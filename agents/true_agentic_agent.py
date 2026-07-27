@@ -993,6 +993,9 @@ _get_dispatcher._instance = None  # type: ignore[attr-defined]
 # Encoding gate — reset to False at the start of each agent run (see TrueAgenticAgent.run)
 _gate_state: Dict[str, bool] = {"encoded": True}
 
+# Consecutive windings with no tool call before the run ends itself.
+_EMISSION_GATE_LIMIT = 3
+
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
@@ -2953,6 +2956,7 @@ class TrueAgenticAgent:
     async def run(self, task: str) -> str:
         self.trajectory = []
         self._omega_z_violation_count = 0
+        self._emission_gate_count = 0
         self._review_pending = False
         self._review_count = 0
         self._empty_choices_retried = False
@@ -3256,9 +3260,31 @@ class TrueAgenticAgent:
                 }
 
         if action_name is None:
-            reasoning += " [EMISSION GATE: no tool call — forced]"
-            action_name  = "run_command"
-            action_input = {"command": "echo EMISSION_GATE_FIRED"}
+            # The gate used to fire `echo EMISSION_GATE_FIRED` every time. That
+            # returns nothing the model can act on, so a model that has stopped
+            # emitting tool calls keeps not emitting them and the run loops on
+            # the same no-op until max_windings. Say what is wrong, then stop.
+            self._emission_gate_count = getattr(self, "_emission_gate_count", 0) + 1
+            n = self._emission_gate_count
+            reasoning += f" [EMISSION GATE: no tool call — forced, {n}]"
+            if n >= _EMISSION_GATE_LIMIT:
+                action_name = "done"
+                action_input = {"conclusion": (
+                    (reasoning or "").strip() or
+                    f"Ended after {n} consecutive windings with no tool call. "
+                    "Whatever remained was not being acted on."
+                )}
+            else:
+                action_name  = "run_command"
+                action_input = {"command": (
+                    f"echo 'No tool call was emitted ({n} of "
+                    f"{_EMISSION_GATE_LIMIT}). Every winding must call a tool. "
+                    f"If the task is finished, call done with your conclusion; "
+                    f"otherwise call the tool you actually need. After "
+                    f"{_EMISSION_GATE_LIMIT} the run ends by itself.'"
+                )}
+        else:
+            self._emission_gate_count = 0
 
         return reasoning, action_name, action_input, tc_id, raw_reasoning_content
 

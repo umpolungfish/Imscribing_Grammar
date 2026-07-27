@@ -1,3 +1,3 @@
-The base tools are run, not merely resolved.
+A winding without a tool call says what is wrong, then ends the run.
 
-The shallow check confirmed an emit function existed, which is exactly what ob3ect passed while dying on every call. This one executes thirteen tools for real and exercises the other four up to but not through the expensive call, which is the segment the ob3ect failure lived in: the module imports, the mandatory gate resolves, the agent class constructs.
+The emission gate fired the same empty echo every time a model returned no tool call, which hands back nothing to act on, so a model that had stopped emitting kept not emitting and the run burned every remaining winding on that no-op. The forced command now states the problem and names the way out, and after three consecutive such windings the run closes itself through done rather than spinning to the ceiling. A real tool call clears the count.
