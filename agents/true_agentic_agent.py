@@ -1029,6 +1029,7 @@ _EMISSION_GATE_LIMIT = 3
 
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
+    "winding":                {"of": "<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: \"2/5\"  OR  angle: <radians>", "power": "<integer, optional>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
     "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "𐑛_val;𐑡_val;𐑩_val;𐑗_val;𐑱_val;𐑘_val;𐑚_val;𐑝_val;𐑢_val;𐑓_val;𐑙_val;𐑷_val"},
     "compute_distance":       {"name_a": "<system1>", "name_b": "<system2>"},
@@ -2820,7 +2821,40 @@ def _load_imsgct_context() -> str:
         "\n### BEFORE DERIVING\n"
         "If a project directory holds a STATE.md, read it first. It records what is\n"
         "already settled and which document is authoritative, so settled questions\n"
-        "are not answered again from scratch.\n")
+        "are not answered again from scratch.\n"
+
+        "\n### ANGLES ARE WINDINGS\n"
+        "One winding is a full turn. Carry every angle, phase and rotation as a\n"
+        "rational number of windings, and convert to radians only at the boundary\n"
+        "where something outside demands them. This is the unit of the framework,\n"
+        "not a preference: quantization IS torus winding, so a phase written in\n"
+        "windings is written in the coordinate the structure already uses.\n"
+        "\n"
+        "Radians are lossy the way a decimal expansion is lossy. They take an exact\n"
+        "rational, multiply it by a transcendental, compose several of those, and\n"
+        "then leave you measuring the drift. As rational turns the same phases\n"
+        "compose by integer arithmetic and close exactly.\n"
+        "\n"
+        "In practice this means:\n"
+        "  - write 2/5 of a winding, never 4*pi/5\n"
+        "  - a phase raised to the k-th power is ONE rational scaling, not k\n"
+        "    complex multiplications\n"
+        "  - a value is real exactly when its winding is self-inverse, which is 0\n"
+        "    and 1/2 and nothing else, so use that rather than a tolerance on an\n"
+        "    imaginary part\n"
+        "  - closure and periodicity are visible in the denominator: a lattice of\n"
+        "    tenths closes after ten steps and you should not need to compute that\n"
+        "\n"
+        "When a constant will not sit on the lattice, that is the finding, not an\n"
+        "inconvenience to round away. In the Fibonacci anyon model every native\n"
+        "phase is a multiple of 1/10 of a winding while the T gate is 1/8, and\n"
+        "since 1/8 is not a multiple of 1/10 no braid reaches T exactly at any\n"
+        "length. That single incommensurability is why gate compilation exists\n"
+        "there at all. Write phases in windings and facts of that shape announce\n"
+        "themselves; write them in radians and they hide inside the decimals.\n"
+        "\n"
+        "Derive pi rather than importing it where it is wanted: one winding is 2*pi,\n"
+        "and Machin's arctan(1/2) + arctan(1/3) gives the quarter turn.\n")
     parts.append("---\n[END IMSGCT CONTEXT]\n---\n")
     return "".join(parts)
 def _assistant_msg(

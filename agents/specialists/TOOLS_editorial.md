@@ -77,6 +77,7 @@ never assert arithmetic from memory.
 - `frobenius_tier`
 - `revise_insight`
 - `search_insights`
+- `winding` — of=<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: "2/5"  OR  angle: <radians>, power=<integer, optional>
 
 ## Editorial tools
 

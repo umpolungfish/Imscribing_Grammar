@@ -1,3 +1,25 @@
-Two launchers died on a name they never imported.
+Agents are given the winding, not just told about it.
 
-The rider was added to the constructor of all three but the import line was only widened in one, so editorial and chembio raised on the first line of their own init. Help exits before the constructor runs, which is why every check passed while launching failed. The deep check now builds each specialist for real and asserts the rider reaches it.
+Every agent that loads the imsgct context now reads that angles are windings,
+one winding to a full turn, carried as rational turns and converted to radians
+only at the boundary where something outside demands them. The section says why
+rather than instructing: radians take an exact rational, multiply it by a
+transcendental, compose several of those, and leave you measuring the drift,
+while rational turns compose by integer arithmetic and close exactly. It gives
+the practical consequences — a phase to the k-th power is one rational scaling
+rather than k multiplications, a value is real exactly when its winding is
+self-inverse at 0 or 1/2, and periodicity is visible in the denominator rather
+than measured — and the Fibonacci case as the worked example, where every
+native phase is a tenth and the T gate is 1/8, so no braid reaches it at any
+length.
+
+Being told to use a unit is not the same as having it, so `winding` is now a
+grammar tool. It takes a named constant, a fraction of a turn, or radians, and
+returns the exact rational winding, its complex value, the denominator that
+says when it closes, and whether it is self-inverse. The period-ten closure
+that took a table to observe is now one call: framing to the tenth power folds
+to zero, and the Jones root to the fifth gives one.
+
+Registered in the required-argument table and picked up by the manifest
+generator, so it reaches all three specialists. Deep check passes; every base
+tool still runs and all three specialists construct.

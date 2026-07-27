@@ -3045,6 +3045,8 @@ class ToolDispatcher:
             return self._revise_insight(**args)
         elif name == "search_insights":
             return self._search_insights(**args)
+        elif name == "winding":
+            return self._winding(**args)
         else:
             return {"status": "error", "error": f"Unknown tool: {name}"}
 
@@ -3248,6 +3250,75 @@ class ToolDispatcher:
             "text": session_match.text,
             "plane": session_match.plane,
             "confidence": session_match.confidence,
+        }
+
+    def _winding(self, angle=None, turns=None, power=1, of=None):
+        """Angles as rational numbers of WINDINGS, one winding to a full turn.
+
+        Give an angle in radians, or `turns` as a fraction of a turn ("2/5",
+        0.4), or a named constant via `of`. Returns the exact rational winding
+        where one exists, its complex value, and whether it is self-inverse.
+
+        Windings compose by integer arithmetic, so a phase raised to the k-th
+        power is a single rational scaling rather than k multiplications, and
+        periodicity is visible in the denominator rather than measured.
+        """
+        from fractions import Fraction
+        import cmath, math
+
+        NAMED = {
+            "theta_tau":   Fraction(2, 5),
+            "r_vacuum":    Fraction(2, 5),
+            "r_tau":       Fraction(-3, 10),
+            "jones_root":  Fraction(1, 5),
+            "framing":     Fraction(-1, 10),
+            "loop_phase":  Fraction(1, 2),
+            "t_gate":      Fraction(1, 8),
+            "s_gate":      Fraction(1, 4),
+            "z_gate":      Fraction(1, 2),
+            "quarter":     Fraction(1, 4),
+            "full":        Fraction(1, 1),
+        }
+
+        if of is not None:
+            key = str(of).strip().lower()
+            if key not in NAMED:
+                return {"status": "error",
+                        "error": f"unknown constant '{of}'",
+                        "known": sorted(NAMED)}
+            w = NAMED[key]
+        elif turns is not None:
+            w = Fraction(str(turns)) if isinstance(turns, str) else \
+                Fraction(turns).limit_denominator(3600)
+        elif angle is not None:
+            w = Fraction(float(angle) / (2 * math.pi)).limit_denominator(3600)
+        else:
+            return {"status": "error",
+                    "error": "give one of: angle (radians), turns, or of (named constant)",
+                    "known": sorted(NAMED)}
+
+        w = w * int(power)
+        folded = w - int(w // 1)          # into [0, 1)
+        z = cmath.exp(2j * math.pi * float(folded))
+        exact = abs(float(w) * 2 * math.pi - (float(w) * 2 * math.pi)) < 1e-15
+
+        return {
+            "status": "ok",
+            "winding": f"{w.numerator}/{w.denominator}",
+            "folded": f"{folded.numerator}/{folded.denominator}",
+            "turns_float": float(w),
+            "radians": float(w) * 2 * math.pi,
+            "denominator": folded.denominator,
+            "closes_after": folded.denominator,
+            "complex": [z.real, z.imag],
+            "is_real": abs(z.imag) < 1e-12,
+            "self_inverse": folded in (Fraction(0), Fraction(1, 2)),
+            "note": ("self-inverse windings are 0 and 1/2 only, and those are "
+                     "exactly the real values; a quantity landing there cannot "
+                     "be told from its own reverse"),
+            "closure": (f"a winding with denominator {folded.denominator} closes "
+                        f"after {folded.denominator} steps"),
+            "exact": exact,
         }
 
     def _search_insights(self, keyword: str, plane: Optional[str] = None) -> Dict[str, Any]:
