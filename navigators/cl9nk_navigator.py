@@ -67,11 +67,12 @@ CLINK_L8_REF = None
 def _find_catalog_path():
     _here = _os.path.dirname(_os.path.abspath(__file__))
     _candidates = [
+        # Canonical FIRST — the website and vendored copies run days behind.
+        _os.path.join(_here, "..", "IG_catalog.json"),
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json",
+        _os.path.join(_here, "IG_catalog.json"),
         _os.path.join(_here, "..", "..", "imscribe.com", "IG_catalog.json"),
         _os.path.join(_here, "..", "..", "red-hot_rebis", "shared", "IG_catalog.json"),
-        _os.path.join(_here, "..", "IG_catalog.json"),
-        _os.path.join(_here, "IG_catalog.json"),
-        "/home/mrnob0dy666/imsgct/imscribe.com/IG_catalog.json",
     ]
     for p in _candidates:
         if _os.path.exists(p):

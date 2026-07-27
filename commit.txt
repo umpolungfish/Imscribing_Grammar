@@ -1,3 +1,3 @@
-The manifest stops naming individual files that may not be there.
+The navigators read the canonical catalog first.
 
-It listed two scripts by name, one of which had been deleted, so the prompt kept asserting a file into existence and an agent went and rebuilt it. The entry points that are stable stay; the loose scripts are found by listing the directory instead.
+Both looked in the website copy before the canonical one, and every other copy runs days behind, so an entry registered a moment earlier read back as absent from a catalog with seventy-eight fewer entries. The canonical path is first now and the stale copies remain only as fallbacks.
