@@ -414,14 +414,22 @@ class _LocalOpenAIClient:
 # ── LLM client ────────────────────────────────────────────────────────────────
 
 def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
-    """OpenAI-compatible client — OpenRouter by default, or any local server."""
+    """OpenAI-compatible client — OpenRouter by default, or any local server.
+    
+    Client timeout: 300s total, 30s connect (prevents indefinite hangs).
+    max_retries=0: we handle retries ourselves in _think_and_act with backoff.
+    """
     try:
         import openai
     except ImportError:
         sys.exit("openai package required: uv add openai")
 
+    is_openrouter = False
     if not base_url:
         base_url = "https://openrouter.ai/api/v1"
+        is_openrouter = True
+    else:
+        is_openrouter = "openrouter.ai" in base_url
 
     is_local = any(h in base_url for h in ("localhost", "127.0.0.1", "0.0.0.0"))
 
@@ -433,8 +441,9 @@ def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
             if not api_key:
                 sys.exit("OPENROUTER_API_KEY not set.")
 
+    # OpenRouter-specific headers — only for OpenRouter endpoints
     headers: Dict[str, str] = {}
-    if not is_local:
+    if is_openrouter:
         headers = {
             "HTTP-Referer": os.environ.get(
                 "OPENROUTER_REFERER",
@@ -443,7 +452,13 @@ def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
             "X-Title": "Imscribing Grammar True Agentic Agent",
         }
 
-    return openai.OpenAI(api_key=api_key, base_url=base_url, default_headers=headers)
+    return openai.OpenAI(
+        api_key=api_key,
+        base_url=base_url,
+        default_headers=headers,
+        timeout=300.0,   # 5 min overall timeout — prevents indefinite hangs
+        max_retries=0,   # we handle retries ourselves with exponential backoff
+    )
 
 
 # ── Model alias table (mirrors induction_harness) ─────────────────────────────
@@ -458,6 +473,9 @@ MODEL_ALIASES: Dict[str, str] = {
     "o3":               "openai/o3",
     "gemini-2-5-pro":   "google/gemini-2.5-pro-preview-05-06",
     "deepseek-r1":      "deepseek/deepseek-r1",
+    "deepseek-chat":    "deepseek/deepseek-chat",
+    "deepseek-v3":      "deepseek/deepseek-v3-0324",
+    "deepseek-reasoner":"deepseek/deepseek-r1",
     "grammaformer":     "local:grammaformer",
 }
 
@@ -473,6 +491,7 @@ LOCAL_BASE_URLS: Dict[str, str] = {
 # Remote API providers — used by the prefix syntax `provider:model`
 REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
     "deepseek": ("https://api.deepseek.com/v1",                          "DEEPSEEK_API_KEY"),
+    "deepseek-v4-flash": ("https://api.deepseek.com/v1",                    "DEEPSEEK_API_KEY"),
     "qwen":     ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
     "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
 }
@@ -1009,21 +1028,23 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
     tool_name = args["tool_name"]
     tool_args = args.get("args") or {}
 
-    # Encoding gate: block lookup/catalog tools until imscribe_system succeeds
-    if not _gate_state["encoded"]:
-        # List of tools that require initial encoding
-        gated_tools = {"lookup_catalog", "list_catalog", "find_analogies"}
-        if tool_name in gated_tools:
-            return json.dumps({
-                "status": "error",
-                "error": (
-                    "Catalog lookup tools are blocked. First imscribe a system using "
-                    "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
-                    "𐑛='𐑛', 𐑡='𐑡', 𐑩='𐑩', 𐑗='𐑗', "
-                    "𐑱='𐑱', 𐑘='𐑘', 𐑚='𐑚', 𐑝='𐑝', "
-                    "𐑢='𐑢', 𐑓='𐑓', 𐑙='𐑙', 𐑷='𐑷')"
-                )
-            })
+    # Encoding gate. It used to hard-block lookup_catalog, list_catalog and
+    # find_analogies until imscribe_system succeeded, which left an agent that
+    # only wanted to read the catalog with exactly one way forward: invent a
+    # system and hand-write its twelve-tuple purely to open the gate. That is
+    # fabrication under duress, and it writes into a catalog that is synced
+    # across repos. Reads are never blocked now; the nudge rides along with the
+    # result instead, so the gate still asks for an imscription without making
+    # a fabricated one the only escape.
+    _gate_nudge = None
+    if not _gate_state["encoded"] and tool_name in {
+            "lookup_catalog", "list_catalog", "find_analogies"}:
+        _gate_nudge = (
+            "Nothing has been imscribed in this run yet. Read freely, but imscribe "
+            "the system you are actually working on with imscribe_system before "
+            "relying on structural comparisons. Do not invent an entry to satisfy "
+            "this: every tuple must be derived, never hand-written."
+        )
 
     # Pre-flight: imscribe_system must have a valid 12-part tuple
     if tool_name == "imscribe_system":
@@ -1079,6 +1100,9 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "meet(⊙, 𐑻)=⊙ but tensor(⊙, 𐑻)=𐑻. "
                     "This is the structural statement of the measurement problem."
                 )
+
+        if _gate_nudge is not None and isinstance(result, dict):
+            result["_imscription_nudge"] = _gate_nudge
 
         serialised = json.dumps(result, indent=2, ensure_ascii=False)
         return serialised
@@ -2106,7 +2130,9 @@ TOOL_SCHEMAS = [
         (
             "Register a new system in the Imscribing Grammar catalog. "
             "Specify all 12 structural primitives explicitly — every field is required. "
-            "This is the ONLY way to add a system; lookup_catalog is blocked until this succeeds. "
+            "This is the ONLY way to add a system. Never invent one to satisfy a "
+            "prompt: catalog reads are always available, and every tuple must be "
+            "derived rather than hand-written. "
             "TETRACTYS: Every call without convergence_justification triggers 3-winding "
             "Tetractys. Your proposed tuple is winding 1; two de novo sub-calls (no catalog "
             "context) are windings 2 and 3. If all 3 agree the catalog is committed immediately. "
@@ -3104,6 +3130,7 @@ class TrueAgenticAgent:
                     tools       = active_tools,
                     tool_choice = "auto",
                     messages    = self._messages,
+                    timeout     = 180.0,   # 3 min per LLM call — prevents hangs
                 )
                 break  # Success — exit retry loop
             except Exception as exc:
