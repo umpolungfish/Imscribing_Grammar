@@ -1,3 +1,3 @@
-The repo listing is read, not remembered.
+The loop closes: UPDATE re-enters THINK.
 
-It was built once and held for the life of the process, so anything deleted mid-session stayed in the system prompt and the agent went on believing it was there. Keying the cache on the parent directory's modification time does not help here, because this filesystem does not bump it when a subdirectory is removed. The listing costs about a millisecond and now happens once per run.
+The update was computed after the continuation message and written only to the log, so the model never received its own structural verdict on a winding and the loop ran as think, act, observe. It is computed before the continuation now and carried in it, on the closed path and the open one, so each winding's update is what the next winding thinks from.

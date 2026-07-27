@@ -3085,12 +3085,23 @@ class TrueAgenticAgent:
                     f"({len(summary)} chars). Context now {new_tok//1000}k tokens.]"
                 )
 
+        # UPDATE is computed here, BEFORE the continuation message, so the loop
+        # can carry it back into THINK. It used to be computed after and only
+        # written to the log, which left the loop as THINK->ACT->OBSERVE with the
+        # update never re-entering the model's context — TAO, not TAOU.
+        done = (action_name == "done")
+        conclusion = action_input.get("conclusion", "") if done else ""
+        update_note = self._update_note(action_name, dual_result, done)
+        b4_note = f" B4={dual_result.b4_result}" if dual_result.b4_result else ""
+        dial_note = " DIALETHEIC" if dual_result.dialetheic else ""
+
         # If Frobenius OPEN, inject a user correction so the model knows to fix it
         if not dual_result.frobenius_closed and action_name != "done":
             self._messages.append({
                 "role": "user",
                 "content": (
                     f"[Frobenius OPEN — winding {winding}]\n"
+                    f"UPDATE: {update_note}{b4_note}{dial_note}\n"
                     f"{dual_result.verify_output}\n"
                     f"The tool call failed. Fix the error and emit the corrected call."
                 ),
@@ -3107,17 +3118,13 @@ class TrueAgenticAgent:
             # Closed — gentle 𐑧 nudge to keep the loop moving
             self._messages.append({
                 "role": "user",
-                "content": f"[Winding {winding} closed] Continue. Emit your next action or done.",
+                "content": (
+                    f"[Winding {winding}] UPDATE: {update_note}{b4_note}{dial_note}\n"
+                    f"Continue. Emit your next action or done."
+                ),
             })
 
-        # UPDATE
-        done = (action_name == "done")
-        conclusion = action_input.get("conclusion", "") if done else ""
-        update_note = self._update_note(action_name, dual_result, done)
-
-        b4_str = f" B4={dual_result.b4_result}" if dual_result.b4_result else ""
-        dial_str = " DIALETHEIC" if dual_result.dialetheic else ""
-        self._log(f"  UPDATE: {update_note}{b4_str}{dial_str}")
+        self._log(f"  UPDATE: {update_note}{b4_note}{dial_note}")
         if done:
             self._log(f"  CONCLUSION: {conclusion}")
 
