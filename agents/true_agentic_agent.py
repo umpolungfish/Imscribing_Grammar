@@ -827,11 +827,20 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
         else:
             window = content[max(0, tm.start() - 400): tm.start()]
         candidate_names = [m.group(1) for m in _NAME_RE.finditer(window)]
+        # Prefer the LONGEST catalog name in the window, not the nearest. The
+        # catalog contains 298 names of four characters or fewer — including
+        # "the", "0", "1", "2048" — so nearest-match reliably picked an English
+        # word out of the surrounding prose and rejected a correct tuple against
+        # that entry's tuple. Length is the practical proxy for specificity;
+        # ties fall back to nearest.
+        hits = [c for c in candidate_names if c in table]
         matched_name = None
-        for cand in reversed(candidate_names):  # nearest first
-            if cand in table:
-                matched_name = cand
-                break
+        if hits:
+            best = max(len(c) for c in hits)
+            for cand in reversed(hits):          # nearest among the longest
+                if len(cand) == best:
+                    matched_name = cand
+                    break
         if matched_name is None:
             continue  # tuple present but no recognizable catalog name nearby
         truth = table[matched_name]
