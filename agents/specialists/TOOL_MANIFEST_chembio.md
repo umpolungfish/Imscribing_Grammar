@@ -74,7 +74,9 @@ never assert arithmetic from memory.
 - `aleph_encode` — text=<Hebrew letter or word>
 - `aleph_distance` — a=<letter1>, b=<letter2>
 - `riemann_xi_info`
-- `__all__`
+- `frobenius_tier`
+- `revise_insight`
+- `search_insights`
 
 ## Chemistry, biology, materials, plasmas tools
 

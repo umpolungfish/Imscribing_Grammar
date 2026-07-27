@@ -48,8 +48,22 @@ def base_tools() -> list[tuple[str, str]]:
 # ── derived: the grammar tools imscribe dispatches ────────────────────
 
 def grammar_tools() -> list[str]:
+    """Names from the dispatch chain only.
+
+    Scraping the whole file matched `if name == "__all__"` inside
+    _frobenius_tier, where `name` is a catalog entry rather than a tool, and
+    shipped `__all__` to the specialists as a callable tool.
+    """
     src = IG_INQUIRY.read_text()
-    names = re.findall(r'^\s+(?:el)?if name == "([a-z_0-9]+)":', src, re.M)
+    lines = src.splitlines()
+    start = next(i for i, l in enumerate(lines)
+                 if l.strip().startswith("def dispatch(self"))
+    indent = len(lines[start]) - len(lines[start].lstrip())
+    end = next(i for i in range(start + 1, len(lines))
+               if lines[i].strip().startswith("def ")
+               and (len(lines[i]) - len(lines[i].lstrip())) <= indent)
+    body = "\n".join(lines[start:end])
+    names = re.findall(r'^\s+(?:el)?if name == "([a-z_0-9]+)":', body, re.M)
     seen, out = set(), []
     for n in names:
         if n not in seen:

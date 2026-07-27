@@ -3036,6 +3036,15 @@ class ToolDispatcher:
             return self._aleph_distance(**args)
         elif name == "riemann_xi_info":
             return self._riemann_xi_info()
+        # ── Previously implemented but never wired into this chain, so no
+        #    agent could call them. frobenius_tier also censuses the whole
+        #    catalog when given the name "__all__".
+        elif name == "frobenius_tier":
+            return self._frobenius_tier(**args)
+        elif name == "revise_insight":
+            return self._revise_insight(**args)
+        elif name == "search_insights":
+            return self._search_insights(**args)
         else:
             return {"status": "error", "error": f"Unknown tool: {name}"}
 
