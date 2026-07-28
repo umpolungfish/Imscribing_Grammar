@@ -3055,6 +3055,8 @@ class ToolDispatcher:
             return self._banked_count(**args)
         elif name == "imasm_transitions":
             return self._imasm_transitions(**args)
+        elif name in ("list", "list_tools", "tools"):
+            return self._list_tools()
         elif name == "quantum_compile":
             return self._quantum_compile(**args)
         elif name == "jones_polynomial":
@@ -3277,7 +3279,16 @@ class ToolDispatcher:
         d = str(_P(__file__).resolve().parent)
         if d not in _s.path:
             _s.path.insert(0, d)
-        return importlib.import_module("lattice_flow")
+        mod = importlib.import_module("lattice_flow")
+        # A long-running agent holds whatever copy it imported first. When this
+        # module gains a function mid-session the cached copy does not have it,
+        # and the call fails with "has no attribute" against a file that plainly
+        # does. Reload rather than make the agent restart to see new tools.
+        if not all(hasattr(mod, f) for f in
+                   ("parse_word", "cycle", "weight", "banked_count_check",
+                    "transitions", "rotation_invariant", "insertion_grid")):
+            mod = importlib.reload(mod)
+        return mod
 
     def _lattice_cycle(self, word=None, insert=None):
         """Walk an IMASM word around its ROTAT orbit and report what moves.
@@ -3406,6 +3417,32 @@ class ToolDispatcher:
             "note": ("real value: this root cannot see the chirality, which is not "
                      "the same as the knot being amphichiral" if real else
                      "the mirror's value is the complex conjugate"),
+        }
+
+    def _list_tools(self):
+        """Every grammar tool this dispatcher answers to, with its arguments.
+
+        Reached as `imscribe(tool_name="list")`. It existed in the roster text
+        before it existed here, so an agent following the roster got
+        "Unknown tool: list" and had to guess its way to anything.
+        """
+        import re as _re
+        names = sorted(set(_re.findall(r'elif name == "([a-z0-9_]+)"',
+                                       open(__file__, encoding="utf-8").read())))
+        try:
+            import sys as _s
+            from pathlib import Path as _P
+            a = str(_P(__file__).resolve().parent.parent / "agents")
+            if a not in _s.path:
+                _s.path.insert(0, a)
+            from true_agentic_agent import _IG_REQUIRED_ARGS as REQ
+        except Exception:
+            REQ = {}
+        return {
+            "status": "ok",
+            "count": len(names),
+            "tools": {n: REQ.get(n, "no required arguments recorded") for n in names},
+            "call": 'imscribe(tool_name="<name>", args={...})',
         }
 
     def _imasm_transitions(self, word=None):

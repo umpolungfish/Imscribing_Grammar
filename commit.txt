@@ -1,21 +1,20 @@
-Transitions are counted on the ring, and a statistic can be asked whether it
-survives rotation.
+The roster promised a tool that did not exist, and a running agent could not see
+a new one.
 
-A word is a cycle and ROTAT is the cyclic shift, so a word of length n has n
-transitions rather than n-1. The one a linear read drops is the wrap from the
-last opcode to the first, and in IMASM that is overwhelmingly TANCH -> VINIT,
-the anchor returning to the source. Across k programs a linear read loses
-exactly k such edges, all of them closing edges, and a table built without them
-can show a rule as universal that the closing edges break. That is what a
-130-transition count over 142 opcodes in twelve programs was: 142 minus twelve.
+`imscribe(tool_name="list")` now names every grammar tool with its arguments and
+the call form. The roster text had been telling agents to call it since the
+roster was written, so an agent following its own instructions got
+"Unknown tool: list" and then had to guess its way to anything. The roster line
+also named the parameter `tool` where the dispatcher takes `tool_name`, and it
+implied the base roster covered the grammar tools; it says now that the roster
+is the base set and `list` is how to reach the rest.
 
-rotation_invariant takes any statistic over a word and runs it around the orbit.
-Anything read from absolute position measures the cut rather than the word:
-matrix rows, tetraktys tiers, odd against even positions. One rotation moves
-every value into a different row. The total ordinal of a word survives; the sum
-over even positions takes a different value at nearly every cut.
+The lattice_flow import reloads when an expected function is absent. A
+long-running agent holds whatever copy of a module it imported first, so a
+function added mid-session is missing from the cached copy and the call fails
+with "has no attribute" against a file that plainly has it. Seen live:
+imasm_transitions returned that error while the function was present on disk and
+importable from a fresh process.
 
-Both reachable as the imasm_transitions grammar tool, which reports the ring
-count, the linear count, the closing edge, and whether each of the two
-statistics most often read off a word is invariant. The kernel carries the same
-as `trans`.
+Neither is a failure of the agent. Both are the harness telling it something
+untrue and then reporting its compliance as an error.

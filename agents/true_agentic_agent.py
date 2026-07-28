@@ -2817,8 +2817,9 @@ def _tool_roster() -> str:
         if desc:
             lines.append(f"      {desc}")
     lines.append("")
-    lines.append("  imscribe(tool=<name>, ...) reaches the grammar tools; "
-                 "`imscribe(tool=\"list\")` names them all.")
+    lines.append('  imscribe(tool_name="<name>", args={...}) reaches the grammar '
+                 'tools. imscribe(tool_name="list") names every one of them with '
+                 'its arguments — the roster above is the BASE tools only.')
     lines.append("[END TOOLS]")
     return "\n".join(lines)
 
