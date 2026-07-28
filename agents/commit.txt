@@ -1,19 +1,32 @@
-Hard fidelity gate added to file_write and chunked_write verify functions.
+Hyperdimensional IMASM gematria, on the ring.
 
-_verify_imscribed_fidelity() scans any content being written for Shavian
-12-tuples preceded by a catalog entry name within 400 chars. If found,
-the tuple is compared against the live IG_catalog.json ground truth.
-Mismatch = hard verify failure with exact per-primitive diff — write is
-rejected and the agent must re-fetch via lookup_catalog/compute_distance.
+177 coordinates over a word, every one of them verified to survive rotation
+rather than asserted to.
 
-This replaces a prompt instruction (which had already been violated by
-hand-imscribing) with a mechanical enforcement. Tested: bad tuple
-correctly caught, correct tuple passes, end-to-end emit/verify confirmed.
+  opcode census      12   the opcodes, order discarded
+  ring transitions  144   ordered pairs with the closing edge included
+  landing spectrum   16   how many of the n cuts land in each register
+  scalars                 length, pairs, greatest depth, total ordinal
 
-Files changed: agents/true_agentic_agent.py
-  - import re added
-  - _PRIM_KEYS, _TUPLE_RE, _NAME_RE module-level constants
-  - _catalog_tuples(): reads live catalog fresh on every call
-  - _verify_imscribed_fidelity(): core checker, returns (ok, problems)
-  - _file_write_verify: wired, returns HAND-IMSCRIBED VALUE REJECTED on fail
-  - _chunked_write_verify: wired, checks full file after all chunks land
+A word is a ring, so a coordinate read from absolute position measures where
+the word was cut and not the word: rows of a matrix, tiers of a tetraktys, odd
+against even. One rotation moves every value into a different row. Each block
+here is a multiset over the whole word, a count on the ring, or an aggregate
+over the entire orbit, and each is checked with rotation_invariant.
+
+The landing spectrum is the coordinate that belongs to the ring rather than to
+a word. The landing of any single cut is the phase-bearing quantity every ROTAT
+audit reports; the distribution over all cuts is not, and two words agreeing on
+census and transitions can still put their cuts in different registers.
+
+The check earned itself immediately: the scalar block failed on first run.
+`pairs` and `max_depth` came from a linear depth scan, so a rotation cutting
+through a region counted an unmatched fuse followed by an unmatched split and
+both moved. They are read as a loop now, from a start where the stack never
+underflows, which the cycle lemma provides whenever splits and fuses balance.
+
+Deposits are reported outside the signature: a rotation moves the IFIX and
+everything after a fixation is inert, so the deposit count belongs to the cut.
+
+Reachable as imasm_gematria or hyper_gematria. 54 grammar tools, registry 34 of
+34, deep check green.

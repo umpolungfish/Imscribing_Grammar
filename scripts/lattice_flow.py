@@ -372,3 +372,154 @@ def rotation_invariant(steps, stat) -> Dict:
                     else f"MOVES under rotation ({len(distinct)} values): this reads "
                          f"the cut, not the word"),
     }
+
+
+# ── hyperdimensional gematria ───────────────────────────────────────────────
+_OPCODE_ORDER = ["VINIT", "TANCH", "AFWD", "AREV", "CLINK", "IMSCRIB",
+                 "FSPLIT3", "FFUSE3", "EVALT", "EVALF", "EVALI", "IFIX"]
+_ORDINAL = {n: i + 1 for i, n in enumerate(_OPCODE_ORDER)}
+_REGISTERS = ["N", "T", "F", "TF", "t", "Tt", "Ft", "TFt",
+              "f", "Tf", "Ff", "TFf", "tf", "Ttf", "Ftf", "A"]
+
+
+def _ring_pairs_and_depth(steps):
+    """Pair count and greatest depth, read as a LOOP.
+
+    A linear scan starts wherever the word was cut, so a region the cut passes
+    through is counted as an unmatched fuse followed by an unmatched split, and
+    both the pair count and the depth move with the rotation. By the cycle
+    lemma, when splits and fuses balance there is a start from which the stack
+    never underflows; read from there, both are properties of the word.
+    """
+    n = len(steps)
+    if n == 0:
+        return 0, 0
+    splits = [i for i, t in enumerate(steps) if t == FSPLIT3]
+    starts = [0] + splits
+    best = None
+    for st in starts:
+        d = mx = pr = 0
+        ok = True
+        for j in range(n):
+            t = steps[(st + j) % n]
+            if t == FSPLIT3:
+                d += 1
+                mx = max(mx, d)
+            elif t == FFUSE3:
+                if d == 0:
+                    ok = False
+                else:
+                    d -= 1
+                    pr += 1
+        if ok and (best is None or pr > best[0]):
+            best = (pr, mx)
+    if best is None:
+        # genuinely unbalanced: real structure, reported as the linear read sees it
+        d = mx = pr = 0
+        for t in steps:
+            if t == FSPLIT3:
+                d += 1; mx = max(mx, d)
+            elif t == FFUSE3 and d > 0:
+                d -= 1; pr += 1
+        return pr, mx
+    return best
+
+
+def hyper_gematria(word_steps) -> Dict:
+    """A high-dimensional signature of an IMASM word, every coordinate of which
+    survives rotation.
+
+    A word is a ring. Any coordinate read from absolute position measures where
+    the word was cut and not the word, so a signature built from rows, tiers or
+    odd-against-even positions describes the cut. Every coordinate here is
+    either a multiset over the whole word, a count on the ring, or an aggregate
+    over the entire orbit, and each one is CHECKED with `rotation_invariant`
+    rather than assumed.
+
+    The coordinates:
+
+      opcode census      12  how many of each opcode, order discarded
+      ring transitions  144  ordered pairs counted with the closing edge, so
+                             the wrap from the last opcode to the first is in
+      landing spectrum   16  how many of the n cuts land in each register.
+                             Aggregating over every cut is what makes this one
+                             invariant: the landing of any SINGLE cut is the
+                             phase-bearing quantity, and the distribution of
+                             all of them is not.
+      scalars                length, delta/mu pairs, greatest depth, deposits,
+                             total ordinal, verdict, closed walk
+
+    The landing spectrum is the part that is genuinely of the ring rather than
+    of a word: two words with the same census and the same transitions can put
+    their cuts in different registers.
+    """
+    n = len(word_steps)
+    if n == 0:
+        return {"status": "error", "error": "empty word"}
+
+    census = Counter(word_steps)
+    ring = Counter((word_steps[i], word_steps[(i + 1) % n]) for i in range(n))
+
+    landings = Counter()
+    for k in range(n):
+        rot = word_steps[k:] + word_steps[:k]
+        landings[reg_name(run_weighted(rot).reg)] += 1
+
+    m = run_weighted(word_steps)
+    pairs, maxdepth = _ring_pairs_and_depth(word_steps)
+
+    scalars = {
+        "length": n,
+        "pairs": pairs,
+        "max_depth": maxdepth,
+        "total_ordinal": sum(_ORDINAL.get(t, 0) for t in word_steps),
+        "distinct_landings": len(landings),
+    }
+    # Deposits are NOT invariant and are reported apart from the signature: a
+    # rotation moves the IFIX, and every opcode after a fixation is inert, so
+    # how much a word deposits depends on where it was cut.
+    deposits_here = sum(1 for _, _, k, _ in m.ledger if k == "DEPOSIT")
+
+    # Every coordinate is checked, not asserted. A coordinate that moves under
+    # rotation is reading the cut and does not belong in a signature of a ring.
+    def _census(w): return tuple(sorted(Counter(w).items()))
+    def _ring(w):
+        L = len(w)
+        return tuple(sorted(Counter((w[i], w[(i + 1) % L]) for i in range(L)).items()))
+    def _land(w):
+        L = len(w)
+        c = Counter()
+        for k in range(L):
+            c[reg_name(run_weighted(w[k:] + w[:k]).reg)] += 1
+        return tuple(sorted(c.items()))
+    def _scal(w):
+        pr, mx = _ring_pairs_and_depth(w)
+        return (len(w), pr, mx, sum(_ORDINAL.get(t, 0) for t in w))
+
+    checks = {name: rotation_invariant(word_steps, fn)["invariant"]
+              for name, fn in (("opcode_census", _census),
+                               ("ring_transitions", _ring),
+                               ("landing_spectrum", _land),
+                               ("scalars", _scal))}
+
+    return {
+        "status": "ok",
+        "word": render(word_steps),
+        "dimension": 12 + 144 + 16 + len(scalars),
+        "opcode_census": {GLYPH.get(k, k): v for k, v in census.items()},
+        "ring_transitions": {f"{GLYPH.get(a,'?')}{GLYPH.get(b,'?')}": c
+                             for (a, b), c in ring.most_common()},
+        "landing_spectrum": {r: landings.get(r, 0) for r in _REGISTERS
+                             if landings.get(r, 0)},
+        "scalars": scalars,
+        "phase_bearing_not_in_signature": {
+            "deposits_at_this_cut": deposits_here,
+            "why": "a rotation moves the IFIX and everything after a fixation is "
+                   "inert, so the deposit count belongs to the cut, not the word",
+        },
+        "every_coordinate_rotation_invariant": all(checks.values()),
+        "invariance_by_block": checks,
+        "note": ("built on the ring: the closing edge is counted and the landing "
+                 "spectrum aggregates every cut, so no coordinate reads absolute "
+                 "position"),
+    }

@@ -125758,5 +125758,21 @@
     "Ħ": "𐑒",
     "Σ": "𐑙",
     "Ω": "𐑷"
+  },
+  {
+    "name": "perfect_cuboid_nested_descent_closure",
+    "description": "Perfect cuboid nested descent closure — the Erdos-Turan banking pattern applied to close the descent gap. Two nested FSPLIT/FFUSE pairs (inner at depth 2, outer at depth 1) collect and bank all 4 Belnap values (T,F,t,f) through the AREV reversal, enabling reconstruction of (a,c,d,f) from the Pythago",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]

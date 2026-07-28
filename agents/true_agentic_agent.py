@@ -1033,6 +1033,7 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "weight_flow":            {"word": "<IMASM word as glyphs>"},
     "banked_count":           {"word": "<IMASM word as glyphs>"},
     "imasm_transitions":      {"word": "<IMASM word as glyphs>"},
+    "imasm_gematria":         {"word": "<IMASM word as glyphs>"},
     "quantum_compile":        {"gates": "<circuit over H T S X, e.g. 'H T'>", "depth": "<recursion depth, optional>"},
     "jones_polynomial":       {"braid": "<signed generators, e.g. '1 1 1' for the trefoil>", "strands": "<optional; implied by the word>"},
     "winding":                {"of": "<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: \"2/5\"  OR  angle: <radians>", "power": "<integer, optional>"},

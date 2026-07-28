@@ -3055,6 +3055,8 @@ class ToolDispatcher:
             return self._banked_count(**args)
         elif name == "imasm_transitions":
             return self._imasm_transitions(**args)
+        elif name in ("hyper_gematria", "imasm_gematria"):
+            return self._hyper_gematria(**args)
         elif name in ("list", "list_tools", "tools"):
             return self._list_tools()
         elif name == "quantum_compile":
@@ -3444,6 +3446,48 @@ class ToolDispatcher:
             "tools": {n: REQ.get(n, "no required arguments recorded") for n in names},
             "call": 'imscribe(tool_name="<name>", args={...})',
         }
+
+    def _hyper_gematria(self, word=None, name=None):
+        """Hyperdimensional gematria of an IMASM word: 177 coordinates, every
+        one of them verified to survive rotation.
+
+        A word is a ring, so any coordinate read from absolute position is
+        measuring where the word was cut. Rows of a matrix, tiers of a
+        tetraktys, odd against even: one rotation moves every value into a
+        different row. Each block here is a multiset over the whole word, a
+        count on the ring including the closing edge, or an aggregate over the
+        entire orbit, and each is CHECKED with rotation_invariant rather than
+        assumed.
+
+          opcode census      12   the opcodes, order discarded
+          ring transitions  144   ordered pairs with the wrap included
+          landing spectrum   16   how many of the n cuts land in each register
+          scalars                 length, pairs, greatest depth, total ordinal
+
+        The landing spectrum is the coordinate that is of the RING rather than
+        of a word: the landing of any single cut is the phase-bearing quantity,
+        and the distribution over all cuts is not. Two words agreeing on census
+        and transitions can still put their cuts in different registers.
+
+        Deposits are reported OUTSIDE the signature, because a rotation moves
+        the IFIX and everything after a fixation is inert.
+        """
+        lf = self._lattice_flow()
+        if name and not word:
+            entry = self.catalog.get(name) if hasattr(self, "catalog") else None
+            if not entry:
+                return {"status": "error",
+                        "error": f"no catalog entry '{name}'; pass word=<glyphs>"}
+            return {"status": "error",
+                    "error": "this tool reads an IMASM word, not a tuple. "
+                             "Pass word=<glyphs>; use `gematria` for a tuple."}
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = lf.parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        return lf.hyper_gematria(steps)
 
     def _imasm_transitions(self, word=None):
         """Opcode-to-opcode transitions counted ON THE RING, plus what a linear
