@@ -243,6 +243,27 @@ def banked_count_check(steps) -> Dict:
                                 "lost": dict(d["lost"]),
                                 "weight": sum(d["lost"].values())})
     total_lost = sum(e["weight"] for e in exposed)
+    # THE SECOND FACT. Banking and surplus are independent, proved in
+    # p4ramill Imscribing/IMASM/BankedWeight.lean. Whether ANYTHING is banked
+    # depends on a frame being open when the clear fires; whether the SURPLUS
+    # is kept depends on where the splits fall between deposits of the same
+    # value. Deposits inside one region accumulate, the fold between regions
+    # takes a maximum, so a value deposited in two sibling regions comes back
+    # as one. A word can bank correctly and still discard a surplus.
+    surplus = {}
+    for step, glyph, kind, d in m.ledger:
+        if kind == "CLEAR" and d["lost"] and d["banked"]:
+            lost_here = d["lost"]
+            back = {}
+            for _, _, k2, d2 in m.ledger:
+                if k2 == "FUSE":
+                    for v, w in d2.get("restored", {}).items():
+                        back[v] = max(back.get(v, 0), w)
+            for v, w in lost_here.items():
+                short = w - back.get(v, 0)
+                if short > 0:
+                    surplus[v] = surplus.get(v, 0) + short
+    total_surplus = sum(surplus.values())
     inert = sum(1 for _, _, k, _ in m.ledger if k == "INERT")
     deposits = sum(1 for _, _, k, _ in m.ledger if k == "DEPOSIT")
     restored = sum(sum(d["restored"].values())
@@ -259,6 +280,8 @@ def banked_count_check(steps) -> Dict:
         "weight_lost_in_the_open": total_lost,
         "banked_ok": not exposed,
         "vacuous": vacuous,
+        "surplus_discarded": surplus,
+        "surplus_total": total_surplus,
         "live_clears": live_clears,
         "restored": restored,
         "deposits": deposits,
@@ -272,7 +295,13 @@ def banked_count_check(steps) -> Dict:
              + (f", {deposits} deposit(s) made" if deposits else ", nothing deposited"))
             if vacuous else
             f"{restored} unit(s) survived a clear by being banked in a frame "
-            f"({live_clears} live clear(s))"),
+            f"({live_clears} live clear(s))"
+            + (f"; {total_surplus} further unit(s) flattened by a fold between "
+               f"sibling regions and not restored" if total_surplus else "")),
+        "surplus_note": None if not total_surplus else
+                        "a split between two deposits of the same value puts them "
+                        "in sibling regions; the fold keeps the larger rather than "
+                        "the sum. Put them in one region to keep both.",
         "remedy": None if not exposed else
                   "open the region that holds the result BEFORE the region that "
                   "computes it, and close them in that order, so the inner fuse "

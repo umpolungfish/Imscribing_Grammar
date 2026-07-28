@@ -1,16 +1,17 @@
-A pass because nothing was at risk is marked as one.
+The tools carry both rules, not one.
 
-banked_count_check flagged only a clear that loses weight with nothing behind
-it, so a word whose clears never fire read identically to a word that banked
-correctly. Those are different facts and the difference is the whole content of
-the check.
+Banking and surplus are independent, proved in
+p4ramill Imscribing/IMASM/BankedWeight.lean, and every tool reported only the
+first. Whether ANYTHING is banked is decided by a frame being open when the
+clear fires. Whether the SURPLUS is kept is decided by where the splits fall
+between deposits of the same value: deposits inside one region accumulate, the
+fold between regions takes a maximum, so a value deposited in two sibling
+regions comes back as one.
 
-Three verdicts now instead of two. Weight cleared with nothing banked, which is
-the failure. Weight that survived a live clear by being held in a frame, which
-is the technique working. And nothing ever at risk, reported with the deposits
-made and the steps left inert after a fixation, since that is usually why: a
-word that commits early leaves its whole second region unexecuted, and its
-reversal never fires.
-
-ob3ect marks the vacuous case ○ against ✓ for an earned pass, and the kernel
-says VACUOUS rather than OK.
+banked_count_check reports the surplus alongside the verdict, with the note that
+a split between two deposits of the same value puts them in sibling regions.
+ob3ect prints it under Phase 9b. The kernel prints the repeat-deposit warning
+after an OK. The design prompt states both rules and says plainly that neither
+implies the other. The technique document is split into Rule 1 and Rule 2, with
+the formula that matches the ledger and the two earlier attempts named as the
+special cases they are.
