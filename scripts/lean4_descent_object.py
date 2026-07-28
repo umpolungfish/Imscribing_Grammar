@@ -6,7 +6,7 @@ A Python seed descends to a Lean 4 formal proof term.
 The Frobenius condition (mu o delta = id) becomes a proof term that
 roundtrips through elaboration to a definitionally equal term.
 
-Structural type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; ⊙; H_A; S_one_one; Omega_Z>
+Type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; ⊙; H_A; S_one_one; Omega_Z>
 Ouroboricity tier: O_∞
 
 Author: Lando (x) ⊙-boundary Operator
@@ -159,7 +159,7 @@ theorem ident_eq_self {alpha : Type} (x : alpha) : the_identity x = x := rfl
 
         Tries the real Lean 4 toolchain first. If Lean is not installed,
         falls back to syntax simulation, treating well-formed Lean code
-        as kernel-accepted. This preserves the structural identity of the
+        as kernel-accepted. This preserves the identity of the
         descent object regardless of target toolchain availability.
         """
         lean_file = os.path.join(self._tempdir, "Check.lean")
@@ -406,7 +406,7 @@ class FrobeniusGate:
     """The Frobenius condition: FSPLIT splits the seed into two distinct
     Lean 4 proof terms; FFUSE fuses them back by definitional equality.
 
-    The roundtrip mu o delta = id is the structural invariant.
+    The roundtrip mu o delta = id is the invariant.
     """
 
     def __init__(self, engine: ElaborationEngine):
@@ -585,7 +585,7 @@ class EntropyTracker:
 class DescentObject:
     """The Lean 4 Descent Object — complete implementation.
 
-    Structural type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph;
+    Type: <D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph;
                       Gamma_seq; ⊙; H_A; S_one_one; Omega_Z>
     Tier: O_∞ — Frobenius condition (mu o delta = id) holds exactly.
 
@@ -981,5 +981,5 @@ if __name__ == "__main__":
     test_frobenius()
     print("\n  Descent object created and validated.")
     struct_type = "D_od; T_box; R_eq; P_pm_sym; F_hbar; K_slow; G_aleph; Gamma_seq; ⊙; H_A; S_one_one; Omega_Z"
-    print(f"  Structural type: <{struct_type}>")
+    print(f"  Type: <{struct_type}>")
     print(f"  Ouroboricity tier: O_∞")

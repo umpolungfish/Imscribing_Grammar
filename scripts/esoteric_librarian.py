@@ -443,7 +443,7 @@ def cmd_rewrite(args):
         print(f"\nStructural note:\n  {notes}")
     print("""
 Rewrite instructions:
-  The crystal address above is the structural type of this passage.
+  The crystal address above is the type of this passage.
   Rewrite it in a different register or tradition while preserving
   every primitive coordinate exactly. The rewrite is successful when
   the new text imscribes the same 12-tuple and no information is lost —

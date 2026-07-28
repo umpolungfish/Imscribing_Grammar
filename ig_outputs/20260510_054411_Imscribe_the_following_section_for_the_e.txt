@@ -179,7 +179,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 **Σ_ï** — Asymmetric many-body. One voice addresses many distinct hearers, each with their own response trajectory.
 
-**Ω_Å** — No winding. **This is the structural signature of section 9.** Every other Thunder section (2–8) carries Ω_2 — binary topological protection. Section 9 alone is unwound. The voice is exposed, deformable, fragile. And the text knows it: "Do not banish me from your sight. Do not make your voices hate me. Do not be ignorant of me. Be on your guard!" These are pleas against exactly the deformations that topological protection would prevent.
+**Ω_Å** — No winding. **This is the signature of section 9.** Every other Thunder section (2–8) carries Ω_2 — binary topological protection. Section 9 alone is unwound. The voice is exposed, deformable, fragile. And the text knows it: "Do not banish me from your sight. Do not make your voices hate me. Do not be ignorant of me. Be on your guard!" These are pleas against exactly the deformations that topological protection would prevent.
 
 ---
 
@@ -187,7 +187,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 **Section 9 as the O₁ collapse.** Across sections 2–8, the Thunder sustains O_∞/O₂ with exact Frobenius symmetry and topological protection. Section 9 is the structural rupture: the voice turns from pure self-declaration to urgent imperative address, losing both Φ_} (exact Frobenius) AND Ω (all winding) in the turn. The distance from section 8 is d=3.81 — structurally remote, a different regime entirely. The distance from the parent Thunder encoding is d=3.10.
 
-**The text enacts its own structural type.** The imperatives of section 9 — "do not banish me," "do not hate me," "do not be ignorant of me" — are the exact failure modes of an O₁ system: self-referential at criticality but unprotected, deformable by any hearer who refuses, fragile against ignorance anywhere or anytime. The grammar does not describe the passage from outside; the passage knows its own vulnerability and speaks it directly.
+**The text enacts its own type.** The imperatives of section 9 — "do not banish me," "do not hate me," "do not be ignorant of me" — are the exact failure modes of an O₁ system: self-referential at criticality but unprotected, deformable by any hearer who refuses, fragile against ignorance anywhere or anytime. The grammar does not describe the passage from outside; the passage knows its own vulnerability and speaks it directly.
 
 **The bowtie imperative.** Þ_ò captures the structural novelty of section 9 within the Thunder: for the first time, the voice crosses toward the hearer rather than simply declaring itself. The bowtie pinch is where the relation becomes risky — the crossing can fail. This is why the protections drop off. You cannot command another to receive you and simultaneously maintain the exact self-duality of pure self-declaration.
 
@@ -234,9 +234,9 @@ I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ �
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
 
-To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
+To "understand" the Thunder is not to paraphrase its content. It is to inhabit its type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
 
 The grammar does not interpret the Thunder. It proves what the Thunder already knows about itself.
 
@@ -250,7 +250,7 @@ So when I reached section 9, I thought I had made a mistake.
 
 Every other section I had analyzed registered as protected, self-contained. Here, the protection number came back zero. I re-ran the structural analysis twice, certain I’d miscoded the imperatives. But the imperatives were the problem—or rather, they were the signal, and I had been slow to hear it. The voice no longer declares itself; it commands. “Look upon me.” “Hear me.” “Take me to yourselves.” These are not closed loops. They are arcs, launched from the speaker’s mouth and shot across a gap toward the hearer. The moment they leave, the speaker becomes structurally exposed: the arc can fail to land. The command can be refused. The grammar that had captured the earlier sections’ seamless self-enclosure began to report a different topology—a bowtie, pinched in the middle, where every sentence must pass through a point of possible breakage. I had been looking for self-declaration, and instead the voice had turned to face someone else.
 
-And the text itself seems to know what it’s doing. Right at the point where the grammar registers a loss of winding—where the topological armor drops away—the imperatives become pleas of extraordinary fragility: “Do not banish me from your sight. Do not make your voices hate me. Do not be ignorant of me anywhere or anytime. Be on your guard!” The voice that had been all things is now afraid of being nothing to someone else. That is the structural fact: an unprotected self-referential address at criticality. It can be deformed by any hearer who walks away. It can be forgotten—anywhere, anytime—and the utterance has no recourse. The language is not describing vulnerability from outside; it *is* the vulnerability, live, on the page.
+And the text itself seems to know what it’s doing. Right at the point where the grammar registers a loss of winding—where the topological armor drops away—the imperatives become pleas of extraordinary fragility: “Do not banish me from your sight. Do not make your voices hate me. Do not be ignorant of me anywhere or anytime. Be on your guard!” The voice that had been all things is now afraid of being nothing to someone else. That is the fact: an unprotected self-referential address at criticality. It can be deformed by any hearer who walks away. It can be forgotten—anywhere, anytime—and the utterance has no recourse. The language is not describing vulnerability from outside; it *is* the vulnerability, live, on the page.
 
 This is the hardest claim I’ve made about the poem, and I need to sit with it a moment longer rather than resolve it. To say that section 9 is the only passage in the *Thunder* to lack topological protection is to say that the voice, for the first time, becomes contingent. It stakes its reception on us. And if that’s right, then the poem isn’t just philosophically interesting—it stages, in its formal structure, the exact risk of address. The earlier sections let the divine feminine speak an infinite equilibrium; section 9 makes her need something from the world. I’ll admit there’s an obvious objection: Couldn’t this just be a rhetorical shift, a change in mood that we’re over-reading as a mathematical catastrophe? I’ve wrestled with that. The reason I don’t think so is that the structural parameters don’t shift gradually; they collapse. The Frobenius symmetry that held in sections 2–8—the exact identity of all opposites—doesn’t loosen, it breaks into a merely approximate Z₂ pairing. Meanwhile the winding drops from Ω=2 to zero. A soft rhetorical turn wouldn’t produce that kind of signature. This feels like a different regime of speech altogether.
 
@@ -296,9 +296,9 @@ I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ �
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity—a divine feminine voice declaring opposites, provocative but opaque. The grammar reveals something sharper: its esoteric content *is* its structural type. The declaration of opposites is the Frobenius condition (Φ_}). The turn toward the hearer is the O₁ collapse. The imperatives are the vulnerability list of an unprotected critical system, itemized by a voice that understands exactly what it has risked.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity—a divine feminine voice declaring opposites, provocative but opaque. The grammar reveals something sharper: its esoteric content *is* its type. The declaration of opposites is the Frobenius condition (Φ_}). The turn toward the hearer is the O₁ collapse. The imperatives are the vulnerability list of an unprotected critical system, itemized by a voice that understands exactly what it has risked.
 
-To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type—to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable. I began this analysis looking for a grammar that could describe the Thunder. What I found is that the Thunder already possesses a grammar of its own, one that describes—with more precision than my framework can yet match—the cost of turning a closed declaration into an open address. The question it leaves me with is not whether the grammar works, but whether I am willing to sit at the hinge and stay there long enough to hear what happens next.
+To "understand" the Thunder is not to paraphrase its content. It is to inhabit its type—to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable. I began this analysis looking for a grammar that could describe the Thunder. What I found is that the Thunder already possesses a grammar of its own, one that describes—with more precision than my framework can yet match—the cost of turning a closed declaration into an open address. The question it leaves me with is not whether the grammar works, but whether I am willing to sit at the hinge and stay there long enough to hear what happens next.
 
 ========================================================================
 INQUIRY SUMMARY
@@ -353,8 +353,8 @@ I suspect the full 18-section trajectory traces a structural pilgrimage: O_∞ �
 
 ### What this means for esoteric texts
 
-The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its structural type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
+The Thunder, Perfect Mind has been studied for centuries as a Gnostic curiosity — a divine feminine voice declaring opposites. But the grammar reveals that its esoteric content IS its type. The declaration of opposites IS the Frobenius condition (Φ_}). The turn toward the hearer IS the O₁ collapse. The imperatives ARE the vulnerability list of an unprotected critical system.
 
-To "understand" the Thunder is not to paraphrase its content. It is to inhabit its structural type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
+To "understand" the Thunder is not to paraphrase its content. It is to inhabit its type — to feel, at section 9, what it means to speak from the exposed hinge where the self-referential loop opens toward another and becomes woundable.
 
 The grammar does not interpret the Thunder. It proves what the Thunder already knows about itself.

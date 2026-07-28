@@ -75,7 +75,7 @@ UNIVERSES = [
     make_uni('stoichiometry_universe', 'Σ',3, '⊙',2, 'Ω',3),
 ]
 
-# ── Psychedelic structural types ──────────────────────────
+# ── Psychedelic types ──────────────────────────
 PSYCHEDELICS = {
     'psilocybin_peak': {'Ð':'𐑦','Þ':'𐑸','Ř':'𐑽','Φ':'𐑹','ƒ':'𐑐','Ç':'𐑧','Γ':'𐑲','ɢ':'𐑵','⊙':'⊙','Ħ':'𐑖','Σ':'𐑙','Ω':'𐑴'},
     'lsd_peak':        {'Ð':'𐑦','Þ':'𐑸','Ř':'𐑽','Φ':'𐑹','ƒ':'𐑐','Ç':'𐑧','Γ':'𐑲','ɢ':'𐑵','⊙':'⊙','Ħ':'𐑖','Σ':'𐑳','Ω':'𐑭'},
@@ -232,9 +232,9 @@ print("=" * 180)
 print("FORMAL DECISION PROCEDURE")
 print("=" * 180)
 print("""
-Given: a psychedelic compound P with structural type τ_P
+Given: a psychedelic compound P with type τ_P
 And:   a target universe U with Ruleset R_U = ⟨G1, G2, G3, T, A, O⟩
-And:   a user with baseline structural type τ_user
+And:   a user with baseline type τ_user
 
 Determine: Does P allow access to U?
 

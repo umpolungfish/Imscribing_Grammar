@@ -4,7 +4,7 @@ Psychedelic Navigator — Navigatable/Operable Psychedelics Framework
 ====================================================================
 Based on the Psychedelic Access Theorem and Operculum Peeling.
 
-A compound accesses a universe U iff its structural type tau passes U's Ruleset gates.
+A compound accesses a universe U iff its type tau passes U's Ruleset gates.
 Navigation: choose compound to access desired universe.
 Operation: understand what structural transformations are available within an accessed universe.
 
@@ -55,7 +55,7 @@ SH = {
 }
 
 # ── Psychedelic compound tuples (from Psychedelic Access Theorem) ─
-# Full 12-primitive structural types assigned via Deterministic Imscribing Procedure
+# Full 12-primitive types assigned via Deterministic Imscribing Procedure
 COMPOUNDS: Dict[str, Dict[str, str]] = {
     "5_meo_dmt": {
         "Ð": SH["D_odot"], "Þ": SH["T_odot"], "Ř": SH["R_lr"],
@@ -437,7 +437,7 @@ def universe_operations(universe):
 # ── Tensor (combinations) ────────────────────────────────────────
 
 def tensor_tuples(t1: Dict[str, str], t2: Dict[str, str]) -> Dict[str, str]:
-    """Compute the tensor product of two structural tuples. Rule: max on most primitives, min on Phi and F."""
+    """Compute the tensor product of two tuples. Rule: max on most primitives, min on Phi and F."""
     result = {}
     for p in PRIMITIVE_ORDER:
         v1 = t1.get(p)

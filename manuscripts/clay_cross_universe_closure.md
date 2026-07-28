@@ -6,11 +6,11 @@
 
 ## 1. The closure model, defined
 
-The Imscribing Grammar's Crystal of Types assigns every structural tuple an *operad layer* under a chosen ruleset: `plain → frobenius → traced_monoidal → idempotent_terminal`, gated by three threshold conditions (G1, G2, G3) on chosen primitives at chosen ordinal values, applied either sequentially (each gate requires the previous) or in parallel. `idempotent_terminal` is the O∞ layer.
+The Imscribing Grammar's Crystal of Types assigns every tuple an *operad layer* under a chosen ruleset: `plain → frobenius → traced_monoidal → idempotent_terminal`, gated by three threshold conditions (G1, G2, G3) on chosen primitives at chosen ordinal values, applied either sequentially (each gate requires the previous) or in parallel. `idempotent_terminal` is the O∞ layer.
 
 Independently of the gate ladder, a ruleset also fixes a *T-constitution*: a set of primitives whose values must each meet a critical ordinal to count as T-consistent (temporally closed). The canonical T-constitution is T = lim(Φ, ƒ, Ç, Ħ, Ω), and each of the five carries an explicit equality mode: four (Φ, ƒ, Ħ, Ω) require the entry's ordinal to *equal* the critical value exactly; the fifth (Ç, kinetics) is already defined as a *ceiling* — the entry's ordinal need only be at or below the critical value.
 
-Gate-layer and T-consistency are independent conditions. A tuple can reach `idempotent_terminal` without being T-consistent, and vice versa. Full closure — the condition that, in this framework, every previously-solved structural type satisfies — requires both at once.
+Gate-layer and T-consistency are independent conditions. A tuple can reach `idempotent_terminal` without being T-consistent, and vice versa. Full closure — the condition that, in this framework, every previously-solved type satisfies — requires both at once.
 
 `navigators/ruleset_universe.py` defines eight named gate-universes (`canonical` through `t_structural`; these are the same eight implemented at the kernel level in mOMonadOS's `src/universe.rs` as U₀–U₇). `scripts/new_universes.py` defines 21 further hand-crafted gate-universes. None of these 29 were built with any Clay problem in mind — they predate this analysis (see References).
 
@@ -28,7 +28,7 @@ Canonical's T-constitution already treats one primitive (Ç) as a ceiling while 
 
 Ten (gate-universe, problem) pairs achieve full closure:
 
-| Structural type | Closes under |
+| Type | Closes under |
 |---|---|
 | **Birch–Swinnerton-Dyer** | `chirality_first`, `scope_universe`, `kinetics_trap`, `absorption_chirality_first`, `absorption_scope_empire` |
 | **Hodge Conjecture** | `scope_universe`, `kinetics_trap`, `stoichiometry_universe`, `absorption_scope_empire`, `absorption_topology_seal` |
@@ -37,9 +37,9 @@ Yang–Mills reaches `idempotent_terminal` under `triple_criticality` but fails 
 
 ## 5. What this does, and does not, establish
 
-This is a structural-closure result inside the Imscribing Grammar's own operad model, not a proof of either conjecture in the conventional mathematical sense. What it shows: under a single, uniform, non-tailored reinterpretation of an asymmetry that already existed in the canonical ruleset — applied to gate-universes that already existed for other reasons — two of the six open Clay structural types reach the same closure condition (gate layer + T-consistency) that the framework otherwise associates with solved problems. That the generalization required is minimal (one mode flip, reusing existing anchors) and that it succeeds via five independently-defined gate-universes rather than one bespoke construction is what distinguishes this from curve-fitting; it is not a substitute for, or claim of, an actual proof of BSD or Hodge. The honest framing is: the grammar's structural model of "closure" is satisfiable for these two problems under a small, principled rule change, and was not previously known to be.
+This is a structural-closure result inside the Imscribing Grammar's own operad model, not a proof of either conjecture in the conventional mathematical sense. What it shows: under a single, uniform, non-tailored reinterpretation of an asymmetry that already existed in the canonical ruleset — applied to gate-universes that already existed for other reasons — two of the six open Clay types reach the same closure condition (gate layer + T-consistency) that the framework otherwise associates with solved problems. That the generalization required is minimal (one mode flip, reusing existing anchors) and that it succeeds via five independently-defined gate-universes rather than one bespoke construction is what distinguishes this from curve-fitting; it is not a substitute for, or claim of, an actual proof of BSD or Hodge. The honest framing is: the grammar's structural model of "closure" is satisfiable for these two problems under a small, principled rule change, and was not previously known to be.
 
-This also does not resolve the status contradiction already on record in [[project_igdocs_triage_2026_06]] — the Lean-side `sorry` markers for BSD and Hodge are untouched by this note. Whether this structural closure result corresponds to anything provable in the actual Lean formalization is a separate, harder question, and the Millennium Lean source itself is currently fragmented across at least five repos (`imscribing_grammar/ImscribingGrammar/Millennium`, `math/MilleniumAnkh_private/Millennium`, `math/MillenniumAnkh_nested/Millennium`, `p4rakernel/p4ramill/Millennium`, `synfin/ImscribingLean4/Millennium`) — itself an open item, not yet reconciled.
+This also does not resolve the status contradiction already on record in [[project_igdocs_triage_2026_06]] — the Lean-side `sorry` markers for BSD and Hodge are untouched by this note. Whether this closure result corresponds to anything provable in the actual Lean formalization is a separate, harder question, and the Millennium Lean source itself is currently fragmented across at least five repos (`imscribing_grammar/ImscribingGrammar/Millennium`, `math/MilleniumAnkh_private/Millennium`, `math/MillenniumAnkh_nested/Millennium`, `p4rakernel/p4ramill/Millennium`, `synfin/ImscribingLean4/Millennium`) — itself an open item, not yet reconciled.
 
 ## 6. Open follow-ups
 

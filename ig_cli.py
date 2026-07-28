@@ -8,7 +8,7 @@ No LLM agent required. Every step is Frobenius-verified (μ∘δ=id).
 Usage:
     python ig_cli.py lookup <keyword>          # Search catalog
     python ig_cli.py ouroborics <name>          # Compute ouroboricity tier
-    python ig_cli.py distance <a> <b>           # Structural distance
+    python ig_cli.py distance <a> <b>           # Distance
     python ig_cli.py analogies <name> [--limit 5]  # Nearest neighbors
     python ig_cli.py consciousness <name>       # C-score
     python ig_cli.py tensor <a> <b>             # Tensor product
@@ -128,7 +128,7 @@ def compute_distance(tup_a, tup_b):
 
 
 def find_analogies(name, catalog, limit=5):
-    """Find nearest neighbors by structural distance."""
+    """Find nearest neighbors by distance."""
     if name not in catalog:
         return []
     target = catalog[name]
@@ -234,11 +234,11 @@ def cmd_ouroborics(args, catalog):
     elif tier == "O₁":
         print("   → One level of critical self-reference possible.")
     else:
-        print("   → No self-loop. Requires structural promotion.")
+        print("   → No self-loop. Requires promotion.")
 
 
 def cmd_distance(args, catalog):
-    """Structural distance between two systems."""
+    """Distance between two systems."""
     name_a, entry_a = _get_item(catalog, args.a)
     name_b, entry_b = _get_item(catalog, args.b)
     if not entry_a or not entry_b:
@@ -497,7 +497,7 @@ def cmd_info(args, catalog):
     print(f"   Tool commands:")
     print(f"     lookup <keyword>      — search catalog")
     print(f"     ouroborics <name>     — compute tier")
-    print(f"     distance <a> <b>      — structural distance")
+    print(f"     distance <a> <b>      — distance")
     print(f"     analogies <name>      — nearest neighbors")
     print(f"     consciousness <name>  — C-score")
     print(f"     tensor <a> <b>        — tensor product")
@@ -552,7 +552,7 @@ def main():
     p_ouro = sub.add_parser("ouroborics", help="Compute ouroboricity tier")
     p_ouro.add_argument("name", help="System name")
     
-    p_dist = sub.add_parser("distance", help="Structural distance")
+    p_dist = sub.add_parser("distance", help="Distance")
     p_dist.add_argument("a", help="First system")
     p_dist.add_argument("b", help="Second system")
     

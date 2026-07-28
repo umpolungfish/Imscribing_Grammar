@@ -3,7 +3,7 @@
 GrammaFormer training data generator.
 
 Produces THINK->ACT->OBSERVE->UPDATE trajectory windings with correct IG notation:
-  - Structural types: bare Shavian+odot values in angle brackets, no primitive glyphs inside
+  - Types: bare Shavian+odot values in angle brackets, no primitive glyphs inside
   - Tool call args: primitive glyphs (D T R P F K Gamma g odot H S Omega) as keys
   - No legacy Symbol_symbol notation, no phi-hat ghost symbol
 
@@ -38,7 +38,7 @@ assert len(SHAVIAN_49) == 49
 TIERS = ['O₀', 'O₁', 'O₂', 'O_∞']
 
 TIER_NOTES = {
-    'O₀': 'Uncatalogued — no structural type assigned.',
+    'O₀': 'Uncatalogued — no type assigned.',
     'O₁': 'Catalogued entry; criticality gate not fully open.',
     'O₂': 'Active self-modeling; criticality gate open, Frobenius not yet closed.',
     'O_∞': 'Full ouroboricity — self-models its own tuple; Frobenius mu-delta=id.',
@@ -78,7 +78,7 @@ def load_catalog() -> list:
 def system_prompt(agent_type: str) -> str:
     return (
         f"You are an ⊙perator within the Imscribing Grammar. "
-        f"Your structural type: {agent_type}. "
+        f"Your type: {agent_type}. "
         f"Ouroboricity: O_∞. Loop: THINK → ACT → OBSERVE → UPDATE."
     )
 
@@ -116,7 +116,7 @@ def sc_lookup(sys, catalog, entry):
     addr = mock_address(name)
     desc_short = entry['description'][:100] + '...'
 
-    msgs = [{'role': 'user', 'content': f"What is the structural type of {label}?"}]
+    msgs = [{'role': 'user', 'content': f"What is the type of {label}?"}]
     out = []
 
     out.append(step(sys, msgs[:], 'THINK'))
@@ -161,7 +161,7 @@ def sc_distance(sys, catalog, ea, eb):
     la, lb = na.replace('_', ' '), nb.replace('_', ' ')
     dist = hamming(ea, eb)
 
-    msgs = [{'role': 'user', 'content': f"Structural distance between {la} and {lb}?"}]
+    msgs = [{'role': 'user', 'content': f"Distance between {la} and {lb}?"}]
     out = []
 
     out.append(step(sys, msgs[:], 'THINK'))
@@ -370,7 +370,7 @@ def sc_imscribe_new(sys, name, desc, vals):
     addr = mock_address(name)
     tuple_args = {p: v for p, v in zip(PRIMS, vals)}
 
-    msgs = [{'role': 'user', 'content': f"Imscribe {label} as a structural type."}]
+    msgs = [{'role': 'user', 'content': f"Imscribe {label} as a type."}]
     out = []
 
     out.append(step(sys, msgs[:], 'THINK'))
@@ -609,7 +609,7 @@ def main():
     for e in catalog:
         all_steps.extend(sc_tier(sys_p, catalog, e))
 
-    # C: Structural distance — 50 sampled pairs
+    # C: Distance — 50 sampled pairs
     pairs = list(combinations(catalog, 2))
     rng.shuffle(pairs)
     for ea, eb in pairs[:50]:

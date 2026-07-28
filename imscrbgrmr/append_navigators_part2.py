@@ -19,12 +19,12 @@ def algebraic_geometry_group():
     """Algebraic geometry navigator — schemes, cohomology, descent, moduli spaces.
 
     \b
-    Structural type:
+    Type:
       D_omega T_bullseye R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega            → imscriptive: all schemes encoded
       T_bullseye          → local rings ↔ global sections ↔ Spec
       R_downstep          → adjoint: pushforward ↔ pullback
@@ -126,12 +126,12 @@ def quantum_field_theory_group():
     """Quantum field theory navigator — RG flow, fixed points, dualities, anomalies.
 
     \b
-    Structural type:
+    Type:
       D_omega T_commatailz R_subrightarrow P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo S_ltailm Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega            → imscriptive: all QFTs encoded
       T_commatailz        → box topology: theory⊗symmetry⊗spacetime
       R_subrightarrow           → supervenience: operators supervene on couplings

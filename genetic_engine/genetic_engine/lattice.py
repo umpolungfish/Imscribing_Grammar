@@ -25,7 +25,7 @@ from enum import Enum
 
 
 class B4Element(Enum):
-    """The four elements of the B₄ lattice — nucleotide structural types.
+    """The four elements of the B₄ lattice — nucleotide types.
 
     Each element has a fixed position in the lattice with deterministic
     join, meet, covering, and distance operations.

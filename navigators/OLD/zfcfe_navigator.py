@@ -16,7 +16,7 @@ Actions:
   promotions    — All 7 promotion channels from ZFC → ZFC_t → ZFC_fe
   distance <name> — d(name, ZFC_fe) with per-primitive conflicts
   tensor  <name> — ZFC_fe ⊗ name — Frobenius absorption test
-  meet    <name> — ZFC_fe ⊓ name — shared structural floor
+  meet    <name> — ZFC_fe ⊓ name — shared floor
   join    <name> — ZFC_fe ⊔ name — minimal ceiling
   tier    <name> — Ouroboricity tier + what's missing for O_∞
   systems     — List all known systems

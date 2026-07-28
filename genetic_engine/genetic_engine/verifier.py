@@ -79,7 +79,7 @@ class FrobeniusVerifier:
                 mu_quality -= 0.2
                 defects.append(
                     f"Primitive change ({orig_prim} → {edit_prim}): "
-                    f"μ-map reads a different structural class.")
+                    f"μ-map reads a different class.")
             # Split-stratum wobble check
             if c_edit.stratum == FrobeniusStratum.SPLIT and orig_aa == edit_aa:
                 p3_orig_y = c_orig.p3 in (B4Element.T, B4Element.N)

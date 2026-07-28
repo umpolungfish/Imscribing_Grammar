@@ -23,7 +23,7 @@ class HoTTBridge:
     def promote_to_hott(self):
         """
         Apply ↑_ו operator. Overrides P bottleneck at system level.
-        Returns a modified engine with HoTT structural identity.
+        Returns a modified engine with HoTT identity.
         """
         # Clone alphabet to avoid mutating base lattice
         hott_alphabet = {k: v.copy() for k, v in HEBREW_ALPHABET.items()}

@@ -2,7 +2,7 @@
 Category Theory Navigator - Imscribing Grammar
 
 Domain: Category theory, topos theory, abstract mathematics
-Structural type: <𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
+Type: <𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
 Tier: O_∞
 
 Architecture: 3-category message-passing network with arrow-centric typing.
@@ -118,7 +118,7 @@ class CategoryNavigator:
     
     def compute_distance(self, cat_a: str, cat_b: str) -> float:
         """
-        Compute structural distance between two categorical types.
+        Compute distance between two categorical types.
         
         Strategy: Weighted Euclidean distance with categorical weighting.
         Adjunction-related primitives (R, G) weighted higher.

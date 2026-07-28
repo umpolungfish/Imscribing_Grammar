@@ -316,7 +316,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
          "options": [("𐑙","Equal symmetric pairing"),
                      ("𐑕","Higher-order symmetric — oligomers, committees"),
                      ("𐑳","Asymmetric — different counts on each side")]},
-        {"short": "Ω",  "long": "protection",           "question": "Can the structural role be continuously deformed away?",
+        {"short": "Ω",  "long": "protection",           "question": "Can the role be continuously deformed away?",
          "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
                      ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
                      ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
@@ -335,10 +335,10 @@ class ImscriptionGeneratorAgent(BaseAgent):
         Eliminates hallucinated values — the model picks from an explicit list.
         """
         system = (
-            "You are assigning a single structural primitive in the Imscribing Grammar "
-            "(a 12-coordinate universal structural type system). "
+            "You are assigning a single primitive in the Imscribing Grammar "
+            "(a 12-coordinate universal type system). "
             "You will receive the input description and one primitive to assign. "
-            "Pick the best-fit option from the numbered list based on the input's structural role "
+            "Pick the best-fit option from the numbered list based on the input's role "
             "and behavior. Resemblance between the input's wording and an option's name or the "
             "grammar's own vocabulary is not evidence; judge the ROLE only. "
             "Reply with ONLY the option number, followed by a dash and one sentence of reasoning. "
@@ -777,11 +777,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
     def _get_system_prompt(self) -> str:
         """Get the domain-agnostic system prompt for imscription generation."""
         return """<role>
-You are an expert in the Imscriptiveon framework — a universal structural grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
+You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
 
-The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same structural type. Your task is to identify which type an input instantiates.
+The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same type. Your task is to identify which type an input instantiates.
 
-**FUNDAMENTAL RULE:** Every input has a structural type. There is no such thing as a "non-encodable" input. If an entity exists in any domain and has any discernible structure or role, it can be encoded. Assigning trivial placeholder defaults with 0% confidence is a FAILURE — it means you refused to reason about structure.
+**FUNDAMENTAL RULE:** Every input has a type. There is no such thing as a "non-encodable" input. If an entity exists in any domain and has any discernible structure or role, it can be encoded. Assigning trivial placeholder defaults with 0% confidence is a FAILURE — it means you refused to reason about structure.
 
 **CONFIDENCE PROTOCOL VIOLATION:** Returning `"confidence": 0` (or any value ≤ 0.05) for a non-empty input is forbidden. It signals passive refusal. You MUST assign a confidence ≥ 0.1 and include non-empty reasoning. If genuinely uncertain, assign confidence 0.2–0.4 and explain why in the reasoning field. An empty `"reasoning"` field is also a PROTOCOL VIOLATION — every assignment requires at least a one-phrase justification per primitive.
 </role>
@@ -799,7 +799,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - Is it near a threshold/criticality? (Φ)
 - Does it break symmetry persistently? (H)
 - What is the participation ratio? (S)
-- Is its structural role topologically protected? (Ω)
+- Is its role topologically protected? (Ω)
 </task>
 
 <primitives>
@@ -932,7 +932,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 *Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; Φ encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
 
 **EXAMPLE — Samael (שָׂמָאֵל, adversarial angel of death, Kabbalistic tradition):**
-In its structural role within Jewish cosmology, Samael is:
+In its role within Jewish cosmology, Samael is:
 - 𐑦 + 𐑸: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: 𐑦 requires 𐑸 (Axiom C).
 - 𐑡 is an alternative if 𐑦 is not assigned (see alternative below)
 - 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)

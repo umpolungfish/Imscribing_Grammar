@@ -27,12 +27,12 @@ def category_theory_group():
     """Category theory navigator — adjunctions, limits, colimits, topos theory.
 
     \b
-    Structural type:
+    Type:
       D_omega T_openo R_ctz P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega / T_openo  → imscriptive: entire category encoded
       R_ctz            → categorical relations (functoriality, natural transformations)
       P_doublebarpipe         → Frobenius interface with categorical uncertainty
@@ -150,12 +150,12 @@ def htt_group():
     """Homotopy type theory navigator — univalence, higher groupoids, univalent foundations.
 
     \b
-    Structural type:
+    Type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_invscripta n:m Omega_crtwo
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega / T_openo  → imscriptive: types and paths encoded
       R_downstep         → adjoint: univalence (paths ≃ equivalences)
       P_doublebarpipe         → self-dual with uncertainty on higher identities

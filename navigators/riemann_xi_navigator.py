@@ -2,14 +2,14 @@
 riemann_xi_navigator.py — Riemann $\\xi$ function navigator.
 
 Grammar derivation (§CXLV P-483, §CXLVI):
-  $d(\\xi, \\text{Lee-Yang}) = 0$ — structural identity, not analogy.
+  $d(\\xi, \\text{Lee-Yang}) = 0$ — identity, not analogy.
   The completed zeta function $\\xi(s) = \\pi^{-s/2}\\Gamma(s/2)\\zeta(s)$
   encodes at $O_\\infty$ with $P_{\\pm}^{\\text{sym}}$ earned directly from the
   functional equation $\\xi(s) = \\xi(1-s)$: the reflection $\\delta(s)=1-s$
   is involutory, so $\\mu \\circ \\delta = \\text{id}$ is the Frobenius special
   condition exactly.
 
-Structural type (= grammar self-encoding, $d = 0$):
+Type (= grammar self-encoding, $d = 0$):
   $\\langle D_\\odot;\\ T_\\odot;\\ R_\\dagger;\\ P_{\\pm}^{\\text{sym}};\\ F_\\hbar;\\ K_\\text{slow};\\ G_\\aleph;\\ \\Gamma_\\text{broad};\\ \\⊙^\\mathbb{C};\\ H_\\infty;\\ n{:}m;\\ \\Omega_{Z_2} \\rangle$
 
   Crystal address: 6,734,591 (Cardinality-One Theorem, §CXLII P-490 — all

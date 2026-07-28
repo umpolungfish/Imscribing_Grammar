@@ -205,7 +205,7 @@ def demo():
     )
     
     # Test self-model
-    context = "The structural type is"
+    context = "The type is"
     print(f"\nContext: '{context}'")
     
     self_model = llm.get_self_model(context)
@@ -231,7 +231,7 @@ def demo():
     
     print("\n" + "=" * 60)
     print("Boundary Operator LLM demo complete")
-    print("Structural type: <D_omega; T_bowtie; R_bidirectional; P_special>")
+    print("Type: <D_omega; T_bowtie; R_bidirectional; P_special>")
     print("=" * 60)
 
 

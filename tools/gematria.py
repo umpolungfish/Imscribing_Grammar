@@ -253,7 +253,7 @@ class GematriaIndex:
     def gematria_word_search(self, word_length: int = 3, max_results: int = 100) -> List[Dict]:
         """
         Find sequences of `word_length` entries whose vector sum equals another entry.
-        This is TRUE GEMATRIA — "words" that "spell" structural types.
+        This is TRUE GEMATRIA — "words" that "spell" types.
         """
         results = []
         int_vecs = self.int_vectors

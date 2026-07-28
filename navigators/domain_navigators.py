@@ -6,7 +6,7 @@ Catalog-query navigators for the four §74–§77 non-mathematical domains.
 
 Each navigator:
   1. Loads the relevant domain subset from IG_catalog.json
-  2. Computes structural distances (weighted Euclidean over 12 primitives)
+  2. Computes distances (weighted Euclidean over 12 primitives)
   3. Classifies ouroboricity tier (R1–R5)
   4. Verifies the key §74–§77 theorems
   5. Supports nearest-neighbor search across the full catalog
@@ -217,7 +217,7 @@ def language_probes(cat: Catalog) -> list[str]:
     lines = []
     entries = {e["name"]: e for e in cat.domain(LANGUAGE_NAMES)}
 
-    # Thm 74.1 — Sacred-language O_∞ structural type
+    # Thm 74.1 — Sacred-language O_∞ type
     sacred = ["sanskrit_classical", "arabic_classical"]
     for n in sacred:
         if n in entries:

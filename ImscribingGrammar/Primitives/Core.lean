@@ -1,7 +1,7 @@
 -- ImscribingGrammar/Primitives/Core.lean
 -- Canonical 12-primitive grammar (v0.5.69).
 -- All names, value counts, and ordinal orderings match space_search/primitives.py.
--- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 structural types.
+-- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 types.
 --   𝓕₃ (3 values): F, G, S
 --   𝓕₄ (4 values): D, R, Γ, H, Ω
 --   𝓕₅ (5 values): T, P, Φ, K
@@ -51,7 +51,7 @@ inductive Grammar : Type where
 -- Ordered: fee < kick < sure < wool
 -- fee: no temporal memory; wool: topologically protected chirality.
 -- Cross-primitive: wool tends to co-occur with on (frozen dynamics preserve
--- deep temporal structure), but this is a structural tendency, not a hard axiom.
+-- deep temporal structure), but this is a tendency, not a hard axiom.
 inductive Chirality : Type where
   | fee      -- achiral: shift-invariant, no handedness to break
   | kick      -- soft chiral: period-2 under the shift
@@ -110,7 +110,7 @@ inductive Criticality : Type where
                    -- (Lee-Yang edge, complex RG fixed point, ζ-function zeros)
                    -- Ordinal 2.33 in Python (non-integer; Lean uses rank 2)
   | err         -- exceptional-point criticality: non-Hermitian eigenvector coalescence
-                   -- Square-root branch point; oak structural tendency
+                   -- Square-root branch point; oak tendency
                    -- Ordinal 2.67 in Python (non-integer; Lean uses rank 3)
   | haha      -- supercritical: unstable, runaway
   deriving DecidableEq, Repr, Ord
@@ -228,7 +228,7 @@ axiom D_odot_iff_T_odot (d : Dimensionality) (t : Topology) :
 axiom Omega_Z_requires_H2 (p : Protection) (h : Chirality) :
   p ≥ Protection.ah → h ≥ Chirality.sure
 
--- Structural tendency (not hard axiom): wool co-occurs with on.
+-- Tendency (not hard axiom): wool co-occurs with on.
 -- An inexhaustible tower stands because its store is frozen.
 -- Not an axiom because some wool systems (e.g. proto-languages) have egg.
 -- Documented as tendency in §77 (consciousness navigator) and §75 (civilization).

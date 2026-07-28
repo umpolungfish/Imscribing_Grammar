@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CL9NK Navigator — CLINK Layer 9 (Gaussian Moat Resolution) reference navigator.
-CATALOG-NATIVE: No hardcoded systems. All structural data sourced from IG_catalog.json.
+CATALOG-NATIVE: No hardcoded systems. All data sourced from IG_catalog.json.
 
 CLINK L9 is the structural resolution of the Gaussian Moat Problem via the Hodge Bridge.
 It builds upon CLINK L8 (Organism) by adding the Hodge Bridge theorem,
@@ -20,7 +20,7 @@ Actions:
   distance <name>   — d(name, CLINK L9) with per-primitive conflicts
   transcendence     — The L9 transcendence: what CLINK L9 has that CLINK L8 doesn't
   tensor  <name>    — CLINK L9 ⊗ name — absorption test
-  meet    <name>    — CLINK L9 ⊓ name — shared structural floor
+  meet    <name>    — CLINK L9 ⊓ name — shared floor
   join    <name>    — CLINK L9 ⊔ name — minimal ceiling
   tier    <name>    — Ouroboricity tier assessment
   chain             — Full CLINK chain (L0–L9) distances from CLINK L9
@@ -705,7 +705,7 @@ def compute_transcendence():
         "significance": (
             "CLINK L9 adds the Hodge Bridge theorem to the organism layer. "
             "It resolves the Gaussian Moat Problem by proving the existence of an infinite bounded-step path, "
-            "a structural fact not encoded in CLINK L8."
+            "a fact not encoded in CLINK L8."
         ),
         "transcendent_primitives": transcendent_prims,
     }
@@ -1159,7 +1159,7 @@ def main():
 
     if len(sys.argv) < 2:
         print("CL9NK Navigator — CLINK Layer 9 (Gaussian Moat Resolution) reference navigator")
-        print("CATALOG-NATIVE: All structural data sourced from IG_catalog.json")
+        print("CATALOG-NATIVE: All data sourced from IG_catalog.json")
         print(f"Catalog: {catalog_stats()['total_entries']} entries loaded")
         print(f"CLINK L9 reference: DEFINED (virtual)")
         print(f"CLINK L8 reference: {'FOUND' if CLINK_L8_REF else 'NOT FOUND'}")

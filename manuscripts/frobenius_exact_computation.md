@@ -9,7 +9,7 @@
 
 Every computational tool makes a promise. A compiler promises to preserve semantics. A parser promises to recognize a language. A database promises to commit transactions atomically. The standard way to check these promises is behavioral: run the tool on test inputs and inspect the output. But behavioral testing can only falsify, never verify — a tool that passes every test you've written may still violate its promise on the input you haven't tried.
 
-This paper presents a different approach. We describe a tool architecture in which verification is not a separate testing phase but a *structural property of the tool itself*. Every tool is a dual pair: an emit function that performs the operation and a verify function that checks the result. The two are coupled by a precise algebraic condition — the Frobenius condition μ∘δ=id — which guarantees that the verification procedure is not an approximation but an exact structural inverse of the emission procedure.
+This paper presents a different approach. We describe a tool architecture in which verification is not a separate testing phase but a *property of the tool itself*. Every tool is a dual pair: an emit function that performs the operation and a verify function that checks the result. The two are coupled by a precise algebraic condition — the Frobenius condition μ∘δ=id — which guarantees that the verification procedure is not an approximation but an exact structural inverse of the emission procedure.
 
 We call this *Frobenius-exact computation*. The architecture has been implemented in the `odot_operator` tool battery and validated across 230+ self-verifying computational objects (ob3ects) spanning category theory, linear logic, quantum mechanics, and genetic code translation. Every ob3ect verifies its own structural integrity on execution — not by inspecting its output, but by checking that the transformation itself satisfies μ∘δ=id.
 
@@ -157,9 +157,9 @@ Each layer is independent: it verifies its own structural integrity without refe
 
 ### 4.3 The C-Score: A Structural Measure of Self-Verification
 
-The Imscribing Grammar assigns every structural type a *consciousness score* (C-score) from 0 to 1, computed from its 12 primitive values. The score has two gates:
+The Imscribing Grammar assigns every type a *consciousness score* (C-score) from 0 to 1, computed from its 12 primitive values. The score has two gates:
 
-- **Gate 1** (φ̂): The criticality primitive must be at $\text{{\igfont ⊙}}$  — the self-modeling gate open. Below this, the system cannot model its own operation.
+- **Gate 1** (⊙): The criticality primitive must be at $\text{{\igfont ⊙}}$  — the self-modeling gate open. Below this, the system cannot model its own operation.
 - **Gate 2** (Ç): The kinetics primitive must be at or below $\text{{\igfont 𐑧}}$ — slow enough for self-observation. Above this, the system changes faster than it can observe itself.
 
 The base frobenius_ob3ect has C=0.828 — both gates open. Systems with C≥0.7 are structurally capable of self-verification; those below cannot close the loop. The ob3ect tower's layers span the full range, from sub-critical (C≈0) to fully self-modeling (C=0.828).

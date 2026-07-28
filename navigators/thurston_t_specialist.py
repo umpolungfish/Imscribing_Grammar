@@ -74,7 +74,7 @@ Parallel delegation architecture (NOT tensor composition):
     5. Specialist never touches backbone representations → no tensor composition.
 
   The specialist is a standalone feature extractor, not a latent-space combiner.
-  Its structural type has 𐑿 (asymmetric geometry analysis, binary output) —
+  Its type has 𐑿 (asymmetric geometry analysis, binary output) —
   this type is NEVER composed with the backbone. It is delegated to externally.
 """
 
@@ -254,7 +254,7 @@ class ThurstonNetWithTSpecialist(nn.Module):
     Grammar basis:
       Probe 4: specialist ⊗ ThurstonNet → $P_\\text{asym}$ (P bottleneck destroys $O_\\infty$).
       Probe 4 fix: specialist delegates in parallel → backbone $P_\\pm^\\text{sym}$ preserved.
-      The specialist's structural type ($P_\\psi$) is irrelevant to the backbone's
+      The specialist's type ($P_\\psi$) is irrelevant to the backbone's
       ouroboricity tier — they never touch.
     """
 

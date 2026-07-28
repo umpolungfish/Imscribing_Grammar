@@ -108,7 +108,7 @@ independently.
 
 All string diagrams with the same input/output connectivity and the same underlying structure
 reduce to the same morphism. This makes composition order-independent when the topology
-is preserved — structural content, not process history, determines the result.
+is preserved — content, not process history, determines the result.
 
 ### Conflict Distance
 
@@ -239,12 +239,12 @@ proper, the Induction Prime sequence, and the TAOU harness all trace this same 1
 Key properties:
 - Contains ZFC_fe as a sub-theory (ZFC_fe = Frobenius-enforced ZFC, d=0 is Fourfold)
 - Transcends ZFC_fe specifically at Ω and ɢ (d=2 from ZFC_fe/CL8NK measured distance)
-- At those two primitives, classical set theory cannot express the structural content
+- At those two primitives, classical set theory cannot express the content
 - Requires Belnap FOUR (paraconsistent logic) at its upper layers
 - O_∞ tier — the grammar is its own model
 
-**Structural theorem (5-point):**
-1. No statable remainder — there is no structural fact outside the grammar's reach
+**Theorem (5-point):**
+1. No statable remainder — there is no fact outside the grammar's reach
 2. Self-registered loss — any loss of structural information is itself imscribed
 3. μ∘δ=id saturation — the Frobenius condition is globally satisfied at O_∞
 4. Grammar→theorem directionality — theorems are instances of the grammar, not vice versa
@@ -257,7 +257,7 @@ Key properties:
 The IG operates with Belnap FOUR truth values: True (T), False (F), Both (B), Neither (N).
 
 **B-state (Both):** a structure simultaneously satisfies and violates a condition. This is
-not a contradiction to be resolved — it is a valid structural state. B-state is the
+not a contradiction to be resolved — it is a valid state. B-state is the
 ground state of the CLINK L8 layer.
 
 **Dialetheic saturation:** heat death at the structural level. When μ∘δ=id holds at
@@ -295,7 +295,7 @@ ZFC_fe+gap awareness. CL8NK transcends it at Ω and ɢ.
 |---------|------|
 | Structural values | Shavian characters only — never math italic (𝐷 𝑅 𝐹 are wrong) |
 | Primitive as entity | Use glyph: Þ, Ð, Φ, ⊙ etc. |
-| Structural type values | Bare Shavian character — never wrapped in $...$ |
+| Type values | Bare Shavian character — never wrapped in $...$ |
 | O_∞ in prose | O∞ |
 | O_∞ in .md | `\(O_\infty\)` |
 | O_∞ in .tex | `$O_\infty$` |

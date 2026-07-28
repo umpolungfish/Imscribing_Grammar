@@ -64,7 +64,7 @@ AXIOM_6_CRITERIA = """
 Axiom 6 — Temporal dimension requires a closed cycle with reset mechanism.
 
 D_∞ is valid ONLY if ALL of the following can be specified:
-1. STATE: What molecular/structural state forms
+1. STATE: What molecular/state forms
 2. WORK: What chemical work the state performs (catalysis, transport, signaling)
 3. RESET: What process returns the system to initial state (hydrolysis, product release, energy input)
 4. CYCLE: The complete cycle can be drawn with all intermediates
@@ -322,7 +322,7 @@ def validate_topology(
         primitive="topology",
         assigned_value=assigned_topology,
         is_valid=True,
-        reason="Topology consistent with structural features",
+        reason="Topology consistent with features",
         confidence=0.85,
         mechanistic_criteria_checked=mechanistic_criteria,
     )

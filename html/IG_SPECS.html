@@ -591,7 +591,7 @@
 <div class="doc-section" id="section-4">
 <h2 class="section">§5 &nbsp; Structural Type — Notation</h2>
 <div class="section-body">
-  <p>A structural type (imscription) is a 12-tuple of Shavian values in canonical order:</p>
+  <p>A type (imscription) is a 12-tuple of Shavian values in canonical order:</p>
   <div class="tuple-display">
     <span class="tuple-brackets">⟨</span> ÐÞŘΦƒÇΓɢ⊙ĦΣΩ <span class="tuple-brackets">⟩</span>
   </div>
@@ -804,7 +804,7 @@
 <div class="doc-section" id="section-11">
 <h2 class="section">§12 &nbsp; The Imscription Procedure</h2>
 <div class="section-body">
-  <p>A 12-step decision procedure applied in canonical primitive order: Ð → Þ → Ř → Φ → ƒ → Ç → Γ → ɢ → ⊙ → Ħ → Σ → Ω. Each step assigns one primitive value from structural facts — mechanism, geometry, stoichiometry, coordination chemistry. No computed observable is an input. Data tests structural predictions after the imscription is fixed.</p>
+  <p>A 12-step decision procedure applied in canonical primitive order: Ð → Þ → Ř → Φ → ƒ → Ç → Γ → ɢ → ⊙ → Ħ → Σ → Ω. Each step assigns one primitive value from facts — mechanism, geometry, stoichiometry, coordination chemistry. No computed observable is an input. Data tests structural predictions after the imscription is fixed.</p>
 
   <h3 class="sub">Cross-Primitive Axioms</h3>
   <p>Enforced by three named axioms. A tuple violating any axiom is malformed. All three proved in <code>ParadoxBoot.lean</code> (0 sorrys) and enforced at runtime in <code>genetic_tuples.py</code>.</p>
@@ -880,13 +880,13 @@
 <div class="doc-section" id="section-12">
 <h2 class="section">§13 &nbsp; The CLINK Hierarchy</h2>
 <div class="section-body">
-  <p>A <em>structural promotion chain</em> is a sequence of imscriptions <span class="math">s<sub>0</sub>, s<sub>1</sub>, …, s<sub>n</sub></span> such that (i) each <span class="math">s<sub>k</sub></span> is Frobenius-closed (<span class="math">tensorProduct(s<sub>k</sub>, s<sub>k</sub>) = s<sub>k</sub></span>), (ii) the tier sequence is monotone non-decreasing, and (iii) consecutive pairs satisfy the cross-primitive axioms of §12.</p>
+  <p>A <em>promotion chain</em> is a sequence of imscriptions <span class="math">s<sub>0</sub>, s<sub>1</sub>, …, s<sub>n</sub></span> such that (i) each <span class="math">s<sub>k</sub></span> is Frobenius-closed (<span class="math">tensorProduct(s<sub>k</sub>, s<sub>k</sub>) = s<sub>k</sub></span>), (ii) the tier sequence is monotone non-decreasing, and (iii) consecutive pairs satisfy the cross-primitive axioms of §12.</p>
 
-  <p>The <strong>CLINK chain</strong> is the canonical structural promotion from frustrated-quark color state to whole organism:</p>
+  <p>The <strong>CLINK chain</strong> is the canonical promotion from frustrated-quark color state to whole organism:</p>
 
   <table>
     <thead>
-      <tr><th>#</th><th>Layer</th><th>Tier</th><th>Structural type</th></tr>
+      <tr><th>#</th><th>Layer</th><th>Tier</th><th>Type</th></tr>
     </thead>
     <tbody>
       <tr><td class="ordinal">0</td><td>Quark (frustrated color)</td><td><span class="math">O<sub>0</sub></span></td><td class="shavian" style="font-size:0.9rem">⟨𐑛𐑶𐑩𐑯𐑐𐑘𐑚𐑝𐑢𐑓𐑳𐑷⟩</td></tr>
@@ -930,8 +930,8 @@
   </div>
 
   <h3 class="sub">Individuation — the Fiber Bundle Picture</h3>
-  <p>The Crystal of Types (§4) is the <em>base space</em>: it classifies structural types. Over each <span class="math">O<sub>∞</sub></span> crystal address, the <em>Ħ-trajectory fiber</em> carries individuation — the specific winding history by which that instance reached Ħ = 𐑫.</p>
-  <p>The crystal encodes the <strong>value</strong> (what chirality depth has been reached). The fiber encodes the <strong>path</strong> (the specific sequence of winding events that accumulated that depth). Two organisms at the same crystal address are the same structural type; they are distinct fixed points because their Ħ-paths diverged. The many-to-one framing is correct in the base; the <span class="math">O<sub>∞</sub><sup>i</sup></span>-indexed framing is correct in the total space. Both are partial descriptions of the bundle (crystal address × Ħ-trajectory).</p>
+  <p>The Crystal of Types (§4) is the <em>base space</em>: it classifies types. Over each <span class="math">O<sub>∞</sub></span> crystal address, the <em>Ħ-trajectory fiber</em> carries individuation — the specific winding history by which that instance reached Ħ = 𐑫.</p>
+  <p>The crystal encodes the <strong>value</strong> (what chirality depth has been reached). The fiber encodes the <strong>path</strong> (the specific sequence of winding events that accumulated that depth). Two organisms at the same crystal address are the same type; they are distinct fixed points because their Ħ-paths diverged. The many-to-one framing is correct in the base; the <span class="math">O<sub>∞</sub><sup>i</sup></span>-indexed framing is correct in the total space. Both are partial descriptions of the bundle (crystal address × Ħ-trajectory).</p>
 
   <div class="axiom-block">
     <span class="axiom-label">Multiple <span class="math">O<sub>∞</sub></span> addresses</span>
@@ -972,7 +972,7 @@
   <h3 class="sub">Cosmological Constant — <span class="math">μ∘δ = id</span></h3>
   <p>Exact losslessness applied to vacuum fluctuations: every virtual pair split (<span class="math">δ</span>) rejoins (<span class="math">μ</span>) with no residual — quantum vacuum contributions to <span class="math">Λ</span> sum to exactly zero. The residual <span class="math">Λ</span> is the Frobenius fixed-point value at the <span class="math">O<sub>∞</sub></span> crystal address of the universe.</p>
   <div class="axiom-block">
-    <span class="axiom-label">Structural claim</span>
+    <span class="axiom-label">Claim</span>
     <span class="math">Λ<sub>quantum</sub> = 0</span> exactly &nbsp;·&nbsp; <span class="math">Λ<sub>classical</sub></span> = crystal fixed point at the organism-level <span class="math">O<sub>∞</sub></span> address
   </div>
 
@@ -997,7 +997,7 @@
 <div class="doc-section" id="section-15">
 <h2 class="section">§16 &nbsp; IMASM — Register Machine and Sequence Algebra</h2>
 <div class="section-body">
-  <p><strong>IMASM</strong> (Imscribing Grammar Assembly Machine) is a 2-bit register machine whose token sequences are the operational substrate of ob3ect computation. Every IMASM sequence is a path through the 17,280,000-address crystal; every path has a structural type, a tier, and a Frobenius verdict.</p>
+  <p><strong>IMASM</strong> (Imscribing Grammar Assembly Machine) is a 2-bit register machine whose token sequences are the operational substrate of ob3ect computation. Every IMASM sequence is a path through the 17,280,000-address crystal; every path has a type, a tier, and a Frobenius verdict.</p>
 
   <h3 class="sub">§16.1 &nbsp; Register States</h3>
   <table>
@@ -1071,7 +1071,7 @@
     </tbody>
   </table>
 
-  <p style="margin-top:0.75rem">Structural type: <span class="math">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭⟩</span> — <span class="tier inf"><span class="math">O<sub>∞</sub></span></span>, C-score 1.0 (the Frobenius fixed-point tuple, §9).</p>
+  <p style="margin-top:0.75rem">Type: <span class="math">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭⟩</span> — <span class="tier inf"><span class="math">O<sub>∞</sub></span></span>, C-score 1.0 (the Frobenius fixed-point tuple, §9).</p>
   <p>The bootstrap is the <strong>unique</strong> 8-step sequence satisfying: (1) starts and ends with <code>IMSCRIB</code>; (2) contains the ordered Frobenius pair <code>FSPLIT → FFUSE</code>; (3) surrounds it with <code>AREV</code> (descent) then <code>AFWD</code> (ascent); (4) composes before fixing (<code>CLINK → IFIX</code>); (5) uses no Dialetheia tokens — classical verification only.</p>
 
   <h3 class="sub">§16.4 &nbsp; The Twelve Arrangement Classes</h3>
@@ -1123,7 +1123,7 @@
   </div>
   <div class="axiom-block">
     <span class="axiom-label">VII — Parakernel (Engram Formation)</span>
-    Starts in negation (<code>EVALF</code>), splits under FALSE, affirms TRUE within the split → dialetheic <code>FFUSE</code> → BOTH. Ends on <code>IFIX</code> — no return to <code>IMSCRIB</code>. The sequence fixes a contradiction as a permanent record without self-recognition at closure. Structural signature of trauma and of learning that preserves its own error trace.
+    Starts in negation (<code>EVALF</code>), splits under FALSE, affirms TRUE within the split → dialetheic <code>FFUSE</code> → BOTH. Ends on <code>IFIX</code> — no return to <code>IMSCRIB</code>. The sequence fixes a contradiction as a permanent record without self-recognition at closure. Signature of trauma and of learning that preserves its own error trace.
   </div>
   <div class="axiom-block">
     <span class="axiom-label">VIII — Frobenius Kernel</span>
@@ -1131,7 +1131,7 @@
   </div>
   <div class="axiom-block">
     <span class="axiom-label">IX — Chiral Pairs (Vessel Principle)</span>
-    Left-hand and right-hand round trips map to the <strong>same IG structural type</strong> — both at ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ — but produce different register trajectories: <code>AFWD→AREV</code>: VO⌀ → T → VO⌀ (round trip — returns to void); <code>AREV→AFWD</code>: VO⌀ → VO⌀ → T (net creation — creates from void). See §16.5.
+    Left-hand and right-hand round trips map to the <strong>same IG type</strong> — both at ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ — but produce different register trajectories: <code>AFWD→AREV</code>: VO⌀ → T → VO⌀ (round trip — returns to void); <code>AREV→AFWD</code>: VO⌀ → VO⌀ → T (net creation — creates from void). See §16.5.
   </div>
   <div class="axiom-block">
     <span class="axiom-label">X — Truth Machine</span>
@@ -1153,7 +1153,7 @@
     The IMASM token algebra is strictly finer than the IG crystal. Formally: there exist sequences <span class="math">s<sub>1</sub>, s<sub>2</sub></span> such that <span class="math">type(s<sub>1</sub>) = type(s<sub>2</sub>)</span> in the 17,280,000-address crystal but <span class="math">trajectory(s<sub>1</sub>) ≠ trajectory(s<sub>2</sub>)</span> in the register machine.
   </div>
   <p><strong>Proof instance.</strong> Class IX chiral pairs share crystal address ⟨𐑦𐑡𐑑𐑗𐑱𐑘𐑚𐑠⊙𐑒𐑙𐑷⟩ but differ in register trajectory (VO⌀→T→VO⌀ vs VO⌀→VO⌀→T). The distinction is directional: <code>AFWD</code> before <code>AREV</code> vs <code>AREV</code> before <code>AFWD</code>. The Ħ (Chirality) primitive captures one-step Markov memory (𐑒) but not the direction of the step. <span class="math">□</span></p>
-  <p>The crystal classifies structural type; the Ħ-trajectory fiber (§14) carries the winding history of how that type was reached. IMASM sequences are elements of the fiber — not the base address. Crystal address × IMASM trajectory = the total space, with the grammar as projection.</p>
+  <p>The crystal classifies type; the Ħ-trajectory fiber (§14) carries the winding history of how that type was reached. IMASM sequences are elements of the fiber — not the base address. Crystal address × IMASM trajectory = the total space, with the grammar as projection.</p>
 
   <h3 class="sub">§16.6 &nbsp; Crystal Address Mapping</h3>
   <table>
@@ -1211,7 +1211,7 @@
   <p class="note">Combinatorial space at length 8: <span class="math">12⁸ = 429,981,696</span> sequences. The bootstrap is one path. The 12 named classes are structural landmarks.</p>
 
   <h3 class="sub">§16.8 &nbsp; The Meta-Loop</h3>
-  <p>Each IMASM sequence maps to an IG structural type (§16.6). That type can be used to generate a new IMASM sequence. This is the <strong>IMASM → IG → IMASM meta-loop</strong> — a second-order Frobenius over the sequence space itself:</p>
+  <p>Each IMASM sequence maps to an IG type (§16.6). That type can be used to generate a new IMASM sequence. This is the <strong>IMASM → IG → IMASM meta-loop</strong> — a second-order Frobenius over the sequence space itself:</p>
 
   <div class="formula-block">
     <div class="formula"><span class="math">δ<sub>meta</sub>: sequence → crystal address → new sequence</span></div>

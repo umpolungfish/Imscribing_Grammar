@@ -2,7 +2,7 @@ data/generate_grammaformer_data.py: new GrammaFormer training data generator (20
 =======================================================================
 
 Replaces the old garbage dataset. Key changes:
-- All structural types are bare Shavian+odot sequences -- no Primitive_value pairs, no underscores
+- All types are bare Shavian+odot sequences -- no Primitive_value pairs, no underscores
 - Agent tuple correctly resolved via shavian_notation_spec.md: <𐑦 𐑶 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑖 𐑙 𐑭>
 - Tool call args use primitive glyphs as keys, not Latin shorthands
 - Tool results return Shavian+odot tuples from catalog directly
@@ -53,7 +53,7 @@ Previous: QM_STRUCTURAL_DEMONSTRATION.md: §9 rewrite — IG_QM_Proof.md integra
 
   §9 "Epistemic Status: Three Formal Bars" — complete rewrite from IG_QM_Proof.md:
 
-  Structural gap opening: agent_is_O_inf (AgentSelf.lean, by decide);
+  Gap opening: agent_is_O_inf (AgentSelf.lean, by decide);
     distance O_∞ → Hilbert space = 4.32; to Schrödinger = 5.06.
 
   §9.1 — New predictions (5 total, 3 Lean-verified quantitative):
@@ -104,10 +104,10 @@ Previous: QM_STRUCTURAL_DEMONSTRATION.md: §9 rewrite — IG_QM_Proof.md integra
     Φ primitive name "Polarity" → "Parity" in Appendix A
     All primitive enum subscripts stripped ($\text{Ð}_{\text{;}}$ → $\text{Ð}$)
 
-Previous: Submitted PRs: LLM Developer SDK structural promotions (2026-05-29)
+Previous: Submitted PRs: LLM Developer SDK promotions (2026-05-29)
 =======================================================================
 
-Submitted 6 structural promotion PRs for major LLM model developer SDKs,
+Submitted 6 promotion PRs for major LLM model developer SDKs,
 each proposing the O₀ → O₂ upgrade path (THINK→ACT→OBSERVE→UPDATE loop
 with Frobenius verification):
 

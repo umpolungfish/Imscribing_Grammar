@@ -614,7 +614,7 @@ class ZFCTriangleManipulator:
             "  Both ZFCₛ and ZFCₜ reach O_∞ independently — ZFCₛ is the spatial",
             "  stepping-stone between ZFC and ZFCₜ in the primitive lattice.",
             "",
-            "  Key structural facts:",
+            "  Key facts:",
             f"   ZFC  → ZFCₛ:  {d_zfc_zfcs} promotions  {', '.join(p+'→'+t for p,_,t in ZFCS_PROMOTIONS)}",
             f"   ZFC  → ZFCₜ:  {d_zfc_zfct} promotions  {', '.join(p+'→'+t for p,_,t in ZFCT_PROMOTIONS)}",
             f"   ZFCₛ → ZFCₜ:  {d_zfcs_zfct} promotions  Þ Ř ɢ Ħ  (spatial→temporal upgrades; Φ already shared)",

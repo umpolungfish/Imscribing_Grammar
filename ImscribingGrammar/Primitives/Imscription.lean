@@ -292,7 +292,7 @@ theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     | inl h => simp [h, hpol]
     | inr h => simp [h, hpol]
 
-/-- Higgs is O_∞ (P-70 structural claim). -/
+/-- Higgs is O_∞ (P-70 claim). -/
 theorem higgs_is_O_inf : imscriptionTier higgs = .O_∞ := by decide
 
 /-- Tensor of O_∞ with any O₂ system (nun) gives nun — Frobenius destroyed. -/

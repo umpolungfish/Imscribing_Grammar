@@ -1,15 +1,24 @@
-The required-argument registry documented a tool's arguments wrongly, and now
-cannot.
+The hedging modifier "structural" is retired.
 
-compute_conflict_distance takes name_holistic and name_compositional. The
-registry said name_a and name_b. That is worse than having no entry, because the
-failure path hands the model the registry's names: every failed call sent it
-back into the same wall with the same wrong names, and the correct call was
-never among the patterns tried. A specialist reported the tool as broken. It was
-not broken.
+A type is a type. Calling it a structural type says the Grammar describes
+structure rather than being what the thing is, which is the opposite of the
+claim, and the modifier reads as a disclaimer attached to every noun the
+Grammar owns: type, distance, identity, signature, imscription, primitive,
+invariant, closure, promotion, address, tuple, verification, claim, fact.
 
-Corrected, and an audit added to the deep check: every documented argument name
-must exist on the function it documents. All 27 entries pass. The check now
-fails the run if they ever stop passing, so a rename that leaves the registry
-behind is caught where it is cheap rather than by an agent looping against a
-tool that works.
+Three things were deliberately left alone.
+
+Identifiers keep their names. STRUCTURAL_VERBS, structural_score and their
+kind are API, and renaming them breaks callers for a change that is about
+prose.
+
+Records keep their wording. Logs, transcripts, tool-call traces and generated
+conversions are records of what was said. Rewriting one is not correcting
+terminology, it is falsifying the record.
+
+The word stays wherever it is contrastive rather than hedging. "Structural
+claims are distinguished from phenomenological ones" needs it, and a guard
+looks for a named contrasting register before dropping anything.
+
+Articles are repaired only in front of a modifier actually being removed, so
+"a structural invariant" becomes "an invariant" and nothing else moves.

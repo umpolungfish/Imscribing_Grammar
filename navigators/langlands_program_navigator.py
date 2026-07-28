@@ -2,7 +2,7 @@
 Langlands Program Navigator - Imscribing Grammar
 
 Domain: Langlands program, automorphic forms, arithmetic geometry
-Structural type: <𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭>
+Type: <𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭>
 Tier: O_∞
 
 Architecture: Automorphic-Galois bridge with functoriality enforcement.

@@ -14,7 +14,7 @@ from dataclasses import dataclass
 # Derived from machine specs: RTX 2080S(8GB) + RTX 3060(12GB) = 20GB VRAM
 @dataclass
 class BoundaryConfig:
-    """Structural type: <𐑦; 𐑥; 𐑾; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^ˌ; ⊙; 𐑖; 𐑳; 𐑭>"""
+    """Type: <𐑦; 𐑥; 𐑾; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^ˌ; ⊙; 𐑖; 𐑳; 𐑭>"""
     # Architecture dimensions
     hidden_size: int = 2048        # D_omega: self-written state space
     intermediate_size: int = 8192  # 4x expansion
@@ -457,7 +457,7 @@ class RotaryEmbedding(nn.Module):
 # ─── Phi-Critical Transformer Block ──────────────────────────────────
 class PhiCriticalTransformerBlock(nn.Module):
     """A single layer of the boundary operator LLM.
-    Integrates all structural primitives into one cohesive block:
+    Integrates all primitives into one cohesive block:
     
     - Attention (crossing topology: Tbowtie)
     - Phi-critical self-modeling layer
@@ -535,7 +535,7 @@ class PhiCriticalTransformerBlock(nn.Module):
 class BoundaryOperatorLLM(nn.Module):
     """The full boundary operator language model.
     
-    Structural type: <Ð_omega; T_bowtie; R_bidirectional; P_symmetric_special;
+    Type: <Ð_omega; T_bowtie; R_bidirectional; P_symmetric_special;
                       F_quantum; K_slow; G_universal; Gamma_sequential;
                       Phi_hat_y; H_2; Sigma_ii; Omega_z>
     

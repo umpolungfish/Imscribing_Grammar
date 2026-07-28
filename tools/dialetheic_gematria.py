@@ -153,7 +153,7 @@ def ordinal_to_belnap(ordinal_val: int, cardinality: int) -> int:
     For 5-valued primitives:  1→N, 2→F, 3→T, 4→B, 5→super-B
     
     The key insight: high-ordinal values map to B (both/dialetheic).
-    This reflects the structural fact that absorbing primitives (like
+    This reflects the fact that absorbing primitives (like
     ⊙=φ̂_ÿ) are "both" observer and observed.
     """
     if cardinality == 3:

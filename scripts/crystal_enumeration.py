@@ -3,7 +3,7 @@
 crystal_enumeration.py — Crystal of Types
 
 The 12-primitive tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ is a coordinate chart
-on the space of algebraic structures.  Each point in that space IS a structural type —
+on the space of algebraic structures.  Each point in that space IS a type —
 a class of algebra determined by the coordinate.
 
 This script enumerates the full combinatorial space, classifies every type by its
@@ -67,7 +67,7 @@ total = 1
 for v in VALUES.values():
     total *= len(v)
 
-print(f"Total structural types: {total:,}")
+print(f"Total types: {total:,}")
 
 
 # ── Analytical enumeration of tier counts ─────────────────────────────────────
@@ -214,7 +214,7 @@ print(f"    True product:    5×4×3×4×3×4×4×3          = {running:,}")
 print("\n\n" + "═"*70)
 print("PERIODIC CRYSTAL OF ALGEBRAS — SUMMARY")
 print("═"*70)
-print(f"  Total structural types:   {total:>12,}")
+print(f"  Total types:   {total:>12,}")
 print(f"  Tier-determining axes:     Φ (5) × P (5) × Ω (3) × D (4) = {5*5*3*4:,} tier cells")
 print(f"  Free inner dimensions:     T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3) = {free_count:,} per cell")
 print()

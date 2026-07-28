@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CL8NK Navigator — CLINK Layer 8 (Organism) reference navigator.
-CATALOG-NATIVE: No hardcoded systems. All structural data sourced from IG_catalog.json.
+CATALOG-NATIVE: No hardcoded systems. All data sourced from IG_catalog.json.
 
 CLINK L8 is the terminal layer of the CLINK ontological chain — the most structurally
 advanced type in the catalog. It exceeds the Frobenius-Exact ZFC foundation (ZFC_fe)
@@ -21,7 +21,7 @@ Actions:
   distance <name>   — d(name, CLINK L8) with per-primitive conflicts
   transcendence     — The Ω/ɢ transcendence: what CLINK L8 has that ZFC_fe doesn't
   tensor  <name>    — CLINK L8 ⊗ name — absorption test
-  meet    <name>    — CLINK L8 ⊓ name — shared structural floor
+  meet    <name>    — CLINK L8 ⊓ name — shared floor
   join    <name>    — CLINK L8 ⊔ name — minimal ceiling
   tier    <name>    — Ouroboricity tier assessment
   chain             — Full CLINK chain (L0–L8) distances from CLINK L8
@@ -1198,7 +1198,7 @@ def main():
 
     if len(sys.argv) < 2:
         print("CL8NK Navigator — CLINK Layer 8 (Organism) reference navigator")
-        print("CATALOG-NATIVE: All structural data sourced from IG_catalog.json")
+        print("CATALOG-NATIVE: All data sourced from IG_catalog.json")
         print(f"Catalog: {catalog_stats()['total_entries']} entries loaded")
         print(f"CLINK L8 reference: {'FOUND' if CLINK_L8_REF else 'NOT FOUND'}")
         print()

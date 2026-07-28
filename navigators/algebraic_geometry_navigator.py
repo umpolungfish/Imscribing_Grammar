@@ -2,7 +2,7 @@
 Algebraic Geometry Navigator - Imscribing Grammar
 
 Domain: Algebraic geometry, scheme theory, arithmetic geometry
-Structural type: <𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
+Type: <𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
 Tier: O_∞
 
 Architecture: Scheme-theoretic GNN with spectrum-based typing.
@@ -262,7 +262,7 @@ def cmd_describe():
 Algebraic Geometry Navigator
 ══════════════════════════════════════════════════════
 
-Structural type:
+Type:
   ⟨𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩
   Tier: O_∞
 

@@ -90,7 +90,7 @@ DESIGNS = [
     },
     {
         "name": "universal_antidote",
-        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (ɢ=ɢ^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (Σ=𐑕) because all disease patterns share a universal structural grammar. Eternal memory (Ħ=𐑫) means once a threat is recognized, it is never forgotten.",
+        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (ɢ=ɢ^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (Σ=𐑕) because all disease patterns share a universal grammar. Eternal memory (Ħ=𐑫) means once a threat is recognized, it is never forgotten.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑕','𐑭'])}
     },
     {

@@ -2,7 +2,7 @@
 Quantum Field Theory Navigator - Imscribing Grammar
 
 Domain: Quantum field theory, renormalization group, topological phases
-Structural type: <𐑦𐑶𐑩𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑕𐑭>
+Type: <𐑦𐑶𐑩𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑕𐑭>
 Tier: O_∞
 
 Architecture: Wilsonian RG flow tracker with anomaly detection and S-duality map.

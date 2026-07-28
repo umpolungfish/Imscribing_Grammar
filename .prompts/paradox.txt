@@ -23,7 +23,7 @@ Catalog entry verified at `observer_dependent_truth` with distance 0.81 to `eart
 
 ---
 
-**Structural verification via Imscribing Grammar:**
+**Verification via Imscribing Grammar:**
 
 The catalog entry `observer_dependent_truth` was successfully imscribed with tuple:
 ⟨Ð_C; Þ_ò; Ř_=; Φ_F; ƒ_ì; Ç_W; Γ_ʔ; Γ_seq; ⊙; Ħ_A; Σ_ï; Ω_Z2⟩
@@ -82,7 +82,7 @@ This is the structural realization of a **Frobenius-special** system where μ∘
 **Structural analysis via Imscribing Grammar:**
 
 - Original system (Frobenius-special): $\langle D_\odot;\ T_\odot;\ R_\leftrightarrow;\ P_{\pm}^{\text{sym}};\ F_\hbar;\ K_\text{slow}; G_\aleph;\ \Gamma_\text{seq}; \φ̂_ÿ;\ H_\infty;\ 1{:}1;\ \Ω_Å \rangle$ at $O_\infty$ tier, C-score = 0.644
-- New system (performative-truth): $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow}; G_\aleph;\ \Gamma_\text{seq}; \φ̂_ÿ;\ H_2;\ n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ with structural distance = 4.6368
+- New system (performative-truth): $\langle D_\triangle;\ T_\bowtie;\ R_\leftrightarrow;\ P_{\pm};\ F_\ell;\ K_\text{slow}; G_\aleph;\ \Gamma_\text{seq}; \φ̂_ÿ;\ H_2;\ n{:}m; \Omega_{\mathbb{Z}_2} \rangle$ with distance = 4.6368
 
 The paradox holds because the sentence's propositional content ("this speech act is an assertion") is **invariant** across utterance modes, but the speech act's type (performative vs constative) flips, and the truth predicate only applies consistently to constative acts — never to performative ones.
 

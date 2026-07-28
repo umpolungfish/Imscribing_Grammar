@@ -65,7 +65,7 @@ CATEGORIES = [
              [("imscriptions (space-separated, 2+)", "names+")]),
             ("ouroborics", "Frobenius ouroboricity tier",
              [("Imscription  (blank = full catalog)", "name?")]),
-            ("distance",   "Weighted structural distance",
+            ("distance",   "Weighted distance",
              [("Imscription A", "name"), ("Imscription B", "name")]),
             ("info-bits",  "I(bits) from degrees of freedom",
              [("Imscription", "name")]),

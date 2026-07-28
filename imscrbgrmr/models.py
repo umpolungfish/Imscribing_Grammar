@@ -314,7 +314,7 @@ class Grammar(Enum):
     Lean canonical 5: Gamma_corner, Gamma_spleftarrow, Gamma_secstress, G_xor, G_impl.
     Replaces the old compound InteractionGrammar(operator, tier) — the tier
     (SPECIFIC/SELECTIVE/BROAD/QUANTUM) encoded selectivity, which belongs to
-    Fidelity or domain metadata, not the structural grammar.
+    Fidelity or domain metadata, not the grammar.
 
     G_dissipative retained from old GrammarOperator for catalogs that used it.
     """

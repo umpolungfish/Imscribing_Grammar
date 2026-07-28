@@ -2,7 +2,7 @@
 """
 crystal_navigator.py — The Crystal Navigator
 ═════════════════════════════════════════════
-Navigator for the Crystal of Types (17,280,000 structural types).
+Navigator for the Crystal of Types (17,280,000 types).
 
 Self-encoding (§69.4):
   ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
@@ -11,11 +11,11 @@ Self-encoding (§69.4):
 Architecture (imscriptive, Frobenius):
   Boundary: (Φ, P, Ω, D)  →  400 tier cells  [boundary encodes bulk]
   Bulk:     (T, R, F, K, G, Γ, H, S)  →  43,200 inner types per cell
-  Total:    400 × 43,200  =  17,280,000 structural types
+  Total:    400 × 43,200  =  17,280,000 types
 
 Grammar families:
   F5 (5 values): T, P, Phi, K  — gate primitives
-  F4 (4 values): D, R, Gamma, H, Omega  — structural primitives
+  F4 (4 values): D, R, Gamma, H, Omega  — primitives
   F3 (3 values): F, G, S  — scaling primitives
   Crystal = 5^4 × 4^5 × 3^3 = 17,280,000
 

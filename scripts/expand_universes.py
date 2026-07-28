@@ -252,7 +252,7 @@ def generate_expansion():
          'Fast systems experience no time. The kinetics_trap T-logic extracted as sole T.'),
         ('t_structural_dynamic', {'Φ': ('𐑹', False), 'ƒ': ('𐑐', False), 'Ç': ('𐑧', True),
                                   'Ð': ('𐑦', False), 'Þ': ('𐑸', False)},
-         'T constituted by 2 dynamic + 1 ceiling + 2 structural primitives. '
+         'T constituted by 2 dynamic + 1 ceiling + 2 primitives. '
          'Parity+fidelity must reach maxima; kinetics must be slow-or-slower; '
          'dimensionality+topology must be maximal. A selective 5-primitive T.'),
     ]

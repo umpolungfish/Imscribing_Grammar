@@ -7,7 +7,7 @@ Backed by manuscript_zfct.json (313 elements × 3 corpora).
 
 Commands:
   <corpus> <id>              show element imscription + ZFCₜ expression
-  :dist <a> <b>              structural distance between any two elements
+  :dist <a> <b>              distance between any two elements
   :near <element> [N]        N nearest neighbors across all corpora
   :corpus <name>             corpus-level crystal imscription + stats
   :ig_bridge                 4×4 cross-corpus distance matrix
@@ -550,7 +550,7 @@ HELP_TEXT = """
   [cyan]voynich:f1r[/cyan]  or  [cyan]f1r[/cyan]  shorthand (if unambiguous)
 
 [bold]ANALYSIS[/bold]
-  [cyan]:dist f1r rohonc:p1[/cyan]    structural distance between any two elements
+  [cyan]:dist f1r rohonc:p1[/cyan]    distance between any two elements
   [cyan]:near voynich:f1r 5[/cyan]    5 nearest neighbors across all corpora
   [cyan]:corpus voynich[/cyan]        corpus-level imscription + primitive variation
   [cyan]:ig_bridge[/cyan]             full 3×3 cross-corpus distance matrix

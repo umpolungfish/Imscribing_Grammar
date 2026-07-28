@@ -1,6 +1,6 @@
 -- ImscribingGrammar/Primitives/TierCrossing.lean
 -- Track 1, File 3: G-scope tier-crossing cost via Real.log.
--- Structural theorems are Mathlib-provable. The grammar-physics
+-- Theorems are Mathlib-provable. The grammar-physics
 -- correspondence is the explicit sorry boundary — an axiom that IS the prediction.
 
 import Mathlib.Analysis.SpecialFunctions.Log.Basic

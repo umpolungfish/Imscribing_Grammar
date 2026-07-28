@@ -50,7 +50,7 @@ The key to the entire system is a set of remarkable magic squares — sigils con
 The text is divided into three books: Book One describes Abraham's journey and his meeting with Abramelin; Book Two details the six-month operation and the preparation of the ritual space, including the selection of the place, the convocation of spirits, and how to resist their demands; Book Three contains the magical squares themselves. This work became a primary source for the ceremonial magic of the Golden Dawn and directly inspired Aleister Crowley's own magical system.""",
         "𐑼","𐑥","𐑽","𐑿","ƒ^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
         "O₂", 0.65,
-        "Structural tuple identical to all ritual grimoires: the adjoint invocation-response loop (𐑽) and Z2 circle-consecration symmetry (𐑴) are invariant across the genre."),
+        "Tuple identical to all ritual grimoires: the adjoint invocation-response loop (𐑽) and Z2 circle-consecration symmetry (𐑴) are invariant across the genre."),
 
     entry(3, "The Key of Solomon the King (Clavicula Salomonis)",
         "The most famous grimoire of all. Translated by S. Liddell MacGregor Mathers [1888]. The foundational text of European ceremonial magic.",

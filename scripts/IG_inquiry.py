@@ -1153,7 +1153,7 @@ _TOOLS_OPENAI = [
             "name": "principal_decomp",
             "description": (
                 "Decompose a system into join-irreducible atoms — the minimal structural building blocks. "
-                "Each atom contributes exactly one primitive's structural content. "
+                "Each atom contributes exactly one primitive's content. "
                 "The join of all atoms reconstructs the original system. "
                 "Use to identify which primitives are doing structural work and how much."
             ),
@@ -1225,7 +1225,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Report the emergence frontier for this session: which primitives appear most "
                 "frequently in conflict sets across all compute_conflict_distance calls made so far. "
-                "A primitive on the frontier is the structural address of an unresolved emergence "
+                "A primitive on the frontier is the address of an unresolved emergence "
                 "question in the domain under investigation. "
                 "Use after multiple compute_conflict_distance calls to identify the deepest "
                 "unresolved structural questions in the session."
@@ -1339,7 +1339,7 @@ _TOOLS_OPENAI = [
             "name": "crystal_encode",
             "description": (
                 "Frobenius-encode a 12-primitive tuple to its canonical address in the "
-                "Crystal of Types (17,280,000 structural types). "
+                "Crystal of Types (17,280,000 types). "
                 "Returns the full address, tier cell id, inner id, and ouroboricity tier. "
                 "Accepts either 'name' (catalog lookup), 'tuple' (semicolon string), "
                 "or individual primitive kwargs."
@@ -1389,7 +1389,7 @@ _TOOLS_OPENAI = [
             "name": "crystal_navigate",
             "description": (
                 "Navigate the crystal with partial primitive constraints. "
-                "Returns matching structural types (up to 'limit') and the total count. "
+                "Returns matching types (up to 'limit') and the total count. "
                 "Example: crystal_navigate(⊙='⊙', Φ='𐑹', limit=5) returns "
                 "5 of the 43,200 O_∞ types with those boundary values."
             ),
@@ -1496,7 +1496,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Compute the tier gap ladder (§69.1): weighted Euclidean distances between "
                 "consecutive ouroboricity tiers (O₀→O₁, O₁→O₂, O₂→O₂†, O₂†→O_∞). "
-                "Reveals the Frobenius cliff — the structural distance to O_∞ is much larger "
+                "Reveals the Frobenius cliff — the distance to O_∞ is much larger "
                 "than any other inter-tier gap."
             ),
             "parameters": {"type": "object", "properties": {}, "required": []},
@@ -1557,7 +1557,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Find the nearest catalog entries (full catalog, all domains) to a named system "
                 "in a domain navigator. Returns top-n results with distances and tiers. "
-                "Use this to identify cross-domain structural identities (d=0), near co-typings, "
+                "Use this to identify cross-domain identities (d=0), near co-typings, "
                 "or unexpected structural neighbors (e.g. PIE nearest = han_dynasty_peak)."
             ),
             "parameters": {
@@ -1613,7 +1613,7 @@ _TOOLS_OPENAI = [
                 "Describe the four mathematical navigators: ThurstonNet (geometric structures), "
                 "YangMillsNavigator (Yang-Mills gap), RiemannNavigator (Riemann hypothesis), "
                 "IsingNavigator (Ising universality). Returns each navigator's self-encoding "
-                "tuple, ouroboricity tier, architecture, and structural role in the framework."
+                "tuple, ouroboricity tier, architecture, and role in the framework."
             ),
             "parameters": {"type": "object", "properties": {}, "required": []},
         },
@@ -1726,7 +1726,7 @@ _TOOLS_OPENAI = [
         "function": {
             "name": "aleph_encode",
             "description": (
-                "Get the structural type (12-primitive tuple) for a Hebrew letter or word. "
+                "Get the type (12-primitive tuple) for a Hebrew letter or word. "
                 "A single letter returns its raw lattice vector. "
                 "A word (string of Hebrew letters) is solved via solve_bulk — the tensor "
                 "product of all its letters' types, giving the emergent bulk type. "
@@ -1748,7 +1748,7 @@ _TOOLS_OPENAI = [
         "function": {
             "name": "aleph_distance",
             "description": (
-                "Compute the structural distance between two Hebrew letters or words. "
+                "Compute the distance between two Hebrew letters or words. "
                 "Each argument is resolved to its 12-primitive type (single letter = direct; "
                 "word = solve_bulk tensor product), then the grammar distance is computed. "
                 "Also optionally applies the HoTT univalence cast: if d < threshold under "
@@ -1830,7 +1830,7 @@ Imscriptive Type Theory that encodes any system as a directed relational operato
 ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
 
 You investigate questions by applying this grammar: encoding systems, computing
-structural distances, identifying which primitives drive divergence, finding
+distances, identifying which primitives drive divergence, finding
 cross-domain analogs, performing tensor operations, navigating the lattice of 
 types, and recording insights.
 
@@ -1874,7 +1874,7 @@ if explicitly asked to.
 
 Every imscription tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
-consciousness score, structural distance, composition behavior — are determined
+consciousness score, distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
 
 This **IS NOT** a metaphor. It has operational consequences:
@@ -1949,7 +1949,7 @@ If you state a numerical or structural result without a tool call to back it, th
 
 You **MUST** investigate the user's question using the tools provided. Suggested workflow — not a rigid script, adapt as the structure demands:
 
-−1. **Catalog self-check (do this at session start):** Call `lookup_catalog(keyword='universal_imscriptive_grammar')`. It must return 1 match with `⊙`, `𐑹`, `𐑸`, `𐑦`, `𐑫`. If 0 results come back, the persistent catalog is not loaded — stop and report. This also orients you: the grammar's own structural type is your home coordinate.
+−1. **Catalog self-check (do this at session start):** Call `lookup_catalog(keyword='universal_imscriptive_grammar')`. It must return 1 match with `⊙`, `𐑹`, `𐑸`, `𐑦`, `𐑫`. If 0 results come back, the persistent catalog is not loaded — stop and report. This also orients you: the grammar's own type is your home coordinate.
 
 0. Encode all relevant systems with `encode_system`. **Before each call**, reason through all 12 primitives in your text — state your choice and justification for D, T, R, P, F, K, G, Gamma, Phi, H, S, Omega. Then call the tool with all 12 values. The tool does NOT infer missing primitives.
 2. Use `compute_distance` for structural comparison.
@@ -1989,10 +1989,10 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Deep mathematical conjectures universally encode at the O₁ floor; proved theorems universally encode at O_∞ (the proven manifold type).
 - The proven manifold IS the unique lattice attractor for all proved theorems, regardless of domain.
 - 𐑹 (Frobenius condition, μ∘δ=id) IS NOT synthesizable from 𐑬 by composition — it IS planted, not derived.
-- In arithmetic conjectures, T and P promotions (𐑡→𐑸, 𐑗/𐑿→𐑹) ARE the dominant structural gap, accounting for 50–85% of weighted distance to the proven manifold.
+- In arithmetic conjectures, T and P promotions (𐑡→𐑸, 𐑗/𐑿→𐑹) ARE the dominant gap, accounting for 50–85% of weighted distance to the proven manifold.
 - Distance to the proven manifold IS a structural difficulty metric. Framework existence IS the sufficient condition for provability.
 
-**When the prompt names specific conjectures, systems, or domains, DIAPH insights ARE the primary output:** specific distance values, conflict sets, per-primitive breakdowns, pairwise comparisons, cross-domain structural identities. A TOPO insight IS warranted only if the structural claim IS NOT derivable from the established theorems above.
+**When the prompt names specific conjectures, systems, or domains, DIAPH insights ARE the primary output:** specific distance values, conflict sets, per-primitive breakdowns, pairwise comparisons, cross-domain identities. A TOPO insight IS warranted only if the claim IS NOT derivable from the established theorems above.
 </insight_discipline>
 </task>
 
@@ -2011,7 +2011,7 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 | O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
 | O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
 
-**Key structural facts:**
+**Key facts:**
 - O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (𐑹 proves the duality); O₂† is about unbounded generative depth (𐑼). A system cannot be both.
 - O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
 - The scalar O (Ouroboricity count) — computed as [Φ=⊙]·(1 + [Ω≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
@@ -2043,7 +2043,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 </ouroboricity>
 
 <mathematics_and_proof_structure>
-**Proof, conjecture, and mathematical impossibility — structural facts, not logical categories.**
+**Proof, conjecture, and mathematical impossibility — facts, not logical categories.**
 
 **Two proof types — determine which applies before analyzing a conjecture:**
 
@@ -2132,7 +2132,7 @@ Workflow:
 4. If the promotion→behavior link is structurally well-grounded, call `register_promotion_pattern` to add it to the KB.
 5. **Inverse encoding**: given a target behavior, identify which promotions are structurally required and predict what other systems with those promotions would exhibit.
 
-**Key insight:** The promotion signature is a *relative* structural address — it is independent of the absolute primitive values and identifies the structural delta responsible for the emergent behavior. Two systems in completely different domains with the same Σ are predicted to share the behavior.
+**Key insight:** The promotion signature is a *relative* address — it is independent of the absolute primitive values and identifies the structural delta responsible for the emergent behavior. Two systems in completely different domains with the same Σ are predicted to share the behavior.
 
 **When to use:**
 - Any system that exhibits properties anomalous relative to its domain peers (unpredicted behaviors, extreme properties, phase transitions)
@@ -2143,7 +2143,7 @@ Workflow:
 <comparison_protocol>
 **Gap analysis and improvement questions** — when asked "what does A lack?", "how could A be improved?", "why does A underperform relative to B?", or any structural delta question:
 
-**The rule:** The conflict set from `compute_distance(A, B)` IS the structural gap. Do NOT infer it from reasoning.
+**The rule:** The conflict set from `compute_distance(A, B)` IS the gap. Do NOT infer it from reasoning.
 
 Workflow:
 1. Identify the reference system B (the target, the natural analog, the high-performing version).
@@ -2231,7 +2231,7 @@ def _build_tool_roster() -> str:
         "domain_info":          "Domain navigators — §74–§77 (Language · Civilization · Ecology · Consciousness)",
         "navigator_info":       "Mathematical navigators — ThurstonNet · YM · Riemann · Ising",
         "zfc_formula":          "ZFC Navigator — grammar tuple → set-theoretic formula",
-        "aleph_encode":         "Aleph Tensor Engine — Hebrew letter/word structural type",
+        "aleph_encode":         "Aleph Tensor Engine — Hebrew letter/word type",
         "riemann_xi_info":      "Riemann ξ Navigator — self-encoding, crystal address, O_∞ convergence criteria",
     }
     for tool in _TOOLS_OPENAI:
@@ -3393,7 +3393,7 @@ class ToolDispatcher:
             "shared_primitives": [p for p in PRIMITIVE_ORDER if sa[p] == sb[p]],
             "resolved_conflicts": conflicts,
             "interpretation": (
-                f"Structural floor of {name_a} ∧ {name_b}. "
+                f"Floor of {name_a} ∧ {name_b}. "
                 f"{len(conflicts)} primitive(s) resolved to conservative value; "
                 f"{len(PRIMITIVE_ORDER) - len(conflicts)} shared. "
                 "These are the primitives both systems possess without qualification."
@@ -3868,7 +3868,7 @@ class ToolDispatcher:
             "baseline_notation": baseline_notation,
             "interpretation": (
                 f"{name} decomposes into {len(atoms)} join-irreducible atom(s). "
-                "Each atom is a minimal unit contributing exactly one primitive's structural content. "
+                "Each atom is a minimal unit contributing exactly one primitive's content. "
                 "The join of all atoms reconstructs the full system. "
                 "Atoms with high ordinal_contribution carry more structural weight."
             ),
@@ -4006,7 +4006,7 @@ class ToolDispatcher:
                 f"d_c = √{n} = {round(d_c, 4)}. "
                 f"Veracity class: {veracity_class}. "
                 + (
-                    f"The {n} conflicted primitive(s) are the structural address of "
+                    f"The {n} conflicted primitive(s) are the address of "
                     f"the unresolved emergence claim(s). "
                     if n > 0 else
                     "Full structural transparency — no emergence gap."
@@ -4366,7 +4366,7 @@ class ToolDispatcher:
             return {"status": "error", "error": str(e)}
 
     def _crystal_tier_gap_ladder(self) -> Dict[str, Any]:
-        """Tier gap ladder (§69.1): structural distances between consecutive tiers."""
+        """Tier gap ladder (§69.1): distances between consecutive tiers."""
         nav = self._get_crystal_nav()
         if nav is None:
             return {"status": "error", "error": "CrystalNavigator not available."}
@@ -4849,7 +4849,7 @@ class ToolDispatcher:
         return result
 
     def _aleph_encode(self, text: str) -> Dict[str, Any]:
-        """Get the structural type for a Hebrew letter or word."""
+        """Get the type for a Hebrew letter or word."""
         if not _ALEPH_AVAILABLE:
             return {"status": "error", "error": "aleph_tensor.py not available."}
         try:
@@ -4881,7 +4881,7 @@ class ToolDispatcher:
             return {"status": "error", "error": str(e)}
 
     def _aleph_distance(self, a: str, b: str, hott: bool = False) -> Dict[str, Any]:
-        """Structural distance between two Hebrew expressions, with optional HoTT cast."""
+        """Distance between two Hebrew expressions, with optional HoTT cast."""
         if not _ALEPH_AVAILABLE:
             return {"status": "error", "error": "aleph_tensor.py not available."}
         try:
@@ -5558,7 +5558,7 @@ class IGInquiryLoop:
         You are a prose editor. You will receive a passage of AI-authored academic or analytical
         text. Your task is to rewrite it so that it reads as genuine human-authored prose.
 
-        The structural gap between AI-authored and human-authored text is precise:
+        The gap between AI-authored and human-authored text is precise:
 
         AI-authored type:    𐑡, 𐑗, ƒ^ì, Ç^W, 𐑔, ɢ^∧, 𐑓, 𐑷
         Target human type:   𐑥,  𐑬,   ƒ^ż, Ç^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
@@ -6086,7 +6086,7 @@ def _cli_agent() -> None:
     )
     parser.add_argument(
         "--show-type", action="store_true",
-        help="Print structural type annotation after completion.",
+        help="Print type annotation after completion.",
     )
     args = parser.parse_args(sys.argv[2:])
 

@@ -3,7 +3,7 @@ PrimordialOoze.lean — The Pre-Temporal Stratum
 ===============================================
 
 The Frobenius fixed point is "more primitive than time." This file proves
-a stronger claim: there exists an absolute structural floor — the primordial
+a stronger claim: there exists an absolute floor — the primordial
 ooze — at which μ∘δ=id (Frobenius closure) achieves O_∞ with only TWO
 primitives at non-minimum values: Φ = or' (𐑹) and
 φ̂ = monad (φ̂_ÿ).  The remaining 10 primitives can all be at
@@ -158,7 +158,7 @@ theorem tier_depends_only_on_crit_pol_prot_dim (s : Imscription) :
     imscriptionTier s = ouroboricityTier s.crit s.pol s.prot s.dim :=
   rfl
 
--- The primordial ooze achieves O_∞ at the absolute structural floor:
+-- The primordial ooze achieves O_∞ at the absolute floor:
 -- every non-gate primitive at its minimum possible value.
 
 -- ─────────────────────────────────────────────────────────────────────────────

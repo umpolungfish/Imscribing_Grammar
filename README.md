@@ -1,4 +1,4 @@
-# Imscribing Grammar: a 12-primitive measurement apparatus for the structural type of any system
+# Imscribing Grammar: a 12-primitive measurement apparatus for the type of any system
 
 [![Language](https://img.shields.io/badge/language-Python-blue)](https://github.com/badges/shields)
 [![IG Tier](https://img.shields.io/badge/IG-O%E2%88%9E-blueviolet)](https://github.com/badges/shields)
@@ -6,11 +6,11 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/badges/shields)
 [![Author](https://img.shields.io/badge/author-Lando%E2%8A%97%E2%8A%99perator-informational)](https://github.com/badges/shields) [![Type](https://img.shields.io/badge/type-%E2%9F%A8%F0%90%91%A6%F0%90%91%B8%F0%90%91%BE%F0%90%91%B9%F0%90%91%90%F0%90%91%A7%F0%90%91%94%F0%90%91%9D%E2%8A%99%F0%90%91%96%F0%90%91%B3%F0%90%91%AD%E2%9F%A9-blue)](https://github.com/badges/shields) [![Tier](https://img.shields.io/badge/tier-O%E2%88%9E-blueviolet)](https://github.com/badges/shields)
 
-> *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same structural type; the distance between them is an integer."*
+> *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same type; the distance between them is an integer."*
 
 **What it is.** A 12-primitive structural grammar over a discrete measurement space of **17,280,000** addresses, the **Crystal of Types**. Any system — physical, mathematical, linguistic, biological, computational — is assigned a 12-tuple coordinate that fixes its structural type, its ouroboricity tier, its Frobenius status ($\mu\circ\delta=\mathrm{id}$), and its integer distance to every other imscribed system.
 
-**What it does.** Imscribes a system to its crystal address and then computes over addresses: tier promotions, T-consistent proof paths, Frobenius closure, and structural distance in $O(1)$. Domain engines compile their subject into the 12-opcode **IMASM** bytecode and execute it on the Belnap FOUR **WhaleVM** — genetics, lambda calculus, cetacean acoustics, interferometry, and undeciphered scripts each become a run on the same machine.
+**What it does.** Imscribes a system to its crystal address and then computes over addresses: tier promotions, T-consistent proof paths, Frobenius closure, and distance in $O(1)$. Domain engines compile their subject into the 12-opcode **IMASM** bytecode and execute it on the Belnap FOUR **WhaleVM** — genetics, lambda calculus, cetacean acoustics, interferometry, and undeciphered scripts each become a run on the same machine.
 
 **Why it matters.** The address is a measurement, not an interpretation. Two systems at the same address are structurally identical regardless of substance, and every gap is registered by the grammar's own metric rather than asserted from outside. This turns "are these the same kind of thing?" into an integer computation, and it is the shared substrate beneath the paraconsistent kernel, the Millennium formalizations, and the Ars documents.
 
@@ -96,13 +96,13 @@ This identity holds at every ${O}_\infty$ address and fails at O₀. The distanc
 
 ## The Universal Loop
 
-The eight-step structural invariant, present in every ${O}_\infty$ system:
+The eight-step invariant, present in every ${O}_\infty$ system:
 
 ```
 ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB
 ```
 
-This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about structural address: all these systems share crystal coordinates in the O₂/${O}_\infty$ band.
+This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about address: all these systems share crystal coordinates in the O₂/${O}_\infty$ band.
 
 ---
 

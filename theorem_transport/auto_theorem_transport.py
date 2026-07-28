@@ -145,7 +145,7 @@ _WEIGHTS = {"Ð": 2.0, "Þ": 2.0, "Ř": 1.5, "Φ": 2.0, "ƒ": 1.5, "Ç": 1.0,
             "Γ": 1.0, "ɢ": 1.0, "⊙": 2.5, "Ω": 2.5, "Σ": 1.0, "Ħ": 2.5}
 
 def compute_distance(ims_a: Imscription, ims_b: Imscription) -> tuple[float, list[dict]]:
-    """Compute structural distance between two Imscriptions."""
+    """Compute distance between two Imscriptions."""
     da = ims_a.to_dict()
     db = ims_b.to_dict()
 

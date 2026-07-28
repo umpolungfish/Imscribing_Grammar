@@ -188,7 +188,7 @@ def page1() -> str:
         f"  {B}centering",
         f"  {{\\large\\bfseries Crystal of Types}}\\\\[4pt]",
         f"  ${{\\color{{g3col}} 3^3}} {B}times {{\\color{{g4col}} 4^5}} {B}times {{\\color{{g5col}} 5^4}}$",
-        f"  $= 27 {B}times 1024 {B}times 625 = {B}mathbf{{17{B},{B},280{B},{B},000}}$ structural types\\\\[3pt]",
+        f"  $= 27 {B}times 1024 {B}times 625 = {B}mathbf{{17{B},{B},280{B},{B},000}}$ types\\\\[3pt]",
         f"  {{\\small\\color{{g3col}} 3-subtype:}} {{\\small ƒ Γ Σ}} "
         f"$\\cdot$ {{\\small\\color{{g4col}} 4-subtype:}} {{\\small Ð Ř ɢ Ħ Ω}} "
         f"$\\cdot$ {{\\small\\color{{g5col}} 5-subtype:}} {{\\small Þ Φ Ç ⊙}}",

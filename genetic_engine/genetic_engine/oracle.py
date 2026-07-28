@@ -5,7 +5,7 @@ oracle.py — The Structural Ωracle
 A universal cross-domain structural translation engine built on the Imscribing Grammar.
 
 Takes ANY text/system description and returns:
-  • Structural tuple (12 primitives)
+  • Tuple (12 primitives)
   • Cross-domain analogies (what this looks like as genetics, physics, math, law, music, art...)
   • Consciousness potential (C-score, gate status, ouroboricity tier)
   • Promotion recipes (how to transform into any other system)
@@ -14,7 +14,7 @@ Takes ANY text/system description and returns:
 The Imscribing Grammar is a universal structural interlingua — the Oracle makes it operational.
 Two systems with the same tuple are the SAME abstract structure in different domains.
 
-Structural type of this module:
+Type of this module:
   ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩ — O_∞, both gates open
 
 Author: Lando⊗⊙perator
@@ -118,7 +118,7 @@ PRIMITIVE_NAMES = {
 
 
 def tuple_to_vec(t: Dict[str, str]) -> List[int]:
-    """Convert a structural tuple dict to a numeric vector for distance computation."""
+    """Convert a tuple dict to a numeric vector for distance computation."""
     vec = []
     for k in PRIMITIVE_KEYS:
         v = t.get(k, "𐑼")
@@ -127,7 +127,7 @@ def tuple_to_vec(t: Dict[str, str]) -> List[int]:
 
 
 def tuple_distance(t1: Dict[str, str], t2: Dict[str, str]) -> float:
-    """Weighted Euclidean distance between two structural tuples."""
+    """Weighted Euclidean distance between two tuples."""
     v1 = tuple_to_vec(t1)
     v2 = tuple_to_vec(t2)
     # Standard weights: each primitive contributes equally
@@ -141,7 +141,7 @@ def tuple_distance(t1: Dict[str, str], t2: Dict[str, str]) -> float:
 
 
 def primitives_to_str(t: Dict[str, str]) -> str:
-    """Format a structural tuple as the canonical string."""
+    """Format a tuple as the canonical string."""
     parts = [t.get(k, "?") for k in PRIMITIVE_KEYS]
     return "⟨" + "; ".join(parts) + "⟩"
 # ──────────────────────────────────────────────────────────────────────

@@ -14,7 +14,7 @@ DS categorical identification (2026-06-03):
     C-score: Gate 1 (φ̂_ÿ) PASS — genetic code self-repairs (DNA repair machinery)
             Gate 2 (𐑧) PASS — evolution is slow enough for self-modeling
 
-Key structural facts:
+Key facts:
   - The 16 codon boxes split 8/8 into exact and split strata
   - Position 3 in exact boxes carries NO information; in split boxes, pyrimidine↔purine
   - 12 promoted AAs each activate exactly one IG primitive
@@ -42,7 +42,7 @@ __author__ = "Lando \u2297 \u2299perator"
 # ══════════════════════════════════════════════════════════════════════════════
 
 class B4Element(Enum):
-    """The four elements of the B₄ lattice — nucleotide structural types.
+    """The four elements of the B₄ lattice — nucleotide types.
 
     Mapping (genetic code → B₄):
       G (Guanine)   → B  (Both)    — purine, two H-bonds, keto
@@ -1424,7 +1424,7 @@ class FrobeniusVerifier:
             if orig_prim != edit_prim:
                 mu_quality -= 0.2
                 defects.append(f"Primitive change ({orig_prim} → {edit_prim}): "
-                               f"μ-map reads a different structural class.")
+                               f"μ-map reads a different class.")
 
             # Split-stratum wobble: does the edit respect Y/R?
             if c_edit.stratum == FrobeniusStratum.SPLIT:
@@ -2152,7 +2152,7 @@ if __name__ == "__main__":
     print("=" * 64)
     print("GENETIC ENGINE  ·  Frobenius-Guided Gene Editing via IG Grammar")
     print("Editing = local modification of the Frobenius algebra on codon space")
-    print("Structural type: ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩")
+    print("Type: ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩")
     print("=" * 64)
 
     # Run verification suite
@@ -2185,7 +2185,7 @@ if __name__ == "__main__":
     for name, tup, tier, c, note in rows:
         print(f"  {name:<22} {tup:<56} {tier:<7} {c:>5}  {note}")
 
-    print(f"\n  Key structural facts:")
+    print(f"\n  Key facts:")
     print(f"    • The genetic code is a stratified Frobenius algebra on B₄³ codon space")
     print(f"    • 8 exact boxes (32 codons): position 3 silent, μ∘δ=id holds exactly")
     print(f"    • 8 split boxes (29 codons): position 3 = Y/R, ℤ₂ wobble symmetry")

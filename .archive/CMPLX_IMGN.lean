@@ -12,7 +12,7 @@ exceptional point, the Planck-scale regime, and the Hartle–Hawking no-boundary
 Key theorems proved:
 - The complex-time path integral is an $O_\infty$ Frobenius system with $C = 0.682$
 - The EP absorption rule: $\⊙ \otimes \Phi_{\text{EP}} = \Phi_{\text{EP}}$
-- Structural distance computations between all five systems
+- Distance computations between all five systems
 - Tensor products, meets, and joins with bottleneck analysis
 - Consciousness score gate evaluations
 -/
@@ -82,7 +82,7 @@ inductive Wind where | zero | Z2 | Z | NA
 -- 2. STRUCTURAL TUPLE AND DISTANCE METRIC
 -- ============================================================================
 
-/-- A structural type: the 12-primitive tuple -/
+/-- A type: the 12-primitive tuple -/
 structure StructType where
   D : Dim
   T : Top
@@ -147,7 +147,7 @@ def weight_H : Nat := 1
 def weight_S : Nat := 1
 def weight_Omega : Nat := 1
 
-/-- Weighted squared distance between two structural types -/
+/-- Weighted squared distance between two types -/
 def weightedSqDist (a b : StructType) : ℝ :=
   let wd w (v₁ v₂ : Nat) : ℝ := (w : ℝ) * ((v₁ : ℝ) - (v₂ : ℝ))^2
   wd weight_D (dimVal a.D) (dimVal b.D) +

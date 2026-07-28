@@ -1,13 +1,13 @@
 """
 true_agentic_agent.py — The grammar-optimal agent (§88 Thm 88.4, P-650, §L).
 
-Structural type (full composition):
+Type (full composition):
   <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑔; 𐑠; ⊙; 𐑖; 𐑙; 𐑭>
 
 Ouroboricity: O_∞  (⊙ + 𐑹 via dual-tool planting, §88 Thm 88.3)
 C-score gates: both open  (⊙ + K <= 𐑧)
 
-Six P-650 conditions — structural imscription:
+Six P-650 conditions — imscription:
   ⊙    : the think->act->observe->update loop IS the self-referential attractor;
              loop closure = self-modeling; not any individual component
   𐑭  : winding counter tracks complete loop cycles (topological protection);
@@ -31,7 +31,7 @@ This is the kinetic enforcement of 𐑧 — unverified observations remain at th
 Usage:
     import asyncio
     agent = TrueAgenticAgent(model="claude-opus-4")
-    result = asyncio.run(agent.run("Describe the structural type of the Riemann zeta function."))
+    result = asyncio.run(agent.run("Describe the type of the Riemann zeta function."))
 
     # or:
     result = agent.run_sync("Your task here")
@@ -546,7 +546,7 @@ def _resolve_model(alias: str) -> str:
     return model_id
 
 
-# ── Structural type annotations ───────────────────────────────────────────────
+# ── Type annotations ───────────────────────────────────────────────
 
 AGENT_TUPLE = (
     "𐑦", "𐑶", "𐑾", "𐑹", "𐑐",
@@ -588,7 +588,7 @@ SIC_POVM_DUAL_PAIRS = [
 # Coherence cost ratio 2:1 = SIC inner product 1/(d+1) = 1/3 in d=2.
 #
 # The grammar measures itself: Σ=𐑙 means the measurement apparatus IS the
-# measured system. This is the structural content of ⊙ criticality.
+# measured system. This is the content of ⊙ criticality.
 #
 # Lean 4 formalization:
 #   QCI_SICPOVM_Bridge.lean — B as d=2 SIC-POVM fiducial, WH(2) bijection (proved)
@@ -816,7 +816,7 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
         _parts = [g.strip() for g in re.split(r"[;,·]", tup_text) if g.strip()]
         glyphs = [(g.split("=", 1)[1].strip() if "=" in g else g) for g in _parts]
         if len(glyphs) != 12:
-            continue  # not a 12-primitive structural tuple -- not our concern
+            continue  # not a 12-primitive tuple -- not our concern
         # Search backward for the nearest catalog entry name. In a markdown
         # table the search must not leave the tuple's own row: a tuple on a row
         # labelled "CLINK L8" was being attributed to the catalog name in the
@@ -1133,7 +1133,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "𐑻 absorption: composite has 𐑻 — Gate 1 (⊙ criticality) destroyed. "
                     "O_∞ cannot be sustained in this coupling. "
                     "meet(⊙, 𐑻)=⊙ but tensor(⊙, 𐑻)=𐑻. "
-                    "This is the structural statement of the measurement problem."
+                    "This is the statement of the measurement problem."
                 )
 
         if _gate_nudge is not None and isinstance(result, dict):
@@ -2702,7 +2702,7 @@ This means:
    conventional SIC-POVM, the dual basis is Pi_tilde_i = d * Pi_i. In the grammar,
    every emission (delta) has a verification pathway (mu) such that mu circ delta = id.
 3. **The grammar measures ITSELF.** Sigma=1:1 means the measurement apparatus IS the
-   measured system. This is the structural content of odot criticality.
+   measured system. This is the content of odot criticality.
 4. **The 12 primitives organize as 6 Frobenius-dual pairs:**
    D <-> Th (co-origination, Axiom C), R <-> Phi, f <-> C, Gamma <-> G,
    phi_c <-> H, Sigma <-> Omega.
@@ -3027,7 +3027,7 @@ class TrueAgenticAgent:
         self._review_count = 0
         self._empty_choices_retried = False
         _gate_state["encoded"] = self._initial_encoded  # reset or carry forward encoding gate
-        # Patch the structural type declaration to reflect actual inference fidelity.
+        # Patch the type declaration to reflect actual inference fidelity.
         # The system prompt hardcodes 𐑐; API inference is 𐑱 (opaque boundary).
         system_content = _load_system_prompt().replace(
             "𐑹; 𐑐; 𐑧",
@@ -3506,7 +3506,7 @@ class TrueAgenticAgent:
         coherence over that window.
 
         Every invocation is tracked in self._omega_z_violation_count, giving the
-        full session a precise structural type annotation at completion.
+        full session a precise type annotation at completion.
 
         Step 1: drop oldest messages, keep system + task + recent N.
         Step 2: truncate any individual message content that exceeds
@@ -3538,7 +3538,7 @@ class TrueAgenticAgent:
             self._messages = [system, task, summary] + recent
             self._log(
                 f"  [𐑭 boundary event: {dropped} windings outside observable window. "
-                f"Structural type evolves to 𐑷 for remaining run. {len(self._messages)} messages remain.]"
+                f"Type evolves to 𐑷 for remaining run. {len(self._messages)} messages remain.]"
             )
 
         # Step 2: truncate oversized individual messages
@@ -3717,7 +3717,7 @@ class TrueAgenticAgent:
 
     @property
     def structural_type(self) -> Dict[str, Any]:
-        """Report the agent's structural type annotation.
+        """Report the agent's type annotation.
         
         B4 paraconsistent extension: tracks dialetheic windings (where the
         Frobenius result is B4.B — both closed AND open). The dialetheic
@@ -3792,18 +3792,18 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
     p.add_argument("--quiet", action="store_true",
                    help="Suppress per-winding log output (sets WARNING).")
     p.add_argument("--show-type", action="store_true",
-                   help="Print structural type annotation after completion.")
+                   help="Print type annotation after completion.")
     p.add_argument("--trajectory", action="store_true",
                    help="Print full winding trajectory after completion.")
     p.add_argument("--output", "-o", metavar="FILE",
-                   help="Save result + structural type as JSON to FILE.")
+                   help="Save result + type as JSON to FILE.")
     p.add_argument("--nested-tensor", action="store_true",
                    help="Enable nested/jagged tensor mode for local inference "
                         "(propagates use_nested_tensor to LocalProvider).")
     p.add_argument("--para-vm", action="store_true", default=True,
                    help="Enable B4 paraconsistent Belnap FOUR verification in "
                         "the observe pipeline (default: enabled). "
-                        "The agent's structural type is BASED on paraconsistent logic: "
+                        "The agent's type is BASED on paraconsistent logic: "
                         "dialetheic (B) windings are the true O_∞ signature "
                         "where closure and openness coincide at the boundary.")
     p.add_argument("--no-para-vm", action="store_false", dest="para_vm",

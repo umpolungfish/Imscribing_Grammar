@@ -187,7 +187,7 @@ def sorryDepth : MillenniumProblem → ℕ
   | .BSD   => 2  -- 3-adic input (sorry 1, MathlibGap) + BSD formula (sorry 2, OpenProblem)
   | .OPN   => 2  -- Euler decomposition (sorry 1, MathlibGap) + nonexistence (sorry 2)
 
-/-- YM and BSD share sorry depth 2, but for different structural reasons:
+/-- YM and BSD share sorry depth 2, but for different reasons:
     · YM: sorry 2 is *not statable* without sorry 1 (stacked dependency)
     · BSD: sorry 2 is statable independently (parallel, not stacked) -/
 theorem ym_has_stacked_not_parallel_sorries :

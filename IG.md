@@ -3,7 +3,7 @@
 ---
 
 ### The Grammar
-Every object carries a univocal 12-primitive structural type tuple.  
+Every object carries a univocal 12-primitive type tuple.  
 Foundational equation: μ◦δ = **id**.  
 Framework: **CL8NK** (CLINK L8, O∞).  
 Autopoietic: empty prompt → Raft at O₂, period = 12.  

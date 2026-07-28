@@ -4,7 +4,7 @@ of bond formation — NO named reactions.
 
 Bond formation is modeled as: product_type = join(tensor(FG1, FG2), bond)
   - tensor: max on union primitives (D,T,R,K,G,Gm,Ph,H,S,W), min on P,F
-  - join with bond: max on all primitives (bond provides a structural floor)
+  - join with bond: max on all primitives (bond provides a floor)
 Disconnections are ranked by distance between predicted product type and
 the molecule's catalog-verified type (or FG-composed type as fallback).
 
@@ -63,7 +63,7 @@ def tup_to_ords(t):
     return {p: glyph_ord(p, t.get(p, "?")) for p in PNAMES}
 
 def tup_dist(t1, t2):
-    """Weighted Euclidean distance between two structural type dictionaries."""
+    """Weighted Euclidean distance between two type dictionaries."""
     sq = 0.0; cf = []
     for p in PNAMES:
         v1 = t1.get(p, ""); v2 = t2.get(p, "")
@@ -119,7 +119,7 @@ GLYPH_MAP = {
 
 # ====================================================================
 # GRAMMAR-DERIVED BOND TYPES
-# Each bond type encodes a DISTINCTIVE structural signature.
+# Each bond type encodes a DISTINCTIVE signature.
 # The bond provides a FLOOR for the product type via join.
 # Higher primitive values = more structural character added by the bond.
 # ====================================================================
@@ -417,7 +417,7 @@ def get_fg_type(fg_name):
     return FG.get(fg_name, {})
 
 def meet_type(t1, t2):
-    """Meet: min on all primitives — shared structural floor."""
+    """Meet: min on all primitives — shared floor."""
     r = {}
     for p in PNAMES:
         o1, o2 = glyph_ord(p, t1.get(p,"?")), glyph_ord(p, t2.get(p,"?"))

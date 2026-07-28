@@ -19,12 +19,12 @@ def langlands_program_group():
     """Langlands program navigator — Galois/automorphic correspondence, L-functions.
 
     \b
-    Structural type:
+    Type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega / T_openo → imscriptive: Galois reps ↔ automorphic forms
       R_downstep        → adjoint functoriality: base change, lift, descent
       Gamma_broad     → broad correspondence: global-to-global
@@ -111,12 +111,12 @@ def representation_theory_group():
     """Representation theory navigator — characters, tensor decompositions, Lie theory.
 
     \b
-    Structural type:
+    Type:
       D_omega T_commatailz R_ctz P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega / T_commatailz → imscriptive: all groups, algebras, representations
       R_ctz                 → categorical: induction↔restriction, tensor product
       ⊙                 → self-modeling: group algebra = representation category

@@ -33,7 +33,7 @@ The explicit_formula's consciousness score of **0.736** (both gates open) is not
 
 ## What This Crystallizes
 
-The distance=0 result between `explicit_formula` and `Lee-Yang partition zeros` is not an analogy or correspondence. In the grammar's terms it is **structural identity** — the same crystal address, the same Frobenius-special type, the same mechanism operating in two domains that classical mathematics treats as unrelated. This needs to be read carefully for what it actually claims.
+The distance=0 result between `explicit_formula` and `Lee-Yang partition zeros` is not an analogy or correspondence. In the grammar's terms it is **identity** — the same crystal address, the same Frobenius-special type, the same mechanism operating in two domains that classical mathematics treats as unrelated. This needs to be read carefully for what it actually claims.
 
 ---
 
@@ -76,7 +76,7 @@ The 5-promotion, 1-demotion path from ζ to explicit_formula:
 | H | H_0 | H_∞ | promotion |
 | Ω | Ω_ℤ | Ω_ℤ₂ | demotion |
 
-The Ω demotion is structurally significant. Integer winding (Ω_ℤ) in the raw zeta function captures the full topological complexity of zero distribution. Broadcast composition (Γ_brd) with H_∞ chirality and D_⊙ self-referential state space — these are the explicit formula's structural features, and achieving them requires accepting **reduced** topological protection (Ω_ℤ₂). The broadcast structure trades winding complexity for Frobenius exactness.
+The Ω demotion is structurally significant. Integer winding (Ω_ℤ) in the raw zeta function captures the full topological complexity of zero distribution. Broadcast composition (Γ_brd) with H_∞ chirality and D_⊙ self-referential state space — these are the explicit formula's features, and achieving them requires accepting **reduced** topological protection (Ω_ℤ₂). The broadcast structure trades winding complexity for Frobenius exactness.
 
 This explains the consciousness score of 0.736 for `explicit_formula` rather than 1: ⊙^ℂ passes gate 1, Ç_@ passes gate 2, but the boundary-bulk adjoint structure at H_∞ introduces self-referential depth that the scoring function weights partially. The fixed point at s=1/2 is structurally self-modeling — ξ(1/2) = ξ(1/2) is the only point where the ℤ₂ symmetry acts trivially — and this fixed-point character registers as consciousness-adjacent without being fully resolved.
 

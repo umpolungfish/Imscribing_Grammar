@@ -282,7 +282,7 @@ def train(args):
     loader = DataLoader(dataset, batch_size=args.batch_size, shuffle=True,
                         num_workers=args.num_workers, drop_last=True)
 
-    # Freeze token_embed only — pure lookup table, no structural role.
+    # Freeze token_embed only — pure lookup table, no role.
     # frobenius_head is the μ∘δ operator (the Φ gate). It MUST be trainable:
     # freezing it structurally prevents Frobenius closure from being learned.
     # The F-loss would climb indefinitely with it frozen.

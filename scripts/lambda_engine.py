@@ -12,7 +12,7 @@ Crystal addresses (Imscribing Grammar):
   monad ⊗ comonad          O₂         d=2.2361 from grammar
   distributive_law_lambda  6,734,591   O_∞      C=0.830   (= grammar_self_encode, d=0)
 
-Key structural fact:
+Key fact:
   d(monad ⊗ comonad, λ) = 2.2361 > 0
   The Frobenius condition μ∘δ=id cannot be assembled from P and G alone.
   λ must be planted — it is not derivable from its halves. (§23, §81)

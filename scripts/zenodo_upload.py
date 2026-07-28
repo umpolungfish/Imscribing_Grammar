@@ -735,7 +735,7 @@ def extract_from_md(path: Path) -> dict:
     _SKIP_HEADS = {
         "abstract", "the problem", "references", "overview", "introduction",
         "conclusion", "results", "methods", "discussion", "background",
-        "the structural type system", "the open problems", "the one gate",
+        "the type system", "the open problems", "the one gate",
         "the lean formalization", "concrete pathways", "the gematria of open problems",
         "latent self-correction in the lattice imscription process",
         "the millennium seven", "the non-millennium seven",
@@ -778,7 +778,7 @@ def extract_from_md(path: Path) -> dict:
         "algebraic geometry":      "algebraic geometry",
         "quantum information":     "quantum information",
         "mathematical physics":    "mathematical physics",
-        "structural type":         "structural type theory",
+        "type":         "type theory",
         "Shavian":                 "Shavian notation",
         "gematria":                "gematria",
         "ZFC_fe":                  "ZFC_fe",

@@ -3,7 +3,7 @@ genetic_tuples.py — Sequence-Driven Generative Structural Tuple Assignment (v0
 
 Replaces hardcoded STAGE_TUPLES with sequence-driven generative tuple functions.
 Each pipeline stage inspects the amino acid sequence and produces a 12-primitive
-structural tuple specific to that input.
+tuple specific to that input.
 
 THREE RESOLUTIONS IMPLEMENTED:
   1. AXIOM C FIX: Protein folding stages use T=bowtie (crossing/bifurcation point)
@@ -342,7 +342,7 @@ def extract_stoichiometry_features(seq: List[Dict],
 
 
 def generate_dna_gene_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for the DNA gene stage."""
+    """Generate tuple for the DNA gene stage."""
     seq_len = features.get("total_length", 0)
     
     if seq_len > 1000:
@@ -369,7 +369,7 @@ def generate_dna_gene_tuple(features: Dict[str, Any]) -> Dict[str, str]:
 
 
 def generate_pre_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for the pre-mRNA stage."""
+    """Generate tuple for the pre-mRNA stage."""
     seq_len = features.get("total_length", 0)
     has_introns = features.get("has_introns", True)
     
@@ -395,7 +395,7 @@ def generate_pre_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
 
 
 def generate_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for the mature mRNA stage."""
+    """Generate tuple for the mature mRNA stage."""
     return {
         "D": IG_CHARS["D_tri"],
         "T": IG_CHARS["T_net"],
@@ -413,7 +413,7 @@ def generate_mrna_tuple(features: Dict[str, Any]) -> Dict[str, str]:
 
 
 def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for protein secondary structure.
+    """Generate tuple for protein secondary structure.
     
     AXIOM C FIX: T=bowtie (crossing point) instead of T=odot.
     φ̂=c gate with Pro absorption: tensor(⊙, 𐑻) = 𐑻.
@@ -469,7 +469,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
 
 
 def generate_tertiary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for protein tertiary structure.
+    """Generate tuple for protein tertiary structure.
     
     AXIOM C FIX: T=bowtie (crossing topology).
     Omega=0 (no topological protection at tertiary level — disulfide
@@ -533,7 +533,7 @@ def generate_tertiary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str
 
 
 def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str]:
-    """Generate structural tuple for protein quaternary structure.
+    """Generate tuple for protein quaternary structure.
     
     Subunit symmetry determines Ω protection level.
     AXIOM C FIX: T=bowtie (subunit crossing interface).
@@ -620,7 +620,7 @@ _STAGE_GENERATORS = {
 
 
 def generate_all_tuples(features: Dict[str, Any]) -> Dict[str, Dict[str, str]]:
-    """Generate structural tuples for all 6 pipeline stages from sequence features."""
+    """Generate tuples for all 6 pipeline stages from sequence features."""
     generated = {}
     for stage in _PIPELINE_STAGES:
         stage_features = features.get(stage, features)
@@ -637,7 +637,7 @@ def extract_features_from_sequence(aa_chain: List[Dict[str, Any]],
                                     gc_content: float = 0.5,
                                     has_introns: bool = True,
                                     has_modifications: bool = True) -> Dict[str, Any]:
-    """Extract all structural features from a sequence for tuple generation.
+    """Extract all features from a sequence for tuple generation.
     
     Bridge function between the pipeline's sequence representation and generators.
     """
@@ -754,7 +754,7 @@ def check_d_omega(o_char: str, d_char: str) -> Tuple[bool, str]:
 
 
 def check_k_phi(k_char: str, phi_char: str) -> Tuple[bool, str]:
-    """K-Φ constraint: warning only (structural tendency, not axiom)."""
+    """K-Φ constraint: warning only (tendency, not axiom)."""
     k_key = CHAR_TO_NAME.get(k_char, "")
     phi_key = CHAR_TO_NAME.get(phi_char, "")
     k_name = get_value_name(k_key) if k_key else "?"
@@ -768,7 +768,7 @@ def check_k_phi(k_char: str, phi_char: str) -> Tuple[bool, str]:
 
 
 def verify_tuple(tup: Dict[str, str], stage_name: str = "") -> Dict[str, Any]:
-    """Verify a structural tuple against all grammatical constraints."""
+    """Verify a tuple against all grammatical constraints."""
     checks = {}
     all_pass = True
     
@@ -855,7 +855,7 @@ def verify_pathway(generated: Dict[str, Dict[str, str]]) -> Dict[str, Any]:
 
 
 def compute_closure_distance(tup_a: Dict[str, str], tup_b: Dict[str, str]) -> float:
-    """Compute weighted Euclidean distance between two structural tuples."""
+    """Compute weighted Euclidean distance between two tuples."""
     primitives_meta = {"D": 4, "T": 5, "R": 4, "P": 5, "F": 3, "K": 5,
                         "G": 3, "Gamma": 4, "Phi": 5, "H": 4, "S": 3, "O": 4}
     

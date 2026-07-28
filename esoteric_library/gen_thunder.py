@@ -3,7 +3,7 @@
 The Thunder, Perfect Mind, from the Nag Hammadi library (Codex VI, tractate 2).
 
 Combines all 18 chapters from the existing gnostic.json into one complete entry
-with the canonical structural tuple: 𐑦, 𐑸, 𐑽, 𐑬, ƒ^ż, Ç^@, 𐑲, ɢ^Ş, ⊙, 𐑫, 𐑳, 𐑭
+with the canonical tuple: 𐑦, 𐑸, 𐑽, 𐑬, ƒ^ż, Ç^@, 𐑲, ɢ^Ş, ⊙, 𐑫, 𐑳, 𐑭
 Tier: O_∞, C_score: 0.95
 """
 import json, os, sys

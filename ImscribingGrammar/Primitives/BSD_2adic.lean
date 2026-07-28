@@ -11,7 +11,7 @@ import Mathlib.Data.Int.Lemmas
 /-!
 # BSD 2-Adic: The Same Constraint Structure as OPN, in a Different Substrate
 
-OPN and BSD are not two problems that happen to share structural features.
+OPN and BSD are not two problems that happen to share features.
 They are the same constraint grammar — *a unique charge-carrier paired with a neutral scaffold,
 subject to a global valuation equation* — expressed in different mathematical substrates.
 The proof below is therefore not a parallel proof; it is the same proof.
@@ -131,7 +131,7 @@ private lemma odd_of_neg_one_pow_neg {n : ℕ} (h : (-1 : ℤ) ^ n = -1) : n % 2
   linarith [show (-1 : ℤ) ≠ 1 from by norm_num]
 
 -- ============================================================
--- §4. Main structural theorems — the BSD analogues
+-- §4. Main theorems — the BSD analogues
 -- ============================================================
 
 /-- **Rank is odd when $\varepsilon = -1$.**

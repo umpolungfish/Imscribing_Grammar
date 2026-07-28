@@ -81,7 +81,7 @@ SAT is NP-complete (Cook 1971 / Levin 1973): SAT ∈ P ↔ P = NP.
 
   **Relativization** (Baker-Gill-Solovay 1975):
     There exist oracles A, B such that P^A = NP^A and P^B ≠ NP^B.
-    Any proof of P ≠ NP must be non-relativizing — it must use structural properties
+    Any proof of P ≠ NP must be non-relativizing — it must use properties
     of the computation model (not just input/output behavior).
 
   **Natural Proofs** (Razborov-Rudich 1994):

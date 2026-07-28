@@ -10,7 +10,7 @@ Primitive-tuple notation: ⟨D; T; R; P; Γ; F; K; G; Φ; Ω; S; H⟩
 DESIGN PRINCIPLE
 ─────────────────────────────────────────────────────────────────────────────
 Each Millennium Problem is treated as a *constraint-propagation system* whose
-answer (if it exists) must propagate from the structural primitives of the
+answer (if it exists) must propagate from the primitives of the
 domain all the way to a formal proof.  The 12-tuple captures the structural
 character of that propagation, not the content of the statement.
 
@@ -337,7 +337,7 @@ def register_millennium_imscriptions() -> None:
         #   analytic geometry (Hodge theory) and algebraic geometry (cycles);
         #   it asks whether these two phases coincide at the critical point.
         # Omega_dzlig: The integral lattice H^{2p}(X, Z) ∩ H^{p,p}(X) is where the
-        #   algebraic cycles live; Z-protection is the structural signature.
+        #   algebraic cycles live; Z-protection is the signature.
         # n:m: Rational linear combinations — many cycles combine to give each class.
         # H_turntwo: Persistent chirality — complex algebraic geometry has inherent
         #   orientation (the complex structure is chiral relative to the reals).
@@ -580,7 +580,7 @@ def register_millennium_imscriptions() -> None:
         #
         # Phi_softsign: SOLVED — the system is in the stable ordered phase.
         #   Perelman's surgery technique prevents Phi_upstep (finite-time blowup)
-        #   in dimension 3.  This is the primary structural signature of solvability.
+        #   in dimension 3.  This is the primary signature of solvability.
         #
         # D_cube: The 3-manifold lives in D_cube (3-dimensional topology).
         # T_bullseye: S^3 has "cyclic closure" topology — it is the double of the

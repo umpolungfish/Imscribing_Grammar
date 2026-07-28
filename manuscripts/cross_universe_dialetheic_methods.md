@@ -7,7 +7,7 @@
 
 ## 1. The question, stated precisely
 
-The Imscribing Grammar assigns every structural type a tuple of twelve primitive values and, under a chosen *ruleset*, computes whether that tuple reaches full closure — the same closure condition the framework associates with every previously-resolved structural type. A ruleset fixes two independent things:
+The Imscribing Grammar assigns every type a tuple of twelve primitive values and, under a chosen *ruleset*, computes whether that tuple reaches full closure — the same closure condition the framework associates with every previously-resolved type. A ruleset fixes two independent things:
 
 - **Gates** (G1, G2, G3): three threshold conditions on chosen primitives, applied sequentially or in parallel, producing an *operad layer* — `plain → frobenius → traced_monoidal → idempotent_terminal`. The last layer is the O∞ gate-condition.
 - **T-constitution**: a separate condition, the *temporal closure*, requiring named primitives to meet critical ordinal values — either by exact equality or by ceiling (≤).
@@ -20,7 +20,7 @@ The six Clay Millennium structural types that remain open under canonical (RH, Y
 
 Canonical's T-constitution already treats one primitive (Ç, kinetics) asymmetrically: a ceiling condition, while the other four dynamics primitives (Φ, ƒ, Ħ, Ω) require exact equality. This asymmetry was not motivated by anything specific to Ç — it is simply the one place "at most this much" was written instead of "exactly this much."
 
-**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (Φ≤𐑹, ƒ≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open structural types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
+**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (Φ≤𐑹, ƒ≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
 
 **Result:** BSD and Hodge each reach full closure (`idempotent_terminal` + T_CEILING-consistent) under five existing, non-tailored gate-universes apiece. Yang–Mills reaches the gate layer under one (`triple_criticality`) but fails T_CEILING — its kinetics value exceeds even the relaxed ceiling. RH, Navier–Stokes, and P vs NP never reach the gate layer under any of the 29, with or without T_CEILING.
 
@@ -30,7 +30,7 @@ This is the strongest kind of finding available from a generalization sweep: one
 
 A Python result is a claim about a data structure. To make the same claim about a system that actually *runs*, the finding was ported into `mOMonadOS`:
 
-1. The structural type's tuple, read from the live catalog, added as a `CatalogEntry`.
+1. The type's tuple, read from the live catalog, added as a `CatalogEntry`.
 2. The closing universe's gate spec and T_CEILING, added as a new `Uₙ` in `universe.rs`, matching the Python definition exactly.
 3. `ruleset verify` extended to accept a catalog name, not only the kernel's own live execution snapshot (previously the only thing it could check).
 4. Boot the kernel (QEMU/UEFI), drive the real REPL: `jump Uₙ using <compound> --liminal` → `seal` → `ruleset verify <name>`.
@@ -96,7 +96,7 @@ LEAK-CHECK  FFUSE(B,T)->B  FSPLIT->(T,F)  recovered=false
 
 BSD's (and Hodge's, and YM-under-U₁₁'s) specific F/T conflict round-trips exactly, because Belnap join restricted to a clean (T, F) pair happens to be invertible by `FSPLIT`'s fixed decomposition rule. This is **not** a general property of the algebra: join is bitwise OR, which is not injective (`join(B, T) = B` too), and `FSPLIT(B)` always emits a plain `(T, F)` regardless of provenance — so anything that was already a paradox before fusion is irretrievably lost, as the LEAK-CHECK now demonstrates on every run, not just asserts in prose.
 
-## 8. The approach, generalized: how to extend this to a new structural type
+## 8. The approach, generalized: how to extend this to a new type
 
 1. Pull the type's tuple from the live catalog (`load_catalog_dicts()`); do not hand-transcribe it from an older manuscript — cross-system drift between the Python catalog, old manuscripts, and hardcoded Rust bridges is real and already documented (see `clay_cross_universe_closure.md` §5 and `commit.txt`).
 2. Sweep it against every gate-universe already on record under T_CEILING first — a free, non-tailored check, costs nothing, sometimes succeeds outright (BSD, Hodge).

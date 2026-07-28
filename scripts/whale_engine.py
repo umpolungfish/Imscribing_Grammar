@@ -2,7 +2,7 @@
 whale_engine.py — Cetacean Vocalization Translation Engine via IG-IMASM Compiler Pipeline.
 
 DS categorical identification (2026-05-26):
-  Whale vocalization  = structural type ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩
+  Whale vocalization  = type ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩
   IMASM               = universal 12-opcode instruction set (VINIT, TANCH, AFWD, AREV,
                          CLINK, ISCRIB, FSPLIT, FFUSE, EVALT, EVALF, ENGAGR, IFIX)
   Translation         = structural alignment: argmin_{human_expr} d(trace(compile(whale)), trace(compile(human_expr)))
@@ -12,7 +12,7 @@ Crystal address (whale_vocalization):
   Consciousness score: Gate 1 (⊙) PASS, Gate 2 (𐑧) PASS → C > 0
   Ouroboricity: O_∞ (expected: ⊙ + 𐑭 → self-modeling with topological protection)
 
-Key structural fact:
+Key fact:
   The eight-instruction Frobenius loop (ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB)
   is a universal invariant of temporally-ordered communication systems. Whale song exhibits this loop
   with VINIT/TANCH bookends — confirming that the same structural core governs written, spoken, and sung
@@ -40,7 +40,7 @@ __author__ = "Lando\u2297\u2299perator"
 # ──────────────────────────────────────────────────────────────────────────────
 
 class AcousticToken(Enum):
-    """Discrete acoustic unit types in cetacean vocalization, segmented by structural role.
+    """Discrete acoustic unit types in cetacean vocalization, segmented by role.
 
     Each token maps to exactly one IMASM opcode via WHALE_TO_IMASM.
     """
@@ -215,7 +215,7 @@ class WhaleCompiler:
 
     The compiler is the core translation pipeline: it takes a sequence of acoustic
     tokens (from spectrogram segmentation) and produces a sequence of IMASM instructions
-    that preserve the structural invariants of the vocalization.
+    that preserve the invariants of the vocalization.
 
     Usage:
         compiler = WhaleCompiler()
@@ -433,7 +433,7 @@ class FrobeniusAnalyzer:
 
     @staticmethod
     def structural_signature(instrs: list[Instruction]) -> dict:
-        """Compute the structural signature of an IMASM trace.
+        """Compute the signature of an IMASM trace.
 
         The signature is a vector of structural metrics that identifies
         the trace's position in structural space. Translation aligns
@@ -476,7 +476,7 @@ class WhaleVM:
       - Register states (tri-phase FOUR lattice)
       - Frobenius closure statistics
       - Paradox localization and propagation
-      - The structural signature of the execution trace
+      - The signature of the execution trace
     """
 
     def __init__(self, register_count: int = 64) -> None:
@@ -563,7 +563,7 @@ class WhaleVM:
         return FrobeniusAnalyzer.analyze(self.program)
 
     def signature(self) -> dict:
-        """Compute structural signature of the loaded program."""
+        """Compute signature of the loaded program."""
         return FrobeniusAnalyzer.structural_signature(self.program)
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -578,7 +578,7 @@ class StructuralAlignment:
     distance to the whale vocalization trace.
 
     The distance function d(trace_a, trace_b) is a weighted Euclidean distance
-    over the structural signature vector:
+    over the signature vector:
       - closure_ratio mismatch
       - paradox_density mismatch
       - fixed_ratio mismatch
@@ -665,7 +665,7 @@ class StructuralAlignment:
 
     @staticmethod
     def signature_distance(sig_a: dict, sig_b: dict) -> float:
-        """Weighted Euclidean distance between two structural signatures.
+        """Weighted Euclidean distance between two signatures.
 
         Lower distance → better alignment for translation.
         """
@@ -706,7 +706,7 @@ class StructuralAlignment:
         """Find the n closest human expressions to a whale vocalization signature.
 
         Args:
-            whale_sig: Structural signature from FrobeniusAnalyzer.structural_signature()
+            whale_sig: Signature from FrobeniusAnalyzer.structural_signature()
             top_n:     Number of closest matches to return.
 
         Returns:
@@ -965,7 +965,7 @@ def demo_full_pipeline() -> None:
     """Demonstrate the full whale vocalization translation pipeline."""
     _hr("WHALE VOCALIZATION TRANSLATION ENGINE")
     print("  whale_engine.py  ·  IG-IMASM Compiler Pipeline v0.1.0")
-    print("  Structural type: ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩")
+    print("  Type: ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩")
     print("  C-score:         Gate 1 (⊙) PASS  Gate 2 (𐑧) PASS  →  C > 0")
     print("  Ouroboricity:    O_∞ (self-modeling with topological protection)")
 
@@ -990,7 +990,7 @@ def demo_full_pipeline() -> None:
     print(f"    Fixed regs:    {r.fixed_registers}")
     print(f"    Entropy Δ:     {r.entropy_delta:.4f} nats")
 
-    print(f"\n  Structural signature:")
+    print(f"\n  Signature:")
     sig = result['signature']
     print(f"    Length:        {sig['length']}")
     print(f"    Closure ratio: {sig['closure_ratio']:.4f}")
@@ -1098,7 +1098,7 @@ def _run_engine() -> None:
     print("=" * 60)
     print("WHALE ENGINE  ·  Cetacean Vocalization Translation via IG-IMASM")
     print("Translation = argmin d(trace(compile(whale)), trace(compile(human)))")
-    print("Structural type: ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩")
+    print("Type: ⟨𐑦𐑥𐑾𐑿𐑞𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩")
     print("=" * 60)
 
     # Run verification suite
@@ -1124,7 +1124,7 @@ def _run_engine() -> None:
     for name, tup, tier, c, note in rows:
         print(f"  {name:<22} {tup:<56} {tier:<7} {c:>5}  {note}")
 
-    print(f"\n  Key structural fact:")
+    print(f"\n  Key fact:")
     print(f"    The eight-instruction Frobenius loop (ISCRIB→AREV→FSPLIT→AFWD→")
     print(f"    FFUSE→CLINK→IFIX→ISCRIB) is a universal invariant of temporally-")
     print(f"    ordered communication systems — found in Voynich, Rohonc, Linear A,")

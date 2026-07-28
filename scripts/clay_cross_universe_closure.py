@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 clay_cross_universe_closure.py — Ceiling-generalized T-constitution test
-against the six open Clay Millennium structural types.
+against the six open Clay Millennium types.
 
 Background: ruleset_universe.py's canonical universe already treats one
 T-primitive (Ç, kinetics) asymmetrically as a ceiling condition (entry's

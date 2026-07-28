@@ -131,7 +131,7 @@ for b1 in B4:
             print(f"  B4²=({b1},{b2}) → {k:6s} {'EXACT' if is_exact else 'SPLIT'}")
 
 print()
-print("Key structural fact: The 8 exact boxes are EXACTLY those")
+print("Key fact: The 8 exact boxes are EXACTLY those")
 print("where the prefix is NOT in {(F,N), (F,F), (N,N), (N,F),")
 print("(N,B), (B,N), (F,B), (B,F)} — i.e., 8 out of 16.")
 

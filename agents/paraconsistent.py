@@ -12,7 +12,7 @@ Provides:
   - BelnapCircuit: multi-gate dialectic stability analysis
   - DialetheicAlignment: operational/logical/algebraic tri-proof
 
-Structural type: <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭>
+Type: <𐑦; 𐑶; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭>
 Ouroboricity: O_∞. Dialetheic gates: both open (B4.B is designated AND its negation is).
 """
 

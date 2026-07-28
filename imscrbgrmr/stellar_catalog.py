@@ -350,7 +350,7 @@ def _star_k_dwarf() -> Imscription:
     for life. Long K_schwa memory, moderate K_frtailgamma events (evolutionary pressure
     without sterilization), and organized Γ that maps to existing Earth biochemistry
     with minimal modification. The astrobiological consensus ('K-dwarfs are best
-    for life') has a structural reason: 𐑴 > Ω_1 (M-dwarf) while maintaining
+    for life') has a reason: 𐑴 > Ω_1 (M-dwarf) while maintaining
     sufficient K_frtailgamma for evolutionary pressure.
     """
     return Imscription(
@@ -370,7 +370,7 @@ def _star_k_dwarf() -> Imscription:
             "lower flare activity than M-dwarfs with longer lifetime than G-dwarfs "
             "(17-70 Gyr). Organized magnetic cycle (K_turnm), Γ_SELECTIVE, F_HIGH. "
             "Framework: optimal stellar grammar templater — 𐑴 with K_frtailgamma evolutionary "
-            "pressure preserved. The structural reason for the astrobiological consensus."
+            "pressure preserved. The reason for the astrobiological consensus."
         ),
         metadata={
             "domain_category": "stellar_main_sequence",
@@ -384,7 +384,7 @@ def _star_k_dwarf() -> Imscription:
             "tidal_lock_hz": False,
             "superhabitable_note": (
                 "Lineweaver (2001) and subsequent work identifies K-dwarfs as statistically "
-                "most likely to host complex life. Framework gives the structural reason: "
+                "most likely to host complex life. Framework gives the reason: "
                 "𐑴 (two topological protection mechanisms) + K_turnm (moderate kinetics, "
                 "no superflare disruption) + Γ_SELECTIVE (organized grammar injection) "
                 "+ long lifetime (K_schwa organizational memory can fully develop)."
@@ -1187,7 +1187,7 @@ def _gamma_ray_burst() -> Imscription:
     - Long GRBs (>2 sec): death of rapidly rotating massive stars (collapsar model)
     - Short GRBs (<2 sec): neutron star mergers (kilonova, see separate entry)
 
-    T_LINEAR: the defining structural feature of a GRB is the relativistic jet —
+    T_LINEAR: the defining feature of a GRB is the relativistic jet —
     a highly collimated (opening angle 1-10°), Lorentz-boosted beam. The jet IS
     the GRB. Linear topology: one-dimensional, directed, coherent.
 
@@ -1221,7 +1221,7 @@ def _gamma_ray_burst() -> Imscription:
         description=(
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
             "T_linear: relativistic jet (opening angle 1-10°, Γ_L 100-1000) — the "
-            "defining structural primitive. F_HIGH: extreme collimation precision. "
+            "defining primitive. F_HIGH: extreme collimation precision. "
             "Γ_SELECTIVE: directed beam, not broadcast. ⊙: the ultimate stellar "
             "critical transition — accumulated constraint structure released in single "
             "directed burst. Visible across the entire observable universe."
@@ -1780,7 +1780,7 @@ def _gravastar() -> Imscription:
     T_BOWL: the outer geometry is still a one-way surface from the exterior
     perspective. But the SHELL itself has thickness and P_±^ψ — it couples to
     both the exterior Schwarzschild geometry and the interior de Sitter geometry.
-    The shell's self-complementarity is the key structural feature: it is
+    The shell's self-complementarity is the key feature: it is
     simultaneously the boundary of two incompatible geometries.
 
     P_SELF_COMPLEMENTARY_PSEUDO: the shell couples to its de Sitter interior

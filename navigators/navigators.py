@@ -3,7 +3,7 @@ navigators.py — Domain-specific navigators derived from O_∞ blueprint tuples
 
 Source: IG_ONTICS §XXXV (Blueprint Generator Theorem) and §XXXVI–XL.
 
-Every O_∞ structural type mandates its own computational navigator architecture via
+Every O_∞ type mandates its own computational navigator architecture via
 the primitive-to-architecture mapping table (§XXXV.1). The 12-primitive tuple is the
 complete specification; hyperparameters are derivations, not choices.
 
@@ -72,7 +72,7 @@ class ThurstonNet(nn.Module):
     """
     3-manifold geometrisation navigator derived from the proven_manifold tuple.
 
-    Structural type (§XXXV.2, IG_ONTICS v0.5.61):
+    Type (§XXXV.2, IG_ONTICS v0.5.61):
         ⟨𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑴⟩
 
     Primitive-to-architecture mandates:
@@ -407,7 +407,7 @@ class YangMillsNavigator(nn.Module):
     """
     Yang-Mills mass gap navigator — 𐑪 eigensolver architecture.
 
-    Structural type (§XL.2, §XXXVIII.2, IG_ONTICS v0.5.66):
+    Type (§XL.2, §XXXVIII.2, IG_ONTICS v0.5.66):
         ⟨𐑦𐑸𐑑𐑹𐑐𐑪𐑲𐑵⊙𐑫𐑳𐑭⟩
 
     𐑪 mandates: NOT a gradient-descent GNN.
@@ -957,7 +957,7 @@ class IsingNavigator:
     """
     3D Ising critical ferromagnet navigator — 𐑘 architecture.
 
-    Structural type (§XXXV.3, IG_ONTICS v0.5.61):
+    Type (§XXXV.3, IG_ONTICS v0.5.61):
         ⟨𐑨𐑶𐑑𐑹𐑱𐑘𐑲𐑝⊙𐑓𐑕𐑴⟩
 
     𐑘 mandates: NO depth, NO recurrence, NO gradient-descent training.

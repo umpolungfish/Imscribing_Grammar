@@ -91,7 +91,7 @@ def crystal_group():
     Architecture (imscriptive, Frobenius O_∞):
       Boundary: (Φ, P, Ω, D) → 400 tier cells
       Bulk:     (T, R, F, K, G, Γ, H, S) → 43,200 inner types per cell
-      Total:    400 × 43,200 = 17,280,000 structural types
+      Total:    400 × 43,200 = 17,280,000 types
 
     \b
     Subcommands:
@@ -102,7 +102,7 @@ def crystal_group():
       encode     Tuple → canonical address
       decode     Address → tuple
       nearest    Nearest catalog entries to a partial/full tuple
-      count      Count matching structural types
+      count      Count matching types
       query      Imscriptive boundary query (Φ, P, Ω, D → tier cells)
     """
 
@@ -300,7 +300,7 @@ def crystal_nearest(kvs, n: int, same_tier: bool):
 @crystal_group.command("count")
 @click.argument("kvs", nargs=-1, metavar="PRIM=VALUE...")
 def crystal_count(kvs):
-    """Count structural types matching a set of primitive constraints.
+    """Count types matching a set of primitive constraints.
 
     \b
     Examples:
@@ -375,7 +375,7 @@ def crystal_query(phi, p, omega, d, tier):
     console.print(tbl)
     console.print(
         f"  [bold]{len(cells):,}[/bold] matching cells  ·  "
-        f"[bold]{total_types:,}[/bold] structural types"
+        f"[bold]{total_types:,}[/bold] types"
     )
     console.print()
 
@@ -399,7 +399,7 @@ def domain_group():
     Subcommands:
       info      Summary table: entries with tier, K, P, Φ (and C-score for consciousness)
       verify    Theorem verification (key §74–§77 predictions)
-      distance  Structural distance breakdown between two entries
+      distance  Distance breakdown between two entries
       nearest   Nearest catalog entries to a named entry
     """
 
@@ -442,7 +442,7 @@ def domain_verify(domain):
 @click.argument("name_b")
 @_domain_option
 def domain_distance(name_a: str, name_b: str, domain):
-    """Structural distance breakdown between two catalog entries.
+    """Distance breakdown between two catalog entries.
 
     \b
     If --domain is omitted the first domain that contains NAME_A is used.
@@ -719,12 +719,12 @@ def adscft_group():
     """AdS/CFT imscriptive duality navigator — bulk/boundary distance, RG flow.
 
     \b
-    Structural type:
+    Type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_omega / T_openo  → imscriptive: boundary encodes bulk (O_∞ tier)
       P_doublebarpipe         → Frobenius: conformal symmetry is explosion-free
       ⊙            → CFT lives precisely at the critical fixed point
@@ -759,7 +759,7 @@ def adscft_describe():
         "[bold]Key methods:[/bold]\n"
         "  bulk_boundary_distance   distance between bulk theory and boundary CFT\n"
         "  find_cft_fixed_points    catalog entries co-typed with AdS/CFT boundary\n"
-        "  imscriptive_entanglement Ryu-Takayanagi via structural distance\n"
+        "  imscriptive_entanglement Ryu-Takayanagi via distance\n"
         "  renormalization_trajectory UV→IR flow as directed distance d_→",
         title="AdS/CFT Navigator", expand=False,
     ))
@@ -778,7 +778,7 @@ def adscft_probe():
 @click.argument("bulk_type")
 @click.argument("cft_type")
 def adscft_bulk_boundary(bulk_type: str, cft_type: str):
-    """Compute structural distance between a bulk theory and boundary CFT.
+    """Compute distance between a bulk theory and boundary CFT.
 
     \b
     Example:
@@ -805,12 +805,12 @@ def mirror_group():
     """Mirror symmetry navigator — Calabi-Yau pairs, A-B model, T-duality tower.
 
     \b
-    Structural type:
+    Type:
       D_invomega T_bullseye R_downstep P_upsilon F_hardsign K_schwa
       G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_crtwo
 
     \b
-    Key structural facts:
+    Key facts:
       D_invomega   → infinite-dimensional moduli space of CY compactifications
       T_bullseye  → A-model ↔ B-model crossing: symplectic meets complex
       P_upsilon     → quantum phase symmetry (complex structure deformation)
@@ -889,12 +889,12 @@ def tqft_group():
     """TQFT navigator — knot invariants, Chern-Simons, modular tensor categories.
 
     \b
-    Structural type:
+    Type:
       D_turnthree T_bullseye R_downstep P_upsilon F_hardsign K_schwa
       G_revapostrophe Gamma_broad ⊙ H_turntwo n:m Omega_dzlig
 
     \b
-    Key structural facts:
+    Key facts:
       D_turnthree  → triangulated state space (simplicial decomposition)
       T_bullseye    → surgery crossing: 3-manifold ↔ knot complement duality
       P_upsilon       → quantum group symmetry (q-deformed at root of unity)
@@ -976,12 +976,12 @@ def category_theory_group():
     """Category theory navigator — adjunctions, limits, colimits, topos theory.
 
     
-    Structural type:
+    Type:
       D_omega T_openo R_ctz P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
-    Key structural facts:
+    Key facts:
       D_omega / T_openo  → imscriptive: entire category encoded
       R_ctz            → categorical relations (functoriality, natural transformations)
       P_doublebarpipe         → Frobenius interface with categorical uncertainty
@@ -1099,12 +1099,12 @@ def htt_group():
     """Homotopy type theory navigator — univalence, higher groupoids, univalent foundations.
 
     
-    Structural type:
+    Type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_invscripta n:m Omega_crtwo
 
     
-    Key structural facts:
+    Key facts:
       D_omega / T_openo  → imscriptive: types and paths encoded
       R_downstep         → adjoint: univalence (paths ≃ equivalences)
       P_doublebarpipe         → self-dual with uncertainty on higher identities
@@ -1186,12 +1186,12 @@ def algebraic_geometry_group():
     """Algebraic geometry navigator — schemes, cohomology, descent, moduli spaces.
 
     
-    Structural type:
+    Type:
       D_omega T_bullseye R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
-    Key structural facts:
+    Key facts:
       D_omega            → imscriptive: all schemes encoded
       T_bullseye          → local rings ↔ global sections ↔ Spec
       R_downstep          → adjoint: pushforward ↔ pullback
@@ -1293,12 +1293,12 @@ def quantum_field_theory_group():
     """Quantum field theory navigator — RG flow, fixed points, dualities, anomalies.
 
     
-    Structural type:
+    Type:
       D_omega T_commatailz R_subrightarrow P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo S_ltailm Omega_dzlig
 
     
-    Key structural facts:
+    Key facts:
       D_omega            → imscriptive: all QFTs encoded
       T_commatailz        → box topology: theory⊗symmetry⊗spacetime
       R_subrightarrow           → supervenience: operators supervene on couplings
@@ -1385,12 +1385,12 @@ def langlands_program_group():
     """Langlands program navigator — Galois/automorphic correspondence, L-functions.
 
     
-    Structural type:
+    Type:
       D_omega T_openo R_downstep P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_broad ⊙ H_invscripta n:m Omega_dzlig
 
     
-    Key structural facts:
+    Key facts:
       D_omega / T_openo → imscriptive: Galois reps ↔ automorphic forms
       R_downstep        → adjoint functoriality: base change, lift, descent
       Gamma_broad     → broad correspondence: global-to-global
@@ -1479,12 +1479,12 @@ def representation_theory_group():
     """Representation theory navigator — characters, tensor decompositions, Lie theory.
 
     
-    Structural type:
+    Type:
       D_omega T_commatailz R_ctz P_doublebarpipe F_hardsign K_schwa
       G_revapostrophe Gamma_seq ⊙ H_turntwo n:m Omega_dzlig
 
     
-    Key structural facts:
+    Key facts:
       D_omega / T_commatailz → imscriptive: all groups, algebras, representations
       R_ctz                 → categorical: induction↔restriction, tensor product
       ⊙                 → self-modeling: group algebra = representation category

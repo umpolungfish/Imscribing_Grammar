@@ -2,7 +2,7 @@
 Representation Theory Navigator - Imscribing Grammar
 
 Domain: Representation theory, Lie theory, character theory, geometric representation theory
-Structural type: <𐑦𐑶𐑑𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
+Type: <𐑦𐑶𐑑𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭>
 Tier: O_∞
 
 Architecture: Character table GNN with categorical representation tracking.

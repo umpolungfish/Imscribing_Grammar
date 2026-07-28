@@ -98,7 +98,7 @@ fig1.text(0.5, 0.965, "Crystal of Types",
           ha="center", va="top", color="white",
           fontsize=26, fontweight="bold", fontfamily="sans-serif")
 fig1.text(0.5, 0.945,
-          r"10,368,000 structural types  ·  $5(\Phi) \times 3(\Omega)$ periods/groups  ·  "
+          r"10,368,000 types  ·  $5(\Phi) \times 3(\Omega)$ periods/groups  ·  "
           r"each cell: $5(P)\times4(D)\times34{,}560\text{ inner} = 691{,}200$ types",
           ha="center", va="top", color="#AAAACC", fontsize=13)
 
@@ -213,7 +213,7 @@ for spine in ax2.spines.values():
     spine.set_visible(False)
 ax2.set_xticks([])
 ax2.set_yticks([])
-ax2.set_title("Periodic Crystal — Tier Census: 10,368,000 = $4^5 \\times 5^3 \\times 3^4$ structural types",
+ax2.set_title("Periodic Crystal — Tier Census: 10,368,000 = $4^5 \\times 5^3 \\times 3^4$ types",
               color="white", fontsize=20, fontweight="bold", pad=16)
 
 # Simple horizontal stacked bar for the full space

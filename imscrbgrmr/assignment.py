@@ -17,7 +17,7 @@ Primitives and their assignment routes:
   F   (Fidelity)          → ΔG via integer Boltzmann ratios (P-21)
   K   (KineticCharacter)  → ΔG‡ via Eyring barrier thresholds
   G   (Granularity)       → component-count / spatial scale
-  D   (Dimensionality)    → structural type (molecule / assembly / cycle / holographic)
+  D   (Dimensionality)    → type (molecule / assembly / cycle / holographic)
   T   (Topology)          → interaction graph structure
   R   (RecognitionMode)   → bond type + reversibility + catalytic flag
   P   (Polarity)          → partner symmetry
@@ -396,7 +396,7 @@ class PrimitiveAssignmentEngine:
         is_holographic: bool = False,
     ) -> PrimitiveAssignment:
         """
-        Assign D from structural type flags.
+        Assign D from type flags.
 
           MOLECULAR        : single molecule / single covalent entity
           SUPRAMOLECULAR   : non-covalent assembly, crystal, scaffold
@@ -726,7 +726,7 @@ class PrimitiveAssignmentEngine:
         Assign Φ from Varma probe score and G/D degeneracy signal.
 
         This is the hardest primitive to assign algorithmically because it encodes
-        a dynamical regime, not a static structural property.  The Varma score
+        a dynamical regime, not a static property.  The Varma score
         (from criticality_probe) is the best available proxy.
 
         Rules:
@@ -995,7 +995,7 @@ class PrimitiveAssignmentEngine:
 
         Returns:
             ImscriptionAssignment with per-primitive results, boundary flags, and
-            notes listing any detected structural features.
+            notes listing any detected features.
         """
         from .rdkit_utils import smiles_to_measurements
         m = smiles_to_measurements(smiles, description)

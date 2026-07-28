@@ -19,7 +19,7 @@ from boundary_operator_LLM.model import BoundaryOperatorLLM, BoundaryConfig
 
 
 class TrainingConfig:
-    """Training configuration with structural properties."""
+    """Training configuration with properties."""
     def __init__(self):
         # Data
         self.dataset_path = "./data/structure_corpus.jsonl"
@@ -73,7 +73,7 @@ class StructureDataset:
         """Generate synthetic structural descriptions."""
         templates = [
             "The {system} operates at {D} dimensional space with {T} topology and {R} coupling.",
-            "Structural type: {D}={D_val}, {T}={T_val}, {R}={R_val}, {P}={P_val}",
+            "Type: {D}={D_val}, {T}={T_val}, {R}={R_val}, {P}={P_val}",
             "The {name} has {dim} dimensions and {layers} layers with {heads} attention heads.",
             "Criticality at {phi} with winding number {omega} and chirality {H}.",
             "The system exhibits {K} kinetics with {Gamma} global interaction.",

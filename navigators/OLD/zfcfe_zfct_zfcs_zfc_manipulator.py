@@ -6,7 +6,7 @@ Extends the ZFC triangle (ZFC/ZFCs/ZFCt) with ZFC_fe as the apex.
 
 Lattice (chain): ZFC < ZFCs < ZFCt < ZFC_fe
 
-Key structural fact:
+Key fact:
   d(ZFCt, ZFC_fe) = 2 — Dh: 𐑛->𐑦 (+3), Ha: 𐑖->𐑫 (+1)
   ZFC_fe-specific promoted atoms: HOLOGRAPHIC_STATE (Dh_o), ETERNAL_FIXEDPOINT (Ha_!)
 

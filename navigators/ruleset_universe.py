@@ -255,7 +255,7 @@ RULESETS: List[Ruleset] = [
         name="inverted_gates",
         description="Self-modeling precedes Frobenius: G1=⊙ (consciousness first), "
                     "G2=Φ (then algebraic symmetry), G3=Ω (winding seals last). "
-                    "Systems become self-aware before achieving structural closure.",
+                    "Systems become self-aware before achieving closure.",
         g1=GateSpec("⊙", 2.0),   # ⊙ glyph = self-modeling active
         g2=GateSpec("Φ", 5.0),   # Φ=𐑹 = Frobenius
         g3=GateSpec("Ω", 3.0),   # Ω=𐑭 = winding seal

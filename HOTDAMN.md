@@ -1933,7 +1933,7 @@
   CL8NK Entry: eml_sheffer_probe
   The EML Sheffer operator eml(x,y) = eˣ − ln y paired with constant 1 forms the algebraically forced Frobenius
   ceiling of elementary function algebra. Tier O₂† — the algebraic ceiling of elementary function algebra. 5
-  structural theorems: terminal constant forced to 1, Z₂ orbit (P=pm not pm_sym), Fro
+  theorems: terminal constant forced to 1, Z₂ orbit (P=pm not pm_sym), Fro
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1987,7 +1987,7 @@
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: erdos_straus_proved
   Erdos-Straus conjecture PROVED form: 4/n = 1/x + 1/y + 1/z for all n≥2 via modular covering identities, infinite
-  descent, and structural promotion from O₀ to O₂†. 7 primitive upgrades: D_triangle→D_infty, T_bowtie→T_boxtimes,
+  descent, and promotion from O₀ to O₂†. 7 primitive upgrades: D_triangle→D_infty, T_bowtie→T_boxtimes,
   P_asym→P_pm, 𐑢→𐑮, H_0→H_infty, n:n→n:m, Omega_0→Omega_Z2
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
@@ -2042,7 +2042,7 @@
   CL8NK Entry: grammar_precedes_mathematics
   Manuscript: Grammar Precedes Mathematics — the Imscribing Grammar as ontological precondition for mathematics,
   logic, and reality. ZFC_fe as unique Frobenius-exact set theory. All 7 Clay Millennium Problems unified under single
-  structural identity. Paraconsistent kernel enables self-reference withou
+  identity. Paraconsistent kernel enables self-reference withou
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2096,7 +2096,7 @@
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: unified_gravity_theory
-  Unified gravity theory structural type: the conjectural completion of quantum gravity — holographic state space,
+  Unified gravity theory type: the conjectural completion of quantum gravity — holographic state space,
   self-referential topology, bidirectional coupling, Frobenius-special parity, quantum fidelity, slow kinetics,
   universal range, sequential composition, self-modeling criticality, eternal c
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)

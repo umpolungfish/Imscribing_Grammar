@@ -116,7 +116,7 @@ def leeYangFrobeniusType : FrobeniusType := .special
 /-- RH: conjectured full Frobenius (Frobenius condition holds) but not special
     (μ ∘ δ ≠ id, because nun is an implicit symmetry).
     This encodes Conjecture 23.1 of PRIMITIVE_THEOREMS as a definition —
-    not a sorry, but a precise structural claim. -/
+    not a sorry, but a precise claim. -/
 def rhFrobeniusType : FrobeniusType := .full
 
 /-- Lee-Yang is strictly above RH in Frobenius completeness. -/

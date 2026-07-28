@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (Φ,ƒ,Ç,Ħ,Ω) AND three structural primitives "
+                    "five dynamic primitives (Φ,ƒ,Ç,Ħ,Ω) AND three primitives "
                     "(Ð,Þ,Ř). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
@@ -182,7 +182,7 @@ NEW_RULESETS = [
                     "hbar regime). Classical (ℓ) and thermal (ð) systems cannot "
                     "Frobenius-close — they lack the coherence required for self-modeling. "
                     "G2=⊙≥⊙. G3=Φ≥𐑹. In this universe, only quantum-coherent systems "
-                    "can achieve structural closure. Classical systems stay plain "
+                    "can achieve closure. Classical systems stay plain "
                     "regardless of their other primitives.",
         g1=GateSpec("ƒ", 3.0),   # 𐑐 = quantum/hbar (ord 3, max)
         g2=GateSpec("⊙", 2.0),
@@ -211,7 +211,7 @@ NEW_RULESETS = [
                     "No ⊙ dominance; no Σ n:m monopoly. Meet, join, and tensor "
                     "are pure lattice operations — the ordinary-weighted sum of "
                     "every primitive. In this universe, nothing is special. "
-                    "Systems that rely on absorption for structural closure are plain.",
+                    "Systems that rely on absorption for closure are plain.",
         absorption_rules=(),  # empty — no absorption at all
     ),
 

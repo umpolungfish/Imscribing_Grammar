@@ -127,7 +127,7 @@ inductive Winding where
 /-
 ## 2. Structural Type (12-tuple)
 
-A structural type is the product of all 12 primitive values.
+A type is the product of all 12 primitive values.
 -/
 
 structure StructuralType where
@@ -228,7 +228,7 @@ def Winding.toNat : Winding → ℕ
 /-
 ## 4. Distance Metric (Diagonal Approximation)
 
-Weighted Euclidean distance between two structural types.
+Weighted Euclidean distance between two types.
 Weights per primitive (diagonal approximation of gᵢⱼ):
   D:1, T:1, R:1, P:1, F:1, K:1, G:1, Gamma:1, Phi:1, H:0.8, S:1, Omega:1
 -/

@@ -201,7 +201,7 @@ SEP_IDX = TOKEN2IDX["SEP_PRIM"]
 # Each template is a list of token strings representing the canonical ZFC
 # formula fragment for that primitive value.
 #
-# Design principle: the template encodes the *structural signature* of the
+# Design principle: the template encodes the *signature* of the
 # primitive value, not a full proof.  The encoder reads these signatures.
 #
 # Non-transmissible values are marked ⚠ COLLAPSE with the target value.

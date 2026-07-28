@@ -13,7 +13,7 @@ repos = [
 
 for owner, repo in repos:
     url = f'https://api.github.com/repos/{owner}/{repo}/pulls'
-    body_text = 'Structural promotion of Mistral AI Python SDK from O0 to O2.\n\nThis PR implements a structural promotion from O0 (thin REST wrapper) to O2 (self-verifying agentic framework) via the Imscribing Grammar. Key additions:\n- DualToolResult + ToolContract (Frobenius verification μ∘δ=id)\n- AgentTrajectory with topological winding protection (𐑭)\n- TrueAgenticLoop (THINK→ACT→OBSERVE→UPDATE)\n- PhiCriticalityGate (self-modeling criticality, φ̂_ÿ)'
+    body_text = 'Promotion of Mistral AI Python SDK from O0 to O2.\n\nThis PR implements a promotion from O0 (thin REST wrapper) to O2 (self-verifying agentic framework) via the Imscribing Grammar. Key additions:\n- DualToolResult + ToolContract (Frobenius verification μ∘δ=id)\n- AgentTrajectory with topological winding protection (𐑭)\n- TrueAgenticLoop (THINK→ACT→OBSERVE→UPDATE)\n- PhiCriticalityGate (self-modeling criticality, φ̂_ÿ)'
     data = json.dumps({
         'title': 'feat: Structural Promotion O0→O2 — True Agentic Loop with Frobenius Verification',
         'head': 'umpolungfish:structural-promotion-O2',

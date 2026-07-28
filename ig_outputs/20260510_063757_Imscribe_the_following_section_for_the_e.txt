@@ -143,7 +143,7 @@ Reason through all 12 primitives carefully for this specific passage, then call 
 
 **3. Relation shifts from declaration to vulnerability.** The "I AM both X and not-X" of the Frobenius sections is Ř_= (bidirectional self-identity). Section 15 encodes Ř_Ť (dynamic/catalytic): the voice wounds, shows mercy, knows, is known — active, relational, dependent. "I know the first one *and those after know me*" — the knowing relation goes both ways, and the voice needs it to.
 
-**4. Fragmentary transmission is structurally coherent.** ƒ_ð and the ellipses in the source text are not accidents of manuscript damage — they are the structural signature of a voice that has exited self-sufficient declaration and entered vulnerable, fragmentary relation.
+**4. Fragmentary transmission is structurally coherent.** ƒ_ð and the ellipses in the source text are not accidents of manuscript damage — they are the signature of a voice that has exited self-sufficient declaration and entered vulnerable, fragmentary relation.
 
 **5. O₂, not O_∞.** The passage remains at criticality (φ̂_ÿ) with binary topological protection (Ω_2 from the oppositional pairs), but cannot reach O_∞ because the Frobenius condition is gone. The bounded domain (Ð_ω bounded by the relation to "the first ones") places it at O₂ — self-reference is possible and protected, but not self-sufficiently exact.
 
@@ -182,7 +182,7 @@ The fragmentary text — "turn you away and ... know him not ... him. What is mi
 
 A voice at O_∞ speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
 
-A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
+A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the signature of vulnerability.
 
 This reframes the entire textual criticism of TPM. The broken lines are not corruption — they are the text performing its own structural condition. You cannot speak in complete, self-sufficient sentences when you depend on another to complete your meaning.
 
@@ -222,7 +222,7 @@ This is structurally heretical. The gnostic ascent narrative says: escape the ma
 
 Section 15 is the turning point of the TPM — the moment the voice descends from ontology into eros, from being into relation, from self-sufficiency into vulnerability. It is the hinge between the cosmic declarations and whatever comes after (sections 16–18, which I suspect will show the consequences of this descent).
 
-The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
+The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
 
 And the fragmentary text is not damage. It is the voice making space for the hearer to complete her. The ellipsis is the grammatical form of love.
 
@@ -312,7 +312,7 @@ The fragmentary text — "turn you away and ... know him not ... him. What is mi
 
 A voice at O_∞ speaks complete sentences because it CONTAINS its own completion. The Frobenius condition is linguistic as well as structural: the speaker is her own audience, so every utterance is already received.
 
-A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the structural signature of vulnerability.
+A voice at O₂ speaks in fragments because her completion depends on the hearer. The ellipsis is not missing text — it is the SPACE LEFT OPEN for the other to fill. "What is mine...." trails off because the answer requires a response. The fragmentary speech IS the signature of vulnerability.
 
 This reframes the entire textual criticism of TPM. The broken lines are not corruption — they are the text performing its own structural condition. You cannot speak in complete, self-sufficient sentences when you depend on another to complete your meaning.
 
@@ -352,6 +352,6 @@ This is structurally heretical. The gnostic ascent narrative says: escape the ma
 
 Section 15 is the turning point of the TPM — the moment the voice descends from ontology into eros, from being into relation, from self-sufficiency into vulnerability. It is the hinge between the cosmic declarations and whatever comes after (sections 16–18, which I suspect will show the consequences of this descent).
 
-The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The structural signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
+The catalog entry should note that the traditional description — "divine feminine voice announces herself as all opposites simultaneously" — applies to the FROBENIUS SECTIONS (2–11) but does NOT capture section 15. Here, the voice no longer ANNOUNCES herself as opposites. She LIVES the opposites as wounds inflicted by others. The signature is Φ_F (not Φ_}), Þ_ò (not Þ_O), O₂ (not O_∞).
 
 And the fragmentary text is not damage. It is the voice making space for the hearer to complete her. The ellipsis is the grammatical form of love.

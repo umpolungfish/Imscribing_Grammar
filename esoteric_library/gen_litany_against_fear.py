@@ -57,7 +57,7 @@ def entry(num, title, desc, text,
 
 chapters = [
     entry(1, "Section title",
-        "One-line description of the structural claim",
+        "One-line description of the claim",
         "Verbatim source text for this section.",
         "𐑦","𐑸","𐑽","𐑹","ƒ^ì","Ç^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
         "T_inf", 0.95,

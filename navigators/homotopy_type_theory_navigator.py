@@ -2,7 +2,7 @@
 Homotopy Type Theory Navigator - Imscribing Grammar
 
 Domain: Homotopy type theory, univalent foundations, higher topos theory
-Structural type: <𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑴>
+Type: <𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑴>
 Tier: O_∞
 
 Architecture: Univalence-preserving GNN with univalence axiom enforcement.

@@ -38,7 +38,7 @@ DOC_DIR = Path("/home/mrnob0dy666/imsgct/ig-docs") / "mycelial_conduit"
 STEPS = {
     1: ("lookup_base", "🔍 Catalog search for base materials"),
     2: ("ouroborics", "🌀 Ouroboricity tier analysis of components"),
-    3: ("structural_distance", "📏 Structural distance between components"),
+    3: ("structural_distance", "📏 Distance between components"),
     4: ("design_targets", "🔗 Find nearest structural neighbors (target types)"),
     5: ("design_space", "💎 Crystal navigation — how many types match target constraints"),
     6: ("consciousness", "🧠 Consciousness score — baseline vs engineered target"),
@@ -105,12 +105,12 @@ def step_ouroborics():
     print("  distributed_ganglia_system_v1:    O_∞ (self-modeling loop CLOSED)")
     print()
     print("  ⇒ To engineer MB-NC: need to promote mycelium+graphene")
-    print("    from O₀ → O_∞ through structural promotion cascade.")
+    print("    from O₀ → O_∞ through promotion cascade.")
     print("  ✅ Step 2 complete")
 
 
 ###############################################################################
-# STEP 3 — Structural distance
+# STEP 3 — Distance
 ###############################################################################
 def step_structural_distance():
     banner("STEP 3: 📏 Structural Distance Between Components")
@@ -312,7 +312,7 @@ def step_protein_classify():
     print("  Composite:                  D=𐑨, T=𐑡, K=𐑧 (slow kinetics)")
     print()
     print("  Each amino acid maps to one of 12 IG primitives.")
-    print("  The protein as a whole has a structural type signature.")
+    print("  The protein as a whole has a type signature.")
     print("  ✅ Step 9 complete")
 
 
@@ -400,7 +400,7 @@ Light-gated cation channel. Activation: 470 nm (matches NanoLuc emission).
 ## 4. Genetic Code Verification
 
 The B4 nucleotide lattice confirms:
-- 64 codons × 270,000 types per codon = 17,280,000 total structural addresses
+- 64 codons × 270,000 types per codon = 17,280,000 total addresses
 - Watson-Crick pairing: G↔C, A↔U (fixed-point-free)
 - All codons verified Frobenius-closed
 
