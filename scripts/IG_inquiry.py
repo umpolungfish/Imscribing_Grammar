@@ -3059,6 +3059,8 @@ class ToolDispatcher:
             return self._hyper_gematria(**args)
         elif name in ("shared_floor", "proven_floor"):
             return self._shared_floor(**args)
+        elif name in ("additive_spectrum", "rep_spectrum"):
+            return self._additive_spectrum(**args)
         elif name in ("list", "list_tools", "tools"):
             return self._list_tools()
         elif name == "quantum_compile":
@@ -3448,6 +3450,38 @@ class ToolDispatcher:
             "tools": {n: REQ.get(n, "no required arguments recorded") for n in names},
             "call": 'imscribe(tool_name="<name>", args={...})',
         }
+
+    def _additive_spectrum(self, elements=None, M=None):
+        """Representation counts as a winding spectrum.
+
+        r_A(n) = #{(a,b) : a+b = n} is the n-th coefficient of f(z)^2 where
+        f(z) = sum z^a. On the unit circle f is a function of a WINDING, so
+        evaluating the generating function is evaluating at a rational number of
+        turns, and r is recovered from the root-of-unity lattice exactly.
+
+        This is the move from counting at the critical exponent to the complex
+        plane, which is the slot `shared_floor` names as the gap between the
+        proved counting bound and the proven attractor.
+
+        Note f(z)^2 carries the SUM counts; |f(z)|^2 carries the DIFFERENCE
+        counts. The recovery is checked against a direct count, so extracting
+        from the wrong one is reported rather than tolerated.
+        """
+        import importlib, sys as _s
+        from pathlib import Path as _P
+        d = str(_P(__file__).resolve().parent)
+        if d not in _s.path:
+            _s.path.insert(0, d)
+        mod = importlib.import_module("additive_spectrum")
+        if elements is None:
+            return {"status": "error",
+                    "error": "give elements=<list of naturals>"}
+        A = elements if isinstance(elements, list) else \
+            [int(x) for x in str(elements).replace(",", " ").split()]
+        out = mod.spectrum(A, M)
+        if out.get("status") == "ok":
+            out["strict_sidon"] = mod.sidon_check(A)
+        return out
 
     def _shared_floor(self, match=None, names=None):
         """The floor of a family of entries, computed rather than asserted.
