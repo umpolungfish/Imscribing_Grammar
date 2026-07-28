@@ -1,20 +1,29 @@
-The roster promised a tool that did not exist, and a running agent could not see
-a new one.
+A tool that does not exist no longer reports success.
 
-`imscribe(tool_name="list")` now names every grammar tool with its arguments and
-the call form. The roster text had been telling agents to call it since the
-roster was written, so an agent following its own instructions got
-"Unknown tool: list" and then had to guess its way to anything. The roster line
-also named the parameter `tool` where the dispatcher takes `tool_name`, and it
-implied the base roster covered the grammar tools; it says now that the roster
-is the base set and `list` is how to reach the rest.
+The worst of the three. Calling an unregistered name emitted "(unknown tool: X)",
+found no verify function, and took the no-verify branch: "Frobenius trivially
+closed", B4=T. So a call to a tool that does not exist was reported to the loop
+as a successful winding. Nothing re-entered THINK with a failure, and the same
+wrong call could be repeated with the loop counting each one as progress. Seen
+live on crystal_count and crystal_navigate. An unknown tool now closes nothing
+and says so.
 
-The lattice_flow import reloads when an expected function is absent. A
-long-running agent holds whatever copy of a module it imported first, so a
-function added mid-session is missing from the cached copy and the call fails
-with "has no attribute" against a file that plainly has it. Seen live:
-imasm_transitions returned that error while the function was present on disk and
-importable from a fresh process.
+It also says where the real tool is. Most unknown names are grammar tools called
+as though they were base tools, which is invisible from a name alone, so the
+message names the imscribe form for them and offers near matches otherwise. The
+lookup reads the dispatcher's own chain rather than the required-argument
+registry, since that registry holds only the tools whose arguments were worth
+documenting and crystal_count is absent from it — the case that produced the
+log.
 
-Neither is a failure of the agent. Both are the harness telling it something
-untrue and then reporting its compliance as an error.
+aleph_encode imported compute_ouroboricity from space_search.primitives, which
+has no such function and never had one. The import raised before the try/except
+around the CALL could catch anything, so the tool failed outright rather than
+degrading to an unknown tier. The obvious replacement does heavy work at import
+and would hang a tool call rather than break it, which is worse, so the tier is
+simply not computed there and the field says which tool to ask.
+
+Verified live: the unknown-tool path, the grammar-tool hint, the dispatch-chain
+lookup, list, and the reload. The aleph import is fixed by inspection only —
+that tool is slow for unrelated reasons and I could not get an end-to-end run
+inside a timeout.

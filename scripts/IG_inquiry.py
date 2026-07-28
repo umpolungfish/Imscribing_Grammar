@@ -5126,10 +5126,15 @@ class ToolDispatcher:
         try:
             vec, kind = self._resolve_hebrew(text)
             tup = self._vec_to_tuple(vec)
-            from space_search.primitives import compute_ouroboricity  # type: ignore
+            # `space_search.primitives` has no `compute_ouroboricity` and has not
+            # had one; the import raised before the try/except around the CALL
+            # could do anything, so aleph_encode failed outright rather than
+            # degrading to an unknown tier. The real function lives in
+            # IG_primitive_map.
             tier = "?"
             try:
-                tier = compute_ouroboricity(tup)
+                from IG_primitive_map import ouroboricity  # type: ignore
+                tier = ouroboricity(tup)
             except Exception:
                 pass
             # distance to samadhi

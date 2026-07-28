@@ -2793,6 +2793,33 @@ def _load_system_prompt() -> str:
 
 
 
+
+_GRAMMAR_TOOL_NAMES = None
+
+
+def _grammar_tool_names():
+    """Every name the grammar dispatcher answers to, read from its dispatch chain.
+
+    Not `_IG_REQUIRED_ARGS`: that records only the tools whose arguments were
+    worth documenting, so a dispatchable tool like `crystal_count` is absent
+    from it and would be reported as simply unknown.
+    """
+    global _GRAMMAR_TOOL_NAMES
+    if _GRAMMAR_TOOL_NAMES is None:
+        import re as _re
+        from pathlib import Path as _P
+        try:
+            src = (_P(__file__).resolve().parent.parent / "scripts"
+                   / "IG_inquiry.py").read_text(encoding="utf-8")
+            found = set(_re.findall(r'elif name == "([a-z0-9_]+)"', src))
+            # the aliases on the `in (...)` branch, e.g. list / list_tools / tools
+            for grp in _re.findall(r'elif name in \(([^)]*)\)', src):
+                found |= set(_re.findall(r'"([a-z0-9_]+)"', grp))
+            _GRAMMAR_TOOL_NAMES = found
+        except Exception:
+            _GRAMMAR_TOOL_NAMES = set(_IG_REQUIRED_ARGS)
+    return _GRAMMAR_TOOL_NAMES
+
 def _tool_roster() -> str:
     """Every tool, named and described, laid out in full.
 
@@ -3466,8 +3493,20 @@ class TrueAgenticAgent:
         emit_fn   = _EMIT_FNS.get(action_name)
         verify_fn = _VERIFY_FNS.get(action_name)
 
-        if emit_fn is None:
-            tool_output = f"(unknown tool: {action_name})"
+        unknown_tool = emit_fn is None
+        if unknown_tool:
+            # Say what it is and where the real one lives. Most "unknown" names
+            # are grammar tools called as though they were base tools, and the
+            # difference is not visible from a name alone.
+            from difflib import get_close_matches
+            near = get_close_matches(action_name, list(_EMIT_FNS), n=3, cutoff=0.6)
+            grammar = action_name in _grammar_tool_names()
+            hint = (f' — this is a GRAMMAR tool: call '
+                    f'imscribe(tool_name="{action_name}", args={{...}})'
+                    if grammar else
+                    (f" — did you mean {', '.join(near)}?" if near else
+                     ' — imscribe(tool_name="list") names every grammar tool'))
+            tool_output = f"(unknown tool: {action_name}){hint}"
         else:
             try:
                 tool_output = emit_fn(action_input)
@@ -3500,7 +3539,14 @@ class TrueAgenticAgent:
 
         verify_name = f"{action_name}_verify"
         verify_args = action_input
-        if verify_fn is None:
+        if unknown_tool:
+            # A tool that does not exist did not close anything. Reporting it as
+            # trivially closed told the loop the winding succeeded, so nothing
+            # re-entered THINK with a failure and the same wrong call could be
+            # made again with the loop counting it as progress.
+            verify_output    = "(no such tool — nothing was emitted, so nothing closed)"
+            frobenius_closed = False
+        elif verify_fn is None:
             verify_output    = "(no verify function — Frobenius trivially closed)"
             frobenius_closed = True
         else:
