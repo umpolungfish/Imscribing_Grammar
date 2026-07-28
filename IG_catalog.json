@@ -125646,5 +125646,53 @@
     "Ħ": "𐑫",
     "Σ": "𐑳",
     "Ω": "𐑟"
+  },
+  {
+    "name": "sidon_set_density_bound",
+    "description": "There are no infinite Sidon sets A⊂ℕ such that |A∩{1,...,N}| ≫_ε N^(1/2-ε) for all ε>0. A Sidon set (all pairwise sums distinct) has maximal density O(N^{1/2}) — the Erdős–Turán bound. The local combinatorial constraint holographically encodes the global asymptotic density. Fixes grounding failure: ",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑿",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "there_are_no_infinite_sidon_sets_\\subset_\\mathbb{n}$_such",
+    "description": "There are no infinite Sidon sets \\subset \\mathbb{N}$ such that\\[\\lvert A\\cap \\{1\\ldots,N\\}\\rvert \\gg_\\epsilon N^{1/2-\\epsilon}\\]for all $\\epsilon>0$",
+    "Ð": "𐑦",
+    "Þ": "𐑰",
+    "Ř": "𐑽",
+    "Φ": "𐑿",
+    "ƒ": "𐑱",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "there_are_infinite_sidon_sets_\\subset_\\mathbb{n}$_such",
+    "description": "There are infinite Sidon sets \\subset \\mathbb{N}$ such that\\[\\lvert A\\cap \\{1\\ldots,N\\}\\rvert \\gg_\\epsilon N^{1/2-\\epsilon}\\]for all $\\epsilon>0$",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑽",
+    "Φ": "𐑬",
+    "ƒ": "𐑞",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
   }
 ]
