@@ -3053,6 +3053,8 @@ class ToolDispatcher:
             return self._weight_flow(**args)
         elif name == "banked_count":
             return self._banked_count(**args)
+        elif name == "imasm_transitions":
+            return self._imasm_transitions(**args)
         elif name == "quantum_compile":
             return self._quantum_compile(**args)
         elif name == "jones_polynomial":
@@ -3405,6 +3407,41 @@ class ToolDispatcher:
                      "the same as the knot being amphichiral" if real else
                      "the mirror's value is the complex conjugate"),
         }
+
+    def _imasm_transitions(self, word=None):
+        """Opcode-to-opcode transitions counted ON THE RING, plus what a linear
+        read would have dropped.
+
+        A word is a cycle and ROTAT is the cyclic shift, so a word of length n
+        has n transitions, not n-1. The missing edge is the wrap from the last
+        opcode back to the first, and across a corpus of k programs a linear
+        read loses exactly k of them, all closing edges. In IMASM those are
+        overwhelmingly TANCH -> VINIT, the anchor returning to the source, so a
+        table built without them can show a rule as universal that the closing
+        edges break.
+
+        Anything read from ABSOLUTE position on a ring measures the cut rather
+        than the word: matrix rows, tetraktys tiers, odd against even positions.
+        One rotation moves every value into a different row.
+        """
+        lf = self._lattice_flow()
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = lf.parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        out = lf.transitions(steps)
+        # the two statistics most often read off a word, one of each kind
+        order = {n: i + 1 for i, n in enumerate(
+            ["VINIT", "TANCH", "AFWD", "AREV", "CLINK", "IMSCRIB",
+             "FSPLIT3", "FFUSE3", "EVALT", "EVALF", "EVALI", "IFIX"])}
+        out["total_ordinal_is_invariant"] = lf.rotation_invariant(
+            steps, lambda w: sum(order.get(t, 0) for t in w))["invariant"]
+        out["even_position_sum_is_invariant"] = lf.rotation_invariant(
+            steps, lambda w: sum(order.get(t, 0)
+                                 for i, t in enumerate(w) if i % 2 == 0))["invariant"]
+        return out
 
     def _banked_count(self, word=None):
         """Was anything counted, then cleared with nothing banked behind it?

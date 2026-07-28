@@ -307,3 +307,68 @@ def banked_count_check(steps) -> Dict:
                   "computes it, and close them in that order, so the inner fuse "
                   "folds into the enclosing frame rather than into the register",
     }
+
+
+# ── the ring ────────────────────────────────────────────────────────────────
+def transitions(steps) -> Dict:
+    """Opcode-to-opcode transitions, counted ON THE RING.
+
+    A word is a cycle and ROTAT is the cyclic shift, so a word of length n has n
+    transitions, not n-1. The missing one is the wrap from the last opcode back
+    to the first, and it is the edge that makes the word a cycle rather than a
+    list. Read linearly, a corpus of k programs loses exactly k transitions, all
+    of them closing edges, and in IMASM those are overwhelmingly TANCH -> VINIT:
+    the anchor returning to the source. A transition table built without them
+    can show a rule as universal that the closing edges break.
+    """
+    n = len(steps)
+    if n == 0:
+        return {"status": "ok", "ring": {}, "linear": {}, "dropped": []}
+    ring, linear = Counter(), Counter()
+    for i in range(n):
+        pair = (steps[i], steps[(i + 1) % n])
+        ring[pair] += 1
+        if i < n - 1:
+            linear[pair] += 1
+    wrap = (steps[-1], steps[0])
+    return {
+        "status": "ok",
+        "length": n,
+        "ring_count": sum(ring.values()),
+        "linear_count": sum(linear.values()),
+        "wrap": f"{GLYPH.get(wrap[0], '?')} -> {GLYPH.get(wrap[1], '?')}",
+        "ring": {f"{GLYPH.get(a,'?')}->{GLYPH.get(b,'?')}": c
+                 for (a, b), c in ring.most_common()},
+        "note": ("the ring carries one more transition than the linear read: the "
+                 "closing edge, here " + f"{GLYPH.get(wrap[0],'?')} -> {GLYPH.get(wrap[1],'?')}"),
+    }
+
+
+def rotation_invariant(steps, stat) -> Dict:
+    """Does a statistic survive rotation, or is it reading the cut?
+
+    Anything computed from ABSOLUTE position on a ring measures where the word
+    was cut, not the word: rows of a matrix, tiers of a tetraktys, odd against
+    even positions. One rotation moves every value into a different row. This
+    runs `stat` over the whole orbit and says whether it moved.
+
+    `stat` takes a list of token names and returns anything comparable.
+    """
+    n = len(steps)
+    vals = []
+    for k in range(n):
+        rot = steps[k:] + steps[:k]
+        try:
+            vals.append(stat(rot))
+        except Exception as exc:
+            return {"status": "error", "error": f"stat failed at k={k}: {exc}"}
+    distinct = {repr(v) for v in vals}
+    return {
+        "status": "ok",
+        "invariant": len(distinct) == 1,
+        "distinct_values": len(distinct),
+        "by_cut": {k: vals[k] for k in range(n)} if len(distinct) > 1 else vals[0],
+        "verdict": ("survives rotation: a property of the word" if len(distinct) == 1
+                    else f"MOVES under rotation ({len(distinct)} values): this reads "
+                         f"the cut, not the word"),
+    }

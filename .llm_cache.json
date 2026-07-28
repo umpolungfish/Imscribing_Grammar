@@ -11680,5 +11680,7 @@
   "02c9799080b21dc213bf9935d01d18cff465a74b282517cf9a97e44303bd4b5e": "3 \u2014 The description assigns a kinetic character (\u00c7) to a system that is kinetically frozen, matching the high barrier option requiring external driving to rearrange.",
   "652ed78cbb4deaf71a45efba19e3b137b383365a177dda4ea0d424b389ec56f8": "2 \u2014 The inner frame splits by n mod 4 congruence class, grouping numbers into motifs that propagate interactions across a cluster of related residues.",
   "d3fd43ce0cc75ffbe29a35899c13b694e5672d561a0fb87349b84181682070d0": "2 \u2014 The inner frame splits by n mod 4 congruence class, indicating a disjunctive choice among cases.",
-  "2ab50e90372e3363356236d46980f111b9e7e78c06aee91c35f1000b4f3142cc": "2 \u2014 The invariant is exactly balanced at CLEAR, with T restored from the frame, indicating the system is at the critical threshold where the Egyptian fraction decomposition holds."
+  "2ab50e90372e3363356236d46980f111b9e7e78c06aee91c35f1000b4f3142cc": "2 \u2014 The invariant is exactly balanced at CLEAR, with T restored from the frame, indicating the system is at the critical threshold where the Egyptian fraction decomposition holds.",
+  "3b77a5409869c50eec62e7f4bbe01f5586867ea8c0d2988359199372c0eeddcd": "3 \u2014 The constraint propagation is inherently inductive, operating stepwise through recursive cycles to build the set.",
+  "561d3c33973c5a4085074ee6f263dc9b14c297b8a2f34068afcb156b5a4c1b11": "2 \u2014 The recursive constraint a_{k+1} \u2209 S_k+S_k forces each new element to lie outside the sumset of all prior subset sums, creating a nested, branch-like hierarchy of sums that mirrors a containment tree."
 }
