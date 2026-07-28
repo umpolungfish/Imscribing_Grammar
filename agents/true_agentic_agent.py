@@ -1031,6 +1031,7 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
     "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>", "insert": "<glyph, optional>"},
     "weight_flow":            {"word": "<IMASM word as glyphs>"},
+    "banked_count":           {"word": "<IMASM word as glyphs>"},
     "winding":                {"of": "<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: \"2/5\"  OR  angle: <radians>", "power": "<integer, optional>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
     "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "𐑛_val;𐑡_val;𐑩_val;𐑗_val;𐑱_val;𐑘_val;𐑚_val;𐑝_val;𐑢_val;𐑓_val;𐑙_val;𐑷_val"},

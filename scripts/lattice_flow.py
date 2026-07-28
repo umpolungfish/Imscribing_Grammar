@@ -219,3 +219,39 @@ def insertion_grid(steps, glyph: str) -> Dict:
             [i for i, col in enumerate(cols) if len(set(col)) == 1],
         "reachable": sorted({c for row in grid for c in row}),
     }
+
+
+def banked_count_check(steps) -> Dict:
+    """Was anything counted, then destroyed by a clear that a frame would have held?
+
+    AREV empties the register and leaves open frames alone, so a count fused
+    back to depth zero is exposed to the next reversal while the same count held
+    one level up survives it. A proof that counts, reverses, then bounds must
+    bank the count in an enclosing region before the reversal.
+
+    The signature is a CLEAR losing weight with nothing banked behind it. What
+    the fix costs is one nesting: open the region that will hold the result
+    before opening the region that computes it, and close them in that order.
+    """
+    m = run_weighted(steps)
+    exposed = []
+    for step, glyph, kind, d in m.ledger:
+        if kind == "CLEAR" and d["lost"] and d["banked"] == 0:
+            exposed.append({"step": step, "glyph": glyph,
+                            "lost": dict(d["lost"]),
+                            "weight": sum(d["lost"].values())})
+    total_lost = sum(e["weight"] for e in exposed)
+    return {
+        "status": "ok",
+        "word": render(steps),
+        "exposed_clears": exposed,
+        "weight_lost_in_the_open": total_lost,
+        "banked_ok": not exposed,
+        "verdict": ("nothing counted was exposed to a clear" if not exposed else
+                    f"{total_lost} unit(s) of weight cleared with nothing banked "
+                    f"behind them: the count was in the open when the reversal came"),
+        "remedy": None if not exposed else
+                  "open the region that holds the result BEFORE the region that "
+                  "computes it, and close them in that order, so the inner fuse "
+                  "folds into the enclosing frame rather than into the register",
+    }

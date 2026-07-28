@@ -3051,6 +3051,8 @@ class ToolDispatcher:
             return self._lattice_cycle(**args)
         elif name == "weight_flow":
             return self._weight_flow(**args)
+        elif name == "banked_count":
+            return self._banked_count(**args)
         else:
             return {"status": "error", "error": f"Unknown tool: {name}"}
 
@@ -3299,6 +3301,24 @@ class ToolDispatcher:
         if insert:
             out["insertion"] = insertion_grid(steps, insert)
         return out
+
+    def _banked_count(self, word=None):
+        """Was anything counted, then cleared with nothing banked behind it?
+
+        AREV empties the register and leaves open frames alone, so a result
+        fused back to depth zero is exposed to the next reversal while the same
+        result held one level up survives it. A program that establishes
+        something, reverses, then bounds must open the region that will HOLD the
+        result before the region that COMPUTES it, and close them in that order.
+        """
+        lf = self._lattice_flow()
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = lf.parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        return lf.banked_count_check(steps)
 
     def _weight_flow(self, word=None):
         """Where the weight moves through an IMASM word.

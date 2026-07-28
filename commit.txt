@@ -1,27 +1,25 @@
-Lattice cycling and weight flow become grammar tools.
+Banking a result before reversing it becomes a strategy, not just a reading.
 
-One implementation in scripts/lattice_flow.py, dispatched by IG_inquiry, so the
-agents, MoDoT's bridge and the ob3ect CLIs all reach the same rules rather than
-each carrying a copy.
+AREV empties the register and leaves open frames alone, so a result fused back
+to depth zero is exposed to the next reversal while the same result held one
+level up survives it. A program that establishes something, then reverses, then
+bounds must open the region that will HOLD the result before the region that
+COMPUTES it, and close them in that order. The Erdos-Turan proof does exactly
+that: card_unorderedPairs is a `have` still in scope when the calc runs, so the
+reversal inside the chain cannot reach it. The `have` is the outer frame.
 
-lattice_cycle walks a word around its ROTAT orbit and returns the map from cut
-to landing register. Every rotation is the same object: the verdict and the
-topology hold across the orbit and the final register does not, so the phase is
-the only handle on where a word comes to rest. Given `insert` it also places a
-token at every index of every rotation, which asks the same question of an
-operation, since appending is insertion at the seam and the seam is the phase.
+Three places, so it is enforced where it is cheap and available where it is
+wanted.
 
-weight_flow counts what the union throws away. The fork is a set and the fuse a
-union, so a walk keeps which values were touched and nothing else. The lift of
-OR to weights is max rather than sum. SEED and INERT are reported because a
-final register hides both: AFWD and IMSCRIB assign T to an empty register
-without any deposit, and after IFIX everything but IFIX and IMSCRIB is a no-op.
+banked_count_check in lattice_flow reports every CLEAR that loses weight with
+nothing banked behind it, with the remedy attached. Reachable as the
+banked_count grammar tool, so the agents and MoDoT both have it; 50 grammar
+tools now, registry 30 of 30, deep check green.
 
-The machine is subclassed rather than reimplemented, so the transition rules
-stay the ones the pipeline uses and only the bookkeeping is added. The import
-resolves by path, since callers reach the dispatcher from several roots and a
-bare import only worked from one of them.
+ob3ect carries it as Phase 9b of the report and on the artifact, so a generated
+program says whether it lost a count to a clear. The design prompt gains the
+strategy under EDGE ROUTING, with the wrong and right arrangements written out,
+so programs are built that way rather than only checked afterwards.
 
-Registered in the required-argument table, picked up by the manifest generator,
-so all three specialists carry them. Deep check passes; 29 entries match their
-functions.
+The kernel gains `banked <word>`, which reads the flat arrangement as four
+units cleared at the AREV and the nested one as clean.

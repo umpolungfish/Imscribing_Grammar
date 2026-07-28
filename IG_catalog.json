@@ -125694,5 +125694,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑳",
     "Ω": "𐑭"
+  },
+  {
+    "name": "erdos_turan_swap_frobenius",
+    "description": "Erdos-Turan swap involution Frobenius structure: finite set B under Z₂ swap action on B×B, orbit space U of unordered pairs, projection μ:B×B→U and section δ:U→B×B forming Frobenius algebra with μ∘δ=id_U and δ∘μ=(id+Swap)/2. Sidon property ensures |sumSet|=|U|=k(k+1)/2. Constructive Finset proof (0 ",
+    "Ð": "𐑛",
+    "Þ": "𐑡",
+    "Ř": "𐑑",
+    "Φ": "𐑹",
+    "ƒ": "𐑱",
+    "Ç": "𐑤",
+    "Γ": "𐑚",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑴"
   }
 ]
