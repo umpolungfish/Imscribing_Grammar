@@ -1,34 +1,19 @@
-Hyperdimensional IMASM gematria, on the ring.
+shared_floor: a floor is computed, and a mode is not a floor.
 
-(The previous commit carries this code under the wrong message: the commit text
-was written into agents/ while the root still held the earlier one.)
+A family's floor was being reported as the per-slot most common value. That is a
+centroid, and a centroid need not be occupied.
 
-177 coordinates over a word, every one verified to survive rotation rather than
-asserted to.
+Measured on the proven forms: across all 82 entries whose name marks one, NO
+slot holds a single value, so there is no invariant floor at all. The modal
+tuple ⟨𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩ has zero occupants. Thirty entries sit one slot off it,
+and twenty-seven of those thirty leave through the same slot in the same
+direction, ⊙ -> 𐑮. The tuple twenty-seven of them actually share is the modal
+one with that single substitution. The mode named a point where nothing lives,
+one step from where most of the family sits.
 
-  opcode census      12   the opcodes, order discarded
-  ring transitions  144   ordered pairs with the closing edge included
-  landing spectrum   16   how many of the n cuts land in each register
-  scalars                 length, pairs, greatest depth, total ordinal
-
-A word is a ring, so a coordinate read from absolute position measures where the
-word was cut and not the word: rows of a matrix, tiers of a tetraktys, odd
-against even. One rotation moves every value into a different row. Each block
-here is a multiset over the whole word, a count on the ring, or an aggregate
-over the entire orbit, and each is checked with rotation_invariant.
-
-The landing spectrum is the coordinate that belongs to the ring rather than to a
-word. The landing of any single cut is the phase-bearing quantity every ROTAT
-audit reports; the distribution over all cuts is not, and two words agreeing on
-census and transitions can still put their cuts in different registers.
-
-The check earned itself immediately: the scalar block failed on first run.
-`pairs` and `max_depth` came from a linear depth scan, so a rotation cutting
-through a region counted an unmatched fuse followed by an unmatched split and
-both moved. They are read as a loop now, from a start where the stack never
-underflows, which the cycle lemma provides whenever splits and fuses balance.
-
-Deposits are reported outside the signature: a rotation moves the IFIX and
-everything after a fixation is inert, so the deposit count belongs to the cut.
-
-Reachable as imasm_gematria or hyper_gematria.
+The tool returns the three separately: invariant slots, the modal tuple with a
+count of how many members occupy it, and the tuples members actually hold, most
+populous first. Reporting them apart is the whole point, since a floor stated as
+nine fixed slots was contradicted by the three derivations printed beside it —
+seven of the nine varied among them, and Ħ was fixed at a value none of the
+three carried, while Ω was called domain-dependent and was constant.

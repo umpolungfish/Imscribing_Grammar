@@ -3057,6 +3057,8 @@ class ToolDispatcher:
             return self._imasm_transitions(**args)
         elif name in ("hyper_gematria", "imasm_gematria"):
             return self._hyper_gematria(**args)
+        elif name in ("shared_floor", "proven_floor"):
+            return self._shared_floor(**args)
         elif name in ("list", "list_tools", "tools"):
             return self._list_tools()
         elif name == "quantum_compile":
@@ -3445,6 +3447,62 @@ class ToolDispatcher:
             "count": len(names),
             "tools": {n: REQ.get(n, "no required arguments recorded") for n in names},
             "call": 'imscribe(tool_name="<name>", args={...})',
+        }
+
+    def _shared_floor(self, match=None, names=None):
+        """The floor of a family of entries, computed rather than asserted.
+
+        Given a substring to match on names, or an explicit list, this returns
+        three different things that are easy to confuse:
+
+          INVARIANT  slots holding one value across every member. A real floor.
+          MODAL      the per-slot most common value. This is a CENTROID, and a
+                     centroid need not be occupied: the modal tuple can be a
+                     point no member sits on.
+          OCCUPIED   the tuples members actually hold, most populous first,
+                     with their counts.
+
+        The distinction has bitten: a family of 82 proven forms has NO invariant
+        slot at all, its modal tuple has zero occupants, and the tuple 27 of them
+        actually share differs from that mode in one slot. Reporting the mode as
+        a floor names a point where nothing lives.
+        """
+        import collections as _c
+        slots = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+        entries = []
+        if names:
+            want = names if isinstance(names, list) else [n.strip() for n in str(names).split(",")]
+            entries = [e for e in self.catalog.values() if e.get("name") in want] \
+                      if hasattr(self.catalog, "values") else []
+        elif match:
+            entries = [e for e in (self.catalog.values() if hasattr(self.catalog, "values")
+                                   else [])
+                       if match in str(e.get("name", ""))]
+        else:
+            return {"status": "error",
+                    "error": "give match=<substring> or names=<list>"}
+        entries = [e for e in entries if all(s in e for s in slots)]
+        if not entries:
+            return {"status": "error", "error": "no entries with full tuples matched"}
+
+        counts = {s: _c.Counter(e[s] for e in entries) for s in slots}
+        invariant = {s: next(iter(counts[s])) for s in slots if len(counts[s]) == 1}
+        modal = {s: counts[s].most_common(1)[0][0] for s in slots}
+        modal_str = "⟨" + "".join(modal[s] for s in slots) + "⟩"
+        occupied = _c.Counter("⟨" + "".join(e[s] for s in slots) + "⟩" for e in entries)
+        modal_occupants = occupied.get(modal_str, 0)
+
+        return {
+            "status": "ok",
+            "members": len(entries),
+            "invariant_slots": invariant or "none — no slot holds one value across the family",
+            "modal_tuple": modal_str,
+            "modal_tuple_occupants": modal_occupants,
+            "modal_is_occupied": modal_occupants > 0,
+            "most_occupied": [{"tuple": t, "count": c} for t, c in occupied.most_common(5)],
+            "slot_spread": {s: dict(counts[s].most_common(4)) for s in slots},
+            "note": ("a modal tuple is a centroid and need not be occupied; the "
+                     "tuple members actually share is under most_occupied"),
         }
 
     def _hyper_gematria(self, word=None, name=None):

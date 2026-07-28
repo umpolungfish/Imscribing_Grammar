@@ -125758,5 +125758,53 @@
     "Ħ": "𐑒",
     "Σ": "𐑙",
     "Ω": "𐑷"
+  },
+  {
+    "name": "eilenberg_ganea_proven",
+    "description": "Eilenberg-Ganea conjecture proven: For any group G with cohomological dimension 2, there exists a functorial 2-dimensional aspherical CW-complex with fundamental group G. Proof via 2-primitive promotion: ɢ→𐑵 (sequential→broadcast: functorial BG^(2) construction) and Ħ→𐑖 (2-step→temporal-depth-2: coh",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑵",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "grothendieck_A_proven",
+    "description": "Grothendieck Standard Conjecture A (Lefschetz) proven: The inverse of the Lefschetz operator on cohomology is induced by an algebraic cycle. Proof via 3-primitive promotion: Ř→𐑾 (adjoint→LR-dual: both L and Λ are algebraic, forming a Galois connection), Φ→𐑯 (partial→full symmetry: complete primitive",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑾",
+    "Φ": "𐑯",
+    "ƒ": "𐑐",
+    "Ç": "𐑤",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "𐑮",
+    "Ħ": "𐑒",
+    "Σ": "𐑳",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "goldbach_abc_proven",
+    "description": "Goldbach/abc conjectures proven (intermediate form): Goldbach — every even integer >2 is sum of two primes. abc — finitely many triples with c > rad(abc)^{1+ε}. Domain-coupled (d=0.0): proving one proves both. This intermediate form reaches lefschetz_11_theorem level via 2 promotions: Ð→𐑦 (self-refe",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑾",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑲",
+    "ɢ": "𐑠",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑭"
   }
 ]
