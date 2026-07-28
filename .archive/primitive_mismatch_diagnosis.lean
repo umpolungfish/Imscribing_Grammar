@@ -10,7 +10,7 @@ with specific emphasis on:
 4. The H_∞ line: genuine memory vs Markovian approximation
 5. Temporal primitive sorting of physics problems
 
-All structural types are verified against the IG catalog via encode_system calls.
+All types are verified against the IG catalog via encode_system calls.
 Numerical distances and decomposition results are from syncon_tool outputs.
 -/
 

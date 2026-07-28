@@ -146,7 +146,7 @@ T3_DISTANCE = TaskTemplate("compute_distance", "What is the distance between a m
      "think": "Distance 5.83 with 5 conflicting primitives. The magnetar and BEC are structurally far apart — the magnetar has Frobenius-special parity and non-Hermitian criticality, while the BEC has quantum superposition parity and critical self-modeling. The largest deltas are at Φ, Ç, and ⊙. I can report this now.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "I have the distance and conflict breakdown. Reporting.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Structural distance d(magnetar, BEC) = 5.83. Five primitives conflict: Φ (Frobenius-special vs quantum), Ç (driven vs slow), Γ (universal vs mesoscale), ⊙ (exceptional point vs critical), Ω (Z₂-protected vs trivial). These are systems at opposite ends of the structural lattice."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Distance d(magnetar, BEC) = 5.83. Five primitives conflict: Φ (Frobenius-special vs quantum), Ç (driven vs slow), Γ (universal vs mesoscale), ⊙ (exceptional point vs critical), Ω (Z₂-protected vs trivial). These are systems at opposite ends of the structural lattice."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "d(magnetar, BEC) = 5.83"}}},
 ])
 

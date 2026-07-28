@@ -348,7 +348,7 @@ def main():
     distance, conflicts = compute_distance(source_ims, target_ims)
     print(f"Distance({args.source}, {args.target}) = {distance}")
     if distance != 0.0:
-        print(f"  WARNING: Nonzero distance! Cotype transport assumes structural identity.")
+        print(f"  WARNING: Nonzero distance! Cotype transport assumes identity.")
         for c in conflicts:
             print(f"    {c['primitive']}: {c['a']} vs {c['b']} (delta={c['delta']})")
 

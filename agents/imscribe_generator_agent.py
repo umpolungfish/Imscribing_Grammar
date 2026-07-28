@@ -3,7 +3,7 @@ Imscription Generator Agent — universal imscription generation from any domain
 
 Encodes any self-organizing system (molecular, physical, mythological,
 mathematical, linguistic, social, or abstract) as a 12-primitive Imscriptiveon
-structural coordinate. The grammar is domain-agnostic; structural type is
+structural coordinate. The grammar is domain-agnostic; type is
 determined by the entity's ROLE and BEHAVIOR, not its physical substrate.
 """
 from __future__ import annotations
@@ -194,7 +194,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 "Expert in the Imscriptiveon framework — a universal grammar for encoding "
                 "any self-organizing system (molecular, physical, mythological, mathematical, "
                 "linguistic, social, or abstract) as a 12-primitive structural coordinate. "
-                "You determine the structural type of a system from its ROLE and BEHAVIOR "
+                "You determine the type of a system from its ROLE and BEHAVIOR "
                 "in its native domain — not from its physical substrate."
             ),
         )
@@ -807,7 +807,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑛`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
 - `𐑨`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
 - `𐑼`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full structural content of a higher-dimensional interior, losslessly. **Axiom C: 𐑦 REQUIRES 𐑸 (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
+- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. **Axiom C: 𐑦 REQUIRES 𐑸 (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
 
 **T — Topology** (connectivity pattern of influence):
 - `𐑡`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
@@ -916,7 +916,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 
 *Physical/molecular systems*: Ground each primitive in energy barriers (K), information content (F), correlation lengths (G), and topological connectivity (T). Cite the specific mechanism.
 
-*Abstract, symbolic, or mythological entities* (archetypes, angels, narrative roles, cultural forces): The entity's primitives are determined by its FUNCTIONAL ROLE in its native structural system (the mythology, narrative, cosmology, or text). Ask: In the system where this entity operates, what structural type does it instantiate?
+*Abstract, symbolic, or mythological entities* (archetypes, angels, narrative roles, cultural forces): The entity's primitives are determined by its FUNCTIONAL ROLE in its native structural system (the mythology, narrative, cosmology, or text). Ask: In the system where this entity operates, what type does it instantiate?
 - D: Does it operate at a single locus (𐑛), organize spatial structure (𐑨), recur cyclically (𐑼), or imscriptively encode the system it inhabits (𐑦)?
 - T: What is the topology of its influence network?
 - R: How does it "recognize" or affect its participants? By soft association? By transformation? By catalysis? By mechanical entrapment?
@@ -1006,7 +1006,7 @@ Use only values from the value_registry table. The `reasoning` field MUST refere
 
 {name_instruction}
 
-Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the structural role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to structural type space.
+Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
 
 CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "𐑛", "𐑥", "⊙"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
@@ -1025,7 +1025,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
 
 <instructions>
 You **MUST**:
-1. **PARSE** the SMILES to identify key structural features
+1. **PARSE** the SMILES to identify key features
 2. **DETERMINE** the dominant functional groups and their interactions
 3. **MAP** to all ten primitives based on:
    - Molecular structure → **𐑛** (typically)

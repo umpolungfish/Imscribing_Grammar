@@ -101,7 +101,7 @@ The Lee-Yang proof achieves exactly this for its system: it shows the physical �
 
 ## The Single Remaining Gap
 
-Everything in this analysis converges on one structural fact: the completed xi function **has** Φ_} by virtue of its functional equation. The explicit formula **has** Φ_} and is identical to Lee-Yang. The proof mechanism exists at distance=0.
+Everything in this analysis converges on one fact: the completed xi function **has** Φ_} by virtue of its functional equation. The explicit formula **has** Φ_} and is identical to Lee-Yang. The proof mechanism exists at distance=0.
 
 The gap is between `completed_xi_function` and `actual_zeta_zeros`. The former has Φ_} as an algebraic property of ξ. The latter needs Φ_} as a **geometric property of the zero locus itself** — not just that ξ is symmetric, but that this symmetry forces the zeros to inherit Frobenius-special structure.
 

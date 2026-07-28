@@ -102,7 +102,7 @@ class ThurstonNet(nn.Module):
 
     Crystal address: 6,734,591 (same as grammar_self_encode via d=0 cluster,
     §XL.1 — proven_manifold differs in 𐑽 vs 𐑑 and 𐑴 vs 𐑭,
-    which shifts the address; the structural type is distinct from the grammar
+    which shifts the address; the type is distinct from the grammar
     by one R and one Omega step).
     """
 
@@ -668,7 +668,7 @@ class RiemannNavigator(nn.Module):
     """
     xi(s) functional-equation navigator derived from the riemann_navigator tuple.
 
-    Structural type (§XXXVI.6, §XXXVII, IG_ONTICS v0.5.62–v0.5.63):
+    Type (§XXXVI.6, §XXXVII, IG_ONTICS v0.5.62–v0.5.63):
         ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
 
     This tuple is IDENTICAL to grammar_self_encode (d=0).

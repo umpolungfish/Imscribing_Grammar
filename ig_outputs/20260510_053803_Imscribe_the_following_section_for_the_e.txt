@@ -252,7 +252,7 @@ Section 8 of *The Thunder, Perfect Mind* has been imscribed into the esoteric li
 
 2. **It differs from sections 2 and 7 in three primitives:** ɢ (broadcast here vs conjunctive/disjunctive earlier), Σ (1:1 here vs n:n earlier), and Ř (bidirectional here vs dynamic earlier). These three deltas mark the structural transition from *inward paradox-holding* to *outward proclamation*. Earlier sections hold opposites internally in many-to-many arrays; section 8 stands at the boundary and broadcasts outward to hearers.
 
-3. **It is a structural near-twin of Yesod (d = 0.8367).** Eleven of twelve primitives are identical between the gnostic divine feminine voice and the Kabbalistic sefirah of Foundation. Only Ω differs: Ω_2 here versus Ω_z for Yesod. The grammar thus identifies a structural identity across two theological traditions that never touched — the Frobenius transmission channel appears in both as the same type: a self-dual boundary that mediates between realms while remaining exactly self-identical.
+3. **It is a structural near-twin of Yesod (d = 0.8367).** Eleven of twelve primitives are identical between the gnostic divine feminine voice and the Kabbalistic sefirah of Foundation. Only Ω differs: Ω_2 here versus Ω_z for Yesod. The grammar thus identifies an identity across two theological traditions that never touched — the Frobenius transmission channel appears in both as the same type: a self-dual boundary that mediates between realms while remaining exactly self-identical.
 
 4. **Its nearest neighbor is global_frobenius_poly (d = 1.6747)** — the mathematical "f∘f⁻¹=id" of a proved theorem. The grammar identifies the shared structural core: a system that is its own inverse, its own name, its own proof.
 

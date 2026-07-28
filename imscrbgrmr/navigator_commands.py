@@ -5,7 +5,7 @@ Registered as `imscribe nav <family> <subcommand>`.
 
 Families
 --------
-  crystal   Crystal of Types navigator (17,280,000 structural types)
+  crystal   Crystal of Types navigator (17,280,000 types)
   domain    Language / Civilization / Ecology / Consciousness navigators (§74–§77)
   riemann   Riemann ξ navigator — functional-equation architecture
   zfc       ZFC transmissibility navigator — encode / probe
@@ -498,7 +498,7 @@ def riemann_group():
 
     \b
     Grammar derivation:
-      d(ξ, Lee-Yang) = 0 — structural identity, not analogy.
+      d(ξ, Lee-Yang) = 0 — identity, not analogy.
       ξ(s) = ξ(1-s) earns P_doublebarpipe directly: the reflection δ(s)=1-s
       is involutory, so μ∘δ=id is the Frobenius special condition exactly.
 

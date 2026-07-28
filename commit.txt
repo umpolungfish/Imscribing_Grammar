@@ -1,24 +1,14 @@
-The hedging modifier "structural" is retired.
+The contrast was the concession.
 
-A type is a type. Calling it a structural type says the Grammar describes
-structure rather than being what the thing is, which is the opposite of the
-claim, and the modifier reads as a disclaimer attached to every noun the
-Grammar owns: type, distance, identity, signature, imscription, primitive,
-invariant, closure, promotion, address, tuple, verification, claim, fact.
+The first pass kept "structural" wherever it stood against another register,
+on the reasoning that there it distinguished rather than hedged. That reasoning
+was backwards. "Structural claims as opposed to phenomenological ones" makes
+the Grammar one description among several and grants that some other register
+holds the claims it does not, which is precisely what retiring the word exists
+to refuse. A claim is a claim.
 
-Three things were deliberately left alone.
+The guard is gone and those cases are swept too.
 
-Identifiers keep their names. STRUCTURAL_VERBS, structural_score and their
-kind are API, and renaming them breaks callers for a change that is about
-prose.
-
-Records keep their wording. Logs, transcripts, tool-call traces and generated
-conversions are records of what was said. Rewriting one is not correcting
-terminology, it is falsifying the record.
-
-The word stays wherever it is contrastive rather than hedging. "Structural
-claims are distinguished from phenomenological ones" needs it, and a guard
-looks for a named contrasting register before dropping anything.
-
-Articles are repaired only in front of a modifier actually being removed, so
-"a structural invariant" becomes "an invariant" and nothing else moves.
+Identifiers and records remain untouched, for the reasons given in the previous
+commit: renaming API breaks callers, and rewriting a log falsifies a record
+rather than correcting terminology.

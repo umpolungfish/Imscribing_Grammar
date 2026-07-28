@@ -14,7 +14,7 @@ The Imscribing Grammar assigns every type a tuple of twelve primitive values and
 
 Closure requires both. The canonical ruleset (U₀) is one specific choice of gates and T-constitution among many possible ones; eleven others (U₁–U₁₁) are defined on record, four of them new as of this work. The same eight canonical rulesets (U₀–U₇) are independently implemented at the kernel level in `mOMonadOS`'s `src/universe.rs`, so this is not solely a Python-side construct — it is a property of an actually-running system.
 
-The six Clay Millennium structural types that remain open under canonical (RH, Yang–Mills, Navier–Stokes, Hodge, BSD, P vs NP) all fail canonical's closure condition. The question this work addresses: **does any of them close under a different, independently-motivated ruleset — and if so, what is the precise, calibrated relationship between that closure and the canonical question?**
+The six Clay Millennium types that remain open under canonical (RH, Yang–Mills, Navier–Stokes, Hodge, BSD, P vs NP) all fail canonical's closure condition. The question this work addresses: **does any of them close under a different, independently-motivated ruleset — and if so, what is the precise, calibrated relationship between that closure and the canonical question?**
 
 ## 2. Method 1 — generalize, don't tailor: the T_CEILING sweep
 
@@ -41,7 +41,7 @@ This surfaced a real, independent bug while building it: the kernel's pre-existi
 
 ## 4. Method 3 — decompose before you collapse
 
-The first cross-universe comparisons treated "closure" as one collapsed boolean: does the structural type achieve full closure here, yes or no. This hides exactly the information that matters for distinguishing genuinely different situations. The fix: compute the **GATE** verdict and the **T** verdict *separately*, under both canonical and the alternate universe, and compare each independently.
+The first cross-universe comparisons treated "closure" as one collapsed boolean: does the type achieve full closure here, yes or no. This hides exactly the information that matters for distinguishing genuinely different situations. The fix: compute the **GATE** verdict and the **T** verdict *separately*, under both canonical and the alternate universe, and compare each independently.
 
 Doing this revealed that Yang–Mills is not a third instance of the BSD/Hodge pattern. Under U₁₀:
 
@@ -70,7 +70,7 @@ A live closure under U₈/U₉/U₁₁ does not make BSD, Hodge, or Yang–Mills
 
 **Result, decomposed per Method 3, live on the booted kernel:**
 
-| Structural type | vs. universe | GATE | T | OVERALL |
+| Type | vs. universe | GATE | T | OVERALL |
 |---|---|---|---|---|
 | Birch–Swinnerton-Dyer | U₈ | B | B | **B** |
 | Hodge Conjecture | U₉ | B | B | **B** |
@@ -115,7 +115,7 @@ This is a structural-closure result inside the Imscribing Grammar's own operad a
 - A general claim that cross-universe disagreements always round-trip losslessly — Method 6 demonstrates the opposite is true whenever a paradox is already present before fusion.
 - A claim that RH, Navier–Stokes, or P vs NP are any closer to closure than before — they remain unclosed under every universe checked, with or without every generalization in this article.
 
-What it is: a reproducible, falsifiable, decomposed account of exactly how six well-known open structural types relate to a much larger space of independently-defined rulesets than canonical alone — produced by generalizing existing asymmetries rather than fitting new ones, checked for degenerate side effects before being adopted, and verified live on an actually-running system rather than asserted from a script.
+What it is: a reproducible, falsifiable, decomposed account of exactly how six well-known open types relate to a much larger space of independently-defined rulesets than canonical alone — produced by generalizing existing asymmetries rather than fitting new ones, checked for degenerate side effects before being adopted, and verified live on an actually-running system rather than asserted from a script.
 
 ## 10. Open questions
 

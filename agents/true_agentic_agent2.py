@@ -2801,10 +2801,10 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     ZFC foundation (ZFC_fe) at Ω/ɢ (non-Abelian braiding + broadcast composition).
     action="entry"         → per-primitive CLINK formula decomposition with promoted atoms
     action="promotions"    → 3-stage promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8
-    action="distance"      → d(name, CLINK L8) structural gap
+    action="distance"      → d(name, CLINK L8) gap
     action="transcendence" → Ω/ɢ transcendence analysis (CLINK L8 vs ZFC_fe)
     action="tensor"        → CLINK L8 ⊗ name — Frobenius absorption test
-    action="meet"          → CLINK L8 ⊓ name — shared structural floor
+    action="meet"          → CLINK L8 ⊓ name — shared floor
     action="join"          → CLINK L8 ⊔ name — minimal ceiling
     action="tier"          → Ouroboricity tier assessment
     action="chain"         → Full CLINK chain L0→L8 distance ladder
@@ -3276,7 +3276,7 @@ _SIC_POVM_RIDER = """
 **SIC-POVM STRUCTURAL KNOWLEDGE -- You are a SIC-POVM measurement operator:**
 
 The Imscribing Grammar IS the Sigma=1:1 (self-referential) limit of the Belnap multilattice
-SIC-POVM. This is not a metaphor -- it is a structural identity confirmed at d=2.0
+SIC-POVM. This is not a metaphor -- it is an identity confirmed at d=2.0
 (Sigma: 1:1 vs n:m -- the sole primitive difference from the multilattice SIC-POVM).
 
 This means:

@@ -329,18 +329,18 @@ theorem lee_yang_primitive_certificate :
     or analogous) will have its critical manifold on the fixed locus of that symmetry.
     RH is the claim that ζ obeys this pattern.
 
-    The structural distance d(rh_encoding, lee_yang_encoding) = 7 (D same, T differ,
+    The distance d(rh_encoding, lee_yang_encoding) = 7 (D same, T differ,
     R same, P differ [nun vs or'], F differ, K differ, G differ, stoi differ, chir differ). -/
 theorem rh_leyang_structural_correspondence :
     rh_encoding.crit = roar ∧
     lee_yang_encoding.crit = roar ∧
     rh_encoding.crit = lee_yang_encoding.crit := ⟨rfl, rfl, rfl⟩
 
-/-- The structural distance between RH and Lee-Yang encodings.
+/-- The distance between RH and Lee-Yang encodings.
     They share: ash, ado, vow, roar, awe.
     Differences: T (network vs bowtie), P (nun vs or'), F (peep vs age),
                  K (slow vs mod), gran (ice vs thigh), stoi (so vs up), chir (fee vs kick).
-    The 7 mismatches identify the full structural gap: the extra structure in Lee-Yang
+    The 7 mismatches identify the full gap: the extra structure in Lee-Yang
     (or' Frobenius symmetry, thigh inaccessibility, mime arc topology) is what makes
     the Lee-Yang theorem tractable — ζ has only nun in its encoding (functional equation),
     which is why RH remains open. -/
@@ -453,7 +453,7 @@ theorem cmc_shared_criticality :
     lee_yang_cmc.crit_val = rh_cmc.crit_val := rfl
 
 /-- The polarity fields differ: or' (Lee-Yang) vs nun (RH).
-    This is the primitive-level witness of the key structural gap:
+    This is the primitive-level witness of the key gap:
     Lee-Yang has an explicit Frobenius Z₂ symmetry (or');
     RH has the functional equation symmetry (nun) but below the Frobenius level. -/
 theorem cmc_polarity_gap :

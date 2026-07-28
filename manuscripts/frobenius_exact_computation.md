@@ -47,7 +47,7 @@ The condition μ∘δ=id says: if you emit and then verify, you get back exactly
 
 ### 2.1 Not a Test, Not a Proof
 
-μ∘δ=id is neither a unit test nor a formal proof. It is a *structural invariant* — a property of the tool's own algebraic structure that holds for all inputs in the domain.
+μ∘δ=id is neither a unit test nor a formal proof. It is a *invariant* — a property of the tool's own algebraic structure that holds for all inputs in the domain.
 
 A unit test would say: "on input X, parse_config returns Y." μ∘δ=id says: "for *any* input in the domain, the verify function is the exact inverse of the emit function." The guarantee is universal but bounded — it covers the tool's entire domain, but only that domain.
 

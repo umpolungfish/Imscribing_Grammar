@@ -82,7 +82,7 @@ Usage:
     results = loop.run()
 
     # Or: from the CLI
-    python IG_inquiry.py "What structural features distinguish life from non-life?"
+    python IG_inquiry.py "What features distinguish life from non-life?"
 """
 
 from __future__ import annotations
@@ -1462,7 +1462,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Find the N nearest catalog entries to a given tuple by weighted Euclidean "
                 "distance in the 12-primitive space. Useful for identifying known physical "
-                "or mathematical systems that best realize a structural type. "
+                "or mathematical systems that best realize a type. "
                 "Accepts 'name' (catalog lookup), 'tuple' (semicolon string), or primitive kwargs."
             ),
             "parameters": {
@@ -5576,7 +5576,7 @@ class IGInquiryLoop:
 
         ƒ^ì → ƒ^ż
           Cut redundancy. Remove any sentence that restates the previous sentence in different
-          words. Demonstrate rather than explain — show the structural fact in action rather than
+          words. Demonstrate rather than explain — show the fact in action rather than
           describing it twice.
 
         Ç^W → Ç^@

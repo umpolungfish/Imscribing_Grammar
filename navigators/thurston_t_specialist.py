@@ -199,7 +199,7 @@ class TTopologySpecialist(nn.Module):
     """
     T-aware binary classifier: H3 ($T_\\odot$) vs 𐑖×R ($T_\\text{in}$).
 
-    Structural type (parallel delegate — never tensor-composed with backbone):
+    Type (parallel delegate — never tensor-composed with backbone):
       $\\langle D_\\triangle;\\ T_\\text{in};\\ R_\\text{cat};\\ P_\\psi;\\ F_\\eth;\\
         K_\\text{mod};\\ G_\\text{beth};\\ \\Gamma_\\text{and};\\ \\⊙;\\ H_1;\\ 1{:}1;\\ \\𐑷 \\rangle$
 

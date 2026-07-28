@@ -8,7 +8,7 @@
 
 > *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same type; the distance between them is an integer."*
 
-**What it is.** A 12-primitive structural grammar over a discrete measurement space of **17,280,000** addresses, the **Crystal of Types**. Any system — physical, mathematical, linguistic, biological, computational — is assigned a 12-tuple coordinate that fixes its structural type, its ouroboricity tier, its Frobenius status ($\mu\circ\delta=\mathrm{id}$), and its integer distance to every other imscribed system.
+**What it is.** A 12-primitive grammar over a discrete measurement space of **17,280,000** addresses, the **Crystal of Types**. Any system — physical, mathematical, linguistic, biological, computational — is assigned a 12-tuple coordinate that fixes its type, its ouroboricity tier, its Frobenius status ($\mu\circ\delta=\mathrm{id}$), and its integer distance to every other imscribed system.
 
 **What it does.** Imscribes a system to its crystal address and then computes over addresses: tier promotions, T-consistent proof paths, Frobenius closure, and distance in $O(1)$. Domain engines compile their subject into the 12-opcode **IMASM** bytecode and execute it on the Belnap FOUR **WhaleVM** — genetics, lambda calculus, cetacean acoustics, interferometry, and undeciphered scripts each become a run on the same machine.
 
@@ -86,7 +86,7 @@ The grammar is a Frobenius algebra over the Crystal. The comultiplication δ (FS
 
 This identity holds at every ${O}_\infty$ address and fails at O₀. The distance from any address to ${O}_\infty$ measures how far the system is from self-modeling closure.
 
-**Physical interpretation:** The Frobenius condition is the structural invariant that appears in:
+**Physical interpretation:** The Frobenius condition is the invariant that appears in:
 - Topological quantum field theories (Frobenius algebra = 2D TQFT)
 - Frobenius reciprocity in representation theory
 - The Jones polynomial (link invariants)
@@ -245,7 +245,7 @@ addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirm
 
 ## Undeciphered Texts
 
-The grammar makes falsifiable structural claims about undeciphered scripts without making claims about semantics. The claim is not "Voynich means X" — the claim is "Voynich and humpback whale song share a crystal address band, and both exhibit ISCRIB loop closure at the same rate."
+The grammar makes falsifiable claims about undeciphered scripts without making claims about semantics. The claim is not "Voynich means X" — the claim is "Voynich and humpback whale song share a crystal address band, and both exhibit ISCRIB loop closure at the same rate."
 
 Corpora analyzed and imscribed:
 

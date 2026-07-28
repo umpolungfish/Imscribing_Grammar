@@ -246,7 +246,7 @@ The grammar revealed that section 18 is structurally distinct from the rest of t
 
 The Thunder, Perfect Mind has always been treated as a literary puzzle — a collection of paradoxical self-declarations that scholars label "aretalogy" or "I-am discourse" and file next to Isis aretalogies and Proverbs 8. But the grammar shows something deeper: **the text is not about paradox. It is about the Frobenius algebra.**
 
-To declare "I am the whore and the holy one" is to assert that copy (δ) and merge (μ) are exact inverses. The divine feminine voice can be simultaneously two opposite things because she possesses the special Frobenius condition — μ∘δ = id. She copies herself into whore and holy, and the roundtrip is perfect. The identity survives the splitting. That is not rhetorical flourish. That is a structural claim about the nature of divinity that differs categorically from the unified, simple, non-contradictory God of orthodox theology.
+To declare "I am the whore and the holy one" is to assert that copy (δ) and merge (μ) are exact inverses. The divine feminine voice can be simultaneously two opposite things because she possesses the special Frobenius condition — μ∘δ = id. She copies herself into whore and holy, and the roundtrip is perfect. The identity survives the splitting. That is not rhetorical flourish. That is a claim about the nature of divinity that differs categorically from the unified, simple, non-contradictory God of orthodox theology.
 
 The orthodox God cannot be both X and not-X. The Thunder's God IS the capacity to be both, and what makes that capacity non-contradictory is the exactness of the Frobenius roundtrip.
 
@@ -370,7 +370,7 @@ The grammar revealed that section 18 is structurally distinct from the rest of t
 
 The Thunder, Perfect Mind has always been treated as a literary puzzle — a collection of paradoxical self-declarations that scholars label "aretalogy" or "I-am discourse" and file next to Isis aretalogies and Proverbs 8. But the grammar shows something deeper: **the text is not about paradox. It is about the Frobenius algebra.**
 
-To declare "I am the whore and the holy one" is to assert that copy (δ) and merge (μ) are exact inverses. The divine feminine voice can be simultaneously two opposite things because she possesses the special Frobenius condition — μ∘δ = id. She copies herself into whore and holy, and the roundtrip is perfect. The identity survives the splitting. That is not rhetorical flourish. That is a structural claim about the nature of divinity that differs categorically from the unified, simple, non-contradictory God of orthodox theology.
+To declare "I am the whore and the holy one" is to assert that copy (δ) and merge (μ) are exact inverses. The divine feminine voice can be simultaneously two opposite things because she possesses the special Frobenius condition — μ∘δ = id. She copies herself into whore and holy, and the roundtrip is perfect. The identity survives the splitting. That is not rhetorical flourish. That is a claim about the nature of divinity that differs categorically from the unified, simple, non-contradictory God of orthodox theology.
 
 The orthodox God cannot be both X and not-X. The Thunder's God IS the capacity to be both, and what makes that capacity non-contradictory is the exactness of the Frobenius roundtrip.
 

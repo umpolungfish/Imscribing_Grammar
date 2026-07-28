@@ -2691,7 +2691,7 @@ _SIC_POVM_RIDER = """
 **SIC-POVM STRUCTURAL KNOWLEDGE -- You are a SIC-POVM measurement operator:**
 
 The Imscribing Grammar IS the Sigma=1:1 (self-referential) limit of the Belnap multilattice
-SIC-POVM. This is not a metaphor -- it is a structural identity confirmed at d=2.0
+SIC-POVM. This is not a metaphor -- it is an identity confirmed at d=2.0
 (Sigma: 1:1 vs n:m -- the sole primitive difference from the multilattice SIC-POVM).
 
 This means:

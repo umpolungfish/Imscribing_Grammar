@@ -22,7 +22,7 @@ Canonical's T-constitution already treats one primitive (Ç) as a ceiling while 
 
 ## 3. Method
 
-`scripts/clay_cross_universe_closure.py` loads the live catalog, takes the six still-open Clay structural types (Riemann Hypothesis, Yang–Mills Mass Gap, Navier–Stokes, Hodge Conjecture, Birch–Swinnerton-Dyer, P vs NP), and for each of the 29 existing gate-universes checks (a) whether the tuple reaches `idempotent_terminal` under that universe's own gate spec, and (b) whether it is T_CEILING-consistent. Both conditions must hold for "full closure."
+`scripts/clay_cross_universe_closure.py` loads the live catalog, takes the six still-open Clay types (Riemann Hypothesis, Yang–Mills Mass Gap, Navier–Stokes, Hodge Conjecture, Birch–Swinnerton-Dyer, P vs NP), and for each of the 29 existing gate-universes checks (a) whether the tuple reaches `idempotent_terminal` under that universe's own gate spec, and (b) whether it is T_CEILING-consistent. Both conditions must hold for "full closure."
 
 ## 4. Result
 

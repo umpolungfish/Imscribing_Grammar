@@ -25,7 +25,7 @@ requires paraconsistent logic (Belnap FOUR) rather than classical set theory.
 
 ## 2. The 12 Primitives
 
-A structural tuple is written: `⟨Ð · Þ · Ř · Φ · ƒ · Ç · Γ · ɢ · ⊙ · Ħ · Σ · Ω⟩`
+A tuple is written: `⟨Ð · Þ · Ř · Φ · ƒ · Ç · Γ · ɢ · ⊙ · Ħ · Σ · Ω⟩`
 
 Each position holds a single Shavian character drawn from that primitive's value set.
 
@@ -70,7 +70,7 @@ The 49 symbols also correspond to: d² where d=7 (the SIC-POVM dimension). The e
 
 **Tuple format:**
 
-A structural type tuple lists one Shavian value per primitive in canonical order:
+A type tuple lists one Shavian value per primitive in canonical order:
 
 ```
 ⟨Ð_val · Þ_val · Ř_val · Φ_val · ƒ_val · Ç_val · Γ_val · ɢ_val · ⊙_val · Ħ_val · Σ_val · Ω_val⟩
