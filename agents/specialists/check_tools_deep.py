@@ -127,10 +127,45 @@ run("specialists",      probe_specialists)
 run("web_fetch",        probe_web_fetch)
 run("imscribe_system",  probe_imscribe_system)
 
+def check_required_args_match():
+    """Every documented argument name must exist on the function it documents.
+
+    A wrong name here is worse than no entry: the failure path hands the model
+    the registry's names, so a mismatch sends it round the same wall forever
+    without ever trying the correct call. `compute_conflict_distance` sat like
+    that, documented as name_a/name_b against a function taking
+    name_holistic/name_compositional.
+    """
+    import inspect
+    sys.path.insert(0, str(HERE.parent.parent / "scripts"))
+    import true_agentic_agent as t
+    import IG_inquiry as m
+    bad = []
+    for tool, args in t._IG_REQUIRED_ARGS.items():
+        fn = getattr(m.ToolDispatcher, "_" + tool, None)
+        if fn is None:
+            continue
+        sig = set(inspect.signature(fn).parameters) - {"self"}
+        missing = set(args) - sig
+        if missing:
+            bad.append((tool, sorted(missing), sorted(sig)))
+    if bad:
+        print("\n  required-arg registry disagrees with the functions:")
+        for tool, missing, sig in bad:
+            print(f"    {tool}: documents {missing}, function takes {sig}")
+    else:
+        print(f"\n  required-arg registry: all {len(t._IG_REQUIRED_ARGS)} entries match their functions")
+    return not bad
+
+
+args_ok = check_required_args_match()
+
 print()
 if FAILS:
     print(f"{len(FAILS)} tool(s) do not run:")
     for n, d in FAILS:
         print(f"  {n}: {d}")
+    raise SystemExit(1)
+if not args_ok:
     raise SystemExit(1)
 print("every base tool runs")
