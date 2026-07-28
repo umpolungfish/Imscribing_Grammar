@@ -3053,6 +3053,10 @@ class ToolDispatcher:
             return self._weight_flow(**args)
         elif name == "banked_count":
             return self._banked_count(**args)
+        elif name == "quantum_compile":
+            return self._quantum_compile(**args)
+        elif name == "jones_polynomial":
+            return self._jones_polynomial(**args)
         else:
             return {"status": "error", "error": f"Unknown tool: {name}"}
 
@@ -3301,6 +3305,106 @@ class ToolDispatcher:
         if insert:
             out["insertion"] = insertion_grid(steps, insert)
         return out
+
+    @staticmethod
+    def _m3iosis():
+        import importlib, sys as _s
+        from pathlib import Path as _P
+        d = str(_P(__file__).resolve().parent.parent.parent / "m3iosis" / "src")
+        if d not in _s.path:
+            _s.path.insert(0, d)
+        return importlib.import_module("m3iosis.fibonacci_quantum_computer")
+
+    def _quantum_compile(self, gates=None, depth=3):
+        """Compile a circuit to a Fibonacci anyon BRAID WORD.
+
+        Real topological quantum computation: the circuit becomes a sequence of
+        anyon exchanges, and the reported unitary is checked against its own
+        printed word by resynthesis.
+
+        `gates` is a circuit over H, T, S, X, given as a string or a list. The
+        whole circuit compiles as ONE unitary rather than gate by gate, so the
+        approximation error is incurred once instead of accumulating.
+
+        Every phase native to this model is an exact multiple of a tenth of a
+        winding, while T is 1/8 and S is 1/4. Since 1/8 is not a multiple of
+        1/10, no braid reaches T exactly at any length, which is why
+        compilation exists here at all.
+        """
+        m = self._m3iosis()
+        if not gates:
+            return {"status": "error",
+                    "error": "give a circuit over H, T, S, X, e.g. gates='H T'"}
+        names = gates.split() if isinstance(gates, str) else list(gates)
+        bad = [g for g in names if g.upper() not in ("H", "T", "S", "X")]
+        if bad:
+            return {"status": "error", "error": f"unknown gate(s): {' '.join(bad)}",
+                    "known": ["H", "T", "S", "X"]}
+        circ = m.FibonacciQuantumCircuit(1)
+        word, gate, err, target = circ.compile_composite(
+            [g.upper() for g in names], sk_depth=int(depth))
+        ok, resid, _ = m.FibonacciQuantumCircuit.braid_word_check(
+            circ.gate_set.qc, word, gate)
+        return {
+            "status": "ok",
+            "circuit": " ".join(g.upper() for g in names),
+            "braid_length": len(word),
+            "error": float(err),
+            "word_matches_gate": bool(ok),
+            "resynthesis_residual": float(resid),
+            "braid_word": [int(g) for g in word],
+            "note": ("the error is phase-invariant: a braid realizes its gate only "
+                     "up to a global phase, which is not observable"),
+        }
+
+    def _jones_polynomial(self, braid=None, strands=None):
+        """Jones polynomial of a braid closure at the fifth root of unity.
+
+        The invariant Fibonacci anyons compute natively: SU(2) level 3
+        Chern-Simons IS this evaluation rather than a simulation of it.
+
+        `braid` is a word of signed generators, e.g. "1 1 1" for the trefoil or
+        "1 -2 1 -2" for the figure-eight. The strand count is implied, since
+        sigma_k needs k+1 strands; pass `strands` only to add trivial strands.
+
+        Chirality is decidable from the value: the polynomial has integer
+        coefficients and mirroring acts by t -> 1/t, which on the unit circle is
+        conjugation, so a mirror pair separates exactly when the imaginary part
+        is nonzero. A REAL value means this root cannot see the chirality, NOT
+        that the knot is amphichiral — the cinquefoil is chiral and evaluates
+        real. One root is not a complete invariant: 8_19 evaluates to 1 as the
+        unknot does.
+        """
+        m = self._m3iosis()
+        if braid is None:
+            return {"status": "error",
+                    "error": "give a braid word, e.g. braid='1 1 1' (trefoil)"}
+        try:
+            word = [int(x) for x in (braid.split() if isinstance(braid, str) else braid)]
+        except (TypeError, ValueError):
+            return {"status": "error", "error": "braid must be signed integers"}
+        if not word:
+            n = int(strands or 1)
+        else:
+            n = int(strands or (max(abs(g) for g in word) + 1))
+        qc = m.BaseFibonacciQC() if hasattr(m, "BaseFibonacciQC") else None
+        from m3iosis.fibonacci_anyon_tool import FibonacciQuantumComputer as _QC
+        try:
+            v = _QC().jones_polynomial(n, word)
+        except ValueError as exc:
+            return {"status": "error", "error": str(exc)}
+        real = abs(v.imag) < 1e-9
+        return {
+            "status": "ok",
+            "braid": word, "strands": n,
+            "writhe": sum(1 if g > 0 else -1 for g in word),
+            "value": [float(v.real), float(v.imag)],
+            "modulus": float(abs(v)),
+            "separates_from_mirror": not real,
+            "note": ("real value: this root cannot see the chirality, which is not "
+                     "the same as the knot being amphichiral" if real else
+                     "the mirror's value is the complex conjugate"),
+        }
 
     def _banked_count(self, word=None):
         """Was anything counted, then cleared with nothing banked behind it?

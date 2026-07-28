@@ -1,25 +1,32 @@
-Banking a result before reversing it becomes a strategy, not just a reading.
+The tool roster is read every winding, and two writing faults are named.
 
-AREV empties the register and leaves open frames alone, so a result fused back
-to depth zero is exposed to the next reversal while the same result held one
-level up survives it. A program that establishes something, then reverses, then
-bounds must open the region that will HOLD the result before the region that
-COMPUTES it, and close them in that order. The Erdos-Turan proof does exactly
-that: card_unorderedPairs is a `have` still in scope when the calc runs, so the
-reversal inside the chain cannot reach it. The `have` is the outer frame.
+THE ROSTER. Every tool, with its signature and its description, laid out in
+full at the top of each winding rather than once at the start of a session. A
+roster given once is a roster forgotten by winding four: the model works from
+whatever it still remembers, which is the handful it happened to use early, and
+the rest may as well not exist. The previous copy is removed as the new one goes
+in, so the history carries exactly one and it does not accumulate a copy per
+turn.
 
-Three places, so it is enforced where it is cheap and available where it is
-wanted.
+THE QUANTUM CALCULATOR. quantum_compile takes a circuit over H, T, S and X and
+returns a Fibonacci anyon braid word, with the reported unitary checked against
+its own printed word by resynthesis. jones_polynomial evaluates a braid closure
+at the fifth root of unity, which is what these anyons compute natively. Both
+carry the readings that are easy to get wrong: the error is phase-invariant
+because a braid realizes its gate only up to an unobservable phase, and a REAL
+Jones value means this root cannot see the chirality rather than the knot being
+amphichiral, the cinquefoil being chiral and evaluating real.
 
-banked_count_check in lattice_flow reports every CLEAR that loses weight with
-nothing banked behind it, with the remedy attached. Reachable as the
-banked_count grammar tool, so the agents and MoDoT both have it; 50 grammar
-tools now, registry 30 of 30, deep check green.
+BARE GLYPHS. A tuple is twelve Shavian glyphs and the sealed ⊙ in canonical slot
+order. Not Ð=𐑦; Þ=𐑸; and so on: the slot names ARE the order, so writing them
+out restates position twelve times and turns a twelve-character object into a
+sentence. The glyphs are real characters, never a unicode-math stand-in and
+never inside $...$, since a substituted character is a different point in the
+Crystal.
 
-ob3ect carries it as Phase 9b of the report and on the artifact, so a generated
-program says whether it lost a count to a clear. The design prompt gains the
-strategy under EDGE ROUTING, with the wrong and right arrangements written out,
-so programs are built that way rather than only checked afterwards.
+THE RETIRED WORD. "Structural" is not to be written. A type is a type. It is
+worst where it looks most useful: "structural claims as opposed to
+phenomenological ones" grants that another register holds claims the Grammar
+does not, which is the concession retiring the word exists to refuse.
 
-The kernel gains `banked <word>`, which reads the flat arrangement as four
-units cleared at the AREV and the nested one as clean.
+52 grammar tools now, registry 32 of 32, deep check green.

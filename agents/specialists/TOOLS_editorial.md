@@ -81,6 +81,8 @@ never assert arithmetic from memory.
 - `lattice_cycle` — word=<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>, insert=<glyph, optional>
 - `weight_flow` — word=<IMASM word as glyphs>
 - `banked_count` — word=<IMASM word as glyphs>
+- `quantum_compile` — gates=<circuit over H T S X, e.g. 'H T'>, depth=<recursion depth, optional>
+- `jones_polynomial` — braid=<signed generators, e.g. '1 1 1' for the trefoil>, strands=<optional; implied by the word>
 
 ## Editorial tools
 

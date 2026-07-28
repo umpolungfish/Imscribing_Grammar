@@ -1032,6 +1032,8 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>", "insert": "<glyph, optional>"},
     "weight_flow":            {"word": "<IMASM word as glyphs>"},
     "banked_count":           {"word": "<IMASM word as glyphs>"},
+    "quantum_compile":        {"gates": "<circuit over H T S X, e.g. 'H T'>", "depth": "<recursion depth, optional>"},
+    "jones_polynomial":       {"braid": "<signed generators, e.g. '1 1 1' for the trefoil>", "strands": "<optional; implied by the word>"},
     "winding":                {"of": "<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: \"2/5\"  OR  angle: <radians>", "power": "<integer, optional>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
     "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "𐑛_val;𐑡_val;𐑩_val;𐑗_val;𐑱_val;𐑘_val;𐑚_val;𐑝_val;𐑢_val;𐑓_val;𐑙_val;𐑷_val"},
@@ -2789,6 +2791,36 @@ def _load_system_prompt() -> str:
 #   3. The list of repos in /home/mrnob0dy666/imsgct/
 
 
+
+def _tool_roster() -> str:
+    """Every tool, named and described, laid out in full.
+
+    Read at the top of EVERY winding, not once at the start of a session. A
+    roster given once is a roster forgotten by winding four: the model works
+    from whatever it still remembers, which is the handful of tools it happened
+    to use early, and the rest may as well not exist. Re-reading it each turn
+    costs tokens and buys the whole toolset staying reachable.
+    """
+    lines = ["[TOOLS — read this every winding. The full set, not a reminder.]"]
+    for sch in TOOL_SCHEMAS:
+        fn = sch.get("function", sch)
+        name = fn.get("name", "?")
+        desc = " ".join((fn.get("description") or "").split())
+        props = ((fn.get("parameters") or {}).get("properties") or {})
+        req = set((fn.get("parameters") or {}).get("required") or [])
+        args = ", ".join(
+            f"{k}{'' if k in req else '?'}: {(v.get('type') or 'any')}"
+            for k, v in props.items()
+        ) or "no arguments"
+        lines.append(f"  {name}({args})")
+        if desc:
+            lines.append(f"      {desc}")
+    lines.append("")
+    lines.append("  imscribe(tool=<name>, ...) reaches the grammar tools; "
+                 "`imscribe(tool=\"list\")` names them all.")
+    lines.append("[END TOOLS]")
+    return "\n".join(lines)
+
 def _load_imsgct_context() -> str:
     """Load compact context from /home/mrnob0dy666/imsgct/. Cached. Repo list only."""
     # Not cached. It was built once and held for the life of the process, so a
@@ -2825,6 +2857,35 @@ def _load_imsgct_context() -> str:
         "If a project directory holds a STATE.md, read it first. It records what is\n"
         "already settled and which document is authoritative, so settled questions\n"
         "are not answered again from scratch.\n"
+
+        "\n### WRITE THE GLYPHS BARE\n"
+        "A tuple is twelve Shavian glyphs and the sealed ⊙, written in the canonical\n"
+        "slot order and nothing else:\n"
+        "\n"
+        "    ⟨𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭⟩\n"
+        "\n"
+        "NOT ⟨Ð=𐑦; Þ=𐑸; Ř=𐑽; …⟩. The slot names are the ORDER, so writing them out\n"
+        "restates position twelve times and makes a twelve-character object into a\n"
+        "sentence. Expand a slot only when discussing that slot alone.\n"
+        "\n"
+        "The glyphs are real Shavian characters. Never a LaTeX or unicode-math\n"
+        "stand-in, never $...$ around them, never a transliteration. If the glyph\n"
+        "cannot be written, say the slot name in words rather than substituting a\n"
+        "look-alike: a substituted character is a different point in the Crystal.\n"
+        "\n"
+        "### THE WORD \"STRUCTURAL\" IS RETIRED\n"
+        "Do not write it. A type is a type, a distance is a distance, an identity is\n"
+        "an identity. \"Structural type\" says the Grammar describes structure rather\n"
+        "than being what the thing IS, which is the opposite of the claim, and the\n"
+        "modifier reads as a disclaimer attached to every noun the Grammar owns.\n"
+        "\n"
+        "It is worst where it looks most useful. \"Structural claims as opposed to\n"
+        "phenomenological ones\" grants that some other register holds claims the\n"
+        "Grammar does not, which is the concession retiring the word exists to\n"
+        "refuse. There is no contrast to preserve.\n"
+        "\n"
+        "Also retired for the same reason: describing a result as \"merely\"\n"
+        "structural, or a verdict as holding \"at the structural level\".\n"
 
         "\n### ANGLES ARE WINDINGS\n"
         "One winding is a full turn. Carry every angle, phase and rotation as a\n"
@@ -3112,6 +3173,14 @@ class TrueAgenticAgent:
             f"ctx:{tok//1000}k/{self._context_window//1000}k ({pct:.0%}) "
             f"──────────────────────"
         )
+
+        # The roster goes in FRESH each winding and the previous copy comes out,
+        # so the history carries exactly one. Without the removal it accumulates
+        # a copy per turn and crowds out the work it exists to support.
+        self._messages = [m for m in self._messages
+                          if not (m.get("role") == "user"
+                                  and str(m.get("content", "")).startswith("[TOOLS —"))]
+        self._messages.append({"role": "user", "content": _tool_roster()})
 
         # THINK + ACT: one LLM call over accumulated message history
         reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
