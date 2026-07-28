@@ -50,7 +50,7 @@ never assert arithmetic from memory.
 - `primitive_peel` — name=<catalog_entry_name>, primitive=<𐑛|𐑡|𐑩|𐑗|𐑱|𐑘|𐑚|𐑝|𐑢|𐑓|𐑙|𐑷>
 - `principal_decomp` — name=<catalog_entry_name>
 - `retrosynthetic_path` — name=<catalog_entry_name>
-- `compute_conflict_distance` — name_a=<system1>, name_b=<system2>
+- `compute_conflict_distance` — name_holistic=<top-down encoding>, name_compositional=<bottom-up encoding>
 - `emergence_frontier`
 - `compute_promotions` — name_source=<system1>, name_target=<system2>
 - `predict_from_promotions` — promoted_primitives=['<val1>', '<val2>']
@@ -78,6 +78,8 @@ never assert arithmetic from memory.
 - `revise_insight`
 - `search_insights`
 - `winding` — of=<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: "2/5"  OR  angle: <radians>, power=<integer, optional>
+- `lattice_cycle` — word=<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>, insert=<glyph, optional>
+- `weight_flow` — word=<IMASM word as glyphs>
 
 ## Chemistry, biology, materials, plasmas tools
 

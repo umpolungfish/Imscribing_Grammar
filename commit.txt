@@ -1,14 +1,27 @@
-The contrast was the concession.
+Lattice cycling and weight flow become grammar tools.
 
-The first pass kept "structural" wherever it stood against another register,
-on the reasoning that there it distinguished rather than hedged. That reasoning
-was backwards. "Structural claims as opposed to phenomenological ones" makes
-the Grammar one description among several and grants that some other register
-holds the claims it does not, which is precisely what retiring the word exists
-to refuse. A claim is a claim.
+One implementation in scripts/lattice_flow.py, dispatched by IG_inquiry, so the
+agents, MoDoT's bridge and the ob3ect CLIs all reach the same rules rather than
+each carrying a copy.
 
-The guard is gone and those cases are swept too.
+lattice_cycle walks a word around its ROTAT orbit and returns the map from cut
+to landing register. Every rotation is the same object: the verdict and the
+topology hold across the orbit and the final register does not, so the phase is
+the only handle on where a word comes to rest. Given `insert` it also places a
+token at every index of every rotation, which asks the same question of an
+operation, since appending is insertion at the seam and the seam is the phase.
 
-Identifiers and records remain untouched, for the reasons given in the previous
-commit: renaming API breaks callers, and rewriting a log falsifies a record
-rather than correcting terminology.
+weight_flow counts what the union throws away. The fork is a set and the fuse a
+union, so a walk keeps which values were touched and nothing else. The lift of
+OR to weights is max rather than sum. SEED and INERT are reported because a
+final register hides both: AFWD and IMSCRIB assign T to an empty register
+without any deposit, and after IFIX everything but IFIX and IMSCRIB is a no-op.
+
+The machine is subclassed rather than reimplemented, so the transition rules
+stay the ones the pipeline uses and only the bookkeeping is added. The import
+resolves by path, since callers reach the dispatcher from several roots and a
+bare import only worked from one of them.
+
+Registered in the required-argument table, picked up by the manifest generator,
+so all three specialists carry them. Deep check passes; 29 entries match their
+functions.

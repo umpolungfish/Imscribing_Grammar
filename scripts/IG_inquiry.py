@@ -3047,6 +3047,10 @@ class ToolDispatcher:
             return self._search_insights(**args)
         elif name == "winding":
             return self._winding(**args)
+        elif name == "lattice_cycle":
+            return self._lattice_cycle(**args)
+        elif name == "weight_flow":
+            return self._weight_flow(**args)
         else:
             return {"status": "error", "error": f"Unknown tool: {name}"}
 
@@ -3251,6 +3255,75 @@ class ToolDispatcher:
             "plane": session_match.plane,
             "confidence": session_match.confidence,
         }
+
+    @staticmethod
+    def _lattice_flow():
+        """Import lattice_flow by path, not by luck.
+
+        Callers reach this dispatcher from several roots (the agents, MoDoT's
+        bridge, the ob3ect pipeline), and a bare `import lattice_flow` only
+        works when sys.path happens to carry this directory.
+        """
+        import importlib, sys as _s
+        from pathlib import Path as _P
+        d = str(_P(__file__).resolve().parent)
+        if d not in _s.path:
+            _s.path.insert(0, d)
+        return importlib.import_module("lattice_flow")
+
+    def _lattice_cycle(self, word=None, insert=None):
+        """Walk an IMASM word around its ROTAT orbit and report what moves.
+
+        A word is a ring and ROTAT is the cyclic shift, so every rotation is the
+        same object. The verdict, the closed-walk flag and the topology class
+        hold across the orbit; the final register does not. So the phase is the
+        only handle on where a word comes to rest, and this returns the map from
+        cut to landing register.
+
+        `insert` additionally places that token at every index of every rotation.
+        Appending is insertion at the seam and the seam is the phase, so the two
+        operations differ only by which rotation is held. A constant row means
+        the index does not matter at that cut; a constant column means the cut
+        does not matter at that index.
+        """
+        lf = self._lattice_flow()
+        parse_word, cycle, insertion_grid = lf.parse_word, lf.cycle, lf.insertion_grid
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}",
+                    "note": "◇ and ● are accepted for ∈ and ∋"}
+        out = cycle(steps)
+        if insert:
+            out["insertion"] = insertion_grid(steps, insert)
+        return out
+
+    def _weight_flow(self, word=None):
+        """Where the weight moves through an IMASM word.
+
+        The machine holds each open fork as a set and closes it with a union, so
+        a finished walk knows which base values were touched and nothing else.
+        This records the movement instead: deposits, the clears that empty the
+        register while frames keep what they banked, and the fuse restoring
+        exactly what a clear destroyed.
+
+        Two movements carrying no weight are reported because they are otherwise
+        invisible in a final register: SEED, where AFWD or IMSCRIB assigns T to
+        an empty register directly, so a walk can land in T having carried
+        nothing; and INERT, where IFIX has fixed the register and the machine
+        returns early for everything but IFIX and IMSCRIB.
+        """
+        lf = self._lattice_flow()
+        parse_word, weight = lf.parse_word, lf.weight
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        return weight(steps)
 
     def _winding(self, angle=None, turns=None, power=1, of=None):
         """Angles as rational numbers of WINDINGS, one winding to a full turn.
