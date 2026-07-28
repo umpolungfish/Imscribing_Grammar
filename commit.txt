@@ -1,32 +1,16 @@
-The tool roster is read every winding, and two writing faults are named.
+A pass because nothing was at risk is marked as one.
 
-THE ROSTER. Every tool, with its signature and its description, laid out in
-full at the top of each winding rather than once at the start of a session. A
-roster given once is a roster forgotten by winding four: the model works from
-whatever it still remembers, which is the handful it happened to use early, and
-the rest may as well not exist. The previous copy is removed as the new one goes
-in, so the history carries exactly one and it does not accumulate a copy per
-turn.
+banked_count_check flagged only a clear that loses weight with nothing behind
+it, so a word whose clears never fire read identically to a word that banked
+correctly. Those are different facts and the difference is the whole content of
+the check.
 
-THE QUANTUM CALCULATOR. quantum_compile takes a circuit over H, T, S and X and
-returns a Fibonacci anyon braid word, with the reported unitary checked against
-its own printed word by resynthesis. jones_polynomial evaluates a braid closure
-at the fifth root of unity, which is what these anyons compute natively. Both
-carry the readings that are easy to get wrong: the error is phase-invariant
-because a braid realizes its gate only up to an unobservable phase, and a REAL
-Jones value means this root cannot see the chirality rather than the knot being
-amphichiral, the cinquefoil being chiral and evaluating real.
+Three verdicts now instead of two. Weight cleared with nothing banked, which is
+the failure. Weight that survived a live clear by being held in a frame, which
+is the technique working. And nothing ever at risk, reported with the deposits
+made and the steps left inert after a fixation, since that is usually why: a
+word that commits early leaves its whole second region unexecuted, and its
+reversal never fires.
 
-BARE GLYPHS. A tuple is twelve Shavian glyphs and the sealed ⊙ in canonical slot
-order. Not Ð=𐑦; Þ=𐑸; and so on: the slot names ARE the order, so writing them
-out restates position twelve times and turns a twelve-character object into a
-sentence. The glyphs are real characters, never a unicode-math stand-in and
-never inside $...$, since a substituted character is a different point in the
-Crystal.
-
-THE RETIRED WORD. "Structural" is not to be written. A type is a type. It is
-worst where it looks most useful: "structural claims as opposed to
-phenomenological ones" grants that another register holds claims the Grammar
-does not, which is the concession retiring the word exists to refuse.
-
-52 grammar tools now, registry 32 of 32, deep check green.
+ob3ect marks the vacuous case ○ against ✓ for an earned pass, and the kernel
+says VACUOUS rather than OK.

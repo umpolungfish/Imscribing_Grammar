@@ -234,22 +234,45 @@ def banked_count_check(steps) -> Dict:
     before opening the region that computes it, and close them in that order.
     """
     m = run_weighted(steps)
-    exposed = []
+    exposed, live_clears = [], 0
     for step, glyph, kind, d in m.ledger:
-        if kind == "CLEAR" and d["lost"] and d["banked"] == 0:
-            exposed.append({"step": step, "glyph": glyph,
-                            "lost": dict(d["lost"]),
-                            "weight": sum(d["lost"].values())})
+        if kind == "CLEAR" and d["lost"]:
+            live_clears += 1
+            if d["banked"] == 0:
+                exposed.append({"step": step, "glyph": glyph,
+                                "lost": dict(d["lost"]),
+                                "weight": sum(d["lost"].values())})
     total_lost = sum(e["weight"] for e in exposed)
+    inert = sum(1 for _, _, k, _ in m.ledger if k == "INERT")
+    deposits = sum(1 for _, _, k, _ in m.ledger if k == "DEPOSIT")
+    restored = sum(sum(d["restored"].values())
+                   for _, _, k, d in m.ledger if k == "FUSE")
+    # Passing because nothing was ever at risk is not the same as passing
+    # because the frame held. A word whose clears never fire reads identically
+    # to one that banked correctly, and the difference is the whole content of
+    # the check.
+    vacuous = not exposed and live_clears == 0
     return {
         "status": "ok",
         "word": render(steps),
         "exposed_clears": exposed,
         "weight_lost_in_the_open": total_lost,
         "banked_ok": not exposed,
-        "verdict": ("nothing counted was exposed to a clear" if not exposed else
-                    f"{total_lost} unit(s) of weight cleared with nothing banked "
-                    f"behind them: the count was in the open when the reversal came"),
+        "vacuous": vacuous,
+        "live_clears": live_clears,
+        "restored": restored,
+        "deposits": deposits,
+        "inert": inert,
+        "verdict": (
+            f"{total_lost} unit(s) of weight cleared with nothing banked behind "
+            f"them: the count was in the open when the reversal came"
+            if exposed else
+            (f"nothing was at risk: no clear ever fired against a live register"
+             + (f" ({inert} step(s) inert after a fixation)" if inert else "")
+             + (f", {deposits} deposit(s) made" if deposits else ", nothing deposited"))
+            if vacuous else
+            f"{restored} unit(s) survived a clear by being banked in a frame "
+            f"({live_clears} live clear(s))"),
         "remedy": None if not exposed else
                   "open the region that holds the result BEFORE the region that "
                   "computes it, and close them in that order, so the inner fuse "
