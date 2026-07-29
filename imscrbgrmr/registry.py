@@ -34,6 +34,43 @@ from .models import (
 InteractionGrammar = Grammar
 
 
+def slot_category_violations(entries) -> List[str]:
+    """Report glyphs sitting in a slot that cannot hold them.
+
+    Each primitive is an inductive with a closed constructor list — Ω, for
+    instance, is `| awe | oak | ah | zoo` and nothing else — so a glyph outside
+    that list is not an unusual value but a type error. The catalog carried such
+    entries undetected because nothing ever compared a saved tuple against
+    CANONICAL_PRIMITIVES: two entries held a Φ value in the Ω slot, and every
+    structural verb that needed Ω on them returned N (void) rather than naming
+    the cause. This runs on save so the next one is reported when it is written
+    rather than discovered by a refusal much later.
+
+    Reports; does not block. The correct value for a violating slot is a
+    determination about the entry, not something a guard can supply.
+    """
+    # imported here rather than at module scope to keep registry importable if
+    # canonical_primitives is being edited; the ImportError is NOT swallowed —
+    # a guard that silently reports zero because it reached for the wrong name
+    # is the same defect it exists to catch.
+    from .canonical_primitives import CANONICAL_VALUES as _LEGAL
+    if isinstance(entries, dict):
+        entries = list(entries.values())
+    out: List[str] = []
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        for slot, legal in _LEGAL.items():
+            if not isinstance(legal, list):
+                continue
+            got = e.get(slot)
+            if got is not None and got not in legal:
+                out.append(
+                    f"{e.get('name', '<unnamed>')}: {slot} = {got!r} is not in "
+                    f"{legal}")
+    return out
+
+
 # =============================================================================
 # Grounding Validation Support (Fix 1 — IG_FIXES.md)
 # =============================================================================
@@ -608,8 +645,11 @@ class ImscriptionCatalog:
         """Save catalog to JSON file, then propagate if it was the canonical."""
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
+        payload = self.to_json()
+        for line in slot_category_violations(json.loads(payload)):
+            logging.warning("slot-category violation: %s", line)
         with open(path, "w") as f:
-            f.write(self.to_json())
+            f.write(payload)
         propagate_catalog(path)
     
     @classmethod

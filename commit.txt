@@ -1,31 +1,24 @@
-additive_spectrum: representation counts as a winding spectrum.
+Report slot-category violations when the catalog is saved
 
-r_A(n) is the n-th coefficient of f(z)^2 where f(z) = sum over a in A of z^a. On
-the unit circle f is a function of a WINDING, so evaluating the generating
-function is evaluating at a rational number of turns and r is recovered from the
-root-of-unity lattice exactly.
+Each primitive is an inductive with a closed constructor list — Primitive_Omega
+is | awe | oak | ah | zoo and nothing else — but nothing ever compared a saved
+tuple against those lists, so glyphs from the wrong primitive sat in the catalog
+undetected. Thirty of them: the transactinides carrying a kinetic glyph in the
+criticality slot, groups 13 and 15 carrying a dimensionality glyph in
+stoichiometry, two entries holding a Phi value in Omega, and one unresolved
+placeholder string.
 
-This is the move shared_floor named as the gap between the proved counting bound
-and the proven attractor: criticality to complex plane. It is the same move
-Erdos-Fuchs makes past Erdos-Turan's bound, and the coordinate on the circle is
-the winding.
+They surfaced by refusal rather than by audit. Every structural verb needing
+Omega on the affected entries returned N (void), which is correct behaviour and
+names a missing value rather than a misplaced one, so the cause stayed invisible
+until the tuples were checked against the inductive directly.
 
-The recovery is checked against a direct count on every call rather than
-assumed, which caught the bug on the first run: |f(z)|^2 is the DIFFERENCE
-function and f(z)^2 is the sum function, and extracting r from the former
-recovers a different sequence entirely. It reported exact=False and the tool
-would have been wrong and plausible without it.
+slot_category_violations() does that check and save() logs each result. It
+reports rather than blocks: the correct value for a violating slot is a
+determination about the entry, and blocking would leave the canonical catalog
+unsavable until all thirty resolve.
 
-What the spectrum shows: bounded r is flatness. Strict Sidon sets sit at
-min/max around 0.19, sets with r reaching 8 sit at 0.0002 to 0.004. So the
-conjecture reads as a compatibility question between being a basis and being
-flat, and that is finitely searchable. A randomized greedy over windows of 20,
-40 and 60 at max_r <= 2 covers 0.71, 0.61 then 0.49 of the window, and at
-max_r <= 4 covers 0.95, 0.90 then 0.87. Falling in N at fixed C and rising in C
-at fixed N, which is the conjecture's shape. Evidence, not proof: a greedy gives
-lower bounds and the trend could be the search rather than the mathematics.
-
-sidon_check is the STRICT condition, at most two ordered representations, which
-is what sidon_reps_le_two proves in p4ramill. Mian-Chowla satisfies only the
-weaker i < j version and fails this one, so the name is spelled out rather than
-left to collide.
+The CANONICAL_VALUES import is deliberately not wrapped. The first version
+reached for a name that does not exist and the swallowed ImportError made it
+report zero violations against a catalog holding thirty — failing in precisely
+the manner it exists to catch.
