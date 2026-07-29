@@ -1103,6 +1103,37 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
 }
 
 
+_ECHO_DESC_CHARS = 300
+
+
+def _emit_short_echo(payload: Dict[str, Any]) -> str:
+    """Persist in full, echo a trimmed description back into context.
+
+    The catalog keeps whatever the caller wrote. Only the string that re-enters
+    the agent's context is shortened, which is what the token concern was
+    actually about.
+    """
+    out = _imscribe_emit(payload)
+    try:
+        obj = json.loads(out)
+    except Exception:
+        return out
+
+    def _trim(o):
+        if isinstance(o, dict):
+            for k, v in list(o.items()):
+                if k == "description" and isinstance(v, str) and len(v) > _ECHO_DESC_CHARS:
+                    o[k] = v[:_ECHO_DESC_CHARS] + f" …[{len(v)} chars stored in full]"
+                else:
+                    _trim(v)
+        elif isinstance(o, list):
+            for v in o:
+                _trim(v)
+
+    _trim(obj)
+    return json.dumps(obj, indent=2, ensure_ascii=False)
+
+
 def _imscribe_emit(args: Dict[str, Any]) -> str:
     """Call a imscribe ToolDispatcher method directly (no subprocess)."""
     tool_name = args["tool_name"]
@@ -1544,10 +1575,18 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
         if k not in args:
             args[k] = v
     name = args.get("name", "")
-    # Truncate description — the model (especially 1.7B) often dumps the full task
-    # text here. The dispatcher only needs a short label; verbose descriptions waste
-    # tokens in every subsequent winding's context.
-    description = (args.get("description", "") or "")[:300]
+    # The model (especially 1.7B) often dumps the full task text into description,
+    # and verbose descriptions waste tokens in every subsequent winding's context.
+    # That is a real concern about the ECHO, and it used to be handled by slicing
+    # to [:300] here — which is the value that gets PERSISTED. The result is 675
+    # catalog entries sitting at exactly 300 characters and 805 ending mid-word:
+    # `belnap_multilattice_sic_povm` stops at "CONFLICT RESOLUTION: all 5 " and
+    # `sic_povm_bridge_monadic` at "The bridge mecha". The description is the only
+    # prose the catalog carries, so a context-economy measure was destroying the
+    # record to save tokens in a transcript.
+    #
+    # Persist the whole thing; trim it out of what comes back into context.
+    description = args.get("description", "") or ""
     justification = args.get("convergence_justification", "")
     order = CANONICAL_FAMILIES[:]
     parts = [_PRIM_NORM.get(str(args.get(p, "")), str(args.get(p, ""))) for p in order]
@@ -1559,13 +1598,13 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # If convergence_justification already provided, the caller has resolved Tetractys
     # conflicts — commit directly without re-triangulating.
     if justification:
-        return _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
+        return _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
 
     # Check that the caller supplied a complete tuple (all 12 primitives non-empty)
     proposed: Dict[str, str] = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
     if not all(proposed.values()):
         # Incomplete — fall through to normal dispatch which will report the error
-        return _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
+        return _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
 
     # ── TETRACTYS PROTOCOL ────────────────────────────────────────────────
     # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
@@ -1602,7 +1641,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
         tool_args["convergence_justification"] = (
             f"[Triangulated: {n_windings}/3 windings converged] {report}"
         )
-        commit_result = _imscribe_emit({"tool_name": "imscribe_system", "args": tool_args})
+        commit_result = _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
         return f"{report}\n\nCOMMIT RESULT:\n{commit_result}"
     else:
         # Conflicts found — return the report and majority tuple WITHOUT committing.
