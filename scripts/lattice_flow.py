@@ -529,3 +529,199 @@ def hyper_gematria(word_steps) -> Dict:
                  "spectrum aggregates every cut, so no coordinate reads absolute "
                  "position"),
     }
+
+
+# ── Steering: reach a target register by rotation and insertion ───────────────
+
+
+# ── What an insertion costs ─────────────────────────────────────────────────
+# Measured, not stipulated: each opcode was inserted at every third position of
+# 120 randomly generated LIVE words (words that had weight to lose), and the
+# change in restored weight and the rate of vacating recorded.
+#
+# The result is categorical rather than graded. IFIX vacates a live word about
+# half the time; every other opcode vacates zero. A fixation makes everything
+# after it inert, so it is the only insertion that can end a run rather than
+# merely shift it. The productive ordering that falls out is the banking
+# discipline arrived at from the other direction: open a region, clear against
+# it, deposit inside it.
+OP_COST: Dict[str, Dict[str, float]] = {
+    "FSPLIT3": {"delta": +0.019, "vacates": 0.000},   # open a region — best
+    "AREV":    {"delta": +0.011, "vacates": 0.000},   # the clear that banks
+    "EVALI":   {"delta": +0.008, "vacates": 0.000},
+    "EVALT":   {"delta": +0.004, "vacates": 0.000},
+    "EVALF":   {"delta": +0.004, "vacates": 0.000},
+    "AFWD":    {"delta":  0.000, "vacates": 0.000},
+    "CLINK":   {"delta":  0.000, "vacates": 0.000},
+    "IMSCRIB": {"delta":  0.000, "vacates": 0.000},
+    "TANCH":   {"delta":  0.000, "vacates": 0.000},
+    "FFUSE3":  {"delta": -0.019, "vacates": 0.000},   # closing early costs
+    "VINIT":   {"delta": -0.044, "vacates": 0.000},   # clears, banks nothing
+    "IFIX":    {"delta": -0.069, "vacates": 0.494},   # the only one that ends a run
+}
+
+
+def op_cost(tokens) -> Dict:
+    """The measured cost of a set of insertions, and whether any can vacate."""
+    d = sum(OP_COST.get(t, {}).get("delta", 0.0) for t in tokens)
+    risk = max([OP_COST.get(t, {}).get("vacates", 0.0) for t in tokens] or [0.0])
+    return {"delta": round(d, 4), "vacate_risk": risk,
+            "carries_fixation": any(t == "IFIX" for t in tokens)}
+
+# Ordered by measured productivity so the search meets the useful insertions
+# first; the set is unchanged, only the order.
+_STEER_TOKENS = ["FSPLIT3", "AREV", "EVALI", "EVALT", "EVALF", "AFWD",
+                 "CLINK", "IMSCRIB", "TANCH", "FFUSE3", "VINIT", "IFIX"]
+
+
+def _inserted(base, cand) -> List[str]:
+    """Which tokens `cand` has that `base` does not, as a multiset difference."""
+    c = Counter(cand) - Counter(base)
+    return [t for t, n in c.items() for _ in range(n)]
+
+
+def steer(steps, target=None, rotate=True, insert=True, depth=1,
+          require_live=False, min_restored=0):
+    """Reach a target register AND a target state, by rotation and insertion.
+
+    A landing is a property of the cut, not of the word, so asking for a
+    register is asking which cut to read from and what to add. But a register
+    alone is not a result: inserting IFIX makes everything after it inert, so
+    almost any target is reachable on a run where nothing was ever at risk.
+    `require_live` and `min_restored` are how the caller asks for the landing
+    to have been earned, which is the half of the request a register cannot
+    express.
+
+    `depth` allows more than one insertion. With no target, the reachable set is
+    returned — the refusal stated positively, as what this word CAN land on.
+
+    Cost prunes NOTHING here, deliberately. The obvious optimisation is to stop
+    expanding intermediates that have gone vacuous, and it is maximally lossy:
+    measured on the Frobenius kernel, every live depth-2 solution is reached
+    through a vacuous depth-1 intermediate and none through a live one, because
+    no single insertion makes that word live at all. From a word carrying
+    nothing, the path to carrying something passes through carrying nothing —
+    so a search that refuses to walk through vacuity finds no way out of it.
+    The measured costs order the frontier and are reported per solution; they do
+    not gate it.
+
+    """
+    n = len(steps)
+    rots = list(range(n)) if rotate else [0]
+
+    def variants(w):
+        """All words reachable from w by up to `depth` insertions, w included."""
+        seen = {render(w): w}
+        frontier = [w]
+        for _ in range(max(0, depth) if insert else 0):
+            nxt = []
+            for cur in frontier:
+                for g in _STEER_TOKENS:
+                    for i in range(len(cur) + 1):
+                        cand = cur[:i] + [g] + cur[i:]
+                        key = render(cand)
+                        if key not in seen:
+                            seen[key] = cand
+                            nxt.append(cand)
+            frontier = nxt
+        return seen
+
+    hits, reachable, examined = [], {}, 0
+    for k in rots:
+        rot = steps[k:] + steps[:k]
+        for key, cand in variants(rot).items():
+            examined += 1
+            reg = weight(cand)["final_register"]
+            reachable[reg] = reachable.get(reg, 0) + 1
+            if target is not None and reg != target:
+                continue
+            b = banked_count_check(cand)
+            live = not b.get("vacuous")
+            rest = b.get("restored", 0)
+            if require_live and not live:
+                continue
+            if rest < min_restored:
+                continue
+            if target is not None:
+                added_toks = _inserted(rot, cand)
+                hits.append({"word": key, "cut": k, "added": len(cand) - n,
+                             "register": reg, "restored": rest,
+                             "vacuous": b.get("vacuous"),
+                             "deposits": b.get("deposits", 0),
+                             "cost": op_cost(added_toks)})
+    # Liveness leads, then weight: a landing bought with a vacuous run is free,
+    # and ranking by the target alone manufactures exactly those.
+    hits.sort(key=lambda h: (not h["vacuous"], h["restored"], -h["added"]),
+              reverse=True)
+    out = {"status": "ok", "word": render(steps), "target": target,
+           "depth": depth, "examined": examined,
+           "constraints": {"require_live": require_live,
+                           "min_restored": min_restored},
+           "reachable": dict(sorted(reachable.items(), key=lambda t: -t[1]))}
+    if target is None:
+        out["note"] = ("no target given; reachable registers counted over every "
+                       "cut and insertion")
+        return out
+    out["solutions"] = len(hits)
+    out["best"] = hits[:5]
+    if not hits:
+        why = "with nothing at risk excluded" if require_live else ""
+        out["refusal"] = (f"{target} is not reachable from this word by rotation "
+                          f"and {depth} insertion(s) {why}".strip())
+    return out
+
+
+def steer_spectrum(steps, target=None, depth=1):
+    """Steer the landing SPECTRUM, which is a property of the word not the cut.
+
+    Rotation moves the landing and cannot move the spectrum — the spectrum is
+    rotation-invariant by construction, so this searches insertions only. That
+    asymmetry is the point: to change where a word rests you turn it, to change
+    what it IS you add to it.
+
+    Scored by the target's share across every cut, so the answer is a word that
+    lands on the target from MOST readings rather than from a lucky one, and by
+    the weight it still carries after the change.
+    """
+    def spectrum(w):
+        n = len(w)
+        c = Counter(weight(w[k:] + w[:k])["final_register"] for k in range(n))
+        return c, n
+
+    base_c, base_n = spectrum(steps)
+    base = {"word": render(steps), "spectrum": dict(base_c),
+            "share": round(base_c.get(target, 0) / base_n, 4) if target else None}
+    if target is None:
+        return {"status": "ok", "base": base,
+                "note": "no target; the spectrum above is the word's invariant landing profile"}
+
+    seen, frontier = {render(steps): steps}, [steps]
+    for _ in range(max(1, depth)):
+        nxt = []
+        for w in frontier:
+            for g in _STEER_TOKENS:
+                for i in range(len(w) + 1):
+                    cand = w[:i] + [g] + w[i:]
+                    key = render(cand)
+                    if key not in seen:
+                        seen[key] = cand
+                        nxt.append(cand)
+        frontier = nxt
+    rows = []
+    for key, cand in seen.items():
+        c, n = spectrum(cand)
+        b = banked_count_check(cand)
+        rows.append({"word": key, "added": len(cand) - len(steps),
+                     "share": round(c.get(target, 0) / n, 4),
+                     "spectrum": dict(c), "restored": b.get("restored", 0),
+                     "vacuous": b.get("vacuous")})
+    # Ranking share first manufactures the free landing: inserting IFIX makes
+    # everything after it inert, so the word lands on the target from EVERY cut
+    # while nothing is ever at risk. A perfect spectrum bought with a vacuous
+    # run is not a better word, so liveness leads, then weight, then share.
+    rows.sort(key=lambda r: (not r["vacuous"], r["restored"], r["share"]), reverse=True)
+    best_share = rows[0]["share"] if rows else 0.0
+    return {"status": "ok", "target": target, "base": base,
+            "searched": len(seen), "best_share": best_share,
+            "best": rows[:5],
+            "invariant_note": "rotation is absent from this search because it cannot change a spectrum"}

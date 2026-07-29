@@ -143,11 +143,42 @@ def _expand_tilde(action_input: dict) -> dict:
 import logging as _logging
 
 _AGENT_LOG = _logging.getLogger("true_agentic_agent")
-_AGENT_LOG_HANDLER = _logging.StreamHandler()
-_AGENT_LOG_HANDLER.setFormatter(
-    _logging.Formatter("%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
-)
-_AGENT_LOG.addHandler(_AGENT_LOG_HANDLER)
+
+# `getLogger` returns a singleton but `addHandler` appends. If this module body
+# runs twice — two sys.path entries reaching it under different names, a
+# reload, or a specialist importing it by another path — a second StreamHandler
+# lands on the SAME logger and every line prints twice for the rest of the run.
+# That is what "the agent duplicates when it uses ob3ect" was: the ob3ect tool
+# path re-executed this module. Tag the handler and attach it once.
+_AGENT_LOG_HANDLER = next(
+    (h for h in _AGENT_LOG.handlers if getattr(h, "_taa_console", False)), None)
+if _AGENT_LOG_HANDLER is None:
+    _AGENT_LOG_HANDLER = _logging.StreamHandler()
+    _AGENT_LOG_HANDLER._taa_console = True
+    # Console carries no timestamp; the winding header already dates each step
+    # and the wall clock costs nine columns on every line. Any file handler
+    # attached elsewhere keeps its own format, so the record is unchanged.
+    _AGENT_LOG_HANDLER.setFormatter(
+        _logging.Formatter("[%(levelname)s] %(message)s")
+    )
+    _AGENT_LOG.addHandler(_AGENT_LOG_HANDLER)
+
+# The console line carries no timestamp; the record still does, and it goes to
+# the session database so nothing is lost from the log itself. Attached once,
+# by the same tag guard as the console handler.
+try:
+    from session_db import attach_log_handler as _attach_db_log
+    _AGENT_DB_LOG = _attach_db_log(_AGENT_LOG)
+except Exception:
+    _AGENT_DB_LOG = None
+
+
+def _bind_log_session(session_id: str) -> None:
+    """Point the database sink at a session once the agent has one."""
+    if _AGENT_DB_LOG is not None:
+        _AGENT_DB_LOG.session_id = session_id
+
+
 _AGENT_LOG.setLevel(_logging.INFO)
 _AGENT_LOG.propagate = False
 
@@ -572,11 +603,11 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 # IS the SIC-POVM dual basis. The 12 primitives organize as 6 Frobenius-dual pairs:
 
 SIC_POVM_DUAL_PAIRS = [
-    ("Ð", "Þ"),     # Co-origination (Axiom C: D_φ̂ ↔ T_φ̂)
+    ("Ð", "Þ"),     # Co-origination (Axiom C: D_⊙ ↔ T_⊙)
     ("Ř", "Φ"),     # Coupling ↔ Parity
     ("ƒ", "Ç"),     # Fidelity ↔ Kinetics
     ("Γ", "ɢ"),     # Cardinality ↔ Composition
-    ("φ̂", "Ħ"),     # Criticality ↔ Chirality
+    ("⊙", "Ħ"),     # Criticality ↔ Chirality
     ("Σ", "Ω"),     # Stoichiometry ↔ Winding
 ]
 
@@ -610,20 +641,25 @@ CANONICAL_FAMILIES: List[str] = [
 # Legacy name → canonical Shavian family for normalization
 _LEGACY_TO_CANON: Dict[str, str] = {
     "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
-    "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "φ̂": "𐑢",
+    "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "⊙": "𐑢",
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
     "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗", "ƒ": "𐑱",
     "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝", "⊙": "𐑢", "Ħ": "𐑓",
     "Σ": "𐑙", "Ω": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "Ð": "D_", "Þ": "T_", "Ř": "R_", "Φ": "P_", "ƒ": "F_",
-    "Ç": "K_", "Γ": "G_", "ɢ": "Gm", "φ̂": "Ph", "Ħ": "H_",
+    "Ç": "K_", "Γ": "G_", "ɢ": "Gm", "Ħ": "H_",
     "Σ": "S_", "Ω": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
+# `φ̂` is not a primitive. The twelve are Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
+# criticality slot is ⊙; `φ̂` was its pre-migration spelling and was still being
+# carried here in parallel, so the same slot appeared twice under two names and
+# was emitted to callers under the wrong one. Accepted on input, never written.
+_ASCII_KEY_TO_UNICODE["Ph"] = "⊙"
 
 # Extend _LEGACY_TO_CANON so imscribe_system_emit remaps ASCII keys → Shavian families
 _LEGACY_TO_CANON.update({
@@ -639,9 +675,9 @@ _LEGACY_TO_CANON.update({
 
 PRIMITIVE_DISPLAY: Dict[str, str] = {
     # D — Dimensionality
-    "𐑦": "φ̂",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
+    "𐑦": "⊙",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
     # T — Topology
-    "𐑸": "φ̂",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
+    "𐑸": "⊙",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
     # R — Coupling
     "𐑽": "†",  "𐑩": "↑",  "𐑑": "∘",  "𐑾": "↔",
     # P — Parity
@@ -1101,7 +1137,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
                 "valid_values": {
                     "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1111,7 +1147,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "Ç":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                     "Γ":     ["𐑲", "𐑚", "𐑔"],
                     "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
-                    "φ̂":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+                    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                     "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
                     "Σ":     ["𐑙", "𐑕", "𐑳"],
                     "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
@@ -1122,7 +1158,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     '"tuple": "𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭"'
                     "})"
                 ),
-            })
+            }, ensure_ascii=False)
 
     try:
         dispatcher = _get_dispatcher()
@@ -1136,7 +1172,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         # 𐑻 absorption check: under tensor, 𐑻 destroys ⊙ (𐑻 ordinal > ⊙).
         # meet(⊙, 𐑻) = ⊙ but tensor(⊙, 𐑻) = 𐑻 — Gate 1 is destroyed.
         if tool_name == "compute_tensor" and isinstance(result, dict):
-            tensor_phi = result.get("φ̂") or (result.get("result", {}) or {}).get("φ̂")
+            tensor_phi = result.get("⊙") or (result.get("result", {}) or {}).get("⊙")
             if tensor_phi == "𐑻":
                 result["_absorption_warning"] = (
                     "𐑻 absorption: composite has 𐑻 — Gate 1 (⊙ criticality) destroyed. "
@@ -1157,11 +1193,11 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
             "error": str(exc),
             "fix": (
                 f"Retry with: imscribe(tool_name=\"{tool_name}\", "
-                f"args={json.dumps(required)})"
+                f"args={json.dumps(required, ensure_ascii=False)})"
             ),
         })
     except Exception as exc:
-        return json.dumps({"status": "error", "error": str(exc)})
+        return json.dumps({"status": "error", "error": str(exc)}, ensure_ascii=False)
 
 
 def _imscribe_verify(emit_input: Dict, emit_output: str,
@@ -1498,7 +1534,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -1558,7 +1594,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                 "RESTORE LLM CONNECTIVITY AND RETRY: re-call imscribe_system to complete the Tetractys protocol."
             ),
             "report": tri["report"],
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     if tri["converged"]:
         # All windings agree — commit with Tetractys note embedded as justification
@@ -1589,7 +1625,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
             "majority_tuple": majority_tuple,
             "windings": winding_details,
             "tetractys_report": report,
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
 def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
@@ -1654,7 +1690,7 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
 def _ouroborics_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
     if not name:
-        return json.dumps({"status": "error", "error": "name required"})
+        return json.dumps({"status": "error", "error": "name required"}, ensure_ascii=False)
     return _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
 
 def _ouroborics_verify(emit_input: Dict, emit_output: str,
@@ -1672,7 +1708,7 @@ def _ouroborics_verify(emit_input: Dict, emit_output: str,
 def _monad_probe_emit(args: Dict[str, Any]) -> str:
     name = args.get("name", "")
     if not name:
-        return json.dumps({"status": "error", "error": "name required"})
+        return json.dumps({"status": "error", "error": "name required"}, ensure_ascii=False)
     return _imscribe_emit({"tool_name": "monad_probe", "args": {"name": name}})
 
 
@@ -1684,7 +1720,7 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     """
     name = args.get("name", "")
     if not name:
-        return json.dumps({"status": "error", "error": "name required"})
+        return json.dumps({"status": "error", "error": "name required"}, ensure_ascii=False)
 
     phi_result = _imscribe_emit({"tool_name": "monad_probe", "args": {"name": name}})
     ouro_result = _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
@@ -1696,7 +1732,7 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
         ouro_data = json.loads(ouro_result)
         dist_data = json.loads(dist_result)
     except json.JSONDecodeError:
-        return json.dumps({"status": "error", "error": "Failed to parse probe results"})
+        return json.dumps({"status": "error", "error": "Failed to parse probe results"}, ensure_ascii=False)
 
     dual_pair_analysis = {}
     for a, b in SIC_POVM_DUAL_PAIRS:
@@ -1732,7 +1768,7 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
             "multilattice SIC-POVM. d(grammar, multilattice_SIC_POVM) = "
             f"{SIC_POVM_DISTANCE_TO_GRAMMAR} (\u03a3: \U00010459 vs \U00010473 -- the sole difference)."
         ),
-    }, indent=2)
+    }, indent=2, ensure_ascii=False)
 
 
 def _sic_povm_probe_verify(emit_input: Dict, emit_output: str,
@@ -1823,17 +1859,17 @@ def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
     try:
         import navigators.cl8nk_navigator as _cl8nk
     except ImportError as exc:
-        return json.dumps({"status": "error", "error": f"cl8nk_navigator import failed: {exc}"})
+        return json.dumps({"status": "error", "error": f"cl8nk_navigator import failed: {exc}"}, ensure_ascii=False)
 
     buf = io.StringIO()
 
     if action == "entry":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=entry"})
+            return json.dumps({"status": "error", "error": "name required for action=entry"}, ensure_ascii=False)
         with contextlib.redirect_stdout(buf):
             _cl8nk.probe_entry(name=name)
         out = buf.getvalue()
-        return out if out.strip() else json.dumps({"status": "error", "error": f'no entry found for \"{name}\"'})
+        return out if out.strip() else json.dumps({"status": "error", "error": f'no entry found for \"{name}\"'}, ensure_ascii=False)
 
     elif action == "promotions":
         with contextlib.redirect_stdout(buf):
@@ -1842,7 +1878,7 @@ def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
 
     elif action == "distance":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=distance"})
+            return json.dumps({"status": "error", "error": "name required for action=distance"}, ensure_ascii=False)
         with contextlib.redirect_stdout(buf):
             _cl8nk.probe_distance(name=name)
         return buf.getvalue()
@@ -1854,28 +1890,28 @@ def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
 
     elif action == "tensor":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=tensor"})
+            return json.dumps({"status": "error", "error": "name required for action=tensor"}, ensure_ascii=False)
         with contextlib.redirect_stdout(buf):
             _cl8nk.probe_tensor(name=name)
         return buf.getvalue()
 
     elif action == "meet":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=meet"})
+            return json.dumps({"status": "error", "error": "name required for action=meet"}, ensure_ascii=False)
         with contextlib.redirect_stdout(buf):
             _cl8nk.probe_meet(name=name)
         return buf.getvalue()
 
     elif action == "join":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=join"})
+            return json.dumps({"status": "error", "error": "name required for action=join"}, ensure_ascii=False)
         with contextlib.redirect_stdout(buf):
             _cl8nk.probe_join(name=name)
         return buf.getvalue()
 
     elif action == "tier":
         if not name:
-            return json.dumps({"status": "error", "error": "name required for action=tier"})
+            return json.dumps({"status": "error", "error": "name required for action=tier"}, ensure_ascii=False)
         result = _cl8nk.action_tier(name)
         return json.dumps(result, ensure_ascii=False)
 
@@ -1896,7 +1932,7 @@ def _cl8nk_navigator_emit(args: Dict[str, Any]) -> str:
         return json.dumps({
             "status": "error",
             "error": f'unknown action "{action}". Valid: entry, promotions, distance, transcendence, tensor, meet, join, tier, chain, systems, stats',
-        })
+        }, ensure_ascii=False)
 
 
 def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
@@ -1927,15 +1963,104 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
 
 # ── ob3ect pipeline tool ───────────────────────────────────────────────────────
 
+def _ob3ect_harness():
+    """Import the ob3ect harness (the pipeline with the provider call removed)."""
+    import sys as _s
+    from pathlib import Path as _P
+    d = str(_P.home() / "imsgct" / "ob3ect")
+    if d not in _s.path:
+        _s.path.insert(0, d)
+    import harness as _h
+    return _h
+
+
 def _ob3ect_emit(args: Dict[str, Any]) -> str:
-    """Generate a new ob3ect via ob3ect/auto.py and optionally run it."""
+    """Put the CALLING agent in the ob3ect harness — do not query another model.
+
+    The old behaviour shelled out to `ob3ect/auto.py`, which builds a prompt,
+    sends it to a provider, and mints whatever JSON comes back. The design then
+    entered this agent's transcript as though it had reasoned it. That launders
+    a second model's judgement into a report bound by the golem rule, which is
+    exactly the seam that rule exists to keep visible.
+
+    This returns the design task instead: the byte-identical system prompt and
+    grounded prompt the provider would have received. The agent answers it and
+    calls `ob3ect_close` with its own JSON, which is where the minting and the
+    verdict happen.
+
+    `delegate=true` restores the old path for the case where a second opinion is
+    actually wanted — but it is then explicitly a delegation, not a default.
+    """
+    description = args.get("description", "").strip()
+    if not description:
+        return json.dumps({"status": "error", "error": "'description' is required"}, ensure_ascii=False)
+
+    if args.get("delegate"):
+        return _ob3ect_delegate(args)
+
+    try:
+        h = _ob3ect_harness()
+        out = h.open_harness(
+            description,
+            domain_type=args.get("domain") or None,
+            retry_info=args.get("retry_info", "") or "",
+        )
+        out["next"] = ("answer the prompt yourself, then call ob3ect_close with "
+                       "description and your design JSON")
+        return json.dumps(out, ensure_ascii=False)
+    except Exception as e:
+        return json.dumps({"status": "error", "error": f"harness open failed: {e}"}, ensure_ascii=False)
+
+
+def _ob3ect_close_emit(args: Dict[str, Any]) -> str:
+    """Mint the agent's own ob3ect design: verify mu-delta, then persist on PASS."""
+    description = args.get("description", "").strip()
+    design = args.get("design")
+    if not description or design is None:
+        return json.dumps({"status": "error",
+                           "error": "'description' and 'design' are required"}, ensure_ascii=False)
+    try:
+        h = _ob3ect_harness()
+        out = h.close_harness(description, design,
+                              name=args.get("name") or None,
+                              scope=args.get("scope", "local"))
+        return json.dumps(out, ensure_ascii=False)
+    except Exception as e:
+        return json.dumps({"status": "error", "error": f"harness close failed: {e}"}, ensure_ascii=False)
+
+
+def _ob3ect_close_verify(emit_input: Dict, emit_output: str,
+                         *a, **kw) -> Tuple[str, bool]:
+    """Closed only on a COMPUTED Frobenius PASS — never on a claimed one."""
+    try:
+        d = json.loads(emit_output)
+    except Exception:
+        return ("ob3ect_close: could not parse output", False)
+    if d.get("status") == "error":
+        return (f"ob3ect_close error: {d.get('error')}", False)
+    v, claimed = d.get("frobenius_verdict"), d.get("frobenius_claimed")
+    if v != "PASS":
+        return (f"ob3ect_close: Frobenius {v} — {d.get('retry_info','').splitlines()[3].strip() if d.get('retry_info') else 'open'}", False)
+    note = "" if v == claimed else f" (designer claimed {claimed}; verdict computed)"
+    bc = d.get("banked_count") or {}
+    risk = " — but vacuous: nothing was at risk" if bc.get("vacuous") else ""
+    return (f"ob3ect_close: {d.get('slug', description_of(d))} — Frobenius PASS{note}{risk}", True)
+
+
+def description_of(d):
+    return d.get("name", "ob3ect")
+
+
+def _ob3ect_delegate(args: Dict[str, Any]) -> str:
+    """The old path: hand the design to another model via ob3ect/auto.py."""
+
     description = args.get("description", "").strip()
     domain      = args.get("domain", "computational").strip()
     scope       = args.get("scope", "local").strip()
     run         = args.get("run", True)
 
     if not description:
-        return json.dumps({"status": "error", "error": "'description' is required"})
+        return json.dumps({"status": "error", "error": "'description' is required"}, ensure_ascii=False)
 
     root = Path(__file__).resolve().parent.parent
     cmd  = [sys.executable, str(root / "ob3ect" / "auto.py"), description,
@@ -1952,7 +2077,7 @@ def _ob3ect_emit(args: Dict[str, Any]) -> str:
                 "status": "error",
                 "error": f"auto.py exited {result.returncode}",
                 "output": output[:2000],
-            })
+            }, ensure_ascii=False)
 
         generated_path = None
         for line in output.splitlines():
@@ -1982,9 +2107,9 @@ def _ob3ect_emit(args: Dict[str, Any]) -> str:
         }, ensure_ascii=False)
 
     except subprocess.TimeoutExpired:
-        return json.dumps({"status": "error", "error": "auto.py timed out after 120s"})
+        return json.dumps({"status": "error", "error": "auto.py timed out after 120s"}, ensure_ascii=False)
     except Exception as exc:
-        return json.dumps({"status": "error", "error": str(exc)})
+        return json.dumps({"status": "error", "error": str(exc)}, ensure_ascii=False)
 
 
 def _ob3ect_verify(emit_input: Dict, emit_output: str,
@@ -1996,6 +2121,14 @@ def _ob3ect_verify(emit_input: Dict, emit_output: str,
 
     if data.get("status") != "ok":
         return (f"ob3ect error: {data.get('error', 'unknown')}", False)
+
+    # Harness mode: opening the design task is NOT a closure. The Frobenius
+    # verdict is minted by ob3ect_close, and reporting closed here would be the
+    # free landing again — a tool that did nothing but hand over a prompt.
+    if data.get("mode") == "harness":
+        return (f"ob3ect: design task issued ({data.get('task_chars')} chars) → "
+                f"{data.get('task_file')}. Read it, design the ob3ect yourself, "
+                f"then call ob3ect_close. OPEN until then.", False)
 
     generated = data.get("generated", "")
     run_out   = data.get("run_output", "")
@@ -2057,7 +2190,7 @@ def _spawn_agent_emit(args: Dict[str, Any]) -> str:
     api_key     = args.get("api_key") or _spawn_config.get("api_key", "")
 
     if not task:
-        return json.dumps({"status": "error", "error": "spawn_agent requires 'task'"})
+        return json.dumps({"status": "error", "error": "spawn_agent requires 'task'"}, ensure_ascii=False)
 
     cmd = [
         "uv", "run", "agents/true_agentic_agent.py",
@@ -2118,6 +2251,7 @@ _EMIT_FNS: Dict[str, Any] = {
     "crystal_tier_census":  _crystal_tier_census_emit,
     "cl8nk_navigator":     _cl8nk_navigator_emit,
     "ob3ect":               _ob3ect_emit,
+    "ob3ect_close":         _ob3ect_close_emit,
     "proof_scaffold":       _proof_scaffold_emit,
     "spawn_agent":          _spawn_agent_emit,
     "sic_povm_probe":       _sic_povm_probe_emit,
@@ -2140,6 +2274,7 @@ _VERIFY_FNS: Dict[str, Any] = {
     "crystal_tier_census":  _crystal_tier_census_verify,
     "cl8nk_navigator":     _cl8nk_navigator_verify,
     "ob3ect":               _ob3ect_verify,
+    "ob3ect_close":         _ob3ect_close_verify,
     "proof_scaffold":       _proof_scaffold_verify,
     "context_review":       _context_review_verify,
     "spawn_agent":          _spawn_agent_verify,
@@ -2202,7 +2337,7 @@ TOOL_SCHEMAS = [
                            "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
             "ɢ": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
                            "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
-            "φ̂":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+            "⊙":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
             "Ħ":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
@@ -2220,7 +2355,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"],
+        ["name", "description", "Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"],
     ),
     _fn(
         "run_command",
@@ -2422,17 +2557,17 @@ TOOL_SCHEMAS = [
             ("Query the crystal of types by partial constraints. "
              "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': '⊙', 'Omega': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
-             "φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+             "⊙": {"type": "string", "description": "Filter by criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"},
              "Ω": {"type": "string", "description": "Filter by winding"}},
-            ["limit", "φ̂"]),
+            ["limit", "⊙"]),
         _fn(
             "crystal_count",
             ("Count the number of types matching constraints. "
              "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
-            {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+            {"⊙": {"type": "string", "description": "Filter by criticality"},
              "Ç": {"type": "string", "description": "Filter by kinetics"}},
-            ["φ̂"]),
+            ["⊙"]),
     _fn(
         "sic_povm_probe",
         (
@@ -2491,12 +2626,12 @@ TOOL_SCHEMAS = [
     _fn(
         "ob3ect",
         (
-            "Generate a new self-imscribing ob3ect via the ob3ect/auto.py pipeline. "
-            "The ob3ect is a program that verifies its own algebraic closure (μ∘δ = id_A). "
-            "auto.py synthesizes the ob3ect, places it in ob3ect/digital/<slug>/<slug>_ob3ect.py, "
-            "and (if run=true, the default) executes it immediately to confirm Closure: True. "
-            "Use this to extend the categorical tower with new types — "
-            "Hopf, monad, topos, linear logic, HoTT, quantum, etc."
+            "Enter the ob3ect harness. Returns the design task — the same system "
+            "prompt and catalog-grounded prompt the pipeline would have sent to a "
+            "provider — for YOU to answer. Design the ob3ect yourself, then call "
+            "ob3ect_close with your JSON; that is where μ∘δ=id is verified and the "
+            "artifact is written. Pass delegate=true only if you actually want a "
+            "second model to design it instead of you."
         ),
         {
             "description": {
@@ -2518,6 +2653,26 @@ TOOL_SCHEMAS = [
             },
         },
         ["description"],
+    ),
+    _fn(
+        "ob3ect_close",
+        (
+            "Mint YOUR ob3ect design. Pass the JSON you wrote after reading the "
+            "task from ob3ect. This is where μ∘δ=id is actually verified: the "
+            "Frobenius verdict is COMPUTED here by comparing fuse_result to "
+            "split_input, not taken from your own claim. On PASS the artifact is "
+            "written to ~/ob3ect/digital/<slug>/. On FAIL nothing is written and "
+            "retry_info names the broken split/fuse pair — re-enter ob3ect with it."
+        ),
+        {
+            "description": {"type": "string",
+                            "description": "The same description passed to ob3ect"},
+            "design": {"type": "object",
+                       "description": "Your design JSON: domain_type, tokens, boundary, opcodes, frobenius, registers, sequence"},
+            "name": {"type": "string", "description": "Optional artifact name"},
+            "scope": {"type": "string", "description": "local | global (default local)"},
+        },
+        ["description", "design"],
     ),
     _fn(
         "proof_scaffold",
@@ -2969,7 +3124,7 @@ def _assistant_msg(
             "type":     "function",
             "function": {
                 "name":      fn_name,
-                "arguments": json.dumps(fn_args),
+                "arguments": json.dumps(fn_args, ensure_ascii=False),
             },
         }],
     }
@@ -2986,7 +3141,7 @@ def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
 
 # ── ASCII-safe tool schemas helpers (moved here to fix NameError) ─────────────
 # The API rejects property keys with non-ASCII characters (Shavian glyphs like
-# Ð, Þ, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
+# Ð, Þ, ⊙, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
 # on definition and keep the Unicode originals for emit-function compatibility.
 
 def _asciify_schema(schema: Dict) -> Dict:
@@ -3016,7 +3171,7 @@ def _asciify_tool_schemas() -> List[Dict]:
 
 def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
     """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
-    Emit functions use Unicode keys (φ̂, Ç, Ω, etc.); the model responds with
+    Emit functions use Unicode keys (⊙, Ç, Ω, etc.); the model responds with
     ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
     Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
     for k in list(args.keys()):
@@ -3141,7 +3296,10 @@ class TrueAgenticAgent:
                 f"  [Restored {len(preloaded_msgs)} messages from prior session. "
                 f"Starting at winding offset {self.starting_winding_offset}]"
             )
-            self._messages = list(preloaded_msgs)
+            # A prior session can end between an assistant's tool_calls and the
+            # tool messages answering them; restoring that verbatim reproduces
+            # the orphan and the next request is rejected.
+            self._messages = self._well_formed_tail(list(preloaded_msgs))
             self._messages.append({
                 "role": "user",
                 "content": (
@@ -3218,7 +3376,7 @@ class TrueAgenticAgent:
         reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
 
         self._log(f"  THINK: {reasoning}")
-        self._log(f"  ACT:   {action_name}({json.dumps(action_input)})")
+        self._log(f"  ACT:   {action_name}({json.dumps(action_input, ensure_ascii=False)})")
 
         # OBSERVE: emit + verify (dual-tool pair)
         dual_result = self._observe(action_name, action_input)
@@ -3647,8 +3805,8 @@ class TrueAgenticAgent:
 
         # Step 1: drop old middle messages
         if len(self._messages) > keep_recent + 2:
-            recent  = self._messages[-(keep_recent):]
-            dropped = len(self._messages) - keep_recent - 2
+            recent  = self._well_formed_tail(self._messages[-(keep_recent):])
+            dropped = len(self._messages) - len(recent) - 2
             summary = {
                 "role": "user",
                 "content": (
@@ -3707,6 +3865,29 @@ class TrueAgenticAgent:
             f"— review prompt injected]"
         )
 
+
+    @staticmethod
+    def _well_formed_tail(msgs: List[Dict]) -> List[Dict]:
+        """Trim a tail slice so it can stand alone as a conversation.
+
+        A blind `[-keep_recent:]` can cut between an assistant message carrying
+        `tool_calls` and the `tool` messages answering it. The orphan survives,
+        its parent does not, and the next request dies with
+
+            Messages with role 'tool' must be a response to a preceding
+            message with 'tool_calls'
+
+        which aborts the run at the moment compaction was supposed to save it.
+        Two ends to guard: leading `tool` messages whose parent was dropped, and
+        a trailing assistant message whose calls nothing answers.
+        """
+        out = list(msgs)
+        while out and out[0].get("role") == "tool":
+            out.pop(0)
+        while out and out[-1].get("role") == "assistant" and out[-1].get("tool_calls"):
+            out.pop()
+        return out
+
     def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
         """Replace old messages with the model's distilled summary, keeping recent context."""
         system = self._messages[0]
@@ -3719,6 +3900,7 @@ class TrueAgenticAgent:
             if len(self._messages) > keep_recent + 2
             else self._messages[2:]
         )
+        recent = self._well_formed_tail(recent)
         dropped = max(0, len(self._messages) - 2 - len(recent))
         summary_msg = {
             "role": "user",
@@ -4080,7 +4262,7 @@ def _run_agent(args: "argparse.Namespace") -> None:
 
     if args.show_type:
         print("\nStructural type:")
-        print(json.dumps(agent.structural_type, indent=2))
+        print(json.dumps(agent.structural_type, indent=2, ensure_ascii=False))
 
     if args.trajectory:
         print("\nTrajectory:")
@@ -4379,7 +4561,7 @@ def _cli_chat(argv: List[str]) -> None:
         print()
 
         if args.show_type:
-            print(json.dumps(st, indent=2))
+            print(json.dumps(st, indent=2, ensure_ascii=False))
         if args.trajectory:
             agent.print_trajectory()
 
@@ -4481,7 +4663,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             belief_set_from_primitive, frobenius_cliff_belief,
         )
     except ImportError as exc:
-        return json.dumps({"status": "error", "error": f"paraconsistent module not found: {exc}"})
+        return json.dumps({"status": "error", "error": f"paraconsistent module not found: {exc}"}, ensure_ascii=False)
 
     op = args.get("op", "test")
 
@@ -4522,7 +4704,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "algebraic_arm": alg_arm,
             "all_three": all([op_arm, log_arm, alg_arm]),
             "theorem": "Dialetheic Alignment Theorem holds: B is the unique dialetheic fixed point",
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     elif op == "invariant":
         results = {}
@@ -4534,13 +4716,13 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "results": results,
             "all_pass": all_pass,
             "theorem": "mu(delta(r)) = r for all r in B4 — Frobenius algebra on Belnap FOUR",
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     elif op == "run":
         asm = args.get("asm", "")
         steps = int(args.get("steps", 200))
         if not asm:
-            return json.dumps({"status": "error", "error": "para_vm run requires 'asm' field"})
+            return json.dumps({"status": "error", "error": "para_vm run requires 'asm' field"}, ensure_ascii=False)
         vm = ParaVM()
         result = vm.run_program(asm, steps=steps)
         return json.dumps({
@@ -4556,7 +4738,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
         vals = args.get("gates", "B,T,B,F")
         gates = [B4(v.strip()) for v in vals.split(",") if v.strip() in ("N","T","F","B")]
         if not gates:
-            return json.dumps({"status": "error", "error": "Provide gates as N,T,F,B comma-separated"})
+            return json.dumps({"status": "error", "error": "Provide gates as N,T,F,B comma-separated"}, ensure_ascii=False)
         bc = BelnapCircuit(gates)
         return json.dumps({
             "status": "ok",
@@ -4566,7 +4748,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "paradox_energy": bc.paradox_energy(),
             "sustain_stable": bc.sustain_stable(),
             "classical_cannot_become_b": bc.classical_cannot_become_b(),
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     elif op == "b4f_check":
         bf = B4Frobenius()
@@ -4580,7 +4762,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "b4_result": result.value,
             "classical_bool": result.to_bool(),
             "dialetheic": result.dialetheic(),
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     elif op == "bridge":
         prim = args.get("primitive", "Φ")
@@ -4607,7 +4789,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "tensor_result": list(tensor_result),
             "frobenius_cliff": cliff.value if cliff else None,
             "note": "Bottleneck min: 𐑗 < 𐑿 < 𐑬 < 𐑯 < 𐑹",
-        }, indent=2)
+        }, indent=2, ensure_ascii=False)
 
     elif op == "test":
         return self_test()
@@ -4618,7 +4800,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
             "error": f"Unknown para_vm op: {op!r}",
             "valid_ops": ["lattice", "kernel", "alignment", "invariant", "run",
                           "circuit", "b4f_check", "bridge", "test"],
-        })
+        }, ensure_ascii=False)
 
 
 def _para_vm_verify(emit_input: Dict, emit_output: str,
@@ -4713,7 +4895,7 @@ def _para_verify_enable(args: Dict[str, Any]) -> str:
             "When enabled, the observe pipeline runs dual verification: "
             "standard boolean + B4 dialetheic check."
         ),
-    })
+    }, ensure_ascii=False)
 
 
 def _para_verify_emit(args: Dict[str, Any]) -> str:
@@ -4728,7 +4910,7 @@ def _para_verify_emit(args: Dict[str, Any]) -> str:
     try:
         from paraconsistent import B4Frobenius
     except ImportError as exc:
-        return json.dumps({"status": "error", "error": f"paraconsistent module: {exc}"})
+        return json.dumps({"status": "error", "error": f"paraconsistent module: {exc}"}, ensure_ascii=False)
 
     bf = B4Frobenius()
     result = bf.check(
@@ -4747,7 +4929,7 @@ def _para_verify_emit(args: Dict[str, Any]) -> str:
             + ("Dialetheic: system is both closed and open — O_∞ signature."
                if result.dialetheic() else "")
         ),
-    })
+    }, ensure_ascii=False)
 
 
 # ── Register para_verify tools ─────────────────────────────────────────────────

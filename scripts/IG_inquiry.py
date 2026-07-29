@@ -2489,7 +2489,7 @@ class SessionCatalog:
             self._save_to_file(self._catalog_path)
 
         # Build tuple notation
-        notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(imscription[p] for p in PRIMITIVE_ORDER) + "⟩"
         result: Dict[str, Any] = {
             "status": "ok" if not conflict_info else "updated",
             "name": name,
@@ -2545,7 +2545,7 @@ class SessionCatalog:
         results = []
         for name, imscription in self._entries.items():
             if kw in name.lower() or kw in self._descriptions.get(name, "").lower():
-                notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+                notation = "⟨" + "".join(imscription[p] for p in PRIMITIVE_ORDER) + "⟩"
                 results.append({
                     "name": name,
                     "description": self._descriptions.get(name, ""),
@@ -2556,7 +2556,7 @@ class SessionCatalog:
     def list_all(self) -> List[Dict[str, Any]]:
         results = []
         for name, imscription in self._entries.items():
-            notation = "⟨" + "; ".join(f"{p}={imscription[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+            notation = "⟨" + "".join(imscription[p] for p in PRIMITIVE_ORDER) + "⟩"
             results.append({
                 "name": name,
                 "description": self._descriptions.get(name, ""),
@@ -2896,6 +2896,30 @@ class PromotionKnowledgeBase:
         return list(self._entries.values())
 
 
+
+def _fresh(modname: str):
+    """Import a module and reload it if its source changed since it was cached.
+
+    A long-running agent holds whatever copy it imported first. When a module
+    gains a function mid-session the cached copy does not have it, and the call
+    fails with "has no attribute" against a file that plainly does — pointing
+    the caller at the dispatch when the dispatch is fine. Keyed on the source
+    file's mtime, so additions and edits are both covered and no list of
+    expected names has to be maintained.
+    """
+    import importlib
+    from pathlib import Path as _P
+    mod = importlib.import_module(modname)
+    try:
+        stamp = _P(mod.__file__).resolve().stat().st_mtime_ns
+        if getattr(mod, "_ig_loaded_at", None) != stamp:
+            mod = importlib.reload(mod)
+            setattr(mod, "_ig_loaded_at", stamp)
+    except Exception:
+        pass
+    return mod
+
+
 class ToolDispatcher:
     def __init__(self, catalog: SessionCatalog, question_queue: List[str], insights: List[Insight],
                  insight_library: Optional[InsightLibrary] = None,
@@ -3055,6 +3079,10 @@ class ToolDispatcher:
             return self._banked_count(**args)
         elif name == "imasm_transitions":
             return self._imasm_transitions(**args)
+        elif name in ("steer", "imasm_steer"):
+            return self._steer(**args)
+        elif name in ("steer_spectrum", "imasm_steer_spectrum"):
+            return self._steer_spectrum(**args)
         elif name in ("hyper_gematria", "imasm_gematria"):
             return self._hyper_gematria(**args)
         elif name in ("shared_floor", "proven_floor"):
@@ -3285,16 +3313,7 @@ class ToolDispatcher:
         d = str(_P(__file__).resolve().parent)
         if d not in _s.path:
             _s.path.insert(0, d)
-        mod = importlib.import_module("lattice_flow")
-        # A long-running agent holds whatever copy it imported first. When this
-        # module gains a function mid-session the cached copy does not have it,
-        # and the call fails with "has no attribute" against a file that plainly
-        # does. Reload rather than make the agent restart to see new tools.
-        if not all(hasattr(mod, f) for f in
-                   ("parse_word", "cycle", "weight", "banked_count_check",
-                    "transitions", "rotation_invariant", "insertion_grid")):
-            mod = importlib.reload(mod)
-        return mod
+        return _fresh("lattice_flow")
 
     def _lattice_cycle(self, word=None, insert=None):
         """Walk an IMASM word around its ROTAT orbit and report what moves.
@@ -3332,7 +3351,7 @@ class ToolDispatcher:
         d = str(_P(__file__).resolve().parent.parent.parent / "m3iosis" / "src")
         if d not in _s.path:
             _s.path.insert(0, d)
-        return importlib.import_module("m3iosis.fibonacci_quantum_computer")
+        return _fresh("m3iosis.fibonacci_quantum_computer")
 
     def _quantum_compile(self, gates=None, depth=3):
         """Compile a circuit to a Fibonacci anyon BRAID WORD.
@@ -3479,7 +3498,7 @@ class ToolDispatcher:
         d = str(_P(__file__).resolve().parent)
         if d not in _s.path:
             _s.path.insert(0, d)
-        mod = importlib.import_module("additive_spectrum")
+        mod = _fresh("additive_spectrum")
         if elements is None:
             return {"status": "error",
                     "error": "give elements=<list of naturals>"}
@@ -3551,6 +3570,46 @@ class ToolDispatcher:
             "note": ("a modal tuple is a centroid and need not be occupied; the "
                      "tuple members actually share is under most_occupied"),
         }
+
+    def _steer(self, word=None, target=None, rotate=True, insert=True,
+               depth=1, require_live=False, min_restored=0):
+        """Reach a target register from a word, by rotation and one insertion.
+
+        A landing is a property of the cut, not of the word, so asking for a
+        register is asking which cut to read from and what to add. Solutions are
+        ranked by what they carry: a register reached on a vacuous run is a free
+        landing, bought with nothing at risk, and the ranking says so rather
+        than leaving the caller to check.
+
+        With no target, the reachable set is returned — what this word CAN land
+        on, which is the refusal stated positively.
+        """
+        lf = self._lattice_flow()
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = lf.parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        return lf.steer(steps, target=target, rotate=rotate, insert=insert,
+                        depth=int(depth), require_live=bool(require_live),
+                        min_restored=int(min_restored))
+
+    def _steer_spectrum(self, word=None, target=None, depth=1):
+        """Steer the landing SPECTRUM — the invariant, not the cut.
+
+        Rotation moves a landing and cannot move a spectrum, so this searches
+        insertions alone. That asymmetry is the content: to change where a word
+        rests you turn it; to change what it IS you add to it.
+        """
+        lf = self._lattice_flow()
+        if not word:
+            return {"status": "error", "error": "give an IMASM word as glyphs"}
+        steps, unknown = lf.parse_word(word)
+        if unknown:
+            return {"status": "error",
+                    "error": f"not in the alphabet: {' '.join(unknown)}"}
+        return lf.steer_spectrum(steps, target=target, depth=int(depth))
 
     def _hyper_gematria(self, word=None, name=None):
         """Hyperdimensional gematria of an IMASM word: 177 coordinates, every
@@ -3804,7 +3863,7 @@ class ToolDispatcher:
             val, conflict = self._apply_binary("min", p, sa[p], sb[p])
             result[p] = val
             (conflicts if conflict else shared).append(conflict or p)
-        notation = "⟨" + "; ".join(f"{p}={result[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(result[p] for p in PRIMITIVE_ORDER) + "⟩"
         return {
             "status": "ok",
             "operation": "meet",
@@ -3832,7 +3891,7 @@ class ToolDispatcher:
             result[p] = val
             if conflict:
                 conflicts.append(conflict)
-        notation = "⟨" + "; ".join(f"{p}={result[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(result[p] for p in PRIMITIVE_ORDER) + "⟩"
         return {
             "status": "ok",
             "operation": "join",
@@ -3932,7 +3991,7 @@ class ToolDispatcher:
                 "paraconsistent-observer surface, not just sit outside a secondary primitive. Refused."
             )
 
-        notation = "⟨" + "; ".join(f"{p}={floor[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(floor[p] for p in PRIMITIVE_ORDER) + "⟩"
         return {
             "status": "ok",
             "operation": "containment_boundary",
@@ -3964,7 +4023,7 @@ class ToolDispatcher:
                     unions.append({**conflict, "rule": "union/promote"})
             else:
                 shared.append(p)
-        notation = "⟨" + "; ".join(f"{p}={result[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(result[p] for p in PRIMITIVE_ORDER) + "⟩"
         dist_from_a = round(tuple_distance(result, sa), 4)
         dist_from_b = round(tuple_distance(result, sb), 4)
         return {
@@ -4236,7 +4295,7 @@ class ToolDispatcher:
                 "interpretation": f"{name}.{primitive} is already at minimum ({original_val}). Nothing to peel.",
             }
         residual = {**s, primitive: min_val}
-        notation = "⟨" + "; ".join(f"{p}={residual[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        notation = "⟨" + "".join(residual[p] for p in PRIMITIVE_ORDER) + "⟩"
         peeled_contribution = round(
             abs(ORDINALS[primitive].get(original_val, 0) - ORDINALS[primitive].get(min_val, 0)) *
             WEIGHTS.get(primitive, 1.0) / len(PRIMITIVE_ORDER) ** 0.5, 4
@@ -4270,7 +4329,7 @@ class ToolDispatcher:
             if val != min_val:
                 atom = {pp: min_vals[pp] for pp in PRIMITIVE_ORDER}
                 atom[p] = val
-                atom_notation = "⟨" + "; ".join(f"{pp}={atom[pp]}" for pp in PRIMITIVE_ORDER) + "⟩"
+                atom_notation = "⟨" + "".join(atom[p] for p in PRIMITIVE_ORDER) + "⟩"
                 atoms.append({
                     "primitive": p,
                     "value": val,
@@ -4279,7 +4338,7 @@ class ToolDispatcher:
                 })
         # Sort by ordinal contribution (most structurally significant first)
         atoms.sort(key=lambda x: -x["ordinal_contribution"])
-        baseline_notation = "⟨" + "; ".join(f"{p}={min_vals[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        baseline_notation = "⟨" + "".join(min_vals[p] for p in PRIMITIVE_ORDER) + "⟩"
         return {
             "status": "ok",
             "name": name,
@@ -4306,9 +4365,9 @@ class ToolDispatcher:
         steps = []
         current = dict(s)
         for p, val in active:
-            prev_notation = "⟨" + "; ".join(f"{pp}={current[pp]}" for pp in PRIMITIVE_ORDER) + "⟩"
+            prev_notation = "⟨" + "".join(current[p] for p in PRIMITIVE_ORDER) + "⟩"
             current = {**current, p: min_vals[p]}
-            next_notation = "⟨" + "; ".join(f"{pp}={current[pp]}" for pp in PRIMITIVE_ORDER) + "⟩"
+            next_notation = "⟨" + "".join(current[p] for p in PRIMITIVE_ORDER) + "⟩"
             steps.append({
                 "step": len(steps) + 1,
                 "peel_primitive": p,
@@ -4318,7 +4377,7 @@ class ToolDispatcher:
                 "after": next_notation,
                 "rationale": f"Remove {p}={val} → structural requirement for {p} eliminated",
             })
-        baseline_notation = "⟨" + "; ".join(f"{p}={min_vals[p]}" for p in PRIMITIVE_ORDER) + "⟩"
+        baseline_notation = "⟨" + "".join(min_vals[p] for p in PRIMITIVE_ORDER) + "⟩"
         return {
             "status": "ok",
             "name": name,
@@ -6114,7 +6173,7 @@ class IGInquiryLoop:
                     f"{len(self.insights)} insights recorded so far."
                 )
             if self.question_queue:
-                user_msg += f"\n\n**Queued questions for later:** {json.dumps(self.question_queue)}"
+                user_msg += f"\n\n**Queued questions for later:** {json.dumps(self.question_queue, ensure_ascii=False)}"
 
             self._messages.append({"role": "user", "content": user_msg})
 
@@ -6531,7 +6590,7 @@ def _cli_agent() -> None:
 
     if args.show_type:
         print("\nStructural type:")
-        print(_json.dumps(agent.structural_type, indent=2))
+        print(_json.dumps(agent.structural_type, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":

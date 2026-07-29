@@ -24,6 +24,8 @@ from __future__ import annotations
 
 import json
 import os
+import logging as _logging
+import time as _time
 import sqlite3
 import uuid
 from datetime import datetime, timezone
@@ -78,6 +80,17 @@ class SessionDB:
                     FOREIGN KEY (session_id) REFERENCES sessions(id) ON DELETE CASCADE,
                     UNIQUE(session_id, seq)
                 );
+
+                CREATE TABLE IF NOT EXISTS logs (
+                    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+                    session_id  TEXT,
+                    ts          TEXT NOT NULL,
+                    epoch       REAL NOT NULL,
+                    level       TEXT NOT NULL,
+                    logger      TEXT,
+                    message     TEXT NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS logs_session_idx ON logs(session_id, id);
 
                 CREATE TABLE IF NOT EXISTS windings (
                     id              INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -319,12 +332,12 @@ class SessionDB:
                 sid, now,
                 meta.get("model", "unknown"),
                 meta.get("task", ""),
-                json.dumps(meta.get("tags", [])),
+                json.dumps(meta.get("tags", []), ensure_ascii=False),
                 meta.get("result", ""),
                 meta.get("windings_count", len(windings)),
                 meta.get("frobenius_ratio", 0.0),
-                json.dumps(meta.get("structural_type", {})),
-                json.dumps(meta.get("extra", {})),
+                json.dumps(meta.get("structural_type", {}), ensure_ascii=False),
+                json.dumps(meta.get("extra", {}), ensure_ascii=False),
             ))
 
             for i, msg in enumerate(messages):
@@ -338,7 +351,7 @@ class SessionDB:
                     msg.get("role", ""),
                     msg.get("content"),
                     msg.get("tool_call_id"),
-                    json.dumps(msg.get("tool_calls")) if msg.get("tool_calls") else None,
+                    json.dumps(msg.get("tool_calls"), ensure_ascii=False) if msg.get("tool_calls") else None,
                     msg.get("reasoning_content"),
                 ))
 
@@ -356,7 +369,7 @@ class SessionDB:
                     w.get("ts", now),
                     w.get("think_reasoning", ""),
                     w.get("action_name", ""),
-                    json.dumps(w.get("action_input", {})),
+                    json.dumps(w.get("action_input", {}), ensure_ascii=False),
                     w.get("tool_output", ""),
                     w.get("verify_output", ""),
                     1 if w.get("frobenius_closed") else 0,
@@ -365,7 +378,7 @@ class SessionDB:
                     w.get("conclusion", ""),
                     w.get("b4_result"),
                     1 if w.get("dialetheic") else 0,
-                    json.dumps(w.get("para_vm_snapshot")) if w.get("para_vm_snapshot") else None,
+                    json.dumps(w.get("para_vm_snapshot"), ensure_ascii=False) if w.get("para_vm_snapshot") else None,
                 ))
 
         return sid
@@ -382,3 +395,51 @@ def get_session_db(db_path: Optional[str] = None) -> SessionDB:
     if _db_instance is None or (db_path and db_path != _db_instance.db_path):
         _db_instance = SessionDB(db_path)
     return _db_instance
+
+
+# ── Console-parity log sink ─────────────────────────────────────────────────
+class SessionLogHandler(_logging.Handler):
+    """Persist every log record to the session database.
+
+    The console formatter drops the timestamp — the winding header already dates
+    each step and the wall clock costs nine columns on every line. The record is
+    not lost, it moves here, with the epoch alongside the formatted time so the
+    stream can be ordered exactly and joined against `windings`.
+
+    `session_id` is set after construction because logging starts before the
+    session exists; records emitted before that are stored under NULL and are
+    still ordered by `id`.
+    """
+
+    _taa_db = True
+
+    def __init__(self, db_path: Optional[str] = None):
+        super().__init__()
+        self.session_id: Optional[str] = None
+        self._db = get_session_db(db_path)
+
+    def emit(self, record: "_logging.LogRecord") -> None:
+        try:
+            with self._db._conn() as conn:
+                conn.execute(
+                    "INSERT INTO logs (session_id, ts, epoch, level, logger, message)"
+                    " VALUES (?,?,?,?,?,?)",
+                    (self.session_id,
+                     _time.strftime("%Y-%m-%dT%H:%M:%S", _time.localtime(record.created)),
+                     record.created, record.levelname, record.name,
+                     record.getMessage()),
+                )
+        except Exception:
+            # a logging sink must never cost the run
+            pass
+
+
+def attach_log_handler(logger: "_logging.Logger", db_path: Optional[str] = None):
+    """Attach the session sink once, and hand it back so the id can be set."""
+    for h in logger.handlers:
+        if getattr(h, "_taa_db", False):
+            return h
+    h = SessionLogHandler(db_path)
+    h.setLevel(_logging.DEBUG)
+    logger.addHandler(h)
+    return h

@@ -605,11 +605,12 @@ class ImscriptionCatalog:
         return cls.from_dict(json.loads(json_str))
     
     def save(self, path: str | Path) -> None:
-        """Save catalog to JSON file."""
+        """Save catalog to JSON file, then propagate if it was the canonical."""
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "w") as f:
             f.write(self.to_json())
+        propagate_catalog(path)
     
     @classmethod
     def load(cls, path: str | Path) -> ImscriptionCatalog:
@@ -889,3 +890,42 @@ def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
                 seen_names.add(name)
                 merged.append(entry)
     return merged
+
+
+# ── Catalog propagation ─────────────────────────────────────────────────────
+CANONICAL_CATALOG = Path("/home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json")
+_SYNC_SCRIPT = Path("/home/mrnob0dy666/imsgct/imscribing_grammar/sync_catalog.sh")
+
+
+def propagate_catalog(saved_path) -> bool:
+    """Push the canonical catalog to every consumer, immediately after it is written.
+
+    The drift this closes is not hypothetical. A pre-commit hook was installed to
+    do this and structurally could not: the catalog is not written at commit
+    boundaries, it is written whenever an imscription is generated. Between
+    commits the canonical grew by 81 entries while eight consumer copies stood
+    still, and since the grammar tools read `scripts/IG_catalog.json`, one entry
+    name resolved to two different tuples — the stale one carrying Φ=𐑹, which
+    promoted it to a tier the real entry does not hold.
+
+    The trigger belongs at the write, which is here. Guarded so that saving a
+    CONSUMER copy never propagates outward; only the canonical does. Failures are
+    logged and never raised — a sync problem must not cost the imscription that
+    was just generated.
+    """
+    try:
+        if Path(saved_path).resolve() != CANONICAL_CATALOG.resolve():
+            return False
+        if not _SYNC_SCRIPT.exists():
+            return False
+        import subprocess
+        r = subprocess.run([str(_SYNC_SCRIPT)], capture_output=True,
+                           text=True, timeout=120)
+        if r.returncode != 0:
+            logging.warning("catalog propagation failed: %s",
+                            (r.stderr or "").strip()[:200])
+            return False
+        return True
+    except Exception as e:
+        logging.warning("catalog propagation error: %s", e)
+        return False

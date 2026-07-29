@@ -784,8 +784,8 @@ def _agent_resolve_conflict(
 
     from agents.true_agentic_agent import TrueAgenticAgent
 
-    existing_str = "⟨" + "; ".join(f"{p}={existing[p]}" for p in _PRIMITIVE_ORDER) + "⟩"
-    proposed_str = "⟨" + "; ".join(f"{p}={proposed[p]}" for p in _PRIMITIVE_ORDER) + "⟩"
+    existing_str = "⟨" + "".join(existing[p] for p in _PRIMITIVE_ORDER) + "⟩"
+    proposed_str = "⟨" + "".join(proposed[p] for p in _PRIMITIVE_ORDER) + "⟩"
     prim_list    = ", ".join(differing)
 
     task = f"""\
