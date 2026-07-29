@@ -671,8 +671,8 @@ def delete_imscriptions(names: tuple, yes: bool):
         global_catalog.remove(n)
 
     try:
-        with open(catalog_path, "w", encoding="utf-8") as f:
-            json.dump(list(disk.values()), f, indent=2, ensure_ascii=False)
+        from .registry import write_canonical_catalog
+        write_canonical_catalog(disk, catalog_path)
         for n in found:
             console.print(f"[green]✓ Deleted '{n}' from IG_catalog.json[/green]")
     except OSError as e:
@@ -921,8 +921,8 @@ def _register_to_json_catalog(
             new_entry.update(proposed)
             disk_entries[name] = new_entry
             try:
-                with open(catalog_path, "w", encoding="utf-8") as f:
-                    json.dump(list(disk_entries.values()), f, indent=2, ensure_ascii=False)
+                from .registry import write_canonical_catalog
+                write_canonical_catalog(disk_entries, catalog_path)
                 console.print(f"[green]✓ '{name}' updated in IG_catalog.json[/green]")
             except OSError as e:
                 console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
@@ -941,8 +941,8 @@ def _register_to_json_catalog(
     new_entry.update(proposed)
     disk_entries[name] = new_entry
     try:
-        with open(catalog_path, "w", encoding="utf-8") as f:
-            json.dump(list(disk_entries.values()), f, indent=2, ensure_ascii=False)
+        from .registry import write_canonical_catalog
+        write_canonical_catalog(disk_entries, catalog_path)
         console.print(f"[green]✓ '{name}' registered in IG_catalog.json[/green]")
     except OSError as e:
         console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")

@@ -1,17 +1,19 @@
-Wrap the phase-match residual to the signed branch
+Route the real catalog writers through one function
 
-phase_diff is normalized so its first element is exactly zero, so a good match
-leaves the remaining residuals near zero. Taking the standard deviation over
-[0, 2pi) then sends every residual that is zero-from-below to nearly a full
-turn: a perfect match with float dust scores 2.91, worse than genuinely random
-phases at 1.77. The metric inverts exactly where it is meant to be sharpest.
+The slot-category guard added earlier, and the propagation moved into save()
+before it, were both on a path the registration flow never takes.
+ImscriptionCatalog.save() does not write IG_catalog.json. The canonical file is
+a bare list of name, description and twelve glyphs, and cli.py json.dumps that
+list directly at three sites — delete, guided-encoding update, and new-name
+registration. None of them validated anything and none of them propagated;
+cli.py contains no reference to sync_catalog or propagate_catalog at all. That
+is why the catalog drifted across its consumers and why thirty slot-category
+violations accumulated unseen: the checks existed, on a function nobody called.
 
-On the current inputs the change is small — the demo's headline moves from
-1.818977 to 1.778632, and two of four configurations move by under 0.003 —
-because the PE/QFT residuals are spread around the circle rather than
-concentrated near the wrap. No conclusion drawn from these numbers changes. The
-fix matters if the alignment ever gets good.
+write_canonical_catalog() validates the slots, writes the list, and propagates,
+and the three sites call it. Propagation is a no-op for any path that is not the
+canonical one, so temporary and test writes stay inert.
 
-Same defect class as the braid bridge's winding sum, fixed in m3iosis 52fd070.
-The neighbouring _phase_to_glyph already guards both sides of the wrap, which is
-why these read as oversights rather than convention.
+esoteric_librarian's four write sites are deliberately left alone: they write
+esoteric_library/<name>.json, which are separate side catalogs, and sending them
+through this helper would fire propagation to the canonical consumers.

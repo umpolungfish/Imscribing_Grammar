@@ -34,6 +34,32 @@ from .models import (
 InteractionGrammar = Grammar
 
 
+def write_canonical_catalog(entries, path) -> List[str]:
+    """Write the flat catalog list, checking slots and propagating afterwards.
+
+    The canonical IG_catalog.json is a bare list of {name, description, twelve
+    glyphs}. It is NOT produced by ImscriptionCatalog.save() — the registration
+    flow in cli.py, and esoteric_librarian, json.dump the list directly. Hanging
+    validation or propagation off save() therefore does nothing for the path
+    that actually writes the file, which is how the catalog drifted across its
+    consumers and how thirty slot-category violations accumulated unseen.
+
+    Every direct writer goes through here instead. Returns the violation lines
+    so a caller can surface them; they are logged either way. Reports rather
+    than blocks, for the reason given in slot_category_violations.
+    """
+    entries = list(entries.values()) if isinstance(entries, dict) else list(entries)
+    problems = slot_category_violations(entries)
+    for line in problems:
+        logging.warning("slot-category violation: %s", line)
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(entries, f, indent=2, ensure_ascii=False)
+    propagate_catalog(path)
+    return problems
+
+
 def slot_category_violations(entries) -> List[str]:
     """Report glyphs sitting in a slot that cannot hold them.
 
