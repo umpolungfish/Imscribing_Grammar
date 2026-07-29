@@ -80,6 +80,69 @@ def grammar_arg_shapes() -> dict[str, dict]:
 # Each entry is (path_to_check, heading, body). path_to_check is verified to
 # exist; None means the entry is a command on PATH or a pure convention.
 
+def _m3iosis_surface() -> str:
+    """Derive the m3iosis CLI surface from its own argparse tree.
+
+    This entry used to be curated prose, and it drifted completely: it
+    documented six modules that do not exist (explorer, braid_torus, iuft,
+    paranumber, three_body_horn, discovery) and a subcommand list that had been
+    replaced wholesale, so every invocation an agent copied out of it failed.
+    Deriving it means the surface cannot say something the code does not.
+    """
+    import argparse
+    import importlib
+    try:
+        mod = importlib.import_module("m3iosis.cli")
+    except Exception as exc:
+        return f"(m3iosis.cli did not import: {exc})"
+
+    parser = None
+    for fn in ("build_parser", "make_parser", "get_parser", "_parser"):
+        if hasattr(mod, fn):
+            try:
+                parser = getattr(mod, fn)()
+                break
+            except Exception:
+                pass
+    if parser is None:
+        # No factory to call, so intercept the parser on its way to parse_args.
+        real = argparse.ArgumentParser.parse_args
+        held = {}
+
+        def _spy(self, *a, **k):
+            held["p"] = self
+            raise SystemExit(0)
+
+        argparse.ArgumentParser.parse_args = _spy
+        try:
+            mod.main()
+        except SystemExit:
+            pass
+        except Exception:
+            pass
+        finally:
+            argparse.ArgumentParser.parse_args = real
+        parser = held.get("p")
+    if parser is None:
+        return "(could not introspect m3iosis.cli)"
+
+    out = ["`python3 -m m3iosis.cli <subcommand>` — derived from its argparse tree:", ""]
+    for action in parser._actions:
+        if not isinstance(action, argparse._SubParsersAction):
+            continue
+        for name, sub in action.choices.items():
+            opts = sorted({o for a in sub._actions for o in a.option_strings
+                           if o.startswith("--") and o != "--help"})
+            pos = [a.dest for a in sub._actions if not a.option_strings]
+            bits = []
+            if pos:
+                bits.append(" ".join(f"<{x}>" for x in pos))
+            if opts:
+                bits.append(" ".join(opts))
+            out.append(f"- `{name}` {' '.join(bits)}".rstrip())
+    return "\n".join(out)
+
+
 MATH_DOMAIN = [
     (IMSGCT / "MoDoT" / "ask", "MoDoT — ./ask", """\
 `cd ~/imsgct/MoDoT && ./ask [FLAGS]`. Auto-builds the Rust binary if absent.
@@ -150,37 +213,14 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral."""),
 · --canonical STR · --reference · --list-canonical · --list-patterns ·
 --suggest STR"""),
 
-    (IMSGCT / "m3iosis", "m3iosis", """\
-`python3 -m m3iosis.cli`: resonance A B · sweep SOURCE [--top N] ·
-matrix SYSTEMS… · forge NAME MONOMERS… [--register] · landscape summary |
-neighborhood NAME [RADIUS] | bridges A B | clusters [--min-size N] ·
-predict NAME TUPLE [--winding N] · spectrum WAVELENGTHS… ·
-proof NAME DESCRIPTION [--tuple T] [--save] [--ops OPS…] ·
-discover SOURCE [--targets …] [--top N] · braid list | analyze CONFIG |
-invariants CONFIG | demo. Most take --json.
+    (IMSGCT / "m3iosis", "m3iosis", _m3iosis_surface() + """
 
-`python3 -m m3iosis.braid_torus <cmd> [CONFIG]` — analyze, create, list,
-braid, evolve, invariants. Configs: trinity, hyperbolic_triple, pentabraid,
-tight_braid, wild_braid, heptaplex.
-
-`python3 -m m3iosis.explorer` — click A B · sweep SOURCE · windings λ… ·
-imasm expand NAME · complement NAME · broadcast NAME · calc EXPR ·
-report A B · explore (interactive).
-
-`python3 -m m3iosis.iuft` — explore ANCHOR · bridge A B ·
-landscape ANCHOR [DEPTH] · wormhole ENTRANCE MEDIATOR… ·
-teichmuller NAME TIER · alien NAME · network SEED1 SEED2… ·
-synthesize BASE_TIER TARGET_TIER · demo.
-
-`python3 -m m3iosis.paranumber` — number N · range M N · dialetheic L ·
-void L · frobenius N · table N · theorems · kernel · demo.
-
-`python3 -m m3iosis.three_body_horn [analyze|sweep|figure_eight|lagrange|all|
-demo] --E --J --m1 --m2 --m3 --tmax --steps --n --plot --json --output`.
-
-`python3 -m m3iosis.discovery [SOURCE] [--rounds N] [--output FILE]`, and
-`m3iosis.demo`, `visualize_braids`, `visualize_braids_3d`,
-`landscape_explorer`, `materials_workbench`, `proof_forge`."""),
+Also importable directly: `m3iosis.braid_grammar_bridge` (BraidGrammarAnalyzer),
+`m3iosis.fibonacci_anyon_algebra` (evaluate_braid_word(n, word),
+fusion_space_dimension(n) — the VACUUM sector Hom(tau^n,1) = F_{n-1}, so n>=4
+for a non-trivial representation), `m3iosis.manifold`, `m3iosis.triple_frame`,
+`m3iosis.holonomic_quantale`, `m3iosis.dyson_algebra`, `m3iosis.afdmc`,
+`m3iosis.gematria`, `m3iosis.universe_hopper`."""),
 
     (IMSGCT / "Linear_Analytica", "Linear_Analytica", """\
 Console script `la`: `la lookup CODE` · `la list [--category/-c CAT]` ·
@@ -426,6 +466,32 @@ never assert arithmetic from memory.
 """
 
 
+_MODULE_CACHE: dict = {}
+
+
+def _documented_modules(body: str):
+    """Every `python3 -m <module>` named in a curated entry's prose."""
+    import re
+    return sorted(set(re.findall(r'python3\s+-m\s+([A-Za-z_][A-Za-z0-9_.]*)', body)))
+
+
+def _module_importable(mod: str) -> bool:
+    """True if `python3 -m mod` would resolve. Cached; import machinery only,
+    so nothing in the target module actually executes."""
+    if mod in _MODULE_CACHE:
+        return _MODULE_CACHE[mod]
+    ok = False
+    try:
+        import importlib.util
+        parts = mod.split(".")
+        spec = importlib.util.find_spec(mod)
+        ok = spec is not None
+    except Exception:
+        ok = False
+    _MODULE_CACHE[mod] = ok
+    return ok
+
+
 def render_reference(domain: str) -> tuple[str, list[str]]:
     """The full detail. Written to TOOLS_<domain>.md, read on demand, not inlined."""
     label, entries = DOMAINS[domain]
@@ -454,6 +520,16 @@ def render_reference(domain: str) -> tuple[str, list[str]]:
             lines.append(f"### {heading}  (MISSING: {path})\n")
         else:
             lines.append(f"### {heading}\n")
+        # Checking that the repo directory exists says nothing about whether the
+        # commands inside the prose can be run. The m3iosis entry documented six
+        # modules — explorer, braid_torus, iuft, paranumber, three_body_horn,
+        # discovery — that do not exist, and a `cli` subcommand list that had been
+        # replaced wholesale. Every documented invocation failed, which is exactly
+        # how a tool falls out of use: one call, one error, never again.
+        for mod in _documented_modules(body):
+            if not _module_importable(mod):
+                missing.append(f"{domain}: {heading} → no module {mod}")
+                lines.append(f"> NOTE: `python3 -m {mod}` does not resolve.\n")
         lines.append(body.rstrip() + "\n")
 
     return "\n".join(lines).rstrip() + "\n", missing

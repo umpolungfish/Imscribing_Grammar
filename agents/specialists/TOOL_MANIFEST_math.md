@@ -4,7 +4,7 @@ never assert arithmetic from memory.
 
 ## Base tools
 
-`chunked_write`, `cl8nk_navigator`, `context_review`, `crystal_count`, `crystal_navigate`, `done`, `file_read`, `file_write`, `imscribe`, `imscribe_system`, `ob3ect`, `para_verify`, `para_verify_enable`, `para_vm`, `project`, `proof_scaffold`, `rewrite_tool`, `run_command`, `sic_povm_probe`, `spawn_agent`, `web_fetch`
+`chunked_write`, `cl8nk_navigator`, `context_review`, `crystal_count`, `crystal_navigate`, `done`, `file_read`, `file_write`, `imscribe`, `imscribe_system`, `ob3ect`, `ob3ect_close`, `para_verify`, `para_verify_enable`, `para_vm`, `project`, `proof_scaffold`, `rewrite_tool`, `run_command`, `sic_povm_probe`, `spawn_agent`, `web_fetch`
 
 
 ## Grammar tools, via `imscribe(tool_name=..., args={...})`
@@ -19,7 +19,7 @@ never assert arithmetic from memory.
 - **MoDoT — imasm sub-verbs** — `ref`
 - **MoDoT — Python IG bridge** — `python3 -m modot.ig_tools call <verb> <arg> …`, `names`, `selftest`
 - **MoDoT — Python agent** — `python3 momonados_agent.py`, `modot`
-- **m3iosis** — `python3 -m m3iosis.cli`
+- **m3iosis** — `python3 -m m3iosis.cli <subcommand>`
 - **Linear_Analytica** — `la`, `la lookup CODE`, `la list [--category/-c CAT]`
 - **p4rakernel — Lean 4** — `cd ~/imsgct/p4rakernel/p4ramill && lake build`
 - **math — Lake projects** — `cd <project> && lake build`, `lake exe <name>`

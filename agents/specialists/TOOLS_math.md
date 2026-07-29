@@ -15,6 +15,7 @@ never assert arithmetic from memory.
 - `imscribe` — Call a Imscribing Grammar grammar tool. tool_name selects the operation; args is a JSON object with that tool's required fields. DO NOT use imscribe for imscribe_system — call imscribe_system directly as its own top-level tool. Required args per tool_name: lookup_catalog → {"keyword": "search term"}; ouroborics → {"name": "catalog_name"}; compute_distance → {"name_a": "x", "name_b": "y"}; find_analogies → {"name": "catalog_name", "limit": 5}; compute_tensor → {"name_a": "x", "name_b": "y"}; compute_meet → {"name_a": "x", "name_b": "y"}; compute_join → {"name_a": "x", "name_b": "y"}; consciousness_score → {"name": "catalog_name"}; monad_probe → {"name": "catalog_name"}; crystal_tier_gap_ladder → {}; emergence_frontier → {}; list_catalog → {}.
 - `imscribe_system` — Register a new system in the Imscribing Grammar catalog. Specify all 12 primitives explicitly — every field is required. This is the ONLY way to add a system. Never invent one to satisfy a prompt: catalog reads are always available, and every tuple must be derived rather than hand-written. TETRACTYS: Every call without convergence_justification triggers 3-winding Tetractys. Your proposed tuple is winding 1; two de novo sub-calls (no catalog context) are windings 2 and 3. If all 3 agree the catalog is committed immediately. If conflicts exist the tool returns status=tetractys_conflict — you MUST re-call with convergence_justification resolving each conflicting primitive.
 - `ob3ect` — Enter the ob3ect harness. Returns the design task — the same system prompt and catalog-grounded prompt the pipeline would have sent to a provider — for YOU to answer. Design the ob3ect yourself, then call ob3ect_close with your JSON; that is where μ∘δ=id is verified and the artifact is written. Pass delegate=true only if you actually want a second model to design it instead of you.
+- `ob3ect_close` — Mint YOUR ob3ect design. Pass the JSON you wrote after reading the task from ob3ect. This is where μ∘δ=id is actually verified: the Frobenius verdict is COMPUTED here by comparing fuse_result to split_input, not taken from your own claim. On PASS the artifact is written to ~/ob3ect/digital/<slug>/. On FAIL nothing is written and retry_info names the broken split/fuse pair — re-enter ob3ect with it.
 - `para_verify` — Manually run B4 Frobenius verification on any prior winding's result. Returns B4.T (closed), B4.F (open), B4.B (dialetheic), or B4.N (unknown).
 - `para_verify_enable` — Enable or disable B4-valued Frobenius verification in the observe pipeline. When enabled, every tool result gets a dialetheic check alongside standard verification.
 - `para_vm` — Paraconsistent Belnap FOUR VM tool. Run ParaASM programs, compute B4 lattice operations, execute dialetheic kernel, check Frobenius invariants, analyze dialectic circuits, bridge to zfct_para.py belief sets. Use for all paraconsistent reasoning involving true contradictions.
@@ -161,36 +162,28 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral.
 
 ### m3iosis
 
-`python3 -m m3iosis.cli`: resonance A B · sweep SOURCE [--top N] ·
-matrix SYSTEMS… · forge NAME MONOMERS… [--register] · landscape summary |
-neighborhood NAME [RADIUS] | bridges A B | clusters [--min-size N] ·
-predict NAME TUPLE [--winding N] · spectrum WAVELENGTHS… ·
-proof NAME DESCRIPTION [--tuple T] [--save] [--ops OPS…] ·
-discover SOURCE [--targets …] [--top N] · braid list | analyze CONFIG |
-invariants CONFIG | demo. Most take --json.
+`python3 -m m3iosis.cli <subcommand>` — derived from its argparse tree:
 
-`python3 -m m3iosis.braid_torus <cmd> [CONFIG]` — analyze, create, list,
-braid, evolve, invariants. Configs: trinity, hyperbolic_triple, pentabraid,
-tight_braid, wild_braid, heptaplex.
+- `fib` --braid --diag --dimension --fusion --gate-info --jones --manifold --sim --summary --tree --word
+- `sim` --strands --word
+- `manifold` --strands --word
+- `qc` --approx-h --approx-t --available --circuit --depth --gate-stats --verify
+- `triple` --bridge --check --cycle --expand --path --report --types --verify --word
+- `hqe` --consciousness --distance --holonomy --join --json --mbl --meet --report --tuple
+- `braid-grammar` <word> --strands
+- `hop` --compare-a --compare-b --framework-matrix --geodesic --hop-origin --hop-target --json --report --reverse-framework --reverse-params --tuple
+- `dyson` --N --beta --distance --dr-cycle --form-factor --frobenius --genus --json --level-spacing --report --tuple
+- `afdmc` --W_c --cohomology --disorder --distance --filtration --json --mbl --obstructions --report --seed --size --spectral --steps --tuple
+- `troq` --distance --expand --frames --frobenius --join --json --ladder --meet --ouroboric --report --short --table --tensor --triangular --verify
+- `gematria` --all --banked --cycle --depth --flow --json --report --signature --steer --transitions --word
+- `info`
 
-`python3 -m m3iosis.explorer` — click A B · sweep SOURCE · windings λ… ·
-imasm expand NAME · complement NAME · broadcast NAME · calc EXPR ·
-report A B · explore (interactive).
-
-`python3 -m m3iosis.iuft` — explore ANCHOR · bridge A B ·
-landscape ANCHOR [DEPTH] · wormhole ENTRANCE MEDIATOR… ·
-teichmuller NAME TIER · alien NAME · network SEED1 SEED2… ·
-synthesize BASE_TIER TARGET_TIER · demo.
-
-`python3 -m m3iosis.paranumber` — number N · range M N · dialetheic L ·
-void L · frobenius N · table N · theorems · kernel · demo.
-
-`python3 -m m3iosis.three_body_horn [analyze|sweep|figure_eight|lagrange|all|
-demo] --E --J --m1 --m2 --m3 --tmax --steps --n --plot --json --output`.
-
-`python3 -m m3iosis.discovery [SOURCE] [--rounds N] [--output FILE]`, and
-`m3iosis.demo`, `visualize_braids`, `visualize_braids_3d`,
-`landscape_explorer`, `materials_workbench`, `proof_forge`.
+Also importable directly: `m3iosis.braid_grammar_bridge` (BraidGrammarAnalyzer),
+`m3iosis.fibonacci_anyon_algebra` (evaluate_braid_word(n, word),
+fusion_space_dimension(n) — the VACUUM sector Hom(tau^n,1) = F_{n-1}, so n>=4
+for a non-trivial representation), `m3iosis.manifold`, `m3iosis.triple_frame`,
+`m3iosis.holonomic_quantale`, `m3iosis.dyson_algebra`, `m3iosis.afdmc`,
+`m3iosis.gematria`, `m3iosis.universe_hopper`.
 
 ### Linear_Analytica
 

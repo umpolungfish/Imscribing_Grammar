@@ -1,17 +1,13 @@
-Write axiom4's temporal test as one member, with the history that explains it
+Shout only about new slot-category violations
 
-The test read `dimensionality in (array, array)` — the same member twice, which
-looks like a copy-paste slip and would neatly explain why a sixth of the catalog
-fails this axiom. It is not a slip. git log -L shows the line was
-(D_invomega, TEMPORAL), and the commit that gave the enums Shavian names had
-D_invomega = 𐑼 and TEMPORAL = 𐑼: two names for one glyph. Collapsing both onto
-array is behaviourally identical and the test does what the docstring says.
+Thirty known violations printed thirty warning lines on every catalog write,
+which buries the only line that matters: one that was not there before.
 
-Rewritten as a single `is` comparison with that history in a comment so it stops
-inviting a fix it does not need. Violation counts unchanged, which is the point.
+Known violations are now baselined in a sidecar and summarised in a single INFO
+line. Anything absent from the baseline is reported in full at WARNING and folded
+in, so each violation is shouted about exactly once and never again. Verified: a
+clean write emits one summary line, and injecting a single new violation surfaces
+it by name against the same thirty-strong baseline.
 
-What that leaves standing is the real finding, recorded in the audit doc: 1332 of
-2880 sequential-grammar entries, 46 percent, carry neither the temporal dimension
-nor a catalytic mode. Either those entries are malformed or Axiom 4 is false, and
-the implementation anticipates the second reading — it prints AXIOM FALSIFIED
-rather than raising.
+The thirty are unchanged and still need values from the emitter. This only stops
+them drowning the next one.
