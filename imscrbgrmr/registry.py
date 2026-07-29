@@ -53,11 +53,75 @@ def write_canonical_catalog(entries, path) -> List[str]:
     for line in problems:
         logging.warning("slot-category violation: %s", line)
     path = Path(path)
+    record_provenance(entries, path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(entries, f, indent=2, ensure_ascii=False)
     propagate_catalog(path)
     return problems
+
+
+PROVENANCE_SUFFIX = ".provenance.json"
+
+
+def provenance_path(catalog_path) -> Path:
+    """Sidecar holding who wrote each entry and when."""
+    p = Path(catalog_path)
+    return p.with_name(p.stem + PROVENANCE_SUFFIX)
+
+
+def record_provenance(entries, catalog_path) -> Dict[str, Any]:
+    """Stamp first-seen and last-changed for every entry, in a sidecar file.
+
+    The catalog stores name, description and twelve glyphs and nothing else, so
+    there is no way to ask of an assignment whether it was computed or asserted.
+    That gap is load-bearing: entries at the top of the Ω ladder cannot be
+    distinguished from entries that merely claim to be, and the ones that name
+    their own claim in their description are indistinguishable from the ones
+    that were walked there by a verb.
+
+    The tuple fields are left alone — eight consumers read this file and adding
+    keys to the entries risks all of them — so the record goes beside the
+    catalog instead. Each entry gets first_seen, last_changed, a hash of its
+    twelve glyphs, and a change count. An entry whose tuple never changes after
+    it appears was asserted whole at registration; one that moves has been
+    walked, and by how many steps.
+
+    This is not retroactive. Entries already in the catalog get their first
+    stamp now, and what it dates is this write, not their origin.
+    """
+    import hashlib
+    from datetime import datetime, timezone
+
+    ppath = provenance_path(catalog_path)
+    try:
+        prov = json.loads(ppath.read_text(encoding="utf-8"))
+    except Exception:
+        prov = {}
+
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    slots = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+    for e in entries:
+        if not isinstance(e, dict) or "name" not in e:
+            continue
+        tup = "".join(str(e.get(s, "")) for s in slots)
+        h = hashlib.sha256(tup.encode("utf-8")).hexdigest()[:16]
+        rec = prov.get(e["name"])
+        if rec is None:
+            prov[e["name"]] = {"first_seen": now, "last_changed": now,
+                               "tuple_hash": h, "changes": 0}
+        elif rec.get("tuple_hash") != h:
+            rec["tuple_hash"] = h
+            rec["last_changed"] = now
+            rec["changes"] = int(rec.get("changes", 0)) + 1
+
+    try:
+        ppath.parent.mkdir(parents=True, exist_ok=True)
+        ppath.write_text(json.dumps(prov, indent=2, sort_keys=True),
+                         encoding="utf-8")
+    except OSError as exc:
+        logging.warning("could not write provenance sidecar %s: %s", ppath, exc)
+    return prov
 
 
 def slot_category_violations(entries) -> List[str]:
