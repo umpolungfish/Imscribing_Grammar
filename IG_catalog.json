@@ -126878,5 +126878,53 @@
     "Ħ": "𐑓",
     "Σ": "𐑕",
     "Ω": "𐑷"
+  },
+  {
+    "name": "b_1",
+    "description": "Basis element b_1 of the six-coefficient Frobenius algebra. Corresponds to Fourier coefficient a_1. Under the Z7 mapping: relabel[1]=1, so b_1 = e_1 of R[Z7].",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑩",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑘",
+    "Γ": "𐑲",
+    "ɢ": "𐑜",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
+  },
+  {
+    "name": "b_2",
+    "description": "Basis element b_2 of the six-coefficient Frobenius algebra. Corresponds to Fourier coefficient a_2. Under the Z7 mapping: relabel[2]=2, so b_2 = e_2 of R[Z7].",
+    "Ð": "𐑛",
+    "Þ": "𐑥",
+    "Ř": "𐑩",
+    "Φ": "𐑿",
+    "ƒ": "𐑱",
+    "Ç": "𐑘",
+    "Γ": "𐑲",
+    "ɢ": "𐑜",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "b_3",
+    "description": "Basis element b_3 of the six-coefficient Frobenius algebra. Corresponds to Fourier coefficient a_3. Under the Z7 mapping: relabel[3]=3, so b_3 = e_3 of R[Z7].",
+    "Ð": "𐑼",
+    "Þ": "𐑥",
+    "Ř": "𐑽",
+    "Φ": "𐑿",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑜",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
