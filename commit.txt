@@ -1,26 +1,17 @@
-Stop truncating the persisted description at 300 characters
+Write axiom4's temporal test as one member, with the history that explains it
 
-The catalog's description field is the only prose it carries, and 675 entries sit
-at exactly 300 characters with 805 ending mid-word. belnap_multilattice_sic_povm
-stops at "CONFLICT RESOLUTION: all 5 " and sic_povm_bridge_monadic at "The bridge
-mecha" — the resolution of those five conflicts and the bridge mechanism are lost
-text, not unwritten text.
+The test read `dimensionality in (array, array)` — the same member twice, which
+looks like a copy-paste slip and would neatly explain why a sixth of the catalog
+fails this axiom. It is not a slip. git log -L shows the line was
+(D_invomega, TEMPORAL), and the commit that gave the enums Shavian names had
+D_invomega = 𐑼 and TEMPORAL = 𐑼: two names for one glyph. Collapsing both onto
+array is behaviourally identical and the test does what the docstring says.
 
-The cause is a one-line slice in the imscribe_system emit path, with a comment
-that names the real concern: the model often dumps the whole task into the
-description, and a verbose description wastes tokens in every subsequent
-winding's context. That is true of the ECHO. The slice was applied to the value
-handed to the dispatcher, so a context-economy measure was destroying the record
-to save tokens in a transcript.
+Rewritten as a single `is` comparison with that history in a comment so it stops
+inviting a fix it does not need. Violation counts unchanged, which is the point.
 
-Now the dispatcher gets the whole description and _emit_short_echo trims only
-what re-enters context, marking the cut with the full stored length so the
-shortening is visible rather than silent. Fixed in both live agents,
-true_agentic_agent and odot_operator, which write the same canonical catalog.
-
-Not touched: true_agentic_agent1 and true_agentic_agent2 are byte-identical
-snapshots that nothing in the tree invokes, and the two website copies under
-imscribesite_repo and imscribe.com write a different catalog and live in other
-repos. Their copies of the line are recorded here rather than changed.
-
-This does not recover the 805 already-cut descriptions.
+What that leaves standing is the real finding, recorded in the audit doc: 1332 of
+2880 sequential-grammar entries, 46 percent, carry neither the temporal dimension
+nor a catalytic mode. Either those entries are malformed or Axiom 4 is false, and
+the implementation anticipates the second reading — it prints AXIOM FALSIFIED
+rather than raising.

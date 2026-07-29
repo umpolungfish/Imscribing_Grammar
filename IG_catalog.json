@@ -127358,5 +127358,37 @@
     "Ħ": "𐑖",
     "Σ": "𐑕",
     "Ω": "𐑭"
+  },
+  {
+    "name": "axionic_anyonic_frobenioid_algebra",
+    "description": "Axionic Anyonic Frobenioid Algebra (AAFA): a Frobenioid C over a base category of anyon configurations where each fiber is a monoid in a modular tensor category (Fibonacci), the Frobenius endomorphism φ encodes axion periodicity θ→θ+2π, and the degree function deg = topological charge. Combines Moch",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑫",
+    "Σ": "𐑕",
+    "Ω": "𐑭"
+  },
+  {
+    "name": "pericyclic_semiotic_frobenoids",
+    "description": "Pericyclic Semiotic Frobenoids",
+    "Ð": "𐑦",
+    "Þ": "𐑥",
+    "Ř": "𐑑",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑤",
+    "Γ": "𐑔",
+    "ɢ": "𐑝",
+    "⊙": "⊙",
+    "Ħ": "𐑒",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]

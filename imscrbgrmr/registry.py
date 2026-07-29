@@ -34,6 +34,33 @@ from .models import (
 InteractionGrammar = Grammar
 
 
+BASELINE_SUFFIX = ".violations.json"
+
+
+def _baseline_path(catalog_path) -> Path:
+    p = Path(catalog_path)
+    return p.with_name(p.stem + BASELINE_SUFFIX)
+
+
+def _known_violations(catalog_path) -> set:
+    """The violations already present, so only new ones are shouted about."""
+    try:
+        return set(json.loads(_baseline_path(catalog_path).read_text(encoding="utf-8")))
+    except Exception:
+        return set()
+
+
+def _record_violations(catalog_path, problems) -> None:
+    """Fold new violations into the baseline so they are reported exactly once."""
+    bp = _baseline_path(catalog_path)
+    try:
+        bp.parent.mkdir(parents=True, exist_ok=True)
+        bp.write_text(json.dumps(sorted(problems), indent=2, ensure_ascii=False),
+                      encoding="utf-8")
+    except OSError as exc:
+        logging.warning("could not write violation baseline %s: %s", bp, exc)
+
+
 def write_canonical_catalog(entries, path) -> List[str]:
     """Write the flat catalog list, checking slots and propagating afterwards.
 
@@ -50,8 +77,18 @@ def write_canonical_catalog(entries, path) -> List[str]:
     """
     entries = list(entries.values()) if isinstance(entries, dict) else list(entries)
     problems = slot_category_violations(entries)
-    for line in problems:
-        logging.warning("slot-category violation: %s", line)
+    # Thirty known violations printed thirty lines on every single write, which
+    # buries the one line that would matter: a violation that was not there
+    # before. Known ones get a single summary; anything new is reported in full.
+    known = _known_violations(path)
+    fresh = [p for p in problems if p not in known]
+    for line in fresh:
+        logging.warning("NEW slot-category violation: %s", line)
+    if len(problems) - len(fresh) > 0:
+        logging.info("%d known slot-category violations carried forward (see %s)",
+                     len(problems) - len(fresh), _baseline_path(path).name)
+    if fresh:
+        _record_violations(path, problems)
     path = Path(path)
     record_provenance(entries, path)
     path.parent.mkdir(parents=True, exist_ok=True)
