@@ -164,8 +164,14 @@ def cycle(steps) -> Dict:
     landings: Dict[str, List[int]] = {}
     for r in rows:
         landings.setdefault(r["final_register"], []).append(r["k"])
-    moving = [f for f in ("final_register",)
-              if len({r[f] for r in rows}) > 1]
+    # Every field the orbit carries is a candidate, not just the landing. An
+    # earlier form checked `final_register` alone and so reported that as the
+    # only phase-bearing statistic in words where `restored` swung from full to
+    # nothing across the cut. A statistic that moves under rotation is reading
+    # the cut, and the point of naming them is to catch exactly that.
+    fields = [f for f in rows[0] if f != "k"] if rows else []
+    moving = [f for f in fields
+              if len({repr(r[f]) for r in rows}) > 1]
     return {"status": "ok", "word": render(steps), "period": n,
             "orbit": rows, "landing_by_cut": landings,
             "phase_bearing": moving or ["nothing"]}

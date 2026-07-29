@@ -3433,8 +3433,15 @@ class ToolDispatcher:
         "Unknown tool: list" and had to guess its way to anything.
         """
         import re as _re
-        names = sorted(set(_re.findall(r'elif name == "([a-z0-9_]+)"',
-                                       open(__file__, encoding="utf-8").read())))
+        # Two dispatch spellings reach the same place: `name == "x"` and
+        # `name in ("x", "alias")`. Reading only the first under-reported the
+        # roster by every tool that carries an alias, which is every tool added
+        # most recently. Both forms are scanned.
+        _src = open(__file__, encoding="utf-8").read()
+        names = set(_re.findall(r'elif name == "([a-z0-9_]+)"', _src))
+        for _grp in _re.findall(r'elif name in \(([^)]*)\)', _src):
+            names.update(_re.findall(r'"([a-z0-9_]+)"', _grp))
+        names = sorted(names)
         try:
             import sys as _s
             from pathlib import Path as _P
@@ -3503,15 +3510,21 @@ class ToolDispatcher:
         """
         import collections as _c
         slots = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+        # The catalog is a Catalog, not a dict. An earlier form of this reached
+        # for `.values()` and, finding none, silently matched nothing at all, so
+        # every call answered "no entries with full tuples matched" whatever was
+        # asked of it. `_entries` maps name to imscription; that is the surface.
+        store = getattr(self.catalog, "_entries", None)
+        if store is None:
+            store = self.catalog if isinstance(self.catalog, dict) else {}
+        allpairs = [(n, dict(im, name=n)) for n, im in store.items()]
         entries = []
         if names:
             want = names if isinstance(names, list) else [n.strip() for n in str(names).split(",")]
-            entries = [e for e in self.catalog.values() if e.get("name") in want] \
-                      if hasattr(self.catalog, "values") else []
+            want = set(want)
+            entries = [e for n, e in allpairs if n in want]
         elif match:
-            entries = [e for e in (self.catalog.values() if hasattr(self.catalog, "values")
-                                   else [])
-                       if match in str(e.get("name", ""))]
+            entries = [e for n, e in allpairs if str(match).lower() in n.lower()]
         else:
             return {"status": "error",
                     "error": "give match=<substring> or names=<list>"}
