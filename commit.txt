@@ -1,19 +1,21 @@
-Route the real catalog writers through one function
+Record catalog provenance in a sidecar
 
-The slot-category guard added earlier, and the propagation moved into save()
-before it, were both on a path the registration flow never takes.
-ImscriptionCatalog.save() does not write IG_catalog.json. The canonical file is
-a bare list of name, description and twelve glyphs, and cli.py json.dumps that
-list directly at three sites — delete, guided-encoding update, and new-name
-registration. None of them validated anything and none of them propagated;
-cli.py contains no reference to sync_catalog or propagate_catalog at all. That
-is why the catalog drifted across its consumers and why thirty slot-category
-violations accumulated unseen: the checks existed, on a function nobody called.
+The catalog stores name, description and twelve glyphs and nothing else, so an
+assignment cannot be asked whether it was computed or asserted. That gap is
+load-bearing: an entry at the top of the winding ladder is indistinguishable
+from one that merely claims to be, and an entry whose description asserts its
+own promotion is indistinguishable from one a verb walked there.
 
-write_canonical_catalog() validates the slots, writes the list, and propagates,
-and the three sites call it. Propagation is a no-op for any path that is not the
-canonical one, so temporary and test writes stay inert.
+It demonstrated itself while this was being written. A well-formed entry,
+g_lattice_investigation, appeared in the canonical catalog and nothing anywhere
+records who wrote it or when — only the file mtime, which the next write
+destroys.
 
-esoteric_librarian's four write sites are deliberately left alone: they write
-esoteric_library/<name>.json, which are separate side catalogs, and sending them
-through this helper would fire propagation to the canonical consumers.
+The tuple fields are left alone, because eight consumers read that file and new
+keys risk all of them. The record goes beside the catalog instead: first_seen,
+last_changed, a hash of the twelve glyphs, and a change count. An entry whose
+tuple never moves after it appears was asserted whole at registration; one that
+moves was walked, and the count says by how many steps.
+
+Not retroactive. Existing entries are stamped as of this write, which dates the
+stamp and not their origin.

@@ -127326,5 +127326,21 @@
     "Ħ": "𐑖",
     "Σ": "𐑕",
     "Ω": "𐑭"
+  },
+  {
+    "name": "g_lattice_investigation",
+    "description": "The ɢ Lattice: composition from conjunction (𐑝) through disjunction (𐑜) and sequential (𐑠) to broadcast (𐑵). Forms a diamond lattice D₂ with 𐑝 as bottom, 𐑵 as top, and 𐑜/𐑠 as incomparable middle nodes. Each composition mode corresponds to a categorical operation: product, coproduct, composition, uni",
+    "Ð": "𐑦",
+    "Þ": "𐑸",
+    "Ř": "𐑽",
+    "Φ": "𐑹",
+    "ƒ": "𐑐",
+    "Ç": "𐑧",
+    "Γ": "𐑔",
+    "ɢ": "𐑵",
+    "⊙": "⊙",
+    "Ħ": "𐑖",
+    "Σ": "𐑙",
+    "Ω": "𐑷"
   }
 ]
