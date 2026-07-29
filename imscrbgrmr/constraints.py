@@ -816,7 +816,12 @@ class AxiomValidator:
                 "reason": "Not a sequential grammar",
             }
         
-        has_temporal = imscription.dimensionality in (Dimensionality.array, Dimensionality.array)
+        # Reads as a copy-paste slip and is not one. This was
+        # `(D_invomega, TEMPORAL)`, and those were two names for the same glyph
+        # 𐑼 — the Shavian rename collapsed both onto `array`, which is
+        # behaviourally identical. The test is Ð = 𐑼, the D_∞ the docstring
+        # names. Left as a single member so it stops inviting a "fix".
+        has_temporal = imscription.dimensionality is Dimensionality.array
         has_catalytic = imscription.recognition_mode in {
             RecognitionMode.ear,
             RecognitionMode.tot,

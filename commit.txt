@@ -1,21 +1,26 @@
-Record catalog provenance in a sidecar
+Stop truncating the persisted description at 300 characters
 
-The catalog stores name, description and twelve glyphs and nothing else, so an
-assignment cannot be asked whether it was computed or asserted. That gap is
-load-bearing: an entry at the top of the winding ladder is indistinguishable
-from one that merely claims to be, and an entry whose description asserts its
-own promotion is indistinguishable from one a verb walked there.
+The catalog's description field is the only prose it carries, and 675 entries sit
+at exactly 300 characters with 805 ending mid-word. belnap_multilattice_sic_povm
+stops at "CONFLICT RESOLUTION: all 5 " and sic_povm_bridge_monadic at "The bridge
+mecha" — the resolution of those five conflicts and the bridge mechanism are lost
+text, not unwritten text.
 
-It demonstrated itself while this was being written. A well-formed entry,
-g_lattice_investigation, appeared in the canonical catalog and nothing anywhere
-records who wrote it or when — only the file mtime, which the next write
-destroys.
+The cause is a one-line slice in the imscribe_system emit path, with a comment
+that names the real concern: the model often dumps the whole task into the
+description, and a verbose description wastes tokens in every subsequent
+winding's context. That is true of the ECHO. The slice was applied to the value
+handed to the dispatcher, so a context-economy measure was destroying the record
+to save tokens in a transcript.
 
-The tuple fields are left alone, because eight consumers read that file and new
-keys risk all of them. The record goes beside the catalog instead: first_seen,
-last_changed, a hash of the twelve glyphs, and a change count. An entry whose
-tuple never moves after it appears was asserted whole at registration; one that
-moves was walked, and the count says by how many steps.
+Now the dispatcher gets the whole description and _emit_short_echo trims only
+what re-enters context, marking the cut with the full stored length so the
+shortening is visible rather than silent. Fixed in both live agents,
+true_agentic_agent and odot_operator, which write the same canonical catalog.
 
-Not retroactive. Existing entries are stamped as of this write, which dates the
-stamp and not their origin.
+Not touched: true_agentic_agent1 and true_agentic_agent2 are byte-identical
+snapshots that nothing in the tree invokes, and the two website copies under
+imscribesite_repo and imscribe.com write a different catalog and live in other
+repos. Their copies of the line are recorded here rather than changed.
+
+This does not recover the 805 already-cut descriptions.
