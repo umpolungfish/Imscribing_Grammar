@@ -346,7 +346,13 @@ def pe_qft_alignment(n: int, d_model: int) -> Tuple[float, float]:
     qft_phases = np.angle(F[:, 1])     # QFT freq 1 vs position
     phase_diff = pe_phases - qft_phases
     phase_diff -= phase_diff[0]        # normalize
-    phase_match_err = float(np.std(phase_diff % (2*math.pi)))
+    # Wrap to (-pi, pi], not [0, 2pi). phase_diff is normalized so its first
+    # element is exactly zero, so a good match leaves the rest near zero — and
+    # under [0, 2pi) every residual that is zero-from-below wraps to nearly a
+    # full turn. A perfect match with float dust scored 2.91 that way, worse
+    # than genuinely random phases at 1.77: the metric inverted exactly where it
+    # was supposed to be sharpest.
+    phase_match_err = float(np.std((phase_diff + math.pi) % (2*math.pi) - math.pi))
 
     return float(np.mean(correlations)), phase_match_err
 

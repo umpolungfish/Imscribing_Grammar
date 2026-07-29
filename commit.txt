@@ -1,24 +1,17 @@
-Report slot-category violations when the catalog is saved
+Wrap the phase-match residual to the signed branch
 
-Each primitive is an inductive with a closed constructor list — Primitive_Omega
-is | awe | oak | ah | zoo and nothing else — but nothing ever compared a saved
-tuple against those lists, so glyphs from the wrong primitive sat in the catalog
-undetected. Thirty of them: the transactinides carrying a kinetic glyph in the
-criticality slot, groups 13 and 15 carrying a dimensionality glyph in
-stoichiometry, two entries holding a Phi value in Omega, and one unresolved
-placeholder string.
+phase_diff is normalized so its first element is exactly zero, so a good match
+leaves the remaining residuals near zero. Taking the standard deviation over
+[0, 2pi) then sends every residual that is zero-from-below to nearly a full
+turn: a perfect match with float dust scores 2.91, worse than genuinely random
+phases at 1.77. The metric inverts exactly where it is meant to be sharpest.
 
-They surfaced by refusal rather than by audit. Every structural verb needing
-Omega on the affected entries returned N (void), which is correct behaviour and
-names a missing value rather than a misplaced one, so the cause stayed invisible
-until the tuples were checked against the inductive directly.
+On the current inputs the change is small — the demo's headline moves from
+1.818977 to 1.778632, and two of four configurations move by under 0.003 —
+because the PE/QFT residuals are spread around the circle rather than
+concentrated near the wrap. No conclusion drawn from these numbers changes. The
+fix matters if the alignment ever gets good.
 
-slot_category_violations() does that check and save() logs each result. It
-reports rather than blocks: the correct value for a violating slot is a
-determination about the entry, and blocking would leave the canonical catalog
-unsavable until all thirty resolve.
-
-The CANONICAL_VALUES import is deliberately not wrapped. The first version
-reached for a name that does not exist and the swallowed ImportError made it
-report zero violations against a catalog holding thirty — failing in precisely
-the manner it exists to catch.
+Same defect class as the braid bridge's winding sum, fixed in m3iosis 52fd070.
+The neighbouring _phase_to_glyph already guards both sides of the wrap, which is
+why these read as oversights rather than convention.
