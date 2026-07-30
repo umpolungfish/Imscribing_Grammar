@@ -3251,6 +3251,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fa69e5ef1ef0512b"
   },
+  "anyonic_holonomic_semiotic_frobenoid_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T00:06:47+00:00",
+    "last_changed": "2026-07-30T00:06:47+00:00",
+    "tuple_hash": "d02e0870df7d1114"
+  },
   "apache_gaan_dancers": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -3995,6 +4001,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2d2b5665b8b1f1f2"
   },
+  "asymmetric_ai_novm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "9be394708930a4c7"
+  },
   "asymmetric_catalysis_current": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -4012,6 +4024,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9e19c77f899e7ab5"
+  },
+  "asymmetric_information_complete_negative_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:02:11+00:00",
+    "last_changed": "2026-07-30T09:02:11+00:00",
+    "tuple_hash": "9ac4da420333d80d"
+  },
+  "asymmetric_information_incomplete_negative_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "03e70cb978611742"
   },
   "asymmetric_potential": {
     "changes": 0,
@@ -9983,6 +10007,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ef58aa2ae732efd"
   },
+  "coaxial_pencil": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "19038543d0a336a1"
+  },
   "cobalt": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -11002,6 +11032,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "78befe65581088bd"
+  },
+  "conversational_peer_sed": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "4621201c99e5e045"
   },
   "convex_polygon_condition": {
     "changes": 0,
@@ -21149,11 +21185,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0d6d5cfb36e404ed"
   },
+  "holomorphic_semiotic_operator_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T00:56:31+00:00",
+    "last_changed": "2026-07-30T00:56:31+00:00",
+    "tuple_hash": "6395af722b4aedcc"
+  },
   "holonomic_quasi_ergodic_quantale": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b85b937758faf12b"
+  },
+  "holonomic_semiotic_super_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T03:26:48+00:00",
+    "last_changed": "2026-07-30T03:26:48+00:00",
+    "tuple_hash": "909cd406cd5e0929"
   },
   "holonomy_winding_fundamental_law": {
     "changes": 0,
@@ -31727,6 +31775,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e4122756e011dae9"
   },
+  "paraconsistent_semiotic_frobenoid_operator_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T00:15:44+00:00",
+    "last_changed": "2026-07-30T00:15:44+00:00",
+    "tuple_hash": "71bb4ed048e6163e"
+  },
   "paraconsistent_substrate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34558,6 +34612,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4db0d905713375d9"
+  },
+  "prompt_academic_sed": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "74085d2479e6782a"
   },
   "proof": {
     "changes": 0,
@@ -40649,11 +40709,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "298459b193c2d850"
   },
+  "student_reflection_academic": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "74085d2479e6782a"
+  },
   "student_reflection_ai_lifted": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8652c5912348a682"
+  },
+  "student_voice_conversational": {
+    "changes": 0,
+    "first_seen": "2026-07-30T08:39:21+00:00",
+    "last_changed": "2026-07-30T08:39:21+00:00",
+    "tuple_hash": "4621201c99e5e045"
   },
   "su2_structural": {
     "changes": 0,

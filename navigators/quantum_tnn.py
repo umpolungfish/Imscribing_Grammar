@@ -237,23 +237,26 @@ def qft_exact(psi: np.ndarray) -> np.ndarray:
     return qft_matrix(n) @ psi
 
 def apply_qft_mps(mps: MPS):
-    """Apply QFT to MPS (nearest-neighbor SWAP decomposition)."""
+    """Apply QFT to MPS (nearest-neighbor SWAP decomposition with corrected back‑swaps)."""
     n = mps.n
     for i in range(n):
         mps.apply1(H, i)
         for j in range(i+1, n):
-            # bring qubit j adjacent to i via SWAPs, apply CRk, SWAP back
-            # for demonstration: do nearest-neighbor sequence
+            # bring qubit j next to i
             for k_ in range(j, i+1, -1):
                 mps.apply2(SWAP.reshape(4,4), k_-1)
             mps.apply2(_controlled_phase_mat(j - i + 1), i)
-            for k_ in range(i+1, j):
-                mps.apply2(SWAP.reshape(4,4), k_)
+            # return qubit to original position
+            for k_ in range(i+1, j+1):
+                mps.apply2(SWAP.reshape(4,4), k_-1)
+    # bit-reversal permutation using adjacent swaps
     for i in range(n // 2):
-        # bit reversal via SWAP chain
-        for k_ in range(i, n - i - 1):
+        lo, hi = i, n - i - 1
+        # move lo to hi
+        for k_ in range(lo, hi):
             mps.apply2(SWAP.reshape(4,4), k_)
-        for k_ in range(n - i - 2, i, -1):
+        # move old hi (now at lo+1) back to lo
+        for k_ in range(hi-1, lo, -1):
             mps.apply2(SWAP.reshape(4,4), k_)
 
 def _controlled_phase_mat(k: int) -> np.ndarray:
@@ -278,10 +281,14 @@ IBM_HERON_2Q_ERR   = 3e-3    # ~0.3%
 IBM_EAGLE_READOUT  = 1.5e-2  # ~1.5% readout error per qubit
 
 def qft_gate_count(n: int) -> Tuple[int, int]:
-    """Returns (n_1q_gates, n_2q_gates) for n-qubit QFT."""
-    n1q = n                       # n Hadamard gates
-    n2q = n * (n - 1) // 2       # n(n-1)/2 controlled-phase gates
-    n2q += n // 2                  # n/2 SWAP gates at the end (3 CNOTs each → 3× overhead)
+    """Returns (n_1q_gates, n_2q_gates) for n-qubit QFT.
+
+    Controlled-phase gates: n(n-1)/2.
+    Bit-reversal swaps: n/2 SWAPs, each decomposed into 3 CNOTs.
+    """
+    n1q = n                        # n Hadamard gates
+    n2q = n * (n - 1) // 2        # controlled-phase
+    n2q += (n // 2) * 3           # SWAP = 3 CNOTs
     return n1q, n2q
 
 def circuit_fidelity(n: int, err_1q: float, err_2q: float, readout: float) -> float:
@@ -346,12 +353,7 @@ def pe_qft_alignment(n: int, d_model: int) -> Tuple[float, float]:
     qft_phases = np.angle(F[:, 1])     # QFT freq 1 vs position
     phase_diff = pe_phases - qft_phases
     phase_diff -= phase_diff[0]        # normalize
-    # Wrap to (-pi, pi], not [0, 2pi). phase_diff is normalized so its first
-    # element is exactly zero, so a good match leaves the rest near zero — and
-    # under [0, 2pi) every residual that is zero-from-below wraps to nearly a
-    # full turn. A perfect match with float dust scored 2.91 that way, worse
-    # than genuinely random phases at 1.77: the metric inverted exactly where it
-    # was supposed to be sharpest.
+    # Wrap to (-pi, pi] to avoid 2π wraparound artefacts
     phase_match_err = float(np.std((phase_diff + math.pi) % (2*math.pi) - math.pi))
 
     return float(np.mean(correlations)), phase_match_err
@@ -486,10 +488,10 @@ def demo_mps(n: int = 12, chi_max: int = 64):
     psi0 = rng.standard_normal(2**n) + 1j * rng.standard_normal(2**n)
     psi0 /= norm(psi0)
 
-    # exact QFT output (this is what IBM's processor is trying to produce)
+    # exact QFT output
     psi_qft = qft_exact(psi0)
 
-    # entanglement structure of QFT output
+    # entanglement structure
     sv_exact = StateVec(n)
     sv_exact.psi = psi_qft.copy()
     S_exact = sv_exact.entanglement_entropy()
@@ -500,11 +502,16 @@ def demo_mps(n: int = 12, chi_max: int = 64):
     print(f"  χ     MPS memory    Fidelity      Ent. entropy  Compression")
     print(f"  {'-'*4}  {'-'*11}  {'-'*12}  {'-'*12}  {'-'*11}")
 
-    exact_mem = 2**n * 16 / 1024
+    exact_mem = 2**n * 16 / 1024  # KB of exact state vector
+    exact_chi = 2**(n//2)         # bond dimension for exact MPS representation
 
-    for chi in [1, 2, 4, 8, 16, 32, 64, 2**(n//2)]:
-        if chi > 2**(n//2):
-            chi = 2**(n//2)
+    best_chi = None
+    best_mem = None
+    mem_exact_mps = None
+
+    for chi in [1, 2, 4, 8, 16, 32, 64, exact_chi]:
+        if chi > exact_chi:
+            chi = exact_chi
         mps = _mps_from_statevec(psi_qft, n, chi)
         psi_mps = mps.to_statevec()
         n_mps = norm(psi_mps)
@@ -520,15 +527,22 @@ def demo_mps(n: int = 12, chi_max: int = 64):
         compression = exact_mem / mem_kb
         print(f"  {chi:>4}  {mem_kb:>8.1f} KB  {fid:>12.8f}  {S:>12.4f}  {compression:>8.1f}×")
 
-        if chi == 2**(n//2):
+        if chi == exact_chi:
+            mem_exact_mps = mem_kb   # store memory of exact MPS
+        if fid > 0.9 and best_chi is None:
+            best_chi = chi
+            best_mem = mem_kb
+
+        if chi == exact_chi:
             break
 
-    print(f"  exact  {exact_mem:>8.1f} KB  {'1.00000000':>12}  {S_exact:>12.4f}  {'1.0×':>11}")
-    print(f"""
-  At χ = 2^(n/2) = {2**(n//2)}: MPS is exact (full Hilbert space representable).
-  At χ = 32: captures high fidelity with {32*32*n*16/1024:.0f} KB vs {exact_mem:.0f} KB exact.
-  Memory advantage: O(nχ²) vs O(2^n) — exponential in n.
+    # dynamic summary line
+    if best_chi is not None:
+        print(f"\n  At χ = {best_chi}: already >90% fidelity with {best_mem:.0f} KB vs {exact_mem:.0f} KB exact.")
+    else:
+        print(f"\n  At χ = {exact_chi}: MPS is exact, using {mem_exact_mps:.0f} KB.")
 
+    print(f"""
   IBM Eagle @ 127 qubits: exact simulation needs 2^127 amplitudes (impossible).
   MPS @ χ=1024: needs 127 × 1024² × 16 bytes ≈ {127*1024**2*16/1e9:.1f} GB — feasible on a GPU.
   For circuits where entanglement entropy S < log₂(χ), classical MPS wins indefinitely.

@@ -1765,11 +1765,17 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     ouro_result = _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
     dist_result = _imscribe_emit({"tool_name": "compute_distance",
                                    "args": {"name_a": "multilattice_sic_povm", "name_b": name}})
+    gram_result = _imscribe_emit({"tool_name": "compute_distance",
+                                   "args": {"name_a": "imscribing_grammar", "name_b": name}})
 
     try:
         phi_data = json.loads(phi_result)
         ouro_data = json.loads(ouro_result)
         dist_data = json.loads(dist_result)
+        try:
+            gram_data = json.loads(gram_result)
+        except json.JSONDecodeError:
+            gram_data = {}
     except json.JSONDecodeError:
         return json.dumps({"status": "error", "error": "Failed to parse probe results"}, ensure_ascii=False)
 
@@ -1800,11 +1806,20 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
             phi_val == "\u2609" and d_val == "\U00010466" and tier == "O_\u221e"
         ),
         "dual_pair_analysis": dual_pair_analysis,
-        "grammar_distance": SIC_POVM_DISTANCE_TO_GRAMMAR,
-        "shared_primitives_with_grammar": SIC_POVM_SHARED_PRIMITIVES,
+        # Measured for THIS entry. Previously these two fields emitted the
+        # module constants below, which describe the fixed pair
+        # (grammar, multilattice_sic_povm) and not the probed name at all --
+        # every entry came back 2.0 / 11 regardless of what was probed.
+        "grammar_distance": gram_data.get("distance", "?"),
+        "shared_primitives_with_grammar": gram_data.get(
+            "shared_primitives", gram_data.get("shared", "?")),
+        "multilattice_to_grammar_distance": SIC_POVM_DISTANCE_TO_GRAMMAR,
+        "multilattice_shared_with_grammar": SIC_POVM_SHARED_PRIMITIVES,
         "note": (
-            "The grammar is the \u03a3=\U00010459 (self-referential) limit of the Belnap "
-            "multilattice SIC-POVM. d(grammar, multilattice_SIC_POVM) = "
+            "grammar_distance/shared_primitives_with_grammar are measured for "
+            "this entry. The multilattice_* fields are the fixed reference pair: "
+            "the grammar is the \u03a3=\U00010459 (self-referential) limit of the Belnap "
+            "multilattice SIC-POVM, d(grammar, multilattice_SIC_POVM) = "
             f"{SIC_POVM_DISTANCE_TO_GRAMMAR} (\u03a3: \U00010459 vs \U00010473 -- the sole difference)."
         ),
     }, indent=2, ensure_ascii=False)
@@ -3917,14 +3932,46 @@ class TrueAgenticAgent:
             message with 'tool_calls'
 
         which aborts the run at the moment compaction was supposed to save it.
-        Two ends to guard: leading `tool` messages whose parent was dropped, and
-        a trailing assistant message whose calls nothing answers.
+        Trimming the two ends is not enough. The dual of the error above is
+
+            An assistant message with 'tool_calls' must be followed by tool
+            messages responding to each 'tool_call_id'
+
+        and it fires on INTERIOR pairs too: an assistant carrying several
+        tool_calls of which only some results survive the cut, or one whose
+        results were themselves dropped as leading orphans. End-trimming leaves
+        those in place, and a preloaded session (which is how a compacted state
+        comes back) re-raises the same 400 at winding 0.
+
+        So scan the whole list and keep an assistant-with-tool_calls only when
+        every one of its ids is answered by the contiguous run of `tool`
+        messages that follows it. Drop unmatched `tool` messages outright.
         """
-        out = list(msgs)
-        while out and out[0].get("role") == "tool":
-            out.pop(0)
-        while out and out[-1].get("role") == "assistant" and out[-1].get("tool_calls"):
-            out.pop()
+        out: List[Dict] = []
+        i, n = 0, len(msgs)
+        while i < n:
+            m = msgs[i]
+            role = m.get("role")
+            if role == "tool":
+                # No live parent above it — its assistant was cut or dropped.
+                i += 1
+                continue
+            if role == "assistant" and m.get("tool_calls"):
+                want = [tc.get("id") for tc in (m.get("tool_calls") or [])]
+                j = i + 1
+                answers = []
+                while j < n and msgs[j].get("role") == "tool":
+                    answers.append(msgs[j])
+                    j += 1
+                have = {a.get("tool_call_id") for a in answers}
+                if want and all(w in have for w in want):
+                    out.append(m)
+                    out.extend(answers)
+                # else: drop the assistant AND its partial answers together
+                i = j
+                continue
+            out.append(m)
+            i += 1
         return out
 
     def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
