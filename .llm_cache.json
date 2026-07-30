@@ -12106,5 +12106,7 @@
   "09bc608167c77d4df8bc32e6c2424aea2b1e848f824ab2780304277bf157198d": "2 \u2014 Fibonacci anyon systems, such as the golden chain, are inherently scale-invariant and sit exactly at a conformal quantum critical point.",
   "01fcb5cf2f2e9d0a73ff24133ccde7dd37247864ea1cf643c2a2292272592c56": "4 \u2014 Fibonacci anyons are non-Abelian topological quasiparticles whose chiral braiding properties are protected by the topology of their worldlines, thus cannot be undone without global restructuring.",
   "cae909a11a4fe27ffc165e050e2dca7bf41c3933221334a70da766a16809381a": "1 \u2014 Fibonacci anyons fuse symmetrically, with two identical \u03c4 particles yielding a superposition of 1 and \u03c4, matching equal symmetric pairing.",
-  "0fd4d897bc0a73d866481d5f7e0abaddccfb2e8abd685365ae422eb9f26756e1": "4 \u2014 Fibonacci anyons are non-Abelian and thus topologically protected against continuous deformation."
+  "0fd4d897bc0a73d866481d5f7e0abaddccfb2e8abd685365ae422eb9f26756e1": "4 \u2014 Fibonacci anyons are non-Abelian and thus topologically protected against continuous deformation.",
+  "cb8a8b3ae214ad9ba705f0419aae6c9a3b02f61c36f9020d4f8abcf18d53a772": "3 \u2014 The sequence AAFA implies a temporal/iterative cycle, repeating A and returning to A after F, suggesting a reset step.",
+  "a44869487c346683981851938b35b4b671e9869a00dd7affc4df1b62d60507d0": "3 \u2014 The sequence AAFA forms a cycle between A and F with a self-loop on A, indicating a cyclic interface."
 }

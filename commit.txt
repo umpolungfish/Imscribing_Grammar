@@ -1,13 +1,15 @@
-Shout only about new slot-category violations
+Point the QC tools at the mOMonadOS kernel, not the Python
 
-Thirty known violations printed thirty warning lines on every catalog write,
-which buries the only line that matters: one that was not there before.
+Every m3iosis subcommand has a Rust counterpart in the kernel — fibonacci_qc,
+braid_grammar, dyson, hqe, afdmc, hop, troq, triple_frame, manifold, gematria —
+and the manifests named only the Python. The kernel section now comes first and
+says plainly where the QC tools are meant to run; the m3iosis entry is retitled
+as a duplicate of that surface and kept for what the kernel does not expose.
 
-Known violations are now baselined in a sidecar and summarised in a single INFO
-line. Anything absent from the baseline is reported in full at WARNING and folded
-in, so each violation is shouted about exactly once and never again. Verified: a
-clean write emits one summary line, and injecting a single new violation surfaces
-it by name against the same thirty-strong baseline.
+The kernel path is `cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" …`,
+which takes several commands per boot — worth stating, since one boot per command
+is where the QEMU overhead would otherwise eat the advantage.
 
-The thirty are unchanged and still need values from the emitter. This only stops
-them drowning the next one.
+Also recorded there: `bg`'s winding is a closed form in the writhe rather than a
+sum of eigenvalue phases, which is why it cannot pick up the error the Python
+bridge carried until today.

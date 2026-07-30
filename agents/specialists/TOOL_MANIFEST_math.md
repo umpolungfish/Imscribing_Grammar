@@ -19,7 +19,8 @@ never assert arithmetic from memory.
 - **MoDoT — imasm sub-verbs** — `ref`
 - **MoDoT — Python IG bridge** — `python3 -m modot.ig_tools call <verb> <arg> …`, `names`, `selftest`
 - **MoDoT — Python agent** — `python3 momonados_agent.py`, `modot`
-- **m3iosis** — `python3 -m m3iosis.cli <subcommand>`
+- **mOMonadOS kernel — RUN THE QC TOOLS HERE, NOT IN PYTHON** — `cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]`
+- **m3iosis (Python — a DUPLICATE of the kernel surface)** — `python3 -m m3iosis.cli <subcommand>`
 - **Linear_Analytica** — `la`, `la lookup CODE`, `la list [--category/-c CAT]`
 - **p4rakernel — Lean 4** — `cd ~/imsgct/p4rakernel/p4ramill && lake build`
 - **math — Lake projects** — `cd <project> && lake build`, `lake exe <name>`

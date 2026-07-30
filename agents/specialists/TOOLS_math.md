@@ -160,7 +160,38 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral.
 · --canonical STR · --reference · --list-canonical · --list-patterns ·
 --suggest STR
 
-### m3iosis
+### mOMonadOS kernel — RUN THE QC TOOLS HERE, NOT IN PYTHON
+
+`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]` — pipes REPL
+commands into the kernel over QEMU serial and prints the output. Several commands
+per boot: pass them as separate arguments rather than booting once each.
+`PROFILE=release` by default; it rebuilds the ELF if absent.
+
+Quantum / anyon / SIC surface, all native Rust:
+
+- `fibqc verify` — F unitary, pentagon (F^2=I, anti-diagonal, a^2+b^2=1),
+  braid relation (Yang-Baxter), spin-statistics, S unitary, charge conjugation
+  S^2=I, TQFT identities, Verlinde formula, Artin B_n<=8, and phase lattice =
+  tenths of a winding. `fibqc compile <gates>` compiles a circuit.
+- `bg report` · `bg tuple <word> [strands]` — braid word to grammar tuple. The
+  winding is a closed form in the writhe (topological_spin = writhe*2/5 mod 1),
+  so it never diagonalises a matrix and cannot pick up eigenvalue-phase error.
+- `shor` — Belnap Shor pipeline, N=15 and N=21.
+- `iuft gate|distance|list` — IUFT QC gates.
+- `hqe report` — holonomic quasi-ergodic quantale, MBL holonomy.
+- `dyson report` — Dyson beta-ensemble, double-ramified cycle.
+- `troq report` · `afdmc report` · `hop report` · `manifold` · `triple
+  report|verify|cycle|bridge` — the triple-frame vN superoperator algebra.
+- `sic` — SIC-POVM d=12 identity, three lattice proofs.
+- `d12 tower|magnitudes|orbits|existence|duallink|z0` ·
+  `d2048 tower|redei|grammar|pari|next`.
+- `cycle <word>` · `weight <word>` · `banked <word>` · `trans <word>` —
+  IMASM ring walks.
+
+The kernel is the canonical path for all of the above. Note that its help text
+does not yet list bg, hqe, dyson, troq, hop, afdmc — they work regardless.
+
+### m3iosis (Python — a DUPLICATE of the kernel surface)
 
 `python3 -m m3iosis.cli <subcommand>` — derived from its argparse tree:
 
@@ -176,7 +207,15 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral.
 - `afdmc` --W_c --cohomology --disorder --distance --filtration --json --mbl --obstructions --report --seed --size --spectral --steps --tuple
 - `troq` --distance --expand --frames --frobenius --join --json --ladder --meet --ouroboric --report --short --table --tensor --triangular --verify
 - `gematria` --all --banked --cycle --depth --flow --json --report --signature --steer --transitions --word
+- `pf` --crossing --distance --frobenius --json --pairing --parity --report --short --tuple --verify
+- `pqc` --compile --evolve --genus --interactive --lean --output --protocol --sic --tqft
 - `info`
+
+Every subcommand above has a Rust counterpart in the mOMonadOS kernel
+(fibonacci_qc.rs, braid_grammar.rs, dyson.rs, hqe.rs, afdmc.rs, hop.rs, troq.rs,
+triple_frame.rs, manifold.rs, gematria.rs), and the kernel is the path to use for
+anything with real compute in it. Reach for this Python only when the kernel does
+not expose what you need.
 
 Also importable directly: `m3iosis.braid_grammar_bridge` (BraidGrammarAnalyzer),
 `m3iosis.fibonacci_anyon_algebra` (evaluate_braid_word(n, word),
