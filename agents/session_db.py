@@ -33,6 +33,32 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 
+def _scrub(obj: Any) -> Any:
+    """Strip lone surrogates from any string reachable in `obj`.
+
+    Tool output can carry bytes that failed to decode as UTF-8 and were kept as
+    surrogate escapes (a stray 0xCF becomes '\\udccf'). Such a string is a valid
+    Python str but cannot be encoded to UTF-8, so it kills both the sqlite write
+    and the API request with
+
+        UnicodeEncodeError: 'utf-8' codec can't encode character '\\udccf':
+        surrogates not allowed
+
+    and the whole run is lost at save time, after the work is done. Round-trip
+    through UTF-8 with replacement so the byte is visible as U+FFFD rather than
+    fatal.
+    """
+    if isinstance(obj, str):
+        if any(0xD800 <= ord(c) <= 0xDFFF for c in obj):
+            return obj.encode("utf-8", "replace").decode("utf-8", "replace")
+        return obj
+    if isinstance(obj, dict):
+        return {_scrub(k): _scrub(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return type(obj)(_scrub(v) for v in obj)
+    return obj
+
+
 def _default_db_path() -> str:
     """Default session database: /home/mrnob0dy666/.imsgct/sessions.db"""
     base = os.environ.get("IMSGCT_DB_DIR", os.path.expanduser("/home/mrnob0dy666/.imsgct"))
@@ -154,13 +180,13 @@ class SessionDB:
                                       windings_count, frobenius_ratio, structural_type, extra)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
-                sid, now, getattr(agent, 'model_id', 'unknown'), task,
-                json.dumps(tags or [], ensure_ascii=False),
-                result,
+                sid, now, getattr(agent, 'model_id', 'unknown'), _scrub(task),
+                json.dumps(_scrub(tags or []), ensure_ascii=False),
+                _scrub(result),
                 len(agent.trajectory),
                 frob_ratio,
-                json.dumps(st, ensure_ascii=False),
-                json.dumps(extra or {}, ensure_ascii=False),
+                json.dumps(_scrub(st), ensure_ascii=False),
+                json.dumps(_scrub(extra or {}), ensure_ascii=False),
             ))
 
             # --- messages rows ---
@@ -168,7 +194,7 @@ class SessionDB:
             for i, msg in enumerate(messages):
                 tool_calls_json = None
                 if msg.get("tool_calls"):
-                    tool_calls_json = json.dumps(msg["tool_calls"], ensure_ascii=False)
+                    tool_calls_json = json.dumps(_scrub(msg["tool_calls"]), ensure_ascii=False)
                 conn.execute("""
                     INSERT OR REPLACE INTO messages
                         (session_id, seq, role, content, tool_call_id,
@@ -177,10 +203,10 @@ class SessionDB:
                 """, (
                     sid, i,
                     msg.get("role", ""),
-                    msg.get("content"),
+                    _scrub(msg.get("content")),
                     msg.get("tool_call_id"),
                     tool_calls_json,
-                    msg.get("reasoning_content"),
+                    _scrub(msg.get("reasoning_content")),
                 ))
 
             # --- windings rows ---
@@ -194,14 +220,14 @@ class SessionDB:
                          para_vm_snapshot)
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
-                    sid, cyc.winding, cyc.ts, cyc.think_reasoning, cyc.action_name,
-                    json.dumps(cyc.action_input, ensure_ascii=False),
-                    dr.tool_output if dr else None,
+                    sid, cyc.winding, cyc.ts, _scrub(cyc.think_reasoning), cyc.action_name,
+                    json.dumps(_scrub(cyc.action_input), ensure_ascii=False),
+                    _scrub(dr.tool_output) if dr else None,
                     dr.verify_output if dr else None,
                     1 if cyc.frobenius_closed else 0,
                     cyc.update_note,
                     1 if cyc.done else 0,
-                    cyc.conclusion,
+                    _scrub(cyc.conclusion),
                     cyc.b4_result,
                     1 if cyc.dialetheic else 0,
                     json.dumps(cyc.para_vm_snapshot, ensure_ascii=False)

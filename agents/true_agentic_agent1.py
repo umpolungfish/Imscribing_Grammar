@@ -1318,11 +1318,23 @@ _TRIANGULATION_SYSTEM = (
 
 
 def _run_single_imscription(
-    name: str, description: str, client: Any, model_id: str
+    name: str, description: str, client: Any, model_id: str,
+    errors: Optional[List[str]] = None,
 ) -> Optional[Dict[str, str]]:
     """Make one de novo LLM imscription with no catalog or history context.
-    Returns dict of {primitive: value} or None on failure."""
+    Returns dict of {primitive: value} or None on failure.
+
+    Every failure path appends its reason to `errors`. Without that, five
+    distinct causes -- unreachable LLM, no JSON in the reply, unparseable JSON,
+    a missing family key, an out-of-range primitive -- all collapsed into a
+    bare `return None`, and the caller reported the first one as if it were the
+    only one. Only the first is a connectivity problem.
+    """
     import re as _re
+    def _fail(reason: str) -> None:
+        if errors is not None:
+            errors.append(reason)
+        return None
     user_msg = (
         f"Imscribe this system using the Deterministic Imscribing Procedure.\n"
         f"Name: {name}\n"
@@ -1330,34 +1342,44 @@ def _run_single_imscription(
         f"Output ONLY the JSON object with all 12 primitive assignments."
     )
     try:
+        # No max_tokens. This reply must carry a JSON object with all twelve
+        # primitive assignments; the old 256-token cap truncated it mid-object
+        # on any model that emits a preamble or reasoning tokens, and a
+        # truncated object fails the regex below -- which then read as
+        # "could not reach the LLM".
         resp = client.chat.completions.create(
             model=model_id,
-            max_tokens=256,
             messages=[
                 {"role": "system", "content": _TRIANGULATION_SYSTEM},
                 {"role": "user",   "content": user_msg},
             ],
         )
         content = (resp.choices[0].message.content or "").strip()
+        if not content:
+            return _fail("empty content returned (model replied, body was blank)")
         # Extract the first JSON object from the response
         m = _re.search(r'\{[^{}]*\}', content, _re.DOTALL)
         if not m:
-            return None
-        data = json.loads(m.group())
+            return _fail(f"no JSON object in reply ({len(content)} chars): {content[:120]!r}")
+        try:
+            data = json.loads(m.group())
+        except json.JSONDecodeError as exc:
+            return _fail(f"JSON parse failed ({exc}): {m.group()[:120]!r}")
         # Normalize to canonical Shavian family keys
         data = {_LEGACY_TO_CANON.get(k, k): v for k, v in data.items()}
-        if not all(k in data for k in CANONICAL_FAMILIES):
-            return None
+        missing = [k for k in CANONICAL_FAMILIES if k not in data]
+        if missing:
+            return _fail(f"missing families {missing}")
         # Normalise and validate each value
         result: Dict[str, str] = {}
         for k in CANONICAL_FAMILIES:
             v = _PRIM_NORM.get(str(data[k]), str(data[k]))
             if v not in _PRIM_VALID.get(k, []):
-                return None
+                return _fail(f"{k}={data[k]!r} normalised to {v!r}, not a valid value")
             result[k] = v
         return result
-    except Exception:
-        return None
+    except Exception as exc:
+        return _fail(f"{type(exc).__name__}: {exc}")
 
 
 def _triangulate_imscription(
@@ -1609,11 +1631,17 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     ouro_result = _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
     dist_result = _imscribe_emit({"tool_name": "compute_distance",
                                    "args": {"name_a": "multilattice_sic_povm", "name_b": name}})
+    gram_result = _imscribe_emit({"tool_name": "compute_distance",
+                                   "args": {"name_a": "imscribing_grammar", "name_b": name}})
 
     try:
         phi_data = json.loads(phi_result)
         ouro_data = json.loads(ouro_result)
         dist_data = json.loads(dist_result)
+        try:
+            gram_data = json.loads(gram_result)
+        except json.JSONDecodeError:
+            gram_data = {}
     except json.JSONDecodeError:
         return json.dumps({"status": "error", "error": "Failed to parse probe results"})
 
@@ -1644,8 +1672,11 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
             phi_val == "\u2609" and d_val == "\U00010466" and tier == "O_\u221e"
         ),
         "dual_pair_analysis": dual_pair_analysis,
-        "grammar_distance": SIC_POVM_DISTANCE_TO_GRAMMAR,
-        "shared_primitives_with_grammar": SIC_POVM_SHARED_PRIMITIVES,
+        "grammar_distance": gram_data.get("distance", "?"),
+        "shared_primitives_with_grammar": gram_data.get(
+            "shared_primitives", gram_data.get("shared", "?")),
+        "multilattice_to_grammar_distance": SIC_POVM_DISTANCE_TO_GRAMMAR,
+        "multilattice_shared_with_grammar": SIC_POVM_SHARED_PRIMITIVES,
         "note": (
             "The grammar is the \u03a3=\U00010459 (self-referential) limit of the Belnap "
             "multilattice SIC-POVM. d(grammar, multilattice_SIC_POVM) = "
@@ -4051,6 +4082,60 @@ class TrueAgenticAgent:
             f"— review prompt injected]"
         )
 
+    @staticmethod
+    def _well_formed_tail(msgs: List[Dict]) -> List[Dict]:
+        """Trim a tail slice so it can stand alone as a conversation.
+
+        A blind `[-keep_recent:]` can cut between an assistant message carrying
+        `tool_calls` and the `tool` messages answering it. The orphan survives,
+        its parent does not, and the next request dies with
+
+            Messages with role 'tool' must be a response to a preceding
+            message with 'tool_calls'
+
+        which aborts the run at the moment compaction was supposed to save it.
+        Trimming the two ends is not enough. The dual of the error above is
+
+            An assistant message with 'tool_calls' must be followed by tool
+            messages responding to each 'tool_call_id'
+
+        and it fires on INTERIOR pairs too: an assistant carrying several
+        tool_calls of which only some results survive the cut, or one whose
+        results were themselves dropped as leading orphans. End-trimming leaves
+        those in place, and a preloaded session (which is how a compacted state
+        comes back) re-raises the same 400 at winding 0.
+
+        So scan the whole list and keep an assistant-with-tool_calls only when
+        every one of its ids is answered by the contiguous run of `tool`
+        messages that follows it. Drop unmatched `tool` messages outright.
+        """
+        out: List[Dict] = []
+        i, n = 0, len(msgs)
+        while i < n:
+            m = msgs[i]
+            role = m.get("role")
+            if role == "tool":
+                # No live parent above it — its assistant was cut or dropped.
+                i += 1
+                continue
+            if role == "assistant" and m.get("tool_calls"):
+                want = [tc.get("id") for tc in (m.get("tool_calls") or [])]
+                j = i + 1
+                answers = []
+                while j < n and msgs[j].get("role") == "tool":
+                    answers.append(msgs[j])
+                    j += 1
+                have = {a.get("tool_call_id") for a in answers}
+                if want and all(w in have for w in want):
+                    out.append(m)
+                    out.extend(answers)
+                # else: drop the assistant AND its partial answers together
+                i = j
+                continue
+            out.append(m)
+            i += 1
+        return out
+
     def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
         """Replace old messages with the model's distilled summary, keeping recent context."""
         system = self._messages[0]
@@ -4060,6 +4145,7 @@ class TrueAgenticAgent:
             if len(self._messages) > keep_recent + 2
             else self._messages[2:]
         )
+        recent = self._well_formed_tail(recent)
         dropped = max(0, len(self._messages) - 2 - len(recent))
         summary_msg = {
             "role": "user",

@@ -2375,6 +2375,40 @@ class SessionCatalog:
             entry.update(imscription)
             merged[name] = entry
 
+        # ── Address invariant ────────────────────────────────────────────────────
+        # The set of occupied addresses may only grow. A name overlaying a disk
+        # entry re-points that name, and if it was the sole holder of its tuple
+        # the address vanishes from the written file. That is depopulation by
+        # side effect, reachable from this merge as well as from encode().
+        # Enforced here because this is the single write boundary: whatever
+        # vacated an address upstream, it cannot reach disk.
+        def _addr(e: Dict[str, Any]) -> Optional[tuple]:
+            if not isinstance(e, dict):
+                return None
+            try:
+                return tuple(e[p] for p in PRIMITIVE_ORDER)
+            except KeyError:
+                return None
+
+        live = {a for a in (_addr(e) for e in merged.values()) if a}
+        orphaned = [
+            (n, e) for n, e in disk_entries.items()
+            if (_a := _addr(e)) and _a not in live
+        ]
+        for n, e in orphaned:
+            stem = f"{n}__retired"
+            key, _i = stem, 2
+            while key in merged:
+                key, _i = f"{stem}{_i}", _i + 1
+            kept = dict(e)
+            kept["name"] = key
+            kept["description"] = (
+                f"[address retained] Formerly imscribed as '{n}'; the name was "
+                f"re-pointed elsewhere. {e.get('description', '')}"
+            ).strip()
+            merged[key] = kept
+            live.add(_addr(e))
+
         try:
             with open(path, "w", encoding="utf-8") as f:
                 json.dump(list(merged.values()), f, indent=2, ensure_ascii=False)
@@ -2475,6 +2509,39 @@ class SessionCatalog:
                         ),
                     }
 
+        # ── Address preservation ─────────────────────────────────────────────────
+        # Names and descriptions are mutable; ADDRESSES ARE NOT. Every tuple that
+        # exists is real structure, independent of whether the name currently
+        # attached to it corresponds correctly. Re-pointing a name is legitimate;
+        # vacating the address it leaves is not. Because _entries is keyed by
+        # name, the assignment below silently depopulated the prior address
+        # whenever this name was its only occupant.
+        #
+        # So: before re-pointing, check whether any OTHER name still holds the
+        # outgoing tuple. If none does, retain it under a derived name so the
+        # address keeps a resident. Nothing is ever removed.
+        preserved_as: Optional[str] = None
+        if conflict_info is not None:
+            outgoing = conflict_info["existing_tuple"]
+            still_held = any(
+                other_name != name and other == outgoing
+                for other_name, other in self._entries.items()
+            )
+            if not still_held:
+                stem = f"{name}__retired"
+                preserved_as = stem
+                _n = 2
+                while preserved_as in self._entries:
+                    preserved_as = f"{stem}{_n}"
+                    _n += 1
+                self._entries[preserved_as] = outgoing
+                self._descriptions[preserved_as] = (
+                    f"[address retained] Formerly imscribed as '{name}'. The name was "
+                    f"re-pointed; this address is kept populated because it is structure "
+                    f"regardless of the correspondence. "
+                    f"{conflict_info.get('existing_description', '')}"
+                ).strip()
+
         self._entries[name] = imscription
         self._descriptions[name] = description
 
@@ -2503,8 +2570,10 @@ class SessionCatalog:
                 f"Name '{name}' already existed with a DIFFERENT tuple "
                 f"(distance={conflict_info['distance']:.4f}, "
                 f"differing primitives: {conflict_info['differing_primitives']}). "
-                f"Catalog updated to new tuple — the prior encoding is superseded. "
-                f"If both encodings are valid, use a distinct name for the earlier one."
+                f"Name re-pointed to the new tuple. The prior ADDRESS is retained"
+                + (f" as '{preserved_as}'." if preserved_as
+                   else " — it is still held by another name.")
+                + " Addresses are never vacated; only names and descriptions move."
             )
             result["conflict"] = {
                 "superseded_tuple": conflict_info["existing_tuple"],
@@ -2512,6 +2581,7 @@ class SessionCatalog:
                 "differing_primitives": conflict_info["differing_primitives"],
                 "distance_from_superseded": conflict_info["distance"],
                 "convergence_justification": convergence_justification,
+                "address_retained_as": preserved_as,
             }
 
         if exact_duplicates:
@@ -3353,8 +3423,67 @@ class ToolDispatcher:
             _s.path.insert(0, d)
         return _fresh("m3iosis.fibonacci_quantum_computer")
 
+    @staticmethod
+    def _kernel(*cmds, timeout=180):
+        """Run REPL commands in mOMonadOS and return its raw output.
+
+        The kernel is the Rust-native authority for the Fibonacci QC surface;
+        `menu.rs` registers `quantum_compile` and `jones_polynomial` explicitly
+        as aliases for `fibqc compile` / `fibqc jones`, "the grammar-tool name".
+        There is deliberately no Python fallback: the m3iosis amplitude path and
+        the kernel's braid-grammar path have disagreed before, and a silent
+        fallback would let the losing one answer under the winner's name.
+        """
+        import subprocess, os
+        from pathlib import Path as _P
+        root = _P(__file__).resolve().parent.parent.parent / "mOMonadOS"
+        runner = root / "run_serial_cmds.sh"
+        if not runner.exists():
+            return None, f"kernel runner not found at {runner}"
+        try:
+            p = subprocess.run(["bash", str(runner), *cmds],
+                               capture_output=True, text=True, timeout=timeout,
+                               cwd=str(root))
+        except subprocess.TimeoutExpired:
+            return None, f"kernel timed out after {timeout}s"
+        except OSError as exc:
+            return None, f"kernel invocation failed: {exc}"
+        # Do NOT gate on returncode: the kernel halts through QEMU's
+        # isa-debug-exit device, which exits nonzero (33) on a clean shutdown.
+        # Presence of serial output is the success signal.
+        if not (p.stdout or "").strip():
+            return None, (f"kernel produced no output (exit {p.returncode})"
+                          f"{': ' + p.stderr[:200] if p.stderr else ''}")
+        return p.stdout, None
+
     def _quantum_compile(self, gates=None, depth=3):
-        """Compile a circuit to a Fibonacci anyon BRAID WORD.
+        """Compile a circuit to a Fibonacci anyon braid word, in the kernel."""
+        if not gates:
+            return {"status": "error",
+                    "error": "give a circuit over H, T, S, X, e.g. gates='H T'"}
+        names = gates.split() if isinstance(gates, str) else list(gates)
+        bad = [g for g in names if g.upper() not in ("H", "T", "S", "X")]
+        if bad:
+            return {"status": "error", "error": f"unknown gate(s): {' '.join(bad)}",
+                    "known": ["H", "T", "S", "X"]}
+        circuit = " ".join(g.upper() for g in names)
+        out, err = self._kernel(f"fibqc compile {circuit} {int(depth)}")
+        if err:
+            return {"status": "error", "error": err,
+                    "note": ("the Rust kernel is the authority for this tool and no "
+                             "Python fallback is provided — build mOMonadOS and retry")}
+        return {"status": "ok", "circuit": circuit, "depth": int(depth),
+                "source": "mOMonadOS kernel (Rust) — fibqc compile",
+                "kernel_output": out}
+
+    def _quantum_compile_python_RETIRED(self, gates=None, depth=3):
+        """RETIRED — the Python m3iosis amplitude path.
+
+        Kept for reference and not dispatched. This is the route whose
+        eigenvalue handling disagreed with the kernel's closed-form braid
+        winding; the kernel is authoritative.
+
+        Compile a circuit to a Fibonacci anyon BRAID WORD.
 
         Real topological quantum computation: the circuit becomes a sequence of
         anyon exchanges, and the reported unitary is checked against its own
@@ -3396,7 +3525,40 @@ class ToolDispatcher:
         }
 
     def _jones_polynomial(self, braid=None, strands=None):
-        """Jones polynomial of a braid closure at the fifth root of unity.
+        """Jones polynomial of a braid closure, in the kernel.
+
+        `braid` is a word of signed generators, e.g. "1 1 1" for the trefoil or
+        "1 -2 1 -2" for the figure-eight. The strand count is implied, since
+        sigma_k needs k+1 strands.
+
+        Routed to `fibqc jones`, which `menu.rs` registers as the kernel side of
+        this grammar-tool name. No Python fallback, for the same reason as
+        _quantum_compile.
+        """
+        if braid is None:
+            return {"status": "error",
+                    "error": "give a braid word, e.g. braid='1 1 1' (trefoil)"}
+        try:
+            word = [int(x) for x in (braid.split() if isinstance(braid, str) else braid)]
+        except (TypeError, ValueError):
+            return {"status": "error", "error": "braid must be signed integers"}
+        if not word:
+            return {"status": "error", "error": "braid word is empty"}
+        out, err = self._kernel("fibqc jones " + " ".join(str(g) for g in word))
+        if err:
+            return {"status": "error", "error": err,
+                    "note": ("the Rust kernel is the authority for this tool and no "
+                             "Python fallback is provided — build mOMonadOS and retry")}
+        return {"status": "ok",
+                "braid": " ".join(str(g) for g in word),
+                "strands": int(strands or (max(abs(g) for g in word) + 1)),
+                "source": "mOMonadOS kernel (Rust) — fibqc jones",
+                "kernel_output": out}
+
+    def _jones_polynomial_python_RETIRED(self, braid=None, strands=None):
+        """RETIRED — the Python m3iosis path. Not dispatched; kept for reference.
+
+        Jones polynomial of a braid closure at the fifth root of unity.
 
         The invariant Fibonacci anyons compute natively: SU(2) level 3
         Chern-Simons IS this evaluation rather than a simulation of it.

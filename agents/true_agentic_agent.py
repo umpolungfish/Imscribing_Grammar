@@ -630,6 +630,12 @@ SIC_POVM_DUAL_PAIRS = [
 SIC_POVM_DISTANCE_TO_GRAMMAR = 2.0  # Σ: 𐑙 vs 𐑳 — the ONLY differing primitive
 SIC_POVM_SHARED_PRIMITIVES = 11     # out of 12 total
 
+# This agent derives imscriptions; it does not commit them. Committing belongs to
+# the generator pipeline, which validates the cross-primitive axioms (A/B/C).
+# Set True only to restore the old direct-write behaviour, which bypasses those
+# checks entirely.
+_AGENT_MAY_IMSCRIBE = False
+
 # Inherited by sub-agents spawned via spawn_agent tool — set by TrueAgenticAgent.__init__
 _spawn_config: Dict[str, str] = {"model": "grok-4", "base_url": "", "api_key": ""}
 
@@ -1434,11 +1440,23 @@ _TRIANGULATION_SYSTEM = (
 
 
 def _run_single_imscription(
-    name: str, description: str, client: Any, model_id: str
+    name: str, description: str, client: Any, model_id: str,
+    errors: Optional[List[str]] = None,
 ) -> Optional[Dict[str, str]]:
     """Make one de novo LLM imscription with no catalog or history context.
-    Returns dict of {primitive: value} or None on failure."""
+    Returns dict of {primitive: value} or None on failure.
+
+    Every failure path appends its reason to `errors`. Without that, five
+    distinct causes -- unreachable LLM, no JSON in the reply, unparseable JSON,
+    a missing family key, an out-of-range primitive -- all collapsed into a
+    bare `return None`, and the caller reported the first one as if it were the
+    only one. Only the first is a connectivity problem.
+    """
     import re as _re
+    def _fail(reason: str) -> None:
+        if errors is not None:
+            errors.append(reason)
+        return None
     user_msg = (
         f"Imscribe this system using the Deterministic Imscribing Procedure.\n"
         f"Name: {name}\n"
@@ -1446,34 +1464,44 @@ def _run_single_imscription(
         f"Output ONLY the JSON object with all 12 primitive assignments."
     )
     try:
+        # No max_tokens. This reply must carry a JSON object with all twelve
+        # primitive assignments; the old 256-token cap truncated it mid-object
+        # on any model that emits a preamble or reasoning tokens, and a
+        # truncated object fails the regex below -- which then read as
+        # "could not reach the LLM".
         resp = client.chat.completions.create(
             model=model_id,
-            max_tokens=256,
             messages=[
                 {"role": "system", "content": _TRIANGULATION_SYSTEM},
                 {"role": "user",   "content": user_msg},
             ],
         )
         content = (resp.choices[0].message.content or "").strip()
+        if not content:
+            return _fail("empty content returned (model replied, body was blank)")
         # Extract the first JSON object from the response
         m = _re.search(r'\{[^{}]*\}', content, _re.DOTALL)
         if not m:
-            return None
-        data = json.loads(m.group())
+            return _fail(f"no JSON object in reply ({len(content)} chars): {content[:120]!r}")
+        try:
+            data = json.loads(m.group())
+        except json.JSONDecodeError as exc:
+            return _fail(f"JSON parse failed ({exc}): {m.group()[:120]!r}")
         # Normalize to canonical Shavian family keys
         data = {_LEGACY_TO_CANON.get(k, k): v for k, v in data.items()}
-        if not all(k in data for k in CANONICAL_FAMILIES):
-            return None
+        missing = [k for k in CANONICAL_FAMILIES if k not in data]
+        if missing:
+            return _fail(f"missing families {missing}")
         # Normalise and validate each value
         result: Dict[str, str] = {}
         for k in CANONICAL_FAMILIES:
             v = _PRIM_NORM.get(str(data[k]), str(data[k]))
             if v not in _PRIM_VALID.get(k, []):
-                return None
+                return _fail(f"{k}={data[k]!r} normalised to {v!r}, not a valid value")
             result[k] = v
         return result
-    except Exception:
-        return None
+    except Exception as exc:
+        return _fail(f"{type(exc).__name__}: {exc}")
 
 
 def _triangulate_imscription(
@@ -1494,9 +1522,10 @@ def _triangulate_imscription(
     """
     order = CANONICAL_FAMILIES[:]
     windings = [winding1]
+    sub_errors: List[str] = []
     # Winding 2 and 3 are de novo — no knowledge of prior winding results
     for _ in range(2):
-        w = _run_single_imscription(name, description, client, model_id)
+        w = _run_single_imscription(name, description, client, model_id, sub_errors)
         if w:
             windings.append(w)
 
@@ -1505,18 +1534,21 @@ def _triangulate_imscription(
         # This is a FIRST-CLASS ERROR: the imscription MUST NOT be committed
         # without cross-validation. The agent must restore LLM connectivity and retry.
         import logging as _log
+        why = "; ".join(sub_errors) if sub_errors else "no reason captured"
         _log.getLogger('true_agentic_agent').error(
             f'✗ TRIANGULATION FAILURE: only {len(windings)}/3 windings succeeded for {name!r}. '
-            f'Imscription REJECTED — cross-validation absent. Agent must restore and retry.'
+            f'Imscription REJECTED — cross-validation absent. Sub-call failures: {why}'
         )
         return {
             "converged": False,
             "triangulation_failure": True,
             "windings": windings,
+            "sub_call_errors": sub_errors,
             "report": (
                 f"✗ TRIANGULATION FAILURE: only {len(windings)}/3 windings completed. "
-                f"Sub-calls could not reach the LLM. The imscription has NOT been committed. "
-                f"Restore LLM connectivity and re-call imscribe_system."
+                f"The imscription has NOT been committed. Sub-call failures: {why}. "
+                f"Only a connection/auth error means the LLM was unreachable; a parse or "
+                f"validation failure means the model replied and the reply was rejected."
             ),
         }
 
@@ -1595,6 +1627,38 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     if justification:
         tool_args["convergence_justification"] = justification
 
+    # ── SHUNT: this agent proposes, the pipeline imscribes ───────────────────
+    # Both commit paths below wrote straight to the catalog with no
+    # cross-primitive axiom check. The generator pipeline
+    # (agents/imscribe_generator_agent.py, run via agents_cli
+    # "imscription_generator") validates Axioms A/B/C and auto-corrects, e.g.
+    # it refuses Ω=𐑭 with Ħ below 𐑖 and downgrades the protection. Nothing on
+    # this path did. That is how `sic_novm` reached the catalog at Ħ=𐑒 with
+    # Ω=𐑭, an address the generator would decline to emit — 227 catalog entries
+    # currently violate Axiom B.
+    #
+    # So the tuple is derived here and handed on; it is not committed here.
+    if not _AGENT_MAY_IMSCRIBE:
+        proposal = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
+        return json.dumps({
+            "status": "shunted_to_pipeline",
+            "name": name,
+            "proposed_tuple": proposal,
+            "proposed_notation": "⟨" + "".join(proposal.get(k, "?") for k in order) + "⟩",
+            "committed": False,
+            "message": (
+                "The catalog has NOT been written. Imscription is the pipeline's to "
+                "commit, not this agent's: the pipeline validates the cross-primitive "
+                "axioms and this path does not. The derivation above is preserved — "
+                "hand it to the generator, which will triangulate and commit, or "
+                "report the axiom that blocks it."
+            ),
+            "pipeline": (
+                "python -m imscribing_grammar.agents.agents_cli imscription_generator "
+                f"--description {name!r}"
+            ),
+        }, indent=2, ensure_ascii=False)
+
     # If convergence_justification already provided, the caller has resolved Tetractys
     # conflicts — commit directly without re-triangulating.
     if justification:
@@ -1624,14 +1688,19 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
 
     if tri.get("triangulation_failure"):
         # Triangulation sub-calls failed — FIRST-CLASS ERROR, do NOT commit.
-        # The agent must restore LLM connectivity and retry the imscription.
+        # Report the measured reason. This message used to assert connectivity
+        # loss unconditionally, which is the one cause that cannot be true when
+        # the main loop is reaching the same client on every other winding.
+        _errs = tri.get("sub_call_errors") or []
+        _why = "; ".join(_errs) if _errs else "no reason captured"
         return json.dumps({
             "status": "triangulation_failure",
             "message": (
                 f"Triangulation sub-calls failed: only {len(tri.get('windings',[]))}/3 windings succeeded. "
-                "Sub-call LLM requests could not be completed. The catalog has NOT been updated. "
-                "RESTORE LLM CONNECTIVITY AND RETRY: re-call imscribe_system to complete the Tetractys protocol."
+                f"The catalog has NOT been updated. Sub-call failures: {_why}. "
+                "Re-call imscribe_system once the cause above is addressed."
             ),
+            "sub_call_errors": _errs,
             "report": tri["report"],
         }, indent=2, ensure_ascii=False)
 
@@ -1668,6 +1737,17 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
 
 def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
+    # Shunted to the pipeline — the derivation succeeded and was handed on.
+    # Closed, not OPEN: nothing failed and re-calling will not commit it either.
+    if '"status": "shunted_to_pipeline"' in emit_output or \
+       '"status":"shunted_to_pipeline"' in emit_output:
+        return (
+            "Derivation complete and handed to the generator pipeline. Catalog NOT "
+            "written by this agent — the pipeline commits, after validating the "
+            "cross-primitive axioms. Continue the task. — Frobenius closed",
+            True,
+        )
+
     # Triangulation failure — sub-calls could not reach LLM, catalog not updated
     if '"status": "triangulation_failure"' in emit_output or \
        '"status":"triangulation_failure"' in emit_output:
@@ -3162,6 +3242,31 @@ def _load_imsgct_context() -> str:
         "and Machin's arctan(1/2) + arctan(1/3) gives the quarter turn.\n")
     parts.append("---\n[END IMSGCT CONTEXT]\n---\n")
     return "".join(parts)
+def _scrub_surrogates(obj: Any) -> Any:
+    """Strip lone surrogates from any string reachable in `obj`.
+
+    A byte that failed UTF-8 decoding upstream survives as a surrogate escape
+    (a stray 0xCF becomes '\\udccf'). It is a legal Python str but cannot be
+    encoded to UTF-8, so it kills the request with
+
+        UnicodeEncodeError: 'utf-8' codec can't encode character '\\udccf':
+        surrogates not allowed
+
+    Once one is in the message history every subsequent call dies, including at
+    winding 0 of a continued session -- the whole run aborts before any work is
+    done, and the retry loop cannot help because the payload is what is broken.
+    """
+    if isinstance(obj, str):
+        if any(0xD800 <= ord(c) <= 0xDFFF for c in obj):
+            return obj.encode("utf-8", "replace").decode("utf-8", "replace")
+        return obj
+    if isinstance(obj, dict):
+        return {_scrub_surrogates(k): _scrub_surrogates(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return type(obj)(_scrub_surrogates(v) for v in obj)
+    return obj
+
+
 def _assistant_msg(
     reasoning: str,
     tool_call_id: str,
@@ -3549,7 +3654,7 @@ class TrueAgenticAgent:
                     max_tokens  = self.max_think_tokens,
                     tools       = active_tools,
                     tool_choice = "auto",
-                    messages    = self._messages,
+                    messages    = _scrub_surrogates(self._messages),
                     timeout     = 180.0,   # 3 min per LLM call — prevents hangs
                 )
                 break  # Success — exit retry loop
@@ -3852,8 +3957,7 @@ class TrueAgenticAgent:
         # opens with the PRIOR conversation, so _messages[1] is an old task while
         # the live one sits at the end and drops out of `recent` after a few
         # windings — compaction would pin the wrong objective and lose the real one.
-        _ti = getattr(self, "_task_msg_index", 1)
-        task = self._messages[_ti] if 0 <= _ti < len(self._messages) else self._messages[1]
+        task = self._task_anchor()
 
         self._omega_z_violation_count += 1
 
@@ -3974,13 +4078,38 @@ class TrueAgenticAgent:
             i += 1
         return out
 
+    def _task_anchor(self) -> Dict[str, Any]:
+        """Return a message safe to place at index 1 of a rebuilt list.
+
+        Both rebuild paths assemble [system, task, summary] + recent, and only
+        `recent` passes through _well_formed_tail. The task slot was taken raw
+        from self._messages[_task_msg_index] -- an index that goes stale as soon
+        as either path rebuilds the list. When it lands on an assistant message
+        carrying tool_calls, that message is placed at index 1 with nothing
+        answering it, and the next request dies with
+
+            An assistant message with 'tool_calls' must be followed by tool
+            messages responding to each 'tool_call_id'
+
+        which is the same 400 the guard on `recent` was added to prevent.
+        A task anchor must be a plain user message; anything else is replaced.
+        """
+        _ti = getattr(self, "_task_msg_index", 1)
+        cand = self._messages[_ti] if 0 <= _ti < len(self._messages) else None
+        if cand and cand.get("role") == "user" and not cand.get("tool_calls"):
+            return cand
+        for m in self._messages:
+            if m.get("role") == "user" and not m.get("tool_calls"):
+                return m
+        return {"role": "user",
+                "content": f"TASK: {getattr(self, 'last_task', '') or '(task text unavailable)'}"}
+
     def _compact_history(self, summary: str, keep_recent: int = 6) -> int:
         """Replace old messages with the model's distilled summary, keeping recent context."""
         system = self._messages[0]
         # Anchor on the CURRENT task. In a continued session the history opens
         # with the prior conversation, so _messages[1] is a stale task.
-        _ti = getattr(self, "_task_msg_index", 1)
-        task = self._messages[_ti] if 0 <= _ti < len(self._messages) else self._messages[1]
+        task = self._task_anchor()
         recent = (
             self._messages[-keep_recent:]
             if len(self._messages) > keep_recent + 2
@@ -4571,13 +4700,35 @@ def _cli_chat(argv: List[str]) -> None:
             continue
 
         lines.append(first)
+        # A single blank line used to terminate collection. That silently
+        # truncated every pasted prompt at its first paragraph break, and the
+        # remainder fell through to the next input(">>>") and was submitted as
+        # separate turns. Blank lines are CONTENT. Terminators, none of which
+        # can occur mid-paste:
+        #   * two consecutive blank lines  (preserves one-line Enter/Enter flow)
+        #   * a line that is exactly "."
+        #   * EOF / Ctrl-D
+        # Lines are also no longer rstrip()ed, so trailing whitespace inside
+        # fenced code survives.
+        blanks = 0
         while True:
             try:
-                line = input("... ").rstrip()
-            except (EOFError, KeyboardInterrupt):
+                line = input("... ")
+            except EOFError:
                 break
-            if not line:
+            except KeyboardInterrupt:
+                lines = []
+                print("\n[input discarded]")
                 break
+            if line.strip() == ".":
+                break
+            if not line.strip():
+                blanks += 1
+                if blanks >= 2:
+                    break
+                lines.append(line)
+                continue
+            blanks = 0
             lines.append(line)
 
         task = "\n".join(lines).strip()

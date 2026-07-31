@@ -74,6 +74,33 @@ REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
 }
 
 
+def _provider_for(model_str: str, base_url: str = "") -> str:
+    """Provider name for build_agent_config, resolved rather than assumed.
+
+    Every runner in this file passed provider="anthropic" as a literal while
+    separately resolving model/base_url/api_key from --model. The two disagreed
+    whenever --model pointed anywhere else, and the run died with a billing
+    error from a provider that was never asked for. Honour IG_PROVIDER, then
+    infer from the endpoint, then fall back to openrouter.
+    """
+    env = os.environ.get("IG_PROVIDER") or os.environ.get("IG_DEFAULT_PROVIDER")
+    if env:
+        return env
+    if ":" in (model_str or ""):
+        prefix = model_str.split(":", 1)[0].lower()
+        if prefix in ("ollama", "lm-studio", "lmstudio", "vllm", "local"):
+            return "local"
+        if prefix in ("deepseek", "qwen", "openrouter", "anthropic", "openai"):
+            return prefix
+    u = (base_url or "").lower()
+    for name in ("openrouter", "deepseek", "dashscope", "anthropic", "openai"):
+        if name in u:
+            return "openrouter" if name == "openrouter" else name
+    if u:
+        return "local"
+    return "openrouter"
+
+
 def resolve_model(model_str: str) -> Tuple[str, str, str]:
     """Return (model_id, base_url, api_key).
 
@@ -346,7 +373,7 @@ def run_perturbation_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -384,7 +411,7 @@ def run_ensemble_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -413,7 +440,7 @@ def run_retrodesign_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -442,7 +469,7 @@ def run_criticality_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -470,7 +497,7 @@ def run_imscribe_generator_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -479,15 +506,34 @@ def run_imscribe_generator_agent(task: str, args):
         config.update(load_config(args.config))
     
     agent = ImscriptionGeneratorAgent(config)
-    result = agent.run_sync(task)
-    
-    print("\n" + "="*72)
+
+    # ImscriptionGeneratorAgent exposes `async def run(task)` returning a dict.
+    # This called `agent.run_sync(task)` — which does not exist — and then read
+    # `.imscriptions` and `.to_dict()` off the result, neither of which exists
+    # either (the dataclass field is `imscription`, singular, and carries no
+    # to_dict). Three attribute errors in four lines; the first one fired and
+    # masked the other two.
+    import asyncio as _asyncio
+    try:
+        result = _asyncio.run(agent.run(task))
+    except RuntimeError:
+        # already inside a loop (e.g. called from an async host)
+        _loop = _asyncio.new_event_loop()
+        try:
+            result = _loop.run_until_complete(agent.run(task))
+        finally:
+            _loop.close()
+
+    print("\n" + "=" * 72)
     print("IMSCRIPTION GENERATION RESULTS:")
-    print(result.imscriptions)
-    
+    if result.get("status") == "success":
+        print(result.get("findings", ""))
+    else:
+        print(f"FAILED: {result.get('error', 'unknown error')}")
+
     return {
         "agent": "imscription_generator",
-        "result": result.to_dict(),
+        "result": result,
     }
 
 
@@ -498,7 +544,7 @@ def run_axiom_generator_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":
@@ -526,7 +572,7 @@ def run_autonomous_imscribe_agent(task: str, args):
     
     model_id, base_url, api_key = resolve_model(args.model)
     
-    config = build_agent_config(provider="anthropic", model=model_id)
+    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
     if base_url:
         config["base_url"] = base_url
     if api_key and api_key != "local":

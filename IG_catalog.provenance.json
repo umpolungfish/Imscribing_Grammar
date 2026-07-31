@@ -2177,6 +2177,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2fa13ec51f2f04c6"
   },
+  "ai_cnovm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:52:42+00:00",
+    "last_changed": "2026-07-30T14:52:42+00:00",
+    "tuple_hash": "5c635fee72147d60"
+  },
+  "ai_cpovm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:54:22+00:00",
+    "last_changed": "2026-07-30T09:54:22+00:00",
+    "tuple_hash": "d0f7b962530103db"
+  },
   "ai_generated_scientific_paper": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -2194,6 +2206,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f748a12c545b7f44"
+  },
+  "ai_po_ovm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:54:22+00:00",
+    "last_changed": "2026-07-30T09:54:22+00:00",
+    "tuple_hash": "e76d834f31cd668b"
   },
   "ai_student_reflection_draft": {
     "changes": 0,
@@ -3251,6 +3269,96 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fa69e5ef1ef0512b"
   },
+  "antisymmetric_information_paracomplete_oscillating_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T10:16:53+00:00",
+    "last_changed": "2026-07-30T10:16:53+00:00",
+    "tuple_hash": "becb584c56395aba"
+  },
+  "antisymmetric_informationally_complete_non_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:57:07+00:00",
+    "last_changed": "2026-07-30T14:57:07+00:00",
+    "tuple_hash": "dbdc1c1cf513c221"
+  },
+  "antisymmetric_informationally_complete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "dbdc1c1cf513c221"
+  },
+  "antisymmetric_informationally_complete_oscillating_non": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:03:46+00:00",
+    "last_changed": "2026-07-30T15:03:46+00:00",
+    "tuple_hash": "2cefacaf316fc016"
+  },
+  "antisymmetric_informationally_complete_oscillating_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:03:09+00:00",
+    "last_changed": "2026-07-30T15:03:09+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
+  "antisymmetric_informationally_complete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
+  "antisymmetric_informationally_complete_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:56:35+00:00",
+    "last_changed": "2026-07-30T14:56:35+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
+  },
+  "antisymmetric_informationally_complete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
+  },
+  "antisymmetric_paracomplete_non_positive_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:58:17+00:00",
+    "last_changed": "2026-07-30T14:58:17+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "antisymmetric_paracomplete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "antisymmetric_paracomplete_oscillating_non_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:04:59+00:00",
+    "last_changed": "2026-07-30T15:04:59+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "antisymmetric_paracomplete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "antisymmetric_paracomplete_oscillating_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:04:18+00:00",
+    "last_changed": "2026-07-30T15:04:18+00:00",
+    "tuple_hash": "41dbde84c69c0e85"
+  },
+  "antisymmetric_paracomplete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "41dbde84c69c0e85"
+  },
+  "antisymmetric_paracomplete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:57:34+00:00",
+    "last_changed": "2026-07-30T14:57:34+00:00",
+    "tuple_hash": "6c22ca50af15f3eb"
+  },
   "anyonic_holonomic_semiotic_frobenoid_algebra": {
     "changes": 0,
     "first_seen": "2026-07-30T00:06:47+00:00",
@@ -4031,11 +4139,113 @@
     "last_changed": "2026-07-30T09:02:11+00:00",
     "tuple_hash": "9ac4da420333d80d"
   },
+  "asymmetric_information_complete_positive_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:21:04+00:00",
+    "last_changed": "2026-07-30T09:21:04+00:00",
+    "tuple_hash": "b60f274c9155430f"
+  },
   "asymmetric_information_incomplete_negative_operator_valued": {
     "changes": 0,
     "first_seen": "2026-07-30T08:39:21+00:00",
     "last_changed": "2026-07-30T08:39:21+00:00",
     "tuple_hash": "03e70cb978611742"
+  },
+  "asymmetric_information_incomplete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "03e70cb978611742"
+  },
+  "asymmetric_informationally_complete_non_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:54:52+00:00",
+    "last_changed": "2026-07-30T14:54:52+00:00",
+    "tuple_hash": "c4f98664f7255506"
+  },
+  "asymmetric_informationally_complete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "9ac4da420333d80d"
+  },
+  "asymmetric_informationally_complete_non_positive_operator_valued_measure_variant_b": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "c4f98664f7255506"
+  },
+  "asymmetric_informationally_complete_oscillating_non": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:01:28+00:00",
+    "last_changed": "2026-07-30T15:01:28+00:00",
+    "tuple_hash": "1a8f5098648e54a2"
+  },
+  "asymmetric_informationally_complete_oscillating_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:00:57+00:00",
+    "last_changed": "2026-07-30T15:00:57+00:00",
+    "tuple_hash": "1a8f5098648e54a2"
+  },
+  "asymmetric_informationally_complete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "1a8f5098648e54a2"
+  },
+  "asymmetric_informationally_complete_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:54:14+00:00",
+    "last_changed": "2026-07-30T14:54:14+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
+  "asymmetric_informationally_complete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "b60f274c9155430f"
+  },
+  "asymmetric_informationally_complete_positive_operator_valued_measure_variant_b": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
+  "asymmetric_paracomplete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:56:05+00:00",
+    "last_changed": "2026-07-30T14:56:05+00:00",
+    "tuple_hash": "b0b4ba69ff59d4ab"
+  },
+  "asymmetric_paracomplete_oscillating_non_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:02:29+00:00",
+    "last_changed": "2026-07-30T15:02:29+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "asymmetric_paracomplete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "98386024d926b726"
+  },
+  "asymmetric_paracomplete_oscillating_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:01:59+00:00",
+    "last_changed": "2026-07-30T15:01:59+00:00",
+    "tuple_hash": "e404d5f279dc848f"
+  },
+  "asymmetric_paracomplete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "e404d5f279dc848f"
+  },
+  "asymmetric_paracomplete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:55:29+00:00",
+    "last_changed": "2026-07-30T14:55:29+00:00",
+    "tuple_hash": "503108c4cb804fe9"
   },
   "asymmetric_potential": {
     "changes": 0,
@@ -23087,6 +23297,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b80f65d7ff47c78c"
   },
+  "ising_anyon_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:21:04+00:00",
+    "last_changed": "2026-07-30T09:21:04+00:00",
+    "tuple_hash": "ece72fab8c1ed84c"
+  },
+  "ising_anyon_qc": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:21:04+00:00",
+    "last_changed": "2026-07-30T09:21:04+00:00",
+    "tuple_hash": "15f15c1867fc6842"
+  },
   "ising_conformal_bootstrap": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38723,10 +38945,40 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "822a0aa15e0735e6"
   },
-  "sic_povm": {
+  "sic_nonpositive_operator": {
     "changes": 0,
+    "first_seen": "2026-07-30T15:17:56+00:00",
+    "last_changed": "2026-07-30T15:17:56+00:00",
+    "tuple_hash": "472a344b07627068"
+  },
+  "sic_novm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:54:22+00:00",
+    "last_changed": "2026-07-30T09:54:22+00:00",
+    "tuple_hash": "9051a914ffd3628e"
+  },
+  "sic_o_novm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:52:42+00:00",
+    "last_changed": "2026-07-30T14:52:42+00:00",
+    "tuple_hash": "d2e7d666fbeda30d"
+  },
+  "sic_o_povm": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:52:42+00:00",
+    "last_changed": "2026-07-30T14:52:42+00:00",
+    "tuple_hash": "9e3dc32fadec3da0"
+  },
+  "sic_povm": {
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
+    "last_changed": "2026-07-30T15:02:29+00:00",
+    "tuple_hash": "0b22c7587b80e4e3"
+  },
+  "sic_povm__retired": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:02:29+00:00",
+    "last_changed": "2026-07-30T15:02:29+00:00",
     "tuple_hash": "a8fed99b3ba758f3"
   },
   "sic_povm_bridge_monadic": {
@@ -40727,6 +40979,12 @@
     "last_changed": "2026-07-30T08:39:21+00:00",
     "tuple_hash": "4621201c99e5e045"
   },
+  "su2_4_anyon_algebra": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:21:04+00:00",
+    "last_changed": "2026-07-30T09:21:04+00:00",
+    "tuple_hash": "2f41bfb030ad110b"
+  },
   "su2_structural": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -41069,6 +41327,54 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "37edd8e110f87418"
   },
+  "supersymmetric_informationally_complete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:46+00:00",
+    "last_changed": "2026-07-30T15:14:46+00:00",
+    "tuple_hash": "d568ff56deae82f1"
+  },
+  "supersymmetric_informationally_complete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:16:55+00:00",
+    "last_changed": "2026-07-30T15:16:55+00:00",
+    "tuple_hash": "483bc114fe352007"
+  },
+  "supersymmetric_informationally_complete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:16:17+00:00",
+    "last_changed": "2026-07-30T15:16:17+00:00",
+    "tuple_hash": "a023f2ae8f1b839c"
+  },
+  "supersymmetric_informationally_complete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "899043a32c748588"
+  },
+  "supersymmetric_paracomplete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:15:46+00:00",
+    "last_changed": "2026-07-30T15:15:46+00:00",
+    "tuple_hash": "1c693df2a3990646"
+  },
+  "supersymmetric_paracomplete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:17:56+00:00",
+    "last_changed": "2026-07-30T15:17:56+00:00",
+    "tuple_hash": "67c76ae1cdbde63b"
+  },
+  "supersymmetric_paracomplete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:17:24+00:00",
+    "last_changed": "2026-07-30T15:17:24+00:00",
+    "tuple_hash": "454bf4941dd74a91"
+  },
+  "supersymmetric_paracomplete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:15:21+00:00",
+    "last_changed": "2026-07-30T15:15:21+00:00",
+    "tuple_hash": "5acef26da4476a44"
+  },
   "supposing": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -41200,6 +41506,90 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "57867998453932d8"
+  },
+  "symmetric_information_complete_negative_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T09:54:22+00:00",
+    "last_changed": "2026-07-30T09:54:22+00:00",
+    "tuple_hash": "f0d83f6559e9a01e"
+  },
+  "symmetric_informationally_complete_non_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:52:42+00:00",
+    "last_changed": "2026-07-30T14:52:42+00:00",
+    "tuple_hash": "08c5c6f2c159fb6a"
+  },
+  "symmetric_informationally_complete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "f0d83f6559e9a01e"
+  },
+  "symmetric_informationally_complete_non_positive_operator_valued_measure_variant_b": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "08c5c6f2c159fb6a"
+  },
+  "symmetric_informationally_complete_oscillating_non_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:59:18+00:00",
+    "last_changed": "2026-07-30T14:59:18+00:00",
+    "tuple_hash": "a023f2ae8f1b839c"
+  },
+  "symmetric_informationally_complete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "a023f2ae8f1b839c"
+  },
+  "symmetric_informationally_complete_oscillating_positive": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:58:53+00:00",
+    "last_changed": "2026-07-30T14:58:53+00:00",
+    "tuple_hash": "6124d561366bf333"
+  },
+  "symmetric_informationally_complete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "6124d561366bf333"
+  },
+  "symmetric_paracomplete_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:53:47+00:00",
+    "last_changed": "2026-07-30T14:53:47+00:00",
+    "tuple_hash": "454bf4941dd74a91"
+  },
+  "symmetric_paracomplete_oscillating_non_positive_operator": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:00:24+00:00",
+    "last_changed": "2026-07-30T15:00:24+00:00",
+    "tuple_hash": "454bf4941dd74a91"
+  },
+  "symmetric_paracomplete_oscillating_non_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "454bf4941dd74a91"
+  },
+  "symmetric_paracomplete_oscillating_positive_operator_valued": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:59:48+00:00",
+    "last_changed": "2026-07-30T14:59:48+00:00",
+    "tuple_hash": "67c76ae1cdbde63b"
+  },
+  "symmetric_paracomplete_oscillating_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T15:14:02+00:00",
+    "last_changed": "2026-07-30T15:14:02+00:00",
+    "tuple_hash": "67c76ae1cdbde63b"
+  },
+  "symmetric_paracomplete_positive_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-07-30T14:53:08+00:00",
+    "last_changed": "2026-07-30T14:53:08+00:00",
+    "tuple_hash": "4c760d688c0af0c9"
   },
   "symmetry": {
     "changes": 0,

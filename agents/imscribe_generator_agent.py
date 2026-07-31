@@ -14,13 +14,29 @@ from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, field
 
 
-def _desc_slug(desc: str, maxlen: int = 60) -> str:
-    """Slugify a description, truncating at a word boundary (no mid-word cuts)."""
+def _desc_slug(desc: str, maxlen: int = 96) -> str:
+    """Slugify a description, truncating at a word boundary (no mid-word cuts).
+
+    Two bugs lived here. The old rsplit('_', 1)[0] dropped the final token
+    UNCONDITIONALLY, including when slug[:maxlen] already ended on a clean
+    boundary -- so a 60-character name lost its last word for no reason. That
+    is how 'Asymmetric_Informationally_Complete_Oscillating_Non_positive'
+    (exactly 60 chars) registered as '..._Oscillating_Non', silently discarding
+    the positive/non-positive discriminator and colliding with its own twin.
+
+    And maxlen=60 was below the length of the names this family actually
+    generates, so the truncation fired on nearly every entry rather than as a
+    rare guard.
+    """
     slug = desc.replace('-', ' ').replace('/', ' ').replace(' ', '_')
     if len(slug) <= maxlen:
         return slug
-    truncated = slug[:maxlen].rsplit('_', 1)[0]
-    return truncated or slug[:maxlen]
+    head = slug[:maxlen]
+    # Only trim back to a boundary if the cut actually fell mid-word.
+    if slug[maxlen] == '_' or head.endswith('_'):
+        return head.rstrip('_') or slug[:maxlen]
+    truncated = head.rsplit('_', 1)[0]
+    return truncated or head
 
 from framework import BaseAgent, ToolDefinitions
 from imscrbgrmr import (
