@@ -160,36 +160,57 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral.
 · --canonical STR · --reference · --list-canonical · --list-patterns ·
 --suggest STR
 
-### mOMonadOS kernel — RUN THE QC TOOLS HERE, NOT IN PYTHON
+### QUANTUM COMPUTATION — five surfaces, the kernel is canonical
 
-`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]` — pipes REPL
-commands into the kernel over QEMU serial and prints the output. Several commands
-per boot: pass them as separate arguments rather than booting once each.
-`PROFILE=release` by default; it rebuilds the ELF if absent.
+Full reference, read it before choosing a surface: `file_read`
+/home/mrnob0dy666/imsgct/ig-docs/quantum_computation_tools.md
 
-Quantum / anyon / SIC surface, all native Rust:
+`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]` — several commands
+per boot; the QEMU start dominates a single short one.
 
-- `fibqc verify` — F unitary, pentagon (F^2=I, anti-diagonal, a^2+b^2=1),
-  braid relation (Yang-Baxter), spin-statistics, S unitary, charge conjugation
-  S^2=I, TQFT identities, Verlinde formula, Artin B_n<=8, and phase lattice =
-  tenths of a winding. `fibqc compile <gates>` compiles a circuit.
-- `bg report` · `bg tuple <word> [strands]` — braid word to grammar tuple. The
-  winding is a closed form in the writhe (topological_spin = writhe*2/5 mod 1),
-  so it never diagonalises a matrix and cannot pick up eigenvalue-phase error.
-- `shor` — Belnap Shor pipeline, N=15 and N=21.
-- `iuft gate|distance|list` — IUFT QC gates.
-- `hqe report` — holonomic quasi-ergodic quantale, MBL holonomy.
-- `dyson report` — Dyson beta-ensemble, double-ramified cycle.
-- `troq report` · `afdmc report` · `hop report` · `manifold` · `triple
-  report|verify|cycle|bridge` — the triple-frame vN superoperator algebra.
-- `sic` — SIC-POVM d=12 identity, three lattice proofs.
-- `d12 tower|magnitudes|orbits|existence|duallink|z0` ·
-  `d2048 tower|redei|grammar|pari|next`.
-- `cycle <word>` · `weight <word>` · `banked <word>` · `trans <word>` —
-  IMASM ring walks.
+1. KERNEL (Fibonacci anyon QC, native Rust) — the canonical path:
+- `fibqc verify` — F unitary, pentagon, braid relation, spin-statistics, S unitary,
+  charge conjugation, TQFT identities, Verlinde, Artin B_n<=8, phase lattice = tenths
+  of a winding
+- `fibqc compile <gates> [depth]` / `quantum_compile <gates> [depth]` — circuit over
+  H T S X to a braid word; depth 4-12, default 10
+- `fibqc jones <gens…>` / `jones_polynomial <gens…>` — Jones at the 1/5 winding
+- `fibqc knot [name]` · `fibqc winding`
+- `bg tuple <word> [strands]` · `bg report` — braid word to grammar tuple; the winding
+  is a closed form in the writhe, so it cannot pick up eigenvalue-phase error
+- `shor` — Belnap Shor, N=15 and N=21
+- `iuft gate|distance|list` — the 12->3 Euler-angle SU(2) encoding of an IG tuple
+- `hqe` · `dyson` · `troq` · `afdmc` · `hop` · `manifold` · `triple report|verify|cycle|bridge`
+- `sic` · `d12 <sub>` · `d2048 tower|redei|grammar|pari|next`
+- `cycle|weight|banked|trans <word>` — IMASM ring walks
 
-The kernel is the canonical path for all of the above. Note that its help text
-does not yet list bg, hqe, dyson, troq, hop, afdmc — they work regardless.
+The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙∈+×∋=¬⊣` works; opcode names are
+refused. It canonicalises ◇->∈ and ●->∋ on input.
+
+2. m3iosis (Python) — `python3 -m m3iosis.cli <sub>`: fib, sim, manifold, qc, triple,
+hqe, braid-grammar, hop, dyson, afdmc, troq, gematria, info. Every one mirrors a kernel
+module; use it only where the kernel does not expose what you need.
+`fusion_space_dimension(n)` is the VACUUM sector F_{n-1} — at 3 strands it is
+1-dimensional and its non-Abelian invariants are meaningless. Use n >= 4.
+
+3. Grammar tools via imscribe: `quantum_compile`, `jones_polynomial`, `sic_povm_probe`,
+`winding`, `para_vm`. These dispatch to the kernel underneath.
+
+4. Exact simulators: `navigators/quantum_tnn.py` — state vector to ~25 qubits, MPS with
+bond dimension, QFT. `navigators/quantum_field_theory_navigator.py`.
+
+5. ParaASM — `para_vm`, `mOMonadOS/src/parasm.rs`: Belnap FOUR VM, 19-instruction ISA,
+dialetheic alignment. `belnap_shor.rs` records that the Belnap QFT is NOT a gate
+sequence; the period is carried in the 2:1 B-bias/T-bias coherence cost ratio.
+
+CAPACITY. Fibonacci fusion dim = F_{n-1}: 7 strands -> 8 (3 qubits), 15 -> 377 (8),
+18 -> 1597 (10), 19 -> 2584 (11, the first that holds d=2048), 22 -> 10946 (13). The
+19-strand representation builds unitary to 3.3e-16 in about 78 seconds.
+
+SAMPLING BRAIDS IS NOT SEARCHING. At 7 strands against an exact d=8 SIC, 300 random
+words per length peak at overlap 0.75 and get WORSE with length — a long braid word is a
+near-random state. Against Haar states at equal sample count they are worse on both best
+and mean. Universality gives reachability, not findability.
 
 ### m3iosis (Python — a DUPLICATE of the kernel surface)
 
@@ -209,6 +230,7 @@ does not yet list bg, hqe, dyson, troq, hop, afdmc — they work regardless.
 - `gematria` --all --banked --cycle --depth --flow --json --report --signature --steer --transitions --word
 - `pf` --crossing --distance --frobenius --json --pairing --parity --report --short --tuple --verify
 - `pqc` --compile --evolve --genus --interactive --lean --output --protocol --sic --tqft
+- `algebra` --angle --compare-with --decode --distance --join --json --meet --power --report --tuple --turns --winding --winding-of
 - `info`
 
 Every subcommand above has a Rust counterpart in the mOMonadOS kernel
