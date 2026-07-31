@@ -366,7 +366,7 @@ _ACCENTS = {
         "`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh \"<cmd>\" [\"<cmd>\" …]`, "
         "several commands per boot.\n"
         "  fibqc verify | compile <gates> [depth] | jones <gens…> | knot [name] | winding\n"
-        "  quantum_compile <gates> [depth]   jones_polynomial <gens…>   (same, grammar names)\n"
+        "  qc <gates> [depth]   jp <gens…>   (short forms; quantum_compile / jones_polynomial also work)\n"
         "  bg tuple <word> [strands] · bg report — braid word to grammar tuple\n"
         "  shor · iuft gate|distance|list · hqe · dyson · troq · afdmc · hop · manifold\n"
         "  triple report|verify|cycle|bridge · sic · d12 <sub> · d2048 tower|redei|grammar|pari|next\n"

@@ -225,9 +225,9 @@ per boot; the QEMU start dominates a single short one.
 - `fibqc verify` — F unitary, pentagon, braid relation, spin-statistics, S unitary,
   charge conjugation, TQFT identities, Verlinde, Artin B_n<=8, phase lattice = tenths
   of a winding
-- `fibqc compile <gates> [depth]` / `quantum_compile <gates> [depth]` — circuit over
-  H T S X to a braid word; depth 4-12, default 10
-- `fibqc jones <gens…>` / `jones_polynomial <gens…>` — Jones at the 1/5 winding
+- `qc <gates> [depth]` — circuit over H T S X to a braid word; depth 4-12, default 10
+  (aliases `quantum_compile`, `fibqc compile`)
+- `jp <gens…>` — Jones at the 1/5 winding (aliases `jones_polynomial`, `fibqc jones`)
 - `fibqc knot [name]` · `fibqc winding`
 - `bg tuple <word> [strands]` · `bg report` — braid word to grammar tuple; the winding
   is a closed form in the writhe, so it cannot pick up eigenvalue-phase error
