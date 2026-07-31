@@ -1,24 +1,20 @@
-Jones polynomial at an arbitrary root, so the level is a parameter
+Number the lines file_read returns
 
-The kernel's fibqc jones is pinned at the Fibonacci root, t = 1/5 of a winding, so every
-value it returns lies in Q(zeta_5) with phases on the tenths lattice. For the d=2048 SIC
-discriminant 4190205 = 3*5*409*683 that supplies one prime of four, which is exactly why
-the QC route delivered the sqrt5 part and stopped there. Stating that as a limit of the
-method was wrong; it is a limit of one evaluation point.
+file_read takes a 0-indexed offset and reported 1-indexed line numbers in its header,
+then handed back bare text. The caller had to derive line numbers itself, from a header
+in one convention for an argument in the other, while grep -n and sed — the tools it
+would use next — are 1-indexed.
 
-scripts/jones_at_root.py computes the Kauffman bracket as an exact Laurent polynomial by
-state sum, converts to the Jones polynomial in t, and substitutes a root only at the end,
-so the level is an argument. quadratic_root_level(m) reports the conductor of Q(sqrt m),
-which is the level at which that square root becomes reachable: 5 for sqrt5, 12 for
-sqrt3, 409 for sqrt409, 2732 for sqrt683, and 4190205 for the whole discriminant.
+That is what broke the kernel build. A specialist read at offset=237, saw "lines
+238-262", and edited with `del lines[237:259]`. The deletion landed one line off, leaving
+a stray closing brace and a duplicated doc comment in iuft_qc.rs, and the compile failed
+with "unexpected closing delimiter" pointing at a line the agent had not touched. It then
+tried `sed -i '237,239d'` against numbers read from the same header and shifted the file
+again.
 
-Verified against five known Jones polynomials: unknot, both trefoil chiralities,
-figure-eight, cinquefoil. At level 10, the kernel's own phase lattice, the trefoil gives
-|V| = 1.618034.
+Every returned line now carries its own 1-indexed number, and the header states both
+spans: the sed range and the equivalent python slice. Nothing has to be computed, so the
+class of error is gone rather than documented.
 
-Three bugs were found by that self-test and are worth recording, since each produced
-plausible output. The identity smoothing was written as a strand swap, which models the
-crossing as a permutation rather than as a smoothed diagram. The union-find allocated 2n
-nodes where n are used, and the unused half counted as extra loops. And the geometric
-smoothing was tied to the A/B label, which put the A-power out by two on every negative
-crossing — visible only as a uniform half-integer shift in the mirror trefoil.
+Verified against sed -n on the same file: the numbering agrees line for line. Applied to
+all four agents carrying this reader.

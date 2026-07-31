@@ -748,10 +748,18 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
         lines = Path(path).read_text(encoding="utf-8").splitlines()
         total = len(lines)
         chunk = lines[offset: offset + limit]
-        header = f"[{path} — lines {offset+1}–{min(offset+limit, total)} of {total}]\n"
+        first, last = offset + 1, min(offset + limit, total)
+        # Line numbers on every line: the bare text made the caller derive them
+        # from a header that reported 1-indexed lines for a 0-indexed `offset`,
+        # and an edit built on that lands one line off. grep -n and sed are
+        # 1-indexed; this offset is not.
+        body = "\n".join(f"{offset + i + 1:>6}\t{l}" for i, l in enumerate(chunk))
+        header = (f"[{path} — lines {first}–{last} of {total}]\n"
+                  f"[numbers are 1-indexed: sed '{first},{last}d' matches them; "
+                  f"python lines[{offset}:{last}] is the same span]\n")
         if offset + limit < total:
             header += f"[use offset={offset+limit} to continue]\n"
-        return header + "\n".join(chunk)
+        return header + body
     except Exception as e:
         return f"(error reading {path}: {e})"
 

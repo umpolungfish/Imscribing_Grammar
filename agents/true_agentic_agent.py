@@ -809,10 +809,23 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
         lines = Path(path).read_text(encoding="utf-8").splitlines()
         total = len(lines)
         chunk = lines[offset: offset + limit]
-        header = f"[{path} — lines {offset+1}–{min(offset+limit, total)} of {total}]\n"
+        first, last = offset + 1, min(offset + limit, total)
+        # Every line carries its own 1-indexed number.
+        #
+        # The bare text made the caller derive line numbers itself, from a header
+        # that reported 1-indexed lines for a 0-indexed `offset`. Read at
+        # offset=237, see "lines 238-262", reach for `sed -i '237,239d'` or
+        # `del lines[237:259]`, and the edit lands one line off — which is how a
+        # stray `}` and a duplicated doc comment got written into iuft_qc.rs and
+        # broke the kernel build. grep -n and sed are 1-indexed, this tool's
+        # offset is 0-indexed, and nothing on the page said which was which.
+        body = "\n".join(f"{offset + i + 1:>6}\t{l}" for i, l in enumerate(chunk))
+        header = (f"[{path} — lines {first}–{last} of {total}]\n"
+                  f"[numbers are 1-indexed: sed '{first},{last}d' matches them; "
+                  f"python lines[{offset}:{last}] is the same span]\n")
         if offset + limit < total:
             header += f"[use offset={offset+limit} to continue]\n"
-        return header + "\n".join(chunk)
+        return header + body
     except Exception as e:
         return f"(error reading {path}: {e})"
 
