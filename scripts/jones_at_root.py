@@ -72,6 +72,7 @@ def _closure_loops(word, n, state):
         else:
             union(cur[i], cur[i + 1])          # cap joins the two incoming
             parent.extend([nxt, nxt + 1])      # cup makes two fresh ends
+            union(nxt, nxt + 1)                # and they are one arc, not two
             cur[i], cur[i + 1] = nxt, nxt + 1
             nxt += 2
     for i in range(n):

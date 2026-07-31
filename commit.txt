@@ -1,15 +1,24 @@
-Point the QC tools at the mOMonadOS kernel, not the Python
+Jones polynomial at an arbitrary root, so the level is a parameter
 
-Every m3iosis subcommand has a Rust counterpart in the kernel — fibonacci_qc,
-braid_grammar, dyson, hqe, afdmc, hop, troq, triple_frame, manifold, gematria —
-and the manifests named only the Python. The kernel section now comes first and
-says plainly where the QC tools are meant to run; the m3iosis entry is retitled
-as a duplicate of that surface and kept for what the kernel does not expose.
+The kernel's fibqc jones is pinned at the Fibonacci root, t = 1/5 of a winding, so every
+value it returns lies in Q(zeta_5) with phases on the tenths lattice. For the d=2048 SIC
+discriminant 4190205 = 3*5*409*683 that supplies one prime of four, which is exactly why
+the QC route delivered the sqrt5 part and stopped there. Stating that as a limit of the
+method was wrong; it is a limit of one evaluation point.
 
-The kernel path is `cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" …`,
-which takes several commands per boot — worth stating, since one boot per command
-is where the QEMU overhead would otherwise eat the advantage.
+scripts/jones_at_root.py computes the Kauffman bracket as an exact Laurent polynomial by
+state sum, converts to the Jones polynomial in t, and substitutes a root only at the end,
+so the level is an argument. quadratic_root_level(m) reports the conductor of Q(sqrt m),
+which is the level at which that square root becomes reachable: 5 for sqrt5, 12 for
+sqrt3, 409 for sqrt409, 2732 for sqrt683, and 4190205 for the whole discriminant.
 
-Also recorded there: `bg`'s winding is a closed form in the writhe rather than a
-sum of eigenvalue phases, which is why it cannot pick up the error the Python
-bridge carried until today.
+Verified against five known Jones polynomials: unknot, both trefoil chiralities,
+figure-eight, cinquefoil. At level 10, the kernel's own phase lattice, the trefoil gives
+|V| = 1.618034.
+
+Three bugs were found by that self-test and are worth recording, since each produced
+plausible output. The identity smoothing was written as a strand swap, which models the
+crossing as a permutation rather than as a smoothed diagram. The union-find allocated 2n
+nodes where n are used, and the unused half counted as extra loops. And the geometric
+smoothing was tied to the A/B label, which put the A-power out by two on every negative
+crossing — visible only as a uniform half-integer shift in the mirror trefoil.
