@@ -385,6 +385,12 @@ _ACCENTS = {
         "an exact d=8 SIC, random words peak at overlap 0.75 and get worse with length, "
         "losing to Haar states on best and mean. Universality gives reachability, not "
         "findability.\n"
+        "LEVEL IS A PARAMETER. fibqc jones is pinned at the Fibonacci root (1/5 winding), so "
+        "its values sit in Q(zeta_5) — one prime of a conductor. For any other level use "
+        "`python3 scripts/jones_at_root.py \"<braid>\" <strands> <root>`: exact Kauffman "
+        "bracket, then evaluation at zeta_root. `quadratic_root_level(m)` gives the level "
+        "at which sqrt(m) becomes reachable — 5 for sqrt5, 12 for sqrt3, 409 for sqrt409, "
+        "2732 for sqrt683, 4190205 for the d=2048 discriminant. Never say a value is out of reach; say which level reaches it.\n"
         "Full reference: `file_read` /home/mrnob0dy666/imsgct/ig-docs/quantum_computation_tools.md"
     ),
     "editorial": (
