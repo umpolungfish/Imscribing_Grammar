@@ -1,3 +1,18 @@
-Anything at all is a word in the opcode alphabet.
+Give the math specialist the quantum surfaces in its prompt
 
-The walkthrough said catalog entries become programs, which stops short of the point: imscribe anything and its twelve slots are types, each type unfolds into its own sequence, and the composition is the thing as a program. A molecule, a theorem, a document, an argument, a stretch of reasoning. Once it is a word it can be checked, proven, walked from, or spliced into something larger.
+Five distinct quantum surfaces exist and they are not variants of one engine: the
+mOMonadOS Fibonacci anyon QC in Rust, the m3iosis Python mirror, the grammar tools that
+dispatch into the kernel, the exact state-vector and MPS simulators under navigators, and
+ParaASM's Belnap FOUR VM. The manifest named the kernel but the detail sat behind a
+file_read, which is one call an agent has to decide to make before it knows the surface
+exists.
+
+The list is now in the math accent, which is inlined verbatim, so the commands are in the
+prompt itself. Two failure modes go with it, both found by running into them:
+fusion_space_dimension is the vacuum sector, so at three strands the representation is
+1x1 and its non-Abelian invariants describe a trivial matrix; and sampling braid words is
+not searching, since a long word is a near-random state and loses to Haar sampling on
+both best and mean.
+
+ig-docs/quantum_computation_tools.md carries the full reference, including the capacity
+table — 19 strands is the first fusion space that holds d=2048, at 2584 dimensions.
