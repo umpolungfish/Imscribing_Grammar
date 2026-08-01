@@ -100,11 +100,22 @@ python3 scripts/jones_at_root.py "<braid>" <strands> <root>
 ```
 
 Agreement across a pinned-root numeric engine and an exact-polynomial engine is
-a real cross-check; agreement of one engine with itself is not. `jones_at_root`
-is verified against unknot, both trefoil chiralities, figure-eight and
-cinquefoil, and at level 10 the trefoil gives |V| = 1.618034 — which is the
-kernel's own phase lattice, so that is the calibration point where the two must
-meet.
+a real cross-check; agreement of one engine with itself is not.
+
+**These two do not currently agree, and the kernel is the one that is right.**
+On the trefoil, closure of `1 1 1` at two strands, the textbook Jones polynomial
+V(t) = −t⁻⁴ + t⁻³ + t⁻¹ evaluated at t = e^{2πi/5} is
+−0.809017 − 1.314328i, modulus 1.543362. The kernel returns exactly that, both
+parts, to six digits. `jones_at_root.py` returns 1.309017 + 0.951057i, modulus
+1.618034, and `QC_TOOLZ.md` records that same 1.618034 as the calibration
+point. It is not a normalisation difference: the script sends the unknot to 1,
+so it is computing normalised Jones, and the ratio 1.0484 is not a quantum
+dimension.
+
+So calibrate against the closed form, not against either engine, and treat a
+φ appearing where the textbook says 1.543362 as the script's defect rather than
+a golden-ratio result. The trefoil is the case to check first when either
+engine is touched.
 
 ## Chain C — reach a quadratic root the braid cannot reach
 
