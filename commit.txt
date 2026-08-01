@@ -1,20 +1,21 @@
-Number the lines file_read returns
+Compute the RG flow table instead of typing it
 
-file_read takes a 0-indexed offset and reported 1-indexed line numbers in its header,
-then handed back bare text. The caller had to derive line numbers itself, from a header
-in one convention for an argument in the other, while grep -n and sed — the tools it
-would use next — are 1-indexed.
+The flow table in ig-docs/rg_running_grammar_sm.md rebuilt alpha_em from the gauge
+couplings as alpha_em^-1 = alpha_2^-1 + (3/5) alpha_1^-1. alpha_1 is the GUT-normalised
+hypercharge coupling, alpha_1 = (5/3) alpha_Y, so recovering alpha_Y^-1 multiplies by 5/3.
+Dividing instead put sin^2(theta_W) at 0.455 at M_Z, and the document said 0.231 four
+sections later without noticing.
 
-That is what broke the kernel build. A specialist read at offset=237, saw "lines
-238-262", and edited with `del lines[237:259]`. The deletion landed one line off, leaving
-a stray closing brace and a duplicated doc comment in iuft_qc.rs, and the compile failed
-with "unexpected closing delimiter" pointing at a line the agent had not touched. It then
-tried `sed -i '237,239d'` against numbers read from the same header and shifted the file
-again.
+scripts/rg_running.py runs the one loop from the PDG values at M_Z and prints the table.
+Everything it needs is measured input; nothing in it is transcribed.
 
-Every returned line now carries its own 1-indexed number, and the header states both
-spans: the sed range and the equivalent python slice. Nothing has to be computed, so the
-class of error is gone rather than documented.
+Correcting the factor moves three things. sin^2(theta_W) at M_Z comes out at 0.2312,
+which is the PDG number the table was seeded with, so the reconstruction now closes and
+the 3/13 match the document leads with is no longer contradicted by its own table. The UV
+value goes to 0.3605 from 0.610 — still far from 3/13, so the conclusion that the ratio is
+an infrared statement survives. And alpha_s/alpha_em at a single scale passes through 4 at
+1.167e10 GeV, so gear = 4 has a same-scale reading and does not have to be bridged across
+regimes.
 
-Verified against sed -n on the same file: the numbering agrees line for line. Applied to
-all four agents carrying this reader.
+The 1.033e12 GeV scale is unchanged. It comes from pure QCD running against alpha_em at
+zero momentum, which the factor never touched.
