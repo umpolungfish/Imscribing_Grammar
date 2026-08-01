@@ -49,10 +49,12 @@ Provider: OpenRouter via OPENROUTER_API_KEY.
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import hashlib
 import json
 import os
 import re
+import signal
 import subprocess
 import sys
 import textwrap
@@ -3432,12 +3434,61 @@ class TrueAgenticAgent:
         self._dialetheic_count: int = 0
         self._empty_choices_retried: bool = False
 
+        # Operator interrupt. Ctrl-C sets the request; the loop honours it at a
+        # winding boundary so no winding is ever torn in half.
+        self._interrupt_requested: bool = False
+        self.interrupted: bool = False
+
         # Expose config so spawn_agent tool can inherit it
         _spawn_config["model"]   = model
         _spawn_config["base_url"] = effective_base
         _spawn_config["api_key"]  = effective_key
 
     # ── Public interface ───────────────────────────────────────────────────────
+
+    def request_interrupt(self) -> None:
+        """Ask the loop to stop once the winding in flight has finished."""
+        self._interrupt_requested = True
+
+    @contextlib.contextmanager
+    def _interrupt_guard(self):
+        """Make SIGINT set a flag instead of raising.
+
+        Raising mid-winding tears the cycle in half: the action has been
+        emitted and its observation never folds back, so μ∘δ is left open and
+        the message history ends on an assistant tool_call with no answer —
+        exactly the orphan `_well_formed_tail` has to repair on reload. Setting
+        a flag lets the winding close honestly and the context stay usable.
+
+        A second Ctrl-C restores the previous handler and aborts immediately,
+        so a genuinely hung winding is still escapable.
+        """
+        try:
+            previous = signal.getsignal(signal.SIGINT)
+        except (ValueError, AttributeError):      # no signal support here
+            yield
+            return
+
+        def _on_sigint(_signum, _frame):
+            if self._interrupt_requested:          # second press — go now
+                signal.signal(signal.SIGINT, previous)
+                raise KeyboardInterrupt
+            self._interrupt_requested = True
+            self._log(
+                f"\n  ⏸  interrupt — finishing winding {len(self.trajectory)}, "
+                "then back to the prompt with context intact. "
+                "Ctrl-C again to abort now."
+            )
+
+        try:
+            signal.signal(signal.SIGINT, _on_sigint)
+        except ValueError:                         # not the main thread
+            yield
+            return
+        try:
+            yield
+        finally:
+            signal.signal(signal.SIGINT, previous)
 
     def run_sync(self, task: str) -> str:
         return asyncio.run(self.run(task))
@@ -3501,28 +3552,60 @@ class TrueAgenticAgent:
         import itertools as _it
         _windings = (_it.count() if self.max_windings <= 0
                      else range(self.max_windings))
-        for winding in _windings:
-            # Proactive context pressure check — inject review prompt before THINK
-            pressure = self._estimate_context_tokens() / self._context_window
-            if pressure >= self._review_threshold and not self._review_pending:
-                self._inject_review_prompt(pressure)
+        self._interrupt_requested = False
+        self.interrupted = False
+        with self._interrupt_guard():
+            for winding in _windings:
+                # Proactive context pressure check — inject review prompt before THINK
+                pressure = self._estimate_context_tokens() / self._context_window
+                if pressure >= self._review_threshold and not self._review_pending:
+                    self._inject_review_prompt(pressure)
 
-            try:
-                cycle = await self._winding(winding)
-            except RuntimeError as exc:
-                self._log(f"\n  FATAL: {exc}")
-                self._log(f"{'═'*72}")
-                return f"[Fatal error — run aborted: {exc}]"
+                try:
+                    cycle = await self._winding(winding)
+                except RuntimeError as exc:
+                    self._log(f"\n  FATAL: {exc}")
+                    self._log(f"{'═'*72}")
+                    return f"[Fatal error — run aborted: {exc}]"
 
-            self.trajectory.append(cycle)
+                self.trajectory.append(cycle)
 
-            if cycle.done:
-                self._log(f"\n  ✓ DONE at winding {winding}  (Frobenius: {'closed' if cycle.frobenius_closed else 'open'})")
-                self._log(f"\n{'═'*72}")
-                return cycle.conclusion
+                if cycle.done:
+                    self._log(f"\n  ✓ DONE at winding {winding}  (Frobenius: {'closed' if cycle.frobenius_closed else 'open'})")
+                    self._log(f"\n{'═'*72}")
+                    return cycle.conclusion
+
+                # Honoured here and nowhere else: the cycle is complete, its
+                # observation is folded in, and the history ends well-formed.
+                if self._interrupt_requested:
+                    self.interrupted = True
+                    return self._interrupted_conclusion(winding)
 
         self._log(f"\n  ⚠ max_windings ({self.max_windings}) reached without done. Pass 0 to run unbounded.")
         return self._emergency_conclusion("")
+
+    def _interrupted_conclusion(self, winding: int) -> str:
+        """Park the run so the next task reads as a correction, not a restart."""
+        self._messages.append({
+            "role": "user",
+            "content": (
+                f"[OPERATOR INTERRUPT after winding {winding}. The work is "
+                "paused, not abandoned, and this trajectory stands. The next "
+                "message is a correction or additional information: fold it in "
+                "and continue from where you stopped. Do not restart the task "
+                "and do not re-tread windings already made.]"
+            ),
+        })
+        last = self.trajectory[-1] if self.trajectory else None
+        where = f"last action: {last.action_name}" if last is not None else "no windings completed"
+        self._log(f"\n  ⏸  PAUSED at winding {winding}  ({where})")
+        self._log(f"{'═'*72}")
+        return (
+            f"[Paused at winding {winding} by operator interrupt — {where}. "
+            f"{len(self.trajectory)} winding(s) held in context. "
+            "Type a correction or more information to continue; the agent "
+            "resumes rather than restarting.]"
+        )
 
     # ── Loop phases ────────────────────────────────────────────────────────────
 

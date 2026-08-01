@@ -182,24 +182,42 @@ def main():
         try:
             while True:
                 task_lines = []
-                first = input(">>> ").rstrip()
+                try:
+                    first = input(">>> ").rstrip()
+                except KeyboardInterrupt:
+                    # At the prompt Ctrl-C clears the line; Ctrl-D or 'quit' exits.
+                    print()
+                    continue
                 if first.lower() in ("quit", "exit", "q"):
                     break
                 task_lines.append(first)
+                abandoned = False
                 while True:
-                    line = input("... ").rstrip()
+                    try:
+                        line = input("... ").rstrip()
+                    except KeyboardInterrupt:
+                        # Abandon this entry, keep the session and its context.
+                        print()
+                        abandoned = True
+                        break
                     if not line:
                         break
                     if line.lower() in ("quit", "exit", "q"):
                         break
                     task_lines.append(line)
+                if abandoned:
+                    continue
                 task = "\n".join(task_lines)
                 session_task_log.append(task)
 
                 result = asyncio.run(agent.run(task))
+                paused = getattr(agent, "interrupted", False)
                 print(f"\n{'─'*52}")
                 print(result)
                 print(f"{'─'*52}")
+                if paused:
+                    print("  [context held — your next entry continues this "
+                          "trajectory; it does not start a new one]")
                 print(f"Windings:{len(agent.trajectory)}  "
                       f"Frobenius:{agent.frobenius_ratio:.0%}  "
                       f"Tier:{agent.structural_type.get('ouroboricity', '?')}")
