@@ -2168,6 +2168,29 @@ def _ob3ect_close_emit(args: Dict[str, Any]) -> str:
     if not description or design is None:
         return json.dumps({"status": "error",
                            "error": "'description' and 'design' are required"}, ensure_ascii=False)
+    # 13 of the recorded ob3ect failures were "'list'/'str'/'dict' object has no
+    # attribute 'get'" raised deep inside close_harness, because the model
+    # emitted the design as a JSON string or wrapped it in a single-element
+    # list. Normalise both here so the agent gets an actionable message instead
+    # of a type error from someone else's stack frame.
+    if isinstance(design, str):
+        try:
+            design = json.loads(design)
+        except json.JSONDecodeError:
+            return json.dumps({
+                "status": "error",
+                "error": "'design' is a string that is not valid JSON",
+                "required": "a JSON object of design fields",
+            }, ensure_ascii=False)
+    if isinstance(design, list) and len(design) == 1 and isinstance(design[0], dict):
+        design = design[0]
+    if not isinstance(design, dict):
+        return json.dumps({
+            "status": "error",
+            "error": f"'design' must be a JSON object, got {type(design).__name__}",
+            "required": "a single JSON object of design fields",
+        }, ensure_ascii=False)
+
     try:
         h = _ob3ect_harness()
         out = h.close_harness(description, design,
@@ -2215,9 +2238,14 @@ def _ob3ect_delegate(args: Dict[str, Any]) -> str:
     cmd  = [sys.executable, str(root / "ob3ect" / "auto.py"), description,
             "--domain", domain, "--scope", scope]
 
+    # No timeout. A design call goes out to a provider and runs a guided
+    # multi-turn imscription; the 120s cap that used to be here accounted for 86
+    # of the 101 recorded ob3ect failures. That work was not wrong, it was cut
+    # off, and a cut-off design is indistinguishable from a failed one in the
+    # log. Work is not capped.
     try:
         result = subprocess.run(
-            cmd, capture_output=True, text=True, timeout=120, cwd=str(root)
+            cmd, capture_output=True, text=True, cwd=str(root)
         )
         output = result.stdout + (("\n[stderr]\n" + result.stderr) if result.stderr.strip() else "")
 
@@ -2244,7 +2272,7 @@ def _ob3ect_delegate(args: Dict[str, Any]) -> str:
             if full_path.exists():
                 r2 = subprocess.run(
                     [sys.executable, str(full_path)],
-                    capture_output=True, text=True, timeout=60, cwd=str(root)
+                    capture_output=True, text=True, cwd=str(root)
                 )
                 run_output = r2.stdout + (r2.stderr if r2.stderr.strip() else "")
 
@@ -2255,8 +2283,6 @@ def _ob3ect_delegate(args: Dict[str, Any]) -> str:
             "run_output": run_output[:2000] if run_output else "(not run)",
         }, ensure_ascii=False)
 
-    except subprocess.TimeoutExpired:
-        return json.dumps({"status": "error", "error": "auto.py timed out after 120s"}, ensure_ascii=False)
     except Exception as exc:
         return json.dumps({"status": "error", "error": str(exc)}, ensure_ascii=False)
 
