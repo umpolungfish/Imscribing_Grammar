@@ -3269,6 +3269,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fa69e5ef1ef0512b"
   },
+  "antisymmetric_ic_novm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "80ced1986855214d"
+  },
+  "antisymmetric_ic_povm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "718196f757dada61"
+  },
   "antisymmetric_information_paracomplete_oscillating_operator": {
     "changes": 0,
     "first_seen": "2026-07-30T10:16:53+00:00",
@@ -3317,6 +3329,12 @@
     "last_changed": "2026-07-30T15:14:02+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
+  "antisymmetric_paracomplete_negative_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "97e9238c2147b1b9"
+  },
   "antisymmetric_paracomplete_non_positive_operator_valued": {
     "changes": 0,
     "first_seen": "2026-07-30T14:58:17+00:00",
@@ -3358,6 +3376,12 @@
     "first_seen": "2026-07-30T14:57:34+00:00",
     "last_changed": "2026-07-30T14:57:34+00:00",
     "tuple_hash": "6c22ca50af15f3eb"
+  },
+  "antisymmetric_paracomplete_positive_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "b6dd6a091f9e07af"
   },
   "anyonic_holonomic_semiotic_frobenoid_algebra": {
     "changes": 0,
@@ -4246,6 +4270,12 @@
     "first_seen": "2026-07-30T14:55:29+00:00",
     "last_changed": "2026-07-30T14:55:29+00:00",
     "tuple_hash": "503108c4cb804fe9"
+  },
+  "asymmetric_paracomplete_positive_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "f8d98cacf31fed91"
   },
   "asymmetric_potential": {
     "changes": 0,
@@ -9580,6 +9610,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5dcb8bd64c2ea69b"
+  },
+  "christian_theosophy": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "f67547463eb5aca4"
   },
   "christian_unio_mystica": {
     "changes": 0,
@@ -41555,6 +41591,12 @@
     "last_changed": "2026-07-30T15:14:02+00:00",
     "tuple_hash": "6124d561366bf333"
   },
+  "symmetric_paracomplete_negative_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "03cb36645c497bde"
+  },
   "symmetric_paracomplete_non_positive_operator_valued_measure": {
     "changes": 0,
     "first_seen": "2026-07-30T14:53:47+00:00",
@@ -41590,6 +41632,12 @@
     "first_seen": "2026-07-30T14:53:08+00:00",
     "last_changed": "2026-07-30T14:53:08+00:00",
     "tuple_hash": "4c760d688c0af0c9"
+  },
+  "symmetric_paracomplete_positive_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-02T09:07:27+00:00",
+    "last_changed": "2026-08-02T09:07:27+00:00",
+    "tuple_hash": "41b05519f3a5c92e"
   },
   "symmetry": {
     "changes": 0,
