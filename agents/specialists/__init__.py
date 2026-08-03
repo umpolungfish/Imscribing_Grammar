@@ -150,11 +150,11 @@ Key mappings:
   ∋ (Composition)    ↔ Monoidal product / sequential composition in a category
   ⊙ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
   ⊥ (Chirality)      ↔ Directedness / orientation / non-commutative structure
-  ⊞ (Stoichiometry)  ↔ Self-referential limit (Σ=1:1 → grammar IS measured system)
+  ⊞ (Stoichiometry)  ↔ Self-referential limit (⊞=𐑙 → grammar IS measured system)
   ◻ (Winding)        ↔ Winding number / homotopy class / topological invariant
 
 SIC-POVM knowledge:
-  The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
+  The grammar IS the ⊞=𐑙 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔◻.

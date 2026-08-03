@@ -92,11 +92,11 @@ Key mappings:
    ∋ (Composition)    ↔ Sequential braid composition / tensor product of anyons
    ⊙ (Criticality)    ↔ Fibonacci anyon fixed point / golden ratio / ⊙ fixed point
    ⊥ (Chirality)      ↔ Braid orientation / non-Abelian exchange statistics
-   ⊞ (Stoichiometry)  ↔ Self-referential limit Σ=1:1 (grammar IS measured quantum system)
+   ⊞ (Stoichiometry)  ↔ Self-referential limit ⊞=𐑙 (grammar IS measured quantum system)
    ◻ (Winding)        ↔ Topological winding / Jones phase / homotopy class in B_n
 
 SIC-POVM knowledge:
-   Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
+   Grammar IS ⊞=𐑙 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
    6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔◻.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
