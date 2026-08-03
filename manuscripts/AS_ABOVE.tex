@@ -201,7 +201,7 @@ theory --- a category need not have sets as objects --- and strictly more struct
 \textbf{Special cases (add axioms):}\\[2pt]
 $\mathbf{Set}$:\enspace extensionality + $\in$\\
 Type theory:\enspace identity types\\
-Topos:\enspace subobject classifier $\text{{\igprimfont Ω}}$\\
+Topos:\enspace subobject classifier $\text{{\igprimfont ◻}}$\\
 Monoidal cat.:\enspace tensor product $\otimes$\\[5pt]
 \textbf{More general than:}\\[2pt]
 Bare graph:\enspace no composition law
@@ -230,7 +230,7 @@ Bare graph:\enspace no composition law
 \rowcolors{1}{white}{gray!10}
 ZFC pure sets & Extensionality axiom, $\in$-relation & $\mathbf{Set}$ is a specific category \\
 Martin-L\"of type universe & Dependent types, identity types & Corresponds to locally cartesian closed category \\
-Topos & Subobject classifier $\text{{\igprimfont Ω}}$, power objects & Cartesian closed category with full power-object structure \\
+Topos & Subobject classifier $\text{{\igprimfont ◻}}$, power objects & Cartesian closed category with full power-object structure \\
 Monoidal category & Tensor product $\otimes$, unit $I$ & Category with additional algebraic structure \\
 Partial order (poset) & Antisymmetry & Thin category: $|\text{hom}(A,B)| \leq 1$ \\
 \bottomrule
@@ -311,7 +311,7 @@ the four degrees of freedom in a cocompletion: you can freely add colimits of (a
 (b) a
 $\omega$-chain, (c) a simplicial object, or (d) a presheaf. There is no fifth shape of diagram that yields an
 independent invariant. The crystal's complete enumeration confirms this: $\text{{\igprimfont ⊢}}$,
-$\text{{\igprimfont ⊥}}$, $\text{{\igprimfont Ω}}$, and ${{\igprimfont ∈}}$ (which I4 partly determines) occupy exactly 4,
+$\text{{\igprimfont ⊥}}$, $\text{{\igprimfont ◻}}$, and ${{\igprimfont ∈}}$ (which I4 partly determines) occupy exactly 4,
 4, 4, and 3 values respectively, accounting for all inductive degrees of freedom.
 \paragraph{Algebraic operations (5: A1--A5).}
 An algebraic operation equips $\mathcal{C}$ with an additional structural layer. There are exactly five independent
@@ -333,7 +333,7 @@ operations contribute to the same primitive (L1 and L2 both contribute to $R$; L
 new primitive). This reduction is forced, not chosen, as shown below.\subsubsection{II.2 Why These Mappings from
 Operations to Primitives Are Unique}
 The original derivation listed associations like `\texttt{I1} (colimit) $\to$ $\text{{\igprimfont\Gamma}}$'', `\texttt{I2} (iteration)
-$\to$ $\text{{\igprimfont ⊥}}$'', `\texttt{I3} (classifying space) $\to$ $\text{{\igprimfont Ω}}$'' and so on. The
+$\to$ $\text{{\igprimfont ⊥}}$'', `\texttt{I3} (classifying space) $\to$ $\text{{\igprimfont ◻}}$'' and so on. The
 question arises: could an operation map to a different primitive, or a primitive be the result of a different
 operation? The answer is forced by the categorical nature of each operation's output --- the invariant each operation
 produces is the \emph{only} natural categorical invariant it can produce, and the assignment is
@@ -356,7 +356,7 @@ system's chirality --- how many prior states must be retained for the dynamics t
 gives \text{{\igfont 𐑓}} (memoryless); at step 1 gives \text{{\igfont 𐑒}} (one prior state); at step 2 gives
 \text{{\igfont 𐑖}}; never stabilizing gives \text{{\igfont 𐑫}} (infinite memory). This is the natural invariant of the
 iteration operation. No other operation measures the Markov order of the dynamics.
-\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont Ω}}$, and cannot map to any other primitive}
+\paragraph{Why I3 (classifying space) maps to $\text{{\igprimfont ◻}}$, and cannot map to any other primitive}
 The classifying space $B\mathcal{C}$ of a category is the geometric realization of its nerve
 $N\mathcal{C}$ --- a
 simplicial set whose $n$-simplices are composable $n$-tuples of morphisms. The fundamental group
@@ -460,7 +460,7 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
  
 % Gate primitives (top row) — 4 nodes, 2.2cm spacing, starting at x=-1.3
 \node[primnode=purple!12] (D)   at (-1.3, 2.2) {\text{{\igprimfont ⊢}}\\I4, S2};
-\node[primnode=purple!12] (Om)  at ( 0.9, 2.2) {$\text{{\igprimfont Ω}}$\\I3, S2};
+\node[primnode=purple!12] (Om)  at ( 0.9, 2.2) {$\text{{\igprimfont ◻}}$\\I3, S2};
 \node[primnode=purple!12] (Phi) at ( 3.1, 2.2) {${{\igprimfont \odot}}$\\L4, S4};
 \node[primnode=purple!12] (P)   at ( 5.3, 2.2) {$\text{{\igprimfont \text{{\igprimfont ⊙}}}}$\\A1+L5};
  
@@ -502,8 +502,8 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
  
 \node[primnode=blue!40,inner sep=4pt,font=\footnotesize\bfseries]          (O0t)   at (-6.5,-5.2) {$O₀$\\\text{{\igfont 𐑢}}};
 \node[primnode=green!40,inner sep=4pt,font=\footnotesize\bfseries]         (O1t)   at (-3.5,-5.2) {$O₁$\\${{\igprimfont \odot}}$};
-\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t)   at ( 0.0,-5.2) {$O₂$\\${{\igprimfont \odot}},\text{{\igprimfont Ω}}\neq\text{{\igfont 𐑷}}$};
-\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries]        (O2dt)  at ( 3.8,-5.2) {$O₂^\dagger$\\${{\igprimfont \odot}},\text{{\igprimfont Ω}}\neq\text{{\igfont 𐑷}},\text{{\igfont 𐑼}}$};
+\node[primnode=yellow!60!orange,inner sep=4pt,font=\footnotesize\bfseries] (O2t)   at ( 0.0,-5.2) {$O₂$\\${{\igprimfont \odot}},\text{{\igprimfont ◻}}\neq\text{{\igfont 𐑷}}$};
+\node[primnode=orange!60,inner sep=4pt,font=\footnotesize\bfseries]        (O2dt)  at ( 3.8,-5.2) {$O₂^\dagger$\\${{\igprimfont \odot}},\text{{\igprimfont ◻}}\neq\text{{\igfont 𐑷}},\text{{\igfont 𐑼}}$};
 \node[primnode=purple!50,inner sep=4pt,font=\footnotesize\bfseries]        (Oifnt) at ( 7.5,-5.2) {$O_{\infty}$\\${{\igprimfont \odot}},\text{{\igfont 𐑹}}$};
  
 \draw[->,>=stealth,thick] (O0t.east) -- (O1t.west);
@@ -512,13 +512,13 @@ primitive exists. It constrains the evaluation of L4 and L5, thus determining th
 \draw[->,>=stealth,ultra thick,red!70] (O2dt.east) -- node[above,font=\tiny] {$\Delta=4.38$} (Oifnt.west);
  
 % Annotation
-\node[label,below=0.3cm of O2t] {4 gate primitives ($\text{{\igprimfont ⊢}},\text{{\igprimfont Ω}},{{\igprimfont \odot}},\text{{\igprimfont \text{{\igprimfont ⊙}}}}$) drive tier boundaries; 8 shape primitives describe internal architecture};
+\node[label,below=0.3cm of O2t] {4 gate primitives ($\text{{\igprimfont ⊢}},\text{{\igprimfont ◻}},{{\igprimfont \odot}},\text{{\igprimfont \text{{\igprimfont ⊙}}}}$) drive tier boundaries; 8 shape primitives describe internal architecture};
  
 \end{tikzpicture}
 }
 
 
-\caption{Complete mapping from 15 operations to 12 primitives. L1--L2 converge to $\text{{\igprimfont >}}$; A1 contributes to both $\text{{\igprimfont \Sigma}}$ and $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$; L5 promotes $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ (not a new primitive); A5 installs self-awareness without a new primitive. Bottom: ouroboricity tiers determined by the 4 gate primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont Ω}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$).}
+\caption{Complete mapping from 15 operations to 12 primitives. L1--L2 converge to $\text{{\igprimfont >}}$; A1 contributes to both $\text{{\igprimfont \Sigma}}$ and $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$; L5 promotes $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ (not a new primitive); A5 installs self-awareness without a new primitive. Bottom: ouroboricity tiers determined by the 4 gate primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ◻}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$).}
 \label{fig:operation-primitive-mapping}
 \end{figure}
 
@@ -648,7 +648,7 @@ exactly to the Lie group $E_8 \times E_8$ root lattice scaled by $G_2$ --- a fac
 (\emph{So Below}) and independently confirmed by the crystal tier census. The dimensionality of the crystal is exactly
 the number of degrees of freedom in the operations: $3^3 \times 4^5 \times 5^4$. The $3$ family
 ($\text{{\igprimfont ⋈}},{{\igprimfont ∈}},\text{{\igprimfont \Sigma}}$) corresponds to the 3-valued K3 logic of the algebraic
-operations (A1, A3, A2's spectral output, respectively). The $4$ family ($\text{{\igprimfont ⊢}},\text{{\igprimfont >}},\text{{\igprimfont ∋}},\text{{\igprimfont ⊥}},\text{{\igprimfont Ω}}$) corresponds to the 4-valued FDE logic
+operations (A1, A3, A2's spectral output, respectively). The $4$ family ($\text{{\igprimfont ⊢}},\text{{\igprimfont >}},\text{{\igprimfont ∋}},\text{{\igprimfont ⊥}},\text{{\igprimfont ◻}}$) corresponds to the 4-valued FDE logic
 of the inductive and Stage-1/Stage-4 logical operations. The $5$ family ($\text{{\igprimfont ⊣}},\text{{\igprimfont \text{{\igprimfont ⊙}}}},{{\igprimfont \odot}},\text{{\igprimfont ⊤}}$) corresponds to the 5-valued LP logic of the gate operations
 that require algebraic enrichment to be in place. The three-logic structure of the value space is not an empirical fact
 about the catalog. It is a consequence of the logical depth of the operation
@@ -747,7 +747,7 @@ inductive construction --- free monoid, Kleene star, Cauchy completion, sheafifi
 four base constructions: for instance, the free monoid on an object is a special case of I2 (the list monad is the
 initial algebra of $F(X) = 1 + A \otimes X$), and sheafification is a composite of I1, I4, and a localization (a
 logical operation, not a new inductive one). There is no inductive construction that produces an invariant not already
-captured by $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont Ω}}$, and
+captured by $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont ◻}}$, and
 $\text{{\igprimfont\Gamma}}$.\begin{center}
 \rule{0.5\textwidth}{0.4pt}
 \end{center}
@@ -836,7 +836,7 @@ $\mathcal{C}$ directly.
 
 \begin{itemize}[nosep, leftmargin=2em]
  \item I2 (iteration) $\to$ $H$ (chirality: depth of stabilization)
- \item I3 (classifying) $\to$ $\text{{\igprimfont Ω}}$ (winding: $\pi_1$ of $B\mathcal{C}$)
+ \item I3 (classifying) $\to$ $\text{{\igprimfont ◻}}$ (winding: $\pi_1$ of $B\mathcal{C}$)
  \item I4 (Yoneda) $\to$ $\text{{\igprimfont ⊢}}$ (dimensionality: \text{{\igfont 𐑦}} if Yoneda is point-surjective;
 free cocompletion size gives \text{{\igfont 𐑼}}, \text{{\igfont 𐑨}}, \text{{\igfont 𐑛}})
 \end{itemize}
@@ -910,7 +910,7 @@ Yoneda embedding under the monoidal structure. Local (\text{{\igfont 𐑚}}) if 
 
 % Primitives at each stage
 \node[prim,right=0.3cm of ops1] (p1) {$\to R$};
-\node[prim,right=0.3cm of ops2] (p2) {$\to \text{{\igprimfont ⊢}}, \text{{\igprimfont ⊥}}, \text{{\igprimfont Ω}}, {{\igprimfont ∈}}$};
+\node[prim,right=0.3cm of ops2] (p2) {$\to \text{{\igprimfont ⊢}}, \text{{\igprimfont ⊥}}, \text{{\igprimfont ◻}}, {{\igprimfont ∈}}$};
 \node[prim,right=0.3cm of ops3] (p3) {$\to \text{{\igprimfont \Sigma}}, \text{{\igprimfont \text{{\igprimfont ⊙}}}}, \text{{\igprimfont ⊤}}, \text{{\igprimfont ⋈}}, \text{{\igprimfont ∋}}$};
 \node[prim,right=0.3cm of ops4] (p4) {$\to \text{{\igprimfont ⊣}}, {{\igprimfont \odot}},\ \text{{\igfont 𐑹}}$};
 
@@ -990,7 +990,7 @@ retrosynthetic path of the induction system itself --- computed from the crystal
 8 & $\text{{\igprimfont ∋}}$ & \text{{\igfont 𐑠}} (sequential composition) \\
 9 & $\text{{\igprimfont \Sigma}}$ & \text{{\igfont 𐑳}} (heterogeneous stoichiometry) \\
 10 & $\text{{\igprimfont ⊥}}$ & \text{{\igfont 𐑫}} (eternal-return chirality) \\
-11 & $\text{{\igprimfont Ω}}$ & \text{{\igfont 𐑭}} (integer winding) \\
+11 & $\text{{\igprimfont ◻}}$ & \text{{\igfont 𐑭}} (integer winding) \\
 12 & ${{\igprimfont \odot}}$ & ${{\igprimfont \odot}}$ (Lawvere criticality) \\
 \bottomrule
 \end{tabularx}
@@ -1025,7 +1025,7 @@ is the exact count of independent structural constraints.
 
 % Step 11: Omega
 \node[stepno] (s11) at (-4.1,2.7) {11};
-\node[prim=green!12,above=0.1cm of s11] (p11) {$\text{{\igprimfont Ω}}$\\\text{{\igfont 𐑷}}};
+\node[prim=green!12,above=0.1cm of s11] (p11) {$\text{{\igprimfont ◻}}$\\\text{{\igfont 𐑷}}};
 \draw[peel] (s11) -- (s12);
 
 % Step 10: H
@@ -1090,7 +1090,7 @@ $\langle \text{{\igfont 𐑦}} \text{{\igfont 𐑶}} \text{{\igfont 𐑾}} \text
 \bfseries Ordinal contribution:\\
 \quad $P$ = 4 (heaviest)\\
 \quad $D,T,R$ = 3 each\\
-\quad $\text{{\igprimfont ⋈}},\text{{\igprimfont ⊤}},{{\igprimfont ∈}},\text{{\igprimfont ∋}},\text{{\igprimfont ⊥}},\text{{\igprimfont \Sigma}},\text{{\igprimfont Ω}}$ = 2 each\\
+\quad $\text{{\igprimfont ⋈}},\text{{\igprimfont ⊤}},{{\igprimfont ∈}},\text{{\igprimfont ∋}},\text{{\igprimfont ⊥}},\text{{\igprimfont \Sigma}},\text{{\igprimfont ◻}}$ = 2 each\\
 \quad ${{\igprimfont \odot}}$ = 1 (lightest, most consequential)
 \end{tabular}};
 
@@ -1105,7 +1105,7 @@ in
 \end{tikzpicture}
 }
 
-\caption{The 12-step retrosynthetic path from the full induction system ($O_{\infty}$, address 6,687,051) to the structural baseline. Each step peels one primitive to its minimum value. Ordinal contributions: $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ = 4 (heaviest); $D$, $T$, $R$ = 3 each; $\text{{\igprimfont ⋈}}$, $\text{{\igprimfont ⊤}}$, ${{\igprimfont ∈}}$, $\text{{\igprimfont ∋}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont \Sigma}}$, $\text{{\igprimfont Ω}}$ = 2 each; ${{\igprimfont \odot}}$ = 1 (lightest but most consequential for tier structure). All 12 steps are independent --- no two primitives collapse together.}
+\caption{The 12-step retrosynthetic path from the full induction system ($O_{\infty}$, address 6,687,051) to the structural baseline. Each step peels one primitive to its minimum value. Ordinal contributions: $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ = 4 (heaviest); $D$, $T$, $R$ = 3 each; $\text{{\igprimfont ⋈}}$, $\text{{\igprimfont ⊤}}$, ${{\igprimfont ∈}}$, $\text{{\igprimfont ∋}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont \Sigma}}$, $\text{{\igprimfont ◻}}$ = 2 each; ${{\igprimfont \odot}}$ = 1 (lightest but most consequential for tier structure). All 12 steps are independent --- no two primitives collapse together.}
 \label{fig:retrosynthetic-path}
 \end{figure}
 
@@ -1121,7 +1121,7 @@ atom is a minimal unit contributing exactly one primitive's content. The atoms a
  \item \textbf{Atoms with ordinal contribution 2:} $\text{{\igprimfont ⋈}}$, $\text{{\igprimfont ⊤}}$,
 ${{\igprimfont ∈}}$, $\text{{\igprimfont ∋}}$,
 $\text{{\igprimfont \Sigma}}$,
-$\text{{\igprimfont Ω}}$ --- the algebraic and inductive primitives.
+$\text{{\igprimfont ◻}}$ --- the algebraic and inductive primitives.
  \item \textbf{Atom with ordinal contribution 1:} ${{\igprimfont \odot}}$ --- the criticality primitive, a single
 logical condition, carries the least weight but is the most consequential for tier structure.
 \end{itemize}
@@ -1142,7 +1142,7 @@ case of $\text{{\igprimfont >}}$ and $\text{{\igprimfont \text{{\igprimfont ⊙}
 the same primitive) that has no effect on the others. The monoidal operation (A1) determines
 $\text{{\igprimfont\Sigma}}$ and $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ but leaves $\text{{\igprimfont ⊢}}$ and
 $\text{{\igprimfont ⊥}}$ untouched.
-The classifying space operation (I3) determines $\text{{\igprimfont Ω}}$ but leaves
+The classifying space operation (I3) determines $\text{{\igprimfont ◻}}$ but leaves
 $\text{{\igprimfont ⋈}}$
 untouched. The independence is structural, not statistical. There is no fusion possible.
 \textbf{Why not 13?} A 13th primitive would require a categorical invariant that is (i) independent of the 12, (ii)
@@ -1233,7 +1233,7 @@ $\text{{\igprimfont ⊥}}$ & Chirality & $\mathcal{F}_4$ / FDE & S2 (I2) & $\tex
 \cdot \text{{\igfont 𐑖}} \cdot \text{{\igfont 𐑫}}$ \\
 $\text{{\igprimfont \Sigma}}$ & Stoichiometry & $\mathcal{F}_3$ / K3 & S3 (A1) & $\text{{\igfont 𐑙}} \cdot
 \text{{\igfont 𐑕}} \cdot \text{{\igfont 𐑳}}$ \\
-$\text{{\igprimfont Ω}}$ & Winding & $\mathcal{F}_4$ / FDE & S2 (I3) & $\text{{\igfont 𐑷}} \cdot \text{{\igfont 𐑴}} \cdot \text{{\igfont 𐑭}} \cdot \text{{\igfont 𐑟}}$ \\
+$\text{{\igprimfont ◻}}$ & Winding & $\mathcal{F}_4$ / FDE & S2 (I3) & $\text{{\igfont 𐑷}} \cdot \text{{\igfont 𐑴}} \cdot \text{{\igfont 𐑭}} \cdot \text{{\igfont 𐑟}}$ \\
 \bottomrule
 \end{tabular}
 
@@ -1262,7 +1262,7 @@ preconditions. K3 (3 values) applies to operations that can produce an indetermi
 ${{\igprimfont ∈}}$, $\text{{\igprimfont \Sigma}}$). FDE (4 values) applies to operations that can produce
 both true, false, neither, or both ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont >}}$,
 $\text{{\igprimfont ∋}}$,
-$\text{{\igprimfont ⊥}}$, $\text{{\igprimfont Ω}}$). LP (5 values) applies to operations whose 4 FDE values
+$\text{{\igprimfont ⊥}}$, $\text{{\igprimfont ◻}}$). LP (5 values) applies to operations whose 4 FDE values
 receive a dialetheic completion ($\text{{\igprimfont ⊣}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$,
 $\text{{\igprimfont $\odot$}}$,
 $\text{{\igprimfont ⊤}}$). Every primitive's value count is accounted for, and no additional logic is needed. A 13th
@@ -1303,10 +1303,10 @@ exactly five ouroboricity tiers.
 self-modeling loop can form in the internal hom $A^A$; the system is closed against the induction's own fixed-point
  \item $O₁$: $\text{{\igprimfont $\odot$}}$ (L4 holds) and \text{{\igfont 𐑷}} (topologically trivial). The loop
 instantiates but cannot sustain --- \text{{\igfont 𐑷}} carries no winding number to protect it.
- \item $O₂$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}}$, and
+ \item $O₂$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont ◻}} \neq \text{{\igfont 𐑷}}$, and
 $\text{{\igprimfont ⊢}} \in \{\text{{\igfont 𐑛}}, \text{{\igfont 𐑨}}, \text{{\igfont 𐑦}}\}$. Topologically protected by
 winding (I3) and either finite-dimensional or imscriptive. The loop is stabilized without reaching
- \item $O₂^{\dagger}$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont Ω}} \neq
+ \item $O₂^{\dagger}$: $\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont ◻}} \neq
  \text{{\igfont 𐑷}}$,
 \text{{\igfont 𐑼}}. Topologically protected but infinite-dimensional and not imscriptive: winding-number stabilization
 without bulk-boundary imscription.
@@ -1340,14 +1340,14 @@ composition $\mu \circ \delta = \text{id}_{A}$ makes self-reference algebraicall
 \draw[gap] (O1.south) -- node[gaplab,pos=1.15] {$\Delta=1.30$\\$\text{{\igfont 𐑛}}\!\to\!\text{{\igfont 𐑨}},\ \text{{\igfont 𐑷}}\!\to\!\text{{\igfont 𐑴}}$} ++(0,-0.85);
 
 % Tier O2
-\node[tier=yellow!50!orange,below=1.5cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}},\ \text{{\igprimfont ⊢}} \in \{\text{{\igfont 𐑛}},\text{{\igfont 𐑨}},\text{{\igfont 𐑦}}\}$};
+\node[tier=yellow!50!orange,below=1.5cm of O1] (O2) {$\mathbf{O₂}$\\\small Topologically Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont ◻}} \neq \text{{\igfont 𐑷}},\ \text{{\igprimfont ⊢}} \in \{\text{{\igfont 𐑛}},\text{{\igfont 𐑨}},\text{{\igfont 𐑦}}\}$};
 \node[condition,right=0.4cm of O2] (c2) {Winding-number protection\\Finite-dim or imscriptive\\$C > 0$ possible};
 
 % Gap O2 -> O2†
 \draw[gap] (O2.south) -- node[gaplab,pos=1.15] {$\Delta=1.00$\\$\text{{\igfont 𐑨}}\to \text{{\igfont 𐑼}}$} ++(0,-0.85);
 
 % Tier O2†
-\node[tier=orange,below=1.5cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont Ω}} \neq \text{{\igfont 𐑷}},\ \text{{\igfont 𐑼}}$};
+\node[tier=orange,below=1.5cm of O2] (O2d) {$\mathbf{O₂^\dagger}$\\\small Inf-dim Protected\\\small $\text{{\igprimfont $\odot$}},\ \text{{\igprimfont ◻}} \neq \text{{\igfont 𐑷}},\ \text{{\igfont 𐑼}}$};
 \node[condition,right=0.4cm of O2d] (c2d) {Infinite-dimensional\\Winding protection\\Not imscriptive};
 
 % Gap O2† -> O$$\infty$$ --- LARGEST
@@ -1369,7 +1369,7 @@ composition $\mu \circ \delta = \text{id}_{A}$ makes self-reference algebraicall
 \quad $\text{{\igprimfont $\odot$}}$ (L4: Lawvere)\\
 \quad $P$  (L5: Frobenius)\\
 \quad $D$  (I4: Yoneda)\\
-\quad $\text{{\igprimfont Ω}}$ (I3: Classifying)\\[6pt]
+\quad $\text{{\igprimfont ◻}}$ (I3: Classifying)\\[6pt]
 8 shape primitives:\\
 \quad $\text{{\igprimfont ⊣}},\text{{\igprimfont >}},\text{{\igprimfont ⋈}},\text{{\igprimfont ⊤}},{{\igprimfont ∈}},\text{{\igprimfont ∋}},\text{{\igprimfont ⊥}},\text{{\igprimfont \Sigma}}$\\[6pt]
 Tier boundaries: exclusively\\[2pt]
@@ -1379,7 +1379,7 @@ Tier boundaries: exclusively\\[2pt]
 \end{tikzpicture}
 }
 
-\caption{The ouroboricity tier ladder. Five tiers ($O₀ \to O₁ \to O₂ \to O₂^\dagger \to O_{\infty}$) determined by 4 gate primitives ($\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont Ω}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$). The largest jump ($\Delta = 4.38$) is the Frobenius promotion $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$.}
+\caption{The ouroboricity tier ladder. Five tiers ($O₀ \to O₁ \to O₂ \to O₂^\dagger \to O_{\infty}$) determined by 4 gate primitives ($\text{{\igprimfont $\odot$}}$, $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ◻}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$). The largest jump ($\Delta = 4.38$) is the Frobenius promotion $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$.}
 \label{fig:tier-ladder}
 \end{figure}
 
@@ -1396,7 +1396,7 @@ The crystal tier gap ladder confirms this structure:
 \midrule
 \rowcolors{1}{white}{gray!10}
 $O₀ \to O₁$ & 1.05 & $\text{{\igprimfont $\odot$}}$ & $\text{{\igfont 𐑢}} \to \text{{\igprimfont $\odot$}}$ (Lawvere condition met) \\
-$O₁ \to O₂$ & 1.30 & $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont Ω}}$ & $\text{{\igfont 𐑛}} \to \text{{\igfont 𐑨}}$, $\text{{\igfont 𐑷}} \to \text{{\igfont 𐑴}}$ \\
+$O₁ \to O₂$ & 1.30 & $\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ◻}}$ & $\text{{\igfont 𐑛}} \to \text{{\igfont 𐑨}}$, $\text{{\igfont 𐑷}} \to \text{{\igfont 𐑴}}$ \\
 $O₂ \to O₂^\dagger$ & 1.00 & $\text{{\igprimfont ⊢}}$ & $\text{{\igfont 𐑨}} \to \text{{\igfont 𐑼}}$
 (infinite-dimensional) \\
 $O₂^\dagger \to O_{\infty}$ & 4.38 & $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$ & $\text{{\igfont 𐑗}} \to \text{{\igfont 𐑹}}$
@@ -1410,17 +1410,17 @@ $O₂^\dagger \to O_{\infty}$ & 4.38 & $\text{{\igprimfont \text{{\igprimfont �
 
 The four transitions correspond to four of the 12 primitives ($\text{{\igprimfont $\odot$}}$,
 $\text{{\igprimfont ⊢}}$,
-$\text{{\igprimfont Ω}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$) --- the gate primitives that are the
+$\text{{\igprimfont ◻}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$) --- the gate primitives that are the
 The remaining 8 primitives ($\text{{\igprimfont ⊣}}$, $\text{{\igprimfont >}}$, $\text{{\igprimfont ⋈}}$,
 $\text{{\igprimfont ⊤}}$, ${{\igprimfont ∈}}$, $\text{{\igprimfont ∋}}$,
 $\text{{\igprimfont ⊥}}$,
 $\text{{\igprimfont \Sigma}}$) are determined within a given tier; they do not drive tier boundaries. This is why the
 induction terminates at 12: the 8 non-gate primitives describe the internal shape of a system within its tier, while
-the 4 gate primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont Ω}}$, $\text{{\igprimfont$\odot$}}$,
+the 4 gate primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont ◻}}$, $\text{{\igprimfont$\odot$}}$,
 $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$) determine which tier it occupies. No operation can produce a fifth gate primitive, because
 the four induction stages are exhausted: L3/L4 ($\text{{\igprimfont $\odot$}}$), L5
 ($\text{{\igprimfont \text{{\igprimfont ⊙}}}}$), I3
-($\text{{\igprimfont Ω}}$), I4 ($\text{{\igprimfont ⊢}}$) are the only operations that affect
+($\text{{\igprimfont ◻}}$), I4 ($\text{{\igprimfont ⊢}}$) are the only operations that affect
 There is no fifth operation that could create a new tier-determining primitive.
 \textbf{The self-imscribing fixed point resolved.} The proof that $O_{\infty}$ requires both L4 and L5 is now confirmed
 by the crystal tier ladder. The $O₂^\dagger \to O_{\infty}$ boundary is driven \emph{exclusively} by the
@@ -1580,7 +1580,7 @@ to the twelve IG primitives $\langle \text{{\igprimfont ⊢}};\, \text{{\igprimf
 \text{{\igprimfont \text{{\igprimfont ⊙}}}};\, \text{{\igprimfont ⋈}};\, \text{{\igprimfont ⊤}};\, \text{{\igprimfont\Gamma}};\,
 \text{{\igprimfont ∋}};\, \text{{\igprimfont $\odot$}};\, \text{{\igprimfont ⊥}};\,
 \text{{\igprimfont \Sigma}};\,
-\text{{\igprimfont Ω}} \rangle$. The stages are: Calcination, Dissolution, Separation, Conjunction, Putrefaction,
+\text{{\igprimfont ◻}} \rangle$. The stages are: Calcination, Dissolution, Separation, Conjunction, Putrefaction,
 Congelation, Cibation, Sublimation, Fermentation, Exaltation, Multiplication, Projection. Each stage
 \textbf{primitive invocation}: it asks, in the phenomenological vocabulary of material transformation, exactly the
 structural question that the corresponding IG primitive answers.
@@ -1613,8 +1613,8 @@ are present; the gate has not yet fired. Second gate. \\
 acquires its unique orientation. \text{{\igfont 𐑫}} (eternal chirality). \\
 11 & Multiplication & $\text{{\igprimfont \Sigma}}$ & A grain transmutes a pound: stoichiometric ratio departs from
 $1{:}1$ into $n{:}m$, $n > 1$. \text{{\igfont 𐑳}}. \\
-12 & Projection & $\text{{\igprimfont Ω}}$ & Acts on base metal with topological protection that cannot be
-stripped. Projection requires $\text{{\igprimfont Ω}} \geq \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect} \\
+12 & Projection & $\text{{\igprimfont ◻}}$ & Acts on base metal with topological protection that cannot be
+stripped. Projection requires $\text{{\igprimfont ◻}} \geq \text{{\igfont 𐑭}}$. Third gate. \emph{Perfect} \\
 \bottomrule
 \end{tabular}
 
@@ -1622,7 +1622,7 @@ stripped. Projection requires $\text{{\igprimfont Ω}} \geq \text{{\igfont 𐑭}
 
 The correspondences at stages 4, 6, and 12 are not analogical but definitional: Conjunction is
 $\mu$; Congelation is
-kinetic freezing; Projection requires $\text{{\igprimfont Ω}}$-protection. The remaining nine correspondences
+kinetic freezing; Projection requires $\text{{\igprimfont ◻}}$-protection. The remaining nine correspondences
 admit one degree of interpretive freedom but no ambiguity: no alternative primitive assignment is both structurally
 coherent and preserves the ordering.
 \textbf{The three-gate structure.} The gate primitives \text{{\igfont 𐑹}}, $\text{{\igprimfont$\odot$}}$,
@@ -1642,9 +1642,9 @@ tower, and the tower is the Work.
 \text{{\igprimfont ⋈}},\, \text{{\igprimfont ⊤}},\, \text{{\igprimfont ⊥}},\, \text{{\igprimfont\Omega}}$ (stages 4,
 5, 6, 10, 12) jointly constitute time as the limit $T = \lim(\text{{\igprimfont \text{{\igprimfont ⊙}}}},\,
 \text{{\igprimfont ⋈}},\,
-\text{{\igprimfont ⊤}},\, \text{{\igprimfont ⊥}},\, \text{{\igprimfont Ω}})$ --- the constraint satisfaction
+\text{{\igprimfont ⊤}},\, \text{{\igprimfont ⊥}},\, \text{{\igprimfont ◻}})$ --- the constraint satisfaction
 manifold that sheafifies wherever all five are simultaneously consistent. $T$ is not a primitive. It is the derived
-limit of five primitives, and it cannot seal until $\text{{\igprimfont Ω}}$ fires and cannot self-reference until
+limit of five primitives, and it cannot seal until $\text{{\igprimfont ◻}}$ fires and cannot self-reference until
 $\text{{\igprimfont $\odot$}}$ fires. The Work appears to presuppose time (stages must be ordered); but $T$ is produced
 by the Work, not given before it. The resolution: before stage~9 the trace is unavailable, so the loop is impossible,
 so $T$ has no self-referential structure. After stage~12, $T$ seals and the fixed point $T =
@@ -1665,7 +1665,7 @@ at stage~6. The full Magnum Opus is the ordered tensor product
 \text{{\igprimfont \text{{\igprimfont ⊙}}}}_4 \;\otimes\; \text{{\igprimfont ⋈}}_5 \;\otimes\; \text{{\igprimfont ⊤}}_6 \;\otimes\;
 {{\igprimfont ∈}}_7 \;\otimes\; \text{{\igprimfont ∋}}_8 \;\otimes\; \text{{\igprimfont\odot}}_9 \;\otimes\;
 \text{{\igprimfont ⊥}}_{10} \;\otimes\; \text{{\igprimfont \Sigma}}_{11} \;\otimes\;
-\text{{\igprimfont Ω}}_{12}
+\text{{\igprimfont ◻}}_{12}
 \]
 applied in stage order. The \Stone{} is the unique system for which this sequence terminates with all twelve primitives
 simultaneously at their $O_{\infty}$-sufficient values: $\bigl\langle \text{{\igfont 𐑦}};\,
@@ -1829,7 +1829,7 @@ Frobenius condition. Meanwhile, $O₀ \to O₁$ is the $\text{{\igfont 𐑢}} \t
 \text{{\igfont 𐑹}} (L5).
 Both are necessary and jointly sufficient.
 \paragraph{Step 2 --- $O_{\infty}$ overrides all topological branching.} The ouroboricity tier rules state:
-$O_{\infty}$ overrides all $\text{{\igprimfont Ω}}$ and $\text{{\igprimfont ⊢}}$ branching because algebraic
+$O_{\infty}$ overrides all $\text{{\igprimfont ◻}}$ and $\text{{\igprimfont ⊢}}$ branching because algebraic
 closure is categorically distinct from topological stabilization. The manuscript entry \texttt{as\_above\_manuscript} has
 \text{{\igfont 𐑦}}, \text{{\igfont 𐑭}} but is tier $O_{\infty}$ --- not $O₂$ despite having
 \paragraph{Step 3 --- Self-imscribing implies $O_{\infty}$.}
@@ -1854,7 +1854,7 @@ System $S$\\[4pt]
 
 % === BASE RIGHT: Crystal type ===
 \node[space=green!60!black] (type) at (5.5, 0) {
-$\langle \text{{\igprimfont ⊢}}\text{{\igprimfont ⊣}}\text{{\igprimfont >}}\text{{\igprimfont \text{{\igprimfont ⊙}}}}\text{{\igprimfont ⋈}}\text{{\igprimfont ⊤}}{{\igprimfont ∈}}\text{{\igprimfont ∋}}\text{{\igprimfont $\odot$}}\text{{\igprimfont ⊥}}\text{{\igprimfont \Sigma}}\text{{\igprimfont Ω}} \rangle$\\[4pt]
+$\langle \text{{\igprimfont ⊢}}\text{{\igprimfont ⊣}}\text{{\igprimfont >}}\text{{\igprimfont \text{{\igprimfont ⊙}}}}\text{{\igprimfont ⋈}}\text{{\igprimfont ⊤}}{{\igprimfont ∈}}\text{{\igprimfont ∋}}\text{{\igprimfont $\odot$}}\text{{\igprimfont ⊥}}\text{{\igprimfont \Sigma}}\text{{\igprimfont ◻}} \rangle$\\[4pt]
 \footnotesize 12-primitive tuple\\[2pt]
 \footnotesize Crystal address $a \in [0,\,17{,}279{,}999]$
 };
@@ -2281,7 +2281,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \node[primnode=green!60!black] (R) at (-2.8,1.1)  {$\text{{\igprimfont >}}$\\Relational};
 \node[primnode=green!60!black] (Gam) at (0,1.1)  {$\text{{\igprimfont ∋}}$\\Composition};
 \node[primnode=green!60!black] (H) at (2.8,1.1)   {$\text{{\igprimfont ⊥}}$\\Chirality};
-\node[primnode=green!60!black] (Om) at (5.5,1.1)  {$\text{{\igprimfont Ω}}$\\Winding};
+\node[primnode=green!60!black] (Om) at (5.5,1.1)  {$\text{{\igprimfont ◻}}$\\Winding};
 
 % Values for each FDE primitive
 \node[valsel=green!60!black,below=0.43cm of D] (Dvals)  {\text{{\igfont 𐑛}}\\\text{{\igfont 𐑨}}\\\text{{\igfont 𐑼}}\\\text{{\igfont 𐑦}}};
@@ -2332,7 +2332,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \end{tikzpicture}
 }
 
-\caption{The three-logic correspondence. $\mathcal{F}_3$ primitives ($\text{{\igprimfont ⋈}}$, ${{\igprimfont ∈}}$, $\text{{\igprimfont \Sigma}}$) correspond to Kleene K3 (3 values: $\{0,\frac12,1\}$). $\mathcal{F}_4$ primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont >}}$, $\text{{\igprimfont ∋}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont Ω}}$) correspond to Belnap-Dunn FDE (4 values: $\{\mathbf{n},\mathbf{f},\mathbf{t},\mathbf{b}\}$). $\mathcal{F}_5$ primitives ($\text{{\igprimfont ⊣}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont ⊤}}$) correspond to Priest LP (5 values: FDE + dialetheic completion). The crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ follows from the logical structure alone.}
+\caption{The three-logic correspondence. $\mathcal{F}_3$ primitives ($\text{{\igprimfont ⋈}}$, ${{\igprimfont ∈}}$, $\text{{\igprimfont \Sigma}}$) correspond to Kleene K3 (3 values: $\{0,\frac12,1\}$). $\mathcal{F}_4$ primitives ($\text{{\igprimfont ⊢}}$, $\text{{\igprimfont >}}$, $\text{{\igprimfont ∋}}$, $\text{{\igprimfont ⊥}}$, $\text{{\igprimfont ◻}}$) correspond to Belnap-Dunn FDE (4 values: $\{\mathbf{n},\mathbf{f},\mathbf{t},\mathbf{b}\}$). $\mathcal{F}_5$ primitives ($\text{{\igprimfont ⊣}}$, $\text{{\igprimfont \text{{\igprimfont ⊙}}}}$, ${{\igprimfont \odot}}$, $\text{{\igprimfont ⊤}}$) correspond to Priest LP (5 values: FDE + dialetheic completion). The crystal size $3^3 \times 4^5 \times 5^4 = 17{,}280{,}000$ follows from the logical structure alone.}
 \label{fig:three-logics}
 \end{figure}
 
@@ -2348,7 +2348,7 @@ contradictions. In LP, the Liar sentence (`\texttt{this} sentence is false") rec
 \rowcolors{1}{white}{gray!10}
 $\mathcal{F}_3$ & $F, G, S$ & K3 & $\{0, \frac{1}{2}, 1\}$ & 3 \\
 $\mathcal{F}_4$ & $\text{{\igprimfont ⊢}}, \text{{\igprimfont >}}, \text{{\igprimfont ∋}}, \text{{\igprimfont ⊥}},
-\text{{\igprimfont Ω}}$ & FDE & $\{\mathbf{n}, \mathbf{f}, \mathbf{t}, \mathbf{b}\}$ & 4 \\
+\text{{\igprimfont ◻}}$ & FDE & $\{\mathbf{n}, \mathbf{f}, \mathbf{t}, \mathbf{b}\}$ & 4 \\
 $\mathcal{F}_5$ & $\text{{\igprimfont ⊣}}, \text{{\igprimfont \text{{\igprimfont ⊙}}}}, {{\igprimfont \odot}}, \text{{\igprimfont ⊤}}$ & LP & FDE + dialetheic completion & 5 \\
 \bottomrule
 \end{tabularx}
@@ -2384,7 +2384,7 @@ this four-corner structure explicitly:
 \rowcolor{gray!25}\textbf{Primitive} & \textbf{$\mathbf{n}$ (neither)} & \textbf{$\mathbf{f}$ (false only)} & \textbf{$\mathbf{t}$ (true only)} & \textbf{$\mathbf{b}$ (both)} \\
 \midrule
 \rowcolors{1}{white}{gray!10}
-$\text{{\igprimfont Ω}}$ & \text{{\igfont 𐑷}} (no winding) & \text{{\igfont 𐑴}} (binary) & \text{{\igfont 𐑭}}
+$\text{{\igprimfont ◻}}$ & \text{{\igfont 𐑷}} (no winding) & \text{{\igfont 𐑴}} (binary) & \text{{\igfont 𐑭}}
 (integer) & \text{{\igfont 𐑟}} (non-Abelian) \\
 $\text{{\igprimfont ⊢}}$ & \text{{\igfont 𐑛}} (finite) & \text{{\igfont 𐑨}} (polynomial) & \text{{\igfont 𐑼}}
 (exponential) & \text{{\igfont 𐑦}} (imscriptive) \\
@@ -2466,11 +2466,11 @@ value exists for any $\mathcal{F}_5$ primitive in the crystal.
 \subsubsection{IX.4 The Inclosure Schema and \texorpdfstring{\text{{\igfont 𐑣}}}{Phi-EP}}
 \begin{sloppypar}
 Priest (1995) formalizes the \textbf{Inclosure Schema} as the common structure of the classical paradoxes of
-\[\psi(\text{{\igprimfont Ω}}), \quad \forall y \subseteq \text{{\igprimfont Ω}}
+\[\psi(\text{{\igprimfont ◻}}), \quad \forall y \subseteq \text{{\igprimfont ◻}}
 \left[\phi(y) \Rightarrow
 \underbrace{\delta(y) \notin y}_{\scriptstyle\text{transcendence}} \;\wedge\; \underbrace{\delta(y) \in \text{{\igprimfont\Omega}}}_{\scriptstyle\text{closure}}\right]\]
 The \text{{\igfont 𐑣}} identification: the exceptional point of a non-Hermitian Hamiltonian is
-Two eigenvectors coalesce into one; the Jordan vector $\delta(\text{{\igprimfont Ω}})$ is simultaneously outside
+Two eigenvectors coalesce into one; the Jordan vector $\delta(\text{{\igprimfont ◻}})$ is simultaneously outside
 (not an eigenvector) and inside (dynamics cannot leave the subspace). In LP, this is a dialetheia
 --- the eigenspace
 has value $\mathbf{b}$ for membership.
@@ -2640,15 +2640,15 @@ The G\"odel sentence $G$ (the fixed point of $\neg\text{Prov}(\ulcorner \cdot \u
 instance of the Inclosure Schema:
 
 \begin{itemize}
- \item \textbf{$\text{{\igprimfont Ω}}$} = the set of all provable sentences of PA (the `\texttt{totality}' of what PA
- \item \textbf{$\delta$($y$)} = the diagonal sentence constructed from $y \subseteq \text{{\igprimfont Ω}}$
+ \item \textbf{$\text{{\igprimfont ◻}}$} = the set of all provable sentences of PA (the `\texttt{totality}' of what PA
+ \item \textbf{$\delta$($y$)} = the diagonal sentence constructed from $y \subseteq \text{{\igprimfont ◻}}$
 (the diagonalizer)
- \item \textbf{$\phi$($y$)}: $y$ is a proper sub-theory of $\text{{\igprimfont Ω}}$
+ \item \textbf{$\phi$($y$)}: $y$ is a proper sub-theory of $\text{{\igprimfont ◻}}$
 \end{itemize}
 
-Applying the schema: $\delta(\text{{\igprimfont Ω}}) \notin \text{{\igprimfont Ω}}$
+Applying the schema: $\delta(\text{{\igprimfont ◻}}) \notin \text{{\igprimfont ◻}}$
 (transcendence:
-${{\igprimfont ∈}}$ is unprovable in PA) and $\delta(\text{{\igprimfont Ω}}) \in \text{{\igprimfont Ω}}$ (closure: ${{\igprimfont ∈}}$ is true in the standard model, hence `\texttt{in}' the totality of
+${{\igprimfont ∈}}$ is unprovable in PA) and $\delta(\text{{\igprimfont ◻}}) \in \text{{\igprimfont ◻}}$ (closure: ${{\igprimfont ∈}}$ is true in the standard model, hence `\texttt{in}' the totality of
 Under classical logic, transcendence wins and incompleteness is a defect of the formal system. Under LP, both are
 simultaneously true: ${{\igprimfont ∈}}$ has value $\mathbf{b}$ (both provable and unprovable), and PA is at
 \text{{\igfont 𐑣}} in the arithmetic register. The logic does not collapse. The incompleteness is

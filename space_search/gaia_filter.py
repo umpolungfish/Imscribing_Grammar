@@ -154,7 +154,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
             and dm_density_relative > 0.6   # above 60th percentile DM density
             and ipd_multi < 0.1):           # not explained by double star
         score += 4
-        flags.append("Ω_candidate")
+        flags.append("◻_candidate")
 
     # D-TEMPORAL FILTER: harmonic variation proxy (ipd_gof_harmonic_amplitude)
     harmonic = row.get("ipd_gof_harmonic_amplitude", 0) or 0

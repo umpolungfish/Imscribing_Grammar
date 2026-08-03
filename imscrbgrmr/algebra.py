@@ -82,12 +82,15 @@ _G_ORD: Dict[Granularity, int] = {
 }
 _G_BY_ORD = {v: k for k, v in _G_ORD.items()}
 
+# Four values, not five. The retired fifth sat between ah and zoo and was
+# rekeyed onto ah, so the dict held ah twice and the later binding won at 3.
+# That left the oak-to-ah gap reading as two steps instead of one, and every
+# weighted distance crossing it was inflated. Four values, unit gaps.
 _PROT_ORD: Dict[Protection, int] = {
-    Protection.awe:  0,
+    Protection.awe: 0,
     Protection.oak: 1,
     Protection.ah:  2,
-    Protection.ah:  3,
-    Protection.zoo: 4,
+    Protection.zoo: 3,
 }
 _PROT_BY_ORD = {v: k for k, v in _PROT_ORD.items()}
 
@@ -240,7 +243,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     "Gamma": {"𐑵": "𐑵", "𐑠": "𐑠", "𐑜": "𐑜"},
     "Phi": {"⊙_upstep": "⊙_upstep"},
     "S": {"1:1": "𐑙", "1:n": "𐑕", "n:m": "𐑳", "cat": "𐑳"},
-    "Omega": {"Ω_C": "Ω_dzlig", "Ω_turna": "Ω_dzlig"},
+    "Omega": {"𐑭": "𐑭", "𐑟": "𐑭"},
 }
 
 

@@ -174,7 +174,7 @@ def derive_tuple(sym):
     else:
         H = 3
 
-    # ─── Ω (Winding) idx ─────────────────────────────────────────
+    # ─── ◻ (Winding) idx ─────────────────────────────────────────
     # f-block strong winding: 29; d-block 4-5 integer: 36
     # everything else (s, p, d period 6 relativistic): 39
     if block == 'f':
@@ -426,7 +426,7 @@ def main():
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> ⊥ Ω ⊢ Σ < ⊤ ⋈ ∋ ∈ ⊣ ⊙"}')
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> ⊥ ◻ ⊢ Σ < ⊤ ⋈ ∋ ∈ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -438,7 +438,7 @@ def main():
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | >  ⊥  Ω  ⊢  Σ  <  ⊤  ⋈  ∋  ∈  ⊣  ⊙')
+        info_line(f'\n{"Sym":4s} {"Z":3s} | >  ⊥  ◻  ⊢  Σ  <  ⊤  ⋈  ∋  ∈  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

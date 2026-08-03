@@ -230,7 +230,7 @@ def cmd_ouroborics(args, catalog):
     elif tier == "O₂†":
         print("   → Broadcast medium — O₂ with universal composition.")
     elif tier == "O₂":
-        print("   → Self-referential topology (𐑸), but Ω limits closure.")
+        print("   → Self-referential topology (𐑸), but ◻ limits closure.")
     elif tier == "O₁":
         print("   → One level of critical self-reference possible.")
     else:

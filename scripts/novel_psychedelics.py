@@ -622,7 +622,7 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['<']}  Ω={ctuple['◻']}")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['<']}  ◻={ctuple['◻']}")
         lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['>']}{ctuple['<']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
@@ -699,7 +699,7 @@ Commands:
 Control Methods:
   control ep <compound> [ratio]      EP Gate Toggle — couple with Praxeum
   control chirality <compound> <H>   Chirality Ladder — step to target ⊥
-  control winding <compound> <W>     Winding Modulate — adjust Ω protection
+  control winding <compound> <W>     Winding Modulate — adjust ◻ protection
   control scope <compound> <G>       Scope Focus — adjust ∈ range
   control adjoint <compound> <P> <V> Adjoint Steer — directed primitive change
   control launch <compound>          Supercritical Launch — couple with Chimerium

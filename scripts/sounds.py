@@ -55,7 +55,7 @@ def normalize(signal, peak=0.8):
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
 #   ⊥  Chirality  — reverberation       (dry → long decay = deep memory)
 #   ⊞  Stoichiometry   — multiplicity        (one voice → many at fixed ratio)
-#   Ω  Winding         — topological closure (open fade → periodic wrap)
+#   ◻  Winding         — topological closure (open fade → periodic wrap)
 # =============================================================================
 
 def synthesize_symbol(base, sub, fs=44100, dur=0.7):
@@ -425,7 +425,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * env
 
     # =========================================================================
-    # Ω — Topological Invariant / Winding
+    # ◻ — Topological Invariant / Winding
     # Topological closure class:
     # open fade (trivial) → binary toggle (Z₂) → phase-sawtooth winding (Z) →
     # noise burst (undefined)
@@ -469,7 +469,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
@@ -483,7 +483,7 @@ symbol_list = [
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
     ('⊥', 'Ñ'), ('⊥', '£'), ('⊥', 'A'), ('⊥', '!'),             # ⊥ Chirality
     ('⊞', 'S'), ('⊞', 'ő'), ('⊞', 'ï'),                          # ⊞ Stoichiometry
-    ('◻', 'Å'), ('◻', '2'), ('◻', 'z'), ('◻', '5'),              # Ω Topological Invariant
+    ('◻', 'Å'), ('◻', '2'), ('◻', 'z'), ('◻', '5'),              # ◻ Topological Invariant
 ]
 
 # =============================================================================
@@ -520,7 +520,7 @@ PRIMITIVE_MAP = {
     '𐑖': ('⊥', 'A'),   '𐑫': ('⊥', '!'),
     # ⊞ Stoichiometry
     '𐑙': ('⊞', 'S'),   '𐑕': ('⊞', 'ő'),   '𐑳': ('⊞', 'ï'),
-    # Ω Topological Invariant
+    # ◻ Topological Invariant
     '𐑷': ('◻', 'Å'),   '𐑴': ('◻', '2'),
     '𐑭': ('◻', 'z'),   '𐑟': ('◻', '5'),
 }

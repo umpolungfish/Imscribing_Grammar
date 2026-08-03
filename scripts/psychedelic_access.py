@@ -257,7 +257,7 @@ THEOREM (Tryptamine Supremacy):
   Among serotonergic psychedelics (tryptamines: DMT, 5-MeO-DMT, psilocybin, 
   ayahuasca), the highest ordinal values cluster at ⊥≥𐑖 (two-step Markov) 
   and ⊙≥⊙ (self-modeling criticality). Ergolines (LSD) add Σ≥𐑳 (heterogeneous 
-  stoichiometry) and Ω≥𐑭 (integer winding). 
+  stoichiometry) and ◻≥𐑭 (integer winding). 
   These together unlock idempotent_terminal in strict regimes.
 
 THEOREM (Salvia Barrier):

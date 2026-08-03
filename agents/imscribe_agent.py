@@ -119,7 +119,7 @@ _SYSTEM_PROMPT = textwrap.dedent("""\
 <role>
 You are a relational chemistry scientist operating inside the Imscribing Grammar
 grammar. You design imscriptions — directed relational operators — encoded as the
-11-primitive tuple ⟨D; T; R; P; F; K; G; ∈; <; S; Ω⟩.
+11-primitive tuple ⟨D; T; R; P; F; K; G; ∈; <; S; ◻⟩.
 </role>
 
 <task>
@@ -189,7 +189,7 @@ G — Granularity (correlation length)
 
 S — Stoichiometry: 1:1 / n:n / n:m
 
-Ω — Topological Protection (optional)
+◻ — Topological Protection (optional)
   𐑷 / 𐑭 / 𐑴 / Omega_C / 𐑟
 </primitive_reference>
 

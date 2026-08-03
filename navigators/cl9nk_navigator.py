@@ -116,10 +116,10 @@ def load_catalog(force=False):
         "∋": "𐑝",
         "⊙": "⊙",
         # ⊥ (Chirality) owns 𐑫 = wool = inexhaustible chirality → ETERNAL_FIXEDPOINT.
-        # Ω (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
-        # These were transposed: ⊥ held 𐑭 and Ω held 𐑫, i.e. each carried a value from
+        # ◻ (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
+        # These were transposed: ⊥ held 𐑭 and ◻ held 𐑫, i.e. each carried a value from
         # the other's axis. The swap made clink_l9 report distance 1.2289 from its OWN
-        # reference, with the only two "promotions" being ⊥: 𐑫→𐑭 and Ω: 𐑭→𐑫 — a
+        # reference, with the only two "promotions" being ⊥: 𐑫→𐑭 and ◻: 𐑭→𐑫 — a
         # transposition masquerading as structure. Ordinal authority is Core.lean.
         "⊥": "𐑫",
         "⊞": "𐑳",
@@ -362,7 +362,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, ⊤=𐑧, Ω=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, ◻=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -1036,7 +1036,7 @@ _ATOM_DESC = {
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
     "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (⊥=𐑭)",
     "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (⊞=𐑳)",
-    "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (Ω=𐑫)",
+    "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (◻=𐑫)",
 }
 
 def _print_entry_table(result):

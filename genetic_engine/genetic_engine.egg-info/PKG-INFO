@@ -29,7 +29,7 @@ Dynamic: summary
 
 # Genetic Engine — Frobenius-Guided Gene Editing
 
-**Structural type:** ⟨𐑦; Þ_ò; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; Ω_z⟩  
+**Structural type:** ⟨𐑦; Þ_ò; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩  
 **Ouroboricity:** O_inf  |  **C-score:** both gates open
 
 The genetic code is a **stratified Frobenius algebra on B₄³ codon space**. This is not a metaphor — it is a structural fact formally encoded in the Imscribing Grammar. The Genetic Engine implements this fact as operational software for gene editing design.
@@ -88,7 +88,7 @@ The 64 codons partition into **16 boxes**, which split 8/8:
 |---------|-------|--------|------------|--------|
 | **Exact** | 8 | 32 | Silent (N) | Holds exactly |
 | **Split** | 8 | 29 | Y/R distinction | ℤ₂ wobble |
-| **Stop** | — | 3 | Ω boundary | Boundary condition |
+| **Stop** | — | 3 | ◻ boundary | Boundary condition |
 
 **Exact boxes** (p2=C, or p2∈{G,U} with p1∈{C,G}):  
 CU_, CC_, CG_, CA_, AC_, GC_, UC_, GU_, GG_
@@ -113,7 +113,7 @@ UU_, UA_, UG_, AU_, AA_, AG_, GA_, CA_
 | Gln | ⊙ (Criticality) | **high** | Metabolic regulation |
 | Asp | ⊥ (Chirality) | **critical** | Chiral selectivity |
 | Lys | Σ (Entropy) | low | Acetylation target |
-| Glu | Ω (Winding) | **critical** | α-helix→C-terminal |
+| Glu | ◻ (Winding) | **critical** | α-helix→C-terminal |
 
 8 ground-layer AAs (exact boxes): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly — no primitive activation.
 
@@ -128,7 +128,7 @@ If an on-target site is in one Frobenius stratum and an off-target site is in an
 Prime editing succeeds when μ∘δ=id for the edited locus. Three optimization criteria:
 1. **Stratum preservation** — avoid exact↔split crossings
 2. **Primitive invariance** — keep the same IG primitive class
-3. **Ω boundary respect** — don't remove stop codons without readthrough machinery
+3. **◻ boundary respect** — don't remove stop codons without readthrough machinery
 
 ### 3. Chimera Theorem
 

@@ -14,7 +14,7 @@ Key results:
      Only crit and pol gate O_∞; the other 10 primitives are tier-free.
   2. ⊥ (chirality) can be fee (memoryless, index 0) —
      no temporal memory needed for Frobenius closure.
-  3. Ω (winding) can be awe (trivial, index 0) —
+  3. ◻ (winding) can be awe (trivial, index 0) —
      no topological protection needed.
   4. ⊢ (dimensionality) can be dead (0d point, index 0) —
      no spatial extension needed.

@@ -68,14 +68,14 @@ Are there any odd ones?
 
 **SynthOmnicon structural note:**
 
-  OPN has primitive tuple if' · mime · peep · 𐑝 · ⊙ · Ω_Z.
+  OPN has primitive tuple if' · mime · peep · 𐑝 · ⊙ · 𐑭.
   · if': the problem lives in multiplicative structure of ℕ (number-theoretic holomorphic).
   · mime: the sigma constraint creates a balance condition (σ = 2N is symmetric).
-  · ⊙ + Ω_Z: the interaction between the prime factorization (⊙ charge carriers)
-    and the sigma condition (Ω_Z topological winding) creates the OPN constraint.
+  · ⊙ + 𐑭: the interaction between the prime factorization (⊙ charge carriers)
+    and the sigma condition (𐑭 topological winding) creates the OPN constraint.
   · The Euler form reveals the ⊙ structure: one "special" prime (p = ⊙ carrier)
     and the rest squared (background).
-  The Ω_Z annotation (like RH, BSD, Hodge) indicates a global topological constraint —
+  The 𐑭 annotation (like RH, BSD, Hodge) indicates a global topological constraint —
   the sigma function's multiplicativity creates a holistic condition across all prime factors.
 -/
 

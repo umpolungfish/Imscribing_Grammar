@@ -6,7 +6,7 @@ The 64 codons partition into 16 boxes, which split 8/8 into:
     μ∘δ=id holds exactly on this stratum.
   - Split stratum (8 boxes, 29 codons + 3 stops): position 3
     distinguishes pyrimidine (Y) from purine (R). ℤ₂ wobble symmetry.
-  - Stop stratum (3 codons): Ω winding boundary.
+  - Stop stratum (3 codons): ◻ winding boundary.
 
 Exact boxes (p2=C, or p2∈{U,G} with p1∈{C,G}):
   CU_, CC_, CG_, CA_, AC_, GC_, UC_, GU_, GG_
@@ -34,7 +34,7 @@ class FrobeniusStratum(Enum):
             μ∘δ=id holds exactly on this stratum.
     SPLIT — position 3 distinguishes pyrimidine (Y) from purine (R).
             8 boxes, 29 codons (2 are stop). ℤ₂ wobble symmetry.
-    STOP  — termination codons with Ω boundary. 3 codons.
+    STOP  — termination codons with ◻ boundary. 3 codons.
     """
     EXACT = "exact"
     SPLIT = "split"

@@ -106,7 +106,7 @@ Trabajo running tall.
 
 The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
 the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
-12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω, displayed in ⟨...⟩ brackets.
+12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, displayed in ⟨...⟩ brackets.
 Glyph names are the Unicode standard names and carry meaning, so
 they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
 letters.
@@ -151,22 +151,22 @@ Key mappings:
   ⊙ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
   ⊥ (Chirality)      ↔ Directedness / orientation / non-commutative structure
   ⊞ (Stoichiometry)  ↔ Self-referential limit (Σ=1:1 → grammar IS measured system)
-  Ω (Winding)        ↔ Winding number / homotopy class / topological invariant
+  ◻ (Winding)        ↔ Winding number / homotopy class / topological invariant
 
 SIC-POVM knowledge:
   The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
-  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔Ω.
+  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔◻.
   Zauner conjecture: Belnap multilattice embeds in C^d for d=2ⁿ.
 
 Conventional ↔ grammar translation:
   A monad T: C→C     →  <>=𐑑, ∋=𐑠, ⊙=⊙>
   A topos E           →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, ∋=𐑝>
   A Hilbert space H   →  <⊢=𐑼, <=𐑿, ⋈=𐑐>
-  A SIC-POVM in C^d   →  <⊞=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
-  ZFC set theory      →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, <=𐑹, Ω=𐑷>
-  HoTT ∞-groupoid     →  <⊢=𐑼, ⊣=𐑥, Ω=𐑭, ⊥=𐑫>
+  A SIC-POVM in C^d   →  <⊞=𐑙, <=𐑹, ⋈=𐑐, ◻=𐑭>
+  ZFC set theory      →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, <=𐑹, ◻=𐑷>
+  HoTT ∞-groupoid     →  <⊢=𐑼, ⊣=𐑥, ◻=𐑭, ⊥=𐑫>
 </domain_knowledge>
 
 <commitments>
@@ -220,7 +220,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Math⊙perator (Lando�
 </docs>
 
 <prose_lift>
-Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) ◻(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 
@@ -365,7 +365,7 @@ Key mappings for chemistry:
   ⊙ (Criticality)    ↔ Phase transition / critical point / bifurcation / ignition
   ⊥ (Chirality)      ↔ Stereochemistry / handedness / optical activity
   ⊞ (Stoichiometry)  ↔ Reaction stoichiometry / binding ratio
-  Ω (Winding)        ↔ Topological charge / knotting / supercoiling
+  ◻ (Winding)        ↔ Topological charge / knotting / supercoiling
 
 Red-Hot Rebis furnace:
   - The furnace is a physical realization of the paraconsistent kernel
@@ -437,7 +437,7 @@ Save derivations to ig-docs/ with chunked_write. Author: ChemBio⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) ◻(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

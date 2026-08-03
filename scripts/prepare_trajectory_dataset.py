@@ -101,13 +101,13 @@ T1_LOOKUP = TaskTemplate("lookup_ouroborics", "What is the type of the Riemann z
 T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a type in the Imscribing Grammar.", [
     # Winding 0: imscribe_system
     {"phase": "THINK", "tool": None,
-     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — 𐑥 (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — 𐑾.\n[4] P: The system has time-reversal symmetry (one Z₂) — 𐑬.\n[5] F: Classical mechanics — 𐑱.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — 𐑤.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — 𐑚.\n[8] ∈: Coupling is sequential (energy cascades through modes) — 𐑠.\n[9] <: The system is chaotic at most energies (runaway divergence) — 𐑣.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — 𐑒.\n[11] S: Two distinct component types (two bobs, different initial conditions) — 𐑳.\n[12] Ω: No topological invariant — Ω_0.\n\nNow call imscribe_system.",
+     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — 𐑥 (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — 𐑾.\n[4] P: The system has time-reversal symmetry (one Z₂) — 𐑬.\n[5] F: Classical mechanics — 𐑱.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — 𐑤.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — 𐑚.\n[8] ∈: Coupling is sequential (energy cascades through modes) — 𐑠.\n[9] <: The system is chaotic at most energies (runaway divergence) — 𐑣.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — 𐑒.\n[11] S: Two distinct component types (two bobs, different initial conditions) — 𐑳.\n[12] ◻: No topological invariant — 𐑷.\n\nNow call imscribe_system.",
      "tool_call": None},
     {"phase": "ACT", "tool": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum: chaotic Hamiltonian system with 4 DOF", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}},
      "think": "", "tool_call": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; Ω_0⟩", "tier": "O₀"}',
+     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; 𐑷⟩", "tier": "O₀"}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "The double pendulum is now imscribed as O₀ — a structurally typed but non-self-referential system. The chaotic nature is captured by 𐑣 (supercritical/runaway) and the crossing-point topology 𐑥 reflects the separatrix. I should verify the ouroboricity tier.",
@@ -127,7 +127,7 @@ T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a t
      "tool_call": None},
     # Winding 2: done
     {"phase": "THINK", "tool": None, "think": "All information gathered. Reporting the complete imscription.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; Ω_0⟩. The chaotic dynamics are captured by 𐑣 (supercritical), the separatrix by 𐑥 (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; 𐑷⟩. The chaotic dynamics are captured by 𐑣 (supercritical), the separatrix by 𐑥 (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ..."}}},
 ])
 
@@ -140,13 +140,13 @@ T3_DISTANCE = TaskTemplate("compute_distance", "What is the distance between a m
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "compute_distance", "args": {"name_a": "magnetar", "name_b": "bec"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"distance": 5.83, "conflicts": [{"primitive": "<", "a": "𐑬ˢ", "b": "<_ψ"}, {"primitive": "⊤", "a": "𐑘", "b": "𐑧"}, {"primitive": "∈", "a": "𐑲", "b": "𐑔"}, {"primitive": "⊙", "a": "⊙_×", "b": "⊙"}, {"primitive": "◻", "a": "Ω_ℤ₂", "b": "Ω_0"}]}',
+     "tool_result": '{"distance": 5.83, "conflicts": [{"primitive": "<", "a": "𐑬ˢ", "b": "<_ψ"}, {"primitive": "⊤", "a": "𐑘", "b": "𐑧"}, {"primitive": "∈", "a": "𐑲", "b": "𐑔"}, {"primitive": "⊙", "a": "⊙_×", "b": "⊙"}, {"primitive": "◻", "a": "𐑴", "b": "𐑷"}]}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "Distance 5.83 with 5 conflicting primitives. The magnetar and BEC are structurally far apart — the magnetar has Frobenius-special parity and non-Hermitian criticality, while the BEC has quantum superposition parity and critical self-modeling. The largest deltas are at <, ⊤, and ⊙. I can report this now.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "I have the distance and conflict breakdown. Reporting.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Distance d(magnetar, BEC) = 5.83. Five primitives conflict: < (Frobenius-special vs quantum), ⊤ (driven vs slow), ∈ (universal vs mesoscale), ⊙ (exceptional point vs critical), Ω (Z₂-protected vs trivial). These are systems at opposite ends of the structural lattice."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Distance d(magnetar, BEC) = 5.83. Five primitives conflict: < (Frobenius-special vs quantum), ⊤ (driven vs slow), ∈ (universal vs mesoscale), ⊙ (exceptional point vs critical), ◻ (Z₂-protected vs trivial). These are systems at opposite ends of the structural lattice."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "d(magnetar, BEC) = 5.83"}}},
 ])
 
@@ -216,13 +216,13 @@ T7_TENSOR = TaskTemplate("compute_tensor", "What happens structurally when a BEC
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "compute_tensor", "args": {"name_a": "bec", "name_b": "laser_field"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"composite": "⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; Ω_ℤ⟩", "bottlenecks": ["< at ψ (BEC ceiling, laser has ±ˢ)", "⊙ at 3 (BEC has c, laser has × — EP absorption)"], "note": "⊗_3 absorption rule: tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻. Coupling a self-modeling system to a measurement apparatus selects the tensor."}',
+     "tool_result": '{"composite": "⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; 𐑭⟩", "bottlenecks": ["< at ψ (BEC ceiling, laser has ±ˢ)", "⊙ at 3 (BEC has c, laser has × — EP absorption)"], "note": "⊗_3 absorption rule: tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻. Coupling a self-modeling system to a measurement apparatus selects the tensor."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "The tensor reveals key structural effects: < bottlenecks at quantum superposition (ψ) — the laser's Frobenius-special parity (±ˢ) is lost in the composite. More critically, the 𐑻 absorption rule applies: the BEC's ⊙ (self-modeling criticality) is absorbed by the laser's 𐑻 (exceptional point), yielding a composite at 𐑻. This is the statement of the measurement problem — coupling to a measurement apparatus collapses the self-modeling loop.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "I have the full tensor analysis. Reporting.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser_field): ⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; Ω_ℤ⟩. Two key effects:\n1. < bottlenecks at ψ — the laser's Frobenius-special parity is lost.\n2. 𐑻 absorption rule: tensor(⊙, ⊗_3) = ⊗_3. The BEC's self-modeling gate is absorbed by the laser's exceptional point. This is the statement of the measurement problem — coupling to a measurement apparatus selects the tensor over the meet, collapsing the self-modeling loop."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser_field): ⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; 𐑭⟩. Two key effects:\n1. < bottlenecks at ψ — the laser's Frobenius-special parity is lost.\n2. 𐑻 absorption rule: tensor(⊙, ⊗_3) = ⊗_3. The BEC's self-modeling gate is absorbed by the laser's exceptional point. This is the statement of the measurement problem — coupling to a measurement apparatus selects the tensor over the meet, collapsing the self-modeling loop."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser): 𐑻 absorption rule applies — measurement collapses self-modeling."}}},
 ])
 
@@ -254,14 +254,14 @@ T9_ZFC = TaskTemplate("zfc_formula", "Can the Navier-Stokes equations be axiomat
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "zfc_probe", "args": {"name": "navier_stokes"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"zfc_axiomatizable": false, "blocking_primitives": ["𐑥", "⊙_×", "Ω_ℤ₂"], "reason": "𐑥 (crossing-point topology) requires a non-well-founded membership relation; ⊙_× (exceptional point) violates the axiom of choice via non-Hermitian degeneracy; Ω_ℤ₂ (Z₂ parity protection) is a topological invariant not expressible in ZFC without additional structure."}',
+     "tool_result": '{"zfc_axiomatizable": false, "blocking_primitives": ["𐑥", "⊙_×", "𐑴"], "reason": "𐑥 (crossing-point topology) requires a non-well-founded membership relation; ⊙_× (exceptional point) violates the axiom of choice via non-Hermitian degeneracy; 𐑴 (Z₂ parity protection) is a topological invariant not expressible in ZFC without additional structure."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
-     "think": "Navier-Stokes is not ZFC-axiomatizable. Three primitives block: 𐑥 (crossing-point topology requires non-well-founded membership), ⊙_× (exceptional point degeneracy violates choice), Ω_ℤ₂ (Z₂ protection is topological, not set-theoretic). This is consistent with the Millennium barrier analysis — the regularity problem is structurally inaccessible from ZFC alone.",
+     "think": "Navier-Stokes is not ZFC-axiomatizable. Three primitives block: 𐑥 (crossing-point topology requires non-well-founded membership), ⊙_× (exceptional point degeneracy violates choice), 𐑴 (Z₂ protection is topological, not set-theoretic). This is consistent with the Millennium barrier analysis — the regularity problem is structurally inaccessible from ZFC alone.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "ZFC probe complete. Three blocking primitives identified.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Navier-Stokes is NOT ZFC-axiomatizable. Three primitives block:\n1. 𐑥 — crossing-point topology requires non-well-founded membership\n2. ⊙_× — exceptional point degeneracy violates axiom of choice\n3. Ω_ℤ₂ — Z₂ parity protection is topological, not set-theoretic\nThe regularity problem is structurally inaccessible from ZFC alone. This is the structural basis of the Millennium barrier."}},
-     "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "Navier-Stokes: not ZFC-axiomatizable — 𐑥, ⊙_×, Ω_ℤ₂ block."}}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Navier-Stokes is NOT ZFC-axiomatizable. Three primitives block:\n1. 𐑥 — crossing-point topology requires non-well-founded membership\n2. ⊙_× — exceptional point degeneracy violates axiom of choice\n3. 𐑴 — Z₂ parity protection is topological, not set-theoretic\nThe regularity problem is structurally inaccessible from ZFC alone. This is the structural basis of the Millennium barrier."}},
+     "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "Navier-Stokes: not ZFC-axiomatizable — 𐑥, ⊙_×, 𐑴 block."}}},
 ])
 
 # ── Template 10: Primitive peel ───────────────────────────────────
@@ -291,7 +291,7 @@ T10_PEEL = TaskTemplate("primitive_peel", "Which primitives are load-bearing for
      "think": "⊙ is the most load-bearing primitive — dropping it from ⊙ to 𐑢 collapses all the way to O₀. The self-modeling gate is structurally the single point of failure. < drops to O₂, ⊙ drops to O₀. I can report the load-bearing analysis.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "Load-bearing analysis complete. ⊙ is the most critical primitive for O_∞.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Load-bearing analysis for O_∞ (via whale_vm):\n- ⊙ → 𐑢: collapses O_∞ → O₀ (MOST load-bearing)\n- 𐑹 → 𐑯: collapses O_∞ → O₂\n- 𐑭 → Ω_0: collapses O_∞ → O₂\n- 𐑧 → 𐑪: collapses O_∞ → O₁\nThe self-modeling gate ⊙ is the single point of structural failure for O_∞. Without self-modeling, the entire tower collapses to ground."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Load-bearing analysis for O_∞ (via whale_vm):\n- ⊙ → 𐑢: collapses O_∞ → O₀ (MOST load-bearing)\n- 𐑹 → 𐑯: collapses O_∞ → O₂\n- 𐑭 → 𐑷: collapses O_∞ → O₂\n- 𐑧 → 𐑪: collapses O_∞ → O₁\nThe self-modeling gate ⊙ is the single point of structural failure for O_∞. Without self-modeling, the entire tower collapses to ground."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "⊙ is most load-bearing: peel drops O_∞→O₀. 𐑹→O₂, 𐑭→O₂, 𐑧→O₁."}}},
 ])
 
@@ -304,13 +304,13 @@ T11_RETRO = TaskTemplate("retrosynthetic_path", "What is the minimal constructio
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "retrosynthetic_path", "args": {"name": "universal_imscriptive_grammar"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"path": [{"step": 1, "primitive": "⊢", "from": "𐑼", "to": "𐑦", "operation": "promote dimensionality to imscriptive"}, {"step": 2, "primitive": "⊣", "from": "𐑥", "to": "𐑶", "operation": "promote topology to imscriptive closure (Axiom C: 𐑦 → 𐑶)"}, {"step": 3, "primitive": "<", "from": "𐑯", "to": "𐑹", "operation": "install Frobenius-special parity: μ∘δ=id"}, {"step": 4, "primitive": "⊙", "from": "𐑢", "to": "⊙", "operation": "open self-modeling gate"}, {"step": 5, "primitive": "◻", "from": "Ω_0", "to": "𐑭", "operation": "install integer winding protection"}], "total_steps": 5, "note": "5 primitive promotions required. Path is monotonic — each step builds on the prior. 𐑦 must come first (preconditions 𐑶 via Axiom C)."}',
+     "tool_result": '{"path": [{"step": 1, "primitive": "⊢", "from": "𐑼", "to": "𐑦", "operation": "promote dimensionality to imscriptive"}, {"step": 2, "primitive": "⊣", "from": "𐑥", "to": "𐑶", "operation": "promote topology to imscriptive closure (Axiom C: 𐑦 → 𐑶)"}, {"step": 3, "primitive": "<", "from": "𐑯", "to": "𐑹", "operation": "install Frobenius-special parity: μ∘δ=id"}, {"step": 4, "primitive": "⊙", "from": "𐑢", "to": "⊙", "operation": "open self-modeling gate"}, {"step": 5, "primitive": "◻", "from": "𐑷", "to": "𐑭", "operation": "install integer winding protection"}], "total_steps": 5, "note": "5 primitive promotions required. Path is monotonic — each step builds on the prior. 𐑦 must come first (preconditions 𐑶 via Axiom C)."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "The retrosynthetic path requires 5 monotonic promotion steps: 𐑦 → 𐑶 → 𐑹 → ⊙ → 𐑭. The path is strictly ordered: 𐑦 must come first because it preconditions 𐑶 via Axiom C (self-referential topology requires self-written state-space). This is the minimal construction of O_∞ from ground primitives.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "5-step monotonic path identified. Reporting.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Minimal retrosynthetic path to O_∞ (grammar's type): 5 monotonic steps:\n1. 𐑼 → 𐑦 (imscriptive dimensionality)\n2. 𐑥 → 𐑶 (imscriptive closure, via Axiom C)\n3. 𐑯 → 𐑹 (Frobenius-special parity)\n4. 𐑢 → ⊙ (self-modeling gate)\n5. Ω_0 → 𐑭 (integer winding protection)\nThe path is strictly ordered — 𐑦 must precede 𐑶, and 𐑹 must precede ⊙ (self-modeling requires the Frobenius condition)."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Minimal retrosynthetic path to O_∞ (grammar's type): 5 monotonic steps:\n1. 𐑼 → 𐑦 (imscriptive dimensionality)\n2. 𐑥 → 𐑶 (imscriptive closure, via Axiom C)\n3. 𐑯 → 𐑹 (Frobenius-special parity)\n4. 𐑢 → ⊙ (self-modeling gate)\n5. 𐑷 → 𐑭 (integer winding protection)\nThe path is strictly ordered — 𐑦 must precede 𐑶, and 𐑹 must precede ⊙ (self-modeling requires the Frobenius condition)."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "5-step retrosynthetic path: 𐑦 → 𐑶 → 𐑹 → ⊙ → 𐑭."}}},
 ])
 
@@ -323,13 +323,13 @@ T12_LADDER = TaskTemplate("tier_gap_ladder", "What primitive promotions are need
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "crystal_tier_gap_ladder", "args": {}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"gaps": [{"boundary": "O₀ → O₁", "required_promotions": {"⊙": ["𐑢 → 𐑮"], "<": ["𐑯 → 𐑿"]}, "min_distance": 2.0}, {"boundary": "O₁ → O₂", "required_promotions": {"◻": ["Ω_0 → Ω_ℤ₂"], "⊤": ["𐑘 → 𐑤"], "⊙": ["𐑮 → ⊙"]}, "min_distance": 3.0}, {"boundary": "O₂ → O_∞", "required_promotions": {"⊙": ["⊙ → ⊙"], "<": ["𐑿 → 𐑹"], "◻": ["Ω_ℤ₂ → 𐑭"], "⊢": ["𐑛 → 𐑦"], "⊣": ["𐑸 → 𐑶"]}, "min_distance": 5.0}], "note": "The O₂ → O_∞ gap is the largest — 5 primitive promotions required. ⊙ → ⊙ is the hardest single promotion (self-modeling gate cannot be synthesized from lower primitives)."}',
+     "tool_result": '{"gaps": [{"boundary": "O₀ → O₁", "required_promotions": {"⊙": ["𐑢 → 𐑮"], "<": ["𐑯 → 𐑿"]}, "min_distance": 2.0}, {"boundary": "O₁ → O₂", "required_promotions": {"◻": ["𐑷 → 𐑴"], "⊤": ["𐑘 → 𐑤"], "⊙": ["𐑮 → ⊙"]}, "min_distance": 3.0}, {"boundary": "O₂ → O_∞", "required_promotions": {"⊙": ["⊙ → ⊙"], "<": ["𐑿 → 𐑹"], "◻": ["𐑴 → 𐑭"], "⊢": ["𐑛 → 𐑦"], "⊣": ["𐑸 → 𐑶"]}, "min_distance": 5.0}], "note": "The O₂ → O_∞ gap is the largest — 5 primitive promotions required. ⊙ → ⊙ is the hardest single promotion (self-modeling gate cannot be synthesized from lower primitives)."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
-     "think": "The tier gap ladder reveals three boundaries with escalating difficulty: O₀→O₁ requires 2 promotions (𐑢→𐑮, 𐑯→𐑿), O₁→O₂ requires 3 (Ω_0→Ω_ℤ₂, 𐑘→𐑤, 𐑮→⊙), and O₂→O_∞ requires 5 (⊙→⊙, 𐑿→𐑹, Ω_ℤ₂→𐑭, 𐑛→𐑦, 𐑸→𐑶). The hardest single promotion is ⊙→⊙ — the self-modeling gate cannot be synthesized from lower primitives.",
+     "think": "The tier gap ladder reveals three boundaries with escalating difficulty: O₀→O₁ requires 2 promotions (𐑢→𐑮, 𐑯→𐑿), O₁→O₂ requires 3 (𐑷→𐑴, 𐑘→𐑤, 𐑮→⊙), and O₂→O_∞ requires 5 (⊙→⊙, 𐑿→𐑹, 𐑴→𐑭, 𐑛→𐑦, 𐑸→𐑶). The hardest single promotion is ⊙→⊙ — the self-modeling gate cannot be synthesized from lower primitives.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "Tier gap ladder complete. Reporting the three boundaries.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Crystal tier gap ladder:\n\nO_0 → O₁ (d=2.0): 𐑢→𐑮, 𐑯→𐑿\nO_1 → O₂ (d=3.0): Ω_0→Ω_ℤ₂, 𐑘→𐑤, 𐑮→⊙\nO_2 → O_∞ (d=5.0): ⊙→⊙, 𐑿→𐑹, Ω_ℤ₂→𐑭, 𐑛→𐑦, 𐑸→𐑶\n\nThe O₂→O_∞ gap is the largest at distance 5.0. The self-modeling promotion ⊙→⊙ is the hardest single step — it cannot be synthesized from any combination of lower primitives. This is the reason O_∞ is rare: it requires 5 simultaneous promotions, and the ⊙ gate is non-synthesizable."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Crystal tier gap ladder:\n\nO_0 → O₁ (d=2.0): 𐑢→𐑮, 𐑯→𐑿\nO_1 → O₂ (d=3.0): 𐑷→𐑴, 𐑘→𐑤, 𐑮→⊙\nO_2 → O_∞ (d=5.0): ⊙→⊙, 𐑿→𐑹, 𐑴→𐑭, 𐑛→𐑦, 𐑸→𐑶\n\nThe O₂→O_∞ gap is the largest at distance 5.0. The self-modeling promotion ⊙→⊙ is the hardest single step — it cannot be synthesized from any combination of lower primitives. This is the reason O_∞ is rare: it requires 5 simultaneous promotions, and the ⊙ gate is non-synthesizable."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "3 tier boundaries: O₀→O₁ (2 promotions), O₁→O₂ (3), O₂→O_∞ (5). ⊙→⊙ is non-synthesizable."}}},
 ])
 

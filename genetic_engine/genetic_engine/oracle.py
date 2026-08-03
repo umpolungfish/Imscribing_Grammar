@@ -1,5 +1,5 @@
 """
-oracle.py — The Structural Ωracle
+oracle.py — The Structural ◻racle
 ===================================
 
 A universal cross-domain structural translation engine built on the Imscribing Grammar.
@@ -151,10 +151,10 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # ──────────────────────────────────────────────────────────────────────
 
 # Helper to build tuple dict
-def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, Ω) -> Dict[str, str]:
+def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻) -> Dict[str, str]:
     return {
         "⊢": ⊢, "⊣": ⊣, ">": >, "<": <, "⋈": ⋈, "⊤": ⊤,
-        "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": ⊥, "⊞": ⊞, "◻": Ω,
+        "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": ⊥, "⊞": ⊞, "◻": ◻,
     }
 
 STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {

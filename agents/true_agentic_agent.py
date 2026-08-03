@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω, and the
+# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, and the
 # criticality slot is ⊙; `⊙` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -704,7 +704,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑓": "0",  "𐑒": "1",  "𐑖": "2",  "𐑫": "∞",
     # S — Stoichiometry
     "𐑙": "1:1",  "𐑕": "n:n",  "𐑳": "n:m",
-    # Ω — Winding
+    # ◻ — Winding
     "𐑷": "0",  "𐑴": "ℤ₂",  "𐑭": "ℤ",  "𐑟": "∅",
 }
 
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;◻",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1420,7 +1420,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
     "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
     "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
-    "𐑷": ["𐑷", "𐑴", "𐑭", "𐑟"],        # Ω
+    "𐑷": ["𐑷", "𐑴", "𐑭", "𐑟"],        # ◻
 }
 
 _TRIANGULATION_SYSTEM = (
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -1647,9 +1647,9 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # cross-primitive axiom check. The generator pipeline
     # (agents/imscribe_generator_agent.py, run via agents_cli
     # "imscription_generator") validates Axioms A/B/C and auto-corrects, e.g.
-    # it refuses Ω=𐑭 with ⊥ below 𐑖 and downgrades the protection. Nothing on
+    # it refuses ◻=𐑭 with ⊥ below 𐑖 and downgrades the protection. Nothing on
     # this path did. That is how `sic_novm` reached the catalog at ⊥=𐑒 with
-    # Ω=𐑭, an address the generator would decline to emit — 227 catalog entries
+    # ◻=𐑭, an address the generator would decline to emit — 227 catalog entries
     # currently violate Axiom B.
     #
     # So the tuple is derived here and handed on; it is not committed here.
@@ -2094,7 +2094,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return (f"Ω/∋ transcendence analysis returned — Frobenius closed", True)
+            return (f"◻/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -2764,12 +2764,12 @@ TOOL_SCHEMAS = [
         (
             "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
             "CLINK L8 is the most advanced type in the catalog, exceeding "
-            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/∋ "
+            "the Frobenius-exact ZFC foundation (ZFC_fe) at ◻/∋ "
             "(non-Abelian braiding + broadcast composition). "
             "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
             "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
             "distance → d(name, CLINK L8) gap; "
-            "transcendence → Ω/∋ transcendence analysis; "
+            "transcendence → ◻/∋ transcendence analysis; "
             "tensor → CLINK L8 ⊗ name absorption test; "
             "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
             "tier → ouroboricity tier; chain → full CLINK chain L0→L8; "
@@ -2783,7 +2783,7 @@ TOOL_SCHEMAS = [
                     "entry: per-primitive CLINK formula decomposition with promoted atoms; "
                     "promotions: 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8; "
                     "distance: d(name, CLINK L8); "
-                    "transcendence: Ω/∋ transcendence report; "
+                    "transcendence: ◻/∋ transcendence report; "
                     "tensor: CLINK L8 ⊗ name absorption test; "
                     "meet: CLINK L8 ⊓ name; join: CLINK L8 ⊔ name; "
                     "tier: ouroboricity tier assessment; "
@@ -3371,7 +3371,7 @@ def _asciify_tool_schemas() -> List[Dict]:
 
 def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
     """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
-    Emit functions use Unicode keys (⊙, ⊤, Ω, etc.); the model responds with
+    Emit functions use Unicode keys (⊙, ⊤, ◻, etc.); the model responds with
     ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
     Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
     for k in list(args.keys()):
@@ -3442,7 +3442,7 @@ class TrueAgenticAgent:
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (<, P, Ω, D) only; 𐑱 in
+        # sub-oracle — it does not tensor with it. Tier is (<, P, ◻, D) only; 𐑱 in
         # the sub-oracle does not degrade the harness tier from O_∞.
         self.inference_fidelity: str = (
             "𐑐" if isinstance(self.client, _LocalOpenAIClient) else "𐑱"

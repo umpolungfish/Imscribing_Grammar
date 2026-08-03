@@ -4,7 +4,7 @@ Millennium Prize Problems — Imscriptive Catalog  (v0.5.0)
 Seven Clay Mathematics Institute Millennium Prize Problems encoded as canonical
 12-primitive imscriptions.  Includes the standard_proof_system as the reference baseline.
 
-Primitive-tuple notation: ⟨D; T; R; P; ∈; F; K; G; <; Ω; S; H⟩
+Primitive-tuple notation: ⟨D; T; R; P; ∈; F; K; G; <; ◻; S; H⟩
 
 ─────────────────────────────────────────────────────────────────────────────
 DESIGN PRINCIPLE
@@ -21,7 +21,7 @@ Key encoding choices:
               accessible via standard proof-system morphisms from Phi_softsign.
     Phi_softsign = the problem HAS been solved within standard formalism (Poincaré).
 
-  Ω (Topological Protection):
+  ◻ (Topological Protection):
     Omega_dzlig  = the key invariant is integer-valued (winding number / rank / charge).
     Omega_closeepsilon  = no topological protection; the barrier is combinatorial/analytic.
 
@@ -38,7 +38,7 @@ Key encoding choices:
 AXIOM COMPLIANCE CHECK
 ─────────────────────────────────────────────────────────────────────────────
   A: H_invscripta → K_teshlig       — not needed (none have H_invscripta)
-  B: Ω ≥ Omega_dzlig → H ≥ H_turntwo — all entries with Omega_dzlig carry H_turntwo  ✓
+  B: ◻ ≥ Omega_dzlig → H ≥ H_turntwo — all entries with Omega_dzlig carry H_turntwo  ✓
   C: D_holo ↔ T_holo       — RH and Hodge both use D_holo + T_holo  ✓
   D: Omega_turna → D_holo     — not needed (none use Omega_turna)
 
@@ -57,7 +57,7 @@ DISTANCES FROM standard_proof_system
 NOTABLE PAIRWISE DISTANCES
 ─────────────────────────────────────────────────────────────────────────────
   Yang–Mills ↔ BSD               : d = 5   ← structurally closest pair among unsolved;
-                                             share D, F, K, G, <, Ω, H → spectral/topological
+                                             share D, F, K, G, <, ◻, H → spectral/topological
                                              methods may bridge both
   RH ↔ P vs NP                   : d = 9   ← despite both being d=10 from baseline,
                                              they differ by 9: completely different mechanisms
@@ -88,7 +88,7 @@ PREDICTIONS
              Ricci flow: a catalytic recognition operator (R_catalytic) that
              drives the gauge system to its unique ground state.
 
-  P-MILL-05: The Ω = Omega_closeepsilon entries (P vs NP, Navier–Stokes) are NOT topologically
+  P-MILL-05: The ◻ = Omega_closeepsilon entries (P vs NP, Navier–Stokes) are NOT topologically
              protected.  This means a counterexample (NP algorithm / blowup solution)
              is structurally permitted — unlike RH, Hodge, YM, BSD where the integer
              topological invariant would be violated by a counterexample.

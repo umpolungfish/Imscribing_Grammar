@@ -27,7 +27,7 @@ Promoted AAs (split stratum):
   Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→> (Reversibility),
   Tyr→< (Parity),    Phe→⋈ (Force),        Ile→⊤ (Kinetics),
   His→⊙ (Criticality), Asn→∋ (Interaction), Gln→∈ (Grammar/Scope),
-  Asp→⊥ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
+  Asp→⊥ (Chirality), Lys→Σ (Entropy),     Glu→◻ (Winding)
 
 Ground AAs (exact stratum): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly
 """
@@ -91,7 +91,7 @@ for aa, prim in AA_PRIMITIVE_MAP.items():
 PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CHIRALITY:      "critical",     # ⊥ — chiral specificity lost
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
-    IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
+    IGPrimitive.WINDING:        "critical",     # ◻ — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # ⊙ — pH-critical catalysis gate
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable
@@ -164,7 +164,7 @@ def get_aa_primitive_description(aa: str) -> str:
         "Asn": "∋ (Interaction) — N-glycosylation sequon, extracellular recognition",
         "Asp": "⊥ (Chirality) — chiral selectivity in active site catalysis",
         "Lys": "Σ (Entropy) — most variable charged residue, acetylation target",
-        "Glu": "Ω (Winding) — highest helix propensity, helix dipole stabilizer",
+        "Glu": "◻ (Winding) — highest helix propensity, helix dipole stabilizer",
     }
     return descriptions.get(aa, "Ground-layer AA: no primitive activation")
 

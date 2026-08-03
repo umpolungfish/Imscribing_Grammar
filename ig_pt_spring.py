@@ -12,7 +12,7 @@ Edge types and weights:
   enzyme bridge          weight 4.0   (S-P → Fe bridge)
   icosahedron edges      weight 2.5   (primitive adjacency from crystal structure)
   same period            weight 0.3   (weak ∈-ring pull)
-  same block             weight 0.5   (Ω-family pull)
+  same block             weight 0.5   (◻-family pull)
 
 Layout: Kamada-Kawai (minimises graph-theoretic stress).
 Primitive nodes seeded at icosahedron projections; elements seeded at their
@@ -86,7 +86,7 @@ def build_graph():
         for i in range(len(syms_s) - 1):
             G.add_edge(syms_s[i], syms_s[i+1], weight=0.3, etype='period')
 
-    # Same-block cohesion (Ω family)
+    # Same-block cohesion (◻ family)
     by_block = defaultdict(list)
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         by_block[blk].append(sym)

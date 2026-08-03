@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω
+Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻
 """
 
 import wave
@@ -273,7 +273,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Labiodental nasal. Lower lip touches upper teeth (as for 'f' or 'v'), soft palate down, voice hums through the nose. The 'm' in 'triumph', 'circumvent', 'comfort' — the nasal that assimilates to a following /f/ or /v/.",
     ),
 
-    # Ω — Topological invariant
+    # ◻ — Topological invariant
     "𐑷": (
         "/e/",
         "pure 'e' as in French 'été'",

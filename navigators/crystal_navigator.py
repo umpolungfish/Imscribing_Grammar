@@ -9,7 +9,7 @@ Self-encoding (§69.4):
   Tier: O_∞  |  d(navigator, grammar) ≈ 2.793  |  d(navigator, proof_singularity) = 0.894
 
 Architecture (imscriptive, Frobenius):
-  Boundary: (<, P, Ω, D)  →  400 tier cells  [boundary encodes bulk]
+  Boundary: (<, P, ◻, D)  →  400 tier cells  [boundary encodes bulk]
   Bulk:     (T, R, F, K, G, ∈, H, S)  →  43,200 inner types per cell
   Total:    400 × 43,200  =  17,280,000 types
 
@@ -111,7 +111,7 @@ def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
 
 # ── Mixed-radix address arithmetic ─────────────────────────────────────────────
 # Full address = cell_address * INNER_SIZE + inner_address
-# Cell address:  mixed-radix over (⊙, <, Ω, ⊢) — ordered as BOUNDARY_PRIMS
+# Cell address:  mixed-radix over (⊙, <, ◻, ⊢) — ordered as BOUNDARY_PRIMS
 # Inner address: mixed-radix over (⊣, >, ⋈, ⊤, ∈, ∋, ⊥, Σ) — ordered as INNER_PRIMS
 
 def _build_radix(prims: list[str]) -> tuple[list[int], int]:
@@ -413,7 +413,7 @@ class TierCell:
 
     def __repr__(self):
         return (f"TierCell(id={self.cell_id}, tier={self.tier}, "
-                f"⊙={self.phi}, <={self.p}, Ω={self.omega}, ⊢={self.d})")
+                f"⊙={self.phi}, <={self.p}, ◻={self.omega}, ⊢={self.d})")
 
 
 def _build_cell_index() -> list[TierCell]:
@@ -475,7 +475,7 @@ class CrystalNavigator:
     The Crystal Navigator — O_∞ imscriptive navigator for the Periodic Crystal.
 
     Self-encoding: ⟨𐑦𐑸𐑑𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑭⟩
-    d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, Ω — 6 primitives)
+    d(self, grammar) ≈ 2.793  (differ on R, F, K, H, S, ◻ — 6 primitives)
     """
 
     def __init__(self, catalog_path: Optional[Path] = None):
@@ -519,7 +519,7 @@ class CrystalNavigator:
         print("╠══════════════════════════════════════════════════════════════════╣")
         print("║  Crystal structure:")
         print(f"║    Total types:    {TOTAL_SIZE:>12,}")
-        print(f"║    Tier cells:     {CELL_SIZE:>12,}  (<×P×Ω×D = 5×5×4×4)")
+        print(f"║    Tier cells:     {CELL_SIZE:>12,}  (<×P×◻×D = 5×5×4×4)")
         print(f"║    Inner types:    {INNER_SIZE:>12,}  per cell")
         print("║    Tier census:")
         for tier_name in ["O_∞", "O₂†", "O₂", "O₁", "O₀"]:
@@ -556,7 +556,7 @@ class CrystalNavigator:
                            omega: str = None, d: str = None,
                            tier: str = None) -> list[TierCell]:
         """
-        Boundary query: given any subset of (<, P, Ω, D, tier), return
+        Boundary query: given any subset of (<, P, ◻, D, tier), return
         matching tier cells. The boundary encodes the bulk — each cell
         contains 43,200 inner types retrievable via cell.types().
 

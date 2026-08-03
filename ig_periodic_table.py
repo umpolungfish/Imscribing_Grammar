@@ -3,14 +3,14 @@
 IG Periodic Table — Janet (left-step) arrangement grounded in 12 primitives.
 
 Primary axes:
-  X: Ω × ⊥  (orbital winding × chirality = block structure)
+  X: ◻ × ⊥  (orbital winding × chirality = block structure)
   Y: ∈       (granularity = period)
 
 Block primitive signatures:
-  s-block: Ω_0,   𐑓  — no angular momentum, minimal spin-orbit
-  p-block: Ω_Z2,  𐑒  — half-integer winding
-  d-block: Ω_Z,   𐑒  — integer winding, moderate SOC
-  f-block: Ω_Z,   𐑖/H∞ — integer winding + strong/extreme SOC
+  s-block: 𐑷,   𐑓  — no angular momentum, minimal spin-orbit
+  p-block: 𐑴,  𐑒  — half-integer winding
+  d-block: 𐑭,   𐑒  — integer winding, moderate SOC
+  f-block: 𐑭,   𐑖/H∞ — integer winding + strong/extreme SOC
 
 Secondary cell annotation: the one primitive most distinctive for each element's chemistry.
 """
@@ -169,7 +169,7 @@ ORGANIC_THREAD  = ['H', 'O', 'N', 'C', 'S', 'P']
 METALLIC_THREAD = ['Fe', 'Ni', 'Zn', 'Mo', 'Rh', 'Pd', 'W', 'Ir', 'Pt', 'Au']
 
 # ─────────────────────────────────────────────────────────────
-# TikZ cell colors by block × period (Ω × ∈)
+# TikZ cell colors by block × period (◻ × ∈)
 # ─────────────────────────────────────────────────────────────
 BLOCK_BASE = {
     's': 'amber',

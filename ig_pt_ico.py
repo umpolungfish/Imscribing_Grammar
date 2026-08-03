@@ -3,7 +3,7 @@
 Design C-3D — Icosahedral Radial.
 12 IG primitives at icosahedron vertices; elements cluster at their primitive's
 vertex, at radius = period × scale. Projected isometrically.
-Empty arms (Ω > ∈ ⋈) form a cold cap on the back hemisphere.
+Empty arms (◻ > ∈ ⋈) form a cold cap on the back hemisphere.
 """
 
 import math, subprocess, shutil

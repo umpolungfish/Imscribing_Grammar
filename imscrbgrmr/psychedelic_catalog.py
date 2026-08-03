@@ -206,7 +206,7 @@ def _lsd_brain_state() -> Imscription:
         K_schwa — the brain-state duration mirrors molecular K.
         𐑝(SELECTIVE) — frequency-specific coupling enhancement; gamma oscillations
             (40 Hz) are selectively amplified; the grammar is not broadband.
-        Ω_1 — the ⊙ state is sustained by the molecular K_teshlig but is not
+        ◻_1 — the ⊙ state is sustained by the molecular K_teshlig but is not
             intrinsically topologically protected; it will collapse when the molecule
             is cleared. (This is what §XIX T_braid engineering aims to make permanent.)
     """
@@ -227,7 +227,7 @@ def _lsd_brain_state() -> Imscription:
             "default mode, executive, and sensory networks globally coupled. "
             "K_schwa: state persists 8-12 hr (mirrors molecular K). ⊙: confirmed "
             "by fMRI LZc/entropy increases. ∋_SELECTIVE: frequency-specific gamma "
-            "enhancement, not broadband noise. Ω_1: sustained by molecular K_teshlig, "
+            "enhancement, not broadband noise. ◻_1: sustained by molecular K_teshlig, "
             "not intrinsically topologically protected."
         ),
         metadata={

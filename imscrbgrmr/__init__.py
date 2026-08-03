@@ -24,7 +24,7 @@ The Seven Primitives (EXTENDED to nine):
 
     - Stoichiometry (S): Valency ratio primitive — NEW (v2.2)
 
-Extended Notation: ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
+Extended Notation: ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩  (H/◻ optional, default H_closeomega/None)
 """
 
 from .models import (
@@ -235,7 +235,7 @@ from .decompose import (  # Decomposition algebra — inverse of build-up operat
 #   from imscrbgrmr import register_cross_domain_imscriptions; register_cross_domain_imscriptions()
 # (auto-registration removed to avoid ~200ms startup overhead)
 
-__version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · ∋(QUANTUM) · Ω · Factor 8
+__version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · ∋(QUANTUM) · ◻ · Factor 8
 __author__ = "Imscribing Grammar Contributors"
 
 __all__ = [
@@ -250,7 +250,7 @@ __all__ = [
     "InteractionGrammar",
     "GrammarOperator",  # NEW
     "CriticalityPhase",  # NEW
-    "TopoIndex",         # NEW — Ω
+    "TopoIndex",         # NEW — ◻
     # Core classes
     "Imscription",
     "ImscriptionNotation",

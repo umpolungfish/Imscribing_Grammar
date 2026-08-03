@@ -127,7 +127,7 @@ _FIELD_LABELS = {
     CRIT_LEGACY: '<  Criticality   ',
     '⊥': 'H  Chirality',
     '⊞': 'S  Stoichiometry ',
-    '◻': 'Ω  Winding       ',
+    '◻': '◻  Winding       ',
 }
 
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
@@ -474,7 +474,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ ◻
 #   ⊢: 𐑛 𐑨 𐑼 𐑦
 #   ⊣: 𐑡 𐑰 𐑥 𐑶 𐑸
 #   >: 𐑩 𐑑 𐑽 𐑾
@@ -486,7 +486,7 @@ PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 #   ⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣
 #   ⊥: 𐑓 𐑒 𐑖 𐑫
 #   ⊞: 𐑙 𐑕 𐑳
-#   Ω: 𐑷 𐑴 𐑭 𐑟
+#   ◻: 𐑷 𐑴 𐑭 𐑟
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,

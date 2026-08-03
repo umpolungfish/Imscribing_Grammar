@@ -5,25 +5,25 @@ Canonical encodings for quantum particles and topological matter imscriptions.
 Eight imscriptions in two tiers:
 
   Tier 1 — Quantum Particles (five fundamental particles as recognition imscriptions):
-    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊙(QUANTUM) · 𐑢 · Ω_0
-    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · Ω_0
-    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · Ω_0
-    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_0
-    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_0
+    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊙(QUANTUM) · 𐑢 · 𐑷
+    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · 𐑷
+    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · 𐑷
+    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑷
+    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑷
 
-  Tier 2 — Topological Matter (first catalog entries using T_braid + Ω):
-    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_Z
-    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_NA
-    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · ∈⊙          · 𐑢 · Ω_Z₂
+  Tier 2 — Topological Matter (first catalog entries using T_braid + ◻):
+    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑭
+    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑟
+    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · ∈⊙          · 𐑢 · 𐑴
 
 Key physics encoded:
   - spin_singlet is the first Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞
     → quantum criticality (TFI/heavy-fermion class), χ(T→0) ~ T^{-γ}
-  - kitaev_chain: K_teshlig (gap-protected) · Ω_Z (ℤ class-D invariant in 1D)
+  - kitaev_chain: K_teshlig (gap-protected) · 𐑭 (ℤ class-D invariant in 1D)
     · non-local Majorana qubit: left-end ⊗ right-end = one logical qubit
-  - fqh_moore_read: T_braid (anyonic statistics) · Ω_NA (non-Abelian Ising anyons)
+  - fqh_moore_read: T_braid (anyonic statistics) · 𐑟 (non-Abelian Ising anyons)
     · GSD = 3 on torus; fusion rules: σ × σ = 1 + ψ
-  - topological_insulator: Ω_Z₂ (ℤ₂ class-AII, Kramers-protected)
+  - topological_insulator: 𐑴 (ℤ₂ class-AII, Kramers-protected)
     · T_nrleg encodes the 2D surface-state network on the 3D bulk
   - MBL note: K_lambda deliberately absent from Tier 1; it belongs to disorder-driven
     phases. The K_teshlig→K_lambda perturbation (Δξ +2.30 nats, HIGH sensitivity) was
@@ -72,7 +72,7 @@ def register_quantum_imscriptions() -> List[str]:
     Register all eight quantum/topological imscriptions into the global catalog.
 
     Safe to call multiple times (idempotent). Always refreshes metadata on
-    already-present entries so Ω and topo_index fields survive JSON round-trips.
+    already-present entries so ◻ and topo_index fields survive JSON round-trips.
 
     Returns:
         List of names that were newly registered (empty if all already present).
@@ -136,7 +136,7 @@ def _photon() -> Imscription:
       ∈ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
           frequency match (selective) AND a transition dipole (AND logic).
       < = 𐑢: single photon is below the G–D criticality locus.
-      Ω = TRIVIAL: free-space photon has no topological protection.
+      ◻ = TRIVIAL: free-space photon has no topological protection.
           (Photonic topological insulators would be a separate imscription.)
     """
     return Imscription(
@@ -185,7 +185,7 @@ def _proton() -> Imscription:
           experiments on ice; non-local in principle.
       ∈ = SPECIFIC_AND: one highly specific protonation site at a time.
       < = 𐑢.
-      Ω = TRIVIAL: bare proton, no topological structure.
+      ◻ = TRIVIAL: bare proton, no topological structure.
     """
     return Imscription(
         name="proton",
@@ -229,7 +229,7 @@ def _electron() -> Imscription:
       G = G_ℵ (GLOBAL): Bell-pair electrons are non-locally correlated (CHSH).
       ∈ = SPECIFIC_AND: one target orbital per bonding event.
       < = 𐑢.
-      Ω = TRIVIAL: free electron; topological character emerges from band
+      ◻ = TRIVIAL: free electron; topological character emerges from band
           structure of hosting material (separate imscription).
     """
     return Imscription(
@@ -286,8 +286,8 @@ def _spin_singlet() -> Imscription:
       < = 𐑢: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
           isolated singlet is not yet at the criticality locus; Factor 8
           scores the criticality candidacy probe, not <.
-      Ω = TRIVIAL: the singlet is not a topologically protected state per se.
-          (A spin singlet in a topological magnet would inherit the material Ω.)
+      ◻ = TRIVIAL: the singlet is not a topologically protected state per se.
+          (A spin singlet in a topological magnet would inherit the material ◻.)
     """
     return Imscription(
         name="spin_singlet",
@@ -336,7 +336,7 @@ def _qubit_logical() -> Imscription:
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
       ∈ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
       < = 𐑢: sub-threshold fidelity prevents criticality lift (Axiom 5).
-      Ω = TRIVIAL: unprotected qubit. Topological qubit (Ω_NA) is a separate
+      ◻ = TRIVIAL: unprotected qubit. Topological qubit (𐑟) is a separate
           imscription — it would have F_ℏ and K_teshlig instead.
     """
     return Imscription(
@@ -359,7 +359,7 @@ def _qubit_logical() -> Imscription:
             "operations are slow relative to decoherence. Compare: spin_singlet "
             "(F_ℏ, K_teshlig) is the idealised entangled state; qubit_logical "
             "(F_beltl, K_schwa) is the practical computational unit. "
-            "Topological qubit (Ω_NA) would flip both: F_ℏ, K_teshlig, Ω_NA."
+            "Topological qubit (𐑟) would flip both: F_ℏ, K_teshlig, 𐑟."
         ),
     )
 
@@ -400,7 +400,7 @@ def _kitaev_chain_majorana() -> Imscription:
       ∈ = QUANTUM_AND: the non-local qubit requires both end modes simultaneously;
           a single Majorana is not a qubit.
       < = 𐑢: stable topological phase (not at the phase transition).
-      Ω = Z_CLASS (Ω_Z): ℤ topological invariant, AZ class D, 1D.
+      ◻ = Z_CLASS (𐑭): ℤ topological invariant, AZ class D, 1D.
           The winding number W ∈ ℤ; topological phase has W = 1.
       S = "1:1": one Majorana zero mode per end (γ_L : γ_R = 1:1).
     """
@@ -422,9 +422,9 @@ def _kitaev_chain_majorana() -> Imscription:
             "(|μ| < 2t). Majorana zero modes γ_L, γ_R at chain ends encode a "
             "single non-local logical qubit. AZ class D, ℤ invariant (W=1). "
             "Gap-protected (K_teshlig); no disorder required (contrast K_lambda). "
-            "Ω_Z: first topological imscription in the quantum catalog. "
-            "Prediction: tensor(kitaev_chain, qubit_logical) → Ω_Z (dominant "
-            "protection propagates); meet(kitaev_chain, spin_singlet) → Ω_0 "
+            "𐑭: first topological imscription in the quantum catalog. "
+            "Prediction: tensor(kitaev_chain, qubit_logical) → 𐑭 (dominant "
+            "protection propagates); meet(kitaev_chain, spin_singlet) → 𐑷 "
             "(conservative guarantee)."
         ),
     )
@@ -460,7 +460,7 @@ def _fqh_moore_read() -> Imscription:
           two or more anyons — inherently a multi-particle (QUANTUM AND) operation.
       < = 𐑢: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
           separate imscription).
-      Ω = NON_ABELIAN (Ω_NA): non-Abelian Ising anyons. First Ω_NA entry in the
+      ◻ = NON_ABELIAN (𐑟): non-Abelian Ising anyons. First 𐑟 entry in the
           catalog. Protection_strength = 4 (maximum).
       S = None: filling fraction ν=5/2 is a material property, not a pairwise
           stoichiometric ratio.
@@ -481,11 +481,11 @@ def _fqh_moore_read() -> Imscription:
         description=(
             "FQH ν=5/2 Moore-Read (Pfaffian) state. Non-Abelian Ising anyons: "
             "σ × σ = 1 + ψ, quantum dimension d_σ = √2. GSD = 3 on torus. "
-            "First T_braid entry in the quantum catalog. Ω_NA (protection_strength=4). "
+            "First T_braid entry in the quantum catalog. 𐑟 (protection_strength=4). "
             "Experimental platform: GaAs/AlGaAs at T ~ 10 mK, B ~ 5 T. "
             "Tension: anti-Pfaffian debate unresolved (PH-symmetric partner). "
-            "Prediction: tensor(fqh_moore_read, kitaev_chain) → Ω_NA (dominates). "
-            "Prediction: meet(fqh_moore_read, topological_insulator_bi2se3) → Ω_Z₂ "
+            "Prediction: tensor(fqh_moore_read, kitaev_chain) → 𐑟 (dominates). "
+            "Prediction: meet(fqh_moore_read, topological_insulator_bi2se3) → 𐑴 "
             "(conservative guarantee falls to weaker protection)."
         ),
     )
@@ -521,7 +521,7 @@ def _topological_insulator_bi2se3() -> Imscription:
       ∈ = SELECTIVE_AND: the surface states selectively couple to magnetic
           perturbations (gap-opening) vs. non-magnetic (no gap); selective.
       < = 𐑢: stable topological insulating phase.
-      Ω = Z2_CLASS (Ω_Z₂): strong ℤ₂ TI, class AII (ν₀ = 1).
+      ◻ = Z2_CLASS (𐑴): strong ℤ₂ TI, class AII (ν₀ = 1).
       S = None: bulk material, not a pairwise recognition event.
     """
     return Imscription(
@@ -542,10 +542,10 @@ def _topological_insulator_bi2se3() -> Imscription:
             "AZ class AII (time-reversal symmetric). Single Dirac cone per surface, "
             "Kramers-protected. Bulk gap ~0.35 eV; surface state velocity "
             "v_F ~ 5×10⁵ m/s. K_schwa: surface carrier mobility < bulk. "
-            "Ω_Z₂ (protection_strength=1). "
-            "Prediction: tensor(topological_insulator, spin_singlet) → Ω_Z₂ "
+            "𐑴 (protection_strength=1). "
+            "Prediction: tensor(topological_insulator, spin_singlet) → 𐑴 "
             "(dominates TRIVIAL). "
-            "meet(topological_insulator, fqh_moore_read) → Ω_Z₂ "
+            "meet(topological_insulator, fqh_moore_read) → 𐑴 "
             "(conservative: Z₂ < non-Abelian)."
         ),
     )

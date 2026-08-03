@@ -34,12 +34,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 
 # G1: Frobenius gate     — < reaches its maximum (𐑹, ord 5)
 # G2: Traced monoidal    — ⊙ reaches self-modeling threshold (⊙ glyph, ord 2)
-# G3: Idempotent terminal — Ω reaches integer winding (𐑭, ord 3)
+# G3: Idempotent terminal — ◻ reaches integer winding (𐑭, ord 3)
 _G1_DEFAULT = ("<",  5.0)
 _G2_DEFAULT = ("⊙",  2.0)
 _G3_DEFAULT = ("◻",  3.0)
 
-# Canonical T-constitution: T = lim(<, ⋈, ⊤, ⊥, Ω)
+# Canonical T-constitution: T = lim(<, ⋈, ⊤, ⊥, ◻)
 # Each entry: prim → (critical_shavian_value, ceiling_mode)
 # ceiling_mode=True means "must be ≤ this value" (⊤); False means "must equal this value"
 _T_CANONICAL: Dict[str, Tuple[str, bool]] = {
@@ -226,8 +226,8 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="canonical",
         description="Our universe: Frobenius then self-modeling then winding seal. "
-                    "G1=<≥𐑹, G2=⊙≥⊙, G3=Ω≥𐑭. Sequential gate ordering. "
-                    "T=lim(<,⋈,⊤,⊥,Ω).",
+                    "G1=<≥𐑹, G2=⊙≥⊙, G3=◻≥𐑭. Sequential gate ordering. "
+                    "T=lim(<,⋈,⊤,⊥,◻).",
     ),
 
     Ruleset(
@@ -244,21 +244,21 @@ RULESETS: List[Ruleset] = [
         name="strict_frobenius",
         description="Frobenius gate requires full fidelity (⋈=𐑐) instead of parity (<=𐑹). "
                     "Self-reference is gated by quantum coherence, not algebraic symmetry. "
-                    "Parity graduates to G2; Ω stays at G3. "
+                    "Parity graduates to G2; ◻ stays at G3. "
                     "Most QM experiments have full fidelity — 12/17 entries become Frobenius.",
         g1=GateSpec("⋈", 3.0),   # ⋈=𐑐 (ord 3, max fidelity)
         g2=GateSpec("<", 5.0),   # <=𐑹 (ord 5)
-        g3=GateSpec("◻", 3.0),   # Ω=𐑭 (ord 3)
+        g3=GateSpec("◻", 3.0),   # ◻=𐑭 (ord 3)
     ),
 
     Ruleset(
         name="inverted_gates",
         description="Self-modeling precedes Frobenius: G1=⊙ (consciousness first), "
-                    "G2=< (then algebraic symmetry), G3=Ω (winding seals last). "
+                    "G2=< (then algebraic symmetry), G3=◻ (winding seals last). "
                     "Systems become self-aware before achieving closure.",
         g1=GateSpec("⊙", 2.0),   # ⊙ glyph = self-modeling active
         g2=GateSpec("<", 5.0),   # <=𐑹 = Frobenius
-        g3=GateSpec("◻", 3.0),   # Ω=𐑭 = winding seal
+        g3=GateSpec("◻", 3.0),   # ◻=𐑭 = winding seal
     ),
 
     Ruleset(
@@ -272,7 +272,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="high_gate",
         description="Strictest possible thresholds: G1=<=𐑹, G2=⊙≥𐑮 (ord 2.33, above bare self-model), "
-                    "G3=Ω=𐑟 (ord 4, maximum winding). O_∞ is nearly unreachable — "
+                    "G3=◻=𐑟 (ord 4, maximum winding). O_∞ is nearly unreachable — "
                     "only maximally wound, fully self-modeling, parity-perfect objects qualify.",
         g1=GateSpec("<", 5.0),
         g2=GateSpec("⊙", 2.33),  # 𐑮 = ord 2.33
@@ -281,7 +281,7 @@ RULESETS: List[Ruleset] = [
 
     Ruleset(
         name="winding_first",
-        description="Topological order: G1=Ω (winding seal first), G2=⊙ (then self-modeling), "
+        description="Topological order: G1=◻ (winding seal first), G2=⊙ (then self-modeling), "
                     "G3=< (Frobenius last — symmetry emerges from topology, not the other way). "
                     "Geometry precedes algebra.",
         g1=GateSpec("◻", 3.0),
@@ -292,7 +292,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="t_structural",
         description="Time constituted by structural/geometric primitives: "
-                    "T=lim(⊢,⊣,>,∋,⊙) instead of the dynamic T=lim(<,⋈,⊤,⊥,Ω). "
+                    "T=lim(⊢,⊣,>,∋,⊙) instead of the dynamic T=lim(<,⋈,⊤,⊥,◻). "
                     "In this universe time is geometry, not process. "
                     "Gate structure unchanged (canonical).",
         t_prims=dict(_T_STRUCTURAL),

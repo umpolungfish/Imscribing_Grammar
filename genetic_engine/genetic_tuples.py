@@ -104,7 +104,7 @@ IG_CHARS: Dict[str, str] = {
     "S_n_n":        "𐑕",     # 𐑕 — n:n (matched many)
     "S_n_m":        "𐑳",     # 𐑳 — n:m (unmatched many)
     
-    # ── Winding/Protection (Ω) — 4 values ──
+    # ── Winding/Protection (◻) — 4 values ──
     "O₀":          "𐑷",     # 𐑷 — trivial / no protection
     "O_Z2":         "𐑴",     # 𐑴 — ℤ₂ parity protection
     "O_Z":          "𐑭",     # 𐑭 — integer winding
@@ -196,7 +196,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Asn": "Gamma",     # ∋ — interaction
     "Asp": "H",         # ⊥ — chirality
     "Lys": "S",         # Σ — entropy
-    "Glu": "O",         # Ω — winding
+    "Glu": "O",         # ◻ — winding
 }
 
 PRIMITIVE_TO_AAS: Dict[str, List[str]] = defaultdict(list)
@@ -535,7 +535,7 @@ def generate_tertiary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str
 def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, str]:
     """Generate tuple for protein quaternary structure.
     
-    Subunit symmetry determines Ω protection level.
+    Subunit symmetry determines ◻ protection level.
     AXIOM C FIX: T=bowtie (subunit crossing interface).
     """
     stoich = features.get("stoichiometry", {})
@@ -559,7 +559,7 @@ def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, s
     else:
         s_val = "S_one_one"
     
-    # Winding (Ω) from subunit symmetry
+    # Winding (◻) from subunit symmetry
     # Dimer = Z2 (parity), Tetramer+ = Z (integer winding)
     if n_subunits == 2:
         o_val = "O_Z2"
@@ -718,7 +718,7 @@ def check_axiom_c(d_char: str, t_char: str) -> Tuple[bool, str]:
 
 
 def check_axiom_b(o_char: str, h_char: str) -> Tuple[bool, str]:
-    """Check Axiom B: Ω≥Z2 requires H≥2 (actually H≥1 for Z2).
+    """Check Axiom B: ◻≥Z2 requires H≥2 (actually H≥1 for Z2).
     
     Lean axiom: Omega_dzlig (Z) requires H_turntwo (2)
     Note: Omega_crtwo (Z2) requires H_toneletterstem (1) structurally.
@@ -740,16 +740,16 @@ def check_axiom_b(o_char: str, h_char: str) -> Tuple[bool, str]:
 
 
 def check_d_omega(o_char: str, d_char: str) -> Tuple[bool, str]:
-    """D-Ω constraint: Z requires D≥infty, Z2 requires D≥tri."""
+    """D-◻ constraint: Z requires D≥infty, Z2 requires D≥tri."""
     o_key = CHAR_TO_NAME.get(o_char, "")
     d_key = CHAR_TO_NAME.get(d_char, "")
     o_name = get_value_name(o_key) if o_key else "?"
     d_name = get_value_name(d_key) if d_key else "?"
     
     if o_name == "Z" and d_name not in ("infty", "odot"):
-        return False, f"D-Ω: Omega=Z but D={d_name} (<infty)"
+        return False, f"D-◻: Omega=Z but D={d_name} (<infty)"
     if o_name == "Z2" and d_name not in ("tri", "infty", "odot"):
-        return False, f"D-Ω: Omega=Z2 but D={d_name} (<tri)"
+        return False, f"D-◻: Omega=Z2 but D={d_name} (<tri)"
     return True, "OK"
 
 
@@ -1016,7 +1016,7 @@ def demo_poly_phe() -> None:
 def demo_gcn4_leucine_zipper() -> None:
     """Demo GCN4 leucine zipper (dimer → Z2)."""
     print("\n" + "=" * 60)
-    print("DEMO 5: GCN4 Leucine Zipper (dimer → Ω=Z2)")
+    print("DEMO 5: GCN4 Leucine Zipper (dimer → ◻=Z2)")
     print("=" * 60)
     
     # GCN4 coiled-coil dimer sequence (simplified heptad repeats)
@@ -1036,9 +1036,9 @@ def demo_gcn4_leucine_zipper() -> None:
     
     o_char = generated["quaternary_structure"]["O"]
     o_name = prim_value_name("O", o_char)
-    print(f"\n  Ω = {o_char} ({o_name}) — dimer Z2 parity protection")
+    print(f"\n  ◻ = {o_char} ({o_name}) — dimer Z2 parity protection")
     assert o_name == "Z2", f"Expected Z2 for dimer, got {o_name}"
-    print("  ✓ Dimer confirmed: Ω=Z2")
+    print("  ✓ Dimer confirmed: ◻=Z2")
 
 
 def demo_geometric_suppression() -> None:

@@ -222,7 +222,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── ⊥: max → SOC of most complex component
     H = max(get(tA, '⊥'), get(tB, '⊥'))
 
-    # ── Ω: max → bonding adds winding; keep max of reactants
+    # ── ◻: max → bonding adds winding; keep max of reactants
     Om = max(get(tA, '◻'), get(tB, '◻'))
 
     # ── ⊢: max → dimensionality of more complex atom dominates

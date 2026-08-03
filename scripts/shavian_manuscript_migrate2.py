@@ -62,13 +62,13 @@ MISSING = [
     (r'\text{{\igprimfont ∋}}_{\gg}',             r'{\igfont 𐑵}'),   # G_broad, double-arrow
     (r'\text{{\igprimfont ∋}}_{\text{seq}}',      r'{\igfont 𐑠}'),   # G_seq, text subscript
 
-    # Ω (Protection) — varnothing variant = Omega_0 = "not applicable"
-    (r'\text{{\igprimfont Ω}}_{\varnothing}',     r'{\igfont 𐑷}'),   # Omega_0 / NA
+    # ◻ (Protection) — varnothing variant = Omega_0 = "not applicable"
+    (r'\text{{\igprimfont ◻}}_{\varnothing}',     r'{\igfont 𐑷}'),   # Omega_0 / NA
 
     # Bare subscript variants (no curly braces around subscript)
     (r'\text{{\igprimfont ⊢}}_\omega',            r'{\igfont 𐑦}'),   # D_odot, bare
     (r'\text{{\igprimfont ⊤}}_W',                 r'{\igfont 𐑤}'),   # K_mod, bare
-    (r'\text{{\igprimfont Ω}}_z',                 r'{\igfont 𐑭}'),   # Omega_Z, bare
+    (r'\text{{\igprimfont ◻}}_z',                 r'{\igfont 𐑭}'),   # Omega_Z, bare
     (r'\text{{\igprimfont ⊤}}_{\text{{\igfont @}}}', r'{\igfont 𐑧}'), # K_slow, font-wrapped @
 ]
 

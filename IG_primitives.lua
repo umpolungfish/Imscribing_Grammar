@@ -67,6 +67,7 @@ local CLASS_A = {
   [0x220B] = true,  -- ∋  contains as member     (∋ Grammar primitive)
   [0x22A5] = true,  -- ⊥  up tack                (⊥ Chirality primitive)
   [0x229E] = true,  -- ⊞  squared plus           (⊞ Stoichiometry primitive)
+  [0x25FB] = true,  -- ◻  white medium square    (◻ Protection primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
@@ -81,7 +82,6 @@ for cp = 0x10450, 0x1047F do CLASS_A[cp] = true end
 local CLASS_B = {
   -- IG primitive glyphs
   -- IG subtype chars (SYMBOL_REFERENCE.md)
-  [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
 }
 

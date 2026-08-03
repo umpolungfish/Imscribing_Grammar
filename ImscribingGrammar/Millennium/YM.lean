@@ -148,7 +148,7 @@ axiom PathIntegralMeasure (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤] : 
     Formal data it would need to carry:
     · Physical Hilbert space ℋ (gauge-invariant sector of L²(𝒜/𝒢, μ))
     · Hamiltonian H_YM : ℋ →L[ℂ] ℋ, self-adjoint, H_YM ≥ 0
-    · Vacuum |Ω⟩ ∈ ℋ with H_YM |Ω⟩ = 0 (unique, by clustering)
+    · Vacuum |◻⟩ ∈ ℋ with H_YM |◻⟩ = 0 (unique, by clustering)
     · OS axioms: Euclidean covariance, reflection positivity, clustering -/
 -- Output pinned to Type (not Type*) to avoid universe polymorphism clashes.
 axiom QuantumYMTheory (𝔤 : Type*) [LieRing 𝔤] [LieAlgebra ℝ 𝔤] : Type

@@ -93,7 +93,7 @@ class FrobeniusGuideDesigner:
                 "creates a sense codon causes readthrough.")
             notes = (
                 f"Target is STOP codon {codon_target}. Editing stop codons "
-                f"removes the Ω winding boundary. Only proceed with explicit "
+                f"removes the ◻ winding boundary. Only proceed with explicit "
                 f"readthrough design or selenocysteine machinery.")
 
         return GuideDesign(

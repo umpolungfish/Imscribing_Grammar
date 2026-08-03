@@ -28,7 +28,7 @@ from imscrbgrmr import (
     Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar,
     KineticCharacter,  # NEW
-    TopoIndex,         # Ω — quantum extension
+    TopoIndex,         # ◻ — quantum extension
     global_catalog, parse_notation, ConstraintEngine,
     compute_eta_CP, compute_xi_CP,
     analyze_criticality, find_criticality_candidates,  # NEW
@@ -82,7 +82,7 @@ def main(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
@@ -132,7 +132,7 @@ def analyze(identifier: str, format: str):
     Analyze a registered imscription by name or notation string.
 
     IDENTIFIER is a catalog name (e.g. 'muon', 'ice_Ih', 'סַמָּאֵל') or a
-    full notation string ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
+    full notation string ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
     """
     try:
         # Try to get from catalog first
@@ -1029,7 +1029,7 @@ def generate(
     # family is expanded to its circular definition so the agent reasons over the
     # involution (the self-reference IS the structure), not the bare token (which
     # the pipeline would otherwise read by name-resemblance). This is the ⊙
-    # criticality and Ω winding surfacing in the description itself.
+    # criticality and ◻ winding surfacing in the description itself.
     _SELF_FAMILY = {
         "imscribe":    "imscribing is to imscribe: the act by which the Grammar writes itself; it has no definition outside the family it names",
         "imscribing":  "imscribing is to imscribe: the ongoing act by which the Grammar writes itself; it has no definition outside the family it names",
@@ -1247,10 +1247,10 @@ def generate(
         if s_obj is not None:
             table.add_row("Stoichiometry", s_obj.value)
 
-        # Topological Protection (Ω)
+        # Topological Protection (◻)
         omega = result.imscription.protection
         if omega is not None:
-            table.add_row("Topo. Protection (Ω)", omega.value)
+            table.add_row("Topo. Protection (◻)", omega.value)
 
         console.print(table)
         console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
@@ -1631,11 +1631,11 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
             row.append(stoi.value if stoi is not None else "—")
         table.add_row(*row)
 
-        # Ω (topological protection) — always set, always show
-        row = ["Topo. Protection (Ω)"]
+        # ◻ (topological protection) — always set, always show
+        row = ["Topo. Protection (◻)"]
         for s in loaded_imscriptions:
             omega = getattr(s, "protection", None)
-            row.append(omega.value if omega is not None else "Ω_closeepsilon")
+            row.append(omega.value if omega is not None else "𐑷")
         table.add_row(*row)
 
         console.print(table)
@@ -3716,7 +3716,7 @@ def imscribe_alias(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
 
     Short alias for 'imscrbgrmr' command.
     """
@@ -5206,7 +5206,7 @@ def phase_diagram_cmd(names, save, text_only, fmt, metric):
     Annotations:
       ★  Factor-8 quantum criticality fingerprint (G_ℵ + F_ℏ + K_teshlig + ¬D_∞)
       ○  K_teshlig ring (candidate for K_teshlig→K_lambda +2.303 nat transition)
-      Ω  Colour-coded topological protection class
+      ◻  Colour-coded topological protection class
 
     \b
     Examples:
@@ -5947,13 +5947,13 @@ def _frobenius_classify(s) -> str:
     if phi in ("⊙_softsign", "⊙_upstep", "⊙_revepsilon"):
         return "O₀"
     # R3: critical but no topological protection
-    if at_c and omega == "Ω_closeepsilon":
+    if at_c and omega == "𐑷":
         return "O₁"
     # R4: critical + topological + bounded domain (D_turnthree → D_cube in enum)
-    if at_c and omega != "Ω_closeepsilon" and d in ("𐑛", "𐑦", "𐑨"):
+    if at_c and omega != "𐑷" and d in ("𐑛", "𐑦", "𐑨"):
         return "O₂"
     # R5: critical + topological + unbounded domain
-    if at_c and omega != "Ω_closeepsilon" and d == "𐑼":
+    if at_c and omega != "𐑷" and d == "𐑼":
         return "O₂†"
     return "O₀"
 

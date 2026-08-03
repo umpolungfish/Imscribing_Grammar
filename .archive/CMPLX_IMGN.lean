@@ -74,7 +74,7 @@ inductive Temp where | H_closeomega | H_toneletterstem | H_turntwo | Hinf
 inductive Stoich where | S_doublebaresh | S_ctn | S_ltailm
   deriving Repr, DecidableEq
 
-/-- Winding invariant primitive Ω -/
+/-- Winding invariant primitive ◻ -/
 inductive Wind where | zero | Z2 | Z | NA
   deriving Repr, DecidableEq
 
@@ -392,7 +392,7 @@ theorem complex_time_crystal_address :
 theorem downward_cost :
     (2 : ℝ) * (2 - 1) + 1 * (3 - 2) = 3 := by norm_num
 
-/-- Theorem 18: Upward promotion cost Δ = 6 (T:1 + R:1 + P:3 + Ω:1) -/
+/-- Theorem 18: Upward promotion cost Δ = 6 (T:1 + R:1 + P:3 + ◻:1) -/
 theorem upward_cost :
     1 + 1 + 3 + 1 = (6 : ℕ) := by norm_num
 

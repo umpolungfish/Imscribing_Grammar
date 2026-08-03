@@ -3,7 +3,7 @@
 -- All names, value counts, and ordinal orderings match space_search/primitives.py.
 -- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 types.
 --   𝓕₃ (3 values): F, G, S
---   𝓕₄ (4 values): D, R, ∈, H, Ω
+--   𝓕₄ (4 values): D, R, ∈, H, ◻
 --   𝓕₅ (5 values): T, P, ⊙, K
 
 import Mathlib.Order.Lattice
@@ -59,7 +59,7 @@ inductive Chirality : Type where
   | wool   -- topological chiral, inexhaustible chirality
   deriving DecidableEq, Repr, Ord
 
--- 5. Topological Protection (Ω)  [𝓕₄]
+-- 5. Topological Protection (◻)  [𝓕₄]
 -- Ordered: awe < oak < ah < zoo
 -- zoo: non-Abelian / non-standard protection (not necessarily stronger than ah
 -- in a linear sense; occupies ordinal 4 as the maximally exotic tier).
@@ -89,7 +89,7 @@ inductive Topology : Type where
 -- 7. Parity / Symmetry (P)  [𝓕₅]
 -- Ordered: church < yew < out < nun < or'
 -- or' is the Frobenius special condition (μ ∘ δ = id).
--- It is the tier singularity: overrides all Ω and D branching → O_∞.
+-- It is the tier singularity: overrides all ◻ and D branching → O_∞.
 -- or' cannot be synthesised by composition of P < or' partners (§23).
 inductive Polarity : Type where
   | church    -- asymmetric: no symmetry axis
@@ -193,7 +193,7 @@ instance instLEStoichiometry  : LE Stoichiometry  := ⟨fun a b => compare a b �
 -- The 17,280,000-type crystal: 3³ × 4⁵ × 5⁴
 -- Exponent = count of primitives in each family (Arithmetic Ouroboros §68).
 -- 𝓕₃: {F, G, S}         3 primitives × 3 values = 3³ = 27
--- 𝓕₄: {D, R, ∈, H, Ω}  5 primitives × 4 values = 4⁵ = 1,024
+-- 𝓕₄: {D, R, ∈, H, ◻}  5 primitives × 4 values = 4⁵ = 1,024
 -- 𝓕₅: {T, P, ⊙, K}     4 primitives × 5 values = 5⁴ = 625
 -- Total: 27 × 1,024 × 625 = 17,280,000
 
@@ -237,20 +237,20 @@ axiom Omega_Z_requires_H2 (p : Protection) (h : Chirality) :
 -- TIER STRUCTURE (§69 — Tier Gap Ladder)
 -- ============================================================
 
--- The ouroboricity tier is determined by (<, P, Ω, D) only.
--- R1: ⊙ + or' → O_∞  (overrides all Ω and D)
+-- The ouroboricity tier is determined by (<, P, ◻, D) only.
+-- R1: ⊙ + or' → O_∞  (overrides all ◻ and D)
 -- R2: < ∉ {⊙, ⊙^ℂ} → O₀
--- R3: ⊙ + Ω_0 → O₁  (P < or')
--- R4: ⊙ + Ω ≠ 0 + D ∈ {dead, if', ash} → O₂
--- R5: ⊙ + Ω ≠ 0 + array → O₂†
+-- R3: ⊙ + 𐑷 → O₁  (P < or')
+-- R4: ⊙ + ◻ ≠ 0 + D ∈ {dead, if', ash} → O₂
+-- R5: ⊙ + ◻ ≠ 0 + array → O₂†
 -- Frobenius cliff: d(O₂†, O_∞) ≈ 4.382 (non-tunable by gradient methods).
 
 /-- Ouroboricity tier as a decidable function of the four gate primitives. -/
 inductive OuroboricityTier : Type where
   | O₀    -- non-critical
   | O₁    -- critical, no topological protection
-  | O₂    -- critical, Ω-protected, D ≠ array
-  | O₂† -- critical, Ω-protected, D = array
+  | O₂    -- critical, ◻-protected, D ≠ array
+  | O₂† -- critical, ◻-protected, D = array
   | O_∞  -- Special Frobenius (or' at ⊙)
   deriving DecidableEq, Repr, Ord
 

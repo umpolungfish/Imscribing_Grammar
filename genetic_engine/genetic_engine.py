@@ -142,12 +142,12 @@ class FrobeniusStratum(Enum):
             μ∘δ=id holds exactly on this stratum.
     split — position 3 distinguishes pyrimidine (Y) from purine (R).
             8 boxes, 29 codons (2 are stop). ℤ₂ wobble symmetry.
-    stop  — termination codons with Ω boundary. 3 codons.
+    stop  — termination codons with ◻ boundary. 3 codons.
             Editing these changes the protein's C-terminal winding.
     """
     EXACT = "exact"     # Position 3 silent — Frobenius-closed
     SPLIT = "split"     # Position 3 = Y/R distinction — ℤ₂ wobble
-    STOP  = "stop"      # Termination codon — Ω boundary
+    STOP  = "stop"      # Termination codon — ◻ boundary
 
 
 # The 12 IMASM opcodes mapped to 12 promoted amino acid primitives
@@ -464,7 +464,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Gln": IGPrimitive.CRITICALITY,   # ⊙ — most regulated biosynthetic node
     "Asp": IGPrimitive.CHIRALITY,     # ⊥ — chiral substrate selectivity
     "Lys": IGPrimitive.ENTROPY,       # Σ — highest variability + acetylation
-    "Glu": IGPrimitive.WINDING,       # Ω — α-helix propensity
+    "Glu": IGPrimitive.WINDING,       # ◻ — α-helix propensity
 
     # ── Ground-layer (exact-box) amino acids — no primitive activation ──
     "Leu": None,    # exact box CU_
@@ -477,7 +477,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Gly": None,    # exact box GG_
 
     # Special
-    "Stop": IGPrimitive.WINDING,  # Ω — termination, winding boundary
+    "Stop": IGPrimitive.WINDING,  # ◻ — termination, winding boundary
 }
 
 # Reverse map: primitive → list of amino acids
@@ -490,7 +490,7 @@ for aa, prim in AA_PRIMITIVE_MAP.items():
 PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CHIRALITY:      "critical",     # ⊥ — chiral specificity lost
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
-    IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
+    IGPrimitive.WINDING:        "critical",     # ◻ — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # ⊙ — metabolic critical point
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
@@ -817,9 +817,9 @@ class FrobeniusStratumClassifier:
             (FrobeniusStratum.SPLIT, FrobeniusStratum.STOP):
                 "CRITICAL — stop codon created. Loss of downstream coding.",
             (FrobeniusStratum.STOP, FrobeniusStratum.EXACT):
-                "CRITICAL — Ω winding boundary removed. Readthrough.",
+                "CRITICAL — ◻ winding boundary removed. Readthrough.",
             (FrobeniusStratum.STOP, FrobeniusStratum.SPLIT):
-                "CRITICAL — Ω winding boundary removed. Readthrough.",
+                "CRITICAL — ◻ winding boundary removed. Readthrough.",
         }
         return crossings.get((from_stratum, to_stratum),
                              "unknown crossing — assess manually")
@@ -921,7 +921,7 @@ class FrobeniusGuideDesigner:
             off_target_risk = ("CRITICAL — stop codon target. Any off-target edit that "
                                "creates a sense codon causes readthrough.")
             notes = (f"Target is STOP codon {codon_target}. Editing stop codons removes the\n"
-                     f"Ω winding boundary. Only proceed with full selenocysteine machinery or\n"
+                     f"◻ winding boundary. Only proceed with full selenocysteine machinery or\n"
                      f"explicit readthrough design.")
 
         return GuideDesign(
@@ -1013,7 +1013,7 @@ class PrimeEditOptimizer:
     for the edited locus. This decomposes into three conditions:
       1. Stratum preservation
       2. Primitive invariance
-      3. Ω boundary respect
+      3. ◻ boundary respect
     """
 
     @staticmethod
@@ -1046,7 +1046,7 @@ class PrimeEditOptimizer:
         edit_prim = AA_PRIMITIVE_MAP.get(edit_aa, None)
         primitive_invariant = (orig_prim == edit_prim)
 
-        # ── Condition 3: Ω boundary respect ──
+        # ── Condition 3: ◻ boundary respect ──
         # If target is a stop codon, the edit must preserve termination or
         # explicitly account for readthrough
         if c_orig.is_stop:
@@ -1113,9 +1113,9 @@ class PrimeEditOptimizer:
             notes_parts.append(f"  Risk: {delta['risk_class']} (score: {delta['risk_score']})")
 
         if omega_respected:
-            notes_parts.append("✓ Ω boundary respected")
+            notes_parts.append("✓ ◻ boundary respected")
         else:
-            notes_parts.append("✗ Ω BOUNDARY VIOLATED — stop codon edit without readthrough machinery")
+            notes_parts.append("✗ ◻ BOUNDARY VIOLATED — stop codon edit without readthrough machinery")
 
         notes_parts.append(f"B₄ lattice cost: {b4_cost}/6 (normalized: {cost_report.normalized_cost:.2f})")
         notes_parts.append(f"Frobenius design score: {design_score:.3f}")
@@ -1188,10 +1188,10 @@ class ChimeraDetector:
             (P.CHIRALITY, P.SCOPE, 4.0, True,  # ⊥ ⊗ ⊢
              "Chiral scope collapsed: editing both chirality and translation scope "
              "creates a protein that cannot be translated correctly in any chiral form."),
-            (P.CHIRALITY, P.WINDING, 4.0, True,  # ⊥ ⊗ Ω
+            (P.CHIRALITY, P.WINDING, 4.0, True,  # ⊥ ⊗ ◻
              "Chiral winding break: removing both chiral specificity and C-terminal "
              "winding produces a topologically uncontrolled peptide."),
-            (P.SCOPE, P.WINDING, 4.0, True,  # ⊢ ⊗ Ω
+            (P.SCOPE, P.WINDING, 4.0, True,  # ⊢ ⊗ ◻
              "Scope/winding annihilation: editing both start and stop destroys "
              "the entire translation boundary structure."),
 
@@ -1203,7 +1203,7 @@ class ChimeraDetector:
             (P.REVERSIBILITY, P.SCOPE, 3.5, True,  # > ⊗ ⊢
              "Reversibility/scope trap: editing Cys and Met locks the protein's "
              "translational start into a disulfide-bridged conformation."),
-            (P.REVERSIBILITY, P.WINDING, 3.5, True,  # > ⊗ Ω
+            (P.REVERSIBILITY, P.WINDING, 3.5, True,  # > ⊗ ◻
              "Disulfide readthrough: editing a disulfide Cys near a stop codon "
              "creates an orphan half-cystine at the C-terminus."),
             (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # ⊙ ⊗ ⊥
@@ -2089,7 +2089,7 @@ def demo_verification() -> None:
         ("UUU", "UUC", "Phe silent (split stratum)"),
         ("AUG", "AUU", "Met→Ile missense"),
         ("UGU", "UGG", "Cys→Trp (>→⊣ primitive change)"),
-        ("AUG", "UAA", "Met→Stop (Ω boundary violation)"),
+        ("AUG", "UAA", "Met→Stop (◻ boundary violation)"),
         ("AAA", "AAG", "Lys silent (split stratum)"),
     ]
     print(f"\n  {'Target→Edit':<20} {'Scenario':<35} {'Status':<20} {'Ratio':<8} {'Score':<6}")
@@ -2106,7 +2106,7 @@ def demo_chimera_risk() -> None:
     _hr("CHIMERA RISK — Tensor Product Analysis")
     pairs = [
         [("Lys", "Arg")],                    # Σ→Σ (same primitive) — safe
-        [("Glu", "Asp")],                     # Ω→⊥ — primitive change
+        [("Glu", "Asp")],                     # ◻→⊥ — primitive change
         [("Cys", "Ser")],                     # >→None — high risk single
         [("Cys", "Ser"), ("His", "Gln")],     # >⊗∈ — semi-locked pair
         [("Cys", "Ser"), ("Asp", "Asn")],     # >⊗⊥ — critical pair

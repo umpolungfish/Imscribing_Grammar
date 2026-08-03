@@ -102,10 +102,10 @@ total_aas = len(ground_layer) + len(promoted_layer)
 print(f"TOTAL: {len(ground_layer)} (ground) + {len(promoted_layer)} (promoted) = {total_aas} amino acids")
 print()
 
-# ── 3. Stop codons as Ω ───────────────────────────────────────────────────────
+# ── 3. Stop codons as ◻ ───────────────────────────────────────────────────────
 
 print("=" * 60)
-print("3. STOP CODONS AS Ω (WINDING CLOSURE) SIGNAL")
+print("3. STOP CODONS AS ◻ (WINDING CLOSURE) SIGNAL")
 print("=" * 60)
 
 stop_codons = [c for c, aa in GENETIC_CODE.items() if aa == "Stop"]
@@ -113,21 +113,21 @@ print(f"Stop codons: {stop_codons}  (count: {len(stop_codons)})")
 print()
 print("3-valued IG primitives: ⋈, ∈, Σ  (cardinality = 3)")
 print()
-print("Ω (winding/closure, primitive 12) is 4-valued.")
-print("But the STOP signal fires once per protein = termination of Ω-winding.")
+print("◻ (winding/closure, primitive 12) is 4-valued.")
+print("But the STOP signal fires once per protein = termination of ◻-winding.")
 print("3 stop codons = 3 distinct closure contexts:")
-print("  UAA — ochre  (most common in lower organisms; Ω₀: simple closure)")
-print("  UAG — amber  (read-through in selenoproteins; Ω_Z₂: conditional closure)")
-print("  UGA — opal   (also Sec/Trp in mitochondria; Ω_Z: open/topological closure)")
+print("  UAA — ochre  (most common in lower organisms; ◻₀: simple closure)")
+print("  UAG — amber  (read-through in selenoproteins; 𐑴: conditional closure)")
+print("  UGA — opal   (also Sec/Trp in mitochondria; 𐑭: open/topological closure)")
 print()
 print("Correspondence:")
-print("  UAA = Ω₀  (null winding; clean termination)")
-print("  UAG = Ω_Z₂ (Z₂-symmetric; recoded in some contexts)")
-print("  UGA = Ω_Z  (maximal; known read-through, selenocysteine gate)")
+print("  UAA = ◻₀  (null winding; clean termination)")
+print("  UAG = 𐑴 (Z₂-symmetric; recoded in some contexts)")
+print("  UGA = 𐑭  (maximal; known read-through, selenocysteine gate)")
 print()
-print(f"3 stop codons = 3-valued Ω signal. The Ω closure primitive has exactly")
-print(f"3 non-trivial termination modes. (Ω cardinality = 4; 3 values are Stop,")
-print(f"1 value = Ω₀ = no-stop / infinite continuation.)")
+print(f"3 stop codons = 3-valued ◻ signal. The ◻ closure primitive has exactly")
+print(f"3 non-trivial termination modes. (◻ cardinality = 4; 3 values are Stop,")
+print(f"1 value = ◻₀ = no-stop / infinite continuation.)")
 print()
 
 # ── 4. The 12 promoted AAs ↔ 12 IG primitives ────────────────────────────────
@@ -162,7 +162,7 @@ promotions = {
     "Asn": ("∋",  "Interaction grammar: N-glycosylation target; gates extracellular interaction/recognition grammar"),
     "Lys": ("⊞",  "Symmetry/conservation: most sequence-variable charged residue; high surface entropy; epigenetic acetylation target"),
     "Asp": ("⊥",  "Chirality gate in catalysis: Asp in serine protease/kinase active site enforces chiral selectivity of substrate binding"),
-    "Glu": ("◻",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; Ω-closure of secondary structure"),
+    "Glu": ("◻",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; ◻-closure of secondary structure"),
 }
 
 for aa in sorted(promotions):

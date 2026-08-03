@@ -91,7 +91,7 @@ _S_full   = "𐑲"   # full / global scope
 _S_mid    = "𐑔"   # intermediate
 _S_spread = "𐑚"   # spreading / global
 
-# Ω — Topological Invariant
+# ◻ — Topological Invariant
 _W_triv   = "𐑷"   # trivial (Z)
 _W_z2     = "𐑴"   # Z/2
 _W_der    = "𐑭"   # derived / complex zeta
@@ -286,7 +286,7 @@ OPERATIONS: list[Op] = [
         name="apply_spectral_sequence",
         description="Deploy a spectral sequence to compute cohomology from a filtration.",
         math=(
-            "Hodge-de Rham: E_1^{p,q} = H^q(X, Ω^p_X) ⟹ H^{p+q}_{dR}(X). "
+            "Hodge-de Rham: E_1^{p,q} = H^q(X, ◻^p_X) ⟹ H^{p+q}_{dR}(X). "
             "Degenerates at E_1 for smooth projective X (Deligne–Illusie), "
             "giving the Hodge decomposition H^n(X,C) = ⊕_{p+q=n} H^{p,q}(X)."
         ),

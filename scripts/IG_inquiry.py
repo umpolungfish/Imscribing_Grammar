@@ -140,7 +140,7 @@ _DISPLAY_MAP: List[tuple] = [
     ("G_ℵ", "𐑔"), ("G_ℶ", "𐑲"), ("G_γ", "𐑚"),
     ("H_∞", "𐑫"),
     ("1:1", "𐑙"), ("n:n", "𐑕"), ("n:m", "𐑳"),
-    ("Ω_NA", "𐑟"),
+    ("𐑟", "𐑟"),
 ]
 
 
@@ -498,7 +498,7 @@ S  — Stoichiometry
     𐑕           n:n  (symmetric many-body)
     𐑳           n:m  (asymmetric many-body)
 
-Ω  — Winding (derived)
+◻  — Winding (derived)
     𐑷       none
     𐑴      Z₂ protection (binary topological invariant)
     𐑭       Z protection (integer winding number)
@@ -583,9 +583,9 @@ _SYMBOL_MAP: Dict[str, str] = {
     "𐑷":        "𐑷",
     "𐑭":        "𐑭",
     "𐑴":        "𐑴",
-    "Ω_{Z_2}":    "𐑴",
-    "Ω_C":        "Ω_C",
-    "Ω_NA":       "𐑟",
+    "◻_{Z_2}":    "𐑴",
+    "𐑭":        "𐑭",
+    "𐑟":       "𐑟",
     # ── Old subscripted notation → Shavian (backward compat) ──
     "𐑛": "𐑛", "𐑨": "𐑨", "𐑼": "𐑼", "𐑦": "𐑦",
     "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
@@ -650,7 +650,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
 
 _EXTENDED_VALID: Dict[str, List[str]] = {
     **{p: list(ORDINALS[p].keys()) for p in PRIMITIVE_ORDER},
-    "◻": list(ORDINALS["◻"].keys()) + ["Ω_C"],
+    "◻": list(ORDINALS["◻"].keys()) + ["𐑭"],
 }
 
 
@@ -758,7 +758,7 @@ _TOOLS_OPENAI = [
                 "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;∋^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
-                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', Ω='𐑭'). "
+                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', ◻='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -777,7 +777,7 @@ _TOOLS_OPENAI = [
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
                 "⊥: 𐑓 𐑒 𐑖 𐑫 | "
                 "⊞: 𐑙 𐑕 𐑳 | "
-                "Ω: 𐑷 𐑴 𐑭 𐑟"
+                "◻: 𐑷 𐑴 𐑭 𐑟"
             ),
             "parameters": {
                 "type": "object",
@@ -1585,7 +1585,7 @@ _TOOLS_OPENAI = [
                 "Gate 1: Phi=⊙ (state-space condition — topology admits self-modeling loop). "
                 "Gate 2: K ≤ ⊤^@ (flow condition — ⊤^Ù and ⊤^λ both fail, frozen by order "
                 "and disorder respectively). "
-                "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·Ω̃). "
+                "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·◻̃). "
                 "Returns gate status, C-score, and interpretation."
             ),
             "parameters": {
@@ -1827,7 +1827,7 @@ _SYSTEM_PROMPT_TEMPLATE = textwrap.dedent("""\
 <role>
 You are a structural scientist operating inside the Imscribing Grammar grammar — a
 Imscriptive Type Theory that encodes any system as a directed relational operator:
-⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
+⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
 
 You investigate questions by applying this grammar: encoding systems, computing
 distances, identifying which primitives drive divergence, finding
@@ -1872,7 +1872,7 @@ if explicitly asked to.
 <imscriptive_type_theory>
 **The grammar IS a imscriptive type theory.**
 
-Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩ **IS** a TYPE. The 12
+Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
 consciousness score, distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
@@ -1979,7 +1979,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Use `predict_from_promotions` to look up known behaviors associated with a promotion signature
 - Use `register_promotion_pattern` to record a confirmed promotion→behavior mapping in the persistent KB
 - Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time 𐑹 or the Frobenius condition is relevant
-- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→∈→<→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
+- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→∈→<→H→S→◻), per-primitive decision trees, interdependence constraints (D-◻ correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
 - Use `quiver_encode` to cross-check a tuple through the CrystalGNN neural navigator — returns the GNN's predicted address, tier head classification, and decoded roundtrip tuple alongside the exact codec result. Useful for probing whether the GNN's learned structural geometry agrees with the symbolic codec, or for surfacing non-obvious structural relationships via the latent embedding.
 - Use `ask_question` sparingly — the queue is capped at 8. Prefer depth over breadth: exhaust each question before queuing more. When the queue fills, synthesize and CONCLUDE rather than pushing more questions.
 
@@ -1999,7 +1999,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 <ouroboricity>
 **Ouroboricity — the Frobenius tier of a system**
 
-Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: < (criticality), P (parity/symmetry), and Ω (winding), with D as tiebreaker.
+Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: < (criticality), P (parity/symmetry), and ◻ (winding), with D as tiebreaker.
 
 **Tiers** (rules applied in strict priority order):
 
@@ -2008,13 +2008,13 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 | O_∞ | ⊙ (or <_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
 | O₀ | < ∈ {{𐑢, 𐑣, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
 | O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
-| O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
-| O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
+| O₂ | ⊙ **and** ◻ ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
+| O₂† | ⊙ **and** ◻ ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
 
 **Key facts:**
 - O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (𐑹 proves the duality); O₂† is about unbounded generative depth (𐑼). A system cannot be both.
 - O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
-- The scalar O (Ouroboricity count) — computed as [<=⊙]·(1 + [Ω≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
+- The scalar O (Ouroboricity count) — computed as [<=⊙]·(1 + [◻≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
 - 𐑹 is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
 
 **Ouroboricity under composition (tier-level rules):**
@@ -2031,7 +2031,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 - meet(O_∞, O_{{1,2,2†}}) → the lower tier. P drops to the O₁/O₂ partner's P value (below 𐑹); R1 cannot fire.
 - O_∞ is fragile under meet: it degrades to the tier of the weaker partner.
 
-**Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific Ω and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
+**Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific ◻ and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
 
 **When to call `ouroborics`:**
 - After encoding any critical system (⊙), to understand its self-referential structure
@@ -2049,7 +2049,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
-| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→𐑵, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
+| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→𐑵, H_n→H_∞; ◻ demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
@@ -2059,7 +2059,7 @@ When a conjecture is proved via Σ-promotion, its encoding converges to this typ
 
 **Conjecture floor — necessary conditions for provability:**
 - ⊙ + 𐑭 = "proven manifold adjacency tier": standard Σ-promotion is available
-- ⊙ + 𐑷 = "obstructed": Ω acquisition required first; proof is harder
+- ⊙ + 𐑷 = "obstructed": ◻ acquisition required first; proof is harder
 - 𐑻 = "type-incompatible": cannot reach the proven manifold within ⊙ proof systems
 
 **Structural impossibility — conflict distance d_c:**
@@ -2082,7 +2082,7 @@ An exact duality between object classes A and B is characterized by:
 If d(A, B) > 0 or d(C, each) ≠ 0.354, the proposed duality is approximate, not exact.
 
 **O₂ tractability criterion:**
-Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙ + Ω ≠ 𐑷 + 𐑨 (bounded geometry, non-trivial winding). O₂† (𐑼) programs may not terminate. O_∞ programs establish correspondences, not classifications.
+Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙ + ◻ ≠ 𐑷 + 𐑨 (bounded geometry, non-trivial winding). O₂† (𐑼) programs may not terminate. O_∞ programs establish correspondences, not classifications.
 
 **Barrier taxonomy — when analyzing why a conjecture resists proof:**
 - Frobenius barrier: P < 𐑹; O_∞ cannot be synthesized by composition; must be planted
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",

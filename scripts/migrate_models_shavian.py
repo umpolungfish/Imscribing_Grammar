@@ -4,7 +4,7 @@ migrate_models_shavian.py — migrate models.py enum values from Symbol_symbol t
 
 Per shavian_notation_spec.md OLD_TO_SHAVIAN table.
 Only canonical values with Shavian mappings are replaced.
-Non-canonical extensions (𐑰, Ω_C, 𐑱, 𐑜, etc.) are left unchanged.
+Non-canonical extensions (𐑰, 𐑭, 𐑱, 𐑜, etc.) are left unchanged.
 """
 import re
 import sys
@@ -27,7 +27,7 @@ OLD_TO_SHAVIAN = {
 
 # Build a regex that matches any old symbol inside a Python string literal "..."
 # We do a simple quoted-string replacement: "OLD" → "NEW"
-# Sorted longest-first to avoid partial matches (e.g. "𐑟" before "Ω_")
+# Sorted longest-first to avoid partial matches (e.g. "𐑟" before "◻_")
 _SORTED = sorted(OLD_TO_SHAVIAN.keys(), key=len, reverse=True)
 
 def replace_quoted(text: str) -> str:

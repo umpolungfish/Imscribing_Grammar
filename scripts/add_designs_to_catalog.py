@@ -41,13 +41,13 @@ DESIGNS = [
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) supports Majorana zero modes. Self-written dimensionality (⊢=𐑦) — topological order writes its own ground state. Quantum coherent at room temperature via eternal chirality protection.",
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (◻=𐑟) supports Majorana zero modes. Self-written dimensionality (⊢=𐑦) — topological order writes its own ground state. Quantum coherent at room temperature via eternal chirality protection.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "∋^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑟"
     },
     {
         "name": "eternal_memory_polymer",
-        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data in kinetically trapped molecular conformations. Eternal chirality (⊥=𐑫) — info encoded in chirality sequence that cannot thermally equilibrate. Integer winding (Ω=𐑭) per monomer.",
+        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data in kinetically trapped molecular conformations. Eternal chirality (⊥=𐑫) — info encoded in chirality sequence that cannot thermally equilibrate. Integer winding (◻=𐑭) per monomer.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑺", "∈": "𐑲", "∋": "∋^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },
@@ -77,7 +77,7 @@ DESIGNS = [
     },
     {
         "name": "topological_morphogenesis",
-        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding (Ω=𐑭) — each organ primordium characterized by conserved winding number. Self-written field (⊢=𐑦) — developmental program writes itself as embryo grows. Eternal chirality (⊥=𐑫) topologically protects bilateral symmetry.",
+        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding (◻=𐑭) — each organ primordium characterized by conserved winding number. Self-written field (⊢=𐑦) — developmental program writes itself as embryo grows. Eternal chirality (⊥=𐑫) topologically protects bilateral symmetry.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "∋^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

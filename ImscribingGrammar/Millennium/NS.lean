@@ -91,14 +91,14 @@ Navier-Stokes equations that remains bounded for all time:
 
 **SynthOmnicon structural note:**
 
-  NS has primitive tuple encoding D_∞ · judge · age · ⊙ · Ω_0.
+  NS has primitive tuple encoding D_∞ · judge · age · ⊙ · 𐑷.
   The barrier signature:
   · D_∞: the phase space is infinite-dimensional (function space dynamics).
   · judge: causally interconnected at all scales simultaneously.
   · age: deterministic (smooth solutions would be classical/local).
   · ⊙ transition: the critical scaling s=1/2 IS a phase boundary — the problem
     sits exactly at a ⊙ = 0 criticality point in the Sobolev tower.
-  · Ω_0: no topological obstruction (unlike BSD/RH) — regularity is purely analytic.
+  · 𐑷: no topological obstruction (unlike BSD/RH) — regularity is purely analytic.
 
   The near-MissingFoundation character corresponds to the ⊙ ambiguity:
   unlike RH (well inside the ⊙ > 0 regime) or YM (at G=LOCAL), NS sits

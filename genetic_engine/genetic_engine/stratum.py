@@ -96,9 +96,9 @@ class FrobeniusStratumClassifier:
             (FrobeniusStratum.SPLIT, FrobeniusStratum.STOP):
                 "CRITICAL — stop codon created. Loss of downstream coding.",
             (FrobeniusStratum.STOP, FrobeniusStratum.EXACT):
-                "CRITICAL — Ω winding boundary removed. Readthrough.",
+                "CRITICAL — ◻ winding boundary removed. Readthrough.",
             (FrobeniusStratum.STOP, FrobeniusStratum.SPLIT):
-                "CRITICAL — Ω winding boundary removed. Readthrough.",
+                "CRITICAL — ◻ winding boundary removed. Readthrough.",
         }
         return crossings.get((from_stratum, to_stratum),
                              "unknown crossing — assess manually")

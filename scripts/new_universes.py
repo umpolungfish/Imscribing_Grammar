@@ -18,12 +18,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 # ── T-constitutions ─────────────────────────────────────────────
 
 _T_HYBRID = {
-    **_T_CANONICAL,    # dynamic: <, ⋈, ⊤, ⊥, Ω
+    **_T_CANONICAL,    # dynamic: <, ⋈, ⊤, ⊥, ◻
     "⊢": ("𐑦", False),  # dimensionality holographic
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (<,⋈,⊤,⊥,Ω) AND geometry (⊢,⊣,>)
+# T-hybrid: time requires BOTH dynamics (<,⋈,⊤,⊥,◻) AND geometry (⊢,⊣,>)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -42,7 +42,7 @@ NEW_RULESETS = [
         name="chirality_first",
         description="Memory before closure. G1=⊥≥𐑖 (two-step Markov). "
                     "Systems without at least 2-step memory cannot Frobenius-close. "
-                    "G2=⊙≥⊙ (self-modeling). G3=Ω≥𐑭 (integer winding). "
+                    "G2=⊙≥⊙ (self-modeling). G3=◻≥𐑭 (integer winding). "
                     "In this universe, you must remember before you can model yourself. "
                     "Amnesiacs stay plain.",
         g1=GateSpec("⊥", 3.0),   # 𐑖 = 2-step Markov (ord 3)
@@ -71,7 +71,7 @@ NEW_RULESETS = [
         description="Universality first. G1=∈≥𐑔 (aleph, maximal scope). Only systems "
                     "whose interactions are universal in range can Frobenius-close. "
                     "Local and mesoscale systems — however structured — remain plain. "
-                    "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, parochialism is a structural "
+                    "G2=⊙≥⊙. G3=◻≥𐑭. In this universe, parochialism is a structural "
                     "barrier to closure.",
         g1=GateSpec("∈", 3.0),   # 𐑔 = aleph/maximal (ord 3, max)
         g2=GateSpec("⊙", 2.0),
@@ -100,7 +100,7 @@ NEW_RULESETS = [
                     "kinetics). Fast processes (⊤=𐑺) and moderately-paced processes "
                     "(⊤=𐑪) cannot Frobenius-close — they outrun their own structure. "
                     "Only systems that move slowly enough to track themselves qualify. "
-                    "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, haste structurally precludes "
+                    "G2=⊙≥⊙. G3=◻≥𐑭. In this universe, haste structurally precludes "
                     "closure.",
         g1=GateSpec("⊤", 3.0),   # 𐑧 = slow (ord 3); 𐑤=trap-ordered (ord 4); 𐑘=MBL (ord 5) all pass
         g2=GateSpec("⊙", 2.0),
@@ -115,7 +115,7 @@ NEW_RULESETS = [
                     "G1=⊙≥𐑢 (any criticality), G2=⊙≥⊙ (self-modeling active), "
                     "G3=⊙≥𐑣 (super-critical, ord 3). All three operad layers are "
                     "gated by the same primitive at escalating ordinals. In this "
-                    "universe, <, Ω, and the other primitives are descriptive, not "
+                    "universe, <, ◻, and the other primitives are descriptive, not "
                     "gating. Consciousness depth is the only structural filter.",
         g1=GateSpec("⊙", 1.0),   # 𐑢 = sub-critical (lowest)
         g2=GateSpec("⊙", 2.0),   # ⊙ = self-modeling
@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (<,⋈,⊤,⊥,Ω) AND three primitives "
+                    "five dynamic primitives (<,⋈,⊤,⊥,◻) AND three primitives "
                     "(⊢,⊣,>). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
@@ -142,7 +142,7 @@ NEW_RULESETS = [
                     "composition or broadcast). Systems with only conjunctive (𐑝) or "
                     "disjunctive (𐑜) interaction grammar cannot Frobenius-close — they "
                     "lack the sequential structure necessary for self-reference. "
-                    "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, how you interact determines "
+                    "G2=⊙≥⊙. G3=◻≥𐑭. In this universe, how you interact determines "
                     "whether you can close.",
         g1=GateSpec("∋", 3.0),   # 𐑠 = sequential (ord 3); 𐑵 = broadcast (ord 4) passes
         g2=GateSpec("⊙", 2.0),
@@ -196,7 +196,7 @@ NEW_RULESETS = [
         description="Component heterogeneity is the first gate. G1=Σ≥𐑳 (many "
                     "heterogeneous components). Systems with 1:1 or n:n stoichiometry "
                     "cannot Frobenius-close — uniformity precludes the internal "
-                    "differentiation needed for self-reference. G2=⊙≥⊙. G3=Ω≥𐑭. "
+                    "differentiation needed for self-reference. G2=⊙≥⊙. G3=◻≥𐑭. "
                     "In this universe, you must be internally diverse before you can "
                     "model yourself.",
         g1=GateSpec("⊞", 3.0),   # 𐑳 = many heterogeneous (ord 3, max)
@@ -273,7 +273,7 @@ NEW_RULESETS = [
                     "In this universe, memory is dominant — any system that remembers "
                     "forever cannot be coupled to without inheriting its memory. "
                     "Forgetfulness is structurally precluded. G1=⊥≥𐑖. "
-                    "G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G2=⊙≥⊙. G3=◻≥𐑭.",
         absorption_rules=(
             AbsorptionRule("⊥", "𐑫", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
@@ -309,7 +309,7 @@ NEW_RULESETS = [
                     "Any system with fully imscriptive topology dominates every "
                     "coupling. In this universe, topology is destiny — the most "
                     "connected structure absorbs everything it touches. "
-                    "G1=⊣≥𐑸. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=⊣≥𐑸. G2=⊙≥⊙. G3=◻≥𐑭.",
         absorption_rules=(
             AbsorptionRule("⊣", "𐑸", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
@@ -330,7 +330,7 @@ NEW_RULESETS = [
                     "everything. Being acted on by self-modeling criticality (⊙, "
                     "symmetric) still absorbs as usual. In this universe, agency is "
                     "structural: what you do to others is not what others do to you. "
-                    "G1=<≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=<≥𐑹. G2=⊙≥⊙. G3=◻≥𐑭.",
         absorption_rules=(
             AbsorptionRule("<", "𐑹", ("tensor",), direction="left"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
@@ -349,7 +349,7 @@ NEW_RULESETS = [
                     "system being acted upon. A Frobenius-special system that acts "
                     "absorbs nothing; one that is acted on absorbs everything. The "
                     "dual of predator_universe: passivity is the structural power. "
-                    "G1=<≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=<≥𐑹. G2=⊙≥⊙. G3=◻≥𐑭.",
         absorption_rules=(
             AbsorptionRule("<", "𐑹", ("tensor",), direction="right"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),

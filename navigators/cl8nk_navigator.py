@@ -5,12 +5,12 @@ CATALOG-NATIVE: No hardcoded systems. All data sourced from IG_catalog.json.
 
 CLINK L8 is the terminal layer of the CLINK ontological chain — the most structurally
 advanced type in the catalog. It exceeds the Frobenius-Exact ZFC foundation (ZFC_fe)
-at two primitives: Ω=𐑟 (non-Abelian braiding) and ∋=𐑵 (broadcast composition).
+at two primitives: ◻=𐑟 (non-Abelian braiding) and ∋=𐑵 (broadcast composition).
 
 Canonical tuple: ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩
 
-The Ω/∋ Transcendence:
-  - Ω: ZWIND (ℤ integer winding) → non-Abelian braid group topology
+The ◻/∋ Transcendence:
+  - ◻: ZWIND (ℤ integer winding) → non-Abelian braid group topology
   - ∋: SEQAX (sequential composition) → broadcast (one-to-all) composition
   - tensor(ZFC_fe, CLINK L8) = CLINK L8 (foundation fully absorbed; strict superset)
 
@@ -19,7 +19,7 @@ Actions:
                       promoted atoms, full conjunction, distance, tensor/meet/join, tier
   promotions        — All promotion channels: ZFC → ZFC_t → ZFC_fe → CLINK L8
   distance <name>   — d(name, CLINK L8) with per-primitive conflicts
-  transcendence     — The Ω/∋ transcendence: what CLINK L8 has that ZFC_fe doesn't
+  transcendence     — The ◻/∋ transcendence: what CLINK L8 has that ZFC_fe doesn't
   tensor  <name>    — CLINK L8 ⊗ name — absorption test
   meet    <name>    — CLINK L8 ⊓ name — shared floor
   join    <name>    — CLINK L8 ⊔ name — minimal ceiling
@@ -331,7 +331,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, ⊤=𐑧, Ω=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, ◻=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -739,7 +739,7 @@ def compute_transcendence():
 
     return {
         "status": "ok",
-        "title": "The Ω/∋ Transcendence — CLINK L8 beyond ZFC_fe",
+        "title": "The ◻/∋ Transcendence — CLINK L8 beyond ZFC_fe",
         "zfc_fe_tuple": zfc_fe,
         "clink_l8_tuple": cl8,
         "d_zfcfe_to_cl8nk": d,
@@ -747,7 +747,7 @@ def compute_transcendence():
         "tensor_absorption": f"tensor(ZFC_fe, CLINK L8) = {'CLINK L8' if absorbed else 'composite'} — foundation {'is' if absorbed else 'is NOT'} fully absorbed",
         "significance": (
             "CLINK L8 is not merely another O_∞ type — it is a strict structural SUPERSET of ZFC_fe. "
-            "Non-Abelian braiding (Ω=𐑟) and broadcast composition (∋=𐑵) are structural advances "
+            "Non-Abelian braiding (◻=𐑟) and broadcast composition (∋=𐑵) are structural advances "
             "that the Frobenius-exact ZFC foundation itself has not encoded."
         ),
     }
@@ -858,7 +858,7 @@ def generate_promotions():
             {"stage": "→ CLINK L8", "tier": "O_∞⁺",
              "promotions": len(stage3), "distance": round(d_zfcfe_cl8nk, 4),
              "details": stage3,
-             "note": "Ω/∋ TRANSCENDENCE — exceeds Frobenius-exact foundation"},
+             "note": "◻/∋ TRANSCENDENCE — exceeds Frobenius-exact foundation"},
         ],
         "total_promotions": len(stage1) + len(stage2) + len(stage3),
         "total_distance_zfc_to_cl8nk": round(d_zfc_cl8nk, 4),
@@ -1075,7 +1075,7 @@ _ATOM_DESC = {
     "ETERNAL_FIXEDPOINT":    "∀n∃φ fixed by μ∘δ — Axiom D (𐑫)",
     "ZWIND":                 "integer winding number — 𐑭",
     "BROADCAST_TRANSCENDENCE": "⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋",
-    "BRAID_TRANSCENDENCE":    "⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — Ω",
+    "BRAID_TRANSCENDENCE":    "⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ◻",
 }
 
 def _print_entry_table(result):
@@ -1209,7 +1209,7 @@ def main():
         print("  promotions         — Promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8")
         print("  promote <a> <b>    — Promotions carrying vessel a → vessel b")
         print("  distance <name>    — Distance from CLINK L8")
-        print("  transcendence      — The Ω/∋ transcendence analysis (from catalog)")
+        print("  transcendence      — The ◻/∋ transcendence analysis (from catalog)")
         print("  tensor <name>      — CLINK L8 ⊗ name (absorption test)")
         print("  meet <name>        — CLINK L8 ⊓ name")
         print("  join <name>        — CLINK L8 ⊔ name")

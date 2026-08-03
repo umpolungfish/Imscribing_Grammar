@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ω}{z}
+%   e.g. \shav{𐑭}  \axis{◻}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; ◻=𐑭}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -161,11 +161,12 @@
 \newcommand{\Snn}{\shav{𐑕}}    % so   — n:n, matched many-to-many
 \newcommand{\Snm}{\shav{𐑳}}    % up   — n:m, unmatched many-to-many
 
-% Ω — Topological Invariant
-\newcommand{\Omzero}{\prim{Ω}{Å}}
-\newcommand{\Omtwo}{\prim{Ω}{2}}
-\newcommand{\Omz}{\prim{Ω}{z}}
-\newcommand{\Omna}{\prim{Ω}{5}}
+% ◻ — Protection.  Core.lean ctor order: awe, oak, ah, zoo.
+\newcommand{\Omprot}{\axis{◻}}
+\newcommand{\Omzero}{\shav{𐑷}}  % awe — no topological protection
+\newcommand{\Omtwo}{\shav{𐑴}}   % oak — ℤ₂ symmetry protection
+\newcommand{\Omz}{\shav{𐑭}}     % ah  — integer winding number, ℤ
+\newcommand{\Omna}{\shav{𐑟}}    % zoo — non-Abelian / non-standard
 
 % ── odot_operator tuple ───────────────────────────────────────────────────────
 % \odottuple — the ⊙perator's structural type, precomposed

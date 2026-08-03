@@ -30,7 +30,7 @@ See METAPHYSICS.md §XXVII for full structural derivations and §XXVI for
 the photon encoding that anchors this catalog.
 
 Recorded 2026-03-21. Qwen validation document: graviton (D_holo, T_braid,
-K_frtailgamma, ⊙, Ω_Z) and Higgs (D_wynn, T_bullseye, K_schwa, G_local, ⊙, Ω_0)
+K_frtailgamma, ⊙, 𐑭) and Higgs (D_wynn, T_bullseye, K_schwa, G_local, ⊙, 𐑷)
 incorporated and reconciled with framework primitives. Note: Qwen's T_braid
 for the graviton was replaced by T_network_sym — T_braid encodes anyonic
 exchange statistics (fractional QHE, Kitaev), not spin-2 metric perturbation
