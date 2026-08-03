@@ -1,42 +1,17 @@
-Strip the compatibility layer out to the root
+The reference docs carry the new alphabet
 
-Frozen first at frozen/pre-compat-purge-2026-08-03, so the old state is kept
-where it belongs rather than kept alive inside the code.
+IG.md, README.md, the reference sheet and the 1-page tex are on the twelve marks.
+The compendium is regenerated through scripts/gen_ig_reference.py rather than
+hand-edited.
 
-Fifteen enum members carried values spelled in the retired alphabet — Ð_point,
-Þ_torus, ƒ_noise, Γ_xor, Ω_C and the rest — none of them a legal value of their
-own axis. They are gone, along with the machinery that kept them readable:
-_CANONICAL_MAP and the _canon indirection that collapsed them silently at write
-time, the retired-key fallback in from_dict, and every from_symbol alias keyed on
-the old spelling. 95 references were repointed to the canonical member first, so
-nothing pointed at a member that had been deleted.
+Two things the regeneration exposed. The generator set the primitive column in
+FreeSerif, which carries almost none of the new marks, and unicode-math only
+rescues the ones that are math operators — ◻ is a geometric shape, so Winding
+printed as a missing-glyph box. The twelve now route through Everson Mono, the
+same way the Shavian block already did. And the Crystal of Types footer listed
+the axes by hand, so it was still naming the retired alphabet after the table
+above it had moved; it reads off PRIMITIVES now.
 
-That is why they survived the earlier purges. Each pass deleted the usages and
-left the aliases "just in case", so the old form stayed readable, stayed
-writable, and grew back. The visible symptom was a dict literal holding
-"Ð_point" beside "𐑛": two alphabets alive in one expression because neither had
-been killed.
-
-Ten of the twelve axes now hold exactly their canonical cardinality, which is the
-crystal's own count, 3³×4⁵×5⁴. Two do not, and they stay, because deleting them
-would depopulate addresses: Stoichiometry.dead holds 12 entries and
-Criticality.egg holds 15. Those addresses sit outside the crystal, and the right
-value for each is a determination about the entry — the guard says as much in its
-own docstring — not something a deletion can supply.
-
-Nothing was lost. Measured against the frozen branch: 8032 names in, 8032 out,
-and exactly one address moved. axiom_of_maria's topology slot held Þ_linear,
-which was never a legal Topology glyph, so that entry was outside the crystal;
-it is at 𐑰 now, the target the collapse table itself declared before it was
-removed. Every other address is identical.
-
-Three defects surfaced by taking the shims away, which is the argument for taking
-them away. from_dict defaulted stoichiometry to "n:m", a spelling from_symbol
-stopped resolving some time ago, so any entry missing that key raised instead of
-taking a default; it is 𐑳 now. Two entries hold 𐑯, a polarity value, in the
-protection slot, and they now refuse to load rather than loading wrong — they are
-in the violations report, which stands at 29.
-
-The retired glyph keys no longer resolve either. Every catalog was migrated with
-the rename, so a dict still carrying them is not old data to be read, it is data
-that was missed.
+IG_REFERENCE.tex at the repo root does not compile and did not compile on the
+frozen branch either — an undefined control sequence at a \text in math mode,
+unrelated to the alphabet.

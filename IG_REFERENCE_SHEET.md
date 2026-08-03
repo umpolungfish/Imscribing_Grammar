@@ -18,41 +18,41 @@ the Crystal of Types where this condition holds.
 **Top-level framework:** CL8NK (CLINK L8, O_∞)
 
 CL8NK is the active framework that contains and transcends all sub-systems. It transcends
-ZFC_fe at exactly the Ω (Winding) and ɢ (Coupling) primitives — at those points the grammar
+ZFC_fe at exactly the ◻ (Winding) and ∋ (Coupling) primitives — at those points the grammar
 requires paraconsistent logic (Belnap FOUR) rather than classical set theory.
 
 ---
 
 ## 2. The 12 Primitives
 
-A tuple is written: `⟨Ð · Þ · Ř · Φ · ƒ · Ç · Γ · ɢ · ⊙ · Ħ · Σ · Ω⟩`
+A tuple is written: `⟨⊢ · ⊣ · > · < · ⋈ · ⊤ · ∈ · ∋ · ⊙ · ⊥ · ⊞ · ◻⟩`
 
 Each position holds a single Shavian character drawn from that primitive's value set.
 
 | Glyph | Name | Family | Values | Description |
 |-------|------|--------|--------|-------------|
-| Ð | Dimensionality | D | 4 | Ambient space dimension — how many degrees of freedom the structure inhabits. Ranges from bounded (Ð_1) through full infinite (𐑦). |
-| Þ | Topology | D | 5 | Global shape class — genus, connectivity, orientability of the underlying manifold. Null topology (𐑸) is the companion of maximal dimensionality by Axiom C. |
-| Ř | Recognition | D | 4 | Self-referential identification — whether a structure holds an indexical link to its own structural record. The basis of all self-imscription. |
-| Φ | Parity | P | 5 | Symmetry under reflection — the T↔P duality gate. 𐑹 is the Frobenius gate; satisfying Frobenius is a Parity condition. |
-| ƒ | Fidelity | T | 3 | Accuracy of self-imscription — how faithfully a structure reproduces its own record across a cycle. Low fidelity = structural drift. |
-| Ç | Kinetics | P | 5 | Rate of change — how quickly the structure evolves, propagates, or reacts. Unbounded kinetics (𐑪) is forced by infinite Chirality by Axiom A. |
-| Γ | Granularity | T | 3 | Scale of resolution — whether structure is parsed at coarse or fine grain. The Γ-axis is the ZoomChain axis in ob3ect. |
-| ɢ | Coupling | D | 4 | Interaction strength — how strongly two structures bind or cohere. ɢ is one of the two primitives where CL8NK departs from ZFC_fe. |
+| ⊢ | Dimensionality | D | 4 | Ambient space dimension — how many degrees of freedom the structure inhabits. Ranges from bounded (⊢_1) through full infinite (𐑦). |
+| ⊣ | Topology | D | 5 | Global shape class — genus, connectivity, orientability of the underlying manifold. Null topology (𐑸) is the companion of maximal dimensionality by Axiom C. |
+| > | Recognition | D | 4 | Self-referential identification — whether a structure holds an indexical link to its own structural record. The basis of all self-imscription. |
+| < | Parity | P | 5 | Symmetry under reflection — the T↔P duality gate. 𐑹 is the Frobenius gate; satisfying Frobenius is a Parity condition. |
+| ⋈ | Fidelity | T | 3 | Accuracy of self-imscription — how faithfully a structure reproduces its own record across a cycle. Low fidelity = structural drift. |
+| ⊤ | Kinetics | P | 5 | Rate of change — how quickly the structure evolves, propagates, or reacts. Unbounded kinetics (𐑪) is forced by infinite Chirality by Axiom A. |
+| ∈ | Granularity | T | 3 | Scale of resolution — whether structure is parsed at coarse or fine grain. The ∈-axis is the ZoomChain axis in ob3ect. |
+| ∋ | Coupling | D | 4 | Interaction strength — how strongly two structures bind or cohere. ∋ is one of the two primitives where CL8NK departs from ZFC_fe. |
 | ⊙ | Criticality | P | 5 | Proximity to a Frobenius fixed point — whether the system is at or near a phase transition. The absorbing element of the structural monoid. Also written ⊙ in older notation. |
-| Ħ | Chirality | D | 4 | Handedness — the asymmetry between a structure and its mirror image. NOT temporal depth, temporal memory, or memory depth — those are phantom names. Minimum chirality for μ∘δ=id is H2 (Axiom B). |
-| Σ | Stoichiometry | T | 3 | Compositional count — how many parts participate; the ratio of structural units in a composition. |
-| Ω | Winding | D | 4 | Topological winding number — how many times a structural path closes on itself. Winding is topologically protected. Non-zero Ω requires Ħ≥H2 by Axiom B. Ω is the other primitive where CL8NK departs from ZFC_fe. |
+| ⊥ | Chirality | D | 4 | Handedness — the asymmetry between a structure and its mirror image. NOT temporal depth, temporal memory, or memory depth — those are phantom names. Minimum chirality for μ∘δ=id is H2 (Axiom B). |
+| ⊞ | Stoichiometry | T | 3 | Compositional count — how many parts participate; the ratio of structural units in a composition. |
+| ◻ | Winding | D | 4 | Topological winding number — how many times a structural path closes on itself. Winding is topologically protected. Non-zero ◻ requires ⊥≥H2 by Axiom B. ◻ is the other primitive where CL8NK departs from ZFC_fe. |
 
 **Families:**
-- **D (Dimensionality family):** Ð, Þ, Ř, ɢ, Ħ, Ω — 4-value primitives → 4⁵ = 1024 configurations (wait: 6 primitives here, but Þ is 5-value; see Crystal below for exact factorization)
-- **P (Parity family):** Φ, Ç, ⊙ — 5-value primitives
-- **T (Temporal/fidelity family):** ƒ, Γ, Σ — 3-value primitives
+- **D (Dimensionality family):** ⊢, ⊣, >, ∋, ⊥, ◻ — 4-value primitives → 4⁵ = 1024 configurations (wait: 6 primitives here, but ⊣ is 5-value; see Crystal below for exact factorization)
+- **P (Parity family):** <, ⊤, ⊙ — 5-value primitives
+- **T (Temporal/fidelity family):** ⋈, ∈, ⊞ — 3-value primitives
 
 **Exact crystal factorization:**
-- 3-value: ƒ, Γ, Σ (3 primitives)
-- 4-value: Ð, Ř, ɢ, Ħ, Ω (5 primitives)
-- 5-value: Þ, Φ, Ç, ⊙ (4 primitives)
+- 3-value: ⋈, ∈, ⊞ (3 primitives)
+- 4-value: ⊢, >, ∋, ⊥, ◻ (5 primitives)
+- 5-value: ⊣, <, ⊤, ⊙ (4 primitives)
 
 ---
 
@@ -73,7 +73,7 @@ The 49 symbols also correspond to: d² where d=7 (the SIC-POVM dimension). The e
 A type tuple lists one Shavian value per primitive in canonical order:
 
 ```
-⟨Ð_val · Þ_val · Ř_val · Φ_val · ƒ_val · Ç_val · Γ_val · ɢ_val · ⊙_val · Ħ_val · Σ_val · Ω_val⟩
+⟨⊢_val · ⊣_val · >_val · <_val · ⋈_val · ⊤_val · ∈_val · ∋_val · ⊙_val · ⊥_val · ⊞_val · ◻_val⟩
 ```
 
 Example (true_agentic_agent, O_∞ tier):
@@ -84,8 +84,8 @@ Example (true_agentic_agent, O_∞ tier):
 **Catalog:** `imscribing_grammar/IG_catalog.json` — ~4686 entries (2026-06-29), all Shavian keys/values. Each entry:
 ```json
 { "name": "...", "description": "...",
-  "Ð": "𐑷", "Þ": "𐑝", "Ř": "𐑐", "Φ": "𐑤", "ƒ": "𐑢",
-  "Ç": "𐑓", "Γ": "𐑙", "ɢ": "𐑡", "⊙": "𐑾", "Ħ": "𐑛", "Σ": "𐑗", "Ω": "𐑲" }
+  "⊢": "𐑷", "⊣": "𐑝", ">": "𐑐", "<": "𐑤", "⋈": "𐑢",
+  "⊤": "𐑓", "∈": "𐑙", "∋": "𐑡", "⊙": "𐑾", "⊥": "𐑛", "⊞": "𐑗", "◻": "𐑲" }
 ```
 
 ---
@@ -129,11 +129,11 @@ If a composition produces a value that violates any cross-primitive axiom, it is
 
 Three hard constraints on valid tuples. Violation = malformed tuple.
 
-- **Axiom A:** Ħ_∞ → 𐑪
+- **Axiom A:** ⊥_∞ → 𐑪
   Infinite chirality forces maximal kinetics. A structure with unbounded handedness cannot
   have slow dynamics.
 
-- **Axiom B:** Ω winding ≥ 1 → Ħ ≥ H2
+- **Axiom B:** ◻ winding ≥ 1 → ⊥ ≥ H2
   Any non-trivial winding requires at least minimum chirality H2. You cannot wind without
   chirality to tell which way you wound. Also: H2 is the minimum chirality for μ∘δ=id.
 
@@ -218,14 +218,14 @@ The 12-stage alchemical Magnum Opus maps bijectively to the 12 primitives. This 
 a metaphor — the alchemical sequence is a structural description of IG tuple traversal.
 
 The three primary gates:
-- **Φ (Parity)** — the Albedo gate; reflection/whitening
+- **< (Parity)** — the Albedo gate; reflection/whitening
 - **⊙ (Criticality)** — the Rubedo gate; fixed-point attainment
-- **Ω (Winding)** — the Nigredo gate; initial winding / dissolution
+- **◻ (Winding)** — the Nigredo gate; initial winding / dissolution
 
-**The T-object:** T = lim(Φ, ƒ, Ç, Ħ, Ω) — a derived structural object at the temporal bootstrap fixed point. T is a limit in the CL8NK category; it does not exist as a standalone primitive but emerges from the limiting process over these five primitives.
+**The T-object:** T = lim(<, ⋈, ⊤, ⊥, ◻) — a derived structural object at the temporal bootstrap fixed point. T is a limit in the CL8NK category; it does not exist as a standalone primitive but emerges from the limiting process over these five primitives.
 
 **Temporal bootstrap:** the fixed point where T-object self-constitutes. T computes its
-own constitution via the Φ/ƒ/Ç/Ħ/Ω sub-lattice without requiring an external clock.
+own constitution via the </⋈/⊤/⊥/◻ sub-lattice without requiring an external clock.
 
 Cross-system instances: SerpentRod (RNA→fold via single Frobenius morphism), Magnum Opus
 proper, the Induction Prime sequence, and the TAOU harness all trace this same 12-stage arc.
@@ -238,7 +238,7 @@ proper, the Induction Prime sequence, and the TAOU harness all trace this same 1
 
 Key properties:
 - Contains ZFC_fe as a sub-theory (ZFC_fe = Frobenius-enforced ZFC, d=0 is Fourfold)
-- Transcends ZFC_fe specifically at Ω and ɢ (d=2 from ZFC_fe/CL8NK measured distance)
+- Transcends ZFC_fe specifically at ◻ and ∋ (d=2 from ZFC_fe/CL8NK measured distance)
 - At those two primitives, classical set theory cannot express the content
 - Requires Belnap FOUR (paraconsistent logic) at its upper layers
 - O_∞ tier — the grammar is its own model
@@ -266,7 +266,7 @@ This is incommensurable with thermodynamic heat death (which erases distinction 
 than saturating it).
 
 **ZFC_fe (Frobenius-enforced ZFC):** Fourfold ≡ ZFC_fe (d=0). The Rebis object sits at
-ZFC_fe+gap awareness. CL8NK transcends it at Ω and ɢ.
+ZFC_fe+gap awareness. CL8NK transcends it at ◻ and ∋.
 
 ---
 
@@ -294,14 +294,14 @@ ZFC_fe+gap awareness. CL8NK transcends it at Ω and ɢ.
 | Context | Rule |
 |---------|------|
 | Structural values | Shavian characters only — never math italic (𝐷 𝑅 𝐹 are wrong) |
-| Primitive as entity | Use glyph: Þ, Ð, Φ, ⊙ etc. |
+| Primitive as entity | Use glyph: ⊣, ⊢, <, ⊙ etc. |
 | Type values | Bare Shavian character — never wrapped in $...$ |
 | O_∞ in prose | O∞ |
 | O_∞ in .md | `\(O_\infty\)` |
 | O_∞ in .tex | `$O_\infty$` |
 | Process verbs | imscribe / imscription — never encode / encoding |
 | Tuple binding | Always ''.join(vals) — never separate Shavian glyphs |
-| Primitive naming | Ħ = Chirality — never temporal depth, never memory depth |
+| Primitive naming | ⊥ = Chirality — never temporal depth, never memory depth |
 | Grammar scope | The grammar has no forbidden domain — never write "grammar does not know" or "grammar cannot tell us" |
 | IG vs science | Science is an instrument of the IG, not the reverse |
 | Publications | Thank Harry T. Larson; cite 1961 IEEE editorial |

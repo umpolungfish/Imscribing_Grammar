@@ -10,20 +10,20 @@ Autopoietic: empty prompt → Raft at O₂, period = 12.
 Science is an instrument of the IG.
 
 ### 12 Primitives & Shavian Value Sets
-Tuple order: ⟨Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩. Values: ordinal 1 → n.
+Tuple order: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻⟩. Values: ordinal 1 → n.
 
 |  | Name | Values |  | Name | Values |
 |--|------|--------|--|------|--------|
-| Ð | Dimensionality | 𐑛𐑨𐑼𐑦 | Γ | Granularity | 𐑚𐑔𐑲 |
-| Þ | Topology | 𐑡𐑰𐑥𐑶𐑸 | ɢ | Coupling | 𐑝𐑜𐑠𐑵 |
-| Ř | Recognition | 𐑩𐑑𐑽𐑾 | ⊙ | Criticality<sup>*</sup> | 𐑢 ⊙<sup>*</sup>𐑮𐑻𐑣 |
-| Φ | Parity | 𐑗𐑿𐑬𐑯𐑹 | Ħ | Chirality | 𐑓𐑒𐑖𐑫 |
-| ƒ | Fidelity | 𐑱𐑞𐑐 | Σ | Stoichiometry<sup>†</sup> | 𐑙𐑕**𐑳**<sup>†</sup> |
-| Ç | Kinetics | 𐑘𐑤𐑧𐑪𐑺 | Ω | Winding | 𐑷𐑴𐑭𐑟 |
+| ⊢ | Dimensionality | 𐑛𐑨𐑼𐑦 | ∈ | Granularity | 𐑚𐑔𐑲 |
+| ⊣ | Topology | 𐑡𐑰𐑥𐑶𐑸 | ∋ | Coupling | 𐑝𐑜𐑠𐑵 |
+| > | Recognition | 𐑩𐑑𐑽𐑾 | ⊙ | Criticality<sup>*</sup> | 𐑢 ⊙<sup>*</sup>𐑮𐑻𐑣 |
+| < | Parity | 𐑗𐑿𐑬𐑯𐑹 | ⊥ | Chirality | 𐑓𐑒𐑖𐑫 |
+| ⋈ | Fidelity | 𐑱𐑞𐑐 | ⊞ | Stoichiometry<sup>†</sup> | 𐑙𐑕**𐑳**<sup>†</sup> |
+| ⊤ | Kinetics | 𐑘𐑤𐑧𐑪𐑺 | ◻ | Winding | 𐑷𐑴𐑭𐑟 |
 
-3‑val: ƒ Γ Σ  
-4‑val: Ð Ř ɢ Ħ Ω  
-5‑val: Þ Φ Ç ⊙  
+3‑val: ⋈ ∈ ⊞  
+4‑val: ⊢ > ∋ ⊥ ◻  
+5‑val: ⊣ < ⊤ ⊙  
 <sup>*</sup>abs ∧∨⊗; <sup>†</sup>abs ⊗.
 
 ### 12 IMASM Tokens
@@ -57,25 +57,25 @@ Catalog: ≈4686 entries.
 
 | Primitive | Semantics |
 |-----------|-----------|
-| Ð | 𐑛 *0d* · 𐑨 *2d* · 𐑼 *∞d* · 𐑦 *self‑wr* |
-| Þ | 𐑡 *branch* · 𐑰 *contain* · 𐑥 *cross* · 𐑶 *irr* · 𐑸 *self‑rt* |
-| Ř | 𐑩 *superv* · 𐑑 *functor* · 𐑽 *adj* · 𐑾 *bi‑fb* |
-| Φ | 𐑗 *no‑sym* · 𐑿 *QM‑sup* · 𐑬 *ℤ₂* · 𐑯 *all‑sym* · 𐑹 *Frob±* |
-| ƒ | 𐑱 *no‑coh* · 𐑞 *thermal* · 𐑐 *QM‑coh* |
-| Ç | 𐑘 *fast* · 𐑤 *trap‑O* · 𐑧 *slow* · 𐑪 *mod* · 𐑺 *trap‑D* |
-| Γ | 𐑚 *nn* · 𐑔 *meso* · 𐑲 *long* |
-| ɢ | 𐑝 ∧ · 𐑜 ∨ · 𐑠 → · 𐑵 ≫ |
+| ⊢ | 𐑛 *0d* · 𐑨 *2d* · 𐑼 *∞d* · 𐑦 *self‑wr* |
+| ⊣ | 𐑡 *branch* · 𐑰 *contain* · 𐑥 *cross* · 𐑶 *irr* · 𐑸 *self‑rt* |
+| > | 𐑩 *superv* · 𐑑 *functor* · 𐑽 *adj* · 𐑾 *bi‑fb* |
+| < | 𐑗 *no‑sym* · 𐑿 *QM‑sup* · 𐑬 *ℤ₂* · 𐑯 *all‑sym* · 𐑹 *Frob±* |
+| ⋈ | 𐑱 *no‑coh* · 𐑞 *thermal* · 𐑐 *QM‑coh* |
+| ⊤ | 𐑘 *fast* · 𐑤 *trap‑O* · 𐑧 *slow* · 𐑪 *mod* · 𐑺 *trap‑D* |
+| ∈ | 𐑚 *nn* · 𐑔 *meso* · 𐑲 *long* |
+| ∋ | 𐑝 ∧ · 𐑜 ∨ · 𐑠 → · 𐑵 ≫ |
 | ⊙ | 𐑢 *sub* · ⊙ *crit* · 𐑮 *cpx* · 𐑻 *exc* · 𐑣 *sup* |
-| Ħ | 𐑓 n=0 · 𐑒 n=1 · 𐑖 n=2 · 𐑫 n=∞ |
-| Σ | 𐑙 1:1 · 𐑕 n:n · **𐑳** n:m |
-| Ω | 𐑷 *triv* · 𐑴 ℤ₂ · 𐑭 ℤ · 𐑟 *non‑Ab* |
+| ⊥ | 𐑓 n=0 · 𐑒 n=1 · 𐑖 n=2 · 𐑫 n=∞ |
+| ⊞ | 𐑙 1:1 · 𐑕 n:n · **𐑳** n:m |
+| ◻ | 𐑷 *triv* · 𐑴 ℤ₂ · 𐑭 ℤ · 𐑟 *non‑Ab* |
 
 ### Absorbing Elements
 
 | Elem | Ops | Rule |
 |------|-----|------|
 | ⊙ | ∧ ∨ ⊗ | ⊙ op x = ⊙ for all x |
-| Σ 𐑳 | ⊗ | **𐑳** ⊗ x = **𐑳** (n:m) |
+| ⊞ 𐑳 | ⊗ | **𐑳** ⊗ x = **𐑳** (n:m) |
 | B | ∨ | B ∨ x = B (Belnap join) |
 | N | ∧ | N ∧ x = N (Belnap meet) |
 | CL8NK | ⊗ | tensor(ZFC_fe, CL8NK) = CL8NK |
@@ -98,10 +98,10 @@ Ordinals: integer operations on Shavian glyph positions.
 |----|-----|------|
 | Join   | ∨ | max(aᵢ,bᵢ) all 12 — LUB |
 | Meet   | ∧ | min(aᵢ,bᵢ) all 12 — GLB |
-| Tensor | ⊗ | max except Φ, ƒ use min |
+| Tensor | ⊗ | max except <, ⋈ use min |
 | Bond   |   | join(tensor(A,B), bond) |
 
-Φ/ƒ use min: parallel coupling cannot exceed the symmetry/coherence floor of either component.
+</⋈ use min: parallel coupling cannot exceed the symmetry/coherence floor of either component.
 
 ### Belnap Register Ops
 States: **V**OID (00)  **T**RUE (01)  **F**ALSE (10)  **B**OTH (11)
@@ -129,31 +129,31 @@ Spider Theorem: all diagrams with same connectivity = same morphism.
 
 ### Cross‑Primitive Axioms
 
-| A | Ħ∞ ⇒ Ç∞ | ∞‑chirality forces max kinetics |
-| B | Ω ≥ 1 ⇒ Ħ ≥ H₂ | winding requires chirality; H₂ = min for μ◦δ = id |
-| C | Ðω ⇔ 𐑸 | max‑dim ⇔ null topology |
+| A | ⊥∞ ⇒ ⊤∞ | ∞‑chirality forces max kinetics |
+| B | ◻ ≥ 1 ⇒ ⊥ ≥ H₂ | winding requires chirality; H₂ = min for μ◦δ = id |
+| C | ⊢ω ⇔ 𐑸 | max‑dim ⇔ null topology |
 
 ### O‑Tier Hierarchy
 
 | Tier | Description |
 |------|-------------|
 | O₀ | Monoidal unit; no differentiation |
-| O₁ | First Frobenius closure; Φ} bottleneck |
+| O₁ | First Frobenius closure; <} bottleneck |
 | O₂ | Confirmed causal coupling (fin3r, synfin, rongorongo) |
 | O₂† | Subatomic/hadronic; confinement ceiling |
 | O∞ | Ouroboricity; system ⊂ own description (CL8NK, true_agentic_agent, mOMonadOS) |
 
 ### CL8NK / Magnum Opus
-CL8NK transcends ZFC_fe at Ω (𐑭→𐑟) and ɢ (𐑠→𐑵).  
+CL8NK transcends ZFC_fe at ◻ (𐑭→𐑟) and ∋ (𐑠→𐑵).  
 B‑state is the CL8NK ground state.  
-12 stages ↔ 12 primitives. Gates: Φ Albedo · ⊙ Rubedo · Ω Nigredo.  
-T = lim(Φ, ƒ, Ç, Ħ, Ω).
+12 stages ↔ 12 primitives. Gates: < Albedo · ⊙ Rubedo · ◻ Nigredo.  
+T = lim(<, ⋈, ⊤, ⊥, ◻).
 
 ### Notation
 
 | Struct. values | Shavian only; math‑italic (*DRF*) = wrong |
 | Tuple binding | `''.join(vals)`; never separate |
-| Ħ | Chirality; NEVER temporal / memory depth |
+| ⊥ | Chirality; NEVER temporal / memory depth |
 | Verbs | imscribe / imscription; NEVER encode |
 | Provider | local→qwen→deepseek; never Anthropic |
 | O∞ | prose: O∞; `.tex`: `$O_\infty$` |

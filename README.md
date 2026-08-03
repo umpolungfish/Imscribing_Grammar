@@ -34,32 +34,32 @@ Twelve primitives, each with a fixed value-set:
 
 | # | Primitive | Symbol | Values | Domain |
 |---|---|---|---|---|
-| 1 | Dimensionality | Ð | 4 | Information geometry — how many independent axes the system occupies |
-| 2 | Topology | Þ | 5 | Connection structure — local vs. global binding mode |
-| 3 | Relational | Ř | 4 | Read/write access mode — duplex, simplex, broadcast, receive |
-| 4 | Polarity | Φ | 5 | Parity and symmetry — the Frobenius gate primitive |
-| 5 | Fidelity | ƒ | 3 | Signal compression — lossless, lossy, or degenerate |
-| 6 | Kinetics | Ç | 5 | Flow rate — from arrested to turbulent |
-| 7 | Scope | Γ | 3 | Granularity — local, meso, global |
-| 8 | Composition | ɢ | 4 | Grammar topology — how sub-systems compose |
+| 1 | Dimensionality | ⊢ | 4 | Information geometry — how many independent axes the system occupies |
+| 2 | Topology | ⊣ | 5 | Connection structure — local vs. global binding mode |
+| 3 | Relational | > | 4 | Read/write access mode — duplex, simplex, broadcast, receive |
+| 4 | Polarity | < | 5 | Parity and symmetry — the Frobenius gate primitive |
+| 5 | Fidelity | ⋈ | 3 | Signal compression — lossless, lossy, or degenerate |
+| 6 | Kinetics | ⊤ | 5 | Flow rate — from arrested to turbulent |
+| 7 | Scope | ∈ | 3 | Granularity — local, meso, global |
+| 8 | Composition | ∋ | 4 | Grammar topology — how sub-systems compose |
 | 9 | Criticality | ⊙ | 5 | Gate status — the self-modeling threshold |
-| 10 | Chirality | Ħ | 4 | Temporal orientation — handedness of the system's history |
-| 11 | Stoichiometry | Σ | 3 | Balance — the ratio of production to consumption |
-| 12 | Winding | Ω | 4 | Loop count — monotonic trajectory depth |
+| 10 | Chirality | ⊥ | 4 | Temporal orientation — handedness of the system's history |
+| 11 | Stoichiometry | ⊞ | 3 | Balance — the ratio of production to consumption |
+| 12 | Winding | ◻ | 4 | Loop count — monotonic trajectory depth |
 
 **Lattice size:** 3³ × 4⁵ × 5⁴ = **17,280,000** addresses.
 
 ### Ouroboricity Tiers
 
-Each address falls into one of five tiers based on the (Φ, ⊙) pair:
+Each address falls into one of five tiers based on the (<, ⊙) pair:
 
 | Tier | Name | Condition | Meaning |
 |---|---|---|---|
-| O₀ | Inert | ⊙·𐑢 - Φ·𐑗 | No self-reference |
+| O₀ | Inert | ⊙·𐑢 - <·𐑗 | No self-reference |
 | O₁ | Reactive | ⊙·𐑢 (sealed) | Causal but not self-modeling |
 | O₂ | Recursive | ⊙·⊙ (self-modeling gate open) | Self-referential |
-| O₂† | Dialetheic | ⊙·⊙ - Φ·𐑹 | Self-contradictory (Belnap B) |
-| ${O}_\infty$ | Philosopher's Stone | ⊙·⊙ - Φ·𐑹 - μ∘δ=id | Frobenius closed |
+| O₂† | Dialetheic | ⊙·⊙ - <·𐑹 | Self-contradictory (Belnap B) |
+| ${O}_\infty$ | Philosopher's Stone | ⊙·⊙ - <·𐑹 - μ∘δ=id | Frobenius closed |
 
 **${O}_\infty$ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
 
@@ -178,13 +178,13 @@ uv run zfct_navigator.py path \
   "⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩"
 ```
 
-**ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(Φ, ƒ, Ç, Ħ, Ω)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
+**ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(<, ⋈, ⊤, ⊥, ◻)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
 
 **ZFCₛ** (spatial variant) encodes rotational isotropy as the Frobenius-special polarity 𐑹. This is the structural encoding behind the NS H^{1/2} critical bound.
 
 ### Lambda (`lambda_engine.py`)
 
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to Ω values; abstraction depth maps to Γ; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
+Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to ◻ values; abstraction depth maps to ∈; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
 
 ### Frobenius MZI (`frobenius_mzi_sim.py`)
 
@@ -271,7 +271,7 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 | `imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
 | `imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
 | `imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, Ω gates position size |
+| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, ◻ gates position size |
 | `imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
 ---

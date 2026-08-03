@@ -6,24 +6,24 @@
 
 ## 12 Primitives & Shavian Value Sets
 
-Tuple order: $\langle$\heb{Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω}$\rangle$. Values: ordinal $1 \to n$. **Bold name = absorbing element** (\heb{⊙} absorbs $\wedge\vee\otimes$; 𐑳 absorbs $\otimes$).
+Tuple order: $\langle$\heb{⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻}$\rangle$. Values: ordinal $1 \to n$. **Bold name = absorbing element** (\heb{⊙} absorbs $\wedge\vee\otimes$; 𐑳 absorbs $\otimes$).
 
 | Glyph | Name | Values |
 |---|---|---|
-| \heb{Ð} | Dimensionality | 𐑛 𐑨 𐑼 𐑦 |
-| \heb{Þ} | Topology | 𐑡 𐑰 𐑥 𐑶 𐑸 |
-| \heb{Ř} | Recognition | 𐑩 𐑑 𐑽 𐑾 |
-| \heb{Φ} | Parity | 𐑗 𐑿 𐑬 𐑯 𐑹 |
-| \heb{ƒ} | Fidelity | 𐑱 𐑞 𐑐 |
-| \heb{Ç} | Kinetics | 𐑘 𐑤 𐑧 𐑪 𐑺 |
-| \heb{Γ} | Granularity | 𐑚 𐑔 𐑲 |
-| \heb{ɢ} | Coupling | 𐑝 𐑜 𐑠 𐑵 |
+| \heb{⊢} | Dimensionality | 𐑛 𐑨 𐑼 𐑦 |
+| \heb{⊣} | Topology | 𐑡 𐑰 𐑥 𐑶 𐑸 |
+| \heb{>} | Recognition | 𐑩 𐑑 𐑽 𐑾 |
+| \heb{<} | Parity | 𐑗 𐑿 𐑬 𐑯 𐑹 |
+| \heb{⋈} | Fidelity | 𐑱 𐑞 𐑐 |
+| \heb{⊤} | Kinetics | 𐑘 𐑤 𐑧 𐑪 𐑺 |
+| \heb{∈} | Granularity | 𐑚 𐑔 𐑲 |
+| \heb{∋} | Coupling | 𐑝 𐑜 𐑠 𐑵 |
 | \heb{⊙} | **Criticality** | 𐑢 ⊙ 𐑮 𐑻 𐑣 |
-| \heb{Ħ} | Chirality | 𐑓 𐑒 𐑖 𐑫 |
-| \heb{Σ} | **Stoichiometry** | 𐑙 𐑕 **𐑳** |
-| \heb{Ω} | Winding | 𐑷 𐑴 𐑭 𐑟 |
+| \heb{⊥} | Chirality | 𐑓 𐑒 𐑖 𐑫 |
+| \heb{⊞} | **Stoichiometry** | 𐑙 𐑕 **𐑳** |
+| \heb{◻} | Winding | 𐑷 𐑴 𐑭 𐑟 |
 
-Crystal families — 3-val: \heb{ƒ Γ Σ} — 4-val: \heb{Ð Ř ɢ Ħ Ω} — 5-val: \heb{Þ Φ Ç ⊙}
+Crystal families — 3-val: \heb{⋈ ∈ ⊞} — 4-val: \heb{⊢ > ∋ ⊥ ◻} — 5-val: \heb{⊣ < ⊤ ⊙}
 
 ---
 
@@ -31,18 +31,18 @@ Crystal families — 3-val: \heb{ƒ Γ Σ} — 4-val: \heb{Ð Ř ɢ Ħ Ω} — 5
 
 | Prim | Values with meanings |
 |---|---|
-| \heb{Ð} | 𐑛 0d-pt · 𐑨 2d-surf · 𐑼 $\infty$-dim · 𐑦 self-written |
-| \heb{Þ} | 𐑡 branching · 𐑰 containment · 𐑥 crossing · 𐑶 irred-product · 𐑸 self-ref-top |
-| \heb{Ř} | 𐑩 supervenience · 𐑑 functorial · 𐑽 adjoint-pair · 𐑾 bi-feedback |
-| \heb{Φ} | 𐑗 no-sym · 𐑿 QM-superpos · 𐑬 partial-$\mathbb{Z}_2$ · 𐑯 all-sym · 𐑹 Frobenius-$\pm^s$ |
-| \heb{ƒ} | 𐑱 no-coherence · 𐑞 thermal · 𐑐 QM-coherence |
-| \heb{Ç} | 𐑘 fast · 𐑤 trap-ordered · 𐑧 slow · 𐑪 moderate · 𐑺 trap-disorder |
-| \heb{Γ} | 𐑚 nearest-nbr · 𐑔 mesoscale · 𐑲 long-range |
-| \heb{ɢ} | 𐑝 conjunct-$\wedge$ · 𐑜 disjunct-$\vee$ · 𐑠 sequential-$\to$ · 𐑵 broadcast-$\gg$ |
+| \heb{⊢} | 𐑛 0d-pt · 𐑨 2d-surf · 𐑼 $\infty$-dim · 𐑦 self-written |
+| \heb{⊣} | 𐑡 branching · 𐑰 containment · 𐑥 crossing · 𐑶 irred-product · 𐑸 self-ref-top |
+| \heb{>} | 𐑩 supervenience · 𐑑 functorial · 𐑽 adjoint-pair · 𐑾 bi-feedback |
+| \heb{<} | 𐑗 no-sym · 𐑿 QM-superpos · 𐑬 partial-$\mathbb{Z}_2$ · 𐑯 all-sym · 𐑹 Frobenius-$\pm^s$ |
+| \heb{⋈} | 𐑱 no-coherence · 𐑞 thermal · 𐑐 QM-coherence |
+| \heb{⊤} | 𐑘 fast · 𐑤 trap-ordered · 𐑧 slow · 𐑪 moderate · 𐑺 trap-disorder |
+| \heb{∈} | 𐑚 nearest-nbr · 𐑔 mesoscale · 𐑲 long-range |
+| \heb{∋} | 𐑝 conjunct-$\wedge$ · 𐑜 disjunct-$\vee$ · 𐑠 sequential-$\to$ · 𐑵 broadcast-$\gg$ |
 | \heb{⊙} | 𐑢 sub-critical · ⊙ critical/self-modeling · 𐑮 complex-plane-crit · 𐑻 exceptional-pt · 𐑣 supercritical |
-| \heb{Ħ} | 𐑓 $n=0$ · 𐑒 $n=1$ · 𐑖 $n=2$ · 𐑫 $n=\infty$ |
-| \heb{Σ} | 𐑙 1:1 · 𐑕 $n$:$n$ identical · 𐑳 $n$:$m$ heterogeneous |
-| \heb{Ω} | 𐑷 trivial · 𐑴 $\mathbb{Z}_2$ · 𐑭 integer-winding · 𐑟 non-Abelian-braiding |
+| \heb{⊥} | 𐑓 $n=0$ · 𐑒 $n=1$ · 𐑖 $n=2$ · 𐑫 $n=\infty$ |
+| \heb{⊞} | 𐑙 1:1 · 𐑕 $n$:$n$ identical · 𐑳 $n$:$m$ heterogeneous |
+| \heb{◻} | 𐑷 trivial · 𐑴 $\mathbb{Z}_2$ · 𐑭 integer-winding · 𐑟 non-Abelian-braiding |
 
 ---
 
@@ -51,7 +51,7 @@ Crystal families — 3-val: \heb{ƒ Γ Σ} — 4-val: \heb{Ð Ř ɢ Ħ Ω} — 5
 | Element | Identity |
 |---|---|
 | \heb{⊙} | $\odot \circ x = \odot$ for any op $\circ \in \{\wedge, \vee, \otimes\}$ |
-| \heb{Σ} = 𐑳 | $\text{𐑳} \otimes x = \text{𐑳}$ (n:m, tensor only) |
+| \heb{⊞} = 𐑳 | $\text{𐑳} \otimes x = \text{𐑳}$ (n:m, tensor only) |
 | B | $\mathrm{B} \vee x = \mathrm{B}$ (Belnap join) |
 | N | $\mathrm{N} \wedge x = \mathrm{N}$ (Belnap meet) |
 | CL8NK | $\mathrm{ZFC}_\mathrm{fe} \otimes \mathrm{CL8NK} = \mathrm{CL8NK}$ |
@@ -84,10 +84,10 @@ Ordinals: integer operations on Shavian glyph positions.
 |---|---|---|
 | Join | $\vee$ | $\max(a_i, b_i)$ all 12 — LUB |
 | Meet | $\wedge$ | $\min(a_i, b_i)$ all 12 — GLB |
-| Tensor | $\otimes$ | $\max$ except \heb{Φ}, \heb{ƒ} use $\min$ |
+| Tensor | $\otimes$ | $\max$ except \heb{<}, \heb{⋈} use $\min$ |
 | Bond | | $\mathrm{join}(\mathrm{tensor}(A,B),\,\mathrm{bond})$ |
 
-\heb{Φ}/\heb{ƒ} use $\min$: parallel coupling cannot exceed the symmetry/coherence floor of either component.
+\heb{<}/\heb{⋈} use $\min$: parallel coupling cannot exceed the symmetry/coherence floor of either component.
 
 ---
 
@@ -141,9 +141,9 @@ Groups: L = Logical; F = Frobenius ($\delta$/$\mu$); B = Belnap; Li = Linear. $1
 
 | | Axiom | Meaning |
 |---|---|---|
-| A | \heb{Ħ}$_\infty \Rightarrow$ \heb{Ç}$_\infty$ | $\infty$-chirality forces max kinetics |
-| B | \heb{Ω}$\geq 1 \Rightarrow$ \heb{Ħ}$\geq H_2$ | winding requires chirality; $H_2$ = min for $\mu\circ\delta=\mathrm{id}$ |
-| C | \heb{Ð}$_\omega \Leftrightarrow$ \heb{Þ}$_O$ | max-dim $\Leftrightarrow$ null topology |
+| A | \heb{⊥}$_\infty \Rightarrow$ \heb{⊤}$_\infty$ | $\infty$-chirality forces max kinetics |
+| B | \heb{◻}$\geq 1 \Rightarrow$ \heb{⊥}$\geq H_2$ | winding requires chirality; $H_2$ = min for $\mu\circ\delta=\mathrm{id}$ |
+| C | \heb{⊢}$_\omega \Leftrightarrow$ \heb{⊣}$_O$ | max-dim $\Leftrightarrow$ null topology |
 
 ---
 
@@ -152,7 +152,7 @@ Groups: L = Logical; F = Frobenius ($\delta$/$\mu$); B = Belnap; Li = Linear. $1
 | Tier | Description |
 |---|---|
 | $O_0$ | Monoidal unit; no differentiation |
-| $O_1$ | First Frobenius closure; \heb{Φ}$_\}$ bottleneck |
+| $O_1$ | First Frobenius closure; \heb{<}$_\}$ bottleneck |
 | $O_2$ | Confirmed causal coupling (fin3r, synfin, rongorongo) |
 | $O_2^\dagger$ | Subatomic/hadronic; confinement ceiling |
 | $O_\infty$ | Ouroboricity; system $\subset$ own description (CL8NK, true\_agentic\_agent, mOMonadOS) |
@@ -161,12 +161,12 @@ Groups: L = Logical; F = Frobenius ($\delta$/$\mu$); B = Belnap; Li = Linear. $1
 
 ## CL8NK / Magnum Opus
 
-CL8NK transcends $\mathrm{ZFC}_\mathrm{fe}$ at \heb{Ω} (𐑭$\to$𐑟) and \heb{ɢ} (𐑠$\to$𐑵).
+CL8NK transcends $\mathrm{ZFC}_\mathrm{fe}$ at \heb{◻} (𐑭$\to$𐑟) and \heb{∋} (𐑠$\to$𐑵).
 B-state is the CL8NK ground state. 12 stages $\leftrightarrow$ 12 primitives.
-Gates: \heb{Φ} Albedo $\cdot$ \heb{⊙} Rubedo $\cdot$ \heb{Ω} Nigredo.
-$T = \lim($\heb{Φ}, \heb{ƒ}, \heb{Ç}, \heb{Ħ}, \heb{Ω}$)$.
+Gates: \heb{<} Albedo $\cdot$ \heb{⊙} Rubedo $\cdot$ \heb{◻} Nigredo.
+$T = \lim($\heb{<}, \heb{⋈}, \heb{⊤}, \heb{⊥}, \heb{◻}$)$.
 
-CL8NK tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑵 ⊙ 𐑫 𐑳 𐑟$\rangle$ — $\mathrm{ZFC}_\mathrm{fe}$ tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑫 𐑳 𐑭$\rangle$. Transcendence: \heb{Ω}: 𐑭$\to$𐑟 (integer$\to$non-Abelian); \heb{ɢ}: 𐑠$\to$𐑵 (sequential$\to$broadcast).
+CL8NK tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑵 ⊙ 𐑫 𐑳 𐑟$\rangle$ — $\mathrm{ZFC}_\mathrm{fe}$ tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑫 𐑳 𐑭$\rangle$. Transcendence: \heb{◻}: 𐑭$\to$𐑟 (integer$\to$non-Abelian); \heb{∋}: 𐑠$\to$𐑵 (sequential$\to$broadcast).
 
 ---
 
@@ -176,7 +176,7 @@ CL8NK tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑵 ⊙ 𐑫 𐑳 𐑟
 |---|---|
 | Structural values | Shavian only; math-italic ($\mathit{DRF}$) is wrong |
 | Tuple binding | `''.join(vals)`; never separate glyphs |
-| \heb{Ħ} | Chirality — NEVER temporal / memory depth |
+| \heb{⊥} | Chirality — NEVER temporal / memory depth |
 | Verbs | imscribe / imscription — NEVER encode |
 | Provider | local$\to$qwen$\to$deepseek; never Anthropic |
 | $O_\infty$ | prose: O$\infty$; `.tex`: `$O_\infty$` |

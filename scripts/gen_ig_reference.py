@@ -84,6 +84,15 @@ def preamble() -> str:
         f"% Shavian block → Everson Mono",
         f"{B}usepackage{{newunicodechar}}",
     ] + [
+        # The twelve primitive marks, likewise. FreeSerif has neither the
+        # turnstiles nor the tacks nor the box, and unicode-math only rescues
+        # the ones that are math operators: ◻ is a geometric shape and came out
+        # as a missing-glyph box in the Winding row.
+        (f"{B}newunicodechar{{{g}}}"
+         f"{{{B}ifmmode{B}text{{{{{B}shavfont {g}}}}}"
+         f"{B}else{{{{{B}shavfont {g}}}}}{B}fi}}")
+        for g in "⊢⊣⋈⊤∈∋⊙⊥⊞◻"
+    ] + [
         (f"{B}newunicodechar{{{chr(0x10450+i)}}}"
          f"{{{B}ifmmode{B}text{{{{{B}shavfont {chr(0x10450+i)}}}}}"
          f"{B}else{{{{{B}shavfont {chr(0x10450+i)}}}}}{B}fi}}")
@@ -189,9 +198,11 @@ def page1() -> str:
         f"  {{\\large\\bfseries Crystal of Types}}\\\\[4pt]",
         f"  ${{\\color{{g3col}} 3^3}} {B}times {{\\color{{g4col}} 4^5}} {B}times {{\\color{{g5col}} 5^4}}$",
         f"  $= 27 {B}times 1024 {B}times 625 = {B}mathbf{{17{B},{B},280{B},{B},000}}$ types\\\\[3pt]",
-        f"  {{\\small\\color{{g3col}} 3-subtype:}} {{\\small ƒ Γ Σ}} "
-        f"$\\cdot$ {{\\small\\color{{g4col}} 4-subtype:}} {{\\small Ð Ř ɢ Ħ Ω}} "
-        f"$\\cdot$ {{\\small\\color{{g5col}} 5-subtype:}} {{\\small Þ Φ Ç ⊙}}",
+        # Read off PRIMITIVES rather than restated. The hand-written copy was
+        # still naming the retired alphabet after the table above had moved.
+        f"  {{\\small\\color{{g3col}} 3-subtype:}} {{\\small {' '.join(g for g,_,n,_,_ in PRIMITIVES if n==3)}}} "
+        f"$\\cdot$ {{\\small\\color{{g4col}} 4-subtype:}} {{\\small {' '.join(g for g,_,n,_,_ in PRIMITIVES if n==4)}}} "
+        f"$\\cdot$ {{\\small\\color{{g5col}} 5-subtype:}} {{\\small {' '.join(g for g,_,n,_,_ in PRIMITIVES if n==5)}}}",
         f"  {B}end{{axiombox}}",
     ])
 
