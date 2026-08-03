@@ -532,7 +532,7 @@ def page4() -> str:
             ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "Ω Γ Σ"),
         ],
         "MATERIALS": [
-            ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "Ç ⊣ <"),
+            ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "⊤ ⊣ <"),
             ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω Ħ"),
             ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "Ħ Σ Ω"),
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.", "Γ ɢ ⊢"),
@@ -606,7 +606,7 @@ def page4() -> str:
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
         f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\\\",
-        f"  Coagulatio & Ç (Kinetics, fixation) & Projectio & ɢ (Coupling, projection) \\\\",
+        f"  Coagulatio & ⊤ (Kinetics, fixation) & Projectio & ɢ (Coupling, projection) \\\\",
         f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\\\",
         f"  \\end{{tabular}}",
         f"  }}",

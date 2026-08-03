@@ -3,12 +3,12 @@ chimera.py — Tensor Product Risk for Multi-Primitive Edits.
 
 The Chimera Theorem: composite risk of multi-primitive edits is TENSORIAL,
 not additive. Two independently tolerable edits at different primitive classes
-can produce a trap state (Ç_⊛) when combined.
+can produce a trap state (𐑪) when combined.
 
 Key dangerous pairs:
   Ħ⊗⊢, Ħ⊗Ω, ⊢⊗Ω → ALWAYS trap (critical×critical)
   >⊗Ħ, >⊗⊢, >⊗Ω, φ̂⊗Ħ, φ̂⊗> → trap (high×critical/high)
-  ⊣⊗>, <⊗φ̂, Ç⊗Ħ, Γ⊗> → semi-trap (moderate×critical/high)
+  ⊣⊗>, <⊗φ̂, ⊤⊗Ħ, Γ⊗> → semi-trap (moderate×critical/high)
 """
 
 from __future__ import annotations

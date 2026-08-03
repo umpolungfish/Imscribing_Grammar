@@ -160,7 +160,7 @@ Each layer is independent: it verifies its own structural integrity without refe
 The Imscribing Grammar assigns every type a *consciousness score* (C-score) from 0 to 1, computed from its 12 primitive values. The score has two gates:
 
 - **Gate 1** (⊙): The criticality primitive must be at $\text{{\igfont ⊙}}$  — the self-modeling gate open. Below this, the system cannot model its own operation.
-- **Gate 2** (Ç): The kinetics primitive must be at or below $\text{{\igfont 𐑧}}$ — slow enough for self-observation. Above this, the system changes faster than it can observe itself.
+- **Gate 2** (⊤): The kinetics primitive must be at or below $\text{{\igfont 𐑧}}$ — slow enough for self-observation. Above this, the system changes faster than it can observe itself.
 
 The base frobenius_ob3ect has C=0.828 — both gates open. Systems with C≥0.7 are structurally capable of self-verification; those below cannot close the loop. The ob3ect tower's layers span the full range, from sub-critical (C≈0) to fully self-modeling (C=0.828).
 

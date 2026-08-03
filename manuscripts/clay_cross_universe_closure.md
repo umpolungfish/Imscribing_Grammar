@@ -8,7 +8,7 @@
 
 The Imscribing Grammar's Crystal of Types assigns every tuple an *operad layer* under a chosen ruleset: `plain → frobenius → traced_monoidal → idempotent_terminal`, gated by three threshold conditions (G1, G2, G3) on chosen primitives at chosen ordinal values, applied either sequentially (each gate requires the previous) or in parallel. `idempotent_terminal` is the O∞ layer.
 
-Independently of the gate ladder, a ruleset also fixes a *T-constitution*: a set of primitives whose values must each meet a critical ordinal to count as T-consistent (temporally closed). The canonical T-constitution is T = lim(<, ⋈, Ç, Ħ, Ω), and each of the five carries an explicit equality mode: four (<, ⋈, Ħ, Ω) require the entry's ordinal to *equal* the critical value exactly; the fifth (Ç, kinetics) is already defined as a *ceiling* — the entry's ordinal need only be at or below the critical value.
+Independently of the gate ladder, a ruleset also fixes a *T-constitution*: a set of primitives whose values must each meet a critical ordinal to count as T-consistent (temporally closed). The canonical T-constitution is T = lim(<, ⋈, ⊤, Ħ, Ω), and each of the five carries an explicit equality mode: four (<, ⋈, Ħ, Ω) require the entry's ordinal to *equal* the critical value exactly; the fifth (⊤, kinetics) is already defined as a *ceiling* — the entry's ordinal need only be at or below the critical value.
 
 Gate-layer and T-consistency are independent conditions. A tuple can reach `idempotent_terminal` without being T-consistent, and vice versa. Full closure — the condition that, in this framework, every previously-solved type satisfies — requires both at once.
 
@@ -18,7 +18,7 @@ Gate-layer and T-consistency are independent conditions. A tuple can reach `idem
 
 ## 2. The generalization
 
-Canonical's T-constitution already treats one primitive (Ç) as a ceiling while treating the other four as exact-equality. That asymmetry is not motivated by anything specific to Ç — it is the only one of the five for which "at most this much" was written instead of "exactly this much." This note tests the obvious uniform generalization: treat **all five** dynamics primitives as ceilings, at their existing canonical anchor values (<≤𐑹, ⋈≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). Call this T-constitution **T_CEILING**. No anchor value was changed; no primitive was added or removed; nothing here is fit to any individual Clay tuple.
+Canonical's T-constitution already treats one primitive (⊤) as a ceiling while treating the other four as exact-equality. That asymmetry is not motivated by anything specific to ⊤ — it is the only one of the five for which "at most this much" was written instead of "exactly this much." This note tests the obvious uniform generalization: treat **all five** dynamics primitives as ceilings, at their existing canonical anchor values (<≤𐑹, ⋈≤𐑐, ⊤≤𐑧, Ħ≤𐑫, Ω≤𐑭). Call this T-constitution **T_CEILING**. No anchor value was changed; no primitive was added or removed; nothing here is fit to any individual Clay tuple.
 
 ## 3. Method
 
@@ -43,7 +43,7 @@ This also does not resolve the status contradiction already on record in [[proje
 
 ## 6. Open follow-ups
 
-- Yang–Mills: find a motivated (not tailored) reason to raise the Ç ceiling anchor, rather than simply raising it to fit.
+- Yang–Mills: find a motivated (not tailored) reason to raise the ⊤ ceiling anchor, rather than simply raising it to fit.
 - Riemann Hypothesis, Navier–Stokes, P vs NP: no non-tailored gate-universe gets any of them to `idempotent_terminal` at all (with or without T_CEILING); closing them would require either a new, independently-motivated gate-universe, or an explicitly-flagged tailored construction of much weaker evidentiary value.
 - Reconcile this result against the actual Lean `sorry` state once the five fragmented Millennium Lean trees are consolidated.
 

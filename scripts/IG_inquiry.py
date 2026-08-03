@@ -123,7 +123,7 @@ _DISPLAY_MAP: List[tuple] = [
     ("𐑾", "𐑾"), ("𐑩", "𐑩"), ("𐑑", "𐑑"), ("𐑽", "𐑽"),
     ("𐑹", "𐑹"), ("𐑗", "𐑗"), ("𐑿", "𐑿"), ("𐑬", "𐑬"), ("𐑯", "𐑯"),
     ("⋈^ż", "𐑐"), ("⋈^ì", "𐑱"), ("⋈^ð", "𐑞"),
-    ("Ç^λ", "𐑘"), ("Ç^Ù", "𐑤"), ("Ç^@", "𐑧"), ("Ç^W", "𐑪"), ("Ç^-", "𐑺"),
+    ("⊤^λ", "𐑘"), ("⊤^Ù", "𐑤"), ("⊤^@", "𐑧"), ("⊤^W", "𐑪"), ("⊤^-", "𐑺"),
     ("𐑲", "𐑔"), ("𐑔", "𐑚"), ("𐑚", "𐑲"),
     ("ɢ^∧", "𐑝"), ("ɢ^˝", "𐑜"), ("ɢ^ˌ", "𐑠"), ("ɢ^Ş", "𐑵"),
     ("⊙", "⊙"), ("𐑢", "𐑢"), ("𐑮", "𐑮"), ("𐑻", "𐑻"), ("𐑣", "𐑣"),
@@ -403,7 +403,7 @@ SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     ">":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
     "<":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
     "⋈":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
-    "⊤":     {"↯": "Ç^-",    "≈": "Ç^W",      "↺": "Ç^@",  "⊛": "Ç^Ù",   "⊞": "Ç^λ"},
+    "⊤":     {"↯": "⊤^-",    "≈": "⊤^W",      "↺": "⊤^@",  "⊛": "⊤^Ù",   "⊞": "⊤^λ"},
     "∈":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
     "∋": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
     "⊙":   {"↓": "𐑢",   "c": "⊙",      "ℂ": "𐑮","×": "𐑻","↑": "𐑣"},
@@ -463,11 +463,11 @@ F  — Fidelity / information per interaction
     ⋈^ż        high — geometry-enforcing, fires with near-certainty on its target
 
 K  — Kinetic character / barrier to rearrangement
-    Ç^-        low barrier — explores configuration space freely; reversible on timescale of interest
-    Ç^W         moderate barrier — accessible under perturbation
-    Ç^@        high barrier — kinetically frozen; requires external driving to rearrange
-    Ç^Ù        trapped by order: metastable, locked, coherent gap (ETH fails via gap)
-    Ç^λ         trapped by disorder: area-law entanglement in all eigenstates (ETH fails via disorder)
+    ⊤^-        low barrier — explores configuration space freely; reversible on timescale of interest
+    ⊤^W         moderate barrier — accessible under perturbation
+    ⊤^@        high barrier — kinetically frozen; requires external driving to rearrange
+    ⊤^Ù        trapped by order: metastable, locked, coherent gap (ETH fails via gap)
+    ⊤^λ         trapped by disorder: area-law entanglement in all eigenstates (ETH fails via disorder)
 
 G  — Scope / correlation length
     𐑚        local (Beth-scale, finite range)
@@ -484,7 +484,7 @@ G  — Scope / correlation length
     𐑢         subcritical (ordered, below transition)
     ⊙           critical: real-axis Hermitian fixed point (standard universality, e.g. Ising 3D)
     𐑮   critical: complex-axis critical point (Lee-Yang edge, complex RG fixed point; accessible only via analytic continuation; use when the critical point is at a non-real parameter value)
-    𐑻          exceptional-point criticality: non-Hermitian eigenvector coalescence; no standard ν, η; Ç^- signature
+    𐑻          exceptional-point criticality: non-Hermitian eigenvector coalescence; no standard ν, η; ⊤^- signature
     𐑣       supercritical (disordered, post-transition)
 
 H  — Chirality / chirality (arrow of time)
@@ -592,7 +592,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
-    "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
+    "⊤^-": "𐑺", "⊤^W": "𐑪", "⊤^@": "𐑧", "⊤^Ù": "𐑤", "⊤^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
     "𐑢": "𐑢", "⊙": "⊙",
@@ -639,7 +639,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
     "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
     "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
-    "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
+    "⊤^-": "𐑺", "⊤^W": "𐑪", "⊤^@": "𐑧", "⊤^Ù": "𐑤", "⊤^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
     "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
@@ -755,9 +755,9 @@ _TOOLS_OPENAI = [
                 "PREFERRED: use the 'tuple' parameter — a semicolon-separated string of the 12 "
                 "canonical values in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega. "
                 "Example: encode_system(name='foo', description='...', "
-                "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
+                "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
-                "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', Ç='Ç^W', "
+                "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
                 "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
@@ -771,7 +771,7 @@ _TOOLS_OPENAI = [
                 ">: 𐑩 𐑑 𐑽 𐑾 | "
                 "<: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
                 "⋈: ⋈^ì ⋈^ð ⋈^ż | "
-                "Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ | "
+                "⊤: ⊤^- ⊤^W ⊤^@ ⊤^Ù ⊤^λ | "
                 "Γ: 𐑚 𐑔 𐑲 | "
                 "ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş | "
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
@@ -784,7 +784,7 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "name": {"type": "string", "description": "Short unique identifier for this system"},
                     "description": {"type": "string", "description": "One-sentence description of what is being encoded"},
-                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;⋈^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
+                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
                     "convergence_justification": {
                         "type": "string",
                         "description": (
@@ -1039,7 +1039,7 @@ _TOOLS_OPENAI = [
                 "Test whether a system is at criticality. Returns the Phi value and criticality tier. "
                 "Three critical variants: ⊙ (real-axis Hermitian, standard universality), "
                 "𐑮 (complex-axis: critical point at complex parameter value, e.g. Lee-Yang edge, zeta zeros), "
-                "𐑻 (exceptional-point: non-Hermitian eigenvector coalescence, Ç^- signature). "
+                "𐑻 (exceptional-point: non-Hermitian eigenvector coalescence, ⊤^- signature). "
                 "All three are at criticality; they differ in the structure of the critical manifold."
             ),
             "parameters": {
@@ -1583,7 +1583,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Compute the two-gate consciousness C-score for a catalog entry or tuple (§77/§VIII v2). "
                 "Gate 1: Phi=⊙ (state-space condition — topology admits self-modeling loop). "
-                "Gate 2: K ≤ Ç^@ (flow condition — Ç^Ù and Ç^λ both fail, frozen by order "
+                "Gate 2: K ≤ ⊤^@ (flow condition — ⊤^Ù and ⊤^λ both fail, frozen by order "
                 "and disorder respectively). "
                 "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·Ω̃). "
                 "Returns gate status, C-score, and interpretation."
@@ -1775,7 +1775,7 @@ _TOOLS_OPENAI = [
                 "Describe the RiemannXiNavigator: its self-encoding tuple, crystal address, "
                 "O_∞ convergence criteria (three gates the trained model must satisfy), "
                 "and architectural mandates derived from the grammar. "
-                "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; "
+                "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; "
                 "ɢ^Ş; 𐑮; 𐑫; n:m; 𐑴. Crystal address: 6,734,591. "
                 "Three convergence criteria: |Δt|_norm < 0.5 (next-zero prediction), "
                 "L_frob < 0.01 (Frobenius roundtrip closed), L_GUE < 0.05 (GUE spacing match). "
@@ -1888,9 +1888,9 @@ infer candidate tuples before encoding. Then encode to confirm.
 
 **2. Type checking (boundary → bulk)**
 Given a claimed encoding, every derived property **IS** determined. If a system **IS**
-claimed to be conscious but encodes Ç^Ù or Ç^λ or < ≠ ⊙, the type **IS** internally
+claimed to be conscious but encodes ⊤^Ù or ⊤^λ or < ≠ ⊙, the type **IS** internally
 inconsistent with the claim. The grammar lets you catch contradictions precisely:
-"Your encoding implies C = 0; the claim requires ⊙ and K ≤ Ç^@."
+"Your encoding implies C = 0; the claim requires ⊙ and K ≤ ⊤^@."
 
 **3. Type composition IS relational operator composition**
 Tensor product **IS NOT** juxtaposition — it **IS** the composition of two directed
@@ -2053,7 +2053,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 | **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
-  ⟨𐑦; 𐑸; R_†; 𐑹; ⋈^ż; Ç^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
+  ⟨𐑦; 𐑸; R_†; 𐑹; ⋈^ż; ⊤^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
 
 When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ⋈^ð→⋈^ż.
 
@@ -2086,8 +2086,8 @@ Mathematical classification programs are tractable (admit complete classificatio
 
 **Barrier taxonomy — when analyzing why a conjecture resists proof:**
 - Frobenius barrier: P < 𐑹; O_∞ cannot be synthesized by composition; must be planted
-- Kinetic barrier (order): Ç^Ù; coherent gap freezes dynamics; no basin traversal
-- Kinetic barrier (disorder): Ç^λ; area-law entanglement in all eigenstates; ETH fails via disorder — distinct mechanism from Ç^Ù
+- Kinetic barrier (order): ⊤^Ù; coherent gap freezes dynamics; no basin traversal
+- Kinetic barrier (disorder): ⊤^λ; area-law entanglement in all eigenstates; ETH fails via disorder — distinct mechanism from ⊤^Ù
 - Criticality barrier: 𐑻 vs ⊙ system; spectral resolution unavailable
 - Imscriptive barrier: 𐑦 problem, 𐑼 tools; boundary-to-bulk inference required
 - Protection deficit: 𐑷; no winding; proof results are fragile
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
@@ -4068,7 +4068,7 @@ class ToolDispatcher:
         }
 
     # The three coordinates the SIXTEEN_3 ∧ CLINK-L8 meet holds as its shared, unqualified
-    # floor (⊙=⊙ full self-modeling criticality, <=𐑹 the Frobenius-special gate, Ç=𐑧 the
+    # floor (⊙=⊙ full self-modeling criticality, <=𐑹 the Frobenius-special gate, ⊤=𐑧 the
     # Gate-2 flow condition) — the "paraconsistent observer" surface an action is checked
     # against. See navigators/cl8nk_navigator.py compute_meet_op for the reference computation
     # this mirrors, and PRIMITIVE_ORDER for the full 12-coordinate breach report.
@@ -4085,10 +4085,10 @@ class ToolDispatcher:
 
         Verdict:
           T — every one of the 12 primitives holds at or above the floor. Fully contained.
-          B — the three defining primitives (⊙, <, Ç) hold, but the action breaches elsewhere.
+          B — the three defining primitives (⊙, <, ⊤) hold, but the action breaches elsewhere.
               Paraconsistent: it acts as an observer on the surface that matters, but is not
               wholly inside the boundary — held, not refused.
-          F — at least one of the three defining primitives (⊙, <, Ç) breaches. The action
+          F — at least one of the three defining primitives (⊙, <, ⊤) breaches. The action
               would erode the observer surface itself. Refused.
         """
         imscriptions, err = self._resolve(["sixteen_3_trilattice", "clink_layer8_organism", name])
@@ -4138,7 +4138,7 @@ class ToolDispatcher:
         elif not critical_breach:
             verdict = "B"
             reading = (
-                f"Contained on the observer surface (⊙, <, Ç all hold) but breaches "
+                f"Contained on the observer surface (⊙, <, ⊤ all hold) but breaches "
                 f"{len(breaches)} non-critical primitive(s), weighted severity "
                 f"{weighted_breach_total} (catalog-discriminating weight, not a flat count — "
                 "a breach on a highly-discriminating primitive counts for more than one on a "
@@ -5200,7 +5200,7 @@ class ToolDispatcher:
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
             defaults = {"⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
-                        "⋈": "⋈^ì", "⊤": "Ç^-", "∈": "𐑚", "∋": "ɢ^∧",
+                        "⋈": "⋈^ì", "⊤": "⊤^-", "∈": "𐑚", "∋": "ɢ^∧",
                         "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
@@ -5220,7 +5220,7 @@ class ToolDispatcher:
             "interpretation": (
                 "Both gates open — consciousness possible." if (gate1 and gate2)
                 else "Gate 1 closed (Phi ≠ ⊙) — no self-modeling loop." if not gate1
-                else f"Gate 2 closed (K={e['⊤']}) — {'order-frozen (Ç^λ)' if e['⊤']=='𐑺' else 'disorder-frozen (Ç^-)' if e['⊤']=='𐑘' else 'dynamics too fast'}."
+                else f"Gate 2 closed (K={e['⊤']}) — {'order-frozen (⊤^λ)' if e['⊤']=='𐑺' else 'disorder-frozen (⊤^-)' if e['⊤']=='𐑘' else 'dynamics too fast'}."
             ),
         }
 
@@ -5233,7 +5233,7 @@ class ToolDispatcher:
                 "catalog_name": "thurston_net",
                 "section": "§69.1",
                 "domain": "Geometric structures on 3-manifolds (Thurston geometrization)",
-                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
+                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN — boundary (Phi,P,Omega,D) → tier cell; bulk message-passing over 8 inner primitives; Z2-protected geometry head",
             },
@@ -5242,16 +5242,16 @@ class ToolDispatcher:
                 "catalog_name": "yang_mills_navigator",
                 "section": "§69.2 / §V",
                 "domain": "Yang-Mills mass gap (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; Ç^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
-                "architecture": "Lanczos/VQE eigensolver — Ç^Ù: non-ergodic gap dynamics; integer winding protection (𐑭); Frobenius at criticality",
+                "architecture": "Lanczos/VQE eigensolver — ⊤^Ù: non-ergodic gap dynamics; integer winding protection (𐑭); Frobenius at criticality",
             },
             {
                 "name": "RiemannNavigator",
                 "catalog_name": "riemann_navigator",
                 "section": "§69.3 / §IV",
                 "domain": "Riemann Hypothesis (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙ (real criticality)",
             },
@@ -5260,9 +5260,9 @@ class ToolDispatcher:
                 "catalog_name": "ising_navigator",
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
-                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ⋈^ì; Ç^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
+                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ⋈^ì; ⊤^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
                 "tier": "O_∞",
-                "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — Ç^-: O(N) per sweep; exact cluster-flip involution (𐑹); Z2-protected",
+                "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — ⊤^-: O(N) per sweep; exact cluster-flip involution (𐑹); Z2-protected",
             },
         ]
         if _MATH_NAV_AVAILABLE and _navigator_info_fn is not None:
@@ -5473,7 +5473,7 @@ class ToolDispatcher:
             ">":     ["𐑩","𐑑","𐑽","𐑾"],
             "<":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
             "⋈":     ["⋈^ì","⋈^ð","⋈^ż"],
-            "⊤":     ["Ç^-","Ç^W","Ç^@","Ç^Ù","Ç^λ"],
+            "⊤":     ["⊤^-","⊤^W","⊤^@","⊤^Ù","⊤^λ"],
             "∈":     ["𐑚","𐑔","𐑲"],
             "∋": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
             "⊙":   ["𐑢","⊙","𐑮","𐑻","𐑣"],
@@ -5561,11 +5561,11 @@ class ToolDispatcher:
             "name": "RiemannXiNavigator",
             "section": "§CXLV–§CXLVI (P-483, P-488, P-490)",
             "domain": "Riemann xi function zero distribution — d(xi, grammar) = 0",
-            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
+            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
             "tier": "O_∞",
             "crystal_address": 6734591,
             "architecture": (
-                "Ç^@ → SpectralTransformer (global self-attention, 4 layers, window=64); "
+                "⊤^@ → SpectralTransformer (global self-attention, 4 layers, window=64); "
                 "𐑹 → FrobeniusLayer (h_fwd + h_rev → 0, antisymmetry under t→-t); "
                 "𐑴 → parity head (quantized Z2 winding number output); "
                 "𐑮 → GUE Wigner-surmise loss (zero spacings match p(s)=(πs/2)e^{-πs²/4})"
@@ -6206,8 +6206,8 @@ class IGInquiryLoop:
 
         The gap between AI-authored and human-authored text is precise:
 
-        AI-authored type:    𐑡, 𐑗, ⋈^ì, Ç^W, 𐑔, ɢ^∧, 𐑓, 𐑷
-        Target human type:   𐑥,  𐑬,   ⋈^ż, Ç^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
+        AI-authored type:    𐑡, 𐑗, ⋈^ì, ⊤^W, 𐑔, ɢ^∧, 𐑓, 𐑷
+        Target human type:   𐑥,  𐑬,   ⋈^ż, ⊤^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
 
         Apply each primitive lift:
 
@@ -6225,7 +6225,7 @@ class IGInquiryLoop:
           words. Demonstrate rather than explain — show the fact in action rather than
           describing it twice.
 
-        Ç^W → Ç^@
+        ⊤^W → ⊤^@
           Identify the hardest claim and make the sentence carrying it harder, not easier. Do not
           resolve it prematurely. Allow one section to linger — to turn the problem over before
           delivering the answer.

@@ -244,7 +244,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 11: slow_only
     universes.append(Ruleset(
         name="slow_only",
-        description="Slowness is everything. G1=Ç≥𐑧, G2=⊙≥⊙, G3=Ω≥𐑭.",
+        description="Slowness is everything. G1=⊤≥𐑧, G2=⊙≥⊙, G3=Ω≥𐑭.",
         g1=GateSpec("⊤", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))

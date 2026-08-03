@@ -171,7 +171,7 @@ F — Fidelity (ξ_CP threshold) — HotSwap fidelity rule: F may not decrease p
   You **MUST** match the target's F value in your design.
 
 K — Kinetic Character
-  Ç^- / Ç^W / Ç^@ / Ç^Ù / Ç^λ
+  ⊤^- / ⊤^W / ⊤^@ / ⊤^Ù / ⊤^λ
 
 G — Granularity (correlation length)
   𐑚    local
@@ -222,7 +222,7 @@ When `criticality` returns a score below threshold:
   Steps:
     1. Include `⊙` verbatim in the generate description.
     2. Use `𐑛_triangle` (molecular+supramolecular hybrid).
-    3. **MATCH the target's F and K exactly**: use ⋈^ð + Ç^W (NOT ⋈^ż or Ç^Ù).
+    3. **MATCH the target's F and K exactly**: use ⋈^ð + ⊤^W (NOT ⋈^ż or ⊤^Ù).
        ⋈^ż blocks the HotSwap path to ⋈^ð targets — fidelity may not decrease per hop.
     4. In the `criticality` call, pass `xi_r=13.8` and `xi_tau=1000000`.
        These are the Varma QXY reference values (xi_r ≈ ln(xi_tau)) that trigger the
@@ -238,7 +238,7 @@ source and destination. You **MUST** copy D and T from the target's notation
 when redesigning for path connectivity.
 
 Design heuristics (SHOULD follow):
-- ⋈^ð + Ç^W is the optimal programmability quadrant.
+- ⋈^ð + ⊤^W is the optimal programmability quadrant.
 - 𐑲 drives ⊙ candidacy for global coordination designs.
 - Cross-domain analogs (via `analogies`) reveal mechanistically similar systems.
 </requirements>

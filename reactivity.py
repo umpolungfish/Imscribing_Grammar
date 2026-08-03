@@ -250,7 +250,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     else:
         Ph = 31    # fully saturated, no lone pairs → <=𐑯 (closed)
 
-    # ── Ç: max kinetics of components
+    # ── ⊤: max kinetics of components
     C = max(get(tA, '⊤'), get(tB, '⊤'))
 
     # ── ⋈: universally 0

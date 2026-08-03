@@ -204,7 +204,7 @@ class RetrodesignAgent(BaseAgent):
             max_depth:        Maximum decomposition depth.
             prune_axioms:     Axioms to enforce during pruning (default: [1,2,4,6]).
             strict_grounding: Block decomposition if D_∞ target lacks Axiom 6 grounding.
-            prune_ktrap:      Prune Ç^Ù leaves without escape pathway (default True).
+            prune_ktrap:      Prune ⊤^Ù leaves without escape pathway (default True).
 
         Returns:
             RetrodesignAnalysisResult with ranked routes.

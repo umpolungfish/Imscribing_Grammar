@@ -233,7 +233,7 @@ def derive_tuple(sym):
     else:
         Ph = 7    # odd-valence open shell (alkalis, H, halogens, group 13)
 
-    # ─── Ç (Kinetics) idx ────────────────────────────────────────
+    # ─── ⊤ (Kinetics) idx ────────────────────────────────────────
     # PGM + Fe-like TM catalysts: 20; radioactive/nuclear: 23; rest: 8
     CATALYTIC = {'Fe','Co','Ru','Rh','Pd','Os','Ir','Pt','Mn','Ni'}
     if sym in (RADIOACTIVE - TRANSACTINIDES) or sym in TRANSACTINIDES:
@@ -426,7 +426,7 @@ def main():
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> Ħ Ω ⊢ Σ < Ç ⋈ ɢ Γ ⊣ ⊙"}')
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> Ħ Ω ⊢ Σ < ⊤ ⋈ ɢ Γ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -438,7 +438,7 @@ def main():
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | >  Ħ  Ω  ⊢  Σ  <  Ç  ⋈  ɢ  Γ  ⊣  ⊙')
+        info_line(f'\n{"Sym":4s} {"Z":3s} | >  Ħ  Ω  ⊢  Σ  <  ⊤  ⋈  ɢ  Γ  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

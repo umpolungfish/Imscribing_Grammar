@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω
+Primitive order: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω
 """
 
 import wave
@@ -142,27 +142,27 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     ),
 
     # ⊤ — Kinetics
-    "Ç^-": (
+    "⊤^-": (
         "/ɣ/",
         "Spanish 'g' in 'agua'",
         "Voiced velar fricative. The back of the tongue approaches but does not touch the velum, and voice flows through with friction — the softened 'g' between vowels in Spanish 'agua', 'amigo'. A voiced version of the Scottish 'ch' in 'loch'.",
     ),
-    "Ç^W": (
+    "⊤^W": (
         "/ɯ/",
         "back 'oo' with spread lips",
         "Close back unrounded vowel. Like the 'oo' in 'food' but with lips completely flat and spread — the opposite of rounding. Common in Korean (으), Turkish (ı), Japanese (u in many contexts).",
     ),
-    "Ç^@": (
+    "⊤^@": (
         "/ə/",
         "schwa — 'uh' resting vowel",
         "Mid central vowel. The vocal tract at rest — tongue mid-height, mid-front-back, lips neutral. The default reduced vowel in English: 'a'bout, 'comm'a, 'bett'er. The acoustic center of gravity.",
     ),
-    "Ç^Ù": (
+    "⊤^Ù": (
         "/tʃ/",
         "like 'ch' in 'church'",
         "Voiceless palato-alveolar affricate. Tongue tip at the ridge behind the upper teeth, releasing into a 'sh'-like hiss — 'ch' in 'church', 'cheese', 'chair'.",
     ),
-    "Ç^λ": (
+    "⊤^λ": (
         "/l/",
         "like 'l' in 'light'",
         "Alveolar lateral approximant. Tongue tip touches the ridge behind the upper teeth; voice flows around the sides of the tongue. The classical 'l' — clear before vowels, dark ('dark l') before consonants.",
@@ -177,7 +177,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     "𐑔": (
         "/ɣ/",
         "Spanish 'g' in 'agua'",
-        "Voiced velar fricative. Same as Ç^- — back of tongue near but not touching the velum, voice flowing through with turbulence. Greek γ, Dutch 'g', Arabic غ.",
+        "Voiced velar fricative. Same as ⊤^- — back of tongue near but not touching the velum, voice flowing through with turbulence. Greek γ, Dutch 'g', Arabic غ.",
     ),
     "𐑲": (
         "/ʔ/",
@@ -199,7 +199,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     "ɢ^ˌ": (
         "/ə/",
         "weak schwa — unstressed beat",
-        "Mid central vowel at secondary stress. The same neutral 'uh' as Ç^@, but positioned at the lighter of two stress beats — the secondary pulse in a compound word or polysyllabic sequence.",
+        "Mid central vowel at secondary stress. The same neutral 'uh' as ⊤^@, but positioned at the lighter of two stress beats — the secondary pulse in a compound word or polysyllabic sequence.",
     ),
     "ɢ^Ş": (
         "/aː/",

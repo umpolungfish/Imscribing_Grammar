@@ -927,7 +927,7 @@ class PredictiveRuleGenerator:
 
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
-            And(P("F", "𐑐"), P("K", "Ç_frtailgamma")),
+            And(P("F", "𐑐"), P("K", "𐑘")),
             P("<", "⊙_softsign"),
         ))
 
@@ -952,7 +952,7 @@ class PredictiveRuleGenerator:
         # ── T_⋈ ∧ R_⇔ → K_turnm ∨ K_schwa (dethreading barrier) ─────────────────
         candidates.append((
             And(P("T", "𐑥"), P("R", "𐑾")),
-            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
+            Or(P("K", "𐑤"), P("K", "𐑧")),
         ))
 
         # ── Scale-topology coupling ─────────────────────────────────────────────
@@ -978,7 +978,7 @@ class PredictiveRuleGenerator:
         # Catalytic cycles have turnover rates; K_frtailgamma is unphysical for D_∞
         candidates.append((
             P("D", "𐑼"),
-            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
+            Or(P("K", "𐑤"), P("K", "𐑧")),
         ))
         # Catalytic recognition mode → temporal or hybrid temporal dimension
         candidates.append((
@@ -1000,7 +1000,7 @@ class PredictiveRuleGenerator:
         # ── ⊙ indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
-            And(P("T", "𐑥"), P("K", "Ç_teshlig")),
+            And(P("T", "𐑥"), P("K", "𐑪")),
             P("<", "⊙_ctyogh"),
         ))
 
@@ -1013,7 +1013,7 @@ class PredictiveRuleGenerator:
         # T_□□ → K_turnm or K_schwa (enclosed cage always has exchange barrier)
         candidates.append((
             P("T", "𐑶"),
-            Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
+            Or(P("K", "𐑤"), P("K", "𐑧")),
         ))
 
         return candidates

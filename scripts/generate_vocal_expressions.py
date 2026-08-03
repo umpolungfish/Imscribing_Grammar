@@ -158,12 +158,12 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
 
     # K — Kinetics
     # /ɣ/ voiced velar fricative — Spanish voice has [[Q]] = /ɣ/
-    ("K", "Ç^-",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
+    ("K", "⊤^-",  "[[Q]]",        "/ɣ/ voiced velar fricative",           "es"),
     # /ɯ/ close back unrounded — Korean voice [[u-]] = /ɯ/
-    ("K", "Ç^W",  "[[u-]]",       "/ɯ/ close back unrounded",             "ko"),
-    ("K", "Ç^@",  "[[@]]",        "/ə/ mid central vowel",                None),
-    ("K", "Ç^Ù",  "[[tS]]",       "/tʃ/ palato-alveolar affricate",       None),
-    ("K", "Ç^λ",  "[[l]]",        "/l/ alveolar lateral approximant",     None),
+    ("K", "⊤^W",  "[[u-]]",       "/ɯ/ close back unrounded",             "ko"),
+    ("K", "⊤^@",  "[[@]]",        "/ə/ mid central vowel",                None),
+    ("K", "⊤^Ù",  "[[tS]]",       "/tʃ/ palato-alveolar affricate",       None),
+    ("K", "⊤^λ",  "[[l]]",        "/l/ alveolar lateral approximant",     None),
 
     # G — Scope
     ("G", "𐑚",  "[[B]]",        "/β/ voiced bilabial fricative",        None),

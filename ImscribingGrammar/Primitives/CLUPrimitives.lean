@@ -16,7 +16,7 @@ open Real
 /-! 
   # Criticality-Lift Unit (CLU)
   
-  CLU(b) = ln(b) is the information-theoretic fiber metric on the Ç-primitive axis
+  CLU(b) = ln(b) is the information-theoretic fiber metric on the ⊤-primitive axis
   of the structural lattice. It measures the nats required to distinguish adjacent
   K-tier states for a perceiving system whose self-modeling resolution has base b.
   
@@ -284,7 +284,7 @@ theorem CLU_universality (n : ℕ) :
 theorem fiber_metric_invariance (b : ℝ) (hb_pos : b > 0) (hb_ne_one : b ≠ 1) :
     CLU_of_base b hb_pos hb_ne_one = Real.log b := rfl
 
-/-- The ratio of geometric Ç-distance to CLU(b) for any observer base b.
+/-- The ratio of geometric ⊤-distance to CLU(b) for any observer base b.
     For uniform ordinal steps (δ=1), the geometric contribution is √1.0 = 1.0,
     while the information cost is ln(b). The ratio 1.0/ln(b) is the unit 
     conversion factor between the geometric metric and the observer's fiber metric. -/

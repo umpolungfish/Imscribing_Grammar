@@ -137,7 +137,7 @@ def validate_structural(imscription: "Imscription") -> List[str]:
     if errs:
         return errs  # axioms are meaningless over out-of-set values
     if v["chirality"] == "𐑫" and v["kinetic_character"] != "𐑪":
-        errs.append(f"Axiom A: Ħ=𐑫 requires Ç=𐑪 (got Ç={v['kinetic_character']})")
+        errs.append(f"Axiom A: Ħ=𐑫 requires ⊤=𐑪 (got ⊤={v['kinetic_character']})")
     if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
         errs.append(f"Axiom B: Ω={v['protection']} requires Ħ ∈ {{𐑖,𐑫}} (got Ħ={v['chirality']})")
     if (v["dimensionality"] == "𐑦") != (v["topology"] == "𐑸"):
@@ -857,7 +857,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑧`: High barrier — kinetically frozen; requires external driving to rearrange.
 - `𐑪`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
 - `𐑺`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**𐑫 implies Ç=𐑪 (topology-protected chirality cannot be undone without global restructuring).**
+**𐑫 implies ⊤=𐑪 (topology-protected chirality cannot be undone without global restructuring).**
 
 **G — Granularity** (correlation length: how far does one interaction propagate?):
 - `𐑚`: Local — single bond/event, no neighbours influenced.
@@ -881,7 +881,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑓`: Achiral — mirror image accessible; no persistent symmetry breaking.
 - `𐑒`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
 - `𐑖`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies Ç=𐑪.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
+- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies ⊤=𐑪.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
 
 **S — Stoichiometry** (participation ratio):
 - `𐑙`: Equal symmetric pairing (1:1).
@@ -896,7 +896,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 **For abstract/narrative systems: Ω encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
 
 **MANDATORY AXIOMS — violating these causes a parse error:**
-- **Axiom A**: `𐑫` REQUIRES `Ç=𐑪`. If you assign 𐑫, you MUST also assign Ç=𐑪. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS 𐑪. A fast-exchanging (𐑘) system cannot be topologically chiral.
+- **Axiom A**: `𐑫` REQUIRES `⊤=𐑪`. If you assign 𐑫, you MUST also assign ⊤=𐑪. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS 𐑪. A fast-exchanging (𐑘) system cannot be topologically chiral.
 - **Axiom B**: `𐑴` or `𐑭` REQUIRES `𐑖` or `𐑫` (chirality >= 𐑖).
 - **Axiom C**: `𐑦` REQUIRES `𐑸` (and vice versa). They always co-occur.
 - **Axiom D**: `𐑟` REQUIRES `𐑦`.
@@ -916,13 +916,13 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
   [8] Γ  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
   [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
-  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires Ç=𐑪)
+  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires ⊤=𐑪)
   [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
   [12] Ω → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
 - D-Ω: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
-- K-<: ⊙ + Ç=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + Ç=𐑘 = runaway decay
+- K-<: ⊙ + ⊤=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + ⊤=𐑘 = runaway decay
 - 𐑹 requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
 - Tier verification: ⊙ + 𐑹 → O_∞; ⊙ + 𐑷 → O₁; ⊙ + Omega≠0 + D∈{𐑛,𐑨,𐑦} → O₂; ⊙ + Omega≠0 + 𐑼 → O₂†
 </decision_procedure>
@@ -954,7 +954,7 @@ In its role within Jewish cosmology, Samael is:
 - 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)
 - 𐑿: the negating/adversarial pole of the cosmic polarity (signed direction)
 - ⋈=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
-- Ç=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
+- ⊤=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
 - 𐑲: correlation length is global — his influence is correlated across all mortal systems
 - ɢ=𐑜: any mortal is a valid partner (disjunctive)
 - ⊙: he IS the critical threshold between life and non-life

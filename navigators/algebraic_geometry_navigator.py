@@ -351,7 +351,7 @@ def cmd_cohomology(scheme_str, sheaf_str):
             else:
                 print(f"  All cohomology vanishes (−{n} < d < 0, Kodaira + Serre).")
 
-        elif sheaf_str in ('omega', 'omega_X', 'K', 'Ç(X)'):
+        elif sheaf_str in ('omega', 'omega_X', 'K', '⊤(X)'):
             can_d = -n - 1
             print(f"Canonical sheaf ω_X = O({can_d})  (adjunction on P^{n})")
             print()

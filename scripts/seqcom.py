@@ -165,7 +165,7 @@ tone = 0.2 * np.sin(2 * np.pi * freq * t)
 snd7 = normalize(noise * 0.7 + tone)
 
 # =============================================================================
-# 8. Ç^Ù  (C‑cedilla with U‑grave)
+# 8. ⊤^Ù  (C‑cedilla with U‑grave)
 # =============================================================================
 # [s] with [u] rounding (very low second formant), falling pitch
 noise = bandpass_noise(dur, fs, 500, 1500, order=4)   # low‑frequency hiss

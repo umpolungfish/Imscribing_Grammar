@@ -18,9 +18,9 @@ The six Clay Millennium types that remain open under canonical (RH, Yang–Mills
 
 ## 2. Method 1 — generalize, don't tailor: the T_CEILING sweep
 
-Canonical's T-constitution already treats one primitive (Ç, kinetics) asymmetrically: a ceiling condition, while the other four dynamics primitives (<, ⋈, Ħ, Ω) require exact equality. This asymmetry was not motivated by anything specific to Ç — it is simply the one place "at most this much" was written instead of "exactly this much."
+Canonical's T-constitution already treats one primitive (⊤, kinetics) asymmetrically: a ceiling condition, while the other four dynamics primitives (<, ⋈, Ħ, Ω) require exact equality. This asymmetry was not motivated by anything specific to ⊤ — it is simply the one place "at most this much" was written instead of "exactly this much."
 
-**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (<≤𐑹, ⋈≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
+**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (<≤𐑹, ⋈≤𐑐, ⊤≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
 
 **Result:** BSD and Hodge each reach full closure (`idempotent_terminal` + T_CEILING-consistent) under five existing, non-tailored gate-universes apiece. Yang–Mills reaches the gate layer under one (`triple_criticality`) but fails T_CEILING — its kinetics value exceeds even the relaxed ceiling. RH, Navier–Stokes, and P vs NP never reach the gate layer under any of the 29, with or without T_CEILING.
 
@@ -46,17 +46,17 @@ The first cross-universe comparisons treated "closure" as one collapsed boolean:
 Doing this revealed that Yang–Mills is not a third instance of the BSD/Hodge pattern. Under U₁₀:
 
 - GATE: canonical fails, U₁₀ passes — a real conflict.
-- T: canonical fails, U₁₀ *also* fails (T_CEILING's Ç ceiling, ord 3, doesn't admit YM's value, ord 4) — no conflict, just agreement that it fails.
+- T: canonical fails, U₁₀ *also* fails (T_CEILING's ⊤ ceiling, ord 3, doesn't admit YM's value, ord 4) — no conflict, just agreement that it fails.
 
 A collapsed boolean would have reported "no closure, nothing interesting" and stopped there, identical to RH/NS/PNP's situation. The decomposed view shows YM's obstruction is structurally different from both: gate-conflicted but T-flat, where BSD/Hodge are conflicted on both axes simultaneously.
 
 ## 5. Method 4 — when no universe works, ask why, not how-much
 
-Before inventing anything for Yang–Mills, all **109** universes on record (`RULESETS` + `NEW_RULESETS` + `iterate_universes.build_universes()`, the full systematic-permutation set, not just the 29 used so far) were swept in Python for one where YM closes natively. None do. More tellingly: not one of the 109 ever varies the Ç ceiling at all — every universe that touches T at all uses the same ord-3 anchor.
+Before inventing anything for Yang–Mills, all **109** universes on record (`RULESETS` + `NEW_RULESETS` + `iterate_universes.build_universes()`, the full systematic-permutation set, not just the 29 used so far) were swept in Python for one where YM closes natively. None do. More tellingly: not one of the 109 ever varies the ⊤ ceiling at all — every universe that touches T at all uses the same ord-3 anchor.
 
-Rather than raise the anchor to whatever value happens to admit YM's tuple, the question was inverted: *is there an independently-motivated reason a kinetics ceiling should sit higher than ord 3?* There is, and it is not about YM's specific tuple — it is about what the conjecture *says*. A mass gap is, by definition, a trapped/gapped spectrum: the absence of low-energy excitations. That is a kinetically *trapped* reading (Ç=𐑪, ord 4), not a merely *slow* one (Ç=𐑧, ord 3). The temporal-closure condition for a mass-gap claim should not structurally exclude the gap itself.
+Rather than raise the anchor to whatever value happens to admit YM's tuple, the question was inverted: *is there an independently-motivated reason a kinetics ceiling should sit higher than ord 3?* There is, and it is not about YM's specific tuple — it is about what the conjecture *says*. A mass gap is, by definition, a trapped/gapped spectrum: the absence of low-energy excitations. That is a kinetically *trapped* reading (⊤=𐑪, ord 4), not a merely *slow* one (⊤=𐑧, ord 3). The temporal-closure condition for a mass-gap claim should not structurally exclude the gap itself.
 
-**U₁₁** ("triple_criticality_gapped") is U₁₀'s gates, T_CEILING with only the Ç anchor raised to 𐑪. Before adopting it, the side effect was checked explicitly: it does **not** also open RH, NS, P vs NP, BSD, or Hodge (verified in Python — they remain gate-blocked regardless of the T change, so this is not a universe that happens to dissolve every obstruction at once, which would be the signature of a degenerate, content-free move).
+**U₁₁** ("triple_criticality_gapped") is U₁₀'s gates, T_CEILING with only the ⊤ anchor raised to 𐑪. Before adopting it, the side effect was checked explicitly: it does **not** also open RH, NS, P vs NP, BSD, or Hodge (verified in Python — they remain gate-blocked regardless of the T change, so this is not a universe that happens to dissolve every obstruction at once, which would be the signature of a degenerate, content-free move).
 
 **Result, live on the booted kernel:** `ruleset verify yang_mills_mass_gap` under U₁₁ → `ALL GATES PASS`.
 

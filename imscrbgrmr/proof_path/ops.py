@@ -103,11 +103,11 @@ _F_approx = "⋈^ì"   # lateral = approximate
 _F_voiced = "⋈^ð"   # voiced dental = active
 
 # ⊤ — Kinetics
-_K_fast   = "Ç^-"   # fast spread
-_K_unif   = "Ç^W"   # uniform
-_K_slow   = "Ç^@"   # neutral / slow
-_K_osc    = "Ç^Ù"   # oscillating / trapped
-_K_lin    = "Ç^λ"   # linear
+_K_fast   = "⊤^-"   # fast spread
+_K_unif   = "⊤^W"   # uniform
+_K_slow   = "⊤^@"   # neutral / slow
+_K_osc    = "⊤^Ù"   # oscillating / trapped
+_K_lin    = "⊤^λ"   # linear
 
 # Σ — Stoichiometry
 _STO_1_1  = "𐑙"   # 1:1

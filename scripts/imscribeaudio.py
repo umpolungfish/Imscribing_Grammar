@@ -9,7 +9,7 @@ Modes:
   imscribeaudio.py <base> <sub>
       Single symbol, e.g.:  imscribeaudio.py ō ž
 
-  imscribeaudio.py --tuple "𐑛 𐑡 𐑩 𐑬 ⋈^ì Ç^- 𐑲 ɢ^∧ 𐑢 𐑓 𐑙 𐑷"
+  imscribeaudio.py --tuple "𐑛 𐑡 𐑩 𐑬 ⋈^ì ⊤^- 𐑲 ɢ^∧ 𐑢 𐑓 𐑙 𐑷"
       12-primitive Imscription tuple -> WAV with each primitive in sequence
       Accepts space- or comma-separated glyph IDs (canonical or old Lean names).
 
@@ -134,7 +134,7 @@ def main():
 
     # ---- --list ------------------------------------------------------------
     if args.list:
-        print("Canonical glyph IDs (field order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω)\n")
+        print("Canonical glyph IDs (field order: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω)\n")
         for gid in PRIMITIVE_MAP:
             print(f"  {gid}")
         return

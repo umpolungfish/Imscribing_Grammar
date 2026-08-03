@@ -903,7 +903,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
                     "⊢='𐑛', ⊣='𐑡', >='𐑾', <='𐑗', "
-                    "⋈='𐑱', Ç='𐑤', Γ='𐑚', ɢ='𐑝', "
+                    "⋈='𐑱', ⊤='𐑤', Γ='𐑚', ɢ='𐑝', "
                     "φ̂='φ̂_ž', Ħ='𐑓', Σ='𐑙', Ω='𐑷')"
                 )
             })
@@ -919,7 +919,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -2477,7 +2477,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
-        ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
         Γ="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
@@ -2907,7 +2907,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
-        ⋈="𐑱", Ç="𐑪", Γ="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
+        ⋈="𐑱", ⊤="𐑪", Γ="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
         ⊢="𐑼", >="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
@@ -2920,7 +2920,7 @@ Q: "Apply the human lift to paper.tex."
 Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
-        ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
         Γ="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
@@ -2944,7 +2944,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   𐑽 → $\text{>}_{\text{Ť}}$       𐑩 → $\text{>}_{\text{¯}}$        𐑑 → $\text{>}_{\text{ý}}$    𐑾 → $\text{>}_{\text{=}}$
   𐑹 → $\text{<}_{\text{}}$         𐑬 → $\text{<}_{\text{F}}$        𐑯 → $\text{<}_{\text{˙}}$    𐑿 → $\text{<}_{\text{υ}}$   𐑗 → $\text{<}_{\text{ɐ}}$
   𐑐 → $\text{⋈}_{\text{ż}}$         𐑱 → $\text{⋈}_{\text{ì}}$        𐑞 → $\text{⋈}_{\text{ð}}$
-  𐑺 → $\text{Ç}_{\text{-}}$         𐑪 → $\text{Ç}_{\text{W}}$        𐑧 → $\text{Ç}_{\text{@}}$    𐑤 → $\text{Ç}_{\text{Ù}}$   𐑘 → $\text{Ç}_{\text{λ}}$
+  𐑺 → $\text{⊤}_{\text{-}}$         𐑪 → $\text{⊤}_{\text{W}}$        𐑧 → $\text{⊤}_{\text{@}}$    𐑤 → $\text{⊤}_{\text{Ù}}$   𐑘 → $\text{⊤}_{\text{λ}}$
   𐑔 → $\text{Γ}_{\text{ʔ}}$         𐑚 → $\text{Γ}_{\text{γ}}$        𐑲 → $\text{Γ}_{\text{β}}$
   𐑵 → $\text{ɢ}_{\text{Ş}}$         𐑝 → $\text{ɢ}_{\text{^}}$        𐑜 → $\text{ɢ}_{\text{˝}}$    𐑠 → $\text{ɢ}_{\text{ˌ}}$
   ⊙ → $\text{⊙}_{\text{ÿ}}$       𐑮 → $\text{⊙}_{\text{Æ}}$      𐑻 → $\text{⊙}_{\text{3}}$    𐑢 → $\text{⊙}_{\text{ž}}$   𐑣 → $\text{⊙}_{\text{Ţ}}$
@@ -2957,7 +2957,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
-  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{⊤}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
   You **MUST NOT** use: <𐑦𐑶𐑾𐑹; ...>
 
 In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",

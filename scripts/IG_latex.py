@@ -18,7 +18,7 @@ import re, sys, os
 # ── Canonical table (source_id → LaTeX body, no $ delimiters) ────────────────
 #
 # Rules:
-#   ⋈  Ç  ɢ  use superscript  ^
+#   ⋈  ⊤  ɢ  use superscript  ^
 #   all others use subscript  _
 #   non-ASCII subtypes that are NOT standard Greek commands get \text{}
 #   Greek subtypes get their LaTeX command: \omega \beta \gamma \lambda \upsilon
@@ -170,8 +170,8 @@ def fix_file(path: str) -> None:
     with open(path, 'w', encoding='utf-8') as f:
         f.write(fixed)
     # Report changed primitives
-    orig_set  = set(re.findall(r'[⊢⊣><⋈ÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
-    fixed_set = set(re.findall(r'[⊢⊣><⋈ÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
+    orig_set  = set(re.findall(r'[⊢⊣><⋈⊤Γɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
+    fixed_set = set(re.findall(r'[⊢⊣><⋈⊤Γɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
     print(f"Fixed: {path}")
 
 

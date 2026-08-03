@@ -49,7 +49,7 @@ def normalize(signal, peak=0.8):
 #   >  Relational      — directional sweeps  (directionality of pitch)
 #   <  Parity          — waveform symmetry   (symmetry of the waveform itself)
 #   ⋈  Fidelity        — signal clarity      (noise floor vs clean tone)
-#   Ç  Kinetics        — temporal envelope   (attack/decay shape = speed)
+#   ⊤  Kinetics        — temporal envelope   (attack/decay shape = speed)
 #   Γ  Scope           — bandwidth           (narrow → full spectrum)
 #   ɢ  Grammar         — temporal structure  (how events compose in time)
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
@@ -218,7 +218,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = clean
 
     # =========================================================================
-    # Ç — Kinetics
+    # ⊤ — Kinetics
     # Temporal envelope shape encodes rate of change:
     # sharp attack+quick decay (fast) → ADSR (moderate) → slow bloom (slow) →
     # flat with hard cutoff (trapped) → near-silence burst (MBL)
@@ -469,7 +469,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
@@ -477,7 +477,7 @@ symbol_list = [
     ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # > Relational
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # < Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ⋈ Fidelity
-    ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # Ç Kinetics
+    ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # ⊤ Kinetics
     ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # Γ Scope
     ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ɢ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
@@ -504,9 +504,9 @@ PRIMITIVE_MAP = {
     '𐑯': ('<', '̇'),   '𐑹': ('<', '}'),
     # ⋈ Fidelity
     '⋈^ì': ('⋈', 'ì'),   '⋈^ð': ('⋈', 'ð'),   '⋈^ż': ('⋈', 'ż'),
-    # Ç Kinetics
-    'Ç^-': ('⊤', '-'),   'Ç^W': ('⊤', 'W'),   'Ç^@': ('⊤', '@'),
-    'Ç^Ù': ('⊤', 'Ù'),   'Ç^λ': ('⊤', 'λ'),
+    # ⊤ Kinetics
+    '⊤^-': ('⊤', '-'),   '⊤^W': ('⊤', 'W'),   '⊤^@': ('⊤', '@'),
+    '⊤^Ù': ('⊤', 'Ù'),   '⊤^λ': ('⊤', 'λ'),
     # Γ Scope
     '𐑚': ('∈', 'β'),   '𐑔': ('∈', 'γ'),   '𐑲': ('∈', 'ʔ'),
     # ɢ Grammar
@@ -533,8 +533,8 @@ OLD_ID_MAP = {
     'P_asym': '𐑗',     'P_psi': '𐑿',          'P_pm': '𐑬',
     'P_sym': '𐑯',      'P_pm_sym': '𐑹',
     'F_ell': '⋈^ì',      'F_eth': '⋈^ð',          'F_hbar': '⋈^ż',
-    'K_fast': 'Ç^-',     'K_mod': 'Ç^W',          'K_slow': 'Ç^@',
-    'K_trap': 'Ç^Ù',     'K_MBL': 'Ç^λ',
+    'K_fast': '⊤^-',     'K_mod': '⊤^W',          'K_slow': '⊤^@',
+    'K_trap': '⊤^Ù',     'K_MBL': '⊤^λ',
     'G_beth': '𐑚',     'G_gimel': '𐑔',        'G_aleph': '𐑲',
     'G_and': 'ɢ^∧',      'Gamma_and': 'ɢ^∧',      'G_or': 'ɢ^˝',      'Gamma_or': 'ɢ^˝',
     'G_seq': 'ɢ^ˌ',      'Gamma_seq': 'ɢ^ˌ',      'G_broad': 'ɢ^Ş',   'Gamma_broad': 'ɢ^Ş',

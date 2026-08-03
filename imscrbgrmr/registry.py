@@ -968,7 +968,7 @@ def register_imscription(
     fidelity: str,
     granularity: str,
     interaction_grammar: str,
-    kinetic_character: str = "Ç_turnm",  # NEW parameter
+    kinetic_character: str = "𐑤",  # NEW parameter
     criticality_phase: Optional[str] = None,  # NEW parameter
     description: str = "",
     **metadata,
@@ -988,7 +988,7 @@ def register_imscription(
         ...     fidelity="𐑐",
         ...     granularity="Γ_beta",
         ...     interaction_grammar="Gamma_and(SELECTIVE)",
-        ...     kinetic_character="Ç_frtailgamma",
+        ...     kinetic_character="𐑘",
         ...     description="Classic R₂²(8) hydrogen-bonded dimer",
         ... )
     """

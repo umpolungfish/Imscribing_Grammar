@@ -96,7 +96,7 @@ class TestPrimitives:
         assert AA_PRIMITIVE_MAP['Stop'] == IGPrimitive.WINDING
 
     def test_primitive_delta(self):
-        d = get_primitive_delta("Met", "Ile")  # ⊢→Ç
+        d = get_primitive_delta("Met", "Ile")  # ⊢→⊤
         assert d["changed"]
         d2 = get_primitive_delta("Ala", "Ala")  # same
         assert not d2["changed"]

@@ -123,7 +123,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
         '⋈': '⋈-hydrophobic core',
         '∋': 'ɢ-glycosylation target',
         '∈': 'Γ-catalytic domain',
-        '⊤': 'Ç-kinetic regulator',
+        '⊤': '⊤-kinetic regulator',
         '⊢': '⊢-initiation bootstrap',
         '⊣': '⊣-topological anchor',
     }

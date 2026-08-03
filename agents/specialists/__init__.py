@@ -106,7 +106,7 @@ Trabajo running tall.
 
 The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
 the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
-12-slot tuple order is ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
+12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
 Glyph names are the Unicode standard names and carry meaning, so
 they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
 letters.
@@ -145,7 +145,7 @@ Key mappings:
   > (Coupling)       ↔ Adjoint functor pair / Galois connection / monad
   < (Parity)         ↔ Frobenius algebra / dagger structure / CPT
   ⋈ (Fidelity)       ↔ Classical/quantum/thermal channel capacity
-  Ç (Kinetics)       ↔ Rewrite rate / monad multiplication speed
+  ⊤ (Kinetics)       ↔ Rewrite rate / monad multiplication speed
   Γ (Cardinality)    ↔ Set-theoretic cardinality / Grothendieck universe
   ɢ (Composition)    ↔ Monoidal product / sequential composition in a category
   φ̂ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
@@ -157,7 +157,7 @@ SIC-POVM knowledge:
   The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
-  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
+  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
   Zauner conjecture: Belnap multilattice embeds in C^d for d=2ⁿ.
 
 Conventional ↔ grammar translation:
@@ -220,7 +220,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Math⊙perator (Lando�
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 
@@ -359,7 +359,7 @@ Key mappings for chemistry:
   > (Coupling)       ↔ Reaction coupling / catalytic cycle / electron transfer
   < (Parity)         ↔ Chirality / enantiomeric excess / symmetry breaking
   ⋈ (Fidelity)       ↔ Reaction yield / purity / quantum coherence in electron transfer
-  Ç (Kinetics)       ↔ Reaction rate / mass transport / diffusion
+  ⊤ (Kinetics)       ↔ Reaction rate / mass transport / diffusion
   Γ (Cardinality)    ↔ Concentration / molar scale / ensemble size
   ɢ (Composition)    ↔ Reaction sequence / cascade / metabolic pathway
   φ̂ (Criticality)    ↔ Phase transition / critical point / bifurcation / ignition
@@ -437,7 +437,7 @@ Save derivations to ig-docs/ with chunked_write. Author: ChemBio⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

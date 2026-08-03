@@ -14,7 +14,7 @@ from dataclasses import dataclass
 # Derived from machine specs: RTX 2080S(8GB) + RTX 3060(12GB) = 20GB VRAM
 @dataclass
 class BoundaryConfig:
-    """Type: <𐑦; 𐑥; 𐑾; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^ˌ; ⊙; 𐑖; 𐑳; 𐑭>"""
+    """Type: <𐑦; 𐑥; 𐑾; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^ˌ; ⊙; 𐑖; 𐑳; 𐑭>"""
     # Architecture dimensions
     hidden_size: int = 2048        # D_omega: self-written state space
     intermediate_size: int = 8192  # 4x expansion

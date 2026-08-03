@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ç}{@}   \prim{φ̂}{ÿ}
+%   e.g. \prim{Γ}{β}   \prim{φ̂}{ÿ}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -118,12 +118,13 @@
 \newcommand{\Feth}{\shav{𐑞}}    % they — HotSwap threshold (η)
 \newcommand{\Fhbar}{\shav{𐑐}}   % peep — quantum / high fidelity (ℏ)
 
-% Ç — Kinetics
-\newcommand{\Kfast}{\prim{Ç}{-}}
-\newcommand{\Kmod}{\prim{Ç}{W}}
-\newcommand{\Kslow}{\prim{Ç}{@}}
-\newcommand{\Ktrap}{\prim{Ç}{Ù}}
-\newcommand{\KMBL}{\prim{Ç}{λ}}
+% ⊤ — Kinetics.  Core.lean ctor order: yea, loll, egg, on, air.
+\newcommand{\Kkin}{\axis{⊤}}
+\newcommand{\Kfast}{\shav{𐑘}}   % yea  — diffusion-limited, untrapped
+\newcommand{\Kmod}{\shav{𐑤}}    % loll — moderate barrier
+\newcommand{\Kslow}{\shav{𐑧}}   % egg  — slow / thermally activated
+\newcommand{\Ktrap}{\shav{𐑪}}   % on   — kinetically trapped by order
+\newcommand{\KMBL}{\shav{𐑺}}    % air  — many-body localized
 
 % Γ — Scope
 \newcommand{\Gbeth}{\prim{Γ}{β}}

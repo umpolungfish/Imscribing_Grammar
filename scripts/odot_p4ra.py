@@ -113,7 +113,7 @@ class BelnapValue(Enum):
 
 def clu_fiber(b: float = 4.0, step: int = 0) -> float:
     """
-    CLU(b) = ln(b) fiber metric on the Ç (Kinetics) axis.
+    CLU(b) = ln(b) fiber metric on the ⊤ (Kinetics) axis.
     
     For Belnap FOUR paraconsistent evaluation, b=4 (4-valued logic).
     Each evaluation step multiplies by CLU(b).

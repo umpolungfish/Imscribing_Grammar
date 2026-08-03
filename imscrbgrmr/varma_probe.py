@@ -694,7 +694,7 @@ def score_phi_c_candidacy(
             label for cond, label in [
                 (_has_galeph,  "Γ_revapostrophe"),
                 (_has_f_high,  "𐑐"),
-                (_has_k_trap,  "Ç_teshlig"),
+                (_has_k_trap,  "𐑪"),
                 (_no_temporal, "¬D_∞"),
             ] if not cond
         ]

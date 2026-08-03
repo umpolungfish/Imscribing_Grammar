@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -95,7 +95,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_composite",
-        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (⊣=𐑶) — the material's response is a function of its own damage state. Trapped-ordered kinetics (Ç=𐑺) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=𐑫) ensures the material remembers every damage event across its lifetime.",
+        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (⊣=𐑶) — the material's response is a function of its own damage state. Trapped-ordered kinetics (⊤=𐑺) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=𐑫) ensures the material remembers every damage event across its lifetime.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑺','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -105,12 +105,12 @@ DESIGNS = [
     },
     {
         "name": "eternal_memory_polymer",
-        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (Ç=𐑺) — data is stored in kinetically trapped molecular conformations. Eternal chirality (Ħ=𐑫) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (Ω=𐑭) — integer winding number per monomer ensures error-free readout.",
+        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data is stored in kinetically trapped molecular conformations. Eternal chirality (Ħ=𐑫) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (Ω=𐑭) — integer winding number per monomer ensures error-free readout.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑺','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "self_weaving_fabric",
-        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — the fabric responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
+        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (⊤=𐑤) — the fabric responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑤','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

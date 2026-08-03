@@ -22,7 +22,7 @@ Input format (paper.md):
       caption: "OrbitalState ≅ Belnap FOUR"
     - id: profile
       type: primitive_profile
-      tuple: "𐑦 𐑸 𐑾 𐑹 ⋈^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
+      tuple: "𐑦 𐑸 𐑾 𐑹 ⋈^ż ⊤^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
       title: "Frobenius fixed-point profile"
     - id: tier
       type: tier_chain
@@ -159,7 +159,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list,
         "",
         f"% Shorthand primitive commands — redefined for IG document use",
         f"{_B}renewcommand{{{_B}H}}{{Ħ}}",  # \H is Hungarian accent; override for chirality H-bar
-        f"{_B}newcommand{{{_B}K}}{{Ç}}",   # Kinetics
+        f"{_B}newcommand{{{_B}K}}{{⊤}}",   # Kinetics
         f"{_B}newcommand{{{_B}G}}{{Γ}}",   # Cardinality
         f"{_B}newcommand{{{_B}g}}{{ɢ}}",   # Composition
         f"{_B}newcommand{{{_B}Th}}{{⊣}}",   # Topology

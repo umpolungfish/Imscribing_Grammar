@@ -373,11 +373,11 @@ Assign T_≫ (chain), T_| (linear), T_□ (hub), T_⊥ (branched), T_∈ or a T_
 - **T_∈** — use only when ring topology is genuinely unspecified or irrelevant
 
 **T_□□ vs T_∪ vs T_⋈ — THREE-WAY DISTINCTION (critical):**
-- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; Ç^@/Ç^Ù default.
+- **T_□□ (CAGE)** — guest ENCLOSED in 3D; egress requires framework distortion; ⊤^@/⊤^Ù default.
   Examples: cucurbiturils (CB[n]), cryptands, carceplexes, self-assembled metal-organic cages, COCs,
   Fujita-type Pd₁₂L₂₄ spheres. Keywords: "cage", "capsule", "encapsulat", "cucurbit", "cryptand",
   "carceplex", "carcerand".
-- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; Ç^- default.
+- **T_∪ (BOWL)** — open concave cavity with ONE portal; guest enters/exits freely; ⊤^- default.
   Examples: calix[4]arene, calix[6]arene, calix[4]pyrrole, calix[4]resorcinarene, pillar[n]arene,
   cyclotriveratrylene (CTV), corannulene, hemicarceplex, cavitand (when not capped).
   **Any imscription with "calix", "resorcinarene", "pillar[", "calixpyrrole", "bowl", or "upper/lower rim"
@@ -493,7 +493,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "𐑩")),
             polarity=Polarity.from_symbol(data.get("polarity", "𐑬")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "𐑞")),
-            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),
+            kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "⊤^W")),
             granularity=Granularity.from_symbol(data.get("granularity", "𐑚")),
             grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ^∧(SELECTIVE)")),
             criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "𐑢"),

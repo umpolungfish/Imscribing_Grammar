@@ -4,7 +4,7 @@ clay_cross_universe_closure.py — Ceiling-generalized T-constitution test
 against the six open Clay Millennium types.
 
 Background: ruleset_universe.py's canonical universe already treats one
-T-primitive (Ç, kinetics) asymmetrically as a ceiling condition (entry's
+T-primitive (⊤, kinetics) asymmetrically as a ceiling condition (entry's
 ordinal <= critical ordinal) while the other four dynamics primitives
 (<, ⋈, Ħ, Ω) require exact ordinal equality. This script generalizes that
 single asymmetry uniformly to all five dynamics primitives, at the same
@@ -39,7 +39,7 @@ CLAY_OPEN = [
     "p_vs_np",
 ]
 
-# Canonical's own anchors, generalized from "Ç only" to all five dynamics
+# Canonical's own anchors, generalized from "⊤ only" to all five dynamics
 # primitives, all treated as ceilings instead of exact-equality.
 T_CEILING = {
     "<": ("𐑹", True),

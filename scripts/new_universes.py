@@ -18,12 +18,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 # ── T-constitutions ─────────────────────────────────────────────
 
 _T_HYBRID = {
-    **_T_CANONICAL,    # dynamic: <, ⋈, Ç, Ħ, Ω
+    **_T_CANONICAL,    # dynamic: <, ⋈, ⊤, Ħ, Ω
     "⊢": ("𐑦", False),  # dimensionality holographic
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (<,⋈,Ç,Ħ,Ω) AND geometry (⊢,⊣,>)
+# T-hybrid: time requires BOTH dynamics (<,⋈,⊤,Ħ,Ω) AND geometry (⊢,⊣,>)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -96,9 +96,9 @@ NEW_RULESETS = [
     # ── 13: kinetics_trap ─────────────────────────────────────
     Ruleset(
         name="kinetics_trap",
-        description="Slowness is a structural requirement. G1=Ç≥𐑧 (slow/near-equilibrium "
-                    "kinetics). Fast processes (Ç=𐑺) and moderately-paced processes "
-                    "(Ç=𐑪) cannot Frobenius-close — they outrun their own structure. "
+        description="Slowness is a structural requirement. G1=⊤≥𐑧 (slow/near-equilibrium "
+                    "kinetics). Fast processes (⊤=𐑺) and moderately-paced processes "
+                    "(⊤=𐑪) cannot Frobenius-close — they outrun their own structure. "
                     "Only systems that move slowly enough to track themselves qualify. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, haste structurally precludes "
                     "closure.",
@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (<,⋈,Ç,Ħ,Ω) AND three primitives "
+                    "five dynamic primitives (<,⋈,⊤,Ħ,Ω) AND three primitives "
                     "(⊢,⊣,>). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "

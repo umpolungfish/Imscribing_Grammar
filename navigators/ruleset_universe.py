@@ -227,7 +227,7 @@ RULESETS: List[Ruleset] = [
         name="canonical",
         description="Our universe: Frobenius then self-modeling then winding seal. "
                     "G1=<≥𐑹, G2=⊙≥⊙, G3=Ω≥𐑭. Sequential gate ordering. "
-                    "T=lim(<,⋈,Ç,Ħ,Ω).",
+                    "T=lim(<,⋈,⊤,Ħ,Ω).",
     ),
 
     Ruleset(
@@ -292,7 +292,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="t_structural",
         description="Time constituted by structural/geometric primitives: "
-                    "T=lim(⊢,⊣,>,ɢ,⊙) instead of the dynamic T=lim(<,⋈,Ç,Ħ,Ω). "
+                    "T=lim(⊢,⊣,>,ɢ,⊙) instead of the dynamic T=lim(<,⋈,⊤,Ħ,Ω). "
                     "In this universe time is geometry, not process. "
                     "Gate structure unchanged (canonical).",
         t_prims=dict(_T_STRUCTURAL),

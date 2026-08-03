@@ -71,14 +71,14 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ⋈}}_{\hbar}', r'{\igfont 𐑱}'),
     (r'\text{{\igprimfont ⋈}}_{\eth}', r'{\igfont 𐑞}'),
     (r'\text{{\igprimfont ⋈}}_{0}', r'{\igfont 𐑐}'),
-    # Ç (Kinetic character)
-    (r'\text{{\igprimfont Ç}}_{-}', r'{\igfont 𐑘}'),
-    (r'\text{{\igprimfont Ç}}_{W}', r'{\igfont 𐑤}'),
-    (r'\text{{\igprimfont Ç}}_{@}', r'{\igfont 𐑧}'),
-    (r'\text{{\igprimfont Ç}}_{\text{{\igfont Ù}}}', r'{\igfont 𐑪}'),
-    (r'\text{{\igprimfont Ç}}_{\lambda}', r'{\igfont 𐑺}'),
-    (r'\text{{\igprimfont Ç}}_{trap}', r'{\igfont 𐑘}'),
-    (r'\text{{\igprimfont Ç}}_{slow}', r'{\igfont 𐑤}'),
+    # ⊤ (Kinetic character)
+    (r'\text{{\igprimfont ⊤}}_{-}', r'{\igfont 𐑘}'),
+    (r'\text{{\igprimfont ⊤}}_{W}', r'{\igfont 𐑤}'),
+    (r'\text{{\igprimfont ⊤}}_{@}', r'{\igfont 𐑧}'),
+    (r'\text{{\igprimfont ⊤}}_{\text{{\igfont Ù}}}', r'{\igfont 𐑪}'),
+    (r'\text{{\igprimfont ⊤}}_{\lambda}', r'{\igfont 𐑺}'),
+    (r'\text{{\igprimfont ⊤}}_{trap}', r'{\igfont 𐑘}'),
+    (r'\text{{\igprimfont ⊤}}_{slow}', r'{\igfont 𐑤}'),
     # Σ (Stoichiometry)
     (r'\text{{\igprimfont Σ}}_{n}', r'{\igfont 𐑕}'),
     (r'\text{{\igprimfont Σ}}_{m}', r'{\igfont 𐑳}'),

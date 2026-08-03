@@ -35,7 +35,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_composite",
-        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (⊣=𐑶) — response is a function of its own damage state. Trapped-ordered kinetics (Ç=𐑺) — healing agents stored in ordered activatable reservoir. Eternal damage memory (Ħ=𐑫).",
+        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (⊣=𐑶) — response is a function of its own damage state. Trapped-ordered kinetics (⊤=𐑺) — healing agents stored in ordered activatable reservoir. Eternal damage memory (Ħ=𐑫).",
         "⊢": "𐑦", "⊣": "𐑶", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑺", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },
@@ -47,13 +47,13 @@ DESIGNS = [
     },
     {
         "name": "eternal_memory_polymer",
-        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (Ç=𐑺) — data in kinetically trapped molecular conformations. Eternal chirality (Ħ=𐑫) — info encoded in chirality sequence that cannot thermally equilibrate. Integer winding (Ω=𐑭) per monomer.",
+        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data in kinetically trapped molecular conformations. Eternal chirality (Ħ=𐑫) — info encoded in chirality sequence that cannot thermally equilibrate. Integer winding (Ω=𐑭) per monomer.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑺", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },
     {
         "name": "self_weaving_fabric",
-        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
+        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (⊤=𐑤) — responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑤", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

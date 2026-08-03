@@ -303,7 +303,7 @@ def _ice_xxi() -> Imscription:
             "fidelity_note": "F_MEDIUM: sub-ideal H-bond geometry due to tetragonal distortion",
             "k_note": "K_teshlig: room-temperature kinetic stability via pressure-induced barrier",
             "dominant_triple": True,
-            "dominant_triple_components": ["𐑶", "Ç_teshlig", "<_SC_PSEUDO"],
+            "dominant_triple_components": ["𐑶", "𐑪", "<_SC_PSEUDO"],
             "theorem_001": "Dominant Triple Theorem — absorbing element of tensor products",
             "delta_i_to_5meo": 0.000,
             "delta_i_note": "Zero by absorbing dominance — not zero by similarity",

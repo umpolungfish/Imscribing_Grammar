@@ -100,7 +100,7 @@ def compose_primitive_radial(
         ">": composite.get("R", "𐑾"),
         "<": composite.get("Phi", "𐑗"),
         "⋈": composite.get("F", "⋈^ì"),
-        "⊤": composite.get("K", "Ç^-"),
+        "⊤": composite.get("K", "⊤^-"),
         "∈": composite.get("G", "𐑔"),
         "∋": composite.get("Gamma", "ɢ^∧"),
         "⊙": composite.get("Phi", "𐑢"),

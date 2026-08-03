@@ -339,7 +339,7 @@ __all__ = [
     "PrimitiveCheckResult",
     "validate_hotswap",
     "XI_CP_TOLERANCE",
-    "Ç_MULTIPLICITY_PENALTY",
+    "⊤_MULTIPLICITY_PENALTY",
     # Translation Protocol v0.4 (NEW)
     "TranslationCost",
     "TranslationStep",

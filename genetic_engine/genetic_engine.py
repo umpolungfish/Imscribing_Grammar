@@ -458,7 +458,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Cys": IGPrimitive.REVERSIBILITY, # > — disulfide bonds, reversible crosslinks
     "Tyr": IGPrimitive.PARITY,        # < — phosphorylation switch
     "Phe": IGPrimitive.FORCE,         # ⋈ — max hydrophobicity, force ceiling
-    "Ile": IGPrimitive.KINETICS,      # Ç — β-branched, ribosomal coupling
+    "Ile": IGPrimitive.KINETICS,      # ⊤ — β-branched, ribosomal coupling
     "His": IGPrimitive.GRAMMAR,       # Γ — imidazole pKa bridge
     "Asn": IGPrimitive.INTERACTION,   # ɢ — N-glycosylation sequon
     "Gln": IGPrimitive.CRITICALITY,   # φ̂ — most regulated biosynthetic node
@@ -495,7 +495,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
-    IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation matters
+    IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation matters
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss is pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
@@ -1144,7 +1144,7 @@ class ChimeraReport:
 
     The Chimera Theorem: composite risk of multi-primitive edits is TENSORIAL,
     not additive. Two independently tolerable edits at different primitive
-    classes can produce a trap state (Ç_⊛) when combined.
+    classes can produce a trap state (𐑪) when combined.
 
     Attributes:
         edits:              List of primitive changes being made
@@ -1168,7 +1168,7 @@ class ChimeraDetector:
     """Detects dangerous tensor-product interactions between primitive edits.
 
     The risk of editing across primitive classes is not the sum of individual
-    risks but their tensor product. Certain combinations create Ç_⊛ trap states:
+    risks but their tensor product. Certain combinations create 𐑪 trap states:
     frozen-order conformations from which no further editing can rescue the protein.
     """
 
@@ -1220,7 +1220,7 @@ class ChimeraDetector:
             (P.PARITY, P.CRITICALITY, 2.5, False,  # < ⊗ φ̂
              "Parity-critical coupling: editing Tyr (phosphorylation loss) AND Gln "
              "(regulatory node) removes both the signaling switch and its control."),
-            (P.KINETICS, P.CHIRALITY, 2.5, False,  # Ç ⊗ Ħ
+            (P.KINETICS, P.CHIRALITY, 2.5, False,  # ⊤ ⊗ Ħ
              "Kinetic-chiral bottleneck: editing Ile (ribosomal coupling) AND Asp "
              "(chiral selectivity) slows translation and mis-folds the product."),
             (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # Γ ⊗ >

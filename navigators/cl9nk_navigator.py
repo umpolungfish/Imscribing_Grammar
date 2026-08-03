@@ -362,7 +362,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, Ç=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent

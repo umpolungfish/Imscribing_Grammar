@@ -58,7 +58,7 @@ def generate_expansion():
     ))
 
     # ── SECTION B: G2 expansion — 8 primitives never used as G2 ─────
-    # Missing G2: Ç, ⊢, ⊣, Ħ, ⋈, ɢ, Γ, Ω
+    # Missing G2: ⊤, ⊢, ⊣, Ħ, ⋈, ɢ, Γ, Ω
 
     g2_configs = [
         ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
@@ -68,7 +68,7 @@ def generate_expansion():
         ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=<≥𐑹, G2=Γ≥𐑲 (aleph/maximal), G3=Ω≥𐑭. Frobenius closure is local; tracing requires universality.'),
         ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=<≥𐑹, G2=ɢ≥𐑠 (sequential), G3=Ω≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
         ('winding_second', '◻', 2.0, 'Topological protection as the monoidal gate: G1=<≥𐑹, G2=Ω≥𐑴 (Z2), G3=⊙≥⊙. After Frobenius parity, only topologically protected systems trace.'),
-        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=<≥𐑹, G2=Ç≥𐑧 (slow), G3=Ω≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
+        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=<≥𐑹, G2=⊤≥𐑧 (slow), G3=Ω≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
     ]
 
     for name, prim, ord_val, desc in g2_configs:
@@ -79,7 +79,7 @@ def generate_expansion():
             g1=GateSpec('<', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
     # ── SECTION C: G3 expansion — 8 primitives never used as G3 ─────
-    # Missing G3: Ç, ⊢, ⊣, Ħ, >, ⋈, ɢ, Γ
+    # Missing G3: ⊤, ⊢, ⊣, Ħ, >, ⋈, ɢ, Γ
 
     g3_configs = [
         ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
@@ -89,7 +89,7 @@ def generate_expansion():
         ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
         ('composition_third', '∋', 4.0, 'Broadcast composition as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=ɢ≥𐑵 (broadcast). Only systems with one-to-all composition achieve O_∞.'),
         ('coupling_third', '>', 4.0, 'Bilateral coupling as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=>≥𐑾 (bilateral). Only self-modeling systems with bidirectional coupling achieve O_∞.'),
-        ('kinetics_third', '⊤', 4.0, 'Moderate kinetics as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Ç≥𐑪 (moderate, ord 4). Self-modeling systems that are too fast cannot achieve O_∞.'),
+        ('kinetics_third', '⊤', 4.0, 'Moderate kinetics as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊤≥𐑪 (moderate, ord 4). Self-modeling systems that are too fast cannot achieve O_∞.'),
     ]
 
     for name, prim, ord_val, desc in g3_configs:
@@ -117,7 +117,7 @@ def generate_expansion():
         ('parallel_dimensional', GateSpec('⊢', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
          'Dimensional gates, parallel: ⊢≥𐑼, ⊙≥⊙, <≥𐑹. State-space, self-modeling, Frobenius independent.'),
         ('parallel_kinetics', GateSpec('⊤', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Kinetics gates, parallel: Ç≥𐑧, ⊙≥⊙, Ω≥𐑭. Slowness, self-modeling, winding independent.'),
+         'Kinetics gates, parallel: ⊤≥𐑧, ⊙≥⊙, Ω≥𐑭. Slowness, self-modeling, winding independent.'),
         ('parallel_fidelity', GateSpec('⋈', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
          'Fidelity gates, parallel: ⋈≥𐑐, ⊙≥⊙, <≥𐑹. Coherence, self-modeling, Frobenius independent.'),
     ]
@@ -248,7 +248,7 @@ def generate_expansion():
 
     t_ceiling_configs = [
         ('t_kinetics_ceiling', {'⊤': ('𐑧', True)},
-         'T constituted solely by kinetics ceiling: Ç≤𐑧 (must be slow or slower). '
+         'T constituted solely by kinetics ceiling: ⊤≤𐑧 (must be slow or slower). '
          'Fast systems experience no time. The kinetics_trap T-logic extracted as sole T.'),
         ('t_structural_dynamic', {'<': ('𐑹', False), '⋈': ('𐑐', False), '⊤': ('𐑧', True),
                                   '⊢': ('𐑦', False), '⊣': ('𐑸', False)},

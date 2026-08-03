@@ -22,7 +22,7 @@ def entry(num, title, desc, text,
 
 # All Upanishads share the same tuple — Atman = Brahman is the closed loop
 D, T, R, P, F, K, G, Gm, C, H, S, Om = (
-    "𐑦","𐑸","𐑾","𐑹","⋈^ż","Ç^@","𐑲","ɢ^ˌ","⊙","𐑫","𐑳","𐑭"
+    "𐑦","𐑸","𐑾","𐑹","⋈^ż","⊤^@","𐑲","ɢ^ˌ","⊙","𐑫","𐑳","𐑭"
 )
 
 chapters = [

@@ -68,7 +68,7 @@ IG_CHARS: Dict[str, str] = {
     "F_eth":        "𐑞",     # 𐑱 — thermal / threshold
     "F_hbar":       "𐑐",     # 𐑐 — quantum / coherent
     
-    # ── Kinetics (Ç) — 5 values ──
+    # ── Kinetics (⊤) — 5 values ──
     "K_fast":       "𐑺",     # 𐑘 — driven / fast relaxation
     "K_mod":        "𐑪",     # 𐑤 — moderate
     "K_slow":       "𐑧",     # 𐑧 — near-equilibrium / slow
@@ -192,7 +192,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Cys": "R",         # > — reversibility
     "Tyr": "P",         # < — parity
     "Phe": "F",         # ⋈ — force
-    "Ile": "K",         # Ç — kinetics
+    "Ile": "K",         # ⊤ — kinetics
     "Asn": "Gamma",     # ɢ — interaction
     "Asp": "H",         # Ħ — chirality
     "Lys": "S",         # Σ — entropy
@@ -428,7 +428,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
     geo_sup = crit.get("geometric_suppression", False)
     mixed_ss = par.get("mixed_ss", False)
     
-    # Kinetics (Ç): β-branched fraction determines folding speed
+    # Kinetics (⊤): β-branched fraction determines folding speed
     if beta_frac > 0.3:
         k_val = "K_slow"
     elif beta_frac > 0.15:

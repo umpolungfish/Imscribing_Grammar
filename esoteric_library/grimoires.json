@@ -10,7 +10,7 @@
     ">": "𐑽",
     "<": "𐑿",
     "⋈": "⋈^ì",
-    "Ç": "Ç^@",
+    "⊤": "⊤^@",
     "Γ": "Γ_β",
     "ɢ": "ɢ^Ş",
     "⊙": "⊙_Æ",
@@ -19,7 +19,7 @@
     "Ω": "Ω_2",
     "tier": "O₂",
     "C_score": 0.65,
-    "notes": "Classic ritual magic text. 𐑼 bounded ritual/spiritual space; 𐑥 crossing point between mundane and divine; 𐑽 adjoint invocation-response; 𐑿 quantum superposition of summoned/dismissed spirits; ⋈^ì classical fidelity through physical ritual; Ç^@ slow kinetics requiring precise timing; Γ_β localized to magician's circle; ɢ^Ş broadcast addressing spiritual hierarchies; ⊙_Æ complex-plane critical at boundary of seen/unseen; Ħ_A two-step Markov (preparation then execution); Σ_ï many heterogeneous participants; Ω_2 Z2 parity (circle consecrated or not)."
+    "notes": "Classic ritual magic text. 𐑼 bounded ritual/spiritual space; 𐑥 crossing point between mundane and divine; 𐑽 adjoint invocation-response; 𐑿 quantum superposition of summoned/dismissed spirits; ⋈^ì classical fidelity through physical ritual; ⊤^@ slow kinetics requiring precise timing; Γ_β localized to magician's circle; ɢ^Ş broadcast addressing spiritual hierarchies; ⊙_Æ complex-plane critical at boundary of seen/unseen; Ħ_A two-step Markov (preparation then execution); Σ_ï many heterogeneous participants; Ω_2 Z2 parity (circle consecrated or not)."
   },
   {
     "name": "grimoires_02",
@@ -32,7 +32,7 @@
     ">": "𐑽",
     "<": "𐑿",
     "⋈": "⋈^ì",
-    "Ç": "Ç^@",
+    "⊤": "⊤^@",
     "Γ": "Γ_β",
     "ɢ": "ɢ^Ş",
     "⊙": "⊙_Æ",
@@ -54,7 +54,7 @@
     ">": "𐑽",
     "<": "𐑿",
     "⋈": "⋈^ì",
-    "Ç": "Ç^@",
+    "⊤": "⊤^@",
     "Γ": "Γ_β",
     "ɢ": "ɢ^Ş",
     "⊙": "⊙_Æ",
