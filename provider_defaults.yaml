@@ -153,7 +153,7 @@ providers:
     note: OpenRouter FREE MODELS require FREE API key (no credits needed) - get at
       https://openrouter.ai/keys
     openrouter_api_key_required: true
-    api_key_env: OPENROUTEŘ_API_KEY
+    api_key_env: OPENROUTER_API_KEY
     models:
     - name: nvidia/nemotron-3-nano-30b-a3b:free
       description: Nemotron 3 Nano 30B - Efficient small MoE model (RECOMMENDED)

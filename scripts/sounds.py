@@ -46,7 +46,7 @@ def normalize(signal, peak=0.8):
 #
 #   ⊢  Dimensionality  — harmonic richness  (more harmonics = higher dimension)
 #   ⊣  Topology        — interval structure  (dissonance/consonance = topology)
-#   Ř  Relational      — directional sweeps  (directionality of pitch)
+#   >  Relational      — directional sweeps  (directionality of pitch)
 #   Φ  Parity          — waveform symmetry   (symmetry of the waveform itself)
 #   ƒ  Fidelity        — signal clarity      (noise floor vs clean tone)
 #   Ç  Kinetics        — temporal envelope   (attack/decay shape = speed)
@@ -128,7 +128,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * env
 
     # =========================================================================
-    # Ř — Relational mode
+    # > — Relational mode
     # Direction and flow in pitch:
     # upward glide (supervisory) → step intervals (categorical) →
     # rise-then-mirror (dagger/reversible) → stable middle (lateral/peer)
@@ -469,12 +469,12 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
     ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
-    ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # Ř Relational
+    ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # > Relational
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # Φ Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ƒ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # Ç Kinetics
@@ -496,7 +496,7 @@ PRIMITIVE_MAP = {
     # ⊣ Topology
     '𐑡': ('⊣', '6'),   '𐑰': ('⊣', 'K'),   '𐑥': ('⊣', 'ò'),
     '𐑶': ('⊣', '¨'),   '𐑸': ('⊣', 'O'),
-    # Ř Relational
+    # > Relational
     '𐑩': ('>', '̄'),   '𐑑': ('>', 'ý'),
     '𐑽': ('>', 'Ť'),   '𐑾': ('>', '='),
     # Φ Polarity

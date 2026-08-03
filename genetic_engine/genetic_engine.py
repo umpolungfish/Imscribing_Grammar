@@ -455,7 +455,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     # ── Promoted (split-stratum) amino acids ──
     "Met": IGPrimitive.SCOPE,         # ⊢ — start codon, translation scope
     "Trp": IGPrimitive.TOPOLOGY,      # ⊣ — bicyclic indole, topological ceiling
-    "Cys": IGPrimitive.REVERSIBILITY, # Ř — disulfide bonds, reversible crosslinks
+    "Cys": IGPrimitive.REVERSIBILITY, # > — disulfide bonds, reversible crosslinks
     "Tyr": IGPrimitive.PARITY,        # Φ — phosphorylation switch
     "Phe": IGPrimitive.FORCE,         # ƒ — max hydrophobicity, force ceiling
     "Ile": IGPrimitive.KINETICS,      # Ç — β-branched, ribosomal coupling
@@ -491,7 +491,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CHIRALITY:      "critical",     # Ħ — chiral specificity lost
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
-    IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
+    IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
     IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
@@ -1196,25 +1196,25 @@ class ChimeraDetector:
              "the entire translation boundary structure."),
 
             # ── High × Critical/HIGH → TRAP ──
-            (P.REVERSIBILITY, P.CHIRALITY, 3.5, True,  # Ř ⊗ Ħ
+            (P.REVERSIBILITY, P.CHIRALITY, 3.5, True,  # > ⊗ Ħ
              "Irreversible chiral loss: editing a disulfide Cys AND an Asp active-site "
              "chirality enforcer creates a structurally frozen active site "
              "with no reversible escape path."),
-            (P.REVERSIBILITY, P.SCOPE, 3.5, True,  # Ř ⊗ ⊢
+            (P.REVERSIBILITY, P.SCOPE, 3.5, True,  # > ⊗ ⊢
              "Reversibility/scope trap: editing Cys and Met locks the protein's "
              "translational start into a disulfide-bridged conformation."),
-            (P.REVERSIBILITY, P.WINDING, 3.5, True,  # Ř ⊗ Ω
+            (P.REVERSIBILITY, P.WINDING, 3.5, True,  # > ⊗ Ω
              "Disulfide readthrough: editing a disulfide Cys near a stop codon "
              "creates an orphan half-cystine at the C-terminus."),
             (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # φ̂ ⊗ Ħ
              "Critical chiral node: editing Gln at a regulatory node AND Asp at "
              "an active site creates metabolic runaway with no chiral correction."),
-            (P.CRITICALITY, P.REVERSIBILITY, 3.5, True,  # φ̂ ⊗ Ř
+            (P.CRITICALITY, P.REVERSIBILITY, 3.5, True,  # φ̂ ⊗ >
              "Critical irreversibility: editing Gln AND Cys in the same pathway "
              "produces a metabolic bottleneck that cannot be reversed."),
 
             # ── Moderate × Critical/HIGH → semi-trap ──
-            (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # ⊣ ⊗ Ř
+            (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # ⊣ ⊗ >
              "Topological irreversibility: editing Trp (indole collapse) AND Cys "
              "(disulfide loss) reduces both structural complexity and flexibility."),
             (P.PARITY, P.CRITICALITY, 2.5, False,  # Φ ⊗ φ̂
@@ -1223,7 +1223,7 @@ class ChimeraDetector:
             (P.KINETICS, P.CHIRALITY, 2.5, False,  # Ç ⊗ Ħ
              "Kinetic-chiral bottleneck: editing Ile (ribosomal coupling) AND Asp "
              "(chiral selectivity) slows translation and mis-folds the product."),
-            (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # Γ ⊗ Ř
+            (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # Γ ⊗ >
              "Grammatical irreversibility: editing His (pH gate) AND Cys (disulfide) "
              "at the same active site creates a pH-locked irreversible bond."),
 
@@ -1835,7 +1835,7 @@ def verify_prime_edit_optimizer() -> bool:
     # Stratum-crossing edit (exact → split)
     pe2 = optimizer.optimize("GCU", "GUU")  # Ala→Val
     # Missense with primitive change
-    pe3 = optimizer.optimize("UGU", "UGG")  # Cys→Trp (Ř→⊣)
+    pe3 = optimizer.optimize("UGU", "UGG")  # Cys→Trp (>→⊣)
     assert pe3.stratum_preserved, "Both should be split"
     assert not pe3.primitive_invariant, "Cys→Trp should change primitive"
     print("  ✓ Prime edit optimizer: silent edits, stratum crossing, primitive changes detected")
@@ -1852,7 +1852,7 @@ def verify_chimera_detector() -> bool:
     # Trap pair
     trap = detector.analyze_edit_set([("Cys", "Ser"), ("His", "Gln")])
     # Cys→Ser breaks reversibility, His→Gln breaks pH gate
-    # The tensor product of Ř (high) and Γ (moderate) should be amplified
+    # The tensor product of > (high) and Γ (moderate) should be amplified
     if trap.tensor_risk >= 1.5:
         print(f"  ✓ Chimera detector: Cys-His tensor risk = {trap.tensor_risk:.1f}x")
     else:
@@ -2088,7 +2088,7 @@ def demo_verification() -> None:
         ("GCU", "GCC", "Ala silent (exact stratum)"),
         ("UUU", "UUC", "Phe silent (split stratum)"),
         ("AUG", "AUU", "Met→Ile missense"),
-        ("UGU", "UGG", "Cys→Trp (Ř→⊣ primitive change)"),
+        ("UGU", "UGG", "Cys→Trp (>→⊣ primitive change)"),
         ("AUG", "UAA", "Met→Stop (Ω boundary violation)"),
         ("AAA", "AAG", "Lys silent (split stratum)"),
     ]
@@ -2107,9 +2107,9 @@ def demo_chimera_risk() -> None:
     pairs = [
         [("Lys", "Arg")],                    # Σ→Σ (same primitive) — safe
         [("Glu", "Asp")],                     # Ω→Ħ — primitive change
-        [("Cys", "Ser")],                     # Ř→None — high risk single
-        [("Cys", "Ser"), ("His", "Gln")],     # Ř⊗Γ — semi-locked pair
-        [("Cys", "Ser"), ("Asp", "Asn")],     # Ř⊗Ħ — critical pair
+        [("Cys", "Ser")],                     # >→None — high risk single
+        [("Cys", "Ser"), ("His", "Gln")],     # >⊗Γ — semi-locked pair
+        [("Cys", "Ser"), ("Asp", "Asn")],     # >⊗Ħ — critical pair
         [("Met", "Ile"), ("Asp", "Glu")],     # ⊢⊗Ħ — scope+chirality
     ]
     for edit_set in pairs:

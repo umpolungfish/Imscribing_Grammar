@@ -53,8 +53,8 @@ _T_MAP = {
 }
 
 _R_MAP = {
-    "Ř_downstep": "Ř_catalytic",
-    "Ř_ctz":    "Ř_catalytic",
+    "𐑽": "𐑽",
+    "𐑑":    "𐑽",
     # unchanged: R_exact, R_subset, R_superset, R_catalytic, R_allosteric,
     #            R_mechanical, R_covalent_dynamic
 }

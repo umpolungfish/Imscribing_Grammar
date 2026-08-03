@@ -10,11 +10,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PHI = '⊙'
 
 # ---------------------------------------------------------------------------
-# Available glyph IDs — field order: ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #
 #   ⊢  Dimensionality : 𐑛  𐑨  𐑼  𐑦
 #   ⊣  Topology       : 𐑡  𐑰  𐑥  𐑶  𐑸
-#   Ř  Relational     : 𐑩  𐑑  𐑽  𐑾
+#   >  Relational     : 𐑩  𐑑  𐑽  𐑾
 #   Φ  Polarity       : 𐑗  𐑿  𐑬  𐑯  𐑹
 #   ƒ  Fidelity       : ƒ^ì  ƒ^ð  ƒ^ż
 #   Ç  Kinetics       : Ç^-  Ç^W  Ç^@  Ç^Ù  Ç^λ

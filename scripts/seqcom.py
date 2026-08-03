@@ -140,7 +140,7 @@ tone = 0.3 * np.sin(2 * np.pi * freq * t) * np.linspace(1, 0.5, len(t))
 snd5 = normalize(noise + tone)
 
 # =============================================================================
-# 6. Ř_ˍ  (R‑caron with macron)
+# 6. 𐑩  (R‑caron with macron)
 # =============================================================================
 # breathy voiced trill, gradually becoming more breathy
 t_full = np.arange(int(1.0 * fs)) / fs

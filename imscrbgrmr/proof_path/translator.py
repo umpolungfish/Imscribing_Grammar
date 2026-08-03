@@ -80,7 +80,7 @@ def _format_step(i: int, step: ProofStep) -> str:
 _SYSTEM = """\
 You are a mathematical proof assistant working with the Imscribing Grammar (IG), \
 a 12-primitive coordinate system for mathematical and physical objects. \
-IG primitives: ⊢ (Dimensionality), ⊣ (Topology), Ř (Relational Mode), \
+IG primitives: ⊢ (Dimensionality), ⊣ (Topology), > (Relational Mode), \
 Φ (Parity/Symmetry), ƒ (Fidelity), Ç (Kinetics), Γ (Scope), \
 ɢ (Interaction Grammar), ⊙ (Criticality), Ħ (Chirality), \
 Σ (Stoichiometry), Ω (Topological Invariant).

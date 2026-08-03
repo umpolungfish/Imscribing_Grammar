@@ -792,7 +792,7 @@ REFERENCE_VALUES: Dict[str, Dict[str, Any]] = {
         "delta_g_ddagger": (60, 125),  # kJ/mol (dethreading barrier)
         "fidelity": "ƒ_dh",
         "kinetic_character": "Ç_turnm",
-        "recognition_mode": "Ř_mechanical",
+        "recognition_mode": "𐑾",
         "note": "DB24C8/dialkylammonium pseudorotaxane - planned Transformation #8",
         "criticality_probe": True,  # Examine for near-critical topology
     },

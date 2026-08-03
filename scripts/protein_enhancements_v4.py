@@ -7,7 +7,7 @@ Extends the Frobenius-guided predictor with:
   • Biological fragment naming (B-chain, C-peptide, A-chain, etc.)
   • C-terminal amidation prediction (PAM consensus)
   • Carboxypeptidase E/H trimming
-  • Disulfide bond (Ř-Ř) topology prediction
+  • Disulfide bond (>->) topology prediction
   • Post-translational modification prediction
   • Viral polyprotein detection
   • Cross-species validation suite
@@ -191,7 +191,7 @@ def name_fragment(seq: str, start: int, end: int,
     if re.search(r'RPVKVYPNVA', seq): return 'γ-LPH precursor'
     # Generic
     dom = (profile or {}).get('dominant')
-    desc = {'◻':'Winding/closure','φ̂':'Criticality signal','Ř':'Disulfide scaffold','Ħ':'Substrate recognition',
+    desc = {'◻':'Winding/closure','φ̂':'Criticality signal','>':'Disulfide scaffold','Ħ':'Substrate recognition',
             '⊞':'Variable region','ƒ':'Hydrophobic anchor','ɢ':'Glycosylation target','Φ':'Phosphorylation switch',
             '∈':'Catalytic','Ç':'Kinetic regulator','⊢':'Initiation','⊣':'Topological anchor'}
     return desc.get(dom, f'Fragment {idx+1}')

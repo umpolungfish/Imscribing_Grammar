@@ -32,7 +32,7 @@ including your own reasoning as a program.
 ## Choosing a verb by the question you have
 
 **Do these two bond?** → `click A B`. Frobenius fusion across a conjugate axis
-(⊢↔Ω, ⊣↔Ħ, Ř↔Σ). Closes only when the tuples are complementary. `click A` alone
+(⊢↔Ω, ⊣↔Ħ, >↔Σ). Closes only when the tuples are complementary. `click A` alone
 sweeps the whole catalog for partners.
 
 **What sits between these two?** → `scan A B`. Ranks catalog entries as

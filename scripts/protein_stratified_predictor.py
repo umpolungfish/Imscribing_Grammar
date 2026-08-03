@@ -481,11 +481,11 @@ class ProteinStratifiedPredictor:
 
         return result
 
-    # ─── Disulfide Bond Prediction (Ř-Ř pairing) ────────────────────────
+    # ─── Disulfide Bond Prediction (>-> pairing) ────────────────────────
 
     def predict_disulfide_bonds(self, fragments=None):
         """
-        Predict disulfide bond patterns from Cys (Ř) distribution.
+        Predict disulfide bond patterns from Cys (>) distribution.
         Uses spatial proximity + structural constraints:
         - Cys must be in fragments likely to fold together
         - Pairing prefers even spacing (odd Cys → unpaired)
@@ -553,7 +553,7 @@ class ProteinStratifiedPredictor:
         Assemble fragments into final mature products.
         Identifies which fragments constitute the functional protein(s)
         based on structural criteria:
-        - Fragments with Ř (Cys) clusters → structural core
+        - Fragments with > (Cys) clusters → structural core
         - Fragments with ⊙ (Gln) → criticality signaling
         - Fragments with Ω (Glu) → winding/closure modules
         """
@@ -689,7 +689,7 @@ class ProteinStratifiedPredictor:
         # Disulfide bonds
         db = result.get('disulfide_bonds')
         if db and db.get('bonds'):
-            lines.append("▸ Predicted disulfide bonds (Ř-Ř):")
+            lines.append("▸ Predicted disulfide bonds (>->):")
             for bond in db['bonds']:
                 lines.append(f"  Cys{bond['cys_1']['position']}—Cys{bond['cys_2']['position']} "
                              f"({bond['bond_type']}, {bond['motif']})")

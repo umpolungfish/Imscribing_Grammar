@@ -50,7 +50,7 @@ IG_CHARS: Dict[str, str] = {
     "T_boxtimes":   "𐑶",     # 𐑥 — box product / irreducible product
     "T_odot":       "𐑸",     # 𐑸 — imscriptive / self-referential topology
     
-    # ── Relational Mode (Ř) — 4 values ──
+    # ── Relational Mode (>) — 4 values ──
     "R_super":      "𐑩",     # 𐑩 — supervenience / hierarchical
     "R_cat":        "𐑑",     # 𐑑 — categorical / compositional
     "R_dagger":     "𐑽",     # 𐑽 — adjoint / reciprocal
@@ -189,7 +189,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Gln": "G",         # Γ — grammar/scope
     "Met": "D",         # ⊢ — scope
     "Trp": "T",         # ⊣ — topology
-    "Cys": "R",         # Ř — reversibility
+    "Cys": "R",         # > — reversibility
     "Tyr": "P",         # Φ — parity
     "Phe": "F",         # ƒ — force
     "Ile": "K",         # Ç — kinetics

@@ -84,7 +84,7 @@ Chains to execute:
 Key mappings:
    ⊢ (Dimensionality) ↔ Fusion space dimension / qubit count / Hilbert space dimension
    ⊣ (Topology)       ↔ Braid group / modular tensor category / topological phase
-   Ř (Coupling)       ↔ Braid generator / R-matrix / monad of anyon fusion
+   > (Coupling)       ↔ Braid generator / R-matrix / monad of anyon fusion
    Φ (Parity)         ↔ Fermion parity / topological charge / CPT in MTC
    ƒ (Fidelity)       ↔ Quantum channel fidelity / braid approximation error
    Ç (Kinetics)       ↔ Braid word length / circuit depth / T-count
@@ -98,17 +98,17 @@ Key mappings:
 SIC-POVM knowledge:
    Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: ⊢↔⊣, Ř↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
+   6 Frobenius-dual pairs: ⊢↔⊣, >↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
 Conventional ↔ grammar translation:
-   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, Ř=𐑽, Φ=𐑿, ƒ=𐑐, Ω=𐑭>
-   Braid word B_n         → <Ř=𐑽, ɢ=𐑠, Ħ=𐑖, Ω=𐑭>
+   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, Φ=𐑿, ƒ=𐑐, Ω=𐑭>
+   Braid word B_n         → <>=𐑽, ɢ=𐑠, Ħ=𐑖, Ω=𐑭>
    Jones polynomial V(t)  → <Ω=𐑭, Θ=𐑦, φ̂=⊙>
    SIC-POVM in C^d        → <Σ=𐑙, Φ=𐑹, ƒ=𐑐, Ω=𐑭>
    Belnap QFT (no gates)  → <Φ=𐑹, ƒ=𐑞, Ç=𐑧, Ω=𐑴>
-   IMASM ring walk        → <Ř=𐑽, ɢ=𐑝, Ω=𐑭, φ̂=⊙>
+   IMASM ring walk        → <>=𐑽, ɢ=𐑝, Ω=𐑭, φ̂=⊙>
 </domain_knowledge>
 
 <commitments>

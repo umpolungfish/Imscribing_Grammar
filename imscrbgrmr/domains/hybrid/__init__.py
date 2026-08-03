@@ -117,7 +117,7 @@ class HybridImscriptionAgent:
             "cycle_type": cycle_type,
             "confinement": confinement,
             "dimensionality": "𐑼",
-            "recognition_mode": "Ř_downstep",
+            "recognition_mode": "𐑽",
             "confinement_effects": effect,
             "notes": (
                 f"Temporal imscription (D_infinity) coupled with "

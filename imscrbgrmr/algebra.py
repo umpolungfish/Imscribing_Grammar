@@ -225,9 +225,9 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     "D": {"𐑛": "𐑛", "𐑛": "𐑛", "𐑨": "𐑨"},
     # ⊣ Topology needs no fallback: all five values are in ORDINALS.
     "R": {
-        "Ř_exact": "Ř_ctz", "Ř_subset": "Ř_subrightarrow", "Ř_superset": "Ř_subrightarrow",
-        "Ř_catalytic": "Ř_downstep", "Ř_allosteric": "Ř_downstep",
-        "Ř_mechanical": "Ř_downstep", "Ř_covalent_dynamic": "Ř_lyoghlig",
+        "𐑑": "𐑑", "𐑩": "𐑩", "𐑩": "𐑩",
+        "𐑽": "𐑽", "𐑽": "𐑽",
+        "𐑾": "𐑽", "𐑾": "𐑾",
     },
     "P": {
         "Φ_directional": "Φ_aolig", "Φ_minus": "Φ_upsilon", "Φ_plus": "Φ_upsilon",

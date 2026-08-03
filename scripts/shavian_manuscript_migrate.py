@@ -18,13 +18,13 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ⊣}}_{\in}', r'{\igfont 𐑰}'),
     (r'\text{{\igprimfont ⊣}}_{\bowtie}', r'{\igfont 𐑕}'),
     (r'\text{{\igprimfont ⊣}}_{\square}', r'{\igfont 𐑡}'),
-    # Ř (Relational)
-    (r'\text{{\igprimfont Ř}}_{\text{{\igfont ¯}}}', r'{\igfont 𐑩}'),
-    (r'\text{{\igprimfont Ř}}_{\text{{\igfont ý}}}', r'{\igfont 𐑑}'),
-    (r'\text{{\igprimfont Ř}}_{\text{{\igfont Ť}}}', r'{\igfont 𐑽}'),
-    (r'\text{{\igprimfont Ř}}_{=}', r'{\igfont 𐑾}'),
-    (r'\text{{\igprimfont Ř}}_{\dagger}', r'{\igfont 𐑽}'),
-    (r'\text{{\igprimfont Ř}}_{\leftrightarrow}', r'{\igfont 𐑾}'),
+    # > (Relational)
+    (r'\text{{\igprimfont >}}_{\text{{\igfont ¯}}}', r'{\igfont 𐑩}'),
+    (r'\text{{\igprimfont >}}_{\text{{\igfont ý}}}', r'{\igfont 𐑑}'),
+    (r'\text{{\igprimfont >}}_{\text{{\igfont Ť}}}', r'{\igfont 𐑽}'),
+    (r'\text{{\igprimfont >}}_{=}', r'{\igfont 𐑾}'),
+    (r'\text{{\igprimfont >}}_{\dagger}', r'{\igfont 𐑽}'),
+    (r'\text{{\igprimfont >}}_{\leftrightarrow}', r'{\igfont 𐑾}'),
     # Φ (Polarity)
     (r'\text{{\igprimfont Φ}}_{\text{{\igprimfont ɐ}}}', r'{\igfont 𐑗}'),
     (r'\text{{\igprimfont Φ}}_{\text{{\igfont ˙}}}', r'{\igfont 𐑯}'),

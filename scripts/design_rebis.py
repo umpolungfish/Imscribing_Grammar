@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -85,7 +85,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_biologic",
-        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (Ř=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (Φ=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
+        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (>=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (Φ=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑩','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -120,7 +120,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_bioelectric_tissue",
-        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (Ř=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) ensures the bodyplan blueprint is never lost during regeneration.",
+        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (>=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) ensures the bodyplan blueprint is never lost during regeneration.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

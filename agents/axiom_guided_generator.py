@@ -490,7 +490,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             name=clean_name,
             dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "𐑛")),
             topology=Topology.from_symbol(data.get("topology", "𐑰")),
-            recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "Ř_superset")),
+            recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "𐑩")),
             polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
             kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),

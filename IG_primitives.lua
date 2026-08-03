@@ -9,7 +9,7 @@
 --     → need {\igprimfont char} (Everson Mono)
 --
 --   Class B — missing from LaTeX math font (lmmi10) but OK in text mode:
---     Ř U+0158, Ç U+00C7   (⊢ and ⊣ moved to Class A)
+--     Ç U+00C7   (⊢ ⊣ > all migrated off Class B)
 --     → need \text{char} (Latin Modern Roman has these)
 --
 -- In math mode:
@@ -73,6 +73,7 @@ local CLASS_A = {
   [0x03C9] = true,  -- ω  omega                  (retired ⊢ subtype)
   -- Canonical alphabet: axis letters that are not text characters in lmroman
   [0x22A2] = true,  -- ⊢  right tack             (⊢ Dimensionality primitive)
+  -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
 
@@ -86,10 +87,8 @@ for cp = 0x10450, 0x1047F do CLASS_A[cp] = true end
 local CLASS_B = {
   -- IG primitive glyphs
   [0x00C7] = true,  -- Ç  C with cedilla         (Ç primitive)
-  [0x0158] = true,  -- Ř  R with caron           (Ř primitive)
   -- IG subtype chars (SYMBOL_REFERENCE.md)
   [0x00A3] = true,  -- £  pound sign             (Ħ_£ subtype)
-  [0x00AF] = true,  -- ¯  macron                 (Ř_¯ subtype)
   [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
   [0x00C6] = true,  -- Æ  AE ligature            (⊙_Æ subtype)
   [0x00D1] = true,  -- Ñ  N with tilde           (Ħ_Ñ subtype)
@@ -98,11 +97,9 @@ local CLASS_B = {
   [0x00EC] = true,  -- ì  i grave                (ƒ_ì subtype)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
   [0x00F0] = true,  -- ð  eth                    (ƒ_ð subtype)
-  [0x00FD] = true,  -- ý  y acute                (Ř_ý subtype)
   [0x00FF] = true,  -- ÿ  y diaeresis            (⊙_ÿ subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
   [0x0162] = true,  -- Ţ  T with cedilla         (⊙_Ţ subtype)
-  [0x0164] = true,  -- Ť  T with caron           (Ř_Ť subtype)
   [0x015E] = true,  -- Ş  S with cedilla         (ɢ_Ş subtype)
   [0x017C] = true,  -- ż  z dot-above            (ƒ_ż subtype)
   [0x017E] = true,  -- ž  z caron                (⊙_ž subtype)

@@ -164,7 +164,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list,
         f"{_B}newcommand{{{_B}g}}{{ɢ}}",   # Composition
         f"{_B}newcommand{{{_B}Th}}{{⊣}}",   # Topology
         f"{_B}newcommand{{{_B}D}}{{⊢}}",   # Dimensionality
-        f"{_B}newcommand{{{_B}R}}{{Ř}}",   # Coupling
+        f"{_B}newcommand{{{_B}R}}{{>}}",   # Coupling
         f"{_B}newcommand{{{_B}f}}{{ƒ}}",   # Fidelity
         "",
         f"% Imscription tuple box",

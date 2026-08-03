@@ -5,7 +5,7 @@ Generates ~60 new universes on top of the existing 29 (8 RULESETS + 21 NEW_RULES
 to reach 88 structurally distinct universes.
 
 Expansion strategy:
-  A. Ř (coupling) as G1 — 2 universes
+  A. > (coupling) as G1 — 2 universes
   B. G2 expansion — 8 primitives never used as G2 — 8 universes
   C. G3 expansion — 8 primitives never used as G3 — 8 universes
   D. Parallel gate ordering variants — 10 universes
@@ -35,11 +35,11 @@ def generate_expansion():
 
     new_unis = []
 
-    # ── SECTION A: Ř (coupling) as G1 — completely uncovered ─────
+    # ── SECTION A: > (coupling) as G1 — completely uncovered ─────
 
     new_unis.append(Ruleset(
         name='coupling_first',
-        description='Relation before closure. G1=Ř≥𐑽 (adjoint coupling, ord 3). '
+        description='Relation before closure. G1=>≥𐑽 (adjoint coupling, ord 3). '
                     'Systems without at least adjoint-pair coupling cannot Frobenius-close. '
                     'Supervenience and categorical coupling remain plain. '
                     'G2=⊙≥⊙. G3=Ω≥𐑭.',
@@ -49,7 +49,7 @@ def generate_expansion():
 
     new_unis.append(Ruleset(
         name='coupling_maximal',
-        description='Only bilateral coupling suffices. G1=Ř≥𐑾 (bilateral, ord 4, max). '
+        description='Only bilateral coupling suffices. G1=>≥𐑾 (bilateral, ord 4, max). '
                     'Even adjoint pairs (one-way hedges) do not Frobenius-close. '
                     'Only bidirectional feedback loops qualify. '
                     'G2=⊙≥⊙. G3=Ω≥𐑭.',
@@ -79,7 +79,7 @@ def generate_expansion():
             g1=GateSpec('<', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
     # ── SECTION C: G3 expansion — 8 primitives never used as G3 ─────
-    # Missing G3: Ç, ⊢, ⊣, Ħ, Ř, ƒ, ɢ, Γ
+    # Missing G3: Ç, ⊢, ⊣, Ħ, >, ƒ, ɢ, Γ
 
     g3_configs = [
         ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
@@ -88,7 +88,7 @@ def generate_expansion():
         ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ƒ≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
         ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
         ('composition_third', '∋', 4.0, 'Broadcast composition as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ɢ≥𐑵 (broadcast). Only systems with one-to-all composition achieve O_∞.'),
-        ('coupling_third', '>', 4.0, 'Bilateral coupling as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ř≥𐑾 (bilateral). Only self-modeling systems with bidirectional coupling achieve O_∞.'),
+        ('coupling_third', '>', 4.0, 'Bilateral coupling as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=>≥𐑾 (bilateral). Only self-modeling systems with bidirectional coupling achieve O_∞.'),
         ('kinetics_third', '⊤', 4.0, 'Moderate kinetics as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ç≥𐑪 (moderate, ord 4). Self-modeling systems that are too fast cannot achieve O_∞.'),
     ]
 
@@ -109,7 +109,7 @@ def generate_expansion():
         ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Chirality gates, parallel: Ħ≥𐑖, ⊙≥⊙, Ω≥𐑭. Memory, self-modeling, and winding are independent axes.'),
         ('parallel_topology', GateSpec('⊣', 5.0), GateSpec('>', 4.0), GateSpec('⊙', 2.0),
-         'Topology gates, parallel: ⊣≥𐑸, Ř≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
+         'Topology gates, parallel: ⊣≥𐑸, >≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
         ('parallel_scope', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Scope gates, parallel: Γ≥𐑲, ⊙≥⊙, Ω≥𐑭. Universal scope, self-modeling, and winding are independent.'),
         ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
@@ -136,7 +136,7 @@ def generate_expansion():
          'Topology ladder: G1=⊣≥𐑥 (bowtie crossing), G2=⊣≥𐑶 (box product), G3=⊣≥𐑸 (imscriptive closure). '
          'Three rungs of increasing topological connectivity.'),
         ('triple_coupling', '>', [('𐑽', 3.0), ('𐑾', 4.0), ('𐑾', 4.0)],
-         'Coupling ladder: G1=Ř≥𐑽 (adjoint), G2=Ř≥𐑾 (bilateral), G3=Ř≥𐑾. Terminal collapse at G2.'),
+         'Coupling ladder: G1=>≥𐑽 (adjoint), G2=>≥𐑾 (bilateral), G3=>≥𐑾. Terminal collapse at G2.'),
         ('triple_chirality', '⊥', [('𐑒', 2.0), ('𐑖', 3.0), ('𐑫', 4.0)],
          'Chirality ladder: G1=Ħ≥𐑒 (1-step), G2=Ħ≥𐑖 (2-step), G3=Ħ≥𐑫 (eternal). '
          'Memory depth as the sole operad filter.'),
@@ -205,7 +205,7 @@ def generate_expansion():
          'G1=⊢≥𐑼 (∞-dim), G2=Ħ≥𐑖 (2-step memory), G3=Ω≥𐑭 (integer winding). '
          'Closure requires infinite canvas, then memory, then topological protection.'),
         ('coupling_fidelity_scope', GateSpec('>', 3.0), GateSpec('⋈', 3.0), GateSpec('∈', 3.0),
-         'G1=Ř≥𐑽 (adjoint coupling), G2=ƒ≥𐑐 (quantum fidelity), G3=Γ≥𐑲 (universal scope). '
+         'G1=>≥𐑽 (adjoint coupling), G2=ƒ≥𐑐 (quantum fidelity), G3=Γ≥𐑲 (universal scope). '
          'Relation, then coherence, then universality.'),
         ('topology_composition_criticality', GateSpec('⊣', 3.0), GateSpec('∋', 3.0), GateSpec('⊙', 2.0),
          'G1=⊣≥𐑥 (bowtie crossing), G2=ɢ≥𐑠 (sequential comp), G3=⊙≥⊙ (self-modeling). '

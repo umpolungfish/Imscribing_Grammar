@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ř}{ý}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
+%   e.g. \prim{Φ}{υ}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -97,11 +97,12 @@
 \newcommand{\Tbox}{\shav{𐑶}}   % oil   — box / lattice
 \newcommand{\Todot}{\shav{𐑸}}  % are   — imscriptive
 
-% Ř — Relational Mode
-\newcommand{\Rsuper}{\prim{Ř}{¯}}
-\newcommand{\Rcat}{\prim{Ř}{ý}}
-\newcommand{\Rdag}{\prim{Ř}{Ť}}
-\newcommand{\Rlr}{\prim{Ř}{=}}
+% > — Relational.  Core.lean ctor order: ado, tot, ear, ian.
+\newcommand{\Rrel}{\axis{>}}
+\newcommand{\Rsuper}{\shav{𐑩}}  % ado — supervisory / hierarchical
+\newcommand{\Rcat}{\shav{𐑑}}    % tot — categorical / compositional
+\newcommand{\Rdag}{\shav{𐑽}}    % ear — dagger / reciprocal
+\newcommand{\Rlr}{\shav{𐑾}}     % ian — lateral / peer
 
 % Φ — Parity/Symmetry
 \newcommand{\Pasym}{\prim{Φ}{ɐ}}

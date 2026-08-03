@@ -806,7 +806,7 @@ def compute_I_from_imscription(
     from .thermodynamics import compute_information_gain
     heuristic_bits = compute_information_gain(imscription, method="configurational")
 
-    if contact_type == "hbond" or imscription.recognition_mode.value in ("Ř_superset",):
+    if contact_type == "hbond" or imscription.recognition_mode.value in ("𐑩",):
         return compute_I_hbond_dimer(
             n_hbonds=n_contacts,
             system_name=imscription.name,

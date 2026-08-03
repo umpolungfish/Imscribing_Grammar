@@ -85,7 +85,7 @@ class TemporalImscriptionAgent:
             "catalyst": catalyst,
             **cycle_data,
             "dimensionality": "𐑼",
-            "recognition_mode": "Ř_downstep",
+            "recognition_mode": "𐑽",
         }
     
     def compute_fidelity_per_cycle(

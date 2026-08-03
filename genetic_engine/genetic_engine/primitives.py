@@ -24,7 +24,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
     His→Γ (Grammar), Gln→⊙ (Criticality) — original assignment
 
 Promoted AAs (split stratum):
-  Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→Ř (Reversibility),
+  Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→> (Reversibility),
   Tyr→Φ (Parity),    Phe→ƒ (Force),        Ile→Ç (Kinetics),
   His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→Γ (Grammar/Scope),
   Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
@@ -92,7 +92,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CHIRALITY:      "critical",     # Ħ — chiral specificity lost
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
-    IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
+    IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # ⊙ — pH-critical catalysis gate
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable
     IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
@@ -157,7 +157,7 @@ def get_aa_primitive_description(aa: str) -> str:
         "Gln": "Γ (Grammar) — long amide side chain H-bond network structuring",
         "Met": "⊢ (Scope) — translation initiation, start codon",
         "Trp": "⊣ (Topology) — largest indole ring system, structural complexity ceiling",
-        "Cys": "Ř (Reversibility) — disulfide bond, only reversible covalent crosslink",
+        "Cys": "> (Reversibility) — disulfide bond, only reversible covalent crosslink",
         "Tyr": "Φ (Parity) — phosphorylation switch, aromatic OH toggle",
         "Phe": "ƒ (Force) — maximally hydrophobic aromatic, no heteroatoms",
         "Ile": "Ç (Kinetics) — β-branched, tightest ribosomal coupling",

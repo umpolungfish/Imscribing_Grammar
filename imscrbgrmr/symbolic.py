@@ -456,7 +456,7 @@ class AxiomTheoremProver:
                 SymbolicExpression.primitive("∈", "Gamma_seq(SELECTIVE)"),
                 SymbolicExpression.Or(
                     SymbolicExpression.primitive("D", "𐑼"),
-                    SymbolicExpression.primitive("R", "Ř_downstep"),
+                    SymbolicExpression.primitive("R", "𐑽"),
                 ),
             ),
         }
@@ -921,7 +921,7 @@ class PredictiveRuleGenerator:
                 P("D", "𐑼"),
                 P("D", "𐑼"),
                 P("D", "𐑦"),
-                P("R", "Ř_downstep"),
+                P("R", "𐑽"),
             ),
         ))
 
@@ -934,24 +934,24 @@ class PredictiveRuleGenerator:
         # ── R → F coupling ─────────────────────────────────────────────────────
         # Covalent recognition → high fidelity (bond-energy argument)
         candidates.append((
-            P("R", "Ř_subset"),
+            P("R", "𐑩"),
             P("F", "ƒ_hardsign"),
         ))
         # Dynamic covalent → F_hardsign or F_dh (imine, disulfide: reversible but reliable)
         candidates.append((
-            P("R", "Ř_covalent_dynamic"),
+            P("R", "𐑾"),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 
         # ── R_⇔ → T_⋈ (mechanical bond requires cyclic wheel topology) ─────────
         candidates.append((
-            P("R", "Ř_mechanical"),
+            P("R", "𐑾"),
             P("T", "𐑥"),
         ))
 
         # ── T_⋈ ∧ R_⇔ → K_turnm ∨ K_schwa (dethreading barrier) ─────────────────
         candidates.append((
-            And(P("T", "𐑥"), P("R", "Ř_mechanical")),
+            And(P("T", "𐑥"), P("R", "𐑾")),
             Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
 
@@ -982,7 +982,7 @@ class PredictiveRuleGenerator:
         ))
         # Catalytic recognition mode → temporal or hybrid temporal dimension
         candidates.append((
-            P("R", "Ř_downstep"),
+            P("R", "𐑽"),
             Or(
                 P("D", "𐑼"),
                 P("D", "𐑼"),
@@ -993,7 +993,7 @@ class PredictiveRuleGenerator:
 
         # ── Hub-node granularity amplification ─────────────────────────────────
         candidates.append((
-            And(P("T", "𐑶"), P("R", "Ř_superset")),
+            And(P("T", "𐑶"), P("R", "𐑩")),
             Or(P("G", "Γ_gamma"), P("G", "Γ_revapostrophe")),
         ))
 
@@ -1007,7 +1007,7 @@ class PredictiveRuleGenerator:
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────
         # T_□□ with non-covalent recognition → F ≥ F_dh
         candidates.append((
-            And(P("T", "𐑶"), P("R", "Ř_superset")),
+            And(P("T", "𐑶"), P("R", "𐑩")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
         # T_□□ → K_turnm or K_schwa (enclosed cage always has exchange barrier)

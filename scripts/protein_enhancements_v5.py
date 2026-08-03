@@ -116,7 +116,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
     desc_map = {
         '◻': 'Ω-winding module',
         'φ̂': '⊙-criticality signal',
-        '>': 'Ř-scaffold domain',
+        '>': '>-scaffold domain',
         '<': 'Φ-switch domain',
         '⊥': 'Ħ-chiral domain',
         '⊞': 'Σ-variable region',

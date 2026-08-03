@@ -111,7 +111,7 @@ def example_3_catalog_and_search():
         name="formamide_dimer",
         dimensionality="𐑛",
         topology="𐑥",
-        recognition_mode="Ř_superset",
+        recognition_mode="𐑩",
         polarity="Φ_pipevar",
         fidelity="ƒ_beltl",  # Lower fidelity than carboxylic acid
         granularity="Γ_beta",
@@ -123,7 +123,7 @@ def example_3_catalog_and_search():
         name="triple_hbond_array",
         dimensionality="𐑛",
         topology="𐑥",
-        recognition_mode="Ř_superset",
+        recognition_mode="𐑩",
         polarity="Φ_directional",
         fidelity="ƒ_hardsign",  # HIGH fidelity due to cooperativity
         granularity="Γ_gamma",  # Mesoscale
@@ -135,7 +135,7 @@ def example_3_catalog_and_search():
         name="proline_aldol_cycle",
         dimensionality="𐑼",  # Temporal!
         topology="𐑥",
-        recognition_mode="Ř_downstep",  # Catalytic
+        recognition_mode="𐑽",  # Catalytic
         polarity="Φ_directional",
         fidelity="ƒ_dh",
         granularity="Γ_gamma",

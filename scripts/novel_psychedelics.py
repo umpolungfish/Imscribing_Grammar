@@ -362,7 +362,7 @@ def scope_focus(compound_key: str, target_g: str) -> dict:
 def adjoint_steer(compound_key: str, direction_primitive: str, target_value: str) -> dict:
     """Compute the adjoint-mapped access profile for a directed change.
 
-    The adjoint coupling (Ř=𐑽) is one-way: it funnels the experience vector
+    The adjoint coupling (>=𐑽) is one-way: it funnels the experience vector
     in a specific direction. This method modifies a single primitive to its
     target value and computes the predicted access shift.
 

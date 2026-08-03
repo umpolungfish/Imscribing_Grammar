@@ -527,8 +527,8 @@ def page4() -> str:
     # rebis_concrete designs
     designs = {
         "THERAPEUTICS": [
-            ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ Ř Φ"),
-            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "Ř ƒ Ħ"),
+            ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > Φ"),
+            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ƒ Ħ"),
             ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "Ω Γ Σ"),
         ],
         "MATERIALS": [
@@ -538,7 +538,7 @@ def page4() -> str:
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.", "Γ ɢ ⊢"),
         ],
         "BIOLOGY": [
-            ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ Ř Ħ"),
+            ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ > Ħ"),
             ("Quantum Bioelectric",   "iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array. Xenopus limb regeneration model.", "Ħ ⊙ ɢ"),
             ("Universal Symbiont",    "12-strain microbial consortium. Quorum sensing + metabolic cross-feeding. 12 strains $\\leftrightarrow$ 12 primitives (Σ bijection).", "Σ Γ ɢ"),
             ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "Ω ⊣ ⊢"),
@@ -604,7 +604,7 @@ def page4() -> str:
         f"  \\begin{{tabular}}{{@{{}}llll@{{}}}}",
         f"  Prima Materia & ⊢ (Dimensionality) & Albedo & Φ (Parity, Frobenius-special) \\\\",
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
-        f"  Solutio & Ř (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
+        f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\\\",
         f"  Coagulatio & Ç (Kinetics, fixation) & Projectio & ɢ (Coupling, projection) \\\\",
         f"  Sublimatio & ƒ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\\\",
