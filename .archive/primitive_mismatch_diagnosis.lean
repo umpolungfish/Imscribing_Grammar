@@ -84,12 +84,12 @@ inductive Scope where
   | aleph -- G_𝑎: maximal/all
   deriving DecidableEq, Repr, Inhabited
 
-/-- Γ: Interaction grammar — composition logic -/
+/-- ∈: Interaction grammar — composition logic -/
 inductive InteractionGrammar where
   | and   -- Γ_∧: conjunctive
   | or    -- Γ_∨: disjunctive
   | seq   -- Γ_seq: sequential
-  | broad -- Γ_brd: broadcast
+  | broad -- ∈_brd: broadcast
   deriving DecidableEq, Repr, Inhabited
 
 /-- <: Criticality — scaling behavior -/

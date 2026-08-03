@@ -19,12 +19,12 @@ The Seven Primitives (EXTENDED to nine):
     - Fidelity (F): Thermodynamic reliability
     - Kinetic Character (K): Kinetic accessibility — NEW
     - Granularity (G): Scale of control
-    - Coupling (Γ): Partner selection logic (with Boolean algebra) — EXTENDED
+    - Coupling (∈): Partner selection logic (with Boolean algebra) — EXTENDED
     - Criticality Phase (<): Phase condition at G-D degeneracy — NEW
 
     - Stoichiometry (S): Valency ratio primitive — NEW (v2.2)
 
-Extended Notation: ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
+Extended Notation: ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
 """
 
 from .models import (

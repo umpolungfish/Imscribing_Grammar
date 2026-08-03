@@ -255,7 +255,7 @@ def derive_tuple(sym):
     else:
         g = 16
 
-    # ─── Γ (Granularity) idx ─────────────────────────────────────
+    # ─── ∈ (Granularity) idx ─────────────────────────────────────
     # s-block (all periods): 10; d-block period 6 relativistic: 10
     # p/d periods 2-6 and f-block lanthanides: 4
     # f-block actinides + p/d period 7: 34
@@ -426,7 +426,7 @@ def main():
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> Ħ Ω ⊢ Σ < ⊤ ⋈ ɢ Γ ⊣ ⊙"}')
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> Ħ Ω ⊢ Σ < ⊤ ⋈ ɢ ∈ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -438,7 +438,7 @@ def main():
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | >  Ħ  Ω  ⊢  Σ  <  ⊤  ⋈  ɢ  Γ  ⊣  ⊙')
+        info_line(f'\n{"Sym":4s} {"Z":3s} | >  Ħ  Ω  ⊢  Σ  <  ⊤  ⋈  ɢ  ∈  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

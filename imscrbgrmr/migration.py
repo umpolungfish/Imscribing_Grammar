@@ -95,14 +95,14 @@ _S_MAP = {
 #   old G_beta  was LOCAL (finest)    -> must become G_revapostrophe (finest)
 # We use a sentinel to avoid double-substitution.
 _G_SENTINEL_MAP = {
-    "Γ_revapostrophe": "__G_GIMEL__",
-    "Γ_gamma": "__G_BETH__",
-    "Γ_beta":  "__G_ALEPH__",
+    "𐑲": "__G_GIMEL__",
+    "𐑔": "__G_BETH__",
+    "𐑚":  "__G_ALEPH__",
 }
 _G_SENTINEL_RESOLVE = {
-    "__G_GIMEL__": "Γ_gamma",
-    "__G_BETH__":  "Γ_beta",
-    "__G_ALEPH__": "Γ_revapostrophe",
+    "__G_GIMEL__": "𐑔",
+    "__G_BETH__":  "𐑚",
+    "__G_ALEPH__": "𐑲",
 }
 
 

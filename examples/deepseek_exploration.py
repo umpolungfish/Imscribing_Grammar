@@ -447,7 +447,7 @@ else:
 
 
 # =============================================================================
-# Section 7 — Axiom 4: Γ→ requires D_∞ or R_‡
+# Section 7 — Axiom 4: ∈→ requires D_∞ or R_‡
 # =============================================================================
 
 header("7 · Axiom 4 Scan: Sequential Grammar Without Temporal/Catalytic Dimension")
@@ -474,7 +474,7 @@ if ax4_violations:
         a4t.add_column("Imscription", style="yellow")
         a4t.add_column("D", style="cyan")
         a4t.add_column("R", style="cyan")
-        a4t.add_column("Γ tier")
+        a4t.add_column("∈ tier")
         a4t.add_column("Status")
         for s in ax4_violations[:25]:
             meta = global_catalog.get_entry_metadata(s.name)
@@ -493,7 +493,7 @@ if ax4_violations:
             print(f"  AXIOM4: {s.name}  D={s.dimensionality.name}  R={s.recognition_mode.name}")
 
     bold("Interpretation:")
-    bold("  (a) Misassignment: system is allosteric cooperative, not genuinely ordered-sequential → fix Γ to AND")
+    bold("  (a) Misassignment: system is allosteric cooperative, not genuinely ordered-sequential → fix ∈ to AND")
     bold("  (b) Missing D_∞ or R_‡: temporal or catalytic dimension was omitted from encoding → add it")
     bold("  (c) Genuine falsification: system is truly sequential without temporal coupling → investigate")
 else:

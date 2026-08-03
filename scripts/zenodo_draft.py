@@ -160,7 +160,7 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list,
         f"% Shorthand primitive commands — redefined for IG document use",
         f"{_B}renewcommand{{{_B}H}}{{Ħ}}",  # \H is Hungarian accent; override for chirality H-bar
         f"{_B}newcommand{{{_B}K}}{{⊤}}",   # Kinetics
-        f"{_B}newcommand{{{_B}G}}{{Γ}}",   # Cardinality
+        f"{_B}newcommand{{{_B}G}}{{∈}}",   # Cardinality
         f"{_B}newcommand{{{_B}g}}{{ɢ}}",   # Composition
         f"{_B}newcommand{{{_B}Th}}{{⊣}}",   # Topology
         f"{_B}newcommand{{{_B}D}}{{⊢}}",   # Dimensionality

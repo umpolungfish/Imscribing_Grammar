@@ -266,7 +266,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     else:          # coordinate
         g = min(get(tA, '∋'), get(tB, '∋'))
 
-    # ── Γ: max granularity (isotope complexity)
+    # ── ∈: max granularity (isotope complexity)
     G = max(get(tA, '∈'), get(tB, '∈'))
 
     # ── ⊣: molecular topology from central atom geometry

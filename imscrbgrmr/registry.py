@@ -986,7 +986,7 @@ def register_imscription(
         ...     recognition_mode="𐑩",
         ...     polarity="𐑬",
         ...     fidelity="𐑐",
-        ...     granularity="Γ_beta",
+        ...     granularity="𐑚",
         ...     interaction_grammar="Gamma_and(SELECTIVE)",
         ...     kinetic_character="𐑘",
         ...     description="Classic R₂²(8) hydrogen-bonded dimer",

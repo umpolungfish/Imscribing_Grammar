@@ -9,7 +9,7 @@ using zfct_navigator.compose_formula + render_tokens.
 
 Per-element primitive derivation
 ─────────────────────────────────
-  Fixed (corpus-level):  ⊢, >, ⋈, ⊤, Γ, ⊙, Ω, < (whole-manuscript)
+  Fixed (corpus-level):  ⊢, >, ⋈, ⊤, ∈, ⊙, Ω, < (whole-manuscript)
   Variable (element-level):
     ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     <  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)

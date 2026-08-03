@@ -700,7 +700,7 @@ Control Methods:
   control ep <compound> [ratio]      EP Gate Toggle — couple with Praxeum
   control chirality <compound> <H>   Chirality Ladder — step to target Ħ
   control winding <compound> <W>     Winding Modulate — adjust Ω protection
-  control scope <compound> <G>       Scope Focus — adjust Γ range
+  control scope <compound> <G>       Scope Focus — adjust ∈ range
   control adjoint <compound> <P> <V> Adjoint Steer — directed primitive change
   control launch <compound>          Supercritical Launch — couple with Chimerium
 

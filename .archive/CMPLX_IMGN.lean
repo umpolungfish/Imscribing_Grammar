@@ -58,7 +58,7 @@ inductive Kin where | fast | mod | slow | trap | MBL
 inductive Scope where | beth | gimel | aleph
   deriving Repr, DecidableEq
 
-/-- Interaction grammar primitive Γ -/
+/-- Interaction grammar primitive ∈ -/
 inductive IxGrammar where | and_ | or_ | seq | broad
   deriving Repr, DecidableEq
 

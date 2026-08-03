@@ -29,7 +29,7 @@ Dynamic: summary
 
 # Genetic Engine — Frobenius-Guided Gene Editing
 
-**Structural type:** ⟨𐑦; Þ_ò; 𐑾; 𐑿; 𐑞; 𐑧; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩  
+**Structural type:** ⟨𐑦; Þ_ò; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_ï; Ω_z⟩  
 **Ouroboricity:** O_inf  |  **C-score:** both gates open
 
 The genetic code is a **stratified Frobenius algebra on B₄³ codon space**. This is not a metaphor — it is a structural fact formally encoded in the Imscribing Grammar. The Genetic Engine implements this fact as operational software for gene editing design.
@@ -108,7 +108,7 @@ UU_, UA_, UG_, AU_, AA_, AG_, GA_, CA_
 | Tyr | < (Parity) | moderate | Phosphorylation switch |
 | Phe | ⋈ (Force) | low | Hydrophobicity ceiling |
 | Ile | ⊤ (Kinetics) | moderate | β-branching |
-| His | Γ (Grammar) | moderate | pH-gated catalysis |
+| His | ∈ (Grammar) | moderate | pH-gated catalysis |
 | Asn | ɢ (Interaction) | moderate | Glycosylation sequon |
 | Gln | φ̂ (Criticality) | **high** | Metabolic regulation |
 | Asp | Ħ (Chirality) | **critical** | Chiral selectivity |

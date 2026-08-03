@@ -701,7 +701,7 @@ class AxiomValidator:
         target_granularity: Optional[Granularity] = None,
     ) -> Dict[str, Any]:
         """
-        Axiom 2: Local grammar blocks network propagation (G_ב–Γ barrier rule).
+        Axiom 2: Local grammar blocks network propagation (G_ב–∈ barrier rule).
         
         A imscription with G_ב and Γ_⊗ cannot propagate constraint beyond
         its immediate recognition pair.

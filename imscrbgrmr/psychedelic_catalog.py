@@ -270,7 +270,7 @@ def _dmt_molecular() -> Imscription:
             Also the fastest G_local → G_ℵ transition: no gradual onset.
         Γ_SELECTIVE — primarily 5-HT2A + sigma-1 receptor; tighter profile than LSD.
             Sigma-1 engagement is uniquely important: sigma-1 is an endoplasmic
-            reticulum chaperone involved in cellular stress response — DMT's Γ
+            reticulum chaperone involved in cellular stress response — DMT's ∈
             extends from synaptic grammar to intracellular grammar.
         ENDOGENOUS — present in mammalian brain tissue. DMT is part of the native
             constraint structure of the nervous system. The psychedelic dose is not
@@ -408,7 +408,7 @@ def _five_meo_dmt_molecular() -> Imscription:
         autoreceptor). 5-HT2A is excitatory (Gq-coupled, depolarising, increases
         cortical firing). 5-HT1A is inhibitory (Gi-coupled, hyperpolarising, reduces
         cortical firing). The methoxy substitution flips the dominant grammar operator
-        from excitatory to inhibitory — the same scaffold, different Γ.
+        from excitatory to inhibitory — the same scaffold, different ∈.
 
         This maps onto the qualitative phenomenological difference: DMT produces
         complex, structured, visual, narrative experiences (excitatory grammar →
@@ -436,8 +436,8 @@ def _five_meo_dmt_molecular() -> Imscription:
             "5-MeO-DMT as receptor ligand. Tryptamine with 5-methoxy substitution. "
             "The OMe group shifts receptor grammar from 5-HT2A (excitatory, DMT) "
             "toward 5-HT1A (inhibitory). Same K_frtailgamma profile as DMT but phenomenologically "
-            "distinct: inhibitory Γ → dissolution/'white-out' vs DMT's excitatory "
-            "Γ → structured visual/narrative content. Endogenous. ⊙ via suppression "
+            "distinct: inhibitory ∈ → dissolution/'white-out' vs DMT's excitatory "
+            "∈ → structured visual/narrative content. Endogenous. ⊙ via suppression "
             "rather than excitation — same destination, different grammar path."
         ),
         metadata={
@@ -453,15 +453,15 @@ def _five_meo_dmt_molecular() -> Imscription:
             "grammar_shift_note": (
                 "The 5-methoxy group is a single atom substitution that flips the "
                 "dominant grammar operator from excitatory (Gq / 5-HT2A) to inhibitory "
-                "(Gi / 5-HT1A). This is a Γ-switching event encoded at the molecular "
+                "(Gi / 5-HT1A). This is a ∈-switching event encoded at the molecular "
                 "level — one functional group change = grammar change. "
-                "Predicted by the framework: molecular Γ maps directly to network Γ "
+                "Predicted by the framework: molecular ∈ maps directly to network ∈ "
                 "because the receptor couples to the same downstream constraint pathways."
             ),
             "phenomenology_framework_mapping": (
-                "DMT: excitatory Γ → visual content, narrative, complex imagery. "
-                "5-MeO-DMT: inhibitory Γ → content dissolution, 'white-out', pure space. "
-                "Both reach ⊙. The path to criticality diverges at the Γ operator."
+                "DMT: excitatory ∈ → visual content, narrative, complex imagery. "
+                "5-MeO-DMT: inhibitory ∈ → content dissolution, 'white-out', pure space. "
+                "Both reach ⊙. The path to criticality diverges at the ∈ operator."
             ),
             "nitrogen_present": True,
             "brain_state_imscription": "five_meo_dmt_brain_state",
@@ -704,7 +704,7 @@ def _mescaline_molecular() -> Imscription:
             and sigma receptors. Broader receptor grammar than any tryptamine.
         SCAFFOLD NOTE — mescaline is a phenethylamine, not a tryptamine. It shares
             5-HT2A affinity with the tryptamines but via a completely different
-            molecular grammar. This is a Γ-convergent result: different scaffolds,
+            molecular grammar. This is a ∈-convergent result: different scaffolds,
             different molecular topologies, same ⊙ destination at the brain level.
     """
     return Imscription(
@@ -742,7 +742,7 @@ def _mescaline_molecular() -> Imscription:
                 "Mescaline demonstrates scaffold-independent convergence on ⊙: "
                 "phenethylamine T_linear → same ⊙ as tryptamine T_nrleg. "
                 "The molecular topology differs fundamentally but the receptor-level "
-                "Γ overlap (5-HT2A) is sufficient to drive the same brain-state. "
+                "∈ overlap (5-HT2A) is sufficient to drive the same brain-state. "
                 "This is the framework's prediction for grammar-convergent systems: "
                 "primitive-level similarity at the grammar layer overrides "
                 "structural dissimilarity at the scaffold layer."
@@ -751,8 +751,8 @@ def _mescaline_molecular() -> Imscription:
                 "Mescaline is the active compound in peyote (Lophophora williamsii) "
                 "and San Pedro cactus. Oldest documented psychedelic use (~5700 BP). "
                 "The framework notes: the ancient grammar (ritual context, solar "
-                "symbolism, communal setting) provides the Γ structure within which "
-                "the molecular Γ operates. The compound opens the ⊙ window; "
+                "symbolism, communal setting) provides the ∈ structure within which "
+                "the molecular ∈ operates. The compound opens the ⊙ window; "
                 "the cultural grammar determines what is encoded."
             ),
             "nitrogen_present": True,
@@ -795,7 +795,7 @@ def _mescaline_brain_state() -> Imscription:
             "level — broader receptor grammar → more simultaneous constraint-propagation "
             "channels → richer visual/sensory content, less dissociation than tryptamines. "
             "K_schwa: 8-12 hr. F_MEDIUM: less extreme depth than LSD. "
-            "Framework interpretation: broader Γ = wider content-space within ⊙ "
+            "Framework interpretation: broader ∈ = wider content-space within ⊙ "
             "rather than deeper access to the G/D degeneracy condition."
         ),
         metadata={
@@ -902,7 +902,7 @@ def _salvinorin_a_molecular() -> Imscription:
                 "binding (the 'pharmacophore nitrogen') is absent. KOR binding is "
                 "achieved through ester oxygen contacts — a completely different "
                 "recognition chemistry. "
-                "Framework: same ⊙ destination, completely different Γ path. "
+                "Framework: same ⊙ destination, completely different ∈ path. "
                 "This is the strongest evidence that ⊙ is a topological attractor "
                 "accessible from multiple grammar starting points."
             ),
@@ -915,7 +915,7 @@ def _salvinorin_a_molecular() -> Imscription:
             "cultural_note": (
                 "Active compound in Salvia divinorum, used by Mazatec shamans (Oaxaca). "
                 "Traditional use: divinatory states, regarded as qualitatively different "
-                "from peyote/mushroom experiences. Framework confirms: orthogonal Γ "
+                "from peyote/mushroom experiences. Framework confirms: orthogonal ∈ "
                 "produces orthogonal content character, despite same ⊙ topology."
             ),
             "brain_state_imscription": "salvinorin_a_brain_state",

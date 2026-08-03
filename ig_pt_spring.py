@@ -11,7 +11,7 @@ Edge types and weights:
   thread sequence        weight 7.0   (Frobenius path cohesion)
   enzyme bridge          weight 4.0   (S-P → Fe bridge)
   icosahedron edges      weight 2.5   (primitive adjacency from crystal structure)
-  same period            weight 0.3   (weak Γ-ring pull)
+  same period            weight 0.3   (weak ∈-ring pull)
   same block             weight 0.5   (Ω-family pull)
 
 Layout: Kamada-Kawai (minimises graph-theoretic stress).
@@ -77,7 +77,7 @@ def build_graph():
         if pi and pj:
             G.add_edge(f'P_{pi}', f'P_{pj}', weight=2.5, etype='ico')
 
-    # Same-period pull (weak Γ cohesion)
+    # Same-period pull (weak ∈ cohesion)
     by_period = defaultdict(list)
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         by_period[per].append(sym)

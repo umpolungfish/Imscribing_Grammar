@@ -82,7 +82,7 @@ def main(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
@@ -132,7 +132,7 @@ def analyze(identifier: str, format: str):
     Analyze a registered imscription by name or notation string.
 
     IDENTIFIER is a catalog name (e.g. 'muon', 'ice_Ih', 'סַמָּאֵל') or a
-    full notation string ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+    full notation string ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
     """
     try:
         # Try to get from catalog first
@@ -1226,7 +1226,7 @@ def generate(
         table.add_row("Kinetic Character", result.imscription.kinetic_character.value)
         table.add_row("Granularity", result.imscription.granularity.value)
 
-        # Coupling (Γ)
+        # Coupling (∈)
         ig = result.imscription.grammar
         table.add_row("Coupling", ig.value)
 
@@ -1600,7 +1600,7 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
             ("Fidelity (F)", "fidelity"),
             ("Kinetic Character (K)", "kinetic_character"),
             ("Granularity (G)", "granularity"),
-            ("Coupling (Γ)", "interaction_grammar"),
+            ("Coupling (∈)", "interaction_grammar"),
         ]
 
         for prim_name, attr_name in primitives:
@@ -3042,7 +3042,7 @@ def audit(
                         flag_pass_id = "audit_pass_4"
 
             else:
-                # T⋈ + S="n:m" (n≠m) must have Γ∨(BROAD) or T_nrleg
+                # T⋈ + S="n:m" (n≠m) must have ∈∨(BROAD) or T_nrleg
                 from imscrbgrmr.models import Topology as _Topo
                 grammar_tier = getattr(imscription.interaction_grammar, "tier", "")
                 is_broad = str(grammar_tier).upper() in ("BROAD",)
@@ -3054,8 +3054,8 @@ def audit(
                 if not (is_broad or has_network_topo):
                     flag_reasons.append(
                         f"Pass 4 / Stoichiometry: T_⋈[{s_val}] (asymmetric) "
-                        f"requires Γ∨(BROAD) or T_nrleg. "
-                        f"Current Γ={imscription.interaction_grammar}. "
+                        f"requires ∈∨(BROAD) or T_nrleg. "
+                        f"Current ∈={imscription.interaction_grammar}. "
                         "Update grammar tier or correct stoichiometry."
                     )
                     if flag_pass_id is None:
@@ -3716,7 +3716,7 @@ def imscribe_alias(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
 
     Short alias for 'imscrbgrmr' command.
     """
@@ -4447,7 +4447,7 @@ def distance(imscription_a: str, imscription_b: str, symmetric: bool, format: st
     Directed mode (--directed) penalises only downward moves in F/K —
     matching the HotSwap floor logic (d(A→B) ≠ d(B→A) when fidelity differs).
 
-    Categorical primitives (D, T, R, P, Γ) contribute 1.0 × weight on mismatch.
+    Categorical primitives (D, T, R, P, ∈) contribute 1.0 × weight on mismatch.
     Ordinal primitives (F, K, G) contribute the ordinal gap × weight.
     """
     from .algebra import tuple_distance, mahalanobis_distance
@@ -4503,7 +4503,7 @@ def meet(imscription_a: str, imscription_b: str, format: str):
     Useful for retrosynthesis: the meet gives the minimal common precursor motif.
 
     Ordered primitives (F, K, G) take the minimum (more conservative).
-    Categorical primitives (D, T, R, P, Γ) require exact match; mismatches
+    Categorical primitives (D, T, R, P, ∈) require exact match; mismatches
     are reported as CONFLICT — the meet is a partial sub-imscription in that case.
     """
     from .algebra import meet as _meet

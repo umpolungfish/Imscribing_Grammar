@@ -23,7 +23,7 @@ Tensor rules are primitive-aware (see algebra.py):
   • T    → promotion (topology lattice)
   • <    → join-dominant (⊙ propagates)
   • Ω    → join-dominant (higher topological protection inherits)
-  • R, P, Γ → categorical (tensor helper rules)
+  • R, P, ∈ → categorical (tensor helper rules)
 
 Cofactor analysis is primitive-aware: for meet-dominant (F, K), cofactor reveals
 the bottleneck component; for join-dominant (G, <, Ω), it reveals the contributor.
@@ -485,7 +485,7 @@ def principal_decomp(imscription: Imscription, max_factors: int = 9) -> Principa
     plus the categorical skeleton as the final factor.
 
     A imscription is join-irreducible in the ordinal dimensions when all F/K/G are at
-    their constraint-bottoms.  The categorical dimensions (D, T, R, P, Γ, <, Ω)
+    their constraint-bottoms.  The categorical dimensions (D, T, R, P, ∈, <, Ω)
     are each a single atom — they cannot be further decomposed without losing their
     identity.
 
@@ -559,7 +559,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     T (topology promotion): same logic as join-dominant ordinal
     < (⊙ join-dominant): if A has ⊙ and C has ⊙ → EXPLAINED; else CONTRIBUTOR / CONFLICT
     Ω (topo protection, join): same as G logic on ordinal strength
-    R, P, Γ (categorical, tensor helper):
+    R, P, ∈ (categorical, tensor helper):
       • A[p] = C[p] → EXPLAINED (A explains it)
       • A[p] ≠ C[p] → PASSTHROUGH (B must have C[p]; we can't say more without the tensor rule)
 

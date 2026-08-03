@@ -2,7 +2,7 @@
 """
 crystal_enumeration.py — Crystal of Types
 
-The 12-primitive tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ is a coordinate chart
+The 12-primitive tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ is a coordinate chart
 on the space of algebraic structures.  Each point in that space IS a type —
 a class of algebra determined by the coordinate.
 
@@ -97,7 +97,7 @@ for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     pct = 100.0 * n / total
     print(f"  {t:10s}: {n:>10,}  ({pct:5.1f}%)  from {cells:3d} (<,P,Ω,D) cells  ×  {free_count:,} free combinations")
 
-print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×Γ×H×S = 5×4×3×4×3×4×4×3)")
+print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×∈×H×S = 5×4×3×4×3×4×4×3)")
 
 
 # ── Period × Group × Block structure ──────────────────────────────────────────
@@ -181,7 +181,7 @@ print(f"\n  Total catalog: {len(catalog)} entries")
 
 
 # ── The 8-primitive inner crystal (free primitives within each tier cell) ──────
-print("\n\nINNER CRYSTAL — 8 free primitives (T, R, F, K, G, Γ, H, S)\n")
+print("\n\nINNER CRYSTAL — 8 free primitives (T, R, F, K, G, ∈, H, S)\n")
 inner_combos = {
     "⊣":     5,
     ">":     4,
@@ -203,7 +203,7 @@ print(f"\n  Inner crystal size: {running:,} types per (<,P,Ω,D) tier cell")
 # Show the sub-crystal dimensions as factored groups
 print("\n  Factored structure of inner crystal:")
 print("    Existence tier  [F, K]:                    3 × 4  =   12  (fidelity × kinetics)")
-print("    Scope tier      [G, Γ]:                    3 × 4  =   12  (granularity × grammar)")
+print("    Scope tier      [G, ∈]:                    3 × 4  =   12  (granularity × grammar)")
 print("    Geometric tier  [T, R]:                    5 × 4  =   20  (topology × relation)")
 print("    Temporal tier   [H, S]:                    4 × 3  =   12  (depth × stoichiometry)")
 print(f"    Combined:        12 × 12 × 20 × 12          = {12*12*20*12:,}  ≠ {running}  (factorisation not clean — corrected:)")

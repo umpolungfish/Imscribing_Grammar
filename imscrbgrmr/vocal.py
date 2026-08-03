@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω
+Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
 """
 
 import wave
@@ -168,7 +168,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Alveolar lateral approximant. Tongue tip touches the ridge behind the upper teeth; voice flows around the sides of the tongue. The classical 'l' — clear before vowels, dark ('dark l') before consonants.",
     ),
 
-    # Γ — Scope
+    # ∈ — Scope
     "𐑚": (
         "/β/",
         "bilabial 'v' — lips buzzing",

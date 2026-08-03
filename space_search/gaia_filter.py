@@ -6,7 +6,7 @@ criteria (F-fidelity, T-topology, Phi-criticality, Omega-candidate, D-temporal),
 and outputs a ranked candidate list as JSON.
 
 P-74: neutron stars are DM accumulation nodes → cross-match with neutron star catalog.
-P-75: DM-baryon conflict set {D, T, R, Γ} → anomalies in those channels are priority.
+P-75: DM-baryon conflict set {D, T, R, ∈} → anomalies in those channels are priority.
 """
 
 import json

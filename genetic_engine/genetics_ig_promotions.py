@@ -8,7 +8,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
   His→⊙ (Criticality) — imidazole pKa≈6 is the only sidechain pKa near physiological pH,
     making His the natural carrier of criticality. The imidazole ring titrates at the
     crossover between acid and base catalysis — the definition of φ̂_ÿ criticality.
-  Gln→Γ (Grammar) — amide side chain H-bond networks structure interaction grammar.
+  Gln→∈ (Grammar) — amide side chain H-bond networks structure interaction grammar.
 """
 
 from collections import defaultdict
@@ -111,7 +111,7 @@ print("=" * 60)
 stop_codons = [c for c, aa in GENETIC_CODE.items() if aa == "Stop"]
 print(f"Stop codons: {stop_codons}  (count: {len(stop_codons)})")
 print()
-print("3-valued IG primitives: ⋈, Γ, Σ  (cardinality = 3)")
+print("3-valued IG primitives: ⋈, ∈, Σ  (cardinality = 3)")
 print()
 print("Ω (winding/closure, primitive 12) is 4-valued.")
 print("But the STOP signal fires once per protein = termination of Ω-winding.")
@@ -142,7 +142,7 @@ print()
 
 print("NOTE: REVISED MAPPING (v0.6.0)")
 print("  His→⊙ (Criticality) — imidazole pKa≈6 = pH-critical protonation gate")
-print("  Gln→Γ (Grammar) — amide H-bond network = interaction grammar")
+print("  Gln→∈ (Grammar) — amide H-bond network = interaction grammar")
 print("  Rationale: His is the only residue with pKa near physiological pH,")
 print("  making it the natural carrier of protein criticality. Gln's long")
 print("  amide chain structures H-bond networks — a grammatical function.")

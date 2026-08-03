@@ -21,8 +21,8 @@ Primitives and their assignment routes:
   T   (Topology)          → interaction graph structure
   R   (RecognitionMode)   → bond type + reversibility + catalytic flag
   P   (Polarity)          → partner symmetry
-  Γ   (InteractionGrammar)→ selectivity ratio
-  Ω   (TopoIndex)         → derived from {T, K, D, Γ, G} via P-22 5-rule tree
+  ∈   (InteractionGrammar)→ selectivity ratio
+  Ω   (TopoIndex)         → derived from {T, K, D, ∈, G} via P-22 5-rule tree
   Φ   (CriticalityPhase)  → G/D degeneracy + Varma score heuristic
 """
 
@@ -614,7 +614,7 @@ class PrimitiveAssignmentEngine:
             is_boundary=False, boundary_margin=0.0,
         )
 
-    # ── Γ (InteractionGrammar) ───────────────────────────────────────────────
+    # ── ∈ (InteractionGrammar) ───────────────────────────────────────────────
 
     def assign_Gamma(
         self,
@@ -623,7 +623,7 @@ class PrimitiveAssignmentEngine:
         is_quantum: bool = False,
     ) -> PrimitiveAssignment:
         """
-        Assign Γ from selectivity ratio.
+        Assign ∈ from selectivity ratio.
 
           SELECTIVE_AND   : narrow selectivity (ratio ≤ 0.15 — few compatible partners)
           BROAD_OR        : wide selectivity (ratio > 0.15 — many compatible partners)
@@ -678,7 +678,7 @@ class PrimitiveAssignmentEngine:
         G: Granularity,
     ) -> PrimitiveAssignment:
         """
-        Derive Ω from {T, K, D, Γ, G} using the P-22 five-rule decision tree.
+        Derive Ω from {T, K, D, ∈, G} using the P-22 five-rule decision tree.
         Zero mismatches on 32/32 catalog imscriptions in the original audit.
 
         Rules (priority order):
@@ -703,7 +703,7 @@ class PrimitiveAssignmentEngine:
             rule = "Rule 4: D=TEMPORAL ∧ G=GLOBAL → Ω=Z2_CLASS"
         elif Gamma == InteractionGrammar.vow:
             value = TopoIndex.zoo
-            rule = "Rule 5: Γ=QUANTUM_AND → Ω=NON_ABELIAN"
+            rule = "Rule 5: ∈=QUANTUM_AND → Ω=NON_ABELIAN"
         else:
             value = None
             rule = "Default: no Ω-trigger rules fired → Ω=None"
@@ -919,7 +919,7 @@ class PrimitiveAssignmentEngine:
         else:
             underdetermined.append("P")
 
-        # ── Γ ────────────────────────────────────────────────────────────────
+        # ── ∈ ────────────────────────────────────────────────────────────────
         if "n_compatible_partners" in m and "n_total_possible_partners" in m:
             assignments["Gamma"] = self.assign_Gamma(
                 n_compatible_partners=m["n_compatible_partners"],
@@ -931,7 +931,7 @@ class PrimitiveAssignmentEngine:
         else:
             underdetermined.append("Gamma")
 
-        # ── Ω — derived from {T, K, D, Γ, G} ────────────────────────────────
+        # ── Ω — derived from {T, K, D, ∈, G} ────────────────────────────────
         needed = {"T", "K", "D", "Gamma", "G"}
         if needed <= set(assignments.keys()):
             assignments["Omega"] = self.assign_Omega_from_primitives(
@@ -980,10 +980,10 @@ class PrimitiveAssignmentEngine:
             Undetermined from SMILES alone
             ─────────────────────────────
             K   — needs ΔG‡ (activation barrier); provide delta_g_ddagger_kj
-            Γ   — needs interaction selectivity; provide n_compatible/n_total_partners
+            ∈   — needs interaction selectivity; provide n_compatible/n_total_partners
             P   — needs partner identity; provide partners_identical / has_pseudosymmetry
             <   — needs Varma score or G/D degeneracy data
-            Ω   — derived from {T,K,D,Γ,G}; auto-computed when all four are available
+            Ω   — derived from {T,K,D,∈,G}; auto-computed when all four are available
 
         Any of those can be supplied via extra_measurements to complete the picture.
 

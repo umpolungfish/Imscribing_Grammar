@@ -164,7 +164,7 @@ def demo3_strategy_composition() -> None:
 def demo4_fallback_search() -> None:
     header(
         "Demo 4 — Fallback Design Search  (or: / mplus)",
-        "Primary join blocked on P+Γ conflict → fallback join succeeds"
+        "Primary join blocked on P+∈ conflict → fallback join succeeds"
     )
     narrate(
         "The or: step expresses the MonadPlus mplus operator directly in YAML. "
@@ -178,7 +178,7 @@ def demo4_fallback_search() -> None:
         DEMO_DIR / "04_fallback_search.syn",
         label="04_fallback_search.syn",
         description=(
-            "or: tries adenine_thymine join (conflicts on P+Γ), falls back to "
+            "or: tries adenine_thymine join (conflicts on P+∈), falls back to "
             "CB7_ferrocene join (no conflict). Continues with fidelity assert "
             "and tensor with Soai."
         ),

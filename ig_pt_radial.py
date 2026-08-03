@@ -3,8 +3,8 @@
 Design C — 12-Primitive Radial periodic arrangement.
 
 Each element sits on the arm of its dominant IG primitive.
-Radial distance from centre = period (Γ).
-Empty arms (Ω > Γ ⋈) are structurally meaningful: no element incarnates
+Radial distance from centre = period (∈).
+Empty arms (Ω > ∈ ⋈) are structurally meaningful: no element incarnates
 those primitives as its dominant character at the atomic level.
 """
 

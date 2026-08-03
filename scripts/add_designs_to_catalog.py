@@ -71,7 +71,7 @@ DESIGNS = [
     },
     {
         "name": "universal_symbiont",
-        "description": "Consortium of 12 engineered microbial strains providing all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct complementary strains. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range mesoscale signaling (Γ=𐑲) coordinates consortium.",
+        "description": "Consortium of 12 engineered microbial strains providing all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct complementary strains. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range mesoscale signaling (∈=𐑲) coordinates consortium.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

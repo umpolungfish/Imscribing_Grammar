@@ -10,7 +10,7 @@ Self-encoding (§69.4):
 
 Architecture (imscriptive, Frobenius):
   Boundary: (<, P, Ω, D)  →  400 tier cells  [boundary encodes bulk]
-  Bulk:     (T, R, F, K, G, Γ, H, S)  →  43,200 inner types per cell
+  Bulk:     (T, R, F, K, G, ∈, H, S)  →  43,200 inner types per cell
   Total:    400 × 43,200  =  17,280,000 types
 
 Grammar families:
@@ -112,7 +112,7 @@ def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
 # ── Mixed-radix address arithmetic ─────────────────────────────────────────────
 # Full address = cell_address * INNER_SIZE + inner_address
 # Cell address:  mixed-radix over (⊙, <, Ω, ⊢) — ordered as BOUNDARY_PRIMS
-# Inner address: mixed-radix over (⊣, >, ⋈, ⊤, Γ, ∋, ⊥, Σ) — ordered as INNER_PRIMS
+# Inner address: mixed-radix over (⊣, >, ⋈, ⊤, ∈, ∋, ⊥, Σ) — ordered as INNER_PRIMS
 
 def _build_radix(prims: list[str]) -> tuple[list[int], int]:
     """Compute mixed-radix strides and total size for a given primitive list."""

@@ -1031,7 +1031,7 @@ _ATOM_DESC = {
     "MOAT_PARITY":          "ℤ₂ parity of the moat (𐑬)",
     "BRIDGE_COMM":          "Commutator of bridge — quantum bridge (𐑐)",
     "INFINITE_EXT":         "Infinite extension of the path (𐑪)",
-    "BRIDGE_EXIST":         "Existence of a bridge (Γ existential) (𐑔)",
+    "BRIDGE_EXIST":         "Existence of a bridge (∈ existential) (𐑔)",
     "STITCH_3":             "3-unit stitch: moat · hodge · linker (ɢ conjunction) (𐑝)",
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
     "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (Ħ=𐑭)",

@@ -357,7 +357,7 @@ _REVERSIBLE_WARHEAD_SMARTS = {
 
 # SMARTS for self-complementary H-bond arrays (DAD or ADA patterns)
 # Split into "specific" (triggers gamma_specific_smarts → SELECTIVE_AND regardless of
-# binding-site count) and "moderate" (is_self_complementary only; Γ uses site-count rule).
+# binding-site count) and "moderate" (is_self_complementary only; ∈ uses site-count rule).
 _SELF_COMPLEMENTARY_SMARTS = {
     # Carboxylic acid — forms R2^2(8) DAD···ADA dimer with itself
     # Moderate: COOH alone is selective, but other groups on the same molecule can make it broad.
@@ -374,7 +374,7 @@ _SELF_COMPLEMENTARY_SMARTS = {
     "uracil":            "O=C1CC(=O)[NH]C([NH]1)",
 }
 
-# Subset of the above for which matching guarantees SELECTIVE Γ regardless of
+# Subset of the above for which matching guarantees SELECTIVE ∈ regardless of
 # total binding-site count.  Carboxylic acid is excluded because it appears on
 # multifunctional molecules (amino acids, peptides) that are NOT selective.
 _SPECIFIC_COMPLEMENTARY_SMARTS = {
@@ -437,7 +437,7 @@ class StructuralFlags:
     # P  (partner symmetry)
     partners_identical: bool = False
     has_pseudosymmetry: bool = False
-    # Γ  (selectivity proxy — None means insufficient evidence, don't assign)
+    # ∈  (selectivity proxy — None means insufficient evidence, don't assign)
     n_compatible_partners: Optional[int] = None
     n_total_possible_partners: Optional[int] = None
     gamma_specific_smarts: bool = False   # True when a named DAD/ADA pattern matched
@@ -467,7 +467,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
     ✅ HBD + HBA + aromatic rings → n_binding_sites
     ✅ Heavy-atom diameter estimate → scale_nm
     ✅ Canonical fragment identity → partners_identical / has_pseudosymmetry (P)
-    ✅ Selectivity proxy from binding-site count → n_compatible/n_total (Γ heuristic)
+    ✅ Selectivity proxy from binding-site count → n_compatible/n_total (∈ heuristic)
 
     What cannot be determined from 2D SMILES
     -----------------------------------------
@@ -586,7 +586,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
             partners_identical = True
             features.append("self-complementary single molecule → partners_identical (homodimer)")
 
-    # ── Γ: selectivity proxy ─────────────────────────────────────────────────
+    # ── ∈: selectivity proxy ─────────────────────────────────────────────────
     # Only assign when structural evidence is strong enough.
     # Rule: specific DAD/ADA SMARTS match (not just HBD==HBA proxy) AND
     #       n_binding_sites ≤ 5 → SELECTIVE_AND (ratio 0.05–0.10)
@@ -649,7 +649,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
     n_binding_sites = min(n_hbd, 5) + min(n_hba, 5) + min(n_aromatic_rings, 3) + n_metals
     n_binding_sites = max(1, n_binding_sites)  # floor at 1
 
-    # ── Γ finalisation (now that n_binding_sites is known) ────────────────────
+    # ── ∈ finalisation (now that n_binding_sites is known) ────────────────────
     # Selective (ratio ≤ 0.10): specific named DAD/ADA pattern AND few binding sites
     # Broad    (ratio ≥ 0.30): many binding sites OR non-specific multi-fragment
     # None: insufficient evidence → left undetermined in assign_all
@@ -660,7 +660,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
         n_compatible_partners = 2       # ratio = 0.10 → SELECTIVE_AND
         n_total_possible_partners = TOTAL
         features.append(
-            f"named complementary array matched → Γ SELECTIVE_AND (ratio~0.10)"
+            f"named complementary array matched → ∈ SELECTIVE_AND (ratio~0.10)"
         )
     elif is_self_complementary and not _gamma_specific and n_hbd <= 1:
         # Carboxylic acid (or similar) is the sole H-bond donor → COOH-driven selectivity.
@@ -669,7 +669,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
         n_compatible_partners = 2       # ratio = 0.10 → SELECTIVE_AND
         n_total_possible_partners = TOTAL
         features.append(
-            f"COOH as sole donor (HBD={n_hbd}) → Γ estimated SELECTIVE_AND (ratio~0.10)"
+            f"COOH as sole donor (HBD={n_hbd}) → ∈ estimated SELECTIVE_AND (ratio~0.10)"
         )
     elif (n_binding_sites >= 7
           or (is_assembly and not is_self_complementary)
@@ -678,7 +678,7 @@ def smiles_to_structural_flags(smiles: str) -> StructuralFlags:
         n_total_possible_partners = TOTAL
         features.append(
             f"n_binding_sites={n_binding_sites} or broad assembly "
-            f"→ Γ estimated BROAD_OR (ratio~0.35)"
+            f"→ ∈ estimated BROAD_OR (ratio~0.35)"
         )
     # else: None / None → undetermined
 
@@ -742,7 +742,7 @@ def smiles_to_measurements(smiles: str, description: str = "") -> Dict[str, Any]
         n_binding_sites, partner_count
         is_covalent, is_reversible, is_mechanical, is_catalytic
         partners_identical, has_pseudosymmetry    (P — from fragment identity)
-        n_compatible_partners, n_total_possible_partners  (Γ — structural proxy;
+        n_compatible_partners, n_total_possible_partners  (∈ — structural proxy;
             only present when evidence is sufficient, otherwise absent → undetermined)
         _smiles_source          — passthrough metadata
 
@@ -786,7 +786,7 @@ def smiles_to_measurements(smiles: str, description: str = "") -> Dict[str, Any]
         "_delta_g_confidence":  dg.confidence,
         "_warnings":            dg.warnings + sf.warnings,
     }
-    # Γ — only include when structural evidence is sufficient
+    # ∈ — only include when structural evidence is sufficient
     if sf.n_compatible_partners is not None and sf.n_total_possible_partners is not None:
         m["n_compatible_partners"]     = sf.n_compatible_partners
         m["n_total_possible_partners"] = sf.n_total_possible_partners

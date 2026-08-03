@@ -51,7 +51,7 @@ print("2. IG PRIMITIVE CARDINALITIES vs GENETIC CODE")
 print("=" * 60)
 
 # Crystal = 3^3 * 4^5 * 5^4
-# 3-card primitives: ⋈, Γ, Σ  (count=3, each 3 values)
+# 3-card primitives: ⋈, ∈, Σ  (count=3, each 3 values)
 # 4-card primitives: ⊢, >, ɢ, Ħ, Ω  (count=5, each 4 values)
 # 5-card primitives: ⊣, <, ⊤, ⊙  (count=4, each 5 values)
 
@@ -73,7 +73,7 @@ for card in sorted(by_card):
 print()
 print("Genetic code cardinalities:")
 print("  4 nucleotides    → matches 4-valued primitives (⊢, >, ɢ, Ħ, Ω)")
-print("  3 bases/codon    → matches 3-valued primitives (⋈, Γ, Σ)")
+print("  3 bases/codon    → matches 3-valued primitives (⋈, ∈, Σ)")
 print("  20 amino acids   = 4 × 5  (both cardinalities appear in Crystal)")
 print("  64 codons = 4³   → 4-valued base × 3-valued codon length")
 print()
@@ -316,7 +316,7 @@ print("8. IG BOOTSTRAP SEQUENCE vs CENTRAL DOGMA ORDERING")
 print("=" * 60)
 
 # IG bootstrap: ordinal-1 of each primitive in canonical tuple order
-# ⊢→⊣→>→<→⋈→⊤→Γ→ɢ→⊙→Ħ→Σ→Ω
+# ⊢→⊣→>→<→⋈→⊤→∈→ɢ→⊙→Ħ→Σ→Ω
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
 ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]

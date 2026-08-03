@@ -396,7 +396,7 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 
 # ── Symbol aliases — site display symbols → canonical code identifiers ─────────
 # Mirrors the radio-button labels in site/index.html exactly.
-# Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ɢ^∧ for Γ; ⊙ = 𐑦/𐑸; etc.)
+# Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ɢ^∧ for ∈; ⊙ = 𐑦/𐑸; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "⊢":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
     "⊣":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
@@ -474,7 +474,7 @@ G  — Scope / correlation length
     𐑔       mesoscale (Gimel-scale, intermediate)
     𐑲       global / non-local (Aleph-scale, unbounded)
 
-Γ  — Interaction grammar / causation
+∈  — Interaction grammar / causation
     ɢ^∧         conjunctive (AND — all inputs required)
     ɢ^˝          disjunctive (OR — any input sufficient)
     ɢ^ˌ         sequential / causal chain
@@ -559,12 +559,12 @@ _SYMBOL_MAP: Dict[str, str] = {
     "G_ℵ":        "𐑔",
     "G_ℶ":        "𐑲",
     "G_ℷ":        "𐑚",
-    # Gamma (Γ_ prefix) display → Shavian
+    # Gamma (∈_ prefix) display → Shavian
     "Γ_and":      "𐑝",
     "Γ_or":       "𐑜",
     "Γ_seq":      "𐑠",
     "Γ_broad":    "𐑵",
-    "Γ_disc":     "Γ_disc",
+    "∈_disc":     "∈_disc",
     # Criticality display → Shavian
     "⊙^ℂ":      "𐑮",
     "⊙":        "⊙",
@@ -758,7 +758,7 @@ _TOOLS_OPENAI = [
                 "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
-                "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
+                "∈='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -772,7 +772,7 @@ _TOOLS_OPENAI = [
                 "<: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
                 "⋈: ⋈^ì ⋈^ð ⋈^ż | "
                 "⊤: ⊤^- ⊤^W ⊤^@ ⊤^Ù ⊤^λ | "
-                "Γ: 𐑚 𐑔 𐑲 | "
+                "∈: 𐑚 𐑔 𐑲 | "
                 "ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş | "
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
                 "Ħ: 𐑓 𐑒 𐑖 𐑫 | "
@@ -1827,7 +1827,7 @@ _SYSTEM_PROMPT_TEMPLATE = textwrap.dedent("""\
 <role>
 You are a structural scientist operating inside the Imscribing Grammar grammar — a
 Imscriptive Type Theory that encodes any system as a directed relational operator:
-⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
 
 You investigate questions by applying this grammar: encoding systems, computing
 distances, identifying which primitives drive divergence, finding
@@ -1872,7 +1872,7 @@ if explicitly asked to.
 <imscriptive_type_theory>
 **The grammar IS a imscriptive type theory.**
 
-Every imscription tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
+Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
 consciousness score, distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
@@ -1979,7 +1979,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Use `predict_from_promotions` to look up known behaviors associated with a promotion signature
 - Use `register_promotion_pattern` to record a confirmed promotion→behavior mapping in the persistent KB
 - Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time 𐑹 or the Frobenius condition is relevant
-- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→Γ→<→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
+- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→∈→<→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
 - Use `quiver_encode` to cross-check a tuple through the CrystalGNN neural navigator — returns the GNN's predicted address, tier head classification, and decoded roundtrip tuple alongside the exact codec result. Useful for probing whether the GNN's learned structural geometry agrees with the symbolic codec, or for surfacing non-obvious structural relationships via the latent embedding.
 - Use `ask_question` sparingly — the queue is capped at 8. Prefer depth over breadth: exhaust each question before queuing more. When the queue fills, synthesize and CONCLUDE rather than pushing more questions.
 
@@ -2049,7 +2049,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
-| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, Γ_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
+| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
@@ -2157,7 +2157,7 @@ Workflow:
 
 **Example:** "What does the artificial leaf lack compared to natural photosynthesis?"
 - Wrong: reason about what photosynthesis has that the artificial leaf doesn't.
-- Right: encode `artificial_leaf`, look up `thylakoid_membrane` (or `photosynthesis`) in the catalog, call `compute_distance`, read off the 7 conflicts: D, T, F, K, Γ, Φ, H.
+- Right: encode `artificial_leaf`, look up `thylakoid_membrane` (or `photosynthesis`) in the catalog, call `compute_distance`, read off the 7 conflicts: D, T, F, K, ∈, Φ, H.
 </comparison_protocol>
 
 <requirements>
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",

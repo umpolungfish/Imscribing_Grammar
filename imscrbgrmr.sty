@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Γ}{β}   \prim{φ̂}{ÿ}
+%   e.g. \prim{ɢ}{ˌ}   \prim{φ̂}{ÿ}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -126,10 +126,11 @@
 \newcommand{\Ktrap}{\shav{𐑪}}   % on   — kinetically trapped by order
 \newcommand{\KMBL}{\shav{𐑺}}    % air  — many-body localized
 
-% Γ — Scope
-\newcommand{\Gbeth}{\prim{Γ}{β}}
-\newcommand{\Ggimel}{\prim{Γ}{γ}}
-\newcommand{\Galeph}{\prim{Γ}{ʔ}}
+% ∈ — Granularity.  Core.lean ctor order: bib, thigh, ice.
+\newcommand{\Ggran}{\axis{∈}}
+\newcommand{\Gbeth}{\shav{𐑚}}   % bib   — local / mesoscale (ℶ)
+\newcommand{\Ggimel}{\shav{𐑔}}  % thigh — intermediate / collective (ℷ)
+\newcommand{\Galeph}{\shav{𐑲}}  % ice   — global / fine-grained (ℵ)
 
 % ɢ — Interaction Grammar
 \newcommand{\IGand}{\prim{ɢ}{\^{}}}

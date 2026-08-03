@@ -420,9 +420,9 @@ QUADS = [
     },
     {
         "label": "Scope",
-        "prims": "G × Γ",
+        "prims": "G × ∈",
         "size":  "3 × 4 = 12",
-        "vals":  "Γ: ℶ, ℷ, ℵ\nΓ: and, or, seq, broad",
+        "vals":  "∈: ℶ, ℷ, ℵ\n∈: and, or, seq, broad",
         "role":  "Granularity × Interaction grammar\n(how wide and how structured)",
         "color": "#552222",
         "x": 0.51, "y": 0.35, "w": 0.46, "h": 0.20,

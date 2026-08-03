@@ -459,7 +459,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Tyr": IGPrimitive.PARITY,        # < — phosphorylation switch
     "Phe": IGPrimitive.FORCE,         # ⋈ — max hydrophobicity, force ceiling
     "Ile": IGPrimitive.KINETICS,      # ⊤ — β-branched, ribosomal coupling
-    "His": IGPrimitive.GRAMMAR,       # Γ — imidazole pKa bridge
+    "His": IGPrimitive.GRAMMAR,       # ∈ — imidazole pKa bridge
     "Asn": IGPrimitive.INTERACTION,   # ɢ — N-glycosylation sequon
     "Gln": IGPrimitive.CRITICALITY,   # φ̂ — most regulated biosynthetic node
     "Asp": IGPrimitive.CHIRALITY,     # Ħ — chiral substrate selectivity
@@ -496,7 +496,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation matters
-    IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
+    IGPrimitive.GRAMMAR:        "moderate",     # ∈ — pH-gated catalysis redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss is pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
     IGPrimitive.FORCE:          "low",          # ⋈ — hydrophobic class preserved
@@ -1223,7 +1223,7 @@ class ChimeraDetector:
             (P.KINETICS, P.CHIRALITY, 2.5, False,  # ⊤ ⊗ Ħ
              "Kinetic-chiral bottleneck: editing Ile (ribosomal coupling) AND Asp "
              "(chiral selectivity) slows translation and mis-folds the product."),
-            (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # Γ ⊗ >
+            (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # ∈ ⊗ >
              "Grammatical irreversibility: editing His (pH gate) AND Cys (disulfide) "
              "at the same active site creates a pH-locked irreversible bond."),
 
@@ -1852,7 +1852,7 @@ def verify_chimera_detector() -> bool:
     # Trap pair
     trap = detector.analyze_edit_set([("Cys", "Ser"), ("His", "Gln")])
     # Cys→Ser breaks reversibility, His→Gln breaks pH gate
-    # The tensor product of > (high) and Γ (moderate) should be amplified
+    # The tensor product of > (high) and ∈ (moderate) should be amplified
     if trap.tensor_risk >= 1.5:
         print(f"  ✓ Chimera detector: Cys-His tensor risk = {trap.tensor_risk:.1f}x")
     else:
@@ -2108,7 +2108,7 @@ def demo_chimera_risk() -> None:
         [("Lys", "Arg")],                    # Σ→Σ (same primitive) — safe
         [("Glu", "Asp")],                     # Ω→Ħ — primitive change
         [("Cys", "Ser")],                     # >→None — high risk single
-        [("Cys", "Ser"), ("His", "Gln")],     # >⊗Γ — semi-locked pair
+        [("Cys", "Ser"), ("His", "Gln")],     # >⊗∈ — semi-locked pair
         [("Cys", "Ser"), ("Asp", "Asn")],     # >⊗Ħ — critical pair
         [("Met", "Ile"), ("Asp", "Glu")],     # ⊢⊗Ħ — scope+chirality
     ]

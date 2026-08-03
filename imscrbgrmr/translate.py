@@ -119,7 +119,7 @@ class TranslationCost:
     """
     coherence_loss: float = 0.0    # cost of F-tier downgrade (quantum → classical)
     criticality_loss: float = 0.0  # cost of ⊙ → Phi_softsign (criticality → sub-critical)
-    interaction_cost: float = 0.0  # cost of grammar mismatch (Γ constraint loosening)
+    interaction_cost: float = 0.0  # cost of grammar mismatch (∈ constraint loosening)
 
     @property
     def total(self) -> float:
@@ -340,7 +340,7 @@ def translate_grammar(s: Imscription) -> ImscriptionM[Imscription]:
     if grammar is None:
         rec = StepRecord(
             "translate_grammar", s.name, "PASS", 0.0,
-            "Γ=None — no grammar to translate"
+            "∈=None — no grammar to translate"
         )
         return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 
@@ -360,7 +360,7 @@ def translate_grammar(s: Imscription) -> ImscriptionM[Imscription]:
     if operator in classical_operators:
         rec = StepRecord(
             "translate_grammar", s.name, "PASS", 0.0,
-            f"Γ={grammar.name if hasattr(grammar, 'name') else grammar} "
+            f"∈={grammar.name if hasattr(grammar, 'name') else grammar} "
             f"(op={operator.name}) — classically compatible; no interaction cost"
         )
         return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
@@ -376,7 +376,7 @@ def translate_grammar(s: Imscription) -> ImscriptionM[Imscription]:
 
     cost = math.log(2)  # 1 bit of interaction information lost
     msg = (
-        f"Γ={grammar.name if hasattr(grammar, 'name') else grammar} "
+        f"∈={grammar.name if hasattr(grammar, 'name') else grammar} "
         f"(op={operator.name if hasattr(operator, 'name') else operator}) "
         f"→ {fallback.name} (no classical analogue for DISSIPATIVE)  "
         f"interaction_cost={cost:.4f} nat"

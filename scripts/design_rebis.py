@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -125,7 +125,7 @@ DESIGNS = [
     },
     {
         "name": "universal_symbiont",
-        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct strains with complementary functions. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range signaling (Γ=𐑲) via quorum-sensing molecules that coordinate across the entire consortium.",
+        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct strains with complementary functions. All-simultaneous composition (ɢ=ɢ^∧) — all metabolic pathways active at once. Long-range signaling (∈=𐑲) via quorum-sensing molecules that coordinate across the entire consortium.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

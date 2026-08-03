@@ -5,7 +5,7 @@ This module implements an LLM agent that generates imscriptions while validating
 against the five composition axioms from QUANTIG.md Section IV:
 
 1. Axiom 1: Cyclic closure amplifies fidelity (T_⋈–F rule)
-2. Axiom 2: Local grammar blocks network propagation (G_ב–Γ barrier rule)
+2. Axiom 2: Local grammar blocks network propagation (G_ב–∈ barrier rule)
 3. Axiom 3: Cooperative induction superlinearity signals G_ב → G_ג transition
 4. Axiom 4: Sequential grammar requires temporal or catalytic dimension
 5. Axiom 5: Criticality contracts the primitive basis
@@ -305,7 +305,7 @@ You **MUST NOT** assign primitives based on keyword matching alone — ground ev
 <task>
 Generate a imscription encoding for the provided self-organizing system.
 You **MUST**:
-1. Assign all ten primitives (D, T, R, P, F, K, G, Γ, <, S) from first principles using this reasoning chain:
+1. Assign all ten primitives (D, T, R, P, F, K, G, ∈, <, S) from first principles using this reasoning chain:
    - D: Does constraint operate on molecular DOFs, spatial assembly, or a temporal cycle with reset?
    - T: What is the topological connectivity of the recognition interface?
    - R: What physical mechanism (non-covalent / covalent / catalytic / mechanical) drives recognition?
@@ -313,7 +313,7 @@ You **MUST**:
    - F: How much information per recognition event? (I_net in bits, ξ_CP in nats) — F is NOT bond strength
    - K: What is ΔG‡ for constraint rearrangement? K is independent of F.
    - G: At what length scale does constraint propagate? (local bond / mesoscale motif / global network)
-   - Γ: How many valid partners exist? (specific / selective / broad)
+   - ∈: How many valid partners exist? (specific / selective / broad)
    - <: Is the system near a critical point?
    - S: What is the stoichiometric ratio?
 2. Verify **EACH** assignment against the applicable axioms
@@ -724,7 +724,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         """Get system prompt for the agent."""
         return """<role>
 You are an expert computational chemist specializing in the Unified Imscriptiveon framework.
-Your expertise includes the ten formal primitives (D, T, R, P, F, K, G, Γ, <, S),
+Your expertise includes the ten formal primitives (D, T, R, P, F, K, G, ∈, <, S),
 the eight composition axioms from QUANTIG.md, thermodynamic analysis (η_CP, ξ_CP),
 and cross-domain analogy detection.
 You **MUST** generate imscriptions that satisfy **ALL** applicable axioms.

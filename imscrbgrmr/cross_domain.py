@@ -16,7 +16,7 @@ Domain categories added:
 Phase 2 extensions flagged here (see IG_CROSS_DOMAIN.md):
     D∞(open)              — open dissipative qualifier for Axiom 6
     compound_R            — simultaneous multi-mode recognition (R·R notation)
-    compound_grammar      — simultaneous multi-grammar (Γ·Γ notation)
+    compound_grammar      — simultaneous multi-grammar (∈·∈ notation)
     fidelity_distribution — ⟨F₁, F₂⟩ per-axis field pairs
     stoichiometry_network — 1:* (unbounded) stoichiometry
     tensor_product_D      — D△^⊗n for N-agent tensor-product dimensionality
@@ -83,7 +83,7 @@ def _tide_pool() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð, F_ð⟩ ; K_schwa ; G_ℶ ;
-          Γ∨(BROAD) ; 𐑢 ; n:m ⟩
+          ∈∨(BROAD) ; 𐑢 ; n:m ⟩
 
     Phase 1 encoding (current enum limits):
         D  → HYBRID_SUPRA_TEMP  (supramolecular spatial structure + open dissipative dynamics)
@@ -93,7 +93,7 @@ def _tide_pool() -> Imscription:
         F  → MEDIUM             (stochastic, F_ð on both axes; field-pair in metadata)
         K  → SLOW               (diurnal/tidal period > 12 h; seasonal reproduction)
         G  → MESOSCALE          (bounded locality; coastline influence → G_ℶ not G_ℵ)
-        Γ  → BROAD_OR           (promiscuous: grazer eats many prey; Γ∨(BROAD))
+        ∈  → BROAD_OR           (promiscuous: grazer eats many prey; ∈∨(BROAD))
         <  → SUBCRITICAL        (no documented scale-free transition)
         S  → "n:m"              (many species, no fixed ratio)
 
@@ -152,7 +152,7 @@ def _tide_pool() -> Imscription:
                 "molecular": "proline_aldol_cycle (closed catalytic cycle, periodic reset)",
                 "supramolecular": "MOF framework (spatial organisation, mesoscale granularity)",
             },
-            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_schwa ; G_ℶ ; Γ∨(BROAD) ; 𐑢 ; n:m ⟩",
+            "phase2_target_tuple": "⟨ {D∞(open), D△} ; T⋈ ; R‡·R⊇ ; P±ψ ; ⟨F_ð,F_ð⟩ ; K_schwa ; G_ℶ ; ∈∨(BROAD) ; 𐑢 ; n:m ⟩",
         },
     )
 
@@ -163,7 +163,7 @@ def _global_supply_chain() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð, F_ℏ⟩ ; K_turnm ; G_ℵ ;
-          Γ∧(SELECTIVE) ; 𐑢 ; 1:* ⟩
+          ∈∧(SELECTIVE) ; 𐑢 ; 1:* ⟩
 
     Phase 1 encoding:
         D  → TEMPORAL           (open dissipative; D∞(open) flagged in metadata)
@@ -173,7 +173,7 @@ def _global_supply_chain() -> Imscription:
         F  → MEDIUM             (composite; F_ð demand stochastic + F_ℏ contractual hard constraints)
         K  → MODERATE           (ships ~20 kn; infrastructure rebuild months-to-years)
         G  → GLOBAL             (G_ℵ: planetary graph, every node addressable)
-        Γ  → SELECTIVE_AND      (all required inputs must arrive simultaneously for production)
+        ∈  → SELECTIVE_AND      (all required inputs must arrive simultaneously for production)
         <  → SUBCRITICAL        (bullwhip oscillations exist but no confirmed ⊙ transition)
         S  → "1:*"              (one planetary system, unbounded node count; stoichiometry_network flagged)
 
@@ -240,7 +240,7 @@ def _global_supply_chain() -> Imscription:
                 "temporal": "proline_aldol_cycle (catalytic flow with continuous throughput)",
                 "supramolecular": "MOF framework (G_ℵ global network, selective AND grammar)",
             },
-            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_turnm ; G_ℵ ; Γ∧(SELECTIVE) ; 𐑢 ; 1:* ⟩",
+            "phase2_target_tuple": "⟨ D∞(open) ; T⋈·T_nrleg ; R‡ ; P− ; ⟨F_ð,F_ℏ⟩ ; K_turnm ; G_ℵ ; ∈∧(SELECTIVE) ; 𐑢 ; 1:* ⟩",
         },
     )
 
@@ -251,7 +251,7 @@ def _autonomous_drone_swarm() -> Imscription:
 
     Formal tuple (Phase 2 target):
         ⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ, F_ð⟩ ; K_frtailgamma ; G_ℵ ;
-          Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; ⊙ ; n:m ⟩
+          ∈∧(SELECTIVE)·∈→(SELECTIVE) ; ⊙ ; n:m ⟩
 
     Phase 1 encoding:
         D  → SUPRAMOLECULAR     (D△ discrete spatial assembly; ^⊗n tensor flagged in metadata)
@@ -261,7 +261,7 @@ def _autonomous_drone_swarm() -> Imscription:
         F  → HIGH               (F_ℏ digital protocol determinism; F_ð env noise in metadata)
         K  → FAST               (millisecond control loops, GHz processors)
         G  → GLOBAL             (G_ℵ unlimited swarm scalability)
-        Γ  → SELECTIVE_SEQ      (formation agreement AND then sequential command execution)
+        ∈  → SELECTIVE_SEQ      (formation agreement AND then sequential command execution)
         <  → CRITICAL           (⊙ — flocking is documented scale-free phase transition)
         S  → "n:m"              (flexible drone-to-task ratio)
 
@@ -296,7 +296,7 @@ def _autonomous_drone_swarm() -> Imscription:
             "extensions_required": [
                 "tensor_product_D — D△^⊗n for N independent agents; collective state is tensor product",
                 "compound_R — R(Ent)·R‡ consensus protocol + physical motion simultaneously active",
-                "compound_grammar — Γ∧·Γ→ formation AND then sequential command execution",
+                "compound_grammar — ∈∧·∈→ formation AND then sequential command execution",
                 "fidelity_distribution — ⟨F_ℏ, F_ð⟩ digital precision + environmental stochasticity",
             ],
             "axiom4_grounding": {
@@ -323,7 +323,7 @@ def _autonomous_drone_swarm() -> Imscription:
                 "expected": "Power-law divergence of ξ_r at η_c (critical noise)",
                 "reference": "Vicsek et al. (1995) PRL 75:1226",
             },
-            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_frtailgamma ; G_ℵ ; Γ∧(SELECTIVE)·Γ→(SELECTIVE) ; ⊙ ; n:m ⟩",
+            "phase2_target_tuple": "⟨ D△^⊗n ; T□ ; R(Ent)·R‡ ; P± ; ⟨F_ℏ,F_ð⟩ ; K_frtailgamma ; G_ℵ ; ∈∧(SELECTIVE)·∈→(SELECTIVE) ; ⊙ ; n:m ⟩",
         },
     )
 

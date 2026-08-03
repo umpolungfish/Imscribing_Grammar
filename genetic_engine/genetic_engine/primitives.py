@@ -10,23 +10,23 @@ REVISED MAPPING (2026-06-03 v0.6.0):
     Histidine is the Swiss Army knife of protein function: catalytic triads, metal binding,
     pH-dependent conformational switching. Its criticality is biochemical, not metabolic.
 
-  Gln→Γ (Grammar) — glutamine's long amide side chain enables extended hydrogen bonding
+  Gln→∈ (Grammar) — glutamine's long amide side chain enables extended hydrogen bonding
     networks that structure interaction patterns (grammar of H-bond recognition). Maps to
     Granularity/Scope because Gln's length positions H-bond donors at structural range.
 
-  Rationale: The original mapping (His→Γ, Gln→⊙) was structurally correct at the metabolic
+  Rationale: The original mapping (His→∈, Gln→⊙) was structurally correct at the metabolic
     level (Gln synthetase is the most regulated biosynthetic node) but biochemically incorrect
     at the protein function level. His IS the critical residue — its imidazole ring titrates
     at the crossover between acid and base catalysis (protonated/deprotonated equilibrium),
     which is the definition of φ̂_ÿ criticality in the protein context.
 
   Previous mapping (preserved for reference):
-    His→Γ (Grammar), Gln→⊙ (Criticality) — original assignment
+    His→∈ (Grammar), Gln→⊙ (Criticality) — original assignment
 
 Promoted AAs (split stratum):
   Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→> (Reversibility),
   Tyr→< (Parity),    Phe→⋈ (Force),        Ile→⊤ (Kinetics),
-  His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→Γ (Grammar/Scope),
+  His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→∈ (Grammar/Scope),
   Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
 
 Ground AAs (exact stratum): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly
@@ -70,7 +70,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Ile": IGPrimitive.KINETICS,
     "His": IGPrimitive.CRITICALITY,    # REVISED: His→⊙ (criticality)
     "Asn": IGPrimitive.INTERACTION,
-    "Gln": IGPrimitive.GRAMMAR,        # REVISED: Gln→Γ (grammar)
+    "Gln": IGPrimitive.GRAMMAR,        # REVISED: Gln→∈ (grammar)
     "Asp": IGPrimitive.CHIRALITY,
     "Lys": IGPrimitive.ENTROPY,
     "Glu": IGPrimitive.WINDING,
@@ -97,7 +97,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation
-    IGPrimitive.GRAMMAR:        "moderate",     # Γ — H-bond grammar redesign
+    IGPrimitive.GRAMMAR:        "moderate",     # ∈ — H-bond grammar redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
     IGPrimitive.FORCE:          "low",          # ⋈ — hydrophobic class preserved
@@ -146,7 +146,7 @@ def get_primitive_delta(orig_aa: str, target_aa: str) -> dict:
 
 def get_mapping_version() -> str:
     """Return the current mapping version with revision notes."""
-    return ("v0.6.0: His→⊙ (Criticality), Gln→Γ (Grammar). "
+    return ("v0.6.0: His→⊙ (Criticality), Gln→∈ (Grammar). "
             "His imidazole pKa≈6 is the natural carrier of protein criticality; "
             "Gln H-bond networks structure interaction grammar.")
 
@@ -154,7 +154,7 @@ def get_aa_primitive_description(aa: str) -> str:
     """Return a description of what primitive an amino acid activates."""
     descriptions = {
         "His": "⊙ (Criticality) — imidazole pKa≈6, pH-gated protonation equilibrium",
-        "Gln": "Γ (Grammar) — long amide side chain H-bond network structuring",
+        "Gln": "∈ (Grammar) — long amide side chain H-bond network structuring",
         "Met": "⊢ (Scope) — translation initiation, start codon",
         "Trp": "⊣ (Topology) — largest indole ring system, structural complexity ceiling",
         "Cys": "> (Reversibility) — disulfide bond, only reversible covalent crosslink",

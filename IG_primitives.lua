@@ -4,7 +4,7 @@
 --
 -- Two classes of problem characters:
 --   Class A — missing from Latin Modern text font (lmroman):
---     Ħ U+0126, ɢ U+0262, ʔ U+0294,
+--     Ħ U+0126, ɢ U+0262,
 --     ˌ U+02CC, ˝ U+02DD, ⊙ U+2299
 --     → need {\igprimfont char} (Everson Mono)
 --
@@ -58,19 +58,17 @@ end
 local CLASS_A = {
   [0x0126] = true,  -- Ħ  H with stroke         (Ħ primitive)
   [0x0262] = true,  -- ɢ  small capital G        (ɢ primitive)
-  [0x0294] = true,  -- ʔ  glottal stop           (Γ_ʔ subtype)
   [0x02CC] = true,  -- ˌ  low vertical line      (ɢ_ˌ subtype)
   [0x02DD] = true,  -- ˝  double acute accent    (ɢ_˝ subtype)
   [0x2299] = true,  -- ⊙  circled dot            (⊙ criticality primitive)
   [0x2297] = true,  -- ⊗  tensor product         (not in lmroman text font)
   -- Greek subtype chars — not in lmroman; Everson Mono has full Greek coverage
-  [0x03B2] = true,  -- β  beta                   (Γ_β subtype)
-  [0x03B3] = true,  -- γ  gamma                  (Γ_γ subtype)
   [0x03C9] = true,  -- ω  omega                  (retired ⊢ subtype)
   -- Canonical alphabet: axis letters that are not text characters in lmroman
   [0x22A2] = true,  -- ⊢  right tack             (⊢ Dimensionality primitive)
   [0x22C8] = true,  -- ⋈  bowtie                 (⋈ Fidelity primitive)
   [0x22A4] = true,  -- ⊤  down tack              (⊤ Kinetics primitive)
+  [0x2208] = true,  -- ∈  element of             (∈ Granularity primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }

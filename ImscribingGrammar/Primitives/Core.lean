@@ -3,7 +3,7 @@
 -- All names, value counts, and ordinal orderings match space_search/primitives.py.
 -- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 types.
 --   𝓕₃ (3 values): F, G, S
---   𝓕₄ (4 values): D, R, Γ, H, Ω
+--   𝓕₄ (4 values): D, R, ∈, H, Ω
 --   𝓕₅ (5 values): T, P, Φ, K
 
 import Mathlib.Order.Lattice
@@ -37,7 +37,7 @@ inductive Relational : Type where
   | ian      -- lateral / peer: symmetric two-way exchange
   deriving DecidableEq, Repr, Ord
 
--- 3. Interaction Grammar (Γ)  [𝓕₄]
+-- 3. Interaction Grammar (∈)  [𝓕₄]
 -- Ordered: vow < gag < measure < ooze
 -- Categorical primitive (identity of composition rule required for non-⊥ meet).
 inductive Grammar : Type where
@@ -193,7 +193,7 @@ instance instLEStoichiometry  : LE Stoichiometry  := ⟨fun a b => compare a b �
 -- The 17,280,000-type crystal: 3³ × 4⁵ × 5⁴
 -- Exponent = count of primitives in each family (Arithmetic Ouroboros §68).
 -- 𝓕₃: {F, G, S}         3 primitives × 3 values = 3³ = 27
--- 𝓕₄: {D, R, Γ, H, Ω}  5 primitives × 4 values = 4⁵ = 1,024
+-- 𝓕₄: {D, R, ∈, H, Ω}  5 primitives × 4 values = 4⁵ = 1,024
 -- 𝓕₅: {T, P, Φ, K}     4 primitives × 5 values = 5⁴ = 625
 -- Total: 27 × 1,024 × 625 = 17,280,000
 

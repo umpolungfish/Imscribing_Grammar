@@ -86,7 +86,7 @@ _T_smooth = "𐑰"   # smooth continuous
 _T_fib    = "𐑶"   # fibered / twisted
 _T_seal   = "𐑥"   # compact / sealed (click)
 
-# Γ — Scope
+# ∈ — Scope
 _S_full   = "𐑲"   # full / global scope
 _S_mid    = "𐑔"   # intermediate
 _S_spread = "𐑚"   # spreading / global

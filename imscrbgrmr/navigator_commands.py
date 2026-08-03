@@ -90,7 +90,7 @@ def crystal_group():
     \b
     Architecture (imscriptive, Frobenius O_∞):
       Boundary: (<, P, Ω, D) → 400 tier cells
-      Bulk:     (T, R, F, K, G, Γ, H, S) → 43,200 inner types per cell
+      Bulk:     (T, R, F, K, G, ∈, H, S) → 43,200 inner types per cell
       Total:    400 × 43,200 = 17,280,000 types
 
     \b

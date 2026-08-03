@@ -4,7 +4,7 @@ IG Periodic Table — Janet (left-step) arrangement grounded in 12 primitives.
 
 Primary axes:
   X: Ω × Ħ  (orbital winding × chirality = block structure)
-  Y: Γ       (granularity = period)
+  Y: ∈       (granularity = period)
 
 Block primitive signatures:
   s-block: Ω_0,   Ħ_H0  — no angular momentum, minimal spin-orbit
@@ -169,7 +169,7 @@ ORGANIC_THREAD  = ['H', 'O', 'N', 'C', 'S', 'P']
 METALLIC_THREAD = ['Fe', 'Ni', 'Zn', 'Mo', 'Rh', 'Pd', 'W', 'Ir', 'Pt', 'Au']
 
 # ─────────────────────────────────────────────────────────────
-# TikZ cell colors by block × period (Ω × Γ)
+# TikZ cell colors by block × period (Ω × ∈)
 # ─────────────────────────────────────────────────────────────
 BLOCK_BASE = {
     's': 'amber',
@@ -424,7 +424,7 @@ def generate_tex():
     lines.append(make_block_label('s', 31, 32, 1,
         r's-block: $\Omega_0$, {\igprimfont Ħ}$_0$'))
 
-    # Period Γ labels on left  (\beth \gimel \aleph work with amssymb)
+    # Period ∈ labels on left  (\beth \gimel \aleph work with amssymb)
     gamma = {1: r'$\Gamma_\beth$ (1)', 2: r'$\Gamma_\beth$ (2)',
              3: r'$\Gamma_\gimel$ (3)', 4: r'$\Gamma_\gimel$ (4)',
              5: r'$\Gamma_\aleph$ (5)', 6: r'$\Gamma_\aleph$ (6)',

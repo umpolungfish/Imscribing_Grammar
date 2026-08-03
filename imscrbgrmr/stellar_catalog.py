@@ -348,7 +348,7 @@ def _star_k_dwarf() -> Imscription:
 
     The framework prediction: K-dwarfs are the optimal stellar grammar templaters
     for life. Long K_schwa memory, moderate K_frtailgamma events (evolutionary pressure
-    without sterilization), and organized Γ that maps to existing Earth biochemistry
+    without sterilization), and organized ∈ that maps to existing Earth biochemistry
     with minimal modification. The astrobiological consensus ('K-dwarfs are best
     for life') has a reason: 𐑴 > Ω_1 (M-dwarf) while maintaining
     sufficient K_frtailgamma for evolutionary pressure.
@@ -720,7 +720,7 @@ def _star_red_giant() -> Imscription:
             "loses Hale-cycle hemispheric asymmetry → P_subdoublearrow (symmetric). Dredge-up "
             "events reorganize T_nrleg (core/envelope topology). 𐑢: stable, no SOC. "
             "Framework: the P_subdoublearrow transition marks the loss of organized stellar grammar — "
-            "the star is transitioning from structured Γ-injection to broadcast mode."
+            "the star is transitioning from structured ∈-injection to broadcast mode."
         ),
         metadata={
             "domain_category": "stellar_evolved",
@@ -1191,7 +1191,7 @@ def _gamma_ray_burst() -> Imscription:
     a highly collimated (opening angle 1-10°), Lorentz-boosted beam. The jet IS
     the GRB. Linear topology: one-dimensional, directed, coherent.
 
-    F_HIGH: the Lorentz factor of the jet (Γ_L ~ 100-1000) represents extreme
+    F_HIGH: the Lorentz factor of the jet (∈_L ~ 100-1000) represents extreme
     collimation — the energy is concentrated into a tiny solid angle with
     extraordinary precision.
 
@@ -1220,7 +1220,7 @@ def _gamma_ray_burst() -> Imscription:
         stoichiometry="1:1",
         description=(
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
-            "T_linear: relativistic jet (opening angle 1-10°, Γ_L 100-1000) — the "
+            "T_linear: relativistic jet (opening angle 1-10°, ∈_L 100-1000) — the "
             "defining primitive. F_HIGH: extreme collimation precision. "
             "Γ_SELECTIVE: directed beam, not broadcast. ⊙: the ultimate stellar "
             "critical transition — accumulated constraint structure released in single "
@@ -1261,7 +1261,7 @@ def _kilonova() -> Imscription:
     Γ_SPECIFIC: the r-process nucleosynthesis grammar is highly specific — it
     follows a well-defined path through the nuclear chart, set by neutron capture
     rates and beta decay half-lives at nuclear density. This is the most specific
-    Γ in the catalog: only the correct neutron flux, density, and temperature
+    ∈ in the catalog: only the correct neutron flux, density, and temperature
     produce the correct r-process path.
 
     The r-process is the origin of gold, platinum, uranium, iodine, and

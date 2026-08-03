@@ -13,7 +13,7 @@ open Dimensionality Topology Relational Polarity Grammar
 
 -- ============================================================
 -- IMSCRIPTION STRUCT
--- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩.
+-- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
 -- Field name 'rel' used for Relational (R) since 'rec' is reserved in Lean 4.
 -- @[ext] generates Imscription.ext for pointwise equality.
 -- ============================================================
@@ -27,7 +27,7 @@ structure Imscription : Type where
   fid   : Fidelity         -- F
   kin   : KineticChar      -- K
   gran  : Granularity      -- G
-  gram  : Grammar          -- Γ
+  gram  : Grammar          -- ∈
   crit  : Criticality      -- Φ
   chir  : Chirality        -- H
   stoi  : Stoichiometry    -- S
@@ -95,7 +95,7 @@ theorem primitiveMismatches_zero_iff (a b : Imscription) :
 
 -- ============================================================
 -- TENSOR PRODUCT (structural composition)
--- Union primitives: max (D, T, R, G, Γ, Φ, H, S, Ω)
+-- Union primitives: max (D, T, R, G, ∈, Φ, H, S, Ω)
 -- Bottleneck primitives: min (P, F) — weaker partner wins
 -- ============================================================
 

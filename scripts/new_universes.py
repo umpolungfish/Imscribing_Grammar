@@ -68,7 +68,7 @@ NEW_RULESETS = [
     # ── 11: scope_universe ────────────────────────────────────
     Ruleset(
         name="scope_universe",
-        description="Universality first. G1=Γ≥𐑔 (aleph, maximal scope). Only systems "
+        description="Universality first. G1=∈≥𐑔 (aleph, maximal scope). Only systems "
                     "whose interactions are universal in range can Frobenius-close. "
                     "Local and mesoscale systems — however structured — remain plain. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, parochialism is a structural "
@@ -287,7 +287,7 @@ NEW_RULESETS = [
     # ── 27: absorption_scope_empire ───────────────────────────
     Ruleset(
         name="absorption_scope_empire",
-        description="Maximal scope (Γ=𐑔) is absorbing under all operations. "
+        description="Maximal scope (∈=𐑔) is absorbing under all operations. "
                     "Any system with universal interaction range dominates every "
                     "coupling. Local and mesoscale systems are absorbed into "
                     "universality. In this universe, you cannot be parochial — "

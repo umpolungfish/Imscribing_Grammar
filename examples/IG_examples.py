@@ -114,7 +114,7 @@ def example_3_catalog_and_search():
         recognition_mode="𐑩",
         polarity="𐑬",
         fidelity="𐑱",  # Lower fidelity than carboxylic acid
-        granularity="Γ_beta",
+        granularity="𐑚",
         interaction_grammar="ɢ_otimes",
         description="Weaker amide dimer (F_ℓ)",
     )
@@ -126,7 +126,7 @@ def example_3_catalog_and_search():
         recognition_mode="𐑩",
         polarity="𐑗",
         fidelity="𐑐",  # HIGH fidelity due to cooperativity
-        granularity="Γ_gamma",  # Mesoscale
+        granularity="𐑔",  # Mesoscale
         interaction_grammar="ɢ_otimes",
         description="DAD·ADA triple H-bond array (Watson-Crick like)",
     )
@@ -138,7 +138,7 @@ def example_3_catalog_and_search():
         recognition_mode="𐑽",  # Catalytic
         polarity="𐑗",
         fidelity="𐑞",
-        granularity="Γ_gamma",
+        granularity="𐑔",
         interaction_grammar="ɢ_selective",
         description="Proline-catalyzed aldol cycle (temporal imscription)",
     )

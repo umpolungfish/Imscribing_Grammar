@@ -2,7 +2,7 @@
 Symbolic Reasoning Engine — Formal algebra and theorem proving for the Imscriptiveon grammar.
 
 This module implements:
-1. Primitive algebra (Γ Boolean operators, G-D tensor operations)
+1. Primitive algebra (∈ Boolean operators, G-D tensor operations)
 2. Automated theorem prover for axiom validation
 3. Cross-domain analogy detection with formal similarity metrics
 4. Predictive rule generation and testing
@@ -155,14 +155,14 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "P": imscription.polarity.value,
         "F": imscription.fidelity.value,
         "K": imscription.kinetic_character.value,
-        "G": imscription.granularity.value,        "Γ": imscription.grammar.value,
+        "G": imscription.granularity.value,        "∈": imscription.grammar.value,
         "<": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
     }
     return mapping.get(name, "")
 
 
 # =============================================================================
-# Grammar Operator Algebra (Γ Algebra)
+# Grammar Operator Algebra (∈ Algebra)
 # =============================================================================
 
 @dataclass

@@ -4,7 +4,7 @@ Millennium Prize Problems — Imscriptive Catalog  (v0.5.0)
 Seven Clay Mathematics Institute Millennium Prize Problems encoded as canonical
 12-primitive imscriptions.  Includes the standard_proof_system as the reference baseline.
 
-Primitive-tuple notation: ⟨D; T; R; P; Γ; F; K; G; <; Ω; S; H⟩
+Primitive-tuple notation: ⟨D; T; R; P; ∈; F; K; G; <; Ω; S; H⟩
 
 ─────────────────────────────────────────────────────────────────────────────
 DESIGN PRINCIPLE

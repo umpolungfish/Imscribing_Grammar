@@ -5,16 +5,16 @@ Canonical encodings for quantum particles and topological matter imscriptions.
 Eight imscriptions in two tiers:
 
   Tier 1 — Quantum Particles (five fundamental particles as recognition imscriptions):
-    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊙(QUANTUM) · 𐑢 · Ω_0
-    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · 𐑢 · Ω_0
-    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · Γ⊗          · 𐑢 · Ω_0
-    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · 𐑢 · Ω_0
-    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · Γ∧(QUANTUM) · 𐑢 · Ω_0
+    photon              D_∞  · T_⋈  · R_sup · P_±  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊙(QUANTUM) · 𐑢 · Ω_0
+    proton              D_∧  · T_■  · R_†   · P_+  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · Ω_0
+    electron            D_∧  · T_■  · R_sub · P_−  · F_ℏ · K_frtailgamma · G_ℵ · ∈⊗          · 𐑢 · Ω_0
+    spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_0
+    qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_0
 
   Tier 2 — Topological Matter (first catalog entries using T_braid + Ω):
-    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · 𐑢 · Ω_Z
-    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · Γ∧(QUANTUM) · 𐑢 · Ω_NA
-    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · Γ⊙          · 𐑢 · Ω_Z₂
+    kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_Z
+    fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · Ω_NA
+    topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · ∈⊙          · 𐑢 · Ω_Z₂
 
 Key physics encoded:
   - spin_singlet is the first Factor 8 trigger: G_ℵ + F_ℏ + K_teshlig + ¬D_∞
@@ -133,7 +133,7 @@ def _photon() -> Imscription:
       K = K_frtailgamma (FAST): propagates at c; no kinetic barrier for absorption.
       G = G_ℵ (GLOBAL): entangled photon pairs exhibit non-local correlations
           across macroscopic distances (Bell tests).
-      Γ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
+      ∈ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
           frequency match (selective) AND a transition dipole (AND logic).
       < = 𐑢: single photon is below the G–D criticality locus.
       Ω = TRIVIAL: free-space photon has no topological protection.
@@ -183,7 +183,7 @@ def _proton() -> Imscription:
           (kH⁺ ~ 10¹¹ M⁻¹s⁻¹). Grotthuss mechanism is essentially barrierless.
       G = G_ℵ (GLOBAL): entangled proton states observed in neutron scattering
           experiments on ice; non-local in principle.
-      Γ = SPECIFIC_AND: one highly specific protonation site at a time.
+      ∈ = SPECIFIC_AND: one highly specific protonation site at a time.
       < = 𐑢.
       Ω = TRIVIAL: bare proton, no topological structure.
     """
@@ -227,7 +227,7 @@ def _electron() -> Imscription:
       K = K_frtailgamma (FAST): electron transfer at picosecond timescales (Marcus
           theory); Franck-Condon principle.
       G = G_ℵ (GLOBAL): Bell-pair electrons are non-locally correlated (CHSH).
-      Γ = SPECIFIC_AND: one target orbital per bonding event.
+      ∈ = SPECIFIC_AND: one target orbital per bonding event.
       < = 𐑢.
       Ω = TRIVIAL: free electron; topological character emerges from band
           structure of hosting material (separate imscription).
@@ -281,7 +281,7 @@ def _spin_singlet() -> Imscription:
           free-energy minimum with a barrier to the triplet sector.
       G = G_ℵ (GLOBAL): non-local correlations; spins can be separated
           arbitrarily (EPR-type) while maintaining the singlet structure.
-      Γ = QUANTUM_AND: the singlet requires BOTH spins simultaneously — it is
+      ∈ = QUANTUM_AND: the singlet requires BOTH spins simultaneously — it is
           a joint property of the two-particle system (Toffoli semantics).
       < = 𐑢: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
           isolated singlet is not yet at the criticality locus; Factor 8
@@ -334,7 +334,7 @@ def _qubit_logical() -> Imscription:
       K = K_schwa (SLOW): gate operation speeds (ns–μs) are slow relative to
           environmental decoherence; threshold error correction overhead is large.
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
-      Γ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
+      ∈ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
       < = 𐑢: sub-threshold fidelity prevents criticality lift (Axiom 5).
       Ω = TRIVIAL: unprotected qubit. Topological qubit (Ω_NA) is a separate
           imscription — it would have F_ℏ and K_teshlig instead.
@@ -397,7 +397,7 @@ def _kitaev_chain_majorana() -> Imscription:
       G = G_ℵ (GLOBAL): the logical qubit is non-locally encoded — γ_L and γ_R
           are at opposite ends of the chain; no local operator can distinguish
           |0_L⟩ from |1_L⟩.
-      Γ = QUANTUM_AND: the non-local qubit requires both end modes simultaneously;
+      ∈ = QUANTUM_AND: the non-local qubit requires both end modes simultaneously;
           a single Majorana is not a qubit.
       < = 𐑢: stable topological phase (not at the phase transition).
       Ω = Z_CLASS (Ω_Z): ℤ topological invariant, AZ class D, 1D.
@@ -456,7 +456,7 @@ def _fqh_moore_read() -> Imscription:
           pinned in the ν=5/2 plateau.
       G = G_ℵ (GLOBAL): non-local topological order — groundstate degeneracy
           (GSD = 3 on torus) is a global property inaccessible to local probes.
-      Γ = QUANTUM_AND: non-Abelian fusion requires simultaneous manipulation of
+      ∈ = QUANTUM_AND: non-Abelian fusion requires simultaneous manipulation of
           two or more anyons — inherently a multi-particle (QUANTUM AND) operation.
       < = 𐑢: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
           separate imscription).
@@ -518,7 +518,7 @@ def _topological_insulator_bi2se3() -> Imscription:
           the surface states are slow compared to bulk.
       G = G_ℵ (GLOBAL): bulk-boundary correspondence is a non-local relationship —
           the number of surface Dirac cones is determined by the bulk ℤ₂ invariant.
-      Γ = SELECTIVE_AND: the surface states selectively couple to magnetic
+      ∈ = SELECTIVE_AND: the surface states selectively couple to magnetic
           perturbations (gap-opening) vs. non-magnetic (no gap); selective.
       < = 𐑢: stable topological insulating phase.
       Ω = Z2_CLASS (Ω_Z₂): strong ℤ₂ TI, class AII (ν₀ = 1).

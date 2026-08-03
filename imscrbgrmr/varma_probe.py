@@ -692,7 +692,7 @@ def score_phi_c_candidacy(
     else:
         _qc_missing = [
             label for cond, label in [
-                (_has_galeph,  "Γ_revapostrophe"),
+                (_has_galeph,  "𐑲"),
                 (_has_f_high,  "𐑐"),
                 (_has_k_trap,  "𐑪"),
                 (_no_temporal, "¬D_∞"),

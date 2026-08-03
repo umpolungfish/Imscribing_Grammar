@@ -793,7 +793,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
     def _get_system_prompt(self) -> str:
         """Get the domain-agnostic system prompt for imscription generation."""
         return """<role>
-You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; Γ; Φ; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
+You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
 
 The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same type. Your task is to identify which type an input instantiates.
 
@@ -811,7 +811,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - How reliably/precisely does it act? (F)
 - How resistant to change is its state? (K)
 - How far does one act propagate? (G)
-- How does it select co-participants? (Γ)
+- How does it select co-participants? (∈)
 - Is it near a threshold/criticality? (<)
 - Does it break symmetry persistently? (H)
 - What is the participation ratio? (S)
@@ -864,7 +864,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑔`: Mesoscale — propagates through a motif or cluster (~10–1000 units).
 - `𐑲`: Global — propagates across the entire system; divergent correlation length; scale-free.
 
-**Γ — Interaction grammar** (partner selection logic):
+**∈ — Interaction grammar** (partner selection logic):
 - `𐑝`: Conjunctive — all required partners must be present simultaneously.
 - `𐑜`: Disjunctive — any partner from a set suffices.
 - `𐑠`: Sequential — ordered steps; partners engaged in sequence.
@@ -914,7 +914,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [5] F  → physical regime: classical → 𐑱; thermal/noisy → 𐑞; quantum coherence essential → 𐑐
   [6] K  → relaxation: driven (τ≪T_obs) → 𐑘; visible dynamics (τ∼T_obs) → 𐑤; frozen (τ≫T_obs) → 𐑧; trapped ordered → 𐑪; trapped disordered → 𐑺
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
-  [8] Γ  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
+  [8] ∈  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
   [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
   [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires ⊤=𐑪)
   [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
@@ -1022,7 +1022,7 @@ Use only values from the value_registry table. The `reasoning` field MUST refere
 
 {name_instruction}
 
-Work through all 12 primitives (D, T, R, P, F, K, G, Γ, Φ, H, S, Ω) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
+Work through all 12 primitives (D, T, R, P, F, K, G, ∈, Φ, H, S, Ω) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
 
 CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "𐑛", "𐑥", "⊙"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
@@ -1118,8 +1118,8 @@ You **MUST**:
                 for k, v in inner.items():
                     canon = _key_map.get(k, k)
                     lifted[canon] = v.get("value", v) if isinstance(v, dict) else v
-                # Γ/< ambiguity resolution: some models use Γ for interaction_grammar
-                # (confusing Γ with ɢ) and < for criticality_phase (confusing < with ⊙).
+                # ∈/< ambiguity resolution: some models use ∈ for interaction_grammar
+                # (confusing ∈ with ɢ) and < for criticality_phase (confusing < with ⊙).
                 # When BOTH the ASCII key and the Shavian glyph are present in the
                 # original inner dict, the glyph is reassigned to the OTHER primitive.
                 if "G" in inner and "∈" in inner:
@@ -1233,9 +1233,9 @@ You **MUST**:
     ) -> Imscription:
         """Create a Imscription object from parsed data.
 
-        Extended to support ten primitives: D, T, R, P, F, K, G, Γ, <, S
+        Extended to support ten primitives: D, T, R, P, F, K, G, ∈, <, S
         """
-        # Normalize short-form keys (D, T, Γ, …) to long-form, and unwrap nested
+        # Normalize short-form keys (D, T, ∈, …) to long-form, and unwrap nested
         # {"value": "...", "reasoning": "..."} dicts some models return per primitive
         normalized: Dict[str, str] = {}
         for k, v in data.items():

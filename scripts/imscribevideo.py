@@ -49,7 +49,7 @@ BG        = '#0d0d14'
 DIM_BG    = '#1a1a26'    # placeholder box fill
 DIM_ALPHA = 0.55         # past-symbol opacity
 
-# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω
+# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
 FIELD_COLORS = [
     '#e06060',   # ⊢  red
     '#e09030',   # ⊣  orange
@@ -57,7 +57,7 @@ FIELD_COLORS = [
     '#70c840',   # <  lime
     '#40c8a0',   # ⋈  teal
     '#40b0e0',   # ⊤  sky
-    '#5070e8',   # Γ  blue
+    '#5070e8',   # ∈  blue
     '#9060e8',   # ɢ  violet
     '#c050c8',   # ⊙  magenta
     '#e04878',   # Ħ  pink

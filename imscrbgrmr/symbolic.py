@@ -2,7 +2,7 @@
 Symbolic Reasoning Engine — Formal algebra and theorem proving for the Imscriptiveon grammar.
 
 This module implements:
-1. Primitive algebra (Γ Boolean operators, G-D tensor operations)
+1. Primitive algebra (∈ Boolean operators, G-D tensor operations)
 2. Automated theorem prover for axiom validation
 3. Cross-domain analogy detection with formal similarity metrics
 4. Predictive rule generation and testing
@@ -163,7 +163,7 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
 
 
 # =============================================================================
-# Grammar Operator Algebra (Γ Algebra)
+# Grammar Operator Algebra (∈ Algebra)
 # =============================================================================
 
 @dataclass
@@ -447,9 +447,9 @@ class AxiomTheoremProver:
             ),
             "axiom2": SymbolicExpression.Not(
                 SymbolicExpression.And(
-                    SymbolicExpression.primitive("G", "Γ_beta"),
+                    SymbolicExpression.primitive("G", "𐑚"),
                     SymbolicExpression.primitive("∈", "Gamma_and(SPECIFIC)"),
-                    SymbolicExpression.primitive("G", "Γ_revapostrophe"),  # Can propagate to global
+                    SymbolicExpression.primitive("G", "𐑲"),  # Can propagate to global
                 ),
             ),
             "axiom4": SymbolicExpression.Implies(
@@ -958,19 +958,19 @@ class PredictiveRuleGenerator:
         # ── Scale-topology coupling ─────────────────────────────────────────────
         # Global-scale control requires hub, network, or cage topology
         candidates.append((
-            P("G", "Γ_revapostrophe"),
+            P("G", "𐑲"),
             Or(P("T", "𐑶"), P("T", "𐑡"), P("T", "𐑶")),
         ))
         # Molecular dimensionality → not global scale
         candidates.append((
             P("D", "𐑛"),
-            Or(P("G", "Γ_beta"), P("G", "Γ_gamma")),
+            Or(P("G", "𐑚"), P("G", "𐑔")),
         ))
 
         # ── Fidelity-granularity coupling ───────────────────────────────────────
         # Global propagation requires at least medium fidelity
         candidates.append((
-            P("G", "Γ_revapostrophe"),
+            P("G", "𐑲"),
             Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
 
@@ -994,7 +994,7 @@ class PredictiveRuleGenerator:
         # ── Hub-node granularity amplification ─────────────────────────────────
         candidates.append((
             And(P("T", "𐑶"), P("R", "𐑩")),
-            Or(P("G", "Γ_gamma"), P("G", "Γ_revapostrophe")),
+            Or(P("G", "𐑔"), P("G", "𐑲")),
         ))
 
         # ── ⊙ indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─

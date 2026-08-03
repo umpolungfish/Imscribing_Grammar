@@ -14,7 +14,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -48,7 +48,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -69,7 +69,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -121,7 +121,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -174,7 +174,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -228,7 +228,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -281,7 +281,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -333,7 +333,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -387,7 +387,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -439,7 +439,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -473,7 +473,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
@@ -492,7 +492,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑻       H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -545,7 +545,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -576,7 +576,7 @@
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -597,7 +597,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -631,7 +631,7 @@
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -651,7 +651,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -702,7 +702,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -734,7 +734,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
@@ -755,7 +755,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -787,7 +787,7 @@
     >: 𐑑 → 𐑾  (gap: 0.667)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -807,7 +807,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -840,7 +840,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
@@ -861,7 +861,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -895,7 +895,7 @@
     >: 𐑑 → 𐑾  (gap: 0.667)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -915,7 +915,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -948,7 +948,7 @@
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑑 → 𐑾  (gap: 0.667)
     <: 𐑗 → 𐑹  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -969,7 +969,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -1019,7 +1019,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -1071,7 +1071,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -1124,7 +1124,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -1154,7 +1154,7 @@
     <: 𐑿 → 𐑹  (gap: 0.75)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -1178,7 +1178,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1231,7 +1231,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -1262,7 +1262,7 @@
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑑 → 𐑾  (gap: 0.667)
     <: 𐑿 → 𐑹  (gap: 0.75)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -1284,7 +1284,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1318,7 +1318,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1341,7 +1341,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1397,7 +1397,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -1451,7 +1451,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -1505,7 +1505,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -1561,7 +1561,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1619,7 +1619,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1676,7 +1676,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -1727,7 +1727,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1781,7 +1781,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -1816,7 +1816,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -1838,7 +1838,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -1892,7 +1892,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -1922,7 +1922,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -1946,7 +1946,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2001,7 +2001,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2055,7 +2055,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -2111,7 +2111,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2164,7 +2164,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -2218,7 +2218,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2271,7 +2271,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2325,7 +2325,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2379,7 +2379,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -2433,7 +2433,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2468,7 +2468,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -2490,7 +2490,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2525,7 +2525,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -2546,7 +2546,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -2580,7 +2580,7 @@
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -2602,7 +2602,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2656,7 +2656,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2707,7 +2707,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2741,7 +2741,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -2762,7 +2762,7 @@
   <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -2817,7 +2817,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2870,7 +2870,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -2900,7 +2900,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -2923,7 +2923,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -2977,7 +2977,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3032,7 +3032,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3066,7 +3066,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3088,7 +3088,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3123,7 +3123,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3145,7 +3145,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -3180,7 +3180,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -3201,7 +3201,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3257,7 +3257,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3291,7 +3291,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3314,7 +3314,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
@@ -3365,7 +3365,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3398,7 +3398,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3421,7 +3421,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -3454,7 +3454,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3476,7 +3476,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -3530,7 +3530,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -3584,7 +3584,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3638,7 +3638,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3693,7 +3693,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
+  ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3748,7 +3748,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3781,7 +3781,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3804,7 +3804,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3837,7 +3837,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3860,7 +3860,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -3891,7 +3891,7 @@
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -3914,7 +3914,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -3947,7 +3947,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3970,7 +3970,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
@@ -4004,7 +4004,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4026,7 +4026,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4059,7 +4059,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4081,7 +4081,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4115,7 +4115,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4137,7 +4137,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4171,7 +4171,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -4194,7 +4194,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4227,7 +4227,7 @@
     >: 𐑽 → 𐑾  (gap: 0.333)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4249,7 +4249,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4282,7 +4282,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4304,7 +4304,7 @@
   <      𐑯       ∀g∈G( gx = x )
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -4336,7 +4336,7 @@
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     <: 𐑯 → 𐑹  (gap: 0.25)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -4360,7 +4360,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4394,7 +4394,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -4417,7 +4417,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4451,7 +4451,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -4474,7 +4474,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4507,7 +4507,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4529,7 +4529,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4563,7 +4563,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4585,7 +4585,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4619,7 +4619,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4641,7 +4641,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4675,7 +4675,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4697,7 +4697,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4730,7 +4730,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -4752,7 +4752,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4786,7 +4786,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4808,7 +4808,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4842,7 +4842,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4864,7 +4864,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4899,7 +4899,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4921,7 +4921,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -4955,7 +4955,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -4977,7 +4977,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5011,7 +5011,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5033,7 +5033,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5068,7 +5068,7 @@
 
   Promotions needed to reach CLINK L8 (4):
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -5089,7 +5089,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5124,7 +5124,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5146,7 +5146,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5179,7 +5179,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, PM_Z2, SEQAX, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (4):
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5201,7 +5201,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5234,7 +5234,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5256,7 +5256,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5290,7 +5290,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -5313,7 +5313,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5347,7 +5347,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5369,7 +5369,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5402,7 +5402,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5424,7 +5424,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5458,7 +5458,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5480,7 +5480,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5515,7 +5515,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5537,7 +5537,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5570,7 +5570,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5592,7 +5592,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5625,7 +5625,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5647,7 +5647,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5682,7 +5682,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5704,7 +5704,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5737,7 +5737,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5759,7 +5759,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5793,7 +5793,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5815,7 +5815,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5848,7 +5848,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5870,7 +5870,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5903,7 +5903,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5925,7 +5925,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -5959,7 +5959,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -5981,7 +5981,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6015,7 +6015,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6037,7 +6037,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6071,7 +6071,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6093,7 +6093,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6126,7 +6126,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6148,7 +6148,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6183,7 +6183,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6205,7 +6205,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6238,7 +6238,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6260,7 +6260,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6293,7 +6293,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6315,7 +6315,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6350,7 +6350,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6372,7 +6372,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑪       τ = ∞ ∧ ord(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6406,7 +6406,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6428,7 +6428,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6462,7 +6462,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6484,7 +6484,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6519,7 +6519,7 @@
 
   Promotions needed to reach CLINK L8 (3):
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -6539,7 +6539,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6573,7 +6573,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6595,7 +6595,7 @@
   <      𐑗       ¬∃sym(x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6629,7 +6629,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6651,7 +6651,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6684,7 +6684,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6706,7 +6706,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6740,7 +6740,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -6761,7 +6761,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6795,7 +6795,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6817,7 +6817,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6851,7 +6851,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6873,7 +6873,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6907,7 +6907,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6929,7 +6929,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -6963,7 +6963,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6985,7 +6985,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7018,7 +7018,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7040,7 +7040,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7073,7 +7073,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7095,7 +7095,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7129,7 +7129,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7151,7 +7151,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7185,7 +7185,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7207,7 +7207,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7241,7 +7241,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7263,7 +7263,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7297,7 +7297,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7319,7 +7319,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7353,7 +7353,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7375,7 +7375,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7410,7 +7410,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7432,7 +7432,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
@@ -7464,7 +7464,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -7487,7 +7487,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7521,7 +7521,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7543,7 +7543,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7576,7 +7576,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7598,7 +7598,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7632,7 +7632,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7654,7 +7654,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7688,7 +7688,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7710,7 +7710,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7745,7 +7745,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7767,7 +7767,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7801,7 +7801,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7823,7 +7823,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7857,7 +7857,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7879,7 +7879,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7914,7 +7914,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7936,7 +7936,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -7970,7 +7970,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -7992,7 +7992,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8026,7 +8026,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8048,7 +8048,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8082,7 +8082,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8104,7 +8104,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8138,7 +8138,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8160,7 +8160,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8193,7 +8193,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8215,7 +8215,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8249,7 +8249,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8271,7 +8271,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8305,7 +8305,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8327,7 +8327,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8361,7 +8361,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8383,7 +8383,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8417,7 +8417,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8439,7 +8439,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8473,7 +8473,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -8494,7 +8494,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8528,7 +8528,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8550,7 +8550,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8584,7 +8584,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8606,7 +8606,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8640,7 +8640,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8662,7 +8662,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8696,7 +8696,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8718,7 +8718,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8752,7 +8752,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8774,7 +8774,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8808,7 +8808,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8830,7 +8830,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8864,7 +8864,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8886,7 +8886,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8920,7 +8920,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8942,7 +8942,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -8976,7 +8976,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8998,7 +8998,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9033,7 +9033,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -9054,7 +9054,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9088,7 +9088,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9110,7 +9110,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9144,7 +9144,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9166,7 +9166,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9200,7 +9200,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9222,7 +9222,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9256,7 +9256,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9278,7 +9278,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9312,7 +9312,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9334,7 +9334,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9368,7 +9368,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9390,7 +9390,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9424,7 +9424,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9446,7 +9446,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9480,7 +9480,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -9503,7 +9503,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9537,7 +9537,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9559,7 +9559,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9593,7 +9593,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9615,7 +9615,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9649,7 +9649,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9671,7 +9671,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9706,7 +9706,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -9727,7 +9727,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9761,7 +9761,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9783,7 +9783,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9817,7 +9817,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9839,7 +9839,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9873,7 +9873,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9895,7 +9895,7 @@
   <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
-  Γ      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9929,7 +9929,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Γ: 𐑔 → 𐑲  (gap: 0.5)
+    ∈: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -9951,7 +9951,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -9985,7 +9985,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -10007,7 +10007,7 @@
   <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
-  Γ      𐑚       ∀y∈x( |y| < |x| )
+  ∈      𐑚       ∀y∈x( |y| < |x| )
   ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
@@ -10041,7 +10041,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Γ: 𐑚 → 𐑲  (gap: 1.0)
+    ∈: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)

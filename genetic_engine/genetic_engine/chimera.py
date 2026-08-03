@@ -8,7 +8,7 @@ can produce a trap state (𐑪) when combined.
 Key dangerous pairs:
   Ħ⊗⊢, Ħ⊗Ω, ⊢⊗Ω → ALWAYS trap (critical×critical)
   >⊗Ħ, >⊗⊢, >⊗Ω, φ̂⊗Ħ, φ̂⊗> → trap (high×critical/high)
-  ⊣⊗>, <⊗φ̂, ⊤⊗Ħ, Γ⊗> → semi-trap (moderate×critical/high)
+  ⊣⊗>, <⊗φ̂, ⊤⊗Ħ, ∈⊗> → semi-trap (moderate×critical/high)
 """
 
 from __future__ import annotations

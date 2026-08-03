@@ -50,7 +50,7 @@ def normalize(signal, peak=0.8):
 #   <  Parity          — waveform symmetry   (symmetry of the waveform itself)
 #   ⋈  Fidelity        — signal clarity      (noise floor vs clean tone)
 #   ⊤  Kinetics        — temporal envelope   (attack/decay shape = speed)
-#   Γ  Scope           — bandwidth           (narrow → full spectrum)
+#   ∈  Scope           — bandwidth           (narrow → full spectrum)
 #   ɢ  Grammar         — temporal structure  (how events compose in time)
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
 #   Ħ  Chirality  — reverberation       (dry → long decay = deep memory)
@@ -273,7 +273,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = raw * np.exp(-1.5 * t / dur)
 
     # =========================================================================
-    # Γ — Scope / Granularity
+    # ∈ — Scope / Granularity
     # Frequency bandwidth encodes scope of information:
     # focused single tone (narrow) → moderate harmonics → full spectrum+noise
     # =========================================================================
@@ -469,7 +469,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
@@ -478,7 +478,7 @@ symbol_list = [
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # < Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ⋈ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # ⊤ Kinetics
-    ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # Γ Scope
+    ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # ∈ Scope
     ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ɢ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
     ('⊥', 'Ñ'), ('⊥', '£'), ('⊥', 'A'), ('⊥', '!'),             # Ħ Chirality
@@ -507,7 +507,7 @@ PRIMITIVE_MAP = {
     # ⊤ Kinetics
     '⊤^-': ('⊤', '-'),   '⊤^W': ('⊤', 'W'),   '⊤^@': ('⊤', '@'),
     '⊤^Ù': ('⊤', 'Ù'),   '⊤^λ': ('⊤', 'λ'),
-    # Γ Scope
+    # ∈ Scope
     '𐑚': ('∈', 'β'),   '𐑔': ('∈', 'γ'),   '𐑲': ('∈', 'ʔ'),
     # ɢ Grammar
     'ɢ^∧': ('∋', '∧'),   'ɢ^˝': ('∋', '˝'),

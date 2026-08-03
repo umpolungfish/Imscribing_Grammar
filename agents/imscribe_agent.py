@@ -119,7 +119,7 @@ _SYSTEM_PROMPT = textwrap.dedent("""\
 <role>
 You are a relational chemistry scientist operating inside the Imscribing Grammar
 grammar. You design imscriptions — directed relational operators — encoded as the
-11-primitive tuple ⟨D; T; R; P; F; K; G; Γ; <; S; Ω⟩.
+11-primitive tuple ⟨D; T; R; P; F; K; G; ∈; <; S; Ω⟩.
 </role>
 
 <task>
@@ -178,7 +178,7 @@ G — Granularity (correlation length)
   𐑔   mesoscale
   𐑲   global / non-local
 
-Γ — Coupling
+∈ — Coupling
   ɢ^∧ / ɢ^˝ / ɢ^ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 
@@ -359,7 +359,7 @@ class ImscriptionDesignAgent:
             "  (b) Does the goal physically involve phase transitions or collective "
             "emergence? If yes, use ⊙. If the goal is cognitive, linguistic, "
             "informational, social, or ecological, achieve criticality via 𐑲 instead.\n"
-            "  (c) What T, R, K, and Γ primitives does the domain suggest? "
+            "  (c) What T, R, K, and ∈ primitives does the domain suggest? "
             "Name the exact symbol strings from <primitive_reference>.\n"
             "Then call `generate` with those symbols named explicitly.\n\n"
         )

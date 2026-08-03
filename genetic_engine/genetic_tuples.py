@@ -10,7 +10,7 @@ THREE RESOLUTIONS IMPLEMENTED:
      instead of T=odot (imscriptive odot). Physical self-reference (H-bonds looping
      back) is a crossing topology, not a holographic boundary encoding.
   
-  2. His/Gln MAPPING REVISION: His→⊙ (Criticality), Gln→Γ (Grammar).
+  2. His/Gln MAPPING REVISION: His→⊙ (Criticality), Gln→∈ (Grammar).
      Biochemical justification: His imidazole pKa≈6 is the natural carrier of
      protein criticality; Gln H-bond networks structure interaction grammar.
   
@@ -75,7 +75,7 @@ IG_CHARS: Dict[str, str] = {
     "K_trap_order": "𐑤",     # 𐑺 — frozen by order
     "K_trap_disorder":"𐑘",   # 𐑪 — frozen by disorder
     
-    # ── Scope/Granularity (Γ) — 3 values ──
+    # ── Scope/Granularity (∈) — 3 values ──
     "G_beth":       "𐑲",     # 𐑚 — local / mesoscale
     "G_gimel":      "𐑚",     # 𐑔 — intermediate
     "G_aleph":      "𐑔",     # 𐑲 — global / maximal
@@ -183,10 +183,10 @@ CHOU_FASMAN: Dict[str, Dict[str, float]] = {
     "Val": {"alpha": 1.06, "beta": 1.70, "turn": 0.50},
 }
 
-# Primitive activation (revised v0.6.0): His→⊙, Gln→Γ
+# Primitive activation (revised v0.6.0): His→⊙, Gln→∈
 AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "His": "Phi",       # ⊙ — criticality
-    "Gln": "G",         # Γ — grammar/scope
+    "Gln": "G",         # ∈ — grammar/scope
     "Met": "D",         # ⊢ — scope
     "Trp": "T",         # ⊣ — topology
     "Cys": "R",         # > — reversibility
@@ -576,7 +576,7 @@ def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, s
     else:
         phi_val = "𐑢"
     
-    # Scope (Γ)
+    # Scope (∈)
     if n_subunits >= 4 and unique_aas > 8:
         g_val = "G_aleph"
     elif n_subunits >= 2:
@@ -1067,7 +1067,7 @@ if __name__ == "__main__":
     print("=" * 60)
     print("Three Resolutions:")
     print("  1. AXIOM C: T=bowtie (not T=odot) for protein structures")
-    print("  2. MAPPING: His→⊙ (criticality), Gln→Γ (grammar)")
+    print("  2. MAPPING: His→⊙ (criticality), Gln→∈ (grammar)")
     print("  3. φ̂=c GATE with Pro absorption: tensor(⊙, 𐑻)=𐑻")
     print("=" * 60)
     

@@ -51,12 +51,12 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont Ħ}}_2', r'{\igfont 𐑖}'),
     (r'\text{{\igprimfont Ħ}}_{!}', r'{\igfont 𐑫}'),
     (r'\text{{\igprimfont Ħ}}_3', r'{\igfont 𐑖}'),
-    # Γ (Granularity)
-    (r'\text{{\igprimfont Γ}}_{\beta}', r'{\igfont 𐑚}'),
-    (r'\text{{\igprimfont Γ}}_{\gamma}', r'{\igfont 𐑔}'),
-    (r'\text{{\igprimfont Γ}}_{\text{{\igprimfont ʔ}}}', r'{\igfont 𐑲}'),
-    (r'\text{{\igprimfont Γ}}_{\wedge}', r'{\igfont 𐑚}'),
-    (r'\text{{\igprimfont Γ}}_{\vee}', r'{\igfont 𐑔}'),
+    # ∈ (Granularity)
+    (r'\text{{\igprimfont ∈}}_{\beta}', r'{\igfont 𐑚}'),
+    (r'\text{{\igprimfont ∈}}_{\gamma}', r'{\igfont 𐑔}'),
+    (r'\text{{\igprimfont ∈}}_{\text{{\igprimfont ʔ}}}', r'{\igfont 𐑲}'),
+    (r'\text{{\igprimfont ∈}}_{\wedge}', r'{\igfont 𐑚}'),
+    (r'\text{{\igprimfont ∈}}_{\vee}', r'{\igfont 𐑔}'),
     # ɢ (Grammar)
     (r'\text{{\igprimfont ɢ}}_{\wedge}', r'{\igfont 𐑝}'),
     (r'\text{{\igprimfont ɢ}}_{\text{{\igprimfont ˝}}}', r'{\igfont 𐑜}'),

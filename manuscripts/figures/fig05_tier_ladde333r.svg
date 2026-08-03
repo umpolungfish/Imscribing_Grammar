@@ -695,7 +695,7 @@
        transform="matrix(0,-1.3333333,1.3333333,0,41.370667,373.236)" />
     <g
        id="g141"
-       aria-label="4gateprimitives:&#10;<(L4:Lawvere)&#10;P(L5:Frobenius)&#10;D(I4:Yoneda)&#10;Ω(I3:Classifying)&#10;8shapeprimitives:&#10;T,R,F,K,G,Γ,H,S&#10;Tierboundaries:exclusively&#10;<+Ppromotions"
+       aria-label="4gateprimitives:&#10;<(L4:Lawvere)&#10;P(L5:Frobenius)&#10;D(I4:Yoneda)&#10;Ω(I3:Classifying)&#10;8shapeprimitives:&#10;T,R,F,K,G,∈,H,S&#10;Tierboundaries:exclusively&#10;<+Ppromotions"
        transform="matrix(1.3333333,0,0,1.3333333,376.87333,45.116)">
       <path
          id="path142"

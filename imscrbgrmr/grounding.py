@@ -370,7 +370,7 @@ class GroundingValidator:
             ],
         },
         
-        # Coupling (Γ) — partner selection logic
+        # Coupling (∈) — partner selection logic
         "interaction_grammar": {
             # SPECIFIC tier
             "SPECIFIC_AND": [
