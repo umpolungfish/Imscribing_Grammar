@@ -521,7 +521,7 @@ class AxiomTheoremProver:
         # Generate combinations that might violate axioms
         for i in range(count):
             # Systematically vary primitives
-            topology = [Topology.mime, Topology.T_linear][i % 2]
+            topology = [Topology.mime, Topology.eat][i % 2]
             polarity = [Polarity.or_, Polarity.yew][i % 2]
             fidelity = [Fidelity.age, Fidelity.peep][i % 2]
             

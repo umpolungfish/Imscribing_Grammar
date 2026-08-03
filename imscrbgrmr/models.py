@@ -57,23 +57,17 @@ class Dimensionality(Enum):
     array  = "𐑼"   # ordinal 3: ∞-dimensional / iterative-temporal
     if_      = "𐑦"   # ordinal 4: imscriptive (boundary encodes bulk); canonical value D_omega
     # ── Lean-only extensions (non-canonical, chemistry/physics domain) ─────
-    D_point = "Ð_point"   # 0D, scalar / spin-0 field
-    D_line  = "Ð_line"    # 1D, vectorial
-    D_cube  = "Ð_cube"    # 3D volumetric (Lean extension; canonical slot = D_turnthree)
 
     # Backward-compat aliases (chemistry-domain names → canonical values)
 
     @property
     def domains(self) -> frozenset:
-        """Compat shim: old compound Dimensionality had a .domains frozenset."""
+        """Which domains this extent is at home in."""
         return {
-            "Ð_point":  frozenset({"point"}),
-            "Ð_line":   frozenset({"linear"}),
-            "𐑛":      frozenset({"molecular"}),
-            "𐑨":      frozenset({"molecular", "supramolecular"}),
-            "Ð_cube":   frozenset({"molecular", "supramolecular"}),
-            "𐑼":      frozenset({"temporal", "molecular"}),
-            "𐑦":      frozenset({"temporal", "molecular", "supramolecular", "imscriptive"}),
+            "𐑛": frozenset({"molecular"}),
+            "𐑨": frozenset({"molecular", "supramolecular"}),
+            "𐑼": frozenset({"temporal", "molecular"}),
+            "𐑦": frozenset({"temporal", "molecular", "supramolecular", "imscriptive"}),
         }.get(self.value, frozenset())
 
     @classmethod
@@ -85,9 +79,6 @@ class Dimensionality(Enum):
             "ash": cls.ash,
             "array": cls.array,
             "if_": cls.if_,
-            "D_point": cls.D_point,
-            "D_line": cls.D_line,
-            "D_cube": cls.D_cube,
             # glyph IDs (canonical)
             "𐑛": cls.dead,
             "𐑨": cls.ash,
@@ -96,9 +87,6 @@ class Dimensionality(Enum):
             # phonetic names (backward compat)
             # legacy canonical names (pre-migration)
             # Lean extensions
-            "Ð_point": cls.D_point,
-            "Ð_line": cls.D_line,
-            "Ð_cube": cls.D_cube,
             # Shavian (v0.6.0)
             "𐑛": cls.dead, "𐑨": cls.ash,
             "𐑼": cls.array, "𐑦": cls.if_,
@@ -128,20 +116,12 @@ class Topology(Enum):
     Lean canonical 6: T_linear, T_branched, T_nrleg, T_bullseye, T_torus, T_openo.
     Chemistry extras below the separator are valid for molecular catalog entries.
     """
-    T_linear   = "Þ_linear"    # open chain
-    T_branched = "Þ_branched"  # tree / DAG
     judge    = "𐑡"         # general graph
     mime = "𐑥"         # cyclic closure / double-well / figure-8
-    T_torus    = "Þ_torus"     # higher-genus compact (NEW — not in old Python)
     are     = "𐑸"         # imscriptive: non-local boundary-bulk; canonical: T_openo
     # Chemistry extras
-    T_network_hex    = "Þ_network_hex"
-    T_network_mixed  = "Þ_network_mixed"
-    T_network_interp = "Þ_network_interp"
-    T_network_sym    = "Þ_network_sym"
     oil  = "𐑶"
     eat  = "𐑰"
-    T_braid = "Þ_braid"
     # Backward-compat aliases
 
     @classmethod
@@ -149,19 +129,11 @@ class Topology(Enum):
         _map = {
             # canonical: the glyph, and the Shavian name. Nothing else resolves —
             # an old form MUST NOT import, so it is simply absent.
-            "T_linear": cls.T_linear,
-            "T_branched": cls.T_branched,
             "judge": cls.judge,
             "mime": cls.mime,
-            "T_torus": cls.T_torus,
             "are": cls.are,
-            "T_network_hex": cls.T_network_hex,
-            "T_network_mixed": cls.T_network_mixed,
-            "T_network_interp": cls.T_network_interp,
-            "T_network_sym": cls.T_network_sym,
             "oil": cls.oil,
             "eat": cls.eat,
-            "T_braid": cls.T_braid,
             # glyph IDs (canonical)
             "𐑡": cls.judge,
             "𐑥": cls.mime,
@@ -169,14 +141,6 @@ class Topology(Enum):
             "𐑶": cls.oil,
             "𐑰": cls.eat,
             # phonetic names (backward compat)
-            "Þ_linear": cls.T_linear,
-            "Þ_branched": cls.T_branched,
-            "Þ_torus": cls.T_torus,
-            "Þ_network_hex": cls.T_network_hex,
-            "Þ_network_mixed": cls.T_network_mixed,
-            "Þ_network_interp": cls.T_network_interp,
-            "Þ_network_sym": cls.T_network_sym,
-            "Þ_braid": cls.T_braid,
             # Shavian (v0.6.0)
             "𐑡": cls.judge, "𐑰": cls.eat, "𐑥": cls.mime,
             "𐑶": cls.oil, "𐑸": cls.are,
@@ -321,8 +285,6 @@ class Grammar(Enum):
     vow      = "𐑝"   # conjunctive / simultaneous (all partners required)
     gag = "𐑜"   # disjunctive / any one suffices
     measure   = "𐑠"   # sequential / ordered
-    G_xor         = "Γ_xor"     # exclusive (NEW — was missing)
-    G_impl        = "Γ_impl"    # implicative / conditional (NEW — was missing)
     ooze = "𐑵"       # irreversible / Lindblad (legacy)
     # Backward-compat aliases: old compound InteractionGrammar values -> canonical operator
 
@@ -334,8 +296,6 @@ class Grammar(Enum):
             "vow": cls.vow,
             "gag": cls.gag,
             "measure": cls.measure,
-            "G_xor": cls.G_xor,
-            "G_impl": cls.G_impl,
             "ooze": cls.ooze,
             # glyph IDs (canonical)
             "𐑝": cls.vow,
@@ -348,8 +308,6 @@ class Grammar(Enum):
             # phonetic names (backward compat)
             # Unicode aliases
             # G_xor / G_impl kept as phonetic since they have no glyph ID yet
-            "Γ_xor": cls.G_xor,
-            "Γ_impl": cls.G_impl,
             # legacy full string (backward compat)
         }
         try:
@@ -371,8 +329,8 @@ class Grammar(Enum):
             Grammar.vow:      "All partners required simultaneously",
             Grammar.gag: "Any one partner suffices",
             Grammar.measure:   "Ordered sequential recognition",
-            Grammar.G_xor:             "Exactly one partner (exclusive)",
-            Grammar.G_impl:            "Partner A implies partner B",
+            Grammar.gag:             "Exactly one partner (exclusive)",
+            Grammar.measure:            "Partner A implies partner B",
             Grammar.ooze:     "Irreversible — information erased by environment",
         }[self]
 
@@ -391,7 +349,6 @@ class Fidelity(Enum):
       F_dh   = HotSwap threshold (η) — minimum for renormalizability
       F_hardsign  = quantum / high-fidelity (ℏ)
     """
-    F_noise    = "ƒ_noise"  # below threshold, lossy (NEW)
     age    = "𐑱"     # classical search fidelity
     they       = "𐑞"     # HotSwap threshold
     peep = "𐑐"     # quantum coherent
@@ -402,7 +359,6 @@ class Fidelity(Enum):
         _map = {
             # canonical: the glyph, and the Shavian name. Nothing else resolves —
             # an old form MUST NOT import, so it is simply absent.
-            "F_noise": cls.F_noise,
             "age": cls.age,
             "they": cls.they,
             "peep": cls.peep,
@@ -413,7 +369,6 @@ class Fidelity(Enum):
             # Shavian (v0.6.0)
             "𐑱": cls.age, "𐑞": cls.they, "𐑐": cls.peep,
             # phonetic names (backward compat)
-            "ƒ_noise": cls.F_noise,
         }
         try:
             return _map[s]
@@ -637,7 +592,6 @@ class Protection(Enum):
     awe = "𐑷"
     oak        = "𐑴"
     ah        = "𐑭"
-    Omega_C            = "Ω_C"
     zoo        = "𐑟"
     # Backward-compat aliases (old TopoIndex names)
 
@@ -649,13 +603,11 @@ class Protection(Enum):
             "awe": cls.awe,
             "oak": cls.oak,
             "ah": cls.ah,
-            "Omega_C": cls.Omega_C,
             "zoo": cls.zoo,
             # glyph IDs (canonical)
             "𐑷": cls.awe,
             "𐑴": cls.oak,
             "𐑭": cls.ah,
-            "Ω_C": cls.Omega_C,
             "𐑟": cls.zoo,
             # Shavian (v0.6.0)
             "𐑷": cls.awe, "𐑴": cls.oak,
@@ -685,7 +637,7 @@ class Protection(Enum):
             Protection.awe: "Ordinary insulators, classical systems",
             Protection.oak:        "HgTe/CdTe, Bi2Se3, topological insulators (AII/DIII)",
             Protection.ah:        "Kitaev chain, SSH model, 1D p-wave superconductors",
-            Protection.Omega_C:            "Integer quantum Hall, Chern insulators (class A)",
+            Protection.ah:            "Integer quantum Hall, Chern insulators (class A)",
             Protection.zoo:        "nu=5/2 FQH, Kitaev honeycomb B-phase, non-Abelian Majorana",
         }[self]
 
@@ -942,40 +894,24 @@ class Imscription:
 
     # Translate internal enum values to canonical ORDINALS keys (primitives.py).
     # Models layer uses a richer chemistry vocab; registry/zfc must see only canon values.
-    _CANONICAL_MAP: ClassVar[Dict[str, str]] = {
-        # D — non-canonical extensions collapse to nearest canonical
-        "Ð_point": "𐑛", "Ð_line": "𐑛",
-        "Ð_cube": "𐑨",
-        # T — chemistry extras collapse to canonical 5
-        "Þ_linear": "𐑰", "Þ_branched": "𐑰", "Þ_bowl": "𐑰",
-        "Þ_cage": "𐑶",
-        "Þ_torus": "𐑥", "Þ_braid": "𐑥",
-        "Þ_network_hex": "𐑡", "Þ_network_mixed": "𐑡",
-        "Þ_network_interp": "𐑡", "Þ_network_sym": "𐑡",
-        # Grammar — non-canonical G_xor/G_impl/G_dissipative collapse to canonical
-        "Γ_impl": "𐑠", "Γ_xor": "𐑜", "Γ_dissipative": "𐑵",
-    }
 
-    @classmethod
-    def _canon(cls, val: str) -> str:
-        return cls._CANONICAL_MAP.get(val, val)
 
     def to_dict(self) -> Dict[str, Any]:
         return {
             "name":          self.name,
             "description":   self.description,
-            "⊢":             self._canon(self.dimensionality.value),
-            "⊣":             self._canon(self.topology.value),
-            ">":             self._canon(self.recognition_mode.value),
-            "<":             self._canon(self.polarity.value),
-            "⋈":             self._canon(self.fidelity.value),
-            "⊤":             self._canon(self.kinetic_character.value),
-            "∈":             self._canon(self.granularity.value),
-            "∋":             self._canon(self.grammar.value),
-            "⊙":             self._canon(self.criticality_phase.value),
-            "◻":             self._canon(self.protection.value),
-            "⊞":             self._canon(self.stoichiometry.value),
-            "⊥":             self._canon(self.chirality.value),
+            "⊢":             self.dimensionality.value,
+            "⊣":             self.topology.value,
+            ">":             self.recognition_mode.value,
+            "<":             self.polarity.value,
+            "⋈":             self.fidelity.value,
+            "⊤":             self.kinetic_character.value,
+            "∈":             self.granularity.value,
+            "∋":             self.grammar.value,
+            "⊙":             self.criticality_phase.value,
+            "◻":             self.protection.value,
+            "⊞":             self.stoichiometry.value,
+            "⊥":             self.chirality.value,
             "grounding":     self.grounding,
             "is_grounded":   self.is_grounded,
             "metadata":      self.metadata,
@@ -986,24 +922,18 @@ class Imscription:
         """
         Construct a Imscription from a catalog dict (new or legacy format).
 
-        Accepts glyph keys (⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻), the retired glyph
-        keys (Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω), short ASCII keys
+        Accepts glyph keys (⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻), short ASCII keys
         (D, T, R, P, F, K, G, Gamma, Phi, Omega, S, H), and long Python field names.
-        Parses all primitive fields via from_symbol() for backward compatibility.
 
-        This is the one seam every consumer goes through, so a catalog written
-        before the alphabet moved still loads here rather than in twelve places.
-        Values did not move, only keys, and ⊙ did not move at all.
+        The retired glyph keys do NOT resolve. Every stored catalog was migrated
+        with the rename, so a dict still carrying them is not old data to be
+        read, it is data that was missed, and a reader that quietly accepted it
+        is how the two alphabets stayed alive through the last several purges.
         """
-        # retired key -> current key, for entries written before the alphabet moved
-        _RETIRED = {"⊢": "⊢", "⊣": "⊣", ">": ">", "<": "<", "⋈": "⋈", "⊤": "⊤",
-                    "∈": "∈", "∋": "∋", "⊥": "⊥", "⊞": "⊞", "◻": "◻"}
 
         def _get(glyph: str, short: str, long: str, default: str) -> str:
             # Prefer glyph key (catalog format), then long Python name, then short ASCII
             v = d.get(glyph) or d.get(long) or d.get(short)
-            if v is None and glyph in _RETIRED:
-                v = d.get(_RETIRED[glyph])
             if v is None:
                 return default
             # Handle old compound interaction_grammar dict: {"operator": "ɢ_and", "tier": "SELECTIVE"}
@@ -1029,7 +959,10 @@ class Imscription:
                 granularity      = Granularity.from_symbol(_get("∈", "G", "granularity", "𐑚")),
                 criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "𐑢")),
                 protection       = Protection.from_symbol(_get("◻", "Omega", "protection", "𐑷")),
-                stoichiometry    = Stoichiometry.from_symbol(_get("⊞", "S", "stoichiometry", "n:m")),
+                # 𐑳 is n:m, the general ratio: the old "n:m" spelling was left as the
+                # default long after from_symbol stopped resolving it, so an entry
+                # missing this key raised instead of taking a default.
+                stoichiometry    = Stoichiometry.from_symbol(_get("⊞", "S", "stoichiometry", "𐑳")),
                 chirality        = Chirality.from_symbol(_get("⊥", "H", "chirality", "𐑓")),
                 description      = d.get("description", ""),
                 metadata         = d.get("metadata", {}),

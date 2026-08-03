@@ -145,7 +145,7 @@ def register_millennium_imscriptions() -> None:
         # ─────────────────────────────────────────────────────────────────────
         Imscription(
             name="standard_proof_system",
-            dimensionality=Dimensionality.D_cube,
+            dimensionality=Dimensionality.ash,
             topology=Topology.oil,
             recognition_mode=Recognition.ear,
             polarity=Polarity.or_,
@@ -281,7 +281,7 @@ def register_millennium_imscriptions() -> None:
             topology=Topology.judge,
             recognition_mode=Recognition.tot,
             polarity=Polarity.out,
-            grammar=Grammar.G_impl,
+            grammar=Grammar.measure,
             fidelity=Fidelity.they,
             kinetic_character=KineticChar.on,
             granularity=Granularity.thigh,
@@ -408,7 +408,7 @@ def register_millennium_imscriptions() -> None:
         # ─────────────────────────────────────────────────────────────────────
         Imscription(
             name="yang_mills_mass_gap",
-            dimensionality=Dimensionality.D_cube,
+            dimensionality=Dimensionality.ash,
             topology=Topology.judge,
             recognition_mode=Recognition.ear,
             polarity=Polarity.or_,
@@ -473,7 +473,7 @@ def register_millennium_imscriptions() -> None:
         # ─────────────────────────────────────────────────────────────────────
         Imscription(
             name="navier_stokes_smoothness",
-            dimensionality=Dimensionality.D_cube,
+            dimensionality=Dimensionality.ash,
             topology=Topology.judge,
             recognition_mode=Recognition.ear,
             polarity=Polarity.out,
@@ -541,11 +541,11 @@ def register_millennium_imscriptions() -> None:
         # ─────────────────────────────────────────────────────────────────────
         Imscription(
             name="birch_swinnerton_dyer",
-            dimensionality=Dimensionality.D_cube,
-            topology=Topology.T_torus,
+            dimensionality=Dimensionality.ash,
+            topology=Topology.mime,
             recognition_mode=Recognition.ado,
             polarity=Polarity.out,
-            grammar=Grammar.G_impl,
+            grammar=Grammar.measure,
             fidelity=Fidelity.peep,
             kinetic_character=KineticChar.egg,
             granularity=Granularity.ice,
@@ -609,7 +609,7 @@ def register_millennium_imscriptions() -> None:
         # ─────────────────────────────────────────────────────────────────────
         Imscription(
             name="poincare_conjecture",
-            dimensionality=Dimensionality.D_cube,
+            dimensionality=Dimensionality.ash,
             topology=Topology.mime,
             recognition_mode=Recognition.ear,
             polarity=Polarity.or_,

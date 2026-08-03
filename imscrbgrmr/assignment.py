@@ -470,7 +470,7 @@ class PrimitiveAssignmentEngine:
           BOWL     : single concave binding cavity
         """
         if has_braid_statistics:
-            value, conf = Topology.T_braid, 0.90
+            value, conf = Topology.mime, 0.90
             evidence = "Braid / anyonic exchange statistics → T_BRAID"
         elif has_cage_geometry:
             value, conf = Topology.oil, 0.88
@@ -483,10 +483,10 @@ class PrimitiveAssignmentEngine:
             evidence = "Closed ring / cycle → T_CYCLIC_BOWTIE"
         elif n_binding_sites == 1 and partner_count <= 2:
             if partner_count >= 1:
-                value, conf = Topology.T_linear, 0.82
+                value, conf = Topology.eat, 0.82
                 evidence = f"1 binding site, {partner_count} partner(s) → T_LINEAR"
             else:
-                value, conf = Topology.T_linear, 0.75
+                value, conf = Topology.eat, 0.75
                 evidence = "Single binding site, no partners specified → T_LINEAR"
         elif n_binding_sites == 1 and partner_count >= 3:
             value, conf = Topology.judge, 0.82
@@ -692,11 +692,11 @@ class PrimitiveAssignmentEngine:
         if K == KineticCharacter.air:
             value = TopoIndex.oak
             rule = "Rule 1: K=MBL → Ω=Z2_CLASS"
-        elif T == Topology.T_braid:
+        elif T == Topology.mime:
             value = TopoIndex.zoo
             rule = "Rule 2: T=BRAID → Ω=NON_ABELIAN"
         elif T == Topology.judge and G == Granularity.thigh:
-            value = TopoIndex.Omega_C
+            value = TopoIndex.ah
             rule = "Rule 3: T=NETWORK ∧ G=GLOBAL → Ω=CHERN"
         elif D == Dimensionality.array and G == Granularity.thigh:
             value = TopoIndex.oak

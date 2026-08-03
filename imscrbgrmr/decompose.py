@@ -69,7 +69,7 @@ _G_BY_ORD: Dict[int, Granularity] = {v: k for k, v in _G_ORD.items()}
 
 _TOPO_ORD: Dict[TopoIndex, int] = {
     TopoIndex.awe: 0, TopoIndex.oak: 1, TopoIndex.ah: 2,
-    TopoIndex.Omega_C: 3, TopoIndex.zoo: 4,
+    TopoIndex.ah: 3, TopoIndex.zoo: 4,
 }
 
 # Constraint-bottom values: "removing" the constraint for each ordinal primitive
@@ -286,7 +286,7 @@ def project(imscription: Imscription, primitives: Sequence[str]) -> ProjectResul
 
     bottom_map = {
         "D": Dimensionality.dead,
-        "T": Topology.T_linear,
+        "T": Topology.eat,
         "R": RecognitionMode.ado,
         "P": Polarity.or_,
         "F": Fidelity.age,
@@ -350,7 +350,7 @@ def primitive_peel(
     else:
         bottom_map = {
             "D": Dimensionality.dead,
-            "T": Topology.T_linear,
+            "T": Topology.eat,
             "R": RecognitionMode.ado,
             "P": Polarity.or_,
             "Gamma": InteractionGrammar.gag,

@@ -110,7 +110,7 @@ def _ice_vi() -> Imscription:
     return Imscription(
         name="ice_vi",
         dimensionality=Dimensionality.ash,
-        topology=Topology.T_network_interp,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.yew,
         fidelity=Fidelity.peep,
@@ -147,7 +147,7 @@ def _ice_vii() -> Imscription:
     return Imscription(
         name="ice_vii",
         dimensionality=Dimensionality.ash,
-        topology=Topology.T_network_interp,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -231,7 +231,7 @@ def _ice_xviii_superionic() -> Imscription:
     return Imscription(
         name="ice_xviii_superionic",
         dimensionality=Dimensionality.ash,
-        topology=Topology.T_network_mixed,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -331,7 +331,7 @@ def _ice_superionic_qcp() -> Imscription:
     return Imscription(
         name="ice_superionic_qcp",
         dimensionality=Dimensionality.ash,
-        topology=Topology.T_network_sym,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,

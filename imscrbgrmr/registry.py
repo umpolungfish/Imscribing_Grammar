@@ -876,7 +876,7 @@ class ImscriptionCatalog:
             Imscription(
                 name="enolate_imscription",
                 dimensionality=Dimensionality.dead,
-                topology=Topology.T_linear,
+                topology=Topology.eat,
                 recognition_mode=RecognitionMode.tot,
                 polarity=Polarity.yew,
                 fidelity=Fidelity.they,
@@ -892,7 +892,7 @@ class ImscriptionCatalog:
             Imscription(
                 name="carbonyl_imscription",
                 dimensionality=Dimensionality.dead,
-                topology=Topology.T_linear,
+                topology=Topology.eat,
                 recognition_mode=RecognitionMode.tot,
                 polarity=Polarity.yew,
                 fidelity=Fidelity.they,

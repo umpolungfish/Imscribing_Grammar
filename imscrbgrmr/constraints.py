@@ -502,15 +502,15 @@ class FidelityPropagator:
     # Cooperativity factors based on topology
     TOPOLOGY_COOPERATIVITY: Dict[Topology, float] = field(default_factory=lambda: {
         Topology.mime: 1.5,  # Cyclic motifs show cooperativity
-        Topology.T_linear: 1.0,  # Linear chains: additive
+        Topology.eat: 1.0,  # Linear chains: additive
         Topology.judge: 2.0,  # Hub nodes: strong amplification
-        Topology.T_linear: 1.0,
-        Topology.T_branched: 1.3,
+        Topology.eat: 1.0,
+        Topology.eat: 1.3,
         Topology.judge: 2.5,
-        Topology.T_network_hex: 2.5,           # hexagonal rings: same cooperativity as generic network
-        Topology.T_network_mixed: 2.3,          # mixed ring sizes: slightly damped long-range cooperativity
-        Topology.T_network_interp: 3.0,  # two coupled propagation channels: superlinear
-        Topology.T_network_sym: 2.8,            # centrosymmetric bonding: near-isotropic propagation
+        Topology.judge: 2.5,           # hexagonal rings: same cooperativity as generic network
+        Topology.judge: 2.3,          # mixed ring sizes: slightly damped long-range cooperativity
+        Topology.judge: 3.0,  # two coupled propagation channels: superlinear
+        Topology.judge: 2.8,            # centrosymmetric bonding: near-isotropic propagation
         Topology.oil: 1.8,
     })
     

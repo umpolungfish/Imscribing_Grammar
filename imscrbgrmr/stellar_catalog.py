@@ -766,7 +766,7 @@ def _star_agb() -> Imscription:
     return Imscription(
         name="star_agb",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_network_mixed,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.or_,
         fidelity=Fidelity.they,
@@ -882,7 +882,7 @@ def _star_red_supergiant() -> Imscription:
     return Imscription(
         name="star_red_supergiant",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_network_mixed,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.or_,
         fidelity=Fidelity.they,
@@ -1012,7 +1012,7 @@ def _white_dwarf() -> Imscription:
     return Imscription(
         name="white_dwarf",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_network_hex,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ian,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -1209,7 +1209,7 @@ def _gamma_ray_burst() -> Imscription:
     return Imscription(
         name="gamma_ray_burst",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -1347,7 +1347,7 @@ def _neutron_star() -> Imscription:
     return Imscription(
         name="neutron_star",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_braid,
+        topology=Topology.mime,
         recognition_mode=RecognitionMode.ian,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -1416,7 +1416,7 @@ def _pulsar_millisecond() -> Imscription:
     return Imscription(
         name="pulsar_millisecond",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_braid,
+        topology=Topology.mime,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -1489,7 +1489,7 @@ def _magnetar() -> Imscription:
     return Imscription(
         name="magnetar",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_braid,
+        topology=Topology.mime,
         recognition_mode=RecognitionMode.ian,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -1719,7 +1719,7 @@ def _quark_star() -> Imscription:
     return Imscription(
         name="quark_star",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_braid,
+        topology=Topology.mime,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.yew,
         fidelity=Fidelity.peep,

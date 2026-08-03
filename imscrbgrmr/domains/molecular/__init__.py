@@ -193,7 +193,7 @@ class MolecularImscriptionAgent:
             Imscription(
                 name="enolate_imscription",
                 dimensionality=Dimensionality.dead,
-                topology=Topology.T_linear,
+                topology=Topology.eat,
                 recognition_mode=RecognitionMode.tot,
                 polarity=Polarity.yew,
                 fidelity=Fidelity.they,
@@ -208,7 +208,7 @@ class MolecularImscriptionAgent:
             Imscription(
                 name="carbonyl_imscription",
                 dimensionality=Dimensionality.dead,
-                topology=Topology.T_linear,
+                topology=Topology.eat,
                 recognition_mode=RecognitionMode.tot,
                 polarity=Polarity.yew,
                 fidelity=Fidelity.they,
@@ -256,7 +256,7 @@ class MolecularImscriptionAgent:
         return Imscription(
             name=fragment_name or f"fragment_{fragment_smiles[:10]}",
             dimensionality=Dimensionality.dead,
-            topology=Topology.T_linear,
+            topology=Topology.eat,
             recognition_mode=RecognitionMode.tot,
             polarity=polarity,
             fidelity=Fidelity.they,

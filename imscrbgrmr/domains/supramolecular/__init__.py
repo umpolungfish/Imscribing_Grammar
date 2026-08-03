@@ -221,7 +221,7 @@ class SupramolecularImscriptionAgent:
                 "fidelity": Fidelity.they,
             },
             "halogen_bond": {
-                "topology": Topology.T_linear,
+                "topology": Topology.eat,
                 "polarity": Polarity.church,
                 "fidelity": Fidelity.they,
             },
@@ -233,7 +233,7 @@ class SupramolecularImscriptionAgent:
         }
         
         motif_data = known_motifs.get(motif_name, {
-            "topology": Topology.T_linear,
+            "topology": Topology.eat,
             "polarity": Polarity.church,
             "fidelity": Fidelity.they,
         })

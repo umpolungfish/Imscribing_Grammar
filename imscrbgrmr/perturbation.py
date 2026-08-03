@@ -54,12 +54,12 @@ _KINETIC_TIERS = [
 ]
 _GRANULARITY_TIERS = [Granularity.ice, Granularity.bib, Granularity.thigh]
 _TOPOLOGY_TIERS = [
-    Topology.T_linear, Topology.T_linear, Topology.mime,
-    Topology.T_branched, Topology.judge,
-    Topology.judge, Topology.T_network_hex, Topology.T_network_mixed,
-    Topology.T_network_interp, Topology.T_network_sym,
+    Topology.eat, Topology.eat, Topology.mime,
+    Topology.eat, Topology.judge,
+    Topology.judge, Topology.judge, Topology.judge,
+    Topology.judge, Topology.judge,
     Topology.oil,
-    Topology.T_braid,  # anyonic topology — orthogonal axis but placed at high complexity
+    Topology.mime,  # anyonic topology — orthogonal axis but placed at high complexity
 ]
 _DIM_TIERS = [
     Dimensionality.dead, Dimensionality.ash, Dimensionality.array,

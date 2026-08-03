@@ -342,7 +342,7 @@ def _qubit_logical() -> Imscription:
     return Imscription(
         name="qubit_logical",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.yew,
         fidelity=Fidelity.age,
@@ -407,7 +407,7 @@ def _kitaev_chain_majorana() -> Imscription:
     return Imscription(
         name="kitaev_chain_majorana",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -468,7 +468,7 @@ def _fqh_moore_read() -> Imscription:
     return Imscription(
         name="fqh_moore_read",
         dimensionality=Dimensionality.ash,
-        topology=Topology.T_braid,
+        topology=Topology.mime,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.yew,
         fidelity=Fidelity.peep,

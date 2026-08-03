@@ -204,7 +204,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
         
         # Initial imscription generation (same as ImscriptionGeneratorAgent)
         dimensionality = Dimensionality.dead
-        topology = Topology.T_linear
+        topology = Topology.eat
         recognition_mode = RecognitionMode.ado
         polarity = Polarity.yew
         fidelity = Fidelity.they

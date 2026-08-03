@@ -1,58 +1,42 @@
-The primitives take the IMASM alphabet, and Criticality keeps ⊙
+Strip the compatibility layer out to the root
 
-    ⊢ Dimensionality  ⊣ Topology     > Relational     < Polarity
-    ⋈ Fidelity        ⊤ Kinetics     ∈ Granularity    ∋ Grammar
-    ⊙ Criticality     ⊥ Chirality    ⊞ Stoichiometry  ◻ Protection
+Frozen first at frozen/pre-compat-purge-2026-08-03, so the old state is kept
+where it belongs rather than kept alive inside the code.
 
-The old set arrived already meaning other things. Γ is the gamma function, Σ a
-summation, Φ a potential, Ω a domain, and a reader brings all of that to a slot
-that only wants a position. The opcodes mean nothing on their own, which is their
-whole qualification, and there were never two alphabets to map between: the
-twelve axes and the twelve opcodes are the same twelve.
+Fifteen enum members carried values spelled in the retired alphabet — Ð_point,
+Þ_torus, ƒ_noise, Γ_xor, Ω_C and the rest — none of them a legal value of their
+own axis. They are gone, along with the machinery that kept them readable:
+_CANONICAL_MAP and the _canon indirection that collapsed them silently at write
+time, the retired-key fallback in from_dict, and every from_symbol alias keyed on
+the old spelling. 95 references were repointed to the canonical member first, so
+nothing pointed at a member that had been deleted.
 
-⊙ does not move. Two tables already put it with Criticality — cr3echrz's
-opcodes.py has EVALT as ("⊙", "Criticality — evaluate-true gate") and ask_native's
-learn.rs has the same pairing — and classic.rs says outright that IMSCRIB's ⊙
-appearing as Criticality is not a collision but the same structure surfacing.
-Pairing the two lists by slot position instead would have put ⊙ on Kinetics; the
-anchor wins and Kinetics takes ⊤. That decision is what made the rest tractable:
-eleven keys move rather than twelve, and no VALUE moves at all. The monad is a
-legal value of Criticality and 5,122 of 8,032 entries carry "⊙": "⊙", key and
-value the same character on one line. None of that had to be touched.
+That is why they survived the earlier purges. Each pass deleted the usages and
+left the aliases "just in case", so the old form stayed readable, stayed
+writable, and grew back. The visible symptom was a dict literal holding
+"Ð_point" beside "𐑛": two alphabets alive in one expression because neither had
+been killed.
 
-The migration went through parsed JSON, never text. Ð and Þ and Γ also open value
-names like Ð_point in a different namespace that merely shares the character, and
-every substitution here is anchored on a complete quoted token for the same
-reason. 88,253 keys renamed in the canonical catalog and 87,846 in the live store
-at ~/.imscrbgrmr, both backed up beside themselves, and every entry's twelve
-values verified identical before and after.
+Ten of the twelve axes now hold exactly their canonical cardinality, which is the
+crystal's own count, 3³×4⁵×5⁴. Two do not, and they stay, because deleting them
+would depopulate addresses: Stoichiometry.dead holds 12 entries and
+Criticality.egg holds 15. Those addresses sit outside the crystal, and the right
+value for each is a determination about the entry — the guard says as much in its
+own docstring — not something a deletion can supply.
 
-Two things were restated where they should have been derived, and a rename is
-exactly what finds those. space_search/primitives.py carried its own copy of
-ORDINALS, WEIGHTS and PRIMITIVE_ORDER, so the two would have had to move in the
-same commit forever and the one that was missed would go on answering; it imports
-them now. registry.py's provenance hashed a hand-written slot list, and
-slot_category_violations is keyed on the very names it validates, so a rename
-would have made it fail OPEN: every .get() missing, every entry skipped, silence
-instead of a report. It reads PRIMITIVE_ORDER now. The violations baseline
-regenerated to the same 30 entries it held before, which is the proof it is still
-looking.
+Nothing was lost. Measured against the frozen branch: 8032 names in, 8032 out,
+and exactly one address moved. axiom_of_maria's topology slot held Þ_linear,
+which was never a legal Topology glyph, so that entry was outside the crystal;
+it is at 𐑰 now, the target the collapse table itself declared before it was
+removed. Every other address is identical.
 
-Imscription.from_dict is the seam. It already accepted glyph keys or short ASCII
-or long field names, and it takes the retired glyphs as a further fallback, so a
-catalog written before this still loads in one place rather than twelve. to_dict
-writes the new keys. Old and new keyed entries load to the identical tuple.
+Three defects surfaced by taking the shims away, which is the argument for taking
+them away. from_dict defaulted stoichiometry to "n:m", a spelling from_symbol
+stopped resolving some time ago, so any entry missing that key raised instead of
+taking a default; it is 𐑳 now. Two entries hold 𐑯, a polarity value, in the
+protection slot, and they now refuse to load rather than loading wrong — they are
+in the violations report, which stands at 29.
 
-Verified rather than assumed: the twelve-axis round trip through
-`imasm cycle tuple=⟨…⟩` recovers 12 of 12 axes exactly with the monad intact;
-`imscribe join loki_laufeyjarson odinn_allfather` still meets at 𐑮 and joins at
-𐑻; sync_catalog.sh reports all 8 consumers matching; gen_catalog_subset.py
-regenerates 8,016 entries, one MORE than the committed snapshot and none fewer;
-and mOMonadOS boots reporting ordinal faithfulness against the Lean canonical.
-The ten entries it skips carry a legacy pre-Shavian `tuple` string and no glyph
-keys at all; they were skipped before this too.
-
-scripts/IG_catalog.json had drifted to 8,033 entries with one extra,
-cat_translator, whose > slot holds a ◻ value and whose ⊤ slot holds an ∈ value.
-It is preserved beside itself as .pre_rename_drift rather than merged, since
-merging it would put a malformed tuple in the canonical catalog.
+The retired glyph keys no longer resolve either. Every catalog was migrated with
+the rename, so a dict still carrying them is not old data to be read, it is data
+that was missed.

@@ -494,7 +494,7 @@ def _five_meo_dmt_brain_state() -> Imscription:
     return Imscription(
         name="five_meo_dmt_brain_state",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_network_sym,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -710,7 +710,7 @@ def _mescaline_molecular() -> Imscription:
     return Imscription(
         name="mescaline_molecular",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ado,
         polarity=Polarity.yew,
         fidelity=Fidelity.they,

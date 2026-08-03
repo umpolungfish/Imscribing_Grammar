@@ -180,9 +180,9 @@ class EnsembleCatalog:
             sum(individual_scores) / len(individual_scores) if individual_scores else 0.0
         )
         _NET_TOPOS = {
-            Topology.judge, Topology.T_network_hex,
-            Topology.T_network_mixed, Topology.T_network_interp,
-            Topology.T_network_sym,
+            Topology.judge, Topology.judge,
+            Topology.judge, Topology.judge,
+            Topology.judge,
         }
         n_network = sum(1 for s in self._imscriptions if s.topology in _NET_TOPOS)
         coop_boost = min(0.30, n_network * 0.10 + len(self._imscriptions) * 0.03)
@@ -260,9 +260,9 @@ class EnsembleCatalog:
         has_global_grammar = any(
             s.interaction_grammar.operator == GrammarOperator.OR
             or s.topology in {
-                Topology.judge, Topology.T_network_hex,
-                Topology.T_network_mixed, Topology.T_network_interp,
-                Topology.T_network_sym,
+                Topology.judge, Topology.judge,
+                Topology.judge, Topology.judge,
+                Topology.judge,
             }
             for s in self._imscriptions
         )

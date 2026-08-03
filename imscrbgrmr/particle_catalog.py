@@ -153,7 +153,7 @@ def _graviton() -> Imscription:
     return Imscription(
         name="graviton",
         dimensionality=Dimensionality.if_,
-        topology=Topology.T_network_sym,
+        topology=Topology.judge,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,
@@ -217,7 +217,7 @@ def _photon() -> Imscription:
     return Imscription(
         name="photon",
         dimensionality=Dimensionality.array,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -341,7 +341,7 @@ def _w_boson() -> Imscription:
     return Imscription(
         name="w_boson",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.church,
         fidelity=Fidelity.peep,
@@ -394,7 +394,7 @@ def _z_boson() -> Imscription:
     return Imscription(
         name="z_boson",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.ear,
         polarity=Polarity.or_,
         fidelity=Fidelity.peep,

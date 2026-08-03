@@ -60,7 +60,7 @@ _OMEGA_COLOR = {
     TopoIndex.awe:     "#999999",   # grey
     TopoIndex.ah:     "#3a7eca",   # blue
     TopoIndex.oak:    "#2ca02c",   # green
-    TopoIndex.Omega_C:       "#ff7f0e",   # orange
+    TopoIndex.ah:       "#ff7f0e",   # orange
     TopoIndex.zoo: "#d62728",   # red
 }
 
@@ -69,7 +69,7 @@ _OMEGA_LABEL = {
     TopoIndex.awe:     "Ω₀ TRIVIAL",
     TopoIndex.ah:     "Ω_Z ℤ-class",
     TopoIndex.oak:    "Ω_Z₂ ℤ₂-class",
-    TopoIndex.Omega_C:       "Ω_Ch CHERN",
+    TopoIndex.ah:       "Ω_Ch CHERN",
     TopoIndex.zoo: "Ω_NA NON-ABELIAN",
 }
 
@@ -179,7 +179,7 @@ class PhaseDiagram:
         for name, omega in zip(self.imscription_names, self.omega_values):
             by_omega[omega].append(name)
         omega_order = [None, TopoIndex.awe, TopoIndex.oak,
-                       TopoIndex.ah, TopoIndex.Omega_C, TopoIndex.zoo]
+                       TopoIndex.ah, TopoIndex.ah, TopoIndex.zoo]
         for omega in omega_order:
             if omega in by_omega:
                 label = _OMEGA_LABEL.get(omega, str(omega))

@@ -549,19 +549,19 @@ def repair_catalog(fix_topology: bool, purge_junk: bool, dry_run: bool, limit: i
             if any(kw in combined for kw in NETWORK_SYM_KEYWORDS):
                 topology_net_sym.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.T_network_sym
+                    s.topology = Topology.judge
             elif any(kw in combined for kw in NETWORK_INTERPENETRATING_KEYWORDS):
                 topology_net_interp.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.T_network_interp
+                    s.topology = Topology.judge
             elif any(kw in combined for kw in NETWORK_HEX_KEYWORDS):
                 topology_net_hex.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.T_network_hex
+                    s.topology = Topology.judge
             elif any(kw in combined for kw in NETWORK_MIXED_KEYWORDS):
                 topology_net_mixed.append(s.name)
                 if not dry_run:
-                    s.topology = Topology.T_network_mixed
+                    s.topology = Topology.judge
 
         net_upgraded = len(topology_net_hex) + len(topology_net_mixed) + len(topology_net_interp) + len(topology_net_sym)
         if net_upgraded:
