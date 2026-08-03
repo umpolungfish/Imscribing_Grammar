@@ -4,7 +4,7 @@
 --
 -- Two classes of problem characters:
 --   Class A — missing from Latin Modern text font (lmroman):
---     Ħ U+0126, ƒ U+0192, ɢ U+0262, ʔ U+0294,
+--     Ħ U+0126, ɢ U+0262, ʔ U+0294,
 --     ˌ U+02CC, ˝ U+02DD, ⊙ U+2299
 --     → need {\igprimfont char} (Everson Mono)
 --
@@ -57,7 +57,6 @@ end
 -- Class A: not in Latin Modern at all — need \igprimfont
 local CLASS_A = {
   [0x0126] = true,  -- Ħ  H with stroke         (Ħ primitive)
-  [0x0192] = true,  -- ƒ  f with hook            (ƒ primitive)
   [0x0262] = true,  -- ɢ  small capital G        (ɢ primitive)
   [0x0294] = true,  -- ʔ  glottal stop           (Γ_ʔ subtype)
   [0x02CC] = true,  -- ˌ  low vertical line      (ɢ_ˌ subtype)
@@ -71,6 +70,7 @@ local CLASS_A = {
   [0x03C9] = true,  -- ω  omega                  (retired ⊢ subtype)
   -- Canonical alphabet: axis letters that are not text characters in lmroman
   [0x22A2] = true,  -- ⊢  right tack             (⊢ Dimensionality primitive)
+  [0x22C8] = true,  -- ⋈  bowtie                 (⋈ Fidelity primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
@@ -92,14 +92,11 @@ local CLASS_B = {
   [0x00D1] = true,  -- Ñ  N with tilde           (Ħ_Ñ subtype)
   [0x00D9] = true,  -- Ù  U grave                (Ç_Ù subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
-  [0x00EC] = true,  -- ì  i grave                (ƒ_ì subtype)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
-  [0x00F0] = true,  -- ð  eth                    (ƒ_ð subtype)
   [0x00FF] = true,  -- ÿ  y diaeresis            (⊙_ÿ subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
   [0x0162] = true,  -- Ţ  T with cedilla         (⊙_Ţ subtype)
   [0x015E] = true,  -- Ş  S with cedilla         (ɢ_Ş subtype)
-  [0x017C] = true,  -- ż  z dot-above            (ƒ_ż subtype)
   [0x017E] = true,  -- ž  z caron                (⊙_ž subtype)
 }
 

@@ -953,7 +953,7 @@ In its role within Jewish cosmology, Samael is:
 - 𐑡 is an alternative if 𐑦 is not assigned (see alternative below)
 - 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)
 - 𐑿: the negating/adversarial pole of the cosmic polarity (signed direction)
-- ƒ=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
+- ⋈=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
 - Ç=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
 - 𐑲: correlation length is global — his influence is correlated across all mortal systems
 - ɢ=𐑜: any mortal is a valid partner (disjunctive)

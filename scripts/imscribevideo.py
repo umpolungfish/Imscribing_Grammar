@@ -11,7 +11,7 @@ Requires: numpy, scipy, matplotlib, pillow, ffmpeg (in PATH)
 Usage:
   python imscribevideo.py --name riemann_hypothesis
   python imscribevideo.py --name psilocybin_peak -o audio/psilocybin_peak.mp4
-  python imscribevideo.py --tuple "𐑦 𐑶 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑙 𐑭"
+  python imscribevideo.py --tuple "𐑦 𐑶 𐑾 𐑹 ⋈^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑙 𐑭"
   python imscribevideo.py --all-catalog          # batch: every catalog entry
 """
 
@@ -49,13 +49,13 @@ BG        = '#0d0d14'
 DIM_BG    = '#1a1a26'    # placeholder box fill
 DIM_ALPHA = 0.55         # past-symbol opacity
 
-# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω
 FIELD_COLORS = [
     '#e06060',   # ⊢  red
     '#e09030',   # ⊣  orange
     '#d4c040',   # >  gold
     '#70c840',   # <  lime
-    '#40c8a0',   # ƒ  teal
+    '#40c8a0',   # ⋈  teal
     '#40b0e0',   # Ç  sky
     '#5070e8',   # Γ  blue
     '#9060e8',   # ɢ  violet
@@ -73,7 +73,7 @@ HUMAN = {
     '𐑡':'nrleg',      '𐑰':'invscr',     '𐑥':'bullseye',    '𐑶':'commatailz',  '𐑸':'openo',
     '𐑩':'subrightarrow','𐑑':'ctz',      '𐑽':'downstep',    '𐑾':'lyoghlig',
     '𐑗':'aolig',      '𐑿':'upsilon',    '𐑬':'pipevar',     '𐑯':'subdoublearrow','𐑹':'doublebarpipe',
-    'ƒ^ì':'beltl',      'ƒ^ð':'dh',         'ƒ^ż':'hardsign',
+    '⋈^ì':'beltl',      '⋈^ð':'dh',         '⋈^ż':'hardsign',
     'Ç^-':'frtailgamma','Ç^W':'turnm',      'Ç^@':'schwa',       'Ç^Ù':'teshlig',     'Ç^λ':'lambda',
     '𐑚':'beta',       '𐑔':'gamma',      '𐑲':'revapostrophe',
     'ɢ^∧':'corner',     'ɢ^˝':'spleftarrow','ɢ^ˌ':'secstress',   'ɢ^Ş':'doublevertline',

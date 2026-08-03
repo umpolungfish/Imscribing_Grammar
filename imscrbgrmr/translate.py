@@ -102,7 +102,7 @@ CRITICALITY_LIFT_NATS: float = math.log(10)              # ≈ 2.303 nats  (PHI_
 
 # F-tier ordering for dominance comparisons
 _F_ORDER = {Fidelity.age: 0, Fidelity.they: 1, Fidelity.peep: 2}
-_F_NAME = {Fidelity.age: "ƒ_beltl", Fidelity.they: "ƒ_dh", Fidelity.peep: "ƒ_hardsign"}
+_F_NAME = {Fidelity.age: "𐑱", Fidelity.they: "𐑞", Fidelity.peep: "𐑐"}
 
 
 # ─────────────────────────────────────────────────────────────────────────────

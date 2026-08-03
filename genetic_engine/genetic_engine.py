@@ -457,7 +457,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Trp": IGPrimitive.TOPOLOGY,      # ⊣ — bicyclic indole, topological ceiling
     "Cys": IGPrimitive.REVERSIBILITY, # > — disulfide bonds, reversible crosslinks
     "Tyr": IGPrimitive.PARITY,        # < — phosphorylation switch
-    "Phe": IGPrimitive.FORCE,         # ƒ — max hydrophobicity, force ceiling
+    "Phe": IGPrimitive.FORCE,         # ⋈ — max hydrophobicity, force ceiling
     "Ile": IGPrimitive.KINETICS,      # Ç — β-branched, ribosomal coupling
     "His": IGPrimitive.GRAMMAR,       # Γ — imidazole pKa bridge
     "Asn": IGPrimitive.INTERACTION,   # ɢ — N-glycosylation sequon
@@ -499,7 +499,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss is pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
-    IGPrimitive.FORCE:          "low",          # ƒ — hydrophobic class preserved
+    IGPrimitive.FORCE:          "low",          # ⋈ — hydrophobic class preserved
     None:                       "low",          # Ground layer — no primitive
 }
 
@@ -1228,13 +1228,13 @@ class ChimeraDetector:
              "at the same active site creates a pH-locked irreversible bond."),
 
             # ── Low-risk pairs ──
-            (P.ENTROPY, P.FORCE, 1.2, False,  # Σ ⊗ ƒ
+            (P.ENTROPY, P.FORCE, 1.2, False,  # Σ ⊗ ⋈
              "Low-risk pair: Lys (charge/entropy) + Phe (hydrophobicity) edits "
              "are structurally independent."),
             (P.ENTROPY, P.INTERACTION, 1.2, False,  # Σ ⊗ ɢ
              "Low-risk pair: Lys (acetylation) + Asn (glycosylation) edits "
              "affect orthogonal post-translational modifications."),
-            (P.FORCE, P.INTERACTION, 1.2, False,  # ƒ ⊗ ɢ
+            (P.FORCE, P.INTERACTION, 1.2, False,  # ⋈ ⊗ ɢ
              "Low-risk pair: hydrophobic packing + glycosylation are "
              "structurally orthogonal."),
 

@@ -103,7 +103,7 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     
     This agent ensures generated imscriptions satisfy all five composition axioms:
     
-    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ^ð
+    **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ⋈^ð
     **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ → no global propagation
     **Axiom 3 (Cooperative Induction):** Superlinear induction → G_ג reclassification
     **Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡
@@ -327,8 +327,8 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 </input>
 
 <axioms>
-**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ƒ^ð.
-Falsified by: cyclic self-complementary motif with ƒ^ì or ξ_CP > 10.5 nats.
+**Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ⋈^ð.
+Falsified by: cyclic self-complementary motif with ⋈^ì or ξ_CP > 10.5 nats.
 
 **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ propagates constraint locally; global propagation requires G_ג or above.
 Falsified by: local specific imscription driving global assembly alone.
@@ -492,7 +492,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             topology=Topology.from_symbol(data.get("topology", "𐑰")),
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "𐑩")),
             polarity=Polarity.from_symbol(data.get("polarity", "𐑬")),
-            fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
+            fidelity=Fidelity.from_symbol(data.get("fidelity", "𐑞")),
             kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),
             granularity=Granularity.from_symbol(data.get("granularity", "𐑚")),
             grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ^∧(SELECTIVE)")),

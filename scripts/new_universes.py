@@ -18,12 +18,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 # ── T-constitutions ─────────────────────────────────────────────
 
 _T_HYBRID = {
-    **_T_CANONICAL,    # dynamic: <, ƒ, Ç, Ħ, Ω
+    **_T_CANONICAL,    # dynamic: <, ⋈, Ç, Ħ, Ω
     "⊢": ("𐑦", False),  # dimensionality holographic
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (<,ƒ,Ç,Ħ,Ω) AND geometry (⊢,⊣,>)
+# T-hybrid: time requires BOTH dynamics (<,⋈,Ç,Ħ,Ω) AND geometry (⊢,⊣,>)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (<,ƒ,Ç,Ħ,Ω) AND three primitives "
+                    "five dynamic primitives (<,⋈,Ç,Ħ,Ω) AND three primitives "
                     "(⊢,⊣,>). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
@@ -178,7 +178,7 @@ NEW_RULESETS = [
     # ── 19: fidelity_universe ─────────────────────────────────
     Ruleset(
         name="fidelity_universe",
-        description="Quantum coherence is the fundamental gate. G1=ƒ≥𐑐 (full fidelity, "
+        description="Quantum coherence is the fundamental gate. G1=⋈≥𐑐 (full fidelity, "
                     "hbar regime). Classical (ℓ) and thermal (ð) systems cannot "
                     "Frobenius-close — they lack the coherence required for self-modeling. "
                     "G2=⊙≥⊙. G3=<≥𐑹. In this universe, only quantum-coherent systems "

@@ -152,9 +152,9 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     ("P", "𐑹",  "[[? ts]]",     "/ʔts/ Frobenius glottal + affricate",  None),
 
     # F — Fidelity
-    ("F", "ƒ^ì",  "[[K]]",        "/ɬ/ voiceless lateral fricative",      None),
-    ("F", "ƒ^ð",  "[[D]]",        "/ð/ voiced dental fricative",          None),
-    ("F", "ƒ^ż",  "[[?]]",        "/ʔ/ glottal stop",                     None),
+    ("F", "⋈^ì",  "[[K]]",        "/ɬ/ voiceless lateral fricative",      None),
+    ("F", "⋈^ð",  "[[D]]",        "/ð/ voiced dental fricative",          None),
+    ("F", "⋈^ż",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # K — Kinetics
     # /ɣ/ voiced velar fricative — Spanish voice has [[Q]] = /ɣ/

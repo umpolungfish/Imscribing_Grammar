@@ -268,7 +268,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 14: quantum_only
     universes.append(Ruleset(
         name="quantum_only",
-        description="Quantum fidelity gate. G1=ƒ≥𐑐, G2=⊙≥⊙, G3=Ω≥𐑴.",
+        description="Quantum fidelity gate. G1=⋈≥𐑐, G2=⊙≥⊙, G3=Ω≥𐑴.",
         g1=GateSpec("⋈", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
         gate_ordering=True,
     ))

@@ -846,7 +846,7 @@ def para_tensor_belief(belief_a: FrozenSet[str],
                         prim: str = "<") -> FrozenSet[str]:
     """Paraconsistent tensor on belief sets.
 
-    Bottleneck primitives (<, ƒ): min ordinal (conservative)
+    Bottleneck primitives (<, ⋈): min ordinal (conservative)
     All other primitives: max ordinal (union)
 
     Uses ordinal-aware comparison via _bottleneck_min / _max_v instead of

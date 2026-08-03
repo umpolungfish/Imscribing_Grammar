@@ -63,7 +63,7 @@ IG_CHARS: Dict[str, str] = {
     "P_sym":        "𐑯",     # 𐑗 — full symmetry
     "P_pm_sym":     "𐑹",     # 𐑹 — Frobenius special (μ∘δ=id)
     
-    # ── Fidelity (ƒ) — 3 values ──
+    # ── Fidelity (⋈) — 3 values ──
     "F_ell":        "𐑱",     # 𐑞 — classical / lossy
     "F_eth":        "𐑞",     # 𐑱 — thermal / threshold
     "F_hbar":       "𐑐",     # 𐑐 — quantum / coherent
@@ -191,7 +191,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Trp": "T",         # ⊣ — topology
     "Cys": "R",         # > — reversibility
     "Tyr": "P",         # < — parity
-    "Phe": "F",         # ƒ — force
+    "Phe": "F",         # ⋈ — force
     "Ile": "K",         # Ç — kinetics
     "Asn": "Gamma",     # ɢ — interaction
     "Asp": "H",         # Ħ — chirality
@@ -993,9 +993,9 @@ def demo_pro_absorption() -> None:
 
 
 def demo_poly_phe() -> None:
-    """Demo poly-Phe sequence (all ƒ, no diversity)."""
+    """Demo poly-Phe sequence (all ⋈, no diversity)."""
     print("\n" + "=" * 60)
-    print("DEMO 4: Poly-Phe (all ƒ, minimal diversity)")
+    print("DEMO 4: Poly-Phe (all ⋈, minimal diversity)")
     print("=" * 60)
     
     poly_phe = ["Phe"] * 12

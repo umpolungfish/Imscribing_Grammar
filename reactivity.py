@@ -253,7 +253,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── Ç: max kinetics of components
     C = max(get(tA, '⊤'), get(tB, '⊤'))
 
-    # ── ƒ: universally 0
+    # ── ⋈: universally 0
     f = 0
 
     # ── ɢ: bond coupling type

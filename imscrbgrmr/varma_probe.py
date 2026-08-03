@@ -640,7 +640,7 @@ def score_phi_c_candidacy(
                 (_has_temporal,    "D_∞"),
                 (_has_bowtie,      "𐑥"),
                 (_has_directional, "𐑗"),
-                (_has_high_f,      "ƒ_hardsign"),
+                (_has_high_f,      "𐑐"),
             ] if not cond
         ]
         factors.append({
@@ -693,7 +693,7 @@ def score_phi_c_candidacy(
         _qc_missing = [
             label for cond, label in [
                 (_has_galeph,  "Γ_revapostrophe"),
-                (_has_f_high,  "ƒ_hardsign"),
+                (_has_f_high,  "𐑐"),
                 (_has_k_trap,  "Ç_teshlig"),
                 (_no_temporal, "¬D_∞"),
             ] if not cond

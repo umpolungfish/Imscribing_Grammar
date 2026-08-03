@@ -18,7 +18,7 @@ import re, sys, os
 # ── Canonical table (source_id → LaTeX body, no $ delimiters) ────────────────
 #
 # Rules:
-#   ƒ  Ç  ɢ  use superscript  ^
+#   ⋈  Ç  ɢ  use superscript  ^
 #   all others use subscript  _
 #   non-ASCII subtypes that are NOT standard Greek commands get \text{}
 #   Greek subtypes get their LaTeX command: \omega \beta \gamma \lambda \upsilon
@@ -36,7 +36,7 @@ def PRIM_LATEX_of(value: str) -> str:
 # ── Public API ────────────────────────────────────────────────────────────────
 
 def fmt(raw_id: str) -> str:
-    """Return canonical LaTeX body for a source ID like 'ƒ^ż'. No $ delimiters."""
+    """Return canonical LaTeX body for a source ID like '⋈^ż'. No $ delimiters."""
     if raw_id not in PRIM_LATEX:
         raise KeyError(f"Unknown primitive ID: {raw_id!r}")
     return PRIM_LATEX_of(raw_id)
@@ -170,8 +170,8 @@ def fix_file(path: str) -> None:
     with open(path, 'w', encoding='utf-8') as f:
         f.write(fixed)
     # Report changed primitives
-    orig_set  = set(re.findall(r'[⊢⊣><ƒÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
-    fixed_set = set(re.findall(r'[⊢⊣><ƒÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
+    orig_set  = set(re.findall(r'[⊢⊣><⋈ÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
+    fixed_set = set(re.findall(r'[⊢⊣><⋈ÇΓɢ⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
     print(f"Fixed: {path}")
 
 

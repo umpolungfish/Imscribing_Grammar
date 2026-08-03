@@ -64,13 +64,13 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ɢ}}_{\text{{\igfont Ş}}}', r'{\igfont 𐑵}'),
     (r'\text{{\igprimfont ɢ}}_{\vee}', r'{\igfont 𐑜}'),
     (r'\text{{\igprimfont ɢ}}_{|}', r'{\igfont 𐑠}'),
-    # ƒ (Fidelity)
-    (r'\text{{\igprimfont ƒ}}_{\text{{\igfont ì}}}', r'{\igfont 𐑱}'),
-    (r'\text{{\igprimfont ƒ}}_{\text{{\igfont ð}}}', r'{\igfont 𐑞}'),
-    (r'\text{{\igprimfont ƒ}}_{\text{{\igfont ż}}}', r'{\igfont 𐑐}'),
-    (r'\text{{\igprimfont ƒ}}_{\hbar}', r'{\igfont 𐑱}'),
-    (r'\text{{\igprimfont ƒ}}_{\eth}', r'{\igfont 𐑞}'),
-    (r'\text{{\igprimfont ƒ}}_{0}', r'{\igfont 𐑐}'),
+    # ⋈ (Fidelity)
+    (r'\text{{\igprimfont ⋈}}_{\text{{\igfont ì}}}', r'{\igfont 𐑱}'),
+    (r'\text{{\igprimfont ⋈}}_{\text{{\igfont ð}}}', r'{\igfont 𐑞}'),
+    (r'\text{{\igprimfont ⋈}}_{\text{{\igfont ż}}}', r'{\igfont 𐑐}'),
+    (r'\text{{\igprimfont ⋈}}_{\hbar}', r'{\igfont 𐑱}'),
+    (r'\text{{\igprimfont ⋈}}_{\eth}', r'{\igfont 𐑞}'),
+    (r'\text{{\igprimfont ⋈}}_{0}', r'{\igfont 𐑐}'),
     # Ç (Kinetic character)
     (r'\text{{\igprimfont Ç}}_{-}', r'{\igfont 𐑘}'),
     (r'\text{{\igprimfont Ç}}_{W}', r'{\igfont 𐑤}'),

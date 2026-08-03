@@ -65,7 +65,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_bioelectric_tissue",
-        "description": "Engineered tissue using quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (>=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) protects bodyplan blueprint.",
+        "description": "Engineered tissue using quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (>=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (⋈=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) protects bodyplan blueprint.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

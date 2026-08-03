@@ -413,7 +413,7 @@ QUADS = [
         "label": "Existence",
         "prims": "F × K",
         "size":  "3 × 4 = 12",
-        "vals":  "ƒ: ℓ, ℏ, ħ\nK: fast, mod, slow, trap",
+        "vals":  "⋈: ℓ, ℏ, ħ\nK: fast, mod, slow, trap",
         "role":  "Fidelity × Kinetics\n(how faithfully and how fast)",
         "color": "#225522",
         "x": 0.51, "y": 0.57, "w": 0.46, "h": 0.27,

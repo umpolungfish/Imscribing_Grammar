@@ -120,7 +120,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
     pmdec_err = row.get("pmdec_error", 999)
     if pmra_err < 0.1 and pmdec_err < 0.1:
         score += 1
-        flags.append("ƒ_compliant")
+        flags.append("⋈_compliant")
 
     # T-TOPOLOGY FILTER: correlated proper motions with neighbors
     if neighbors_pmra is not None and len(neighbors_pmra) >= 5:

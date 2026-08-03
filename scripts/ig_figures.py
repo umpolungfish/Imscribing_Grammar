@@ -9,7 +9,7 @@ CLI:
   python3 ig_figures.py belnap [--labels "N:empty,T:spinUp,F:spinDown,B:paired"]
                                 [--highlight B] [--caption "..."] [--out fig.pdf]
 
-  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
+  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ⋈^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
                                  [--title "..."] [--out fig.pdf]
 
   python3 ig_figures.py tier [--highlight O_∞] [--out fig.pdf]
@@ -622,7 +622,7 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Examples:
   python3 ig_figures.py belnap --labels "N:empty,T:spinUp,F:spinDown,B:paired"
-  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ƒ^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
+  python3 ig_figures.py profile --tuple "𐑦 𐑸 𐑾 𐑹 ⋈^ż Ç^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑳 𐑭"
   python3 ig_figures.py tier --highlight O_∞
   python3 ig_figures.py frobenius
 """,

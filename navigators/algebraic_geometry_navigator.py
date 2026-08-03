@@ -402,7 +402,7 @@ _SPEC_DIM = {
     'C':       (0, "field; single point"),
     'R':       (0, "field; single point"),
     'k':       (0, "field; single point"),
-    'ƒ(p)':     (0, "finite field; single point"),
+    '⋈(p)':     (0, "finite field; single point"),
     'Z[x]':   (2, "arithmetic surface; chain (0) ⊂ (p) ⊂ (p,x)"),
     'Z[x,y]': (3, "arithmetic 3-fold"),
     'C[x]':   (1, "affine line over C"),

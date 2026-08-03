@@ -55,11 +55,13 @@ from .models import (
 # Ordinal maps (all aligned with Lean Core.lean)
 # ─────────────────────────────────────────────────────────────────────────────
 
+# Three values, not four. The retired below-threshold value sat under age and was
+# rekeyed onto age itself, leaving a duplicate key whose second binding happened
+# to give the right spacing. Written out so it is right on purpose, not by luck.
 _F_ORD: Dict[Fidelity, int] = {
-    Fidelity.age: 0,
-    Fidelity.age:   1,
-    Fidelity.they:   2,
-    Fidelity.peep:  3,
+    Fidelity.age:  1,
+    Fidelity.they: 2,
+    Fidelity.peep: 3,
 }
 _F_BY_ORD = {v: k for k, v in _F_ORD.items()}
 
@@ -233,7 +235,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
         "𐑗": "𐑗", "𐑬": "𐑿", "𐑬": "𐑿",
         "𐑯": "Φ_subdoublearrow", "𐑬": "𐑬",
     },
-    "F": {"ƒ_noise": "ƒ_beltl"},
+    "F": {"𐑱": "𐑱"},
     "K": {"Ç_lambda": "Ç_teshlig"},
     "Gamma": {"Γ_dissipative": "ɢ_doublevertline", "Γ_impl": "ɢ_corner", "Γ_xor": "ɢ_spleftarrow"},
     "Phi": {"⊙_upstep": "⊙_upstep"},

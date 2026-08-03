@@ -227,7 +227,7 @@ RULESETS: List[Ruleset] = [
         name="canonical",
         description="Our dialect: Frobenius then self-modeling then winding seal. "
                     "G1=<≥𐑹, G2=⊙≥⊙, G3=Ω≥𐑭. Sequential gate ordering. "
-                    "T=lim(<,ƒ,Ç,Ħ,Ω).",
+                    "T=lim(<,⋈,Ç,Ħ,Ω).",
     ),
 
     Ruleset(
@@ -242,11 +242,11 @@ RULESETS: List[Ruleset] = [
 
     Ruleset(
         name="strict_frobenius",
-        description="Frobenius gate requires full fidelity (ƒ=𐑐) instead of parity (<=𐑹). "
+        description="Frobenius gate requires full fidelity (⋈=𐑐) instead of parity (<=𐑹). "
                     "Self-reference is gated by quantum coherence, not algebraic symmetry. "
                     "Parity graduates to G2; Ω stays at G3. "
                     "Most QM experiments have full fidelity — 12/17 entries become Frobenius.",
-        g1=GateSpec("⋈", 3.0),   # ƒ=𐑐 (ord 3, max fidelity)
+        g1=GateSpec("⋈", 3.0),   # ⋈=𐑐 (ord 3, max fidelity)
         g2=GateSpec("<", 5.0),   # <=𐑹 (ord 5)
         g3=GateSpec("◻", 3.0),   # Ω=𐑭 (ord 3)
     ),
@@ -292,7 +292,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="t_structural",
         description="Time constituted by structural/geometric primitives: "
-                    "T=lim(⊢,⊣,>,ɢ,⊙) instead of the dynamic T=lim(<,ƒ,Ç,Ħ,Ω). "
+                    "T=lim(⊢,⊣,>,ɢ,⊙) instead of the dynamic T=lim(<,⋈,Ç,Ħ,Ω). "
                     "In this dialect time is geometry, not process. "
                     "Gate structure unchanged (canonical).",
         t_prims=dict(_T_STRUCTURAL),

@@ -73,9 +73,9 @@ class SymbolicExpression:
     Represents a symbolic expression in the Imscriptiveon algebra.
     
     Examples:
-        - Primitive assertion: Primitive("F", "ƒ_hardsign")
+        - Primitive assertion: Primitive("F", "𐑐")
         - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "𐑬"))
-        - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "ƒ_dh"))
+        - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "𐑞"))
     """
     operator: SymbolicOperator
     operands: List[Any]
@@ -441,8 +441,8 @@ class AxiomTheoremProver:
                     SymbolicExpression.primitive("P", "<_doublebarpipe"),
                 ),
                 SymbolicExpression.Or(
-                    SymbolicExpression.primitive("F", "ƒ_hardsign"),
-                    SymbolicExpression.primitive("F", "ƒ_dh"),
+                    SymbolicExpression.primitive("F", "𐑐"),
+                    SymbolicExpression.primitive("F", "𐑞"),
                 ),
             ),
             "axiom2": SymbolicExpression.Not(
@@ -900,12 +900,12 @@ class PredictiveRuleGenerator:
         # Symmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
             And(P("T", "𐑥"), P("P", "<_doublebarpipe")),
-            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
+            Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
         # Pseudosymmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
             And(P("T", "𐑥"), P("P", "𐑬")),
-            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
+            Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
 
         # ── Axiom 4 (Γ_→ requires D_∞ or R_‡) ────────────────────────────────
@@ -927,7 +927,7 @@ class PredictiveRuleGenerator:
 
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
-            And(P("F", "ƒ_hardsign"), P("K", "Ç_frtailgamma")),
+            And(P("F", "𐑐"), P("K", "Ç_frtailgamma")),
             P("<", "⊙_softsign"),
         ))
 
@@ -935,12 +935,12 @@ class PredictiveRuleGenerator:
         # Covalent recognition → high fidelity (bond-energy argument)
         candidates.append((
             P("R", "𐑩"),
-            P("F", "ƒ_hardsign"),
+            P("F", "𐑐"),
         ))
         # Dynamic covalent → F_hardsign or F_dh (imine, disulfide: reversible but reliable)
         candidates.append((
             P("R", "𐑾"),
-            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
+            Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
 
         # ── R_⇔ → T_⋈ (mechanical bond requires cyclic wheel topology) ─────────
@@ -971,7 +971,7 @@ class PredictiveRuleGenerator:
         # Global propagation requires at least medium fidelity
         candidates.append((
             P("G", "Γ_revapostrophe"),
-            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
+            Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
 
         # ── Temporal dimension → kinetic accessibility ──────────────────────────
@@ -1008,7 +1008,7 @@ class PredictiveRuleGenerator:
         # T_□□ with non-covalent recognition → F ≥ F_dh
         candidates.append((
             And(P("T", "𐑶"), P("R", "𐑩")),
-            Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
+            Or(P("F", "𐑐"), P("F", "𐑞")),
         ))
         # T_□□ → K_turnm or K_schwa (enclosed cage always has exchange barrier)
         candidates.append((

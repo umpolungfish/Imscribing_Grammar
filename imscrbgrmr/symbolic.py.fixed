@@ -73,9 +73,9 @@ class SymbolicExpression:
     Represents a symbolic expression in the Imscriptiveon algebra.
     
     Examples:
-        - Primitive assertion: Primitive("F", "ƒ_hardsign")
+        - Primitive assertion: Primitive("F", "𐑐")
         - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "𐑬"))
-        - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "ƒ_dh"))
+        - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "𐑞"))
     """
     operator: SymbolicOperator
     operands: List[Any]

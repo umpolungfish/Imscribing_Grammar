@@ -4,7 +4,7 @@ migrate_models_shavian.py — migrate models.py enum values from Symbol_symbol t
 
 Per shavian_notation_spec.md OLD_TO_SHAVIAN table.
 Only canonical values with Shavian mappings are replaced.
-Non-canonical extensions (𐑰, Ω_C, ƒ_noise, Γ_xor, etc.) are left unchanged.
+Non-canonical extensions (𐑰, Ω_C, 𐑱, Γ_xor, etc.) are left unchanged.
 """
 import re
 import sys
@@ -15,7 +15,7 @@ OLD_TO_SHAVIAN = {
     "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
     "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
-    "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
+    "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
     "Ç^-": "𐑘", "Ç^W": "𐑤", "Ç^@": "𐑧", "Ç^Ù": "𐑪", "Ç^λ": "𐑺",
     "𐑚": "𐑚", "𐑔": "𐑔", "𐑲": "𐑲",
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",

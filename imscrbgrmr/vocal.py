@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+Primitive order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω
 """
 
 import wave
@@ -125,17 +125,17 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     ),
 
     # ⋈ — Fidelity
-    "ƒ^ì": (
+    "⋈^ì": (
         "/ɬ/",
         "Welsh 'll' in 'Llanfair'",
         "Voiceless lateral fricative. Tongue tip touches the ridge behind the upper teeth (as for 'l'), but instead of voicing, air is forced over both sides of the tongue with friction — the 'll' in Welsh place names.",
     ),
-    "ƒ^ð": (
+    "⋈^ð": (
         "/ð/",
         "like 'th' in 'this'",
         "Voiced dental fricative. Tongue tip between or just behind the upper teeth, voice on — 'th' in 'this', 'the', 'there'. Contrast with voiceless /θ/ in 'think'.",
     ),
-    "ƒ^ż": (
+    "⋈^ż": (
         "/ʔ/",
         "glottal stop — 'uh-oh' catch",
         "Glottal stop. The vocal folds close completely, briefly halting all airflow, then release. The pause between the two syllables of 'uh-oh', or the Cockney replacement for 't' in 'bu'er' (butter).",
@@ -182,7 +182,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     "𐑲": (
         "/ʔ/",
         "glottal stop — 'uh-oh' catch",
-        "Glottal stop. Same as ƒ^ż — complete closure of the vocal folds, a hard catch, then release. The IPA symbol ʔ is derived from the reversed apostrophe, and aleph (א) in Semitic alphabets represents this sound.",
+        "Glottal stop. Same as ⋈^ż — complete closure of the vocal folds, a hard catch, then release. The IPA symbol ʔ is derived from the reversed apostrophe, and aleph (א) in Semitic alphabets represents this sound.",
     ),
 
     # ∋ — Interaction grammar

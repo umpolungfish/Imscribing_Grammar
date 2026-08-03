@@ -35,9 +35,9 @@ Truth! Certainty! That in which there is no doubt! That which is above is from t
 Another Arabic version adds: The structure of the microcosm is in accordance with the structure of the macrocosm. The force of forces overcomes every subtle thing and penetrates into everything gross. The light of lights within it makes the darkness flee before it.
 
 This text encodes the entire alchemical Great Work in twelve cryptic axioms — the birth of the Philosopher's Stone from the union of Sun and Moon, the circulation of the elements, and the correspondence between celestial and terrestrial planes. Its rediscovery by Balinas (Apollonius of Tyana) in a hidden chamber beneath a statue of Hermes established the paradigm of the concealed wisdom tradition.""",
-        "𐑼","𐑥","𐑽","𐑿","ƒ^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
+        "𐑼","𐑥","𐑽","𐑿","⋈^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
         "O₂", 0.65,
-        "Classic ritual magic text. 𐑼 bounded ritual/spiritual space; 𐑥 crossing point between mundane and divine; 𐑽 adjoint invocation-response; 𐑿 quantum superposition of summoned/dismissed spirits; ƒ^ì classical fidelity through physical ritual; Ç^@ slow kinetics requiring precise timing; 𐑚 localized to magician's circle; ɢ^Ş broadcast addressing spiritual hierarchies; 𐑮 complex-plane critical at boundary of seen/unseen; 𐑖 two-step Markov (preparation then execution); 𐑳 many heterogeneous participants; 𐑴 Z2 parity (circle consecrated or not)."),
+        "Classic ritual magic text. 𐑼 bounded ritual/spiritual space; 𐑥 crossing point between mundane and divine; 𐑽 adjoint invocation-response; 𐑿 quantum superposition of summoned/dismissed spirits; ⋈^ì classical fidelity through physical ritual; Ç^@ slow kinetics requiring precise timing; 𐑚 localized to magician's circle; ɢ^Ş broadcast addressing spiritual hierarchies; 𐑮 complex-plane critical at boundary of seen/unseen; 𐑖 two-step Markov (preparation then execution); 𐑳 many heterogeneous participants; 𐑴 Z2 parity (circle consecrated or not)."),
 
     entry(2, "The Book of the Sacred Magic of Abramelin the Mage",
         "A 15th-century grimoire translated by S.L. MacGregor Mathers. Massive influence on Aleister Crowley and the Hermetic Order of the Golden Dawn.",
@@ -48,7 +48,7 @@ The system involves many months of purification — a six-moon regimen of prayer
 The key to the entire system is a set of remarkable magic squares — sigils consisting of mystical words readable in multiple directions. These word-squares encode the names of spirits and angels, and are said to have no potency unless used in the appropriate ritual context by an initiate who has completed the preparatory regimen. Mathers analyzed these squares extensively, giving possible derivations from Hebrew, Greek, and other languages.
 
 The text is divided into three books: Book One describes Abraham's journey and his meeting with Abramelin; Book Two details the six-month operation and the preparation of the ritual space, including the selection of the place, the convocation of spirits, and how to resist their demands; Book Three contains the magical squares themselves. This work became a primary source for the ceremonial magic of the Golden Dawn and directly inspired Aleister Crowley's own magical system.""",
-        "𐑼","𐑥","𐑽","𐑿","ƒ^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
+        "𐑼","𐑥","𐑽","𐑿","⋈^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
         "O₂", 0.65,
         "Tuple identical to all ritual grimoires: the adjoint invocation-response loop (𐑽) and Z2 circle-consecration symmetry (𐑴) are invariant across the genre."),
 
@@ -61,7 +61,7 @@ The work is divided into two books. Book I opens with the spiritual prerequisite
 Book II is the technical manual of the Art: how the Master must govern himself; the fasting and observances; the baths and their arrangement; the garments, shoes, and vestments; the choice of place for operations; the instruments — knife, sword, sickle, poniard, lance, wand, staff; the formation of the Circle — the most crucial protective structure; the incenses, suffumigations, and perfumes; the water, hyssop, light, and fire; the pen, ink, and colours; virgin parchment; wax and virgin earth; the silken cloth; the consecration of the Magical Book; and the sacrifices to spirits.
 
 The Key establishes the complete operative framework of Western magic: purification, consecration, invocation, and dismissal — all bounded by the Circle, armed with the Pentacles, and governed by the planetary hours. Its influence pervades every subsequent grimoire and magical order, from the Renaissance to the Golden Dawn and beyond.""",
-        "𐑼","𐑥","𐑽","𐑿","ƒ^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
+        "𐑼","𐑥","𐑽","𐑿","⋈^ì","Ç^@","𐑚","ɢ^Ş","𐑮","𐑖","𐑳","𐑴",
         "O₂", 0.65,
         "The ur-text of ceremonial magic. Mathers' translation from multiple manuscript sources (Additional MSS 10862, Lansdowne MSS 1203) established the standard edition."),
 ]

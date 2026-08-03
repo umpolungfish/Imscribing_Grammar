@@ -98,9 +98,9 @@ _W_der    = "𐑭"   # derived / complex zeta
 _W_prim   = "𐑟"   # minimal / primitive
 
 # ⋈ — Fidelity
-_F_exact  = "ƒ^ż"   # glottal = exact
-_F_approx = "ƒ^ì"   # lateral = approximate
-_F_voiced = "ƒ^ð"   # voiced dental = active
+_F_exact  = "⋈^ż"   # glottal = exact
+_F_approx = "⋈^ì"   # lateral = approximate
+_F_voiced = "⋈^ð"   # voiced dental = active
 
 # ⊤ — Kinetics
 _K_fast   = "Ç^-"   # fast spread

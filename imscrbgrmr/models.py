@@ -385,7 +385,7 @@ class Fidelity(Enum):
 
     @property
     def numeric_value(self) -> float:
-        return {"ƒ_noise": 0.0, "𐑱": 0.33, "𐑞": 0.67, "𐑐": 1.0}[self.value]
+        return {"𐑱": 0.0, "𐑱": 0.33, "𐑞": 0.67, "𐑐": 1.0}[self.value]
 
 
 # =============================================================================
@@ -876,7 +876,7 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
+        """Canonical tuple string: ⟨⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
 
         Ħ (chirality) is slot 10 and Ω (protection) is slot 12. Emitting protection at
         10 and chirality at 12 transposes them: the VALUES stay correct but land in each

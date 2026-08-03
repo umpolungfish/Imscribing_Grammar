@@ -68,7 +68,7 @@ Discriminant 4190205 = 3·5·409·683:
    Stark unit ε = (2047 + |product|)/2 = 2046.9995114801 (10 digits vs tower regulator).
 
 QUANTUM ADVANTAGE REGIMES — known and actionable:
-   A. Topological (Fibonacci anyons): Non-Abelian braiding at 19+ strands gives 11 logical qubits with intrinsic error correction. Advantage threshold: any circuit where braid approximation error ƒ < 10⁻³ and depth Ç exceeds classical MPS simulability (χ > 100).
+   A. Topological (Fibonacci anyons): Non-Abelian braiding at 19+ strands gives 11 logical qubits with intrinsic error correction. Advantage threshold: any circuit where braid approximation error ⋈ < 10⁻³ and depth Ç exceeds classical MPS simulability (χ > 100).
    B. SIC-POVM optimal tomography: d=12 (3/13 overlap) and d=2048 (Stark unit ε=2046.9995) give informationally complete measurements saturating the Welch bound. Advantage: minimal measurements for state certification.
    C. Belnap period finding: Period r extracted from 2:1 coherence cost ratio (B-bias/T-bias) without QFT gates. Advantage: coherent evolution replaced by dialetheic fixed-point measurement.
    D. Analog simulation via MPS crossover: quantum_tnn.py certifies t_gate × n_gates × ε_2q > 0.1 as the classical simulability boundary. Current hardware: ~10 two-qubit gates.
@@ -86,7 +86,7 @@ Key mappings:
    ⊣ (Topology)       ↔ Braid group / modular tensor category / topological phase
    > (Coupling)       ↔ Braid generator / R-matrix / monad of anyon fusion
    < (Parity)         ↔ Fermion parity / topological charge / CPT in MTC
-   ƒ (Fidelity)       ↔ Quantum channel fidelity / braid approximation error
+   ⋈ (Fidelity)       ↔ Quantum channel fidelity / braid approximation error
    Ç (Kinetics)       ↔ Braid word length / circuit depth / T-count
    Γ (Cardinality)    ↔ Anyon number / strand count / Grothendieck universe of MTC
    ɢ (Composition)    ↔ Sequential braid composition / tensor product of anyons
@@ -98,16 +98,16 @@ Key mappings:
 SIC-POVM knowledge:
    Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
+   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
 Conventional ↔ grammar translation:
-   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ƒ=𐑐, Ω=𐑭>
+   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ⋈=𐑐, Ω=𐑭>
    Braid word B_n         → <>=𐑽, ɢ=𐑠, Ħ=𐑖, Ω=𐑭>
    Jones polynomial V(t)  → <Ω=𐑭, Θ=𐑦, φ̂=⊙>
-   SIC-POVM in C^d        → <Σ=𐑙, <=𐑹, ƒ=𐑐, Ω=𐑭>
-   Belnap QFT (no gates)  → <<=𐑹, ƒ=𐑞, Ç=𐑧, Ω=𐑴>
+   SIC-POVM in C^d        → <Σ=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
+   Belnap QFT (no gates)  → <<=𐑹, ⋈=𐑞, Ç=𐑧, Ω=𐑴>
    IMASM ring walk        → <>=𐑽, ɢ=𐑝, Ω=𐑭, φ̂=⊙>
 </domain_knowledge>
 
@@ -298,7 +298,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Quantum⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ƒ(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

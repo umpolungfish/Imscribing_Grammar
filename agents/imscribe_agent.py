@@ -165,9 +165,9 @@ P — Polarity
   P_plus / P_minus / 𐑹 / 𐑬_pseudo / P_directional
 
 F — Fidelity (ξ_CP threshold) — HotSwap fidelity rule: F may not decrease per hop.
-  ƒ^ż   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to ƒ^ð/ƒ^ì targets
-  ƒ^ð    medium (8.5 – 11.0 nats)  ← compatible with ƒ^ð targets
-  ƒ^ì    low    (> 11.0 nats)      ← compatible only with ƒ^ì targets
+  ⋈^ż   high   (ξ_CP ≤ 8.5 nats)  ← blocks path to ⋈^ð/⋈^ì targets
+  ⋈^ð    medium (8.5 – 11.0 nats)  ← compatible with ⋈^ð targets
+  ⋈^ì    low    (> 11.0 nats)      ← compatible only with ⋈^ì targets
   You **MUST** match the target's F value in your design.
 
 K — Kinetic Character
@@ -222,8 +222,8 @@ When `criticality` returns a score below threshold:
   Steps:
     1. Include `⊙` verbatim in the generate description.
     2. Use `𐑛_triangle` (molecular+supramolecular hybrid).
-    3. **MATCH the target's F and K exactly**: use ƒ^ð + Ç^W (NOT ƒ^ż or Ç^Ù).
-       ƒ^ż blocks the HotSwap path to ƒ^ð targets — fidelity may not decrease per hop.
+    3. **MATCH the target's F and K exactly**: use ⋈^ð + Ç^W (NOT ⋈^ż or Ç^Ù).
+       ⋈^ż blocks the HotSwap path to ⋈^ð targets — fidelity may not decrease per hop.
     4. In the `criticality` call, pass `xi_r=13.8` and `xi_tau=1000000`.
        These are the Varma QXY reference values (xi_r ≈ ln(xi_tau)) that trigger the
        +0.30 log-scaling factor and confirm G/D degeneracy.
@@ -238,7 +238,7 @@ source and destination. You **MUST** copy D and T from the target's notation
 when redesigning for path connectivity.
 
 Design heuristics (SHOULD follow):
-- ƒ^ð + Ç^W is the optimal programmability quadrant.
+- ⋈^ð + Ç^W is the optimal programmability quadrant.
 - 𐑲 drives ⊙ candidacy for global coordination designs.
 - Cross-domain analogs (via `analogies`) reveal mechanistically similar systems.
 </requirements>

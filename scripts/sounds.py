@@ -48,7 +48,7 @@ def normalize(signal, peak=0.8):
 #   ⊣  Topology        — interval structure  (dissonance/consonance = topology)
 #   >  Relational      — directional sweeps  (directionality of pitch)
 #   <  Parity          — waveform symmetry   (symmetry of the waveform itself)
-#   ƒ  Fidelity        — signal clarity      (noise floor vs clean tone)
+#   ⋈  Fidelity        — signal clarity      (noise floor vs clean tone)
 #   Ç  Kinetics        — temporal envelope   (attack/decay shape = speed)
 #   Γ  Scope           — bandwidth           (narrow → full spectrum)
 #   ɢ  Grammar         — temporal structure  (how events compose in time)
@@ -191,7 +191,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * env
 
     # =========================================================================
-    # ƒ — Fidelity
+    # ⋈ — Fidelity
     # Signal clarity versus noise floor:
     # muddy (low-pass noise dominant) → voiced (partial) → pure (no noise)
     # =========================================================================
@@ -469,14 +469,14 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
     ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
     ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # > Relational
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # < Polarity
-    ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ƒ Fidelity
+    ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ⋈ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # Ç Kinetics
     ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # Γ Scope
     ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ɢ Grammar
@@ -502,8 +502,8 @@ PRIMITIVE_MAP = {
     # < Polarity
     '𐑗': ('<', 'ɐ'),   '𐑿': ('<', 'υ'),   '𐑬': ('<', 'F'),
     '𐑯': ('<', '̇'),   '𐑹': ('<', '}'),
-    # ƒ Fidelity
-    'ƒ^ì': ('⋈', 'ì'),   'ƒ^ð': ('⋈', 'ð'),   'ƒ^ż': ('⋈', 'ż'),
+    # ⋈ Fidelity
+    '⋈^ì': ('⋈', 'ì'),   '⋈^ð': ('⋈', 'ð'),   '⋈^ż': ('⋈', 'ż'),
     # Ç Kinetics
     'Ç^-': ('⊤', '-'),   'Ç^W': ('⊤', 'W'),   'Ç^@': ('⊤', '@'),
     'Ç^Ù': ('⊤', 'Ù'),   'Ç^λ': ('⊤', 'λ'),
@@ -532,7 +532,7 @@ OLD_ID_MAP = {
     'R_super': '𐑩',    'R_cat': '𐑑',          'R_dagger': '𐑽',   'R_lr': '𐑾',
     'P_asym': '𐑗',     'P_psi': '𐑿',          'P_pm': '𐑬',
     'P_sym': '𐑯',      'P_pm_sym': '𐑹',
-    'F_ell': 'ƒ^ì',      'F_eth': 'ƒ^ð',          'F_hbar': 'ƒ^ż',
+    'F_ell': '⋈^ì',      'F_eth': '⋈^ð',          'F_hbar': '⋈^ż',
     'K_fast': 'Ç^-',     'K_mod': 'Ç^W',          'K_slow': 'Ç^@',
     'K_trap': 'Ç^Ù',     'K_MBL': 'Ç^λ',
     'G_beth': '𐑚',     'G_gimel': '𐑔',        'G_aleph': '𐑲',

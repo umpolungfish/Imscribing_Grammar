@@ -47,7 +47,7 @@ class Intervention:
     primitive: str          # "⋈", "∈", "⊣", …
     primitive_name: str     # human-readable
     current_value: str
-    suggested_change: str   # e.g. "upgrade ƒ^ð → ƒ^ż"
+    suggested_change: str   # e.g. "upgrade ⋈^ð → ⋈^ż"
     expected_delta_xi: float   # nats (negative = improvement)
     strategy: str           # chemical strategy text from LLM
     feasibility: str        # "HIGH" / "MEDIUM" / "LOW"
@@ -343,7 +343,7 @@ Return ONLY a JSON object:
       "primitive": "⋈",
       "primitive_name": "Fidelity",
       "current_value": "MEDIUM",
-      "suggested_change": "upgrade ƒ^ð → ƒ^ż via electron-withdrawing substituents",
+      "suggested_change": "upgrade ⋈^ð → ⋈^ż via electron-withdrawing substituents",
       "expected_delta_xi_nats": -1.2,
       "strategy": "<specific chemical modification>",
       "feasibility": "HIGH",

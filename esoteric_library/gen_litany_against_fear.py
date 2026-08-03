@@ -10,13 +10,13 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PHI = '⊙'
 
 # ---------------------------------------------------------------------------
-# Available glyph IDs — field order: ⊢ ⊣ > < ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #
 #   ⊢  Dimensionality : 𐑛  𐑨  𐑼  𐑦
 #   ⊣  Topology       : 𐑡  𐑰  𐑥  𐑶  𐑸
 #   >  Relational     : 𐑩  𐑑  𐑽  𐑾
 #   <  Polarity       : 𐑗  𐑿  𐑬  𐑯  𐑹
-#   ƒ  Fidelity       : ƒ^ì  ƒ^ð  ƒ^ż
+#   ⋈  Fidelity       : ⋈^ì  ⋈^ð  ⋈^ż
 #   Ç  Kinetics       : Ç^-  Ç^W  Ç^@  Ç^Ù  Ç^λ
 #   Γ  Scope          : 𐑚  𐑔  𐑲
 #   ɢ  Grammar        : ɢ^∧  ɢ^˝  ɢ^ˌ  ɢ^Ş
@@ -59,7 +59,7 @@ chapters = [
     entry(1, "Section title",
         "One-line description of the claim",
         "Verbatim source text for this section.",
-        "𐑦","𐑸","𐑽","𐑹","ƒ^ì","Ç^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
+        "𐑦","𐑸","𐑽","𐑹","⋈^ì","Ç^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
 

@@ -985,7 +985,7 @@ def register_imscription(
         ...     topology="𐑥",
         ...     recognition_mode="𐑩",
         ...     polarity="𐑬",
-        ...     fidelity="ƒ_hardsign",
+        ...     fidelity="𐑐",
         ...     granularity="Γ_beta",
         ...     interaction_grammar="Gamma_and(SELECTIVE)",
         ...     kinetic_character="Ç_frtailgamma",

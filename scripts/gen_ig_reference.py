@@ -528,7 +528,7 @@ def page4() -> str:
     designs = {
         "THERAPEUTICS": [
             ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > <"),
-            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ƒ Ħ"),
+            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ⋈ Ħ"),
             ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "Ω Γ Σ"),
         ],
         "MATERIALS": [
@@ -607,7 +607,7 @@ def page4() -> str:
         f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\\\",
         f"  Coagulatio & Ç (Kinetics, fixation) & Projectio & ɢ (Coupling, projection) \\\\",
-        f"  Sublimatio & ƒ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\\\",
+        f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\\\",
         f"  \\end{{tabular}}",
         f"  }}",
         f"  {B}end{{sectionbox}}",

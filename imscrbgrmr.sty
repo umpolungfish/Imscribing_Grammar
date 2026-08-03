@@ -8,7 +8,7 @@
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -112,10 +112,11 @@
 \newcommand{\Psym}{\shav{𐑯}}    % nun    — full continuous symmetry
 \newcommand{\Pfrob}{\shav{𐑹}}   % or'    — Special Frobenius, μ∘δ=id
 
-% ƒ — Fidelity
-\newcommand{\Fell}{\prim{ƒ}{ì}}
-\newcommand{\Feth}{\prim{ƒ}{ð}}
-\newcommand{\Fhbar}{\prim{ƒ}{ż}}
+% ⋈ — Fidelity.  Core.lean ctor order: age, they, peep.
+\newcommand{\Ffid}{\axis{⋈}}
+\newcommand{\Fell}{\shav{𐑱}}    % age  — classical search fidelity (ℓ)
+\newcommand{\Feth}{\shav{𐑞}}    % they — HotSwap threshold (η)
+\newcommand{\Fhbar}{\shav{𐑐}}   % peep — quantum / high fidelity (ℏ)
 
 % Ç — Kinetics
 \newcommand{\Kfast}{\prim{Ç}{-}}

@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, <, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -85,7 +85,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_biologic",
-        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (>=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (<=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
+        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (>=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (<=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (⋈=𐑐) manipulation of methylation and histone patterns.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑩','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -100,7 +100,7 @@ DESIGNS = [
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (⊢=𐑦) — the topological order writes its own ground state. Quantum coherent (ƒ=𐑐) at room temperature via eternal chirality protection.",
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (⊢=𐑦) — the topological order writes its own ground state. Quantum coherent (⋈=𐑐) at room temperature via eternal chirality protection.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑟'])}
     },
     {
@@ -120,7 +120,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_bioelectric_tissue",
-        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (>=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (ƒ=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) ensures the bodyplan blueprint is never lost during regeneration.",
+        "description": "Engineered tissue that uses quantum-coherent bioelectric fields to guide regeneration. Bidirectional feedback (>=𐑾) — electric field and tissue state mutually determine each other. Quantum coherent ion channels (⋈=𐑐) maintain coherence at tissue scale. Eternal chirality (Ħ=𐑫) ensures the bodyplan blueprint is never lost during regeneration.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

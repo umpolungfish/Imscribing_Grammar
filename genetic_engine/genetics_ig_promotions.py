@@ -111,7 +111,7 @@ print("=" * 60)
 stop_codons = [c for c, aa in GENETIC_CODE.items() if aa == "Stop"]
 print(f"Stop codons: {stop_codons}  (count: {len(stop_codons)})")
 print()
-print("3-valued IG primitives: ƒ, Γ, Σ  (cardinality = 3)")
+print("3-valued IG primitives: ⋈, Γ, Σ  (cardinality = 3)")
 print()
 print("Ω (winding/closure, primitive 12) is 4-valued.")
 print("But the STOP signal fires once per protein = termination of Ω-winding.")
@@ -151,7 +151,7 @@ print()
 # Map each promoted AA to an IG primitive it uniquely activates
 # Based on the specific chemical novelty each AA introduces
 promotions = {
-    "Phe": ("⋈",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ƒ field ceiling"),
+    "Phe": ("⋈",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ⋈ field ceiling"),
     "Tyr": ("<",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
     "Cys": (">",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
     "Trp": ("⊣",  "Maximal topology: bicyclic indole = highest structural complexity; defines ⊣ ceiling"),

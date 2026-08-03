@@ -11,7 +11,7 @@ Usage:
     python generate_grammaformer_data.py --agent-tuple "VAL1 VAL2 ... VAL12"
 
 The agent tuple is 12 Shavian+odot values in canonical primitive order:
-    ⊢  ⊣  >  <  ƒ  Ç  Γ  ɢ  ⊙  Ħ  Σ  Ω
+    ⊢  ⊣  >  <  ⋈  Ç  Γ  ɢ  ⊙  Ħ  Σ  Ω
 """
 
 import json
@@ -475,7 +475,7 @@ def sc_load_bearing(sys, catalog, entry):
 
 
 # ── New entities to imscribe (not in catalog) ─────────────────────────────────
-# Format: (name, description, [12 values in PRIMS order: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω])
+# Format: (name, description, [12 values in PRIMS order: ⊢ ⊣ > < ⋈ Ç Γ ɢ ⊙ Ħ Σ Ω])
 
 NEW_ENTITIES = [
     ("turbulent_fluid",

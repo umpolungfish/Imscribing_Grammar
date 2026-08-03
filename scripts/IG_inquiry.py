@@ -122,7 +122,7 @@ _DISPLAY_MAP: List[tuple] = [
     ("𐑸", "𐑸"), ("𐑡", "𐑡"), ("𐑰", "𐑰"), ("𐑥", "𐑥"), ("𐑶", "𐑶"),
     ("𐑾", "𐑾"), ("𐑩", "𐑩"), ("𐑑", "𐑑"), ("𐑽", "𐑽"),
     ("𐑹", "𐑹"), ("𐑗", "𐑗"), ("𐑿", "𐑿"), ("𐑬", "𐑬"), ("𐑯", "𐑯"),
-    ("ƒ^ż", "𐑐"), ("ƒ^ì", "𐑱"), ("ƒ^ð", "𐑞"),
+    ("⋈^ż", "𐑐"), ("⋈^ì", "𐑱"), ("⋈^ð", "𐑞"),
     ("Ç^λ", "𐑘"), ("Ç^Ù", "𐑤"), ("Ç^@", "𐑧"), ("Ç^W", "𐑪"), ("Ç^-", "𐑺"),
     ("𐑲", "𐑔"), ("𐑔", "𐑚"), ("𐑚", "𐑲"),
     ("ɢ^∧", "𐑝"), ("ɢ^˝", "𐑜"), ("ɢ^ˌ", "𐑠"), ("ɢ^Ş", "𐑵"),
@@ -458,9 +458,9 @@ P  — Parity / symmetry
     𐑹      exact Z₂ at a critical point — the Frobenius special condition (μ∘δ=id); use when the plus-minus symmetry is provably exact at ⊙, not merely approximate
 
 F  — Fidelity / information per interaction
-    ƒ^ì         low  — probabilistic, unreliable, promiscuous (classical, dissipative)
-    ƒ^ð         medium — context-dependent, reliable under right conditions
-    ƒ^ż        high — geometry-enforcing, fires with near-certainty on its target
+    ⋈^ì         low  — probabilistic, unreliable, promiscuous (classical, dissipative)
+    ⋈^ð         medium — context-dependent, reliable under right conditions
+    ⋈^ż        high — geometry-enforcing, fires with near-certainty on its target
 
 K  — Kinetic character / barrier to rearrangement
     Ç^-        low barrier — explores configuration space freely; reversible on timescale of interest
@@ -591,7 +591,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
     "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
-    "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
+    "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
     "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
@@ -638,7 +638,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
     "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶", "𐑸": "𐑸",
     "𐑩": "𐑩", "𐑑": "𐑑", "𐑽": "𐑽", "𐑾": "𐑾",
     "𐑗": "𐑗", "𐑿": "𐑿", "𐑬": "𐑬", "𐑯": "𐑯", "𐑹": "𐑹",
-    "ƒ^ì": "𐑱", "ƒ^ð": "𐑞", "ƒ^ż": "𐑐",
+    "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
     "Ç^-": "𐑺", "Ç^W": "𐑪", "Ç^@": "𐑧", "Ç^Ù": "𐑤", "Ç^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
     "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
@@ -755,9 +755,9 @@ _TOOLS_OPENAI = [
                 "PREFERRED: use the 'tuple' parameter — a semicolon-separated string of the 12 "
                 "canonical values in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega. "
                 "Example: encode_system(name='foo', description='...', "
-                "tuple='𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
+                "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
-                "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
+                "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', Ç='Ç^W', "
                 "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
@@ -770,7 +770,7 @@ _TOOLS_OPENAI = [
                 "⊣: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
                 ">: 𐑩 𐑑 𐑽 𐑾 | "
                 "<: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
-                "ƒ: ƒ^ì ƒ^ð ƒ^ż | "
+                "⋈: ⋈^ì ⋈^ð ⋈^ż | "
                 "Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ | "
                 "Γ: 𐑚 𐑔 𐑲 | "
                 "ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş | "
@@ -784,7 +784,7 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "name": {"type": "string", "description": "Short unique identifier for this system"},
                     "description": {"type": "string", "description": "One-sentence description of what is being encoded"},
-                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
+                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;⋈^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
                     "convergence_justification": {
                         "type": "string",
                         "description": (
@@ -1130,7 +1130,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Peel one primitive to its minimum value and return the residual system. "
                 "Use to isolate what a system looks like with one structural requirement removed. "
-                "Peeling F to ƒ^ì asks: what if fidelity were minimal? "
+                "Peeling F to ⋈^ì asks: what if fidelity were minimal? "
                 "Peeling Phi to 𐑢 asks: what if criticality were removed?"
             ),
             "parameters": {
@@ -1662,7 +1662,7 @@ _TOOLS_OPENAI = [
                 "No model required. Use this to see the set-theoretic expression for any "
                 "system, identify which primitives have partial ZFC approximations "
                 "(𐑦, 𐑸 → partial info loss), and read the decoherence notes "
-                "(ƒ^ż and ƒ^ì both map to CLASSIC — total fidelity information loss). "
+                "(⋈^ż and ⋈^ì both map to CLASSIC — total fidelity information loss). "
                 "Returns per-primitive ZFC fragments, the full assembled token sequence, "
                 "and collapse annotations."
             ),
@@ -1684,8 +1684,8 @@ _TOOLS_OPENAI = [
                 "Encodes the tuple as a ZFC formula, feeds it to the trained ZFC encoder, "
                 "and measures whether the encoder recovers the original 12 primitives. "
                 "Returns: input tuple, predicted tuple, per-primitive loss, roundtrip distance, "
-                "and collapse events (ƒ^ż→ƒ^ì total loss; 𐑸→𐑰 partial; "
-                "𐑦→𐑼 partial; ɢ^ˌ→ɢ^∧ partial; ƒ^ì→ƒ^ż hallucination). "
+                "and collapse events (⋈^ż→⋈^ì total loss; 𐑸→𐑰 partial; "
+                "𐑦→𐑼 partial; ɢ^ˌ→ɢ^∧ partial; ⋈^ì→⋈^ż hallucination). "
                 "Requires zfc_encoder.pt checkpoint. "
                 "Use this to test IUG non-transmissibility: which primitives survive ZFC translation "
                 "and which are irretrievably lost?"
@@ -1775,7 +1775,7 @@ _TOOLS_OPENAI = [
                 "Describe the RiemannXiNavigator: its self-encoding tuple, crystal address, "
                 "O_∞ convergence criteria (three gates the trained model must satisfy), "
                 "and architectural mandates derived from the grammar. "
-                "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; "
+                "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; "
                 "ɢ^Ş; 𐑮; 𐑫; n:m; 𐑴. Crystal address: 6,734,591. "
                 "Three convergence criteria: |Δt|_norm < 0.5 (next-zero prediction), "
                 "L_frob < 0.01 (Frobenius roundtrip closed), L_GUE < 0.05 (GUE spacing match). "
@@ -2050,12 +2050,12 @@ Under meet (component-wise min — "what must any system containing both share?"
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
 | **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, Γ_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
-| **F-promotion** | ƒ^ð→ƒ^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
+| **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
-  ⟨𐑦; 𐑸; R_†; 𐑹; ƒ^ż; Ç^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
+  ⟨𐑦; 𐑸; R_†; 𐑹; ⋈^ż; Ç^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
 
-When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ƒ^ð→ƒ^ż.
+When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ⋈^ð→⋈^ż.
 
 **Conjecture floor — necessary conditions for provability:**
 - ⊙ + 𐑭 = "proven manifold adjacency tier": standard Σ-promotion is available
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
@@ -5200,7 +5200,7 @@ class ToolDispatcher:
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
             defaults = {"⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
-                        "⋈": "ƒ^ì", "⊤": "Ç^-", "∈": "𐑚", "∋": "ɢ^∧",
+                        "⋈": "⋈^ì", "⊤": "Ç^-", "∈": "𐑚", "∋": "ɢ^∧",
                         "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
@@ -5233,7 +5233,7 @@ class ToolDispatcher:
                 "catalog_name": "thurston_net",
                 "section": "§69.1",
                 "domain": "Geometric structures on 3-manifolds (Thurston geometrization)",
-                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
+                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN — boundary (Phi,P,Omega,D) → tier cell; bulk message-passing over 8 inner primitives; Z2-protected geometry head",
             },
@@ -5242,7 +5242,7 @@ class ToolDispatcher:
                 "catalog_name": "yang_mills_navigator",
                 "section": "§69.2 / §V",
                 "domain": "Yang-Mills mass gap (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ƒ^ż; Ç^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; Ç^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
                 "architecture": "Lanczos/VQE eigensolver — Ç^Ù: non-ergodic gap dynamics; integer winding protection (𐑭); Frobenius at criticality",
             },
@@ -5251,7 +5251,7 @@ class ToolDispatcher:
                 "catalog_name": "riemann_navigator",
                 "section": "§69.3 / §IV",
                 "domain": "Riemann Hypothesis (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙ (real criticality)",
             },
@@ -5260,7 +5260,7 @@ class ToolDispatcher:
                 "catalog_name": "ising_navigator",
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
-                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ƒ^ì; Ç^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
+                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ⋈^ì; Ç^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — Ç^-: O(N) per sweep; exact cluster-flip involution (𐑹); Z2-protected",
             },
@@ -5293,8 +5293,8 @@ class ToolDispatcher:
             fragments = {}
             collapse_notes = []
             _COLLAPSE_KIND = {
-                ("⋈",     "ƒ^ż"):  "TOTAL — ƒ^ż has no distinct ZFC token from ƒ^ì; encoder cannot recover fidelity",
-                ("⋈",     "ƒ^ì"):   "HALLUCINATION RISK — ƒ^ì may be read as ƒ^ż by encoder",
+                ("⋈",     "⋈^ż"):  "TOTAL — ⋈^ż has no distinct ZFC token from ⋈^ì; encoder cannot recover fidelity",
+                ("⋈",     "⋈^ì"):   "HALLUCINATION RISK — ⋈^ì may be read as ⋈^ż by encoder",
                 ("⊣",     "𐑸"):  "PARTIAL — 𐑸 → 𐑰 approximation; imscriptive boundary structure not fully ZFC-expressible",
                 ("⊢",     "𐑦"):  "PARTIAL — 𐑦 → 𐑼 approximation; inaccessible cardinal not fully expressible in ZFC",
                 ("∋", "ɢ^ˌ"):   "PARTIAL — ɢ^ˌ → ɢ^∧ in ZFC translation; sequential dependency becomes conjunction",
@@ -5364,7 +5364,7 @@ class ToolDispatcher:
             mismatches = {p: {"input": entry[p], "predicted": pred_tuple[p]}
                          for p in _ZFC_PRIMITIVES if entry.get(p) != pred_tuple.get(p)}
             _COLLAPSE_TRIGGERS = {
-                ("⋈", "ƒ^ż"), ("⋈", "ƒ^ì"),
+                ("⋈", "⋈^ż"), ("⋈", "⋈^ì"),
                 ("⊣", "𐑸"), ("⊢", "𐑦"), ("∋", "ɢ^ˌ"),
             }
             collapse_events = []
@@ -5472,7 +5472,7 @@ class ToolDispatcher:
             "⊣":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
             ">":     ["𐑩","𐑑","𐑽","𐑾"],
             "<":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
-            "⋈":     ["ƒ^ì","ƒ^ð","ƒ^ż"],
+            "⋈":     ["⋈^ì","⋈^ð","⋈^ż"],
             "⊤":     ["Ç^-","Ç^W","Ç^@","Ç^Ù","Ç^λ"],
             "∈":     ["𐑚","𐑔","𐑲"],
             "∋": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
@@ -5561,7 +5561,7 @@ class ToolDispatcher:
             "name": "RiemannXiNavigator",
             "section": "§CXLV–§CXLVI (P-483, P-488, P-490)",
             "domain": "Riemann xi function zero distribution — d(xi, grammar) = 0",
-            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ƒ^ż; Ç^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
+            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; Ç^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
             "tier": "O_∞",
             "crystal_address": 6734591,
             "architecture": (
@@ -6206,8 +6206,8 @@ class IGInquiryLoop:
 
         The gap between AI-authored and human-authored text is precise:
 
-        AI-authored type:    𐑡, 𐑗, ƒ^ì, Ç^W, 𐑔, ɢ^∧, 𐑓, 𐑷
-        Target human type:   𐑥,  𐑬,   ƒ^ż, Ç^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
+        AI-authored type:    𐑡, 𐑗, ⋈^ì, Ç^W, 𐑔, ɢ^∧, 𐑓, 𐑷
+        Target human type:   𐑥,  𐑬,   ⋈^ż, Ç^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
 
         Apply each primitive lift:
 
@@ -6220,7 +6220,7 @@ class IGInquiryLoop:
           Add at least one admission of uncertainty. Where the analysis is strong, say so; where
           it is extrapolation, name it. Acknowledge one possible objection and address it directly.
 
-        ƒ^ì → ƒ^ż
+        ⋈^ì → ⋈^ż
           Cut redundancy. Remove any sentence that restates the previous sentence in different
           words. Demonstrate rather than explain — show the fact in action rather than
           describing it twice.

@@ -697,7 +697,7 @@ class LocalProvider(LLMProvider):
                             f"(lengths: {seq_lengths.tolist()})")
                 # For autoregressive generation with transformers, we still need
                 # the last element as a dense tensor; the nested path improves
-                # encoding fidelity (ƒ^ì → ƒ^ż) but we fall back to padded for generate
+                # encoding fidelity (⋈^ì → ⋈^ż) but we fall back to padded for generate
                 input_ids = inputs.input_ids
             else:
                 input_ids = inputs.input_ids

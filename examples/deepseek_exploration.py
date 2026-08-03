@@ -282,7 +282,7 @@ f7_conditions = {
     ) or formose.dimensionality == Dimensionality.array,
     "T_⋈ present":   formose.topology == Topology.mime,
     "𐑗": formose.polarity == Polarity.church,
-    "ƒ_hardsign":        formose.fidelity == Fidelity.peep,
+    "𐑐":        formose.fidelity == Fidelity.peep,
 }
 
 if Table and console:
@@ -296,8 +296,8 @@ if Table and console:
         "D_∞ present":   "✓",
         "T_⋈ present":   "✓",
         "𐑗": "✓",
-        "ƒ_hardsign":        "✓",
-    } if soai else {"D_∞ present": "✓", "T_⋈ present": "✓", "𐑗": "✓", "ƒ_hardsign": "✓"}
+        "𐑐":        "✓",
+    } if soai else {"D_∞ present": "✓", "T_⋈ present": "✓", "𐑗": "✓", "𐑐": "✓"}
     for cond, val in f7_conditions.items():
         f7t.add_row(cond, "✓" if val else "✗", soai_vals.get(cond, "?"), "ALL four required")
     console.print(f7t)
