@@ -706,7 +706,7 @@ class CrossDomainAnalogyDetector:
         if s1 == s2:
             return 1.0
         # Phonetic stoichiometry names — ordinal similarity (1:1 < n:n < n:m)
-        _PHONETIC_ORD = {"Σ_doublebaresh": 0, "Σ_ctn": 1, "Σ_ltailm": 2}
+        _PHONETIC_ORD = {"𐑙": 0, "𐑕": 1, "𐑳": 2}
         if s1 in _PHONETIC_ORD and s2 in _PHONETIC_ORD:
             diff = abs(_PHONETIC_ORD[s1] - _PHONETIC_ORD[s2])
             return 0.9 if diff == 1 else 0.7

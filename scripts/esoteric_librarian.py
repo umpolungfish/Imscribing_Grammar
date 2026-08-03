@@ -474,7 +474,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ Ω
 #   ⊢: 𐑛 𐑨 𐑼 𐑦
 #   ⊣: 𐑡 𐑰 𐑥 𐑶 𐑸
 #   >: 𐑩 𐑑 𐑽 𐑾
@@ -485,7 +485,7 @@ PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 #   ∋: ∋^∧ ∋^˝ ∋^ˌ ∋^Ş
 #   ⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣
 #   ⊥: 𐑓 𐑒 𐑖 𐑫
-#   Σ: 𐑙 𐑕 𐑳
+#   ⊞: 𐑙 𐑕 𐑳
 #   Ω: 𐑷 𐑴 𐑭 𐑟
 
 def entry(num, title, desc, text,

@@ -79,7 +79,7 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ⊤}}_{\lambda}', r'{\igfont 𐑺}'),
     (r'\text{{\igprimfont ⊤}}_{trap}', r'{\igfont 𐑘}'),
     (r'\text{{\igprimfont ⊤}}_{slow}', r'{\igfont 𐑤}'),
-    # Σ (Stoichiometry)
+    # ⊞ (Stoichiometry)
     (r'\text{{\igprimfont Σ}}_{n}', r'{\igfont 𐑕}'),
     (r'\text{{\igprimfont Σ}}_{m}', r'{\igfont 𐑳}'),
     (r'\text{{\igprimfont Σ}}_{1}', r'{\igfont 𐑕}'),

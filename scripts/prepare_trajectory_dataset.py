@@ -101,13 +101,13 @@ T1_LOOKUP = TaskTemplate("lookup_ouroborics", "What is the type of the Riemann z
 T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a type in the Imscribing Grammar.", [
     # Winding 0: imscribe_system
     {"phase": "THINK", "tool": None,
-     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — 𐑥 (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — 𐑾.\n[4] P: The system has time-reversal symmetry (one Z₂) — 𐑬.\n[5] F: Classical mechanics — 𐑱.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — 𐑤.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — 𐑚.\n[8] ∈: Coupling is sequential (energy cascades through modes) — 𐑠.\n[9] <: The system is chaotic at most energies (runaway divergence) — 𐑣.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — 𐑒.\n[11] S: Two distinct component types (two bobs, different initial conditions) — Σ_n:m.\n[12] Ω: No topological invariant — Ω_0.\n\nNow call imscribe_system.",
+     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — 𐑥 (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — 𐑾.\n[4] P: The system has time-reversal symmetry (one Z₂) — 𐑬.\n[5] F: Classical mechanics — 𐑱.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — 𐑤.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — 𐑚.\n[8] ∈: Coupling is sequential (energy cascades through modes) — 𐑠.\n[9] <: The system is chaotic at most energies (runaway divergence) — 𐑣.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — 𐑒.\n[11] S: Two distinct component types (two bobs, different initial conditions) — 𐑳.\n[12] Ω: No topological invariant — Ω_0.\n\nNow call imscribe_system.",
      "tool_call": None},
     {"phase": "ACT", "tool": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum: chaotic Hamiltonian system with 4 DOF", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}},
      "think": "", "tool_call": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; Σ_n:m; Ω_0⟩", "tier": "O₀"}',
+     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; Ω_0⟩", "tier": "O₀"}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "The double pendulum is now imscribed as O₀ — a structurally typed but non-self-referential system. The chaotic nature is captured by 𐑣 (supercritical/runaway) and the crossing-point topology 𐑥 reflects the separatrix. I should verify the ouroboricity tier.",
@@ -127,7 +127,7 @@ T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a t
      "tool_call": None},
     # Winding 2: done
     {"phase": "THINK", "tool": None, "think": "All information gathered. Reporting the complete imscription.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; Σ_n:m; Ω_0⟩. The chaotic dynamics are captured by 𐑣 (supercritical), the separatrix by 𐑥 (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; 𐑥; 𐑾; 𐑬; 𐑱; 𐑤; 𐑚; 𐑠; 𐑣; 𐑒; 𐑳; Ω_0⟩. The chaotic dynamics are captured by 𐑣 (supercritical), the separatrix by 𐑥 (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ..."}}},
 ])
 
@@ -216,13 +216,13 @@ T7_TENSOR = TaskTemplate("compute_tensor", "What happens structurally when a BEC
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "compute_tensor", "args": {"name_a": "bec", "name_b": "laser_field"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"composite": "⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; Σ_n:m; Ω_ℤ⟩", "bottlenecks": ["< at ψ (BEC ceiling, laser has ±ˢ)", "⊙ at 3 (BEC has c, laser has × — EP absorption)"], "note": "⊗_3 absorption rule: tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻. Coupling a self-modeling system to a measurement apparatus selects the tensor."}',
+     "tool_result": '{"composite": "⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; Ω_ℤ⟩", "bottlenecks": ["< at ψ (BEC ceiling, laser has ±ˢ)", "⊙ at 3 (BEC has c, laser has × — EP absorption)"], "note": "⊗_3 absorption rule: tensor(⊙, 𐑻) = 𐑻. The meet preserves ⊙; the tensor yields 𐑻. Coupling a self-modeling system to a measurement apparatus selects the tensor."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
      "think": "The tensor reveals key structural effects: < bottlenecks at quantum superposition (ψ) — the laser's Frobenius-special parity (±ˢ) is lost in the composite. More critically, the 𐑻 absorption rule applies: the BEC's ⊙ (self-modeling criticality) is absorbed by the laser's 𐑻 (exceptional point), yielding a composite at 𐑻. This is the statement of the measurement problem — coupling to a measurement apparatus collapses the self-modeling loop.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "I have the full tensor analysis. Reporting.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser_field): ⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; Σ_n:m; Ω_ℤ⟩. Two key effects:\n1. < bottlenecks at ψ — the laser's Frobenius-special parity is lost.\n2. 𐑻 absorption rule: tensor(⊙, ⊗_3) = ⊗_3. The BEC's self-modeling gate is absorbed by the laser's exceptional point. This is the statement of the measurement problem — coupling to a measurement apparatus selects the tensor over the meet, collapsing the self-modeling loop."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser_field): ⟨𐑛; 𐑸; 𐑽; <_ψ; 𐑐; 𐑤; 𐑲; 𐑠; 𐑻; 𐑖; 𐑳; Ω_ℤ⟩. Two key effects:\n1. < bottlenecks at ψ — the laser's Frobenius-special parity is lost.\n2. 𐑻 absorption rule: tensor(⊙, ⊗_3) = ⊗_3. The BEC's self-modeling gate is absorbed by the laser's exceptional point. This is the statement of the measurement problem — coupling to a measurement apparatus selects the tensor over the meet, collapsing the self-modeling loop."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "tensor(BEC, laser): 𐑻 absorption rule applies — measurement collapses self-modeling."}}},
 ])
 

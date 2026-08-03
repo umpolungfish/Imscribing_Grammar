@@ -66,6 +66,7 @@ local CLASS_A = {
   [0x2208] = true,  -- ∈  element of             (∈ Granularity primitive)
   [0x220B] = true,  -- ∋  contains as member     (∋ Grammar primitive)
   [0x22A5] = true,  -- ⊥  up tack                (⊥ Chirality primitive)
+  [0x229E] = true,  -- ⊞  squared plus           (⊞ Stoichiometry primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
@@ -82,8 +83,6 @@ local CLASS_B = {
   -- IG subtype chars (SYMBOL_REFERENCE.md)
   [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
-  [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
-  [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
 }
 
 local function str_has_class_a(s)

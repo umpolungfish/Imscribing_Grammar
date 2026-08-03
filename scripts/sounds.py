@@ -54,7 +54,7 @@ def normalize(signal, peak=0.8):
 #   ∋  Grammar         — temporal structure  (how events compose in time)
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
 #   ⊥  Chirality  — reverberation       (dry → long decay = deep memory)
-#   Σ  Stoichiometry   — multiplicity        (one voice → many at fixed ratio)
+#   ⊞  Stoichiometry   — multiplicity        (one voice → many at fixed ratio)
 #   Ω  Winding         — topological closure (open fade → periodic wrap)
 # =============================================================================
 
@@ -469,7 +469,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
@@ -482,7 +482,7 @@ symbol_list = [
     ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ∋ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
     ('⊥', 'Ñ'), ('⊥', '£'), ('⊥', 'A'), ('⊥', '!'),             # ⊥ Chirality
-    ('⊞', 'S'), ('⊞', 'ő'), ('⊞', 'ï'),                          # Σ Stoichiometry
+    ('⊞', 'S'), ('⊞', 'ő'), ('⊞', 'ï'),                          # ⊞ Stoichiometry
     ('◻', 'Å'), ('◻', '2'), ('◻', 'z'), ('◻', '5'),              # Ω Topological Invariant
 ]
 
@@ -518,7 +518,7 @@ PRIMITIVE_MAP = {
     # ⊥ Chirality
     '𐑓': ('⊥', 'Ñ'),   '𐑒': ('⊥', '£'),
     '𐑖': ('⊥', 'A'),   '𐑫': ('⊥', '!'),
-    # Σ Stoichiometry
+    # ⊞ Stoichiometry
     '𐑙': ('⊞', 'S'),   '𐑕': ('⊞', 'ő'),   '𐑳': ('⊞', 'ï'),
     # Ω Topological Invariant
     '𐑷': ('◻', 'Å'),   '𐑴': ('◻', '2'),

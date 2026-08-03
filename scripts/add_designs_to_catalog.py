@@ -29,7 +29,7 @@ DESIGNS = [
     },
     {
         "name": "universal_antidote",
-        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (∋=∋^∧) — every pathogen feature is processed at once. Many-identical stoichiometry (Σ=𐑕) — all disease patterns share a universal grammar. Eternal memory (⊥=𐑫) — once a threat is recognized, never forgotten.",
+        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (∋=∋^∧) — every pathogen feature is processed at once. Many-identical stoichiometry (⊞=𐑕) — all disease patterns share a universal grammar. Eternal memory (⊥=𐑫) — once a threat is recognized, never forgotten.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "∋^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑕", "◻": "𐑭"
     },
@@ -71,7 +71,7 @@ DESIGNS = [
     },
     {
         "name": "universal_symbiont",
-        "description": "Consortium of 12 engineered microbial strains providing all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct complementary strains. All-simultaneous composition (∋=∋^∧) — all metabolic pathways active at once. Long-range mesoscale signaling (∈=𐑲) coordinates consortium.",
+        "description": "Consortium of 12 engineered microbial strains providing all metabolic support functions. Many-heterogeneous stoichiometry (⊞=𐑳) — 12 distinct complementary strains. All-simultaneous composition (∋=∋^∧) — all metabolic pathways active at once. Long-range mesoscale signaling (∈=𐑲) coordinates consortium.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "∋^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

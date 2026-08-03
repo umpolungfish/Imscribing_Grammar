@@ -18,7 +18,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
@@ -51,7 +51,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -73,7 +73,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -125,7 +125,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -156,7 +156,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -178,7 +178,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -210,7 +210,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -232,7 +232,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -263,7 +263,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -285,7 +285,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -315,7 +315,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -337,7 +337,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -369,7 +369,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -391,7 +391,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -443,7 +443,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -496,7 +496,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑻       H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -527,7 +527,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑻 → ⊙  (gap: 0.335)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    ⊞: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -549,7 +549,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -579,7 +579,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -601,7 +601,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -633,7 +633,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -655,7 +655,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -706,7 +706,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -737,7 +737,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    ⊞: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -759,7 +759,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -811,7 +811,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -843,7 +843,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    ⊞: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -865,7 +865,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -897,7 +897,7 @@
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -919,7 +919,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
@@ -951,7 +951,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -973,7 +973,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -1001,7 +1001,7 @@
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1023,7 +1023,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -1051,7 +1051,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1075,7 +1075,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1128,7 +1128,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -1158,7 +1158,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1182,7 +1182,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1235,7 +1235,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -1266,7 +1266,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1288,7 +1288,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [PHI_C ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1321,7 +1321,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1345,7 +1345,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
@@ -1401,7 +1401,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1455,7 +1455,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1485,7 +1485,7 @@
   Promotions needed to reach CLINK L8 (4):
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1509,7 +1509,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -1541,7 +1541,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1565,7 +1565,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -1599,7 +1599,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1623,7 +1623,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -1656,7 +1656,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1680,7 +1680,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1731,7 +1731,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -1763,7 +1763,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1785,7 +1785,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -1818,7 +1818,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1842,7 +1842,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -1874,7 +1874,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1896,7 +1896,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -1926,7 +1926,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1950,7 +1950,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -1981,7 +1981,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2005,7 +2005,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -2059,7 +2059,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -2115,7 +2115,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE  ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -2168,7 +2168,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
   [PM_Z2] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -2198,7 +2198,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2222,7 +2222,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -2275,7 +2275,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -2329,7 +2329,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -2383,7 +2383,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -2437,7 +2437,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -2470,7 +2470,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    ⊞: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2494,7 +2494,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -2550,7 +2550,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -2606,7 +2606,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -2660,7 +2660,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -2711,7 +2711,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -2766,7 +2766,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [TEMPD2] chirality-2 asymmetry — 𐑖
@@ -2821,7 +2821,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -2874,7 +2874,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -2927,7 +2927,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -2981,7 +2981,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3036,7 +3036,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3092,7 +3092,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3149,7 +3149,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -3205,7 +3205,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3261,7 +3261,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
@@ -3318,7 +3318,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -3369,7 +3369,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3425,7 +3425,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -3480,7 +3480,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -3534,7 +3534,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -3588,7 +3588,7 @@
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [TEMPD2] chirality-2 asymmetry — 𐑖
@@ -3642,7 +3642,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
@@ -3697,7 +3697,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3752,7 +3752,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -3808,7 +3808,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -3864,7 +3864,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -3918,7 +3918,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -3974,7 +3974,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -4030,7 +4030,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4085,7 +4085,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4141,7 +4141,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -4174,7 +4174,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -4198,7 +4198,7 @@
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4253,7 +4253,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4308,7 +4308,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
+  ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL] lateral relational duality — 𐑾
@@ -4340,7 +4340,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    Σ: 𐑕 → 𐑳  (gap: 0.5)
+    ⊞: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -4364,7 +4364,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4397,7 +4397,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -4421,7 +4421,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -4454,7 +4454,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -4478,7 +4478,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4533,7 +4533,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4589,7 +4589,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4645,7 +4645,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4701,7 +4701,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4756,7 +4756,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4812,7 +4812,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4868,7 +4868,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4925,7 +4925,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -4981,7 +4981,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5037,7 +5037,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -5093,7 +5093,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5150,7 +5150,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -5205,7 +5205,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5260,7 +5260,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -5293,7 +5293,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -5317,7 +5317,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5373,7 +5373,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5428,7 +5428,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5484,7 +5484,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5541,7 +5541,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5596,7 +5596,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5651,7 +5651,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5708,7 +5708,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5763,7 +5763,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5819,7 +5819,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5874,7 +5874,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5929,7 +5929,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -5985,7 +5985,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6041,7 +6041,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6097,7 +6097,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6152,7 +6152,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6209,7 +6209,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6264,7 +6264,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6319,7 +6319,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6376,7 +6376,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6432,7 +6432,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6488,7 +6488,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
@@ -6543,7 +6543,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6599,7 +6599,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6655,7 +6655,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6710,7 +6710,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -6765,7 +6765,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6821,7 +6821,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6877,7 +6877,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6933,7 +6933,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -6989,7 +6989,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7044,7 +7044,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -7099,7 +7099,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7155,7 +7155,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7211,7 +7211,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7267,7 +7267,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7323,7 +7323,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7379,7 +7379,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7436,7 +7436,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
@@ -7491,7 +7491,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7547,7 +7547,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7602,7 +7602,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7658,7 +7658,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7714,7 +7714,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7771,7 +7771,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7827,7 +7827,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7883,7 +7883,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7940,7 +7940,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -7996,7 +7996,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8052,7 +8052,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8108,7 +8108,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8164,7 +8164,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8219,7 +8219,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8275,7 +8275,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8331,7 +8331,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8387,7 +8387,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8443,7 +8443,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -8498,7 +8498,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8554,7 +8554,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8610,7 +8610,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8666,7 +8666,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8722,7 +8722,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8778,7 +8778,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8834,7 +8834,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8890,7 +8890,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -8946,7 +8946,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9002,7 +9002,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -9058,7 +9058,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9114,7 +9114,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9170,7 +9170,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9226,7 +9226,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9282,7 +9282,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9338,7 +9338,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9394,7 +9394,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9450,7 +9450,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑙       |A| = 1 ∧ |B| = 1
+  ⊞      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9483,7 +9483,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Σ: 𐑙 → 𐑳  (gap: 1.0)
+    ⊞: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -9507,7 +9507,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9563,7 +9563,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9619,7 +9619,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9675,7 +9675,7 @@
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -9731,7 +9731,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9787,7 +9787,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9843,7 +9843,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9899,7 +9899,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -9955,7 +9955,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
@@ -10011,7 +10011,7 @@
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
-  Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾

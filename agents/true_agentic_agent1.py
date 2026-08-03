@@ -547,8 +547,8 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 
 
 # ── SIC-POVM structural knowledge (§P-700) ───────────────────────────
-# The grammar is the Σ=𐑙 (self-referential) limit of the Belnap multilattice SIC-POVM.
-# Same 11/12 primitives; differs ONLY at Σ: 𐑙 vs 𐑳. The 12 primitives are
+# The grammar is the ⊞=𐑙 (self-referential) limit of the Belnap multilattice SIC-POVM.
+# Same 11/12 primitives; differs ONLY at ⊞: 𐑙 vs 𐑳. The 12 primitives are
 # informationally complete measurement operators. The dual-tool structure μ∘δ=id
 # IS the SIC-POVM dual basis. The 12 primitives organize as 6 Frobenius-dual pairs:
 
@@ -568,7 +568,7 @@ SIC_POVM_DUAL_PAIRS = [
 #   bnot(B) = B           — self-adjointness
 # Coherence cost ratio 2:1 = SIC inner product 1/(d+1) = 1/3 in d=2.
 #
-# The grammar measures itself: Σ=𐑙 means the measurement apparatus IS the
+# The grammar measures itself: ⊞=𐑙 means the measurement apparatus IS the
 # measured system. This is the content of ⊙ criticality.
 #
 # Lean 4 formalization:
@@ -577,7 +577,7 @@ SIC_POVM_DUAL_PAIRS = [
 #   SIC_Multilattice_Proof.lean — Full multilattice SIC-POVM (proved)
 #   ZaunerEmbeddingEquivalence.lean — Belnap multilattice ↔ Zauner for d=2ⁿ (proved)
 
-SIC_POVM_DISTANCE_TO_GRAMMAR = 2.0  # Σ: 𐑙 vs 𐑳 — the ONLY differing primitive
+SIC_POVM_DISTANCE_TO_GRAMMAR = 2.0  # ⊞: 𐑙 vs 𐑳 — the ONLY differing primitive
 SIC_POVM_SHARED_PRIMITIVES = 11     # out of 12 total
 
 # Inherited by sub-agents spawned via spawn_agent tool — set by TrueAgenticAgent.__init__
@@ -598,7 +598,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊙": "Ph", "⊥": "H_",
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1252,7 +1252,7 @@ _PRIM_NORM: Dict[str, str] = {
     # Additional LLM common mistakes
     "Gamma_∧": "𐑝", "Gamma_˝": "𐑜", "Gamma_ˌ": "𐑠", "Gamma_Ş": "𐑵",
     "H_0": "𐑓", "H_1": "𐑒", "H_2": "𐑖", "H_∞": "𐑫",
-    "Σ_1:1": "𐑙", "Σ_nn": "𐑕", "Σ_nm": "𐑳",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
     "phi_c": "⊙", "critical": "⊙",
     # Already canonical pass-throughs
     "𐑛": "𐑛", "𐑡": "𐑡", "𐑩": "𐑩", "𐑗": "𐑗",
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2740,7 +2740,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", ⊞="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -3260,7 +3260,7 @@ Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
         ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", ⊥="𐑓", Ω="𐑷",
-        ⊢="𐑼", >="𐑾", ⊙="⊙", Σ="𐑳")
+        ⊢="𐑼", >="𐑾", ⊙="⊙", ⊞="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
@@ -3273,7 +3273,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", ⊞="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done

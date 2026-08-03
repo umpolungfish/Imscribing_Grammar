@@ -52,7 +52,7 @@ MISSING = [
     (r'\text{{\igprimfont ⊥}}_!',                 r'{\igfont 𐑫}'),   # H_inf, bare subscript
     (r'\text{{\igprimfont ⊥}}_{!}',               r'{\igfont 𐑫}'),   # H_inf, with braces (deduplicate)
 
-    # Σ (Stoichiometry) — all three values
+    # ⊞ (Stoichiometry) — all three values
     (r'\text{{\igprimfont Σ}}_{S}',               r'{\igfont 𐑙}'),   # one:one = S_doublebaresh
     (r'\text{{\igprimfont Σ}}_{\text{{\igfont ő}}}', r'{\igfont 𐑕}'),  # one:n = S_ctn
     (r'\text{{\igprimfont Σ}}_{\text{{\igfont ï}}}', r'{\igfont 𐑳}'),  # n:m = S_ltailm

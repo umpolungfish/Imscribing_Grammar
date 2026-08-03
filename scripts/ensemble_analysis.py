@@ -81,7 +81,7 @@ print("\n── 5. ABSORBING SIGNATURE DETECTION (canonical rules) ──")
 absig = detect_absorbing_signatures(entries)
 s = absig["summary"]
 print(f"  ⊙=⊙ (self-modeling gate):   {s['absorb_phi_only']:>5} entries")
-print(f"  Σ=𐑳 (n:m stoichiometry):    {s['absorb_sigma_only']:>5} entries")
+print(f"  ⊞=𐑳 (n:m stoichiometry):    {s['absorb_sigma_only']:>5} entries")
 print(f"  Both absorbing:              {s['absorb_both']:>5} entries")
 print(f"  Neither absorbing:           {s['absorb_neither']:>5} entries")
 print(f"  Any absorbing:               {s['any_absorbing']:>5} entries ({s['any_absorbing']/n*100:.1f}%)")

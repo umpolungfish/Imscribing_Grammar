@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Σ}{S}   \prim{Ω}{z}
+%   e.g. \prim{Ω}{z}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -155,10 +155,11 @@
 \newcommand{\Htwo}{\shav{𐑖}}    % sure — persistent chiral, descent through rank
 \newcommand{\Hinf}{\shav{𐑫}}    % wool — topological, inexhaustible chirality
 
-% Σ — Stoichiometry
-\newcommand{\Sone}{\prim{Σ}{S}}
-\newcommand{\Snn}{\prim{Σ}{ő}}
-\newcommand{\Snm}{\prim{Σ}{ï}}
+% ⊞ — Stoichiometry.  Core.lean ctor order: hung, so, up.
+\newcommand{\Sstoi}{\axis{⊞}}
+\newcommand{\Sone}{\shav{𐑙}}   % hung — 1:1
+\newcommand{\Snn}{\shav{𐑕}}    % so   — n:n, matched many-to-many
+\newcommand{\Snm}{\shav{𐑳}}    % up   — n:m, unmatched many-to-many
 
 % Ω — Topological Invariant
 \newcommand{\Omzero}{\prim{Ω}{Å}}

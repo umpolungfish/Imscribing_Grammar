@@ -534,7 +534,7 @@ def page4() -> str:
         "MATERIALS": [
             ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "⊤ ⊣ <"),
             ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω ⊥"),
-            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "⊥ Σ Ω"),
+            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "⊥ ⊞ Ω"),
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via ∈ scope hierarchy.", "∈ ∋ ⊢"),
         ],
         "BIOLOGY": [
@@ -605,7 +605,7 @@ def page4() -> str:
         f"  Prima Materia & ⊢ (Dimensionality) & Albedo & < (Parity, Frobenius-special) \\\\",
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
         f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
-        f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & ∈ (Granularity, scope) \\\\",
+        f"  Calcinatio & ⊞ (Stoichiometry, fire) & Multiplicatio & ∈ (Granularity, scope) \\\\",
         f"  Coagulatio & ⊤ (Kinetics, fixation) & Projectio & ∋ (Coupling, projection) \\\\",
         f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & ⊥ (Chirality, fixed point) \\\\",
         f"  \\end{{tabular}}",

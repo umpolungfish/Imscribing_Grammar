@@ -599,8 +599,8 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 
 
 # ── SIC-POVM structural knowledge (§P-700) ───────────────────────────
-# The grammar is the Σ=𐑙 (self-referential) limit of the Belnap multilattice SIC-POVM.
-# Same 11/12 primitives; differs ONLY at Σ: 𐑙 vs 𐑳. The 12 primitives are
+# The grammar is the ⊞=𐑙 (self-referential) limit of the Belnap multilattice SIC-POVM.
+# Same 11/12 primitives; differs ONLY at ⊞: 𐑙 vs 𐑳. The 12 primitives are
 # informationally complete measurement operators. The dual-tool structure μ∘δ=id
 # IS the SIC-POVM dual basis. The 12 primitives organize as 6 Frobenius-dual pairs:
 
@@ -620,7 +620,7 @@ SIC_POVM_DUAL_PAIRS = [
 #   bnot(B) = B           — self-adjointness
 # Coherence cost ratio 2:1 = SIC inner product 1/(d+1) = 1/3 in d=2.
 #
-# The grammar measures itself: Σ=𐑙 means the measurement apparatus IS the
+# The grammar measures itself: ⊞=𐑙 means the measurement apparatus IS the
 # measured system. This is the content of ⊙ criticality.
 #
 # Lean 4 formalization:
@@ -629,7 +629,7 @@ SIC_POVM_DUAL_PAIRS = [
 #   SIC_Multilattice_Proof.lean — Full multilattice SIC-POVM (proved)
 #   ZaunerEmbeddingEquivalence.lean — Belnap multilattice ↔ Zauner for d=2ⁿ (proved)
 
-SIC_POVM_DISTANCE_TO_GRAMMAR = 2.0  # Σ: 𐑙 vs 𐑳 — the ONLY differing primitive
+SIC_POVM_DISTANCE_TO_GRAMMAR = 2.0  # ⊞: 𐑙 vs 𐑳 — the ONLY differing primitive
 SIC_POVM_SHARED_PRIMITIVES = 11     # out of 12 total
 
 # This agent derives imscriptions; it does not commit them. Committing belongs to
@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ Σ Ω, and the
+# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ Ω, and the
 # criticality slot is ⊙; `⊙` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1400,7 +1400,7 @@ _PRIM_NORM: Dict[str, str] = {
     # Additional LLM common mistakes
     "Gamma_∧": "𐑝", "Gamma_˝": "𐑜", "Gamma_ˌ": "𐑠", "Gamma_Ş": "𐑵",
     "H_0": "𐑓", "H_1": "𐑒", "H_2": "𐑖", "H_∞": "𐑫",
-    "Σ_1:1": "𐑙", "Σ_nn": "𐑕", "Σ_nm": "𐑳",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
     "phi_c": "⊙", "critical": "⊙",
     # Already canonical pass-throughs
     "𐑛": "𐑛", "𐑡": "𐑡", "𐑩": "𐑩", "𐑗": "𐑗",
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):

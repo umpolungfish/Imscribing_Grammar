@@ -758,7 +758,7 @@ _TOOLS_OPENAI = [
                 "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;∋^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
-                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', Σ='𐑳', Ω='𐑭'). "
+                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -776,7 +776,7 @@ _TOOLS_OPENAI = [
                 "∋: ∋^∧ ∋^˝ ∋^ˌ ∋^Ş | "
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
                 "⊥: 𐑓 𐑒 𐑖 𐑫 | "
-                "Σ: 𐑙 𐑕 𐑳 | "
+                "⊞: 𐑙 𐑕 𐑳 | "
                 "Ω: 𐑷 𐑴 𐑭 𐑟"
             ),
             "parameters": {
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",

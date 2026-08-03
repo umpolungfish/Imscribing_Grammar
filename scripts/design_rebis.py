@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', '∋^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -90,7 +90,7 @@ DESIGNS = [
     },
     {
         "name": "universal_antidote",
-        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (∋=∋^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (Σ=𐑕) because all disease patterns share a universal grammar. Eternal memory (⊥=𐑫) means once a threat is recognized, it is never forgotten.",
+        "description": "Platform therapeutic that self-selects against any disease signature. All-simultaneous detection (∋=∋^∧) — every pathogen feature is processed at once via parallel molecular recognition. Stoichiometry is many-identical (⊞=𐑕) because all disease patterns share a universal grammar. Eternal memory (⊥=𐑫) means once a threat is recognized, it is never forgotten.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','∋^∧','⊙','𐑫','𐑕','𐑭'])}
     },
     {
@@ -125,7 +125,7 @@ DESIGNS = [
     },
     {
         "name": "universal_symbiont",
-        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (Σ=𐑳) — 12 distinct strains with complementary functions. All-simultaneous composition (∋=∋^∧) — all metabolic pathways active at once. Long-range signaling (∈=𐑲) via quorum-sensing molecules that coordinate across the entire consortium.",
+        "description": "Consortium of 12 engineered microbial strains that collectively provide all metabolic support functions. Many-heterogeneous stoichiometry (⊞=𐑳) — 12 distinct strains with complementary functions. All-simultaneous composition (∋=∋^∧) — all metabolic pathways active at once. Long-range signaling (∈=𐑲) via quorum-sensing molecules that coordinate across the entire consortium.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','∋^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

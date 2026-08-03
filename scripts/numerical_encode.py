@@ -439,7 +439,7 @@ def kmeans_cluster(matrix: List[List[float]], k: int = 7,
 def detect_absorbing_signatures(entries: List[dict]) -> Dict:
     """
     Detect which entries have absorbing primitives under canonical rules.
-    An entry is "absorbing" if it has ⊙=⊙ (self-modeling gate) or Σ=𐑳 (n:m).
+    An entry is "absorbing" if it has ⊙=⊙ (self-modeling gate) or ⊞=𐑳 (n:m).
     """
     absorbing_mask = {
         "⊙": "⊙",
@@ -448,7 +448,7 @@ def detect_absorbing_signatures(entries: List[dict]) -> Dict:
     
     results = {
         "absorbing_Phi_c": [],   # entries with ⊙=⊙
-        "absorbing_Sigma_nm": [],  # entries with Σ=𐑳
+        "absorbing_Sigma_nm": [],  # entries with ⊞=𐑳
         "both": [],
         "neither": [],
     }

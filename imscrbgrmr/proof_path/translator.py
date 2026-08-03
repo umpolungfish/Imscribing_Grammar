@@ -83,7 +83,7 @@ a 12-primitive coordinate system for mathematical and physical objects. \
 IG primitives: ⊢ (Dimensionality), ⊣ (Topology), > (Relational Mode), \
 < (Parity/Symmetry), ⋈ (Fidelity), ⊤ (Kinetics), ∈ (Scope), \
 ∋ (Interaction Grammar), ⊙ (Criticality), ⊥ (Chirality), \
-Σ (Stoichiometry), Ω (Topological Invariant).
+⊞ (Stoichiometry), Ω (Topological Invariant).
 
 A proof path in IG is a sequence of named mathematical operations that transform \
 the imscription (primitive tuple) of an open conjecture into the imscription of a \

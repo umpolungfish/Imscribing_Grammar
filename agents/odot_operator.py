@@ -904,7 +904,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
                     "⊢='𐑛', ⊣='𐑡', >='𐑾', <='𐑗', "
                     "⋈='𐑱', ⊤='𐑤', ∈='𐑚', ∋='𐑝', "
-                    "⊙='𐑢', ⊥='𐑓', Σ='𐑙', Ω='𐑷')"
+                    "⊙='𐑢', ⊥='𐑓', ⊞='𐑙', Ω='𐑷')"
                 )
             })
 
@@ -919,7 +919,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1127,7 +1127,7 @@ _PRIM_NORM: Dict[str, str] = {
     # Additional LLM common mistakes
     "Gamma_∧": "𐑝", "Gamma_˝": "𐑜", "Gamma_ˌ": "𐑠", "Gamma_Ş": "𐑵",
     "H_0": "𐑓", "H_1": "𐑒", "H_2": "𐑖", "H_∞": "𐑫",
-    "Σ_1:1": "𐑙", "Σ_nn": "𐑕", "Σ_nm": "𐑳",
+    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
     "phi_c": "⊙", "critical": "⊙",
     # Already canonical pass-throughs
     "𐑛": "𐑛", "𐑡": "𐑡", "𐑩": "𐑩", "𐑗": "𐑗",
@@ -2478,7 +2478,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", ⊞="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -2908,7 +2908,7 @@ Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
         ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", ⊥="𐑓", Ω="𐑷",
-        ⊢="𐑼", >="𐑾", ⊙="⊙", Σ="𐑳")
+        ⊢="𐑼", >="𐑾", ⊙="⊙", ⊞="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
@@ -2921,7 +2921,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", ⊞="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done

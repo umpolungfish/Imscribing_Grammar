@@ -1035,7 +1035,7 @@ _ATOM_DESC = {
     "STITCH_3":             "3-unit stitch: moat · hodge · linker (∋ conjunction) (𐑝)",
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
     "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (⊥=𐑭)",
-    "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (Σ=𐑳)",
+    "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (⊞=𐑳)",
     "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (Ω=𐑫)",
 }
 

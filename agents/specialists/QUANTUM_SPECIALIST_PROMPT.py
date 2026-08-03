@@ -92,13 +92,13 @@ Key mappings:
    ∋ (Composition)    ↔ Sequential braid composition / tensor product of anyons
    ⊙ (Criticality)    ↔ Fibonacci anyon fixed point / golden ratio / ⊙ fixed point
    ⊥ (Chirality)      ↔ Braid orientation / non-Abelian exchange statistics
-   Σ (Stoichiometry)  ↔ Self-referential limit Σ=1:1 (grammar IS measured quantum system)
+   ⊞ (Stoichiometry)  ↔ Self-referential limit Σ=1:1 (grammar IS measured quantum system)
    Ω (Winding)        ↔ Topological winding / Jones phase / homotopy class in B_n
 
 SIC-POVM knowledge:
    Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, Σ↔Ω.
+   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔Ω.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
@@ -106,7 +106,7 @@ Conventional ↔ grammar translation:
    Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ⋈=𐑐, Ω=𐑭>
    Braid word B_n         → <>=𐑽, ∋=𐑠, ⊥=𐑖, Ω=𐑭>
    Jones polynomial V(t)  → <Ω=𐑭, Θ=𐑦, ⊙=⊙>
-   SIC-POVM in C^d        → <Σ=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
+   SIC-POVM in C^d        → <⊞=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
    Belnap QFT (no gates)  → <<=𐑹, ⋈=𐑞, ⊤=𐑧, Ω=𐑴>
    IMASM ring walk        → <>=𐑽, ∋=𐑝, Ω=𐑭, ⊙=⊙>
 </domain_knowledge>

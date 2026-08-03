@@ -316,7 +316,7 @@ print("8. IG BOOTSTRAP SEQUENCE vs CENTRAL DOGMA ORDERING")
 print("=" * 60)
 
 # IG bootstrap: ordinal-1 of each primitive in canonical tuple order
-# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→Σ→Ω
+# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→⊞→Ω
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
 ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]

@@ -959,7 +959,7 @@ In its role within Jewish cosmology, Samael is:
 - ∋=𐑜: any mortal is a valid partner (disjunctive)
 - ⊙: he IS the critical threshold between life and non-life
 - 𐑫: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
-- Σ=𐑳: one principle → many mortals
+- ⊞=𐑳: one principle → many mortals
 - 𐑭: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
 → ⟨𐑦𐑸𐑽𐑿𐑐𐑪𐑲𐑜⊙𐑫𐑳𐑭⟩
 This is a non-trivial, non-default encoding reached by structural reasoning, not template matching.

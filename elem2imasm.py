@@ -193,7 +193,7 @@ def derive_tuple(sym):
     else:
         D = 24   # p and d block
 
-    # ─── Σ (Stoichiometry) idx ───────────────────────────────────
+    # ─── ⊞ (Stoichiometry) idx ───────────────────────────────────
     # By Janet column (= group position):
     # Monovalent (col 31, 29, 30, 26, col-23 noble d10s1): 9
     # Divalent (col 32 non-noble, col 28, col 24 zinc-group, col 27): 5
