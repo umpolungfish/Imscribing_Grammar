@@ -1,34 +1,14 @@
-The twelve primitives take the IMASM glyphs
+Criticality is a plain +, not a raised one
 
-AS_ABOVE and SO_BELOW now write the primitives as the opcodes they are:
+The mark I used was U+207A, the superscript plus, so Everson drew it small and
+raised wherever it stood: the table cell, the value list, every tuple. It is a
+plain U+002B now, the same character IMASM writes EVALT with, which is what the
+mapping said in the first place.
 
-    ⊢ Dimensionality   ⊣ Topology         ≻ Relational      ≺ Polarity
-    ═ Fidelity         ⊙ Kinetics         ∈ Granularity     ∋ Grammar
-    ⁺ Criticality      × Chirality        ⊞ Stoichiometry   ¬ Protection
+The ones that were bare groups in math mode are wrapped in \mathord, so a
+criticality standing between two operands is an ordinary atom and not a sum. The
+rest were already inside \text and needed nothing. 133 marks in AS_ABOVE, 66 in
+SO_BELOW, and no U+207A survives in either file.
 
-The old marks carried too much of their own meaning. Ð and Þ and ƒ and Ħ arrive
-already saying something, and what they say is not what the axis says; the reader
-brings a letter's history to a slot that only wants a position. The opcodes say
-nothing on their own, which is the whole of their qualification, and the mapping
-is one to one because the twelve axes and the twelve opcodes were always the same
-twelve. The serpent eats its tail.
-
-Every replacement is scoped to the primitive font, so nothing outside it moved:
-SO_BELOW's 117 \Phi, 38 \Omega and 5 \Sigma are ordinary mathematics and are
-untouched, as are the two places where AS_ABOVE talks about ⊙ as the alchemical
-sign of the Stone rather than as a primitive. 475 marks changed in AS_ABOVE, 629
-in SO_BELOW, and no old glyph survives anywhere in either file.
-
-Two things had to be got right rather than swept. The manuscripts spelled two
-different primitives with the same mark: AS_ABOVE wrote Polarity as ⊙ and
-Criticality as \odot, which render identically, so a character-level pass would
-have collapsed them. They are separated by their markup, and each went to its own
-new glyph. And the critical point is a VALUE of Criticality as well as being the
-axis, spelled with the same mark in both files and behind a macro in SO_BELOW.
-Both went to ⁺, which keeps the identity that was already there: the axis and its
-own self-referential value are the same mark, as they were when both were ⊙. ⊙ is
-free now and belongs to Kinetics alone.
-
-Everson Mono carries all twelve of the new glyphs. Both documents compile at the
-page counts they had, 45 and 82, with no missing character that was not already
-missing: SO_BELOW's nine are a ✓ it has never had.
+Both still compile at 45 and 82 pages, with no missing character beyond the ✓
+SO_BELOW has never had.
