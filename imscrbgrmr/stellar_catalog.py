@@ -1191,7 +1191,7 @@ def _gamma_ray_burst() -> Imscription:
     a highly collimated (opening angle 1-10°), Lorentz-boosted beam. The jet IS
     the GRB. Linear topology: one-dimensional, directed, coherent.
 
-    F_HIGH: the Lorentz factor of the jet (∈_L ~ 100-1000) represents extreme
+    F_HIGH: the Lorentz factor of the jet (Γ_L ~ 100-1000) represents extreme
     collimation — the energy is concentrated into a tiny solid angle with
     extraordinary precision.
 
@@ -1220,7 +1220,7 @@ def _gamma_ray_burst() -> Imscription:
         stoichiometry="1:1",
         description=(
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
-            "T_linear: relativistic jet (opening angle 1-10°, ∈_L 100-1000) — the "
+            "T_linear: relativistic jet (opening angle 1-10°, Γ_L 100-1000) — the "
             "defining primitive. F_HIGH: extreme collimation precision. "
             "∋_SELECTIVE: directed beam, not broadcast. ⊙: the ultimate stellar "
             "critical transition — accumulated constraint structure released in single "

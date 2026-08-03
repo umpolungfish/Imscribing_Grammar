@@ -111217,7 +111217,7 @@
   },
   {
     "name": "higher_genus_sync",
-    "description": "Monadic representation of the genus-dependent coupling coefficient between the elliptic curve Hodge theater and the genus-N hyperbolic curve, defined by the action of the Teichmüller modular group ∈_g on the tempered arithmetic fundamental group Π_X,g.",
+    "description": "Monadic representation of the genus-dependent coupling coefficient between the elliptic curve Hodge theater and the genus-N hyperbolic curve, defined by the action of the Teichmüller modular group Γ_g on the tempered arithmetic fundamental group Π_X,g.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -124865,7 +124865,7 @@
   },
   {
     "name": "fiducial_imscription_algebra",
-    "description": "The Fiducial ImScription Algebra (FIA): the algebra of SIC-POVM fiducial vectors under imscription operations. The Belnap fiducial B = XZ (d=2) is the fundamental μ-term — the fixed point of the self-imscription operator <_B(B) = B where <_B is the fiducial's own measurement channel. Higher-dimensio",
+    "description": "The Fiducial ImScription Algebra (FIA): the algebra of SIC-POVM fiducial vectors under imscription operations. The Belnap fiducial B = XZ (d=2) is the fundamental μ-term — the fixed point of the self-imscription operator Φ_B(B) = B where Φ_B is the fiducial's own measurement channel. Higher-dimensio",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -127185,7 +127185,7 @@
   },
   {
     "name": "sic_povm_fiducial_frobenius_algebra",
-    "description": "SIC-POVM fiducial B = XZ as Frobenius algebra in C^2. The fiducial is the fixed point of its own measurement channel <_B(B)=B. The Frobenius structure: δ (FSPLIT) decomposes the fiducial into its 4 Weyl-Heisenberg orbit states and 4 SIC-POVM projectors; μ (FFUSE) reconstructs the fiducial via ρ = Σ_",
+    "description": "SIC-POVM fiducial B = XZ as Frobenius algebra in C^2. The fiducial is the fixed point of its own measurement channel Φ_B(B)=B. The Frobenius structure: δ (FSPLIT) decomposes the fiducial into its 4 Weyl-Heisenberg orbit states and 4 SIC-POVM projectors; μ (FFUSE) reconstructs the fiducial via ρ = Σ_",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",

@@ -285,7 +285,7 @@ _L_FUNCTIONS = {
         "name": "Dirichlet L-function, χ mod 3 (non-trivial character)",
         "group": "GL(1)/Q",
         "form": "L(s,χ) = Σ χ(n)n^{−s} = (1 − χ(2)2^{−s})^{−1}(1 − χ(3)3^{−s})^{−1}…",
-        "functional_eq": "τ(χ)L(1−s,χ̄) = (π/3)^{s−1/2}∈((1−s)/2)/Γ(s/2)L(s,χ)",
+        "functional_eq": "τ(χ)L(1−s,χ̄) = (π/3)^{s−1/2}Γ((1−s)/2)/Γ(s/2)L(s,χ)",
         "poles": "Entire (no poles); L(1,χ) ≠ 0 (Dirichlet's theorem)",
         "special_vals": {"0": "0 (trivial zero from ∈)", "1": "L(1,χ₃) = π/(3√3)"},
         "euler_product": "Π_p (1 − χ(p)p^{−s})^{−1}  (Euler product)",

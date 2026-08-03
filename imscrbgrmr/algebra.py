@@ -224,35 +224,16 @@ def tuple_distance(
 # Mahalanobis metric (full g_ij = Sigma^{-1} from catalog)
 # ─────────────────────────────────────────────────────────────────────────────
 
-_PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
-    # Values present in models.py but not in primitives.py ORDINALS.
-    # Mapped to the nearest canonical primitives.py value.
-    "D": {"𐑛": "𐑛", "𐑛": "𐑛", "𐑨": "𐑨"},
-    # ⊣ Topology needs no fallback: all five values are in ORDINALS.
-    "R": {
-        "𐑑": "𐑑", "𐑩": "𐑩", "𐑩": "𐑩",
-        "𐑽": "𐑽", "𐑽": "𐑽",
-        "𐑾": "𐑽", "𐑾": "𐑾",
-    },
-    "P": {
-        "𐑗": "𐑗", "𐑬": "𐑿", "𐑬": "𐑿",
-        "𐑯": "𐑯", "𐑬": "𐑬",
-    },
-    "F": {"𐑱": "𐑱"},
-    "K": {"𐑺": "𐑪"},
-    "Gamma": {"𐑵": "𐑵", "𐑠": "𐑠", "𐑜": "𐑜"},
-    "Phi": {"⊙_upstep": "⊙_upstep"},
-    "S": {"1:1": "𐑙", "1:n": "𐑕", "n:m": "𐑳", "cat": "𐑳"},
-    "Omega": {"𐑭": "𐑭", "𐑟": "𐑭"},
-}
-
-
 def _imscription_to_primitives_dict(s: Imscription) -> Optional[Dict[str, str]]:
     """Convert a Imscription to the dict format expected by space_search/primitives.py.
 
-    Extended enum values that postdate the catalog encoding are mapped to their
-    nearest canonical equivalent via _PRIMITIVES_FALLBACK.  Returns None only
-    if a value cannot be resolved even with the fallback table.
+    Keyed by the canonical axis marks, which is what to_vector() iterates.  It
+    used to be keyed by short ASCII names (D, T, R, …) against an ORDINALS that
+    had moved to the marks, so the membership test could never succeed: every
+    lookup fell through to a fallback table of retired spellings, every entry
+    came back unresolvable, and mahalanobis_distance returned None for the whole
+    catalog without raising anything.  Returns None only if a value is genuinely
+    off its axis.
     """
     import os, sys
     _sp = os.path.join(os.path.dirname(__file__), "..", "space_search")
@@ -264,27 +245,24 @@ def _imscription_to_primitives_dict(s: Imscription) -> Optional[Dict[str, str]]:
         return None
 
     raw = {
-        "D":     s.dimensionality.value,
-        "T":     s.topology.value,
-        "R":     s.recognition_mode.value,
-        "P":     s.polarity.value,
-        "F":     s.fidelity.value,
-        "K":     s.kinetic_character.value,
-        "G":     s.granularity.value,
-        "Gamma": s.grammar.value,
-        "Phi":   s.criticality_phase.value,
-        "H":     s.chirality.value,
-        "S":     s.stoichiometry.value,
-        "Omega": s.protection.value,
+        "⊢": s.dimensionality.value,
+        "⊣": s.topology.value,
+        ">": s.recognition_mode.value,
+        "<": s.polarity.value,
+        "⋈": s.fidelity.value,
+        "⊤": s.kinetic_character.value,
+        "∈": s.granularity.value,
+        "∋": s.grammar.value,
+        "⊙": s.criticality_phase.value,
+        "⊥": s.chirality.value,
+        "⊞": s.stoichiometry.value,
+        "◻": s.protection.value,
     }
     resolved = {}
     for prim, val in raw.items():
-        if val in ORDINALS.get(prim, {}):
-            resolved[prim] = val
-        elif val in _PRIMITIVES_FALLBACK.get(prim, {}):
-            resolved[prim] = _PRIMITIVES_FALLBACK[prim][val]
-        else:
-            return None  # unresolvable — caller handles gracefully
+        if val not in ORDINALS.get(prim, {}):
+            return None  # off-axis value — caller handles gracefully
+        resolved[prim] = val
     return resolved
 
 

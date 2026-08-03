@@ -17,10 +17,10 @@ the order of vanishing of its L-function at s = 1:
   rank E(ℚ) = ord_{s=1} L(E, s)
 
 Moreover, the leading coefficient of L(E, s) at s = 1 is given by
-the BSD formula involving the real period ◻_E, regulator Reg_E,
+the BSD formula involving the real period Ω_E, regulator Reg_E,
 Tate-Shafarevich group Ш(E/ℚ), Tamagawa numbers c_v, and torsion:
 
-  lim_{s→1} (s−1)^{−r} L(E,s) = (◻_E · Reg_E · ∏_v c_v · |Ш(E)|) / |E(ℚ)_tors|²
+  lim_{s→1} (s−1)^{−r} L(E,s) = (Ω_E · Reg_E · ∏_v c_v · |Ш(E)|) / |E(ℚ)_tors|²
 
 ---
 
