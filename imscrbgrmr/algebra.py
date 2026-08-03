@@ -11,9 +11,11 @@ Weighted distance: tuple_distance(a, b) -> float
 
 Lattice operations: meet(a, b), join(a, b) -> LatticeResult
   Ordered primitives (F, K, G, Omega, H): take min/max over ordinal.
-  Categorical primitives (D, T, R, P, Gamma, Phi, S): require exact match
+  Categorical primitives (D, T, R, P, Gamma, S): require exact match
   or emit CONFLICT.
-  Special: ⊙ is absorbing under both meet and join.
+  Criticality is ordered too, but with an absorbing element: ⊙ absorbs under
+  both meet and join, and the rest of the axis takes min/max like the others.
+  A value off that axis emits CONFLICT, the way a categorical mismatch does.
 
 Ordinal conventions match Lean Core.lean and the corrected models.py:
   F: F_noise(0) < F_beltl(1) < F_dh(2) < F_hardsign(3)
@@ -21,12 +23,17 @@ Ordinal conventions match Lean Core.lean and the corrected models.py:
   G: G_revapostrophe(0) < G_beta(1) < G_gamma(2)   [aleph = finest, gimel = coarsest]
   Omega: Omega_closeepsilon(0) < Omega_crtwo(1) < Omega_dzlig(2) < Omega_C(3) < Omega_turna(4)
   H: H_closeomega(0) < H_toneletterstem(1) < H_turntwo(2) < H_invscripta(3)
+  Criticality: woe(1) < monad(2) < roar(2.33) < err(2.67) < haha(3), the ranks
+    read from the canonical table. Lean carries the same order at integer ranks;
+    the fractional two are where the complex and exceptional-point criticalities
+    sit between the real critical point and the supercritical phase.
 """
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence
 
+from .canonical_primitives import ORDINALS as _CANON_ORDINALS
 from .models import (
     CONFLICT,
     Chirality,
@@ -89,6 +96,18 @@ _CHIR_ORD: Dict[Chirality, int] = {
     Chirality.wool: 3,
 }
 _CHIR_BY_ORD = {v: k for k, v in _CHIR_ORD.items()}
+
+# Criticality is the one ordered axis whose ranks are not consecutive integers:
+# complex criticality and the exceptional point sit between the real critical
+# point and the supercritical phase, at 2.33 and 2.67. Read from the canonical
+# table rather than restated here, since restating it is how the map this
+# replaces came to hold three of the five values and raise KeyError on a tuple
+# carrying either of the others. 𐑧 is deliberately absent: the canonical order
+# is five values, and the sixth is not on it.
+_PHI_ORD: Dict[Criticality, float] = {
+    c: _CANON_ORDINALS["⊙"][c.value]
+    for c in Criticality if c.value in _CANON_ORDINALS["⊙"]
+}
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Canonical distance: primitive_mismatches
@@ -423,12 +442,17 @@ def _absorb_check(
 
 
 def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
-                absorption=None) -> Criticality:
+                absorption=None, conflicts: Optional[List[str]] = None) -> Any:
     """Criticality absorption (generalized). ⊙ is absorbing under meet and join."""
+    # Which operation this is, by the symbol the callers actually pass: ⊓ and ⊔,
+    # the square cap and cup. Testing for ∩, the set intersection, matched
+    # neither, so every call took the join branch and a meet of two criticalities
+    # returned the higher of them.
+    is_meet = op in ("⊓", "∩")
     # Check configurable absorption first
     if absorption is not None:
         absorbed = _absorb_check(absorption, "⊙", p1, p2, notes, op,
-                                 "meet" if "∩" in op else "join")
+                                 "meet" if is_meet else "join")
         if absorbed is not None:
             return absorbed
     # Fall through to canonical behavior
@@ -440,11 +464,21 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
     if p2.is_degenerate:
         notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (⊙ absorbing)")
         return p2
+    # 𐑧 is a sixth value the canonical five-value order does not rank, so neither
+    # the lower nor the higher of the pair means anything when it is one of them.
+    # Report it the way a categorical mismatch is reported rather than invent a
+    # rank to put it at one end of an axis it is not on.
+    if p1 not in _PHI_ORD or p2 not in _PHI_ORD:
+        off = p1 if p1 not in _PHI_ORD else p2
+        notes.append(f"Φ: {off.value} is off the criticality order, "
+                     f"so {p1.value} {op} {p2.value} does not resolve")
+        if conflicts is not None:
+            conflicts.append("Phi")
+        return CONFLICT
     # Neither critical — meet takes lower, join takes higher in the linear order
-    phi_ord = {Criticality.woe: 0, Criticality.monad: 1, Criticality.haha: 2}
-    result = min if "∩" in op else max
-    idx = result(phi_ord[p1], phi_ord[p2])
-    return [Criticality.woe, Criticality.monad, Criticality.haha][idx]
+    o1, o2 = _PHI_ORD[p1], _PHI_ORD[p2]
+    lower, higher = (p1, p2) if o1 <= o2 else (p2, p1)
+    return lower if is_meet else higher
 def meet(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
     """
     Lattice meet (sqcap): greatest lower bound.
@@ -481,7 +515,7 @@ def meet(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
         fidelity         = _ord("F",     s1.fidelity,          s2.fidelity,          _F_ORD,    _F_BY_ORD),
         kinetic_character= _ord("K",     s1.kinetic_character, s2.kinetic_character, _K_ORD,    _K_BY_ORD),
         granularity      = _ord("G",     s1.granularity,       s2.granularity,       _G_ORD,    _G_BY_ORD),
-        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2293", absorption),
+        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2293", absorption, conflicts),
         protection       = _ord("Omega", s1.protection,        s2.protection,        _PROT_ORD, _PROT_BY_ORD),
         stoichiometry    = _cat("S",     s1.stoichiometry,     s2.stoichiometry),
         chirality        = _ord("H",     s1.chirality,         s2.chirality,         _CHIR_ORD, _CHIR_BY_ORD),
@@ -525,7 +559,7 @@ def join(s1: Imscription, s2: Imscription, absorption=None) -> LatticeResult:
         fidelity         = _ord("F",     s1.fidelity,          s2.fidelity,          _F_ORD,    _F_BY_ORD),
         kinetic_character= _ord("K",     s1.kinetic_character, s2.kinetic_character, _K_ORD,    _K_BY_ORD),
         granularity      = _ord("G",     s1.granularity,       s2.granularity,       _G_ORD,    _G_BY_ORD),
-        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2294", absorption),
+        criticality_phase= _phi_absorb(s1.criticality_phase, s2.criticality_phase, notes, "\u2294", absorption, conflicts),
         protection       = _ord("Omega", s1.protection,        s2.protection,        _PROT_ORD, _PROT_BY_ORD),
         stoichiometry    = _cat("S",     s1.stoichiometry,     s2.stoichiometry),
         chirality        = _ord("H",     s1.chirality,         s2.chirality,         _CHIR_ORD, _CHIR_BY_ORD),

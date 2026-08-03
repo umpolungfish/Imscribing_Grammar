@@ -1,21 +1,36 @@
-Compute the RG flow table instead of typing it
+Read the criticality order from the table that owns it
 
-The flow table in ig-docs/rg_running_grammar_sm.md rebuilt alpha_em from the gauge
-couplings as alpha_em^-1 = alpha_2^-1 + (3/5) alpha_1^-1. alpha_1 is the GUT-normalised
-hypercharge coupling, alpha_1 = (5/3) alpha_Y, so recovering alpha_Y^-1 multiplies by 5/3.
-Dividing instead put sin^2(theta_W) at 0.455 at M_Z, and the document said 0.231 four
-sections later without noticing.
+`imscribe join loki_laufeyjarson odinn_allfather` raised KeyError on 𐑻. The Φ
+absorption in the algebra carried its own ordinal map, written out by hand, and
+that map held three of the five criticality values: 𐑢, ⊙, 𐑣. Any tuple carrying
+𐑮 or 𐑻 crashed the meet and the join. Loki sits at 𐑻 and Óðinn at 𐑮, so the pair
+missed the map on both sides.
 
-scripts/rg_running.py runs the one loop from the PDG values at M_Z and prints the table.
-Everything it needs is measured input; nothing in it is transcribed.
+The two absent values are the two that are not at integer ranks. Complex
+criticality and the exceptional point sit between the real critical point and the
+supercritical phase, at 2.33 and 2.67, and the hand-written map had integer
+indices into a three-element list, so it could not have held them even with the
+entries present. It reads from ORDINALS in canonical_primitives now, which is the
+table the rest of the system already treats as the source, and it picks the lower
+or higher of the pair by comparing ranks rather than indexing a list by one.
 
-Correcting the factor moves three things. sin^2(theta_W) at M_Z comes out at 0.2312,
-which is the PDG number the table was seeded with, so the reconstruction now closes and
-the 3/13 match the document leads with is no longer contradicted by its own table. The UV
-value goes to 0.3605 from 0.610 — still far from 3/13, so the conclusion that the ratio is
-an infrared statement survives. And alpha_s/alpha_em at a single scale passes through 4 at
-1.167e10 GeV, so gear = 4 has a same-scale reading and does not have to be bridged across
-regimes.
+The same function was deciding which operation it was by looking for ∩, the set
+intersection, in the operator symbol. The callers pass ⊓ and ⊔, the square cap and
+cup, so the test never matched and every call took the join branch: a meet of two
+criticalities returned the higher of them, and a configurable absorption rule
+scoped to meet could never fire while one scoped to join fired during a meet.
+Neither showed up as an error. It tests for the symbols the callers actually pass.
+The pair above now meets at 𐑮 and joins at 𐑻, which is the way round it should be.
 
-The 1.033e12 GeV scale is unchanged. It comes from pure QCD running against alpha_em at
-zero momentum, which the factor never touched.
+𐑧 is a sixth criticality value, carried by the transactinides out of
+elem2imasm.py, and the canonical order does not rank it: the enum's own docstring
+says the ordered set is five and lists it separately. So neither the lower nor the
+higher of a pair means anything when 𐑧 is one of them, and rather than invent a
+rank to put it at one end of an axis it is not on, that case now emits CONFLICT
+and names itself in the conflicts list, which is what the algebra already does for
+a categorical mismatch. All twenty-one pairs of criticality values resolve now,
+where anything outside the three-value map used to be a crash.
+
+The module docstring had Φ in the list of categorical primitives requiring exact
+match. It is ordered, with an absorbing element, and it now says so, with the
+order and its ranks written next to the other five.
