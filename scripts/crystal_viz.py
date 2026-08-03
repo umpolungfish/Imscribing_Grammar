@@ -3,7 +3,7 @@
 crystal_viz.py — Crystal of Types: Visualizations
 
 Generates four figures:
-  1. crystal_periodic_table.png   — 5×3 Φ×Ω periodic table with tier distributions
+  1. crystal_periodic_table.png   — 5×3 <×Ω periodic table with tier distributions
   2. crystal_tier_census.png      — Treemap of 10.4M types by tier
   3. crystal_p_axis.png           — P-axis Frobenius collapse matrix
   4. crystal_inner_crystal.png    — Inner 34,560-type sub-crystal quadrant diagram

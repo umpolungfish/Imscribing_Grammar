@@ -74,7 +74,7 @@ class SymbolicExpression:
     
     Examples:
         - Primitive assertion: Primitive("F", "ƒ_hardsign")
-        - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "Φ_pipevar"))
+        - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "𐑬"))
         - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "ƒ_dh"))
     """
     operator: SymbolicOperator
@@ -156,7 +156,7 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "F": imscription.fidelity.value,
         "K": imscription.kinetic_character.value,
         "G": imscription.granularity.value,        "Γ": imscription.grammar.value,
-        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+        "<": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
     }
     return mapping.get(name, "")
 

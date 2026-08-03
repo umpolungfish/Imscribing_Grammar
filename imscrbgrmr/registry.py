@@ -984,7 +984,7 @@ def register_imscription(
         ...     dimensionality="𐑛",
         ...     topology="𐑥",
         ...     recognition_mode="𐑩",
-        ...     polarity="Φ_pm_pseudo",
+        ...     polarity="𐑬",
         ...     fidelity="ƒ_hardsign",
         ...     granularity="Γ_beta",
         ...     interaction_grammar="Gamma_and(SELECTIVE)",
@@ -1075,7 +1075,7 @@ def propagate_catalog(saved_path) -> bool:
     boundaries, it is written whenever an imscription is generated. Between
     commits the canonical grew by 81 entries while eight consumer copies stood
     still, and since the grammar tools read `scripts/IG_catalog.json`, one entry
-    name resolved to two different tuples — the stale one carrying Φ=𐑹, which
+    name resolved to two different tuples — the stale one carrying <=𐑹, which
     promoted it to a tier the real entry does not hold.
 
     The trigger belongs at the write, which is here. Guarded so that saving a

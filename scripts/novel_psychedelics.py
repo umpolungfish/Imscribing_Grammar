@@ -91,13 +91,13 @@ def all_names() -> Dict[str, str]:
 # ─────────────────────────────────────────────────────────────────
 
 # 2.1 EP Gate Toggle — ⊗(⊙, 𐑻) = 𐑻
-# When Praxeum (Φ=𐑻) couples with any ⊙-critical compound,
+# When Praxeum (<=𐑻) couples with any ⊙-critical compound,
 # the composite falls to EP, closing Gate 1 (self-modeling).
 
 def ep_gate_toggle(compound_key: str, ep_ratio: float = 0.5) -> dict:
     """Compute the tensor of a compound with Praxeum at a given ratio.
 
-    Praxeum (Φ=𐑻) absorbs ⊙ under tensor: ⊗(⊙, 𐑻) = 𐑻.
+    Praxeum (<=𐑻) absorbs ⊙ under tensor: ⊗(⊙, 𐑻) = 𐑻.
     This is a controllable OFF switch for self-modeling.
 
     Args:
@@ -622,7 +622,7 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['⊥']}  Φ={ctuple['<']}  Ω={ctuple['◻']}")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['⊥']}  <={ctuple['<']}  Ω={ctuple['◻']}")
         lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['>']}{ctuple['<']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")

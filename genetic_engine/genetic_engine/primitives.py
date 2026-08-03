@@ -25,7 +25,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
 
 Promoted AAs (split stratum):
   Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→> (Reversibility),
-  Tyr→Φ (Parity),    Phe→ƒ (Force),        Ile→Ç (Kinetics),
+  Tyr→< (Parity),    Phe→ƒ (Force),        Ile→Ç (Kinetics),
   His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→Γ (Grammar/Scope),
   Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
 
@@ -95,7 +95,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # ⊙ — pH-critical catalysis gate
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable
-    IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
+    IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — H-bond grammar redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss pathological
@@ -158,7 +158,7 @@ def get_aa_primitive_description(aa: str) -> str:
         "Met": "⊢ (Scope) — translation initiation, start codon",
         "Trp": "⊣ (Topology) — largest indole ring system, structural complexity ceiling",
         "Cys": "> (Reversibility) — disulfide bond, only reversible covalent crosslink",
-        "Tyr": "Φ (Parity) — phosphorylation switch, aromatic OH toggle",
+        "Tyr": "< (Parity) — phosphorylation switch, aromatic OH toggle",
         "Phe": "ƒ (Force) — maximally hydrophobic aromatic, no heteroatoms",
         "Ile": "Ç (Kinetics) — β-branched, tightest ribosomal coupling",
         "Asn": "ɢ (Interaction) — N-glycosylation sequon, extracellular recognition",

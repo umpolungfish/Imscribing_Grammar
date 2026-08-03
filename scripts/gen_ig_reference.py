@@ -527,12 +527,12 @@ def page4() -> str:
     # rebis_concrete designs
     designs = {
         "THERAPEUTICS": [
-            ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > Φ"),
+            ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > <"),
             ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ƒ Ħ"),
             ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "Ω Γ Σ"),
         ],
         "MATERIALS": [
-            ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "Ç ⊣ Φ"),
+            ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "Ç ⊣ <"),
             ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω Ħ"),
             ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "Ħ Σ Ω"),
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.", "Γ ɢ ⊢"),
@@ -602,7 +602,7 @@ def page4() -> str:
         f"  {{\\small\\bfseries\\color{{frobcol}} Magnum Opus — 12-Stage Alchemical Mapping}}\\\\[2pt]",
         f"  {{\\scriptsize",
         f"  \\begin{{tabular}}{{@{{}}llll@{{}}}}",
-        f"  Prima Materia & ⊢ (Dimensionality) & Albedo & Φ (Parity, Frobenius-special) \\\\",
+        f"  Prima Materia & ⊢ (Dimensionality) & Albedo & < (Parity, Frobenius-special) \\\\",
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
         f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\\\",

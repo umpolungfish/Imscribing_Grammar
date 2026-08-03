@@ -230,8 +230,8 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
         "𐑾": "𐑽", "𐑾": "𐑾",
     },
     "P": {
-        "Φ_directional": "Φ_aolig", "Φ_minus": "Φ_upsilon", "Φ_plus": "Φ_upsilon",
-        "Φ_neutral": "Φ_subdoublearrow", "Φ_pm_pseudo": "Φ_pipevar",
+        "𐑗": "𐑗", "𐑬": "𐑿", "𐑬": "𐑿",
+        "𐑯": "Φ_subdoublearrow", "𐑬": "𐑬",
     },
     "F": {"ƒ_noise": "ƒ_beltl"},
     "K": {"Ç_lambda": "Ç_teshlig"},
@@ -453,10 +453,10 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
     if p1 == p2:
         return p1
     if p1.is_degenerate:
-        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p1.value} (⊙ absorbing)")
+        notes.append(f"<: {p1.value} {op} {p2.value} → {p1.value} (⊙ absorbing)")
         return p1
     if p2.is_degenerate:
-        notes.append(f"Φ: {p1.value} {op} {p2.value} → {p2.value} (⊙ absorbing)")
+        notes.append(f"<: {p1.value} {op} {p2.value} → {p2.value} (⊙ absorbing)")
         return p2
     # 𐑧 is a sixth value the canonical five-value order does not rank, so neither
     # the lower nor the higher of the pair means anything when it is one of them.
@@ -464,7 +464,7 @@ def _phi_absorb(p1: Criticality, p2: Criticality, notes: List[str], op: str,
     # rank to put it at one end of an axis it is not on.
     if p1 not in _PHI_ORD or p2 not in _PHI_ORD:
         off = p1 if p1 not in _PHI_ORD else p2
-        notes.append(f"Φ: {off.value} is off the criticality order, "
+        notes.append(f"<: {off.value} is off the criticality order, "
                      f"so {p1.value} {op} {p2.value} does not resolve")
         if conflicts is not None:
             conflicts.append("Phi")
@@ -767,7 +767,7 @@ def _lift_critical(s: Imscription, strength: float = 1.0) -> LiftResult:
     finally:
         _m._ENFORCE_AXIOMS = old
     return LiftResult(True, result,
-                      notes=[f"Φ {s.criticality_phase.value} → ⊙ (strength={strength:.2f})"],
+                      notes=[f"< {s.criticality_phase.value} → ⊙ (strength={strength:.2f})"],
                       warnings=warnings)
 
 

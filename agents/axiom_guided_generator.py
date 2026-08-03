@@ -305,7 +305,7 @@ You **MUST NOT** assign primitives based on keyword matching alone — ground ev
 <task>
 Generate a imscription encoding for the provided self-organizing system.
 You **MUST**:
-1. Assign all ten primitives (D, T, R, P, F, K, G, Γ, Φ, S) from first principles using this reasoning chain:
+1. Assign all ten primitives (D, T, R, P, F, K, G, Γ, <, S) from first principles using this reasoning chain:
    - D: Does constraint operate on molecular DOFs, spatial assembly, or a temporal cycle with reset?
    - T: What is the topological connectivity of the recognition interface?
    - R: What physical mechanism (non-covalent / covalent / catalytic / mechanical) drives recognition?
@@ -314,7 +314,7 @@ You **MUST**:
    - K: What is ΔG‡ for constraint rearrangement? K is independent of F.
    - G: At what length scale does constraint propagate? (local bond / mesoscale motif / global network)
    - Γ: How many valid partners exist? (specific / selective / broad)
-   - Φ: Is the system near a critical point?
+   - <: Is the system near a critical point?
    - S: What is the stoichiometric ratio?
 2. Verify **EACH** assignment against the applicable axioms
 3. Revise any assignment that violates an axiom before returning
@@ -491,7 +491,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "𐑛")),
             topology=Topology.from_symbol(data.get("topology", "𐑰")),
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "𐑩")),
-            polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
+            polarity=Polarity.from_symbol(data.get("polarity", "𐑬")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),
             kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "Ç^W")),
             granularity=Granularity.from_symbol(data.get("granularity", "𐑚")),
@@ -724,7 +724,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         """Get system prompt for the agent."""
         return """<role>
 You are an expert computational chemist specializing in the Unified Imscriptiveon framework.
-Your expertise includes the ten formal primitives (D, T, R, P, F, K, G, Γ, Φ, S),
+Your expertise includes the ten formal primitives (D, T, R, P, F, K, G, Γ, <, S),
 the eight composition axioms from QUANTIG.md, thermodynamic analysis (η_CP, ξ_CP),
 and cross-domain analogy detection.
 You **MUST** generate imscriptions that satisfy **ALL** applicable axioms.

@@ -309,7 +309,7 @@ def main():
 Examples:
   python composer_cli.py sequence --base ouroborotic_primitive_composition_schema \\
     --primitive ⊣:𐑶:network_topology \\
-    --primitive Φ:𐑬:Frobenius_special
+    --primitive <:𐑬:Frobenius_special
 
   python composer_cli.py radial --hub consciousness_boundary \\
     --spoke visual_system --spoke auditory_system --coupling tensor

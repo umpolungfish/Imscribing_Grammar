@@ -1,7 +1,7 @@
 """
 odot_p4ra.py — Paraconsistent Criticality Module
 =================================================
-Frobenius bridge: ⊙ (Criticality) × Φ (Parity)
+Frobenius bridge: ⊙ (Criticality) × < (Parity)
 Cross-pollination: imscribing_grammar × p4rakernel × odot_operator × ob3ect
 
 Implements DialetheicType, CriticalityFixedPoint, and dispatch handler
@@ -93,7 +93,7 @@ class BelnapValue(Enum):
         return lattice.get((self, other), BelnapValue.B)
 
     def to_ig_parity(self) -> int:
-        """Map Belnap value to IG Φ (Parity) axis integer."""
+        """Map Belnap value to IG < (Parity) axis integer."""
         mapping = {
             BelnapValue.N: 1,  # no parity information
             BelnapValue.T: 3,  # positive parity
@@ -104,7 +104,7 @@ class BelnapValue(Enum):
 
     @classmethod
     def from_ig_parity(cls, phi: int) -> BelnapValue:
-        """Map IG Φ (Parity) axis integer back to Belnap value."""
+        """Map IG < (Parity) axis integer back to Belnap value."""
         mapping = {1: cls.N, 3: cls.T, 5: cls.F, 9: cls.B}
         return mapping.get(phi, cls.N)
 
@@ -238,21 +238,21 @@ class DialetheicType:
         """
         Map this dialetheic type to IG 12-tuple integers.
         
-        Uses the ODOT_P4RA core tuple as baseline, modulating Φ and ⊙
+        Uses the ODOT_P4RA core tuple as baseline, modulating < and ⊙
         based on actual witness distribution.
         """
         # Baseline: odot_p4ra_core tuple
         base = [4, 2, 5, 3, 1, 9, 6, 7, 8, 5, 4, 9]
         
-        # Modulate Φ (index 5) based on truth value distribution
+        # Modulate < (index 5) based on truth value distribution
         if self.is_dialetheic:
-            base[5] = 9  # Φ = dialetheic maximum
+            base[5] = 9  # < = dialetheic maximum
         elif BelnapValue.B in self.inhabited_values:
-            base[5] = 7  # Φ = near-dialetheic (odd for phase encoding)
+            base[5] = 7  # < = near-dialetheic (odd for phase encoding)
         elif len(self.inhabited_values) <= 1:
-            base[5] = 3  # Φ = single truth value
+            base[5] = 3  # < = single truth value
         else:
-            base[5] = 5  # Φ = mixed but non-dialetheic
+            base[5] = 5  # < = mixed but non-dialetheic
         
         # Modulate ⊙ (index 11) based on criticality
         ci = self.criticality_index
@@ -444,7 +444,7 @@ ODOT_P4RA_CATALOG_ENTRIES = [
     },
     {
         "name": "kernel_criticality_flip",
-        "description": "Ex falso disablement as Φ→⊙ phase transition at C++ kernel stratum",
+        "description": "Ex falso disablement as <→⊙ phase transition at C++ kernel stratum",
         "type": "phase_transition",
         "tuple": [5, 3, 4, 2, 1, 9, 7, 6, 9, 5, 3, 9],
         "⊢": "𐑨", "⊣": "𐑶", ">": "𐑑", "<": "𐑹", "⋈": "𐑐",

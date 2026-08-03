@@ -59,7 +59,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each edit is a fixed point. Self-written state space (⊢=𐑦). Eternal generational memory (Ħ=𐑫).",
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — genome encodes its own modification machinery. Frobenius-closed rewrite (<=𐑹) — each edit is a fixed point. Self-written state space (⊢=𐑦). Eternal generational memory (Ħ=𐑫).",
         "⊢": "𐑦", "⊣": "𐑶", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

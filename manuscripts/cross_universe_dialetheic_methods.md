@@ -18,9 +18,9 @@ The six Clay Millennium types that remain open under canonical (RH, Yang–Mills
 
 ## 2. Method 1 — generalize, don't tailor: the T_CEILING sweep
 
-Canonical's T-constitution already treats one primitive (Ç, kinetics) asymmetrically: a ceiling condition, while the other four dynamics primitives (Φ, ƒ, Ħ, Ω) require exact equality. This asymmetry was not motivated by anything specific to Ç — it is simply the one place "at most this much" was written instead of "exactly this much."
+Canonical's T-constitution already treats one primitive (Ç, kinetics) asymmetrically: a ceiling condition, while the other four dynamics primitives (<, ƒ, Ħ, Ω) require exact equality. This asymmetry was not motivated by anything specific to Ç — it is simply the one place "at most this much" was written instead of "exactly this much."
 
-**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (Φ≤𐑹, ƒ≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
+**T_CEILING** generalizes that asymmetry uniformly to all five, same anchors (<≤𐑹, ƒ≤𐑐, Ç≤𐑧, Ħ≤𐑫, Ω≤𐑭). No anchor value changed; no primitive added or removed. This was then swept against all 29 gate-universes already on record (8 canonical + 21 hand-crafted), independently for each of the six open types — a combination that had never been computed, because the prior literature tested gate-universes against the whole catalog and absorption-universes against the Clay set, but never gate-universes against the Clay set with the T side varied.
 
 **Result:** BSD and Hodge each reach full closure (`idempotent_terminal` + T_CEILING-consistent) under five existing, non-tailored gate-universes apiece. Yang–Mills reaches the gate layer under one (`triple_criticality`) but fails T_CEILING — its kinetics value exceeds even the relaxed ceiling. RH, Navier–Stokes, and P vs NP never reach the gate layer under any of the 29, with or without T_CEILING.
 

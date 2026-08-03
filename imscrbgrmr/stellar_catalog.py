@@ -17,7 +17,7 @@ Design principles:
     (K_frtailgamma superflares for M-dwarfs, K_teshlig for neutron stars, K_frtailgamma for GRBs)
   - T encodes internal connectivity: T_braid is the compact remnant signature;
     T_nrleg is the main-sequence signature; T_bowl is the black hole signature
-  - Φ distinguishes criticality state: ⊙ confirmed wherever SOC power-law
+  - < distinguishes criticality state: ⊙ confirmed wherever SOC power-law
     statistics are documented; 𐑢 for stable or non-dynamic objects
   - Ω encodes topological protection: counts independent topological stabilization
     mechanisms (degeneracy pressure, B-field quantization, superfluid vortex

@@ -28,7 +28,7 @@ Design principles:
     dynamics; only superionic/QCP phases escape to K_turnm
   - T encodes proton network: cage (XXI), network_sym (QCP), network_mixed (XVIII),
     network_interpenetrating (VI/VII), network (X/liquid)
-  - Φ distinguishes ionic criticality: ⊙ only for phases with documented
+  - < distinguishes ionic criticality: ⊙ only for phases with documented
     SOC statistics or quantum critical fluctuations (XVIII, QCP)
   - R_COVALENT_DYNAMIC (Ice X, XVIII, QCP) marks the extreme-pressure
     proton-symmetrisation equivalent to R_downstep in biological systems
@@ -303,7 +303,7 @@ def _ice_xxi() -> Imscription:
             "fidelity_note": "F_MEDIUM: sub-ideal H-bond geometry due to tetragonal distortion",
             "k_note": "K_teshlig: room-temperature kinetic stability via pressure-induced barrier",
             "dominant_triple": True,
-            "dominant_triple_components": ["𐑶", "Ç_teshlig", "Φ_SC_PSEUDO"],
+            "dominant_triple_components": ["𐑶", "Ç_teshlig", "<_SC_PSEUDO"],
             "theorem_001": "Dominant Triple Theorem — absorbing element of tensor products",
             "delta_i_to_5meo": 0.000,
             "delta_i_note": "Zero by absorbing dominance — not zero by similarity",

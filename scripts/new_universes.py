@@ -18,12 +18,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 # ── T-constitutions ─────────────────────────────────────────────
 
 _T_HYBRID = {
-    **_T_CANONICAL,    # dynamic: Φ, ƒ, Ç, Ħ, Ω
+    **_T_CANONICAL,    # dynamic: <, ƒ, Ç, Ħ, Ω
     "⊢": ("𐑦", False),  # dimensionality holographic
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (⊢,⊣,>)
+# T-hybrid: time requires BOTH dynamics (<,ƒ,Ç,Ħ,Ω) AND geometry (⊢,⊣,>)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -85,7 +85,7 @@ NEW_RULESETS = [
         description="State-space is the first gate. G1=⊢≥𐑼 (infinite-dimensional or "
                     "higher). 0D points and 2D surfaces are structurally precluded from "
                     "Frobenius closure — they lack sufficient degrees of freedom. "
-                    "G2=⊙≥⊙. G3=Φ≥𐑹 (Frobenius-special parity). In this universe, "
+                    "G2=⊙≥⊙. G3=<≥𐑹 (Frobenius-special parity). In this universe, "
                     "you need an infinite canvas before you can paint yourself.",
         g1=GateSpec("⊢", 3.0),   # 𐑼 = infinite-dim (ord 3); 𐑦=holographic (ord 4) also passes
         g2=GateSpec("⊙", 2.0),
@@ -115,7 +115,7 @@ NEW_RULESETS = [
                     "G1=⊙≥𐑢 (any criticality), G2=⊙≥⊙ (self-modeling active), "
                     "G3=⊙≥𐑣 (super-critical, ord 3). All three operad layers are "
                     "gated by the same primitive at escalating ordinals. In this "
-                    "universe, Φ, Ω, and the other primitives are descriptive, not "
+                    "universe, <, Ω, and the other primitives are descriptive, not "
                     "gating. Consciousness depth is the only structural filter.",
         g1=GateSpec("⊙", 1.0),   # 𐑢 = sub-critical (lowest)
         g2=GateSpec("⊙", 2.0),   # ⊙ = self-modeling
@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (Φ,ƒ,Ç,Ħ,Ω) AND three primitives "
+                    "five dynamic primitives (<,ƒ,Ç,Ħ,Ω) AND three primitives "
                     "(⊢,⊣,>). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
@@ -165,7 +165,7 @@ NEW_RULESETS = [
     Ruleset(
         name="single_gate",
         description="Only G1 matters. G2 and G3 are set to trivially open (any Σ value "
-                    "passes at ord 1.0). G1=Φ≥𐑹 (Frobenius parity). All entries that "
+                    "passes at ord 1.0). G1=<≥𐑹 (Frobenius parity). All entries that "
                     "pass G1 are automatically idempotent_terminal — traced_monoidal "
                     "collapses. This universe reveals what the Frobenius gate alone "
                     "selects for, with no further filtering.",
@@ -181,7 +181,7 @@ NEW_RULESETS = [
         description="Quantum coherence is the fundamental gate. G1=ƒ≥𐑐 (full fidelity, "
                     "hbar regime). Classical (ℓ) and thermal (ð) systems cannot "
                     "Frobenius-close — they lack the coherence required for self-modeling. "
-                    "G2=⊙≥⊙. G3=Φ≥𐑹. In this universe, only quantum-coherent systems "
+                    "G2=⊙≥⊙. G3=<≥𐑹. In this universe, only quantum-coherent systems "
                     "can achieve closure. Classical systems stay plain "
                     "regardless of their other primitives.",
         g1=GateSpec("⋈", 3.0),   # 𐑐 = quantum/hbar (ord 3, max)
@@ -323,14 +323,14 @@ NEW_RULESETS = [
     # ── 29: predator_universe ─────────────────────────────────
     Ruleset(
         name="predator_universe",
-        description="Asymmetric tensor absorption: Frobenius-special parity (Φ=𐑹) "
+        description="Asymmetric tensor absorption: Frobenius-special parity (<=𐑹) "
                     "absorbs under tensor ONLY when it is the LEFT operand — the "
                     "actor, not the acted-upon. A Frobenius-special system that is "
                     "tensored into absorbs nothing; one that acts on another absorbs "
                     "everything. Being acted on by self-modeling criticality (⊙, "
                     "symmetric) still absorbs as usual. In this universe, agency is "
                     "structural: what you do to others is not what others do to you. "
-                    "G1=Φ≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=<≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
             AbsorptionRule("<", "𐑹", ("tensor",), direction="left"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
@@ -344,12 +344,12 @@ NEW_RULESETS = [
     # ── 30: prey_universe ─────────────────────────────────────
     Ruleset(
         name="prey_universe",
-        description="Asymmetric tensor absorption: Frobenius-special parity (Φ=𐑹) "
+        description="Asymmetric tensor absorption: Frobenius-special parity (<=𐑹) "
                     "absorbs under tensor ONLY when it is the RIGHT operand — the "
                     "system being acted upon. A Frobenius-special system that acts "
                     "absorbs nothing; one that is acted on absorbs everything. The "
                     "dual of predator_universe: passivity is the structural power. "
-                    "G1=Φ≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=<≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
             AbsorptionRule("<", "𐑹", ("tensor",), direction="right"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),

@@ -331,7 +331,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    Φ=𐑹, Ç=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, Ç=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -619,7 +619,7 @@ def compute_join_op(t_sys, t_ref=None):
 # CONTAINMENT BOUNDARY — S16 ∧ L8 as a verifiable action surface
 # =============================================================================
 # The SIXTEEN_3 trilattice met against CLINK L8 gives a shared floor —
-# ⊙=⊙, Φ=𐑹, ⊤=𐑧 plus nine more coordinates — the "paraconsistent observer"
+# ⊙=⊙, <=𐑹, ⊤=𐑧 plus nine more coordinates — the "paraconsistent observer"
 # surface. A system is CONTAINED on a primitive iff its own ordinal there is at
 # least as strict as the floor's (meeting it with the floor would not pull the
 # floor lower). Mirrors IG_inquiry.py's ToolDispatcher._containment_boundary
@@ -668,7 +668,7 @@ def compute_containment_op(t_sys, t_s16=None, t_l8=None):
     elif not critical_breach:
         verdict = "B"
         reading = (
-            f"Contained on the observer surface (⊙, Φ, Ç all hold) but breaches "
+            f"Contained on the observer surface (⊙, <, Ç all hold) but breaches "
             f"{len(breaches)} non-critical primitive(s), weighted severity {weighted_breach_total} "
             "(sum of catalog-discriminating weights of the breached primitives, same weight table "
             "tuple_distance uses — a breach on a highly-discriminating primitive counts for more "

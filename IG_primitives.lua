@@ -4,7 +4,7 @@
 --
 -- Two classes of problem characters:
 --   Class A — missing from Latin Modern text font (lmroman):
---     Ħ U+0126, ƒ U+0192, ɢ U+0262, ɐ U+0250, ʔ U+0294,
+--     Ħ U+0126, ƒ U+0192, ɢ U+0262, ʔ U+0294,
 --     ˌ U+02CC, ˝ U+02DD, ⊙ U+2299
 --     → need {\igprimfont char} (Everson Mono)
 --
@@ -58,7 +58,6 @@ end
 local CLASS_A = {
   [0x0126] = true,  -- Ħ  H with stroke         (Ħ primitive)
   [0x0192] = true,  -- ƒ  f with hook            (ƒ primitive)
-  [0x0250] = true,  -- ɐ  turned a               (Φ_ɐ subtype)
   [0x0262] = true,  -- ɢ  small capital G        (ɢ primitive)
   [0x0294] = true,  -- ʔ  glottal stop           (Γ_ʔ subtype)
   [0x02CC] = true,  -- ˌ  low vertical line      (ɢ_ˌ subtype)
@@ -69,7 +68,6 @@ local CLASS_A = {
   [0x03B2] = true,  -- β  beta                   (Γ_β subtype)
   [0x03B3] = true,  -- γ  gamma                  (Γ_γ subtype)
   [0x03BB] = true,  -- λ  lambda                 (Ç_λ subtype)
-  [0x03C5] = true,  -- υ  upsilon                (Φ_υ subtype)
   [0x03C9] = true,  -- ω  omega                  (retired ⊢ subtype)
   -- Canonical alphabet: axis letters that are not text characters in lmroman
   [0x22A2] = true,  -- ⊢  right tack             (⊢ Dimensionality primitive)
@@ -103,7 +101,6 @@ local CLASS_B = {
   [0x015E] = true,  -- Ş  S with cedilla         (ɢ_Ş subtype)
   [0x017C] = true,  -- ż  z dot-above            (ƒ_ż subtype)
   [0x017E] = true,  -- ž  z caron                (⊙_ž subtype)
-  [0x02D9] = true,  -- ˙  dot-above              (Φ_˙ subtype)
 }
 
 local function str_has_class_a(s)

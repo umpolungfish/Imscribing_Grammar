@@ -723,7 +723,7 @@ class PrimitiveAssignmentEngine:
         has_scale_free_behavior: bool = False,
     ) -> PrimitiveAssignment:
         """
-        Assign Φ from Varma probe score and G/D degeneracy signal.
+        Assign < from Varma probe score and G/D degeneracy signal.
 
         This is the hardest primitive to assign algorithmically because it encodes
         a dynamical regime, not a static property.  The Varma score
@@ -944,7 +944,7 @@ class PrimitiveAssignmentEngine:
         else:
             underdetermined.append("Omega")
 
-        # ── Φ ────────────────────────────────────────────────────────────────
+        # ── < ────────────────────────────────────────────────────────────────
         assignments["Phi"] = self.assign_Phi(
             varma_score=m.get("varma_score"),
             gd_degeneracy_detected=m.get("gd_degeneracy", False),
@@ -982,7 +982,7 @@ class PrimitiveAssignmentEngine:
             K   — needs ΔG‡ (activation barrier); provide delta_g_ddagger_kj
             Γ   — needs interaction selectivity; provide n_compatible/n_total_partners
             P   — needs partner identity; provide partners_identical / has_pseudosymmetry
-            Φ   — needs Varma score or G/D degeneracy data
+            <   — needs Varma score or G/D degeneracy data
             Ω   — derived from {T,K,D,Γ,G}; auto-computed when all four are available
 
         Any of those can be supplied via extra_measurements to complete the picture.
@@ -1129,7 +1129,7 @@ def check_catalog_consistency(
     notes = [
         f"Checked {n_checked} catalog imscriptions with quantitative data",
         f"F and K assignments from ξ_CP/ΔG data only — other primitives underdetermined without structural metadata",
-        "Φ assignments are heuristic — all flagged as boundary cases",
+        "< assignments are heuristic — all flagged as boundary cases",
     ]
 
     return CatalogConsistencyReport(

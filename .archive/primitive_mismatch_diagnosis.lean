@@ -92,7 +92,7 @@ inductive InteractionGrammar where
   | broad -- Γ_brd: broadcast
   deriving DecidableEq, Repr, Inhabited
 
-/-- Φ: Criticality — scaling behavior -/
+/-- <: Criticality — scaling behavior -/
 inductive Criticality where
   | sub      -- 𐑢: below critical
   | c        -- ⊙: critical (self-modeling gate)

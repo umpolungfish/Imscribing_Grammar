@@ -6,7 +6,7 @@ Imscription.lean. Enum VALUES are glyph IDs (e.g. 𐑛, 𐑡, 𐑓); field names
 Imscription use the long Python-readable form with short-name properties (dim, top,
 recog, pol, gram, fid, kin, gran, crit, prot, stoi, chir) mirroring Lean.
 
-Tuple notation: ⟨D; T; R; P; F; K; G; Γ; Φ; Ω; S; H⟩
+Tuple notation: ⟨D; T; R; P; F; K; G; Γ; <; Ω; S; H⟩
 
 Ordering conventions (match Lean Core.lean):
   F: F_noise < F_beltl < F_dh < F_hardsign
@@ -508,7 +508,7 @@ class Granularity(Enum):
 
 
 # =============================================================================
-# Primitive IX: Criticality (Φ)
+# Primitive IX: Criticality (<)
 # =============================================================================
 
 class Criticality(Enum):
@@ -770,7 +770,7 @@ class Imscription:
     A Imscription is a minimal constraint-carrying unit encoded as a 12-tuple
     over the canonical primitive types.
 
-    Notation: ⟨D; T; R; P; F; K; G; Γ; Φ; Ω; S; H⟩
+    Notation: ⟨D; T; R; P; F; K; G; Γ; <; Ω; S; H⟩
 
     All 12 primitive fields are required (no Optional). Cross-primitive axioms
     A–D from Core.lean are enforced at construction time.
@@ -876,7 +876,7 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨⊢ ⊣ > Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
+        """Canonical tuple string: ⟨⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
 
         Ħ (chirality) is slot 10 and Ω (protection) is slot 12. Emitting protection at
         10 and chirality at 12 transposes them: the VALUES stay correct but land in each

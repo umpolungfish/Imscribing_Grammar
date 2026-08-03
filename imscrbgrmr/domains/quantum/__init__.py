@@ -135,7 +135,7 @@ def _photon() -> Imscription:
           across macroscopic distances (Bell tests).
       Γ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
           frequency match (selective) AND a transition dipole (AND logic).
-      Φ = 𐑢: single photon is below the G–D criticality locus.
+      < = 𐑢: single photon is below the G–D criticality locus.
       Ω = TRIVIAL: free-space photon has no topological protection.
           (Photonic topological insulators would be a separate imscription.)
     """
@@ -184,7 +184,7 @@ def _proton() -> Imscription:
       G = G_ℵ (GLOBAL): entangled proton states observed in neutron scattering
           experiments on ice; non-local in principle.
       Γ = SPECIFIC_AND: one highly specific protonation site at a time.
-      Φ = 𐑢.
+      < = 𐑢.
       Ω = TRIVIAL: bare proton, no topological structure.
     """
     return Imscription(
@@ -228,7 +228,7 @@ def _electron() -> Imscription:
           theory); Franck-Condon principle.
       G = G_ℵ (GLOBAL): Bell-pair electrons are non-locally correlated (CHSH).
       Γ = SPECIFIC_AND: one target orbital per bonding event.
-      Φ = 𐑢.
+      < = 𐑢.
       Ω = TRIVIAL: free electron; topological character emerges from band
           structure of hosting material (separate imscription).
     """
@@ -283,9 +283,9 @@ def _spin_singlet() -> Imscription:
           arbitrarily (EPR-type) while maintaining the singlet structure.
       Γ = QUANTUM_AND: the singlet requires BOTH spins simultaneously — it is
           a joint property of the two-particle system (Toffoli semantics).
-      Φ = 𐑢: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
+      < = 𐑢: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
           isolated singlet is not yet at the criticality locus; Factor 8
-          scores the criticality candidacy probe, not Φ.
+          scores the criticality candidacy probe, not <.
       Ω = TRIVIAL: the singlet is not a topologically protected state per se.
           (A spin singlet in a topological magnet would inherit the material Ω.)
     """
@@ -335,7 +335,7 @@ def _qubit_logical() -> Imscription:
           environmental decoherence; threshold error correction overhead is large.
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
       Γ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
-      Φ = 𐑢: sub-threshold fidelity prevents criticality lift (Axiom 5).
+      < = 𐑢: sub-threshold fidelity prevents criticality lift (Axiom 5).
       Ω = TRIVIAL: unprotected qubit. Topological qubit (Ω_NA) is a separate
           imscription — it would have F_ℏ and K_teshlig instead.
     """
@@ -399,7 +399,7 @@ def _kitaev_chain_majorana() -> Imscription:
           |0_L⟩ from |1_L⟩.
       Γ = QUANTUM_AND: the non-local qubit requires both end modes simultaneously;
           a single Majorana is not a qubit.
-      Φ = 𐑢: stable topological phase (not at the phase transition).
+      < = 𐑢: stable topological phase (not at the phase transition).
       Ω = Z_CLASS (Ω_Z): ℤ topological invariant, AZ class D, 1D.
           The winding number W ∈ ℤ; topological phase has W = 1.
       S = "1:1": one Majorana zero mode per end (γ_L : γ_R = 1:1).
@@ -458,7 +458,7 @@ def _fqh_moore_read() -> Imscription:
           (GSD = 3 on torus) is a global property inaccessible to local probes.
       Γ = QUANTUM_AND: non-Abelian fusion requires simultaneous manipulation of
           two or more anyons — inherently a multi-particle (QUANTUM AND) operation.
-      Φ = 𐑢: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
+      < = 𐑢: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
           separate imscription).
       Ω = NON_ABELIAN (Ω_NA): non-Abelian Ising anyons. First Ω_NA entry in the
           catalog. Protection_strength = 4 (maximum).
@@ -520,7 +520,7 @@ def _topological_insulator_bi2se3() -> Imscription:
           the number of surface Dirac cones is determined by the bulk ℤ₂ invariant.
       Γ = SELECTIVE_AND: the surface states selectively couple to magnetic
           perturbations (gap-opening) vs. non-magnetic (no gap); selective.
-      Φ = 𐑢: stable topological insulating phase.
+      < = 𐑢: stable topological insulating phase.
       Ω = Z2_CLASS (Ω_Z₂): strong ℤ₂ TI, class AII (ν₀ = 1).
       S = None: bulk material, not a pairwise recognition event.
     """

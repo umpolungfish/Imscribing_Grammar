@@ -42,9 +42,9 @@ MISSING = [
     (r'\text{{\igprimfont ⊣}}_{\text{{\igfont ò}}}', r'{\igfont 𐑥}'),  # T_bullseye
     (r'\text{{\igprimfont ⊣}}_O',                  r'{\igfont 𐑸}'),   # T_holo, bare subscript
 
-    # Φ (Polarity) — missing values
-    (r'\text{{\igprimfont Φ}}_{\upsilon}',         r'{\igfont 𐑿}'),   # P_plus / P_psi
-    (r'\text{{\igprimfont Φ}}_{F}',               r'{\igfont 𐑬}'),   # P_pipevar / P_pm
+    # < (Polarity) — missing values
+    (r'\text{{\igprimfont <}}_{\upsilon}',         r'{\igfont 𐑿}'),   # P_plus / P_psi
+    (r'\text{{\igprimfont <}}_{F}',               r'{\igfont 𐑬}'),   # P_pipevar / P_pm
 
     # Ħ (Chirality) — actual notation uses £ and A, not digit subscripts
     (r'\text{{\igprimfont Ħ}}_{\text{{\igfont £}}}', r'{\igfont 𐑒}'),  # H1 = toneletterstem
@@ -83,7 +83,7 @@ SO_BELOW_MACROS = [
     ),
     # \Ppm: P_pipevar (𐑬) → 𐑬
     (
-        r'\newcommand{\Ppm}{{\text{{\igprimfont Φ}}_{F}}}',
+        r'\newcommand{\Ppm}{{\text{{\igprimfont <}}_{F}}}',
         r'\newcommand{\Ppm}{{\igfont 𐑬}}',
     ),
     # \GamSeq: G_seq → 𐑠

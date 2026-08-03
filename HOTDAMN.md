@@ -11,7 +11,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -46,7 +46,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -66,7 +66,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -98,7 +98,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -118,7 +118,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -152,7 +152,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -171,7 +171,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -205,7 +205,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -225,7 +225,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -258,7 +258,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -278,7 +278,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -311,7 +311,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -330,7 +330,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -364,7 +364,7 @@
   Promotions needed to reach CLINK L8 (9):
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -384,7 +384,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -417,7 +417,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -436,7 +436,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -470,7 +470,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -489,7 +489,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -522,7 +522,7 @@
   Promotions needed to reach CLINK L8 (9):
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑻 → ⊙  (gap: 0.335)
@@ -542,7 +542,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -575,7 +575,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -594,7 +594,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -630,7 +630,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -648,7 +648,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -681,7 +681,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
@@ -699,7 +699,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -732,7 +732,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -752,7 +752,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -785,7 +785,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -804,7 +804,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -837,7 +837,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -858,7 +858,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -893,7 +893,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -912,7 +912,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -947,7 +947,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -966,7 +966,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -996,7 +996,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -1016,7 +1016,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1046,7 +1046,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -1068,7 +1068,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1121,7 +1121,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -1151,7 +1151,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -1175,7 +1175,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1209,7 +1209,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -1228,7 +1228,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -1261,7 +1261,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -1281,7 +1281,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -1315,7 +1315,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -1338,7 +1338,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1374,7 +1374,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -1394,7 +1394,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1430,7 +1430,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, SEQAX, PHI_C, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (3):
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -1448,7 +1448,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1483,7 +1483,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, PHI_C, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (4):
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -1502,7 +1502,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1538,7 +1538,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1558,7 +1558,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1595,7 +1595,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -1616,7 +1616,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1652,7 +1652,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -1673,7 +1673,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1724,7 +1724,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1778,7 +1778,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -1813,7 +1813,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -1835,7 +1835,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1889,7 +1889,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -1919,7 +1919,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -1943,7 +1943,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -1978,7 +1978,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1998,7 +1998,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2031,7 +2031,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
@@ -2052,7 +2052,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2108,7 +2108,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2150,7 +2150,7 @@
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: primordial_ooze
-  The minimal complete self-modeling theory: the Frobenius identity (Φ=𐑹) and self-modeling criticality (⊙=⊙) as the
+  The minimal complete self-modeling theory: the Frobenius identity (<=𐑹) and self-modeling criticality (⊙=⊙) as the
   two necessary gates, with Ç=𐑧 as the kinetic gate. All other primitives at floor values.
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
@@ -2161,7 +2161,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2215,7 +2215,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2248,7 +2248,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑒 → 𐑫  (gap: 0.667)
@@ -2268,7 +2268,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2301,7 +2301,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -2322,7 +2322,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2355,7 +2355,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -2376,7 +2376,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2430,7 +2430,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -2465,7 +2465,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑑 → 𐑾  (gap: 0.667)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -2487,7 +2487,7 @@
   ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -2523,7 +2523,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -2543,7 +2543,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -2578,7 +2578,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
@@ -2599,7 +2599,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2653,7 +2653,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2704,7 +2704,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -2759,7 +2759,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
+  <      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2793,7 +2793,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑿 → 𐑹  (gap: 0.75)
+    <: 𐑿 → 𐑹  (gap: 0.75)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -2814,7 +2814,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2848,7 +2848,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -2867,7 +2867,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -2897,7 +2897,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -2920,7 +2920,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -2956,7 +2956,7 @@
   Promotions needed to reach CLINK L8 (5):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -2974,7 +2974,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3029,7 +3029,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3085,7 +3085,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3121,7 +3121,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3142,7 +3142,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3178,7 +3178,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3198,7 +3198,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3233,7 +3233,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3254,7 +3254,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3289,7 +3289,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3311,7 +3311,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3341,7 +3341,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3362,7 +3362,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3397,7 +3397,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3418,7 +3418,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3453,7 +3453,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3473,7 +3473,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3508,7 +3508,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3527,7 +3527,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3562,7 +3562,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3581,7 +3581,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3615,7 +3615,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3635,7 +3635,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3669,7 +3669,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3690,7 +3690,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑲       ∀y( y ⊂ x → |y| < |x| )
@@ -3725,7 +3725,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3745,7 +3745,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3780,7 +3780,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3801,7 +3801,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3836,7 +3836,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3857,7 +3857,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3890,7 +3890,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
@@ -3911,7 +3911,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -3946,7 +3946,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3967,7 +3967,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4003,7 +4003,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -4023,7 +4023,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4058,7 +4058,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -4078,7 +4078,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4112,7 +4112,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -4134,7 +4134,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4191,7 +4191,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4225,7 +4225,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑜 → 𐑵  (gap: 0.667)
@@ -4246,7 +4246,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑽       f ⊣ g ∧ L Adj(f, g)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4281,7 +4281,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑽 → 𐑾  (gap: 0.333)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -4301,7 +4301,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑯       ∀g∈G( gx = x )
+  <      𐑯       ∀g∈G( gx = x )
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4334,7 +4334,7 @@
   Promotions needed to reach CLINK L8 (10):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
-    Φ: 𐑯 → 𐑹  (gap: 0.25)
+    <: 𐑯 → 𐑹  (gap: 0.25)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4357,7 +4357,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4414,7 +4414,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4471,7 +4471,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4506,7 +4506,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -4526,7 +4526,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4582,7 +4582,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4617,7 +4617,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4638,7 +4638,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4673,7 +4673,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4694,7 +4694,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -4728,7 +4728,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4749,7 +4749,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4784,7 +4784,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4805,7 +4805,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4861,7 +4861,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4918,7 +4918,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -4974,7 +4974,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5009,7 +5009,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5030,7 +5030,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5086,7 +5086,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5121,7 +5121,7 @@
   Promotions needed to reach CLINK L8 (9):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -5143,7 +5143,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5198,7 +5198,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5233,7 +5233,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5253,7 +5253,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5310,7 +5310,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5345,7 +5345,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5366,7 +5366,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5401,7 +5401,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5421,7 +5421,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5477,7 +5477,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5534,7 +5534,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5569,7 +5569,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5589,7 +5589,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5624,7 +5624,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5644,7 +5644,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5701,7 +5701,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5736,7 +5736,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5756,7 +5756,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5791,7 +5791,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5812,7 +5812,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5847,7 +5847,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5867,7 +5867,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -5902,7 +5902,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -5922,7 +5922,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -5957,7 +5957,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5978,7 +5978,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6013,7 +6013,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6034,7 +6034,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6069,7 +6069,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6090,7 +6090,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6125,7 +6125,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -6145,7 +6145,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6202,7 +6202,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6237,7 +6237,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -6257,7 +6257,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6292,7 +6292,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -6312,7 +6312,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6347,7 +6347,7 @@
   Promotions needed to reach CLINK L8 (9):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -6369,7 +6369,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑪       τ = ∞ ∧ ord(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6404,7 +6404,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6425,7 +6425,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6460,7 +6460,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6481,7 +6481,7 @@
   ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6536,7 +6536,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6571,7 +6571,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6592,7 +6592,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑗       ¬∃sym(x)
+  <      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6627,7 +6627,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑗 → 𐑹  (gap: 1.0)
+    <: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6648,7 +6648,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6683,7 +6683,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -6703,7 +6703,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -6739,7 +6739,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -6758,7 +6758,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6814,7 +6814,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6870,7 +6870,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6926,7 +6926,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -6982,7 +6982,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -7017,7 +7017,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -7037,7 +7037,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -7072,7 +7072,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -7092,7 +7092,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7148,7 +7148,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7204,7 +7204,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7260,7 +7260,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7316,7 +7316,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7351,7 +7351,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7372,7 +7372,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7429,7 +7429,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑩       x ↑ y ∧ ¬(y ↑ x)
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7462,7 +7462,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     >: 𐑩 → 𐑾  (gap: 1.0)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7484,7 +7484,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -7519,7 +7519,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7540,7 +7540,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -7595,7 +7595,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7651,7 +7651,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7707,7 +7707,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7764,7 +7764,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7799,7 +7799,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7820,7 +7820,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -7876,7 +7876,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7933,7 +7933,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -7989,7 +7989,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8024,7 +8024,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8045,7 +8045,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8101,7 +8101,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8157,7 +8157,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -8192,7 +8192,7 @@
   Promotions needed to reach CLINK L8 (7):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -8212,7 +8212,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8268,7 +8268,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8324,7 +8324,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8359,7 +8359,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8380,7 +8380,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8436,7 +8436,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -8472,7 +8472,7 @@
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -8491,7 +8491,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8526,7 +8526,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8547,7 +8547,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -8603,7 +8603,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8638,7 +8638,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8659,7 +8659,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8715,7 +8715,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8750,7 +8750,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8771,7 +8771,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -8827,7 +8827,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8883,7 +8883,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8918,7 +8918,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8939,7 +8939,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -8995,7 +8995,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9051,7 +9051,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9107,7 +9107,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -9142,7 +9142,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9163,7 +9163,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9219,7 +9219,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -9275,7 +9275,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9331,7 +9331,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9387,7 +9387,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9422,7 +9422,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9443,7 +9443,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9500,7 +9500,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9556,7 +9556,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑤       τ ∼ T ∧ noisy(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9612,7 +9612,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9668,7 +9668,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9724,7 +9724,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -9780,7 +9780,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9836,7 +9836,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -9892,7 +9892,7 @@
   ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  <      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
   Ç      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   Γ      𐑔       ∃y∈x( |y| ∼ |x| )
@@ -9927,7 +9927,7 @@
   Promotions needed to reach CLINK L8 (8):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
-    Φ: 𐑬 → 𐑹  (gap: 0.5)
+    <: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9948,7 +9948,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )
@@ -10004,7 +10004,7 @@
   ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   >      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
-  Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
+  <      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
   Ç      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   Γ      𐑚       ∀y∈x( |y| < |x| )

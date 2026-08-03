@@ -53,7 +53,7 @@ print("=" * 60)
 # Crystal = 3^3 * 4^5 * 5^4
 # 3-card primitives: ƒ, Γ, Σ  (count=3, each 3 values)
 # 4-card primitives: ⊢, >, ɢ, Ħ, Ω  (count=5, each 4 values)
-# 5-card primitives: ⊣, Φ, Ç, ⊙  (count=4, each 5 values)
+# 5-card primitives: ⊣, <, Ç, ⊙  (count=4, each 5 values)
 
 prim_cards = {
     "⊢": 4, "⊣": 5, ">": 4, "<": 5, "⋈": 3,
@@ -316,7 +316,7 @@ print("8. IG BOOTSTRAP SEQUENCE vs CENTRAL DOGMA ORDERING")
 print("=" * 60)
 
 # IG bootstrap: ordinal-1 of each primitive in canonical tuple order
-# ⊢→⊣→>→Φ→ƒ→Ç→Γ→ɢ→⊙→Ħ→Σ→Ω
+# ⊢→⊣→>→<→ƒ→Ç→Γ→ɢ→⊙→Ħ→Σ→Ω
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
 ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]

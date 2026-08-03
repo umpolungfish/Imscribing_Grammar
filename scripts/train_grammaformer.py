@@ -283,7 +283,7 @@ def train(args):
                         num_workers=args.num_workers, drop_last=True)
 
     # Freeze token_embed only — pure lookup table, no role.
-    # frobenius_head is the μ∘δ operator (the Φ gate). It MUST be trainable:
+    # frobenius_head is the μ∘δ operator (the < gate). It MUST be trainable:
     # freezing it structurally prevents Frobenius closure from being learned.
     # The F-loss would climb indefinitely with it frozen.
     # Memory: backbone(1527M) + frob_head(311M) = 1838M trainable.
@@ -486,7 +486,7 @@ if __name__ == "__main__":
     parser.add_argument("--gate-anneal-steps", type=int, default=500,
                         help="Steps over which gate target anneals from 0.5 to 0.8")
     parser.add_argument("--alpha-f", type=float, default=4.1,
-                        help="Frobenius loss weight (default 4.1; grammar-derived: Φ cliff "
+                        help="Frobenius loss weight (default 4.1; grammar-derived: < cliff "
                              "is 91%% of d(GF,O_∞); must balance LM loss at convergence)")
     parser.add_argument("--alpha-g", type=float, default=0.3,
                         help="Gate loss weight (default 0.3; was 0.1 — gate froze at 0.543)")

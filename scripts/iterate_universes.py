@@ -85,7 +85,7 @@ def build_universes():
         ("⊤", "⊙", "kinetics_criticality", "Ç≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
         ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → ⊢≥ord4.0: topology then dimension"),
         ("∈", "∋", "scope_grammar", "Γ≥ord3.0 → ɢ≥ord4.0: universal scope then broadcast"),
-        ("<", "⋈", "parity_fidelity", "Φ≥ord5.0 → ƒ≥ord3.0: Frobenius parity then quantum fidelity"),
+        ("<", "⋈", "parity_fidelity", "<≥ord5.0 → ƒ≥ord3.0: Frobenius parity then quantum fidelity"),
         ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
     ]
     for g1_prim, g2_prim, name, desc in combos:
@@ -107,7 +107,7 @@ def build_universes():
     # All dynamics only
     rulesets.append(Ruleset(
         name="t_all_dynamics",
-        description="T constituted by ALL 5 dynamic primitives (Φ,ƒ,Ç,Ħ,Ω). Canonical gates. "
+        description="T constituted by ALL 5 dynamic primitives (<,ƒ,Ç,Ħ,Ω). Canonical gates. "
                     "Time requires the full dynamic quintet.",
         t_prims={p: _T_CANONICAL[p] for p in dynamics},
     ))

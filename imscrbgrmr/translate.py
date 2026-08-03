@@ -305,7 +305,7 @@ def translate_criticality(s: Imscription) -> ImscriptionM[Imscription]:
     if s.criticality_phase != CriticalityPhase.monad:
         rec = StepRecord(
             "translate_criticality", s.name, "PASS", 0.0,
-            f"Φ={s.criticality_phase} — not ⊙; no translation cost"
+            f"<={s.criticality_phase} — not ⊙; no translation cost"
         )
         return ImscriptionM(value=s, cost=0.0, context=Context(step_count=1), log=[rec])
 

@@ -827,7 +827,7 @@ class B4Frobenius:
             return (True,
                     f"Consistent: classical={frob_classical}, B4={b4_result}")
         return (False,
-                f"Mismatch: classical Φ check says {frob_classical} "
+                f"Mismatch: classical < check says {frob_classical} "
                 f"but B4 Frobenius says {b4_result}")
 
 
@@ -846,7 +846,7 @@ def para_tensor_belief(belief_a: FrozenSet[str],
                         prim: str = "<") -> FrozenSet[str]:
     """Paraconsistent tensor on belief sets.
 
-    Bottleneck primitives (Φ, ƒ): min ordinal (conservative)
+    Bottleneck primitives (<, ƒ): min ordinal (conservative)
     All other primitives: max ordinal (union)
 
     Uses ordinal-aware comparison via _bottleneck_min / _max_v instead of
@@ -864,7 +864,7 @@ def para_tensor_belief(belief_a: FrozenSet[str],
 
 
 def frobenius_cliff_belief(phi_belief: FrozenSet[str]) -> Optional[B4]:
-    """Compute the Frobenius cliff: does forcing Φ to B{v, 𐑹} collapse?
+    """Compute the Frobenius cliff: does forcing < to B{v, 𐑹} collapse?
 
     Returns:
       B4.T  if classical collapse (𐑹 present alone)

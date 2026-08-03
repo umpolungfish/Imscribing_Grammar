@@ -66,7 +66,7 @@ _G_alt    = "ɢ^˝"   # alternating / cyclic
 _G_sub    = "ɢ^ˌ"   # subordinate / secondary
 _G_broad  = "ɢ^Ş"   # broadcast / full
 
-# Φ — Parity / Symmetry
+# < — Parity / Symmetry
 _P_weak   = "𐑗"   # weak / partial
 _P_strong = "𐑿"   # strong / near-full
 _P_click  = "𐑬"   # sharp click = symmetry-breaking operator

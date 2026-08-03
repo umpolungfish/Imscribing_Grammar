@@ -5,7 +5,7 @@ PrimordialOoze.lean — The Pre-Temporal Stratum
 The Frobenius fixed point is "more primitive than time." This file proves
 a stronger claim: there exists an absolute floor — the primordial
 ooze — at which μ∘δ=id (Frobenius closure) achieves O_∞ with only TWO
-primitives at non-minimum values: Φ = or' (𐑹) and
+primitives at non-minimum values: < = or' (𐑹) and
 φ̂ = monad (φ̂_ÿ).  The remaining 10 primitives can all be at
 their minimum ordinal (index 0).
 

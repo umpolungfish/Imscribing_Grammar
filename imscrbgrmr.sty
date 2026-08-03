@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Φ}{υ}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
+%   e.g. \prim{Ç}{@}   \prim{φ̂}{ÿ}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -104,12 +104,13 @@
 \newcommand{\Rdag}{\shav{𐑽}}    % ear — dagger / reciprocal
 \newcommand{\Rlr}{\shav{𐑾}}     % ian — lateral / peer
 
-% Φ — Parity/Symmetry
-\newcommand{\Pasym}{\prim{Φ}{ɐ}}
-\newcommand{\Ppsi}{\prim{Φ}{υ}}
-\newcommand{\Ppm}{\prim{Φ}{F}}
-\newcommand{\Psym}{\prim{Φ}{˙}}
-\newcommand{\Pfrob}{\prim{Φ}{\}}}   % Frobenius: Φ_}
+% < — Polarity.  Core.lean ctor order: church, yew, out, nun, or'.
+\newcommand{\Ppol}{\axis{<}}
+\newcommand{\Pasym}{\shav{𐑗}}   % church — asymmetric, no symmetry axis
+\newcommand{\Ppsi}{\shav{𐑿}}    % yew    — phase symmetry, U(1)
+\newcommand{\Ppm}{\shav{𐑬}}     % out    — ℤ₂ discrete, sign flip
+\newcommand{\Psym}{\shav{𐑯}}    % nun    — full continuous symmetry
+\newcommand{\Pfrob}{\shav{𐑹}}   % or'    — Special Frobenius, μ∘δ=id
 
 % ƒ — Fidelity
 \newcommand{\Fell}{\prim{ƒ}{ì}}

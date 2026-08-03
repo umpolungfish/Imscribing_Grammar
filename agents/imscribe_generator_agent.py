@@ -812,7 +812,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - How resistant to change is its state? (K)
 - How far does one act propagate? (G)
 - How does it select co-participants? (Γ)
-- Is it near a threshold/criticality? (Φ)
+- Is it near a threshold/criticality? (<)
 - Does it break symmetry persistently? (H)
 - What is the participation ratio? (S)
 - Is its role topologically protected? (Ω)
@@ -870,7 +870,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑠`: Sequential — ordered steps; partners engaged in sequence.
 - `𐑵`: Broad conjunctive — many required partners (>10), cooperative assembly.
 
-**Φ — Criticality** (proximity to a critical point/threshold):
+**< — Criticality** (proximity to a critical point/threshold):
 - `𐑢`: Subcritical — normal regime, no scale-free behavior.
 - `⊙`: Critical — at the threshold; scale-free correlations, 𐑲 and ⊙ co-occur naturally.
 - `𐑮`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
@@ -915,14 +915,14 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [6] K  → relaxation: driven (τ≪T_obs) → 𐑘; visible dynamics (τ∼T_obs) → 𐑤; frozen (τ≫T_obs) → 𐑧; trapped ordered → 𐑪; trapped disordered → 𐑺
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
   [8] Γ  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
-  [9] Φ  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
+  [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
   [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires Ç=𐑪)
   [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
   [12] Ω → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
 - D-Ω: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
-- K-Φ: ⊙ + Ç=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + Ç=𐑘 = runaway decay
+- K-<: ⊙ + Ç=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + Ç=𐑘 = runaway decay
 - 𐑹 requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
 - Tier verification: ⊙ + 𐑹 → O_∞; ⊙ + 𐑷 → O₁; ⊙ + Omega≠0 + D∈{𐑛,𐑨,𐑦} → O₂; ⊙ + Omega≠0 + 𐑼 → O₂†
 </decision_procedure>
@@ -939,13 +939,13 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 - F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is 𐑐. A luck-spirit that sometimes helps is 𐑱.
 - K: How resistant is its role to change? Can it be "talked out of" its function (𐑘)? Or is its role frozen by the structure of the narrative (𐑧/𐑪)?
 - G: Does it affect only its immediate contact, a local region, or the entire system?
-- Φ: Does it operate at a threshold — a point of maximum sensitivity between two states?
+- <: Does it operate at a threshold — a point of maximum sensitivity between two states?
 - H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
 - Ω: Is the role topologically required by the structure of the system, or could it be continuously deformed away?
 
 *Mathematical structures*: The "operating space" is the mathematical domain; 𐑦 for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; Ω encodes homotopy class.
 
-*Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; Φ encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
+*Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; < encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
 
 **EXAMPLE — Samael (שָׂמָאֵל, adversarial angel of death, Kabbalistic tradition):**
 In its role within Jewish cosmology, Samael is:
@@ -1118,8 +1118,8 @@ You **MUST**:
                 for k, v in inner.items():
                     canon = _key_map.get(k, k)
                     lifted[canon] = v.get("value", v) if isinstance(v, dict) else v
-                # Γ/Φ ambiguity resolution: some models use Γ for interaction_grammar
-                # (confusing Γ with ɢ) and Φ for criticality_phase (confusing Φ with ⊙).
+                # Γ/< ambiguity resolution: some models use Γ for interaction_grammar
+                # (confusing Γ with ɢ) and < for criticality_phase (confusing < with ⊙).
                 # When BOTH the ASCII key and the Shavian glyph are present in the
                 # original inner dict, the glyph is reassigned to the OTHER primitive.
                 if "G" in inner and "∈" in inner:
@@ -1218,8 +1218,8 @@ You **MUST**:
         "F": "fidelity",           "K": "kinetic_character",
         "G": "granularity",        "H": "chirality",
         "S": "stoichiometry",      "W": "protection",
-        # Φ is ambiguous: when both P (ASCII) and Φ (glyph) are present,
-        # P→polarity wins; Φ→criticality_phase resolved in adapter logic.
+        # < is ambiguous: when both P (ASCII) and < (glyph) are present,
+        # P→polarity wins; <→criticality_phase resolved in adapter logic.
         "<": "polarity",
     }
 
@@ -1233,7 +1233,7 @@ You **MUST**:
     ) -> Imscription:
         """Create a Imscription object from parsed data.
 
-        Extended to support ten primitives: D, T, R, P, F, K, G, Γ, Φ, S
+        Extended to support ten primitives: D, T, R, P, F, K, G, Γ, <, S
         """
         # Normalize short-form keys (D, T, Γ, …) to long-form, and unwrap nested
         # {"value": "...", "reasoning": "..."} dicts some models return per primitive

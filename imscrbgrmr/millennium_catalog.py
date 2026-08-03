@@ -4,7 +4,7 @@ Millennium Prize Problems — Imscriptive Catalog  (v0.5.0)
 Seven Clay Mathematics Institute Millennium Prize Problems encoded as canonical
 12-primitive imscriptions.  Includes the standard_proof_system as the reference baseline.
 
-Primitive-tuple notation: ⟨D; T; R; P; Γ; F; K; G; Φ; Ω; S; H⟩
+Primitive-tuple notation: ⟨D; T; R; P; Γ; F; K; G; <; Ω; S; H⟩
 
 ─────────────────────────────────────────────────────────────────────────────
 DESIGN PRINCIPLE
@@ -57,7 +57,7 @@ DISTANCES FROM standard_proof_system
 NOTABLE PAIRWISE DISTANCES
 ─────────────────────────────────────────────────────────────────────────────
   Yang–Mills ↔ BSD               : d = 5   ← structurally closest pair among unsolved;
-                                             share D, F, K, G, Φ, Ω, H → spectral/topological
+                                             share D, F, K, G, <, Ω, H → spectral/topological
                                              methods may bridge both
   RH ↔ P vs NP                   : d = 9   ← despite both being d=10 from baseline,
                                              they differ by 9: completely different mechanisms
@@ -705,7 +705,7 @@ def millennium_distance_report() -> str:
         solved = imscriptions[n].metadata.get("solved", False)
         phi = imscriptions[n].crit.value
         mark = "✓ SOLVED" if solved else "  unsolved"
-        lines.append(f"  d={d:2d}  {abbrev[n]}  Φ={phi}  {mark}")
+        lines.append(f"  d={d:2d}  {abbrev[n]}  <={phi}  {mark}")
 
     lines.append("")
     lines.append("Closest pairs among unsolved problems:")

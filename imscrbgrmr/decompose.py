@@ -21,12 +21,12 @@ Tensor rules are primitive-aware (see algebra.py):
   • G    → join-dominant (tensor takes max)  ← "join-dominant"
   • D    → union (D-components form a set system)
   • T    → promotion (topology lattice)
-  • Φ    → join-dominant (⊙ propagates)
+  • <    → join-dominant (⊙ propagates)
   • Ω    → join-dominant (higher topological protection inherits)
   • R, P, Γ → categorical (tensor helper rules)
 
 Cofactor analysis is primitive-aware: for meet-dominant (F, K), cofactor reveals
-the bottleneck component; for join-dominant (G, Φ, Ω), it reveals the contributor.
+the bottleneck component; for join-dominant (G, <, Ω), it reveals the contributor.
 """
 
 from __future__ import annotations
@@ -485,7 +485,7 @@ def principal_decomp(imscription: Imscription, max_factors: int = 9) -> Principa
     plus the categorical skeleton as the final factor.
 
     A imscription is join-irreducible in the ordinal dimensions when all F/K/G are at
-    their constraint-bottoms.  The categorical dimensions (D, T, R, P, Γ, Φ, Ω)
+    their constraint-bottoms.  The categorical dimensions (D, T, R, P, Γ, <, Ω)
     are each a single atom — they cannot be further decomposed without losing their
     identity.
 
@@ -557,7 +557,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
 
     D (union):  cofactor[D] = components(C) − components(A) → CONTRIBUTOR / EXPLAINED
     T (topology promotion): same logic as join-dominant ordinal
-    Φ (⊙ join-dominant): if A has ⊙ and C has ⊙ → EXPLAINED; else CONTRIBUTOR / CONFLICT
+    < (⊙ join-dominant): if A has ⊙ and C has ⊙ → EXPLAINED; else CONTRIBUTOR / CONFLICT
     Ω (topo protection, join): same as G logic on ordinal strength
     R, P, Γ (categorical, tensor helper):
       • A[p] = C[p] → EXPLAINED (A explains it)
@@ -635,7 +635,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     cofactor_kwargs[_PRIM_FIELD["D"]] = cof_d
     dims.append(CofactorDimension("D", C.dimensionality, A.dimensionality, cof_d, role, note))
 
-    # ── Φ (⊙ join-dominant) ────────────────────────────────────────────────
+    # ── < (⊙ join-dominant) ────────────────────────────────────────────────
     a_phi = _has_phi_c(A)
     c_phi = _has_phi_c(C)
     if a_phi and not c_phi:

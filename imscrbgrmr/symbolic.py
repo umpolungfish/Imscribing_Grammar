@@ -74,7 +74,7 @@ class SymbolicExpression:
     
     Examples:
         - Primitive assertion: Primitive("F", "ƒ_hardsign")
-        - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "Φ_pipevar"))
+        - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "𐑬"))
         - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "ƒ_dh"))
     """
     operator: SymbolicOperator
@@ -438,7 +438,7 @@ class AxiomTheoremProver:
             "axiom1": SymbolicExpression.Implies(
                 SymbolicExpression.And(
                     SymbolicExpression.primitive("T", "𐑥"),
-                    SymbolicExpression.primitive("P", "Φ_doublebarpipe"),
+                    SymbolicExpression.primitive("P", "<_doublebarpipe"),
                 ),
                 SymbolicExpression.Or(
                     SymbolicExpression.primitive("F", "ƒ_hardsign"),
@@ -580,7 +580,7 @@ class CrossDomainAnalogyDetector:
     """
     
     # Primitive weights for similarity computation.
-    # D and Φ must be present so that cross-domain pairs (D_∧ vs D_∞) and
+    # D and < must be present so that cross-domain pairs (D_∧ vs D_∞) and
     # criticality differences are reflected in the similarity score and
     # correctly reported in the shared/differing primitive lists.
     # The code self-normalises by dividing by total_weight, so absolute
@@ -899,12 +899,12 @@ class PredictiveRuleGenerator:
         # ── Axiom 1 (T_⋈ closure amplifies fidelity) ──────────────────────────
         # Symmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "𐑥"), P("P", "Φ_doublebarpipe")),
+            And(P("T", "𐑥"), P("P", "<_doublebarpipe")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
         # Pseudosymmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "𐑥"), P("P", "Φ_pm_pseudo")),
+            And(P("T", "𐑥"), P("P", "𐑬")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 

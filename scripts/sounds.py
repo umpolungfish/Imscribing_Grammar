@@ -47,7 +47,7 @@ def normalize(signal, peak=0.8):
 #   ⊢  Dimensionality  — harmonic richness  (more harmonics = higher dimension)
 #   ⊣  Topology        — interval structure  (dissonance/consonance = topology)
 #   >  Relational      — directional sweeps  (directionality of pitch)
-#   Φ  Parity          — waveform symmetry   (symmetry of the waveform itself)
+#   <  Parity          — waveform symmetry   (symmetry of the waveform itself)
 #   ƒ  Fidelity        — signal clarity      (noise floor vs clean tone)
 #   Ç  Kinetics        — temporal envelope   (attack/decay shape = speed)
 #   Γ  Scope           — bandwidth           (narrow → full spectrum)
@@ -162,7 +162,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f_lo, t) * env
 
     # =========================================================================
-    # Φ — Parity / Symmetry
+    # < — Parity / Symmetry
     # Waveform symmetry encodes symmetry class:
     # sawtooth (max asymmetry) → FM complex → square (±) → pure sine → Frobenius
     # =========================================================================
@@ -469,13 +469,13 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
     ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
     ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # > Relational
-    ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # Φ Polarity
+    ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # < Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ƒ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # Ç Kinetics
     ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # Γ Scope
@@ -499,7 +499,7 @@ PRIMITIVE_MAP = {
     # > Relational
     '𐑩': ('>', '̄'),   '𐑑': ('>', 'ý'),
     '𐑽': ('>', 'Ť'),   '𐑾': ('>', '='),
-    # Φ Polarity
+    # < Polarity
     '𐑗': ('<', 'ɐ'),   '𐑿': ('<', 'υ'),   '𐑬': ('<', 'F'),
     '𐑯': ('<', '̇'),   '𐑹': ('<', '}'),
     # ƒ Fidelity

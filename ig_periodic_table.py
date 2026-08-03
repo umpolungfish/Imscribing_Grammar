@@ -458,7 +458,7 @@ def generate_tex():
         f'at (0cm,{prim_y:.3f}cm) {{'
         r'Cell annotation (bottom): dominant IG primitive --- '
         r'{\igprimfont Ħ}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ɢ}=Coupling $\cdot$ '
-        r'{\igprimfont Σ}=Stoichiometry $\cdot$ {\igprimfont ⊣}=Topology $\cdot$ {\igprimfont Φ}=Parity $\cdot$ {\igprimfont Ç}=Kinetics $\cdot$ '
+        r'{\igprimfont Σ}=Stoichiometry $\cdot$ {\igprimfont ⊣}=Topology $\cdot$ {\igprimfont <}=Parity $\cdot$ {\igprimfont Ç}=Kinetics $\cdot$ '
         r'{\igprimfont ⊢}=Dimensionality'
         '. Dashed border = radioactive.};\n'
     )

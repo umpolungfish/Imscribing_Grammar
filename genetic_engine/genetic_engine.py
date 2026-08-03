@@ -456,7 +456,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Met": IGPrimitive.SCOPE,         # ⊢ — start codon, translation scope
     "Trp": IGPrimitive.TOPOLOGY,      # ⊣ — bicyclic indole, topological ceiling
     "Cys": IGPrimitive.REVERSIBILITY, # > — disulfide bonds, reversible crosslinks
-    "Tyr": IGPrimitive.PARITY,        # Φ — phosphorylation switch
+    "Tyr": IGPrimitive.PARITY,        # < — phosphorylation switch
     "Phe": IGPrimitive.FORCE,         # ƒ — max hydrophobicity, force ceiling
     "Ile": IGPrimitive.KINETICS,      # Ç — β-branched, ribosomal coupling
     "His": IGPrimitive.GRAMMAR,       # Γ — imidazole pKa bridge
@@ -494,7 +494,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
-    IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
+    IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation matters
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
     IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss is pathological
@@ -1217,7 +1217,7 @@ class ChimeraDetector:
             (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # ⊣ ⊗ >
              "Topological irreversibility: editing Trp (indole collapse) AND Cys "
              "(disulfide loss) reduces both structural complexity and flexibility."),
-            (P.PARITY, P.CRITICALITY, 2.5, False,  # Φ ⊗ φ̂
+            (P.PARITY, P.CRITICALITY, 2.5, False,  # < ⊗ φ̂
              "Parity-critical coupling: editing Tyr (phosphorylation loss) AND Gln "
              "(regulatory node) removes both the signaling switch and its control."),
             (P.KINETICS, P.CHIRALITY, 2.5, False,  # Ç ⊗ Ħ

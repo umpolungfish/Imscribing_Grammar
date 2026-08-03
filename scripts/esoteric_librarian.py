@@ -124,7 +124,7 @@ _FIELD_LABELS = {
     '⊤': 'K  Kinetics      ',
     '∈': 'G  Scope         ',
     '∋': 'Γ  Grammar       ',
-    CRIT_LEGACY: 'Φ  Criticality   ',
+    CRIT_LEGACY: '<  Criticality   ',
     '⊥': 'H  Chirality',
     '⊞': 'S  Stoichiometry ',
     '◻': 'Ω  Winding       ',
@@ -474,11 +474,11 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #   ⊢: 𐑛 𐑨 𐑼 𐑦
 #   ⊣: 𐑡 𐑰 𐑥 𐑶 𐑸
 #   >: 𐑩 𐑑 𐑽 𐑾
-#   Φ: 𐑗 𐑿 𐑬 𐑯 𐑹}
+#   <: 𐑗 𐑿 𐑬 𐑯 𐑹}
 #   ƒ: ƒ^ì ƒ^ð ƒ^ż
 #   Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ
 #   Γ: 𐑚 𐑔 𐑲

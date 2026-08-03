@@ -10,12 +10,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PHI = '⊙'
 
 # ---------------------------------------------------------------------------
-# Available glyph IDs — field order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ƒ Ç Γ ɢ [⊙=crit] Ħ Σ Ω
 #
 #   ⊢  Dimensionality : 𐑛  𐑨  𐑼  𐑦
 #   ⊣  Topology       : 𐑡  𐑰  𐑥  𐑶  𐑸
 #   >  Relational     : 𐑩  𐑑  𐑽  𐑾
-#   Φ  Polarity       : 𐑗  𐑿  𐑬  𐑯  𐑹
+#   <  Polarity       : 𐑗  𐑿  𐑬  𐑯  𐑹
 #   ƒ  Fidelity       : ƒ^ì  ƒ^ð  ƒ^ż
 #   Ç  Kinetics       : Ç^-  Ç^W  Ç^@  Ç^Ù  Ç^λ
 #   Γ  Scope          : 𐑚  𐑔  𐑲
@@ -25,11 +25,11 @@ PHI = '⊙'
 #   Σ  Stoichiometry  : 𐑙  𐑕  𐑳
 #   Ω  Winding        : 𐑷  𐑴  𐑭  𐑟
 #
-# Tier heuristic (boundary fields: Φ, D, ⊙, Ω):
-#   T_0   : 𐑢, D compact/infty, Φ not Frobenius
-#   T_1   : ⊙, Φ not Frobenius
-#   T_2   : ⊙/𐑮, Φ not Frobenius, Ω winding
-#   T_3   : 𐑮/𐑻, any Φ, Ω winding
+# Tier heuristic (boundary fields: <, D, ⊙, Ω):
+#   T_0   : 𐑢, D compact/infty, < not Frobenius
+#   T_1   : ⊙, < not Frobenius
+#   T_2   : ⊙/𐑮, < not Frobenius, Ω winding
+#   T_3   : 𐑮/𐑻, any <, Ω winding
 #   T_inf : 𐑻 or (⊙ + 𐑹) — Frobenius + EP
 # ---------------------------------------------------------------------------
 

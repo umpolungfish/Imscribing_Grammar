@@ -466,7 +466,7 @@ def _print_section(corpus: str):
             dom_t = max(set(t_vals), key=t_vals.count)
             phi_vals = [e['tuple']['<'] for e in entries]
             dom_phi = max(set(phi_vals), key=phi_vals.count)
-            console.print(f"  [bold]{sec_name:20s}[/bold]  ⊣={dom_t}  Φ={dom_phi}  (sample {len(present)} elements)")
+            console.print(f"  [bold]{sec_name:20s}[/bold]  ⊣={dom_t}  <={dom_phi}  (sample {len(present)} elements)")
         console.print()
     else:
         for sec_name, sample_ids in SECTIONS[corpus]:

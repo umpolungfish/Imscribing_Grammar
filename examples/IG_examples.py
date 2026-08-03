@@ -112,7 +112,7 @@ def example_3_catalog_and_search():
         dimensionality="𐑛",
         topology="𐑥",
         recognition_mode="𐑩",
-        polarity="Φ_pipevar",
+        polarity="𐑬",
         fidelity="ƒ_beltl",  # Lower fidelity than carboxylic acid
         granularity="Γ_beta",
         interaction_grammar="ɢ_otimes",
@@ -124,7 +124,7 @@ def example_3_catalog_and_search():
         dimensionality="𐑛",
         topology="𐑥",
         recognition_mode="𐑩",
-        polarity="Φ_directional",
+        polarity="𐑗",
         fidelity="ƒ_hardsign",  # HIGH fidelity due to cooperativity
         granularity="Γ_gamma",  # Mesoscale
         interaction_grammar="ɢ_otimes",
@@ -136,7 +136,7 @@ def example_3_catalog_and_search():
         dimensionality="𐑼",  # Temporal!
         topology="𐑥",
         recognition_mode="𐑽",  # Catalytic
-        polarity="Φ_directional",
+        polarity="𐑗",
         fidelity="ƒ_dh",
         granularity="Γ_gamma",
         interaction_grammar="ɢ_selective",

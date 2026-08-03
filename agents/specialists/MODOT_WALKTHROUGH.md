@@ -173,7 +173,7 @@ phi inf`; the usual function set.
 
 ## What the tools cannot do for you
 
-`ouroborics` and the tier gates read only four coordinates — ⊙, Φ, Ω, ⊢. The
+`ouroborics` and the tier gates read only four coordinates — ⊙, <, Ω, ⊢. The
 other eight play no part in the tier. Do not explain a tier by a primitive that
 does not enter it.
 

@@ -164,7 +164,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 1: critical_first
     universes.append(Ruleset(
         name="critical_first",
-        description="Self-modeling before structure. G1=⊙≥⊙, G2=Φ≥𐑹, G3=Ω≥𐑭.",
+        description="Self-modeling before structure. G1=⊙≥⊙, G2=<≥𐑹, G3=Ω≥𐑭.",
         g1=GateSpec("⊙", 2.0), g2=GateSpec("<", 5.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -172,7 +172,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 2: winding_first
     universes.append(Ruleset(
         name="winding_first",
-        description="Topological protection first. G1=Ω≥𐑭, G2=⊙≥⊙, G3=Φ≥𐑹.",
+        description="Topological protection first. G1=Ω≥𐑭, G2=⊙≥⊙, G3=<≥𐑹.",
         g1=GateSpec("◻", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("<", 5.0),
         gate_ordering=True,
     ))
@@ -188,7 +188,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 4: critical_tight
     universes.append(Ruleset(
         name="critical_tight",
-        description="Requires super-criticality. G1=⊙≥𐑣, G2=Φ≥𐑹, G3=Ω≥𐑭.",
+        description="Requires super-criticality. G1=⊙≥𐑣, G2=<≥𐑹, G3=Ω≥𐑭.",
         g1=GateSpec("⊙", 4.0), g2=GateSpec("<", 5.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -204,7 +204,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 6: parity_hard
     universes.append(Ruleset(
         name="parity_hard",
-        description="Requires Frobenius-special parity. G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ω≥𐑭.",
+        description="Requires Frobenius-special parity. G1=<≥𐑹, G2=⊙≥⊙, G3=Ω≥𐑭.",
         g1=GateSpec("<", 5.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -220,7 +220,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 8: protection_weak
     universes.append(Ruleset(
         name="protection_weak",
-        description="Weak protection. G1=Ω≥𐑴, G2=⊙≥⊙, G3=Φ≥𐑿.",
+        description="Weak protection. G1=Ω≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
         g1=GateSpec("◻", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("<", 2.0),
         gate_ordering=True,
     ))
@@ -228,7 +228,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 9: psi_parity
     universes.append(Ruleset(
         name="psi_parity",
-        description="Quantum parity gate. G1=Φ≥𐑿, G2=⊙≥⊙, G3=Ω≥𐑴.",
+        description="Quantum parity gate. G1=<≥𐑿, G2=⊙≥⊙, G3=Ω≥𐑴.",
         g1=GateSpec("<", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
         gate_ordering=True,
     ))
@@ -260,7 +260,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 13: binary_only
     universes.append(Ruleset(
         name="binary_only",
-        description="Z2 protection gate. G1=Ω≥𐑴, G2=⊙≥⊙, G3=Φ≥𐑿.",
+        description="Z2 protection gate. G1=Ω≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
         g1=GateSpec("◻", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("<", 2.0),
         gate_ordering=True,
     ))

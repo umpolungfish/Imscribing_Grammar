@@ -94,7 +94,7 @@ def _tide_pool() -> Imscription:
         K  → SLOW               (diurnal/tidal period > 12 h; seasonal reproduction)
         G  → MESOSCALE          (bounded locality; coastline influence → G_ℶ not G_ℵ)
         Γ  → BROAD_OR           (promiscuous: grazer eats many prey; Γ∨(BROAD))
-        Φ  → SUBCRITICAL        (no documented scale-free transition)
+        <  → SUBCRITICAL        (no documented scale-free transition)
         S  → "n:m"              (many species, no fixed ratio)
 
     Axiom grounding:
@@ -174,7 +174,7 @@ def _global_supply_chain() -> Imscription:
         K  → MODERATE           (ships ~20 kn; infrastructure rebuild months-to-years)
         G  → GLOBAL             (G_ℵ: planetary graph, every node addressable)
         Γ  → SELECTIVE_AND      (all required inputs must arrive simultaneously for production)
-        Φ  → SUBCRITICAL        (bullwhip oscillations exist but no confirmed ⊙ transition)
+        <  → SUBCRITICAL        (bullwhip oscillations exist but no confirmed ⊙ transition)
         S  → "1:*"              (one planetary system, unbounded node count; stoichiometry_network flagged)
 
     Axiom grounding:
@@ -262,7 +262,7 @@ def _autonomous_drone_swarm() -> Imscription:
         K  → FAST               (millisecond control loops, GHz processors)
         G  → GLOBAL             (G_ℵ unlimited swarm scalability)
         Γ  → SELECTIVE_SEQ      (formation agreement AND then sequential command execution)
-        Φ  → CRITICAL           (⊙ — flocking is documented scale-free phase transition)
+        <  → CRITICAL           (⊙ — flocking is documented scale-free phase transition)
         S  → "n:m"              (flexible drone-to-task ratio)
 
     Axiom grounding:

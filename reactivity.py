@@ -4,11 +4,11 @@ reactivity.py — Grammar of Chemical Reactivity via IMASM opcodes.
 
 Every element is an IMASM word (12-primitive tuple from elem2imasm.py).
 Chemical reactions are morphisms between words. This module derives:
-  - valence from (Φ, Σ) slots
+  - valence from (<, Σ) slots
   - stoichiometry from valence cross-product
-  - bond type from block/Φ/ɢ structure
+  - bond type from block/</ɢ structure
   - product IMASM word via primitive FFUSE operators
-  - Frobenius gate check: μ∘δ=id ↔ Φ_product = 𐑯
+  - Frobenius gate check: μ∘δ=id ↔ <_product = 𐑯
 
 No chemistry database consulted. The grammar IS the cosmos.
 """
@@ -58,7 +58,7 @@ def valence(sym):
     phi = get(t, '<')
     sig = get(t, '⊞')
 
-    # Closed shell (Φ=𐑯=31)
+    # Closed shell (<=𐑯=31)
     if phi == 31:
         if col == 32 or col == 24:   # alk earths, Zn group
             return 2
@@ -68,7 +68,7 @@ def valence(sym):
             return 0                 # noble gas caught above
         return 2                     # fallback closed-shell
 
-    # Odd single (Φ=𐑗=7)
+    # Odd single (<=𐑗=7)
     if phi == 7:
         if block in ('f', 'd') and sym in COMMON_TM_VALENCE:
             return COMMON_TM_VALENCE[sym]
@@ -76,7 +76,7 @@ def valence(sym):
             return 3
         return 1                     # alkalis, H, halogens
 
-    # Open / diradical (Φ=𐑬=28)
+    # Open / diradical (<=𐑬=28)
     if phi == 28:
         if sig == 35:                # variable TM or variable actinide
             return COMMON_TM_VALENCE.get(sym, -1)
@@ -114,7 +114,7 @@ def stoichiometry(sym_A, sym_B, val_A=None, val_B=None):
 
 def bond_type(sym_A, sym_B):
     """
-    Classify bond from block + Φ + ɢ.
+    Classify bond from block + < + ɢ.
     Returns one of: 'ionic', 'covalent', 'polar_covalent',
                     'metallic', 'coordinate', 'none'
     """
@@ -191,7 +191,7 @@ def bond_type(sym_A, sym_B):
 # ─── lone pair detection ──────────────────────────────────────────────────────
 
 def has_lone_pairs(sym):
-    """True if the atom retains lone pairs after bonding (affects Φ_product)."""
+    """True if the atom retains lone pairs after bonding (affects <_product)."""
     Z, period, col, block, _ = ELEMENTS[sym]
     # Group 16 (O, S, Se, Te): 2 lone pairs after 2 bonds
     # Group 15 (N, P): 1 lone pair after 3 bonds
@@ -238,17 +238,17 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     else:          # coordinate
         Sig = 35   # coordination complex, variable
 
-    # ── Φ: parity closure — the core reaction logic
-    # All valences satisfied AND central atom has lone pairs → Φ=𐑗 (Lewis base)
-    # All valences satisfied AND no lone pairs → Φ=𐑯 (fully closed)
-    # Ionic: Φ=𐑯 (electrostatic closure)
-    # Bond not saturated (shouldn't happen with correct stoich) → Φ=𐑬
+    # ── <: parity closure — the core reaction logic
+    # All valences satisfied AND central atom has lone pairs → <=𐑗 (Lewis base)
+    # All valences satisfied AND no lone pairs → <=𐑯 (fully closed)
+    # Ionic: <=𐑯 (electrostatic closure)
+    # Bond not saturated (shouldn't happen with correct stoich) → <=𐑬
     if btype == 'ionic':
         Ph = 31    # ionic crystal: closed electrostatic shell
     elif has_lone_pairs(central):
-        Ph = 7     # central atom retains lone pair → Φ=𐑗 (polar/Lewis base)
+        Ph = 7     # central atom retains lone pair → <=𐑗 (polar/Lewis base)
     else:
-        Ph = 31    # fully saturated, no lone pairs → Φ=𐑯 (closed)
+        Ph = 31    # fully saturated, no lone pairs → <=𐑯 (closed)
 
     # ── Ç: max kinetics of components
     C = max(get(tA, '⊤'), get(tB, '⊤'))
@@ -287,8 +287,8 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
         T = get(tC, '⊣')  # default: central atom's own topology
 
     # ── ⊙: Frobenius gate
-    # If Φ_product = 𐑯 (31) → μ∘δ=id fires → ⊙=⊙ (self-referential criticality)
-    # If Φ_product = 𐑗 (7) → stable but reactive → ⊙=⊙ (still a fixed-point object)
+    # If <_product = 𐑯 (31) → μ∘δ=id fires → ⊙=⊙ (self-referential criticality)
+    # If <_product = 𐑗 (7) → stable but reactive → ⊙=⊙ (still a fixed-point object)
     # Radioactive parent → carry radioactivity
     from elem2imasm import RADIOACTIVE
     if sym_A in RADIOACTIVE or sym_B in RADIOACTIVE:
@@ -349,15 +349,15 @@ def react(sym_A, sym_B, override_n_A=None, override_n_B=None):
     vA = valence(sym_A)
     vB = valence(sym_B)
 
-    # Φ-drive: check if reaction is favored
+    # <-drive: check if reaction is favored
     phiA = get(tA, '<')
     phiB = get(tB, '<')
 
     if vA == 0 or vB == 0:
-        return {'error': f'{sym_A if vA==0 else sym_B} is inert (Φ=closed, v=0)'}
+        return {'error': f'{sym_A if vA==0 else sym_B} is inert (<=closed, v=0)'}
 
     if phiA == 31 and phiB == 31:
-        phi_drive = 'none — both closed-shell, no Φ-gradient'
+        phi_drive = 'none — both closed-shell, no <-gradient'
     elif phiA == 31 or phiB == 31:
         phi_drive = 'weak — one closed-shell partner'
     elif phiA == 28 or phiB == 28:
@@ -411,16 +411,16 @@ def _justify(sA, sB, nA, nB, tA, tB, prod, btype, vA, vB):
     lines.append(f'Reaction: {nA}{sA} + {nB}{sB} → {formula(sA, nA, sB, nB)}')
     lines.append(f'Bond: {btype}')
     lines.append(f'Stoichiometry from valence: {sA}(v={vA}) × {sB}(v={vB}) → {nA}:{nB}')
-    lines.append(f'  Σ derivation: v({sA})={vA} from Φ={tA["<"]}+Σ={tA["⊞"]}; '
-                 f'v({sB})={vB} from Φ={tB["<"]}+Σ={tB["⊞"]}')
-    lines.append(f'Φ-drive:')
-    lines.append(f'  {sA} Φ={tA["<"]}({get(tA,"<")}) → {sB} Φ={tB["<"]}({get(tB,"<")}) → product Φ={prod["<"]}({get(prod,"<")})')
+    lines.append(f'  Σ derivation: v({sA})={vA} from <={tA["<"]}+Σ={tA["⊞"]}; '
+                 f'v({sB})={vB} from <={tB["<"]}+Σ={tB["⊞"]}')
+    lines.append(f'<-drive:')
+    lines.append(f'  {sA} <={tA["<"]}({get(tA,"<")}) → {sB} <={tB["<"]}({get(tB,"<")}) → product <={prod["<"]}({get(prod,"<")})')
     lines.append(f'ɢ-coupling:')
     lines.append(f'  {sA} ɢ={tA["∋"]}({get(tA,"∋")}) × {sB} ɢ={tB["∋"]}({get(tB,"∋")}) → {btype} → product ɢ={prod["∋"]}({get(prod,"∋")})')
     lines.append(f'⊣-topology:')
     lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product ⊣={prod["⊣"]}({get(prod,"⊣")})')
     lines.append(f'⊙-gate (Frobenius μ∘δ=id):')
-    lines.append(f'  Φ_product ∈ {{𐑯,𐑗}} → {"FIRES ⊙" if prod["⊙"]==CRIT else "blocked → "+prod["⊙"]}')
+    lines.append(f'  <_product ∈ {{𐑯,𐑗}} → {"FIRES ⊙" if prod["⊙"]==CRIT else "blocked → "+prod["⊙"]}')
     return '\n'.join(lines)
 
 
@@ -450,7 +450,7 @@ def print_reaction(result):
     info_line(f'  Reaction:    {r["reactant_A"]["sym"]} + {r["reactant_B"]["sym"]} → {r["formula"]}')
     info_line(f'  Bond type:   {r["bond_type"]}')
     info_line(f'  Stoich:      {r["stoichiometry"][0]}:{r["stoichiometry"][1]}')
-    info_line(f'  Φ-drive:     {r["phi_drive"]}')
+    info_line(f'  <-drive:     {r["phi_drive"]}')
     success_line(f'  Frobenius:   {"μ∘δ=id FIRES ✓" if r["frobenius_closed"] else "open — product reactive"}')
     info_line(f'  {"─"*62}')
     wA = r['reactant_A']['word']

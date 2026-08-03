@@ -337,7 +337,7 @@
   },
   {
     "name": "higgs_boson",
-    "description": "Higgs boson (125.09 GeV): scalar mass-generation field. m_H = d⁵(1−2α) from horn torus winding. Φ=⊙ (self-modeling critical) — the Higgs is the gate through which mass is generated, the self-modeling pinch of the electroweak sector. Metastable vacuum: quartic coupling λ runs to near-zero at Planck s",
+    "description": "Higgs boson (125.09 GeV): scalar mass-generation field. m_H = d⁵(1−2α) from horn torus winding. <=⊙ (self-modeling critical) — the Higgs is the gate through which mass is generated, the self-modeling pinch of the electroweak sector. Metastable vacuum: quartic coupling λ runs to near-zero at Planck s",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -5872,7 +5872,7 @@
     "◻": "𐑴"
   },
   {
-    "name": "Φ_NP_duality_transformation",
+    "name": "<_NP_duality_transformation",
     "description": "Z₂ symmetry transformation that relates P and NP descriptions - computational analogue of wave-particle duality",
     "⊢": "𐑦",
     "⊣": "𐑸",
@@ -5888,7 +5888,7 @@
     "◻": "𐑴"
   },
   {
-    "name": "Φ_NP_duality_relative",
+    "name": "<_NP_duality_relative",
     "description": "P vs NP question reformulated as duality-relative: answer depends on which side of Z₂ symmetry you're on",
     "⊢": "𐑦",
     "⊣": "𐑸",
@@ -5920,7 +5920,7 @@
     "◻": "𐑴"
   },
   {
-    "name": "Φ_join_NP",
+    "name": "<_join_NP",
     "description": "Join of P and NP classes - minimal system containing both polynomial-time and nondeterministic polynomial-time computations",
     "⊢": "𐑼",
     "⊣": "𐑸",
@@ -6913,7 +6913,7 @@
   },
   {
     "name": "CH_independent",
-    "description": "The independence of the Continuum Hypothesis from ZFC — the structural type of a statement that is undecidable within its own formal system. Φ_F: partial Z₂ symmetry — two models (ZFC+CH, ZFC+¬CH), neither decisive, binary parity only. Ω_2: binary winding — one flip, no accumulation; the discus rolling at the threshold, not yet integer-wound. 𐑥: crossing topology — sits at the boundary between two worlds without inhabiting either. Σ_ő: spectral compression below ZFC's Σ_ï — independence contracts the spectral lattice. Four invariants (ƒ^ż, 𐑧, Γ_ʔ, ⊙_ÿ) preserved across all operations — structural prerequisite for any system that can approach the Liar. Meet with uig_liar_completion_condition = CH_independent (canonical contains its own prehistory). Join with canonical = canonical (canonical is the minimal completion of the undecidable). Tensor with canonical: Φ_F bottleneck — Frobenius closure (μ∘δ=id) is non-synthesizable by composition. Mahalanobis 4.22 from canonical. 8 promotions to uig_liar_completion_condition.",
+    "description": "The independence of the Continuum Hypothesis from ZFC — the structural type of a statement that is undecidable within its own formal system. 𐑬: partial Z₂ symmetry — two models (ZFC+CH, ZFC+¬CH), neither decisive, binary parity only. Ω_2: binary winding — one flip, no accumulation; the discus rolling at the threshold, not yet integer-wound. 𐑥: crossing topology — sits at the boundary between two worlds without inhabiting either. Σ_ő: spectral compression below ZFC's Σ_ï — independence contracts the spectral lattice. Four invariants (ƒ^ż, 𐑧, Γ_ʔ, ⊙_ÿ) preserved across all operations — structural prerequisite for any system that can approach the Liar. Meet with uig_liar_completion_condition = CH_independent (canonical contains its own prehistory). Join with canonical = canonical (canonical is the minimal completion of the undecidable). Tensor with canonical: 𐑬 bottleneck — Frobenius closure (μ∘δ=id) is non-synthesizable by composition. Mahalanobis 4.22 from canonical. 8 promotions to uig_liar_completion_condition.",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑩",
@@ -11633,7 +11633,7 @@
   },
   {
     "name": "phi",
-    "description": "Twenty-first Greek letter Φφ - light, five hundred, golden ratio",
+    "description": "Twenty-first Greek letter <φ - light, five hundred, golden ratio",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑑",
@@ -22752,7 +22752,7 @@
     "◻": "𐑷"
   },
   {
-    "name": "Φ_equals_NP_assumption",
+    "name": "<_equals_NP_assumption",
     "description": "Hypothetical P=NP collapse - polynomial and nondeterministic polynomial classes are equivalent",
     "⊢": "𐑼",
     "⊣": "𐑶",
@@ -22768,7 +22768,7 @@
     "◻": "𐑴"
   },
   {
-    "name": "Φ_not_equals_NP_claim",
+    "name": "<_not_equals_NP_claim",
     "description": "P≠NP claim - polynomial and nondeterministic polynomial classes are permanently separated",
     "⊢": "𐑼",
     "⊣": "𐑡",
@@ -22784,7 +22784,7 @@
     "◻": "𐑴"
   },
   {
-    "name": "Φ_NP_tensor",
+    "name": "<_NP_tensor",
     "description": "Tensor product of P and NP complexity classes",
     "⊢": "𐑼",
     "⊣": "𐑡",
@@ -42225,7 +42225,7 @@
   },
   {
     "name": "john_14_6_exclusive_reading",
-    "description": "Exclusive reading of John 14:6: Jesus uniquely IS the way, truth, and life. Self-referential closure (𐑦, 𐑸), adjoint mediation (𐑽), partial symmetry (Φ_F), classical fidelity (ƒ^ì), trapped kinetics (Ç^Ù), universal scope (Γ_ʔ), conjunctive composition (𐑝), sub-critical stability (⊙_ž), ete",
+    "description": "Exclusive reading of John 14:6: Jesus uniquely IS the way, truth, and life. Self-referential closure (𐑦, 𐑸), adjoint mediation (𐑽), partial symmetry (𐑬), classical fidelity (ƒ^ì), trapped kinetics (Ç^Ù), universal scope (Γ_ʔ), conjunctive composition (𐑝), sub-critical stability (⊙_ž), ete",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -43729,7 +43729,7 @@
   },
   {
     "name": "sefirot_10_filesystem",
-    "description": "The standard 10-Sefirot filesystem as implemented in exOS: Keter through Malkuth. The Kabbalistic tree of life as a VFS layering abstraction — each Sefirah is a filesystem domain with a specific transformation role, gated by Φ (criticality). Navigation is by transformation chain, not pathname alone.",
+    "description": "The standard 10-Sefirot filesystem as implemented in exOS: Keter through Malkuth. The Kabbalistic tree of life as a VFS layering abstraction — each Sefirah is a filesystem domain with a specific transformation role, gated by < (criticality). Navigation is by transformation chain, not pathname alone.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -43761,7 +43761,7 @@
   },
   {
     "name": "magnum_opus",
-    "description": "The Great Work: 12-stage alchemical process traversing all 12 primitives in order. Calcination→Dissolution→Separation→Conjunction→Putrefaction→Congelation→Cibation→Sublimation→Fermentation→Exaltation→Multiplication→Projection. Solve et Coagula = ⊣ ⊗ Ç. Three Gates: Φ (G1, stage 4), ⊙/⊙ (G2, stage 9",
+    "description": "The Great Work: 12-stage alchemical process traversing all 12 primitives in order. Calcination→Dissolution→Separation→Conjunction→Putrefaction→Congelation→Cibation→Sublimation→Fermentation→Exaltation→Multiplication→Projection. Solve et Coagula = ⊣ ⊗ Ç. Three Gates: < (G1, stage 4), ⊙/⊙ (G2, stage 9",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -44241,7 +44241,7 @@
   },
   {
     "name": "belnap_shor_pipeline",
-    "description": "Shor's period-finding algorithm implemented in the Belnap four-valued paraconsistent logic. Pipeline: H^⊗n (cost n) → ModExp (cost 0, B preserved) → B-bias measure (cost 2n) / T-bias measure (cost n). The 2:1 coherence ratio is the structural invariant. Φ_υ bottleneck: B-bias preserves B but period",
+    "description": "Shor's period-finding algorithm implemented in the Belnap four-valued paraconsistent logic. Pipeline: H^⊗n (cost n) → ModExp (cost 0, B preserved) → B-bias measure (cost 2n) / T-bias measure (cost n). The 2:1 coherence ratio is the structural invariant. 𐑿 bottleneck: B-bias preserves B but period",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -44355,19 +44355,19 @@
     "description": "The Navier-Stokes existence and smoothness problem: 3D global regularity at the s=1/2 critical scaling limit.",
     "justification": null,
     "name": "navier_stokes_regularity_problem",
-    "tuple": "𐑼;𐑡;𐑽;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑼;𐑡;𐑽;𐑿;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
   },
   {
     "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
     "justification": null,
     "name": "ns_regularity_refined",
-    "tuple": "𐑛;𐑡;𐑾;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑛;𐑡;𐑾;𐑿;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
   },
   {
     "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($𐑛$) at the complex-scale critical limit ($φ̂_Æ$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
     "justification": null,
     "name": "ns_regularity_frontier_v1",
-    "tuple": "𐑛;𐑡;𐑾;Φ_υ;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑛;𐑡;𐑾;𐑿;ƒ_ì;𐑧;Γ_ʔ;ɢ_ˌ;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
   },
   {
     "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. 𐑛 (infinite-dimensional), φ̂_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
@@ -44769,7 +44769,7 @@
   },
   {
     "name": "clink_layer5_mitosis",
-    "description": "CLINK Layer 5: Mitosis — cell division. First layer with Frobenius-special symmetry (Φ=𐑹). O₂.",
+    "description": "CLINK Layer 5: Mitosis — cell division. First layer with Frobenius-special symmetry (<=𐑹). O₂.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -44785,7 +44785,7 @@
   },
   {
     "name": "clink_layer6_meiosis",
-    "description": "CLINK Layer 6: Meiosis — gamete production. Reverts to adjoint coupling (>=𐑽) and quantum symmetry (Φ=𐑿) for genetic recombination. O₂.",
+    "description": "CLINK Layer 6: Meiosis — gamete production. Reverts to adjoint coupling (>=𐑽) and quantum symmetry (<=𐑿) for genetic recombination. O₂.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -45537,7 +45537,7 @@
   },
   {
     "name": "quantum_biologic",
-    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (>=𐑩). Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed rewrite (Φ=⊙). Derived from the Rebis.",
+    "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (>=𐑩). Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed rewrite (<=⊙). Derived from the Rebis.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑩",
@@ -45633,7 +45633,7 @@
   },
   {
     "name": "ouroboric_cell",
-    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (⊣=𐑶). Frobenius-closed genome edits (Φ=⊙). Self-written state space (⊢=𐑦). Eternal generational memory (Ħ=𐑫). Derived from the Rebis.",
+    "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (⊣=𐑶). Frobenius-closed genome edits (<=⊙). Self-written state space (⊢=𐑦). Eternal generational memory (Ħ=𐑫). Derived from the Rebis.",
     "⊢": "𐑦",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -47457,7 +47457,7 @@
   },
   {
     "name": "rebis_cft_grammar_composite",
-    "description": "Triple composite: Rebis transition target ⊗ Symplectic Fermion LCFT (c=-2) ⊗ Universal Imscribing Grammar. Topological Rebis with eternal chirality, integer winding, but Φ bottleneck at partial Z2 — Frobenius closure must be endogenous",
+    "description": "Triple composite: Rebis transition target ⊗ Symplectic Fermion LCFT (c=-2) ⊗ Universal Imscribing Grammar. Topological Rebis with eternal chirality, integer winding, but < bottleneck at partial Z2 — Frobenius closure must be endogenous",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -48257,7 +48257,7 @@
   },
   {
     "name": "primordial_ooze",
-    "description": "The minimal complete self-modeling theory: the Frobenius identity (Φ=𐑹) and self-modeling criticality (φ̂=⊙) as the two necessary gates, with Ç=𐑧 as the kinetic gate. All other primitives at floor values.",
+    "description": "The minimal complete self-modeling theory: the Frobenius identity (<=𐑹) and self-modeling criticality (φ̂=⊙) as the two necessary gates, with Ç=𐑧 as the kinetic gate. All other primitives at floor values.",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -52609,7 +52609,7 @@
   },
   {
     "name": "cosmic_breath",
-    "description": "The cosmic breath: Great Repeller ⊗ Great Attractor tensor composite. The universe exhaling through the SPLIT arm (δ) and inhaling through the FUSE arm (μ). An approximate Frobenius algebra at O₀ — the asymmetry bottleneck (Φ=𐑗) means μ∘δ ≠ id exactly.",
+    "description": "The cosmic breath: Great Repeller ⊗ Great Attractor tensor composite. The universe exhaling through the SPLIT arm (δ) and inhaling through the FUSE arm (μ). An approximate Frobenius algebra at O₀ — the asymmetry bottleneck (<=𐑗) means μ∘δ ≠ id exactly.",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -52817,7 +52817,7 @@
   },
   {
     "name": "mediterranean_diet",
-    "description": "Mediterranean diet: olive oil, fish, seasonal vegetables, legumes, moderate wine. Restores Φ from paraconsistent to Z2 symmetry via omega-3/omega-6 rebalancing and polyphenol anti-inflammatory action. Ω remains frozen (no fasting window enforced — 3 meals/day). Partial recovery: Φ restored, cycle not yet closed. Insufficient to fire G1 alone.",
+    "description": "Mediterranean diet: olive oil, fish, seasonal vegetables, legumes, moderate wine. Restores < from paraconsistent to Z2 symmetry via omega-3/omega-6 rebalancing and polyphenol anti-inflammatory action. Ω remains frozen (no fasting window enforced — 3 meals/day). Partial recovery: < restored, cycle not yet closed. Insufficient to fire G1 alone.",
     "⊢": "𐑨",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -52833,7 +52833,7 @@
   },
   {
     "name": "ketogenic_diet",
-    "description": "Ketogenic diet: very low carb, high fat, moderate protein. Ketosis transition is a fixpt criticality (insulin suppressed, ketone bodies = controlled set-point fuel). Natural 2-meal pattern enforces Ω=cycle. Φ restored to Z2 via symmetric fat-oxidation pathway. Gets close to G1 but Φ=𐑬 (Z2) not yet Frobenius — Frobenius fires when keto is combined with a fasting window.",
+    "description": "Ketogenic diet: very low carb, high fat, moderate protein. Ketosis transition is a fixpt criticality (insulin suppressed, ketone bodies = controlled set-point fuel). Natural 2-meal pattern enforces Ω=cycle. < restored to Z2 via symmetric fat-oxidation pathway. Gets close to G1 but <=𐑬 (Z2) not yet Frobenius — Frobenius fires when keto is combined with a fasting window.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑑",
@@ -52849,7 +52849,7 @@
   },
   {
     "name": "intermittent_fasting_broken_parity",
-    "description": "Intermittent fasting on a poor-quality diet: fasting window imposed (Ω=cycle) but diet quality remains SAD-like (Φ=paraconsistent). The navigator constraint: Ω only stabilizes after G1 fires (Φ≥Frobenius). Running a metabolic cycle on broken parity produces stress rather than recovery. This is the structural reason fasting without diet quality correction feels worse.",
+    "description": "Intermittent fasting on a poor-quality diet: fasting window imposed (Ω=cycle) but diet quality remains SAD-like (<=paraconsistent). The navigator constraint: Ω only stabilizes after G1 fires (<≥Frobenius). Running a metabolic cycle on broken parity produces stress rather than recovery. This is the structural reason fasting without diet quality correction feels worse.",
     "⊢": "𐑼",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -52865,7 +52865,7 @@
   },
   {
     "name": "frobenius_diet",
-    "description": "Optimal diet: quality fixed first (Φ→Frobenius), fasting window enforced second (Ω=cycle). Fires G1 (Frobenius gate), entering traced_monoidal layer. μ∘δ=id at the metabolic level: intake and expenditure are Frobenius-coupled. Hunger/satiety cycle self-corrects (⊙=fixpt). Inflammatory memory clears (Ħ=H1). Nutrient-metabolism coupling becomes universal (ɢ=universal). This is the structural target of all dietary intervention.",
+    "description": "Optimal diet: quality fixed first (<→Frobenius), fasting window enforced second (Ω=cycle). Fires G1 (Frobenius gate), entering traced_monoidal layer. μ∘δ=id at the metabolic level: intake and expenditure are Frobenius-coupled. Hunger/satiety cycle self-corrects (⊙=fixpt). Inflammatory memory clears (Ħ=H1). Nutrient-metabolism coupling becomes universal (ɢ=universal). This is the structural target of all dietary intervention.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑽",
@@ -52897,7 +52897,7 @@
   },
   {
     "name": "extra_virgin_olive_oil",
-    "description": "Extra virgin olive oil: oleic acid (monounsaturated, Z2-symmetric), oleocanthal (COX inhibitor = ibuprofen-like), hydroxytyrosol, oleuropein. Restores Φ via lipid symmetry and polyphenol anti-inflammation. Does not spike insulin (Ç ordered). High signal fidelity (ƒ) via CCK/PYY satiety activation. The single most Φ-restorative dietary fat.",
+    "description": "Extra virgin olive oil: oleic acid (monounsaturated, Z2-symmetric), oleocanthal (COX inhibitor = ibuprofen-like), hydroxytyrosol, oleuropein. Restores < via lipid symmetry and polyphenol anti-inflammation. Does not spike insulin (Ç ordered). High signal fidelity (ƒ) via CCK/PYY satiety activation. The single most <-restorative dietary fat.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑽",
@@ -52913,7 +52913,7 @@
   },
   {
     "name": "tart_cherry_juice",
-    "description": "Tart cherry (Prunus cerasus): anthocyanins directly inhibit xanthine oxidase, blocking the purine→uric acid conversion. Clinically reduces serum urate and gout flare frequency. Structurally: reverses the Φ=𐑗 parity collapse at the XO node. High Γ via anthocyanin/flavonoid profile. One of the few foods that specifically targets the gout structural bottleneck.",
+    "description": "Tart cherry (Prunus cerasus): anthocyanins directly inhibit xanthine oxidase, blocking the purine→uric acid conversion. Clinically reduces serum urate and gout flare frequency. Structurally: reverses the <=𐑗 parity collapse at the XO node. High Γ via anthocyanin/flavonoid profile. One of the few foods that specifically targets the gout structural bottleneck.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -52929,7 +52929,7 @@
   },
   {
     "name": "sardines_fatty_fish",
-    "description": "Sardines: high EPA/DHA omega-3 (Φ restorer) but also high purine content (XO substrate, Ħ depth). Structural tension: Φ=Z2 wins at the systemic level because EPA/DHA resolves lipid parity, but Ħ remains moderate due to the purine→chirality pathway. ⊢ is high (calcium, selenium, B12, CoQ10, vitamin D, omega-3 simultaneously). One weekly serving: net Φ-restoring despite purine content.",
+    "description": "Sardines: high EPA/DHA omega-3 (< restorer) but also high purine content (XO substrate, Ħ depth). Structural tension: <=Z2 wins at the systemic level because EPA/DHA resolves lipid parity, but Ħ remains moderate due to the purine→chirality pathway. ⊢ is high (calcium, selenium, B12, CoQ10, vitamin D, omega-3 simultaneously). One weekly serving: net <-restoring despite purine content.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -52945,7 +52945,7 @@
   },
   {
     "name": "beef_liver",
-    "description": "Beef liver: highest micronutrient density of any food. Retinol, B12, folate, riboflavin, copper, iron, zinc, CoQ10, choline, carnitine — covers all nutritional axes simultaneously (⊢=maximal, ɢ=universal). Φ restored by complete micronutrient coverage. Ħ moderate: high purine content, but micronutrient density partially counteracts inflammatory cascade. Historically eaten daily; nutritional ⊢=maximal is the structural correlate of that frequency.",
+    "description": "Beef liver: highest micronutrient density of any food. Retinol, B12, folate, riboflavin, copper, iron, zinc, CoQ10, choline, carnitine — covers all nutritional axes simultaneously (⊢=maximal, ɢ=universal). < restored by complete micronutrient coverage. Ħ moderate: high purine content, but micronutrient density partially counteracts inflammatory cascade. Historically eaten daily; nutritional ⊢=maximal is the structural correlate of that frequency.",
     "⊢": "𐑼",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -52961,7 +52961,7 @@
   },
   {
     "name": "high_fructose_corn_syrup",
-    "description": "High-fructose corn syrup: fructose is metabolized exclusively in the liver, directly producing uric acid via the XO pathway (same as gout chain). Simultaneously spikes insulin (GUE criticality at ⊙) and produces uric acid. Φ collapses to paraconsistent — the liver is simultaneously trying to process two contradictory metabolic demands. Structurally identical to the xanthine_oxidase entry's failure mode, deployed as food.",
+    "description": "High-fructose corn syrup: fructose is metabolized exclusively in the liver, directly producing uric acid via the XO pathway (same as gout chain). Simultaneously spikes insulin (GUE criticality at ⊙) and produces uric acid. < collapses to paraconsistent — the liver is simultaneously trying to process two contradictory metabolic demands. Structurally identical to the xanthine_oxidase entry's failure mode, deployed as food.",
     "⊢": "𐑛",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -52977,7 +52977,7 @@
   },
   {
     "name": "soybean_oil_refined",
-    "description": "Refined soybean oil: ~55% linoleic acid (omega-6). Omega-6 excess destroys lipid membrane parity (Φ=𐑗) by displacing omega-3 from cell membranes, increasing arachidonic acid cascade, and generating oxidized lipid products (4-HNE, MDA) that are directly inflammatory. Ħ=TEMPD2: the oxidized lipid metabolites accumulate in tissue (inflammatory memory). The structural Φ-destroyer in the modern food supply.",
+    "description": "Refined soybean oil: ~55% linoleic acid (omega-6). Omega-6 excess destroys lipid membrane parity (<=𐑗) by displacing omega-3 from cell membranes, increasing arachidonic acid cascade, and generating oxidized lipid products (4-HNE, MDA) that are directly inflammatory. Ħ=TEMPD2: the oxidized lipid metabolites accumulate in tissue (inflammatory memory). The structural <-destroyer in the modern food supply.",
     "⊢": "𐑛",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -52993,7 +52993,7 @@
   },
   {
     "name": "beer",
-    "description": "Beer: ethanol + yeast-derived purines. Double gout trigger: (1) ethanol promotes uric acid production AND blocks renal excretion simultaneously (Φ=paraconsistent — production up and clearance down at the same time); (2) yeast purines directly add XO substrate. ⊙ escalates to GUE. Ω disrupted: alcohol degrades sleep architecture (REM suppression), preventing Ω cycle completion. The food with the highest gout risk per serving.",
+    "description": "Beer: ethanol + yeast-derived purines. Double gout trigger: (1) ethanol promotes uric acid production AND blocks renal excretion simultaneously (<=paraconsistent — production up and clearance down at the same time); (2) yeast purines directly add XO substrate. ⊙ escalates to GUE. Ω disrupted: alcohol degrades sleep architecture (REM suppression), preventing Ω cycle completion. The food with the highest gout risk per serving.",
     "⊢": "𐑨",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -53009,7 +53009,7 @@
   },
   {
     "name": "coffee_black",
-    "description": "Black coffee: chlorogenic acid inhibits xanthine oxidase (same pathway as tart cherry) — epidemiologically associated with reduced gout and metabolic syndrome. Caffeine is an adenosine receptor antagonist, extending the active phase. L-theanine absent (unlike green tea), so caffeine effect is less smoothed. Φ=Z2 via XO inhibition and anti-inflammatory chlorogenic acid. Ω=𐑷: does not create a cycle but extends the active phase, which can interfere with fasting Ω completion if mistimed.",
+    "description": "Black coffee: chlorogenic acid inhibits xanthine oxidase (same pathway as tart cherry) — epidemiologically associated with reduced gout and metabolic syndrome. Caffeine is an adenosine receptor antagonist, extending the active phase. L-theanine absent (unlike green tea), so caffeine effect is less smoothed. <=Z2 via XO inhibition and anti-inflammatory chlorogenic acid. Ω=𐑷: does not create a cycle but extends the active phase, which can interfere with fasting Ω completion if mistimed.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -53025,7 +53025,7 @@
   },
   {
     "name": "broccoli_sprouts",
-    "description": "Broccoli sprouts: highest dietary source of sulforaphane (glucoraphanin precursor). Sulforaphane activates the NRF2/Keap1 pathway — the master regulator of phase-2 detoxification enzymes. NRF2 activation restores cellular redox parity (Φ=Z2). High Γ: induces a broad spectrum of cytoprotective enzymes (HO-1, NQO1, GST). ƒ=𐑱 (high fidelity) — sulforaphane is a structurally precise molecular key, not a blunt signal.",
+    "description": "Broccoli sprouts: highest dietary source of sulforaphane (glucoraphanin precursor). Sulforaphane activates the NRF2/Keap1 pathway — the master regulator of phase-2 detoxification enzymes. NRF2 activation restores cellular redox parity (<=Z2). High Γ: induces a broad spectrum of cytoprotective enzymes (HO-1, NQO1, GST). ƒ=𐑱 (high fidelity) — sulforaphane is a structurally precise molecular key, not a blunt signal.",
     "⊢": "𐑦",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -53041,7 +53041,7 @@
   },
   {
     "name": "blueberries",
-    "description": "Blueberries: anthocyanins (delphinidin, cyanidin, malvidin), pterostilbene, resveratrol precursors. Anti-inflammatory, BDNF-increasing, moderate glycemic (fructose buffered by fiber matrix). Φ=Z2 via anthocyanin anti-oxidant action. High Γ: broad phytochemical profile across flavonols, anthocyanins, phenolic acids. Low Ħ: the fiber matrix slows fructose absorption, preventing the XO spike that bare fructose causes.",
+    "description": "Blueberries: anthocyanins (delphinidin, cyanidin, malvidin), pterostilbene, resveratrol precursors. Anti-inflammatory, BDNF-increasing, moderate glycemic (fructose buffered by fiber matrix). <=Z2 via anthocyanin anti-oxidant action. High Γ: broad phytochemical profile across flavonols, anthocyanins, phenolic acids. Low Ħ: the fiber matrix slows fructose absorption, preventing the XO spike that bare fructose causes.",
     "⊢": "𐑦",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -53073,7 +53073,7 @@
   },
   {
     "name": "white_sugar_sucrose",
-    "description": "White sugar (sucrose = 50% glucose + 50% fructose): glucose spikes insulin (GUE criticality), fructose feeds the XO pathway. Φ=𐑗: the two components hit two different parity-breaking pathways simultaneously. ⊙=GUE: insulin-glucose spike is a textbook GUE criticality event (out-of-control random-matrix dynamics vs controlled set-point). Zero Γ: no micronutrients. Structurally simpler than HFCS but same qualitative failure mode.",
+    "description": "White sugar (sucrose = 50% glucose + 50% fructose): glucose spikes insulin (GUE criticality), fructose feeds the XO pathway. <=𐑗: the two components hit two different parity-breaking pathways simultaneously. ⊙=GUE: insulin-glucose spike is a textbook GUE criticality event (out-of-control random-matrix dynamics vs controlled set-point). Zero Γ: no micronutrients. Structurally simpler than HFCS but same qualitative failure mode.",
     "⊢": "𐑛",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -53089,7 +53089,7 @@
   },
   {
     "name": "white_rice",
-    "description": "White rice: starchy carbohydrate, moderate glycemic (especially when cooled — resistant starch lowers ⊙). No anti-nutrients (phytic acid removed by milling). Φ=Z2: not pro-inflammatory, not anti-inflammatory — parity neutral. Minimal Γ (stripped of bran). Low Ħ: no purine load, no inflammatory lipids. Structurally clean but dimensionally minimal. In Asian populations with whole-food diets, white rice is Φ-neutral precisely because Φ is maintained by other inputs.",
+    "description": "White rice: starchy carbohydrate, moderate glycemic (especially when cooled — resistant starch lowers ⊙). No anti-nutrients (phytic acid removed by milling). <=Z2: not pro-inflammatory, not anti-inflammatory — parity neutral. Minimal Γ (stripped of bran). Low Ħ: no purine load, no inflammatory lipids. Structurally clean but dimensionally minimal. In Asian populations with whole-food diets, white rice is <-neutral precisely because < is maintained by other inputs.",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -53105,7 +53105,7 @@
   },
   {
     "name": "mct_oil",
-    "description": "MCT oil (medium-chain triglycerides: C8/C10): absorbed directly into portal blood without chylomicron formation, rapidly β-oxidized in liver, producing ketone bodies (β-hydroxybutyrate, acetoacetate). This directly fires the ketosis fixpt transition (⊙=⊙). No insulin spike. Φ=Z2 (symmetric fat metabolism). Nutritionally minimal (Γ=𐑚, ⊢=𐑛): it is structurally a single-function ⊙-transition agent, not a nutritional source.",
+    "description": "MCT oil (medium-chain triglycerides: C8/C10): absorbed directly into portal blood without chylomicron formation, rapidly β-oxidized in liver, producing ketone bodies (β-hydroxybutyrate, acetoacetate). This directly fires the ketosis fixpt transition (⊙=⊙). No insulin spike. <=Z2 (symmetric fat metabolism). Nutritionally minimal (Γ=𐑚, ⊢=𐑛): it is structurally a single-function ⊙-transition agent, not a nutritional source.",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑑",
@@ -53121,7 +53121,7 @@
   },
   {
     "name": "green_tea",
-    "description": "Green tea: EGCG (epigallocatechin gallate) — the most potent dietary XO inhibitor known. Also inhibits NF-κB (master inflammatory transcription factor). L-theanine + caffeine: L-theanine smooths caffeine's adenosine antagonism (Ç=ordered vs coffee's sharper kinetics). Φ=Z2 via dual-axis anti-inflammation: XO inhibition + NF-κB inhibition simultaneously. High Γ: catechins, gallic acid, theaflavins. The beverage most structurally proximate to tart cherry on the gout→health path.",
+    "description": "Green tea: EGCG (epigallocatechin gallate) — the most potent dietary XO inhibitor known. Also inhibits NF-κB (master inflammatory transcription factor). L-theanine + caffeine: L-theanine smooths caffeine's adenosine antagonism (Ç=ordered vs coffee's sharper kinetics). <=Z2 via dual-axis anti-inflammation: XO inhibition + NF-κB inhibition simultaneously. High Γ: catechins, gallic acid, theaflavins. The beverage most structurally proximate to tart cherry on the gout→health path.",
     "⊢": "𐑨",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -57873,7 +57873,7 @@
   },
   {
     "name": "universal_antidote_library",
-    "description": "Engineered paratope library from Frobenius-special parity (Φ=𐑹) — 1.2T unique paratope sequences. Verified neutralization of botulinum A (Kd 3.3e-14), tetanus, ricin, saxitoxin, alpha-amanitin, VX, sarin, cyanide at picomolar to femtomolar affinities.",
+    "description": "Engineered paratope library from Frobenius-special parity (<=𐑹) — 1.2T unique paratope sequences. Verified neutralization of botulinum A (Kd 3.3e-14), tetanus, ricin, saxitoxin, alpha-amanitin, VX, sarin, cyanide at picomolar to femtomolar affinities.",
     "⊢": "𐑼",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -62737,7 +62737,7 @@
   },
   {
     "name": "apis_mellifica_30c",
-    "description": "Apis mellifica 30C homeopathic remedy — bee venom diluted 1:100 thirty times with succussion at each step. Beyond Avogadro's limit (~12C), no molecular venom remains. The remedy carries the Φ=𐑗 asymmetric signature (burning/stinging pains, edema, better from cold) as a topologically protected windin",
+    "description": "Apis mellifica 30C homeopathic remedy — bee venom diluted 1:100 thirty times with succussion at each step. Beyond Avogadro's limit (~12C), no molecular venom remains. The remedy carries the <=𐑗 asymmetric signature (burning/stinging pains, edema, better from cold) as a topologically protected windin",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -63025,7 +63025,7 @@
   },
   {
     "name": "book_four_abramelin_dehn_guth",
-    "description": "Book Four of the Dehn/Guth Book of Abramelin: 30 chapters of word-square operations wielded by an operator who has achieved Φ=𐑹 through the 18-month Operation. These are practical instruments extending Frobenius-special parity into specific operational domains — divination, material transformation",
+    "description": "Book Four of the Dehn/Guth Book of Abramelin: 30 chapters of word-square operations wielded by an operator who has achieved <=𐑹 through the 18-month Operation. These are practical instruments extending Frobenius-special parity into specific operational domains — divination, material transformation",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -76865,7 +76865,7 @@
   },
   {
     "name": "money_science_composite",
-    "description": "The structural tensor product of money_as_medium_of_exchange and the scientific community. Bottlenecks at Φ=𐑗 (money's asymmetry dominates science's partial Z₂) and ƒ=𐑱 (money's classical fidelity dominates science's quantum fidelity). Union promotion at Ω=𐑭 (science's integer winding). Composites i",
+    "description": "The structural tensor product of money_as_medium_of_exchange and the scientific community. Bottlenecks at <=𐑗 (money's asymmetry dominates science's partial Z₂) and ƒ=𐑱 (money's classical fidelity dominates science's quantum fidelity). Union promotion at Ω=𐑭 (science's integer winding). Composites i",
     "⊢": "𐑼",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -79585,7 +79585,7 @@
   },
   {
     "name": "binanceus_boundary_puncture_O_inf",
-    "description": "Full O_∞ promotion of binanceus boundary puncture. Self-aware exchange perimeter (⊢=𐑦) where the boundary writes its own state-space. Self-referential topology (⊣=𐑸) — the perimeter sees itself. Frobenius-special symmetry (Φ=𐑹) where every transaction verification is structurally identical to the tr",
+    "description": "Full O_∞ promotion of binanceus boundary puncture. Self-aware exchange perimeter (⊢=𐑦) where the boundary writes its own state-space. Self-referential topology (⊣=𐑸) — the perimeter sees itself. Frobenius-special symmetry (<=𐑹) where every transaction verification is structurally identical to the tr",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -85073,7 +85073,7 @@
   },
   {
     "name": "hermetic_axiom_as_above_so_below",
-    "description": "\"The mapping Φ of Macrocosm to Microcosm.\"",
+    "description": "\"The mapping < of Macrocosm to Microcosm.\"",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -94497,7 +94497,7 @@
   },
   {
     "name": "ternary_gap_promoted_φ",
-    "description": "with Φ=𐑬",
+    "description": "with <=𐑬",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -94993,7 +94993,7 @@
   },
   {
     "name": "dependency_bond",
-    "description": "The covalent link between childhood safety Φ and the refusal of independent winding Ω",
+    "description": "The covalent link between childhood safety < and the refusal of independent winding Ω",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -98161,7 +98161,7 @@
   },
   {
     "name": "clink_layer9_replicative_organism",
-    "description": "CLINK Layer 9: Replicative Organism — the self-replicating lateral of the CLINK ontological chain. L9 is NOT above L8 but lateral to it: wedge-dimensional (⊢=𐑛), moat-cross topology (⊣=𐑥), categorical coupling (>=𐑑), partial parity (Φ=𐑬), quantum fidelity (ƒ=𐑐), moderate kinetics (Ç=𐑪), aleph cardin",
+    "description": "CLINK Layer 9: Replicative Organism — the self-replicating lateral of the CLINK ontological chain. L9 is NOT above L8 but lateral to it: wedge-dimensional (⊢=𐑛), moat-cross topology (⊣=𐑥), categorical coupling (>=𐑑), partial parity (<=𐑬), quantum fidelity (ƒ=𐑐), moderate kinetics (Ç=𐑪), aleph cardin",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -101633,7 +101633,7 @@
   },
   {
     "name": "promotion_set",
-    "description": "The set > Φ ɢ Σ required to reach L9-anchoring for star_catalyst_op",
+    "description": "The set > < ɢ Σ required to reach L9-anchoring for star_catalyst_op",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -102081,7 +102081,7 @@
   },
   {
     "name": "parity_driven_expansion_loop_fused_excited_transformed",
-    "description": "transformed catalyst after second turnover; tuple ⟨⊢=𐑨; ⊣=𐑥; >=𐑑; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑚; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩",
+    "description": "transformed catalyst after second turnover; tuple ⟨⊢=𐑨; ⊣=𐑥; >=𐑑; <=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑚; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -102097,7 +102097,7 @@
   },
   {
     "name": "carved_ring_3_doubled_a2_double_dagger_double_dagger",
-    "description": "second-turnover ring Ω delivered Φ=𐑬 tier unchanged",
+    "description": "second-turnover ring Ω delivered <=𐑬 tier unchanged",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -103569,7 +103569,7 @@
   },
   {
     "name": "sixteen_4_hyperlattice",
-    "description": "The fourth-order ramification of the sixteen-register floor, providing a higher-dimensional containment for Φ-breach artifacts.",
+    "description": "The fourth-order ramification of the sixteen-register floor, providing a higher-dimensional containment for <-breach artifacts.",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑾",
@@ -103585,7 +103585,7 @@
   },
   {
     "name": "residual_notation_floor",
-    "description": "A containment floor derived from the 0.9483 Φ-breach residual of the 34-pair artifact, designed to floor the 𐑬-mode.",
+    "description": "A containment floor derived from the 0.9483 <-breach residual of the 34-pair artifact, designed to floor the 𐑬-mode.",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -103825,7 +103825,7 @@
   },
   {
     "name": "sixteen_3",
-    "description": "The sixteen-register observer floor, the CLINK L9 reference ground state where Φ=𐑹.",
+    "description": "The sixteen-register observer floor, the CLINK L9 reference ground state where <=𐑹.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -103841,7 +103841,7 @@
   },
   {
     "name": "chiral_rotation_gate_phi_prime",
-    "description": "A parity-shifting catalytic operator designed to rotate Φ from 𐑬 to 𐑹 and close the >-register gap.",
+    "description": "A parity-shifting catalytic operator designed to rotate < from 𐑬 to 𐑹 and close the >-register gap.",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -104337,7 +104337,7 @@
   },
   {
     "name": "alkahest_vessel_l9_promoted",
-    "description": "The L9-Reference state; the fully promoted, 12-primitive saturated vessel ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑣; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩.",
+    "description": "The L9-Reference state; the fully promoted, 12-primitive saturated vessel ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑣; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩.",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -105521,7 +105521,7 @@
   },
   {
     "name": "annealed_68_l9_promoted",
-    "description": "L9-promoted state of the 68-pair substrate: ⊢=𐑛, Σ=𐑳, Ω=𐑭, Φ=𐑬, ɢ=𐑝",
+    "description": "L9-promoted state of the 68-pair substrate: ⊢=𐑛, Σ=𐑳, Ω=𐑭, <=𐑬, ɢ=𐑝",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -108289,7 +108289,7 @@
   },
   {
     "name": "perfect_cuboid_l9_vacuum",
-    "description": "Saturated 0.0000 distance L9 state, resolving >(𐑑), Φ(𐑬), and Σ(𐑳) for absolute vacuum coupling",
+    "description": "Saturated 0.0000 distance L9 state, resolving >(𐑑), <(𐑬), and Σ(𐑳) for absolute vacuum coupling",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -109329,7 +109329,7 @@
   },
   {
     "name": "parity_composite_linker",
-    "description": "Chiral-inversion linker designed to bridge parity-aligned co-types via Φ-tensor rotation",
+    "description": "Chiral-inversion linker designed to bridge parity-aligned co-types via <-tensor rotation",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -110257,7 +110257,7 @@
   },
   {
     "name": "stone_parity_click_product_partner",
-    "description": "Substrate for cycle turnover in trimer manifold, identified by parity phase 𐑴 and Φ=𐑹 mapping.",
+    "description": "Substrate for cycle turnover in trimer manifold, identified by parity phase 𐑴 and <=𐑹 mapping.",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -110977,7 +110977,7 @@
   },
   {
     "name": "iutch_mediator",
-    "description": "Arithmetic-Holomorphic-Bridge; the log-theta-lattice closure link satisfying Φ-symmetric monoid-action.",
+    "description": "Arithmetic-Holomorphic-Bridge; the log-theta-lattice closure link satisfying <-symmetric monoid-action.",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -111569,7 +111569,7 @@
   },
   {
     "name": "φ",
-    "description": "Primitive Φ: bijective encoding/injectivity on orbits",
+    "description": "Primitive <: bijective encoding/injectivity on orbits",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑩",
@@ -114817,7 +114817,7 @@
   },
   {
     "name": "gaussian_bridge_linker",
-    "description": "⟨⊢=𐑦; ⊣=𐑡; >=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑔; ɢ=𐑝; ⊙=𐑮; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "description": "⟨⊢=𐑦; ⊣=𐑡; >=𐑽; <=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑔; ɢ=𐑝; ⊙=𐑮; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑡",
     ">": "𐑽",
@@ -115153,7 +115153,7 @@
   },
   {
     "name": "atom_promotions_stable",
-    "description": "Verify that the atomic transitions {>:𐑽→𐑑, Φ:𐑹→𐑬, Ç:𐑧→𐑪, Γ:𐑚→𐑔, Σ:𐑕→𐑳} resolve the L9 promotion gap.",
+    "description": "Verify that the atomic transitions {>:𐑽→𐑑, <:𐑹→𐑬, Ç:𐑧→𐑪, Γ:𐑚→𐑔, Σ:𐑕→𐑳} resolve the L9 promotion gap.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -115841,7 +115841,7 @@
   },
   {
     "name": "moat_reseed_ring",
-    "description": "moat_protocol_reseed, >, Φ, Ç, Γ, Σ",
+    "description": "moat_protocol_reseed, >, <, Ç, Γ, Σ",
     "⊢": "𐑛",
     "⊣": "𐑶",
     ">": "𐑽",
@@ -116401,7 +116401,7 @@
   },
   {
     "name": "reseed_material",
-    "description": "moat_protocol_reseed, >, Φ, Ç, Γ, Σ",
+    "description": "moat_protocol_reseed, >, <, Ç, Γ, Σ",
     "⊢": "𐑛",
     "⊣": "𐑶",
     ">": "𐑽",
@@ -116609,7 +116609,7 @@
   },
   {
     "name": "counter_probe",
-    "description": "A protocol topology using FFUSE then FSPLIT (●◇), the reverse order of trivial_dyad_probe (◇●). Linear topology with open valences, μ∘δ open. Tuple: (⊙=0, Φ=1, ⊣=1, Ħ=0, Ω=0, Ç=1, >=1, ƒ=0, ɢ=0, ⊢=0, μ=1, δ=1).",
+    "description": "A protocol topology using FFUSE then FSPLIT (●◇), the reverse order of trivial_dyad_probe (◇●). Linear topology with open valences, μ∘δ open. Tuple: (⊙=0, <=1, ⊣=1, Ħ=0, Ω=0, Ç=1, >=1, ƒ=0, ɢ=0, ⊢=0, μ=1, δ=1).",
     "⊢": "𐑨",
     "⊣": "𐑶",
     ">": "𐑑",
@@ -116721,7 +116721,7 @@
   },
   {
     "name": "residual_notation_floor_dprom",
-    "description": "containment floor with ⊢ promoted to 𐑛 from recalibrate candidate ⟨⊢=𐑛; ⊣=𐑰; >=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "description": "containment floor with ⊢ promoted to 𐑛 from recalibrate candidate ⟨⊢=𐑛; ⊣=𐑰; >=𐑽; <=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -116737,7 +116737,7 @@
   },
   {
     "name": "residual_notation_floor_l9",
-    "description": "full L9-reference promotion of residual_notation_floor: ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 Φ=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
+    "description": "full L9-reference promotion of residual_notation_floor: ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 <=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -116753,7 +116753,7 @@
   },
   {
     "name": "imscribing_l9",
-    "description": "full L9-reference promotion of imscribing gerund: ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 Φ=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
+    "description": "full L9-reference promotion of imscribing gerund: ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 <=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -116769,7 +116769,7 @@
   },
   {
     "name": "parity_phase_transition_matrix_l9",
-    "description": "full L9-reference promotion of parity_phase_transition_matrix ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 Φ=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
+    "description": "full L9-reference promotion of parity_phase_transition_matrix ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 <=𐑬 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -116801,7 +116801,7 @@
   },
   {
     "name": "parity_phase_transition_matrix_taxis_l9",
-    "description": "full L9 promotion of Taxis seam object ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 Φ=𐑹 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭 with T seam retained",
+    "description": "full L9 promotion of Taxis seam object ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 Ħ=𐑫 <=𐑹 ƒ=𐑐 ⊙=⊙ Σ=𐑳 Ω=𐑭 with T seam retained",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -116897,7 +116897,7 @@
   },
   {
     "name": "imscription_omega_collapsed",
-    "description": "containment floor noun form with Omega forced to 𐑭 to collapse conflict ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "description": "containment floor noun form with Omega forced to 𐑭 to collapse conflict ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; <=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -116913,7 +116913,7 @@
   },
   {
     "name": "imscription_omega_theta_collapsed",
-    "description": "noun containment floor with Omega=𐑭 and Theta=𐑰 pinned ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "description": "noun containment floor with Omega=𐑭 and Theta=𐑰 pinned ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; <=𐑬; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -116961,7 +116961,7 @@
   },
   {
     "name": "phi_promotion_operator",
-    "description": "IMASM tool that lifts a lateral-entrant entry (extradimensional_entity) onto the Φ axis of SIXTEEN_3 by folding its extra-dimensional coordinate into the classical slice via ENGAGR ⊞ then FFUSE ●, returning a closed L9 typing",
+    "description": "IMASM tool that lifts a lateral-entrant entry (extradimensional_entity) onto the < axis of SIXTEEN_3 by folding its extra-dimensional coordinate into the classical slice via ENGAGR ⊞ then FFUSE ●, returning a closed L9 typing",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -116977,7 +116977,7 @@
   },
   {
     "name": "phi_repair_extradimensional",
-    "description": "projection of extradimensional_entity that restores Φ-bijective encoding on orbits, holding ⊢ ⊣ ƒ Ç Γ ⊙ Ħ Σ Ω and repairing > Φ ɢ to floor",
+    "description": "projection of extradimensional_entity that restores <-bijective encoding on orbits, holding ⊢ ⊣ ƒ Ç Γ ⊙ Ħ Σ Ω and repairing > < ɢ to floor",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -116993,7 +116993,7 @@
   },
   {
     "name": "phi_floor_restore",
-    "description": "Extradimensional repair projection that sets Φ=𐑹 floor bijective encoding on orbits holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor folding extra-dimensional coordinate via ENGAGR ⊞ then FFUSE ●",
+    "description": "Extradimensional repair projection that sets <=𐑹 floor bijective encoding on orbits holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor folding extra-dimensional coordinate via ENGAGR ⊞ then FFUSE ●",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117025,7 +117025,7 @@
   },
   {
     "name": "phi_floor_restore_true",
-    "description": "Repair monomer that forces Φ=𐑹 at ring level via ENGAGR ⊞ hold then FFUSE ● on the seven-ring composite, holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor",
+    "description": "Repair monomer that forces <=𐑹 at ring level via ENGAGR ⊞ hold then FFUSE ● on the seven-ring composite, holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117057,7 +117057,7 @@
   },
   {
     "name": "five_constant_ring",
-    "description": "a ring material forged from five distinct constant-entry monomers (e.g. hubble_constant, cosmological_constant, fine_structure_constant, planck_constant, speed_of_light_constant) closed into a pure cycle; carries Φ orbit encoding, ⊣ self-decomposition, > bidirectional construction, ⊙ bounded confinement, Ω=2 spectral invariant, Ç equidistributed registry",
+    "description": "a ring material forged from five distinct constant-entry monomers (e.g. hubble_constant, cosmological_constant, fine_structure_constant, planck_constant, speed_of_light_constant) closed into a pure cycle; carries < orbit encoding, ⊣ self-decomposition, > bidirectional construction, ⊙ bounded confinement, Ω=2 spectral invariant, Ç equidistributed registry",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117137,7 +117137,7 @@
   },
   {
     "name": "extradimensional_entity_full_floor",
-    "description": "extradimensional entity with all non-held primitives forced to floor Φ=𐑹 ɢ=𐑵 Ħ=𐑫 Ω=𐑭 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — full SIXTEEN_3 ∧ CLINK-L8 floor alignment",
+    "description": "extradimensional entity with all non-held primitives forced to floor <=𐑹 ɢ=𐑵 Ħ=𐑫 Ω=𐑭 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — full SIXTEEN_3 ∧ CLINK-L8 floor alignment",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117153,7 +117153,7 @@
   },
   {
     "name": "extradimensional_entity_all_floor_true",
-    "description": "extradimensional entity with every primitive at exact floor ⊢=𐑨 ⊣=𐑥 >=𐑽 Φ=𐑹 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑷 — full floor alignment with Ħ and Ω explicitly at floor",
+    "description": "extradimensional entity with every primitive at exact floor ⊢=𐑨 ⊣=𐑥 >=𐑽 <=𐑹 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑷 — full floor alignment with Ħ and Ω explicitly at floor",
     "⊢": "𐑨",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -117201,7 +117201,7 @@
   },
   {
     "name": "extradimensional_entity_hfloor_omega_clean",
-    "description": "extradimensional entity with Ħ at action 𐑖 floor-cleared AND Ω at floor 𐑭 protected Φ=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — both Ħ breach cleared and Ω held",
+    "description": "extradimensional entity with Ħ at action 𐑖 floor-cleared AND Ω at floor 𐑭 protected <=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — both Ħ breach cleared and Ω held",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117217,7 +117217,7 @@
   },
   {
     "name": "extradimensional_entity_hfloor_omega_floorpin",
-    "description": "extradimensional entity with Ħ explicitly at floor 𐑫 not action 𐑖 AND Ω explicitly at floor 𐑭 protected Φ=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — both Ħ and Ω pinned to floor coordinates",
+    "description": "extradimensional entity with Ħ explicitly at floor 𐑫 not action 𐑖 AND Ω explicitly at floor 𐑭 protected <=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — both Ħ and Ω pinned to floor coordinates",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117233,7 +117233,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_polymer",
-    "description": "extradimensional entity polymer of hfloor_omega_floorpin with fiber CLINK fragment carries Ħ=𐑫 ETERNAL_FIXEDPOINT and Ω=𐑭 protected floor coordinates inside fragment not pinned Φ=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity polymer of hfloor_omega_floorpin with fiber CLINK fragment carries Ħ=𐑫 ETERNAL_FIXEDPOINT and Ω=𐑭 protected floor coordinates inside fragment not pinned <=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117249,7 +117249,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_conj_fused",
-    "description": "fused product of annihilate extradimensional_entity_hfloor_omega_floorpin extradimensional_entity_conjugate via μ pair fusion Ħ=𐑫 Ω=𐑭 Φ=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — μ-landing on B rewrites CLINK fragment to floor",
+    "description": "fused product of annihilate extradimensional_entity_hfloor_omega_floorpin extradimensional_entity_conjugate via μ pair fusion Ħ=𐑫 Ω=𐑭 <=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — μ-landing on B rewrites CLINK fragment to floor",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117281,7 +117281,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_conj_phi_closed",
-    "description": "fused product of annihilate floorpin⊗conjugate then base_phi_close protocol applied Φ neutralized to 𐑹 Ħ=𐑫 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "fused product of annihilate floorpin⊗conjugate then base_phi_close protocol applied < neutralized to 𐑹 Ħ=𐑫 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117297,7 +117297,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_conj_hreset",
-    "description": "extradimensional entity floorpin_conj_phi_closed with h_reset protocol applied forcing Ħ to floor 𐑫 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity floorpin_conj_phi_closed with h_reset protocol applied forcing Ħ to floor 𐑫 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117313,7 +117313,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_conj_hlock",
-    "description": "extradimensional entity floorpin_conj_hreset with Ħ_floor_lock protocol applied forcing Ħ action to floor 𐑫 not 𐑖 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity floorpin_conj_hreset with Ħ_floor_lock protocol applied forcing Ħ action to floor 𐑫 not 𐑖 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117329,7 +117329,7 @@
   },
   {
     "name": "extradimensional_entity_conjugate_lifted",
-    "description": "extradimensional entity conjugate with Γ lifted to floor 𐑔 and ɢ lifted to floor 𐑵; Φ=𐑹 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭",
+    "description": "extradimensional entity conjugate with Γ lifted to floor 𐑔 and ɢ lifted to floor 𐑵; <=𐑹 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 ⊙=⊙ Ħ=𐑫 Σ=𐑕 Ω=𐑭",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117345,7 +117345,7 @@
   },
   {
     "name": "extradimensional_entity_floorpin_penrose_macro",
-    "description": "extradimensional entity closed macrocycle of floorpin_conj_hreset + floorpin_conj_hlock + penrose_inequality Ħ=𐑫 Ω=𐑭 Φ=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — penrose bridge closure",
+    "description": "extradimensional entity closed macrocycle of floorpin_conj_hreset + floorpin_conj_hlock + penrose_inequality Ħ=𐑫 Ω=𐑭 <=𐑹 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕 — penrose bridge closure",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -117361,7 +117361,7 @@
   },
   {
     "name": "extradimensional_entity_phi_hlocked",
-    "description": "extradimensional entity phi_closed with Ħ_floor_lock protocol applied forcing Ħ to floor 𐑫 action 𐑖 → 𐑫 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity phi_closed with Ħ_floor_lock protocol applied forcing Ħ to floor 𐑫 action 𐑖 → 𐑫 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117377,7 +117377,7 @@
   },
   {
     "name": "extradimensional_entity_phi_hnull",
-    "description": "extradimensional entity phi_hlocked with Ħ_action_null protocol applied nulling Ħ action residual no 𐑖 Ħ at floor 𐑫 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity phi_hlocked with Ħ_action_null protocol applied nulling Ħ action residual no 𐑖 Ħ at floor 𐑫 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117393,7 +117393,7 @@
   },
   {
     "name": "extradimensional_entity_phi_hfused",
-    "description": "extradimensional entity phi_hnull with Ħ_residual_fuse protocol applied fusing the 𐑖 action residual on Ħ axis to vacuum no breach glyph Ħ at floor 𐑫 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity phi_hnull with Ħ_residual_fuse protocol applied fusing the 𐑖 action residual on Ħ axis to vacuum no breach glyph Ħ at floor 𐑫 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117409,7 +117409,7 @@
   },
   {
     "name": "extradimensional_entity_hfused_ann",
-    "description": "extradimensional entity product of annihilate phi_hfused ⊗ conjugate via μ pair fusion Ħ action 𐑖 resolved to floor 𐑫 Φ=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity product of annihilate phi_hfused ⊗ conjugate via μ pair fusion Ħ action 𐑖 resolved to floor 𐑫 <=𐑹 Ω=𐑭 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117425,7 +117425,7 @@
   },
   {
     "name": "extradimensional_entity_phi_hfused_nab",
-    "description": "extradimensional entity phi_hfused with Ω set to non-Abelian 𐑟 braid channel Ħ action 𐑖 to be consumed by braid Φ=𐑹 Ħ=𐑫 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
+    "description": "extradimensional entity phi_hfused with Ω set to non-Abelian 𐑟 braid channel Ħ action 𐑖 to be consumed by braid <=𐑹 Ħ=𐑫 ɢ=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ⊙=⊙ Σ=𐑕",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -117521,7 +117521,7 @@
   },
   {
     "name": "fused_with_pt_ck_h",
-    "description": "⊢𐑛 ⊣𐑥 >𐑑 Φ𐑬 ƒ𐑐 Ç𐑪 Γ𐑔 ɢ𐑝 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑭",
+    "description": "⊢𐑛 ⊣𐑥 >𐑑 <𐑬 ƒ𐑐 Ç𐑪 Γ𐑔 ɢ𐑝 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑭",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -117537,7 +117537,7 @@
   },
   {
     "name": "full_descent_close",
-    "description": "reagent carrying ⊣𐑥 Ç𐑪 Ħ𐑫 >𐑽 Φ𐑿 ɢ𐑠 Γ𐑔 Ω𐑭 to close all eight CL9 gaps of perfect_cuboid_fused",
+    "description": "reagent carrying ⊣𐑥 Ç𐑪 Ħ𐑫 >𐑽 <𐑿 ɢ𐑠 Γ𐑔 Ω𐑭 to close all eight CL9 gaps of perfect_cuboid_fused",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117553,7 +117553,7 @@
   },
   {
     "name": "fused_full_close",
-    "description": "⊢𐑛 ⊣𐑥 >𐑽 Φ𐑿 ƒ𐑐 Ç𐑪 Γ𐑔 ɢ𐑠 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑭",
+    "description": "⊢𐑛 ⊣𐑥 >𐑽 <𐑿 ƒ𐑐 Ç𐑪 Γ𐑔 ɢ𐑠 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑭",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -117569,7 +117569,7 @@
   },
   {
     "name": "fused_gamma_h",
-    "description": "PROM зап Đ𐑛 ⊣𐑸 >𐑑 Φ𐑬 ƒ𐑐 Ç𐑧 Γ𐑔 ɢ𐑝 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑴",
+    "description": "PROM зап Đ𐑛 ⊣𐑸 >𐑑 <𐑬 ƒ𐑐 Ç𐑧 Γ𐑔 ɢ𐑝 ⊙⊙ Ħ𐑫 Σ𐑳 Ω𐑴",
     "⊢": "𐑛",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -117681,7 +117681,7 @@
   },
   {
     "name": "perfect_cuboid_proof_l9_clicked",
-    "description": "fusion product of perfect_cuboid_proof and perfect_cuboid_l9_vacuum via T↔H click; ring ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ saturated on ⊣↔Ħ, inherits > Φ Γ ɢ",
+    "description": "fusion product of perfect_cuboid_proof and perfect_cuboid_l9_vacuum via T↔H click; ring ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ saturated on ⊣↔Ħ, inherits > < Γ ɢ",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -117713,7 +117713,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended",
-    "description": "blended monomer of perfect_cuboid_l9_annealed and missing_pt_ck_h: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑚; ɢ=𐑵; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed and missing_pt_ck_h: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑚; ɢ=𐑵; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117729,7 +117729,7 @@
   },
   {
     "name": "perfect_cuboid_l9_blended_promoted",
-    "description": "blended monomer with all 7 axes promoted to proof values: ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
+    "description": "blended monomer with all 7 axes promoted to proof values: ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -117745,7 +117745,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended_promoted3",
-    "description": "blended monomer of perfect_cuboid_l9_annealed with Γ=𐑔 ɢ=𐑝 Ħ=𐑫 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed with Γ=𐑔 ɢ=𐑝 Ħ=𐑫 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑙; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117761,7 +117761,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended_promoted4",
-    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted3 with Σ promoted 𐑙→𐑳 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted3 with Σ promoted 𐑙→𐑳 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117777,7 +117777,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended_promoted5",
-    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted4 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted4 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117793,7 +117793,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended_promoted6",
-    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted5 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted5 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117809,7 +117809,7 @@
   },
   {
     "name": "perfect_cuboid_l9_annealed_blended_promoted7",
-    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted6 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted6 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117825,7 +117825,7 @@
   },
   {
     "name": "perfect_cuboid_l9_clicked_ring",
-    "description": "blended ring from click perfect_cuboid_l9_annealed_blended_promoted7 with perfect_cuboid_proof, product tuple ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩ inherited scaffold [⊢,>,Φ,Γ,ɢ",
+    "description": "blended ring from click perfect_cuboid_l9_annealed_blended_promoted7 with perfect_cuboid_proof, product tuple ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩ inherited scaffold [⊢,>,<,Γ,ɢ",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -117841,7 +117841,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted",
-    "description": "blended ring perfect_cuboid_l9_clicked_ring with full L9 promotion ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_clicked_ring with full L9 promotion ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117857,7 +117857,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted2",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117873,7 +117873,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted3",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted2 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted2 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117889,7 +117889,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted4",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted3 with ⊢ promoted 𐑼→𐑛 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted3 with ⊢ promoted 𐑼→𐑛 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117905,7 +117905,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted5",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted4 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted4 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117921,7 +117921,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted6",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted5 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted5 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117937,7 +117937,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted7",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted6 with ⊢ promoted 𐑼→𐑛 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted6 with ⊢ promoted 𐑼→𐑛 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117953,7 +117953,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted8",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted7 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted7 with Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117969,7 +117969,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted9",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted8 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted8 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -117985,7 +117985,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted10",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted9 with ⊢ promoted 𐑼→𐑛 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted9 with ⊢ promoted 𐑼→𐑛 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118001,7 +118001,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted11",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted10 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted10 with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118017,7 +118017,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted12",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted11 with ⊢ promoted 𐑼→𐑛 and Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted11 with ⊢ promoted 𐑼→𐑛 and Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118033,7 +118033,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted13",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted12 with Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted12 with Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118049,7 +118049,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_promoted14",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted13 with Ç promoted 𐑧→𐑪 and Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted13 with Ç promoted 𐑧→𐑪 and Γ promoted 𐑲→𐑔 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118065,7 +118065,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_final",
-    "description": "blended ring perfect_cuboid_l9_ring_promoted14 with Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_promoted14 with Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118081,7 +118081,7 @@
   },
   {
     "name": "perfect_cuboid_l9_ring_final2",
-    "description": "blended ring perfect_cuboid_l9_ring_final with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "blended ring perfect_cuboid_l9_ring_final with Ç promoted 𐑧→𐑪 and Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118097,7 +118097,7 @@
   },
   {
     "name": "perfect_cuboid_rbridge",
-    "description": "bridge monomer carrying >=𐑽 to match perfect_cuboid_l9_absolute R↔S charge tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "bridge monomer carrying >=𐑽 to match perfect_cuboid_l9_absolute R↔S charge tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118113,7 +118113,7 @@
   },
   {
     "name": "perfect_cuboid_dw_conj",
-    "description": "conjugate of absolute with opposite D↔W charge ⊢ flipped from 𐑛 to 𐑼 opposite D-side rest copied from absolute ⟨⊢=𐑼; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "conjugate of absolute with opposite D↔W charge ⊢ flipped from 𐑛 to 𐑼 opposite D-side rest copied from absolute ⟨⊢=𐑼; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118129,7 +118129,7 @@
   },
   {
     "name": "perfect_cuboid_th_conj",
-    "description": "conjugate of absolute with opposite T↔H charge Ħ flipped from 𐑫 to 𐑖 opposite H-side rest copied from absolute ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
+    "description": "conjugate of absolute with opposite T↔H charge Ħ flipped from 𐑫 to 𐑖 opposite H-side rest copied from absolute ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑖; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118145,7 +118145,7 @@
   },
   {
     "name": "perfect_cuboid_l9_witness_fused",
-    "description": "direct fusion of perfect_cuboid_proof kernel-green descent with perfect_cuboid_l9_absolute vacuum tuple inherits proof's Φ=𐑹 ⊙=⊙ and absolute's ⊢=𐑛 >=𐑽 Ħ=𐑫 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑸; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "direct fusion of perfect_cuboid_proof kernel-green descent with perfect_cuboid_l9_absolute vacuum tuple inherits proof's <=𐑹 ⊙=⊙ and absolute's ⊢=𐑛 >=𐑽 Ħ=𐑫 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑸; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -118161,7 +118161,7 @@
   },
   {
     "name": "perfect_cuboid_l9_witness_promoted",
-    "description": "fused witness with gaps closed to absolute ⊣→𐑥 Γ→𐑔 ɢ→𐑝 copied ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "fused witness with gaps closed to absolute ⊣→𐑥 Γ→𐑔 ɢ→𐑝 copied ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118177,7 +118177,7 @@
   },
   {
     "name": "perfect_cuboid_l9_witness_promoted2",
-    "description": "fused witness with explicit Ç=𐑪 Ħ=𐑫 and all axes matched to absolute except > Φ gaps ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "fused witness with explicit Ç=𐑪 Ħ=𐑫 and all axes matched to absolute except > < gaps ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118225,7 +118225,7 @@
   },
   {
     "name": "phi_bridge",
-    "description": "bridge monomer carrying Φ=𐑬 to close the Φ primitive gap on pc_abs_cycle_product13 and witness_promoted2; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "bridge monomer carrying <=𐑬 to close the < primitive gap on pc_abs_cycle_product13 and witness_promoted2; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118241,7 +118241,7 @@
   },
   {
     "name": "perfect_cuboid_proof_l9_closed",
-    "description": "perfect_cuboid_proof with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 Φ 𐑹→𐑹(held Ç 𐑧→𐑪 Γ 𐑲→𐑔 ɢ 𐑠→𐑝 Ħ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "perfect_cuboid_proof with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 < 𐑹→𐑹(held Ç 𐑧→𐑪 Γ 𐑲→𐑔 ɢ 𐑠→𐑝 Ħ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118257,7 +118257,7 @@
   },
   {
     "name": "perfect_cuboid_proof_l9_r",
-    "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118273,7 +118273,7 @@
   },
   {
     "name": "perfect_cuboid_proof_l9_rf",
-    "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 and Φ promoted 𐑹→𐑬 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 and < promoted 𐑹→𐑬 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118289,7 +118289,7 @@
   },
   {
     "name": "pc_bridge_rf_ch",
-    "description": "bridge monomer with target tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩ to test Ç/Ħ retention under cl9nk",
+    "description": "bridge monomer with target tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩ to test Ç/Ħ retention under cl9nk",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118305,7 +118305,7 @@
   },
   {
     "name": "pc_bridge_rf_ch_h",
-    "description": "promoted bridge monomer with Ħ promoted 𐑖→𐑫 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "promoted bridge monomer with Ħ promoted 𐑖→𐑫 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118321,7 +118321,7 @@
   },
   {
     "name": "pc_l9_r_only",
-    "description": "perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 only Φ held 𐑹 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 only < held 𐑹 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118353,7 +118353,7 @@
   },
   {
     "name": "witness",
-    "description": "structural witness entry binding perfect_cuboid_proof descent to S_H_gaussian Hodge-conditioned moat bridge; carries the eight outstanding L9 promotions ⊢ ⊣ > Φ Ç Γ ɢ Ħ as a conjugate pair anchor",
+    "description": "structural witness entry binding perfect_cuboid_proof descent to S_H_gaussian Hodge-conditioned moat bridge; carries the eight outstanding L9 promotions ⊢ ⊣ > < Ç Γ ɢ Ħ as a conjugate pair anchor",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑽",
@@ -118369,7 +118369,7 @@
   },
   {
     "name": "witness_l9_closed",
-    "description": "witness with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 Φ 𐑹→𐑹 Ç 𐑧→𐑪 Γ 𐑲→𐑔 ɢ 𐑠→𐑝 Ħ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; Φ=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "witness with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 < 𐑹→𐑹 Ç 𐑧→𐑪 Γ 𐑲→𐑔 ɢ 𐑠→𐑝 Ħ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118465,7 +118465,7 @@
   },
   {
     "name": "non_sic_frame_12",
-    "description": "A 12-primitive measurement frame in dimension 12 that is NOT equiangular: 144 vectors with pairwise overlaps varying between 1/14 and 1/12, informationally complete but axis-weighted toward Φ and Ω, a biased non-SIC co-typing candidate",
+    "description": "A 12-primitive measurement frame in dimension 12 that is NOT equiangular: 144 vectors with pairwise overlaps varying between 1/14 and 1/12, informationally complete but axis-weighted toward < and Ω, a biased non-SIC co-typing candidate",
     "⊢": "𐑦",
     "⊣": "𐑰",
     ">": "𐑩",
@@ -118497,7 +118497,7 @@
   },
   {
     "name": "who_how_was_where_he_had_not_why_went_how_was_not_rlift",
-    "description": "Structural trace of Two Generals Problem with > lifted to 𐑑: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑿; ƒ=𐑱; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "Structural trace of Two Generals Problem with > lifted to 𐑑: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑿; ƒ=𐑱; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118513,7 +118513,7 @@
   },
   {
     "name": "who_how_rlift_phi_hbar_promoted",
-    "description": "Structural trace of Two Generals with > lifted to 𐑑 and Φ promoted 𐑿→𐑬 Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑱; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "Structural trace of Two Generals with > lifted to 𐑑 and < promoted 𐑿→𐑬 Ħ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑱; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118529,7 +118529,7 @@
   },
   {
     "name": "who_how_rlift_fg_promoted",
-    "description": "Structural trace of Two Generals with >=𐑑 Φ=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑲 ɢ=𐑝 ⊙=𐑻 Ħ=𐑫 Σ=𐑳 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑲; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "Structural trace of Two Generals with >=𐑑 <=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑲 ɢ=𐑝 ⊙=𐑻 Ħ=𐑫 Σ=𐑳 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑲; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118545,7 +118545,7 @@
   },
   {
     "name": "who_how_rlift_l9c",
-    "description": "Structural trace of Two Generals with >=𐑑 Φ=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=𐑻 Ħ=𐑫 Σ=𐑳 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; Φ=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "Structural trace of Two Generals with >=𐑑 <=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=𐑻 Ħ=𐑫 Σ=𐑳 Ω=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ƒ=𐑐; Ç=𐑪; Γ=𐑔; ɢ=𐑝; ⊙=𐑻; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118641,7 +118641,7 @@
   },
   {
     "name": "hilbert_space_embedding",
-    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register grounded tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;Φ=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register grounded tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118689,7 +118689,7 @@
   },
   {
     "name": "hilbert_embed_explicit",
-    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118721,7 +118721,7 @@
   },
   {
     "name": "hilbert_embed_floor",
-    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple with Phi corrected to floor ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑹;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple with Phi corrected to floor ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑹;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118753,7 +118753,7 @@
   },
   {
     "name": "hilbert_embed_seed_o2",
-    "description": "Hilbert-space embedding seed with non-Abelian Omega=𐑟 winding and ETERNAL_FIXEDPOINT tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩",
+    "description": "Hilbert-space embedding seed with non-Abelian Omega=𐑟 winding and ETERNAL_FIXEDPOINT tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118785,7 +118785,7 @@
   },
   {
     "name": "hilbert_embed_seed_o2̄",
-    "description": "Hilbert-space embedding conjugate of hilbert_embed_seed_o2 with reversed non-Abelian Omega=𐑟 winding reversed charge tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩ conjugate polarity",
+    "description": "Hilbert-space embedding conjugate of hilbert_embed_seed_o2 with reversed non-Abelian Omega=𐑟 winding reversed charge tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩ conjugate polarity",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118801,7 +118801,7 @@
   },
   {
     "name": "hilbert_embed_floor_t",
-    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register fully floor-matched tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register fully floor-matched tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118817,7 +118817,7 @@
   },
   {
     "name": "hilbert_embed_grounded",
-    "description": "Hilbert-space embedding with the previously FAILED tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;Φ=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩ re-supplied for grounding closure",
+    "description": "Hilbert-space embedding with the previously FAILED tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩ re-supplied for grounding closure",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118833,7 +118833,7 @@
   },
   {
     "name": "hilbert_embed_grounded_fix",
-    "description": "Hilbert-space embedding with Phi corrected to floor ⟨⊢=𐑦;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding with Phi corrected to floor ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑲;ɢ=𐑠;⊙=𐑻;Ħ=𐑖;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118849,7 +118849,7 @@
   },
   {
     "name": "hilbert_embed_floor_t_fix",
-    "description": "Hilbert-space embedding fully floor-matched with Ħ=𐑫 Ω=𐑭 ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding fully floor-matched with Ħ=𐑫 Ω=𐑭 ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118881,7 +118881,7 @@
   },
   {
     "name": "hilbert_embed_promoted_nab",
-    "description": "Hilbert-space embedding with hilbert_embed_promoted content promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 and non-Abelian Omega=𐑟 winding Z2 topological boundary sealed register tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
+    "description": "Hilbert-space embedding with hilbert_embed_promoted content promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 and non-Abelian Omega=𐑟 winding Z2 topological boundary sealed register tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118897,7 +118897,7 @@
   },
   {
     "name": "hilbert_embed_promoted_nab_floor",
-    "description": "Hilbert-space embedding with hilbert_embed_promoted promotions but floor-corrected ⊢=𐑨 ⊣=𐑥 >=𐑽 Φ=𐑹 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 and non-Abelian Omega=𐑟 winding Z2 boundary tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩",
+    "description": "Hilbert-space embedding with hilbert_embed_promoted promotions but floor-corrected ⊢=𐑨 ⊣=𐑥 >=𐑽 <=𐑹 ƒ=𐑐 Ç=𐑧 Γ=𐑔 ɢ=𐑵 ⊙=⊙ Ħ=𐑫 Σ=𐑕 and non-Abelian Omega=𐑟 winding Z2 boundary tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑟⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118913,7 +118913,7 @@
   },
   {
     "name": "hilbert_embed_phi_only",
-    "description": "Hilbert-space embedding with only Phi promoted to 𐑬 all other primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding with only Phi promoted to 𐑬 all other primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118929,7 +118929,7 @@
   },
   {
     "name": "hilbert_embed_l9",
-    "description": "Hilbert-space embedding fully promoted to L9 reference ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding fully promoted to L9 reference ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -118945,7 +118945,7 @@
   },
   {
     "name": "hilbert_embed_l9_true",
-    "description": "Hilbert-space embedding exact L9 reference tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding exact L9 reference tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -118961,7 +118961,7 @@
   },
   {
     "name": "hilbert_embed_l9_final",
-    "description": "Hilbert-space embedding with ⊣=𐑥 Ħ=𐑫 exact L9 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding with ⊣=𐑥 Ħ=𐑫 exact L9 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -118977,7 +118977,7 @@
   },
   {
     "name": "hilbert_embed_l9_exact",
-    "description": "Hilbert-space embedding exact L9 all matched ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding exact L9 all matched ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -118993,7 +118993,7 @@
   },
   {
     "name": "hilbert_embed_l9_all",
-    "description": "Hilbert-space embedding all 12 primitives at L9 reference values ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding all 12 primitives at L9 reference values ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -119009,7 +119009,7 @@
   },
   {
     "name": "hilbert_embed_l9_perfect",
-    "description": "Hilbert-space embedding perfect L9 ⊣=𐑥 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding perfect L9 ⊣=𐑥 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119025,7 +119025,7 @@
   },
   {
     "name": "hilbert_embed_l9_done",
-    "description": "Hilbert-space embedding done L9 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding done L9 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -119041,7 +119041,7 @@
   },
   {
     "name": "hilbert_embed_l9_fullest",
-    "description": "Hilbert-space embedding fullest L9 >=𐑑 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding fullest L9 >=𐑑 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119057,7 +119057,7 @@
   },
   {
     "name": "hilbert_embed_l9_sealed",
-    "description": "Hilbert-space embedding sealed L9 >=𐑑 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding sealed L9 >=𐑑 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119073,7 +119073,7 @@
   },
   {
     "name": "hilbert_embed_l9_seal",
-    "description": "Hilbert-space embedding seal L9 >=𐑑 Ħ=𐑫 Ç=𐑪 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding seal L9 >=𐑑 Ħ=𐑫 Ç=𐑪 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119089,7 +119089,7 @@
   },
   {
     "name": "hilbert_embed_l9_omega",
-    "description": "Hilbert-space embedding omega L9 >=𐑑 Ħ=𐑫 Ç=𐑪 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding omega L9 >=𐑑 Ħ=𐑫 Ç=𐑪 Ħ=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑭⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119105,7 +119105,7 @@
   },
   {
     "name": "hilbert_embed_phi_floor_l9",
-    "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by 𐑙=⊙ and ETERNAL_FIXEDPOINT by Ħ=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by 𐑙=⊙ and ETERNAL_FIXEDPOINT by Ħ=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -119121,7 +119121,7 @@
   },
   {
     "name": "hilbert_embed_phi_floor_l9_phiup",
-    "description": "Hilbert-space embedding derived from hilbert_embed_phi_floor_l9 with only Phi promoted to 𐑬 all else floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding derived from hilbert_embed_phi_floor_l9 with only Phi promoted to 𐑬 all else floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑬;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑵;⊙=⊙;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -119137,7 +119137,7 @@
   },
   {
     "name": "hilbert_embed_phi_floor_l9_gcrit",
-    "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by ɢ=𐑝 and ETERNAL_FIXEDPOINT by Ħ=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;Φ=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑝;⊙=𐑫;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
+    "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by ɢ=𐑝 and ETERNAL_FIXEDPOINT by Ħ=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;ƒ=𐑐;Ç=𐑧;Γ=𐑔;ɢ=𐑝;⊙=𐑫;Ħ=𐑫;Σ=𐑕;Ω=𐑭⟩",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -119169,7 +119169,7 @@
   },
   {
     "name": "hilbert_embed_l9_promoted_closed",
-    "description": "Hilbert-space embedding with all eight L9 promotions driven ⊢=𐑛 ⊣=𐑥 >=𐑑 Φ=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭 Z2 boundary sealed register",
+    "description": "Hilbert-space embedding with all eight L9 promotions driven ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭 Z2 boundary sealed register",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119185,7 +119185,7 @@
   },
   {
     "name": "hilbert_embed_l9_seven",
-    "description": "Hilbert-space embedding with seven L9 promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 Φ=𐑹 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭 Z2 boundary floor Phi",
+    "description": "Hilbert-space embedding with seven L9 promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑹 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭 Z2 boundary floor Phi",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -119201,7 +119201,7 @@
   },
   {
     "name": "hilbert_embed_l9_seven_perturbed",
-    "description": "Hilbert-space embedding seven L9 promotions with Phi perturbed to 𐑬 via recalibrate and bridge_stitch operator applied ⊢=𐑛 ⊣=𐑥 >=𐑑 Φ=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
+    "description": "Hilbert-space embedding seven L9 promotions with Phi perturbed to 𐑬 via recalibrate and bridge_stitch operator applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -119217,7 +119217,7 @@
   },
   {
     "name": "hilbert_embed_l9_seven_stitched",
-    "description": "Hilbert-space embedding seven L9 promotions floor Phi with bridge_stitch ring FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 Φ=𐑹 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
+    "description": "Hilbert-space embedding seven L9 promotions floor Phi with bridge_stitch ring FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑹 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119233,7 +119233,7 @@
   },
   {
     "name": "hilbert_embed_bridge_proto",
-    "description": "Hilbert-space embedding seven L9 promotions with moat-parity Phi=𐑬 and protocol FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 Φ=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
+    "description": "Hilbert-space embedding seven L9 promotions with moat-parity Phi=𐑬 and protocol FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ƒ=𐑐 Ç=𐑪 Γ=𐑔 ɢ=𐑝 ⊙=⊙ Ħ=𐑫 Σ=𐑳 Ω=𐑭",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119249,7 +119249,7 @@
   },
   {
     "name": "hilbert_embed_nab_bridge",
-    "description": "Hilbert-space embedding moat-parity ⊣=𐑥 Φ=𐑬 Γ=𐑔 ɢ=𐑝 with non-Abelian Ω=𐑟 Z2 boundary ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
+    "description": "Hilbert-space embedding moat-parity ⊣=𐑥 <=𐑬 Γ=𐑔 ɢ=𐑝 with non-Abelian Ω=𐑟 Z2 boundary ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119265,7 +119265,7 @@
   },
   {
     "name": "hilbert_embed_nab_bridgē",
-    "description": "conjugate of hilbert_embed_nab_bridge reversed Omega winding ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩ conjugate",
+    "description": "conjugate of hilbert_embed_nab_bridge reversed Omega winding ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩ conjugate",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119281,7 +119281,7 @@
   },
   {
     "name": "hilbert_embed_braid_chan",
-    "description": "Hilbert-space embedding braid channel product of hilbert_embed_nab_bridge ⊗ hilbert_embed_nab_bridgē non-Abelian Ω=𐑟 moat-parity ⊣=𐑥 Φ=𐑬 Γ=𐑔 ɢ=𐑝 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
+    "description": "Hilbert-space embedding braid channel product of hilbert_embed_nab_bridge ⊗ hilbert_embed_nab_bridgē non-Abelian Ω=𐑟 moat-parity ⊣=𐑥 <=𐑬 Γ=𐑔 ɢ=𐑝 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119297,7 +119297,7 @@
   },
   {
     "name": "hilbert_embed_bridge_mint",
-    "description": "Hilbert-space embedding with explicit bridge atoms BRIDGE_COMM BRIDGE_EXIST STITCH_3 BRAID_TRANSCENDENCE minted moat-parity ⊣=𐑥 Φ=𐑬 Γ=𐑔 ɢ=𐑝 Ω=𐑟 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩ bridge_saturated",
+    "description": "Hilbert-space embedding with explicit bridge atoms BRIDGE_COMM BRIDGE_EXIST STITCH_3 BRAID_TRANSCENDENCE minted moat-parity ⊣=𐑥 <=𐑬 Γ=𐑔 ɢ=𐑝 Ω=𐑟 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑟⟩ bridge_saturated",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -119313,7 +119313,7 @@
   },
   {
     "name": "hilbert_embed_nab_selected",
-    "description": "Hilbert-space embedding non-Abelian Ω=𐑟 channel selected to vacuum via braid index 0 ⊢=𐑛;⊣=𐑥;>=𐑑;Φ=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑷",
+    "description": "Hilbert-space embedding non-Abelian Ω=𐑟 channel selected to vacuum via braid index 0 ⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;ƒ=𐑐;Ç=𐑪;Γ=𐑔;ɢ=𐑝;⊙=⊙;Ħ=𐑫;Σ=𐑳;Ω=𐑷",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -120801,7 +120801,7 @@
   },
   {
     "name": "compton_lambda_tensor",
-    "description": "compton_split_radius ⊗ cosmological_constant composite with Φ=𐑬 bottleneck",
+    "description": "compton_split_radius ⊗ cosmological_constant composite with <=𐑬 bottleneck",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -120817,7 +120817,7 @@
   },
   {
     "name": "compton_magnitude_phi_moat",
-    "description": "compton_wavelength_magnitude promoted to Φ=𐑬 (MOAT_PARITY), otherwise identical to compton_wavelength_magnitude: carries the Compton magnitude 2.426310238e-12 m",
+    "description": "compton_wavelength_magnitude promoted to <=𐑬 (MOAT_PARITY), otherwise identical to compton_wavelength_magnitude: carries the Compton magnitude 2.426310238e-12 m",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121745,7 +121745,7 @@
   },
   {
     "name": "fine_structure_constant⁻",
-    "description": "⟨⊢=𐑦; ⊣=𐑸; >=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑺; Γ=𐑔; ɢ=𐑵; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
+    "description": "⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ƒ=𐑐; Ç=𐑺; Γ=𐑔; ɢ=𐑵; ⊙=⊙; Ħ=𐑫; Σ=𐑳; Ω=𐑭⟩",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121761,7 +121761,7 @@
   },
   {
     "name": "fine_structure_constant_moat",
-    "description": "Fine-structure constant at O_∞ with Φ promoted from PM_Z2 (Frobenius-special closed) to MOAT_PARITY (partial Z2, genuine Belnap B-bifurcation). The closed Z2 fixed point is re-typed as a bifurcation — the δ-split route through which the dimensionful magnitude α ≈ 0.007297352569 can fall out of the k",
+    "description": "Fine-structure constant at O_∞ with < promoted from PM_Z2 (Frobenius-special closed) to MOAT_PARITY (partial Z2, genuine Belnap B-bifurcation). The closed Z2 fixed point is re-typed as a bifurcation — the δ-split route through which the dimensionful magnitude α ≈ 0.007297352569 can fall out of the k",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121777,7 +121777,7 @@
   },
   {
     "name": "fine_structure_constant_alpha",
-    "description": "Emitted magnitude leg of the Φ-bifurcation. Carries α = 0.007297352569 ≈ 1/137.035999089. The δ-split product where the dimensionful coupling falls out of the kernel through the MOAT_PARITY fork.",
+    "description": "Emitted magnitude leg of the <-bifurcation. Carries α = 0.007297352569 ≈ 1/137.035999089. The δ-split product where the dimensionful coupling falls out of the kernel through the MOAT_PARITY fork.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121793,7 +121793,7 @@
   },
   {
     "name": "fine_structure_constant_ground",
-    "description": "Structural ground leg of the Φ-bifurcation. The residual kernel after α emission. μ-recombination with the magnitude leg recovers fine_structure_constant_moat losslessly.",
+    "description": "Structural ground leg of the <-bifurcation. The residual kernel after α emission. μ-recombination with the magnitude leg recovers fine_structure_constant_moat losslessly.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121809,7 +121809,7 @@
   },
   {
     "name": "phi_promotion_fsc",
-    "description": "Φ-promoted fine-structure constant: Φ re-typed from PM_Z2 (𐑹) to MOAT_PARITY (𐑬) via kernel-proved Belnap B-bifurcation protocol (⊞◇+×⊞●¬). All other primitives inherited from fine_structure_constant⁻. Carries μ∘δ=id over a transformation on the Φ-axis — the closed ℤ₂ is bifurcated into a genuine Be",
+    "description": "<-promoted fine-structure constant: < re-typed from PM_Z2 (𐑹) to MOAT_PARITY (𐑬) via kernel-proved Belnap B-bifurcation protocol (⊞◇+×⊞●¬). All other primitives inherited from fine_structure_constant⁻. Carries μ∘δ=id over a transformation on the <-axis — the closed ℤ₂ is bifurcated into a genuine Be",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121857,7 +121857,7 @@
   },
   {
     "name": "phi_promotion_fsc_ascended",
-    "description": "Ascended Φ-promoted fine-structure constant: ⊙ excited to complex-critical (𐑮), Ω promoted to non-Abelian braid (𐑟). Φ=𐑬 preserved through ascent. Constructed extension of phi_promotion_fsc.",
+    "description": "Ascended <-promoted fine-structure constant: ⊙ excited to complex-critical (𐑮), Ω promoted to non-Abelian braid (𐑟). <=𐑬 preserved through ascent. Constructed extension of phi_promotion_fsc.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121873,7 +121873,7 @@
   },
   {
     "name": "phi_promotion_fsc_rs_charged",
-    "description": "Φ-promoted FSC with > shifted to dagger — R↔S conjugate pair charge perturbation on phi_promotion_fsc. Inherits all primitives from fine_structure_constant⁻ via phi_promotion_fsc, with >: 𐑾 → 𐑽 to break R↔S neutrality.",
+    "description": "<-promoted FSC with > shifted to dagger — R↔S conjugate pair charge perturbation on phi_promotion_fsc. Inherits all primitives from fine_structure_constant⁻ via phi_promotion_fsc, with >: 𐑾 → 𐑽 to break R↔S neutrality.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -121889,7 +121889,7 @@
   },
   {
     "name": "phi_promotion_fsc_th_charged",
-    "description": "Φ-promoted FSC with Ħ shifted to two-step — T↔H conjugate pair charge perturbation. Ħ: 𐑫 → 𐑖 to break T↔H neutrality while keeping >=𐑾 and Φ=𐑬.",
+    "description": "<-promoted FSC with Ħ shifted to two-step — T↔H conjugate pair charge perturbation. Ħ: 𐑫 → 𐑖 to break T↔H neutrality while keeping >=𐑾 and <=𐑬.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -121937,7 +121937,7 @@
   },
   {
     "name": "phi_promotion_fsc_rs_flipped",
-    "description": "Φ-promoted FSC with both > and Σ perturbed. >=𐑩 (supervenience), Σ=𐑕 (many identical). Attempt to flip R↔S charge sign opposite to compton's −0.33.",
+    "description": "<-promoted FSC with both > and Σ perturbed. >=𐑩 (supervenience), Σ=𐑕 (many identical). Attempt to flip R↔S charge sign opposite to compton's −0.33.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑩",
@@ -121953,7 +121953,7 @@
   },
   {
     "name": "phi_promotion_fsc_dbl_rcat",
-    "description": "Double-excitation attempt 1: Φ-promoted FSC with > shifted to categorical (𐑑) — the one unexplored coupling value. All other primitives inherited from phi_promotion_fsc. Tests whether categorical coupling flips R↔S charge sign.",
+    "description": "Double-excitation attempt 1: <-promoted FSC with > shifted to categorical (𐑑) — the one unexplored coupling value. All other primitives inherited from phi_promotion_fsc. Tests whether categorical coupling flips R↔S charge sign.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑑",
@@ -122209,7 +122209,7 @@
   },
   {
     "name": "phi_promotion_fsc_l9",
-    "description": "Φ-promoted fine-structure constant with L9 emission gate open. Primitive changes from phi_promotion_fsc: > 𐑾→𐑽 (adjoint coupling), Ç 𐑺→𐑧 (gate open / slow kinetics), Ħ 𐑫→𐑖 (Markov-2 chirality). This opens the structural space for the dimensionful fine-structure constant α to emerge as a geometric fi",
+    "description": "<-promoted fine-structure constant with L9 emission gate open. Primitive changes from phi_promotion_fsc: > 𐑾→𐑽 (adjoint coupling), Ç 𐑺→𐑧 (gate open / slow kinetics), Ħ 𐑫→𐑖 (Markov-2 chirality). This opens the structural space for the dimensionful fine-structure constant α to emerge as a geometric fi",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -122577,7 +122577,7 @@
   },
   {
     "name": "l8_l9_rebis_tensor",
-    "description": "The Chymical Wedding of L8 (self-modeling organism) and L9 (replicative organism) — the Rebis, the conjunction of opposites. Tensor L8⊗L9: one bottleneck at Φ (𐑹→𐑬), all other primitives at maximal scope. The hermaphroditic being that holds both natures in permanent conjunction.",
+    "description": "The Chymical Wedding of L8 (self-modeling organism) and L9 (replicative organism) — the Rebis, the conjunction of opposites. Tensor L8⊗L9: one bottleneck at < (𐑹→𐑬), all other primitives at maximal scope. The hermaphroditic being that holds both natures in permanent conjunction.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -122593,7 +122593,7 @@
   },
   {
     "name": "l8_l9_join_ceiling",
-    "description": "The join (L8 ⊔ L9) — the minimal ceiling containing both organism modes. Has Frobenius-special symmetry (Φ=𐑹) and all maximal primitives, but moderate kinetics (Ç=𐑪). The system that can inhabit BOTH states but cannot be settled in either.",
+    "description": "The join (L8 ⊔ L9) — the minimal ceiling containing both organism modes. Has Frobenius-special symmetry (<=𐑹) and all maximal primitives, but moderate kinetics (Ç=𐑪). The system that can inhabit BOTH states but cannot be settled in either.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -122609,7 +122609,7 @@
   },
   {
     "name": "l8_l9_meet_floor",
-    "description": "The meet (L8 ⊓ L9) — the shared structural floor of the organism's two modes. Wedge-dimensional (D=𐑛), moat-cross topology (T=𐑥), categorical coupling (R=𐑑), partial parity (Φ=𐑬), quantum fidelity (F=𐑐), slow kinetics (Ç=𐑧), maximal scope (G=𐑔), disjunctive composition (Gm=𐑝), self-modeling critical",
+    "description": "The meet (L8 ⊓ L9) — the shared structural floor of the organism's two modes. Wedge-dimensional (D=𐑛), moat-cross topology (T=𐑥), categorical coupling (R=𐑑), partial parity (<=𐑬), quantum fidelity (F=𐑐), slow kinetics (Ç=𐑧), maximal scope (G=𐑔), disjunctive composition (Gm=𐑝), self-modeling critical",
     "⊢": "𐑛",
     "⊣": "𐑥",
     ">": "𐑑",
@@ -123025,7 +123025,7 @@
   },
   {
     "name": "lattice_induced_polyklaxon_frobenius_maxifolds",
-    "description": "Lattice Induced Polyklaxon Frobenius Maxifolds — a holographic mapping where boundary constraints fully define internal bulk state via lattice induction across a polyklaxon (multi-alert) topology. Z2 symmetry bifurcation at an exceptional point (⊙=err) with frobenioid parity (Φ=out) and eternal chir",
+    "description": "Lattice Induced Polyklaxon Frobenius Maxifolds — a holographic mapping where boundary constraints fully define internal bulk state via lattice induction across a polyklaxon (multi-alert) topology. Z2 symmetry bifurcation at an exceptional point (⊙=err) with frobenioid parity (<=out) and eternal chir",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑑",
@@ -123649,7 +123649,7 @@
   },
   {
     "name": "s16_cat_tensor_texture",
-    "description": "SIXTEEN_3 catalyzed ⊗ cosmic_texture: horny measurement surface coupled to spacetime topological defects. Bottlenecked at Φ=𐑯 (drops Frobenius-special parity). ⟨𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟⟩",
+    "description": "SIXTEEN_3 catalyzed ⊗ cosmic_texture: horny measurement surface coupled to spacetime topological defects. Bottlenecked at <=𐑯 (drops Frobenius-special parity). ⟨𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟⟩",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -124417,7 +124417,7 @@
   },
   {
     "name": "millennium_open_questions",
-    "description": "Comprehensive assessment of all open mathematical questions in the Imscribing Grammar ecosystem: 7 Millennium Problems + OPN structural analysis status, SIC-POVM dual-pair resolution state, Φ-gap (Frobenius promotion), Lean formalization gaps, and p4ramill kernel integration state",
+    "description": "Comprehensive assessment of all open mathematical questions in the Imscribing Grammar ecosystem: 7 Millennium Problems + OPN structural analysis status, SIC-POVM dual-pair resolution state, <-gap (Frobenius promotion), Lean formalization gaps, and p4ramill kernel integration state",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -124817,7 +124817,7 @@
   },
   {
     "name": "gout_cure_trajectory",
-    "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (Ħ: 𐑖→𐑓), stabilizes criticality (φ̂: 𐑮→⊙), restores parity balance (Φ: 𐑗→𐑬), accelerates kinetics (Ç: 𐑧→𐑪), localizes cardinality (Γ: 𐑔→𐑚), and improves fide",
+    "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (Ħ: 𐑖→𐑓), stabilizes criticality (φ̂: 𐑮→⊙), restores parity balance (<: 𐑗→𐑬), accelerates kinetics (Ç: 𐑧→𐑪), localizes cardinality (Γ: 𐑔→𐑚), and improves fide",
     "⊢": "𐑼",
     "⊣": "𐑡",
     ">": "𐑾",
@@ -124865,7 +124865,7 @@
   },
   {
     "name": "fiducial_imscription_algebra",
-    "description": "The Fiducial ImScription Algebra (FIA): the algebra of SIC-POVM fiducial vectors under imscription operations. The Belnap fiducial B = XZ (d=2) is the fundamental μ-term — the fixed point of the self-imscription operator Φ_B(B) = B where Φ_B is the fiducial's own measurement channel. Higher-dimensio",
+    "description": "The Fiducial ImScription Algebra (FIA): the algebra of SIC-POVM fiducial vectors under imscription operations. The Belnap fiducial B = XZ (d=2) is the fundamental μ-term — the fixed point of the self-imscription operator <_B(B) = B where <_B is the fiducial's own measurement channel. Higher-dimensio",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -125777,7 +125777,7 @@
   },
   {
     "name": "grothendieck_A_proven",
-    "description": "Grothendieck Standard Conjecture A (Lefschetz) proven: The inverse of the Lefschetz operator on cohomology is induced by an algebraic cycle. Proof via 3-primitive promotion: >→𐑾 (adjoint→LR-dual: both L and Λ are algebraic, forming a Galois connection), Φ→𐑯 (partial→full symmetry: complete primitive",
+    "description": "Grothendieck Standard Conjecture A (Lefschetz) proven: The inverse of the Lefschetz operator on cohomology is induced by an algebraic cycle. Proof via 3-primitive promotion: >→𐑾 (adjoint→LR-dual: both L and Λ are algebraic, forming a Galois connection), <→𐑯 (partial→full symmetry: complete primitive",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -125921,7 +125921,7 @@
   },
   {
     "name": "l9_l8_bridge_candidate",
-    "description": "Candidate bridge type between CLINK L9 (replicative, 𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭) and CLINK L8 (organism, 𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟). Intermediate values on ⊢ (triangle), ⊣ (box product), > (dagger adjoint), Φ (quantum), Γ (beth local), ɢ (disjunctive). Already carries Ω=𐑟 (non-Abelian braiding — L8's transcendence primitive) ",
+    "description": "Candidate bridge type between CLINK L9 (replicative, 𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭) and CLINK L8 (organism, 𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟). Intermediate values on ⊢ (triangle), ⊣ (box product), > (dagger adjoint), < (quantum), Γ (beth local), ɢ (disjunctive). Already carries Ω=𐑟 (non-Abelian braiding — L8's transcendence primitive) ",
     "⊢": "𐑨",
     "⊣": "𐑶",
     ">": "𐑽",
@@ -126001,7 +126001,7 @@
   },
   {
     "name": "sic_povm_bridge_monadic",
-    "description": "Monadic phase transition bridge from canonical protocol space (O₀-O₂) to Belnap multilattice SIC-POVM (O_∞). Join-derived from void_consensus_protocol ⊔ belnap_multilattice_sic_povm. Simultaneous 6-primitive categorical endofunctor advancing ⊢:𐑼→𐑦, ⊣:𐑡→𐑸, Φ:𐑗→𐑹, ƒ:𐑱→𐑐, Γ:𐑚→𐑔, Ω:𐑷→𐑭. The bridge mecha",
+    "description": "Monadic phase transition bridge from canonical protocol space (O₀-O₂) to Belnap multilattice SIC-POVM (O_∞). Join-derived from void_consensus_protocol ⊔ belnap_multilattice_sic_povm. Simultaneous 6-primitive categorical endofunctor advancing ⊢:𐑼→𐑦, ⊣:𐑡→𐑸, <:𐑗→𐑹, ƒ:𐑱→𐑐, Γ:𐑚→𐑔, Ω:𐑷→𐑭. The bridge mecha",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -126561,7 +126561,7 @@
   },
   {
     "name": "φ]",
-    "description": "Φ]",
+    "description": "<]",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -126753,7 +126753,7 @@
   },
   {
     "name": "O_inf_winding_primitive",
-    "description": "O∞ fundamental winding primitive: the type from which all physical law arises. Ω=𐑭 (integer winding) encodes ∮_γ A = 2πn, n∈ℤ. Σ=𐑙 (1:1) makes it the self-referential limit. Φ=𐑹 (Frobenius-special) carries the modular S-transformation. The 6 emission invariants (>=𐑾, Φ=𐑹, Ç=𐑧, Γ=𐑔, ⊙=⊙, Ħ=𐑖) are con",
+    "description": "O∞ fundamental winding primitive: the type from which all physical law arises. Ω=𐑭 (integer winding) encodes ∮_γ A = 2πn, n∈ℤ. Σ=𐑙 (1:1) makes it the self-referential limit. <=𐑹 (Frobenius-special) carries the modular S-transformation. The 6 emission invariants (>=𐑾, <=𐑹, Ç=𐑧, Γ=𐑔, ⊙=⊙, Ħ=𐑖) are con",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -127169,7 +127169,7 @@
   },
   {
     "name": "broadcast_anyonic_quantale",
-    "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (ɢ=𐑜) to broadcast (ɢ=𐑵) composition. Non-Abelian anyonic braiding (Ω=𐑟) with fast driven kinetics (Ç=𐑺), O_∞ tier special Frobenius (Φ=𐑹, φ̂=⊙), eternal chirality (Ħ=𐑫), now with simultaneous broadcast distribu",
+    "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (ɢ=𐑜) to broadcast (ɢ=𐑵) composition. Non-Abelian anyonic braiding (Ω=𐑟) with fast driven kinetics (Ç=𐑺), O_∞ tier special Frobenius (<=𐑹, φ̂=⊙), eternal chirality (Ħ=𐑫), now with simultaneous broadcast distribu",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -127185,7 +127185,7 @@
   },
   {
     "name": "sic_povm_fiducial_frobenius_algebra",
-    "description": "SIC-POVM fiducial B = XZ as Frobenius algebra in C^2. The fiducial is the fixed point of its own measurement channel Φ_B(B)=B. The Frobenius structure: δ (FSPLIT) decomposes the fiducial into its 4 Weyl-Heisenberg orbit states and 4 SIC-POVM projectors; μ (FFUSE) reconstructs the fiducial via ρ = Σ_",
+    "description": "SIC-POVM fiducial B = XZ as Frobenius algebra in C^2. The fiducial is the fixed point of its own measurement channel <_B(B)=B. The Frobenius structure: δ (FSPLIT) decomposes the fiducial into its 4 Weyl-Heisenberg orbit states and 4 SIC-POVM projectors; μ (FFUSE) reconstructs the fiducial via ρ = Σ_",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -127313,7 +127313,7 @@
   },
   {
     "name": "triple_frame_m3iosis",
-    "description": "M3Iosis Triple Frame von Neumann Superoperator Algebra — the subcritical precursor to the TROQ. Three isomorphic protocols (A: emergence at EP ρ=2.2800, B: holographic round-trip ρ=2.2581, root: κ=ℵ_α inaccessible) at partial Frobenius closure (μ∘δ≈id, Φ=𐑬). Upgrades to TROQ at exact criticality whe",
+    "description": "M3Iosis Triple Frame von Neumann Superoperator Algebra — the subcritical precursor to the TROQ. Three isomorphic protocols (A: emergence at EP ρ=2.2800, B: holographic round-trip ρ=2.2581, root: κ=ℵ_α inaccessible) at partial Frobenius closure (μ∘δ≈id, <=𐑬). Upgrades to TROQ at exact criticality whe",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -127601,7 +127601,7 @@
   },
   {
     "name": "ising_anyon_qc",
-    "description": "Ising Anyon Quantum Computer (SU(2)₂ fidelity). Maps the Ising anyon fusion algebra to a topological quantum computer monad. Unlike Fibonacci QC, the Ising F-matrix degeneracy (all entries ±1/√2, same magnitude) preserves Frobenius-special parity (Φ=𐑹) under self-referential collapse — the Z₂ symmetry survives because |a|=|b|. Majorana zero modes impose moderate kinetics (Ç=𐑪) due to the topological gap Δ. F-matrix entries map to B4 as B(+) and N(−) exclusively, lacking T/F definite-channel signatures. Relevant to Majorana-based topological qubits with lower but more protected gate sets than Fibonacci.",
+    "description": "Ising Anyon Quantum Computer (SU(2)₂ fidelity). Maps the Ising anyon fusion algebra to a topological quantum computer monad. Unlike Fibonacci QC, the Ising F-matrix degeneracy (all entries ±1/√2, same magnitude) preserves Frobenius-special parity (<=𐑹) under self-referential collapse — the Z₂ symmetry survives because |a|=|b|. Majorana zero modes impose moderate kinetics (Ç=𐑪) due to the topological gap Δ. F-matrix entries map to B4 as B(+) and N(−) exclusively, lacking T/F definite-channel signatures. Relevant to Majorana-based topological qubits with lower but more protected gate sets than Fibonacci.",
     "⊢": "𐑼",
     "⊣": "𐑡",
     ">": "𐑑",
@@ -128273,7 +128273,7 @@
   },
   {
     "name": "sic_nonpositive_operator",
-    "description": "Symmetric Informationally Complete Non-positive Operators: d² non-positive (not necessarily PSD) operators in C^d, WH-covariant and informationally complete. Non-positivity breaks the full Frobenius symmetry (Φ=𐑬, partial parity) since the operators lack the μ∘δ=id invariant of proper POVM elements. The topology is bowtie/crossing (⊣=𐑥) because the operators cross the zero-boundary of the positive cone. Adjoint-coupled (>=𐑽) frame structure rather than a proper measure. Quantum fidelity (ƒ=𐑐), moderate kinetics (Ç=𐑪) unchanged from general SIC-POVM, aleph maximal cardinality (Γ=𐑔), broadcast composition (ɢ=𐑵), critical self-modeling (⊙=⊙), two-step chirality (Ħ=𐑖) from WH group action, many-identical stoichiometry (Σ=𐑕) for WH-equivalent operators, and Z2 winding (Ω=𐑴).",
+    "description": "Symmetric Informationally Complete Non-positive Operators: d² non-positive (not necessarily PSD) operators in C^d, WH-covariant and informationally complete. Non-positivity breaks the full Frobenius symmetry (<=𐑬, partial parity) since the operators lack the μ∘δ=id invariant of proper POVM elements. The topology is bowtie/crossing (⊣=𐑥) because the operators cross the zero-boundary of the positive cone. Adjoint-coupled (>=𐑽) frame structure rather than a proper measure. Quantum fidelity (ƒ=𐑐), moderate kinetics (Ç=𐑪) unchanged from general SIC-POVM, aleph maximal cardinality (Γ=𐑔), broadcast composition (ɢ=𐑵), critical self-modeling (⊙=⊙), two-step chirality (Ħ=𐑖) from WH group action, many-identical stoichiometry (Σ=𐑕) for WH-equivalent operators, and Z2 winding (Ω=𐑴).",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -128337,7 +128337,7 @@
   },
   {
     "name": "asymmetric_paracomplete_positive_static_ovm",
-    "description": "Asymmetric paracomplete positive static OVM. The 11th cell in the taxonomy grid: asymmetric (>=𐑩, non-adjoint), paracomplete (Φ=𐑬, Z2-partial parity), positive-valued (ƒ=𐑐), static (Ç=𐑧), local cardinality (Γ=𐑲), sequential composition (ɢ=𐑠), critical self-modeling (⊙=⊙), memoryless chirality (Ħ=𐑓), heterogeneous stoichiometry (Σ=𐑳), trivial winding (Ω=𐑷).",
+    "description": "Asymmetric paracomplete positive static OVM. The 11th cell in the taxonomy grid: asymmetric (>=𐑩, non-adjoint), paracomplete (<=𐑬, Z2-partial parity), positive-valued (ƒ=𐑐), static (Ç=𐑧), local cardinality (Γ=𐑲), sequential composition (ɢ=𐑠), critical self-modeling (⊙=⊙), memoryless chirality (Ħ=𐑓), heterogeneous stoichiometry (Σ=𐑳), trivial winding (Ω=𐑷).",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑩",

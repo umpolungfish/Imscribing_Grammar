@@ -9,10 +9,10 @@ using zfct_navigator.compose_formula + render_tokens.
 
 Per-element primitive derivation
 ─────────────────────────────────
-  Fixed (corpus-level):  ⊢, >, ƒ, Ç, Γ, ⊙, Ω, Φ (whole-manuscript)
+  Fixed (corpus-level):  ⊢, >, ƒ, Ç, Γ, ⊙, Ω, < (whole-manuscript)
   Variable (element-level):
     ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
-    Φ  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
+    <  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
     ɢ  — broadcast vs sequential vs conjunctive (FSPLIT>>FFUSE→Ş; CLINK→ˌ; VINIT→^)
     Ħ  — instruction count as state-depth proxy (<30→Ñ; <60→£; <120→A; ≥120→!)
 
@@ -48,7 +48,7 @@ from navigators.zfct_navigator import (
 
 # ── corpus base tuples ────────────────────────────────────────────────────────
 # These are the whole-manuscript imscriptions in zfct_navigator notation.
-# Note: zfct_navigator uses "⊙" for criticality (exOS Φ = IG ⊙).
+# Note: zfct_navigator uses "⊙" for criticality (exOS < = IG ⊙).
 
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
@@ -105,7 +105,7 @@ def _derive_⊣(counts: Counter, corpus: str) -> str:
     return CORPUS_BASE[corpus]['⊣']     # corpus default
 
 
-def _derive_Φ(counts: Counter, corpus: str) -> str:
+def _derive_<(counts: Counter, corpus: str) -> str:
     split = counts['FSPLIT']
     fuse  = counts['FFUSE']
     total_frob = split + fuse
@@ -151,7 +151,7 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     counts = _count_mnemonics(instructions)
     base   = dict(CORPUS_BASE[corpus])
     base['⊣'] = _derive_⊣(counts, corpus)
-    base['<'] = _derive_Φ(counts, corpus)
+    base['<'] = _derive_<(counts, corpus)
     base['∋'] = _derive_ɢ(counts, corpus)
     base['⊥'] = _derive_Ħ(len(instructions), corpus)
     return base
@@ -264,7 +264,7 @@ def process_corpus(
         }
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
-                  f'⊣={tuple_["⊣"]}  Φ={tuple_["<"]}  '
+                  f'⊣={tuple_["⊣"]}  <={tuple_["<"]}  '
                   f'ɢ={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
     return records
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: ⊣={t["⊣"]}  Φ={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
+                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

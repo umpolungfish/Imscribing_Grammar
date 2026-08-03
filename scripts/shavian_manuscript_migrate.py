@@ -25,12 +25,12 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont >}}_{=}', r'{\igfont 𐑾}'),
     (r'\text{{\igprimfont >}}_{\dagger}', r'{\igfont 𐑽}'),
     (r'\text{{\igprimfont >}}_{\leftrightarrow}', r'{\igfont 𐑾}'),
-    # Φ (Polarity)
-    (r'\text{{\igprimfont Φ}}_{\text{{\igprimfont ɐ}}}', r'{\igfont 𐑗}'),
-    (r'\text{{\igprimfont Φ}}_{\text{{\igfont ˙}}}', r'{\igfont 𐑯}'),
-    (r'\text{{\igprimfont Φ}}_{\}}', r'{\igfont 𐑹}'),
-    (r'\text{{\igprimfont Φ}}_{+}', r'{\igfont 𐑗}'),
-    (r'\text{{\igprimfont Φ}}_{\text{{\igfont ·}}}', r'{\igfont 𐑯}'),
+    # < (Polarity)
+    (r'\text{{\igprimfont <}}_{\text{{\igprimfont ɐ}}}', r'{\igfont 𐑗}'),
+    (r'\text{{\igprimfont <}}_{\text{{\igfont ˙}}}', r'{\igfont 𐑯}'),
+    (r'\text{{\igprimfont <}}_{\}}', r'{\igfont 𐑹}'),
+    (r'\text{{\igprimfont <}}_{+}', r'{\igfont 𐑗}'),
+    (r'\text{{\igprimfont <}}_{\text{{\igfont ·}}}', r'{\igfont 𐑯}'),
     # ⊙ (Criticality) — ⊙: remove subscript, keep ⊙; others get Shavian
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont ÿ}}}', r'\text{{\igprimfont ⊙}}'),
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont Æ}}}', r'{\igfont 𐑮}'),

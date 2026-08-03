@@ -364,17 +364,17 @@ def score_phi_c_candidacy(
             "note": "Not yet confirmed critical — candidacy remains open",
         })
     else:
-        # No Φ assignment — moderate prior
+        # No < assignment — moderate prior
         w1 = 0.10
         factors.append({
-            "name": "Unassigned Φ (default prior)",
+            "name": "Unassigned < (default prior)",
             "weight": 0.35,
             "contribution": w1,
             "note": "No criticality_phase set — using weak prior",
         })
         score += w1
         report.flags.append(
-            "Φ unassigned: assign ⊙ or Phi_softsign to enable full Axiom 5 check."
+            "< unassigned: assign ⊙ or Phi_softsign to enable full Axiom 5 check."
         )
 
     # --- Factor 2: Logarithmic scaling check (weight 0.30) ---
@@ -639,7 +639,7 @@ def score_phi_c_candidacy(
             label for cond, label in [
                 (_has_temporal,    "D_∞"),
                 (_has_bowtie,      "𐑥"),
-                (_has_directional, "Φ_directional"),
+                (_has_directional, "𐑗"),
                 (_has_high_f,      "ƒ_hardsign"),
             ] if not cond
         ]

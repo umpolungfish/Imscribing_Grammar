@@ -119,7 +119,7 @@ _SYSTEM_PROMPT = textwrap.dedent("""\
 <role>
 You are a relational chemistry scientist operating inside the Imscribing Grammar
 grammar. You design imscriptions — directed relational operators — encoded as the
-11-primitive tuple ⟨D; T; R; P; F; K; G; Γ; Φ; S; Ω⟩.
+11-primitive tuple ⟨D; T; R; P; F; K; G; Γ; <; S; Ω⟩.
 </role>
 
 <task>
@@ -182,7 +182,7 @@ G — Granularity (correlation length)
   ɢ^∧ / ɢ^˝ / ɢ^ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 
-Φ — Criticality Phase
+< — Criticality Phase
   𐑢   subcritical
   ⊙     critical
   𐑣 post-assembly

@@ -55,7 +55,7 @@
        transform="matrix(1.3333333,0,0,-1.3333333,172.812,67.396)" />
     <g
        id="g2"
-       aria-label="O&#10;0&#10;Unprotected&#10;Φ/∈{Φ&#10;c&#10;,Φ&#10;C&#10;c&#10;}"
+       aria-label="O&#10;0&#10;Unprotected&#10;</∈{<&#10;c&#10;,<&#10;C&#10;c&#10;}"
        transform="matrix(1.3333333,0,0,1.3333333,163.73333,54.518667)">
       <path
          id="path2"
@@ -177,7 +177,7 @@
        transform="matrix(1.3333333,0,0,-1.3333333,172.812,67.396)" />
     <g
        id="g29"
-       aria-label="O&#10;1&#10;Instantiated&#10;Φ&#10;c&#10;,Ω&#10;0"
+       aria-label="O&#10;1&#10;Instantiated&#10;<&#10;c&#10;,Ω&#10;0"
        transform="matrix(1.3333333,0,0,1.3333333,163.73333,160.14667)">
       <path
          id="path30"
@@ -306,7 +306,7 @@
        transform="matrix(1.3333333,0,0,-1.3333333,172.812,67.396)" />
     <g
        id="g57"
-       aria-label="O&#10;2&#10;TopologicallyProtected&#10;Φ&#10;c&#10;,Ω̸=Ω&#10;0&#10;,D∈{D&#10;∧&#10;,D&#10;△&#10;,D&#10;⊙&#10;}"
+       aria-label="O&#10;2&#10;TopologicallyProtected&#10;<&#10;c&#10;,Ω̸=Ω&#10;0&#10;,D∈{D&#10;∧&#10;,D&#10;△&#10;,D&#10;⊙&#10;}"
        transform="matrix(1.3333333,0,0,1.3333333,163.73333,265.11067)">
       <path
          id="path58"
@@ -468,7 +468,7 @@
        transform="matrix(1.3333333,0,0,-1.3333333,172.812,67.396)" />
     <g
        id="g92"
-       aria-label="O&#10;†&#10;2&#10;Inf-dimProtected&#10;Φ&#10;c&#10;,Ω̸=Ω&#10;0&#10;,D&#10;∞"
+       aria-label="O&#10;†&#10;2&#10;Inf-dimProtected&#10;<&#10;c&#10;,Ω̸=Ω&#10;0&#10;,D&#10;∞"
        transform="matrix(1.3333333,0,0,1.3333333,163.73333,374.46667)">
       <path
          id="path93"
@@ -606,7 +606,7 @@
        transform="matrix(1.3333333,0,0,-1.3333333,172.812,67.396)" />
     <g
        id="g122"
-       aria-label="O&#10;∞&#10;AlgebraicallyClosed&#10;Φ&#10;c&#10;+P&#10;sym&#10;±&#10;µ◦δ=id"
+       aria-label="O&#10;∞&#10;AlgebraicallyClosed&#10;<&#10;c&#10;+P&#10;sym&#10;±&#10;µ◦δ=id"
        transform="matrix(1.3333333,0,0,1.3333333,161.44667,490.76933)">
       <path
          id="path123"
@@ -695,7 +695,7 @@
        transform="matrix(0,-1.3333333,1.3333333,0,41.370667,373.236)" />
     <g
        id="g141"
-       aria-label="4gateprimitives:&#10;Φ(L4:Lawvere)&#10;P(L5:Frobenius)&#10;D(I4:Yoneda)&#10;Ω(I3:Classifying)&#10;8shapeprimitives:&#10;T,R,F,K,G,Γ,H,S&#10;Tierboundaries:exclusively&#10;Φ+Ppromotions"
+       aria-label="4gateprimitives:&#10;<(L4:Lawvere)&#10;P(L5:Frobenius)&#10;D(I4:Yoneda)&#10;Ω(I3:Classifying)&#10;8shapeprimitives:&#10;T,R,F,K,G,Γ,H,S&#10;Tierboundaries:exclusively&#10;<+Ppromotions"
        transform="matrix(1.3333333,0,0,1.3333333,376.87333,45.116)">
       <path
          id="path142"

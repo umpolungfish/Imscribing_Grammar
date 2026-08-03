@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `φ̂` is not a primitive. The twelve are ⊢ ⊣ > Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
+# `φ̂` is not a primitive. The twelve are ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
 # criticality slot is ⊙; `φ̂` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -698,7 +698,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
     # ɢ — Composition
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
-    # Φ — Criticality
+    # < — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
     # H — Chirality
     "𐑓": "0",  "𐑒": "1",  "𐑖": "2",  "𐑫": "∞",
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;Φ;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -3442,7 +3442,7 @@ class TrueAgenticAgent:
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (Φ, P, Ω, D) only; 𐑱 in
+        # sub-oracle — it does not tensor with it. Tier is (<, P, Ω, D) only; 𐑱 in
         # the sub-oracle does not degrade the harness tier from O_∞.
         self.inference_fidelity: str = (
             "𐑐" if isinstance(self.client, _LocalOpenAIClient) else "𐑱"

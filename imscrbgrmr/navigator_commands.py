@@ -89,7 +89,7 @@ def crystal_group():
 
     \b
     Architecture (imscriptive, Frobenius O_∞):
-      Boundary: (Φ, P, Ω, D) → 400 tier cells
+      Boundary: (<, P, Ω, D) → 400 tier cells
       Bulk:     (T, R, F, K, G, Γ, H, S) → 43,200 inner types per cell
       Total:    400 × 43,200 = 17,280,000 types
 
@@ -103,7 +103,7 @@ def crystal_group():
       decode     Address → tuple
       nearest    Nearest catalog entries to a partial/full tuple
       count      Count matching types
-      query      Imscriptive boundary query (Φ, P, Ω, D → tier cells)
+      query      Imscriptive boundary query (<, P, Ω, D → tier cells)
     """
 
 
@@ -207,7 +207,7 @@ def crystal_encode(kvs, full: bool):
         f"[bold]Address:[/bold]   [cyan]{addr:,}[/cyan]\n"
         f"[bold]Tier:[/bold]      [yellow]{tier}[/yellow]\n"
         f"[bold]Cell:[/bold]      {cell_id}  "
-        f"(Φ={tup['Phi']} P={tup['P']} Ω={tup['Omega']} D={tup['D']})\n"
+        f"(<={tup['Phi']} P={tup['P']} Ω={tup['Omega']} D={tup['D']})\n"
         f"[bold]Inner:[/bold]     {inner_id}\n"
         f"[bold]Roundtrip:[/bold] {_TICK if rt else _CROSS}",
         title="Crystal Encode", expand=False,
@@ -317,16 +317,16 @@ def crystal_count(kvs):
 
 
 @crystal_group.command("query")
-@click.option("--phi",   default=None, help="Φ boundary value (e.g. ⊙)")
+@click.option("--phi",   default=None, help="< boundary value (e.g. ⊙)")
 @click.option("--p",     default=None, help="P boundary value (e.g. P_doublebarpipe)")
 @click.option("--omega", default=None, help="Ω boundary value (e.g. Omega_dzlig)")
 @click.option("--d",     default=None, help="D boundary value (e.g. D_omega)")
 @click.option("--tier",  default=None, help="Tier filter (O_∞ / O₂ / O₂† / O₁ / O₀)")
 def crystal_query(phi, p, omega, d, tier):
-    """Imscriptive boundary query: (Φ, P, Ω, D) → matching tier cells.
+    """Imscriptive boundary query: (<, P, Ω, D) → matching tier cells.
 
     \b
-    The boundary (Φ, P, Ω, D) encodes the bulk — each matching cell contains
+    The boundary (<, P, Ω, D) encodes the bulk — each matching cell contains
     43,200 inner types. Any combination of the four boundary coordinates can be
     specified; omitted coordinates broadcast over all values.
 
@@ -345,7 +345,7 @@ def crystal_query(phi, p, omega, d, tier):
 
     title = "Boundary query"
     parts = []
-    if phi:   parts.append(f"Φ={phi}")
+    if phi:   parts.append(f"<={phi}")
     if p:     parts.append(f"P={p}")
     if omega: parts.append(f"Ω={omega}")
     if d:     parts.append(f"D={d}")
@@ -397,7 +397,7 @@ def domain_group():
 
     \b
     Subcommands:
-      info      Summary table: entries with tier, K, P, Φ (and C-score for consciousness)
+      info      Summary table: entries with tier, K, P, < (and C-score for consciousness)
       verify    Theorem verification (key §74–§77 predictions)
       distance  Distance breakdown between two entries
       nearest   Nearest catalog entries to a named entry

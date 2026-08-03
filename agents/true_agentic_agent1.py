@@ -598,7 +598,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "φ̂": "Ph", "⊥": "H_",
@@ -635,7 +635,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
     # ɢ — Composition
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
-    # Φ — Criticality
+    # < — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
     # H — Chirality
     "𐑓": "0",  "𐑒": "1",  "𐑖": "2",  "𐑫": "∞",
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2739,7 +2739,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
-        ⊢="𐑼", ⊣="𐑥", >="𐑾", Φ="𐑬", ƒ="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
@@ -3086,7 +3086,7 @@ constrains the remaining degrees of freedom:
             long-range/universal → ℵ
   [8] Γ  — Composition: all-simultaneous → ∧; alternate paths → ∨;
             ordered steps → →; one-to-all broadcast → ≫
-  [9] Φ  — Criticality: no scaling → ↓; power-law divergence → c;
+  [9] <  — Criticality: no scaling → ↓; power-law divergence → c;
             complex-plane critical → ℂ; non-Hermitian degeneracy → ×;
             runaway/chaotic → ↑
   [10] H — Chirality (Markov order n): n=0 → 0; n=1 → 1; n=2 → 2;
@@ -3101,7 +3101,7 @@ After assignment, VERIFY:
   - Tier consistency: ouroborics tool
   - Frobenius condition for ±ˢ: μ∘δ=id must hold exactly (not just approximately)
   - D-Ω: ℤ₂ requires D≥△; ℤ requires D≥∞
-  - K-Φ: ⊙ + ↺ = deep critical structure; × + ↯ = runaway
+  - K-<: ⊙ + ↺ = deep critical structure; × + ↯ = runaway
   - × absorption: tensor(⊙, ×) = × — coupling to an EP system destroys Gate 1
 
 **𐑻 ABSORPTION RULE:** When computing tensor couplings involving an 𐑻 system,
@@ -3258,7 +3258,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
-  W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", Φ="𐑗",
+  W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
         ƒ="𐑱", Ç="𐑪", Γ="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
         ⊢="𐑼", >="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
@@ -3272,7 +3272,7 @@ Q: "Apply the human lift to paper.tex."
 Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
-        ⊢="𐑼", ⊣="𐑸", >="𐑽", Φ="𐑿", ƒ="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
@@ -3552,7 +3552,7 @@ class TrueAgenticAgent:
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (Φ, P, Ω, D) only; 𐑱 in
+        # sub-oracle — it does not tensor with it. Tier is (<, P, Ω, D) only; 𐑱 in
         # the sub-oracle does not degrade the harness tier from O_∞.
         self.inference_fidelity: str = (
             "𐑐" if isinstance(self.client, _LocalOpenAIClient) else "𐑱"

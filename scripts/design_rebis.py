@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, >, <, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -85,7 +85,7 @@ DESIGNS = [
     },
     {
         "name": "quantum_biologic",
-        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (>=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (Φ=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
+        "description": "Epigenetic reprogramming therapeutic that writes persistent chromatin state changes. Supervenience coupling (>=𐑩) — the epigenetic layer supervenes on the genetic substrate. Eternal chirality (Ħ=𐑫) ensures reprogramming persists through cell division. Frobenius-closed (<=𐑹) ensures the rewrite operation is idempotent. Quantum coherent (ƒ=𐑐) manipulation of methylation and histone patterns.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑩','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -115,7 +115,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (⊢=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (<=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (⊢=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

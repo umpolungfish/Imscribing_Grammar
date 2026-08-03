@@ -62,7 +62,7 @@ inductive Scope where | beth | gimel | aleph
 inductive IxGrammar where | and_ | or_ | seq | broad
   deriving Repr, DecidableEq
 
-/-- Criticality primitive Φ -/
+/-- Criticality primitive < -/
 inductive Crit where | sub | c | c_complex | EP | super
   deriving Repr, DecidableEq
 

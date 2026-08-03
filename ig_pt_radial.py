@@ -130,7 +130,7 @@ def generate_tex():
         L.append(f'\\node[font={{\\igprimfont\\fontsize{{13}}{{13}}\\selectfont}},text=black!38]'
                  f' at ({lx:.3f}cm,{ly:.3f}cm) {{{prim}}};\n')
 
-    # Period ring labels (near the Φ arm at 0°)
+    # Period ring labels (near the < arm at 0°)
     for per in range(1, 8):
         r = per * R_SCALE + 0.08
         L.append(f'\\node[font={{\\fontsize{{4.5}}{{4.5}}\\selectfont}},text=black!22,'

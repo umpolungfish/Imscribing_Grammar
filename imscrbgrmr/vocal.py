@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+Primitive order: ⊢ ⊣ > < ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 """
 
 import wave
@@ -97,7 +97,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Palatal approximant. Tongue body arches toward the hard palate without touching it — 'y' in 'yes', 'year'. In yogh (ȝ), the Middle English counterpart.",
     ),
 
-    # Φ — Parity / Symmetry
+    # < — Parity / Symmetry
     "𐑗": (
         "/æ/",
         "like 'a' in 'cat'",

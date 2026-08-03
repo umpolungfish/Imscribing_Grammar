@@ -99,7 +99,7 @@ inductive Polarity : Type where
   | or'  -- Special Frobenius: μ ∘ δ = id; exact ℤ₂ at ⊙
   deriving DecidableEq, Repr, Ord
 
--- 8. Criticality (Φ)  [𝓕₅]
+-- 8. Criticality (<)  [𝓕₅]
 -- Ordered: woe < monad < roar < err < haha
 -- monad is absorbing under meet: meet(monad, x) = monad for all x.
 -- This is not a standard linear meet — see note below.
@@ -237,9 +237,9 @@ axiom Omega_Z_requires_H2 (p : Protection) (h : Chirality) :
 -- TIER STRUCTURE (§69 — Tier Gap Ladder)
 -- ============================================================
 
--- The ouroboricity tier is determined by (Φ, P, Ω, D) only.
+-- The ouroboricity tier is determined by (<, P, Ω, D) only.
 -- R1: ⊙ + or' → O_∞  (overrides all Ω and D)
--- R2: Φ ∉ {⊙, ⊙^ℂ} → O₀
+-- R2: < ∉ {⊙, ⊙^ℂ} → O₀
 -- R3: ⊙ + Ω_0 → O₁  (P < or')
 -- R4: ⊙ + Ω ≠ 0 + D ∈ {dead, if', ash} → O₂
 -- R5: ⊙ + Ω ≠ 0 + array → O₂†

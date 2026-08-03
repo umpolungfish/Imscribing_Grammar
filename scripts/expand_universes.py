@@ -61,14 +61,14 @@ def generate_expansion():
     # Missing G2: Ç, ⊢, ⊣, Ħ, ƒ, ɢ, Γ, Ω
 
     g2_configs = [
-        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=Φ≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
-        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=Φ≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
-        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=Φ≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
-        ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=Φ≥𐑹, G2=ƒ≥𐑐 (full fidelity), G3=Ω≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
-        ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=Φ≥𐑹, G2=Γ≥𐑲 (aleph/maximal), G3=Ω≥𐑭. Frobenius closure is local; tracing requires universality.'),
-        ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=Φ≥𐑹, G2=ɢ≥𐑠 (sequential), G3=Ω≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
-        ('winding_second', '◻', 2.0, 'Topological protection as the monoidal gate: G1=Φ≥𐑹, G2=Ω≥𐑴 (Z2), G3=⊙≥⊙. After Frobenius parity, only topologically protected systems trace.'),
-        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=Φ≥𐑹, G2=Ç≥𐑧 (slow), G3=Ω≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
+        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
+        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=<≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
+        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=<≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
+        ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=<≥𐑹, G2=ƒ≥𐑐 (full fidelity), G3=Ω≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
+        ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=<≥𐑹, G2=Γ≥𐑲 (aleph/maximal), G3=Ω≥𐑭. Frobenius closure is local; tracing requires universality.'),
+        ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=<≥𐑹, G2=ɢ≥𐑠 (sequential), G3=Ω≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
+        ('winding_second', '◻', 2.0, 'Topological protection as the monoidal gate: G1=<≥𐑹, G2=Ω≥𐑴 (Z2), G3=⊙≥⊙. After Frobenius parity, only topologically protected systems trace.'),
+        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=<≥𐑹, G2=Ç≥𐑧 (slow), G3=Ω≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
     ]
 
     for name, prim, ord_val, desc in g2_configs:
@@ -82,14 +82,14 @@ def generate_expansion():
     # Missing G3: Ç, ⊢, ⊣, Ħ, >, ƒ, ɢ, Γ
 
     g3_configs = [
-        ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
-        ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=⊢≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
-        ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=⊣≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
-        ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ƒ≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
-        ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
-        ('composition_third', '∋', 4.0, 'Broadcast composition as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ɢ≥𐑵 (broadcast). Only systems with one-to-all composition achieve O_∞.'),
-        ('coupling_third', '>', 4.0, 'Bilateral coupling as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=>≥𐑾 (bilateral). Only self-modeling systems with bidirectional coupling achieve O_∞.'),
-        ('kinetics_third', '⊤', 4.0, 'Moderate kinetics as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ç≥𐑪 (moderate, ord 4). Self-modeling systems that are too fast cannot achieve O_∞.'),
+        ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
+        ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊢≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
+        ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊣≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
+        ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=ƒ≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
+        ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
+        ('composition_third', '∋', 4.0, 'Broadcast composition as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=ɢ≥𐑵 (broadcast). Only systems with one-to-all composition achieve O_∞.'),
+        ('coupling_third', '>', 4.0, 'Bilateral coupling as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=>≥𐑾 (bilateral). Only self-modeling systems with bidirectional coupling achieve O_∞.'),
+        ('kinetics_third', '⊤', 4.0, 'Moderate kinetics as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Ç≥𐑪 (moderate, ord 4). Self-modeling systems that are too fast cannot achieve O_∞.'),
     ]
 
     for name, prim, ord_val, desc in g3_configs:
@@ -101,11 +101,11 @@ def generate_expansion():
 
     parallel_configs = [
         ('parallel_canonical', GateSpec('<', 5.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Canonical gates but parallel: Φ≥𐑹, ⊙≥⊙, Ω≥𐑭 all independent. Any combination qualifies.'),
+         'Canonical gates but parallel: <≥𐑹, ⊙≥⊙, Ω≥𐑭 all independent. Any combination qualifies.'),
         ('parallel_low', GateSpec('<', 3.0), GateSpec('⊙', 1.0), GateSpec('◻', 3.0),
-         'Low gates, parallel: Φ≥𐑬, ⊙≥𐑢, Ω≥𐑭. Easiest possible O_∞ access — three independent low bars.'),
+         'Low gates, parallel: <≥𐑬, ⊙≥𐑢, Ω≥𐑭. Easiest possible O_∞ access — three independent low bars.'),
         ('parallel_high', GateSpec('<', 5.0), GateSpec('⊙', 2.33), GateSpec('◻', 4.0),
-         'High gates, parallel: Φ≥𐑹, ⊙≥𐑮, Ω≥𐑟. Strictest bars but independently checked.'),
+         'High gates, parallel: <≥𐑹, ⊙≥𐑮, Ω≥𐑟. Strictest bars but independently checked.'),
         ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Chirality gates, parallel: Ħ≥𐑖, ⊙≥⊙, Ω≥𐑭. Memory, self-modeling, and winding are independent axes.'),
         ('parallel_topology', GateSpec('⊣', 5.0), GateSpec('>', 4.0), GateSpec('⊙', 2.0),
@@ -115,11 +115,11 @@ def generate_expansion():
         ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Broadcast gates, parallel: ɢ≥𐑠, ⊙≥⊙, Ω≥𐑭. Sequential comp, self-modeling, winding independent.'),
         ('parallel_dimensional', GateSpec('⊢', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
-         'Dimensional gates, parallel: ⊢≥𐑼, ⊙≥⊙, Φ≥𐑹. State-space, self-modeling, Frobenius independent.'),
+         'Dimensional gates, parallel: ⊢≥𐑼, ⊙≥⊙, <≥𐑹. State-space, self-modeling, Frobenius independent.'),
         ('parallel_kinetics', GateSpec('⊤', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Kinetics gates, parallel: Ç≥𐑧, ⊙≥⊙, Ω≥𐑭. Slowness, self-modeling, winding independent.'),
         ('parallel_fidelity', GateSpec('⋈', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
-         'Fidelity gates, parallel: ƒ≥𐑐, ⊙≥⊙, Φ≥𐑹. Coherence, self-modeling, Frobenius independent.'),
+         'Fidelity gates, parallel: ƒ≥𐑐, ⊙≥⊙, <≥𐑹. Coherence, self-modeling, Frobenius independent.'),
     ]
 
     for name, g1, g2, g3, desc in parallel_configs:
@@ -130,7 +130,7 @@ def generate_expansion():
 
     same_prim_configs = [
         ('triple_parity', '<', [('𐑬', 3.0), ('𐑯', 4.0), ('𐑹', 5.0)],
-         'Parity ladder: G1=Φ≥𐑬 (directional), G2=Φ≥𐑯 (full), G3=Φ≥𐑹 (Frobenius-special). '
+         'Parity ladder: G1=<≥𐑬 (directional), G2=<≥𐑯 (full), G3=<≥𐑹 (Frobenius-special). '
          'Three rungs on the parity ladder. All operad layers gated by progressively fuller parity.'),
         ('triple_topology', '⊣', [('𐑥', 3.0), ('𐑶', 4.0), ('𐑸', 5.0)],
          'Topology ladder: G1=⊣≥𐑥 (bowtie crossing), G2=⊣≥𐑶 (box product), G3=⊣≥𐑸 (imscriptive closure). '
@@ -214,7 +214,7 @@ def generate_expansion():
          'G1=Ħ≥𐑖 (2-step memory), G2=Γ≥𐑲 (universal scope), G3=Ω≥𐑭 (integer winding). '
          'Memory, then universality, then topological seal.'),
         ('fidelity_topology_parity', GateSpec('⋈', 3.0), GateSpec('⊣', 5.0), GateSpec('<', 5.0),
-         'G1=ƒ≥𐑐 (quantum fidelity), G2=⊣≥𐑸 (full topological closure), G3=Φ≥𐑹 (Frobenius parity). '
+         'G1=ƒ≥𐑐 (quantum fidelity), G2=⊣≥𐑸 (full topological closure), G3=<≥𐑹 (Frobenius parity). '
          'Coherence in, topology next, parity seals. Very strict — few entries reach O_∞.'),
     ]
 
@@ -226,7 +226,7 @@ def generate_expansion():
 
     ordinal_configs = [
         ('parity_mid_gate', GateSpec('<', 4.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'G1=Φ≥𐑯 (full parity, ord 4 — one step below Frobenius-special). '
+         'G1=<≥𐑯 (full parity, ord 4 — one step below Frobenius-special). '
          'More entries pass G1 than canonical because 𐑯 is lower than 𐑹.'),
         ('criticality_low_mid_high', GateSpec('⊙', 1.0), GateSpec('⊙', 2.33), GateSpec('⊙', 3.0),
          'Criticality at varied ordinal spacings: G1=⊙≥𐑢 (sub), G2=⊙≥𐑮 (complex, 2.33), G3=⊙≥𐑣 (super, 3.0). '
@@ -235,8 +235,8 @@ def generate_expansion():
          'G1=Ħ≥𐑫 (eternal memory, ord 4). Only systems with Markov order ∞ can Frobenius-close. '
          'Stricter than chirality_first (which uses 𐑖 at ord 3).'),
         ('parity_exact', GateSpec('<', 5.0), GateSpec('<', 5.0), GateSpec('<', 5.0),
-         'All three gates identical: Φ≥𐑹 at all three rungs. '
-         'Only Frobenius-special-parity systems advance — any system at Φ=𐑹 is automatically O_∞. '
+         'All three gates identical: <≥𐑹 at all three rungs. '
+         'Only Frobenius-special-parity systems advance — any system at <=𐑹 is automatically O_∞. '
          'Collapses the operad to binary: plain or O_∞.'),
     ]
 

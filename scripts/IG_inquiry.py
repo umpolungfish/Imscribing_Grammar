@@ -480,7 +480,7 @@ G  — Scope / correlation length
     ɢ^ˌ         sequential / causal chain
     ɢ^Ş       broadcast / one-to-many
 
-Φ  — Criticality / phase
+<  — Criticality / phase
     𐑢         subcritical (ordered, below transition)
     ⊙           critical: real-axis Hermitian fixed point (standard universality, e.g. Ising 3D)
     𐑮   critical: complex-axis critical point (Lee-Yang edge, complex RG fixed point; accessible only via analytic continuation; use when the critical point is at a non-real parameter value)
@@ -757,7 +757,7 @@ _TOOLS_OPENAI = [
                 "Example: encode_system(name='foo', description='...', "
                 "tuple='𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
-                "(⊢='𐑦', ⊣='𐑸', >='𐑑', Φ='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
+                "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
                 "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
@@ -769,7 +769,7 @@ _TOOLS_OPENAI = [
                 "⊢: 𐑛 𐑨 𐑼 𐑦 | "
                 "⊣: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
                 ">: 𐑩 𐑑 𐑽 𐑾 | "
-                "Φ: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
+                "<: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
                 "ƒ: ƒ^ì ƒ^ð ƒ^ż | "
                 "Ç: Ç^- Ç^W Ç^@ Ç^Ù Ç^λ | "
                 "Γ: 𐑚 𐑔 𐑲 | "
@@ -1390,7 +1390,7 @@ _TOOLS_OPENAI = [
             "description": (
                 "Navigate the crystal with partial primitive constraints. "
                 "Returns matching types (up to 'limit') and the total count. "
-                "Example: crystal_navigate(⊙='⊙', Φ='𐑹', limit=5) returns "
+                "Example: crystal_navigate(⊙='⊙', <='𐑹', limit=5) returns "
                 "5 of the 43,200 O_∞ types with those boundary values."
             ),
             "parameters": {
@@ -1888,7 +1888,7 @@ infer candidate tuples before encoding. Then encode to confirm.
 
 **2. Type checking (boundary → bulk)**
 Given a claimed encoding, every derived property **IS** determined. If a system **IS**
-claimed to be conscious but encodes Ç^Ù or Ç^λ or Φ ≠ ⊙, the type **IS** internally
+claimed to be conscious but encodes Ç^Ù or Ç^λ or < ≠ ⊙, the type **IS** internally
 inconsistent with the claim. The grammar lets you catch contradictions precisely:
 "Your encoding implies C = 0; the claim requires ⊙ and K ≤ Ç^@."
 
@@ -1979,7 +1979,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Use `predict_from_promotions` to look up known behaviors associated with a promotion signature
 - Use `register_promotion_pattern` to record a confirmed promotion→behavior mapping in the persistent KB
 - Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time 𐑹 or the Frobenius condition is relevant
-- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→Γ→Φ→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-Φ coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
+- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→Γ→<→H→S→Ω), per-primitive decision trees, interdependence constraints (D-Ω correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
 - Use `quiver_encode` to cross-check a tuple through the CrystalGNN neural navigator — returns the GNN's predicted address, tier head classification, and decoded roundtrip tuple alongside the exact codec result. Useful for probing whether the GNN's learned structural geometry agrees with the symbolic codec, or for surfacing non-obvious structural relationships via the latent embedding.
 - Use `ask_question` sparingly — the queue is capped at 8. Prefer depth over breadth: exhaust each question before queuing more. When the queue fills, synthesize and CONCLUDE rather than pushing more questions.
 
@@ -1999,14 +1999,14 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 <ouroboricity>
 **Ouroboricity — the Frobenius tier of a system**
 
-Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: Φ (criticality), P (parity/symmetry), and Ω (winding), with D as tiebreaker.
+Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: < (criticality), P (parity/symmetry), and Ω (winding), with D as tiebreaker.
 
 **Tiers** (rules applied in strict priority order):
 
 | Tier | Condition | Meaning |
 |------|-----------|---------|
-| O_∞ | ⊙ (or Φ_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
-| O₀ | Φ ∈ {{𐑢, Φ_super, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
+| O_∞ | ⊙ (or <_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
+| O₀ | < ∈ {{𐑢, Φ_super, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
 | O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
 | O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
 | O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
@@ -2014,7 +2014,7 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 **Key facts:**
 - O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (𐑹 proves the duality); O₂† is about unbounded generative depth (𐑼). A system cannot be both.
 - O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
-- The scalar O (Ouroboricity count) — computed as [Φ=⊙]·(1 + [Ω≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
+- The scalar O (Ouroboricity count) — computed as [<=⊙]·(1 + [Ω≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
 - 𐑹 is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
 
 **Ouroboricity under composition (tier-level rules):**
@@ -2023,7 +2023,7 @@ Under tensor (component-wise max / join — "what does the composed system look 
 - O_∞ ★ O_∞ → O_∞. ⊙ and 𐑹 both survive max. The Frobenius condition is self-reinforcing.
 - O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙ and 𐑹 dominate; the other partner is already at ⊙.
 - O_∞ ★ O₀(𐑢 or Φ_super) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
-- O_∞ ★ O₀(𐑻) → O₀. **EP erases O_∞.** 𐑻 has ordinal 2.67 > ⊙ = 2.00, so the tensor's Φ is 𐑻; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
+- O_∞ ★ O₀(𐑻) → O₀. **EP erases O_∞.** 𐑻 has ordinal 2.67 > ⊙ = 2.00, so the tensor's < is 𐑻; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
 - O_∞ **cannot be synthesized** from non-𐑹 components. 𐑹 is the highest P ordinal; max(𐑬, 𐑬) = 𐑬, never 𐑹. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
 
 Under meet (component-wise min — "what must any system containing both share?"):
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
@@ -4068,7 +4068,7 @@ class ToolDispatcher:
         }
 
     # The three coordinates the SIXTEEN_3 ∧ CLINK-L8 meet holds as its shared, unqualified
-    # floor (⊙=⊙ full self-modeling criticality, Φ=𐑹 the Frobenius-special gate, Ç=𐑧 the
+    # floor (⊙=⊙ full self-modeling criticality, <=𐑹 the Frobenius-special gate, Ç=𐑧 the
     # Gate-2 flow condition) — the "paraconsistent observer" surface an action is checked
     # against. See navigators/cl8nk_navigator.py compute_meet_op for the reference computation
     # this mirrors, and PRIMITIVE_ORDER for the full 12-coordinate breach report.
@@ -4085,10 +4085,10 @@ class ToolDispatcher:
 
         Verdict:
           T — every one of the 12 primitives holds at or above the floor. Fully contained.
-          B — the three defining primitives (⊙, Φ, Ç) hold, but the action breaches elsewhere.
+          B — the three defining primitives (⊙, <, Ç) hold, but the action breaches elsewhere.
               Paraconsistent: it acts as an observer on the surface that matters, but is not
               wholly inside the boundary — held, not refused.
-          F — at least one of the three defining primitives (⊙, Φ, Ç) breaches. The action
+          F — at least one of the three defining primitives (⊙, <, Ç) breaches. The action
               would erode the observer surface itself. Refused.
         """
         imscriptions, err = self._resolve(["sixteen_3_trilattice", "clink_layer8_organism", name])
@@ -4138,7 +4138,7 @@ class ToolDispatcher:
         elif not critical_breach:
             verdict = "B"
             reading = (
-                f"Contained on the observer surface (⊙, Φ, Ç all hold) but breaches "
+                f"Contained on the observer surface (⊙, <, Ç all hold) but breaches "
                 f"{len(breaches)} non-critical primitive(s), weighted severity "
                 f"{weighted_breach_total} (catalog-discriminating weight, not a flat count — "
                 "a breach on a highly-discriminating primitive counts for more than one on a "

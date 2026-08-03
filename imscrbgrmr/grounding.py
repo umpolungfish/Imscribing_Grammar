@@ -537,7 +537,7 @@ class GroundingValidator:
             ],
         },
         
-        # Criticality Phase (Φ) — phase primitive (extension primitive)
+        # Criticality Phase (<) — phase primitive (extension primitive)
         "criticality": {
             "SUBCRITICAL": [
                 "normal phase",

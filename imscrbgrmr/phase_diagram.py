@@ -342,8 +342,8 @@ class PhaseDiagram:
         _AXIS_LABELS = {
             "diagonal": ("MDS axis 1  (weighted Euclidean)", "MDS axis 2  (weighted Euclidean)"),
             "mahalanobis": (
-                "MDS axis 1  [e₁: topological-criticality  Ω vs G+Φ]",
-                "MDS axis 2  [e₂: criticality  Φ vs G+D]",
+                "MDS axis 1  [e₁: topological-criticality  Ω vs G+<]",
+                "MDS axis 2  [e₂: criticality  < vs G+D]",
             ),
         }
         xlabel, ylabel = _AXIS_LABELS.get(self.metric, ("MDS axis 1", "MDS axis 2"))

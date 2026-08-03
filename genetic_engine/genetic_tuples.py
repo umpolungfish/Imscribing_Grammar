@@ -56,7 +56,7 @@ IG_CHARS: Dict[str, str] = {
     "R_dagger":     "𐑽",     # 𐑽 — adjoint / reciprocal
     "R_lr":         "𐑾",     # 𐑾 — bidirectional / lateral
     
-    # ── Parity/Symmetry (Φ) — 5 values ──
+    # ── Parity/Symmetry (<) — 5 values ──
     "P_asym":       "𐑗",     # 𐑯 — asymmetric / no symmetry
     "P_psi":        "𐑿",     # 𐑬 — quantum / phase symmetry
     "P_pm":         "𐑬",     # 𐑿 — Z2 / partial symmetry
@@ -190,7 +190,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Met": "D",         # ⊢ — scope
     "Trp": "T",         # ⊣ — topology
     "Cys": "R",         # > — reversibility
-    "Tyr": "P",         # Φ — parity
+    "Tyr": "P",         # < — parity
     "Phe": "F",         # ƒ — force
     "Ile": "K",         # Ç — kinetics
     "Asn": "Gamma",     # ɢ — interaction
@@ -444,7 +444,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
     else:
         phi_val = "𐑢"
     
-    # Parity (Φ): mixed SS → asymmetry
+    # Parity (<): mixed SS → asymmetry
     if mixed_ss:
         p_val = "P_asym"
     elif par.get("dominant_ss") == "H":
@@ -754,7 +754,7 @@ def check_d_omega(o_char: str, d_char: str) -> Tuple[bool, str]:
 
 
 def check_k_phi(k_char: str, phi_char: str) -> Tuple[bool, str]:
-    """K-Φ constraint: warning only (tendency, not axiom)."""
+    """K-< constraint: warning only (tendency, not axiom)."""
     k_key = CHAR_TO_NAME.get(k_char, "")
     phi_key = CHAR_TO_NAME.get(phi_char, "")
     k_name = get_value_name(k_key) if k_key else "?"

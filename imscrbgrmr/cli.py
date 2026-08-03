@@ -1230,7 +1230,7 @@ def generate(
         ig = result.imscription.grammar
         table.add_row("Coupling", ig.value)
 
-        # Criticality Phase (Φ) — always show, default Phi_softsign
+        # Criticality Phase (<) — always show, default Phi_softsign
         cp = result.imscription.criticality_phase
         if cp is None:
             from imscrbgrmr.models import CriticalityPhase as _CP
@@ -1610,8 +1610,8 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
                 row.append(value.value)
             table.add_row(*row)
 
-        # Φ (criticality phase) — enum
-        row = ["Criticality (Φ)"]
+        # < (criticality phase) — enum
+        row = ["Criticality (<)"]
         for s in loaded_imscriptions:
             cp = getattr(s, "criticality_phase", None)
             row.append(cp.value if cp is not None else "—")
@@ -4707,7 +4707,7 @@ def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
       F  →  min (bottleneck fidelity)
       K  →  min (kinetic trap propagates)
       G  →  max (coarsest scale dominates)
-      Φ  →  ⊙ propagates (criticality is join-dominant)
+      <  →  ⊙ propagates (criticality is join-dominant)
       ξ  →  ξ₁ + ξ₂ − λ·I(s₁;s₂)   (λ tunable; I from primitive overlap)
     """
     from .algebra import tensor as _tensor
@@ -5941,7 +5941,7 @@ def _frobenius_classify(s) -> str:
     # Phi_closerevepsilon has identical tier distribution to ⊙ (real vs complex is inner-crystal only)
     at_c  = phi in ("⊙_ctyogh", "⊙_closerevepsilon")
     # R1: exact proved Z₂ symmetry at criticality → special Frobenius
-    if at_c and p == "Φ_doublebarpipe":
+    if at_c and p == "<_doublebarpipe":
         return "O_∞"
     # R2: no self-referential loop possible (Phi_revepsilon absorbs O_∞ under tensor → O₀ own tier)
     if phi in ("⊙_softsign", "⊙_upstep", "⊙_revepsilon"):

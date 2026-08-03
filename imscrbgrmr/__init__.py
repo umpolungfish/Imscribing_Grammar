@@ -20,7 +20,7 @@ The Seven Primitives (EXTENDED to nine):
     - Kinetic Character (K): Kinetic accessibility — NEW
     - Granularity (G): Scale of control
     - Coupling (Γ): Partner selection logic (with Boolean algebra) — EXTENDED
-    - Criticality Phase (Φ): Phase condition at G-D degeneracy — NEW
+    - Criticality Phase (<): Phase condition at G-D degeneracy — NEW
 
     - Stoichiometry (S): Valency ratio primitive — NEW (v2.2)
 
