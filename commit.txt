@@ -1,14 +1,21 @@
-Criticality is a plain +, not a raised one
+The primitives take the final set
 
-The mark I used was U+207A, the superscript plus, so Everson drew it small and
-raised wherever it stood: the table cell, the value list, every tuple. It is a
-plain U+002B now, the same character IMASM writes EVALT with, which is what the
-mapping said in the first place.
+    ⊢ Dimensionality  ⊣ Topology     > Relational     < Polarity
+    ⋈ Fidelity        ⊙ Kinetics     ∈ Granularity    ∋ Grammar
+    ⊤ Criticality     ⊥ Chirality    ⊞ Stoichiometry  ◻ Protection
 
-The ones that were bare groups in math mode are wrapped in \mathord, so a
-criticality standing between two operands is an ordinary atom and not a sum. The
-rest were already inside \text and needed nothing. 133 marks in AS_ABOVE, 66 in
-SO_BELOW, and no U+207A survives in either file.
+Six of the twelve move from the first pass: ≻ and ≺ become the plain > and <,
+═ becomes ⋈, the criticality plus becomes ⊤, the chirality times becomes ⊥, and
+the protection ¬ becomes ◻. The reason is the same one that moved them off Ð Þ ƒ
+Ħ in the first place. A mark that already means multiplication, or equality, or
+negation, brings that meaning to a slot that only wants a position, and ⁺ and ×
+were the two worst offenders left.
 
-Both still compile at 45 and 82 pages, with no missing character beyond the ✓
-SO_BELOW has never had.
+311 marks in AS_ABOVE and 359 in SO_BELOW, all scoped to the primitive font, so
+the ordinary mathematics is untouched: SO_BELOW's \Phi, \Omega, \Sigma and every
+× that means a product are where they were. Both documents compile at 45 and 82
+pages with no missing character beyond the ✓ SO_BELOW has never had.
+
+The set is the IMASM opcode alphabet, unchanged and in slot order. There is no
+correspondence to maintain between two notations because there is one notation,
+read as an operation or as an axis according to where it stands.
