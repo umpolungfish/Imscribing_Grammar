@@ -9,7 +9,7 @@
 --     → need {\igprimfont char} (Everson Mono)
 --
 --   Class B — missing from LaTeX math font (lmmi10) but OK in text mode:
---     Ð U+00D0, Ř U+0158, Ç U+00C7   (⊣ moved to Class A)
+--     Ř U+0158, Ç U+00C7   (⊢ and ⊣ moved to Class A)
 --     → need \text{char} (Latin Modern Roman has these)
 --
 -- In math mode:
@@ -70,8 +70,9 @@ local CLASS_A = {
   [0x03B3] = true,  -- γ  gamma                  (Γ_γ subtype)
   [0x03BB] = true,  -- λ  lambda                 (Ç_λ subtype)
   [0x03C5] = true,  -- υ  upsilon                (Φ_υ subtype)
-  [0x03C9] = true,  -- ω  omega                  (Ð_ω subtype)
+  [0x03C9] = true,  -- ω  omega                  (retired ⊢ subtype)
   -- Canonical alphabet: axis letters that are not text characters in lmroman
+  [0x22A2] = true,  -- ⊢  right tack             (⊢ Dimensionality primitive)
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
 
@@ -85,7 +86,6 @@ for cp = 0x10450, 0x1047F do CLASS_A[cp] = true end
 local CLASS_B = {
   -- IG primitive glyphs
   [0x00C7] = true,  -- Ç  C with cedilla         (Ç primitive)
-  [0x00D0] = true,  -- Ð  Eth                    (Ð primitive)
   [0x0158] = true,  -- Ř  R with caron           (Ř primitive)
   -- IG subtype chars (SYMBOL_REFERENCE.md)
   [0x00A3] = true,  -- £  pound sign             (Ħ_£ subtype)
@@ -94,7 +94,6 @@ local CLASS_B = {
   [0x00C6] = true,  -- Æ  AE ligature            (⊙_Æ subtype)
   [0x00D1] = true,  -- Ñ  N with tilde           (Ħ_Ñ subtype)
   [0x00D9] = true,  -- Ù  U grave                (Ç_Ù subtype)
-  [0x00DF] = true,  -- ß  sharp S                (Ð_ß subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
   [0x00EC] = true,  -- ì  i grave                (ƒ_ì subtype)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
@@ -173,7 +172,7 @@ local TEXT_CMD_CHARS = {
   AA = "Å", aa = "å",
   ae = "æ", AE = "Æ", aelig = "æ", AElig = "Æ",
   oe = "œ", OE = "Œ", oelig = "œ", OElig = "Œ",
-  DH = "Ð", dh = "ð",
+  dh = "ð",
   NG = "Ŋ", ng = "ŋ",
   L  = "Ł", l  = "ł",
   o  = "ø", O  = "Ø",

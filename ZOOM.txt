@@ -8,7 +8,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑗       ¬∃sym(x)
@@ -42,7 +42,7 @@
   promoted atoms: PHI_C, ETERNAL_FIXEDPOINT
 
   Promotions needed to reach CLINK L8 (10):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
@@ -62,7 +62,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -96,7 +96,7 @@
   promoted atoms: LR_DUAL, PHI_C
 
   Promotions needed to reach CLINK L8 (10):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -116,7 +116,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
@@ -146,7 +146,7 @@
   tier: O₀   d(CLINK L8): 2.7772   match:0 close:1 distant:11
 
   Promotions needed to reach CLINK L8 (12):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
@@ -168,7 +168,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
@@ -204,7 +204,7 @@
   promoted atoms: SEQAX, PHI_C, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
@@ -225,7 +225,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑯       ∀g∈G( gx = x )
@@ -259,7 +259,7 @@
   promoted atoms: LR_DUAL, TEMPD2
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Φ: 𐑯 → 𐑹  (gap: 0.25)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
@@ -280,7 +280,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
@@ -319,7 +319,7 @@
   ⬆ TRANSCENDENCE primitives: ɢ, Ω
 
   Promotions needed to reach CLINK L8 (5):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -336,7 +336,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -370,7 +370,7 @@
   promoted atoms: LR_DUAL, TEMPD2
 
   Promotions needed to reach CLINK L8 (10):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -392,7 +392,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑗       ¬∃sym(x)
@@ -426,7 +426,7 @@
   ⬆ TRANSCENDENCE primitives: ɢ
 
   Promotions needed to reach CLINK L8 (10):
-    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
@@ -448,7 +448,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
@@ -478,7 +478,7 @@
   tier: O₀   d(CLINK L8): 1.9877   match:1 close:5 distant:6
 
   Promotions needed to reach CLINK L8 (11):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
@@ -501,7 +501,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑨       dim(x) = 2 ∧ sur(x)
+  ⊢      𐑨       dim(x) = 2 ∧ sur(x)
   ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑯       ∀g∈G( gx = x )
@@ -534,7 +534,7 @@
   promoted atoms: LR_DUAL
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑨 → 𐑦  (gap: 0.667)
+    ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Φ: 𐑯 → 𐑹  (gap: 0.25)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -555,7 +555,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑯       ∀g∈G( gx = x )
@@ -591,7 +591,7 @@
   ⬆ TRANSCENDENCE primitives: ɢ
 
   Promotions needed to reach CLINK L8 (6):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑯 → 𐑹  (gap: 0.25)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -609,7 +609,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
@@ -646,7 +646,7 @@
   promoted atoms: HOLOBOUND, LR_DUAL, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (7):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -665,7 +665,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
@@ -701,7 +701,7 @@
   promoted atoms: LR_DUAL, SEQAX, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -723,7 +723,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -760,7 +760,7 @@
   promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (8):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -780,7 +780,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -816,7 +816,7 @@
   promoted atoms: LR_DUAL, SEQAX, PHI_C, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -837,7 +837,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -874,7 +874,7 @@
   promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -896,7 +896,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
+  ⊢      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -933,7 +933,7 @@
   promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑼 → 𐑦  (gap: 0.333)
+    ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -952,7 +952,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
@@ -982,7 +982,7 @@
   tier: O₀   d(CLINK L8): 2.7291   match:1 close:0 distant:11
 
   Promotions needed to reach CLINK L8 (11):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
@@ -1005,7 +1005,7 @@
 
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
-  Ð      𐑛       dim(x) = 0 ∧ fin(x)
+  ⊢      𐑛       dim(x) = 0 ∧ fin(x)
   ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
@@ -1042,7 +1042,7 @@
   promoted atoms: LR_DUAL, SEQAX, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (9):
-    Ð: 𐑛 → 𐑦  (gap: 1.0)
+    ⊢: 𐑛 → 𐑦  (gap: 1.0)
     ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)

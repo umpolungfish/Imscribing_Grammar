@@ -73,7 +73,7 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: Ð, ⊣, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: ⊢, ⊣, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
@@ -100,7 +100,7 @@ DESIGNS = [
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (Ð=𐑦) — the topological order writes its own ground state. Quantum coherent (ƒ=𐑐) at room temperature via eternal chirality protection.",
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (⊢=𐑦) — the topological order writes its own ground state. Quantum coherent (ƒ=𐑐) at room temperature via eternal chirality protection.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑟'])}
     },
     {
@@ -110,12 +110,12 @@ DESIGNS = [
     },
     {
         "name": "self_weaving_fabric",
-        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — the fabric responds at human-relevant timescales. Self-written microarchitecture (Ð=𐑦) — each thread contains its own knitting pattern generator.",
+        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously into a single textile. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — the fabric responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑤','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (Ð=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (⊢=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -130,7 +130,7 @@ DESIGNS = [
     },
     {
         "name": "topological_morphogenesis",
-        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (Ω=𐑭) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (Ð=𐑦) — the developmental program writes itself as the embryo grows. Eternal chirality (Ħ=𐑫) ensures bilateral symmetry is topologically protected.",
+        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (Ω=𐑭) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (⊢=𐑦) — the developmental program writes itself as the embryo grows. Eternal chirality (Ħ=𐑫) ensures bilateral symmetry is topologically protected.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
 ]

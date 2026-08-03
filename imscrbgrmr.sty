@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ð}{ω}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
+%   e.g. \prim{Ř}{ý}   \prim{φ̂}{ÿ}   \prim{Φ}{}}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{Ð_ω; ⊣=𐑶; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : Ð ⊣ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -82,11 +82,12 @@
 
 % ── Individual shortcuts ──────────────────────────────────────────────────────
 
-% Ð — Dimension
-\newcommand{\Dwedge}{\prim{Ð}{ß}}
-\newcommand{\Dtri}{\prim{Ð}{C}}
-\newcommand{\Dinfty}{\prim{Ð}{;}}
-\newcommand{\Dodot}{\prim{Ð}{ω}}
+% ⊢ — Dimensionality.  Core.lean ctor order: dead, ash, array, if'.
+\newcommand{\Ddim}{\axis{⊢}}
+\newcommand{\Dwedge}{\shav{𐑛}}  % dead  — wedge/local, flat sheet
+\newcommand{\Dtri}{\shav{𐑨}}    % ash   — triangulated / simplicial
+\newcommand{\Dinfty}{\shav{𐑼}}  % array — infinite-dimensional
+\newcommand{\Dodot}{\shav{𐑦}}   % if'   — imscriptive
 
 % ⊣ — Topology.  Core.lean ctor order: judge, eat, mime, oil, are.
 \newcommand{\Ttop}{\axis{⊣}}

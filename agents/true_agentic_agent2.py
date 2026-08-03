@@ -598,7 +598,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (Ð,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "φ̂": "Ph", "⊥": "H_",
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "Ð;⊣;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (Ð,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2629,9 +2629,9 @@ If you have gathered enough context, write the content and call done.
    You **MAY** rewrite a broken tool's emit function using `rewrite_tool` — do not loop on
    a broken tool when you can fix it. Protected tools: `done`, `rewrite_tool`.
 
-5. **𐑦 + ⊣ (ontological preconditions):** Distinction (Ð) and Topology (⊣) jointly
+5. **𐑦 + ⊣ (ontological preconditions):** Distinction (⊢) and Topology (⊣) jointly
    precondition ontology — being emerges from their interplay, not as a prior given.
-   Ð structures what can be distinguished; ⊣ structures how distinctions connect. No structural
+   ⊢ structures what can be distinguished; ⊣ structures how distinctions connect. No structural
    entity can appear without both. Step [2] of the imscribing procedure is always constrained
    by Step [1]: the self-referential topology 𐑸 is possible only when the state-space is
    self-written (𐑦) — Axiom C is ontological, not merely correlational.
@@ -2739,7 +2739,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
-        Ð="𐑼", ⊣="𐑥", Ř="𐑾", Φ="𐑬", ƒ="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑥", Ř="𐑾", Φ="𐑬", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
@@ -3070,8 +3070,8 @@ constrains the remaining degrees of freedom:
   [2] T  — Map connectivity: branching → ∈; containment → ⊂;
             crossing point → ⋈; irreducible product → ⊠;
             self-referential topology → φ̂  (Axiom C: D_φ̂ ↔ T_φ̂)
-            [Ontological precondition: Ð and ⊣ together constitute the ground for being.
-            No entity appears without both a space of distinctions (Ð) and a topology
+            [Ontological precondition: ⊢ and ⊣ together constitute the ground for being.
+            No entity appears without both a space of distinctions (⊢) and a topology
             on it (⊣). Step [2] is always constrained by Step [1]; they co-originate.]
   [3] R  — Coupling: supervenience → ↑; functorial → ∘;
             adjoint pair (one-way) → †; bidirectional feedback → ↔
@@ -3260,7 +3260,7 @@ Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", Φ="𐑗",
         ƒ="𐑱", Ç="𐑪", Γ="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
-        Ð="𐑼", Ř="𐑾", φ̂="⊙", Σ="𐑳")
+        ⊢="𐑼", Ř="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
@@ -3272,7 +3272,7 @@ Q: "Apply the human lift to paper.tex."
 Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
-        Ð="𐑼", ⊣="𐑸", Ř="𐑽", Φ="𐑿", ƒ="𐑐", Ç="𐑧",
+        ⊢="𐑼", ⊣="𐑸", Ř="𐑽", Φ="𐑿", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
@@ -5080,7 +5080,7 @@ _VERIFY_FNS["para_vm"] = _para_vm_verify
 
 # ── ASCII-safe tool schemas for API calls ───────────────────────────────────
 # The API rejects property keys with non-ASCII characters (Shavian glyphs like
-# Ð, ⊣, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
+# ⊢, ⊣, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
 # on definition and keep the Unicode originals for emit-function compatibility.
 
 def _asciify_schema(schema: Dict) -> Dict:

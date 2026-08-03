@@ -535,13 +535,13 @@ def page4() -> str:
             ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "Ç ⊣ Φ"),
             ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω Ħ"),
             ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "Ħ Σ Ω"),
-            ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.", "Γ ɢ Ð"),
+            ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via Γ scope hierarchy.", "Γ ɢ ⊢"),
         ],
         "BIOLOGY": [
             ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ Ř Ħ"),
             ("Quantum Bioelectric",   "iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array. Xenopus limb regeneration model.", "Ħ ⊙ ɢ"),
             ("Universal Symbiont",    "12-strain microbial consortium. Quorum sensing + metabolic cross-feeding. 12 strains $\\leftrightarrow$ 12 primitives (Σ bijection).", "Σ Γ ɢ"),
-            ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "Ω ⊣ Ð"),
+            ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "Ω ⊣ ⊢"),
         ],
     }
 
@@ -602,7 +602,7 @@ def page4() -> str:
         f"  {{\\small\\bfseries\\color{{frobcol}} Magnum Opus — 12-Stage Alchemical Mapping}}\\\\[2pt]",
         f"  {{\\scriptsize",
         f"  \\begin{{tabular}}{{@{{}}llll@{{}}}}",
-        f"  Prima Materia & Ð (Dimensionality) & Albedo & Φ (Parity, Frobenius-special) \\\\",
+        f"  Prima Materia & ⊢ (Dimensionality) & Albedo & Φ (Parity, Frobenius-special) \\\\",
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
         f"  Solutio & Ř (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & Γ (Granularity, scope) \\\\",

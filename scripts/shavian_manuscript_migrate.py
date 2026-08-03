@@ -4,11 +4,11 @@ import re
 import sys
 
 REPLACEMENTS = [
-    # Ð (Dimensionality)
-    (r'\text{{\igprimfont Ð}}_{\omega}', r'{\igfont 𐑦}'),
-    (r'\text{{\igprimfont Ð}}_{;}', r'{\igfont 𐑼}'),
-    (r'\text{{\igprimfont Ð}}_{C}', r'{\igfont 𐑨}'),
-    (r'\text{{\igprimfont Ð}}_{\text{{\igfont ß}}}', r'{\igfont 𐑛}'),
+    # ⊢ (Dimensionality)
+    (r'\text{{\igprimfont ⊢}}_{\omega}', r'{\igfont 𐑦}'),
+    (r'\text{{\igprimfont ⊢}}_{;}', r'{\igfont 𐑼}'),
+    (r'\text{{\igprimfont ⊢}}_{C}', r'{\igfont 𐑨}'),
+    (r'\text{{\igprimfont ⊢}}_{\text{{\igfont ß}}}', r'{\igfont 𐑛}'),
     # ⊣ (Topology)
     (r'\text{{\igprimfont ⊣}}_{O}', r'{\igfont 𐑸}'),
     (r'\text{{\igprimfont ⊣}}_{K}', r'{\igfont 𐑶}'),

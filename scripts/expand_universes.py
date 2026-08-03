@@ -58,11 +58,11 @@ def generate_expansion():
     ))
 
     # ── SECTION B: G2 expansion — 8 primitives never used as G2 ─────
-    # Missing G2: Ç, Ð, ⊣, Ħ, ƒ, ɢ, Γ, Ω
+    # Missing G2: Ç, ⊢, ⊣, Ħ, ƒ, ɢ, Γ, Ω
 
     g2_configs = [
         ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=Φ≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
-        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=Φ≥𐑹, G2=Ð≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
+        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=Φ≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
         ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=Φ≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
         ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=Φ≥𐑹, G2=ƒ≥𐑐 (full fidelity), G3=Ω≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
         ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=Φ≥𐑹, G2=Γ≥𐑲 (aleph/maximal), G3=Ω≥𐑭. Frobenius closure is local; tracing requires universality.'),
@@ -79,11 +79,11 @@ def generate_expansion():
             g1=GateSpec('<', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
     # ── SECTION C: G3 expansion — 8 primitives never used as G3 ─────
-    # Missing G3: Ç, Ð, ⊣, Ħ, Ř, ƒ, ɢ, Γ
+    # Missing G3: Ç, ⊢, ⊣, Ħ, Ř, ƒ, ɢ, Γ
 
     g3_configs = [
         ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
-        ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ð≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
+        ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=⊢≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
         ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=⊣≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
         ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ƒ≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
         ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
@@ -115,7 +115,7 @@ def generate_expansion():
         ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Broadcast gates, parallel: ɢ≥𐑠, ⊙≥⊙, Ω≥𐑭. Sequential comp, self-modeling, winding independent.'),
         ('parallel_dimensional', GateSpec('⊢', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
-         'Dimensional gates, parallel: Ð≥𐑼, ⊙≥⊙, Φ≥𐑹. State-space, self-modeling, Frobenius independent.'),
+         'Dimensional gates, parallel: ⊢≥𐑼, ⊙≥⊙, Φ≥𐑹. State-space, self-modeling, Frobenius independent.'),
         ('parallel_kinetics', GateSpec('⊤', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Kinetics gates, parallel: Ç≥𐑧, ⊙≥⊙, Ω≥𐑭. Slowness, self-modeling, winding independent.'),
         ('parallel_fidelity', GateSpec('⋈', 3.0), GateSpec('⊙', 2.0), GateSpec('<', 5.0),
@@ -144,7 +144,7 @@ def generate_expansion():
          'Winding ladder: G1=Ω≥𐑴 (Z2), G2=Ω≥𐑭 (integer), G3=Ω≥𐑟 (non-Abelian, max). '
          'Topological protection as the sole operad filter.'),
         ('triple_dimensional', '⊢', [('𐑨', 2.0), ('𐑼', 3.0), ('𐑦', 4.0)],
-         'Dimensional ladder: G1=Ð≥𐑨 (2D surface), G2=Ð≥𐑼 (∞-dim), G3=Ð≥𐑦 (holographic). '
+         'Dimensional ladder: G1=⊢≥𐑨 (2D surface), G2=⊢≥𐑼 (∞-dim), G3=⊢≥𐑦 (holographic). '
          'State-space complexity as the sole operad filter.'),
         ('triple_scope', '∈', [('𐑔', 2.0), ('𐑲', 3.0), ('𐑲', 3.0)],
          'Scope ladder: G1=Γ≥𐑔 (mesoscale), G2=Γ≥𐑲 (universal), G3=Γ≥𐑲. G2 terminal collapse.'),
@@ -202,7 +202,7 @@ def generate_expansion():
 
     mixed_configs = [
         ('dimensional_chirality_winding', GateSpec('⊢', 3.0), GateSpec('⊥', 3.0), GateSpec('◻', 3.0),
-         'G1=Ð≥𐑼 (∞-dim), G2=Ħ≥𐑖 (2-step memory), G3=Ω≥𐑭 (integer winding). '
+         'G1=⊢≥𐑼 (∞-dim), G2=Ħ≥𐑖 (2-step memory), G3=Ω≥𐑭 (integer winding). '
          'Closure requires infinite canvas, then memory, then topological protection.'),
         ('coupling_fidelity_scope', GateSpec('>', 3.0), GateSpec('⋈', 3.0), GateSpec('∈', 3.0),
          'G1=Ř≥𐑽 (adjoint coupling), G2=ƒ≥𐑐 (quantum fidelity), G3=Γ≥𐑲 (universal scope). '

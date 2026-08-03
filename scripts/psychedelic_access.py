@@ -262,7 +262,7 @@ THEOREM (Tryptamine Supremacy):
 
 THEOREM (Salvia Barrier):
   Salvinorin A produces rapid memoryless (Ħ=𐑓) and sub-critical (⊙=𐑻) states
-  despite holographic dimensionality (Ð=𐑦). This structural configuration
+  despite holographic dimensionality (⊢=𐑦). This structural configuration
   fails G1 (Φ≥5) in most universes, granting access only to low_gate 
   and triple_criticality regimes.
 """)

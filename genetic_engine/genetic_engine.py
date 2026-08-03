@@ -453,7 +453,7 @@ for c in ALL_CODONS:
 
 AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     # ── Promoted (split-stratum) amino acids ──
-    "Met": IGPrimitive.SCOPE,         # Ð — start codon, translation scope
+    "Met": IGPrimitive.SCOPE,         # ⊢ — start codon, translation scope
     "Trp": IGPrimitive.TOPOLOGY,      # ⊣ — bicyclic indole, topological ceiling
     "Cys": IGPrimitive.REVERSIBILITY, # Ř — disulfide bonds, reversible crosslinks
     "Tyr": IGPrimitive.PARITY,        # Φ — phosphorylation switch
@@ -489,7 +489,7 @@ for aa, prim in AA_PRIMITIVE_MAP.items():
 # Risk classification for primitive-editing
 PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.CHIRALITY:      "critical",     # Ħ — chiral specificity lost
-    IGPrimitive.SCOPE:          "critical",     # Ð — translation scope destroyed
+    IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
@@ -1185,13 +1185,13 @@ class ChimeraDetector:
         pairs = [
             # (prim_a, prim_b, risk_multiplier, trap_flag, description)
             # ── Critical × Critical → ALWAYS trap ──
-            (P.CHIRALITY, P.SCOPE, 4.0, True,  # Ħ ⊗ Ð
+            (P.CHIRALITY, P.SCOPE, 4.0, True,  # Ħ ⊗ ⊢
              "Chiral scope collapsed: editing both chirality and translation scope "
              "creates a protein that cannot be translated correctly in any chiral form."),
             (P.CHIRALITY, P.WINDING, 4.0, True,  # Ħ ⊗ Ω
              "Chiral winding break: removing both chiral specificity and C-terminal "
              "winding produces a topologically uncontrolled peptide."),
-            (P.SCOPE, P.WINDING, 4.0, True,  # Ð ⊗ Ω
+            (P.SCOPE, P.WINDING, 4.0, True,  # ⊢ ⊗ Ω
              "Scope/winding annihilation: editing both start and stop destroys "
              "the entire translation boundary structure."),
 
@@ -1200,7 +1200,7 @@ class ChimeraDetector:
              "Irreversible chiral loss: editing a disulfide Cys AND an Asp active-site "
              "chirality enforcer creates a structurally frozen active site "
              "with no reversible escape path."),
-            (P.REVERSIBILITY, P.SCOPE, 3.5, True,  # Ř ⊗ Ð
+            (P.REVERSIBILITY, P.SCOPE, 3.5, True,  # Ř ⊗ ⊢
              "Reversibility/scope trap: editing Cys and Met locks the protein's "
              "translational start into a disulfide-bridged conformation."),
             (P.REVERSIBILITY, P.WINDING, 3.5, True,  # Ř ⊗ Ω
@@ -2110,7 +2110,7 @@ def demo_chimera_risk() -> None:
         [("Cys", "Ser")],                     # Ř→None — high risk single
         [("Cys", "Ser"), ("His", "Gln")],     # Ř⊗Γ — semi-locked pair
         [("Cys", "Ser"), ("Asp", "Asn")],     # Ř⊗Ħ — critical pair
-        [("Met", "Ile"), ("Asp", "Glu")],     # Ð⊗Ħ — scope+chirality
+        [("Met", "Ile"), ("Asp", "Glu")],     # ⊢⊗Ħ — scope+chirality
     ]
     for edit_set in pairs:
         report = ChimeraDetector.analyze_edit_set(edit_set)

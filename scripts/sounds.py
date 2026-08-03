@@ -44,7 +44,7 @@ def normalize(signal, peak=0.8):
 # Design principle: each base character (field) has a characteristic sonic
 # identity; each subscript varies it to reflect the specific value's meaning.
 #
-#   Ð  Dimensionality  — harmonic richness  (more harmonics = higher dimension)
+#   ⊢  Dimensionality  — harmonic richness  (more harmonics = higher dimension)
 #   ⊣  Topology        — interval structure  (dissonance/consonance = topology)
 #   Ř  Relational      — directional sweeps  (directionality of pitch)
 #   Φ  Parity          — waveform symmetry   (symmetry of the waveform itself)
@@ -63,7 +63,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     t = np.arange(n) / fs
 
     # =========================================================================
-    # Ð — Dimensionality
+    # ⊢ — Dimensionality
     # Pure additive synthesis. Each step adds harmonic richness:
     # compact point → surface → infinite series → holographic (full+fifth drone)
     # =========================================================================
@@ -469,10 +469,10 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
-    ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # Ð Dimensionality
+    ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
     ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
     ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # Ř Relational
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # Φ Polarity
@@ -490,7 +490,7 @@ symbol_list = [
 # PRIMITIVE_MAP — canonical glyph ID → (base, sub) for synthesize_symbol
 # =============================================================================
 PRIMITIVE_MAP = {
-    # Ð Dimensionality
+    # ⊢ Dimensionality
     '𐑛': ('⊢', 'ß'),   '𐑨': ('⊢', 'C'),
     '𐑼': ('⊢', ';'),   '𐑦': ('⊢', 'ω'),
     # ⊣ Topology

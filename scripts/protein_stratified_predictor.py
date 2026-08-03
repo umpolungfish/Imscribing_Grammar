@@ -166,7 +166,7 @@ class ProteinStratifiedPredictor:
         1. N-region: net positive charge (R, K > D, E) in first 5-8 AA
         2. H-region: hydrophobic core (rolling KD > 2.0, at least 8 AA)
         3. C-region: polar/helix-breaking near cleavage site
-        4. Bootstrap signature: ⟨Ð, ⊣⟩ preconditions (M, W present)
+        4. Bootstrap signature: ⟨⊢, ⊣⟩ preconditions (M, W present)
         5. Cleavage site: SignalP consensus pattern (AXA↓, etc.)
         """
         if self.length < 15:
@@ -199,7 +199,7 @@ class ProteinStratifiedPredictor:
                         # Check N-region: net positive charge at positions 1-8
                         n_region = self.sequence[max(0, core_start-8):core_start]
                         n_charge = sum(1 for aa in n_region if aa in 'RK') - sum(1 for aa in n_region if aa in 'DE')
-                        # Check bootstrap: Met (Ð) present, ideally Trp (⊣)
+                        # Check bootstrap: Met (⊢) present, ideally Trp (⊣)
                         has_met = 'M' in n_region or 'M' in self.sequence[0:min(5, self.length)]
                         bootstrap_score = 0
                         if has_met:
@@ -660,7 +660,7 @@ class ProteinStratifiedPredictor:
                 max_v = max(sp_vec)
                 dominant_sp = [PRIMITIVE_NAMES[i] for i, v in enumerate(sp_vec) if v == max_v and v > 0]
             lines.append(f"▸ Signal peptide ({sp['length']} AA): {sp_seq}")
-            lines.append(f"  Bootstrap elements: Met(Ð)×{sp_seq.count('M')}, Trp(⊣)×{sp_seq.count('W')}")
+            lines.append(f"  Bootstrap elements: Met(⊢)×{sp_seq.count('M')}, Trp(⊣)×{sp_seq.count('W')}")
             lines.append(f"  Cleavage @ position {sp['cleavage_position']} ← signal peptidase")
             if dominant_sp:
                 lines.append(f"  Dominant: {', '.join(dominant_sp)} — bootstrap preconditions")

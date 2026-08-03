@@ -184,7 +184,7 @@ def derive_tuple(sym):
     else:
         Om = 39
 
-    # ─── Ð (Dimensionality) idx ──────────────────────────────────
+    # ─── ⊢ (Dimensionality) idx ──────────────────────────────────
     # Janet left-step depth: s-block rightmost (11), f-block leftmost (44)
     if block == 's':
         D = 11
@@ -426,7 +426,7 @@ def main():
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω Ð Σ Φ Ç ƒ ɢ Γ ⊣ ⊙"}')
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω ⊢ Σ Φ Ç ƒ ɢ Γ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -438,7 +438,7 @@ def main():
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  Ð  Σ  Φ  Ç  ƒ  ɢ  Γ  ⊣  ⊙')
+        info_line(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  ⊢  Σ  Φ  Ç  ƒ  ɢ  Γ  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

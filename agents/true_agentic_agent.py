@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (Ð,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `φ̂` is not a primitive. The twelve are Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
+# `φ̂` is not a primitive. The twelve are ⊢ ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
 # criticality slot is ⊙; `φ̂` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -865,10 +865,10 @@ def _verify_imscribed_fidelity(content: str) -> Tuple[bool, List[str]]:
     problems: List[str] = []
     for tm in _TUPLE_RE.finditer(content):
         tup_text = tm.group(1)
-        # Accept BOTH notations: bare ⟨𐑼;𐑶;…⟩ and labelled ⟨Ð=𐑼; ⊣=𐑶; …⟩.
+        # Accept BOTH notations: bare ⟨𐑼;𐑶;…⟩ and labelled ⟨⊢=𐑼; ⊣=𐑶; …⟩.
         # Only the bare form was handled, so every labelled tuple failed on all
         # twelve slots against its own correct values — reporting
-        # "wrote 'Ð=𐑼', catalog has '𐑼'". A false rejection here is worse than
+        # "wrote '⊢=𐑼', catalog has '𐑼'". A false rejection here is worse than
         # no check: it drove a rewrite into ASCII transliteration to escape it.
         _parts = [g.strip() for g in re.split(r"[;,·]", tup_text) if g.strip()]
         glyphs = [(g.split("=", 1)[1].strip() if "=" in g else g) for g in _parts]
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "Ð;⊣;Ř;Φ;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;Ř;Φ;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (Ð,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -3226,7 +3226,7 @@ def _load_imsgct_context() -> str:
         "\n"
         "    ⟨𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭⟩\n"
         "\n"
-        "NOT ⟨Ð=𐑦; ⊣=𐑸; Ř=𐑽; …⟩. The slot names are the ORDER, so writing them out\n"
+        "NOT ⟨⊢=𐑦; ⊣=𐑸; Ř=𐑽; …⟩. The slot names are the ORDER, so writing them out\n"
         "restates position twelve times and makes a twelve-character object into a\n"
         "sentence. Expand a slot only when discussing that slot alone.\n"
         "\n"
@@ -3341,7 +3341,7 @@ def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
 
 # ── ASCII-safe tool schemas helpers (moved here to fix NameError) ─────────────
 # The API rejects property keys with non-ASCII characters (Shavian glyphs like
-# Ð, ⊣, ⊙, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
+# ⊢, ⊣, ⊙, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
 # on definition and keep the Unicode originals for emit-function compatibility.
 
 def _asciify_schema(schema: Dict) -> Dict:

@@ -23,7 +23,7 @@ _T_HYBRID = {
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (Ð,⊣,Ř)
+# T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (⊢,⊣,Ř)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -82,7 +82,7 @@ NEW_RULESETS = [
     # ── 12: dimensional_gate ──────────────────────────────────
     Ruleset(
         name="dimensional_gate",
-        description="State-space is the first gate. G1=Ð≥𐑼 (infinite-dimensional or "
+        description="State-space is the first gate. G1=⊢≥𐑼 (infinite-dimensional or "
                     "higher). 0D points and 2D surfaces are structurally precluded from "
                     "Frobenius closure — they lack sufficient degrees of freedom. "
                     "G2=⊙≥⊙. G3=Φ≥𐑹 (Frobenius-special parity). In this universe, "
@@ -128,7 +128,7 @@ NEW_RULESETS = [
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
                     "five dynamic primitives (Φ,ƒ,Ç,Ħ,Ω) AND three primitives "
-                    "(Ð,⊣,Ř). Eight primitives must simultaneously satisfy their critical "
+                    "(⊢,⊣,Ř). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
                     "co-constitute, or time does not seal.",

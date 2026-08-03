@@ -375,7 +375,7 @@ layout = go.Layout(
             backgroundcolor="#0F0F1A",
         ),
         yaxis=dict(
-            title=dict(text="e₂: criticality  ⊙ vs Γ+Ð", font=dict(color="#888899")),
+            title=dict(text="e₂: criticality  ⊙ vs Γ+⊢", font=dict(color="#888899")),
             tickfont=dict(color="#888899"),
             gridcolor="#222233",
             zerolinecolor="#333344",

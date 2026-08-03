@@ -82,7 +82,7 @@ Chains to execute:
    E. Choose surface first: kernel canonical; m3iosis only where kernel lacks; quantum_tnn.py for crossover check; ParaASM for Belnap questions.
 
 Key mappings:
-   Ð (Dimensionality) ↔ Fusion space dimension / qubit count / Hilbert space dimension
+   ⊢ (Dimensionality) ↔ Fusion space dimension / qubit count / Hilbert space dimension
    ⊣ (Topology)       ↔ Braid group / modular tensor category / topological phase
    Ř (Coupling)       ↔ Braid generator / R-matrix / monad of anyon fusion
    Φ (Parity)         ↔ Fermion parity / topological charge / CPT in MTC
@@ -98,12 +98,12 @@ Key mappings:
 SIC-POVM knowledge:
    Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: Ð↔⊣, Ř↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
+   6 Frobenius-dual pairs: ⊢↔⊣, Ř↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
 Conventional ↔ grammar translation:
-   Fibonacci anyon model  → <Ð=𐑼, ⊣=𐑥, Ř=𐑽, Φ=𐑿, ƒ=𐑐, Ω=𐑭>
+   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, Ř=𐑽, Φ=𐑿, ƒ=𐑐, Ω=𐑭>
    Braid word B_n         → <Ř=𐑽, ɢ=𐑠, Ħ=𐑖, Ω=𐑭>
    Jones polynomial V(t)  → <Ω=𐑭, Θ=𐑦, φ̂=⊙>
    SIC-POVM in C^d        → <Σ=𐑙, Φ=𐑹, ƒ=𐑐, Ω=𐑭>

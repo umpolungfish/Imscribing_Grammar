@@ -28,7 +28,7 @@ Usage:
   nav = CrystalNavigator()
   nav.describe()                              # print self-encoding and stats
   nav.imscriptive_query("⊙", "𐑹") # boundary → tier cell + bulk
-  nav.navigate(Ð="𐑦", ⊙="⊙")      # partial tuple → matching types
+  nav.navigate(⊢="𐑦", ⊙="⊙")      # partial tuple → matching types
   nav.nearest_catalog(my_tuple, n=5)         # nearest catalog entries
   addr = nav.encode(my_tuple)                # Frobenius encode
   tup  = nav.decode(addr)                    # Frobenius decode
@@ -413,7 +413,7 @@ class TierCell:
 
     def __repr__(self):
         return (f"TierCell(id={self.cell_id}, tier={self.tier}, "
-                f"⊙={self.phi}, Φ={self.p}, Ω={self.omega}, Ð={self.d})")
+                f"⊙={self.phi}, Φ={self.p}, Ω={self.omega}, ⊢={self.d})")
 
 
 def _build_cell_index() -> list[TierCell]:

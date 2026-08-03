@@ -66,7 +66,7 @@ MISSING = [
     (r'\text{{\igprimfont Ω}}_{\varnothing}',     r'{\igfont 𐑷}'),   # Omega_0 / NA
 
     # Bare subscript variants (no curly braces around subscript)
-    (r'\text{{\igprimfont Ð}}_\omega',            r'{\igfont 𐑦}'),   # D_odot, bare
+    (r'\text{{\igprimfont ⊢}}_\omega',            r'{\igfont 𐑦}'),   # D_odot, bare
     (r'\text{{\igprimfont Ç}}_W',                 r'{\igfont 𐑤}'),   # K_mod, bare
     (r'\text{{\igprimfont Ω}}_z',                 r'{\igfont 𐑭}'),   # Omega_Z, bare
     (r'\text{{\igprimfont Ç}}_{\text{{\igfont @}}}', r'{\igfont 𐑧}'), # K_slow, font-wrapped @

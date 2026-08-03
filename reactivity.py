@@ -225,7 +225,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── Ω: max → bonding adds winding; keep max of reactants
     Om = max(get(tA, '◻'), get(tB, '◻'))
 
-    # ── Ð: max → dimensionality of more complex atom dominates
+    # ── ⊢: max → dimensionality of more complex atom dominates
     D = max(get(tA, '⊢'), get(tB, '⊢'))
 
     # ── Σ: molecular stoichiometric class

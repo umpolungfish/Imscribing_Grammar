@@ -32,7 +32,7 @@ including your own reasoning as a program.
 ## Choosing a verb by the question you have
 
 **Do these two bond?** → `click A B`. Frobenius fusion across a conjugate axis
-(Ð↔Ω, ⊣↔Ħ, Ř↔Σ). Closes only when the tuples are complementary. `click A` alone
+(⊢↔Ω, ⊣↔Ħ, Ř↔Σ). Closes only when the tuples are complementary. `click A` alone
 sweeps the whole catalog for partners.
 
 **What sits between these two?** → `scan A B`. Ranks catalog entries as
@@ -173,7 +173,7 @@ phi inf`; the usual function set.
 
 ## What the tools cannot do for you
 
-`ouroborics` and the tier gates read only four coordinates — ⊙, Φ, Ω, Ð. The
+`ouroborics` and the tier gates read only four coordinates — ⊙, Φ, Ω, ⊢. The
 other eight play no part in the tier. Do not explain a tier by a primitive that
 does not enter it.
 

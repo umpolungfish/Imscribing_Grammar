@@ -41,7 +41,7 @@ DESIGNS = [
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) supports Majorana zero modes. Self-written dimensionality (Ð=𐑦) — topological order writes its own ground state. Quantum coherent at room temperature via eternal chirality protection.",
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (Ω=𐑟) supports Majorana zero modes. Self-written dimensionality (⊢=𐑦) — topological order writes its own ground state. Quantum coherent at room temperature via eternal chirality protection.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑟"
     },
@@ -53,13 +53,13 @@ DESIGNS = [
     },
     {
         "name": "self_weaving_fabric",
-        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — responds at human-relevant timescales. Self-written microarchitecture (Ð=𐑦) — each thread contains its own knitting pattern generator.",
+        "description": "Smart fabric that weaves all functions — sensing, actuation, communication, energy harvesting — simultaneously. All-simultaneous composition (ɢ=ɢ^∧). Moderate kinetics (Ç=𐑤) — responds at human-relevant timescales. Self-written microarchitecture (⊢=𐑦) — each thread contains its own knitting pattern generator.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑤", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each edit is a fixed point. Self-written state space (Ð=𐑦). Eternal generational memory (Ħ=𐑫).",
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each edit is a fixed point. Self-written state space (⊢=𐑦). Eternal generational memory (Ħ=𐑫).",
         "⊢": "𐑦", "⊣": "𐑶", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },
@@ -77,7 +77,7 @@ DESIGNS = [
     },
     {
         "name": "topological_morphogenesis",
-        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding (Ω=𐑭) — each organ primordium characterized by conserved winding number. Self-written field (Ð=𐑦) — developmental program writes itself as embryo grows. Eternal chirality (Ħ=𐑫) topologically protects bilateral symmetry.",
+        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding (Ω=𐑭) — each organ primordium characterized by conserved winding number. Self-written field (⊢=𐑦) — developmental program writes itself as embryo grows. Eternal chirality (Ħ=𐑫) topologically protects bilateral symmetry.",
         "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "ɢ^∧", "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭"
     },

@@ -1271,12 +1271,12 @@ class CoreAxioms:
 
       Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ Ç=𐑧 —
       the exact pair old-A forbade. The correct formulation of D imscribes with
-      Ð=𐑛 ∧ Ω=𐑟 (old-D demanded Ð=𐑦) and ⊣=𐑸 at Ð=𐑛 (violating one-way C).
+      ⊢=𐑛 ∧ Ω=𐑟 (old-D demanded ⊢=𐑦) and ⊣=𐑸 at ⊢=𐑛 (violating one-way C).
       Each correct formulation violates the coordinate form of its own axiom.
 
       Catalog. Every shadow has counterexamples across several dimensionalities,
       including genuine non-Abelian anyons and SIC existence entries at Ω=𐑟
-      without Ð=𐑦. Axiom C's biconditional was already revised to one-way on this
+      without ⊢=𐑦. Axiom C's biconditional was already revised to one-way on this
       kind of evidence (2026-05-03); the one-way form falls to it equally.
 
     A coordinate co-occurrence was never the rule. It was the shadow a closure

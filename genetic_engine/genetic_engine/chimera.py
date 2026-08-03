@@ -6,8 +6,8 @@ not additive. Two independently tolerable edits at different primitive classes
 can produce a trap state (Ç_⊛) when combined.
 
 Key dangerous pairs:
-  Ħ⊗Ð, Ħ⊗Ω, Ð⊗Ω → ALWAYS trap (critical×critical)
-  Ř⊗Ħ, Ř⊗Ð, Ř⊗Ω, φ̂⊗Ħ, φ̂⊗Ř → trap (high×critical/high)
+  Ħ⊗⊢, Ħ⊗Ω, ⊢⊗Ω → ALWAYS trap (critical×critical)
+  Ř⊗Ħ, Ř⊗⊢, Ř⊗Ω, φ̂⊗Ħ, φ̂⊗Ř → trap (high×critical/high)
   ⊣⊗Ř, Φ⊗φ̂, Ç⊗Ħ, Γ⊗Ř → semi-trap (moderate×critical/high)
 """
 

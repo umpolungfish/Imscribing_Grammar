@@ -3,7 +3,7 @@
 fix_catalog_encoding.py — normalize all three encoding errors in IG_catalog.json.
 
   Category 1 — Legacy key names (D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega)
-                → rename to canonical glyph keys (Ð,⊣,Ř,Φ,ƒ,Ç,ɢ,Γ,⊙,Ħ,Σ,Ω)
+                → rename to canonical glyph keys (⊢,⊣,Ř,Φ,ƒ,Ç,ɢ,Γ,⊙,Ħ,Σ,Ω)
                   Values are already Shavian; only keys need renaming.
 
   Category 2 — Tuple notation  (tuple: '𐑼;𐑸;𐑾;...')

@@ -124,7 +124,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
         '∋': 'ɢ-glycosylation target',
         '∈': 'Γ-catalytic domain',
         '⊤': 'Ç-kinetic regulator',
-        '⊢': 'Ð-initiation bootstrap',
+        '⊢': '⊢-initiation bootstrap',
         '⊣': '⊣-topological anchor',
     }
     return desc_map.get(dom, f'Fragment {idx+1}')

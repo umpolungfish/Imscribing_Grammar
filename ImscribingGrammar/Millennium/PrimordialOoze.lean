@@ -16,7 +16,7 @@ Key results:
      no temporal memory needed for Frobenius closure.
   3. Ω (winding) can be awe (trivial, index 0) —
      no topological protection needed.
-  4. Ð (dimensionality) can be dead (0d point, index 0) —
+  4. ⊢ (dimensionality) can be dead (0d point, index 0) —
      no spatial extension needed.
   5. All other primitives at minimum: age, yea,
      bib, vow, hung.

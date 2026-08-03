@@ -37,7 +37,7 @@ import math
 # Use the helper functions below to look up by (primitive, value).
 
 IG_CHARS: Dict[str, str] = {
-    # ── Dimensionality (Ð) — 4 values ──
+    # ── Dimensionality (⊢) — 4 values ──
     "D_wedge":      "𐑛",     # 𐑼 — 0d point / flat
     "D_tri":        "𐑨",     # 𐑨 — 2d surface / simplicial
     "D_infty":      "𐑼",     # 𐑛 — infinite-dimensional
@@ -187,7 +187,7 @@ CHOU_FASMAN: Dict[str, Dict[str, float]] = {
 AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "His": "Phi",       # ⊙ — criticality
     "Gln": "G",         # Γ — grammar/scope
-    "Met": "D",         # Ð — scope
+    "Met": "D",         # ⊢ — scope
     "Trp": "T",         # ⊣ — topology
     "Cys": "R",         # Ř — reversibility
     "Tyr": "P",         # Φ — parity
