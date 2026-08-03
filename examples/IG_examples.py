@@ -109,7 +109,7 @@ def example_3_catalog_and_search():
     # Register imscriptions using the convenience function
     register_imscription(
         name="formamide_dimer",
-        dimensionality="Ð_wynn",
+        dimensionality="𐑛",
         topology="Þ_bullseye",
         recognition_mode="Ř_superset",
         polarity="Φ_pipevar",
@@ -121,7 +121,7 @@ def example_3_catalog_and_search():
     
     register_imscription(
         name="triple_hbond_array",
-        dimensionality="Ð_wynn",
+        dimensionality="𐑛",
         topology="Þ_bullseye",
         recognition_mode="Ř_superset",
         polarity="Φ_directional",
@@ -133,7 +133,7 @@ def example_3_catalog_and_search():
     
     register_imscription(
         name="proline_aldol_cycle",
-        dimensionality="Ð_infinity",  # Temporal!
+        dimensionality="𐑼",  # Temporal!
         topology="Þ_bullseye",
         recognition_mode="Ř_downstep",  # Catalytic
         polarity="Φ_directional",
@@ -244,7 +244,7 @@ def example_5_constraint_compatibility():
     electrophile = Imscription(
         name="carbonyl_imscription",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.yew,  # P+ — electrophile
         fidelity=Fidelity.they,
@@ -257,7 +257,7 @@ def example_5_constraint_compatibility():
     nucleophile = Imscription(
         name="enolate_imscription",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.yew,  # P- — nucleophile
         fidelity=Fidelity.they,
@@ -284,7 +284,7 @@ def example_5_constraint_compatibility():
     another_electrophile = Imscription(
         name="imine_imscription",
         dimensionality=Dimensionality.dead,
-        topology=Topology.T_linear,
+        topology=Topology.eat,
         recognition_mode=RecognitionMode.tot,
         polarity=Polarity.yew,  # Also P+ — incompatible!
         fidelity=Fidelity.they,

@@ -3,8 +3,8 @@
 IG_latex.py — Canonical LaTeX for Imscribing Grammar primitives.
 
 Usage:
-  python3 IG_latex.py fmt  𐑦           # → Ð_{\\omega}  (no $ delimiters)
-  python3 IG_latex.py inline 𐑦         # → $Ð_{\\omega}$
+  python3 IG_latex.py fmt  𐑦           # → \\sh{𐑦}  (no $ delimiters)
+  python3 IG_latex.py inline 𐑦         # → $\\sh{𐑦}$
   python3 IG_latex.py tuple "𐑦 𐑸 …"  # display-math crystal address
   python3 IG_latex.py fix file.md         # rewrite file with canonical LaTeX
   python3 IG_latex.py list                # print all 49 entries
@@ -24,74 +24,14 @@ import re, sys, os
 #   Greek subtypes get their LaTeX command: \omega \beta \gamma \lambda \upsilon
 #   } subtype → \}   ^ subtype → \wedge
 #
-PRIM_LATEX: dict[str, str] = {
-    # ── Ð Dimensionality ──────────────────────────────────────────────────────
-    '𐑛':  r'Ð_{ß}',
-    '𐑨':  r'Ð_{C}',
-    '𐑼':  r'Ð_{;}',
-    '𐑦':  r'Ð_{\omega}',
-    # ── Þ Topology ────────────────────────────────────────────────────────────
-    '𐑡':  r'Þ_{6}',
-    '𐑰':  r'Þ_{K}',
-    '𐑥':  r'Þ_{\text{ò}}',
-    '𐑶':  r'Þ_{\text{¨}}',
-    '𐑸':  r'Þ_{O}',
-    # ── Ř Relational ──────────────────────────────────────────────────────────
-    '𐑩':  r'Ř_{\text{¯}}',
-    '𐑑':  r'Ř_{\text{ý}}',
-    '𐑽':  r'Ř_{\text{Ť}}',
-    '𐑾':  r'Ř_{=}',
-    # ── Φ Parity ──────────────────────────────────────────────────────────────
-    '𐑗':  r'Φ_{\text{ɐ}}',
-    '𐑿':  r'Φ_{\upsilon}',
-    '𐑬':  r'Φ_{F}',
-    '𐑯':  r'Φ_{\text{˙}}',
-    '𐑹':  r'Φ_{\}}',
-    # ── ƒ Fidelity  (SUPERSCRIPT; \text{ƒ} — not in standard math font) ────────
-    'ƒ^ì':  r'\text{ƒ}^{\text{ì}}',
-    'ƒ^ð':  r'\text{ƒ}^{\text{ð}}',
-    'ƒ^ż':  r'\text{ƒ}^{\text{ż}}',
-    # ── Ç Kinetics  (SUPERSCRIPT) ─────────────────────────────────────────────
-    'Ç^-':  r'Ç^{-}',
-    'Ç^W':  r'Ç^{W}',
-    'Ç^@':  r'Ç^{@}',
-    'Ç^Ù':  r'Ç^{\text{Ù}}',
-    'Ç^λ':  r'Ç^{\lambda}',
-    # ── Γ Scope ───────────────────────────────────────────────────────────────
-    '𐑚':  r'Γ_{\beta}',
-    '𐑔':  r'Γ_{\gamma}',
-    '𐑲':  r'Γ_{\text{ʔ}}',
-    # ── ɢ Grammar  (SUPERSCRIPT; \text{ɢ} — not in standard math font) ─────────
-    'ɢ^∧':  r'\text{ɢ}^{\wedge}',
-    'ɢ^˝':  r'\text{ɢ}^{\text{˝}}',
-    'ɢ^ˌ':  r'\text{ɢ}^{\text{ˌ}}',
-    'ɢ^Ş':  r'\text{ɢ}^{\text{Ş}}',
-    # ── ⊙ Criticality (\odot renders in all LaTeX modes; ⊙ is old catalog key) ─
-    '𐑢':  r'\odot_{\text{ž}}',
-    '⊙':  r'\odot_{\text{ÿ}}',
-    '𐑮':  r'\odot_{\text{Æ}}',
-    '𐑻':  r'\odot_{3}',
-    '𐑣':  r'\odot_{\text{Ţ}}',
-    '𐑢':  r'\odot_{\text{ž}}',
-    '⊙':  r'\odot_{\text{ÿ}}',
-    '𐑮':  r'\odot_{\text{Æ}}',
-    '𐑻':  r'\odot_{3}',
-    '𐑣':  r'\odot_{\text{Ţ}}',
-    # ── Ħ Chirality (\text{Ħ} — not in standard math font) ──────────────
-    '𐑓':  r'\text{Ħ}_{\text{Ñ}}',
-    '𐑒':  r'\text{Ħ}_{\text{£}}',
-    '𐑖':  r'\text{Ħ}_{A}',
-    '𐑫':  r'\text{Ħ}_{!}',
-    # ── Σ Stoichiometry ───────────────────────────────────────────────────────
-    '𐑙':  r'Σ_{S}',
-    '𐑕':  r'Σ_{\text{ő}}',
-    '𐑳':  r'Σ_{\text{ï}}',
-    # ── Ω Winding ─────────────────────────────────────────────────────────────
-    '𐑷':  r'Ω_{\text{Å}}',
-    '𐑴':  r'Ω_{2}',
-    '𐑭':  r'Ω_{z}',
-    '𐑟':  r'Ω_{5}',
-}
+# Every value is written as itself, set in the primitive font. The table this
+# replaces rendered each one as a retired axis glyph carrying a subscript —
+# a retired axis glyph carrying a subscript, from before the values were
+# Shavian, kept alive only
+# by this converter.
+def PRIM_LATEX_of(value: str) -> str:
+    return r"\sh{" + value + "}"
+
 
 # ── Public API ────────────────────────────────────────────────────────────────
 
@@ -99,7 +39,7 @@ def fmt(raw_id: str) -> str:
     """Return canonical LaTeX body for a source ID like 'ƒ^ż'. No $ delimiters."""
     if raw_id not in PRIM_LATEX:
         raise KeyError(f"Unknown primitive ID: {raw_id!r}")
-    return PRIM_LATEX[raw_id]
+    return PRIM_LATEX_of(raw_id)
 
 
 def inline(raw_id: str) -> str:

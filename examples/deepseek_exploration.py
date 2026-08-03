@@ -92,7 +92,7 @@ info("Monodentate: [Zn(py)₂Cl₂] — two independent pyridine ligands")
 zn_mono = make_imscription(
     name="zn_pyridine_monodentate",
     dim=Dimensionality.dead,
-    topo=Topology.T_linear,
+    topo=Topology.eat,
     rec=RecognitionMode.ado,
     pol=Polarity.yew,
     fid=Fidelity.peep,

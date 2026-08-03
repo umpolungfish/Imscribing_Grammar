@@ -63,51 +63,23 @@ if not _DERIVED:
     ORDINALS = _FALLBACK_ORDINALS
     WEIGHTS = _FALLBACK_WEIGHTS
     PRIMITIVE_ORDER = _FALLBACK_ORDER
-# Subscript-to-Deseret mapping for catalog values in notation format (e.g., "𐑛" -> Deseret key)
-# The catalog stores values as Primitive_subscript/^superscript, but ORDINALS
-# uses Deseret alphabet characters (U+1045x-U+1047x).
-SUBSCRIPT_TO_DESERET = {
-    "⊢": {";": "\U0001045B", "C": "\U00010468", "ß": "\U0001047C", "\u03c9": "\U00010466"},
-    "⊣": {"6": "\U00010461", "K": "\U00010470", "\u00f2": "\U00010465", "O": "\U00010476", "\u00a8": "\U00010478"},
-    ">": {"\u00af": "\U00010469", "\u00fd": "\U00010451", "\u0164": "\U0001047D", "=": "\U0001047E"},
-    "<": {"\u0250": "\U00010457", "\u03c5": "\U0001047F", "\u02d9": "\U0001046C", "F": "\U0001046F", "}": "\U00010479"},
-    "⋈": {"\u00ec": "\U00010471", "\u00f0": "\U0001045E", "\u017c": "\U00010450"},
-    "⊤": {"-": "\U00010458", "W": "\U00010464", "@": "\U00010467", "\u03bb": "\U0001046A", "\u00d9": "\U0001047A"},
-    "∈": {"\u03b2": "\U0001045A", "\u03b3": "\U0001045A", "\u0294": "\U00010454"},
-    "∋": {"\u2227": "\U0001045D", "\u02dd": "\U0001045C", "\u02cc": "\U00010460", "\u015e": "\U00010475"},
-    "⊙": {"\u017e": "\U00010462", "\u00ff": "\u2299", "\u00c6": "\U0001046E", "3": "\U0001047B", "\u0162": "\U00010463"},
-    "⊥": {"\u00d1": "\U00010453", "\u00a3": "\U00010452", "A": "\U00010456", "!": "\U0001046B"},
-    "⊞": {"S": "\U00010459", "\u0151": "\U00010455", "\u00ef": "\U00010473"},
-    "◻": {"\u00c5": "\U00010477", "2": "\U00010474", "z": "\U0001046D", "5": "\U0001045F"},
-}
 
 
 def resolve_ordinal_key(primitive: str, value: str) -> str:
-    """Convert a catalog value to the Deseret ordinal key used by ORDINALS.
-    
-    Handles three formats:
-      1. Already a valid ORDINALS key (Deseret char or literal symbol like \u2299)
-      2. Notation format: Primitive_separator_subscript (e.g., "Ð_\u00df")
+    """The value IS the ordinal key. A value that is not one is an error.
+
+    This used to fall back to parsing a subscript notation, which is how a value
+    that had stopped being legal went on resolving to something anyway. There is
+    one spelling now; anything else is data that was missed, not data to rescue.
     """
     if not value:
         raise KeyError(f"Empty value for primitive {primitive}")
     ord_map = ORDINALS.get(primitive, {})
-    # Direct match (already a valid key)
     if value in ord_map:
         return value
-    # Parse subscript notation
-    if len(value) >= 3:
-        subscript = value[2]
-        mapping = SUBSCRIPT_TO_DESERET.get(primitive, {})
-        if subscript in mapping:
-            deseret_key = mapping[subscript]
-            if deseret_key in ord_map:
-                return deseret_key
-    # Last resort: check if the entire value is a subscript key
-    ord_map_vals = list(ord_map.keys())
     raise KeyError(
-        f"Cannot map {primitive} value '{value}' to ordinal. "
-        f"Valid keys include: {ord_map_vals[:3]}..."
+        f"Cannot map {primitive} value {value!r} to ordinal. "
+        f"Valid keys: {list(ord_map)}"
     )
 
 

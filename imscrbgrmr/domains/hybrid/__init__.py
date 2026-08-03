@@ -69,7 +69,7 @@ class HybridImscriptionAgent:
             "framework_type": framework_type,
             "topology": topology,
             "topology_name": topology_info.get(topology, {}).get("name", "Unknown"),
-            "dimensionality": "Ð_turnthree",
+            "dimensionality": "𐑨",
             "granularity": Granularity.thigh.value,
             "notes": (
                 f"{framework_type} with {topology} topology provides "
@@ -116,7 +116,7 @@ class HybridImscriptionAgent:
         return {
             "cycle_type": cycle_type,
             "confinement": confinement,
-            "dimensionality": "Ð_infinity",
+            "dimensionality": "𐑼",
             "recognition_mode": "Ř_downstep",
             "confinement_effects": effect,
             "notes": (

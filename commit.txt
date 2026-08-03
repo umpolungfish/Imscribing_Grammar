@@ -1,17 +1,21 @@
-The reference docs carry the new alphabet
+⊢ Dimensionality: every underscored name gone
 
-IG.md, README.md, the reference sheet and the 1-page tex are on the twelve marks.
-The compendium is regenerated through scripts/gen_ig_reference.py rather than
-hand-edited.
+The first axis of the per-primitive purge. Ð_wynn, Ð_turnthree, Ð_invomega,
+Ð_omega and the rest resolve to their Shavian values; the LaTeX subscript forms
+Ð_{ß} Ð_{C} Ð_{;} Ð_{\omega} with them.
 
-Two things the regeneration exposed. The generator set the primitive column in
-FreeSerif, which carries almost none of the new marks, and unicode-math only
-rescues the ones that are math operators — ◻ is a geometric shape, so Winding
-printed as a missing-glyph box. The twelve now route through Everson Mono, the
-same way the Shavian block already did. And the Crystal of Types footer listed
-the axes by hand, so it was still naming the retired alphabet after the table
-above it had moved; it reads off PRIMITIVES now.
+Three kinds of hit, treated differently. Real values became the value glyph.
+Ordinary mathematics that an earlier sweep had glyph-substituted went back to
+ASCII: $A_n$, $B_n$, $C_n$, $Ð_n$ in E8G2.tex is the classical Lie series D_n,
+Ð_p in the SIC-POVM paper is the displacement operator D_p, and Ð_H / Ð_A are
+hydrogen-bond distances. And English words whose D had been eaten were restored:
+HYBRIÐ_SUPRA_TEMP was HYBRID, BROAÐ_SEQ was BROAD.
 
-IG_REFERENCE.tex at the repo root does not compile and did not compile on the
-frozen branch either — an undefined control sequence at a \text in math mode,
-unrelated to the alphabet.
+Also gone: the eight spent migration scripts under .stuff/scripts, the subscript
+fallback in resolve_ordinal_key (which is how a value that had stopped being
+legal went on resolving to something anyway), and the whole PRIM_LATEX table in
+IG_latex.py, whose only job was rendering a value as a retired glyph with a
+subscript.
+
+Zero remain anywhere except 2m3iosis/crystal_fs/*.jsonl, which are kernel run
+logs rather than code or data. Eleven axes to go.

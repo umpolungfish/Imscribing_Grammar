@@ -23,13 +23,13 @@ from itertools import combinations
 
 # ── Symbol sets ───────────────────────────────────────────────────────────────
 
-PRIMS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']
+PRIMS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 PRIM_NAMES = {
-    'Ð': 'Dimensionality', 'Þ': 'Topology', 'Ř': 'Recognition',
-    'Φ': 'Parity', 'ƒ': 'Fidelity', 'Ç': 'Kinetics',
-    'Γ': 'Granularity', 'ɢ': 'Coupling', '⊙': 'Criticality',
-    'Ħ': 'Chirality', 'Σ': 'Stoichiometry', 'Ω': 'Winding',
+    '⊢': 'Dimensionality', '⊣': 'Topology', '>': 'Recognition',
+    '<': 'Parity', '⋈': 'Fidelity', '⊤': 'Kinetics',
+    '∈': 'Granularity', '∋': 'Coupling', '⊙': 'Criticality',
+    '⊥': 'Chirality', '⊞': 'Stoichiometry', '◻': 'Winding',
 }
 
 SHAVIAN_49 = list('𐑐𐑑𐑒𐑓𐑔𐑕𐑖𐑗𐑘𐑙𐑚𐑛𐑜𐑝𐑞𐑟𐑠𐑡𐑢𐑣𐑤𐑥𐑦𐑧𐑨𐑩𐑪𐑫𐑬𐑭𐑮𐑯𐑰𐑱𐑲𐑳𐑴𐑵𐑶𐑷𐑸𐑹𐑺𐑻𐑼𐑽𐑾𐑿⊙')
@@ -280,10 +280,10 @@ def sc_peel(sys, catalog, entry, prim):
 
     if prim == '⊙':
         new_tier, note = 'O₀', 'Criticality gate closes — self-modeling collapses.'
-    elif prim == 'Φ':
+    elif prim == '<':
         new_tier = 'O₁' if tier == 'O_∞' else 'O₀'
         note = 'Frobenius parity gate closes — mu-delta=id no longer holds.'
-    elif prim == 'Ω':
+    elif prim == '◻':
         rank = TIERS.index(tier)
         new_tier = TIERS[max(0, rank - 1)]
         note = 'Winding protection lost — topological invariant undefined.'
@@ -434,7 +434,7 @@ def sc_load_bearing(sys, catalog, entry):
     label = name.replace('_', ' ')
     t = fmt_tuple(entry)
     tier = entry_tier(entry)
-    gate_prims = ['⊙', 'Φ', 'Ω']
+    gate_prims = ['⊙', '<', '◻']
 
     msgs = [{'role': 'user', 'content': f"Which primitives are load-bearing for {label} at {tier}?"}]
     out = []
@@ -448,7 +448,7 @@ def sc_load_bearing(sys, catalog, entry):
     for p in gate_prims:
         if p == '⊙':
             all_peels[p] = 'O₀'
-        elif p == 'Φ':
+        elif p == '<':
             all_peels[p] = 'O₁' if tier == 'O_∞' else 'O₀'
         else:
             rank = TIERS.index(tier)
@@ -629,7 +629,7 @@ def main():
         all_steps.extend(sc_tensor(sys_p, catalog, ea, eb))
 
     # G: Primitive peel — gate prims x sampled entries
-    gate_prims = ['⊙', 'Φ', 'Ω', 'Ħ']
+    gate_prims = ['⊙', '<', '◻', '⊥']
     for e in rng.sample(catalog, min(12, len(catalog))):
         for p in gate_prims:
             all_steps.extend(sc_peel(sys_p, catalog, e, p))

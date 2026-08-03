@@ -69,12 +69,12 @@ def compose_primitive_series(
 if __name__ == "__main__":
     # Example primitives for ascent to O₂
     primitives = [
-        ("Þ", "𐑶", "network topology → self-referential"),
-        ("Φ", "𐑬", "partial symmetry → Frobenius-special"),
-        ("Ç", "Ç^@", "moderate kinetics → slow/near-equilibrium"),
+        ("⊣", "𐑶", "network topology → self-referential"),
+        ("<", "𐑬", "partial symmetry → Frobenius-special"),
+        ("⊤", "Ç^@", "moderate kinetics → slow/near-equilibrium"),
         ("⊙", "⊙", "subcritical → self-modeling criticality"),
-        ("Ħ", "𐑖", "memoryless → two-step chirality"),
-        ("Ω", "𐑭", "trivial winding → integer-wound"),
+        ("⊥", "𐑖", "memoryless → two-step chirality"),
+        ("◻", "𐑭", "trivial winding → integer-wound"),
     ]
     
     print("=== Primitive Series Composition ===")

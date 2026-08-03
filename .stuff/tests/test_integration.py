@@ -34,7 +34,7 @@ def test_imscription_models():
         )
 
         # Test primitive enums
-        assert Dimensionality.dead.value == "Ð_wynn"
+        assert Dimensionality.dead.value == "𐑛"
         assert Topology.mime.value == "Þ_bullseye"
         assert RecognitionMode.ado.value == "Ř_superset"
         assert Polarity.yew.value == "Φ_pm_pseudo"  # Updated
@@ -66,7 +66,7 @@ def test_imscription_models():
 
         # Test notation generation
         notation = imscription.to_notation()
-        assert "Ð_wynn" in notation
+        assert "𐑛" in notation
         assert "Þ_bullseye" in notation
         assert "ƒ_hardsign" in notation
         assert "Ç_frtailgamma" in notation  # NEW
@@ -155,7 +155,7 @@ def test_imscription_catalog():
         # Test convenience function
         register_imscription(
             name="amide_dimer",
-            dimensionality="Ð_wynn",
+            dimensionality="𐑛",
             topology="Þ_bullseye",
             recognition_mode="Ř_superset",
             polarity="Φ_pm_pseudo",
@@ -206,7 +206,7 @@ def test_constraint_engine():
         imscription_a = Imscription(
             name="electrophile",
             dimensionality=Dimensionality.dead,
-            topology=Topology.T_linear,
+            topology=Topology.eat,
             recognition_mode=RecognitionMode.tot,
             polarity=Polarity.yew,
             fidelity=Fidelity.they,
@@ -218,7 +218,7 @@ def test_constraint_engine():
         imscription_b = Imscription(
             name="nucleophile",
             dimensionality=Dimensionality.dead,
-            topology=Topology.T_linear,
+            topology=Topology.eat,
             recognition_mode=RecognitionMode.tot,
             polarity=Polarity.yew,
             fidelity=Fidelity.they,
@@ -237,7 +237,7 @@ def test_constraint_engine():
         imscription_c = Imscription(
             name="another_electrophile",
             dimensionality=Dimensionality.dead,
-            topology=Topology.T_linear,
+            topology=Topology.eat,
             recognition_mode=RecognitionMode.tot,
             polarity=Polarity.yew,
             fidelity=Fidelity.they,

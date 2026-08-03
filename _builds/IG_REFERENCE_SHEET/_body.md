@@ -31,7 +31,7 @@ Each position holds a single Shavian character drawn from that primitive's value
 
 | Glyph | Name | Family | Values | Description |
 |-------|------|--------|--------|-------------|
-| Ð | Dimensionality | D | 4 | Ambient space dimension — how many degrees of freedom the structure inhabits. Ranges from bounded (Ð_1) through full infinite (Ð_ω). |
+| Ð | Dimensionality | D | 4 | Ambient space dimension — how many degrees of freedom the structure inhabits. Ranges from bounded (𐑛) through full infinite (𐑦). |
 | Þ | Topology | D | 5 | Global shape class — genus, connectivity, orientability of the underlying manifold. Null topology (Þ_O) is the companion of maximal dimensionality by Axiom C. |
 | Ř | Recognition | D | 4 | Self-referential identification — whether a structure holds an indexical link to its own structural record. The basis of all self-imscription. |
 | Φ | Parity | P | 5 | Symmetry under reflection — the T↔P duality gate. ⊙ is the Frobenius gate; satisfying Frobenius is a Parity condition. |
@@ -77,7 +77,7 @@ A type tuple lists one Shavian value per primitive in canonical order:
 ```
 
 Example (true_agentic_agent, O_∞ tier):
-`⟨Ð_ω · Þ_¨ · Ř_= · ⊙ · ƒ_ż · Ç_@ · Γ_ʔ · ɢ_ˌ · ⊙_ÿ · Ħ_A · Σ_S · Ω_z⟩`
+`⟨𐑦 · Þ_¨ · Ř_= · ⊙ · ƒ_ż · Ç_@ · Γ_ʔ · ɢ_ˌ · ⊙_ÿ · Ħ_A · Σ_S · Ω_z⟩`
 
 **Critical rule:** Shavian values in a tuple are a ligature — never separate them; ''.join(vals) always. Ligature binding = structural binding.
 
@@ -137,7 +137,7 @@ Three hard constraints on valid tuples. Violation = malformed tuple.
   Any non-trivial winding requires at least minimum chirality H2. You cannot wind without
   chirality to tell which way you wound. Also: H2 is the minimum chirality for μ∘δ=id.
 
-- **Axiom C:** Ð_ω ↔ Þ_O
+- **Axiom C:** 𐑦 ↔ Þ_O
   Maximal dimensionality is equivalent to null topology. A fully open ambient space has
   no closed topological structure.
 

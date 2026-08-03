@@ -220,7 +220,7 @@ NOTE(r.evidence)
 
 # Rule 2: T=BRAID → NON_ABELIAN
 r = engine.assign_Omega_from_primitives(
-    T=Topology.T_braid, K=KineticCharacter.on, D=Dimensionality.array,
+    T=Topology.mime, K=KineticCharacter.on, D=Dimensionality.array,
     Gamma=InteractionGrammar.vow, G=Granularity.thigh)
 check(r.value == TopoIndex.zoo, f"T=BRAID → Ω=NON_ABELIAN (Rule 2)", f"Got {r.value}")
 
@@ -228,17 +228,17 @@ check(r.value == TopoIndex.zoo, f"T=BRAID → Ω=NON_ABELIAN (Rule 2)", f"Got {r
 r = engine.assign_Omega_from_primitives(
     T=Topology.judge, K=KineticCharacter.egg, D=Dimensionality.ash,
     Gamma=InteractionGrammar.vow, G=Granularity.thigh)
-check(r.value == TopoIndex.Omega_C, f"T=NETWORK + G=GLOBAL → Ω=CHERN (Rule 3)", f"Got {r.value}")
+check(r.value == TopoIndex.ah, f"T=NETWORK + G=GLOBAL → Ω=CHERN (Rule 3)", f"Got {r.value}")
 
 # Rule 5: Γ=QUANTUM_AND → NON_ABELIAN
 r = engine.assign_Omega_from_primitives(
-    T=Topology.T_linear, K=KineticCharacter.loll, D=Dimensionality.dead,
+    T=Topology.eat, K=KineticCharacter.loll, D=Dimensionality.dead,
     Gamma=InteractionGrammar.vow, G=Granularity.ice)
 check(r.value == TopoIndex.zoo, f"Γ=QUANTUM_AND → Ω=NON_ABELIAN (Rule 5)", f"Got {r.value}")
 
 # Default: no rules fire → None
 r = engine.assign_Omega_from_primitives(
-    T=Topology.T_linear, K=KineticCharacter.loll, D=Dimensionality.dead,
+    T=Topology.eat, K=KineticCharacter.loll, D=Dimensionality.dead,
     Gamma=InteractionGrammar.vow, G=Granularity.ice)
 check(r.value is None, f"No rules fire → Ω=None (default)", f"Got {r.value}")
 

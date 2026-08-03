@@ -58,18 +58,18 @@ def load_imscription(name: str) -> Imscription:
         else:
             # Map Latin keys to Unicode equivalents
             mapping = {
-                'D': 'Ð',
-                'T': 'Þ',
-                'R': 'Ř',
-                'P': 'Φ',
-                'F': 'ƒ',
-                'K': 'Ç',
-                'G': 'Γ',
-                'Gamma': 'ɢ',
+                'D': '⊢',
+                'T': '⊣',
+                'R': '>',
+                'P': '<',
+                'F': '⋈',
+                'K': '⊤',
+                'G': '∈',
+                'Gamma': '∋',
                 'Phi': '⊙',
-                'H': 'Ħ',
-                'S': 'Σ',
-                'Omega': 'Ω'
+                'H': '⊥',
+                'S': '⊞',
+                'Omega': '◻'
             }
             norm_key = mapping.get(k, k)
             normalized[norm_key] = v

@@ -37,8 +37,8 @@ from typing import Any, Dict, List, Optional, Tuple
 # ─────────────────────────────────────────────────────────────────────────────
 
 _D_MAP = {
-    "Ð_turnthree":  "Ð_cube",
-    "Ð_infinity":  "Ð_invomega",
+    "𐑨":  "𐑨",
+    "𐑼":  "𐑼",
     # unchanged: D_point, D_line, D_wynn, D_cube, D_invomega, D_holo
 }
 

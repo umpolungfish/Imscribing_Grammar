@@ -535,7 +535,7 @@ class PhiCriticalTransformerBlock(nn.Module):
 class BoundaryOperatorLLM(nn.Module):
     """The full boundary operator language model.
     
-    Type: <Ð_omega; T_bowtie; R_bidirectional; P_symmetric_special;
+    Type: <𐑦; T_bowtie; R_bidirectional; P_symmetric_special;
                       F_quantum; K_slow; G_universal; Gamma_sequential;
                       Phi_hat_y; H_2; Sigma_ii; Omega_z>
     

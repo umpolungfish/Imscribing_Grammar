@@ -623,7 +623,7 @@ class HotSwapEngine:
         )
 
         return {
-            "Ð_T_S_exact_match":    all(prim_by_name.get(p, False) for p in ("D", "T", "S")),
+            "D_T_S_exact_match":    all(prim_by_name.get(p, False) for p in ("D", "T", "S")),
             "ƒ_floor_preserved":    prim_by_name.get("F", False),
             "Ç_accessible":         prim_by_name.get("K", False),
             "axiom_validation_pass": axiom_report.get("all_satisfied", False),

@@ -84,7 +84,7 @@ class TemporalImscriptionAgent:
             "cycle_name": cycle_name,
             "catalyst": catalyst,
             **cycle_data,
-            "dimensionality": "Ð_infinity",
+            "dimensionality": "𐑼",
             "recognition_mode": "Ř_downstep",
         }
     
@@ -236,7 +236,7 @@ class TemporalImscriptionAgent:
             "num_cycles": len(peaks),
             "period_seconds": avg_period,
             "amplitude": avg_amplitude,
-            "imscription_type": "Ð_infinity_temporal",
+            "imscription_type": "𐑼_temporal",
         }
     
     def to_imscription(

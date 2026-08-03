@@ -222,7 +222,7 @@ def tuple_distance(
 _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     # Values present in models.py but not in primitives.py ORDINALS.
     # Mapped to the nearest canonical primitives.py value.
-    "D": {"Ð_point": "Ð_wynn", "Ð_line": "Ð_wynn", "Ð_cube": "Ð_turnthree"},
+    "D": {"𐑛": "𐑛", "𐑛": "𐑛", "𐑨": "𐑨"},
     "T": {
         "Þ_linear": "Þ_invscr", "Þ_branched": "Þ_invscr",
         "Þ_bowl": "Þ_bullseye", "Þ_cage": "Þ_bullseye", "Þ_torus": "Þ_bullseye",

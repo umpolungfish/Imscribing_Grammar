@@ -50,11 +50,11 @@ _G = _build_metric_tensor(str(CATALOG_PATH))
 # Covers both catalog values and Lean-only values (D_cube, D_line, R_exact, …)
 ORDINALS = {
     "D": {
-        "Ð_point":    0.5,
-        "Ð_line":     1.0,
+        "𐑛":    0.5,
+        "𐑛":     1.0,
         "𐑛":    1.5,
         "𐑨": 2.0,
-        "Ð_cube":     2.5,
+        "𐑨":     2.5,
         "𐑼":    3.0,
         "𐑦":     4.0,
     },
@@ -253,18 +253,18 @@ print("MDS projection done.")
 # and PrimitiveBridge.lean (encoded in catalog-compatible format).
 KEY_imscriptions: dict[str, dict] = {
     # ── Millennium Prize encodings (PrimitiveBridge.lean) ─────────────────
-    "YM classical":      {"D":"Ð_cube",  "T":"𐑡","R":"Ř_exact",     "P":"𐑬",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
-    "YM quantum\n(target)": {"D":"Ð_cube","T":"𐑡","R":"Ř_exact",    "P":"𐑬",     "F":"ƒ^ż", "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
-    "RH (ζ zeros)":      {"D":"Ð_line",  "T":"𐑡","R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
-    "Lee-Yang\n(proved)":{"D":"Ð_line",  "T":"𐑥", "R":"Ř_exact",     "P":"𐑿",    "F":"ƒ^ì",  "K":"Ç^W",  "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑒",  "S":"𐑳",   "Omega":"𐑷"},
-    "NS smooth\nsoln":   {"D":"Ð_cube",  "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑓",  "S":"𐑳",   "Omega":"𐑷"},
-    "OPN\nconstraint":   {"D":"Ð_point", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ì",  "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
+    "YM classical":      {"D":"𐑨",  "T":"𐑡","R":"Ř_exact",     "P":"𐑬",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
+    "YM quantum\n(target)": {"D":"𐑨","T":"𐑡","R":"Ř_exact",    "P":"𐑬",     "F":"ƒ^ż", "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
+    "RH (ζ zeros)":      {"D":"𐑛",  "T":"𐑡","R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
+    "Lee-Yang\n(proved)":{"D":"𐑛",  "T":"𐑥", "R":"Ř_exact",     "P":"𐑿",    "F":"ƒ^ì",  "K":"Ç^W",  "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑒",  "S":"𐑳",   "Omega":"𐑷"},
+    "NS smooth\nsoln":   {"D":"𐑨",  "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑓",  "S":"𐑳",   "Omega":"𐑷"},
+    "OPN\nconstraint":   {"D":"𐑛", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ì",  "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
     # ── Field-theory imscriptions (Imscription.lean) ──────────────────────────────
-    "Higgs / axion\n/ inflaton":{"D":"Ð_point","T":"𐑥","R":"Ř_catalytic","P":"𐑹","F":"ƒ^ż","K":"Ç^@","G":"𐑚","Gamma":"ɢ^∧","Phi":"⊙","H":"𐑒","S":"one_n","Omega":"𐑷"},
-    "Standard\nModel":   {"D":"Ð_cube",  "T":"𐑡","R":"Ř_allosteric", "P":"𐑬",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑖",  "S":"𐑳",   "Omega":"𐑭"},
+    "Higgs / axion\n/ inflaton":{"D":"𐑛","T":"𐑥","R":"Ř_catalytic","P":"𐑹","F":"ƒ^ż","K":"Ç^@","G":"𐑚","Gamma":"ɢ^∧","Phi":"⊙","H":"𐑒","S":"one_n","Omega":"𐑷"},
+    "Standard\nModel":   {"D":"𐑨",  "T":"𐑡","R":"Ř_allosteric", "P":"𐑬",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑖",  "S":"𐑳",   "Omega":"𐑭"},
     "Quantum\nGravity":  {"D":"𐑦",  "T":"𐑸",   "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^Ù", "G":"𐑲", "Gamma":"Γ_impl", "Phi":"⊙",         "H":"𐑫","S":"𐑳",  "Omega":"𐑟"},
-    "General\nRelativity":{"D":"Ð_cube", "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
-    "Asymptotic\nSafety":{"D":"Ð_cube",  "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
+    "General\nRelativity":{"D":"𐑨", "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
+    "Asymptotic\nSafety":{"D":"𐑨",  "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
 }
 
 # Supplement with catalog entries by name

@@ -34,12 +34,12 @@ from .constraints import (
 # ---------------------------------------------------------------------------
 
 _DIM_DOMAINS: Dict[str, frozenset] = {
-    "Ð_point": frozenset({"point"}),
-    "Ð_line":  frozenset({"line"}),
-    "Ð_wynn": frozenset({"molecular"}),
-    "Ð_cube":  frozenset({"supramolecular"}),
-    "Ð_invomega": frozenset({"temporal"}),
-    "Ð_omega":  frozenset({"holographic", "imscriptive"}),
+    "𐑛": frozenset({"point"}),
+    "𐑛":  frozenset({"line"}),
+    "𐑛": frozenset({"molecular"}),
+    "𐑨":  frozenset({"supramolecular"}),
+    "𐑼": frozenset({"temporal"}),
+    "𐑦":  frozenset({"holographic", "imscriptive"}),
 }
 
 

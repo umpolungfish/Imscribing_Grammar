@@ -160,7 +160,7 @@ def score_source(row: dict, neighbors_pmra: np.ndarray | None = None,
     harmonic = row.get("ipd_gof_harmonic_amplitude", 0) or 0
     if harmonic > 0.1:
         score += 1
-        flags.append("Ð_temporal")
+        flags.append("⊢ temporal")
 
     priority = (
         "Critical" if score >= 7 else

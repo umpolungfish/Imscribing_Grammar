@@ -14,9 +14,9 @@ def entry(num, title, desc, text,
         "title": title,
         "description": desc,
         "text": text,
-        "Ð": D, "Þ": T, "Ř": R, "Φ": P, "ƒ": F,
-        "Ç": K, "Γ": G, "ɢ": Gm, PHI: C,
-        "Ħ": H, "Σ": S, "Ω": Om,
+        "⊢": D, "⊣": T, ">": R, "<": P, "⋈": F,
+        "⊤": K, "∈": G, "∋": Gm, PHI: C,
+        "⊥": H, "⊞": S, "◻": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
     }
 
@@ -100,7 +100,7 @@ chapters = [
 ]
 
 # Fix entry 12 missing Gm
-chapters[11]["ɢ"] = "ɢ^ˌ"
+chapters[11]["∋"] = "ɢ^ˌ"
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "upanishads.json")
 with open(out, "w", encoding="utf-8") as f:

@@ -64,8 +64,8 @@ class SupramolecularImscriptionAgent:
             "motif": motif,
             "occurrences": 1,
             "geometry": {
-                "Ð_H": 1.8,  # Å
-                "Ð_A": 2.8,  # Å
+                "D_H": 1.8,  # Å
+                "D_A": 2.8,  # Å
                 "angle_DHA": 165,  # degrees
             },
             "estimated_energy": -52.0,  # kJ/mol (for AA homodimer)

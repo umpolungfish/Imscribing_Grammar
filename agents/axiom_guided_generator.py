@@ -22,15 +22,12 @@ from dataclasses import dataclass, field
 def _valid_values() -> str:
     """The valid value list for the generation prompt, read off the canonical enums.
 
-    This block used to be a hand-maintained list and it rotted into rubble: three
-    notation generations side by side (`Ð_ß` beside `D_infinity` beside `T_chains`),
-    values that no longer exist (`Ð_ß_triangle` and the other hybrids were aliases,
-    now deleted), and tokens chewed in half by successive migrations — `Ř_¯set` is
-    `R_superset` with its head eaten, and it was already broken before the Shavian
-    pass ever ran. One of those wrecks (`Φ_}}` losing its brace) was a SyntaxError
-    that killed the import, so every `imscribe` failed and the agent could not mint
-    anything: it reached for a reagent, the generator was dead, the next verb said
-    "not found", and it looped there forever.
+    This block used to be a hand-maintained list and it rotted: three notation
+    generations side by side, values that no longer existed, and tokens chewed in
+    half by successive migrations. One of those wrecks was a SyntaxError that
+    killed the import, so every `imscribe` failed and the agent could not mint
+    anything: it reached for a reagent, the generator was dead, the next verb
+    said "not found", and it looped there forever.
 
     A list of enum members maintained by hand will always drift from the enum. So
     this reads the members instead. There is nothing left to migrate.

@@ -3416,7 +3416,7 @@ def criticality_probe(
     # --- Check 3: Recursive tuple potential ---
     console.print(f"\n[bold]3. Recursive Tuple Potential:[/bold]")
     has_phi_c = imscription.criticality_phase is not None and imscription.criticality_phase.value in ("⊙_ctyogh", "⊙_closerevepsilon")
-    is_imscriptive_d = imscription.dimensionality is not None and imscription.dimensionality.value == "Ð_omega"
+    is_imscriptive_d = imscription.dimensionality is not None and imscription.dimensionality.value == "𐑦"
 
     # Recursive potential: tuple can describe behavior at multiple scales without change
     # → requires ⊙ (self-modeling loop) OR D_⊙ (imscriptive, boundary encodes bulk)
@@ -5950,10 +5950,10 @@ def _frobenius_classify(s) -> str:
     if at_c and omega == "Ω_closeepsilon":
         return "O₁"
     # R4: critical + topological + bounded domain (D_turnthree → D_cube in enum)
-    if at_c and omega != "Ω_closeepsilon" and d in ("Ð_wynn", "Ð_omega", "Ð_cube"):
+    if at_c and omega != "Ω_closeepsilon" and d in ("𐑛", "𐑦", "𐑨"):
         return "O₂"
     # R5: critical + topological + unbounded domain
-    if at_c and omega != "Ω_closeepsilon" and d == "Ð_invomega":
+    if at_c and omega != "Ω_closeepsilon" and d == "𐑼":
         return "O₂†"
     return "O₀"
 

@@ -455,7 +455,7 @@ class AxiomTheoremProver:
             "axiom4": SymbolicExpression.Implies(
                 SymbolicExpression.primitive("∈", "Gamma_seq(SELECTIVE)"),
                 SymbolicExpression.Or(
-                    SymbolicExpression.primitive("D", "Ð_infinity"),
+                    SymbolicExpression.primitive("D", "𐑼"),
                     SymbolicExpression.primitive("R", "Ř_downstep"),
                 ),
             ),
@@ -917,10 +917,10 @@ class PredictiveRuleGenerator:
                 P("∈", "Gamma_seq(BROAD)"),
             ),
             Or(
-                P("D", "Ð_infinity"),
-                P("D", "Ð_wedge_infinity"),
-                P("D", "Ð_triangle_infinity"),
-                P("D", "Ð_all"),
+                P("D", "𐑼"),
+                P("D", "𐑼"),
+                P("D", "𐑼"),
+                P("D", "𐑦"),
                 P("R", "Ř_downstep"),
             ),
         ))
@@ -963,7 +963,7 @@ class PredictiveRuleGenerator:
         ))
         # Molecular dimensionality → not global scale
         candidates.append((
-            P("D", "Ð_wynn"),
+            P("D", "𐑛"),
             Or(P("G", "Γ_beta"), P("G", "Γ_gamma")),
         ))
 
@@ -977,17 +977,17 @@ class PredictiveRuleGenerator:
         # ── Temporal dimension → kinetic accessibility ──────────────────────────
         # Catalytic cycles have turnover rates; K_frtailgamma is unphysical for D_∞
         candidates.append((
-            P("D", "Ð_infinity"),
+            P("D", "𐑼"),
             Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
         # Catalytic recognition mode → temporal or hybrid temporal dimension
         candidates.append((
             P("R", "Ř_downstep"),
             Or(
-                P("D", "Ð_infinity"),
-                P("D", "Ð_wedge_infinity"),
-                P("D", "Ð_triangle_infinity"),
-                P("D", "Ð_all"),
+                P("D", "𐑼"),
+                P("D", "𐑼"),
+                P("D", "𐑼"),
+                P("D", "𐑦"),
             ),
         ))
 
