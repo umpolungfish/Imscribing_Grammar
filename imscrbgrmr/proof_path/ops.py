@@ -41,13 +41,13 @@ class Op:
 
 # ── Primitive value shorthands ─────────────────────────────────────────────────
 
-# Ħ — Chirality
+# ⊥ — Chirality
 _H_base   = "𐑓"   # all degrees / base level (closeomega)
 _H_graded = "𐑒"   # specific graded degree k  (toneletterstem)
 _H_iter   = "𐑖"   # recursive / iterated       (turntwo)
 _H_inf    = "𐑫"   # transfinite / infinite      (invscripta)
 
-# Ř — Relational Mode
+# > — Relational Mode
 _R_trill  = "𐑩"   # alveolar trill = continuous rolling
 _R_aff    = "𐑑"   # affricate = discrete→continuous jump
 _R_fall   = "𐑽"   # falling tone = asymptotic / one-way
@@ -60,7 +60,7 @@ _C_round  = "𐑮"   # post-critical / resolved (rounded schwa)
 _C_sub    = "𐑻"   # sub-critical (open-mid front)
 _C_super  = "𐑣"   # supercritical (long open)
 
-# ɢ — Interaction Grammar
+# ∋ — Interaction Grammar
 _G_and    = "ɢ^∧"   # conjunction / sharp
 _G_alt    = "ɢ^˝"   # alternating / cyclic
 _G_sub    = "ɢ^ˌ"   # subordinate / secondary
@@ -73,13 +73,13 @@ _P_click  = "𐑬"   # sharp click = symmetry-breaking operator
 _P_neut   = "𐑯"   # neutral / balanced (schwa)
 _P_dbl    = "𐑹"   # double-barrier
 
-# Ð — Dimension
+# ⊢ — Dimension
 _D_open   = "𐑦"   # complex projective (fully open)
 _D_mid    = "𐑨"   # complex (mixed)
 _D_comp   = "𐑼"   # compact / bounded
 _D_flow   = "𐑛"   # smooth labial / flowing
 
-# Þ — Topology
+# ⊣ — Topology
 _T_proj   = "𐑸"   # projective / open-mid
 _T_dense  = "𐑡"   # dense / intricate
 _T_smooth = "𐑰"   # smooth continuous
@@ -97,12 +97,12 @@ _W_z2     = "𐑴"   # Z/2
 _W_der    = "𐑭"   # derived / complex zeta
 _W_prim   = "𐑟"   # minimal / primitive
 
-# ƒ — Fidelity
+# ⋈ — Fidelity
 _F_exact  = "ƒ^ż"   # glottal = exact
 _F_approx = "ƒ^ì"   # lateral = approximate
 _F_voiced = "ƒ^ð"   # voiced dental = active
 
-# Ç — Kinetics
+# ⊤ — Kinetics
 _K_fast   = "Ç^-"   # fast spread
 _K_unif   = "Ç^W"   # uniform
 _K_slow   = "Ç^@"   # neutral / slow
@@ -128,8 +128,8 @@ OPERATIONS: list[Op] = [
             "the statement collapses to asking whether every (1,1)-class is c₁(L)."
         ),
         transitions={
-            "Ħ": {_H_base: _H_graded, _H_iter: _H_graded, _H_inf: _H_graded},
-            "ɢ": {_G_alt: _G_sub, _G_and: _G_sub, _G_broad: _G_sub},
+            "⊥": {_H_base: _H_graded, _H_iter: _H_graded, _H_inf: _H_graded},
+            "∋": {_G_alt: _G_sub, _G_and: _G_sub, _G_broad: _G_sub},
         },
         direction="specialize",
     ),
@@ -143,8 +143,8 @@ OPERATIONS: list[Op] = [
             "Every holomorphic line bundle L maps to c₁(L) ∈ H²(X, Z) ∩ H^{1,1}."
         ),
         transitions={
-            "Ř": {_R_aff: _R_smooth, _R_trill: _R_smooth},
-            "ɢ": {_G_alt: _G_sub},
+            ">": {_R_aff: _R_smooth, _R_trill: _R_smooth},
+            "∋": {_G_alt: _G_sub},
         },
         direction="bridge",
     ),
@@ -172,8 +172,8 @@ OPERATIONS: list[Op] = [
             "This imposes strong symmetry constraints on the cohomology ring."
         ),
         transitions={
-            "Φ": {_P_neut: _P_click, _P_weak: _P_click},
-            "Ř": {_R_aff: _R_fall},
+            "<": {_P_neut: _P_click, _P_weak: _P_click},
+            ">": {_R_aff: _R_fall},
         },
         direction="transform",
     ),
@@ -186,8 +186,8 @@ OPERATIONS: list[Op] = [
             "Raises the Hodge degree by (1,1) while preserving the variety."
         ),
         transitions={
-            "Ħ": {_H_graded: _H_base, _H_graded: _H_base},
-            "Φ": {_P_neut: _P_strong},
+            "⊥": {_H_graded: _H_base, _H_graded: _H_base},
+            "<": {_P_neut: _P_strong},
         },
         direction="transform",
     ),
@@ -201,8 +201,8 @@ OPERATIONS: list[Op] = [
             "Algebraic cycles of codimension k are dual to cycles of codimension n-k."
         ),
         transitions={
-            "Φ": {_P_neut: _P_strong, _P_weak: _P_dbl},
-            "Ř": {_R_aff: _R_trill},
+            "<": {_P_neut: _P_strong, _P_weak: _P_dbl},
+            ">": {_R_aff: _R_trill},
         },
         direction="dualize",
     ),
@@ -216,8 +216,8 @@ OPERATIONS: list[Op] = [
             "Boundary divisors acquire explicit cohomology classes."
         ),
         transitions={
-            "Þ": {_T_dense: _T_proj, _T_smooth: _T_proj, _T_fib: _T_proj},
-            "Ω": {_W_z2: _W_der, _W_prim: _W_der},
+            "⊣": {_T_dense: _T_proj, _T_smooth: _T_proj, _T_fib: _T_proj},
+            "◻": {_W_z2: _W_der, _W_prim: _W_der},
         },
         direction="generalize",
     ),
@@ -231,8 +231,8 @@ OPERATIONS: list[Op] = [
             "Frobenius acts on H^k with eigenvalues of weight k — Weil's insight."
         ),
         transitions={
-            "Ω": {_W_der: _W_triv, _W_der: _W_z2},
-            "Þ": {_T_proj: _T_fib},
+            "◻": {_W_der: _W_triv, _W_der: _W_z2},
+            "⊣": {_T_proj: _T_fib},
         },
         direction="specialize",
     ),
@@ -246,8 +246,8 @@ OPERATIONS: list[Op] = [
             "Holomorphic line bundles = algebraic line bundles on projective varieties."
         ),
         transitions={
-            "Ř": {_R_aff: _R_smooth, _R_smooth: _R_aff},
-            "ɢ": {_G_alt: _G_sub, _G_broad: _G_sub},
+            ">": {_R_aff: _R_smooth, _R_smooth: _R_aff},
+            "∋": {_G_alt: _G_sub, _G_broad: _G_sub},
         },
         direction="bridge",
     ),
@@ -261,8 +261,8 @@ OPERATIONS: list[Op] = [
             "The Hodge conjecture asks this map to be surjective onto Hodge classes ⊗ Q."
         ),
         transitions={
-            "Ř": {_R_smooth: _R_aff, _R_trill: _R_aff},
-            "Φ": {_P_neut: _P_click},
+            ">": {_R_smooth: _R_aff, _R_trill: _R_aff},
+            "<": {_P_neut: _P_click},
         },
         direction="bridge",
     ),
@@ -276,8 +276,8 @@ OPERATIONS: list[Op] = [
             "Hodge theory beyond smooth proper varieties."
         ),
         transitions={
-            "Φ": {_P_neut: _P_dbl, _P_weak: _P_dbl},
-            "ɢ": {_G_sub: _G_alt, _G_and: _G_alt},
+            "<": {_P_neut: _P_dbl, _P_weak: _P_dbl},
+            "∋": {_G_sub: _G_alt, _G_and: _G_alt},
         },
         direction="generalize",
     ),
@@ -291,8 +291,8 @@ OPERATIONS: list[Op] = [
             "giving the Hodge decomposition H^n(X,C) = ⊕_{p+q=n} H^{p,q}(X)."
         ),
         transitions={
-            "Ħ": {_H_base: _H_iter},
-            "Φ": {_P_neut: _P_strong},
+            "⊥": {_H_base: _H_iter},
+            "<": {_P_neut: _P_strong},
         },
         direction="transform",
     ),
@@ -306,9 +306,9 @@ OPERATIONS: list[Op] = [
             "Symmetry group shrinks the scope and collapses the interaction grammar."
         ),
         transitions={
-            "Φ": {_P_neut: _P_weak, _P_strong: _P_click},
-            "Γ": {_S_full: _S_mid},
-            "ɢ": {_G_alt: _G_and},
+            "<": {_P_neut: _P_weak, _P_strong: _P_click},
+            "∈": {_S_full: _S_mid},
+            "∋": {_G_alt: _G_and},
         },
         direction="specialize",
     ),
@@ -322,8 +322,8 @@ OPERATIONS: list[Op] = [
             "Reduces global scope to a controlled local neighbourhood."
         ),
         transitions={
-            "Γ": {_S_full: _S_mid},
-            "Ç": {_K_unif: _K_slow, _K_fast: _K_slow},
+            "∈": {_S_full: _S_mid},
+            "⊤": {_K_unif: _K_slow, _K_fast: _K_slow},
         },
         direction="specialize",
     ),
@@ -337,8 +337,8 @@ OPERATIONS: list[Op] = [
             "Reduces dimension and stoichiometric complexity."
         ),
         transitions={
-            "Σ": {_STO_mix: _STO_1_1, _STO_nn: _STO_1_1},
-            "Ð": {_D_open: _D_comp, _D_mid: _D_comp},
+            "⊞": {_STO_mix: _STO_1_1, _STO_nn: _STO_1_1},
+            "⊢": {_D_open: _D_comp, _D_mid: _D_comp},
         },
         direction="specialize",
     ),
@@ -352,8 +352,8 @@ OPERATIONS: list[Op] = [
             "and unlocks analytic or algebraic-closure techniques."
         ),
         transitions={
-            "Σ": {_STO_1_1: _STO_nn, _STO_1_1: _STO_mix},
-            "Ω": {_W_z2: _W_der, _W_triv: _W_der},
+            "⊞": {_STO_1_1: _STO_nn, _STO_1_1: _STO_mix},
+            "◻": {_W_z2: _W_der, _W_triv: _W_der},
         },
         direction="generalize",
     ),
@@ -367,9 +367,9 @@ OPERATIONS: list[Op] = [
             "the Galois representation of E to the harmonic analysis of modular forms."
         ),
         transitions={
-            "Ř": {_R_aff: _R_smooth},
-            "Ω": {_W_der: _W_triv},
-            "ɢ": {_G_and: _G_sub},
+            ">": {_R_aff: _R_smooth},
+            "◻": {_W_der: _W_triv},
+            "∋": {_G_and: _G_sub},
         },
         direction="bridge",
     ),
@@ -384,7 +384,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊙": {_C_sharp: _C_round},
-            "ƒ": {_F_exact: _F_approx},
+            "⋈": {_F_exact: _F_approx},
         },
         direction="resolve",
     ),
@@ -399,7 +399,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊙": {_C_sharp: _C_sub},
-            "Þ": {_T_proj: _T_fib},
+            "⊣": {_T_proj: _T_fib},
         },
         direction="specialize",
     ),
@@ -413,8 +413,8 @@ OPERATIONS: list[Op] = [
             "boundary X^{sing} is handled via excision and mixed Hodge structures."
         ),
         transitions={
-            "ƒ": {_F_approx: _F_exact, _F_voiced: _F_exact},
-            "Þ": {_T_fib: _T_smooth, _T_dense: _T_smooth},
+            "⋈": {_F_approx: _F_exact, _F_voiced: _F_exact},
+            "⊣": {_T_fib: _T_smooth, _T_dense: _T_smooth},
         },
         direction="restrict",
     ),
@@ -428,8 +428,8 @@ OPERATIONS: list[Op] = [
             "and every class is a rational multiple of the hyperplane class."
         ),
         transitions={
-            "Ð": {_D_open: _D_comp, _D_mid: _D_comp},
-            "Ħ": {_H_base: _H_graded, _H_inf: _H_graded},
+            "⊢": {_D_open: _D_comp, _D_mid: _D_comp},
+            "⊥": {_H_base: _H_graded, _H_inf: _H_graded},
         },
         direction="specialize",
     ),
@@ -443,8 +443,8 @@ OPERATIONS: list[Op] = [
             "the Hodge decomposition explicit for inductive arguments."
         ),
         transitions={
-            "Ħ": {_H_base: _H_iter},
-            "Ç": {_K_unif: _K_slow},
+            "⊥": {_H_base: _H_iter},
+            "⊤": {_K_unif: _K_slow},
         },
         direction="transform",
     ),
@@ -458,8 +458,8 @@ OPERATIONS: list[Op] = [
             "Constrains the stoichiometry of algebraic cycles."
         ),
         transitions={
-            "Φ": {_P_neut: _P_click, _P_weak: _P_click},
-            "Σ": {_STO_mix: _STO_nn},
+            "<": {_P_neut: _P_click, _P_weak: _P_click},
+            "⊞": {_STO_mix: _STO_nn},
         },
         direction="constrain",
     ),
@@ -472,8 +472,8 @@ OPERATIONS: list[Op] = [
             "Identifies what additional structure must be controlled to close the gap."
         ),
         transitions={
-            "Ħ": {_H_graded: _H_base},
-            "ɢ": {_G_sub: _G_alt, _G_and: _G_alt},
+            "⊥": {_H_graded: _H_base},
+            "∋": {_G_sub: _G_alt, _G_and: _G_alt},
             "⊙": {_C_round: _C_sharp, _C_sub: _C_sharp},
         },
         direction="generalize",

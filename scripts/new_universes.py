@@ -19,19 +19,19 @@ from imscrbgrmr.registry import load_catalog_dicts
 
 _T_HYBRID = {
     **_T_CANONICAL,    # dynamic: Φ, ƒ, Ç, Ħ, Ω
-    "Ð": ("𐑦", False),  # dimensionality holographic
-    "Þ": ("𐑸", False),  # topology fully connected
-    "Ř": ("𐑾", False),  # relation bilateral
+    "⊢": ("𐑦", False),  # dimensionality holographic
+    "⊣": ("𐑸", False),  # topology fully connected
+    ">": ("𐑾", False),  # relation bilateral
 }
 # T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (Ð,Þ,Ř)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
-    "Ð": ("𐑼", False),  # dimensionality: infinite-dim
-    "Þ": ("𐑶", False),  # topology: box product
-    "Ř": ("𐑽", False),  # relation: dagger
-    "Γ": ("𐑚", False),  # scope: mesoscale
-    "Σ": ("𐑕", False),  # stoichiometry: many identical
+    "⊢": ("𐑼", False),  # dimensionality: infinite-dim
+    "⊣": ("𐑶", False),  # topology: box product
+    ">": ("𐑽", False),  # relation: dagger
+    "∈": ("𐑚", False),  # scope: mesoscale
+    "⊞": ("𐑕", False),  # stoichiometry: many identical
 }
 # ── New universes (hand-crafted) ───────────────────────────────
 
@@ -45,9 +45,9 @@ NEW_RULESETS = [
                     "G2=⊙≥⊙ (self-modeling). G3=Ω≥𐑭 (integer winding). "
                     "In this universe, you must remember before you can model yourself. "
                     "Amnesiacs stay plain.",
-        g1=GateSpec("Ħ", 3.0),   # 𐑖 = 2-step Markov (ord 3)
+        g1=GateSpec("⊥", 3.0),   # 𐑖 = 2-step Markov (ord 3)
         g2=GateSpec("⊙", 2.0),   # ⊙ = self-modeling
-        g3=GateSpec("Ω", 3.0),   # 𐑭 = integer winding
+        g3=GateSpec("◻", 3.0),   # 𐑭 = integer winding
         gate_ordering=True,
     ),
 
@@ -59,8 +59,8 @@ NEW_RULESETS = [
                     "relation). G3=⊙≥⊙ (self-modeling seals). In this universe, topology "
                     "and relation precede criticality. Geometry is the precondition for "
                     "consciousness, not its product.",
-        g1=GateSpec("Þ", 5.0),   # 𐑸 = imscriptive closure (ord 5, max)
-        g2=GateSpec("Ř", 4.0),   # 𐑾 = bilateral (ord 4, max)
+        g1=GateSpec("⊣", 5.0),   # 𐑸 = imscriptive closure (ord 5, max)
+        g2=GateSpec(">", 4.0),   # 𐑾 = bilateral (ord 4, max)
         g3=GateSpec("⊙", 2.0),   # ⊙ = self-modeling
         gate_ordering=True,
     ),
@@ -73,9 +73,9 @@ NEW_RULESETS = [
                     "Local and mesoscale systems — however structured — remain plain. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, parochialism is a structural "
                     "barrier to closure.",
-        g1=GateSpec("Γ", 3.0),   # 𐑔 = aleph/maximal (ord 3, max)
+        g1=GateSpec("∈", 3.0),   # 𐑔 = aleph/maximal (ord 3, max)
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ),
 
@@ -87,9 +87,9 @@ NEW_RULESETS = [
                     "Frobenius closure — they lack sufficient degrees of freedom. "
                     "G2=⊙≥⊙. G3=Φ≥𐑹 (Frobenius-special parity). In this universe, "
                     "you need an infinite canvas before you can paint yourself.",
-        g1=GateSpec("Ð", 3.0),   # 𐑼 = infinite-dim (ord 3); 𐑦=holographic (ord 4) also passes
+        g1=GateSpec("⊢", 3.0),   # 𐑼 = infinite-dim (ord 3); 𐑦=holographic (ord 4) also passes
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Φ", 5.0),   # 𐑹 = Frobenius-special
+        g3=GateSpec("<", 5.0),   # 𐑹 = Frobenius-special
         gate_ordering=True,
     ),
 
@@ -102,9 +102,9 @@ NEW_RULESETS = [
                     "Only systems that move slowly enough to track themselves qualify. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, haste structurally precludes "
                     "closure.",
-        g1=GateSpec("Ç", 3.0),   # 𐑧 = slow (ord 3); 𐑤=trap-ordered (ord 4); 𐑘=MBL (ord 5) all pass
+        g1=GateSpec("⊤", 3.0),   # 𐑧 = slow (ord 3); 𐑤=trap-ordered (ord 4); 𐑘=MBL (ord 5) all pass
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ),
 
@@ -144,9 +144,9 @@ NEW_RULESETS = [
                     "lack the sequential structure necessary for self-reference. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭. In this universe, how you interact determines "
                     "whether you can close.",
-        g1=GateSpec("ɢ", 3.0),   # 𐑠 = sequential (ord 3); 𐑵 = broadcast (ord 4) passes
+        g1=GateSpec("∋", 3.0),   # 𐑠 = sequential (ord 3); 𐑵 = broadcast (ord 4) passes
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ),
 
@@ -169,9 +169,9 @@ NEW_RULESETS = [
                     "pass G1 are automatically idempotent_terminal — traced_monoidal "
                     "collapses. This universe reveals what the Frobenius gate alone "
                     "selects for, with no further filtering.",
-        g1=GateSpec("Φ", 5.0),   # 𐑹 = Frobenius-special
-        g2=GateSpec("Σ", 1.0),   # trivial — all pass
-        g3=GateSpec("Σ", 1.0),   # trivial — all pass
+        g1=GateSpec("<", 5.0),   # 𐑹 = Frobenius-special
+        g2=GateSpec("⊞", 1.0),   # trivial — all pass
+        g3=GateSpec("⊞", 1.0),   # trivial — all pass
         gate_ordering=True,
     ),
 
@@ -184,9 +184,9 @@ NEW_RULESETS = [
                     "G2=⊙≥⊙. G3=Φ≥𐑹. In this universe, only quantum-coherent systems "
                     "can achieve closure. Classical systems stay plain "
                     "regardless of their other primitives.",
-        g1=GateSpec("ƒ", 3.0),   # 𐑐 = quantum/hbar (ord 3, max)
+        g1=GateSpec("⋈", 3.0),   # 𐑐 = quantum/hbar (ord 3, max)
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Φ", 5.0),   # 𐑹 = Frobenius-special
+        g3=GateSpec("<", 5.0),   # 𐑹 = Frobenius-special
         gate_ordering=True,
     ),
 
@@ -199,9 +199,9 @@ NEW_RULESETS = [
                     "differentiation needed for self-reference. G2=⊙≥⊙. G3=Ω≥𐑭. "
                     "In this universe, you must be internally diverse before you can "
                     "model yourself.",
-        g1=GateSpec("Σ", 3.0),   # 𐑳 = many heterogeneous (ord 3, max)
+        g1=GateSpec("⊞", 3.0),   # 𐑳 = many heterogeneous (ord 3, max)
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ),
     # ── 22: absorption_democracy ───────────────────────────────
@@ -225,9 +225,9 @@ NEW_RULESETS = [
                     "becoming it. The monadic absorption empire.",
         absorption_rules=(
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("meet", "join", "tensor")),  # Σ n:m also totalitarian
-            AbsorptionRule("Φ", "𐑹", ("meet", "join", "tensor")),  # Frobenius parity absorbs
-            AbsorptionRule("Ω", "𐑭", ("meet", "join", "tensor")),  # integer winding absorbs
+            AbsorptionRule("⊞", "𐑳", ("meet", "join", "tensor")),  # Σ n:m also totalitarian
+            AbsorptionRule("<", "𐑹", ("meet", "join", "tensor")),  # Frobenius parity absorbs
+            AbsorptionRule("◻", "𐑭", ("meet", "join", "tensor")),  # integer winding absorbs
         ),
     ),
 
@@ -242,12 +242,12 @@ NEW_RULESETS = [
                     "every attempt at self-modeling gets absorbed by triviality.",
         absorption_rules=(
             AbsorptionRule("⊙", "𐑢", ("meet", "join", "tensor")),  # sub-critical absorbs
-            AbsorptionRule("Ω", "𐑷", ("meet", "join", "tensor")),  # trivial winding absorbs
-            AbsorptionRule("Σ", "𐑙", ("meet", "join", "tensor")),  # 1:1 stoichiometry absorbs
+            AbsorptionRule("◻", "𐑷", ("meet", "join", "tensor")),  # trivial winding absorbs
+            AbsorptionRule("⊞", "𐑙", ("meet", "join", "tensor")),  # 1:1 stoichiometry absorbs
         ),
-        g1=GateSpec("Φ", 5.0),
+        g1=GateSpec("<", 5.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     # ── 25: absorption_tensor_only ────────────────────────────
@@ -261,7 +261,7 @@ NEW_RULESETS = [
                     "without collapsing.",
         absorption_rules=(
             AbsorptionRule("⊙", "⊙", ("tensor",)),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
     ),
 
@@ -275,13 +275,13 @@ NEW_RULESETS = [
                     "Forgetfulness is structurally precluded. G1=Ħ≥𐑖. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
-            AbsorptionRule("Ħ", "𐑫", ("meet", "join", "tensor")),
+            AbsorptionRule("⊥", "𐑫", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
-        g1=GateSpec("Ħ", 3.0),
+        g1=GateSpec("⊥", 3.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     # ── 27: absorption_scope_empire ───────────────────────────
@@ -293,13 +293,13 @@ NEW_RULESETS = [
                     "universality. In this universe, you cannot be parochial — "
                     "the universal swallows the particular.",
         absorption_rules=(
-            AbsorptionRule("Γ", "𐑔", ("meet", "join", "tensor")),
+            AbsorptionRule("∈", "𐑔", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
-        g1=GateSpec("Γ", 3.0),
+        g1=GateSpec("∈", 3.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     # ── 28: absorption_topology_seal ──────────────────────────
@@ -311,13 +311,13 @@ NEW_RULESETS = [
                     "connected structure absorbs everything it touches. "
                     "G1=Þ≥𐑸. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
-            AbsorptionRule("Þ", "𐑸", ("meet", "join", "tensor")),
+            AbsorptionRule("⊣", "𐑸", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
-        g1=GateSpec("Þ", 5.0),
+        g1=GateSpec("⊣", 5.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     # ── 29: predator_universe ─────────────────────────────────
@@ -332,13 +332,13 @@ NEW_RULESETS = [
                     "structural: what you do to others is not what others do to you. "
                     "G1=Φ≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
-            AbsorptionRule("Φ", "𐑹", ("tensor",), direction="left"),
+            AbsorptionRule("<", "𐑹", ("tensor",), direction="left"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
-        g1=GateSpec("Φ", 5.0),
+        g1=GateSpec("<", 5.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     # ── 30: prey_universe ─────────────────────────────────────
@@ -351,13 +351,13 @@ NEW_RULESETS = [
                     "dual of predator_universe: passivity is the structural power. "
                     "G1=Φ≥𐑹. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
-            AbsorptionRule("Φ", "𐑹", ("tensor",), direction="right"),
+            AbsorptionRule("<", "𐑹", ("tensor",), direction="right"),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-            AbsorptionRule("Σ", "𐑳", ("tensor",)),
+            AbsorptionRule("⊞", "𐑳", ("tensor",)),
         ),
-        g1=GateSpec("Φ", 5.0),
+        g1=GateSpec("<", 5.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 ]
 
@@ -636,7 +636,7 @@ def iter_rulesets(
     """
     # Resolve gate configs
     if gates == "canonical":
-        gate_list = [(GateSpec("Φ", 5.0), GateSpec("⊙", 2.0), GateSpec("Ω", 3.0), True)]
+        gate_list = [(GateSpec("<", 5.0), GateSpec("⊙", 2.0), GateSpec("◻", 3.0), True)]
     elif gates == "all":
         # Limit to avoid explosion: top 2 ordinals per prim, no duplicate prims
         gate_list = list(iter_gate_configs(max_per_prim=2, allow_duplicate_primitives=False))

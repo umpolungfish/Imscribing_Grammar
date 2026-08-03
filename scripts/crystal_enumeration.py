@@ -29,18 +29,18 @@ ROOT = Path(__file__).parent
 
 # ── Canonical primitive value sets (from space_search/primitives.py) ───────────
 VALUES = {
-    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
-    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-    "ƒ":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
-    "Ç":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù"],
-    "Γ":     ["𐑚", "𐑔", "𐑲"],
-    "ɢ": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
+    "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "⋈":     ["ƒ^ì", "ƒ^ð", "ƒ^ż"],
+    "⊤":     ["Ç^-", "Ç^W", "Ç^@", "Ç^Ù"],
+    "∈":     ["𐑚", "𐑔", "𐑲"],
+    "∋": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
-    "Σ":     ["𐑙", "𐑕", "𐑳"],
-    "Ω": ["𐑷", "𐑴", "𐑭"],
+    "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "⊞":     ["𐑙", "𐑕", "𐑳"],
+    "◻": ["𐑷", "𐑴", "𐑭"],
 }
 
 PRIMS = list(VALUES.keys())
@@ -75,7 +75,7 @@ print(f"Total types: {total:,}")
 # Remaining 8 primitives (T, R, F, K, G, Gamma, H, S) are free within each tier cell.
 
 free_count = 1
-for p in ["Þ", "Ř", "ƒ", "Ç", "Γ", "ɢ", "Ħ", "Σ"]:
+for p in ["⊣", ">", "⋈", "⊤", "∈", "∋", "⊥", "⊞"]:
     free_count *= len(VALUES[p])
 # free_count = 5*4*3*4*3*4*4*3 = 17,280
 
@@ -83,9 +83,9 @@ tier_counts = defaultdict(int)
 tier_cells  = defaultdict(list)          # (Phi, P, Omega, D) cells per tier
 
 for phi in VALUES["⊙"]:
-    for p in VALUES["Φ"]:
-        for omega in VALUES["Ω"]:
-            for d in VALUES["Ð"]:
+    for p in VALUES["<"]:
+        for omega in VALUES["◻"]:
+            for d in VALUES["⊢"]:
                 t = tier(phi, p, omega, d)
                 tier_counts[t] += free_count
                 tier_cells[t].append((phi, p, omega, d))
@@ -106,7 +106,7 @@ print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×Γ�
 # Block  = ouroboricity tier
 
 print("\n\nPERIODIC TABLE STRUCTURE  (Period=Φ × Group=Ω, counting (Φ,P,Ω,D) tier cells)\n")
-header = f"{'Φ':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
+header = f"{'<':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
 print(header)
 print("─" * len(header))
 
@@ -121,10 +121,10 @@ PERIOD_LABEL = {
 for phi in VALUES["⊙"]:
     row = {}
     dom = defaultdict(int)
-    for omega in VALUES["Ω"]:
+    for omega in VALUES["◻"]:
         cell_types = defaultdict(int)
-        for p in VALUES["Φ"]:
-            for d in VALUES["Ð"]:
+        for p in VALUES["<"]:
+            for d in VALUES["⊢"]:
                 t = tier(phi, p, omega, d)
                 cell_types[t] += 1
                 dom[t] += 1
@@ -145,7 +145,7 @@ print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙ and 𐑮)\
 print(f"{'P value':12s}  {'𐑷 → tier':16s}  {'Ω≠0, D_bnd → tier':22s}  {'Ω≠0, D_∞ → tier':20s}")
 print("─" * 75)
 
-for p in VALUES["Φ"]:
+for p in VALUES["<"]:
     t_o1    = tier("⊙", p, "𐑷",  "𐑛")
     t_o2    = tier("⊙", p, "𐑴", "𐑛")
     t_o2d   = tier("⊙", p, "𐑴", "𐑼")
@@ -163,9 +163,9 @@ with open(ROOT / "IG_catalog.json") as f:
 catalog_by_tier = defaultdict(list)
 for entry in catalog:
     phi   = entry.get("⊙", "𐑢")
-    p     = entry.get("Φ", "𐑗")
-    omega = entry.get("Ω", "𐑷")
-    d     = entry.get("Ð", "𐑛")
+    p     = entry.get("<", "𐑗")
+    omega = entry.get("◻", "𐑷")
+    d     = entry.get("⊢", "𐑛")
     t     = tier(phi, p, omega, d)
     catalog_by_tier[t].append(entry["name"])
 
@@ -183,14 +183,14 @@ print(f"\n  Total catalog: {len(catalog)} entries")
 # ── The 8-primitive inner crystal (free primitives within each tier cell) ──────
 print("\n\nINNER CRYSTAL — 8 free primitives (T, R, F, K, G, Γ, H, S)\n")
 inner_combos = {
-    "Þ":     5,
-    "Ř":     4,
-    "ƒ":     3,
-    "Ç":     4,
-    "Γ":     3,
-    "ɢ": 4,
-    "Ħ":     4,
-    "Σ":     3,
+    "⊣":     5,
+    ">":     4,
+    "⋈":     3,
+    "⊤":     4,
+    "∈":     3,
+    "∋": 4,
+    "⊥":     4,
+    "⊞":     3,
 }
 print("  These 8 primitives vary freely within each tier cell:")
 running = 1

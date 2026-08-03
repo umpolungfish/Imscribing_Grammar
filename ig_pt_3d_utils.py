@@ -38,18 +38,18 @@ ICO_EDGES = [
 # Primitive → icosahedron vertex index
 # Populated primitives on front hemisphere; empty arms (Ω Ř Γ ƒ) pushed back.
 PRIM_VERT = {
-    'Ħ':  0,   # front-top        — d/f-block + H, most elements
-    'ɢ':  1,   # front-bottom     — alkali metals
+    '⊥':  0,   # front-top        — d/f-block + H, most elements
+    '∋':  1,   # front-bottom     — alkali metals
     '⊙':  4,   # right-top        — noble gases + actinides
-    'Σ':  5,   # left-top         — alkaline earths + group 15
-    'Ç':  8,   # right-front      — halogens + Pt/Au
-    'Φ':  9,   # left-front       — group 16
-    'Ð':  6,   # right-bottom     — group 13
-    'Þ':  7,   # left-bottom      — group 14
-    'Ω': 10,   # right-back       — empty
-    'Ř': 11,   # left-back        — empty
-    'Γ':  2,   # back-top         — empty
-    'ƒ':  3,   # back-bottom      — empty
+    '⊞':  5,   # left-top         — alkaline earths + group 15
+    '⊤':  8,   # right-front      — halogens + Pt/Au
+    '<':  9,   # left-front       — group 16
+    '⊢':  6,   # right-bottom     — group 13
+    '⊣':  7,   # left-bottom      — group 14
+    '◻': 10,   # right-back       — empty
+    '>': 11,   # left-back        — empty
+    '∈':  2,   # back-top         — empty
+    '⋈':  3,   # back-bottom      — empty
 }
 VERT_PRIM = {v: p for p, v in PRIM_VERT.items()}
 
@@ -101,9 +101,9 @@ CLUST_SPC  = 0.22    # cluster node spacing in 3D space
 def ico_element_positions():
     groups = defaultdict(list)
     for sym, (Z, per, col, blk) in ELEMENTS.items():
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         if prim not in PRIM_VERT:
-            prim = 'Ħ'
+            prim = '⊥'
         groups[(prim, per)].append((Z, sym))
 
     pos3d = {}

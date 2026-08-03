@@ -16,9 +16,9 @@ from space_search.primitives import ORDINALS, WEIGHTS, resolve_ordinal_key
 
 PNAMES = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
 FIELD_TO_ORD = {
-    "D":"Ð", "T":"Þ", "R":"Ř", "P":"Φ", "F":"ƒ",
-    "K":"Ç", "G":"Γ", "Gm":"ɢ", "Ph":"⊙", "H":"Ħ",
-    "S":"Σ", "W":"Ω"
+    "D":"⊢", "T":"⊣", "R":">", "P":"<", "F":"⋈",
+    "K":"⊤", "G":"∈", "Gm":"ɢ", "Ph":"⊙", "H":"⊥",
+    "S":"⊞", "W":"◻"
 }
 
 def g2v(p, r):
@@ -74,7 +74,7 @@ print(f"Rebis tuple: {rebis_t}")
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
 # Primitive keys in catalog: Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
-CAT_KEYS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']
+CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
 DESIGNS = [

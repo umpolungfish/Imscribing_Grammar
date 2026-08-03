@@ -873,14 +873,14 @@ class Imscription:
         # cannot decide. NO coordinate-level check is enforced here, because every
         # coordinate form is falsified — twice over:
         #
-        #   Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ Ç=𐑧,
+        #   Self-application. The correct formulation of A imscribes with ⊥=𐑫 ∧ ⊤=𐑧,
         #   the exact pair old-A forbade. The correct formulation of D imscribes with
-        #   Ð=𐑛 ∧ Ω=𐑟 (old-D required Ð=𐑦) and Þ=𐑸 at Ð=𐑛 (violating one-way C).
+        #   ⊢=𐑛 ∧ Ω=𐑟 (old-D required ⊢=𐑦) and ⊣=𐑸 at ⊢=𐑛 (violating one-way C).
         #   Each correct formulation violates the coordinate form of its own axiom.
         #
         #   Catalog. Every shadow has counterexamples across multiple dimensionalities,
         #   including genuine non-Abelian anyons and SIC existence entries carrying
-        #   Ω=𐑟 without Ð=𐑦.
+        #   Ω=𐑟 without ⊢=𐑦.
         #
         # Enforcing any of them refuses to construct legal tuples. The closure test
         # belongs to the protocol layer, where δ/μ can actually be run: see
@@ -964,18 +964,18 @@ class Imscription:
         return {
             "name":          self.name,
             "description":   self.description,
-            "Ð":             self._canon(self.dimensionality.value),
-            "Þ":             self._canon(self.topology.value),
-            "Ř":             self._canon(self.recognition_mode.value),
-            "Φ":             self._canon(self.polarity.value),
-            "ƒ":             self._canon(self.fidelity.value),
-            "Ç":             self._canon(self.kinetic_character.value),
-            "Γ":             self._canon(self.granularity.value),
-            "ɢ":             self._canon(self.grammar.value),
+            "⊢":             self._canon(self.dimensionality.value),
+            "⊣":             self._canon(self.topology.value),
+            ">":             self._canon(self.recognition_mode.value),
+            "<":             self._canon(self.polarity.value),
+            "⋈":             self._canon(self.fidelity.value),
+            "⊤":             self._canon(self.kinetic_character.value),
+            "∈":             self._canon(self.granularity.value),
+            "∋":             self._canon(self.grammar.value),
             "⊙":             self._canon(self.criticality_phase.value),
-            "Ω":             self._canon(self.protection.value),
-            "Σ":             self._canon(self.stoichiometry.value),
-            "Ħ":             self._canon(self.chirality.value),
+            "◻":             self._canon(self.protection.value),
+            "⊞":             self._canon(self.stoichiometry.value),
+            "⊥":             self._canon(self.chirality.value),
             "grounding":     self.grounding,
             "is_grounded":   self.is_grounded,
             "metadata":      self.metadata,
@@ -986,13 +986,24 @@ class Imscription:
         """
         Construct a Imscription from a catalog dict (new or legacy format).
 
-        Accepts glyph keys (Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω), short ASCII keys
+        Accepts glyph keys (⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻), the retired glyph
+        keys (Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω), short ASCII keys
         (D, T, R, P, F, K, G, Gamma, Phi, Omega, S, H), and long Python field names.
         Parses all primitive fields via from_symbol() for backward compatibility.
+
+        This is the one seam every consumer goes through, so a catalog written
+        before the alphabet moved still loads here rather than in twelve places.
+        Values did not move, only keys, and ⊙ did not move at all.
         """
+        # retired key -> current key, for entries written before the alphabet moved
+        _RETIRED = {"⊢": "⊢", "⊣": "⊣", ">": ">", "<": "<", "⋈": "⋈", "⊤": "⊤",
+                    "∈": "∈", "∋": "∋", "⊥": "⊥", "⊞": "⊞", "◻": "◻"}
+
         def _get(glyph: str, short: str, long: str, default: str) -> str:
             # Prefer glyph key (catalog format), then long Python name, then short ASCII
             v = d.get(glyph) or d.get(long) or d.get(short)
+            if v is None and glyph in _RETIRED:
+                v = d.get(_RETIRED[glyph])
             if v is None:
                 return default
             # Handle old compound interaction_grammar dict: {"operator": "ɢ_and", "tier": "SELECTIVE"}
@@ -1008,18 +1019,18 @@ class Imscription:
         try:
             result = cls(
                 name             = d["name"],
-                dimensionality   = Dimensionality.from_symbol(_get("Ð", "D", "dimensionality", "𐑛")),
-                topology         = Topology.from_symbol(_get("Þ", "T", "topology", "𐑡")),
-                recognition_mode = Recognition.from_symbol(_get("Ř", "R", "recognition_mode", "𐑩")),
-                polarity         = Polarity.from_symbol(_get("Φ", "P", "polarity", "𐑗")),
-                grammar          = Grammar.from_symbol(_get("ɢ", "Gamma", "grammar", "𐑝")),
-                fidelity         = Fidelity.from_symbol(_get("ƒ", "F", "fidelity", "𐑱")),
-                kinetic_character= KineticChar.from_symbol(_get("Ç", "K", "kinetic_character", "𐑤")),
-                granularity      = Granularity.from_symbol(_get("Γ", "G", "granularity", "𐑚")),
+                dimensionality   = Dimensionality.from_symbol(_get("⊢", "D", "dimensionality", "𐑛")),
+                topology         = Topology.from_symbol(_get("⊣", "T", "topology", "𐑡")),
+                recognition_mode = Recognition.from_symbol(_get(">", "R", "recognition_mode", "𐑩")),
+                polarity         = Polarity.from_symbol(_get("<", "P", "polarity", "𐑗")),
+                grammar          = Grammar.from_symbol(_get("∋", "Gamma", "grammar", "𐑝")),
+                fidelity         = Fidelity.from_symbol(_get("⋈", "F", "fidelity", "𐑱")),
+                kinetic_character= KineticChar.from_symbol(_get("⊤", "K", "kinetic_character", "𐑤")),
+                granularity      = Granularity.from_symbol(_get("∈", "G", "granularity", "𐑚")),
                 criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "𐑢")),
-                protection       = Protection.from_symbol(_get("Ω", "Omega", "protection", "𐑷")),
-                stoichiometry    = Stoichiometry.from_symbol(_get("Σ", "S", "stoichiometry", "n:m")),
-                chirality        = Chirality.from_symbol(_get("Ħ", "H", "chirality", "𐑓")),
+                protection       = Protection.from_symbol(_get("◻", "Omega", "protection", "𐑷")),
+                stoichiometry    = Stoichiometry.from_symbol(_get("⊞", "S", "stoichiometry", "n:m")),
+                chirality        = Chirality.from_symbol(_get("⊥", "H", "chirality", "𐑓")),
                 description      = d.get("description", ""),
                 metadata         = d.get("metadata", {}),
                 grounding        = d.get("grounding"),

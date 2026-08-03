@@ -397,9 +397,9 @@ def _primitive_diff_labels(a: Imscription, b: Imscription) -> List[str]:
         ("F",  a.fidelity,           b.fidelity),
         ("K",  a.kinetic_character,  b.kinetic_character),
         ("G",  a.granularity,        b.granularity),
-        ("Γ",  a.interaction_grammar,b.interaction_grammar),
-        ("Φ",  a.criticality_phase,  b.criticality_phase),
-        ("Ω",  a.topo_index,         b.topo_index),
+        ("∈",  a.interaction_grammar,b.interaction_grammar),
+        ("<",  a.criticality_phase,  b.criticality_phase),
+        ("◻",  a.topo_index,         b.topo_index),
     ]
     for label, va, vb in checks:
         if va != vb:

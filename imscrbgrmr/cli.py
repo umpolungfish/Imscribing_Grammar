@@ -213,7 +213,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
     Use --source global to list the legacy in-memory global_catalog instead.
     Use -n 0 to show all entries (slow for large catalogs).
     """
-    PRIM_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+    PRIM_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
@@ -258,7 +258,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
 
         for entry in page:
             name = entry.get("name", "?")
-            d_val = entry.get("Ð", "?")
+            d_val = entry.get("⊢", "?")
             vals = [entry.get(p, "?") for p in PRIM_ORDER]
             notation = "⟨" + "".join(vals) + "⟩"
             table.add_row(name, notation, d_val)
@@ -745,20 +745,20 @@ def thermo(identifier: str, delta_g: Optional[float], temp: float):
 # =============================================================================
 
 _PRIM_ATTR = {
-    "Ð": lambda s: s.dimensionality.value,
-    "Þ": lambda s: s.topology.value,
-    "Ř": lambda s: s.recognition_mode.value,
-    "Φ": lambda s: s.polarity.value,
-    "ƒ": lambda s: s.fidelity.value,
-    "Ç": lambda s: s.kinetic_character.value,
-    "Γ": lambda s: s.granularity.value,
-    "ɢ": lambda s: s.grammar.value,
+    "⊢": lambda s: s.dimensionality.value,
+    "⊣": lambda s: s.topology.value,
+    ">": lambda s: s.recognition_mode.value,
+    "<": lambda s: s.polarity.value,
+    "⋈": lambda s: s.fidelity.value,
+    "⊤": lambda s: s.kinetic_character.value,
+    "∈": lambda s: s.granularity.value,
+    "∋": lambda s: s.grammar.value,
     "⊙": lambda s: s.criticality_phase.value,
-    "Ħ": lambda s: s.chirality.value,
-    "Σ": lambda s: s.stoichiometry.value,
-    "Ω": lambda s: s.protection.value,
+    "⊥": lambda s: s.chirality.value,
+    "⊞": lambda s: s.stoichiometry.value,
+    "◻": lambda s: s.protection.value,
 }
-_PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+_PRIMITIVE_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:
@@ -1698,7 +1698,7 @@ def rebuild_index(force: bool):
 
     detector = CrossDomainAnalogyDetector()
     covered = set(detector.PRIMITIVE_WEIGHTS.keys())
-    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "Γ", "Φ", "H", "S", "Ω"}
+    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "∈", "<", "H", "S", "◻"}
     missing = all_primitives - covered
 
     console.print(f"[cyan]Analogy engine primitive coverage check[/cyan]")
@@ -4772,11 +4772,11 @@ def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
         ("F", result.fidelity),
         ("K", result.kinetic_character),
         ("G", result.granularity),
-        ("Γ", result.grammar),
-        ("Φ", result.criticality_phase),
+        ("∈", result.grammar),
+        ("<", result.criticality_phase),
         ("H", result.chirality),
         ("S", result.stoichiometry),
-        ("Ω", result.protection),
+        ("◻", result.protection),
     ]
     for prim, val in rows:
         click.echo(f"    {prim:4s} {_v(val)}")
@@ -4880,8 +4880,8 @@ def lift(imscription_name: str, target: str, strength: float, format: str):
         ("F", s.fidelity, s2.fidelity),
         ("K", s.kinetic_character, s2.kinetic_character),
         ("G", s.granularity, s2.granularity),
-        ("Γ", s.interaction_grammar, s2.interaction_grammar),
-        ("Φ", s.criticality_phase, s2.criticality_phase),
+        ("∈", s.interaction_grammar, s2.interaction_grammar),
+        ("<", s.criticality_phase, s2.criticality_phase),
     ]
     click.echo("  Primitive changes:")
     any_change = False

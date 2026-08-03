@@ -27,7 +27,7 @@ from imscrbgrmr.canonical_primitives import (
     PRIMITIVE_ORDER, CANONICAL_VALUES, ORDINALS, WEIGHTS, CrystalAddress
 )
 
-PRIM_KEYS: List[str] = PRIMITIVE_ORDER  # ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]
+PRIM_KEYS: List[str] = PRIMITIVE_ORDER  # ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
 
 # ── Cardinality per primitive ──────────────────────────────────
 CARDINALITY: Dict[str, int] = {p: len(vals) for p, vals in CANONICAL_VALUES.items()}
@@ -182,7 +182,7 @@ def encode_absorbing(entry: dict,
 
 CANONICAL_ABSORPTION: Tuple[AbsorptionRule, ...] = (
     AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-    AbsorptionRule("Σ", "𐑳", ("tensor",)),
+    AbsorptionRule("⊞", "𐑳", ("tensor",)),
 )
 
 # ═══════════════════════════════════════════════════════════════
@@ -443,7 +443,7 @@ def detect_absorbing_signatures(entries: List[dict]) -> Dict:
     """
     absorbing_mask = {
         "⊙": "⊙",
-        "Σ": "𐑳",
+        "⊞": "𐑳",
     }
     
     results = {
@@ -456,7 +456,7 @@ def detect_absorbing_signatures(entries: List[dict]) -> Dict:
     for e in entries:
         name = e.get("name", "?")
         has_phi = e.get("⊙") == absorbing_mask["⊙"]
-        has_sigma = e.get("Σ") == absorbing_mask["Σ"]
+        has_sigma = e.get("⊞") == absorbing_mask["⊞"]
         
         if has_phi and has_sigma:
             results["both"].append(name)
@@ -514,35 +514,35 @@ def ensemble_to_matrix(entries: List[dict],
 # ═══════════════════════════════════════════════════════════════
 
 IG_TO_SHAVIAN: Dict[str, Dict[str, str]] = {
-    "Ð": {
+    "⊢": {
         "𐑦": "𐑦", "𐑛": "𐑨", "𐑨": "𐑼", "𐑼": "𐑛",
         "D_odot": "𐑦", "D_infty": "𐑨", "D_triangle": "𐑼", "D_wedge": "𐑛",
     },
-    "Þ": {
+    "⊣": {
         "𐑸": "𐑸", "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶",
         "T_odot": "𐑸", "T_net": "𐑡", "T_in": "𐑰", "T_bowtie": "𐑥", "T_boxtimes": "𐑶",
     },
-    "Ř": {
+    ">": {
         "𐑽": "𐑩", "𐑩": "𐑑", "𐑑": "𐑽", "𐑾": "𐑾",
         "R_super": "𐑩", "R_cat": "𐑑", "R_dagger": "𐑽", "R_lr": "𐑾",
     },
-    "Φ": {
+    "<": {
         "𐑿": "𐑗", "𐑬": "𐑿", "𐑯": "𐑬", "𐑹": "𐑯", "𐑗": "𐑹",
         "P_asym": "𐑗", "P_psi": "𐑿", "P_pm": "𐑬", "P_sym": "𐑯", "P_pm_sym": "𐑹",
     },
-    "ƒ": {
+    "⋈": {
         "𐑱": "𐑱", "𐑞": "𐑞", "𐑐": "𐑐",
         "F_ell": "𐑱", "F_eth": "𐑞", "F_hbar": "𐑐",
     },
-    "Ç": {
+    "⊤": {
         "𐑘": "𐑺", "𐑤": "𐑪", "𐑧": "𐑧", "𐑪": "𐑤", "𐑺": "𐑘",
         "K_fast": "𐑺", "K_mod": "𐑪", "K_slow": "𐑧", "K_trap": "𐑤", "K_MBL": "𐑘",
     },
-    "Γ": {
+    "∈": {
         "𐑔": "𐑲", "𐑚": "𐑚", "𐑲": "𐑔",
         "G_beth": "𐑲", "G_gimel": "𐑚", "G_aleph": "𐑔",
     },
-    "ɢ": {
+    "∋": {
         "𐑵": "𐑝", "𐑝": "𐑜", "𐑜": "𐑠", "𐑠": "𐑵",
         "Gamma_and": "𐑝", "Gamma_or": "𐑜", "Gamma_seq": "𐑠", "Gamma_broad": "𐑵",
     },
@@ -550,15 +550,15 @@ IG_TO_SHAVIAN: Dict[str, Dict[str, str]] = {
         "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
         "⊙": "⊙", "𐑢": "𐑢", "𐑮": "𐑮", "𐑻": "𐑻", "Phi_super": "𐑣",
     },
-    "Ħ": {
+    "⊥": {
         "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
         "H0": "𐑓", "H1": "𐑒", "H2": "𐑖", "H_inf": "𐑫",
     },
-    "Σ": {
+    "⊞": {
         "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
         "S_1_1": "𐑙", "S_n_n": "𐑕", "S_n_m": "𐑳",
     },
-    "Ω": {
+    "◻": {
         "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
         "Omega_0": "𐑷", "Omega_Z2": "𐑴", "Omega_Z": "𐑭", "Omega_NA": "𐑟",
     },

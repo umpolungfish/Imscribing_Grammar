@@ -44,7 +44,7 @@ from imscrbgrmr.provider_config import build_agent_config
 @dataclass
 class Intervention:
     """A single recommended experimental intervention."""
-    primitive: str          # "ƒ", "Γ", "Þ", …
+    primitive: str          # "⋈", "∈", "⊣", …
     primitive_name: str     # human-readable
     current_value: str
     suggested_change: str   # e.g. "upgrade ƒ^ð → ƒ^ż"
@@ -340,7 +340,7 @@ Return ONLY a JSON object:
   "summary": "<2–3 sentence overview of what drives ξ_CP for this system>",
   "recommendations": [
     {{
-      "primitive": "ƒ",
+      "primitive": "⋈",
       "primitive_name": "Fidelity",
       "current_value": "MEDIUM",
       "suggested_change": "upgrade ƒ^ð → ƒ^ż via electron-withdrawing substituents",
@@ -391,14 +391,14 @@ Return ONLY a JSON object:
     def _fallback_recommendations(self, jacobian: PrimitiveJacobian, fault_report: Dict):
         """Generate rule-based fallback when LLM is unavailable."""
         STRATEGIES = {
-            "ƒ": "Strengthen H-bond donors/acceptors; add electron-withdrawing substituents to raise fidelity.",
-            "Γ": "Use template-directed assembly or concentration effects to tune mesoscale ordering.",
-            "Þ": "Explore macrocyclisation or ring-closing conditions to alter topology.",
-            "Ç": "Adjust temperature or add competing kinetic pathways to modify barrier heights.",
-            "Ř": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
-            "Ð": "Vary solvent system or co-crystal partner to shift domain character.",
-            "Φ": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
-            "Φ": "Tune proximity to critical point via concentration or temperature ramp.",
+            "⋈": "Strengthen H-bond donors/acceptors; add electron-withdrawing substituents to raise fidelity.",
+            "∈": "Use template-directed assembly or concentration effects to tune mesoscale ordering.",
+            "⊣": "Explore macrocyclisation or ring-closing conditions to alter topology.",
+            "⊤": "Adjust temperature or add competing kinetic pathways to modify barrier heights.",
+            ">": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
+            "⊢": "Vary solvent system or co-crystal partner to shift domain character.",
+            "<": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
+            "<": "Tune proximity to critical point via concentration or temperature ramp.",
         }
         recs = []
         for r in jacobian.results[:5]:

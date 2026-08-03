@@ -26,7 +26,7 @@ def from_idx(n):
     if n == 99: return CRIT
     return SH[max(0, min(47, n))]
 
-PRIMS = ['Ř','Ħ','Ω','Ð','Σ','Φ','Ç','ƒ','ɢ','Γ','Þ','⊙']
+PRIMS = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
 
 def word(t):
     return ''.join(t[p] for p in PRIMS)
@@ -55,8 +55,8 @@ def valence(sym):
         return 0
     Z, period, col, block, _ = ELEMENTS[sym]
     t = derive_tuple(sym)
-    phi = get(t, 'Φ')
-    sig = get(t, 'Σ')
+    phi = get(t, '<')
+    sig = get(t, '⊞')
 
     # Closed shell (Φ=𐑯=31)
     if phi == 31:
@@ -126,8 +126,8 @@ def bond_type(sym_A, sym_B):
 
     tA = derive_tuple(sym_A)
     tB = derive_tuple(sym_B)
-    gA = get(tA, 'ɢ')     # 13=metallic/coord, 16=ionic/covalent
-    gB = get(tB, 'ɢ')
+    gA = get(tA, '∋')     # 13=metallic/coord, 16=ionic/covalent
+    gB = get(tB, '∋')
 
     # Both d-block metals → metallic
     if blkA == 'd' and blkB == 'd':
@@ -175,8 +175,8 @@ def bond_type(sym_A, sym_B):
 
     # Both p-block non-metals → covalent (or polar covalent)
     if blkA == 'p' and blkB == 'p':
-        phiA = get(tA, 'Φ')
-        phiB = get(tB, 'Φ')
+        phiA = get(tA, '<')
+        phiB = get(tB, '<')
         # Both closed-shell (noble) → no reaction
         if phiA == 31 and phiB == 31:
             return 'none'
@@ -217,16 +217,16 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     tT = derive_tuple(terminal)
 
     # ── Ř: max → reactive character of the compound
-    R = max(get(tA, 'Ř'), get(tB, 'Ř'))
+    R = max(get(tA, '>'), get(tB, '>'))
 
     # ── Ħ: max → SOC of most complex component
-    H = max(get(tA, 'Ħ'), get(tB, 'Ħ'))
+    H = max(get(tA, '⊥'), get(tB, '⊥'))
 
     # ── Ω: max → bonding adds winding; keep max of reactants
-    Om = max(get(tA, 'Ω'), get(tB, 'Ω'))
+    Om = max(get(tA, '◻'), get(tB, '◻'))
 
     # ── Ð: max → dimensionality of more complex atom dominates
-    D = max(get(tA, 'Ð'), get(tB, 'Ð'))
+    D = max(get(tA, '⊢'), get(tB, '⊢'))
 
     # ── Σ: molecular stoichiometric class
     if btype in ('covalent', 'polar_covalent'):
@@ -251,7 +251,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
         Ph = 31    # fully saturated, no lone pairs → Φ=𐑯 (closed)
 
     # ── Ç: max kinetics of components
-    C = max(get(tA, 'Ç'), get(tB, 'Ç'))
+    C = max(get(tA, '⊤'), get(tB, '⊤'))
 
     # ── ƒ: universally 0
     f = 0
@@ -264,10 +264,10 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     elif btype == 'ionic':
         g = 13     # ionic lattice — metallic coupling in crystal
     else:          # coordinate
-        g = min(get(tA, 'ɢ'), get(tB, 'ɢ'))
+        g = min(get(tA, '∋'), get(tB, '∋'))
 
     # ── Γ: max granularity (isotope complexity)
-    G = max(get(tA, 'Γ'), get(tB, 'Γ'))
+    G = max(get(tA, '∈'), get(tB, '∈'))
 
     # ── Þ: molecular topology from central atom geometry
     central_valence = valence(central)
@@ -284,7 +284,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     elif btype in ('metallic', 'coordinate'):
         T = 32     # metallic/octahedral: d-orbital topology
     else:
-        T = get(tC, 'Þ')  # default: central atom's own topology
+        T = get(tC, '⊣')  # default: central atom's own topology
 
     # ── ⊙: Frobenius gate
     # If Φ_product = 𐑯 (31) → μ∘δ=id fires → ⊙=⊙ (self-referential criticality)
@@ -300,17 +300,17 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
                             get(tB, '⊙') if tB['⊙'] != CRIT else 0))
 
     return {
-        'Ř': from_idx(R),
-        'Ħ': from_idx(H),
-        'Ω': from_idx(Om),
-        'Ð': from_idx(D),
-        'Σ': from_idx(Sig),
-        'Φ': from_idx(Ph),
-        'Ç': from_idx(C),
-        'ƒ': from_idx(f),
-        'ɢ': from_idx(g),
-        'Γ': from_idx(G),
-        'Þ': from_idx(T),
+        '>': from_idx(R),
+        '⊥': from_idx(H),
+        '◻': from_idx(Om),
+        '⊢': from_idx(D),
+        '⊞': from_idx(Sig),
+        '<': from_idx(Ph),
+        '⊤': from_idx(C),
+        '⋈': from_idx(f),
+        '∋': from_idx(g),
+        '∈': from_idx(G),
+        '⊣': from_idx(T),
         '⊙': crit,
     }
 
@@ -350,8 +350,8 @@ def react(sym_A, sym_B, override_n_A=None, override_n_B=None):
     vB = valence(sym_B)
 
     # Φ-drive: check if reaction is favored
-    phiA = get(tA, 'Φ')
-    phiB = get(tB, 'Φ')
+    phiA = get(tA, '<')
+    phiB = get(tB, '<')
 
     if vA == 0 or vB == 0:
         return {'error': f'{sym_A if vA==0 else sym_B} is inert (Φ=closed, v=0)'}
@@ -384,7 +384,7 @@ def react(sym_A, sym_B, override_n_A=None, override_n_B=None):
     prod = fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype)
     mol  = formula(sym_A, n_A, sym_B, n_B)
 
-    frob_closed = prod['Φ'] in (from_idx(31), from_idx(7))
+    frob_closed = prod['<'] in (from_idx(31), from_idx(7))
 
     # Opcode-level justification
     justification = _justify(sym_A, sym_B, n_A, n_B, tA, tB, prod, btype, vA, vB)
@@ -411,14 +411,14 @@ def _justify(sA, sB, nA, nB, tA, tB, prod, btype, vA, vB):
     lines.append(f'Reaction: {nA}{sA} + {nB}{sB} → {formula(sA, nA, sB, nB)}')
     lines.append(f'Bond: {btype}')
     lines.append(f'Stoichiometry from valence: {sA}(v={vA}) × {sB}(v={vB}) → {nA}:{nB}')
-    lines.append(f'  Σ derivation: v({sA})={vA} from Φ={tA["Φ"]}+Σ={tA["Σ"]}; '
-                 f'v({sB})={vB} from Φ={tB["Φ"]}+Σ={tB["Σ"]}')
+    lines.append(f'  Σ derivation: v({sA})={vA} from Φ={tA["<"]}+Σ={tA["⊞"]}; '
+                 f'v({sB})={vB} from Φ={tB["<"]}+Σ={tB["⊞"]}')
     lines.append(f'Φ-drive:')
-    lines.append(f'  {sA} Φ={tA["Φ"]}({get(tA,"Φ")}) → {sB} Φ={tB["Φ"]}({get(tB,"Φ")}) → product Φ={prod["Φ"]}({get(prod,"Φ")})')
+    lines.append(f'  {sA} Φ={tA["<"]}({get(tA,"<")}) → {sB} Φ={tB["<"]}({get(tB,"<")}) → product Φ={prod["<"]}({get(prod,"<")})')
     lines.append(f'ɢ-coupling:')
-    lines.append(f'  {sA} ɢ={tA["ɢ"]}({get(tA,"ɢ")}) × {sB} ɢ={tB["ɢ"]}({get(tB,"ɢ")}) → {btype} → product ɢ={prod["ɢ"]}({get(prod,"ɢ")})')
+    lines.append(f'  {sA} ɢ={tA["∋"]}({get(tA,"∋")}) × {sB} ɢ={tB["∋"]}({get(tB,"∋")}) → {btype} → product ɢ={prod["∋"]}({get(prod,"∋")})')
     lines.append(f'Þ-topology:')
-    lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product Þ={prod["Þ"]}({get(prod,"Þ")})')
+    lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product Þ={prod["⊣"]}({get(prod,"⊣")})')
     lines.append(f'⊙-gate (Frobenius μ∘δ=id):')
     lines.append(f'  Φ_product ∈ {{𐑯,𐑗}} → {"FIRES ⊙" if prod["⊙"]==CRIT else "blocked → "+prod["⊙"]}')
     return '\n'.join(lines)
@@ -470,15 +470,15 @@ def print_reaction(result):
         a, b, c = tA[p], tB[p], tp[p]
         ia, ib, ic = get(tA,p), get(tB,p), get(tp,p)
         tag = ''
-        if p == 'Φ':
+        if p == '<':
             tag = '← closure gate'
         elif p == '⊙':
             tag = '← Frobenius gate'
-        elif p == 'Σ':
+        elif p == '⊞':
             tag = '← stoich class'
-        elif p == 'ɢ':
+        elif p == '∋':
             tag = '← bond type'
-        elif p == 'Þ':
+        elif p == '⊣':
             tag = '← molecular topology'
         info_line(f'  {p:5s} {a}({ia:2}) {b}({ib:2}) → {c}({ic:2})  {tag}')
     print()

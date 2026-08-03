@@ -114,18 +114,18 @@ def identify_fragment(seq: str, prev_motif: str = None,
            classify_module(seq).get('dominant')
     
     desc_map = {
-        'Ω': 'Ω-winding module',
+        '◻': 'Ω-winding module',
         'φ̂': '⊙-criticality signal',
-        'Ř': 'Ř-scaffold domain',
-        'Φ': 'Φ-switch domain',
-        'Ħ': 'Ħ-chiral domain',
-        'Σ': 'Σ-variable region',
-        'ƒ': 'ƒ-hydrophobic core',
-        'ɢ': 'ɢ-glycosylation target',
-        'Γ': 'Γ-catalytic domain',
-        'Ç': 'Ç-kinetic regulator',
-        'Ð': 'Ð-initiation bootstrap',
-        'Þ': 'Þ-topological anchor',
+        '>': 'Ř-scaffold domain',
+        '<': 'Φ-switch domain',
+        '⊥': 'Ħ-chiral domain',
+        '⊞': 'Σ-variable region',
+        '⋈': 'ƒ-hydrophobic core',
+        '∋': 'ɢ-glycosylation target',
+        '∈': 'Γ-catalytic domain',
+        '⊤': 'Ç-kinetic regulator',
+        '⊢': 'Ð-initiation bootstrap',
+        '⊣': 'Þ-topological anchor',
     }
     return desc_map.get(dom, f'Fragment {idx+1}')
 # ══════════════════════════════════════════════════════════════════
@@ -333,7 +333,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
                         break
                     # Also stop if the fragment is large (>40 AA) and has hormone-like profile
                     nxt_cls = nxt.classification if hasattr(nxt, 'classification') else {}
-                    if len(nxt.sequence) > 40 and 'Ω' not in str(nxt_cls.get('dominant', '')):
+                    if len(nxt.sequence) > 40 and '◻' not in str(nxt_cls.get('dominant', '')):
                         break
                     merged_seq += nxt.sequence
                     merge_end = nxt.end

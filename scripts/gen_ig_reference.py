@@ -39,18 +39,18 @@ def gen_figures():
 
 # (glyph, name, n_subtypes, subtype_list, genetic_aa)
 PRIMITIVES = [
-    ("Ð", "Dimensionality", 4, ["ß","C",";","ω"],   "Gly"),
-    ("Þ", "Topology",       5, ["6","K","ò","¨","O"],"Pro"),
-    ("Ř", "Recognition",    4, ["¯","ý","Ť","="],    "His"),
-    ("Φ", "Parity",         5, ["ɐ","υ","F","˙","}"],"Leu"),
-    ("ƒ", "Fidelity",       3, ["ì","ð","ż"],         "Ile"),
-    ("Ç", "Kinetics",       5, ["-","W","@","Ù","λ"], "Val"),
-    ("Γ", "Granularity",    3, ["β","γ","ʔ"],         "Thr"),
-    ("ɢ", "Coupling",       4, ["∧","˝","ˌ","Ş"],     "Ser"),
+    ("⊢", "Dimensionality", 4, ["ß","C",";","ω"],   "Gly"),
+    ("⊣", "Topology",       5, ["6","K","ò","¨","O"],"Pro"),
+    (">", "Recognition",    4, ["¯","ý","Ť","="],    "His"),
+    ("<", "Parity",         5, ["ɐ","υ","F","˙","}"],"Leu"),
+    ("⋈", "Fidelity",       3, ["ì","ð","ż"],         "Ile"),
+    ("⊤", "Kinetics",       5, ["-","W","@","Ù","λ"], "Val"),
+    ("∈", "Granularity",    3, ["β","γ","ʔ"],         "Thr"),
+    ("∋", "Coupling",       4, ["∧","˝","ˌ","Ş"],     "Ser"),
     ("⊙", "Criticality",    5, ["ž","ÿ","Æ","3","Ţ"], "Cys"),
-    ("Ħ", "Chirality",      4, ["Ñ","£","A","!"],     "Gln"),
-    ("Σ", "Stoichiometry",  3, ["S","ő","ï"],          "Ala"),
-    ("Ω", "Winding",        4, ["Å","2","z","5"],      "Arg"),
+    ("⊥", "Chirality",      4, ["Ñ","£","A","!"],     "Gln"),
+    ("⊞", "Stoichiometry",  3, ["S","ő","ï"],          "Ala"),
+    ("◻", "Winding",        4, ["Å","2","z","5"],      "Arg"),
 ]
 
 # colour by subtype count: 3→green, 4→blue, 5→purple

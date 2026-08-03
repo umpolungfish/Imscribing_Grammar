@@ -44,18 +44,18 @@ class IGPrimitive(Enum):
     Each promoted AA activates exactly one primitive that ground-layer
     (exact-box) AAs do not activate.
     """
-    SCOPE         = "Ð"     # Met — translation scope (start codon)
-    TOPOLOGY      = "Þ"     # Trp — indole ceiling (topological complexity)
-    REVERSIBILITY = "Ř"     # Cys — disulfide bonds (reversible crosslinks)
-    PARITY        = "Φ"     # Tyr — phosphorylation switch (parity toggle)
-    FORCE         = "ƒ"     # Phe — maximum hydrophobicity (force ceiling)
-    KINETICS      = "Ç"     # Ile — β-branching (ribosomal coupling)
-    GRAMMAR       = "Γ"     # Gln — long amide H-bond network (interaction grammar)
-    INTERACTION   = "ɢ"     # Asn — N-glycosylation sequon (recognition gate)
+    SCOPE         = "⊢"     # Met — translation scope (start codon)
+    TOPOLOGY      = "⊣"     # Trp — indole ceiling (topological complexity)
+    REVERSIBILITY = ">"     # Cys — disulfide bonds (reversible crosslinks)
+    PARITY        = "<"     # Tyr — phosphorylation switch (parity toggle)
+    FORCE         = "⋈"     # Phe — maximum hydrophobicity (force ceiling)
+    KINETICS      = "⊤"     # Ile — β-branching (ribosomal coupling)
+    GRAMMAR       = "∈"     # Gln — long amide H-bond network (interaction grammar)
+    INTERACTION   = "∋"     # Asn — N-glycosylation sequon (recognition gate)
     CRITICALITY   = "⊙"     # His — imidazole pKa≈6 (pH-critical protonation gate)
-    CHIRALITY     = "Ħ"     # Asp — chiral substrate selectivity
-    ENTROPY       = "Σ"     # Lys — highest variability + acetylation target
-    WINDING       = "Ω"     # Glu — α-helix propensity / helix winding
+    CHIRALITY     = "⊥"     # Asp — chiral substrate selectivity
+    ENTROPY       = "⊞"     # Lys — highest variability + acetylation target
+    WINDING       = "◻"     # Glu — α-helix propensity / helix winding
 
 
 # ── Amino acid → primitive map ─────────────────────────────────────

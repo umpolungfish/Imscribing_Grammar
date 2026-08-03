@@ -36,29 +36,29 @@ from psychedelic_navigator import (
 
 NOVEL_COMPOUNDS: Dict[str, Dict[str, str]] = {
     "verticullum": {
-        "Ð": "𐑦", "Þ": "𐑥", "Ř": "𐑾", "Φ": "𐑹", "ƒ": "𐑐",
-        "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑠", "⊙": "⊙", "Ħ": "𐑫",
-        "Σ": "𐑳", "Ω": "𐑟",
+        "⊢": "𐑦", "⊣": "𐑥", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑫",
+        "⊞": "𐑳", "◻": "𐑟",
     },
     "chimerium": {
-        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑾", "Φ": "𐑹", "ƒ": "𐑐",
-        "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑵", "⊙": "𐑣", "Ħ": "𐑫",
-        "Σ": "𐑳", "Ω": "𐑭",
+        "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊤": "𐑧", "∈": "𐑲", "∋": "𐑵", "⊙": "𐑣", "⊥": "𐑫",
+        "⊞": "𐑳", "◻": "𐑭",
     },
     "apertix": {
-        "Ð": "𐑦", "Þ": "𐑥", "Ř": "𐑽", "Φ": "𐑬", "ƒ": "𐑐",
-        "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑠", "⊙": "⊙", "Ħ": "𐑖",
-        "Σ": "𐑳", "Ω": "𐑴",
+        "⊢": "𐑦", "⊣": "𐑥", ">": "𐑽", "<": "𐑬", "⋈": "𐑐",
+        "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑖",
+        "⊞": "𐑳", "◻": "𐑴",
     },
     "retiarius": {
-        "Ð": "𐑼", "Þ": "𐑡", "Ř": "𐑾", "Φ": "𐑿", "ƒ": "𐑞",
-        "Ç": "𐑺", "Γ": "𐑚", "ɢ": "𐑜", "⊙": "𐑮", "Ħ": "𐑒",
-        "Σ": "𐑕", "Ω": "𐑷",
+        "⊢": "𐑼", "⊣": "𐑡", ">": "𐑾", "<": "𐑿", "⋈": "𐑞",
+        "⊤": "𐑺", "∈": "𐑚", "∋": "𐑜", "⊙": "𐑮", "⊥": "𐑒",
+        "⊞": "𐑕", "◻": "𐑷",
     },
     "praxeum": {
-        "Ð": "𐑦", "Þ": "𐑶", "Ř": "𐑾", "Φ": "𐑹", "ƒ": "𐑐",
-        "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑠", "⊙": "𐑻", "Ħ": "𐑫",
-        "Σ": "𐑳", "Ω": "𐑭",
+        "⊢": "𐑦", "⊣": "𐑶", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑻", "⊥": "𐑫",
+        "⊞": "𐑳", "◻": "𐑭",
     },
 }
 
@@ -184,12 +184,12 @@ def chirality_ladder(compound_key: str, target_h: str) -> dict:
         return {"error": f"Unknown target chirality: {target_h}. Use: {list(CHIRALITY_ANCHORS.keys())}"}
 
     base = compounds[compound_key]
-    current_h = base.get("Ħ", "")
-    current_ord = get_ordinal("Ħ", current_h)
-    target_ord = get_ordinal("Ħ", target_h)
+    current_h = base.get("⊥", "")
+    current_ord = get_ordinal("⊥", current_h)
+    target_ord = get_ordinal("⊥", target_h)
 
     modified = dict(base)
-    modified["Ħ"] = target_h
+    modified["⊥"] = target_h
 
     anchor_info = CHIRALITY_ANCHORS[target_h]
 
@@ -251,20 +251,20 @@ def winding_modulate(compound_key: str, target_w: str) -> dict:
         return {"error": f"Unknown target winding: {target_w}. Use: {list(WINDING_LEVELS.keys())}"}
 
     base = compounds[compound_key]
-    current_w = base.get("Ω", "")
-    current_ord = get_ordinal("Ω", current_w)
-    target_ord = get_ordinal("Ω", target_w)
+    current_w = base.get("◻", "")
+    current_ord = get_ordinal("◻", current_w)
+    target_ord = get_ordinal("◻", target_w)
 
     # Non-Abelian requires D=𐑦
-    if target_w == "𐑟" and base.get("Ð") != "𐑦":
+    if target_w == "𐑟" and base.get("⊢") != "𐑦":
         return {
             "error": "Non-Abelian winding (𐑟) requires D=𐑦 (self-written dimensionalty).",
-            "current_d": base.get("Ð", ""),
+            "current_d": base.get("⊢", ""),
             "required_d": "𐑦",
         }
 
     modified = dict(base)
-    modified["Ω"] = target_w
+    modified["◻"] = target_w
 
     universes = get_psychedelic_universes()
     base_access = set()
@@ -320,12 +320,12 @@ def scope_focus(compound_key: str, target_g: str) -> dict:
         return {"error": f"Unknown target scope: {target_g}. Use: {list(SCOPE_LEVELS.keys())}"}
 
     base = compounds[compound_key]
-    current_g = base.get("Γ", "")
-    current_ord = get_ordinal("Γ", current_g)
-    target_ord = get_ordinal("Γ", target_g)
+    current_g = base.get("∈", "")
+    current_ord = get_ordinal("∈", current_g)
+    target_ord = get_ordinal("∈", target_g)
 
     modified = dict(base)
-    modified["Γ"] = target_g
+    modified["∈"] = target_g
 
     universes = get_psychedelic_universes()
     base_access = set()
@@ -368,7 +368,7 @@ def adjoint_steer(compound_key: str, direction_primitive: str, target_value: str
 
     Args:
         compound_key: Base compound.
-        direction_primitive: Which primitive to steer (e.g., "⊙", "Ħ", "Φ").
+        direction_primitive: Which primitive to steer (e.g., "⊙", "⊥", "<").
         target_value: The target glyph for that primitive.
     """
     compounds = all_compounds()
@@ -395,7 +395,7 @@ def adjoint_steer(compound_key: str, direction_primitive: str, target_value: str
     modified = dict(base)
     modified[direction_primitive] = target_value
     # Set coupling to adjoint to indicate directed steering
-    modified["Ř"] = "𐑽"
+    modified[">"] = "𐑽"
 
     universes = get_psychedelic_universes()
     base_access = set()
@@ -498,8 +498,8 @@ def supercritical_launch(base_compound_key: str) -> dict:
         "composite_universes": sorted(comp_access),
         "chimerium_profile": {
             "phi": chimerium.get("⊙", ""),
-            "h": chimerium.get("Ħ", ""),
-            "omega": chimerium.get("Ω", ""),
+            "h": chimerium.get("⊥", ""),
+            "omega": chimerium.get("◻", ""),
             "tier": assign_tier(chimerium),
         },
     }
@@ -622,8 +622,8 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['Ħ']}  Φ={ctuple['Φ']}  Ω={ctuple['Ω']}")
-        lines.append(f"    Full: ⟨{ctuple['Ð']}{ctuple['Þ']}{ctuple['Ř']}{ctuple['Φ']}{ctuple['ƒ']}{ctuple['Ç']}{ctuple['Γ']}{ctuple['ɢ']}{ctuple['⊙']}{ctuple['Ħ']}{ctuple['Σ']}{ctuple['Ω']}⟩")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['⊥']}  Φ={ctuple['<']}  Ω={ctuple['◻']}")
+        lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['>']}{ctuple['<']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
         lines.append("")
@@ -632,7 +632,7 @@ def show_novel_compounds():
     lines.append("-" * 78)
     lines.append("  Structural Deltas from Baselines:")
     lines.append("")
-    lines.append(f"  {'Compound':<24} {'⊙':>4} {'Ħ':>4} {'Φ':>4} {'Ω':>4}  Distinguishing Feature")
+    lines.append(f"  {'Compound':<24} {'⊙':>4} {'⊥':>4} {'<':>4} {'◻':>4}  Distinguishing Feature")
     lines.append(f"  {'-'*24} {'-'*4} {'-'*4} {'-'*4} {'-'*4}  {'-'*28}")
     lines.append(f"  {'Verticullum':<24} {'⊙':>4} {'𐑫':>4} {'𐑹':>4} {'𐑟':>4}  EP-Lever: non-Abelian winding + ⊙")
     lines.append(f"  {'Chimerium':<24} {'𐑣':>4} {'𐑫':>4} {'𐑹':>4} {'𐑭':>4}  Supercritical catalyst")

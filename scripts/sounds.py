@@ -67,7 +67,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Pure additive synthesis. Each step adds harmonic richness:
     # compact point → surface → infinite series → holographic (full+fifth drone)
     # =========================================================================
-    if base == 'Ð':
+    if base == '⊢':
         f0 = 110.0  # A2 — foundational low tone
 
         if sub == 'ß':              # D_wedge — compact, point-like
@@ -102,7 +102,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # dissonant cluster (network) → nested (hierarchical) → fifth (bowtie)
     # → beating unison (box) → clean octave (holographic)
     # =========================================================================
-    elif base == 'Þ':
+    elif base == '⊣':
         f0 = 130.81   # C3
         env = np.exp(-1.5 * t / dur)
 
@@ -133,7 +133,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # upward glide (supervisory) → step intervals (categorical) →
     # rise-then-mirror (dagger/reversible) → stable middle (lateral/peer)
     # =========================================================================
-    elif base == 'Ř':
+    elif base == '>':
         f_lo, f_hi = 196.0, 392.0  # G3 – G4  (one octave range)
         env = np.exp(-1.0 * t / dur)
 
@@ -166,7 +166,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Waveform symmetry encodes symmetry class:
     # sawtooth (max asymmetry) → FM complex → square (±) → pure sine → Frobenius
     # =========================================================================
-    elif base == 'Φ':
+    elif base == '<':
         f0 = 220.0   # A3
         env = np.exp(-1.2 * t / dur)
 
@@ -195,7 +195,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Signal clarity versus noise floor:
     # muddy (low-pass noise dominant) → voiced (partial) → pure (no noise)
     # =========================================================================
-    elif base == 'ƒ':
+    elif base == '⋈':
         f0 = 293.66   # D4
         clean = sine(f0, t) * np.exp(-1.0 * t / dur)
         noise_raw = np.random.normal(0, 1, n)
@@ -223,7 +223,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # sharp attack+quick decay (fast) → ADSR (moderate) → slow bloom (slow) →
     # flat with hard cutoff (trapped) → near-silence burst (MBL)
     # =========================================================================
-    elif base == 'Ç':
+    elif base == '⊤':
         f0 = 261.63   # C4 — middle C, neutral pitch for temporal character
         raw = sine(f0, t)
 
@@ -277,7 +277,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Frequency bandwidth encodes scope of information:
     # focused single tone (narrow) → moderate harmonics → full spectrum+noise
     # =========================================================================
-    elif base == 'Γ':
+    elif base == '∈':
         f0 = 349.23   # F4
         env = np.exp(-1.0 * t / dur)
 
@@ -305,7 +305,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # simultaneous chord (and) → alternating (or) → ascending steps (seq) →
     # wide reverberant wash (broad)
     # =========================================================================
-    elif base == 'ɢ':
+    elif base == '∋':
         f0 = 392.0    # G4
         env = np.exp(-1.2 * t / dur)
 
@@ -377,7 +377,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Reverberation depth encodes temporal memory:
     # dry (H0) → short decay (H1) → medium decay (H2) → long decay (H_inf)
     # =========================================================================
-    elif base == 'Ħ':
+    elif base == '⊥':
         f0 = 440.0   # A4 — reference pitch
         dry = sine(f0, t) * np.exp(-2.5 * t / dur)
 
@@ -403,7 +403,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Multiplicity and ratio:
     # single voice (1:1) → octave stack same ratio (n:n) → polyrhythmic (n:m)
     # =========================================================================
-    elif base == 'Σ':
+    elif base == '⊞':
         f0 = 369.99   # F#4
         env = np.exp(-1.2 * t / dur)
 
@@ -430,7 +430,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # open fade (trivial) → binary toggle (Z₂) → phase-sawtooth winding (Z) →
     # noise burst (undefined)
     # =========================================================================
-    elif base == 'Ω':
+    elif base == '◻':
         f0 = 261.63   # C4
 
         if sub == 'Å':              # Omega_0 — trivial: open, fades without returning
@@ -472,18 +472,18 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
 # Canonical 49-symbol list — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
-    ('Ð', 'ß'), ('Ð', 'C'), ('Ð', ';'), ('Ð', 'ω'),             # Ð Dimensionality
-    ('Þ', '6'), ('Þ', 'K'), ('Þ', 'ò'), ('Þ', '¨'), ('Þ', 'O'), # Þ Topology
-    ('Ř', '̄'), ('Ř', 'ý'), ('Ř', 'Ť'), ('Ř', '='),              # Ř Relational
-    ('Φ', 'ɐ'), ('Φ', 'υ'), ('Φ', 'F'), ('Φ', '̇'), ('Φ', '}'),  # Φ Polarity
-    ('ƒ', 'ì'), ('ƒ', 'ð'), ('ƒ', 'ż'),                          # ƒ Fidelity
-    ('Ç', '-'), ('Ç', 'W'), ('Ç', '@'), ('Ç', 'Ù'), ('Ç', 'λ'), # Ç Kinetics
-    ('Γ', 'β'), ('Γ', 'γ'), ('Γ', 'ʔ'),                          # Γ Scope
-    ('ɢ', '∧'), ('ɢ', '˝'), ('ɢ', 'ˌ'), ('ɢ', 'Ş'),             # ɢ Grammar
+    ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # Ð Dimensionality
+    ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # Þ Topology
+    ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # Ř Relational
+    ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # Φ Polarity
+    ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ƒ Fidelity
+    ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # Ç Kinetics
+    ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # Γ Scope
+    ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ɢ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
-    ('Ħ', 'Ñ'), ('Ħ', '£'), ('Ħ', 'A'), ('Ħ', '!'),             # Ħ Chirality
-    ('Σ', 'S'), ('Σ', 'ő'), ('Σ', 'ï'),                          # Σ Stoichiometry
-    ('Ω', 'Å'), ('Ω', '2'), ('Ω', 'z'), ('Ω', '5'),              # Ω Topological Invariant
+    ('⊥', 'Ñ'), ('⊥', '£'), ('⊥', 'A'), ('⊥', '!'),             # Ħ Chirality
+    ('⊞', 'S'), ('⊞', 'ő'), ('⊞', 'ï'),                          # Σ Stoichiometry
+    ('◻', 'Å'), ('◻', '2'), ('◻', 'z'), ('◻', '5'),              # Ω Topological Invariant
 ]
 
 # =============================================================================
@@ -491,38 +491,38 @@ symbol_list = [
 # =============================================================================
 PRIMITIVE_MAP = {
     # Ð Dimensionality
-    '𐑛': ('Ð', 'ß'),   '𐑨': ('Ð', 'C'),
-    '𐑼': ('Ð', ';'),   '𐑦': ('Ð', 'ω'),
+    '𐑛': ('⊢', 'ß'),   '𐑨': ('⊢', 'C'),
+    '𐑼': ('⊢', ';'),   '𐑦': ('⊢', 'ω'),
     # Þ Topology
-    '𐑡': ('Þ', '6'),   '𐑰': ('Þ', 'K'),   '𐑥': ('Þ', 'ò'),
-    '𐑶': ('Þ', '¨'),   '𐑸': ('Þ', 'O'),
+    '𐑡': ('⊣', '6'),   '𐑰': ('⊣', 'K'),   '𐑥': ('⊣', 'ò'),
+    '𐑶': ('⊣', '¨'),   '𐑸': ('⊣', 'O'),
     # Ř Relational
-    '𐑩': ('Ř', '̄'),   '𐑑': ('Ř', 'ý'),
-    '𐑽': ('Ř', 'Ť'),   '𐑾': ('Ř', '='),
+    '𐑩': ('>', '̄'),   '𐑑': ('>', 'ý'),
+    '𐑽': ('>', 'Ť'),   '𐑾': ('>', '='),
     # Φ Polarity
-    '𐑗': ('Φ', 'ɐ'),   '𐑿': ('Φ', 'υ'),   '𐑬': ('Φ', 'F'),
-    '𐑯': ('Φ', '̇'),   '𐑹': ('Φ', '}'),
+    '𐑗': ('<', 'ɐ'),   '𐑿': ('<', 'υ'),   '𐑬': ('<', 'F'),
+    '𐑯': ('<', '̇'),   '𐑹': ('<', '}'),
     # ƒ Fidelity
-    'ƒ^ì': ('ƒ', 'ì'),   'ƒ^ð': ('ƒ', 'ð'),   'ƒ^ż': ('ƒ', 'ż'),
+    'ƒ^ì': ('⋈', 'ì'),   'ƒ^ð': ('⋈', 'ð'),   'ƒ^ż': ('⋈', 'ż'),
     # Ç Kinetics
-    'Ç^-': ('Ç', '-'),   'Ç^W': ('Ç', 'W'),   'Ç^@': ('Ç', '@'),
-    'Ç^Ù': ('Ç', 'Ù'),   'Ç^λ': ('Ç', 'λ'),
+    'Ç^-': ('⊤', '-'),   'Ç^W': ('⊤', 'W'),   'Ç^@': ('⊤', '@'),
+    'Ç^Ù': ('⊤', 'Ù'),   'Ç^λ': ('⊤', 'λ'),
     # Γ Scope
-    '𐑚': ('Γ', 'β'),   '𐑔': ('Γ', 'γ'),   '𐑲': ('Γ', 'ʔ'),
+    '𐑚': ('∈', 'β'),   '𐑔': ('∈', 'γ'),   '𐑲': ('∈', 'ʔ'),
     # ɢ Grammar
-    'ɢ^∧': ('ɢ', '∧'),   'ɢ^˝': ('ɢ', '˝'),
-    'ɢ^ˌ': ('ɢ', 'ˌ'),   'ɢ^Ş': ('ɢ', 'Ş'),
+    'ɢ^∧': ('∋', '∧'),   'ɢ^˝': ('∋', '˝'),
+    'ɢ^ˌ': ('∋', 'ˌ'),   'ɢ^Ş': ('∋', 'Ş'),
     # ⊙ Criticality
     '𐑢': ('⊙', 'ž'),   '⊙': ('⊙', 'ÿ'),   '𐑮': ('⊙', 'Æ'),
     '𐑻': ('⊙', '3'),   '𐑣': ('⊙', 'Ţ'),
     # Ħ Chirality
-    '𐑓': ('Ħ', 'Ñ'),   '𐑒': ('Ħ', '£'),
-    '𐑖': ('Ħ', 'A'),   '𐑫': ('Ħ', '!'),
+    '𐑓': ('⊥', 'Ñ'),   '𐑒': ('⊥', '£'),
+    '𐑖': ('⊥', 'A'),   '𐑫': ('⊥', '!'),
     # Σ Stoichiometry
-    '𐑙': ('Σ', 'S'),   '𐑕': ('Σ', 'ő'),   '𐑳': ('Σ', 'ï'),
+    '𐑙': ('⊞', 'S'),   '𐑕': ('⊞', 'ő'),   '𐑳': ('⊞', 'ï'),
     # Ω Topological Invariant
-    '𐑷': ('Ω', 'Å'),   '𐑴': ('Ω', '2'),
-    '𐑭': ('Ω', 'z'),   '𐑟': ('Ω', '5'),
+    '𐑷': ('◻', 'Å'),   '𐑴': ('◻', '2'),
+    '𐑭': ('◻', 'z'),   '𐑟': ('◻', '5'),
 }
 
 OLD_ID_MAP = {
@@ -548,7 +548,7 @@ OLD_ID_MAP = {
     'Omega_0': '𐑷',    'Omega_Z2': '𐑴',       'Omega_Z': '𐑭',   'Omega_NA': '𐑟',
 }
 
-FIELD_ORDER = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']
+FIELD_ORDER = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 def resolve_id(token):
     """Convert any primitive token (canonical or old name) to a (base, sub) pair."""

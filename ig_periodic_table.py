@@ -79,53 +79,53 @@ ELEMENTS = {
 # ─────────────────────────────────────────────────────────────
 PRIM_LABEL = {
     # H: dialetheic coupling — bonds as both donor and acceptor
-    'H':  'Ħ',
+    'H':  '⊥',
     # He: doubly-magic nucleus, 𐑢 — the archetypal subcritical
     'He': '⊙',
     # Alkali metals: pure ionic donors, ɢ_or coupling
-    'Li': 'ɢ', 'Na': 'ɢ', 'K':  'ɢ',
-    'Rb': 'ɢ', 'Cs': 'ɢ', 'Fr': 'ɢ',
+    'Li': '∋', 'Na': '∋', 'K':  '∋',
+    'Rb': '∋', 'Cs': '∋', 'Fr': '∋',
     # Alkaline earths: fixed Σ=2
-    'Be': 'Σ', 'Mg': 'Σ', 'Ca': 'Σ',
-    'Sr': 'Σ', 'Ba': 'Σ', 'Ra': 'Σ',
+    'Be': '⊞', 'Mg': '⊞', 'Ca': '⊞',
+    'Sr': '⊞', 'Ba': '⊞', 'Ra': '⊞',
     # Group 13 — dimensionality (boundary 2D/3D)
-    'B':  'Ð', 'Al': 'Ð', 'Ga': 'Ð',
-    'In': 'Ð', 'Tl': 'Ð', 'Nh': 'Ð',
+    'B':  '⊢', 'Al': '⊢', 'Ga': '⊢',
+    'In': '⊢', 'Tl': '⊢', 'Nh': '⊢',
     # Group 14 — topology (tetrahedral network)
-    'C':  'Þ', 'Si': 'Þ', 'Ge': 'Þ',
-    'Sn': 'Þ', 'Pb': 'Þ', 'Fl': 'Þ',
+    'C':  '⊣', 'Si': '⊣', 'Ge': '⊣',
+    'Sn': '⊣', 'Pb': '⊣', 'Fl': '⊣',
     # Group 15 — fixed stoichiometry N:3
-    'N':  'Σ', 'P':  'Σ', 'As': 'Σ',
-    'Sb': 'Σ', 'Bi': 'Σ', 'Mc': 'Σ',
+    'N':  '⊞', 'P':  '⊞', 'As': '⊞',
+    'Sb': '⊞', 'Bi': '⊞', 'Mc': '⊞',
     # Group 16 — parity (O double bond, S ring topology)
-    'O':  'Φ', 'S':  'Φ', 'Se': 'Φ',
-    'Te': 'Φ', 'Po': 'Φ', 'Lv': 'Φ',
+    'O':  '<', 'S':  '<', 'Se': '<',
+    'Te': '<', 'Po': '<', 'Lv': '<',
     # Group 17 halogens — fastest kinetics
-    'F':  'Ç', 'Cl': 'Ç', 'Br': 'Ç',
-    'I':  'Ç', 'At': 'Ç', 'Ts': 'Ç',
+    'F':  '⊤', 'Cl': '⊤', 'Br': '⊤',
+    'I':  '⊤', 'At': '⊤', 'Ts': '⊤',
     # Noble gases — subcritical
     'Ne': '⊙', 'Ar': '⊙', 'Kr': '⊙',
     'Xe': '⊙', 'Rn': '⊙', 'Og': '⊙',
     # d-block: coordination chirality
-    'Sc': 'Ħ', 'Ti': 'Ħ', 'V':  'Ħ', 'Cr': 'Ħ',
-    'Mn': 'Ħ', 'Fe': 'Ħ', 'Co': 'Ħ', 'Ni': 'Ħ',
-    'Cu': 'Ħ', 'Zn': 'Ħ',
-    'Y':  'Ħ', 'Zr': 'Ħ', 'Nb': 'Ħ', 'Mo': 'Ħ',
-    'Tc': 'Ħ', 'Ru': 'Ħ', 'Rh': 'Ħ', 'Pd': 'Ħ',
-    'Ag': 'Ħ', 'Cd': 'Ħ',
+    'Sc': '⊥', 'Ti': '⊥', 'V':  '⊥', 'Cr': '⊥',
+    'Mn': '⊥', 'Fe': '⊥', 'Co': '⊥', 'Ni': '⊥',
+    'Cu': '⊥', 'Zn': '⊥',
+    'Y':  '⊥', 'Zr': '⊥', 'Nb': '⊥', 'Mo': '⊥',
+    'Tc': '⊥', 'Ru': '⊥', 'Rh': '⊥', 'Pd': '⊥',
+    'Ag': '⊥', 'Cd': '⊥',
     # Heavy d-block (period 6): relativistic SOC; noble metals annotated with Ç_slow
-    'Lu': 'Ħ', 'Hf': 'Ħ', 'Ta': 'Ħ', 'W':  'Ħ',
-    'Re': 'Ħ', 'Os': 'Ħ', 'Ir': 'Ħ',
-    'Pt': 'Ç', 'Au': 'Ç',
-    'Hg': 'Ħ',
-    'Lr': 'Ħ', 'Rf': 'Ħ', 'Db': 'Ħ', 'Sg': 'Ħ',
-    'Bh': 'Ħ', 'Hs': 'Ħ', 'Mt': 'Ħ', 'Ds': 'Ħ',
-    'Rg': 'Ħ', 'Cn': 'Ħ',
+    'Lu': '⊥', 'Hf': '⊥', 'Ta': '⊥', 'W':  '⊥',
+    'Re': '⊥', 'Os': '⊥', 'Ir': '⊥',
+    'Pt': '⊤', 'Au': '⊤',
+    'Hg': '⊥',
+    'Lr': '⊥', 'Rf': '⊥', 'Db': '⊥', 'Sg': '⊥',
+    'Bh': '⊥', 'Hs': '⊥', 'Mt': '⊥', 'Ds': '⊥',
+    'Rg': '⊥', 'Cn': '⊥',
     # f-block lanthanides: Ħ_H2 (strong SOC, chiral magnetics)
-    'La': 'Ħ', 'Ce': 'Ħ', 'Pr': 'Ħ', 'Nd': 'Ħ',
-    'Pm': 'Ħ', 'Sm': 'Ħ', 'Eu': 'Ħ', 'Gd': 'Ħ',
-    'Tb': 'Ħ', 'Dy': 'Ħ', 'Ho': 'Ħ', 'Er': 'Ħ',
-    'Tm': 'Ħ', 'Yb': 'Ħ',
+    'La': '⊥', 'Ce': '⊥', 'Pr': '⊥', 'Nd': '⊥',
+    'Pm': '⊥', 'Sm': '⊥', 'Eu': '⊥', 'Gd': '⊥',
+    'Tb': '⊥', 'Dy': '⊥', 'Ho': '⊥', 'Er': '⊥',
+    'Tm': '⊥', 'Yb': '⊥',
     # f-block actinides: ⊙ (nuclear criticality dominates)
     'Ac': '⊙', 'Th': '⊙', 'Pa': '⊙', 'U':  '⊙',
     'Np': '⊙', 'Pu': '⊙', 'Am': '⊙', 'Cm': '⊙',

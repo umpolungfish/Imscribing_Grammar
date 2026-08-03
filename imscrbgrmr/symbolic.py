@@ -156,8 +156,8 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "F": imscription.fidelity.value,
         "K": imscription.kinetic_character.value,
         "G": imscription.granularity.value,
-        "Γ": imscription.grammar.value,
-        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
+        "∈": imscription.grammar.value,
+        "<": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
     }
     return mapping.get(name, "")
 
@@ -448,12 +448,12 @@ class AxiomTheoremProver:
             "axiom2": SymbolicExpression.Not(
                 SymbolicExpression.And(
                     SymbolicExpression.primitive("G", "Γ_beta"),
-                    SymbolicExpression.primitive("Γ", "Gamma_and(SPECIFIC)"),
+                    SymbolicExpression.primitive("∈", "Gamma_and(SPECIFIC)"),
                     SymbolicExpression.primitive("G", "Γ_revapostrophe"),  # Can propagate to global
                 ),
             ),
             "axiom4": SymbolicExpression.Implies(
-                SymbolicExpression.primitive("Γ", "Gamma_seq(SELECTIVE)"),
+                SymbolicExpression.primitive("∈", "Gamma_seq(SELECTIVE)"),
                 SymbolicExpression.Or(
                     SymbolicExpression.primitive("D", "Ð_infinity"),
                     SymbolicExpression.primitive("R", "Ř_downstep"),
@@ -589,12 +589,12 @@ class CrossDomainAnalogyDetector:
         "D": 0.20,  # Dimensionality — fundamental domain axis; cross-domain pairs penalised when D differs
         "T": 0.25,  # Topology is highly diagnostic
         "R": 0.20,  # Recognition mode
-        "Γ": 0.20,  # Interaction grammar
+        "∈": 0.20,  # Interaction grammar
         "F": 0.15,  # Fidelity
         "G": 0.10,  # Granularity
         "P": 0.05,  # Polarity
         "K": 0.05,  # Kinetic character
-        "Φ": 0.05,  # Criticality phase
+        "<": 0.05,  # Criticality phase
         "S": 0.08,  # Stoichiometry — raised from 0.05; valency-sensitive for T⋈ systems
     }
     
@@ -677,8 +677,8 @@ class CrossDomainAnalogyDetector:
             "F": imscription.fidelity.value,
             "K": imscription.kinetic_character.value,
             "G": imscription.granularity.value,
-            "Γ": imscription.interaction_grammar.value,
-            "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
+            "∈": imscription.interaction_grammar.value,
+            "<": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
             "S": imscription.stoichiometry.value if imscription.stoichiometry else "unset",
         }
 
@@ -745,7 +745,7 @@ class CrossDomainAnalogyDetector:
         elif "T" in shared_primitives and "R" in shared_primitives:
             # Same topology and recognition → functional analogy
             return "functional"
-        elif "F" in shared_primitives and "Γ" in shared_primitives:
+        elif "F" in shared_primitives and "∈" in shared_primitives:
             # Same fidelity and grammar → behavioral analogy
             return "behavioral"
         else:
@@ -912,9 +912,9 @@ class PredictiveRuleGenerator:
         # Sequential grammar (any tier) → temporal or catalytic dimension
         candidates.append((
             Or(
-                P("Γ", "Gamma_seq(SPECIFIC)"),
-                P("Γ", "Gamma_seq(SELECTIVE)"),
-                P("Γ", "Gamma_seq(BROAD)"),
+                P("∈", "Gamma_seq(SPECIFIC)"),
+                P("∈", "Gamma_seq(SELECTIVE)"),
+                P("∈", "Gamma_seq(BROAD)"),
             ),
             Or(
                 P("D", "Ð_infinity"),
@@ -928,7 +928,7 @@ class PredictiveRuleGenerator:
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
             And(P("F", "ƒ_hardsign"), P("K", "Ç_frtailgamma")),
-            P("Φ", "⊙_softsign"),
+            P("<", "⊙_softsign"),
         ))
 
         # ── R → F coupling ─────────────────────────────────────────────────────
@@ -1001,7 +1001,7 @@ class PredictiveRuleGenerator:
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
             And(P("T", "Þ_bullseye"), P("K", "Ç_teshlig")),
-            P("Φ", "⊙_ctyogh"),
+            P("<", "⊙_ctyogh"),
         ))
 
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────

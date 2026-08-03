@@ -61,19 +61,19 @@ PROGRAMS_DIR = HERE / "manuscript_programs"
 
 CORPUS_BASE = {
     'voynich': {
-        'Ð':'𐑦','Þ':'𐑸','Ř':'𐑾','Φ':'𐑹',
-        'ƒ':'ƒ^ì','Ç':'Ç^Ù','Γ':'𐑲','ɢ':'ɢ^Ş',
-        '⊙':'⊙','Ħ':'𐑫','Σ':'𐑙','Ω':'𐑭',
+        '⊢':'𐑦','⊣':'𐑸','>':'𐑾','<':'𐑹',
+        '⋈':'ƒ^ì','Ç':'Ç^Ù','Γ':'𐑲','ɢ':'ɢ^Ş',
+        '⊙':'⊙','⊥':'𐑫','⊞':'𐑙','◻':'𐑭',
     },
     'rohonc': {
-        'Ð':'𐑨','Þ':'𐑶','Ř':'𐑽','Φ':'𐑹',
-        'ƒ':'ƒ^ì','Ç':'Ç^@','Γ':'𐑲','ɢ':'ɢ^ˌ',
-        '⊙':'⊙','Ħ':'𐑖','Σ':'𐑳','Ω':'𐑭',
+        '⊢':'𐑨','⊣':'𐑶','>':'𐑽','<':'𐑹',
+        '⋈':'ƒ^ì','Ç':'Ç^@','Γ':'𐑲','ɢ':'ɢ^ˌ',
+        '⊙':'⊙','⊥':'𐑖','⊞':'𐑳','◻':'𐑭',
     },
     'linear_a': {
-        'Ð':'𐑨','Þ':'𐑶','Ř':'𐑽','Φ':'𐑹',
-        'ƒ':'ƒ^ż','Ç':'Ç^W','Γ':'𐑲','ɢ':'ɢ^ˌ',
-        '⊙':'⊙','Ħ':'𐑖','Σ':'𐑳','Ω':'𐑭',
+        '⊢':'𐑨','⊣':'𐑶','>':'𐑽','<':'𐑹',
+        '⋈':'ƒ^ż','Ç':'Ç^W','Γ':'𐑲','ɢ':'ɢ^ˌ',
+        '⊙':'⊙','⊥':'𐑖','⊞':'𐑳','◻':'𐑭',
     },
 }
 
@@ -112,7 +112,7 @@ SECTIONS = {
     ],
 }
 
-IG_KEYS   = ['Ð','Þ','Ř','Φ','ƒ','Ç','Γ','ɢ','⊙','Ħ','Σ','Ω']
+IG_KEYS   = ['⊢','⊣','>','<','⋈','⊤','∈','∋','⊙','⊥','⊞','◻']
 IG_WEIGHTS = [10000, 10000, 10000, 12000, 9000, 8000, 10000, 10000, 11000, 8000, 10000, 7000]
 
 CORPUS_COLORS = {'voynich': 'cyan', 'rohonc': 'green', 'linear_a': 'gold1'}
@@ -462,9 +462,9 @@ def _print_section(corpus: str):
                 continue
             entries = [DB[corpus][eid] for eid in present]
             # mode of Þ
-            t_vals = [e['tuple']['Þ'] for e in entries]
+            t_vals = [e['tuple']['⊣'] for e in entries]
             dom_t = max(set(t_vals), key=t_vals.count)
-            phi_vals = [e['tuple']['Φ'] for e in entries]
+            phi_vals = [e['tuple']['<'] for e in entries]
             dom_phi = max(set(phi_vals), key=phi_vals.count)
             console.print(f"  [bold]{sec_name:20s}[/bold]  Þ={dom_t}  Φ={dom_phi}  (sample {len(present)} elements)")
         console.print()

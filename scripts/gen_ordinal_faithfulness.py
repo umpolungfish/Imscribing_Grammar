@@ -19,18 +19,18 @@ OUT = Path("/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/Imscribing/Millennium/C
 
 # canonical label -> (Lean ordinal fn, Lean type, {glyph: constructor})
 PRIM = {
-    "Ð": ("ordinalD",    "Dimensionality", {"𐑛":"dead","𐑨":"ash","𐑼":"array","𐑦":"if'"}),
-    "Þ": ("ordinalT",    "Topology",       {"𐑡":"judge","𐑰":"eat","𐑥":"mime","𐑶":"oil","𐑸":"are"}),
-    "Ř": ("ordinalR",    "Relational",     {"𐑩":"ado","𐑑":"tot","𐑽":"ear","𐑾":"ian"}),
-    "Φ": ("ordinalP",    "Polarity",       {"𐑗":"church","𐑿":"yew","𐑬":"out","𐑯":"nun","𐑹":"or'"}),
-    "ƒ": ("ordinalF",    "Fidelity",       {"𐑱":"age","𐑞":"they","𐑐":"peep"}),
-    "Ç": ("ordinalK",    "KineticChar",    {"𐑘":"yea","𐑤":"loll","𐑧":"egg","𐑪":"on","𐑺":"air"}),
-    "Γ": ("ordinalGran", "Granularity",    {"𐑚":"bib","𐑔":"thigh","𐑲":"ice"}),
-    "ɢ": ("ordinalG",    "Grammar",        {"𐑝":"vow","𐑜":"gag","𐑠":"measure","𐑵":"ooze"}),
+    "⊢": ("ordinalD",    "Dimensionality", {"𐑛":"dead","𐑨":"ash","𐑼":"array","𐑦":"if'"}),
+    "⊣": ("ordinalT",    "Topology",       {"𐑡":"judge","𐑰":"eat","𐑥":"mime","𐑶":"oil","𐑸":"are"}),
+    ">": ("ordinalR",    "Relational",     {"𐑩":"ado","𐑑":"tot","𐑽":"ear","𐑾":"ian"}),
+    "<": ("ordinalP",    "Polarity",       {"𐑗":"church","𐑿":"yew","𐑬":"out","𐑯":"nun","𐑹":"or'"}),
+    "⋈": ("ordinalF",    "Fidelity",       {"𐑱":"age","𐑞":"they","𐑐":"peep"}),
+    "⊤": ("ordinalK",    "KineticChar",    {"𐑘":"yea","𐑤":"loll","𐑧":"egg","𐑪":"on","𐑺":"air"}),
+    "∈": ("ordinalGran", "Granularity",    {"𐑚":"bib","𐑔":"thigh","𐑲":"ice"}),
+    "∋": ("ordinalG",    "Grammar",        {"𐑝":"vow","𐑜":"gag","𐑠":"measure","𐑵":"ooze"}),
     "⊙": ("ordinalPhi",  "Criticality",    {"𐑢":"woe","⊙":"monad","𐑮":"roar","𐑻":"err","𐑣":"haha"}),
-    "Ħ": ("ordinalH",    "Chirality",      {"𐑓":"fee","𐑒":"kick","𐑖":"sure","𐑫":"wool"}),
-    "Σ": ("ordinalS",    "Stoichiometry",  {"𐑙":"hung","𐑕":"so","𐑳":"up"}),
-    "Ω": ("ordinalOmega","Protection",     {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
+    "⊥": ("ordinalH",    "Chirality",      {"𐑓":"fee","𐑒":"kick","𐑖":"sure","𐑫":"wool"}),
+    "⊞": ("ordinalS",    "Stoichiometry",  {"𐑙":"hung","𐑕":"so","𐑳":"up"}),
+    "◻": ("ordinalOmega","Protection",     {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
 }
 # Exact ℚ for the canonical non-integer transitional ranks.
 FRAC = {2.33: "7/3", 2.67: "8/3", 4.5: "9/2"}

@@ -15,18 +15,18 @@ OUT = Path("/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/Imscribing/Millennium/C
 
 # catalog label -> (Lean field, {glyph: constructor}) — inverse of the .shavian maps.
 GLYPH = {
-    "Ð": ("dim",  {"𐑛":"dead","𐑨":"ash","𐑼":"array","𐑦":"if'"}),
-    "Þ": ("top",  {"𐑡":"judge","𐑰":"eat","𐑥":"mime","𐑶":"oil","𐑸":"are"}),
-    "Ř": ("rel",  {"𐑩":"ado","𐑑":"tot","𐑽":"ear","𐑾":"ian"}),
-    "Φ": ("pol",  {"𐑗":"church","𐑿":"yew","𐑬":"out","𐑯":"nun","𐑹":"or'"}),
-    "ƒ": ("fid",  {"𐑱":"age","𐑞":"they","𐑐":"peep"}),
-    "Ç": ("kin",  {"𐑘":"yea","𐑤":"loll","𐑧":"egg","𐑪":"on","𐑺":"air"}),
-    "Γ": ("gran", {"𐑚":"bib","𐑔":"thigh","𐑲":"ice"}),
-    "ɢ": ("gram", {"𐑝":"vow","𐑜":"gag","𐑠":"measure","𐑵":"ooze"}),
+    "⊢": ("dim",  {"𐑛":"dead","𐑨":"ash","𐑼":"array","𐑦":"if'"}),
+    "⊣": ("top",  {"𐑡":"judge","𐑰":"eat","𐑥":"mime","𐑶":"oil","𐑸":"are"}),
+    ">": ("rel",  {"𐑩":"ado","𐑑":"tot","𐑽":"ear","𐑾":"ian"}),
+    "<": ("pol",  {"𐑗":"church","𐑿":"yew","𐑬":"out","𐑯":"nun","𐑹":"or'"}),
+    "⋈": ("fid",  {"𐑱":"age","𐑞":"they","𐑐":"peep"}),
+    "⊤": ("kin",  {"𐑘":"yea","𐑤":"loll","𐑧":"egg","𐑪":"on","𐑺":"air"}),
+    "∈": ("gran", {"𐑚":"bib","𐑔":"thigh","𐑲":"ice"}),
+    "∋": ("gram", {"𐑝":"vow","𐑜":"gag","𐑠":"measure","𐑵":"ooze"}),
     "⊙": ("crit", {"𐑢":"woe","⊙":"monad","𐑮":"roar","𐑻":"err","𐑣":"haha"}),
-    "Ħ": ("chir", {"𐑓":"fee","𐑒":"kick","𐑖":"sure","𐑫":"wool"}),
-    "Σ": ("stoi", {"𐑙":"hung","𐑕":"so","𐑳":"up"}),
-    "Ω": ("prot", {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
+    "⊥": ("chir", {"𐑓":"fee","𐑒":"kick","𐑖":"sure","𐑫":"wool"}),
+    "⊞": ("stoi", {"𐑙":"hung","𐑕":"so","𐑳":"up"}),
+    "◻": ("prot", {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
 }
 FIELD_ORDER = ["dim","top","rel","pol","fid","kin","gran","gram","crit","chir","stoi","prot"]
 # canonical catalog entry name -> Lean def name

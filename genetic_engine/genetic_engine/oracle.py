@@ -33,50 +33,50 @@ from typing import Dict, List, Optional, Tuple, Any
 # ──────────────────────────────────────────────────────────────────────
 
 PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
-    "Ð": {  # Dimensionality
+    "⊢": {  # Dimensionality
         "𐑼": 0,   # wedge — 0d point
         "𐑨": 1,   # triangle — 2d surface
         "𐑛": 2,   # infty — infinite-dimensional
         "𐑦": 3,   # odot — imscriptive / self-written
     },
-    "Þ": {  # Topology
+    "⊣": {  # Topology
         "𐑡": 0,   # network — branching
         "𐑰": 1,   # in — containment
         "𐑥": 2,   # bowtie — crossing point
         "𐑶": 3,   # boxtimes — irreducible product
         "𐑸": 4,   # odot — self-referential closure
     },
-    "Ř": {  # Relational mode
+    ">": {  # Relational mode
         "𐑩": 0,   # super — supervenience
         "𐑑": 1,   # cat — functorial
         "𐑽": 2,   # dagger — adjoint pair (one-way)
         "𐑾": 3,   # lr — bidirectional feedback
     },
-    "Φ": {  # Parity / Symmetry
+    "<": {  # Parity / Symmetry
         "𐑗": 0,   # asym — none
         "𐑿": 1,   # psi — quantum superposition
         "𐑬": 2,   # pm — one Z2 symmetry
         "𐑯": 3,   # sym — all symmetries unbroken
         "𐑹": 4,   # pm_sym — Frobenius-special (μ∘δ=id)
     },
-    "ƒ": {  # Fidelity
+    "⋈": {  # Fidelity
         "𐑱": 0,   # ell — classical, no coherence
         "𐑞": 1,   # eth — thermal / noisy
         "𐑐": 2,   # hbar — quantum coherence essential
     },
-    "Ç": {  # Kinetics
+    "⊤": {  # Kinetics
         "𐑘": 0,   # fast — driven (τ ≪ T)
         "𐑤": 1,   # mod — moderate (τ ∼ T)
         "𐑧": 2,   # slow — near-equilibrium (τ ≫ T)
         "𐑪": 3,   # trap — frozen-order
         "𐑺": 4,   # MBL — frozen-disorder
     },
-    "Γ": {  # Interaction Scope
+    "∈": {  # Interaction Scope
         "𐑚": 0,   # beth — local / nearest-neighbor
         "𐑔": 1,   # gimel — mesoscale / intermediate
         "𐑲": 2,   # aleph — maximal / all
     },
-    "ɢ": {  # Interaction Grammar
+    "∋": {  # Interaction Grammar
         "𐑝": 0,   # and — all-simultaneous
         "𐑜": 1,   # or — alternate paths
         "𐑠": 2,   # seq — ordered steps
@@ -89,18 +89,18 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
         "φ̂_3": 3,   # EP — exceptional point / non-Hermitian degeneracy
         "φ̂_Ţ": 4,   # super — supercritical / runaway
     },
-    "Ħ": {  # Chirality / Markov Order
+    "⊥": {  # Chirality / Markov Order
         "𐑓": 0,   # 0 — memoryless
         "𐑒": 1,   # 1 — one step memory
         "𐑖": 2,   # 2 — two step memory
         "𐑫": 3,   # inf — no finite Markov order
     },
-    "Σ": {  # Stoichiometry
+    "⊞": {  # Stoichiometry
         "𐑙": 0,   # 1:1 — one type, one instance
         "𐑕": 1,   # n:n — many identical
         "𐑳": 2,   # n:m — many heterogeneous
     },
-    "Ω": {  # Winding / Topological Invariant
+    "◻": {  # Winding / Topological Invariant
         "𐑷": 0,   # 0 — trivial
         "𐑴": 1,   # Z2 — parity-protected
         "𐑭": 2,   # Z — integer winding
@@ -108,12 +108,12 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
     },
 }
 
-PRIMITIVE_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"]
+PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "φ̂", "⊥", "⊞", "◻"]
 PRIMITIVE_NAMES = {
-    "Ð": "Dimensionality", "Þ": "Topology", "Ř": "Relational Mode",
-    "Φ": "Parity/Symmetry", "ƒ": "Fidelity", "Ç": "Kinetics",
-    "Γ": "Interaction Scope", "ɢ": "Interaction Grammar", "φ̂": "Criticality",
-    "Ħ": "Chirality", "Σ": "Stoichiometry", "Ω": "Winding/Protection",
+    "⊢": "Dimensionality", "⊣": "Topology", ">": "Relational Mode",
+    "<": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
+    "∈": "Interaction Scope", "∋": "Interaction Grammar", "φ̂": "Criticality",
+    "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Winding/Protection",
 }
 
 
@@ -153,8 +153,8 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # Helper to build tuple dict
 def T(Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, φ̂, Ħ, Σ, Ω) -> Dict[str, str]:
     return {
-        "Ð": Ð, "Þ": Þ, "Ř": Ř, "Φ": Φ, "ƒ": ƒ, "Ç": Ç,
-        "Γ": Γ, "ɢ": ɢ, "φ̂": φ̂, "Ħ": Ħ, "Σ": Σ, "Ω": Ω,
+        "⊢": Ð, "⊣": Þ, ">": Ř, "<": Φ, "⋈": ƒ, "⊤": Ç,
+        "∈": Γ, "∋": ɢ, "φ̂": φ̂, "⊥": Ħ, "⊞": Σ, "◻": Ω,
     }
 
 STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {

@@ -95,18 +95,18 @@ _OP_TACTIC: dict[str, str] = {
 
 # ── Primitive → fallback tactic (when op not in _OP_TACTIC) ──────────────────
 _PRIM_TACTIC: dict[str, str] = {
-    "Ð": "have h_dim : ComplexDim X = _ := by sorry",
-    "Þ": "have h_top : TopologicallyComplete X := by sorry",
-    "Ř": "have h_rel : ∃ (Z : AlgebraicCycle X p), cycleClass X p Z = α := by sorry",
-    "Φ": "have h_sym : Symmetric (pairingForm X) := by sorry",
-    "ƒ": "have h_coh : CoherentSheaves X := by sorry",
-    "Ç": "have h_kin : Equidistributed (flow X) := by sorry",
-    "Γ": "have h_scope : ∀ x ∈ domain X, property x := by sorry",
-    "ɢ": "have h_exact : Exact (exponentialSequence X) := by sorry",
+    "⊢": "have h_dim : ComplexDim X = _ := by sorry",
+    "⊣": "have h_top : TopologicallyComplete X := by sorry",
+    ">": "have h_rel : ∃ (Z : AlgebraicCycle X p), cycleClass X p Z = α := by sorry",
+    "<": "have h_sym : Symmetric (pairingForm X) := by sorry",
+    "⋈": "have h_coh : CoherentSheaves X := by sorry",
+    "⊤": "have h_kin : Equidistributed (flow X) := by sorry",
+    "∈": "have h_scope : ∀ x ∈ domain X, property x := by sorry",
+    "∋": "have h_exact : Exact (exponentialSequence X) := by sorry",
     "⊙": "have h_crit : CriticalityResolved X p := by sorry",
-    "Ħ": "have h_depth : TemporalDepthFinite X := by sorry",
-    "Σ": "have h_uniq : UniqueWitness X p := by sorry",
-    "Ω": "have h_inv : TopologicalInvariant X = _ := by sorry",
+    "⊥": "have h_depth : TemporalDepthFinite X := by sorry",
+    "⊞": "have h_uniq : UniqueWitness X p := by sorry",
+    "◻": "have h_inv : TopologicalInvariant X = _ := by sorry",
 }
 
 # ── Domain → Mathlib imports ───────────────────────────────────────────────────

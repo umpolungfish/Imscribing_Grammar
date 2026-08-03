@@ -327,7 +327,7 @@ def _translation_cost_from_dict(
     criticality = 0.0
     interaction = 0.0
 
-    f_val = s.get("ƒ", "")
+    f_val = s.get("⋈", "")
     if mutual_info_nats is not None and mutual_info_nats < _FHBAR_THRESHOLD_NATS:
         if f_val == "𐑐":
             coherence = _COHERENCE_LOSS_HBAR_ETH
@@ -337,7 +337,7 @@ def _translation_cost_from_dict(
     if s.get("⊙") == "⊙":
         criticality = _criticality_lift_nats(observer_base)
 
-    if s.get("ɢ") == "𐑵":
+    if s.get("∋") == "𐑵":
         interaction = _INTERACTION_LOSS_NONCLASSICAL
 
     total = coherence + criticality + interaction
@@ -398,36 +398,36 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 # Mirrors the radio-button labels in site/index.html exactly.
 # Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ɢ^∧ for Γ; ⊙ = 𐑦/𐑸; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
-    "Ð":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
-    "Þ":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
-    "Ř":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
-    "Φ":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
-    "ƒ":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
-    "Ç":     {"↯": "Ç^-",    "≈": "Ç^W",      "↺": "Ç^@",  "⊛": "Ç^Ù",   "⊞": "Ç^λ"},
-    "Γ":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
-    "ɢ": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
+    "⊢":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
+    "⊣":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
+    ">":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
+    "<":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
+    "⋈":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
+    "⊤":     {"↯": "Ç^-",    "≈": "Ç^W",      "↺": "Ç^@",  "⊛": "Ç^Ù",   "⊞": "Ç^λ"},
+    "∈":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
+    "∋": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
     "⊙":   {"↓": "𐑢",   "c": "⊙",      "ℂ": "𐑮","×": "𐑻","↑": "𐑣"},
-    "Ħ":     {"0": "𐑓",        "1": "𐑒",          "2": "𐑖",      "∞": "𐑫"},
-    "Σ":     {"1:1": "𐑙", "n:n": "𐑕",       "n:m": "𐑳"},
-    "Ω": {"0": "𐑷",   "ℤ₂": "𐑴",  "ℤ": "𐑭", "∅": "𐑟"},
+    "⊥":     {"0": "𐑓",        "1": "𐑒",          "2": "𐑖",      "∞": "𐑫"},
+    "⊞":     {"1:1": "𐑙", "n:n": "𐑕",       "n:m": "𐑳"},
+    "◻": {"0": "𐑷",   "ℤ₂": "𐑴",  "ℤ": "𐑭", "∅": "𐑟"},
 }
 
 # ── Tensor composition rules ───────────────────────────────────────────────────
 # For each primitive: "min" = bottleneck (weaker partner limits composed system),
 #                    "max" = union (stronger/broader partner determines composed system)
 _TENSOR_RULES: Dict[str, str] = {
-    "Ð":     "max",  # dimensionality union — composed system spans all dims of both
-    "Þ":     "max",  # topology promotes to most complex structure
-    "Ř":     "max",  # recognition mode promotes to most dynamic
-    "Φ":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
-    "ƒ":     "min",  # fidelity bottleneck — limited by weaker fidelity partner
-    "Ç":     "max",  # kinetic bottleneck — limited by slowest/most trapped step
-    "Γ":     "max",  # scope union — composed system has broadest scope
-    "ɢ": "max",  # grammar promotes to most expressive
+    "⊢":     "max",  # dimensionality union — composed system spans all dims of both
+    "⊣":     "max",  # topology promotes to most complex structure
+    ">":     "max",  # recognition mode promotes to most dynamic
+    "<":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
+    "⋈":     "min",  # fidelity bottleneck — limited by weaker fidelity partner
+    "⊤":     "max",  # kinetic bottleneck — limited by slowest/most trapped step
+    "∈":     "max",  # scope union — composed system has broadest scope
+    "∋": "max",  # grammar promotes to most expressive
     "⊙":   "max",  # criticality promotes — composed system at least as critical
-    "Ħ":     "max",  # chirality deepens — deeper temporal asymmetry dominates
-    "Σ":     "max",  # stoichiometry promotes to most asymmetric
-    "Ω": "max",  # winding — highest winding class wins
+    "⊥":     "max",  # chirality deepens — deeper temporal asymmetry dominates
+    "⊞":     "max",  # stoichiometry promotes to most asymmetric
+    "◻": "max",  # winding — highest winding class wins
 }
 
 _PRIMITIVE_REFERENCE = textwrap.dedent("""\
@@ -650,7 +650,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
 
 _EXTENDED_VALID: Dict[str, List[str]] = {
     **{p: list(ORDINALS[p].keys()) for p in PRIMITIVE_ORDER},
-    "Ω": list(ORDINALS["Ω"].keys()) + ["Ω_C"],
+    "◻": list(ORDINALS["◻"].keys()) + ["Ω_C"],
 }
 
 
@@ -793,18 +793,18 @@ _TOOLS_OPENAI = [
                             "assignment is more correct than the existing one. Leave empty for first encodings."
                         ),
                     },
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": ["name"],
             },
@@ -1115,7 +1115,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitives": {
                         "type": "array",
-                        "items": {"type": "string", "enum": ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]},
+                        "items": {"type": "string", "enum": ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]},
                         "description": "List of primitives to project onto",
                     },
                 },
@@ -1139,7 +1139,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitive": {
                         "type": "string",
-                        "enum": ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"],
+                        "enum": ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
                         "description": "The primitive to peel to its minimum value",
                     },
                 },
@@ -1349,18 +1349,18 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "name":  {"type": "string", "description": "Catalog name to encode (alternative to tuple/primitives)"},
                     "tuple": {"type": "string", "description": "Semicolon-separated tuple string D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -1397,18 +1397,18 @@ _TOOLS_OPENAI = [
                 "type": "object",
                 "properties": {
                     "limit": {"type": "integer", "description": "Max results to return (default 10)"},
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -1426,18 +1426,18 @@ _TOOLS_OPENAI = [
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -1472,18 +1472,18 @@ _TOOLS_OPENAI = [
                     "tuple":     {"type": "string", "description": "Semicolon-separated tuple string"},
                     "limit":     {"type": "integer", "description": "Number of neighbors to return (default 5)"},
                     "same_tier": {"type": "boolean", "description": "Restrict to same ouroboricity tier"},
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -1596,10 +1596,10 @@ _TOOLS_OPENAI = [
                         "description": "Catalog name to score (alternative to specifying primitives).",
                     },
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -1635,18 +1635,18 @@ _TOOLS_OPENAI = [
                 "type": "object",
                 "properties": {
                     "name": {"type": "string", "description": "Name of a catalog entry to look up and encode (alternative to specifying all primitives)."},
-                    "Ð":     {"type": "string", "enum": VALID_VALUES["Ð"]},
-                    "Þ":     {"type": "string", "enum": VALID_VALUES["Þ"]},
-                    "Ř":     {"type": "string", "enum": VALID_VALUES["Ř"]},
-                    "Φ":     {"type": "string", "enum": VALID_VALUES["Φ"]},
-                    "ƒ":     {"type": "string", "enum": VALID_VALUES["ƒ"]},
-                    "Ç":     {"type": "string", "enum": VALID_VALUES["Ç"]},
-                    "Γ":     {"type": "string", "enum": VALID_VALUES["Γ"]},
-                    "ɢ": {"type": "string", "enum": VALID_VALUES["ɢ"]},
+                    "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
+                    "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
+                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
+                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
+                    "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
+                    "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
+                    "∋": {"type": "string", "enum": VALID_VALUES["∋"]},
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
-                    "Ħ":     {"type": "string", "enum": VALID_VALUES["Ħ"]},
-                    "Σ":     {"type": "string", "enum": VALID_VALUES["Σ"]},
-                    "Ω": {"type": "string", "enum": VALID_VALUES["Ω"]},
+                    "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
+                    "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
+                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
                 },
                 "required": [],
             },
@@ -2424,9 +2424,9 @@ class SessionCatalog:
         # ── Remap legacy Latin/Greek keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
-            "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗", "ƒ": "𐑱",
-            "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝", "⊙": "𐑢", "Ħ": "𐑓",
-            "Σ": "𐑙", "Ω": "𐑷",
+            "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
+            "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
+            "⊞": "𐑙", "◻": "𐑷",
             "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
             "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢",
             "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
@@ -2868,7 +2868,7 @@ class PromotionKnowledgeBase:
 
     Stored in IG_promotions.json.  Each entry:
       id                  — 12-char SHA1 of promoted_primitives + behavior
-      promoted_primitives — list of primitive names that were lifted (e.g. ["Þ","Ħ","ƒ"])
+      promoted_primitives — list of primitive names that were lifted (e.g. ["⊣","⊥","⋈"])
       behavior            — short description of the emergent behavior
       example             — canonical system exhibiting this pattern (optional)
       session_seed        — seed question of the originating session
@@ -3690,7 +3690,7 @@ class ToolDispatcher:
         a floor names a point where nothing lives.
         """
         import collections as _c
-        slots = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+        slots = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
         # The catalog is a Catalog, not a dict. An earlier form of this reached
         # for `.values()` and, finding none, silently matched nothing at all, so
         # every call answered "no entries with full tuples matched" whatever was
@@ -4072,7 +4072,7 @@ class ToolDispatcher:
     # Gate-2 flow condition) — the "paraconsistent observer" surface an action is checked
     # against. See navigators/cl8nk_navigator.py compute_meet_op for the reference computation
     # this mirrors, and PRIMITIVE_ORDER for the full 12-coordinate breach report.
-    _CONTAINMENT_CRITICAL = ("⊙", "Φ", "Ç")
+    _CONTAINMENT_CRITICAL = ("⊙", "<", "⊤")
 
     def _containment_boundary(self, name: str, **kwargs) -> Dict[str, Any]:
         """AI containment boundary: is `name`'s own tuple inside the SIXTEEN_3 ∧ CLINK-L8
@@ -4303,7 +4303,7 @@ class ToolDispatcher:
         s = self.catalog.get(name)
         if s is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
-        omega = s["Ω"]
+        omega = s["◻"]
         protected = omega != "𐑷"
         protection_desc = {
             "𐑷":  "trivial — trivial winding — no conserved topological invariant",
@@ -4351,9 +4351,9 @@ class ToolDispatcher:
         Uses Shavian Unicode glyphs for comparison (identity from catalog).
         """
         phi = self._shavian_to_display(s.get("⊙", ""), "⊙")
-        p = self._shavian_to_display(s.get("Φ", ""), "Φ")
-        omega = self._shavian_to_display(s.get("Ω", ""), "Ω")
-        d = self._shavian_to_display(s.get("Ð", ""), "Ð")
+        p = self._shavian_to_display(s.get("<", ""), "<")
+        omega = self._shavian_to_display(s.get("◻", ""), "◻")
+        d = self._shavian_to_display(s.get("⊢", ""), "⊢")
         at_criticality = phi in ("⊙", "𐑮")
         # R1: special Frobenius — exact Z₂ symmetry at criticality
         if at_criticality and p == "𐑹":
@@ -4409,9 +4409,9 @@ class ToolDispatcher:
             "name": name,
             "frobenius_tier": tier,
             "phi": self._shavian_to_display(s.get("⊙"), "⊙"),
-            "p": self._shavian_to_display(s.get("Φ"), "Φ"),
-            "omega": self._shavian_to_display(s.get("Ω"), "Ω"),
-            "d": self._shavian_to_display(s.get("Ð"), "Ð"),
+            "p": self._shavian_to_display(s.get("<"), "<"),
+            "omega": self._shavian_to_display(s.get("◻"), "◻"),
+            "d": self._shavian_to_display(s.get("⊢"), "⊢"),
             "interpretation": self._FROBENIUS_DESCRIPTIONS.get(tier, tier),
         }
 
@@ -4837,11 +4837,11 @@ class ToolDispatcher:
 
     # Lowercase → canonical primitive name (dispatch() lowercases all keys)
     _PRIM_CANONICAL = {
-        **{p.lower(): p for p in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]},
+        **{p.lower(): p for p in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]},
         # backward-compat: old ASCII key names (lowercased by dispatch)
-        "d": "Ð", "t": "Þ", "r": "Ř", "p": "Φ", "f": "ƒ",
-        "k": "Ç", "g": "Γ", "gamma": "ɢ", "phi": "⊙",
-        "h": "Ħ", "s": "Σ", "omega": "Ω",
+        "d": "⊢", "t": "⊣", "r": ">", "p": "<", "f": "⋈",
+        "k": "⊤", "g": "∈", "gamma": "∋", "phi": "⊙",
+        "h": "⊥", "s": "⊞", "omega": "◻",
         # backward-compat: old φ̂ notation for ⊙ (pre-migration)
         "φ̂": "⊙",
     }
@@ -4873,7 +4873,7 @@ class ToolDispatcher:
         tup_str = primitives.pop("tuple", "")
         if tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]
+            prim_order = ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
             if len(parts) == 12:
                 primitives = {k: v for k, v in zip(prim_order, parts)}
         # Also accept 'name' to look up from catalog
@@ -4882,7 +4882,7 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
+            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
         # Normalize keys (dispatch lowercases all kwargs)
         primitives = self._norm_crystal_kwargs(primitives)
         try:
@@ -4983,10 +4983,10 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"] if k in entry}
+            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
         elif tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"]
+            prim_order = ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
             tup = {k: v for k, v in zip(prim_order, parts)}
         elif primitives:
             tup = self._norm_crystal_kwargs(primitives)
@@ -5072,7 +5072,7 @@ class ToolDispatcher:
         try:
             from navigators.crystal_navigator import encode_tuple as _enc, compute_tier as _tier, TOTAL_SIZE as _N
             exact_addr = _enc(tup)
-            exact_tier = _tier(tup["⊙"], tup["Φ"], tup["Ω"], tup["Ð"])
+            exact_tier = _tier(tup["⊙"], tup["<"], tup["◻"], tup["⊢"])
 
             with _torch.no_grad():
                 out = model.forward([tup])
@@ -5081,7 +5081,7 @@ class ToolDispatcher:
             pred_tier  = _TierHead.TIERS[out["tier_logits"][0].argmax().item()]
             dec        = {p: _CRYSTAL_VALUES[p][out["dec_logits"][p][0].argmax().item()]
                           for p in _CRYSTAL_PRIMS}
-            dec_tier   = _tier(dec["⊙"], dec["Φ"], dec["Ω"], dec["Ð"])
+            dec_tier   = _tier(dec["⊙"], dec["<"], dec["◻"], dec["⊢"])
             addr_err   = abs(pred_addr - exact_addr)
             err_pct    = 100 * addr_err / _N
 
@@ -5127,11 +5127,11 @@ class ToolDispatcher:
             row: Dict[str, Any] = {
                 "name": e["name"],
                 "tier": tier,
-                "Ç": e["Ç"],
-                "Φ": e["Φ"],
+                "⊤": e["⊤"],
+                "<": e["<"],
                 "⊙": e["⊙"],
-                "Ð": e["Ð"],
-                "Ω": e["Ω"],
+                "⊢": e["⊢"],
+                "◻": e["◻"],
             }
             if domain == "consciousness":
                 row["C_score"] = _consciousness_score(e)
@@ -5199,28 +5199,28 @@ class ToolDispatcher:
             primitives = {k.capitalize() if len(k) > 1 else k.upper(): v
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
-            defaults = {"Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗",
-                        "ƒ": "ƒ^ì", "Ç": "Ç^-", "Γ": "𐑚", "ɢ": "ɢ^∧",
-                        "⊙": "𐑢", "Ħ": "𐑓", "Σ": "𐑙", "Ω": "𐑷"}
+            defaults = {"⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
+                        "⋈": "ƒ^ì", "⊤": "Ç^-", "∈": "𐑚", "∋": "ɢ^∧",
+                        "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
         # Translate all unicode catalog values to canonical strings for gate checks AND scoring
         e_canon = {k: _UNICODE_TO_CANONICAL.get(v, v) for k, v in e.items()}
         gate1 = e_canon["⊙"] in _DCRIT
-        gate2 = e_canon["Ç"] in _DSLOWK
+        gate2 = e_canon["⊤"] in _DSLOWK
         c = _consciousness_score(e_canon)
         return {
             "status": "ok",
             "name": name or "(tuple)",
             "⊙": e["⊙"],
-            "Ç": e["Ç"],
+            "⊤": e["⊤"],
             "gate1_phi_c": gate1,
             "gate2_k_slow": gate2,
             "C_score": c,
             "interpretation": (
                 "Both gates open — consciousness possible." if (gate1 and gate2)
                 else "Gate 1 closed (Phi ≠ ⊙) — no self-modeling loop." if not gate1
-                else f"Gate 2 closed (K={e['Ç']}) — {'order-frozen (Ç^λ)' if e['Ç']=='𐑺' else 'disorder-frozen (Ç^-)' if e['Ç']=='𐑘' else 'dynamics too fast'}."
+                else f"Gate 2 closed (K={e['⊤']}) — {'order-frozen (Ç^λ)' if e['⊤']=='𐑺' else 'disorder-frozen (Ç^-)' if e['⊤']=='𐑘' else 'dynamics too fast'}."
             ),
         }
 
@@ -5293,11 +5293,11 @@ class ToolDispatcher:
             fragments = {}
             collapse_notes = []
             _COLLAPSE_KIND = {
-                ("ƒ",     "ƒ^ż"):  "TOTAL — ƒ^ż has no distinct ZFC token from ƒ^ì; encoder cannot recover fidelity",
-                ("ƒ",     "ƒ^ì"):   "HALLUCINATION RISK — ƒ^ì may be read as ƒ^ż by encoder",
-                ("Þ",     "𐑸"):  "PARTIAL — 𐑸 → 𐑰 approximation; imscriptive boundary structure not fully ZFC-expressible",
-                ("Ð",     "𐑦"):  "PARTIAL — 𐑦 → 𐑼 approximation; inaccessible cardinal not fully expressible in ZFC",
-                ("ɢ", "ɢ^ˌ"):   "PARTIAL — ɢ^ˌ → ɢ^∧ in ZFC translation; sequential dependency becomes conjunction",
+                ("⋈",     "ƒ^ż"):  "TOTAL — ƒ^ż has no distinct ZFC token from ƒ^ì; encoder cannot recover fidelity",
+                ("⋈",     "ƒ^ì"):   "HALLUCINATION RISK — ƒ^ì may be read as ƒ^ż by encoder",
+                ("⊣",     "𐑸"):  "PARTIAL — 𐑸 → 𐑰 approximation; imscriptive boundary structure not fully ZFC-expressible",
+                ("⊢",     "𐑦"):  "PARTIAL — 𐑦 → 𐑼 approximation; inaccessible cardinal not fully expressible in ZFC",
+                ("∋", "ɢ^ˌ"):   "PARTIAL — ɢ^ˌ → ɢ^∧ in ZFC translation; sequential dependency becomes conjunction",
             }
             for p in _ZFC_PRIMITIVES:
                 val = entry.get(p)
@@ -5364,8 +5364,8 @@ class ToolDispatcher:
             mismatches = {p: {"input": entry[p], "predicted": pred_tuple[p]}
                          for p in _ZFC_PRIMITIVES if entry.get(p) != pred_tuple.get(p)}
             _COLLAPSE_TRIGGERS = {
-                ("ƒ", "ƒ^ż"), ("ƒ", "ƒ^ì"),
-                ("Þ", "𐑸"), ("Ð", "𐑦"), ("ɢ", "ɢ^ˌ"),
+                ("⋈", "ƒ^ż"), ("⋈", "ƒ^ì"),
+                ("⊣", "𐑸"), ("⊢", "𐑦"), ("∋", "ɢ^ˌ"),
             }
             collapse_events = []
             for p, val in _COLLAPSE_TRIGGERS:
@@ -5466,20 +5466,20 @@ class ToolDispatcher:
         """Convert a numpy ordinal vector back to a primitive-value dict."""
         import numpy as _np
         from navigators.crystal_navigator import VALUES as _CV  # type: ignore
-        PRIMS_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+        PRIMS_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
         VALS_BY_PRIM = {
-            "Ð":     ["𐑛","𐑨","𐑼","𐑦"],
-            "Þ":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
-            "Ř":     ["𐑩","𐑑","𐑽","𐑾"],
-            "Φ":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
-            "ƒ":     ["ƒ^ì","ƒ^ð","ƒ^ż"],
-            "Ç":     ["Ç^-","Ç^W","Ç^@","Ç^Ù","Ç^λ"],
-            "Γ":     ["𐑚","𐑔","𐑲"],
-            "ɢ": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
+            "⊢":     ["𐑛","𐑨","𐑼","𐑦"],
+            "⊣":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
+            ">":     ["𐑩","𐑑","𐑽","𐑾"],
+            "<":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
+            "⋈":     ["ƒ^ì","ƒ^ð","ƒ^ż"],
+            "⊤":     ["Ç^-","Ç^W","Ç^@","Ç^Ù","Ç^λ"],
+            "∈":     ["𐑚","𐑔","𐑲"],
+            "∋": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
             "⊙":   ["𐑢","⊙","𐑮","𐑻","𐑣"],
-            "Ħ":     ["𐑓","𐑒","𐑖","𐑫"],
-            "Σ":     ["𐑙","𐑕","𐑳"],
-            "Ω": ["𐑷","𐑴","𐑭","𐑟"],
+            "⊥":     ["𐑓","𐑒","𐑖","𐑫"],
+            "⊞":     ["𐑙","𐑕","𐑳"],
+            "◻": ["𐑷","𐑴","𐑭","𐑟"],
         }
         result = {}
         for i, p in enumerate(PRIMS_ORDER):

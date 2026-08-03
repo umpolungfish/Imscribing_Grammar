@@ -32,7 +32,7 @@ for name in CLAY_NAMES:
     e = catalog.get(name)
     if e:
         clay_tuples[name] = e
-        print(f"{name}: {e['Ð']} {e['Þ']} {e['Ř']} {e['Φ']} {e['ƒ']} {e['Ç']} {e['Γ']} {e['ɢ']} {e['⊙']} {e['Ħ']} {e['Σ']} {e['Ω']}")
+        print(f"{name}: {e['⊢']} {e['⊣']} {e['>']} {e['<']} {e['⋈']} {e['⊤']} {e['∈']} {e['∋']} {e['⊙']} {e['⊥']} {e['⊞']} {e['◻']}")
     else:
         print(f"WARNING: {name} not found")
 
@@ -45,38 +45,38 @@ NEW_RULESETS_ABSORPTION = [
     # 23: monarchy
     ("monarchy", (
         AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-        AbsorptionRule("Σ", "𐑳", ("meet", "join", "tensor")),
-        AbsorptionRule("Φ", "𐑹", ("meet", "join", "tensor")),
-        AbsorptionRule("Ω", "𐑭", ("meet", "join", "tensor")),
+        AbsorptionRule("⊞", "𐑳", ("meet", "join", "tensor")),
+        AbsorptionRule("<", "𐑹", ("meet", "join", "tensor")),
+        AbsorptionRule("◻", "𐑭", ("meet", "join", "tensor")),
     )),
     # 24: inverted
     ("inverted", (
         AbsorptionRule("⊙", "𐑢", ("meet", "join", "tensor")),
-        AbsorptionRule("Ω", "𐑷", ("meet", "join", "tensor")),
-        AbsorptionRule("Σ", "𐑙", ("meet", "join", "tensor")),
+        AbsorptionRule("◻", "𐑷", ("meet", "join", "tensor")),
+        AbsorptionRule("⊞", "𐑙", ("meet", "join", "tensor")),
     )),
     # 25: tensor_only
     ("tensor_only", (
         AbsorptionRule("⊙", "⊙", ("tensor",)),
-        AbsorptionRule("Σ", "𐑳", ("tensor",)),
+        AbsorptionRule("⊞", "𐑳", ("tensor",)),
     )),
     # 26: chirality_first
     ("chirality_first", (
-        AbsorptionRule("Ħ", "𐑫", ("meet", "join", "tensor")),
+        AbsorptionRule("⊥", "𐑫", ("meet", "join", "tensor")),
         AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-        AbsorptionRule("Σ", "𐑳", ("tensor",)),
+        AbsorptionRule("⊞", "𐑳", ("tensor",)),
     )),
     # 27: scope_empire
     ("scope_empire", (
-        AbsorptionRule("Γ", "𐑔", ("meet", "join", "tensor")),
+        AbsorptionRule("∈", "𐑔", ("meet", "join", "tensor")),
         AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-        AbsorptionRule("Σ", "𐑳", ("tensor",)),
+        AbsorptionRule("⊞", "𐑳", ("tensor",)),
     )),
     # 28: topology_seal
     ("topology_seal", (
-        AbsorptionRule("Þ", "𐑸", ("meet", "join", "tensor")),
+        AbsorptionRule("⊣", "𐑸", ("meet", "join", "tensor")),
         AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
-        AbsorptionRule("Σ", "𐑳", ("tensor",)),
+        AbsorptionRule("⊞", "𐑳", ("tensor",)),
     )),
 ]
 
@@ -94,28 +94,28 @@ def abs_to_dict(abs_rules):
 
 # ── Map letters to ordinals ────────────────────────────────────
 SHORT_TO_FULL = {
-    'D': 'Ð', 'T': 'Þ', 'R': 'Ř', 'P': 'Φ', 'F': 'ƒ',
-    'K': 'Ç', 'G': 'Γ', 'A': 'ɢ', 'C': '⊙', 'H': 'Ħ',
-    'S': 'Σ', 'W': 'Ω',
+    'D': '⊢', 'T': '⊣', 'R': '>', 'P': '<', 'F': '⋈',
+    'K': '⊤', 'G': '∈', 'A': '∋', 'C': '⊙', 'H': '⊥',
+    'S': '⊞', 'W': '◻',
 }
 
 # Standard ordinal values (approximate for primitive comparison)
 ORDINALS = {
-    'Ð': {'𐑛': 1, '𐑨': 2, '𐑼': 3, '𐑦': 4},
-    'Þ': {'𐑡': 1, '𐑰': 2, '𐑥': 3, '𐑶': 4, '𐑸': 5},
-    'Ř': {'𐑩': 1, '𐑑': 2, '𐑽': 3, '𐑾': 4},
-    'Φ': {'𐑗': 1, '𐑿': 2, '𐑬': 3, '𐑯': 4, '𐑹': 5},
-    'ƒ': {'𐑱': 1, '𐑞': 2, '𐑐': 3},
-    'Ç': {'𐑺': 1, '𐑪': 2, '𐑧': 3, '𐑤': 4, '𐑘': 5},
-    'Γ': {'𐑲': 1, '𐑚': 2, '𐑔': 3},
-    'ɢ': {'𐑝': 1, '𐑜': 2, '𐑠': 3, '𐑵': 4},
+    '⊢': {'𐑛': 1, '𐑨': 2, '𐑼': 3, '𐑦': 4},
+    '⊣': {'𐑡': 1, '𐑰': 2, '𐑥': 3, '𐑶': 4, '𐑸': 5},
+    '>': {'𐑩': 1, '𐑑': 2, '𐑽': 3, '𐑾': 4},
+    '<': {'𐑗': 1, '𐑿': 2, '𐑬': 3, '𐑯': 4, '𐑹': 5},
+    '⋈': {'𐑱': 1, '𐑞': 2, '𐑐': 3},
+    '⊤': {'𐑺': 1, '𐑪': 2, '𐑧': 3, '𐑤': 4, '𐑘': 5},
+    '∈': {'𐑲': 1, '𐑚': 2, '𐑔': 3},
+    '∋': {'𐑝': 1, '𐑜': 2, '𐑠': 3, '𐑵': 4},
     '⊙': {'𐑢': 1, '⊙': 2, '𐑮': 3, '𐑻': 4, '𐑣': 5},
-    'Ħ': {'𐑓': 1, '𐑒': 2, '𐑖': 3, '𐑫': 4},
-    'Σ': {'𐑙': 1, '𐑕': 2, '𐑳': 3},
-    'Ω': {'𐑷': 1, '𐑴': 2, '𐑭': 3, '𐑟': 4},
+    '⊥': {'𐑓': 1, '𐑒': 2, '𐑖': 3, '𐑫': 4},
+    '⊞': {'𐑙': 1, '𐑕': 2, '𐑳': 3},
+    '◻': {'𐑷': 1, '𐑴': 2, '𐑭': 3, '𐑟': 4},
 }
 
-PRIM_KEYS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', '⊙', 'Ħ', 'Σ', 'Ω']
+PRIM_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 def apply_absorption(tup, abs_dict, op):
     """Apply absorption rules to a tuple. Returns absorbed tuple."""
@@ -155,7 +155,7 @@ def tensor_with_absorption(tup_a, tup_b, abs_dict):
     return result_abs
 
 def tuple_to_str(tup):
-    return f"⟨{tup['Ð']};{tup['Þ']};{tup['Ř']};{tup['Φ']};{tup['ƒ']};{tup['Ç']};{tup['Γ']};{tup['ɢ']};{tup['⊙']};{tup['Ħ']};{tup['Σ']};{tup['Ω']}⟩"
+    return f"⟨{tup['⊢']};{tup['⊣']};{tup['>']};{tup['<']};{tup['⋈']};{tup['⊤']};{tup['∈']};{tup['∋']};{tup['⊙']};{tup['⊥']};{tup['⊞']};{tup['◻']}⟩"
 
 def tuple_diff_count(a, b):
     return sum(1 for pk in PRIM_KEYS if a[pk] != b[pk])
@@ -176,11 +176,11 @@ print("=" * 100)
 
 # ── 1. Baseline: show each Clay problem's primitives in readable notation ──
 print("\n── 1. CLAY PROBLEM TUPLES (canonical) ──")
-print(f"{'Problem':<6} {'Ð':<4} {'Þ':<4} {'Ř':<4} {'Φ':<4} {'ƒ':<4} {'Ç':<4} {'Γ':<4} {'ɢ':<4} {'⊙':<4} {'Ħ':<4} {'Σ':<4} {'Ω':<4}")
+print(f"{'Problem':<6} {'⊢':<4} {'⊣':<4} {'>':<4} {'<':<4} {'⋈':<4} {'⊤':<4} {'∈':<4} {'∋':<4} {'⊙':<4} {'⊥':<4} {'⊞':<4} {'◻':<4}")
 print("-" * 70)
 for name in CLAY_NAMES:
     t = clay_tuples[name]
-    print(f"{SHORT[name]:<6} {t['Ð']:<4} {t['Þ']:<4} {t['Ř']:<4} {t['Φ']:<4} {t['ƒ']:<4} {t['Ç']:<4} {t['Γ']:<4} {t['ɢ']:<4} {t['⊙']:<4} {t['Ħ']:<4} {t['Σ']:<4} {t['Ω']:<4}")
+    print(f"{SHORT[name]:<6} {t['⊢']:<4} {t['⊣']:<4} {t['>']:<4} {t['<']:<4} {t['⋈']:<4} {t['⊤']:<4} {t['∈']:<4} {t['∋']:<4} {t['⊙']:<4} {t['⊥']:<4} {t['⊞']:<4} {t['◻']:<4}")
 
 # ── 2. Pairwise distances (canonical) ──
 print("\n── 2. PAIRWISE DISTANCES (canonical, primitive diffs) ──")

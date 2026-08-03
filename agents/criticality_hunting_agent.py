@@ -209,13 +209,13 @@ class CriticalityHuntingAgent(BaseAgent):
             target_xi_cp: Target ξ_CP (nats) for perturbation pathfinding.
                          Lower values correspond to more efficient, critical-like systems.
             top_n: Maximum number of candidates to analyse in depth.
-            optimize_primitives: Primitives to vary in pathfinding (default: ["ƒ","Γ","Þ","Φ"]).
+            optimize_primitives: Primitives to vary in pathfinding (default: ["⋈","∈","⊣","<"]).
             include_already_critical: If True, include ⊙ entries in output.
 
         Returns:
             CriticalityHuntReport.
         """
-        optimize_primitives = optimize_primitives or ["ƒ", "Γ", "Þ", "Φ"]
+        optimize_primitives = optimize_primitives or ["⋈", "∈", "⊣", "<"]
 
         # 1. Scan catalog
         approaching, already_critical, stats = self._scan_catalog(delta_g)

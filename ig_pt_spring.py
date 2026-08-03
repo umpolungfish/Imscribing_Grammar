@@ -50,13 +50,13 @@ def build_graph():
     # Element nodes
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         G.add_node(sym, kind='elem', Z=Z, period=per, block=blk,
-                   prim=PRIM_LABEL.get(sym, 'Ħ'))
+                   prim=PRIM_LABEL.get(sym, '⊥'))
 
     # Element → dominant primitive (strong pull)
     for sym in ELEMENTS:
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         if prim not in PRIM_VERT:
-            prim = 'Ħ'
+            prim = '⊥'
         G.add_edge(sym, f'P_{prim}', weight=4.0, etype='prim')
 
     # Frobenius thread sequence (organic)
@@ -110,9 +110,9 @@ def seed_positions(G):
         pos[f'P_{prim}'] = np.array(p2)
 
     for sym in ELEMENTS:
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         if prim not in prim_pos:
-            prim = 'Ħ'
+            prim = '⊥'
         # Slight jitter around primitive seed so elements don't stack exactly
         rng = np.random.default_rng(hash(sym) % 2**31)
         jitter = rng.uniform(-0.15, 0.15, 2)
@@ -174,7 +174,7 @@ def generate_tex(pos):
     # ── Primitive lines from origin ───────────────────────────────────────────
     for prim in PRIM_VERT:
         pp = pos[f'P_{prim}']
-        empty = prim in ('Ω','Ř','Γ','ƒ')
+        empty = prim in ('◻','>','∈','⋈')
         col = 'black!8' if empty else 'black!14'
         L.append(f'\\draw[{col},line width=0.35pt] (0,0) -- ({pp[0]:.3f}cm,{pp[1]:.3f}cm);\n')
 
@@ -224,7 +224,7 @@ def generate_tex(pos):
     # ── Primitive anchor nodes + labels ───────────────────────────────────────
     for prim, vi in PRIM_VERT.items():
         pp   = pos[f'P_{prim}']
-        empty = prim in ('Ω','Ř','Γ','ƒ')
+        empty = prim in ('◻','>','∈','⋈')
         col  = 'black!20' if not empty else 'black!10'
         L.append(f'\\node[circle,fill={col},minimum size=0.15cm,inner sep=0pt]'
                  f' at ({pp[0]:.3f}cm,{pp[1]:.3f}cm) {{}};\n')

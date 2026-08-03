@@ -191,9 +191,9 @@ def name_fragment(seq: str, start: int, end: int,
     if re.search(r'RPVKVYPNVA', seq): return 'γ-LPH precursor'
     # Generic
     dom = (profile or {}).get('dominant')
-    desc = {'Ω':'Winding/closure','φ̂':'Criticality signal','Ř':'Disulfide scaffold','Ħ':'Substrate recognition',
-            'Σ':'Variable region','ƒ':'Hydrophobic anchor','ɢ':'Glycosylation target','Φ':'Phosphorylation switch',
-            'Γ':'Catalytic','Ç':'Kinetic regulator','Ð':'Initiation','Þ':'Topological anchor'}
+    desc = {'◻':'Winding/closure','φ̂':'Criticality signal','Ř':'Disulfide scaffold','Ħ':'Substrate recognition',
+            '⊞':'Variable region','ƒ':'Hydrophobic anchor','ɢ':'Glycosylation target','Φ':'Phosphorylation switch',
+            '∈':'Catalytic','Ç':'Kinetic regulator','Ð':'Initiation','Þ':'Topological anchor'}
     return desc.get(dom, f'Fragment {idx+1}')
 
 # ══════════════════════════════════════════════════════════════════

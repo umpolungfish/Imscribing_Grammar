@@ -56,9 +56,9 @@ print("=" * 60)
 # 5-card primitives: Þ, Φ, Ç, ⊙  (count=4, each 5 values)
 
 prim_cards = {
-    "Ð": 4, "Þ": 5, "Ř": 4, "Φ": 5, "ƒ": 3,
-    "Ç": 5, "Γ": 3, "ɢ": 4, "⊙": 5, "Ħ": 4,
-    "Σ": 3, "Ω": 4,
+    "⊢": 4, "⊣": 5, ">": 4, "<": 5, "⋈": 3,
+    "⊤": 5, "∈": 3, "∋": 4, "⊙": 5, "⊥": 4,
+    "⊞": 3, "◻": 4,
 }
 
 by_card = defaultdict(list)
@@ -319,20 +319,20 @@ print("=" * 60)
 # Ð→Þ→Ř→Φ→ƒ→Ç→Γ→ɢ→⊙→Ħ→Σ→Ω
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
-ig_order = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 ig_desc = {
-    "Ð": "Dimensionality/scope of the system (genome ploidy/size)",
-    "Þ": "Topology (DNA supercoiling, chromosome architecture)",
-    "Ř": "Reversibility/identity (strand complementarity, palindromes)",
-    "Φ": "Parity/phase (reading frame: 0/+1/+2/-1/-2/-3 = 6 frames)",
-    "ƒ": "Force/field (H-bonds, base stacking, molecular drive)",
-    "Ç": "Kinematics/coupling (ribosomal translocation, codon usage bias)",
-    "Γ": "Scope/grammar (gene regulatory networks, operons, promoters)",
-    "ɢ": "Interaction grammar (protein-protein interaction topology, IPC)",
+    "⊢": "Dimensionality/scope of the system (genome ploidy/size)",
+    "⊣": "Topology (DNA supercoiling, chromosome architecture)",
+    ">": "Reversibility/identity (strand complementarity, palindromes)",
+    "<": "Parity/phase (reading frame: 0/+1/+2/-1/-2/-3 = 6 frames)",
+    "⋈": "Force/field (H-bonds, base stacking, molecular drive)",
+    "⊤": "Kinematics/coupling (ribosomal translocation, codon usage bias)",
+    "∈": "Scope/grammar (gene regulatory networks, operons, promoters)",
+    "∋": "Interaction grammar (protein-protein interaction topology, IPC)",
     "⊙": "Criticality (protein fold nucleus, prion-like phase transition)",
-    "Ħ": "Chirality (L-amino acid homochirality — FIXED at bootstrap)",
-    "Σ": "Symmetry/entropy (sequence conservation, evolutionary info content)",
-    "Ω": "Winding/closure (α-helix winding number, topoisomerase, fold closure)",
+    "⊥": "Chirality (L-amino acid homochirality — FIXED at bootstrap)",
+    "⊞": "Symmetry/entropy (sequence conservation, evolutionary info content)",
+    "◻": "Winding/closure (α-helix winding number, topoisomerase, fold closure)",
 }
 
 print("IG primitive → Central dogma stage:")

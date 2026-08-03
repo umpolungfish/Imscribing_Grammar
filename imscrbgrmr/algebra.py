@@ -416,7 +416,7 @@ def _absorb_check(
 
     absorption_rules: iterable of (primitive, value, operations) tuples,
                       or None to use canonical defaults.
-    prim_shavian:   Shavian glyph for this primitive (e.g., "⊙", "Σ")
+    prim_shavian:   Shavian glyph for this primitive (e.g., "⊙", "⊞")
     p1_val, p2_val: enum values with .value attribute giving the Shavian glyph
     op_name:        "meet", "join", or "tensor"
 
@@ -678,7 +678,7 @@ def tensor(s1: Imscription, s2: Imscription, name: Optional[str] = None, absorpt
     # Σ absorption under tensor: if either operand has the absorbing Σ value, it dominates
     stoi = result.stoichiometry
     if absorption is not None:
-        absorbed_stoi = _absorb_check(absorption, "Σ", s1.stoichiometry, s2.stoichiometry,
+        absorbed_stoi = _absorb_check(absorption, "⊞", s1.stoichiometry, s2.stoichiometry,
                                       [], "⊗", "tensor")
         if absorbed_stoi is not None:
             stoi = absorbed_stoi

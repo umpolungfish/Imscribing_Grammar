@@ -107,10 +107,10 @@ class ThurstonNet(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑽",
-        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑧",
-        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
-        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑴",
+        "⊢": "𐑦", "⊣": "𐑸", ">": "𐑽",
+        "<": "𐑹", "⋈": "𐑐", "⊤": "𐑧",
+        "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
+        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑴",
     }
     SELF_ENCODE_TARGET: int = 6_563_951   # encode_tuple(DEFINING_TUPLE)
     THURSTON_GEOMETRIES: list[str] = THURSTON_GEOMETRIES
@@ -444,10 +444,10 @@ class YangMillsNavigator(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑑",
-        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑪",
-        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
-        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑭",
+        "⊢": "𐑦", "⊣": "𐑸", ">": "𐑑",
+        "<": "𐑹", "⋈": "𐑐", "⊤": "𐑪",
+        "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
+        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
     }
     SELF_ENCODE_TARGET: int = 6_734_735   # encode_tuple(DEFINING_TUPLE)
 
@@ -711,10 +711,10 @@ class RiemannNavigator(nn.Module):
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑑",
-        "Φ": "𐑹", "ƒ": "𐑐", "Ç": "𐑧",
-        "Γ": "𐑲", "ɢ": "𐑵", "⊙": "⊙",
-        "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑭",
+        "⊢": "𐑦", "⊣": "𐑸", ">": "𐑑",
+        "<": "𐑹", "⋈": "𐑐", "⊤": "𐑧",
+        "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
+        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
     }
     # Crystal address — same as grammar_self_encode (d=0, Cardinality-One Theorem §XXXVII)
     SELF_ENCODE_TARGET: int = 6_734_591
@@ -990,10 +990,10 @@ class IsingNavigator:
     """
 
     DEFINING_TUPLE: dict[str, str] = {
-        "Ð": "𐑨", "Þ": "𐑶", "Ř": "𐑑",
-        "Φ": "𐑹", "ƒ": "𐑱", "Ç": "𐑘",
-        "Γ": "𐑲", "ɢ": "𐑝", "⊙": "⊙",
-        "Ħ": "𐑓", "Σ": "𐑕", "Ω": "𐑴",
+        "⊢": "𐑨", "⊣": "𐑶", ">": "𐑑",
+        "<": "𐑹", "⋈": "𐑱", "⊤": "𐑘",
+        "∈": "𐑲", "∋": "𐑝", "⊙": "⊙",
+        "⊥": "𐑓", "⊞": "𐑕", "◻": "𐑴",
     }
 
     # Known 3D Ising critical exponents (benchmarks)
@@ -1247,7 +1247,7 @@ def navigator_info() -> None:
         print(f"\n{name}")
         print(f"  Source: IG_ONTICS §XXXV / §XXXVI / §XL")
         print(f"  Tuple:  ⟨{''.join(f'{v}' for v in tup.values())}⟩")
-        k = tup.get("Ç", "?")
+        k = tup.get("⊤", "?")
         arch = {
             "𐑧":  "deep GNN stack (FrobeniusLayer + FamilyMixer)",
             "𐑪":  "Lanczos/VQE eigensolver (𐑪: non-ergodic)",

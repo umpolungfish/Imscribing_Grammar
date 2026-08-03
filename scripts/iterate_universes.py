@@ -13,18 +13,18 @@ from imscrbgrmr.registry import load_catalog_dicts
 
 # ── Primitive registry: name → max ordinal ─────────────────────
 PRIMITIVES_MAX = {
-    "Ð": 4.0,  # 𐑦 = holographic (ord 4)
-    "Þ": 5.0,  # 𐑸 = imscriptive closure (ord 5)
-    "Ř": 4.0,  # 𐑾 = bilateral (ord 4)
-    "Φ": 5.0,  # 𐑹 = Frobenius-special (ord 5)
-    "ƒ": 3.0,  # 𐑐 = quantum/hbar (ord 3)
-    "Ç": 5.0,  # 𐑘 = MBL/frozen-disorder (ord 5)
-    "Γ": 3.0,  # 𐑔 = aleph/maximal (ord 3)
-    "ɢ": 4.0,  # 𐑵 = broadcast (ord 4)
+    "⊢": 4.0,  # 𐑦 = holographic (ord 4)
+    "⊣": 5.0,  # 𐑸 = imscriptive closure (ord 5)
+    ">": 4.0,  # 𐑾 = bilateral (ord 4)
+    "<": 5.0,  # 𐑹 = Frobenius-special (ord 5)
+    "⋈": 3.0,  # 𐑐 = quantum/hbar (ord 3)
+    "⊤": 5.0,  # 𐑘 = MBL/frozen-disorder (ord 5)
+    "∈": 3.0,  # 𐑔 = aleph/maximal (ord 3)
+    "∋": 4.0,  # 𐑵 = broadcast (ord 4)
     "⊙": 3.0,  # 𐑣 = super-critical (ord 3)
-    "Ħ": 4.0,  # 𐑫 = eternal chirality (ord 4)
-    "Σ": 3.0,  # 𐑳 = many heterogeneous (ord 3)
-    "Ω": 4.0,  # 𐑟 = non-Abelian (ord 4)
+    "⊥": 4.0,  # 𐑫 = eternal chirality (ord 4)
+    "⊞": 3.0,  # 𐑳 = many heterogeneous (ord 3)
+    "◻": 4.0,  # 𐑟 = non-Abelian (ord 4)
 }
 
 PRIMITIVES_HALF = {p: max(1.0, v/2) for p, v in PRIMITIVES_MAX.items()}
@@ -45,7 +45,7 @@ def build_universes():
                         f"Canonical T. Universe where {prim} gates first.",
             g1=GateSpec(prim, max_ord),
             g2=GateSpec("⊙", 2.0),
-            g3=GateSpec("Ω", 3.0),
+            g3=GateSpec("◻", 3.0),
             gate_ordering=True,
         ))
 
@@ -59,7 +59,7 @@ def build_universes():
                         f"Universes with relaxed first-gate thresholds.",
             g1=GateSpec(prim, half_ord),
             g2=GateSpec("⊙", 1.0),
-            g3=GateSpec("Ω", 3.0),
+            g3=GateSpec("◻", 3.0),
             gate_ordering=True,
         ))
 
@@ -72,8 +72,8 @@ def build_universes():
             description=f"Only G1 matters: {prim}≥ord{max_ord}. G2/G3 trivially open (Σ≥ord1.0). "
                         f"No further filtering. Universe selects purely on {prim}.",
             g1=GateSpec(prim, max_ord),
-            g2=GateSpec("Σ", 1.0),
-            g3=GateSpec("Σ", 1.0),
+            g2=GateSpec("⊞", 1.0),
+            g3=GateSpec("⊞", 1.0),
             gate_ordering=True,
         ))
 
@@ -81,12 +81,12 @@ def build_universes():
     # Batch D: Two-primitive G1+G2 combos (strong pairs)
     # ═══════════════════════════════════════════════════════════
     combos = [
-        ("Ħ", "⊙", "chirality_criticality", "Ħ≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
-        ("Ç", "⊙", "kinetics_criticality", "Ç≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
-        ("Þ", "Ð", "topology_dimensionality", "Þ≥ord5.0 → Ð≥ord4.0: topology then dimension"),
-        ("Γ", "ɢ", "scope_grammar", "Γ≥ord3.0 → ɢ≥ord4.0: universal scope then broadcast"),
-        ("Φ", "ƒ", "parity_fidelity", "Φ≥ord5.0 → ƒ≥ord3.0: Frobenius parity then quantum fidelity"),
-        ("Ω", "Ħ", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
+        ("⊥", "⊙", "chirality_criticality", "Ħ≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
+        ("⊤", "⊙", "kinetics_criticality", "Ç≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
+        ("⊣", "⊢", "topology_dimensionality", "Þ≥ord5.0 → Ð≥ord4.0: topology then dimension"),
+        ("∈", "∋", "scope_grammar", "Γ≥ord3.0 → ɢ≥ord4.0: universal scope then broadcast"),
+        ("<", "⋈", "parity_fidelity", "Φ≥ord5.0 → ƒ≥ord3.0: Frobenius parity then quantum fidelity"),
+        ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
     ]
     for g1_prim, g2_prim, name, desc in combos:
         rulesets.append(Ruleset(
@@ -94,15 +94,15 @@ def build_universes():
             description=f"G1={g1_prim}≥max, G2={g2_prim}≥max, G3=Ω≥ord3.0. {desc}",
             g1=GateSpec(g1_prim, PRIMITIVES_MAX[g1_prim]),
             g2=GateSpec(g2_prim, PRIMITIVES_MAX[g2_prim]),
-            g3=GateSpec("Ω", 3.0),
+            g3=GateSpec("◻", 3.0),
             gate_ordering=True,
         ))
 
     # ═══════════════════════════════════════════════════════════
     # Batch E: T-constitution variants — every subset of dynamics
     # ═══════════════════════════════════════════════════════════
-    dynamics = ["Φ", "ƒ", "Ç", "Ħ", "Ω"]
-    structure = ["Ð", "Þ", "Ř", "Γ", "Σ"]
+    dynamics = ["<", "⋈", "⊤", "⊥", "◻"]
+    structure = ["⊢", "⊣", ">", "∈", "⊞"]
     
     # All dynamics only
     rulesets.append(Ruleset(
@@ -142,7 +142,7 @@ def build_universes():
                         f"All three must be satisfied simultaneously, not sequentially.",
             g1=GateSpec(prim, max_ord),
             g2=GateSpec("⊙", 2.0),
-            g3=GateSpec("Ω", 3.0),
+            g3=GateSpec("◻", 3.0),
             gate_ordering=False,
         ))
 
@@ -156,7 +156,7 @@ def build_universes():
                         f"Near-trivial gates reveal what the universe looks like with minimal filtering.",
             g1=GateSpec(prim, 1.0),
             g2=GateSpec("⊙", 1.0),
-            g3=GateSpec("Ω", 1.0),
+            g3=GateSpec("◻", 1.0),
             gate_ordering=True,
         ))
 

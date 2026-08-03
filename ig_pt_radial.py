@@ -25,18 +25,18 @@ NODE_D  = 0.44    # node circle diameter cm
 # Arm angles in TikZ convention (CCW from east).
 # Populated arms on right/top; empty arms cluster on left.
 ARM_DEG = {
-    'Ħ': 90,   # up       — d-block, f-lanthanides, H
+    '⊥': 90,   # up       — d-block, f-lanthanides, H
     '⊙': 60,   # UR       — noble gases, He, actinides
-    'Ç': 30,   # R-upper  — halogens, Pt, Au
-    'Φ':  0,   # right    — group 16
-    'Σ': 330,  # R-lower  — alkaline earths + group 15
-    'ɢ': 300,  # L-lower  — alkali metals
-    'Þ': 270,  # down     — group 14
-    'Ð': 240,  # DL       — group 13
-    'Ω': 210,  # L-lower  — empty
-    'Ř': 180,  # left     — empty
-    'Γ': 150,  # L-upper  — empty
-    'ƒ': 120,  # UL       — empty
+    '⊤': 30,   # R-upper  — halogens, Pt, Au
+    '<':  0,   # right    — group 16
+    '⊞': 330,  # R-lower  — alkaline earths + group 15
+    '∋': 300,  # L-lower  — alkali metals
+    '⊣': 270,  # down     — group 14
+    '⊢': 240,  # DL       — group 13
+    '◻': 210,  # L-lower  — empty
+    '>': 180,  # left     — empty
+    '∈': 150,  # L-upper  — empty
+    '⋈': 120,  # UL       — empty
 }
 
 FDE_FILL = {
@@ -59,9 +59,9 @@ METALLIC_SET = set(METALLIC_THREAD)
 def place_elements():
     groups = defaultdict(list)
     for sym, (Z, per, col, blk) in ELEMENTS.items():
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         if prim not in ARM_DEG:
-            prim = 'Ħ'
+            prim = '⊥'
         groups[(prim, per)].append((Z, sym))
 
     positions = {}

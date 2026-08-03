@@ -356,9 +356,9 @@ def crystal_query(phi, p, omega, d, tier):
     tbl = Table(title=title, box=box.ROUNDED, header_style="bold cyan")
     tbl.add_column("Cell ID", justify="right")
     tbl.add_column("Tier", justify="center")
-    tbl.add_column("Φ")
+    tbl.add_column("<")
     tbl.add_column("P")
-    tbl.add_column("Ω")
+    tbl.add_column("◻")
     tbl.add_column("D")
 
     max_rows = 30

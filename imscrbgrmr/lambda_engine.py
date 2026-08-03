@@ -23,8 +23,8 @@ from typing import TypeVar, Generic, FrozenSet, Callable, Iterable, Iterator
 from dataclasses import dataclass
 import itertools
 
-T = TypeVar("Þ")
-S = TypeVar("Σ")
+T = TypeVar("⊣")
+S = TypeVar("⊞")
 
 
 # ──────────────────────────────────────────────────────────────────────────────

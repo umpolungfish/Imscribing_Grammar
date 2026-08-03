@@ -57,13 +57,13 @@ NOBLE_POS = {s: (X_NOBLE, -i * 1.65) for i, s in enumerate(NOBLE_ORDER)}
 # ─── Satellite element positions ─────────────────────────────────────────────
 # Group all remaining elements by prim family and period, spread horizontally.
 PRIM_X = {
-    'ɢ': -8.8,   # alkali metals  (far left)
-    'Σ': -7.2,   # alkaline earths + group 15 excl N,P
-    'Ð': -5.5,   # group 13
-    'Þ': -4.1,   # group 14 excl C
-    'Φ':  4.1,   # group 16 excl O,S
-    'Ç':  5.4,   # halogens (F-state noble metals Pt,Au handled as thread)
-    'Ħ':  7.0,   # d-block non-thread (sub-f at 8.8)
+    '∋': -8.8,   # alkali metals  (far left)
+    '⊞': -7.2,   # alkaline earths + group 15 excl N,P
+    '⊢': -5.5,   # group 13
+    '⊣': -4.1,   # group 14 excl C
+    '<':  4.1,   # group 16 excl O,S
+    '⊤':  5.4,   # halogens (F-state noble metals Pt,Au handled as thread)
+    '⊥':  7.0,   # d-block non-thread (sub-f at 8.8)
     '⊙':  9.5,   # actinides (noble gases handled separately)
 }
 PRIM_X_F = 8.8   # f-block lanthanides sub-arm of Ħ
@@ -76,7 +76,7 @@ def compute_satellite_positions():
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         if sym in shown:
             continue
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         # Noble gases go to NOBLE_POS, not satellite
         if prim == '⊙' and sym in F_SET:
             continue
@@ -91,7 +91,7 @@ def compute_satellite_positions():
             x_base = 7.0
         else:
             x_base = PRIM_X[prim]
-        if subtype == 'f' and prim == 'Ħ':
+        if subtype == 'f' and prim == '⊥':
             x_base = PRIM_X_F
 
         for per, elems in per_dict.items():

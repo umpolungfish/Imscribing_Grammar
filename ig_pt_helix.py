@@ -48,23 +48,23 @@ THREAD_POS3D = {**ORG_POS3D, **MET_POS3D}
 # Elements not on threads placed in concentric outer shell, z = period-based
 
 PRIM_PHI = {   # azimuthal angle (in degrees) for each primitive family
-    'ɢ':  20,   # alkali metals
-    'Σ':  60,   # alkaline earths + group 15
-    'Ð': 100,   # group 13
-    'Þ': 140,   # group 14 excl C
-    'Φ': 200,   # group 16 excl O,S
-    'Ç': 240,   # halogens
-    'Ħ': 280,   # d-block non-thread + lanthanides
+    '∋':  20,   # alkali metals
+    '⊞':  60,   # alkaline earths + group 15
+    '⊢': 100,   # group 13
+    '⊣': 140,   # group 14 excl C
+    '<': 200,   # group 16 excl O,S
+    '⊤': 240,   # halogens
+    '⊥': 280,   # d-block non-thread + lanthanides
     '⊙': 320,   # noble gases + actinides
 }
 
 def satellite_pos3d(sym):
-    prim = PRIM_LABEL.get(sym, 'Ħ')
+    prim = PRIM_LABEL.get(sym, '⊥')
     if prim not in PRIM_PHI:
-        prim = 'Ħ'
+        prim = '⊥'
     Z, per, col, blk = ELEMENTS[sym]
     phi_deg = PRIM_PHI[prim]
-    if prim == 'Ħ' and blk == 'f':
+    if prim == '⊥' and blk == 'f':
         phi_deg += 30
     theta = math.radians(phi_deg)
     # Outer shell radius increases slightly with period
@@ -79,7 +79,7 @@ def compute_satellite_positions():
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         if sym in shown:
             continue
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         key = (prim, per, 'f' if blk == 'f' else 's')
         groups[key].append((Z, sym))
 
@@ -88,7 +88,7 @@ def compute_satellite_positions():
         elems.sort()
         n = len(elems)
         if prim not in PRIM_PHI:
-            prim_use = 'Ħ'
+            prim_use = '⊥'
         else:
             prim_use = prim
         phi_deg = PRIM_PHI[prim_use]

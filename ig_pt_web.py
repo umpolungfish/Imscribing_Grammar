@@ -17,7 +17,7 @@ def build_data():
         p = pos3d.get(sym, [0, 0, 0])
         elements[sym] = {
             'Z': Z, 'period': per, 'block': blk,
-            'prim': PRIM_LABEL.get(sym, 'Ħ'),
+            'prim': PRIM_LABEL.get(sym, '⊥'),
             'fde': FDE_CLASS.get(sym, 'B'),
             'pos': [round(c * WS, 4) for c in p],
             'thread': ('organic' if sym in ORGANIC_SET else
@@ -28,12 +28,12 @@ def build_data():
         v = ICO_VERTS[vi]
         primitives[prim] = {
             'pos': [round(c * 6.5 * WS, 4) for c in v],
-            'empty': prim in ('Omega', 'R', 'Gamma', 'f') or prim in ('Ŋ', 'Ř', 'Γ', 'ƒ'),
+            'empty': prim in ('Omega', 'R', 'Gamma', 'f') or prim in ('Ŋ', '>', '∈', '⋈'),
         }
     # Correct empty check using actual prim names
     EMPTY_PRIMS = {'Omega', 'R', 'Gamma', 'f'}
     for prim in primitives:
-        primitives[prim]['empty'] = (prim in ('Ω', 'Ř', 'Γ', 'ƒ'))
+        primitives[prim]['empty'] = (prim in ('◻', '>', '∈', '⋈'))
     return {
         'elements': elements,
         'primitives': primitives,

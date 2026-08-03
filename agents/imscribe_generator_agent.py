@@ -62,14 +62,14 @@ from imscrbgrmr.criticality import analyze_criticality  # NEW
 # canonical (present in ORDINALS), and (c) it differs from what the block says.
 
 _REASONING_OVERRIDE_FIELDS = {
-    "dimensionality": ("Ð", r"D_(odot|infty|triangle|wedge)"),
-    "topology":       ("Þ", r"T_(odot|boxtimes|bowtie|in|network)\b"),
+    "dimensionality": ("⊢", r"D_(odot|infty|triangle|wedge)"),
+    "topology":       ("⊣", r"T_(odot|boxtimes|bowtie|in|network)\b"),
     "criticality_phase": ("⊙", r"Phi_(c_complex|EP|super|sub|c)\b"),
-    "interaction_grammar": ("ɢ", r"G_(broad|seq|or|and)\b"),
-    "polarity":       ("Φ", r"P_(pm_sym|pm|sym|psi|asym)\b"),
-    "kinetic_character": ("Ç", r"K_(MBL|trap|slow|mod|fast)\b"),
-    "protection":     ("Ω", r"Omega_(NA|Z2|Z|0)\b"),
-    "chirality":      ("Ħ", r"H(0|1|2|_inf)\b"),
+    "interaction_grammar": ("∋", r"G_(broad|seq|or|and)\b"),
+    "polarity":       ("<", r"P_(pm_sym|pm|sym|psi|asym)\b"),
+    "kinetic_character": ("⊤", r"K_(MBL|trap|slow|mod|fast)\b"),
+    "protection":     ("◻", r"Omega_(NA|Z2|Z|0)\b"),
+    "chirality":      ("⊥", r"H(0|1|2|_inf)\b"),
 }
 
 
@@ -85,15 +85,15 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
         # Take the first explicit mention; build back the full value string
         raw = matches[0]
         # Reconstruct the canonical value from the pattern group
-        prefix = pattern.split("(")[0]  # e.g. "D_", "T_", "Phi_", "G_", "Ħ"
+        prefix = pattern.split("(")[0]  # e.g. "D_", "T_", "Phi_", "G_", "⊥"
         candidate = prefix + raw
         # Verify it's canonical before overriding
         try:
             from space_search.primitives import ORDINALS, PRIMITIVE_ORDER
             prim_key = {
-                "dimensionality": "Ð", "topology": "Þ", "criticality_phase": "⊙",
-                "interaction_grammar": "ɢ", "polarity": "Φ", "kinetic_character": "Ç",
-                "protection": "Ω", "chirality": "Ħ",
+                "dimensionality": "⊢", "topology": "⊣", "criticality_phase": "⊙",
+                "interaction_grammar": "∋", "polarity": "<", "kinetic_character": "⊤",
+                "protection": "◻", "chirality": "⊥",
             }[field]
             if candidate in ORDINALS[prim_key] and result.get(field) != candidate:
                 result[field] = candidate
@@ -276,43 +276,43 @@ class ImscriptionGeneratorAgent(BaseAgent):
     # ------------------------------------------------------------------
 
     GUIDED_PRIMITIVES: List[Dict[str, Any]] = [
-        {"short": "Ð",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
+        {"short": "⊢",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
          "options": [("𐑼","Point-like — local, operates on a single unit"),
                      ("𐑨","Spatial — constraint propagates through an extended 3D arrangement"),
                      ("𐑛","Temporal/iterative — recurs through a closed cycle with a reset step"),
                      ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (requires 𐑸 topology)")]},
-        {"short": "Þ",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
+        {"short": "⊣",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
          "options": [("𐑡","Generic network — connected graph, hub-spoke, mixed connectivity"),
                      ("𐑰","Containment / branched tree — partners enter a container or nested hierarchy"),
                      ("𐑥","Cyclic closure — cyclic interface, figure-8, double-well"),
                      ("𐑶","Fully enclosed — partner cannot exit without distorting the container"),
                      ("𐑸","Scale-collapse — connectivity in which the boundary carries the full bulk content losslessly (requires 𐑦 dimensionality)")]},
-        {"short": "Ř",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
+        {"short": ">",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
          "options": [("𐑩","Soft association — non-covalent, reversible, analogical similarity"),
                      ("𐑑","Bond formation / structural transformation — irreversible or semi-reversible"),
                      ("𐑽","Transition-state stabilization — lowers barrier without being consumed; adjoint/catalytic"),
                      ("𐑾","Left-right asymmetric / mechanical topology — interlocking, knotting, irreversible handedness")]},
-        {"short": "Φ",  "long": "polarity",             "question": "What is the directional character of the interface?",
+        {"short": "<",  "long": "polarity",             "question": "What is the directional character of the interface?",
          "options": [("𐑗","No preferred direction; no self-complementarity"),
                      ("𐑿","Signed direction — one accepting OR one donating pole"),
                      ("𐑬","Self-complementary — both donor and acceptor roles present simultaneously"),
                      ("𐑯","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
                      ("𐑹","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
-        {"short": "ƒ",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
+        {"short": "⋈",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
          "options": [("𐑱","Low — probabilistic; many false positives (I_net < 6 bits)"),
                      ("𐑞","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
                      ("𐑐","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
-        {"short": "Ç",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
+        {"short": "⊤",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
          "options": [("𐑘","Low barrier — explores configuration space freely; reversible"),
                      ("𐑤","Moderate barrier — accessible under perturbation"),
                      ("𐑧","High barrier — kinetically frozen; requires external driving to rearrange"),
                      ("𐑪","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
                      ("𐑺","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
-        {"short": "Γ",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
+        {"short": "∈",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
          "options": [("𐑲","Local — single bond/event, no neighbours influenced"),
                      ("𐑚","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
                      ("𐑔","Global — propagates across the entire system; scale-free")]},
-        {"short": "ɢ",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
+        {"short": "∋",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
          "options": [("𐑝","Conjunctive — all required partners must be present simultaneously"),
                      ("𐑜","Disjunctive — any partner from a set suffices"),
                      ("𐑠","Sequential — ordered steps; partners engaged in sequence"),
@@ -323,16 +323,16 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑮","Complex critical — criticality with complex eigenvalues"),
                      ("𐑻","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
                      ("𐑣","Supercritical / post-threshold — system has passed through criticality")]},
-        {"short": "Ħ",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
+        {"short": "⊥",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
          "options": [("𐑓","Achiral — mirror image accessible; no persistent symmetry breaking"),
                      ("𐑒","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
                      ("𐑖","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
                      ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (implies 𐑪 kinetics)")]},
-        {"short": "Σ",  "long": "stoichiometry",        "question": "What is the participation ratio?",
+        {"short": "⊞",  "long": "stoichiometry",        "question": "What is the participation ratio?",
          "options": [("𐑙","Equal symmetric pairing"),
                      ("𐑕","Higher-order symmetric — oligomers, committees"),
                      ("𐑳","Asymmetric — different counts on each side")]},
-        {"short": "Ω",  "long": "protection",           "question": "Can the role be continuously deformed away?",
+        {"short": "◻",  "long": "protection",           "question": "Can the role be continuously deformed away?",
          "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
                      ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
                      ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
@@ -1098,21 +1098,21 @@ You **MUST**:
 
         # Schema adapter: model used "imscription" wrapper but nested primitives under a
         # "primitives" sub-key instead of at the top level.
-        # e.g. {"imscription": {"name": ..., "primitives": {"Ð": ...}, "confidence": ...}}
+        # e.g. {"imscription": {"name": ..., "primitives": {"⊢": ...}, "confidence": ...}}
         if imscription_data and not self._has_string_primitive_values(imscription_data):
             inner = imscription_data.get("primitives")
             if isinstance(inner, dict):
                 _key_map = {
-                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
-                    "ƒ": "fidelity", "Ç": "kinetic_character",
-                    "Γ": "granularity", "ɢ": "interaction_grammar",
-                    "⊙": "criticality_phase", "Ħ": "chirality",
-                    "Σ": "stoichiometry", "Ω": "protection",
+                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⋈": "fidelity", "⊤": "kinetic_character",
+                    "∈": "granularity", "∋": "interaction_grammar",
+                    "⊙": "criticality_phase", "⊥": "chirality",
+                    "⊞": "stoichiometry", "◻": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "Φ": "polarity",
+                    "<": "polarity",
                 }
                 lifted: Dict[str, Any] = {"name": imscription_data.get("name", "")}
                 for k, v in inner.items():
@@ -1122,15 +1122,15 @@ You **MUST**:
                 # (confusing Γ with ɢ) and Φ for criticality_phase (confusing Φ with ⊙).
                 # When BOTH the ASCII key and the Shavian glyph are present in the
                 # original inner dict, the glyph is reassigned to the OTHER primitive.
-                if "G" in inner and "Γ" in inner:
-                    lifted["interaction_grammar"] = inner["Γ"]
+                if "G" in inner and "∈" in inner:
+                    lifted["interaction_grammar"] = inner["∈"]
                     if isinstance(lifted["interaction_grammar"], dict):
                         lifted["interaction_grammar"] = lifted["interaction_grammar"].get("value", "")
                     lifted["granularity"] = inner["G"]
                     if isinstance(lifted["granularity"], dict):
                         lifted["granularity"] = lifted["granularity"].get("value", "")
-                if "P" in inner and "Φ" in inner:
-                    lifted["criticality_phase"] = inner["Φ"]
+                if "P" in inner and "<" in inner:
+                    lifted["criticality_phase"] = inner["<"]
                     if isinstance(lifted["criticality_phase"], dict):
                         lifted["criticality_phase"] = lifted["criticality_phase"].get("value", "")
                     lifted["polarity"] = inner["P"]
@@ -1144,16 +1144,16 @@ You **MUST**:
             if isinstance(pa, dict):
                 # Remap abbreviated keys to canonical field names if needed
                 _key_map = {
-                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
-                    "ƒ": "fidelity", "Ç": "kinetic_character",
-                    "Γ": "granularity", "ɢ": "interaction_grammar",
-                    "⊙": "criticality_phase", "Ħ": "chirality",
-                    "Σ": "stoichiometry", "Ω": "protection",
+                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⋈": "fidelity", "⊤": "kinetic_character",
+                    "∈": "granularity", "∋": "interaction_grammar",
+                    "⊙": "criticality_phase", "⊥": "chirality",
+                    "⊞": "stoichiometry", "◻": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "Φ": "polarity",
+                    "<": "polarity",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in pa.items():
@@ -1168,16 +1168,16 @@ You **MUST**:
             prim = data.get("primitives")
             if isinstance(prim, dict):
                 _key_map = {
-                    "Ð": "dimensionality", "Þ": "topology", "Ř": "recognition_mode",
-                    "ƒ": "fidelity", "Ç": "kinetic_character",
-                    "Γ": "granularity", "ɢ": "interaction_grammar",
-                    "⊙": "criticality_phase", "Ħ": "chirality",
-                    "Σ": "stoichiometry", "Ω": "protection",
+                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⋈": "fidelity", "⊤": "kinetic_character",
+                    "∈": "granularity", "∋": "interaction_grammar",
+                    "⊙": "criticality_phase", "⊥": "chirality",
+                    "⊞": "stoichiometry", "◻": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "Φ": "polarity",
+                    "<": "polarity",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in prim.items():
@@ -1206,12 +1206,12 @@ You **MUST**:
     # Canonical short-form keys returned by models using grammar notation
     _SHORT_TO_LONG: Dict[str, str] = {
         # Shavian glyph keys (unambiguous)
-        "Ð": "dimensionality",    "Þ": "topology",
-        "Ř": "recognition_mode",   "ƒ": "fidelity",
-        "Ç": "kinetic_character",  "Γ": "granularity",
-        "ɢ": "interaction_grammar","⊙": "criticality_phase",
-        "Ħ": "chirality",          "Σ": "stoichiometry",
-        "Ω": "protection",
+        "⊢": "dimensionality",    "⊣": "topology",
+        ">": "recognition_mode",   "⋈": "fidelity",
+        "⊤": "kinetic_character",  "∈": "granularity",
+        "∋": "interaction_grammar","⊙": "criticality_phase",
+        "⊥": "chirality",          "⊞": "stoichiometry",
+        "◻": "protection",
         # ASCII single-letter fallbacks (models frequently return these)
         "D": "dimensionality",     "T": "topology",
         "R": "recognition_mode",   "P": "polarity",
@@ -1220,7 +1220,7 @@ You **MUST**:
         "S": "stoichiometry",      "W": "protection",
         # Φ is ambiguous: when both P (ASCII) and Φ (glyph) are present,
         # P→polarity wins; Φ→criticality_phase resolved in adapter logic.
-        "Φ": "polarity",
+        "<": "polarity",
     }
 
     # Legacy prompt notation → from_symbol()-compatible canonical values.

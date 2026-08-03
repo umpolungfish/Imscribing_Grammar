@@ -521,9 +521,9 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
     "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "φ̂": "𐑢",
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
-    "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗", "ƒ": "𐑱",
-    "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝", "⊙": "𐑢", "Ħ": "𐑓",
-    "Σ": "𐑙", "Ω": "𐑷",
+    "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
+    "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
+    "⊞": "𐑙", "◻": "𐑷",
 }
 
 # ── Primitive display symbols (unicode) ───────────────────────────────────────
@@ -921,18 +921,18 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 ),
                 "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
-                    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
-                    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-                    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-                    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-                    "ƒ":     ["𐑱", "𐑞", "𐑐"],
-                    "Ç":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
-                    "Γ":     ["𐑲", "𐑚", "𐑔"],
-                    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
+                    "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+                    "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+                    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+                    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+                    "⋈":     ["𐑱", "𐑞", "𐑐"],
+                    "⊤":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+                    "∈":     ["𐑲", "𐑚", "𐑔"],
+                    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
                     "φ̂":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-                    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
-                    "Σ":     ["𐑙", "𐑕", "𐑳"],
-                    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
+                    "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+                    "⊞":     ["𐑙", "𐑕", "𐑳"],
+                    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
                 },
                 "example": (
                     'imscribe(tool_name="imscribe_system", args={'
@@ -1947,29 +1947,29 @@ TOOL_SCHEMAS = [
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
             "description": {"type": "string", "description": "Plain-language description of the system"},
-            "Ð":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
+            "⊢":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
-            "Þ":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+            "⊣":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            "Ř":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
+            ">":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
                            "Relational mode: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "Φ":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+            "<":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                            "Parity/symmetry: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
-            "ƒ":     _prim(["𐑱", "𐑞", "𐑐"],
+            "⋈":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
-            "Ç":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+            "⊤":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                            "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
-            "Γ":     _prim(["𐑲", "𐑚", "𐑔"],
+            "∈":     _prim(["𐑲", "𐑚", "𐑔"],
                            "Scope: beth=local, gimel=mesoscale, aleph=maximal/all"),
-            "ɢ": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
+            "∋": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
                            "Interaction grammar: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
             "φ̂":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
-            "Ħ":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
+            "⊥":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
-            "Σ":     _prim(["𐑙", "𐑕", "𐑳"],
+            "⊞":     _prim(["𐑙", "𐑕", "𐑳"],
                            "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-            "Ω": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
+            "◻": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -1981,7 +1981,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "φ̂", "Ħ", "Σ", "Ω"],
+        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "φ̂", "⊥", "⊞", "◻"],
     ),
     _fn(
         "run_command",
@@ -2184,15 +2184,15 @@ TOOL_SCHEMAS = [
              "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': '⊙', 'Omega': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "φ̂": {"type": "string", "description": "Filter by Phi criticality"},
-             "Ç": {"type": "string", "description": "Filter by kinetics"},
-             "Ω": {"type": "string", "description": "Filter by winding"}},
+             "⊤": {"type": "string", "description": "Filter by kinetics"},
+             "◻": {"type": "string", "description": "Filter by winding"}},
             ["limit", "φ̂"]),
         _fn(
             "crystal_count",
             ("Count the number of types matching constraints. "
              "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
             {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
-             "Ç": {"type": "string", "description": "Filter by kinetics"}},
+             "⊤": {"type": "string", "description": "Filter by kinetics"}},
             ["φ̂"]),
         _fn(
             "crystal_tier_census",
@@ -2507,7 +2507,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
   compute_distance(name_a, name_b)
     Weighted Euclidean distance between two catalog entries + per-primitive conflict list.
     Example: imscribe("compute_distance", {"name_a": "magnetar", "name_b": "bec"})
-      → {"distance": 2.14, "conflicts": [{"primitive": "Ç", "a": "𐑧", "b": "𐑺"}, ...]}
+      → {"distance": 2.14, "conflicts": [{"primitive": "⊤", "a": "𐑧", "b": "𐑺"}, ...]}
 
   compute_meet(name_a, name_b)    — greatest lower bound (shared floor)
   compute_join(name_a, name_b)    — least upper bound (minimal ceiling containing both)
@@ -4218,7 +4218,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
         }, indent=2)
 
     elif op == "bridge":
-        prim = args.get("primitive", "Φ")
+        prim = args.get("primitive", "<")
         val_a = args.get("value_a", "𐑹")
         val_b = args.get("value_b", "𐑗")
         is_bn = args.get("is_bottleneck", True)

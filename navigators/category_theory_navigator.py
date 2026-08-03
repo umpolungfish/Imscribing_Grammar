@@ -68,18 +68,18 @@ class NavigatorConfig:
             "tuple": self.tuple,
             "tier": self.tier,
             "architecture": self.architecture,
-            "Ð": self.D,
-            "Þ": self.T,
-            "Ř": self.R,
-            "Φ": self.P,
-            "ƒ": self.F,
-            "Ç": self.K,
-            "Γ": self.G,
-            "ɢ": self.Gamma,
+            "⊢": self.D,
+            "⊣": self.T,
+            ">": self.R,
+            "<": self.P,
+            "⋈": self.F,
+            "⊤": self.K,
+            "∈": self.G,
+            "∋": self.Gamma,
             "⊙": self.Phi,
-            "Ħ": self.H,
-            "Σ": self.S,
-            "Ω": self.Omega
+            "⊥": self.H,
+            "⊞": self.S,
+            "◻": self.Omega
         }
     
     def hash(self) -> str:

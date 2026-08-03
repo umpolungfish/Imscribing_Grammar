@@ -259,7 +259,7 @@ def _format_zenodo_desc(text: str) -> str:
         s = s.replace(r'\ne', '≠').replace(r'\neq', '≠')
         s = s.replace(r'\propto', '∝').replace(r'\to', '→')
         s = s.replace(r'\varepsilon', 'ε').replace(r'\epsilon', 'ε')
-        s = s.replace(r'\Omega', 'Ω').replace(r'\omega', 'ω')
+        s = s.replace(r'\Omega', '◻').replace(r'\omega', 'ω')
         s = s.replace(r'\mu', 'μ').replace(r'\delta', 'δ')
         return s
     text = re.sub(r'\$[^$\n]+?\$', _simplify_math, text)

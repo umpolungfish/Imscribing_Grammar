@@ -51,25 +51,25 @@ for k, v in list(OLD_TO_SHAVIAN.items()):
 
 # ── Legacy key → canonical glyph key ────────────────────────────────────────
 LEGACY_KEY_MAP = {
-    "D":     "Ð",
-    "T":     "Þ",
-    "R":     "Ř",
-    "P":     "Φ",
-    "F":     "ƒ",
-    "K":     "Ç",
-    "G":     "ɢ",
-    "Gamma": "Γ",
+    "D":     "⊢",
+    "T":     "⊣",
+    "R":     ">",
+    "P":     "<",
+    "F":     "⋈",
+    "K":     "⊤",
+    "G":     "∋",
+    "Gamma": "∈",
     "Phi":   "⊙",
-    "H":     "Ħ",
-    "S":     "Σ",
-    "Omega": "Ω",
+    "H":     "⊥",
+    "S":     "⊞",
+    "Omega": "◻",
 }
 
 # Old Criticality glyph → canonical
 PRIM_GLYPH_NORM = {"φ̂": "⊙"}
 
 # Canonical prim glyphs for regex split
-_PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "φ̂", "Ħ", "Σ", "Ω"]
+_PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "φ̂", "⊥", "⊞", "◻"]
 _PRIM_PAT = "|".join(re.escape(p) for p in sorted(_PRIMS, key=len, reverse=True))
 _TUPLE_SPLIT = re.compile(f';(?={_PRIM_PAT})')
 

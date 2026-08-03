@@ -151,18 +151,18 @@ print()
 # Map each promoted AA to an IG primitive it uniquely activates
 # Based on the specific chemical novelty each AA introduces
 promotions = {
-    "Phe": ("ƒ",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ƒ field ceiling"),
-    "Tyr": ("Φ",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
-    "Cys": ("Ř",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
-    "Trp": ("Þ",  "Maximal topology: bicyclic indole = highest structural complexity; defines Þ ceiling"),
+    "Phe": ("⋈",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ƒ field ceiling"),
+    "Tyr": ("<",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
+    "Cys": (">",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
+    "Trp": ("⊣",  "Maximal topology: bicyclic indole = highest structural complexity; defines Þ ceiling"),
     "His": ("⊙",  "Criticality gate: imidazole pKa≈6 = pH-critical protonation equilibrium; catalytic triads, metal binding, pH sensing"),
-    "Gln": ("Γ",  "Grammar/Scope: long amide side chain H-bond network; structures interaction patterns and recognition grammar"),
-    "Ile": ("Ç",  "Kinematic constraint: β-branched (both α-carbon and β-carbon chiral); tightest steric coupling in ribosomal decoding"),
-    "Met": ("Ð",  "Dimensionality/scope opener: universal start codon; AUG = single codon that gates all protein scope"),
-    "Asn": ("ɢ",  "Interaction grammar: N-glycosylation target; gates extracellular interaction/recognition grammar"),
-    "Lys": ("Σ",  "Symmetry/conservation: most sequence-variable charged residue; high surface entropy; epigenetic acetylation target"),
-    "Asp": ("Ħ",  "Chirality gate in catalysis: Asp in serine protease/kinase active site enforces chiral selectivity of substrate binding"),
-    "Glu": ("Ω",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; Ω-closure of secondary structure"),
+    "Gln": ("∈",  "Grammar/Scope: long amide side chain H-bond network; structures interaction patterns and recognition grammar"),
+    "Ile": ("⊤",  "Kinematic constraint: β-branched (both α-carbon and β-carbon chiral); tightest steric coupling in ribosomal decoding"),
+    "Met": ("⊢",  "Dimensionality/scope opener: universal start codon; AUG = single codon that gates all protein scope"),
+    "Asn": ("∋",  "Interaction grammar: N-glycosylation target; gates extracellular interaction/recognition grammar"),
+    "Lys": ("⊞",  "Symmetry/conservation: most sequence-variable charged residue; high surface entropy; epigenetic acetylation target"),
+    "Asp": ("⊥",  "Chirality gate in catalysis: Asp in serine protease/kinase active site enforces chiral selectivity of substrate binding"),
+    "Glu": ("◻",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; Ω-closure of secondary structure"),
 }
 
 for aa in sorted(promotions):
@@ -172,7 +172,7 @@ for aa in sorted(promotions):
 print()
 print("Mapping accounts for all 12 IG primitives:")
 covered = set(prim for prim, _ in promotions.values())
-ig_prims = {"Ð","Þ","Ř","Φ","ƒ","Ç","Γ","ɢ","⊙","Ħ","Σ","Ω"}
+ig_prims = {"⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"}
 print(f"  Covered: {sorted(covered)}")
 print(f"  Missing: {sorted(ig_prims - covered)}")
 print(f"  Bijection: {covered == ig_prims}")

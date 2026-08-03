@@ -1,21 +1,58 @@
-The primitives take the final set
+The primitives take the IMASM alphabet, and Criticality keeps ⊙
 
     ⊢ Dimensionality  ⊣ Topology     > Relational     < Polarity
-    ⋈ Fidelity        ⊙ Kinetics     ∈ Granularity    ∋ Grammar
-    ⊤ Criticality     ⊥ Chirality    ⊞ Stoichiometry  ◻ Protection
+    ⋈ Fidelity        ⊤ Kinetics     ∈ Granularity    ∋ Grammar
+    ⊙ Criticality     ⊥ Chirality    ⊞ Stoichiometry  ◻ Protection
 
-Six of the twelve move from the first pass: ≻ and ≺ become the plain > and <,
-═ becomes ⋈, the criticality plus becomes ⊤, the chirality times becomes ⊥, and
-the protection ¬ becomes ◻. The reason is the same one that moved them off Ð Þ ƒ
-Ħ in the first place. A mark that already means multiplication, or equality, or
-negation, brings that meaning to a slot that only wants a position, and ⁺ and ×
-were the two worst offenders left.
+The old set arrived already meaning other things. Γ is the gamma function, Σ a
+summation, Φ a potential, Ω a domain, and a reader brings all of that to a slot
+that only wants a position. The opcodes mean nothing on their own, which is their
+whole qualification, and there were never two alphabets to map between: the
+twelve axes and the twelve opcodes are the same twelve.
 
-311 marks in AS_ABOVE and 359 in SO_BELOW, all scoped to the primitive font, so
-the ordinary mathematics is untouched: SO_BELOW's \Phi, \Omega, \Sigma and every
-× that means a product are where they were. Both documents compile at 45 and 82
-pages with no missing character beyond the ✓ SO_BELOW has never had.
+⊙ does not move. Two tables already put it with Criticality — cr3echrz's
+opcodes.py has EVALT as ("⊙", "Criticality — evaluate-true gate") and ask_native's
+learn.rs has the same pairing — and classic.rs says outright that IMSCRIB's ⊙
+appearing as Criticality is not a collision but the same structure surfacing.
+Pairing the two lists by slot position instead would have put ⊙ on Kinetics; the
+anchor wins and Kinetics takes ⊤. That decision is what made the rest tractable:
+eleven keys move rather than twelve, and no VALUE moves at all. The monad is a
+legal value of Criticality and 5,122 of 8,032 entries carry "⊙": "⊙", key and
+value the same character on one line. None of that had to be touched.
 
-The set is the IMASM opcode alphabet, unchanged and in slot order. There is no
-correspondence to maintain between two notations because there is one notation,
-read as an operation or as an axis according to where it stands.
+The migration went through parsed JSON, never text. Ð and Þ and Γ also open value
+names like Ð_point in a different namespace that merely shares the character, and
+every substitution here is anchored on a complete quoted token for the same
+reason. 88,253 keys renamed in the canonical catalog and 87,846 in the live store
+at ~/.imscrbgrmr, both backed up beside themselves, and every entry's twelve
+values verified identical before and after.
+
+Two things were restated where they should have been derived, and a rename is
+exactly what finds those. space_search/primitives.py carried its own copy of
+ORDINALS, WEIGHTS and PRIMITIVE_ORDER, so the two would have had to move in the
+same commit forever and the one that was missed would go on answering; it imports
+them now. registry.py's provenance hashed a hand-written slot list, and
+slot_category_violations is keyed on the very names it validates, so a rename
+would have made it fail OPEN: every .get() missing, every entry skipped, silence
+instead of a report. It reads PRIMITIVE_ORDER now. The violations baseline
+regenerated to the same 30 entries it held before, which is the proof it is still
+looking.
+
+Imscription.from_dict is the seam. It already accepted glyph keys or short ASCII
+or long field names, and it takes the retired glyphs as a further fallback, so a
+catalog written before this still loads in one place rather than twelve. to_dict
+writes the new keys. Old and new keyed entries load to the identical tuple.
+
+Verified rather than assumed: the twelve-axis round trip through
+`imasm cycle tuple=⟨…⟩` recovers 12 of 12 axes exactly with the monad intact;
+`imscribe join loki_laufeyjarson odinn_allfather` still meets at 𐑮 and joins at
+𐑻; sync_catalog.sh reports all 8 consumers matching; gen_catalog_subset.py
+regenerates 8,016 entries, one MORE than the committed snapshot and none fewer;
+and mOMonadOS boots reporting ordinal faithfulness against the Lean canonical.
+The ten entries it skips carry a legacy pre-Shavian `tuple` string and no glyph
+keys at all; they were skipped before this too.
+
+scripts/IG_catalog.json had drifted to 8,033 entries with one extra,
+cat_translator, whose > slot holds a ◻ value and whose ⊤ slot holds an ∈ value.
+It is preserved beside itself as .pre_rename_drift rather than merged, since
+merging it would put a malformed tuple in the canonical catalog.

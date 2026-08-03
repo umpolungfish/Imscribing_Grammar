@@ -14,7 +14,7 @@ class HoTTBridge:
     def gap_report(self) -> dict:
         return {
             "structural_distance": self.GAP_DISTANCE,
-            "divergent_primitive": "Φ",
+            "divergent_primitive": "<",
             "hebrew_P": "𐑯",
             "hott_P": "𐑹",
             "interpretation": "Univalence gap: local Frobenius vs global identity"

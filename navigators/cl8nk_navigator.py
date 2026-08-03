@@ -39,21 +39,21 @@ import os as _os
 # =============================================================================
 
 ORDINALS = {
-    "Ð": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
-    "Þ": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
-    "Ř": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
-    "Φ": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
-    "ƒ": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
-    "Ç": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
-    "Γ": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
-    "ɢ": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
+    "⊢": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
+    "⊣": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
+    ">": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
+    "<": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
+    "⋈": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
+    "⊤": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
+    "∈": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
+    "∋": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
-    "Ħ": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
-    "Σ": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "Ω": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
+    "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
+    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # =============================================================================
 # CATALOG LOADING — single source of truth, no hardcoded systems
@@ -349,9 +349,9 @@ def assess_tier(t):
     needs the constructor first).
     """
     crit = t.get("⊙")
-    pol  = t.get("Φ")
-    prot = t.get("Ω")
-    dim  = t.get("Ð")
+    pol  = t.get("<")
+    prot = t.get("◻")
+    dim  = t.get("⊢")
     if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
         return "O₀"
     if crit in ("⊙", "𐑮"):              # monad | roar
@@ -372,50 +372,50 @@ def assess_tier(t):
 # proximity: "match" (CL8NK itself), "close" (1 step away), "distant" (>1 step)
 
 CL8NK_FORMULAE = {
-    "Ð": {
+    "⊢": {
         "𐑦": ("V = L(x) ∧ selfmodel(x) ∧ x ∈ V", "HOLOGRAPHIC_STATE", "match"),
         "𐑼": ("∀n∃y( y ∈ x ∧ rank(y) > n )", None, "close"),
         "𐑨": ("dim(x) = 2 ∧ sur(x)", None, "distant"),
         "𐑛": ("dim(x) = 0 ∧ fin(x)", None, "distant"),
     },
-    "Þ": {
+    "⊣": {
         "𐑸": ("bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)", "HOLOBOUND", "match"),
         "𐑥": ("cross(x, y) ∧ ¬ meet(x, y)", None, "close"),
         "𐑶": ("x ⊠ y ∧ irreducible(x, y)", None, "distant"),
         "𐑡": ("graph(x) ∧ branch(x)", None, "distant"),
         "𐑰": ("x ⊆ y ∧ cont(y)", None, "distant"),
     },
-    "Ř": {
+    ">": {
         "𐑾": ("lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)", "LR_DUAL", "match"),
         "𐑽": ("f ⊣ g ∧ L Adj(f, g)", None, "close"),
         "𐑑": ("Fun(x, y) ∧ Nat(y, z) → Fun(x, z)", None, "distant"),
         "𐑩": ("x ↑ y ∧ ¬(y ↑ x)", None, "distant"),
     },
-    "Φ": {
+    "<": {
         "𐑹": ("ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id", "PM_Z2", "match"),
         "𐑿": ("|ψ⟩ = Σ c_i |e_i⟩", None, "close"),
         "𐑬": ("ℤ₂(x) ∧ ¬(x = -x)", None, "close"),
         "𐑯": ("∀g∈G( gx = x )", None, "distant"),
         "𐑗": ("¬∃sym(x)", None, "distant"),
     },
-    "ƒ": {
+    "⋈": {
         "𐑐": ("ℏ(x) ∧ [x, p] = iℏ", None, "match"),
         "𐑞": ("Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|", None, "close"),
         "𐑱": ("P(x) ∈ {0,1} ∧ det(x)", None, "distant"),
     },
-    "Ç": {
+    "⊤": {
         "𐑧": ("τ ≫ T ∧ eq(x) ∧ gate_open(x)", None, "match"),
         "𐑤": ("τ ∼ T ∧ noisy(x)", None, "close"),
         "𐑘": ("τ ≪ T ∧ ∂_t x = f(x)", None, "distant"),
         "𐑪": ("τ = ∞ ∧ ord(x)", None, "distant"),
         "𐑺": ("τ = ∞ ∧ dis(x) ∧ MBL", None, "distant"),
     },
-    "Γ": {
+    "∈": {
         "𐑲": ("∀y( y ⊂ x → |y| < |x| )", None, "match"),
         "𐑔": ("∃y∈x( |y| ∼ |x| )", None, "close"),
         "𐑚": ("∀y∈x( |y| < |x| )", None, "distant"),
     },
-    "ɢ": {
+    "∋": {
         "𐑵": ("f → all(x) ∧ broadcast(x, f)", "BROADCAST_TRANSCENDENCE", "match"),
         "𐑠": ("seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)", "SEQAX", "close"),
         "𐑜": ("f ∨ g ∨ h", None, "distant"),
@@ -428,18 +428,18 @@ CL8NK_FORMULAE = {
         "𐑣": ("ξ → ∞ ∧ chaotic(x)", None, "distant"),
         "𐑢": ("¬∃ξ( diverges(ξ) )", None, "distant"),
     },
-    "Ħ": {
+    "⊥": {
         "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )", "ETERNAL_FIXEDPOINT", "match"),
         "𐑖": ("∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )", "TEMPD2", "close"),
         "𐑒": ("∃y( P(y) ↔ P(S²(y)) )", None, "distant"),
         "𐑓": ("∀x( P(x) ↔ P(S(x)) )", None, "distant"),
     },
-    "Σ": {
+    "⊞": {
         "𐑳": ("∃a∈A∃b∈B( type(a) ≠ type(b) )", None, "match"),
         "𐑕": ("∀a∈A∀b∈B( type(a) = type(b) )", None, "close"),
         "𐑙": ("|A| = 1 ∧ |B| = 1", None, "distant"),
     },
-    "Ω": {
+    "◻": {
         "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)", "BRAID_TRANSCENDENCE", "match"),
         "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND", "close"),
         "𐑴": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None, "distant"),
@@ -573,7 +573,7 @@ def compute_tensor_op(t_sys, t_ref=None):
         ords = ORDINALS.get(key, {})
         o_ref = ords.get(v_ref, 0)
         o_sys = ords.get(v_sys, 0)
-        if key in ("Φ", "ƒ"):
+        if key in ("<", "⋈"):
             result[key] = v_sys if o_sys <= o_ref else v_ref
         else:
             result[key] = v_ref if o_ref >= o_sys else v_sys
@@ -619,7 +619,7 @@ def compute_join_op(t_sys, t_ref=None):
 # CONTAINMENT BOUNDARY — S16 ∧ L8 as a verifiable action surface
 # =============================================================================
 # The SIXTEEN_3 trilattice met against CLINK L8 gives a shared floor —
-# ⊙=⊙, Φ=𐑹, Ç=𐑧 plus nine more coordinates — the "paraconsistent observer"
+# ⊙=⊙, Φ=𐑹, ⊤=𐑧 plus nine more coordinates — the "paraconsistent observer"
 # surface. A system is CONTAINED on a primitive iff its own ordinal there is at
 # least as strict as the floor's (meeting it with the floor would not pull the
 # floor lower). Mirrors IG_inquiry.py's ToolDispatcher._containment_boundary
@@ -627,7 +627,7 @@ def compute_join_op(t_sys, t_ref=None):
 # to the S16/L8 reference pair, consistent with how compute_tensor_op/
 # compute_meet_op/compute_join_op above are already fixed to CLINK_L8_REF.
 
-_CONTAINMENT_CRITICAL = ("⊙", "Φ", "Ç")
+_CONTAINMENT_CRITICAL = ("⊙", "<", "⊤")
 
 
 def compute_containment_op(t_sys, t_s16=None, t_l8=None):
@@ -714,23 +714,23 @@ def compute_transcendence():
     d, conflicts = tuple_distance(zfc_fe, cl8)
 
     omega_info = {
-        "primitive": "Ω",
-        "zfc_fe_value": zfc_fe.get("Ω", "?"),
-        "clink_l8_value": cl8.get("Ω", "?"),
-        "zfc_fe_fragment": CL8NK_FORMULAE["Ω"].get(zfc_fe.get("Ω", ""), ("?", None, "?"))[0],
-        "clink_l8_fragment": CL8NK_FORMULAE["Ω"].get(cl8.get("Ω", ""), ("?", None, "?"))[0],
-        "zfc_fe_atom": CL8NK_FORMULAE["Ω"].get(zfc_fe.get("Ω", ""), ("?", None, "?"))[1],
-        "clink_l8_atom": CL8NK_FORMULAE["Ω"].get(cl8.get("Ω", ""), ("?", None, "?"))[1],
+        "primitive": "◻",
+        "zfc_fe_value": zfc_fe.get("◻", "?"),
+        "clink_l8_value": cl8.get("◻", "?"),
+        "zfc_fe_fragment": CL8NK_FORMULAE["◻"].get(zfc_fe.get("◻", ""), ("?", None, "?"))[0],
+        "clink_l8_fragment": CL8NK_FORMULAE["◻"].get(cl8.get("◻", ""), ("?", None, "?"))[0],
+        "zfc_fe_atom": CL8NK_FORMULAE["◻"].get(zfc_fe.get("◻", ""), ("?", None, "?"))[1],
+        "clink_l8_atom": CL8NK_FORMULAE["◻"].get(cl8.get("◻", ""), ("?", None, "?"))[1],
         "significance": "Integer winding (Abelian anyons) → braid group topology (non-Abelian anyons). This is the topological quantum computing threshold.",
     }
     grammar_info = {
-        "primitive": "ɢ",
-        "zfc_fe_value": zfc_fe.get("ɢ", "?"),
-        "clink_l8_value": cl8.get("ɢ", "?"),
-        "zfc_fe_fragment": CL8NK_FORMULAE["ɢ"].get(zfc_fe.get("ɢ", ""), ("?", None, "?"))[0],
-        "clink_l8_fragment": CL8NK_FORMULAE["ɢ"].get(cl8.get("ɢ", ""), ("?", None, "?"))[0],
-        "zfc_fe_atom": CL8NK_FORMULAE["ɢ"].get(zfc_fe.get("ɢ", ""), ("?", None, "?"))[1],
-        "clink_l8_atom": CL8NK_FORMULAE["ɢ"].get(cl8.get("ɢ", ""), ("?", None, "?"))[1],
+        "primitive": "∋",
+        "zfc_fe_value": zfc_fe.get("∋", "?"),
+        "clink_l8_value": cl8.get("∋", "?"),
+        "zfc_fe_fragment": CL8NK_FORMULAE["∋"].get(zfc_fe.get("∋", ""), ("?", None, "?"))[0],
+        "clink_l8_fragment": CL8NK_FORMULAE["∋"].get(cl8.get("∋", ""), ("?", None, "?"))[0],
+        "zfc_fe_atom": CL8NK_FORMULAE["∋"].get(zfc_fe.get("∋", ""), ("?", None, "?"))[1],
+        "clink_l8_atom": CL8NK_FORMULAE["∋"].get(cl8.get("∋", ""), ("?", None, "?"))[1],
         "significance": "Sequential stepwise composition → simultaneous broadcast. The organism composes signals to all subsystems simultaneously.",
     }
 
@@ -816,7 +816,7 @@ def generate_promotion_path(from_name, to_name):
 
 
 def generate_promotions():
-    zfc_baseline = {"Ð":"𐑼","Þ":"𐑡","Ř":"𐑩","Φ":"𐑗","ƒ":"𐑱","Ç":"𐑘","Γ":"𐑚","ɢ":"𐑝","⊙":"𐑢","Ħ":"𐑓","Σ":"𐑙","Ω":"𐑷"}
+    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡",">":"𐑩","<":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
 
     zfc_t = None
     load_catalog()
@@ -826,7 +826,7 @@ def generate_promotions():
             zfc_t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
             break
     if zfc_t is None:
-        zfc_t = {"Ð":"𐑼","Þ":"𐑸","Ř":"𐑾","Φ":"𐑬","ƒ":"𐑐","Ç":"𐑧","Γ":"𐑲","ɢ":"𐑠","⊙":"⊙","Ħ":"𐑖","Σ":"𐑳","Ω":"𐑭"}
+        zfc_t = {"⊢":"𐑼","⊣":"𐑸",">":"𐑾","<":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
 
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:
@@ -862,7 +862,7 @@ def generate_promotions():
         ],
         "total_promotions": len(stage1) + len(stage2) + len(stage3),
         "total_distance_zfc_to_cl8nk": round(d_zfc_cl8nk, 4),
-        "transcendence": {"primitives": ["Ω", "ɢ"], "d_zfcfe_to_cl8nk": round(d_zfcfe_cl8nk, 4)},
+        "transcendence": {"primitives": ["◻", "∋"], "d_zfcfe_to_cl8nk": round(d_zfcfe_cl8nk, 4)},
         "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; ZFC baseline is the absolute minimal O₀ type.",
     }
 

@@ -43,15 +43,15 @@ def thread_positions_3d():
     pos = {}
     # Count how many thread elements share each primitive vertex
     from collections import Counter
-    prim_counts = Counter(PRIM_LABEL.get(s, 'Ħ') for s in (ORGANIC_THREAD + METALLIC_THREAD))
+    prim_counts = Counter(PRIM_LABEL.get(s, '⊥') for s in (ORGANIC_THREAD + METALLIC_THREAD))
 
     prim_idx = defaultdict(int)   # how many already placed at this prim
 
     full_thread = list(ORGANIC_THREAD) + list(METALLIC_THREAD)
     for sym in full_thread:
-        prim = PRIM_LABEL.get(sym, 'Ħ')
+        prim = PRIM_LABEL.get(sym, '⊥')
         if prim not in PRIM_VERT:
-            prim = 'Ħ'
+            prim = '⊥'
         vi = PRIM_VERT[prim]
         v  = ICO_VERTS[vi]
         n  = prim_counts[prim]
@@ -125,7 +125,7 @@ def generate_tex():
     for prim, vi in PRIM_VERT.items():
         v = ICO_VERTS[vi]
         d = zdepth(v)
-        empty = prim in ('Ω','Ř','Γ','ƒ')
+        empty = prim in ('◻','>','∈','⋈')
         col = 'black!6' if empty else ('black!10' if d < 0 else 'black!16')
         p2  = proj([c * 5.4 for c in v], SCALE)
         L.append(f'\\draw[{col},line width=0.35pt] (0,0) -- ({p2[0]:.3f}cm,{p2[1]:.3f}cm);\n')
@@ -195,7 +195,7 @@ def generate_tex():
         v    = ICO_VERTS[vi]
         r_lbl = 5.3
         lp   = proj([c * r_lbl for c in v], SCALE)
-        empty = prim in ('Ω','Ř','Γ','ƒ')
+        empty = prim in ('◻','>','∈','⋈')
         alpha = '!22' if (d < -0.1 or empty) else '!52'
         L.append(f'\\node[font={{\\igprimfont\\fontsize{{12}}{{12}}\\selectfont}},text=black{alpha}]'
                  f' at ({lp[0]:.3f}cm,{lp[1]:.3f}cm) {{{prim}}};\n')
@@ -206,7 +206,7 @@ def generate_tex():
              ' {IG Periodic Table --- Frobenius Walk on the Icosahedron};\n')
 
     # ── Walk annotation (which primitives visited, in order) ──────────────────
-    walk_prims = [PRIM_LABEL.get(s,'Ħ') for s in (list(ORGANIC_THREAD)+list(METALLIC_THREAD))]
+    walk_prims = [PRIM_LABEL.get(s,'⊥') for s in (list(ORGANIC_THREAD)+list(METALLIC_THREAD))]
     walk_str   = ' $\\to$ '.join(f'{{\\igprimfont {p}}}' for p in walk_prims)
     ann_y = 10.0
     L.append(f'\\node[font={{\\fontsize{{5}}{{5}}\\selectfont}},text=black!45]'

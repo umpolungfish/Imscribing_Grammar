@@ -346,18 +346,18 @@ class RiemannXiNavigator(nn.Module):
 
 DEFINING_TUPLE = {
     "name":  "riemann_xi_navigator",
-    "Ð":     "𐑦",
-    "Þ":     "𐑸",
-    "Ř":     "𐑽",
-    "Φ":     "𐑹",
-    "ƒ":     "𐑐",
-    "Ç":     "𐑧",
-    "Γ":     "𐑲",
-    "ɢ": "𐑵",
+    "⊢":     "𐑦",
+    "⊣":     "𐑸",
+    ">":     "𐑽",
+    "<":     "𐑹",
+    "⋈":     "𐑐",
+    "⊤":     "𐑧",
+    "∈":     "𐑲",
+    "∋": "𐑵",
     "⊙":   "𐑮",
-    "Ħ":     "𐑫",
-    "Σ":     "𐑳",
-    "Ω": "𐑴",
+    "⊥":     "𐑫",
+    "⊞":     "𐑳",
+    "◻": "𐑴",
 }
 
 # Grammar prediction: d(riemann_xi_navigator, grammar_self_encode) = 0.0

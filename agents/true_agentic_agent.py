@@ -605,12 +605,12 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 # IS the SIC-POVM dual basis. The 12 primitives organize as 6 Frobenius-dual pairs:
 
 SIC_POVM_DUAL_PAIRS = [
-    ("Ð", "Þ"),     # Co-origination (Axiom C: D_⊙ ↔ T_⊙)
-    ("Ř", "Φ"),     # Coupling ↔ Parity
-    ("ƒ", "Ç"),     # Fidelity ↔ Kinetics
-    ("Γ", "ɢ"),     # Cardinality ↔ Composition
-    ("⊙", "Ħ"),     # Criticality ↔ Chirality
-    ("Σ", "Ω"),     # Stoichiometry ↔ Winding
+    ("⊢", "⊣"),     # Co-origination (Axiom C: D_⊙ ↔ T_⊙)
+    (">", "<"),     # Coupling ↔ Parity
+    ("⋈", "⊤"),     # Fidelity ↔ Kinetics
+    ("∈", "∋"),     # Cardinality ↔ Composition
+    ("⊙", "⊥"),     # Criticality ↔ Chirality
+    ("⊞", "◻"),     # Stoichiometry ↔ Winding
 ]
 
 # Belnap fiducial: B = XZ is the d=2 SIC-POVM fiducial state.
@@ -651,16 +651,16 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
     "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "⊙": "𐑢",
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
-    "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗", "ƒ": "𐑱",
-    "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝", "⊙": "𐑢", "Ħ": "𐑓",
-    "Σ": "𐑙", "Ω": "𐑷",
+    "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
+    "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
+    "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
 # Unicode chars (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
-    "Ð": "D_", "Þ": "T_", "Ř": "R_", "Φ": "P_", "ƒ": "F_",
-    "Ç": "K_", "Γ": "G_", "ɢ": "Gm", "Ħ": "H_",
-    "Σ": "S_", "Ω": "W_", "⊙": "Od",
+    "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
+    "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
+    "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
 # `φ̂` is not a primitive. The twelve are Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, and the
@@ -837,7 +837,7 @@ def _file_read_verify(emit_input: Dict, emit_output: str,
     return ("(read is idempotent — Frobenius trivially closed)", True)
 
 
-_PRIM_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+_PRIM_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 _TUPLE_RE = re.compile(r"⟨\s*([^⟩]+?)\s*⟩")
 _NAME_RE = re.compile(r"\b([a-z][a-z0-9_]{2,40})\b")
 
@@ -1191,18 +1191,18 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 ),
                 "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;⊙;Ħ;Σ;Ω",
                 "valid_values": {
-                    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
-                    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-                    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-                    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-                    "ƒ":     ["𐑱", "𐑞", "𐑐"],
-                    "Ç":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
-                    "Γ":     ["𐑲", "𐑚", "𐑔"],
-                    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
+                    "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+                    "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+                    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+                    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+                    "⋈":     ["𐑱", "𐑞", "𐑐"],
+                    "⊤":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+                    "∈":     ["𐑲", "𐑚", "𐑔"],
+                    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
                     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-                    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
-                    "Σ":     ["𐑙", "𐑕", "𐑳"],
-                    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
+                    "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+                    "⊞":     ["𐑙", "𐑕", "𐑳"],
+                    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
                 },
                 "example": (
                     'imscribe(tool_name="imscribe_system", args={'
@@ -2496,29 +2496,29 @@ TOOL_SCHEMAS = [
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
             "description": {"type": "string", "description": "Plain-language description of the system"},
-            "Ð":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
+            "⊢":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
-            "Þ":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+            "⊣":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            "Ř":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
+            ">":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
                            "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "Φ":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+            "<":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                            "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
-            "ƒ":     _prim(["𐑱", "𐑞", "𐑐"],
+            "⋈":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
-            "Ç":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+            "⊤":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                            "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
-            "Γ":     _prim(["𐑲", "𐑚", "𐑔"],
+            "∈":     _prim(["𐑲", "𐑚", "𐑔"],
                            "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
-            "ɢ": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
+            "∋": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
                            "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
             "⊙":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
-            "Ħ":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
+            "⊥":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
-            "Σ":     _prim(["𐑙", "𐑕", "𐑳"],
+            "⊞":     _prim(["𐑙", "𐑕", "𐑳"],
                            "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-            "Ω": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
+            "◻": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -2530,7 +2530,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"],
+        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
     ),
     _fn(
         "run_command",
@@ -2733,15 +2733,15 @@ TOOL_SCHEMAS = [
              "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': '⊙', 'Omega': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "⊙": {"type": "string", "description": "Filter by criticality"},
-             "Ç": {"type": "string", "description": "Filter by kinetics"},
-             "Ω": {"type": "string", "description": "Filter by winding"}},
+             "⊤": {"type": "string", "description": "Filter by kinetics"},
+             "◻": {"type": "string", "description": "Filter by winding"}},
             ["limit", "⊙"]),
         _fn(
             "crystal_count",
             ("Count the number of types matching constraints. "
              "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
             {"⊙": {"type": "string", "description": "Filter by criticality"},
-             "Ç": {"type": "string", "description": "Filter by kinetics"}},
+             "⊤": {"type": "string", "description": "Filter by kinetics"}},
             ["⊙"]),
     _fn(
         "sic_povm_probe",
@@ -5124,7 +5124,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
         }, indent=2, ensure_ascii=False)
 
     elif op == "bridge":
-        prim = args.get("primitive", "Φ")
+        prim = args.get("primitive", "<")
         val_a = args.get("value_a", "𐑹")
         val_b = args.get("value_b", "𐑗")
         is_bn = args.get("is_bottleneck", True)

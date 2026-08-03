@@ -11,13 +11,13 @@ import wave
 import numpy as np
 from pathlib import Path
 
-PRIMITIVE_ORDER = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+PRIMITIVE_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # Glyph primary key → vocal_sounds/ subdirectory name
 PRIM_DIR: dict[str, str] = {
-    "Ð": "D", "Þ": "T", "Ř": "R", "Φ": "P",
-    "ƒ": "F", "Ç": "K", "Γ": "G", "ɢ": "Gamma",
-    "⊙": "Phi", "Ħ": "H", "Σ": "S", "Ω": "Omega",
+    "⊢": "D", "⊣": "T", ">": "R", "<": "P",
+    "⋈": "F", "⊤": "K", "∈": "G", "∋": "Gamma",
+    "⊙": "Phi", "⊥": "H", "⊞": "S", "◻": "Omega",
 }
 
 # ── Pronunciation guide ────────────────────────────────────────────────────────
@@ -26,7 +26,7 @@ PRIM_DIR: dict[str, str] = {
 #   short_hint — one-phrase English anchor, fits in ~40 chars
 #   detail     — fuller articulatory description for learners
 PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
-    # Ð — Dimensionality
+    # ⊢ — Dimensionality
     "𐑛": (
         "/w/",
         "like 'w' in 'wet'",
@@ -48,7 +48,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Open back rounded vowel. Mouth wide open, back of tongue low, lips loosely rounded — British 'lot', 'cot'.",
     ),
 
-    # Þ — Topology
+    # ⊣ — Topology
     "𐑡": (
         "/ɳ/",
         "retroflex 'n' — tongue curled back",
@@ -75,7 +75,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Open-mid back rounded vowel. Mouth fairly open, lips rounded, back of tongue raised slightly — the 'aw' in 'saw', 'thought', 'caught'.",
     ),
 
-    # Ř — Relational mode
+    # > — Relational mode
     "𐑩": (
         "/r/",
         "rolled 'r' — tongue flutters",
@@ -124,7 +124,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Glottal stop followed immediately by an alveolar affricate. Throat closes with a hard catch ('uh-oh' quality), then releases straight into a hissed 'ts'. The Frobenius snap: two distinct articulatory gestures fused into one.",
     ),
 
-    # ƒ — Fidelity
+    # ⋈ — Fidelity
     "ƒ^ì": (
         "/ɬ/",
         "Welsh 'll' in 'Llanfair'",
@@ -141,7 +141,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Glottal stop. The vocal folds close completely, briefly halting all airflow, then release. The pause between the two syllables of 'uh-oh', or the Cockney replacement for 't' in 'bu'er' (butter).",
     ),
 
-    # Ç — Kinetics
+    # ⊤ — Kinetics
     "Ç^-": (
         "/ɣ/",
         "Spanish 'g' in 'agua'",
@@ -185,7 +185,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Glottal stop. Same as ƒ^ż — complete closure of the vocal folds, a hard catch, then release. The IPA symbol ʔ is derived from the reversed apostrophe, and aleph (א) in Semitic alphabets represents this sound.",
     ),
 
-    # ɢ — Interaction grammar
+    # ∋ — Interaction grammar
     "ɢ^∧": (
         "/k/",
         "like 'k' in 'key'",
@@ -234,7 +234,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Long open vowel, same acoustic quality as ɢ^Ş. Here the connotation is supercritical: the voice is at full aperture, sustained or rising — past the threshold into the runaway state.",
     ),
 
-    # Ħ — Chirality
+    # ⊥ — Chirality
     "𐑓": (
         "/o/",
         "pure 'o' as in French 'eau'",

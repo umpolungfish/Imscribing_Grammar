@@ -39,21 +39,21 @@ import os as _os
 # =============================================================================
 
 ORDINALS = {
-    "Ð": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
-    "Þ": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
-    "Ř": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
-    "Φ": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
-    "ƒ": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
-    "Ç": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
-    "Γ": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
-    "ɢ": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
+    "⊢": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
+    "⊣": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
+    ">": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
+    "<": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
+    "⋈": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
+    "⊤": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
+    "∈": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
+    "∋": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
-    "Ħ": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
-    "Σ": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "Ω": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
+    "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
+    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # =============================================================================
 # CATALOG LOADING — single source of truth, no hardcoded systems
@@ -106,24 +106,24 @@ def load_catalog(force=False):
     CLINK_L8_REF = _resolve_clink_l8_reference()
     # CLINK L9 is defined internally (no catalog entry yet)
     CLINK_L9_REF = {
-        "Ð": "𐑛",
-        "Þ": "𐑥",
-        "Ř": "𐑑",
-        "Φ": "𐑬",
-        "ƒ": "𐑐",
-        "Ç": "𐑪",
-        "Γ": "𐑔",
-        "ɢ": "𐑝",
+        "⊢": "𐑛",
+        "⊣": "𐑥",
+        ">": "𐑑",
+        "<": "𐑬",
+        "⋈": "𐑐",
+        "⊤": "𐑪",
+        "∈": "𐑔",
+        "∋": "𐑝",
         "⊙": "⊙",
-        # Ħ (Chirality) owns 𐑫 = wool = inexhaustible chirality → ETERNAL_FIXEDPOINT.
+        # ⊥ (Chirality) owns 𐑫 = wool = inexhaustible chirality → ETERNAL_FIXEDPOINT.
         # Ω (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
-        # These were transposed: Ħ held 𐑭 and Ω held 𐑫, i.e. each carried a value from
+        # These were transposed: ⊥ held 𐑭 and Ω held 𐑫, i.e. each carried a value from
         # the other's axis. The swap made clink_l9 report distance 1.2289 from its OWN
-        # reference, with the only two "promotions" being Ħ: 𐑫→𐑭 and Ω: 𐑭→𐑫 — a
+        # reference, with the only two "promotions" being ⊥: 𐑫→𐑭 and Ω: 𐑭→𐑫 — a
         # transposition masquerading as structure. Ordinal authority is Core.lean.
-        "Ħ": "𐑫",
-        "Σ": "𐑳",
-        "Ω": "𐑭",
+        "⊥": "𐑫",
+        "⊞": "𐑳",
+        "◻": "𐑭",
     }
 
 
@@ -140,18 +140,18 @@ def _resolve_clink_l8_reference():
             return {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
     # Fallback: known L8 tuple from earlier
     return {
-        "Ð": "𐑦",
-        "Þ": "𐑸",
-        "Ř": "𐑾",
-        "Φ": "𐑹",
-        "ƒ": "𐑐",
-        "Ç": "𐑧",
-        "Γ": "𐑲",
-        "ɢ": "𐑵",
+        "⊢": "𐑦",
+        "⊣": "𐑸",
+        ">": "𐑾",
+        "<": "𐑹",
+        "⋈": "𐑐",
+        "⊤": "𐑧",
+        "∈": "𐑲",
+        "∋": "𐑵",
         "⊙": "⊙",
-        "Ħ": "𐑫",
-        "Σ": "𐑳",
-        "Ω": "𐑟",
+        "⊥": "𐑫",
+        "⊞": "𐑳",
+        "◻": "𐑟",
     }
 
 # =============================================================================
@@ -380,9 +380,9 @@ def assess_tier(t):
     needs the constructor first).
     """
     crit = t.get("⊙")
-    pol  = t.get("Φ")
-    prot = t.get("Ω")
-    dim  = t.get("Ð")
+    pol  = t.get("<")
+    prot = t.get("◻")
+    dim  = t.get("⊢")
     if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
         return "O₀"
     if crit in ("⊙", "𐑮"):              # monad | roar
@@ -402,50 +402,50 @@ def assess_tier(t):
 # proximity: "match" (CL9NK itself), "close" (1 step away), "distant" (>1 step)
 
 CL9NK_FORMULAE = {
-    "Ð": {
+    "⊢": {
         "𐑛": ("dim(x) = 0 ∧ fin(x) — point-like prime atom", "PRIME_POINT", "match"),
         "𐑨": ("dim(x) = 2 ∧ sur(x)", None, "distant"),
         "𐑼": ("∀n∃y( y ∈ x ∧ rank(y) > n )", None, "close"),
         "𐑦": ("V = L(x) ∧ selfmodel(x) ∧ x ∈ V", "HOLOGRAPHIC_STATE", "distant"),
     },
-    "Þ": {
+    "⊣": {
         "𐑥": ("cross(x, y) ∧ ¬ meet(x, y) — moat crossing", "MOAT_CROSS", "match"),
         "𐑸": ("bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)", "HOLOBOUND", "distant"),
         "𐑶": ("x ⊠ y ∧ irreducible(x, y)", None, "close"),
         "𐑡": ("graph(x) ∧ branch(x)", None, "distant"),
         "𐑰": ("x ⊆ y ∧ cont(y)", None, "distant"),
     },
-    "Ř": {
+    ">": {
         "𐑑": ("Fun(x, y) ∧ Nat(y, z) → Fun(x, z) — bridge composition", "BRIDGE_COMP", "match"),
         "𐑽": ("f ⊣ g ∧ L Adj(f, g)", None, "close"),
         "𐑩": ("x ↑ y ∧ ¬(y ↑ x)", None, "distant"),
         "𐑾": ("lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)", "LR_DUAL", "distant"),
     },
-    "Φ": {
+    "<": {
         "𐑬": ("ℤ₂(x) ∧ ¬(x = -x) — parity of moat", "MOAT_PARITY", "match"),
         "𐑿": ("|ψ⟩ = Σ c_i |e_i⟩", None, "close"),
         "𐑯": ("∀g∈G( gx = x )", None, "distant"),
         "𐑗": ("¬∃sym(x)", None, "distant"),
         "𐑹": ("ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id", "PM_Z2", "distant"),
     },
-    "ƒ": {
+    "⋈": {
         "𐑐": ("ℏ(x) ∧ [x, p] = iℏ — commutator of bridge", "BRIDGE_COMM", "match"),
         "𐑞": ("Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|", None, "close"),
         "𐑱": ("P(x) ∈ {0,1} ∧ det(x)", None, "distant"),
     },
-    "Ç": {
+    "⊤": {
         "𐑪": ("τ = ∞ ∧ ord(x) — infinite extension", "INFINITE_EXT", "match"),
         "𐑧": ("τ ≫ T ∧ eq(x) ∧ gate_open(x)", None, "distant"),
         "𐑤": ("τ ∼ T ∧ noisy(x)", None, "close"),
         "𐑘": ("τ ≪ T ∧ ∂_t x = f(x)", None, "distant"),
         "𐑺": ("τ = ∞ ∧ dis(x) ∧ MBL", None, "distant"),
     },
-    "Γ": {
+    "∈": {
         "𐑔": ("∃y∈x( |y| ∼ |x| ) — bridge existence", "BRIDGE_EXIST", "match"),
         "𐑲": ("∀y( y ⊂ x → |y| < |x| )", None, "distant"),
         "𐑚": ("∀y∈x( |y| < |x| )", None, "distant"),
     },
-    "ɢ": {
+    "∋": {
         "𐑝": ("f ∧ g ∧ h — three-unit stitch", "STITCH_3", "match"),
         "𐑜": ("f ∨ g ∨ h", None, "close"),
         "𐑠": ("seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)", "SEQAX", "distant"),
@@ -458,19 +458,19 @@ CL9NK_FORMULAE = {
         "𐑣": ("ξ → ∞ ∧ chaotic(x)", None, "distant"),
         "𐑢": ("¬∃ξ( diverges(ξ) )", None, "distant"),
     },
-    "Ħ": {
+    "⊥": {
         "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0 — winding bridge", "WIND_BRIDGE", "match"),
         "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )", "ETERNAL_FIXEDPOINT", "distant"),
         "𐑖": ("∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )", "TEMPD2", "close"),
         "𐑒": ("∃y( P(y) ↔ P(S²(y)) )", None, "distant"),
         "𐑓": ("∀x( P(x) ↔ P(S(x)) )", None, "distant"),
     },
-    "Σ": {
+    "⊞": {
         "𐑳": ("∃a∈A∃b∈B( type(a) ≠ type(b) ) — moat vs bridge", "MOAT_BRIDGE_TYPE", "match"),
         "𐑕": ("∀a∈A∀b∈B( type(a) = type(b) )", None, "close"),
         "𐑙": ("|A| = 1 ∧ |B| = 1", None, "distant"),
     },
-    "Ω": {
+    "◻": {
         "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) — infinite repetition", "INFINITE_STITCH", "match"),
         "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)", "BRAID_TRANSCENDENCE", "distant"),
         "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND", "distant"),
@@ -605,7 +605,7 @@ def compute_tensor_op(t_sys, t_ref=None):
         ords = ORDINALS.get(key, {})
         o_ref = ords.get(v_ref, 0)
         o_sys = ords.get(v_sys, 0)
-        if key in ("Φ", "ƒ"):
+        if key in ("<", "⋈"):
             result[key] = v_sys if o_sys <= o_ref else v_ref
         else:
             result[key] = v_ref if o_ref >= o_sys else v_sys
@@ -671,23 +671,23 @@ def compute_transcendence():
                 transcendent_prims.append(key)
 
     bridge_info = {
-        "primitive": "Ħ",
-        "l8_value": l8.get("Ħ", "?"),
-        "l9_value": l9.get("Ħ", "?"),
-        "l8_fragment": CL9NK_FORMULAE["Ħ"].get(l8.get("Ħ", ""), ("?", None, "?"))[0],
-        "l9_fragment": CL9NK_FORMULAE["Ħ"].get(l9.get("Ħ", ""), ("?", None, "?"))[0],
-        "l8_atom": CL9NK_FORMULAE["Ħ"].get(l8.get("Ħ", ""), ("?", None, "?"))[1],
-        "l9_atom": CL9NK_FORMULAE["Ħ"].get(l9.get("Ħ", ""), ("?", None, "?"))[1],
+        "primitive": "⊥",
+        "l8_value": l8.get("⊥", "?"),
+        "l9_value": l9.get("⊥", "?"),
+        "l8_fragment": CL9NK_FORMULAE["⊥"].get(l8.get("⊥", ""), ("?", None, "?"))[0],
+        "l9_fragment": CL9NK_FORMULAE["⊥"].get(l9.get("⊥", ""), ("?", None, "?"))[0],
+        "l8_atom": CL9NK_FORMULAE["⊥"].get(l8.get("⊥", ""), ("?", None, "?"))[1],
+        "l9_atom": CL9NK_FORMULAE["⊥"].get(l9.get("⊥", ""), ("?", None, "?"))[1],
         "significance": "Integer winding bridge (Hodge Bridge) — guarantees density of bridges across moats.",
     }
     stitch_info = {
-        "primitive": "Ω",
-        "l8_value": l8.get("Ω", "?"),
-        "l9_value": l9.get("Ω", "?"),
-        "l8_fragment": CL9NK_FORMULAE["Ω"].get(l8.get("Ω", ""), ("?", None, "?"))[0],
-        "l9_fragment": CL9NK_FORMULAE["Ω"].get(l9.get("Ω", ""), ("?", None, "?"))[0],
-        "l8_atom": CL9NK_FORMULAE["Ω"].get(l8.get("Ω", ""), ("?", None, "?"))[1],
-        "l9_atom": CL9NK_FORMULAE["Ω"].get(l9.get("Ω", ""), ("?", None, "?"))[1],
+        "primitive": "◻",
+        "l8_value": l8.get("◻", "?"),
+        "l9_value": l9.get("◻", "?"),
+        "l8_fragment": CL9NK_FORMULAE["◻"].get(l8.get("◻", ""), ("?", None, "?"))[0],
+        "l9_fragment": CL9NK_FORMULAE["◻"].get(l9.get("◻", ""), ("?", None, "?"))[0],
+        "l8_atom": CL9NK_FORMULAE["◻"].get(l8.get("◻", ""), ("?", None, "?"))[1],
+        "l9_atom": CL9NK_FORMULAE["◻"].get(l9.get("◻", ""), ("?", None, "?"))[1],
         "significance": "Infinite repetition of the stitch [moat · hodge · linker] — path to infinity.",
     }
 
@@ -715,7 +715,7 @@ def compute_transcendence():
 # =============================================================================
 
 def generate_promotions():
-    zfc_baseline = {"Ð":"𐑼","Þ":"𐑡","Ř":"𐑩","Φ":"𐑗","ƒ":"𐑱","Ç":"𐑘","Γ":"𐑚","ɢ":"𐑝","⊙":"𐑢","Ħ":"𐑓","Σ":"𐑙","Ω":"𐑷"}
+    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡",">":"𐑩","<":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
 
     zfc_t = None
     load_catalog()
@@ -725,7 +725,7 @@ def generate_promotions():
             zfc_t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
             break
     if zfc_t is None:
-        zfc_t = {"Ð":"𐑼","Þ":"𐑸","Ř":"𐑾","Φ":"𐑬","ƒ":"𐑐","Ç":"𐑧","Γ":"𐑲","ɢ":"𐑠","⊙":"⊙","Ħ":"𐑖","Σ":"𐑳","Ω":"𐑭"}
+        zfc_t = {"⊢":"𐑼","⊣":"𐑸",">":"𐑾","<":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
 
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:
@@ -788,7 +788,7 @@ def generate_promotions():
         ],
         "total_promotions": len(stage1) + len(stage2) + len(stage3) + len(stage4),
         "total_distance_zfc_to_l9": round(d_zfc_l9, 4),
-        "transcendence": {"primitives": ["Ħ", "Ω"], "d_l8_to_l9": round(d_l8_l9, 4)},
+        "transcendence": {"primitives": ["⊥", "◻"], "d_l8_to_l9": round(d_l8_l9, 4)},
         "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; CLINK L9 defined internally.",
     }
 

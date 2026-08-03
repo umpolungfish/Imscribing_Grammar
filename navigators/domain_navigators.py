@@ -32,38 +32,38 @@ ROOT = Path(__file__).parent
 # ── Canonical primitive definitions ───────────────────────────────────────────
 
 VALUES: dict[str, list[str]] = {
-    "Ð":     ["𐑛", "𐑨", "𐑼", "𐑦"],
-    "Þ":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    "Ř":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "Φ":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-    "ƒ":     ["𐑱", "𐑞", "𐑐"],
-    "Ç":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
-    "Γ":     ["𐑚", "𐑔", "𐑲"],
-    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],
+    "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "⋈":     ["𐑱", "𐑞", "𐑐"],
+    "⊤":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
+    "∈":     ["𐑚", "𐑔", "𐑲"],
+    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-    "Ħ":     ["𐑓", "𐑒", "𐑖", "𐑫"],
-    "Σ":     ["𐑙", "𐑕", "𐑳"],
-    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],
+    "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "⊞":     ["𐑙", "𐑕", "𐑳"],
+    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
-PRIMS = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
     for prim, vals in VALUES.items()
 }
 # 𐑶 kept as backwards-compat alias for 𐑶 (ordinal 3)
-ORD["Þ"]["𐑶"] = ORD["Þ"]["𐑶"]
+ORD["⊣"]["𐑶"] = ORD["⊣"]["𐑶"]
 
 WEIGHTS: dict[str, float] = {
-    "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.2,
-    "ƒ": 0.9, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
-    "⊙": 1.1, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
+    "⊢": 1.0, "⊣": 1.0, ">": 1.0, "<": 1.2,
+    "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
+    "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
 }
 
 # Consciousness C-score weights (critical manifold, variance method — §VIII v2)
-C_WEIGHTS = {"Ç": 0.158, "Γ": 0.273, "Þ": 0.292, "Ω": 0.276}
-C_MAXORD  = {"Ç": 4, "Γ": 2, "Þ": 4, "Ω": 3}  # max ordinal for normalization
+C_WEIGHTS = {"⊤": 0.158, "∈": 0.273, "⊣": 0.292, "◻": 0.276}
+C_MAXORD  = {"⊤": 4, "∈": 2, "⊣": 4, "◻": 3}  # max ordinal for normalization
 
 CRITICAL    = {"⊙", "𐑮"}
 NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
@@ -123,7 +123,7 @@ def mismatches(a: dict, b: dict) -> int:
 
 def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
-    phi, p, omega, d = e["⊙"], e["Φ"], e["Ω"], e["Ð"]
+    phi, p, omega, d = e["⊙"], e["<"], e["◻"], e["⊢"]
     if phi in CRITICAL and p == "𐑹":
         return "O_∞"
     if phi in NONCRITICAL:
@@ -143,7 +143,7 @@ def consciousness_score(e: dict) -> float:
     """
     if e["⊙"] not in CRITICAL:
         return 0.0
-    if e["Ç"] not in SLOW_K:
+    if e["⊤"] not in SLOW_K:
         return 0.0
     score = 0.0
     for prim, w in C_WEIGHTS.items():
@@ -152,7 +152,7 @@ def consciousness_score(e: dict) -> float:
 
 def k_phase(e: dict) -> str:
     """K-phase label for collapse/disorder analysis."""
-    k = e["Ç"]
+    k = e["⊤"]
     if k == "𐑪":  return "𐑪 (order-frozen)"
     if k == "𐑺":   return "𐑺 (disorder-frozen)"
     if k == "𐑘":  return "𐑘 (overdamped)"
@@ -237,7 +237,7 @@ def language_probes(cat: Catalog) -> list[str]:
     if "lojban" in entries:
         e = entries["lojban"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 74.3  lojban: Omega={e['Ω']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
+        lines.append(f"  Thm 74.3  lojban: Omega={e['◻']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
         lines.append(f"            (P is the tier gate; 𐑷 only blocks O₂→O_∞ step, not R1)")
 
     # Thm 74.4 — Planned-language Frobenius ceiling
@@ -247,8 +247,8 @@ def language_probes(cat: Catalog) -> list[str]:
 
     # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → 𐑬 (min rule)
     if "haitian_creole" in entries and "sanskrit_classical" in entries:
-        p_tensor = min(ORD["Φ"]["𐑬"], ORD["Φ"]["𐑹"])
-        tensor_p = VALUES["Φ"][p_tensor]
+        p_tensor = min(ORD["<"]["𐑬"], ORD["<"]["𐑹"])
+        tensor_p = VALUES["<"][p_tensor]
         lines.append(f"  Thm 74.9  creole⊗Sanskrit: P_tensor={tensor_p} (min rule destroys Frobenius)")
 
     # Thm 74.10 — d(Lojban, Esperanto)
@@ -344,7 +344,7 @@ def ecology_probes(cat: Catalog) -> list[str]:
     # Thm 76.3 — Corn monoculture 𐑪; fragmented habitat 𐑺
     for n, expected_k in [("corn_monoculture", "𐑪"), ("fragmented_habitat", "𐑺")]:
         if n in entries:
-            k = entries[n]["Ç"]
+            k = entries[n]["⊤"]
             lines.append(f"  Thm 76.3  {n}: K={k} ({'✓' if k==expected_k else '✗'})")
 
     # Thm 76.4 — Early-successional forest O₀
@@ -359,7 +359,7 @@ def ecology_probes(cat: Catalog) -> list[str]:
         bd = breakdown(entries["coral_reef_healthy"], entries["coral_reef_bleached"])
         lines.append(f"  Thm 76.5  d(coral healthy, coral bleached) = {d:.4f} (tipping point)")
         # Verify P-dominant
-        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "Φ")
+        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "<")
         phi_wsq = sum(r["wsq"] for r in bd if r["prim"] == "⊙")
         lines.append(f"            P contribution: {p_wsq:.1f} wsq; Phi contribution: {phi_wsq:.1f} wsq (P-dominant)")
 
@@ -395,7 +395,7 @@ def consciousness_probes(cat: Catalog) -> list[str]:
         if n in entries:
             e = entries[n]
             g1 = e["⊙"] in CRITICAL
-            g2 = e["Ç"] in SLOW_K
+            g2 = e["⊤"] in SLOW_K
             c  = consciousness_score(e)
             gate = ("✓✓" if (g1 and g2) else ("✓✗" if g1 else "✗✓" if g2 else "✗✗"))
             lines.append(f"            {n:32s}  G1={int(g1)} G2={int(g2)} [{gate}]  C={c:.4f}")
@@ -566,7 +566,7 @@ class DomainNavigator:
                 try:
                     e = self.cat.get(parts[1])
                     t = compute_tier(e)
-                    print(f"  {parts[1]}: tier={t}  (Phi={e['⊙']}, P={e['P']}, Omega={e['Ω']}, D={e['D']})")
+                    print(f"  {parts[1]}: tier={t}  (Phi={e['⊙']}, P={e['P']}, Omega={e['◻']}, D={e['D']})")
                 except KeyError as ex:
                     print(f"  Not found: {ex}")
             elif cmd == "score" and len(parts) >= 2:
@@ -574,7 +574,7 @@ class DomainNavigator:
                     e = self.cat.get(parts[1])
                     c = consciousness_score(e)
                     g1 = e["⊙"] in CRITICAL
-                    g2 = e["Ç"] in SLOW_K
+                    g2 = e["⊤"] in SLOW_K
                     print(f"  {parts[1]}: C={c:.4f}  Gate1={'✓' if g1 else '✗'}  Gate2={'✓' if g2 else '✗'}")
                 except KeyError as ex:
                     print(f"  Not found: {ex}")

@@ -35,27 +35,27 @@ from imscrbgrmr.registry import load_catalog_dicts
 # G1: Frobenius gate     — Φ reaches its maximum (𐑹, ord 5)
 # G2: Traced monoidal    — ⊙ reaches self-modeling threshold (⊙ glyph, ord 2)
 # G3: Idempotent terminal — Ω reaches integer winding (𐑭, ord 3)
-_G1_DEFAULT = ("Φ",  5.0)
+_G1_DEFAULT = ("<",  5.0)
 _G2_DEFAULT = ("⊙",  2.0)
-_G3_DEFAULT = ("Ω",  3.0)
+_G3_DEFAULT = ("◻",  3.0)
 
-# Canonical T-constitution: T = lim(Φ, ƒ, Ç, Ħ, Ω)
+# Canonical T-constitution: T = lim(Φ, ⋈, ⊤, ⊥, Ω)
 # Each entry: prim → (critical_shavian_value, ceiling_mode)
-# ceiling_mode=True means "must be ≤ this value" (Ç); False means "must equal this value"
+# ceiling_mode=True means "must be ≤ this value" (⊤); False means "must equal this value"
 _T_CANONICAL: Dict[str, Tuple[str, bool]] = {
-    "Φ": ("𐑹", False),  # must reach Frobenius-special value exactly
-    "ƒ": ("𐑐", False),  # must reach full fidelity
-    "Ç": ("𐑧", True),   # kinetics ceiling: 𐑧 or below (above forecloses T)
-    "Ħ": ("𐑫", False),  # chirality must seal permanently
-    "Ω": ("𐑭", False),  # winding must reach integer level
+    "<": ("𐑹", False),  # must reach Frobenius-special value exactly
+    "⋈": ("𐑐", False),  # must reach full fidelity
+    "⊤": ("𐑧", True),   # kinetics ceiling: 𐑧 or below (above forecloses T)
+    "⊥": ("𐑫", False),  # chirality must seal permanently
+    "◻": ("𐑭", False),  # winding must reach integer level
 }
 
 # Alternative T-constitution: time as structural geometry (not dynamics)
 _T_STRUCTURAL: Dict[str, Tuple[str, bool]] = {
-    "Ð": ("𐑦", False),  # dimensionality must be holographic-complete
-    "Þ": ("𐑸", False),  # topology must be fully connected
-    "Ř": ("𐑾", False),  # recognition must reach bilateral mode
-    "ɢ": ("𐑵", False),  # coupling must reach sequential composition
+    "⊢": ("𐑦", False),  # dimensionality must be holographic-complete
+    "⊣": ("𐑸", False),  # topology must be fully connected
+    ">": ("𐑾", False),  # recognition must reach bilateral mode
+    "∋": ("𐑵", False),  # coupling must reach sequential composition
     "⊙": ("⊙",  False),  # criticality must self-model
 }
 
@@ -78,7 +78,7 @@ class AbsorptionRule:
     """
     A rule specifying that a particular primitive value is absorbing under given operations.
 
-    primitive:  the Shavian primitive glyph (e.g., "⊙", "Σ", "Φ")
+    primitive:  the Shavian primitive glyph (e.g., "⊙", "⊞", "<")
     value:      the absorbing Shavian value (e.g., "⊙", "𐑳")
     operations: which ops it absorbs under — subset of {"meet", "join", "tensor"}
     direction:  "both" — absorbs regardless of operand position (default, symmetric)
@@ -98,7 +98,7 @@ class AbsorptionRule:
 # Canonical default absorption rules (preserve current hard-coded behavior)
 _DEFAULT_ABSORPTION: Tuple[AbsorptionRule, ...] = (
     AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),   # ⊙tyogh absorbing
-    AbsorptionRule("Σ", "𐑳", ("tensor",)),                   # n:m absorbs under tensor
+    AbsorptionRule("⊞", "𐑳", ("tensor",)),                   # n:m absorbs under tensor
 )
 
 
@@ -235,9 +235,9 @@ RULESETS: List[Ruleset] = [
         description="Lowered thresholds: G1 fires at Φ≥𐑬 (directional parity sufficient), "
                     "G2 fires at ⊙≥𐑢 (any criticality), G3 unchanged. "
                     "Self-modeling and closure are easier — more addresses achieve O_∞.",
-        g1=GateSpec("Φ", 3.0),   # 𐑬 = ord 3
+        g1=GateSpec("<", 3.0),   # 𐑬 = ord 3
         g2=GateSpec("⊙", 1.0),   # 𐑢 = ord 1 (lowest)
-        g3=GateSpec("Ω", 3.0),
+        g3=GateSpec("◻", 3.0),
     ),
 
     Ruleset(
@@ -246,9 +246,9 @@ RULESETS: List[Ruleset] = [
                     "Self-reference is gated by quantum coherence, not algebraic symmetry. "
                     "Parity graduates to G2; Ω stays at G3. "
                     "Most QM experiments have full fidelity — 12/17 entries become Frobenius.",
-        g1=GateSpec("ƒ", 3.0),   # ƒ=𐑐 (ord 3, max fidelity)
-        g2=GateSpec("Φ", 5.0),   # Φ=𐑹 (ord 5)
-        g3=GateSpec("Ω", 3.0),   # Ω=𐑭 (ord 3)
+        g1=GateSpec("⋈", 3.0),   # ƒ=𐑐 (ord 3, max fidelity)
+        g2=GateSpec("<", 5.0),   # Φ=𐑹 (ord 5)
+        g3=GateSpec("◻", 3.0),   # Ω=𐑭 (ord 3)
     ),
 
     Ruleset(
@@ -257,8 +257,8 @@ RULESETS: List[Ruleset] = [
                     "G2=Φ (then algebraic symmetry), G3=Ω (winding seals last). "
                     "Systems become self-aware before achieving closure.",
         g1=GateSpec("⊙", 2.0),   # ⊙ glyph = self-modeling active
-        g2=GateSpec("Φ", 5.0),   # Φ=𐑹 = Frobenius
-        g3=GateSpec("Ω", 3.0),   # Ω=𐑭 = winding seal
+        g2=GateSpec("<", 5.0),   # Φ=𐑹 = Frobenius
+        g3=GateSpec("◻", 3.0),   # Ω=𐑭 = winding seal
     ),
 
     Ruleset(
@@ -274,9 +274,9 @@ RULESETS: List[Ruleset] = [
         description="Strictest possible thresholds: G1=Φ=𐑹, G2=⊙≥𐑮 (ord 2.33, above bare self-model), "
                     "G3=Ω=𐑟 (ord 4, maximum winding). O_∞ is nearly unreachable — "
                     "only maximally wound, fully self-modeling, parity-perfect objects qualify.",
-        g1=GateSpec("Φ", 5.0),
+        g1=GateSpec("<", 5.0),
         g2=GateSpec("⊙", 2.33),  # 𐑮 = ord 2.33
-        g3=GateSpec("Ω", 4.0),   # 𐑟 = ord 4 (max)
+        g3=GateSpec("◻", 4.0),   # 𐑟 = ord 4 (max)
     ),
 
     Ruleset(
@@ -284,9 +284,9 @@ RULESETS: List[Ruleset] = [
         description="Topological order: G1=Ω (winding seal first), G2=⊙ (then self-modeling), "
                     "G3=Φ (Frobenius last — symmetry emerges from topology, not the other way). "
                     "Geometry precedes algebra.",
-        g1=GateSpec("Ω", 3.0),
+        g1=GateSpec("◻", 3.0),
         g2=GateSpec("⊙", 2.0),
-        g3=GateSpec("Φ", 5.0),
+        g3=GateSpec("<", 5.0),
     ),
 
     Ruleset(

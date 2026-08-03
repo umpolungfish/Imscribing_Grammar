@@ -18,62 +18,62 @@ from typing import Dict, List, Tuple, Literal
 # (sourced from space_search/primitives.py ORDINALS + README + Core.lean)
 # =============================================================================
 
-PRIMITIVE_ORDER: List[str] = ["Ð", "Þ", "Ř", "Φ", "ƒ", "Ç", "Γ", "ɢ", "⊙", "Ħ", "Σ", "Ω"]
+PRIMITIVE_ORDER: List[str] = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # Exact glyphs per primitive (the only legal values)
 CANONICAL_VALUES: Dict[str, List[str]] = {
-    "Ð": ["𐑛", "𐑨", "𐑼", "𐑦"],                    # Dimensionality — 4 values
-    "Þ": ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],                # Topology — 5
-    "Ř": ["𐑩", "𐑑", "𐑽", "𐑾"],                    # Relational — 4
-    "Φ": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],                # Polarity (Frobenius gate) — 5
-    "ƒ": ["𐑱", "𐑞", "𐑐"],                         # Fidelity — 3
-    "Ç": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],                # Kinetics — 5
-    "Γ": ["𐑚", "𐑔", "𐑲"],                         # Scope / Granularity — 3
-    "ɢ": ["𐑝", "𐑜", "𐑠", "𐑵"],                    # Composition — 4
+    "⊢": ["𐑛", "𐑨", "𐑼", "𐑦"],                    # Dimensionality — 4 values
+    "⊣": ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],                # Topology — 5
+    ">": ["𐑩", "𐑑", "𐑽", "𐑾"],                    # Relational — 4
+    "<": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],                # Polarity (Frobenius gate) — 5
+    "⋈": ["𐑱", "𐑞", "𐑐"],                         # Fidelity — 3
+    "⊤": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],                # Kinetics — 5
+    "∈": ["𐑚", "𐑔", "𐑲"],                         # Scope / Granularity — 3
+    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],                    # Composition — 4
     "⊙": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],               # Criticality — 5 (note: ⊙ glyph is a legal value)
-    "Ħ": ["𐑓", "𐑒", "𐑖", "𐑫"],                    # Chirality — 4
-    "Σ": ["𐑙", "𐑕", "𐑳"],                         # Stoichiometry — 3
-    "Ω": ["𐑷", "𐑴", "𐑭", "𐑟"],                    # Winding — 4
+    "⊥": ["𐑓", "𐑒", "𐑖", "𐑫"],                    # Chirality — 4
+    "⊞": ["𐑙", "𐑕", "𐑳"],                         # Stoichiometry — 3
+    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],                    # Winding — 4
 }
 
 # Ordinal ranks (1-based where possible; non-integer only for the two transitional ⊙ values)
 # These are the authoritative ordinals used for all distance / tier calculations.
 ORDINALS: Dict[str, Dict[str, float]] = {
-    "Ð": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
-    "Þ": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
-    "Ř": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
-    "Φ": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
-    "ƒ": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
-    "Ç": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
-    "Γ": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
-    "ɢ": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
+    "⊢": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
+    "⊣": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
+    ">": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
+    "<": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
+    "⋈": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
+    "⊤": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
+    "∈": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
+    "∋": {"𐑝": 1, "𐑜": 2, "𐑠": 3, "𐑵": 4},
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
-    "Ħ": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
-    "Σ": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "Ω": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
+    "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
+    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
 # Canonical weights for distance calculations (from space_search/primitives.py v0.5.0)
 WEIGHTS: Dict[str, float] = {
-    "Ð": 1.0, "Þ": 1.0, "Ř": 1.0, "Φ": 1.0,
-    "ƒ": 1.0, "Ç": 1.0, "Γ": 1.0, "ɢ": 1.0,
-    "⊙": 1.0, "Ħ": 0.8, "Σ": 1.0, "Ω": 0.7,
+    "⊢": 1.0, "⊣": 1.0, ">": 1.0, "<": 1.0,
+    "⋈": 1.0, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
+    "⊙": 1.0, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
 }
 
 # Human-readable names (for docs / errors only — the glyphs are the identity)
 PRIMITIVE_NAMES: Dict[str, str] = {
-    "Ð": "Dimensionality",
-    "Þ": "Topology",
-    "Ř": "Relational",
-    "Φ": "Polarity",
-    "ƒ": "Fidelity",
-    "Ç": "Kinetics",
-    "Γ": "Scope",
-    "ɢ": "Composition",
+    "⊢": "Dimensionality",
+    "⊣": "Topology",
+    ">": "Relational",
+    "<": "Polarity",
+    "⋈": "Fidelity",
+    "⊤": "Kinetics",
+    "∈": "Scope",
+    "∋": "Composition",
     "⊙": "Criticality",
-    "Ħ": "Chirality",
-    "Σ": "Stoichiometry",
-    "Ω": "Winding",
+    "⊥": "Chirality",
+    "⊞": "Stoichiometry",
+    "◻": "Winding",
 }
 
 # =============================================================================
@@ -89,18 +89,18 @@ class CrystalAddress:
     Two addresses are identical iff their 12 glyphs match.
     Distance is integer (or float with the non-integer ⊙ ranks) and O(1).
     """
-    D: str   # Ð Dimensionality
-    T: str   # Þ Topology
-    R: str   # Ř Relational
-    P: str   # Φ Polarity
-    F: str   # ƒ Fidelity
-    K: str   # Ç Kinetics
-    G: str   # Γ Scope/Granularity
-    C: str   # ɢ Composition
+    D: str   # ⊢ Dimensionality
+    T: str   # ⊣ Topology
+    R: str   # > Relational
+    P: str   # < Polarity
+    F: str   # ⋈ Fidelity
+    K: str   # ⊤ Kinetics
+    G: str   # ∈ Scope/Granularity
+    C: str   # ∋ Composition
     Crit: str  # ⊙ Criticality (the field name is Crit; the *value* can be the glyph ⊙)
-    H: str   # Ħ Chirality
-    S: str   # Σ Stoichiometry
-    O: str   # Ω Winding
+    H: str   # ⊥ Chirality
+    S: str   # ⊞ Stoichiometry
+    O: str   # ◻ Winding
 
     def __post_init__(self):
         glyph_map = self._glyph_map()
@@ -110,9 +110,9 @@ class CrystalAddress:
 
     def _glyph_map(self) -> Dict[str, str]:
         return {
-            "Ð": self.D, "Þ": self.T, "Ř": self.R, "Φ": self.P,
-            "ƒ": self.F, "Ç": self.K, "Γ": self.G, "ɢ": self.C,
-            "⊙": self.Crit, "Ħ": self.H, "Σ": self.S, "Ω": self.O,
+            "⊢": self.D, "⊣": self.T, ">": self.R, "<": self.P,
+            "⋈": self.F, "⊤": self.K, "∈": self.G, "∋": self.C,
+            "⊙": self.Crit, "⊥": self.H, "⊞": self.S, "◻": self.O,
         }
 
     @classmethod
@@ -122,17 +122,17 @@ class CrystalAddress:
         # Map positionally to the internal fields using PRIMITIVE_ORDER
         d = dict(zip(PRIMITIVE_ORDER, glyphs))
         return cls(
-            D=d["Ð"], T=d["Þ"], R=d["Ř"], P=d["Φ"],
-            F=d["ƒ"], K=d["Ç"], G=d["Γ"], C=d["ɢ"],
-            Crit=d["⊙"], H=d["Ħ"], S=d["Σ"], O=d["Ω"],
+            D=d["⊢"], T=d["⊣"], R=d[">"], P=d["<"],
+            F=d["⋈"], K=d["⊤"], G=d["∈"], C=d["∋"],
+            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["◻"],
         )
 
     @classmethod
     def from_dict(cls, d: Dict[str, str]) -> "CrystalAddress":
         return cls(
-            D=d["Ð"], T=d["Þ"], R=d["Ř"], P=d["Φ"],
-            F=d["ƒ"], K=d["Ç"], G=d["Γ"], C=d["ɢ"],
-            Crit=d["⊙"], H=d["Ħ"], S=d["Σ"], O=d["Ω"],
+            D=d["⊢"], T=d["⊣"], R=d[">"], P=d["<"],
+            F=d["⋈"], K=d["⊤"], G=d["∈"], C=d["∋"],
+            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["◻"],
         )
 
     def as_tuple(self) -> Tuple[str, ...]:
@@ -166,7 +166,7 @@ OuroboricityTier = Literal["O₀", "O₁", "O₂", "O₂†", "O_∞"]
 
 def ouroboricity_tier(addr: CrystalAddress) -> OuroboricityTier:
     """
-    Compute the canonical ouroboricity tier from the (Φ, ⊙) pair (with Ω/D context).
+    Compute the canonical ouroboricity tier from the (<, ⊙) pair (with ◻/D context).
     Matches the rules in Core.lean and the README table.
     """
     phi = addr.P
@@ -179,7 +179,7 @@ def ouroboricity_tier(addr: CrystalAddress) -> OuroboricityTier:
         return "O_∞"
 
     # 𐑢 or sealed criticality → O₀
-    if phi in ("𐑗", "𐑿"):  # the two lowest Φ
+    if phi in ("𐑗", "𐑿"):  # the two lowest <
         return "O₀"
 
     # ⊙ (𐑬) family
@@ -204,15 +204,15 @@ def ouroboricity_tier(addr: CrystalAddress) -> OuroboricityTier:
 
 # Convenience: the two famous addresses from the README (exact glyphs)
 PHILOSOPHERS_STONE: CrystalAddress = CrystalAddress.from_dict({
-    "Ð": "𐑦", "Þ": "𐑸", "Ř": "𐑾", "Φ": "𐑹",
-    "ƒ": "𐑐", "Ç": "𐑧", "Γ": "𐑲", "ɢ": "𐑠",
-    "⊙": "⊙", "Ħ": "𐑫", "Σ": "𐑳", "Ω": "𐑭",
+    "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹",
+    "⋈": "𐑐", "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠",
+    "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
 })
 
 MINIMUM_BASELINE: CrystalAddress = CrystalAddress.from_dict({
-    "Ð": "𐑛", "Þ": "𐑡", "Ř": "𐑩", "Φ": "𐑗",
-    "ƒ": "𐑱", "Ç": "𐑘", "Γ": "𐑚", "ɢ": "𐑝",
-    "⊙": "𐑢", "Ħ": "𐑓", "Σ": "𐑙", "Ω": "𐑷",
+    "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
+    "⋈": "𐑱", "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝",
+    "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷",
 })
 
 

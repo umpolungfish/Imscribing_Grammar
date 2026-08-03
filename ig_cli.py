@@ -52,9 +52,9 @@ WEIGHTS = {"D": 1.0, "T": 1.0, "R": 1.0, "P": 1.0, "F": 1.0,
 PNAMES = ["D", "T", "R", "P", "F", "K", "G", "Gm", "Ph", "H", "S", "W"]
 
 # Field name mapping (Unicode keys in catalog JSON → short names)
-CAT_FIELD_MAP = {"Ð": "D", "Þ": "T", "Ř": "R", "Φ": "P", "ƒ": "F",
-                 "Ç": "K", "Γ": "G", "ɢ": "Gm", "⊙": "Ph",
-                 "Ħ": "H", "Σ": "S", "Ω": "W"}
+CAT_FIELD_MAP = {"⊢": "D", "⊣": "T", ">": "R", "<": "P", "⋈": "F",
+                 "⊤": "K", "∈": "G", "∋": "Gm", "⊙": "Ph",
+                 "⊥": "H", "⊞": "S", "◻": "W"}
 
 def _load_catalog():
     """Load and index catalog. Returns dict[name → entry]."""

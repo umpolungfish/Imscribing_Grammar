@@ -52,19 +52,19 @@ from navigators.zfct_navigator import (
 
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
-        'Ð': '𐑦', 'Þ': '𐑸', 'Ř': '𐑾',  'Φ': '𐑹',
-        'ƒ': 'ƒ^ì', 'Ç': 'Ç^Ù', 'Γ': '𐑲',  'ɢ': 'ɢ^Ş',
-        '⊙': '⊙', 'Ħ': '𐑫', 'Σ': '𐑙',  'Ω': '𐑭',
+        '⊢': '𐑦', '⊣': '𐑸', '>': '𐑾',  '<': '𐑹',
+        '⋈': 'ƒ^ì', '⊤': 'Ç^Ù', '∈': '𐑲',  '∋': 'ɢ^Ş',
+        '⊙': '⊙', '⊥': '𐑫', '⊞': '𐑙',  '◻': '𐑭',
     },
     'rohonc': {
-        'Ð': '𐑨', 'Þ': '𐑶', 'Ř': '𐑽', 'Φ': '𐑹',
-        'ƒ': 'ƒ^ì', 'Ç': 'Ç^@', 'Γ': '𐑲', 'ɢ': 'ɢ^ˌ',
-        '⊙': '⊙', 'Ħ': '𐑖', 'Σ': '𐑳', 'Ω': '𐑭',
+        '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
+        '⋈': 'ƒ^ì', '⊤': 'Ç^@', '∈': '𐑲', '∋': 'ɢ^ˌ',
+        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
     'linear_a': {
-        'Ð': '𐑨', 'Þ': '𐑶', 'Ř': '𐑽', 'Φ': '𐑹',
-        'ƒ': 'ƒ^ż', 'Ç': 'Ç^W', 'Γ': '𐑲', 'ɢ': 'ɢ^ˌ',
-        '⊙': '⊙', 'Ħ': '𐑖', 'Σ': '𐑳', 'Ω': '𐑭',
+        '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
+        '⋈': 'ƒ^ż', '⊤': 'Ç^W', '∈': '𐑲', '∋': 'ɢ^ˌ',
+        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
 }
 
@@ -102,7 +102,7 @@ def _derive_Þ(counts: Counter, corpus: str) -> str:
         return '𐑶'                    # Frobenius-balanced box
     if ifix > 0.22:
         return '𐑡'                    # linear tape dominance
-    return CORPUS_BASE[corpus]['Þ']     # corpus default
+    return CORPUS_BASE[corpus]['⊣']     # corpus default
 
 
 def _derive_Φ(counts: Counter, corpus: str) -> str:
@@ -133,7 +133,7 @@ def _derive_ɢ(counts: Counter, corpus: str) -> str:
         return 'ɢ^Ş'                   # broadcast (more splits than fuses)
     if clink > 0.15:
         return 'ɢ^ˌ'                   # sequential composition
-    return CORPUS_BASE[corpus]['ɢ']    # corpus default
+    return CORPUS_BASE[corpus]['∋']    # corpus default
 
 
 def _derive_Ħ(n_instructions: int, corpus: str) -> str:
@@ -150,10 +150,10 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     """Derive a per-element 12-tuple from an IMASM instruction list."""
     counts = _count_mnemonics(instructions)
     base   = dict(CORPUS_BASE[corpus])
-    base['Þ'] = _derive_Þ(counts, corpus)
-    base['Φ'] = _derive_Φ(counts, corpus)
-    base['ɢ'] = _derive_ɢ(counts, corpus)
-    base['Ħ'] = _derive_Ħ(len(instructions), corpus)
+    base['⊣'] = _derive_Þ(counts, corpus)
+    base['<'] = _derive_Φ(counts, corpus)
+    base['∋'] = _derive_ɢ(counts, corpus)
+    base['⊥'] = _derive_Ħ(len(instructions), corpus)
     return base
 
 
@@ -264,8 +264,8 @@ def process_corpus(
         }
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
-                  f'Þ={tuple_["Þ"]}  Φ={tuple_["Φ"]}  '
-                  f'ɢ={tuple_["ɢ"]}  Ħ={tuple_["Ħ"]}')
+                  f'Þ={tuple_["⊣"]}  Φ={tuple_["<"]}  '
+                  f'ɢ={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
     return records
 
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: Þ={t["Þ"]}  Φ={t["Φ"]}  ɢ={t["ɢ"]}  Ħ={t["Ħ"]}\n')
+                f.write(f'  Variable: Þ={t["⊣"]}  Φ={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

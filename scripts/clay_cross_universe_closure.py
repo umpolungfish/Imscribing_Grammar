@@ -42,11 +42,11 @@ CLAY_OPEN = [
 # Canonical's own anchors, generalized from "Ç only" to all five dynamics
 # primitives, all treated as ceilings instead of exact-equality.
 T_CEILING = {
-    "Φ": ("𐑹", True),
-    "ƒ": ("𐑐", True),
-    "Ç": ("𐑧", True),
-    "Ħ": ("𐑫", True),
-    "Ω": ("𐑭", True),
+    "<": ("𐑹", True),
+    "⋈": ("𐑐", True),
+    "⊤": ("𐑧", True),
+    "⊥": ("𐑫", True),
+    "◻": ("𐑭", True),
 }
 
 

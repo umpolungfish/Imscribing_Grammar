@@ -35,7 +35,7 @@ from sounds import FIELD_ORDER, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
 # We accept BOTH when reading, but normalize to ⊙ for internal tuple storage.
 CRIT_LEGACY = '⊙'    # used in all catalog .json files
 CRIT_MODERN = '⊙'    # used in sounds.py FIELD_ORDER
-_FIELDS = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', 'Σ', 'Ω']
+_FIELDS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
 
 # ── criticality key normalization ─────────────────────────────────────────────
 def _get_crit(entry):
@@ -116,18 +116,18 @@ def hamming(a, b):
 
 # ── display ───────────────────────────────────────────────────────────────────
 _FIELD_LABELS = {
-    'Ð': 'D  Dimensionality',
-    'Þ': 'T  Topology      ',
-    'Ř': 'R  Relational    ',
-    'Φ': 'P  Polarity      ',
-    'ƒ': 'F  Fidelity      ',
-    'Ç': 'K  Kinetics      ',
-    'Γ': 'G  Scope         ',
-    'ɢ': 'Γ  Grammar       ',
+    '⊢': 'D  Dimensionality',
+    '⊣': 'T  Topology      ',
+    '>': 'R  Relational    ',
+    '<': 'P  Polarity      ',
+    '⋈': 'F  Fidelity      ',
+    '⊤': 'K  Kinetics      ',
+    '∈': 'G  Scope         ',
+    '∋': 'Γ  Grammar       ',
     CRIT_LEGACY: 'Φ  Criticality   ',
-    'Ħ': 'H  Chirality',
-    'Σ': 'S  Stoichiometry ',
-    'Ω': 'Ω  Winding       ',
+    '⊥': 'H  Chirality',
+    '⊞': 'S  Stoichiometry ',
+    '◻': 'Ω  Winding       ',
 }
 
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
@@ -249,18 +249,18 @@ def cmd_validate(args):
     errors = []
     warnings = []
     valid_vals = {
-        'Ð': {'𐑛', '𐑨', '𐑼', '𐑦'},
-        'Þ': {'𐑡', '𐑰', '𐑥', '𐑶', '𐑸'},
-        'Ř': {'𐑩', '𐑑', '𐑽', '𐑾'},
-        'Φ': {'𐑗', '𐑿', '𐑬', '𐑯', '𐑹'},
-        'ƒ': {'ƒ^ì', 'ƒ^ð', 'ƒ^ż'},
-        'Ç': {'Ç^-', 'Ç^W', 'Ç^@', 'Ç^Ù', 'Ç^λ'},
-        'Γ': {'𐑚', '𐑔', '𐑲'},
-        'ɢ': {'ɢ^∧', 'ɢ^˝', 'ɢ^ˌ', 'ɢ^Ş'},
+        '⊢': {'𐑛', '𐑨', '𐑼', '𐑦'},
+        '⊣': {'𐑡', '𐑰', '𐑥', '𐑶', '𐑸'},
+        '>': {'𐑩', '𐑑', '𐑽', '𐑾'},
+        '<': {'𐑗', '𐑿', '𐑬', '𐑯', '𐑹'},
+        '⋈': {'ƒ^ì', 'ƒ^ð', 'ƒ^ż'},
+        '⊤': {'Ç^-', 'Ç^W', 'Ç^@', 'Ç^Ù', 'Ç^λ'},
+        '∈': {'𐑚', '𐑔', '𐑲'},
+        '∋': {'ɢ^∧', 'ɢ^˝', 'ɢ^ˌ', 'ɢ^Ş'},
         CRIT_LEGACY: {'𐑢', '⊙', '𐑮', '𐑻', '𐑣'},
-        'Ħ': {'𐑓', '𐑒', '𐑖', '𐑫'},
-        'Σ': {'𐑙', '𐑕', '𐑳'},
-        'Ω': {'𐑷', '𐑴', '𐑭', '𐑟'},
+        '⊥': {'𐑓', '𐑒', '𐑖', '𐑫'},
+        '⊞': {'𐑙', '𐑕', '𐑳'},
+        '◻': {'𐑷', '𐑴', '𐑭', '𐑟'},
     }
     valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O₀', 'O₁', 'O₂', 'O₂†', 'O_∞', ''}
 
@@ -497,9 +497,9 @@ def entry(num, title, desc, text,
         "title": title,
         "description": desc,
         "text": text,
-        "Ð": D, "Þ": T, "Ř": R, "Φ": P, "ƒ": F,
-        "Ç": K, "Γ": G, "ɢ": Gm, PHI: C,
-        "Ħ": H, "Σ": S, "Ω": Om,
+        "⊢": D, "⊣": T, ">": R, "<": P, "⋈": F,
+        "⊤": K, "∈": G, "∋": Gm, PHI: C,
+        "⊥": H, "⊞": S, "◻": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
     }}
 
@@ -694,7 +694,7 @@ def cmd_add(args):
     if len(raw) != 12:
         sys.exit(f"Error: --tuple requires exactly 12 glyph IDs, got {len(raw)}")
 
-    field_keys = ['Ð', 'Þ', 'Ř', 'Φ', 'ƒ', 'Ç', 'Γ', 'ɢ', CRIT_LEGACY, 'Ħ', 'Σ', 'Ω']
+    field_keys = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
     entry = {}
     entry['name'] = args.name
     if args.number is not None:
