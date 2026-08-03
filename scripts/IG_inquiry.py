@@ -757,7 +757,7 @@ _TOOLS_OPENAI = [
                 "Example: encode_system(name='foo', description='...', "
                 "tuple='𐑦;𐑸;𐑑;𐑬;ƒ^ż;Ç^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
-                "(Ð='𐑦', Þ='𐑸', Ř='𐑑', Φ='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
+                "(Ð='𐑦', ⊣='𐑸', Ř='𐑑', Φ='𐑬', ƒ='ƒ^ż', Ç='Ç^W', "
                 "Γ='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
@@ -767,7 +767,7 @@ _TOOLS_OPENAI = [
                 "to commit. If both encodings are valid, use a distinct name for the earlier one. "
                 "Canonical value sets (Symbol_symbol IDs) — use ONLY these exact strings: "
                 "Ð: 𐑛 𐑨 𐑼 𐑦 | "
-                "Þ: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
+                "⊣: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
                 "Ř: 𐑩 𐑑 𐑽 𐑾 | "
                 "Φ: 𐑗 𐑿 𐑬 𐑯 𐑹 | "
                 "ƒ: ƒ^ì ƒ^ð ƒ^ż | "
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (Ð,Þ,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (Ð,⊣,Ř,Φ,ƒ,Ç,Γ,ɢ,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",

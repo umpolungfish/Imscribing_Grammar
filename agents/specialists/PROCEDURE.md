@@ -33,7 +33,7 @@ which runs the Tetractys, or fetch an existing one with `lookup_catalog`. A
 tuple you assembled from what the values "should" be is a fabrication even when
 every slot happens to be right.
 
-Both notations verify: bare `⟨𐑼;𐑶;…⟩` and labelled `⟨Ð=𐑼; Þ=𐑶; …⟩`.
+Both notations verify: bare `⟨𐑼;𐑶;…⟩` and labelled `⟨Ð=𐑼; ⊣=𐑶; …⟩`.
 
 ## 4. Compute; do not recall
 

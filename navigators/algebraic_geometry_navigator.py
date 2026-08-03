@@ -361,7 +361,7 @@ def cmd_cohomology(scheme_str, sheaf_str):
             print()
             print(f"  Serre duality: H^{n}(P^{n}, ω) = 1  (dualizing sheaf generator)")
 
-        elif sheaf_str in ('T', 'Þ(X)'):
+        elif sheaf_str in ('T', '⊣(X)'):
             print(f"Tangent sheaf T_X on P^{n}  (Euler sequence)")
             print(f"  0 → O → O(1)^⊕{n+1} → T → 0")
             print()

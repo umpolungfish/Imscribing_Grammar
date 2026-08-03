@@ -83,7 +83,7 @@ def build_universes():
     combos = [
         ("⊥", "⊙", "chirality_criticality", "Ħ≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
         ("⊤", "⊙", "kinetics_criticality", "Ç≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
-        ("⊣", "⊢", "topology_dimensionality", "Þ≥ord5.0 → Ð≥ord4.0: topology then dimension"),
+        ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → Ð≥ord4.0: topology then dimension"),
         ("∈", "∋", "scope_grammar", "Γ≥ord3.0 → ɢ≥ord4.0: universal scope then broadcast"),
         ("<", "⋈", "parity_fidelity", "Φ≥ord5.0 → ƒ≥ord3.0: Frobenius parity then quantum fidelity"),
         ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
@@ -115,7 +115,7 @@ def build_universes():
     # All structure only
     rulesets.append(Ruleset(
         name="t_all_structure",
-        description="T constituted by ALL 5 primitives (Ð,Þ,Ř,Γ,Σ). Canonical gates. "
+        description="T constituted by ALL 5 primitives (Ð,⊣,Ř,Γ,Σ). Canonical gates. "
                     "Time is pure geometry, no dynamics.",
         t_prims={p: ("𐑦", False) for p in structure},
     ))

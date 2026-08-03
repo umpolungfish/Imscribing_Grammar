@@ -43,10 +43,10 @@ _D_MAP = {
 }
 
 _T_MAP = {
-    "Þ_chains":  "Þ_linear",
-    "Þ_square":  "Þ_nrleg",   # hub-node -> generic network
-    "Þ_invscr":      "Þ_nrleg",   # old shorthand
-    "Þ_box":     "Þ_cage",
+    "𐑰":  "𐑰",
+    "𐑶":  "𐑡",   # hub-node -> generic network
+    "𐑸":      "𐑡",   # old shorthand
+    "𐑶":     "𐑶",
     # unchanged: T_linear, T_branched, T_nrleg, T_bullseye, T_torus, T_holo,
     #            T_network_hex, T_network_mixed, T_network_interp, T_network_sym,
     #            T_cage, T_bowl, T_braid

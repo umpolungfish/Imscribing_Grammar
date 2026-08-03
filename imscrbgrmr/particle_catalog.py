@@ -301,7 +301,7 @@ def _gluon() -> Imscription:
             "force": "strong_QCD",
             "k_trap_spatial": False,
             "range": "confined_1fm_T_topology",
-            "range_mechanism": "Þ_network_confinement_not_K_trap_mass",
+            "range_mechanism": "𐑡_confinement_not_K_trap_mass",
             "colour_charges": 8,
             "coupling_target": "colour_charge",
             "metaphysics_section": "XXVI.3",

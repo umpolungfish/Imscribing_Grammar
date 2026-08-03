@@ -982,7 +982,7 @@ def register_imscription(
         >>> register_imscription(
         ...     name="carboxylic_acid_dimer",
         ...     dimensionality="𐑛",
-        ...     topology="Þ_bullseye",
+        ...     topology="𐑥",
         ...     recognition_mode="Ř_superset",
         ...     polarity="Φ_pm_pseudo",
         ...     fidelity="ƒ_hardsign",

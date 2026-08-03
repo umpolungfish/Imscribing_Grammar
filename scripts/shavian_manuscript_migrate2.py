@@ -11,20 +11,20 @@ SO_BELOW = '/home/mrnob0dy666/imscribing_grammar/manuscripts/SO_BELOW.tex'
 # Use enough context to uniquely identify each wrong occurrence.
 # ============================================================
 AS_ABOVE_TARGETED = [
-    # L1024: table row with all 5 Þ values (· separator)
+    # L1024: table row with all 5 ⊣ values (· separator)
     (
-        r'\cdot {\igfont 𐑶} \cdot \text{{\igprimfont Þ}}_{\text{{\igfont ò}}} \cdot {\igfont 𐑶} \cdot {\igfont 𐑸}',
-        r'\cdot {\igfont 𐑰} \cdot \text{{\igprimfont Þ}}_{\text{{\igfont ò}}} \cdot {\igfont 𐑶} \cdot {\igfont 𐑸}',
+        r'\cdot {\igfont 𐑶} \cdot \text{{\igprimfont ⊣}}_{\text{{\igfont ò}}} \cdot {\igfont 𐑶} \cdot {\igfont 𐑸}',
+        r'\cdot {\igfont 𐑰} \cdot \text{{\igprimfont ⊣}}_{\text{{\igfont ò}}} \cdot {\igfont 𐑶} \cdot {\igfont 𐑸}',
     ),
     # L1485: "exactly 5 values" list (comma separator)
     (
-        r'_{6}$, ${\igfont 𐑶}$, $\text{{\igprimfont Þ}}_{\text{{\igfont ò}}}$, ${\igfont 𐑶}$, ${\igfont 𐑸}$',
-        r'_{6}$, ${\igfont 𐑰}$, $\text{{\igprimfont Þ}}_{\text{{\igfont ò}}}$, ${\igfont 𐑶}$, ${\igfont 𐑸}$',
+        r'_{6}$, ${\igfont 𐑶}$, $\text{{\igprimfont ⊣}}_{\text{{\igfont ò}}}$, ${\igfont 𐑶}$, ${\igfont 𐑸}$',
+        r'_{6}$, ${\igfont 𐑰}$, $\text{{\igprimfont ⊣}}_{\text{{\igfont ò}}}$, ${\igfont 𐑶}$, ${\igfont 𐑸}$',
     ),
     # L1695: tikz node with \\ separator
     (
-        '_{6}$\\\\${\igfont 𐑶}$\\\\$\\text{{\\igprimfont Þ}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
-        '_{6}$\\\\${\igfont 𐑰}$\\\\$\\text{{\\igprimfont Þ}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
+        '_{6}$\\\\${\igfont 𐑶}$\\\\$\\text{{\\igprimfont ⊣}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
+        '_{6}$\\\\${\igfont 𐑰}$\\\\$\\text{{\\igprimfont ⊣}}_{{\\text{{\\igfont ò}}}}$\\\\${\\igfont 𐑶}$',
     ),
     # L1366: "simultaneously injective" (𐑶 here is 𐑰 = T_bowl, not T_cage)
     (
@@ -37,10 +37,10 @@ AS_ABOVE_TARGETED = [
 # GENERAL MISSING PATTERNS — apply to BOTH files
 # ============================================================
 MISSING = [
-    # Þ (Topology) — missing values
-    (r'\text{{\igprimfont Þ}}_{6}',               r'{\igfont 𐑡}'),   # T_nrleg
-    (r'\text{{\igprimfont Þ}}_{\text{{\igfont ò}}}', r'{\igfont 𐑥}'),  # T_bullseye
-    (r'\text{{\igprimfont Þ}}_O',                  r'{\igfont 𐑸}'),   # T_holo, bare subscript
+    # ⊣ (Topology) — missing values
+    (r'\text{{\igprimfont ⊣}}_{6}',               r'{\igfont 𐑡}'),   # T_nrleg
+    (r'\text{{\igprimfont ⊣}}_{\text{{\igfont ò}}}', r'{\igfont 𐑥}'),  # T_bullseye
+    (r'\text{{\igprimfont ⊣}}_O',                  r'{\igfont 𐑸}'),   # T_holo, bare subscript
 
     # Φ (Polarity) — missing values
     (r'\text{{\igprimfont Φ}}_{\upsilon}',         r'{\igfont 𐑿}'),   # P_plus / P_psi
@@ -93,17 +93,17 @@ SO_BELOW_MACROS = [
     ),
     # \Tbw: T_bullseye (bowtie) → 𐑥
     (
-        r'\newcommand{\Tbw}{\text{{\igprimfont Þ}}_{{\mathord{{\bowtie}}}}}',
+        r'\newcommand{\Tbw}{\text{{\igprimfont ⊣}}_{{\mathord{{\bowtie}}}}}',
         r'\newcommand{\Tbw}{{\igfont 𐑥}}',
     ),
     # \Tin: T_bowl (∈ / subset) → 𐑰
     (
-        r'\newcommand{\Tin}{\text{{\igprimfont Þ}}_{{\mathord{{\subset}}}}}',
+        r'\newcommand{\Tin}{\text{{\igprimfont ⊣}}_{{\mathord{{\subset}}}}}',
         r'\newcommand{\Tin}{{\igfont 𐑰}}',
     ),
     # \Tbox: T_cage (boxtimes) → 𐑶
     (
-        r'\newcommand{\Tbox}{\text{{\igprimfont Þ}}_{{\mathord{{\boxtimes}}}}}',
+        r'\newcommand{\Tbox}{\text{{\igprimfont ⊣}}_{{\mathord{{\boxtimes}}}}}',
         r'\newcommand{\Tbox}{{\igfont 𐑶}}',
     ),
 ]

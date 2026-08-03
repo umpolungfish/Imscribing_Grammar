@@ -9,11 +9,11 @@ vertex. The icosahedron wireframe is the ambient grammar structure; the walk is
 what chemistry selects from it.
 
 Thread walk (prim sequence):
-  Ħ → Φ → Σ → Þ → Φ → Σ   (organic: H O N C S P)
+  Ħ → Φ → Σ → ⊣ → Φ → Σ   (organic: H O N C S P)
   ──enzyme bridge──
   Ħ×8 → Ç×2               (metallic: Fe Ni Zn Mo Rh Pd W Ir Pt Au)
 
-The organic thread zigzags between Φ-Σ-Þ; metallic plants at Ħ then tips to Ç.
+The organic thread zigzags between Φ-Σ-⊣; metallic plants at Ħ then tips to Ç.
 """
 
 import math, subprocess, shutil

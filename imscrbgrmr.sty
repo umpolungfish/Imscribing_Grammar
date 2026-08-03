@@ -8,7 +8,7 @@
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{Ð_ω; Þ_¨; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{Ð_ω; ⊣=𐑶; Ř_=; Φ_}; ƒ_ż; Ç_@; Γ_ʔ; ɢ_ˌ; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -41,10 +41,21 @@
   Ligatures    = TeX,
 ]
 
+% Canonical alphabet fonts.  The twelve axis letters are set in Everson Mono,
+% the Shavian values in Trabajo.  Axes still carrying the pre-Shavian
+% family+subtype spelling below fall back to \glyphfont until their own pass.
+\newfontfamily\primfont{Everson Mono}[Scale=1.05]
+\newfontfamily\shavfont{Trabajo}[Scale=1.0]
+
+% \axis{letter} — one of ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻
+% \shav{glyph}  — one Shavian value glyph
+\newcommand{\axis}[1]{\ifmmode\text{{\primfont #1}}\else{\primfont #1}\fi}
+\newcommand{\shav}[1]{\ifmmode\text{{\shavfont #1}}\else{\shavfont #1}\fi}
+
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : Ð Þ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω
+%   family-char  : Ð ⊣ Ř Φ ƒ Ç Γ ɢ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -77,12 +88,13 @@
 \newcommand{\Dinfty}{\prim{Ð}{;}}
 \newcommand{\Dodot}{\prim{Ð}{ω}}
 
-% Þ — Topology
-\newcommand{\Tnet}{\prim{Þ}{6}}
-\newcommand{\Tin}{\prim{Þ}{K}}
-\newcommand{\Tbow}{\prim{Þ}{ò}}
-\newcommand{\Tbox}{\prim{Þ}{¨}}
-\newcommand{\Todot}{\prim{Þ}{O}}
+% ⊣ — Topology.  Core.lean ctor order: judge, eat, mime, oil, are.
+\newcommand{\Ttop}{\axis{⊣}}
+\newcommand{\Tnet}{\shav{𐑡}}   % judge — general graph
+\newcommand{\Tin}{\shav{𐑰}}    % eat   — inclusion / nested
+\newcommand{\Tbow}{\shav{𐑥}}   % mime  — bowtie / figure-8
+\newcommand{\Tbox}{\shav{𐑶}}   % oil   — box / lattice
+\newcommand{\Todot}{\shav{𐑸}}  % are   — imscriptive
 
 % Ř — Relational Mode
 \newcommand{\Rsuper}{\prim{Ř}{¯}}

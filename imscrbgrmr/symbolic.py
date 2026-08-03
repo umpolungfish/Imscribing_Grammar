@@ -74,8 +74,8 @@ class SymbolicExpression:
     
     Examples:
         - Primitive assertion: Primitive("F", "ƒ_hardsign")
-        - Boolean combination: And(Primitive("T", "Þ_bullseye"), Primitive("P", "Φ_pipevar"))
-        - Implication: Implies(Primitive("T", "Þ_bullseye"), Primitive("F", "ƒ_dh"))
+        - Boolean combination: And(Primitive("T", "𐑥"), Primitive("P", "Φ_pipevar"))
+        - Implication: Implies(Primitive("T", "𐑥"), Primitive("F", "ƒ_dh"))
     """
     operator: SymbolicOperator
     operands: List[Any]
@@ -437,7 +437,7 @@ class AxiomTheoremProver:
         statements = {
             "axiom1": SymbolicExpression.Implies(
                 SymbolicExpression.And(
-                    SymbolicExpression.primitive("T", "Þ_bullseye"),
+                    SymbolicExpression.primitive("T", "𐑥"),
                     SymbolicExpression.primitive("P", "Φ_doublebarpipe"),
                 ),
                 SymbolicExpression.Or(
@@ -899,12 +899,12 @@ class PredictiveRuleGenerator:
         # ── Axiom 1 (T_⋈ closure amplifies fidelity) ──────────────────────────
         # Symmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "Þ_bullseye"), P("P", "Φ_doublebarpipe")),
+            And(P("T", "𐑥"), P("P", "Φ_doublebarpipe")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
         # Pseudosymmetric self-complementary cyclic motifs → F ≥ F_dh
         candidates.append((
-            And(P("T", "Þ_bullseye"), P("P", "Φ_pm_pseudo")),
+            And(P("T", "𐑥"), P("P", "Φ_pm_pseudo")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
 
@@ -946,12 +946,12 @@ class PredictiveRuleGenerator:
         # ── R_⇔ → T_⋈ (mechanical bond requires cyclic wheel topology) ─────────
         candidates.append((
             P("R", "Ř_mechanical"),
-            P("T", "Þ_bullseye"),
+            P("T", "𐑥"),
         ))
 
         # ── T_⋈ ∧ R_⇔ → K_turnm ∨ K_schwa (dethreading barrier) ─────────────────
         candidates.append((
-            And(P("T", "Þ_bullseye"), P("R", "Ř_mechanical")),
+            And(P("T", "𐑥"), P("R", "Ř_mechanical")),
             Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
 
@@ -959,7 +959,7 @@ class PredictiveRuleGenerator:
         # Global-scale control requires hub, network, or cage topology
         candidates.append((
             P("G", "Γ_revapostrophe"),
-            Or(P("T", "Þ_square"), P("T", "Þ_nrleg"), P("T", "Þ_cage")),
+            Or(P("T", "𐑶"), P("T", "𐑡"), P("T", "𐑶")),
         ))
         # Molecular dimensionality → not global scale
         candidates.append((
@@ -993,26 +993,26 @@ class PredictiveRuleGenerator:
 
         # ── Hub-node granularity amplification ─────────────────────────────────
         candidates.append((
-            And(P("T", "Þ_square"), P("R", "Ř_superset")),
+            And(P("T", "𐑶"), P("R", "Ř_superset")),
             Or(P("G", "Γ_gamma"), P("G", "Γ_revapostrophe")),
         ))
 
         # ── ⊙ indicator: K_teshlig in a cyclic system (Axiom 5 / Groppi anchor) ─
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
-            And(P("T", "Þ_bullseye"), P("K", "Ç_teshlig")),
+            And(P("T", "𐑥"), P("K", "Ç_teshlig")),
             P("<", "⊙_ctyogh"),
         ))
 
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────
         # T_□□ with non-covalent recognition → F ≥ F_dh
         candidates.append((
-            And(P("T", "Þ_cage"), P("R", "Ř_superset")),
+            And(P("T", "𐑶"), P("R", "Ř_superset")),
             Or(P("F", "ƒ_hardsign"), P("F", "ƒ_dh")),
         ))
         # T_□□ → K_turnm or K_schwa (enclosed cage always has exchange barrier)
         candidates.append((
-            P("T", "Þ_cage"),
+            P("T", "𐑶"),
             Or(P("K", "Ç_turnm"), P("K", "Ç_schwa")),
         ))
 

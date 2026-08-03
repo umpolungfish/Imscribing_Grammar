@@ -132,8 +132,8 @@ def tuple_distance(t1: Dict[str, str], t2: Dict[str, str]) -> float:
     v2 = tuple_to_vec(t2)
     # Standard weights: each primitive contributes equally
     weights = [1.0] * 12
-    # Þ (topology) and φ̂ (criticality) weighted higher — they're structurally decisive
-    weights[1] = 1.5  # Þ
+    # ⊣ (topology) and φ̂ (criticality) weighted higher — they're structurally decisive
+    weights[1] = 1.5  # ⊣
     weights[8] = 1.5  # φ̂
     
     sq_sum = sum(w * (a - b) ** 2 for a, b, w in zip(v1, v2, weights))
@@ -151,9 +151,9 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # ──────────────────────────────────────────────────────────────────────
 
 # Helper to build tuple dict
-def T(Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, φ̂, Ħ, Σ, Ω) -> Dict[str, str]:
+def T(Ð, ⊣, Ř, Φ, ƒ, Ç, Γ, ɢ, φ̂, Ħ, Σ, Ω) -> Dict[str, str]:
     return {
-        "⊢": Ð, "⊣": Þ, ">": Ř, "<": Φ, "⋈": ƒ, "⊤": Ç,
+        "⊢": Ð, "⊣": ⊣, ">": Ř, "<": Φ, "⋈": ƒ, "⊤": Ç,
         "∈": Γ, "∋": ɢ, "φ̂": φ̂, "⊥": Ħ, "⊞": Σ, "◻": Ω,
     }
 

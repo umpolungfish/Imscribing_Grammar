@@ -308,7 +308,7 @@ def main():
         epilog="""
 Examples:
   python composer_cli.py sequence --base ouroborotic_primitive_composition_schema \\
-    --primitive Þ:𐑶:network_topology \\
+    --primitive ⊣:𐑶:network_topology \\
     --primitive Φ:𐑬:Frobenius_special
 
   python composer_cli.py radial --hub consciousness_boundary \\

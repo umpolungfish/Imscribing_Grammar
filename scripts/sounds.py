@@ -45,7 +45,7 @@ def normalize(signal, peak=0.8):
 # identity; each subscript varies it to reflect the specific value's meaning.
 #
 #   Ð  Dimensionality  — harmonic richness  (more harmonics = higher dimension)
-#   Þ  Topology        — interval structure  (dissonance/consonance = topology)
+#   ⊣  Topology        — interval structure  (dissonance/consonance = topology)
 #   Ř  Relational      — directional sweeps  (directionality of pitch)
 #   Φ  Parity          — waveform symmetry   (symmetry of the waveform itself)
 #   ƒ  Fidelity        — signal clarity      (noise floor vs clean tone)
@@ -97,7 +97,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * np.exp(-2 * t / dur)
 
     # =========================================================================
-    # Þ — Topology
+    # ⊣ — Topology
     # Chord/interval relationships reflect the connectivity shape:
     # dissonant cluster (network) → nested (hierarchical) → fifth (bowtie)
     # → beating unison (box) → clean octave (holographic)
@@ -469,11 +469,11 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # Ð Dimensionality
-    ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # Þ Topology
+    ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
     ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # Ř Relational
     ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # Φ Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ƒ Fidelity
@@ -493,7 +493,7 @@ PRIMITIVE_MAP = {
     # Ð Dimensionality
     '𐑛': ('⊢', 'ß'),   '𐑨': ('⊢', 'C'),
     '𐑼': ('⊢', ';'),   '𐑦': ('⊢', 'ω'),
-    # Þ Topology
+    # ⊣ Topology
     '𐑡': ('⊣', '6'),   '𐑰': ('⊣', 'K'),   '𐑥': ('⊣', 'ò'),
     '𐑶': ('⊣', '¨'),   '𐑸': ('⊣', 'O'),
     # Ř Relational

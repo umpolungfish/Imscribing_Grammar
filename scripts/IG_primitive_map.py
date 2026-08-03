@@ -59,13 +59,13 @@ ORDINALS = {
         "𐑦":     4.0,
     },
     "T": {
-        "Þ_linear":   0.5,
-        "Þ_branched": 1.0,
+        "𐑰":   0.5,
+        "𐑰": 1.0,
         "𐑡":  1.5,
         "𐑰":       2.0,
         "𐑥":   3.0,
-        "Þ_box":      3.5,
-        "Þ_torus":    4.0,
+        "𐑶":      3.5,
+        "𐑥":    4.0,
         "𐑸":     5.0,
     },
     "R": {
@@ -258,7 +258,7 @@ KEY_imscriptions: dict[str, dict] = {
     "RH (ζ zeros)":      {"D":"𐑛",  "T":"𐑡","R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ż", "K":"Ç^@", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
     "Lee-Yang\n(proved)":{"D":"𐑛",  "T":"𐑥", "R":"Ř_exact",     "P":"𐑿",    "F":"ƒ^ì",  "K":"Ç^W",  "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑒",  "S":"𐑳",   "Omega":"𐑷"},
     "NS smooth\nsoln":   {"D":"𐑨",  "T":"𐑡","R":"Ř_catalytic",  "P":"Φ_neutral","F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑓",  "S":"𐑳",   "Omega":"𐑷"},
-    "OPN\nconstraint":   {"D":"𐑛", "T":"Þ_linear", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ì",  "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
+    "OPN\nconstraint":   {"D":"𐑛", "T":"𐑰", "R":"Ř_exact",     "P":"Φ_neutral","F":"ƒ^ì",  "K":"Ç^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
     # ── Field-theory imscriptions (Imscription.lean) ──────────────────────────────
     "Higgs / axion\n/ inflaton":{"D":"𐑛","T":"𐑥","R":"Ř_catalytic","P":"𐑹","F":"ƒ^ż","K":"Ç^@","G":"𐑚","Gamma":"ɢ^∧","Phi":"⊙","H":"𐑒","S":"one_n","Omega":"𐑷"},
     "Standard\nModel":   {"D":"𐑨",  "T":"𐑡","R":"Ř_allosteric", "P":"𐑬",     "F":"ƒ^ð",  "K":"Ç^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑖",  "S":"𐑳",   "Omega":"𐑭"},

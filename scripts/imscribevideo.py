@@ -49,10 +49,10 @@ BG        = '#0d0d14'
 DIM_BG    = '#1a1a26'    # placeholder box fill
 DIM_ALPHA = 0.55         # past-symbol opacity
 
-# Field colours — order matches FIELD_ORDER: Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+# Field colours — order matches FIELD_ORDER: Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 FIELD_COLORS = [
     '#e06060',   # Ð  red
-    '#e09030',   # Þ  orange
+    '#e09030',   # ⊣  orange
     '#d4c040',   # Ř  gold
     '#70c840',   # Φ  lime
     '#40c8a0',   # ƒ  teal

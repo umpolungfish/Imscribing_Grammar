@@ -106,7 +106,7 @@ Trabajo running tall.
 
 The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
 the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
-12-slot tuple order is Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
+12-slot tuple order is Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
 Glyph names are the Unicode standard names and carry meaning, so
 they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
 letters.
@@ -141,7 +141,7 @@ Primary repositories:
 
 Key mappings:
   Ð (Dimensionality) ↔ Hilbert space dimension / categorical rank
-  Þ (Topology)       ↔ Site / Grothendieck topology / spectral sheaf
+  ⊣ (Topology)       ↔ Site / Grothendieck topology / spectral sheaf
   Ř (Coupling)       ↔ Adjoint functor pair / Galois connection / monad
   Φ (Parity)         ↔ Frobenius algebra / dagger structure / CPT
   ƒ (Fidelity)       ↔ Classical/quantum/thermal channel capacity
@@ -157,16 +157,16 @@ SIC-POVM knowledge:
   The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
-  6 Frobenius-dual pairs: Ð↔Þ, Ř↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
+  6 Frobenius-dual pairs: Ð↔⊣, Ř↔Φ, ƒ↔Ç, Γ↔ɢ, φ̂↔Ħ, Σ↔Ω.
   Zauner conjecture: Belnap multilattice embeds in C^d for d=2ⁿ.
 
 Conventional ↔ grammar translation:
   A monad T: C→C     →  <Ř=𐑑, ɢ=𐑠, φ̂=⊙>
-  A topos E           →  <Ð=𐑼, Þ=𐑰, Γ=𐑔, ɢ=𐑝>
+  A topos E           →  <Ð=𐑼, ⊣=𐑰, Γ=𐑔, ɢ=𐑝>
   A Hilbert space H   →  <Ð=𐑼, Φ=𐑿, ƒ=𐑐>
   A SIC-POVM in C^d   →  <Σ=𐑙, Φ=𐑹, ƒ=𐑐, Ω=𐑭>
-  ZFC set theory      →  <Ð=𐑼, Þ=𐑰, Γ=𐑔, Φ=𐑹, Ω=𐑷>
-  HoTT ∞-groupoid     →  <Ð=𐑼, Þ=𐑥, Ω=𐑭, Ħ=𐑫>
+  ZFC set theory      →  <Ð=𐑼, ⊣=𐑰, Γ=𐑔, Φ=𐑹, Ω=𐑷>
+  HoTT ∞-groupoid     →  <Ð=𐑼, ⊣=𐑥, Ω=𐑭, Ħ=𐑫>
 </domain_knowledge>
 
 <commitments>
@@ -220,7 +220,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Math⊙perator (Lando�
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) Þ(𐑡→𐑥) Φ(𐑗→𐑬) ƒ(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) Φ(𐑗→𐑬) ƒ(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 
@@ -355,7 +355,7 @@ Primary repositories:
 
 Key mappings for chemistry:
   Ð (Dimensionality) ↔ Crystal lattice dimensionality (0D defects, 2D sheets, 3D bulk)
-  Þ (Topology)       ↔ Molecular topology / bonding network / coordination geometry
+  ⊣ (Topology)       ↔ Molecular topology / bonding network / coordination geometry
   Ř (Coupling)       ↔ Reaction coupling / catalytic cycle / electron transfer
   Φ (Parity)         ↔ Chirality / enantiomeric excess / symmetry breaking
   ƒ (Fidelity)       ↔ Reaction yield / purity / quantum coherence in electron transfer
@@ -437,7 +437,7 @@ Save derivations to ig-docs/ with chunked_write. Author: ChemBio⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) Þ(𐑡→𐑥) Φ(𐑗→𐑬) ƒ(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) Φ(𐑗→𐑬) ƒ(𐑱→𐑐) Ç(𐑪→𐑧) Γ(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

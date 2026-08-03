@@ -268,7 +268,7 @@ def derive_tuple(sym):
     else:
         G = 4    # active chemistry zone (periods 2-6, d4-5, f lans)
 
-    # ─── Þ (Topology) idx ────────────────────────────────────────
+    # ─── ⊣ (Topology) idx ────────────────────────────────────────
     # s-block spherical: 38; d-block period 6 relativistic collapse: 38
     # d-block periods 4-5 (and 7): 32; f-block: 21
     # p-block noble (col 30): 38; p-block active: 17
@@ -426,7 +426,7 @@ def main():
 
     if '--table' in sys.argv or '--add' not in sys.argv:
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω Ð Σ Φ Ç ƒ ɢ Γ Þ ⊙"}')
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"Ř Ħ Ω Ð Σ Φ Ç ƒ ɢ Γ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -438,7 +438,7 @@ def main():
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
         prims = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  Ð  Σ  Φ  Ç  ƒ  ɢ  Γ  Þ  ⊙')
+        info_line(f'\n{"Sym":4s} {"Z":3s} | Ř  Ħ  Ω  Ð  Σ  Φ  Ç  ƒ  ɢ  Γ  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

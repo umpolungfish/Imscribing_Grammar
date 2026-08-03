@@ -6,10 +6,10 @@
 --   Class A — missing from Latin Modern text font (lmroman):
 --     Ħ U+0126, ƒ U+0192, ɢ U+0262, ɐ U+0250, ʔ U+0294,
 --     ˌ U+02CC, ˝ U+02DD, ⊙ U+2299
---     → need {\igprimfont char} (FreeSerif)
+--     → need {\igprimfont char} (Everson Mono)
 --
 --   Class B — missing from LaTeX math font (lmmi10) but OK in text mode:
---     Ð U+00D0, Þ U+00DE, Ř U+0158, Ç U+00C7
+--     Ð U+00D0, Ř U+0158, Ç U+00C7   (⊣ moved to Class A)
 --     → need \text{char} (Latin Modern Roman has these)
 --
 -- In math mode:
@@ -20,8 +20,8 @@
 --   • Class A chars                  → {\igprimfont char} (run-aware)
 --
 -- Add to your document YAML header-includes:
---   \newfontfamily\igprimfont{FreeSerif}
---   (FreeSerif has full coverage: IPA + ⊙ + all IG primitives; NotoSerif is missing ⊙)
+--   \newfontfamily\igprimfont{Everson Mono}
+--   (Everson Mono covers IPA, the twelve axis letters, and the Shavian block)
 --
 -- Usage:
 --   pandoc FILE.md -o FILE.pdf --pdf-engine=xelatex --lua-filter=IG_primitives.lua
@@ -31,7 +31,7 @@
 -- Uses \@ifundefined so it's safe to include alongside an explicit definition.
 local IGPRIMFONT_DEF = [[
 \makeatletter
-\@ifundefined{igprimfont}{\newfontfamily\igprimfont{FreeSerif}}{}
+\@ifundefined{igprimfont}{\newfontfamily\igprimfont{Everson Mono}}{}
 \makeatother]]
 
 function Meta(m)
@@ -65,13 +65,19 @@ local CLASS_A = {
   [0x02DD] = true,  -- ˝  double acute accent    (ɢ_˝ subtype)
   [0x2299] = true,  -- ⊙  circled dot            (⊙ criticality primitive)
   [0x2297] = true,  -- ⊗  tensor product         (not in lmroman text font)
-  -- Greek subtype chars — not in lmroman; FreeSerif has full Greek coverage
+  -- Greek subtype chars — not in lmroman; Everson Mono has full Greek coverage
   [0x03B2] = true,  -- β  beta                   (Γ_β subtype)
   [0x03B3] = true,  -- γ  gamma                  (Γ_γ subtype)
   [0x03BB] = true,  -- λ  lambda                 (Ç_λ subtype)
   [0x03C5] = true,  -- υ  upsilon                (Φ_υ subtype)
   [0x03C9] = true,  -- ω  omega                  (Ð_ω subtype)
+  -- Canonical alphabet: axis letters that are not text characters in lmroman
+  [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
+
+-- Shavian block U+10450–U+1047F: the canonical value glyphs. Everson Mono
+-- covers them; lmroman does not, so every one is Class A.
+for cp = 0x10450, 0x1047F do CLASS_A[cp] = true end
 
 -- Class B: in lmroman (text mode) but NOT in lmmi10 (math mode).
 -- Covers IG primitive glyphs + all IG subtype chars (from SYMBOL_REFERENCE.md)
@@ -80,11 +86,9 @@ local CLASS_B = {
   -- IG primitive glyphs
   [0x00C7] = true,  -- Ç  C with cedilla         (Ç primitive)
   [0x00D0] = true,  -- Ð  Eth                    (Ð primitive)
-  [0x00DE] = true,  -- Þ  Thorn                  (Þ primitive)
   [0x0158] = true,  -- Ř  R with caron           (Ř primitive)
   -- IG subtype chars (SYMBOL_REFERENCE.md)
   [0x00A3] = true,  -- £  pound sign             (Ħ_£ subtype)
-  [0x00A8] = true,  -- ¨  diaeresis              (Þ_¨ subtype)
   [0x00AF] = true,  -- ¯  macron                 (Ř_¯ subtype)
   [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
   [0x00C6] = true,  -- Æ  AE ligature            (⊙_Æ subtype)
@@ -95,7 +99,6 @@ local CLASS_B = {
   [0x00EC] = true,  -- ì  i grave                (ƒ_ì subtype)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
   [0x00F0] = true,  -- ð  eth                    (ƒ_ð subtype)
-  [0x00F2] = true,  -- ò  o grave                (Þ_ò subtype)
   [0x00FD] = true,  -- ý  y acute                (Ř_ý subtype)
   [0x00FF] = true,  -- ÿ  y diaeresis            (⊙_ÿ subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
@@ -171,7 +174,6 @@ local TEXT_CMD_CHARS = {
   ae = "æ", AE = "Æ", aelig = "æ", AElig = "Æ",
   oe = "œ", OE = "Œ", oelig = "œ", OElig = "Œ",
   DH = "Ð", dh = "ð",
-  TH = "Þ", th = "þ",
   NG = "Ŋ", ng = "ŋ",
   L  = "Ł", l  = "ł",
   o  = "ø", O  = "Ø",

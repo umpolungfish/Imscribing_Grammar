@@ -404,7 +404,7 @@ QUADS = [
         "label": "Geometric",
         "prims": "T × R",
         "size":  "5 × 4 = 20",
-        "vals":  "Þ: network, in, bowtie, box, ⊙\nR: super, cat, dagger, lr",
+        "vals":  "⊣: network, in, bowtie, box, ⊙\nR: super, cat, dagger, lr",
         "role":  "Topology × Relational mode\n(how the algebra connects)",
         "color": "#2255AA",
         "x": 0.03, "y": 0.12, "w": 0.44, "h": 0.72,

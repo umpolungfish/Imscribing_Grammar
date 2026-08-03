@@ -24,7 +24,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
     His→Γ (Grammar), Gln→⊙ (Criticality) — original assignment
 
 Promoted AAs (split stratum):
-  Met→Ð (Scope),     Trp→Þ (Topology),     Cys→Ř (Reversibility),
+  Met→Ð (Scope),     Trp→⊣ (Topology),     Cys→Ř (Reversibility),
   Tyr→Φ (Parity),    Phe→ƒ (Force),        Ile→Ç (Kinetics),
   His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→Γ (Grammar/Scope),
   Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
@@ -94,7 +94,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # ⊙ — pH-critical catalysis gate
-    IGPrimitive.TOPOLOGY:       "moderate",     # Þ — indole collapse tolerable
+    IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable
     IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — H-bond grammar redesign
@@ -156,7 +156,7 @@ def get_aa_primitive_description(aa: str) -> str:
         "His": "⊙ (Criticality) — imidazole pKa≈6, pH-gated protonation equilibrium",
         "Gln": "Γ (Grammar) — long amide side chain H-bond network structuring",
         "Met": "Ð (Scope) — translation initiation, start codon",
-        "Trp": "Þ (Topology) — largest indole ring system, structural complexity ceiling",
+        "Trp": "⊣ (Topology) — largest indole ring system, structural complexity ceiling",
         "Cys": "Ř (Reversibility) — disulfide bond, only reversible covalent crosslink",
         "Tyr": "Φ (Parity) — phosphorylation switch, aromatic OH toggle",
         "Phe": "ƒ (Force) — maximally hydrophobic aromatic, no heteroatoms",

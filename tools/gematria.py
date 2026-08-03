@@ -325,7 +325,7 @@ class GematriaIndex:
     def vector_symmetries(self) -> List[Dict]:
         """
         Find entries that are near-symmetric under primitive permutation.
-        E.g., swapping Ð and Þ yields another valid entry.
+        E.g., swapping Ð and ⊣ yields another valid entry.
         """
         results = []
         # Test all 2-cycle swaps of primitives

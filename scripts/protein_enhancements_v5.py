@@ -125,7 +125,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
         '∈': 'Γ-catalytic domain',
         '⊤': 'Ç-kinetic regulator',
         '⊢': 'Ð-initiation bootstrap',
-        '⊣': 'Þ-topological anchor',
+        '⊣': '⊣-topological anchor',
     }
     return desc_map.get(dom, f'Fragment {idx+1}')
 # ══════════════════════════════════════════════════════════════════

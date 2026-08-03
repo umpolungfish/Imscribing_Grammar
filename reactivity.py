@@ -269,7 +269,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── Γ: max granularity (isotope complexity)
     G = max(get(tA, '∈'), get(tB, '∈'))
 
-    # ── Þ: molecular topology from central atom geometry
+    # ── ⊣: molecular topology from central atom geometry
     central_valence = valence(central)
     if central_valence is None or central_valence < 0:
         central_valence = 2
@@ -417,8 +417,8 @@ def _justify(sA, sB, nA, nB, tA, tB, prod, btype, vA, vB):
     lines.append(f'  {sA} Φ={tA["<"]}({get(tA,"<")}) → {sB} Φ={tB["<"]}({get(tB,"<")}) → product Φ={prod["<"]}({get(prod,"<")})')
     lines.append(f'ɢ-coupling:')
     lines.append(f'  {sA} ɢ={tA["∋"]}({get(tA,"∋")}) × {sB} ɢ={tB["∋"]}({get(tB,"∋")}) → {btype} → product ɢ={prod["∋"]}({get(prod,"∋")})')
-    lines.append(f'Þ-topology:')
-    lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product Þ={prod["⊣"]}({get(prod,"⊣")})')
+    lines.append(f'⊣-topology:')
+    lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product ⊣={prod["⊣"]}({get(prod,"⊣")})')
     lines.append(f'⊙-gate (Frobenius μ∘δ=id):')
     lines.append(f'  Φ_product ∈ {{𐑯,𐑗}} → {"FIRES ⊙" if prod["⊙"]==CRIT else "blocked → "+prod["⊙"]}')
     return '\n'.join(lines)

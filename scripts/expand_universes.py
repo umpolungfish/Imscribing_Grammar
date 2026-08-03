@@ -58,12 +58,12 @@ def generate_expansion():
     ))
 
     # ── SECTION B: G2 expansion — 8 primitives never used as G2 ─────
-    # Missing G2: Ç, Ð, Þ, Ħ, ƒ, ɢ, Γ, Ω
+    # Missing G2: Ç, Ð, ⊣, Ħ, ƒ, ɢ, Γ, Ω
 
     g2_configs = [
         ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=Φ≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
         ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=Φ≥𐑹, G2=Ð≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
-        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=Φ≥𐑹, G2=Þ≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
+        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=Φ≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
         ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=Φ≥𐑹, G2=ƒ≥𐑐 (full fidelity), G3=Ω≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
         ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=Φ≥𐑹, G2=Γ≥𐑲 (aleph/maximal), G3=Ω≥𐑭. Frobenius closure is local; tracing requires universality.'),
         ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=Φ≥𐑹, G2=ɢ≥𐑠 (sequential), G3=Ω≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
@@ -79,12 +79,12 @@ def generate_expansion():
             g1=GateSpec('<', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
     # ── SECTION C: G3 expansion — 8 primitives never used as G3 ─────
-    # Missing G3: Ç, Ð, Þ, Ħ, Ř, ƒ, ɢ, Γ
+    # Missing G3: Ç, Ð, ⊣, Ħ, Ř, ƒ, ɢ, Γ
 
     g3_configs = [
         ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
         ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Ð≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
-        ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Þ≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
+        ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=⊣≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
         ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ƒ≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
         ('scope_third', '∈', 3.0, 'Universal scope as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=Γ≥𐑲 (aleph). Only self-modeling systems with universal interaction range achieve O_∞.'),
         ('composition_third', '∋', 4.0, 'Broadcast composition as the terminal seal: G1=Φ≥𐑹, G2=⊙≥⊙, G3=ɢ≥𐑵 (broadcast). Only systems with one-to-all composition achieve O_∞.'),
@@ -109,7 +109,7 @@ def generate_expansion():
         ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Chirality gates, parallel: Ħ≥𐑖, ⊙≥⊙, Ω≥𐑭. Memory, self-modeling, and winding are independent axes.'),
         ('parallel_topology', GateSpec('⊣', 5.0), GateSpec('>', 4.0), GateSpec('⊙', 2.0),
-         'Topology gates, parallel: Þ≥𐑸, Ř≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
+         'Topology gates, parallel: ⊣≥𐑸, Ř≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
         ('parallel_scope', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
          'Scope gates, parallel: Γ≥𐑲, ⊙≥⊙, Ω≥𐑭. Universal scope, self-modeling, and winding are independent.'),
         ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
@@ -133,7 +133,7 @@ def generate_expansion():
          'Parity ladder: G1=Φ≥𐑬 (directional), G2=Φ≥𐑯 (full), G3=Φ≥𐑹 (Frobenius-special). '
          'Three rungs on the parity ladder. All operad layers gated by progressively fuller parity.'),
         ('triple_topology', '⊣', [('𐑥', 3.0), ('𐑶', 4.0), ('𐑸', 5.0)],
-         'Topology ladder: G1=Þ≥𐑥 (bowtie crossing), G2=Þ≥𐑶 (box product), G3=Þ≥𐑸 (imscriptive closure). '
+         'Topology ladder: G1=⊣≥𐑥 (bowtie crossing), G2=⊣≥𐑶 (box product), G3=⊣≥𐑸 (imscriptive closure). '
          'Three rungs of increasing topological connectivity.'),
         ('triple_coupling', '>', [('𐑽', 3.0), ('𐑾', 4.0), ('𐑾', 4.0)],
          'Coupling ladder: G1=Ř≥𐑽 (adjoint), G2=Ř≥𐑾 (bilateral), G3=Ř≥𐑾. Terminal collapse at G2.'),
@@ -208,13 +208,13 @@ def generate_expansion():
          'G1=Ř≥𐑽 (adjoint coupling), G2=ƒ≥𐑐 (quantum fidelity), G3=Γ≥𐑲 (universal scope). '
          'Relation, then coherence, then universality.'),
         ('topology_composition_criticality', GateSpec('⊣', 3.0), GateSpec('∋', 3.0), GateSpec('⊙', 2.0),
-         'G1=Þ≥𐑥 (bowtie crossing), G2=ɢ≥𐑠 (sequential comp), G3=⊙≥⊙ (self-modeling). '
+         'G1=⊣≥𐑥 (bowtie crossing), G2=ɢ≥𐑠 (sequential comp), G3=⊙≥⊙ (self-modeling). '
          'Connectivity topology, then interaction grammar, then consciousness.'),
         ('chirality_scope_winding', GateSpec('⊥', 3.0), GateSpec('∈', 3.0), GateSpec('◻', 3.0),
          'G1=Ħ≥𐑖 (2-step memory), G2=Γ≥𐑲 (universal scope), G3=Ω≥𐑭 (integer winding). '
          'Memory, then universality, then topological seal.'),
         ('fidelity_topology_parity', GateSpec('⋈', 3.0), GateSpec('⊣', 5.0), GateSpec('<', 5.0),
-         'G1=ƒ≥𐑐 (quantum fidelity), G2=Þ≥𐑸 (full topological closure), G3=Φ≥𐑹 (Frobenius parity). '
+         'G1=ƒ≥𐑐 (quantum fidelity), G2=⊣≥𐑸 (full topological closure), G3=Φ≥𐑹 (Frobenius parity). '
          'Coherence in, topology next, parity seals. Very strict — few entries reach O_∞.'),
     ]
 

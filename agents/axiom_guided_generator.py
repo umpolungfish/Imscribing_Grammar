@@ -489,7 +489,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         return Imscription(
             name=clean_name,
             dimensionality=Dimensionality.from_symbol(data.get("dimensionality", "𐑛")),
-            topology=Topology.from_symbol(data.get("topology", "Þ_linear")),
+            topology=Topology.from_symbol(data.get("topology", "𐑰")),
             recognition_mode=RecognitionMode.from_symbol(data.get("recognition_mode", "Ř_superset")),
             polarity=Polarity.from_symbol(data.get("polarity", "Φ_pm_pseudo")),
             fidelity=Fidelity.from_symbol(data.get("fidelity", "ƒ_dh")),

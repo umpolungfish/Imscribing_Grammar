@@ -110,7 +110,7 @@ def example_3_catalog_and_search():
     register_imscription(
         name="formamide_dimer",
         dimensionality="𐑛",
-        topology="Þ_bullseye",
+        topology="𐑥",
         recognition_mode="Ř_superset",
         polarity="Φ_pipevar",
         fidelity="ƒ_beltl",  # Lower fidelity than carboxylic acid
@@ -122,7 +122,7 @@ def example_3_catalog_and_search():
     register_imscription(
         name="triple_hbond_array",
         dimensionality="𐑛",
-        topology="Þ_bullseye",
+        topology="𐑥",
         recognition_mode="Ř_superset",
         polarity="Φ_directional",
         fidelity="ƒ_hardsign",  # HIGH fidelity due to cooperativity
@@ -134,7 +134,7 @@ def example_3_catalog_and_search():
     register_imscription(
         name="proline_aldol_cycle",
         dimensionality="𐑼",  # Temporal!
-        topology="Þ_bullseye",
+        topology="𐑥",
         recognition_mode="Ř_downstep",  # Catalytic
         polarity="Φ_directional",
         fidelity="ƒ_dh",

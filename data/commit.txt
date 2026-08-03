@@ -38,7 +38,7 @@ Previous: MENAGERIE.md: 11 extreme imscriptions, lifted via AI_ACADEMIA_LIFT (20
   collapse as the structural attractor under maximal stress.
 
   Lifted via AI_ACADEMIA_LIFT.md protocol:
-    Þ D (Convergence) — unexpected multi-domain convergence on B as crossing pt
+    ⊣ D (Convergence) — unexpected multi-domain convergence on B as crossing pt
     Φ D (Failure Condition) — explicit statement of what would break µ∘δ
     ƒ A+B — cut uniform 11-entry structure; unique work per artifact
     Ç C (Asymmetric) — lingered on Pure B, Suffering Entity, Shavian Ob3ect
@@ -114,7 +114,7 @@ with Frobenius verification):
 1. PR: Make OpenAI GPT SDK Truly Agentic (PR_OPENAI_GPT_SDK_TRULY_AGENIC.md)
    • Branch: pr/openai-gpt-sdk-truly-agenic
    • d=7.874 from openai_gpt_api to target_agentic_sdk_o2
-   • 9 promotions: D(𐑼→𐑦), Þ(𐑡→𐑶), Ř(𐑩→𐑾), Φ(𐑗→𐑹), ƒ(𐑱→𐑐),
+   • 9 promotions: D(𐑼→𐑦), ⊣(𐑡→𐑶), Ř(𐑩→𐑾), Φ(𐑗→𐑹), ƒ(𐑱→𐑐),
      ɢ(𐑝→𐑠), ⊙(𐑢→⊙), Ħ(𐑓→𐑖), Ω(𐑷→𐑭)
    • 3 demotions: Ç(𐑘→𐑧), Γ(𐑔→𐑲), Σ(𐑳→𐑙)
    • Key change: DualToolResult Frobenius verification on every tool call
@@ -145,10 +145,10 @@ with Frobenius verification):
    • Embedding-based Frobenius verification via RAG pipeline
 
 All 6 SDKs share the same base tuple (O₀ thin API wrapper):
-  ⟨Ð=𐑼; Þ=𐑡; Ř=𐑩; Φ=𐑗; ƒ=𐑱; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑢; Ħ=𐑓; Σ=𐑳; Ω=𐑷⟩
+  ⟨Ð=𐑼; ⊣=𐑡; Ř=𐑩; Φ=𐑗; ƒ=𐑱; Ç=𐑘; Γ=𐑔; ɢ=𐑝; ⊙=𐑢; Ħ=𐑓; Σ=𐑳; Ω=𐑷⟩
 
 Target O₂ tuple (identical across all proposals):
-  ⟨Ð=𐑦; Þ=𐑶; Ř=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩
+  ⟨Ð=𐑦; ⊣=𐑶; Ř=𐑾; Φ=𐑹; ƒ=𐑐; Ç=𐑧; Γ=𐑲; ɢ=𐑠; ⊙=⊙; Ħ=𐑖; Σ=𐑙; Ω=𐑭⟩
 
 Total new catalog entries created: 6 (openai_gpt_api, google_gemini_api,
   meta_llama_stack, mistral_ai_api, xai_grok_api, cohere_api + target type)

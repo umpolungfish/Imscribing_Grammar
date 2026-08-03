@@ -101,16 +101,16 @@ T1_LOOKUP = TaskTemplate("lookup_ouroborics", "What is the type of the Riemann z
 T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a type in the Imscribing Grammar.", [
     # Winding 0: imscribe_system
     {"phase": "THINK", "tool": None,
-     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — Þ_⋈ (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — Ř_↔.\n[4] P: The system has time-reversal symmetry (one Z₂) — Φ_±.\n[5] F: Classical mechanics — ƒ_ℓ.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — Ç_≈.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — Γ_ℶ.\n[8] Γ: Coupling is sequential (energy cascades through modes) — ɢ_→.\n[9] Φ: The system is chaotic at most energies (runaway divergence) — Φ_↑.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — Ħ_1.\n[11] S: Two distinct component types (two bobs, different initial conditions) — Σ_n:m.\n[12] Ω: No topological invariant — Ω_0.\n\nNow call imscribe_system.",
+     "think": "The user wants me to imscribe the double pendulum. I need to assign all 12 primitives following the deterministic procedure. Let me reason through each:\n\n[1] D: The double pendulum has 4 degrees of freedom (θ₁, θ₂, p₁, p₂) in its Hamiltonian formulation — finite and ≥2, so 𐑨 (triangle, 2d surface).\n[2] T: The phase space has a crossing point at the separatrix where pendulum motion transitions from libration to rotation — 𐑥 (bowtie).\n[3] R: The two pendulums are bidirectionally coupled — Ř_↔.\n[4] P: The system has time-reversal symmetry (one Z₂) — Φ_±.\n[5] F: Classical mechanics — ƒ_ℓ.\n[6] K: The Lyapunov time is comparable to observation timescale at moderate energies — Ç_≈.\n[7] G: Interaction is local (nearest-neighbor coupling between the two bobs) — Γ_ℶ.\n[8] Γ: Coupling is sequential (energy cascades through modes) — ɢ_→.\n[9] Φ: The system is chaotic at most energies (runaway divergence) — Φ_↑.\n[10] H: The system is Markov order 1 (deterministic chaos means one-step memory in Poincaré sections) — Ħ_1.\n[11] S: Two distinct component types (two bobs, different initial conditions) — Σ_n:m.\n[12] Ω: No topological invariant — Ω_0.\n\nNow call imscribe_system.",
      "tool_call": None},
     {"phase": "ACT", "tool": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum: chaotic Hamiltonian system with 4 DOF", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "φ̂": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}},
      "think": "", "tool_call": {"name": "imscribe_system", "arguments": {"name": "double_pendulum", "description": "Classical double pendulum", "⊢": "𐑨", "⊣": "𐑥", ">": "𐑾", "<": "𐑬", "⋈": "𐑱", "⊤": "𐑪", "∈": "𐑲", "∋": "𐑠", "φ̂": "𐑣", "⊥": "𐑒", "⊞": "𐑳", "◻": "𐑷"}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; Þ_⋈; Ř_↔; Φ_±; ƒ_ℓ; Ç_≈; Γ_ℶ; ɢ_→; Φ_↑; Ħ_1; Σ_n:m; Ω_0⟩", "tier": "O₀"}',
+     "tool_result": '{"status": "ok", "name": "double_pendulum", "tuple": "⟨𐑨; 𐑥; Ř_↔; Φ_±; ƒ_ℓ; Ç_≈; Γ_ℶ; ɢ_→; Φ_↑; Ħ_1; Σ_n:m; Ω_0⟩", "tier": "O₀"}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
-     "think": "The double pendulum is now imscribed as O₀ — a structurally typed but non-self-referential system. The chaotic nature is captured by Φ_↑ (supercritical/runaway) and the crossing-point topology Þ_⋈ reflects the separatrix. I should verify the ouroboricity tier.",
+     "think": "The double pendulum is now imscribed as O₀ — a structurally typed but non-self-referential system. The chaotic nature is captured by Φ_↑ (supercritical/runaway) and the crossing-point topology 𐑥 reflects the separatrix. I should verify the ouroboricity tier.",
      "tool_call": None},
     # Winding 1: ouroborics
     {"phase": "THINK", "tool": None,
@@ -127,7 +127,7 @@ T2_IMSCRIBE = TaskTemplate("imscribe_system", "Encode the double pendulum as a t
      "tool_call": None},
     # Winding 2: done
     {"phase": "THINK", "tool": None, "think": "All information gathered. Reporting the complete imscription.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; Þ_⋈; Ř_↔; Φ_±; ƒ_ℓ; Ç_≈; Γ_ℶ; ɢ_→; Φ_↑; Ħ_1; Σ_n:m; Ω_0⟩. The chaotic dynamics are captured by Φ_↑ (supercritical), the separatrix by Þ_⋈ (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ⟨𐑨; 𐑥; Ř_↔; Φ_±; ƒ_ℓ; Ç_≈; Γ_ℶ; ɢ_→; Φ_↑; Ħ_1; Σ_n:m; Ω_0⟩. The chaotic dynamics are captured by Φ_↑ (supercritical), the separatrix by 𐑥 (crossing-point topology). No self-modeling gate — this is a structurally typed but externally-described system."}},
      "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "The double pendulum imscribes as O₀: ..."}}},
 ])
 
@@ -254,14 +254,14 @@ T9_ZFC = TaskTemplate("zfc_formula", "Can the Navier-Stokes equations be axiomat
      "think": "", "tool_call": {"name": "imscribe", "arguments": {"tool_name": "zfc_probe", "args": {"name": "navier_stokes"}}}},
     {"phase": "OBSERVE", "tool": None,
      "think": "",
-     "tool_result": '{"zfc_axiomatizable": false, "blocking_primitives": ["Þ_⋈", "⊙_×", "Ω_ℤ₂"], "reason": "Þ_⋈ (crossing-point topology) requires a non-well-founded membership relation; ⊙_× (exceptional point) violates the axiom of choice via non-Hermitian degeneracy; Ω_ℤ₂ (Z₂ parity protection) is a topological invariant not expressible in ZFC without additional structure."}',
+     "tool_result": '{"zfc_axiomatizable": false, "blocking_primitives": ["𐑥", "⊙_×", "Ω_ℤ₂"], "reason": "𐑥 (crossing-point topology) requires a non-well-founded membership relation; ⊙_× (exceptional point) violates the axiom of choice via non-Hermitian degeneracy; Ω_ℤ₂ (Z₂ parity protection) is a topological invariant not expressible in ZFC without additional structure."}',
      "tool_call": None},
     {"phase": "UPDATE", "tool": None,
-     "think": "Navier-Stokes is not ZFC-axiomatizable. Three primitives block: Þ_⋈ (crossing-point topology requires non-well-founded membership), ⊙_× (exceptional point degeneracy violates choice), Ω_ℤ₂ (Z₂ protection is topological, not set-theoretic). This is consistent with the Millennium barrier analysis — the regularity problem is structurally inaccessible from ZFC alone.",
+     "think": "Navier-Stokes is not ZFC-axiomatizable. Three primitives block: 𐑥 (crossing-point topology requires non-well-founded membership), ⊙_× (exceptional point degeneracy violates choice), Ω_ℤ₂ (Z₂ protection is topological, not set-theoretic). This is consistent with the Millennium barrier analysis — the regularity problem is structurally inaccessible from ZFC alone.",
      "tool_call": None},
     {"phase": "THINK", "tool": None, "think": "ZFC probe complete. Three blocking primitives identified.", "tool_call": None},
-    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Navier-Stokes is NOT ZFC-axiomatizable. Three primitives block:\n1. Þ_⋈ — crossing-point topology requires non-well-founded membership\n2. ⊙_× — exceptional point degeneracy violates axiom of choice\n3. Ω_ℤ₂ — Z₂ parity protection is topological, not set-theoretic\nThe regularity problem is structurally inaccessible from ZFC alone. This is the structural basis of the Millennium barrier."}},
-     "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "Navier-Stokes: not ZFC-axiomatizable — Þ_⋈, ⊙_×, Ω_ℤ₂ block."}}},
+    {"phase": "ACT", "tool": {"name": "done", "arguments": {"conclusion": "Navier-Stokes is NOT ZFC-axiomatizable. Three primitives block:\n1. 𐑥 — crossing-point topology requires non-well-founded membership\n2. ⊙_× — exceptional point degeneracy violates axiom of choice\n3. Ω_ℤ₂ — Z₂ parity protection is topological, not set-theoretic\nThe regularity problem is structurally inaccessible from ZFC alone. This is the structural basis of the Millennium barrier."}},
+     "think": "", "tool_call": {"name": "done", "arguments": {"conclusion": "Navier-Stokes: not ZFC-axiomatizable — 𐑥, ⊙_×, Ω_ℤ₂ block."}}},
 ])
 
 # ── Template 10: Primitive peel ───────────────────────────────────

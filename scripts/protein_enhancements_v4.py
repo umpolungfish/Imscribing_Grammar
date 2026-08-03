@@ -193,7 +193,7 @@ def name_fragment(seq: str, start: int, end: int,
     dom = (profile or {}).get('dominant')
     desc = {'◻':'Winding/closure','φ̂':'Criticality signal','Ř':'Disulfide scaffold','Ħ':'Substrate recognition',
             '⊞':'Variable region','ƒ':'Hydrophobic anchor','ɢ':'Glycosylation target','Φ':'Phosphorylation switch',
-            '∈':'Catalytic','Ç':'Kinetic regulator','Ð':'Initiation','Þ':'Topological anchor'}
+            '∈':'Catalytic','Ç':'Kinetic regulator','Ð':'Initiation','⊣':'Topological anchor'}
     return desc.get(dom, f'Fragment {idx+1}')
 
 # ══════════════════════════════════════════════════════════════════

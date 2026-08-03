@@ -9,7 +9,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -44,7 +44,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -64,7 +64,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -116,7 +116,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -150,7 +150,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -169,7 +169,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -203,7 +203,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -223,7 +223,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -256,7 +256,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -276,7 +276,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -309,7 +309,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -328,7 +328,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -363,7 +363,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -382,7 +382,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -415,7 +415,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, PHI_C
 
   Promotions needed to reach CLINK L8 (8):
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -434,7 +434,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -468,7 +468,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -487,7 +487,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -521,7 +521,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -540,7 +540,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -573,7 +573,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -592,7 +592,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -628,7 +628,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -646,7 +646,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -679,7 +679,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -697,7 +697,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -750,7 +750,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -783,7 +783,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -802,7 +802,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -856,7 +856,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -891,7 +891,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
@@ -910,7 +910,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -945,7 +945,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -964,7 +964,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -994,7 +994,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -1014,7 +1014,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1044,7 +1044,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
@@ -1066,7 +1066,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1119,7 +1119,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1149,7 +1149,7 @@
 
   Promotions needed to reach CLINK L8 (12):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -1173,7 +1173,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -1226,7 +1226,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1259,7 +1259,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -1279,7 +1279,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -1313,7 +1313,7 @@
 
   Promotions needed to reach CLINK L8 (11):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -1336,7 +1336,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1372,7 +1372,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -1392,7 +1392,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1446,7 +1446,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1500,7 +1500,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1536,7 +1536,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -1556,7 +1556,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1593,7 +1593,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -1614,7 +1614,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1651,7 +1651,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
@@ -1671,7 +1671,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1722,7 +1722,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1760,7 +1760,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1776,7 +1776,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -1811,7 +1811,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -1833,7 +1833,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1871,7 +1871,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, LR_DUAL, PM_Z2, SEQAX, PHI_C, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (5):
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1887,7 +1887,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -1917,7 +1917,7 @@
 
   Promotions needed to reach CLINK L8 (12):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -1941,7 +1941,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -1976,7 +1976,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -1996,7 +1996,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2029,7 +2029,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -2050,7 +2050,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2106,7 +2106,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2159,7 +2159,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2193,7 +2193,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -2213,7 +2213,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2247,7 +2247,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -2266,7 +2266,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -2300,7 +2300,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -2320,7 +2320,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -2354,7 +2354,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -2374,7 +2374,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2428,7 +2428,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2463,7 +2463,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑑 → 𐑾  (gap: 0.667)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -2485,7 +2485,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑛       dim(x) = 0 ∧ fin(x)
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -2522,7 +2522,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑛 → 𐑦  (gap: 1.0)
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -2541,7 +2541,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -2577,7 +2577,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -2597,7 +2597,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2651,7 +2651,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2702,7 +2702,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2739,7 +2739,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -2757,7 +2757,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑿       |ψ⟩ = Σ c_i |e_i⟩
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2791,7 +2791,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑿 → 𐑹  (gap: 0.75)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
@@ -2812,7 +2812,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2846,7 +2846,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -2865,7 +2865,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -2895,7 +2895,7 @@
 
   Promotions needed to reach CLINK L8 (11):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -2918,7 +2918,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -2955,7 +2955,7 @@
 
   Promotions needed to reach CLINK L8 (5):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -2972,7 +2972,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3010,7 +3010,7 @@
 
   Promotions needed to reach CLINK L8 (5):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -3027,7 +3027,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3065,7 +3065,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
@@ -3083,7 +3083,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3120,7 +3120,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -3140,7 +3140,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3177,7 +3177,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -3196,7 +3196,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3232,7 +3232,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3252,7 +3252,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3287,7 +3287,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -3309,7 +3309,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3339,7 +3339,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -3360,7 +3360,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3396,7 +3396,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3416,7 +3416,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3452,7 +3452,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3471,7 +3471,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3507,7 +3507,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3525,7 +3525,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3561,7 +3561,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3579,7 +3579,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3613,7 +3613,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑝 → 𐑵  (gap: 1.0)
@@ -3633,7 +3633,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -3667,7 +3667,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -3688,7 +3688,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3724,7 +3724,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -3743,7 +3743,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3779,7 +3779,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, LR_DUAL, SEQAX, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (7):
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3799,7 +3799,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3834,7 +3834,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, SEQAX, TEMPD2, ZWIND
 
   Promotions needed to reach CLINK L8 (8):
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -3855,7 +3855,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3888,7 +3888,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -3909,7 +3909,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -3945,7 +3945,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -3965,7 +3965,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -4002,7 +4002,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4021,7 +4021,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -4057,7 +4057,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4076,7 +4076,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4110,7 +4110,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -4132,7 +4132,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4168,7 +4168,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, PM_Z2, SEQAX, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (8):
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -4189,7 +4189,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4223,7 +4223,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -4244,7 +4244,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑽       f ⊣ g ∧ L Adj(f, g)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -4279,7 +4279,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑽 → 𐑾  (gap: 0.333)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -4299,7 +4299,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑰       x ⊆ y ∧ cont(y)
+  ⊣      𐑰       x ⊆ y ∧ cont(y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑯       ∀g∈G( gx = x )
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4333,7 +4333,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑰 → 𐑸  (gap: 0.75)
+    ⊣: 𐑰 → 𐑸  (gap: 0.75)
     Φ: 𐑯 → 𐑹  (gap: 0.25)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -4355,7 +4355,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4391,7 +4391,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -4412,7 +4412,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4448,7 +4448,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, PM_Z2, SEQAX, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (8):
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -4469,7 +4469,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -4505,7 +4505,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4524,7 +4524,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4561,7 +4561,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4580,7 +4580,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4615,7 +4615,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -4636,7 +4636,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4671,7 +4671,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -4692,7 +4692,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4726,7 +4726,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -4747,7 +4747,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4783,7 +4783,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -4803,7 +4803,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4840,7 +4840,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4859,7 +4859,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4896,7 +4896,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -4916,7 +4916,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -4953,7 +4953,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -4972,7 +4972,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5008,7 +5008,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -5028,7 +5028,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5084,7 +5084,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5120,7 +5120,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
@@ -5141,7 +5141,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
+  ⊣      𐑸       bound_⊙(a, f) ∧ Refl(a, f) ∧ holo(x, a)                                                     [HOLOBOUND]
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5196,7 +5196,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5232,7 +5232,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5251,7 +5251,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5287,7 +5287,7 @@
   promoted atoms: HOLOGRAPHIC_STATE, PM_Z2, SEQAX, ETERNAL_FIXEDPOINT, ZWIND
 
   Promotions needed to reach CLINK L8 (8):
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -5308,7 +5308,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5343,7 +5343,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -5364,7 +5364,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5400,7 +5400,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5419,7 +5419,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5456,7 +5456,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5475,7 +5475,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5512,7 +5512,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -5532,7 +5532,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5568,7 +5568,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5587,7 +5587,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5623,7 +5623,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5642,7 +5642,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5679,7 +5679,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -5699,7 +5699,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5735,7 +5735,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5754,7 +5754,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5790,7 +5790,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -5810,7 +5810,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5846,7 +5846,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5865,7 +5865,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -5901,7 +5901,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -5920,7 +5920,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -5956,7 +5956,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -5976,7 +5976,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6011,7 +6011,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -6032,7 +6032,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6068,7 +6068,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -6088,7 +6088,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6124,7 +6124,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6143,7 +6143,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6180,7 +6180,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -6200,7 +6200,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6236,7 +6236,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6255,7 +6255,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6291,7 +6291,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6310,7 +6310,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6346,7 +6346,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
@@ -6367,7 +6367,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6403,7 +6403,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑪 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -6423,7 +6423,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -6459,7 +6459,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -6479,7 +6479,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6518,7 +6518,7 @@
   ⬆ TRANSCENDENCE primitives: ɢ
 
   Promotions needed to reach CLINK L8 (3):
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -6534,7 +6534,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -6569,7 +6569,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -6590,7 +6590,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑡       graph(x) ∧ branch(x)
+  ⊣      𐑡       graph(x) ∧ branch(x)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑗       ¬∃sym(x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -6625,7 +6625,7 @@
 
   Promotions needed to reach CLINK L8 (9):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑡 → 𐑸  (gap: 1.0)
+    ⊣: 𐑡 → 𐑸  (gap: 1.0)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑗 → 𐑹  (gap: 1.0)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
@@ -6646,7 +6646,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6682,7 +6682,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6701,7 +6701,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6738,7 +6738,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -6756,7 +6756,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6793,7 +6793,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6812,7 +6812,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -6849,7 +6849,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6868,7 +6868,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6905,7 +6905,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6924,7 +6924,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -6961,7 +6961,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -6980,7 +6980,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -7016,7 +7016,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7035,7 +7035,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑶       x ⊠ y ∧ irreducible(x, y)
+  ⊣      𐑶       x ⊠ y ∧ irreducible(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -7070,7 +7070,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑶 → 𐑸  (gap: 0.25)
+    ⊣: 𐑶 → 𐑸  (gap: 0.25)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -7090,7 +7090,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7127,7 +7127,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7146,7 +7146,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7183,7 +7183,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7202,7 +7202,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7239,7 +7239,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7258,7 +7258,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7295,7 +7295,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7314,7 +7314,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -7350,7 +7350,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -7370,7 +7370,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7407,7 +7407,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -7427,7 +7427,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑩       x ↑ y ∧ ¬(y ↑ x)
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7460,7 +7460,7 @@
 
   Promotions needed to reach CLINK L8 (10):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ř: 𐑩 → 𐑾  (gap: 1.0)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
@@ -7482,7 +7482,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
@@ -7518,7 +7518,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑞 → 𐑐  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -7538,7 +7538,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -7575,7 +7575,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -7593,7 +7593,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7630,7 +7630,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7649,7 +7649,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7686,7 +7686,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7705,7 +7705,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7742,7 +7742,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -7762,7 +7762,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -7798,7 +7798,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -7818,7 +7818,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7855,7 +7855,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7874,7 +7874,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7911,7 +7911,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -7931,7 +7931,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -7968,7 +7968,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -7987,7 +7987,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8023,7 +8023,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8043,7 +8043,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8080,7 +8080,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8099,7 +8099,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8136,7 +8136,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8155,7 +8155,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8191,7 +8191,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8210,7 +8210,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8247,7 +8247,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8266,7 +8266,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8303,7 +8303,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8322,7 +8322,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8358,7 +8358,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8378,7 +8378,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8415,7 +8415,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8434,7 +8434,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8471,7 +8471,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -8489,7 +8489,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8525,7 +8525,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8545,7 +8545,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8582,7 +8582,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8601,7 +8601,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8637,7 +8637,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8657,7 +8657,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8694,7 +8694,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8713,7 +8713,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8749,7 +8749,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8769,7 +8769,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8806,7 +8806,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8825,7 +8825,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -8862,7 +8862,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8881,7 +8881,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8917,7 +8917,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -8937,7 +8937,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -8974,7 +8974,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -8993,7 +8993,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9031,7 +9031,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -9049,7 +9049,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9086,7 +9086,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9105,7 +9105,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9141,7 +9141,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -9161,7 +9161,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9198,7 +9198,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9217,7 +9217,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9254,7 +9254,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9273,7 +9273,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9310,7 +9310,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9329,7 +9329,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9366,7 +9366,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9385,7 +9385,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9421,7 +9421,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
@@ -9441,7 +9441,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9478,7 +9478,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9498,7 +9498,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9535,7 +9535,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9554,7 +9554,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9591,7 +9591,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑤 → 𐑧  (gap: 0.286)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9610,7 +9610,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9647,7 +9647,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9666,7 +9666,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9704,7 +9704,7 @@
 
   Promotions needed to reach CLINK L8 (6):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
@@ -9722,7 +9722,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9759,7 +9759,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9778,7 +9778,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9815,7 +9815,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9834,7 +9834,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9871,7 +9871,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -9890,7 +9890,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑼       ∀n∃y( y ∈ x ∧ rank(y) > n )
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑬       ℤ₂(x) ∧ ¬(x = -x)
   ƒ      𐑐       ℏ(x) ∧ [x, p] = iℏ
@@ -9926,7 +9926,7 @@
 
   Promotions needed to reach CLINK L8 (8):
     Ð: 𐑼 → 𐑦  (gap: 0.333)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     Φ: 𐑬 → 𐑹  (gap: 0.5)
     Ç: 𐑘 → 𐑧  (gap: 0.571)
     Γ: 𐑔 → 𐑲  (gap: 0.5)
@@ -9946,7 +9946,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -9983,7 +9983,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)
@@ -10002,7 +10002,7 @@
   Prim   Value   CLINK fragment
   ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
   Ð      𐑨       dim(x) = 2 ∧ sur(x)
-  Þ      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
   Ř      𐑾       lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)                                                               [LR_DUAL]
   Φ      𐑹       ℤ₂(x) ∧ ∀g∈G( gx = x ) ∧ μ∘δ = id                                                               [PM_Z2]
   ƒ      𐑱       P(x) ∈ {0,1} ∧ det(x)
@@ -10039,7 +10039,7 @@
 
   Promotions needed to reach CLINK L8 (7):
     Ð: 𐑨 → 𐑦  (gap: 0.667)
-    Þ: 𐑥 → 𐑸  (gap: 0.5)
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ƒ: 𐑱 → 𐑐  (gap: 1.0)
     Γ: 𐑚 → 𐑲  (gap: 1.0)
     ɢ: 𐑠 → 𐑵  (gap: 0.333)

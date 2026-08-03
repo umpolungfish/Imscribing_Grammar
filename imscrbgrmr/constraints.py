@@ -1271,7 +1271,7 @@ class CoreAxioms:
 
       Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ Ç=𐑧 —
       the exact pair old-A forbade. The correct formulation of D imscribes with
-      Ð=𐑛 ∧ Ω=𐑟 (old-D demanded Ð=𐑦) and Þ=𐑸 at Ð=𐑛 (violating one-way C).
+      Ð=𐑛 ∧ Ω=𐑟 (old-D demanded Ð=𐑦) and ⊣=𐑸 at Ð=𐑛 (violating one-way C).
       Each correct formulation violates the coordinate form of its own axiom.
 
       Catalog. Every shadow has counterexamples across several dimensionalities,

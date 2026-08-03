@@ -23,7 +23,7 @@ The 12 primitives are irreducible dimensions:
 .PP
 .RS
 .nf
-\fBÐ\fR  Dimensionality      \fBÞ\fR  Topology            \fBŘ\fR  Relational mode
+\fBÐ\fR  Dimensionality      \fB⊣\fR  Topology            \fBŘ\fR  Relational mode
 \fBΦ\fR  Parity/symmetry     \fBƒ\fR  Fidelity            \fBÇ\fR  Kinetic character
 \fBΓ\fR  Scope               \fBɢ\fR  Interaction grammar \fBφ̂\fR  Criticality
 \fBĦ\fR  Chirality      \fBΣ\fR  Stoichiometry       \fBΩ\fR  Winding
@@ -102,7 +102,7 @@ Generate the full 49-symbol sequence \(-> \fIimscribing_all_symbols.wav\fR.
 .TP
 \fB\-\-tuple\fR \fITUP\fR
 Synthesise a 12-primitive tuple. Glyph IDs may be space- or comma-separated.
-Old phonetic names (\fIÐ_omega\fR, \fIÞ_nrleg\fR, etc.) are also accepted.
+Retired spellings do not resolve; ⊣ takes only its five Shavian values.
 .TP
 \fB\-\-name\fR \fINAME\fR
 Synthesise the tuple for a named entry from \fIIG_catalog.json\fR.
@@ -319,7 +319,7 @@ uv run crystal_navigator.py describe
 uv run crystal_navigator.py repl
 
 # Encode a tuple to an address
-uv run crystal_navigator.py encode "Ð_ω Þ_O Ř_Ť Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_Ş φ̂_ÿ Ħ_! Σ_ï Ω_z"
+uv run crystal_navigator.py encode "Ð_ω ⊣=𐑸 Ř_Ť Φ_} ƒ_ż Ç_@ Γ_ʔ ɢ_Ş φ̂_ÿ Ħ_! Σ_ï Ω_z"
 
 # Decode address 6734591 back to tuple
 uv run crystal_navigator.py decode 6734591

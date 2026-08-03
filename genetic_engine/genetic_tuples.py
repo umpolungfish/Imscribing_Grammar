@@ -43,7 +43,7 @@ IG_CHARS: Dict[str, str] = {
     "D_infty":      "𐑼",     # 𐑛 — infinite-dimensional
     "D_odot":       "𐑦",     # 𐑦 — imscriptive (self-written state-space)
     
-    # ── Topology (Þ) — 5 values ──
+    # ── Topology (⊣) — 5 values ──
     "T_net":        "𐑡",     # 𐑶 — branching / network
     "T_inc":        "𐑰",     # 𐑡 — inclusion / containment
     "T_bowtie":     "𐑥",     # 𐑰 — crossing point / bifurcation
@@ -188,7 +188,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "His": "Phi",       # ⊙ — criticality
     "Gln": "G",         # Γ — grammar/scope
     "Met": "D",         # Ð — scope
-    "Trp": "T",         # Þ — topology
+    "Trp": "T",         # ⊣ — topology
     "Cys": "R",         # Ř — reversibility
     "Tyr": "P",         # Φ — parity
     "Phe": "F",         # ƒ — force

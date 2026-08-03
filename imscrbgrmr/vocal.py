@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: Ð Þ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
+Primitive order: Ð ⊣ Ř Φ ƒ Ç Γ ɢ ⊙ Ħ Σ Ω
 """
 
 import wave

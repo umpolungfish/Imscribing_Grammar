@@ -11,7 +11,7 @@ Per-element primitive derivation
 ─────────────────────────────────
   Fixed (corpus-level):  Ð, Ř, ƒ, Ç, Γ, ⊙, Ω, Φ (whole-manuscript)
   Variable (element-level):
-    Þ  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
+    ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     Φ  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
     ɢ  — broadcast vs sequential vs conjunctive (FSPLIT>>FFUSE→Ş; CLINK→ˌ; VINIT→^)
     Ħ  — instruction count as state-depth proxy (<30→Ñ; <60→£; <120→A; ≥120→!)
@@ -88,7 +88,7 @@ def _count_mnemonics(instructions: list[str]) -> Counter:
     return counts
 
 
-def _derive_Þ(counts: Counter, corpus: str) -> str:
+def _derive_⊣(counts: Counter, corpus: str) -> str:
     total = sum(counts.values()) or 1
     engagr = counts['ENGAGR'] / total
     fsplit = counts['FSPLIT'] / total
@@ -150,7 +150,7 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     """Derive a per-element 12-tuple from an IMASM instruction list."""
     counts = _count_mnemonics(instructions)
     base   = dict(CORPUS_BASE[corpus])
-    base['⊣'] = _derive_Þ(counts, corpus)
+    base['⊣'] = _derive_⊣(counts, corpus)
     base['<'] = _derive_Φ(counts, corpus)
     base['∋'] = _derive_ɢ(counts, corpus)
     base['⊥'] = _derive_Ħ(len(instructions), corpus)
@@ -264,7 +264,7 @@ def process_corpus(
         }
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
-                  f'Þ={tuple_["⊣"]}  Φ={tuple_["<"]}  '
+                  f'⊣={tuple_["⊣"]}  Φ={tuple_["<"]}  '
                   f'ɢ={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
     return records
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: Þ={t["⊣"]}  Φ={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
+                f.write(f'  Variable: ⊣={t["⊣"]}  Φ={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

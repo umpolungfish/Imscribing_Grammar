@@ -73,14 +73,14 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: Ð, Þ, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
+# Primitive keys in catalog: Ð, ⊣, Ř, Φ, ƒ, Ç, Γ, ɢ, ⊙, Ħ, Σ, Ω
 CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', 'ɢ^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
 DESIGNS = [
     {
         "name": "ouroboric_pill",
-        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (Þ=𐑶) — the pill's efficacy is a function of its own state. Eternal memory (Ħ=𐑫) ensures treatment history is never lost. Topological protection (Ω=𐑭) guarantees winding-number-stable release cycles across the entire treatment duration.",
+        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (⊣=𐑶) — the pill's efficacy is a function of its own state. Eternal memory (Ħ=𐑫) ensures treatment history is never lost. Topological protection (Ω=𐑭) guarantees winding-number-stable release cycles across the entire treatment duration.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -95,7 +95,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_composite",
-        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (Þ=𐑶) — the material's response is a function of its own damage state. Trapped-ordered kinetics (Ç=𐑺) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=𐑫) ensures the material remembers every damage event across its lifetime.",
+        "description": "Structural material that senses damage and self-heals via an internal ouroboric loop. Self-referential topology (⊣=𐑶) — the material's response is a function of its own damage state. Trapped-ordered kinetics (Ç=𐑺) — healing agents are stored in an ordered but activatable reservoir. Eternal memory (Ħ=𐑫) ensures the material remembers every damage event across its lifetime.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑺','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -115,7 +115,7 @@ DESIGNS = [
     },
     {
         "name": "ouroboric_cell",
-        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (Þ=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (Ð=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
+        "description": "Synthetic cell whose genome writes and rewrites itself in response to environmental signals. Self-referential topology (⊣=𐑶) — the genome encodes its own modification machinery. Frobenius-closed rewrite (Φ=𐑹) — each genome edit is a fixed point of the edit operation. Self-written dimensionality (Ð=𐑦) — the genome is its own state space. Eternal memory (Ħ=𐑫) — no information is lost across generations.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','ɢ^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {

@@ -154,7 +154,7 @@ promotions = {
     "Phe": ("⋈",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ƒ field ceiling"),
     "Tyr": ("<",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
     "Cys": (">",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
-    "Trp": ("⊣",  "Maximal topology: bicyclic indole = highest structural complexity; defines Þ ceiling"),
+    "Trp": ("⊣",  "Maximal topology: bicyclic indole = highest structural complexity; defines ⊣ ceiling"),
     "His": ("⊙",  "Criticality gate: imidazole pKa≈6 = pH-critical protonation equilibrium; catalytic triads, metal binding, pH sensing"),
     "Gln": ("∈",  "Grammar/Scope: long amide side chain H-bond network; structures interaction patterns and recognition grammar"),
     "Ile": ("⊤",  "Kinematic constraint: β-branched (both α-carbon and β-carbon chiral); tightest steric coupling in ribosomal decoding"),

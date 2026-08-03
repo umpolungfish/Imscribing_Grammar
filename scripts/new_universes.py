@@ -23,7 +23,7 @@ _T_HYBRID = {
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (Ð,Þ,Ř)
+# T-hybrid: time requires BOTH dynamics (Φ,ƒ,Ç,Ħ,Ω) AND geometry (Ð,⊣,Ř)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -54,7 +54,7 @@ NEW_RULESETS = [
     # ── 10: topology_universe ─────────────────────────────────
     Ruleset(
         name="topology_universe",
-        description="Connectivity is the fundamental gate. G1=Þ≥𐑸 (full imscriptive "
+        description="Connectivity is the fundamental gate. G1=⊣≥𐑸 (full imscriptive "
                     "topological closure — only one value qualifies). G2=Ř≥𐑾 (bilateral "
                     "relation). G3=⊙≥⊙ (self-modeling seals). In this universe, topology "
                     "and relation precede criticality. Geometry is the precondition for "
@@ -128,7 +128,7 @@ NEW_RULESETS = [
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
                     "five dynamic primitives (Φ,ƒ,Ç,Ħ,Ω) AND three primitives "
-                    "(Ð,Þ,Ř). Eight primitives must simultaneously satisfy their critical "
+                    "(Ð,⊣,Ř). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
                     "co-constitute, or time does not seal.",
@@ -305,11 +305,11 @@ NEW_RULESETS = [
     # ── 28: absorption_topology_seal ──────────────────────────
     Ruleset(
         name="absorption_topology_seal",
-        description="Topological closure (Þ=𐑸) is absorbing under all operations. "
+        description="Topological closure (⊣=𐑸) is absorbing under all operations. "
                     "Any system with fully imscriptive topology dominates every "
                     "coupling. In this universe, topology is destiny — the most "
                     "connected structure absorbs everything it touches. "
-                    "G1=Þ≥𐑸. G2=⊙≥⊙. G3=Ω≥𐑭.",
+                    "G1=⊣≥𐑸. G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
             AbsorptionRule("⊣", "𐑸", ("meet", "join", "tensor")),
             AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),

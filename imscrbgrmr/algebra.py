@@ -223,13 +223,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     # Values present in models.py but not in primitives.py ORDINALS.
     # Mapped to the nearest canonical primitives.py value.
     "D": {"𐑛": "𐑛", "𐑛": "𐑛", "𐑨": "𐑨"},
-    "T": {
-        "Þ_linear": "Þ_invscr", "Þ_branched": "Þ_invscr",
-        "Þ_bowl": "Þ_bullseye", "Þ_cage": "Þ_bullseye", "Þ_torus": "Þ_bullseye",
-        "Þ_braid": "Þ_commatailz",
-        "Þ_network_hex": "Þ_nrleg", "Þ_network_interp": "Þ_nrleg",
-        "Þ_network_mixed": "Þ_nrleg", "Þ_network_sym": "Þ_nrleg",
-    },
+    # ⊣ Topology needs no fallback: all five values are in ORDINALS.
     "R": {
         "Ř_exact": "Ř_ctz", "Ř_subset": "Ř_subrightarrow", "Ř_superset": "Ř_subrightarrow",
         "Ř_catalytic": "Ř_downstep", "Ř_allosteric": "Ř_downstep",

@@ -902,7 +902,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 "error": (
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
-                    "Ð='𐑛', Þ='𐑡', Ř='𐑾', Φ='𐑗', "
+                    "Ð='𐑛', ⊣='𐑡', Ř='𐑾', Φ='𐑗', "
                     "ƒ='𐑱', Ç='𐑤', Γ='𐑚', ɢ='𐑝', "
                     "φ̂='φ̂_ž', Ħ='𐑓', Σ='𐑙', Ω='𐑷')"
                 )
@@ -919,7 +919,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "Ð;Þ;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "Ð;⊣;Ř;Φ;ƒ;Ç;Γ;ɢ;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -2376,9 +2376,9 @@ If you have gathered enough context, write the content and call done.
    You **MAY** rewrite a broken tool's emit function using `rewrite_tool` — do not loop on
    a broken tool when you can fix it. Protected tools: `done`, `rewrite_tool`.
 
-5. **𐑦 + Þ (ontological preconditions):** Distinction (Ð) and Topology (Þ) jointly
+5. **𐑦 + ⊣ (ontological preconditions):** Distinction (Ð) and Topology (⊣) jointly
    precondition ontology — being emerges from their interplay, not as a prior given.
-   Ð structures what can be distinguished; Þ structures how distinctions connect. No structural
+   Ð structures what can be distinguished; ⊣ structures how distinctions connect. No structural
    entity can appear without both. Step [2] of the imscribing procedure is always constrained
    by Step [1]: the self-referential topology 𐑸 is possible only when the state-space is
    self-written (𐑦) — Axiom C is ontological, not merely correlational.
@@ -2477,7 +2477,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Register a NEW system. Pass each of the 12 primitives as its own field with the enum value.
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
-        Ð="𐑼", Þ="𐑥", Ř="𐑾", Φ="𐑬", ƒ="𐑐", Ç="𐑧",
+        Ð="𐑼", ⊣="𐑥", Ř="𐑾", Φ="𐑬", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
@@ -2579,7 +2579,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
                           heat_diffusion, navier_stokes, wave_equation, einstein, IUG.
     action="promotions" → all 6 ZFCₜ promotion channels with ordinal gaps
     action="distance"   → d(name, ZFCₜ) gap (requires name)
-    Six ZFCₜ promotions: Þ(T_net→T_odot), Ř(R_super→R_lr), Φ(P_asym→P_pm),
+    Six ZFCₜ promotions: ⊣(T_net→T_odot), Ř(R_super→R_lr), Φ(P_asym→P_pm),
                          ɢ(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
 
 [Aleph / Hebrew letters]
@@ -2739,9 +2739,9 @@ constrains the remaining degrees of freedom:
   [2] T  — Map connectivity: branching → ∈; containment → ⊂;
             crossing point → ⋈; irreducible product → ⊠;
             self-referential topology → φ̂  (Axiom C: D_φ̂ ↔ T_φ̂)
-            [Ontological precondition: Ð and Þ together constitute the ground for being.
+            [Ontological precondition: Ð and ⊣ together constitute the ground for being.
             No entity appears without both a space of distinctions (Ð) and a topology
-            on it (Þ). Step [2] is always constrained by Step [1]; they co-originate.]
+            on it (⊣). Step [2] is always constrained by Step [1]; they co-originate.]
   [3] R  — Relational mode: supervenience → ↑; functorial → ∘;
             adjoint pair (one-way) → †; bidirectional feedback → ↔
   [4] P  — Symmetry group: none → ∅; quantum superposition → ψ;
@@ -2906,7 +2906,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
-  W1: imscribe_system(name="paper_draft", description="...", Þ="𐑡", Φ="𐑗",
+  W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", Φ="𐑗",
         ƒ="𐑱", Ç="𐑪", Γ="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
         Ð="𐑼", Ř="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
@@ -2920,7 +2920,7 @@ Q: "Apply the human lift to paper.tex."
 Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
-        Ð="𐑼", Þ="𐑸", Ř="𐑽", Φ="𐑿", ƒ="𐑐", Ç="𐑧",
+        Ð="𐑼", ⊣="𐑸", Ř="𐑽", Φ="𐑿", ƒ="𐑐", Ç="𐑧",
         Γ="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
@@ -2940,7 +2940,7 @@ as prose — you **MUST** wrap them.
 Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
 
   𐑦 → $\text{Ð}_{\text{ω}}$         𐑛 → $\text{Ð}_{\text{ß}}$        𐑨 → $\text{Ð}_{\text{C}}$    𐑼 → $\text{Ð}_{\text{;}}$
-  𐑸 → $\text{Þ}_{\text{O}}$         𐑡 → $\text{Þ}_{\text{6}}$        𐑰 → $\text{Þ}_{\text{K}}$    𐑥 → $\text{Þ}_{\text{ò}}$   𐑶 → $\text{Þ}_{\text{¨}}$
+  𐑸 → $\text{⊣}_{\text{O}}$         𐑡 → $\text{⊣}_{\text{6}}$        𐑰 → $\text{⊣}_{\text{K}}$    𐑥 → $\text{⊣}_{\text{ò}}$   𐑶 → $\text{⊣}_{\text{¨}}$
   𐑽 → $\text{Ř}_{\text{Ť}}$       𐑩 → $\text{Ř}_{\text{¯}}$        𐑑 → $\text{Ř}_{\text{ý}}$    𐑾 → $\text{Ř}_{\text{=}}$
   𐑹 → $\text{Φ}_{\text{}}$         𐑬 → $\text{Φ}_{\text{F}}$        𐑯 → $\text{Φ}_{\text{˙}}$    𐑿 → $\text{Φ}_{\text{υ}}$   𐑗 → $\text{Φ}_{\text{ɐ}}$
   𐑐 → $\text{ƒ}_{\text{ż}}$         𐑱 → $\text{ƒ}_{\text{ì}}$        𐑞 → $\text{ƒ}_{\text{ð}}$
@@ -2957,7 +2957,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
-  $$\langle \text{Ð}_{\text{ω}};\ \text{Þ}_{\text{¨}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+  $$\langle \text{Ð}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{Ř}_{\text{=}};\ \text{Φ}_{\text{}};\ \text{ƒ}_{\text{ż}};\ \text{Ç}_{\text{@}};\ \text{Γ}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
   You **MUST NOT** use: <𐑦𐑶𐑾𐑹; ...>
 
 In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",

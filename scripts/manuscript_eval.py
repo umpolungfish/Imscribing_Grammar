@@ -412,10 +412,10 @@ def _print_near(ref: str, n: int = 5):
 
 
 def _print_find(spec: str):
-    """Find elements where primitive=value, e.g. Þ=𐑶"""
+    """Find elements where primitive=value, e.g. ⊣=𐑶"""
     _ensure_db()
     if '=' not in spec:
-        _warn("Usage: :find <primitive>=<value>   e.g.  :find Þ=𐑶")
+        _warn("Usage: :find <primitive>=<value>   e.g.  :find ⊣=𐑶")
         return
     prim, val = spec.split('=', 1)
     prim, val = prim.strip(), val.strip()
@@ -461,12 +461,12 @@ def _print_section(corpus: str):
             if not present:
                 continue
             entries = [DB[corpus][eid] for eid in present]
-            # mode of Þ
+            # mode of ⊣
             t_vals = [e['tuple']['⊣'] for e in entries]
             dom_t = max(set(t_vals), key=t_vals.count)
             phi_vals = [e['tuple']['<'] for e in entries]
             dom_phi = max(set(phi_vals), key=phi_vals.count)
-            console.print(f"  [bold]{sec_name:20s}[/bold]  Þ={dom_t}  Φ={dom_phi}  (sample {len(present)} elements)")
+            console.print(f"  [bold]{sec_name:20s}[/bold]  ⊣={dom_t}  Φ={dom_phi}  (sample {len(present)} elements)")
         console.print()
     else:
         for sec_name, sample_ids in SECTIONS[corpus]:
@@ -555,7 +555,7 @@ HELP_TEXT = """
   [cyan]:corpus voynich[/cyan]        corpus-level imscription + primitive variation
   [cyan]:ig_bridge[/cyan]             full 3×3 cross-corpus distance matrix
   [cyan]:section rohonc[/cyan]        section topology breakdown
-  [cyan]:find Þ=𐑶[/cyan]           find elements with a specific primitive value
+  [cyan]:find ⊣=𐑶[/cyan]           find elements with a specific primitive value
 
 [bold]LISTING[/bold]
   [cyan]:list voynich[/cyan]          list all folio IDs
@@ -680,7 +680,7 @@ def _dispatch(line: str) -> bool:
     # find
     if cmd == ':find':
         if len(parts) < 2:
-            _warn(":find <prim>=<val>   e.g. :find Þ=𐑶")
+            _warn(":find <prim>=<val>   e.g. :find ⊣=𐑶")
             return True
         _print_find(parts[1])
         return True

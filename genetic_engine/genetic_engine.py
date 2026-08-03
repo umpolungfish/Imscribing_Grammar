@@ -454,7 +454,7 @@ for c in ALL_CODONS:
 AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     # ── Promoted (split-stratum) amino acids ──
     "Met": IGPrimitive.SCOPE,         # Ð — start codon, translation scope
-    "Trp": IGPrimitive.TOPOLOGY,      # Þ — bicyclic indole, topological ceiling
+    "Trp": IGPrimitive.TOPOLOGY,      # ⊣ — bicyclic indole, topological ceiling
     "Cys": IGPrimitive.REVERSIBILITY, # Ř — disulfide bonds, reversible crosslinks
     "Tyr": IGPrimitive.PARITY,        # Φ — phosphorylation switch
     "Phe": IGPrimitive.FORCE,         # ƒ — max hydrophobicity, force ceiling
@@ -493,7 +493,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # Ř — disulfide partner needed
     IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
-    IGPrimitive.TOPOLOGY:       "moderate",     # Þ — indole collapse tolerable in surface
+    IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
     IGPrimitive.PARITY:         "moderate",     # Φ — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # Ç — β-branching preservation matters
     IGPrimitive.GRAMMAR:        "moderate",     # Γ — pH-gated catalysis redesign
@@ -1214,7 +1214,7 @@ class ChimeraDetector:
              "produces a metabolic bottleneck that cannot be reversed."),
 
             # ── Moderate × Critical/HIGH → semi-trap ──
-            (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # Þ ⊗ Ř
+            (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # ⊣ ⊗ Ř
              "Topological irreversibility: editing Trp (indole collapse) AND Cys "
              "(disulfide loss) reduces both structural complexity and flexibility."),
             (P.PARITY, P.CRITICALITY, 2.5, False,  # Φ ⊗ φ̂
@@ -1835,7 +1835,7 @@ def verify_prime_edit_optimizer() -> bool:
     # Stratum-crossing edit (exact → split)
     pe2 = optimizer.optimize("GCU", "GUU")  # Ala→Val
     # Missense with primitive change
-    pe3 = optimizer.optimize("UGU", "UGG")  # Cys→Trp (Ř→Þ)
+    pe3 = optimizer.optimize("UGU", "UGG")  # Cys→Trp (Ř→⊣)
     assert pe3.stratum_preserved, "Both should be split"
     assert not pe3.primitive_invariant, "Cys→Trp should change primitive"
     print("  ✓ Prime edit optimizer: silent edits, stratum crossing, primitive changes detected")
@@ -2088,7 +2088,7 @@ def demo_verification() -> None:
         ("GCU", "GCC", "Ala silent (exact stratum)"),
         ("UUU", "UUC", "Phe silent (split stratum)"),
         ("AUG", "AUU", "Met→Ile missense"),
-        ("UGU", "UGG", "Cys→Trp (Ř→Þ primitive change)"),
+        ("UGU", "UGG", "Cys→Trp (Ř→⊣ primitive change)"),
         ("AUG", "UAA", "Met→Stop (Ω boundary violation)"),
         ("AAA", "AAG", "Lys silent (split stratum)"),
     ]

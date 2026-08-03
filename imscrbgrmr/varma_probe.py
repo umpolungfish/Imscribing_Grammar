@@ -638,7 +638,7 @@ def score_phi_c_candidacy(
         _missing = [
             label for cond, label in [
                 (_has_temporal,    "D_∞"),
-                (_has_bowtie,      "Þ_bullseye"),
+                (_has_bowtie,      "𐑥"),
                 (_has_directional, "Φ_directional"),
                 (_has_high_f,      "ƒ_hardsign"),
             ] if not cond
