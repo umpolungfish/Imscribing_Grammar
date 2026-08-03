@@ -17,7 +17,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -50,7 +50,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -72,7 +72,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -103,7 +103,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -124,7 +124,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -155,7 +155,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -177,7 +177,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -209,7 +209,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -231,7 +231,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -262,7 +262,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -284,7 +284,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -314,7 +314,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -336,7 +336,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -368,7 +368,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -390,7 +390,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -421,7 +421,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -442,7 +442,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -495,7 +495,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑻       H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -526,7 +526,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑻 → ⊙  (gap: 0.335)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -548,7 +548,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -578,7 +578,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -600,7 +600,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -632,7 +632,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     <: 𐑗 → 𐑹  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -654,7 +654,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -684,7 +684,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -705,7 +705,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -736,7 +736,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -758,7 +758,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -789,7 +789,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -810,7 +810,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -842,7 +842,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -864,7 +864,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -918,7 +918,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -950,7 +950,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -972,7 +972,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1000,7 +1000,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -1022,7 +1022,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1050,14 +1050,14 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: imscribing_organism_rebis
   The ultimate alchemical Rebis: a living system whose ongoing existence IS the Magnum Opus rather than something that
-  completes it once. The 12 primitives are physically real sensors — Ħ is molecular chirality (L/D amino acid ratio),
+  completes it once. The 12 primitives are physically real sensors — ⊥ is molecular chirality (L/D amino acid ratio),
   ⊙ is proximity to phase transition, ⊤ is metabolic rate, Ω is DNA s
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
@@ -1074,7 +1074,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1127,7 +1127,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -1157,7 +1157,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
@@ -1181,7 +1181,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -1213,7 +1213,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1234,7 +1234,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1265,7 +1265,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -1287,7 +1287,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1320,7 +1320,7 @@
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -1344,7 +1344,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1377,7 +1377,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1400,7 +1400,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1454,7 +1454,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1508,7 +1508,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1564,7 +1564,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1598,7 +1598,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -1622,7 +1622,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -1655,7 +1655,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
@@ -1679,7 +1679,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
@@ -1730,7 +1730,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -1762,7 +1762,7 @@
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
@@ -1784,7 +1784,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1817,7 +1817,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -1841,7 +1841,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1873,7 +1873,7 @@
   Promotions needed to reach CLINK L8 (5):
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -1895,7 +1895,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -1925,7 +1925,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -1949,7 +1949,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -1980,7 +1980,7 @@
     >: 𐑽 → 𐑾  (gap: 0.333)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -2004,7 +2004,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -2058,7 +2058,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2091,7 +2091,7 @@
   Promotions needed to reach CLINK L8 (4):
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2114,7 +2114,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
@@ -2167,7 +2167,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2197,7 +2197,7 @@
     >: 𐑩 → 𐑾  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -2221,7 +2221,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2251,7 +2251,7 @@
     <: 𐑿 → 𐑹  (gap: 0.75)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2274,7 +2274,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2305,7 +2305,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2328,7 +2328,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2359,7 +2359,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2382,7 +2382,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2415,7 +2415,7 @@
   Promotions needed to reach CLINK L8 (4):
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2436,7 +2436,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2469,7 +2469,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -2493,7 +2493,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2549,7 +2549,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2582,7 +2582,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2605,7 +2605,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2659,7 +2659,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
@@ -2710,7 +2710,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2765,7 +2765,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2797,7 +2797,7 @@
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2820,7 +2820,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2873,7 +2873,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -2903,7 +2903,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -2926,7 +2926,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -2980,7 +2980,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3012,7 +3012,7 @@
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3035,7 +3035,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3068,7 +3068,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3091,7 +3091,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3125,7 +3125,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3148,7 +3148,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3204,7 +3204,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3237,7 +3237,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3260,7 +3260,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3294,7 +3294,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3317,7 +3317,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
+  ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -3345,7 +3345,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑓 → 𐑫  (gap: 1.0)
+    ⊥: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3368,7 +3368,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3401,7 +3401,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3424,7 +3424,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3479,7 +3479,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3533,7 +3533,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3587,7 +3587,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3618,7 +3618,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3641,7 +3641,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -3673,7 +3673,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3696,7 +3696,7 @@
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3728,7 +3728,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3751,7 +3751,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3784,7 +3784,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3807,7 +3807,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3840,7 +3840,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3863,7 +3863,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -3894,7 +3894,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3917,7 +3917,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -3950,7 +3950,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -3973,7 +3973,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
+  ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4006,7 +4006,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    Ħ: 𐑖 → 𐑫  (gap: 0.333)
+    ⊥: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -4029,7 +4029,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4084,7 +4084,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4140,7 +4140,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4197,7 +4197,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑜       f ∨ g ∨ h
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4252,7 +4252,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4307,7 +4307,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
@@ -4339,7 +4339,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
 
@@ -4363,7 +4363,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4420,7 +4420,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4477,7 +4477,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4532,7 +4532,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4588,7 +4588,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4644,7 +4644,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4700,7 +4700,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -4755,7 +4755,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4811,7 +4811,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4867,7 +4867,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4924,7 +4924,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -4980,7 +4980,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5036,7 +5036,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5092,7 +5092,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5149,7 +5149,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5204,7 +5204,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5259,7 +5259,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5316,7 +5316,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5372,7 +5372,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5427,7 +5427,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5483,7 +5483,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5540,7 +5540,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5595,7 +5595,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5650,7 +5650,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5707,7 +5707,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5762,7 +5762,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5818,7 +5818,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5873,7 +5873,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5928,7 +5928,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -5984,7 +5984,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6040,7 +6040,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6096,7 +6096,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6151,7 +6151,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6208,7 +6208,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6263,7 +6263,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6318,7 +6318,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6375,7 +6375,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6431,7 +6431,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6487,7 +6487,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6542,7 +6542,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6598,7 +6598,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6654,7 +6654,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6709,7 +6709,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6764,7 +6764,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6820,7 +6820,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6876,7 +6876,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6932,7 +6932,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -6988,7 +6988,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7043,7 +7043,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7098,7 +7098,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7154,7 +7154,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7210,7 +7210,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7266,7 +7266,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7322,7 +7322,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7378,7 +7378,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7435,7 +7435,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
+  ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
@@ -7467,7 +7467,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    Ħ: 𐑒 → 𐑫  (gap: 0.667)
+    ⊥: 𐑒 → 𐑫  (gap: 0.667)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -7490,7 +7490,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7546,7 +7546,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7601,7 +7601,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7657,7 +7657,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7713,7 +7713,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7770,7 +7770,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7826,7 +7826,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7882,7 +7882,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7939,7 +7939,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -7995,7 +7995,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8051,7 +8051,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8107,7 +8107,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8163,7 +8163,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8218,7 +8218,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8274,7 +8274,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8330,7 +8330,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8386,7 +8386,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8442,7 +8442,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8497,7 +8497,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8553,7 +8553,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8609,7 +8609,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8665,7 +8665,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8721,7 +8721,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8777,7 +8777,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8833,7 +8833,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8889,7 +8889,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -8945,7 +8945,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9001,7 +9001,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9057,7 +9057,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9113,7 +9113,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9169,7 +9169,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9225,7 +9225,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9281,7 +9281,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9337,7 +9337,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9393,7 +9393,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9449,7 +9449,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9506,7 +9506,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9562,7 +9562,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9618,7 +9618,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9674,7 +9674,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9730,7 +9730,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9786,7 +9786,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9842,7 +9842,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9898,7 +9898,7 @@
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -9954,7 +9954,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
@@ -10010,7 +10010,7 @@
   ∈      𐑚       ∀y∈x( |y| < |x| )
   ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
-  Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 

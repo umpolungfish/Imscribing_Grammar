@@ -80,7 +80,7 @@ _PHI_MAP = {
 }
 
 _H_MAP = {
-    "Hinf": "Ħ_invscripta",
+    "Hinf": "𐑫",
     # unchanged: H_closeomega, H_toneletterstem, H_turntwo, H_invscripta
 }
 

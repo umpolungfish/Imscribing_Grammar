@@ -462,7 +462,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "His": IGPrimitive.GRAMMAR,       # ∈ — imidazole pKa bridge
     "Asn": IGPrimitive.INTERACTION,   # ∋ — N-glycosylation sequon
     "Gln": IGPrimitive.CRITICALITY,   # ⊙ — most regulated biosynthetic node
-    "Asp": IGPrimitive.CHIRALITY,     # Ħ — chiral substrate selectivity
+    "Asp": IGPrimitive.CHIRALITY,     # ⊥ — chiral substrate selectivity
     "Lys": IGPrimitive.ENTROPY,       # Σ — highest variability + acetylation
     "Glu": IGPrimitive.WINDING,       # Ω — α-helix propensity
 
@@ -488,7 +488,7 @@ for aa, prim in AA_PRIMITIVE_MAP.items():
 
 # Risk classification for primitive-editing
 PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
-    IGPrimitive.CHIRALITY:      "critical",     # Ħ — chiral specificity lost
+    IGPrimitive.CHIRALITY:      "critical",     # ⊥ — chiral specificity lost
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
@@ -1185,10 +1185,10 @@ class ChimeraDetector:
         pairs = [
             # (prim_a, prim_b, risk_multiplier, trap_flag, description)
             # ── Critical × Critical → ALWAYS trap ──
-            (P.CHIRALITY, P.SCOPE, 4.0, True,  # Ħ ⊗ ⊢
+            (P.CHIRALITY, P.SCOPE, 4.0, True,  # ⊥ ⊗ ⊢
              "Chiral scope collapsed: editing both chirality and translation scope "
              "creates a protein that cannot be translated correctly in any chiral form."),
-            (P.CHIRALITY, P.WINDING, 4.0, True,  # Ħ ⊗ Ω
+            (P.CHIRALITY, P.WINDING, 4.0, True,  # ⊥ ⊗ Ω
              "Chiral winding break: removing both chiral specificity and C-terminal "
              "winding produces a topologically uncontrolled peptide."),
             (P.SCOPE, P.WINDING, 4.0, True,  # ⊢ ⊗ Ω
@@ -1196,7 +1196,7 @@ class ChimeraDetector:
              "the entire translation boundary structure."),
 
             # ── High × Critical/HIGH → TRAP ──
-            (P.REVERSIBILITY, P.CHIRALITY, 3.5, True,  # > ⊗ Ħ
+            (P.REVERSIBILITY, P.CHIRALITY, 3.5, True,  # > ⊗ ⊥
              "Irreversible chiral loss: editing a disulfide Cys AND an Asp active-site "
              "chirality enforcer creates a structurally frozen active site "
              "with no reversible escape path."),
@@ -1206,7 +1206,7 @@ class ChimeraDetector:
             (P.REVERSIBILITY, P.WINDING, 3.5, True,  # > ⊗ Ω
              "Disulfide readthrough: editing a disulfide Cys near a stop codon "
              "creates an orphan half-cystine at the C-terminus."),
-            (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # ⊙ ⊗ Ħ
+            (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # ⊙ ⊗ ⊥
              "Critical chiral node: editing Gln at a regulatory node AND Asp at "
              "an active site creates metabolic runaway with no chiral correction."),
             (P.CRITICALITY, P.REVERSIBILITY, 3.5, True,  # ⊙ ⊗ >
@@ -1220,7 +1220,7 @@ class ChimeraDetector:
             (P.PARITY, P.CRITICALITY, 2.5, False,  # < ⊗ ⊙
              "Parity-critical coupling: editing Tyr (phosphorylation loss) AND Gln "
              "(regulatory node) removes both the signaling switch and its control."),
-            (P.KINETICS, P.CHIRALITY, 2.5, False,  # ⊤ ⊗ Ħ
+            (P.KINETICS, P.CHIRALITY, 2.5, False,  # ⊤ ⊗ ⊥
              "Kinetic-chiral bottleneck: editing Ile (ribosomal coupling) AND Asp "
              "(chiral selectivity) slows translation and mis-folds the product."),
             (P.GRAMMAR, P.REVERSIBILITY, 2.5, False,  # ∈ ⊗ >
@@ -2106,11 +2106,11 @@ def demo_chimera_risk() -> None:
     _hr("CHIMERA RISK — Tensor Product Analysis")
     pairs = [
         [("Lys", "Arg")],                    # Σ→Σ (same primitive) — safe
-        [("Glu", "Asp")],                     # Ω→Ħ — primitive change
+        [("Glu", "Asp")],                     # Ω→⊥ — primitive change
         [("Cys", "Ser")],                     # >→None — high risk single
         [("Cys", "Ser"), ("His", "Gln")],     # >⊗∈ — semi-locked pair
-        [("Cys", "Ser"), ("Asp", "Asn")],     # >⊗Ħ — critical pair
-        [("Met", "Ile"), ("Asp", "Glu")],     # ⊢⊗Ħ — scope+chirality
+        [("Cys", "Ser"), ("Asp", "Asn")],     # >⊗⊥ — critical pair
+        [("Met", "Ile"), ("Asp", "Glu")],     # ⊢⊗⊥ — scope+chirality
     ]
     for edit_set in pairs:
         report = ChimeraDetector.analyze_edit_set(edit_set)

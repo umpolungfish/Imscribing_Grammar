@@ -187,7 +187,7 @@ print("=" * 60)
 ground_props = {
     "Val": "branched aliphatic, nonpolar — substrate for helix/sheet cores",
     "Ala": "simplest chiral AA, nonpolar — helix former, abiotic synthesis abundant",
-    "Gly": "achiral (Ħ=0), smallest — maximally flexible, coil/turn former",
+    "Gly": "achiral (⊥=0), smallest — maximally flexible, coil/turn former",
     "Thr": "β-hydroxyl, polar — simplest H-bond donor/acceptor",
     "Pro": "pyrrolidine ring, rigid — helix breaker, turn former",
     "Ser": "hydroxymethyl, polar — phosphorylation target (simpler than Thr)",

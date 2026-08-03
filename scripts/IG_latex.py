@@ -170,8 +170,8 @@ def fix_file(path: str) -> None:
     with open(path, 'w', encoding='utf-8') as f:
         f.write(fixed)
     # Report changed primitives
-    orig_set  = set(re.findall(r'[⊢⊣><⋈⊤∈∋⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', original))
-    fixed_set = set(re.findall(r'[⊢⊣><⋈⊤∈∋⊙Ħ-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
+    orig_set  = set(re.findall(r'[⊢⊣><⋈⊤∈∋⊙⊥-ΩΣ⊙][_^][^\s;\\$\{]+', original))
+    fixed_set = set(re.findall(r'[⊢⊣><⋈⊤∈∋⊙⊥-ΩΣ⊙][_^][^\s;\\$\{]+', fixed))
     print(f"Fixed: {path}")
 
 

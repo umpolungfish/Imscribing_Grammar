@@ -362,7 +362,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, ⊤=𐑧, Ω=𐑟, ⊙=⊙, Ħ=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, Ω=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -1034,7 +1034,7 @@ _ATOM_DESC = {
     "BRIDGE_EXIST":         "Existence of a bridge (∈ existential) (𐑔)",
     "STITCH_3":             "3-unit stitch: moat · hodge · linker (∋ conjunction) (𐑝)",
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
-    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (Ħ=𐑭)",
+    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (⊥=𐑭)",
     "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (Σ=𐑳)",
     "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (Ω=𐑫)",
 }

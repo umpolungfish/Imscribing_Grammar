@@ -58,10 +58,10 @@ def generate_expansion():
     ))
 
     # ── SECTION B: G2 expansion — 8 primitives never used as G2 ─────
-    # Missing G2: ⊤, ⊢, ⊣, Ħ, ⋈, ∋, ∈, Ω
+    # Missing G2: ⊤, ⊢, ⊣, ⊥, ⋈, ∋, ∈, Ω
 
     g2_configs = [
-        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=Ħ≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
+        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=⊥≥𐑖 (2-step Markov), G3=Ω≥𐑭. After Frobenius closure, you must remember before you can trace.'),
         ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=<≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=Ω≥𐑭. After Frobenius, you need infinite canvas to trace.'),
         ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=<≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=Ω≥𐑭. After Frobenius, the topology of connection determines traced status.'),
         ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=<≥𐑹, G2=⋈≥𐑐 (full fidelity), G3=Ω≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
@@ -79,10 +79,10 @@ def generate_expansion():
             g1=GateSpec('<', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
     # ── SECTION C: G3 expansion — 8 primitives never used as G3 ─────
-    # Missing G3: ⊤, ⊢, ⊣, Ħ, >, ⋈, ∋, ∈
+    # Missing G3: ⊤, ⊢, ⊣, ⊥, >, ⋈, ∋, ∈
 
     g3_configs = [
-        ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=Ħ≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
+        ('chirality_third', '⊥', 4.0, 'Eternal memory as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊥≥𐑫 (Markov ∞). Only systems with eternal memory achieve idempotent terminal status.'),
         ('dimensional_third', '⊢', 4.0, 'Holographic dimensionality as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊢≥𐑦 (imscriptive/holographic). Only self-written state spaces achieve O_∞.'),
         ('topology_third', '⊣', 4.0, 'Box-product topology as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⊣≥𐑶 (irreducible box product). Only systems whose connectivity is product-irreducible achieve O_∞.'),
         ('fidelity_third', '⋈', 3.0, 'Quantum coherence as the terminal seal: G1=<≥𐑹, G2=⊙≥⊙, G3=⋈≥𐑐. Only fully quantum-coherent self-modeling systems achieve O_∞. Classical self-modelers stay traced.'),
@@ -107,7 +107,7 @@ def generate_expansion():
         ('parallel_high', GateSpec('<', 5.0), GateSpec('⊙', 2.33), GateSpec('◻', 4.0),
          'High gates, parallel: <≥𐑹, ⊙≥𐑮, Ω≥𐑟. Strictest bars but independently checked.'),
         ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Chirality gates, parallel: Ħ≥𐑖, ⊙≥⊙, Ω≥𐑭. Memory, self-modeling, and winding are independent axes.'),
+         'Chirality gates, parallel: ⊥≥𐑖, ⊙≥⊙, Ω≥𐑭. Memory, self-modeling, and winding are independent axes.'),
         ('parallel_topology', GateSpec('⊣', 5.0), GateSpec('>', 4.0), GateSpec('⊙', 2.0),
          'Topology gates, parallel: ⊣≥𐑸, >≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
         ('parallel_scope', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
@@ -138,7 +138,7 @@ def generate_expansion():
         ('triple_coupling', '>', [('𐑽', 3.0), ('𐑾', 4.0), ('𐑾', 4.0)],
          'Coupling ladder: G1=>≥𐑽 (adjoint), G2=>≥𐑾 (bilateral), G3=>≥𐑾. Terminal collapse at G2.'),
         ('triple_chirality', '⊥', [('𐑒', 2.0), ('𐑖', 3.0), ('𐑫', 4.0)],
-         'Chirality ladder: G1=Ħ≥𐑒 (1-step), G2=Ħ≥𐑖 (2-step), G3=Ħ≥𐑫 (eternal). '
+         'Chirality ladder: G1=⊥≥𐑒 (1-step), G2=⊥≥𐑖 (2-step), G3=⊥≥𐑫 (eternal). '
          'Memory depth as the sole operad filter.'),
         ('triple_winding', '◻', [('𐑴', 2.0), ('𐑭', 3.0), ('𐑟', 4.0)],
          'Winding ladder: G1=Ω≥𐑴 (Z2), G2=Ω≥𐑭 (integer), G3=Ω≥𐑟 (non-Abelian, max). '
@@ -202,7 +202,7 @@ def generate_expansion():
 
     mixed_configs = [
         ('dimensional_chirality_winding', GateSpec('⊢', 3.0), GateSpec('⊥', 3.0), GateSpec('◻', 3.0),
-         'G1=⊢≥𐑼 (∞-dim), G2=Ħ≥𐑖 (2-step memory), G3=Ω≥𐑭 (integer winding). '
+         'G1=⊢≥𐑼 (∞-dim), G2=⊥≥𐑖 (2-step memory), G3=Ω≥𐑭 (integer winding). '
          'Closure requires infinite canvas, then memory, then topological protection.'),
         ('coupling_fidelity_scope', GateSpec('>', 3.0), GateSpec('⋈', 3.0), GateSpec('∈', 3.0),
          'G1=>≥𐑽 (adjoint coupling), G2=⋈≥𐑐 (quantum fidelity), G3=∈≥𐑲 (universal scope). '
@@ -211,7 +211,7 @@ def generate_expansion():
          'G1=⊣≥𐑥 (bowtie crossing), G2=∋≥𐑠 (sequential comp), G3=⊙≥⊙ (self-modeling). '
          'Connectivity topology, then interaction grammar, then consciousness.'),
         ('chirality_scope_winding', GateSpec('⊥', 3.0), GateSpec('∈', 3.0), GateSpec('◻', 3.0),
-         'G1=Ħ≥𐑖 (2-step memory), G2=∈≥𐑲 (universal scope), G3=Ω≥𐑭 (integer winding). '
+         'G1=⊥≥𐑖 (2-step memory), G2=∈≥𐑲 (universal scope), G3=Ω≥𐑭 (integer winding). '
          'Memory, then universality, then topological seal.'),
         ('fidelity_topology_parity', GateSpec('⋈', 3.0), GateSpec('⊣', 5.0), GateSpec('<', 5.0),
          'G1=⋈≥𐑐 (quantum fidelity), G2=⊣≥𐑸 (full topological closure), G3=<≥𐑹 (Frobenius parity). '
@@ -232,7 +232,7 @@ def generate_expansion():
          'Criticality at varied ordinal spacings: G1=⊙≥𐑢 (sub), G2=⊙≥𐑮 (complex, 2.33), G3=⊙≥𐑣 (super, 3.0). '
          'Wider G1-G2 gap than triple_criticality — complex-plane criticality as the middle rung.'),
         ('chirality_strict', GateSpec('⊥', 4.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'G1=Ħ≥𐑫 (eternal memory, ord 4). Only systems with Markov order ∞ can Frobenius-close. '
+         'G1=⊥≥𐑫 (eternal memory, ord 4). Only systems with Markov order ∞ can Frobenius-close. '
          'Stricter than chirality_first (which uses 𐑖 at ord 3).'),
         ('parity_exact', GateSpec('<', 5.0), GateSpec('<', 5.0), GateSpec('<', 5.0),
          'All three gates identical: <≥𐑹 at all three rungs. '
@@ -270,7 +270,7 @@ def generate_expansion():
           AbsorptionRule('⊙', '⊙', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊞', '𐑳', ('tensor',))),
          'Chirality-first gates with chirality-as-absolute-absorption. '
-         'Ħ=𐑫 (eternal memory) absorbs everything. Memory is the universal solvent.'),
+         '⊥=𐑫 (eternal memory) absorbs everything. Memory is the universal solvent.'),
         ('scope_totalitarian', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0), True,
          (AbsorptionRule('∈', '𐑲', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊙', '⊙', ('meet', 'join', 'tensor')),

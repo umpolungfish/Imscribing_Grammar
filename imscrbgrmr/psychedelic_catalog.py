@@ -162,7 +162,7 @@ def _lsd_molecular() -> Imscription:
             "scaffold": "ergoline_tetracyclic",
             "primary_receptor": "5-HT2A",
             "receptor_profile": ["5-HT2A", "5-HT1A", "5-HT6", "5-HT7", "D2", "D3",
-                                  "alpha2-adrenergic", "Ħ_toneletterstem"],
+                                  "alpha2-adrenergic", "𐑒"],
             "ki_primary_nm": 2.0,
             "active_dose_ug": "25-75",
             "duration_hr": "8-12",

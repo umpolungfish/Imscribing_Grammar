@@ -93,7 +93,7 @@ IG_CHARS: Dict[str, str] = {
     "𐑻":       "𐑻",     # 𐑻 — exceptional point
     "Phi_super":    "𐑣",     # 𐑣 — supercritical / runaway
     
-    # ── Chirality (Ħ) — 4 values ──
+    # ── Chirality (⊥) — 4 values ──
     "H_0":          "𐑓",     # 𐑓 — memoryless / achiral
     "H_1":          "𐑒",     # 𐑒 — one-step
     "H_2":          "𐑖",     # 𐑖 — two-step
@@ -194,7 +194,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Phe": "F",         # ⋈ — force
     "Ile": "K",         # ⊤ — kinetics
     "Asn": "Gamma",     # ∋ — interaction
-    "Asp": "H",         # Ħ — chirality
+    "Asp": "H",         # ⊥ — chirality
     "Lys": "S",         # Σ — entropy
     "Glu": "O",         # Ω — winding
 }

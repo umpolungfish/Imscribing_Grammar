@@ -14,7 +14,7 @@ Per-element primitive derivation
     ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     <  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
     ∋  — broadcast vs sequential vs conjunctive (FSPLIT>>FFUSE→Ş; CLINK→ˌ; VINIT→^)
-    Ħ  — instruction count as state-depth proxy (<30→Ñ; <60→£; <120→A; ≥120→!)
+    ⊥  — instruction count as state-depth proxy (<30→Ñ; <60→£; <120→A; ≥120→!)
 
 Outputs
 ───────
@@ -136,7 +136,7 @@ def _derive_∋(counts: Counter, corpus: str) -> str:
     return CORPUS_BASE[corpus]['∋']    # corpus default
 
 
-def _derive_Ħ(n_instructions: int, corpus: str) -> str:
+def _derive_⊥(n_instructions: int, corpus: str) -> str:
     if n_instructions < 30:
         return '𐑓'
     if n_instructions < 60:
@@ -153,7 +153,7 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     base['⊣'] = _derive_⊣(counts, corpus)
     base['<'] = _derive_<(counts, corpus)
     base['∋'] = _derive_∋(counts, corpus)
-    base['⊥'] = _derive_Ħ(len(instructions), corpus)
+    base['⊥'] = _derive_⊥(len(instructions), corpus)
     return base
 
 
@@ -265,7 +265,7 @@ def process_corpus(
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
                   f'⊣={tuple_["⊣"]}  <={tuple_["<"]}  '
-                  f'∋={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
+                  f'∋={tuple_["∋"]}  ⊥={tuple_["⊥"]}')
     return records
 
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ∋={t["∋"]}  Ħ={t["⊥"]}\n')
+                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ∋={t["∋"]}  ⊥={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

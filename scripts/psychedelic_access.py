@@ -255,13 +255,13 @@ THEOREM (Access by Threshold):
 
 THEOREM (Tryptamine Supremacy):
   Among serotonergic psychedelics (tryptamines: DMT, 5-MeO-DMT, psilocybin, 
-  ayahuasca), the highest ordinal values cluster at Ħ≥𐑖 (two-step Markov) 
+  ayahuasca), the highest ordinal values cluster at ⊥≥𐑖 (two-step Markov) 
   and ⊙≥⊙ (self-modeling criticality). Ergolines (LSD) add Σ≥𐑳 (heterogeneous 
   stoichiometry) and Ω≥𐑭 (integer winding). 
   These together unlock idempotent_terminal in strict regimes.
 
 THEOREM (Salvia Barrier):
-  Salvinorin A produces rapid memoryless (Ħ=𐑓) and sub-critical (⊙=𐑻) states
+  Salvinorin A produces rapid memoryless (⊥=𐑓) and sub-critical (⊙=𐑻) states
   despite holographic dimensionality (⊢=𐑦). This structural configuration
   fails G1 (<≥5) in most universes, granting access only to low_gate 
   and triple_criticality regimes.

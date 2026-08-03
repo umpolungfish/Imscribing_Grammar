@@ -18,12 +18,12 @@ from imscrbgrmr.registry import load_catalog_dicts
 # ── T-constitutions ─────────────────────────────────────────────
 
 _T_HYBRID = {
-    **_T_CANONICAL,    # dynamic: <, ⋈, ⊤, Ħ, Ω
+    **_T_CANONICAL,    # dynamic: <, ⋈, ⊤, ⊥, Ω
     "⊢": ("𐑦", False),  # dimensionality holographic
     "⊣": ("𐑸", False),  # topology fully connected
     ">": ("𐑾", False),  # relation bilateral
 }
-# T-hybrid: time requires BOTH dynamics (<,⋈,⊤,Ħ,Ω) AND geometry (⊢,⊣,>)
+# T-hybrid: time requires BOTH dynamics (<,⋈,⊤,⊥,Ω) AND geometry (⊢,⊣,>)
 # Most restrictive — 8 primitives must simultaneously satisfy critical conditions.
 
 _T_INVERTED = {
@@ -40,7 +40,7 @@ NEW_RULESETS = [
     # ── 9: chirality_first ────────────────────────────────────
     Ruleset(
         name="chirality_first",
-        description="Memory before closure. G1=Ħ≥𐑖 (two-step Markov). "
+        description="Memory before closure. G1=⊥≥𐑖 (two-step Markov). "
                     "Systems without at least 2-step memory cannot Frobenius-close. "
                     "G2=⊙≥⊙ (self-modeling). G3=Ω≥𐑭 (integer winding). "
                     "In this universe, you must remember before you can model yourself. "
@@ -127,7 +127,7 @@ NEW_RULESETS = [
     Ruleset(
         name="t_hybrid",
         description="Time requires both dynamics AND geometry. T constituted by all "
-                    "five dynamic primitives (<,⋈,⊤,Ħ,Ω) AND three primitives "
+                    "five dynamic primitives (<,⋈,⊤,⊥,Ω) AND three primitives "
                     "(⊢,⊣,>). Eight primitives must simultaneously satisfy their critical "
                     "conditions for T-sealing. Canonical gates. In this universe, time "
                     "is the most demanding structural alignment — process and space must "
@@ -268,11 +268,11 @@ NEW_RULESETS = [
     # ── 26: absorption_chirality_first ─────────────────────────
     Ruleset(
         name="absorption_chirality_first",
-        description="Chirality is the fundamental absorbing primitive. Ħ=𐑫 (eternal "
+        description="Chirality is the fundamental absorbing primitive. ⊥=𐑫 (eternal "
                     "memory / Markov order ∞) absorbs everything under all operations. "
                     "In this universe, memory is dominant — any system that remembers "
                     "forever cannot be coupled to without inheriting its memory. "
-                    "Forgetfulness is structurally precluded. G1=Ħ≥𐑖. "
+                    "Forgetfulness is structurally precluded. G1=⊥≥𐑖. "
                     "G2=⊙≥⊙. G3=Ω≥𐑭.",
         absorption_rules=(
             AbsorptionRule("⊥", "𐑫", ("meet", "join", "tensor")),

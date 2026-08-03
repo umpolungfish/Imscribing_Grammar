@@ -46,11 +46,11 @@ MISSING = [
     (r'\text{{\igprimfont <}}_{\upsilon}',         r'{\igfont 𐑿}'),   # P_plus / P_psi
     (r'\text{{\igprimfont <}}_{F}',               r'{\igfont 𐑬}'),   # P_pipevar / P_pm
 
-    # Ħ (Chirality) — actual notation uses £ and A, not digit subscripts
-    (r'\text{{\igprimfont Ħ}}_{\text{{\igfont £}}}', r'{\igfont 𐑒}'),  # H1 = toneletterstem
-    (r'\text{{\igprimfont Ħ}}_{A}',               r'{\igfont 𐑖}'),   # H2 = turntwo
-    (r'\text{{\igprimfont Ħ}}_!',                 r'{\igfont 𐑫}'),   # H_inf, bare subscript
-    (r'\text{{\igprimfont Ħ}}_{!}',               r'{\igfont 𐑫}'),   # H_inf, with braces (deduplicate)
+    # ⊥ (Chirality) — actual notation uses £ and A, not digit subscripts
+    (r'\text{{\igprimfont ⊥}}_{\text{{\igfont £}}}', r'{\igfont 𐑒}'),  # H1 = toneletterstem
+    (r'\text{{\igprimfont ⊥}}_{A}',               r'{\igfont 𐑖}'),   # H2 = turntwo
+    (r'\text{{\igprimfont ⊥}}_!',                 r'{\igfont 𐑫}'),   # H_inf, bare subscript
+    (r'\text{{\igprimfont ⊥}}_{!}',               r'{\igfont 𐑫}'),   # H_inf, with braces (deduplicate)
 
     # Σ (Stoichiometry) — all three values
     (r'\text{{\igprimfont Σ}}_{S}',               r'{\igfont 𐑙}'),   # one:one = S_doublebaresh

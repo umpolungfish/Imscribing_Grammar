@@ -106,7 +106,7 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
 # ── Structural validation: canonical slot membership + cross-primitive axioms ─────────
 # The axioms were, until now, stated only in the PROMPT — told to the model, enforced by
 # nothing. A tuple violating Axiom C sailed through with grounding_status "full" (seen
-# live: ⊢=𐑦 with ⊣=𐑥, plus Ħ/Ω values transposed by the old to_notation slot order).
+# live: ⊢=𐑦 with ⊣=𐑥, plus ⊥/Ω values transposed by the old to_notation slot order).
 # This is the code the prose always claimed to be.
 #
 # Value sets mirror the ordinal scripture (Core.lean ctor order / gen_clay; same table
@@ -137,9 +137,9 @@ def validate_structural(imscription: "Imscription") -> List[str]:
     if errs:
         return errs  # axioms are meaningless over out-of-set values
     if v["chirality"] == "𐑫" and v["kinetic_character"] != "𐑪":
-        errs.append(f"Axiom A: Ħ=𐑫 requires ⊤=𐑪 (got ⊤={v['kinetic_character']})")
+        errs.append(f"Axiom A: ⊥=𐑫 requires ⊤=𐑪 (got ⊤={v['kinetic_character']})")
     if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
-        errs.append(f"Axiom B: Ω={v['protection']} requires Ħ ∈ {{𐑖,𐑫}} (got Ħ={v['chirality']})")
+        errs.append(f"Axiom B: Ω={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
     if (v["dimensionality"] == "𐑦") != (v["topology"] == "𐑸"):
         errs.append(f"Axiom C: ⊢=𐑦 and ⊣=𐑸 must co-occur (got ⊢={v['dimensionality']}, ⊣={v['topology']})")
     if v["protection"] == "𐑟" and v["dimensionality"] != "𐑦":
@@ -420,7 +420,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         prot = imscription_data.get("protection", "")
         chir = imscription_data.get("chirality", "")
         _needs_chiral = {"𐑴", "𐑭", "𐑟"}   # Ω Z2 / integer / non-Abelian
-        _weak_chiral  = {"𐑓", "𐑒"}        # Ħ achiral / soft
+        _weak_chiral  = {"𐑓", "𐑒"}        # ⊥ achiral / soft
         if prot in _needs_chiral and chir in _weak_chiral:
             import warnings
             warnings.warn(

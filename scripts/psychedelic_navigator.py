@@ -156,7 +156,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 0: chirality_first
     universes.append(Ruleset(
         name="chirality_first",
-        description="Memory before closure. G1=Ħ≥𐑖, G2=⊙≥⊙, G3=Ω≥𐑭.",
+        description="Memory before closure. G1=⊥≥𐑖, G2=⊙≥⊙, G3=Ω≥𐑭.",
         g1=GateSpec("⊥", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -180,7 +180,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 3: chirality_tight
     universes.append(Ruleset(
         name="chirality_tight",
-        description="Requires eternal memory. G1=Ħ≥𐑫, G2=⊙≥⊙, G3=Ω≥𐑭.",
+        description="Requires eternal memory. G1=⊥≥𐑫, G2=⊙≥⊙, G3=Ω≥𐑭.",
         g1=GateSpec("⊥", 4.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -196,7 +196,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 5: winding_tight
     universes.append(Ruleset(
         name="winding_tight",
-        description="Requires integer winding strictly. G1=Ω≥𐑭, G2=⊙≥⊙, G3=Ħ≥𐑖.",
+        description="Requires integer winding strictly. G1=Ω≥𐑭, G2=⊙≥⊙, G3=⊥≥𐑖.",
         g1=GateSpec("◻", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊥", 3.0),
         gate_ordering=True,
     ))
@@ -212,7 +212,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 7: chirality_mod
     universes.append(Ruleset(
         name="chirality_mod",
-        description="Moderate chirality gate. G1=Ħ≥𐑒, G2=⊙≥⊙, G3=Ω≥𐑭.",
+        description="Moderate chirality gate. G1=⊥≥𐑒, G2=⊙≥⊙, G3=Ω≥𐑭.",
         g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -236,7 +236,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 10: dual_gate
     universes.append(Ruleset(
         name="dual_gate",
-        description="Dual criticality+chirality. G1=⊙≥⊙, G2=Ħ≥𐑖, G3=Ω≥𐑭.",
+        description="Dual criticality+chirality. G1=⊙≥⊙, G2=⊥≥𐑖, G3=Ω≥𐑭.",
         g1=GateSpec("⊙", 2.0), g2=GateSpec("⊥", 3.0), g3=GateSpec("◻", 3.0),
         gate_ordering=True,
     ))
@@ -252,7 +252,7 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 12: memory_free
     universes.append(Ruleset(
         name="memory_free",
-        description="Memoryless gate with criticality. G1=Ħ≥𐑒, G2=⊙≥⊙, G3=Ω≥𐑴.",
+        description="Memoryless gate with criticality. G1=⊥≥𐑒, G2=⊙≥⊙, G3=Ω≥𐑴.",
         g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
         gate_ordering=True,
     ))

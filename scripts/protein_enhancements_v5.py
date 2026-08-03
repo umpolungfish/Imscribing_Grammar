@@ -118,7 +118,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
         '⊙': '⊙-criticality signal',
         '>': '>-scaffold domain',
         '<': '<-switch domain',
-        '⊥': 'Ħ-chiral domain',
+        '⊥': '⊥-chiral domain',
         '⊞': 'Σ-variable region',
         '⋈': '⋈-hydrophobic core',
         '∋': '∋-glycosylation target',
@@ -372,7 +372,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
             # Merge β-LPH + γ-LPH (KK at ~215 splits in some tissues)
             if 'β-LPH' in prod.name and i+1 < len(products):
                 nxt = products[i+1]
-                # γ-LPH is typically 15-25 AA with Ħ/Ω signature
+                # γ-LPH is typically 15-25 AA with ⊥/Ω signature
                 if len(nxt.sequence.rstrip('KR')) < 30 and 'β-endorphin' not in nxt.name:
                     merged_seq = prod.sequence + nxt.sequence
                     merged_cls = classify_module(merged_seq)
@@ -406,7 +406,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
             # Merge β-LPH + γ-LPH (KK at ~215 splits in some tissues)
             if 'β-LPH' in prod.name and i+1 < len(products):
                 nxt = products[i+1]
-                # γ-LPH is typically 15-25 AA with Ħ/Ω signature
+                # γ-LPH is typically 15-25 AA with ⊥/Ω signature
                 if len(nxt.sequence.rstrip('KR')) < 30 and 'β-endorphin' not in nxt.name:
                     merged_seq = prod.sequence + nxt.sequence
                     merged_cls = classify_module(merged_seq)

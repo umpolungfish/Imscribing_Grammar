@@ -548,7 +548,7 @@ h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow
     </div>
     <div class="info" style="margin-top:.75rem">
       <p class="info-t" id="gen-qt">Select a generation</p>
-      <p class="info-b" id="gen-qb">Three quark generations. Same quantum numbers, different Ħ-trajectory over the same crystal address. Yukawa couplings scale across generations; top quark mass ~173 GeV ≈ v/√2 marks it as a Frobenius fixed point of the Yukawa coupling at the Higgs VEV.</p>
+      <p class="info-b" id="gen-qb">Three quark generations. Same quantum numbers, different ⊥-trajectory over the same crystal address. Yukawa couplings scale across generations; top quark mass ~173 GeV ≈ v/√2 marks it as a Frobenius fixed point of the Yukawa coupling at the Higgs VEV.</p>
     </div>
   </div>
   <div id="gen-leptons" class="sview">
@@ -568,7 +568,7 @@ h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow
     </div>
     <div class="info" style="margin-top:.75rem">
       <p class="info-t" id="gen-lt">Select a generation</p>
-      <p class="info-b" id="gen-lb">Three lepton generations. Neutrino masses non-zero but sub-eV. Each generation a distinct Ħ-chirality winding over the same crystal address as the corresponding quark doublet.</p>
+      <p class="info-b" id="gen-lb">Three lepton generations. Neutrino masses non-zero but sub-eV. Each generation a distinct ⊥-chirality winding over the same crystal address as the corresponding quark doublet.</p>
     </div>
   </div>
   <div id="gen-omega" class="sview">
@@ -582,11 +582,11 @@ h2.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow
       </div>
     </div>
     <div class="grid3" style="margin-top:10px">
-      <div class="crd"><p class="crd-t">Ω¹ — lightest</p><p class="crd-b">First non-trivial winding. Minimal Ħ-depth. u/d · e/νe.</p></div>
-      <div class="crd"><p class="crd-t">Ω² — middle</p><p class="crd-b">Second winding. Intermediate Ħ-depth. c/s · μ/νμ.</p></div>
-      <div class="crd"><p class="crd-t">Ω³ — heaviest</p><p class="crd-b">Third winding. Maximum Ħ-depth before closure. t/b · τ/ντ. Top quark: m_t ≈ v/√2 — Frobenius fixed point of Yukawa at VEV.</p></div>
+      <div class="crd"><p class="crd-t">Ω¹ — lightest</p><p class="crd-b">First non-trivial winding. Minimal ⊥-depth. u/d · e/νe.</p></div>
+      <div class="crd"><p class="crd-t">Ω² — middle</p><p class="crd-b">Second winding. Intermediate ⊥-depth. c/s · μ/νμ.</p></div>
+      <div class="crd"><p class="crd-t">Ω³ — heaviest</p><p class="crd-b">Third winding. Maximum ⊥-depth before closure. t/b · τ/ντ. Top quark: m_t ≈ v/√2 — Frobenius fixed point of Yukawa at VEV.</p></div>
     </div>
-    <div class="info" style="margin-top:.75rem"><p class="info-t">Ω fiber closure</p><p class="info-b">The number of fermion generations is not a free parameter — it is forced by the cardinality of the Winding primitive fiber F₄(Ω). Four elements, one trivial (vacuum), three non-trivial. Each non-trivial element is a distinct Ħ-trajectory reaching the same crystal address with increasing chirality depth.</p></div>
+    <div class="info" style="margin-top:.75rem"><p class="info-t">Ω fiber closure</p><p class="info-b">The number of fermion generations is not a free parameter — it is forced by the cardinality of the Winding primitive fiber F₄(Ω). Four elements, one trivial (vacuum), three non-trivial. Each non-trivial element is a distinct ⊥-trajectory reaching the same crystal address with increasing chirality depth.</p></div>
   </div>
 </div>
 
@@ -825,12 +825,12 @@ function updateWeinberg(){
 }
 updateWeinberg();
 const dGen={
-  u:{t:'Generation I quarks',b:'u (2.3 MeV, +⅔) and d (4.8 MeV, −⅓). Lightest. First Ω winding. Stable matter: proton=uud, neutron=udd. Minimum Ħ-depth trajectory.'},
+  u:{t:'Generation I quarks',b:'u (2.3 MeV, +⅔) and d (4.8 MeV, −⅓). Lightest. First Ω winding. Stable matter: proton=uud, neutron=udd. Minimum ⊥-depth trajectory.'},
   c:{t:'Generation II quarks',b:'c (1.28 GeV, +⅔) and s (95 MeV, −⅓). Second Ω winding. Charm discovered 1974 (J/ψ). Strangeness: first cross-generational mixing (CKM).'},
   t:{t:'Generation III quarks',b:'t (173 GeV ≈ v/√2, +⅔) and b (4.18 GeV, −⅓). Third and final Ω winding. Top mass is a Frobenius fixed point: Yukawa coupling y_t = m_t/v ≈ 1/√2 at the VEV.'},
-  e:{t:'Generation I leptons',b:'e (0.511 MeV) and νe (<2 eV). Electron is stable. Neutrino mass non-zero but tiny. First non-trivial Ħ-trajectory for the lepton sector.'},
+  e:{t:'Generation I leptons',b:'e (0.511 MeV) and νe (<2 eV). Electron is stable. Neutrino mass non-zero but tiny. First non-trivial ⊥-trajectory for the lepton sector.'},
   mu:{t:'Generation II leptons',b:'μ (105.7 MeV) and νμ (<0.19 MeV). Muon decays: μ→eνν̄. Second Ω winding. Anomalous magnetic moment (g−2) may signal BSM.'},
-  tau:{t:'Generation III leptons',b:'τ (1777 MeV) and ντ (<18.2 MeV). Heaviest lepton. Third Ω winding — maximum Ħ-depth before fiber closure. Decays hadronically and leptonically.'},
+  tau:{t:'Generation III leptons',b:'τ (1777 MeV) and ντ (<18.2 MeV). Heaviest lepton. Third Ω winding — maximum ⊥-depth before fiber closure. Decays hadronically and leptonically.'},
 };
 function selGen(k){
   document.getElementById('gen-qt').textContent=dGen[k].t;

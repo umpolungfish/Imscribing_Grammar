@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ħ}{A}   \prim{Σ}{S}
+%   e.g. \prim{Σ}{S}   \prim{Ω}{z}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -148,11 +148,12 @@
 \newcommand{\PhiEP}{\shav{𐑻}}     % err   — exceptional-point criticality
 \newcommand{\Phisuper}{\shav{𐑣}}  % haha  — supercritical, unstable
 
-% Ħ — Chirality
-\newcommand{\Hzero}{\prim{Ħ}{Ñ}}
-\newcommand{\Hone}{\prim{Ħ}{£}}
-\newcommand{\Htwo}{\prim{Ħ}{A}}
-\newcommand{\Hinf}{\prim{Ħ}{!}}
+% ⊥ — Chirality.  Core.lean ctor order: fee, kick, sure, wool.
+\newcommand{\Hchir}{\axis{⊥}}
+\newcommand{\Hzero}{\shav{𐑓}}   % fee  — achiral, no handedness to break
+\newcommand{\Hone}{\shav{𐑒}}    % kick — soft chiral, period-2 under shift
+\newcommand{\Htwo}{\shav{𐑖}}    % sure — persistent chiral, descent through rank
+\newcommand{\Hinf}{\shav{𐑫}}    % wool — topological, inexhaustible chirality
 
 % Σ — Stoichiometry
 \newcommand{\Sone}{\prim{Σ}{S}}

@@ -12,7 +12,7 @@ their minimum ordinal (index 0).
 Key results:
   1. The ouroboricity tier depends only on {crit, pol, prot, dim}.
      Only crit and pol gate O_∞; the other 10 primitives are tier-free.
-  2. Ħ (chirality) can be fee (memoryless, index 0) —
+  2. ⊥ (chirality) can be fee (memoryless, index 0) —
      no temporal memory needed for Frobenius closure.
   3. Ω (winding) can be awe (trivial, index 0) —
      no topological protection needed.

@@ -364,7 +364,7 @@ class ProteinStratifiedPredictor:
             dominant_prims = ['—']
 
         # C-terminal amidation prediction
-        # Requires Ħ (Asp) or ∋ (Asn) + X + G at C-terminus (PAM recognition)
+        # Requires ⊥ (Asp) or ∋ (Asn) + X + G at C-terminus (PAM recognition)
         amidation = self._predict_amidation(seq)
 
         return {
@@ -392,7 +392,7 @@ class ProteinStratifiedPredictor:
     def _predict_amidation(self, seq):
         """
         C-terminal amidation requires the consensus: G-R/K-R/K↓X-Gly
-        where X is the amidated residue (typically with Ħ or ∋).
+        where X is the amidated residue (typically with ⊥ or ∋).
         PAM enzyme recognition pattern.
         """
         if len(seq) < 3:
@@ -865,9 +865,9 @@ def run_all_tests():
         for frag in r['fragments']:
             gln = frag['vector'][8]  # ⊙ index
             glu = frag['vector'][11]  # Ω index
-            asp = frag['vector'][9]  # Ħ index
+            asp = frag['vector'][9]  # ⊥ index
             print(f"  {frag['label']} ({frag['length']} AA @ {frag['start']}-{frag['end']}): "
-                  f"⊙={gln}, Ω={glu}, Ħ={asp}, dominant={frag['dominant_primitives']}")
+                  f"⊙={gln}, Ω={glu}, ⊥={asp}, dominant={frag['dominant_primitives']}")
 
     return results
 

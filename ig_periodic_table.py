@@ -3,14 +3,14 @@
 IG Periodic Table — Janet (left-step) arrangement grounded in 12 primitives.
 
 Primary axes:
-  X: Ω × Ħ  (orbital winding × chirality = block structure)
+  X: Ω × ⊥  (orbital winding × chirality = block structure)
   Y: ∈       (granularity = period)
 
 Block primitive signatures:
-  s-block: Ω_0,   Ħ_H0  — no angular momentum, minimal spin-orbit
-  p-block: Ω_Z2,  Ħ_H1  — half-integer winding
-  d-block: Ω_Z,   Ħ_H1  — integer winding, moderate SOC
-  f-block: Ω_Z,   Ħ_H2/H∞ — integer winding + strong/extreme SOC
+  s-block: Ω_0,   𐑓  — no angular momentum, minimal spin-orbit
+  p-block: Ω_Z2,  𐑒  — half-integer winding
+  d-block: Ω_Z,   𐑒  — integer winding, moderate SOC
+  f-block: Ω_Z,   𐑖/H∞ — integer winding + strong/extreme SOC
 
 Secondary cell annotation: the one primitive most distinctive for each element's chemistry.
 """
@@ -121,7 +121,7 @@ PRIM_LABEL = {
     'Lr': '⊥', 'Rf': '⊥', 'Db': '⊥', 'Sg': '⊥',
     'Bh': '⊥', 'Hs': '⊥', 'Mt': '⊥', 'Ds': '⊥',
     'Rg': '⊥', 'Cn': '⊥',
-    # f-block lanthanides: Ħ_H2 (strong SOC, chiral magnetics)
+    # f-block lanthanides: 𐑖 (strong SOC, chiral magnetics)
     'La': '⊥', 'Ce': '⊥', 'Pr': '⊥', 'Nd': '⊥',
     'Pm': '⊥', 'Sm': '⊥', 'Eu': '⊥', 'Gd': '⊥',
     'Tb': '⊥', 'Dy': '⊥', 'Ho': '⊥', 'Er': '⊥',
@@ -398,7 +398,7 @@ def generate_tex():
 \begin{document}
 \begin{center}
 {\large\bfseries Imscribing Grammar Periodic Table}\\[2pt]
-{\small Janet (left-step) arrangement $\cdot$ primary axes: $\Omega \times$ Ħ (block) and $\Gamma$ (period)}\\[6pt]
+{\small Janet (left-step) arrangement $\cdot$ primary axes: $\Omega \times$ ⊥ (block) and $\Gamma$ (period)}\\[6pt]
 
 \begin{tikzpicture}
 """)
@@ -416,13 +416,13 @@ def generate_tex():
 
     # Block bracket labels (above period 1 row)
     lines.append(make_block_label('f', 1, 14, 1,
-        r'f-block: $\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_2$/{\igprimfont Ħ}$_\infty$'))
+        r'f-block: $\Omega_{\mathbb{Z}}$, {\igprimfont ⊥}$_2$/{\igprimfont ⊥}$_\infty$'))
     lines.append(make_block_label('d', 15, 24, 1,
-        r'd-block: $\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_1$'))
+        r'd-block: $\Omega_{\mathbb{Z}}$, {\igprimfont ⊥}$_1$'))
     lines.append(make_block_label('p', 25, 30, 1,
-        r'p-block: $\Omega_{\mathbb{Z}_2}$, {\igprimfont Ħ}$_1$'))
+        r'p-block: $\Omega_{\mathbb{Z}_2}$, {\igprimfont ⊥}$_1$'))
     lines.append(make_block_label('s', 31, 32, 1,
-        r's-block: $\Omega_0$, {\igprimfont Ħ}$_0$'))
+        r's-block: $\Omega_0$, {\igprimfont ⊥}$_0$'))
 
     # Period ∈ labels on left  (\beth \gimel \aleph work with amssymb)
     gamma = {1: r'$\Gamma_\beth$ (1)', 2: r'$\Gamma_\beth$ (2)',
@@ -439,10 +439,10 @@ def generate_tex():
     # Legend
     legend_y = cell_y(7) - CELL_H - 0.5
     legend_items = [
-        (r'\colorbox{amber!40}{\phantom{X}} s-block ($\Omega_0$, {\igprimfont Ħ}$_0$)', 0),
-        (r'\colorbox{sky!40}{\phantom{X}} p-block ($\Omega_{\mathbb{Z}_2}$, {\igprimfont Ħ}$_1$)', 5.5),
-        (r'\colorbox{sage!40}{\phantom{X}} d-block ($\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_1$)', 11.5),
-        (r'\colorbox{orchid!40}{\phantom{X}} f-block ($\Omega_{\mathbb{Z}}$, {\igprimfont Ħ}$_{\geq 2}$)', 17),
+        (r'\colorbox{amber!40}{\phantom{X}} s-block ($\Omega_0$, {\igprimfont ⊥}$_0$)', 0),
+        (r'\colorbox{sky!40}{\phantom{X}} p-block ($\Omega_{\mathbb{Z}_2}$, {\igprimfont ⊥}$_1$)', 5.5),
+        (r'\colorbox{sage!40}{\phantom{X}} d-block ($\Omega_{\mathbb{Z}}$, {\igprimfont ⊥}$_1$)', 11.5),
+        (r'\colorbox{orchid!40}{\phantom{X}} f-block ($\Omega_{\mathbb{Z}}$, {\igprimfont ⊥}$_{\geq 2}$)', 17),
         (r'{\footnotesize darker shade = higher $\Gamma$ (period)}', 23.5),
     ]
     for text, xoff in legend_items:
@@ -457,7 +457,7 @@ def generate_tex():
         f'\\node[anchor=west, font=\\scriptsize, text=black!60] '
         f'at (0cm,{prim_y:.3f}cm) {{'
         r'Cell annotation (bottom): dominant IG primitive --- '
-        r'{\igprimfont Ħ}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ∋}=Coupling $\cdot$ '
+        r'{\igprimfont ⊥}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ∋}=Coupling $\cdot$ '
         r'{\igprimfont Σ}=Stoichiometry $\cdot$ {\igprimfont ⊣}=Topology $\cdot$ {\igprimfont <}=Parity $\cdot$ {\igprimfont ⊤}=Kinetics $\cdot$ '
         r'{\igprimfont ⊢}=Dimensionality'
         '. Dashed border = radioactive.};\n'

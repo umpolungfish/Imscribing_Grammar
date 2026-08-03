@@ -66,7 +66,7 @@ PRIM_X = {
     '⊥':  7.0,   # d-block non-thread (sub-f at 8.8)
     '⊙':  9.5,   # actinides (noble gases handled separately)
 }
-PRIM_X_F = 8.8   # f-block lanthanides sub-arm of Ħ
+PRIM_X_F = 8.8   # f-block lanthanides sub-arm of ⊥
 
 
 def compute_satellite_positions():

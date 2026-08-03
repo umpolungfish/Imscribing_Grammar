@@ -45,12 +45,12 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont Ω}}_{5}', r'{\igfont 𐑟}'),
     (r'\text{{\igprimfont Ω}}_{Z}', r'{\igfont 𐑭}'),
     (r'\text{{\igprimfont Ω}}_{Z_2}', r'{\igfont 𐑴}'),
-    # Ħ (Chirality)
-    (r'\text{{\igprimfont Ħ}}_0', r'{\igfont 𐑓}'),
-    (r'\text{{\igprimfont Ħ}}_1', r'{\igfont 𐑒}'),
-    (r'\text{{\igprimfont Ħ}}_2', r'{\igfont 𐑖}'),
-    (r'\text{{\igprimfont Ħ}}_{!}', r'{\igfont 𐑫}'),
-    (r'\text{{\igprimfont Ħ}}_3', r'{\igfont 𐑖}'),
+    # ⊥ (Chirality)
+    (r'\text{{\igprimfont ⊥}}_0', r'{\igfont 𐑓}'),
+    (r'\text{{\igprimfont ⊥}}_1', r'{\igfont 𐑒}'),
+    (r'\text{{\igprimfont ⊥}}_2', r'{\igfont 𐑖}'),
+    (r'\text{{\igprimfont ⊥}}_{!}', r'{\igfont 𐑫}'),
+    (r'\text{{\igprimfont ⊥}}_3', r'{\igfont 𐑖}'),
     # ∈ (Granularity)
     (r'\text{{\igprimfont ∈}}_{\beta}', r'{\igfont 𐑚}'),
     (r'\text{{\igprimfont ∈}}_{\gamma}', r'{\igfont 𐑔}'),
@@ -86,9 +86,9 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont Σ}}_{2}', r'{\igfont 𐑳}'),
 ]
 
-# Regex-based: \text{{\igprimfont Ħ}}_(\d) for any digit
+# Regex-based: \text{{\igprimfont ⊥}}_(\d) for any digit
 CHIRALITY_DIGIT_MAP = {'0': '𐑓', '1': '𐑒', '2': '𐑖', '3': '𐑖'}
-CHIRALITY_PAT = re.compile(r'\\text\{\{\\igprimfont Ħ\}\}_(\d)')
+CHIRALITY_PAT = re.compile(r'\\text\{\{\\igprimfont ⊥\}\}_(\d)')
 
 def migrate_text(text: str) -> tuple[str, int]:
     count = 0

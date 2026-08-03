@@ -6,9 +6,9 @@ not additive. Two independently tolerable edits at different primitive classes
 can produce a trap state (𐑪) when combined.
 
 Key dangerous pairs:
-  Ħ⊗⊢, Ħ⊗Ω, ⊢⊗Ω → ALWAYS trap (critical×critical)
-  >⊗Ħ, >⊗⊢, >⊗Ω, ⊙⊗Ħ, ⊙⊗> → trap (high×critical/high)
-  ⊣⊗>, <⊗⊙, ⊤⊗Ħ, ∈⊗> → semi-trap (moderate×critical/high)
+  ⊥⊗⊢, ⊥⊗Ω, ⊢⊗Ω → ALWAYS trap (critical×critical)
+  >⊗⊥, >⊗⊢, >⊗Ω, ⊙⊗⊥, ⊙⊗> → trap (high×critical/high)
+  ⊣⊗>, <⊗⊙, ⊤⊗⊥, ∈⊗> → semi-trap (moderate×critical/high)
 """
 
 from __future__ import annotations

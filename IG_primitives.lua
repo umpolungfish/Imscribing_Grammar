@@ -4,7 +4,6 @@
 --
 -- Two classes of problem characters:
 --   Class A — missing from Latin Modern text font (lmroman):
---     Ħ U+0126,
 --     ⊙ U+2299
 --     → need {\igprimfont char} (Everson Mono)
 --
@@ -56,7 +55,6 @@ end
 
 -- Class A: not in Latin Modern at all — need \igprimfont
 local CLASS_A = {
-  [0x0126] = true,  -- Ħ  H with stroke         (Ħ primitive)
   [0x2299] = true,  -- ⊙  circled dot            (⊙ criticality primitive)
   [0x2297] = true,  -- ⊗  tensor product         (not in lmroman text font)
   -- Greek subtype chars — not in lmroman; Everson Mono has full Greek coverage
@@ -67,6 +65,7 @@ local CLASS_A = {
   [0x22A4] = true,  -- ⊤  down tack              (⊤ Kinetics primitive)
   [0x2208] = true,  -- ∈  element of             (∈ Granularity primitive)
   [0x220B] = true,  -- ∋  contains as member     (∋ Grammar primitive)
+  [0x22A5] = true,  -- ⊥  up tack                (⊥ Chirality primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
@@ -81,9 +80,7 @@ for cp = 0x10450, 0x1047F do CLASS_A[cp] = true end
 local CLASS_B = {
   -- IG primitive glyphs
   -- IG subtype chars (SYMBOL_REFERENCE.md)
-  [0x00A3] = true,  -- £  pound sign             (Ħ_£ subtype)
   [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
-  [0x00D1] = true,  -- Ñ  N with tilde           (Ħ_Ñ subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)

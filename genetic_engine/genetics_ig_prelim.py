@@ -52,7 +52,7 @@ print("=" * 60)
 
 # Crystal = 3^3 * 4^5 * 5^4
 # 3-card primitives: ⋈, ∈, Σ  (count=3, each 3 values)
-# 4-card primitives: ⊢, >, ∋, Ħ, Ω  (count=5, each 4 values)
+# 4-card primitives: ⊢, >, ∋, ⊥, Ω  (count=5, each 4 values)
 # 5-card primitives: ⊣, <, ⊤, ⊙  (count=4, each 5 values)
 
 prim_cards = {
@@ -72,7 +72,7 @@ for card in sorted(by_card):
 
 print()
 print("Genetic code cardinalities:")
-print("  4 nucleotides    → matches 4-valued primitives (⊢, >, ∋, Ħ, Ω)")
+print("  4 nucleotides    → matches 4-valued primitives (⊢, >, ∋, ⊥, Ω)")
 print("  3 bases/codon    → matches 3-valued primitives (⋈, ∈, Σ)")
 print("  20 amino acids   = 4 × 5  (both cardinalities appear in Crystal)")
 print("  64 codons = 4³   → 4-valued base × 3-valued codon length")
@@ -289,18 +289,18 @@ print("  → Code is 'near-Frobenius': 8/16 boxes satisfy strict condition,")
 print("    8/16 satisfy it modulo the purine/pyrimidine (T/F) distinction")
 print()
 
-# ── 7. Chirality: Ħ invariant ─────────────────────────────────────────────────
+# ── 7. Chirality: ⊥ invariant ─────────────────────────────────────────────────
 
 print("=" * 60)
-print("7. L-AMINO ACID HOMOCHIRALITY AS Ħ INVARIANT")
+print("7. L-AMINO ACID HOMOCHIRALITY AS ⊥ INVARIANT")
 print("=" * 60)
 
 print("All 19 chiral amino acids are exclusively L-configuration.")
 print("Glycine is achiral (no stereocentre).")
 print()
 print("In IG terms:")
-print("  Ħ (primitive 9, chirality) = 𐑖 (left-handed) for all biological AAs")
-print("  Ħ is fixed at the bootstrap — not derivable from chemistry alone")
+print("  ⊥ (primitive 9, chirality) = 𐑖 (left-handed) for all biological AAs")
+print("  ⊥ is fixed at the bootstrap — not derivable from chemistry alone")
 print("  (D-amino acids are chemically equivalent; life chose one and froze it)")
 print()
 print("This is the clearest single primitive in the genetic system:")
@@ -316,7 +316,7 @@ print("8. IG BOOTSTRAP SEQUENCE vs CENTRAL DOGMA ORDERING")
 print("=" * 60)
 
 # IG bootstrap: ordinal-1 of each primitive in canonical tuple order
-# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→Ħ→Σ→Ω
+# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→Σ→Ω
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
 ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
@@ -341,7 +341,7 @@ for i, prim in enumerate(ig_order):
 
 print()
 print("Ordering note:")
-print("  Ħ (chirality, position 9 of 12) comes AFTER ⊙ (criticality).")
+print("  ⊥ (chirality, position 9 of 12) comes AFTER ⊙ (criticality).")
 print("  In the RNA world: RNA self-replication (⊙ self-modeling) precedes")
 print("  the fixation of L-amino acid chirality (𐑖) as proteins emerge.")
 print("  The bootstrap sequence orders correctly: self-reference before chirality-lock.")
@@ -364,10 +364,10 @@ findings = [
      "{1,2,3,4,6}: 3 and 4 match IG primitive cardinalities; 6=2×3 is Frobenius×3-split"),
     ("Frobenius condition",
      "8/16 codon boxes satisfy μ∘δ=id exactly; 8/16 satisfy it modulo pyrimidine/purine"),
-    ("Chirality Ħ invariant",
+    ("Chirality ⊥ invariant",
      "L-amino acid homochirality = 𐑖 fixed at bootstrap; Frobenius-locked, non-derivable from chemistry"),
     ("Bootstrap ordering",
-     "⊙ (self-reference/RNA-world) precedes Ħ (chirality-lock) — matches RNA-world before DNA hypothesis"),
+     "⊙ (self-reference/RNA-world) precedes ⊥ (chirality-lock) — matches RNA-world before DNA hypothesis"),
     ("Open question",
      "Why 20 amino acids and not 16 or 25? 20=4×5 matches Crystal factor product but no clean derivation yet"),
 ]

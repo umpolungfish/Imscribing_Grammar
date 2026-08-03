@@ -322,7 +322,7 @@ def page2() -> str:
     mpp_table = "\n".join([
         f"  {B}begin{{tabular}}{{@{{}} l l c p{{4.5cm}} @{{}}}}",
         f"  {B}toprule",
-        f"  {B}textbf{{Problem}} & {B}textbf{{Address}} & {B}textbf{{Ħ}} & {B}textbf{{Barrier (B-state)}} {B}{B}",
+        f"  {B}textbf{{Problem}} & {B}textbf{{Address}} & {B}textbf{{⊥}} & {B}textbf{{Barrier (B-state)}} {B}{B}",
         f"  {B}midrule",
     ] + mpp_rows + [
         f"  {B}bottomrule",
@@ -360,7 +360,7 @@ def page2() -> str:
         f"  {B}section*{{Millennium Prize Resolution}}",
         f"  {{\\small All 7 Clay Millennium Problems + OPN resolved as Belnap-B dialetheias at tier",
         f"  O$_\\infty$ (Crystal address $\\approx 6.74{B}times 10^6$).",
-        f"  BSD occupies distinct address due to Ħ\\textsubscript{{A}} vs Ħ\\textsubscript{{!}} chirality.",
+        f"  BSD occupies distinct address due to ⊥\\textsubscript{{A}} vs ⊥\\textsubscript{{!}} chirality.",
         f"  Gate: $\\Phi_{{\\textbraceleft\\textbraceright}}$ (Frobenius-special parity) governs O$_{{2{B}dagger}} {B}to$ O$_{{\\infty}}$ crossing.",
         f"  Lean 4 kernel fork disables ex falso; 0 sorries; 167 modules.}}",
         f"  {B}vspace{{3pt}}",
@@ -528,18 +528,18 @@ def page4() -> str:
     designs = {
         "THERAPEUTICS": [
             ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > <"),
-            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ⋈ Ħ"),
+            ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ⋈ ⊥"),
             ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "Ω ∈ Σ"),
         ],
         "MATERIALS": [
             ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "⊤ ⊣ <"),
-            ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω Ħ"),
-            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "Ħ Σ Ω"),
+            ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ Ω ⊥"),
+            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "⊥ Σ Ω"),
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via ∈ scope hierarchy.", "∈ ∋ ⊢"),
         ],
         "BIOLOGY": [
-            ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ > Ħ"),
-            ("Quantum Bioelectric",   "iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array. Xenopus limb regeneration model.", "Ħ ⊙ ∋"),
+            ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ > ⊥"),
+            ("Quantum Bioelectric",   "iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array. Xenopus limb regeneration model.", "⊥ ⊙ ∋"),
             ("Universal Symbiont",    "12-strain microbial consortium. Quorum sensing + metabolic cross-feeding. 12 strains $\\leftrightarrow$ 12 primitives (Σ bijection).", "Σ ∈ ∋"),
             ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "Ω ⊣ ⊢"),
         ],
@@ -607,7 +607,7 @@ def page4() -> str:
         f"  Solutio & > (Recognition, dissolve) & Rubedo & Ω (Winding, completion) \\\\",
         f"  Calcinatio & Σ (Stoichiometry, fire) & Multiplicatio & ∈ (Granularity, scope) \\\\",
         f"  Coagulatio & ⊤ (Kinetics, fixation) & Projectio & ∋ (Coupling, projection) \\\\",
-        f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & Ħ (Chirality, fixed point) \\\\",
+        f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & ⊥ (Chirality, fixed point) \\\\",
         f"  \\end{{tabular}}",
         f"  }}",
         f"  {B}end{{sectionbox}}",

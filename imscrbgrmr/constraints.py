@@ -1269,7 +1269,7 @@ class CoreAxioms:
 
     Why no coordinate form survives, on two independent grounds:
 
-      Self-application. The correct formulation of A imscribes with Ħ=𐑫 ∧ ⊤=𐑧 —
+      Self-application. The correct formulation of A imscribes with ⊥=𐑫 ∧ ⊤=𐑧 —
       the exact pair old-A forbade. The correct formulation of D imscribes with
       ⊢=𐑛 ∧ Ω=𐑟 (old-D demanded ⊢=𐑦) and ⊣=𐑸 at ⊢=𐑛 (violating one-way C).
       Each correct formulation violates the coordinate form of its own axiom.

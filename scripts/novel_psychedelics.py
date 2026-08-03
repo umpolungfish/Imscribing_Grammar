@@ -157,7 +157,7 @@ def ep_gate_toggle(compound_key: str, ep_ratio: float = 0.5) -> dict:
         "composite_universes": sorted(comp_access),
     }
 # 2.2 Chirality Ladder
-# Step through Ħ values by coupling with compounds at different chirality levels.
+# Step through ⊥ values by coupling with compounds at different chirality levels.
 
 CHIRALITY_ANCHORS = {
     "𐑓": {"name": "H0 (memoryless)", "ordinal": 1, "exemplar": "salvinorin_a"},
@@ -622,7 +622,7 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  Ħ={ctuple['⊥']}  <={ctuple['<']}  Ω={ctuple['◻']}")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['<']}  Ω={ctuple['◻']}")
         lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['>']}{ctuple['<']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
@@ -698,7 +698,7 @@ Commands:
 
 Control Methods:
   control ep <compound> [ratio]      EP Gate Toggle — couple with Praxeum
-  control chirality <compound> <H>   Chirality Ladder — step to target Ħ
+  control chirality <compound> <H>   Chirality Ladder — step to target ⊥
   control winding <compound> <W>     Winding Modulate — adjust Ω protection
   control scope <compound> <G>       Scope Focus — adjust ∈ range
   control adjoint <compound> <P> <V> Adjoint Steer — directed primitive change

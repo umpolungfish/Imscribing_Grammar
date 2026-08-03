@@ -431,7 +431,7 @@ QUADS = [
         "label": "Temporal",
         "prims": "H × S",
         "size":  "4 × 3 = 12",
-        "vals":  "Ħ: H₀, H₁, H₂, H∞\nS: 1:1, n:n, n:m",
+        "vals":  "⊥: H₀, H₁, H₂, H∞\nS: 1:1, n:n, n:m",
         "role":  "Chirality depth × Stoichiometry\n(how deep and how many)",
         "color": "#442255",
         "x": 0.51, "y": 0.12, "w": 0.46, "h": 0.21,

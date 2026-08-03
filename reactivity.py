@@ -219,7 +219,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── >: max → reactive character of the compound
     R = max(get(tA, '>'), get(tB, '>'))
 
-    # ── Ħ: max → SOC of most complex component
+    # ── ⊥: max → SOC of most complex component
     H = max(get(tA, '⊥'), get(tB, '⊥'))
 
     # ── Ω: max → bonding adds winding; keep max of reactants

@@ -598,7 +598,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊙": "Ph", "⊥": "H_",
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2740,7 +2740,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑠", ⊙="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -3259,7 +3259,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
-        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", Ħ="𐑓", Ω="𐑷",
+        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", ⊥="𐑓", Ω="𐑷",
         ⊢="𐑼", >="𐑾", ⊙="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
@@ -3273,7 +3273,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑵", ⊙="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done

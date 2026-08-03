@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω, and the
+# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ Σ Ω, and the
 # criticality slot is ⊙; `⊙` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -1647,8 +1647,8 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # cross-primitive axiom check. The generator pipeline
     # (agents/imscribe_generator_agent.py, run via agents_cli
     # "imscription_generator") validates Axioms A/B/C and auto-corrects, e.g.
-    # it refuses Ω=𐑭 with Ħ below 𐑖 and downgrades the protection. Nothing on
-    # this path did. That is how `sic_novm` reached the catalog at Ħ=𐑒 with
+    # it refuses Ω=𐑭 with ⊥ below 𐑖 and downgrades the protection. Nothing on
+    # this path did. That is how `sic_novm` reached the catalog at ⊥=𐑒 with
     # Ω=𐑭, an address the generator would decline to emit — 227 catalog entries
     # currently violate Axiom B.
     #

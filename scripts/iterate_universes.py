@@ -81,12 +81,12 @@ def build_universes():
     # Batch D: Two-primitive G1+G2 combos (strong pairs)
     # ═══════════════════════════════════════════════════════════
     combos = [
-        ("⊥", "⊙", "chirality_criticality", "Ħ≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
+        ("⊥", "⊙", "chirality_criticality", "⊥≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
         ("⊤", "⊙", "kinetics_criticality", "⊤≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
         ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → ⊢≥ord4.0: topology then dimension"),
         ("∈", "∋", "scope_grammar", "∈≥ord3.0 → ∋≥ord4.0: universal scope then broadcast"),
         ("<", "⋈", "parity_fidelity", "<≥ord5.0 → ⋈≥ord3.0: Frobenius parity then quantum fidelity"),
-        ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
+        ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → ⊥≥ord4.0: non-Abelian winding then eternal chirality"),
     ]
     for g1_prim, g2_prim, name, desc in combos:
         rulesets.append(Ruleset(
@@ -107,7 +107,7 @@ def build_universes():
     # All dynamics only
     rulesets.append(Ruleset(
         name="t_all_dynamics",
-        description="T constituted by ALL 5 dynamic primitives (<,⋈,⊤,Ħ,Ω). Canonical gates. "
+        description="T constituted by ALL 5 dynamic primitives (<,⋈,⊤,⊥,Ω). Canonical gates. "
                     "Time requires the full dynamic quintet.",
         t_prims={p: _T_CANONICAL[p] for p in dynamics},
     ))
