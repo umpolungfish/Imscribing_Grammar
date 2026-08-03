@@ -8,7 +8,9 @@ models/
 *.bin
 
 # ── Virtual environments ───────────────────────────────────────────────────────
-imscrbgrmr/
+# (.venv/ and venv/ are listed below. `imscrbgrmr/` was here, which is the package
+# itself, not an environment: the files predate the rule so they stayed tracked,
+# but a new one needed `git add -f` or it was skipped without a word.)
 
 # ── Private session outputs ────────────────────────────────────────────────────
 syncon_outputs/

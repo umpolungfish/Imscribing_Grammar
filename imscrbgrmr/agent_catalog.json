@@ -1,0 +1,23 @@
+{
+  "grammaformer_training_run": {
+    "name": "grammaformer_training_run",
+    "description": "QLoRA fine-tuning of Qwen3-1.7B on 1260 Imscribing Grammar trajectory windings. Four-component loss (LM + Fidelity + Morphology + Grammar) with Gate metric stable at ~0.47 \u2014 just below the phi_c self-modeling threshold.",
+    "tuple": "\ud801\udc66;\ud801\udc78;\ud801\udc7e;\ud801\udc6c;\ud801\udc5e;\ud801\udc67;\ud801\udc72;\ud801\udc60;\ud801\udc62;\ud801\udc56;\ud801\udc55;\ud801\udc77",
+    "notation": "\u27e8\ud801\udc66\u00b7\ud801\udc78\u00b7\ud801\udc7e\u00b7\ud801\udc6c\u00b7\ud801\udc5e\u00b7\ud801\udc67\u00b7\ud801\udc72\u00b7\ud801\udc60\u00b7\ud801\udc62\u00b7\ud801\udc56\u00b7\ud801\udc55\u00b7\ud801\udc77\u27e9",
+    "ouroboricity_tier": "O₁",
+    "glyph_map": {
+      "\u00d0": "\ud801\udc66",
+      "\u00de": "\ud801\udc78",
+      "\u0158": "\ud801\udc7e",
+      "\u03a6": "\ud801\udc6c",
+      "\u0192": "\ud801\udc5e",
+      "\u00c7": "\ud801\udc67",
+      "\u0393": "\ud801\udc72",
+      "\u0262": "\ud801\udc60",
+      "\u2299": "\ud801\udc62",
+      "\u0126": "\ud801\udc56",
+      "\u03a3": "\ud801\udc55",
+      "\u03a9": "\ud801\udc77"
+    }
+  }
+}
