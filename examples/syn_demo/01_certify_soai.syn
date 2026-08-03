@@ -1,18 +1,18 @@
 version: "1.0"
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Protocol: Soai Φ_c Certification
+# Protocol: Soai ⊙ Certification
 #
 # A certification chain that proves the Soai pyrimidyl autocatalytic cycle
-# satisfies all requirements for Φ_c candidacy before it is admitted into an
+# satisfies all requirements for ⊙ candidacy before it is admitted into an
 # ensemble calculation.  Every assert is a typed proof obligation — if any
 # fails the pipeline short-circuits and the certification is denied.
 #
 # Requirements checked in order:
 #   1. Axiom 6 grounding — D_∞ system must have a closed-cycle evidence block
 #   2. Reset type — must be continuous (open dissipative, not stoichiometric)
-#   3. Φ_c score — must exceed 0.50 (Varma three-mechanism probe)
-#   4. Φ_c score — must exceed 0.80 (high-confidence threshold for ensembles)
+#   3. ⊙ score — must exceed 0.50 (Varma three-mechanism probe)
+#   4. ⊙ score — must exceed 0.80 (high-confidence threshold for ensembles)
 # ─────────────────────────────────────────────────────────────────────────────
 
 start: soai_pyrimidyl_autocatalytic_cycle
@@ -28,11 +28,11 @@ do:
 
   - assert:
       expr: phi_c_score > 0.50
-      message: "Φ_c probe: score must exceed 0.50 (candidacy threshold)"
+      message: "⊙ probe: score must exceed 0.50 (candidacy threshold)"
 
   - assert:
       expr: phi_c_score > 0.80
-      message: "Φ_c probe: score must exceed 0.80 (ensemble admission threshold)"
+      message: "⊙ probe: score must exceed 0.80 (ensemble admission threshold)"
 
 output:
   format: text

@@ -23,7 +23,7 @@ Primitives and their assignment routes:
   P   (Polarity)          → partner symmetry
   ∈   (InteractionGrammar)→ selectivity ratio
   Ω   (TopoIndex)         → derived from {T, K, D, ∈, G} via P-22 5-rule tree
-  Φ   (CriticalityPhase)  → G/D degeneracy + Varma score heuristic
+  ⊙   (CriticalityPhase)  → G/D degeneracy + Varma score heuristic
 """
 
 from __future__ import annotations
@@ -714,7 +714,7 @@ class PrimitiveAssignmentEngine:
             is_boundary=False, boundary_margin=0.0,
         )
 
-    # ── Φ (CriticalityPhase) — heuristic ─────────────────────────────────────
+    # ── ⊙ (CriticalityPhase) — heuristic ─────────────────────────────────────
 
     def assign_Phi(
         self,

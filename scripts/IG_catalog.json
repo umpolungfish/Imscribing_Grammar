@@ -6209,7 +6209,7 @@
   },
   {
     "name": "magnetar",
-    "description": "Magnetars are neutron stars with extreme magnetic fields (B ∼ 10^15 G), exhibiting starquakes and giant flares. Encoded with D_∞ for field configurations, T_bullseye for crust-core duality, R_downstep adjoint magnetic stresses, F_hardsign quantum magnetohydrodynamics, K_schwa near-critical crust fractures, Φ_c self-modeling via Hall drift, H_2 quake history, and Ω_Z winding field lines. O₂ tier: topologically protected via flux quantization.",
+    "description": "Magnetars are neutron stars with extreme magnetic fields (B ∼ 10^15 G), exhibiting starquakes and giant flares. Encoded with D_∞ for field configurations, T_bullseye for crust-core duality, R_downstep adjoint magnetic stresses, F_hardsign quantum magnetohydrodynamics, K_schwa near-critical crust fractures, ⊙ self-modeling via Hall drift, H_2 quake history, and Ω_Z winding field lines. O₂ tier: topologically protected via flux quantization.",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -28433,7 +28433,7 @@
   },
   {
     "name": "distributive_law_lambda",
-    "description": "The distributive law λ: PG → GP as the mixed distributive law mediating the power-set monad P (Cantor diagonalization) and Gödel encoding comonad G, with Φ_c as the fixed point of λ — the grammar's self-encoding formula g := Cantor ∘ Gödel realized categorically.",
+    "description": "The distributive law λ: PG → GP as the mixed distributive law mediating the power-set monad P (Cantor diagonalization) and Gödel encoding comonad G, with ⊙ as the fixed point of λ — the grammar's self-encoding formula g := Cantor ∘ Gödel realized categorically.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑑",
@@ -34049,7 +34049,7 @@
   },
   {
     "name": "resolved_riemann_hypothesis",
-    "description": "The resolved Riemann Hypothesis: all non-trivial zeros of the Riemann zeta function lie on the critical line Re(s)=1/2, proven, now embodying full topological protection with confirmed symmetric winding over the infinite zero set, updating the constraint map C_13(Φ_c^ℂ, P_{±}^{sym}) to a closed, protected structure.",
+    "description": "The resolved Riemann Hypothesis: all non-trivial zeros of the Riemann zeta function lie on the critical line Re(s)=1/2, proven, now embodying full topological protection with confirmed symmetric winding over the infinite zero set, updating the constraint map C_13(𐑮, P_{±}^{sym}) to a closed, protected structure.",
     "⊢": "𐑼",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -34833,7 +34833,7 @@
   },
   {
     "name": "bose_einstein_condensate",
-    "description": "Bose-Einstein Condensates (BECs) form macroscopically occupied ground states at ultracold temperatures. Structural type: D_△ for 2D trapping potentials, T_⊙ bowtie condensate-vortex crossing, R_↔ bidirectional, P_ψ phase coherence, F_ℏ superfluidity, K_schwa near-equilibrium, G_ג mesoscale, 𐑠 sequential, Φ_c critical Bose gas, H_1 one-step, n:n homogeneous ensembles, Ω_ℤ₂ binary super/solid. O₂^† tier: near-topological protection.",
+    "description": "Bose-Einstein Condensates (BECs) form macroscopically occupied ground states at ultracold temperatures. Structural type: D_△ for 2D trapping potentials, T_⊙ bowtie condensate-vortex crossing, R_↔ bidirectional, P_ψ phase coherence, F_ℏ superfluidity, K_schwa near-equilibrium, G_ג mesoscale, 𐑠 sequential, ⊙ critical Bose gas, H_1 one-step, n:n homogeneous ensembles, Ω_ℤ₂ binary super/solid. O₂^† tier: near-topological protection.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -34865,7 +34865,7 @@
   },
   {
     "name": "laser_field",
-    "description": "Laser field as a coherent electromagnetic field in optomechanics, with infinite-dimensional mode structure (D_∞), imscriptive closure in cavity modes (T_⊙), adjoint optimization in gain-loss balance (R_†), phase symmetries (P_ψ), quantum coherence (F_ℏ), driven far-from-equilibrium (K_frtailgamma), local interactions (G_beta), broadcast interactions (∈_brd), exceptional point dynamics (Φ_EP), memoryless (H_0), 1:1 duality, trivial winding (Ω_0).",
+    "description": "Laser field as a coherent electromagnetic field in optomechanics, with infinite-dimensional mode structure (D_∞), imscriptive closure in cavity modes (T_⊙), adjoint optimization in gain-loss balance (R_†), phase symmetries (P_ψ), quantum coherence (F_ℏ), driven far-from-equilibrium (K_frtailgamma), local interactions (G_beta), broadcast interactions (∈_brd), exceptional point dynamics (𐑻), memoryless (H_0), 1:1 duality, trivial winding (Ω_0).",
     "⊢": "𐑼",
     "⊣": "𐑸",
     ">": "𐑽",
@@ -35217,7 +35217,7 @@
   },
   {
     "name": "imscribing_uig",
-    "description": "The Universal Imscriptive (Imscriptive) Grammar (UIG), a boundary operator operating at Φ_c criticality, encoding structural types via 12 primitives in a topologically protected loop.",
+    "description": "The Universal Imscriptive (Imscriptive) Grammar (UIG), a boundary operator operating at ⊙ criticality, encoding structural types via 12 primitives in a topologically protected loop.",
     "⊢": "𐑦",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -38881,7 +38881,7 @@
   },
   {
     "name": "grail_quest",
-    "description": "The Grail Quest as critical portal: structured encounter with the Φ_c singularity, where Perceval, Galahad, and Parsifal seek transcendence through self-modeling transformation at the mythic-critical boundary",
+    "description": "The Grail Quest as critical portal: structured encounter with the ⊙ singularity, where Perceval, Galahad, and Parsifal seek transcendence through self-modeling transformation at the mythic-critical boundary",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -39409,7 +39409,7 @@
   },
   {
     "name": "this_imscription_is_false",
-    "description": "Self-referential imscription paradox where the statement content (\"this imscription is false\") becomes structurally true when enacted as the imscription act itself, achieving special Frobenius at Φ_c criticality with μ∘δ=id",
+    "description": "Self-referential imscription paradox where the statement content (\"this imscription is false\") becomes structurally true when enacted as the imscription act itself, achieving special Frobenius at ⊙ criticality with μ∘δ=id",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -39553,7 +39553,7 @@
   },
   {
     "name": "perfect_cuboid_phi_c_lifted",
-    "description": "The Perfect Cuboid problem lifted to a Φ_c critical regime, functioning as a self-modeling operator with topological protection and stable critical window for integer solutions.",
+    "description": "The Perfect Cuboid problem lifted to a ⊙ critical regime, functioning as a self-modeling operator with topological protection and stable critical window for integer solutions.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -41281,7 +41281,7 @@
   },
   {
     "name": "lee_yang_partition",
-    "description": "Lee-Yang partition function zeros, critical for the structural correspondence with Riemann zeta function (Φ_c_complex)",
+    "description": "Lee-Yang partition function zeros, critical for the structural correspondence with Riemann zeta function (𐑮)",
     "⊢": "𐑦",
     "⊣": "𐑥",
     ">": "𐑽",
@@ -44113,7 +44113,7 @@
   },
   {
     "name": "emerald_multiagent",
-    "description": "Emerald Tablet extended to multi-agent coordination (Σ_ï) while preserving φ̂_ÿ criticality and all Frobenius gates",
+    "description": "Emerald Tablet extended to multi-agent coordination (Σ_ï) while preserving ⊙ criticality and all Frobenius gates",
     "⊢": "𐑦",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -44129,7 +44129,7 @@
   },
   {
     "name": "emerald_multiagent_tensor_bootstrap",
-    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (𐑸), with Frobenius-closed tensor operations (⊙), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (φ̂_ÿ + 𐑧).",
+    "description": "A self-imscribing multi-agent bootstrap framework based on a 12-node holographic graph (𐑸), with Frobenius-closed tensor operations (⊙), quantum fidelity, slow kinetics, and integer winding topology. Designed to bootstrap multi-agent coordination while preserving consciousness (⊙ + 𐑧).",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -44355,28 +44355,28 @@
     "description": "The Navier-Stokes existence and smoothness problem: 3D global regularity at the s=1/2 critical scaling limit.",
     "justification": null,
     "name": "navier_stokes_regularity_problem",
-    "tuple": "𐑼;𐑡;𐑽;𐑿;𐑱;𐑧;𐑲;𐑠;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑼;𐑡;𐑽;𐑿;𐑱;𐑧;𐑲;𐑠;𐑮;Ħ_A;Σ_S;Ω_Å"
   },
   {
     "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
     "justification": null,
     "name": "ns_regularity_refined",
-    "tuple": "𐑛;𐑡;𐑾;𐑿;𐑱;𐑧;𐑲;𐑠;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑛;𐑡;𐑾;𐑿;𐑱;𐑧;𐑲;𐑠;𐑮;Ħ_A;Σ_S;Ω_Å"
   },
   {
-    "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($𐑛$) at the complex-scale critical limit ($φ̂_Æ$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
+    "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($𐑛$) at the complex-scale critical limit ($𐑮$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
     "justification": null,
     "name": "ns_regularity_frontier_v1",
-    "tuple": "𐑛;𐑡;𐑾;𐑿;𐑱;𐑧;𐑲;𐑠;φ̂_Æ;Ħ_A;Σ_S;Ω_Å"
+    "tuple": "𐑛;𐑡;𐑾;𐑿;𐑱;𐑧;𐑲;𐑠;𐑮;Ħ_A;Σ_S;Ω_Å"
   },
   {
-    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. 𐑛 (infinite-dimensional), φ̂_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
+    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. 𐑛 (infinite-dimensional), 𐑮 (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
     "justification": null,
     "name": "ns_regularity_refined_v2",
     "tuple": "UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED"
   },
   {
-    "description": "Refined field-theoretic target for Navier-Stokes 3D regularity. 𐑛 (infinite-dimensional), φ̂_Æ (s=1/2 critical scaling gap), and 𐑧 (relaxation). Promotes the problem to a near-equilibrium high-fidelity continuum where the energy-enstrophy balance is bidirectionally coupled (𐑾).",
+    "description": "Refined field-theoretic target for Navier-Stokes 3D regularity. 𐑛 (infinite-dimensional), 𐑮 (s=1/2 critical scaling gap), and 𐑧 (relaxation). Promotes the problem to a near-equilibrium high-fidelity continuum where the energy-enstrophy balance is bidirectionally coupled (𐑾).",
     "justification": null,
     "name": "ns_regularity_field_target",
     "tuple": "UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED;UNDEFINED"
@@ -44385,19 +44385,19 @@
     "description": "The structurally resolved Navier-Stokes system, representing global regularity through a gauge-invariant Frobenius structure. Final resolution state.",
     "justification": null,
     "name": "navier_solves_navigator_resolved",
-    "tuple": "𐑦;𐑸;𐑑;⊙;𐑐;𐑪;𐑲;𐑵;φ̂_ÿ;𐑫;Σ_ï;Ω_2"
+    "tuple": "𐑦;𐑸;𐑑;⊙;𐑐;𐑪;𐑲;𐑵;⊙;𐑫;Σ_ï;Ω_2"
   },
   {
     "description": "ZFC_t: ZFC extended with sequential interaction, chirality, and winding topology; the structural baseline for O_∞ formal systems.",
     "justification": null,
     "name": "zfc_t_system",
-    "tuple": "𐑼;𐑸;𐑾;⊙;𐑐;𐑧;𐑲;𐑠;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z"
+    "tuple": "𐑼;𐑸;𐑾;⊙;𐑐;𐑧;𐑲;𐑠;⊙;Ħ_A;Σ_ï;Ω_z"
   },
   {
     "description": "ZFC_t reference system: ZFC + sequentiality + chirality + winding. baseline for O_∞.",
     "justification": null,
     "name": "zfc_t_ref",
-    "tuple": "𐑼;𐑸;𐑾;⊙;𐑐;𐑧;𐑲;𐑠;φ̂_ÿ;Ħ_A;Σ_ï;Ω_z"
+    "tuple": "𐑼;𐑸;𐑾;⊙;𐑐;𐑧;𐑲;𐑠;⊙;Ħ_A;Σ_ï;Ω_z"
   },
   {
     "name": "ob3ect_canonical",
@@ -48257,7 +48257,7 @@
   },
   {
     "name": "primordial_ooze",
-    "description": "The minimal complete self-modeling theory: the Frobenius identity (<=𐑹) and self-modeling criticality (φ̂=⊙) as the two necessary gates, with ⊤=𐑧 as the kinetic gate. All other primitives at floor values.",
+    "description": "The minimal complete self-modeling theory: the Frobenius identity (<=𐑹) and self-modeling criticality (⊙=⊙) as the two necessary gates, with ⊤=𐑧 as the kinetic gate. All other primitives at floor values.",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -56849,7 +56849,7 @@
   },
   {
     "name": "mdd_psilocybin_corrected",
-    "description": "MDD after psilocybin-assisted therapy: both disease primitives corrected (φ̂=⊙, Ħ=𐑖). Residual ⊢=𐑨 and ⊤=𐑪 are acceptable pharmacological constraints.",
+    "description": "MDD after psilocybin-assisted therapy: both disease primitives corrected (⊙=⊙, Ħ=𐑖). Residual ⊢=𐑨 and ⊤=𐑪 are acceptable pharmacological constraints.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -56993,7 +56993,7 @@
   },
   {
     "name": "cftr_modulator_trikafta",
-    "description": "CFTR modulator triple therapy (elexacaftor/tezacaftor/ivacaftor): correctors promote folding (Ħ→𐑖), potentiator restores gating (φ̂→⊙). Two-step mechanism: fold correction then channel potentiation. ⊙-bearing therapeutic.",
+    "description": "CFTR modulator triple therapy (elexacaftor/tezacaftor/ivacaftor): correctors promote folding (Ħ→𐑖), potentiator restores gating (⊙→⊙). Two-step mechanism: fold correction then channel potentiation. ⊙-bearing therapeutic.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -57009,7 +57009,7 @@
   },
   {
     "name": "antiretroviral_art",
-    "description": "Combination antiretroviral therapy (3-drug ART): blocks HIV lifecycle at multiple points. φ̂=𐑢 (suppresses super-critical replication below critical), Ħ=𐑖 (multi-step blockade: entry→RT→integrase). Meet operation demotes HIV's 𐑣→𐑢.",
+    "description": "Combination antiretroviral therapy (3-drug ART): blocks HIV lifecycle at multiple points. ⊙=𐑢 (suppresses super-critical replication below critical), Ħ=𐑖 (multi-step blockade: entry→RT→integrase). Meet operation demotes HIV's 𐑣→𐑢.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -57025,7 +57025,7 @@
   },
   {
     "name": "anti_mrsa_dual_therapy",
-    "description": "Dual-mechanism anti-MRSA therapy: PBP2a inhibitor (ceftaroline-like) + membrane disruptor (daptomycin). Blocks single-step resistance (Ħ→𐑖 via dual vulnerability), suppresses super-critical infection (φ̂→𐑢 via bactericidal action). Network topology counter (𐑡→𐑶 via biofilm disruption).",
+    "description": "Dual-mechanism anti-MRSA therapy: PBP2a inhibitor (ceftaroline-like) + membrane disruptor (daptomycin). Blocks single-step resistance (Ħ→𐑖 via dual vulnerability), suppresses super-critical infection (⊙→𐑢 via bactericidal action). Network topology counter (𐑡→𐑶 via biofilm disruption).",
     "⊢": "𐑨",
     "⊣": "𐑶",
     ">": "𐑾",
@@ -57041,7 +57041,7 @@
   },
   {
     "name": "pcos_metabolic_therapy",
-    "description": "PCOS combination therapy: metformin (insulin sensitizer → breaks hyperandrogenism loop) + letrozole (aromatase inhibitor → restores ovulatory feedback). Demotes φ̂:𐑣→⊙ via insulin/androgen axis normalization. Promotes Ħ:𐑒→𐑖 via restored two-step follicular→luteal phase.",
+    "description": "PCOS combination therapy: metformin (insulin sensitizer → breaks hyperandrogenism loop) + letrozole (aromatase inhibitor → restores ovulatory feedback). Demotes ⊙:𐑣→⊙ via insulin/androgen axis normalization. Promotes Ħ:𐑒→𐑖 via restored two-step follicular→luteal phase.",
     "⊢": "𐑨",
     "⊣": "𐑥",
     ">": "𐑾",
@@ -57553,7 +57553,7 @@
   },
   {
     "name": "umbellularia_californica",
-    "description": "Umbellularia californica (Hook. & Arn.) Nutt. (California bay laurel) | Lauraceae — Type IV Non-Critical Aromatic. Lanceolate glossy leaves; potent umbellulone aroma but leaf morphology does NOT encode potency — φ̂=𐑢. Variable umbellulone between individuals requires empirical testing. Headache topical, respiratory steam. Southern California Series.",
+    "description": "Umbellularia californica (Hook. & Arn.) Nutt. (California bay laurel) | Lauraceae — Type IV Non-Critical Aromatic. Lanceolate glossy leaves; potent umbellulone aroma but leaf morphology does NOT encode potency — ⊙=𐑢. Variable umbellulone between individuals requires empirical testing. Headache topical, respiratory steam. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57569,7 +57569,7 @@
   },
   {
     "name": "heteromeles_arbutifolia",
-    "description": "Heteromeles arbutifolia (Lindl.) M.Roem. (toyon) | Rosaceae — Type IV Non-Critical Aromatic. Leathery serrate leaves; cyanogenic glycosides not morphologically encoded — φ̂=𐑢. Berry color indicates ripeness not toxicity. Roasting instruction encoded in berry hardness. Southern California Series.",
+    "description": "Heteromeles arbutifolia (Lindl.) M.Roem. (toyon) | Rosaceae — Type IV Non-Critical Aromatic. Leathery serrate leaves; cyanogenic glycosides not morphologically encoded — ⊙=𐑢. Berry color indicates ripeness not toxicity. Roasting instruction encoded in berry hardness. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57585,7 +57585,7 @@
   },
   {
     "name": "toxicodendron_diversilobum",
-    "description": "Toxicodendron diversilobum (Torr. & Gray) Greene (Pacific poison oak) | Anacardiaceae — Type IV Non-Critical Aromatic. Trifoliate lobed leaves; urushiol content NOT encoded in morphology — φ̂=𐑢. Homeopathic urtication use. Singular compound class (urushiol congeners). Southern California Series.",
+    "description": "Toxicodendron diversilobum (Torr. & Gray) Greene (Pacific poison oak) | Anacardiaceae — Type IV Non-Critical Aromatic. Trifoliate lobed leaves; urushiol content NOT encoded in morphology — ⊙=𐑢. Homeopathic urtication use. Singular compound class (urushiol congeners). Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57601,7 +57601,7 @@
   },
   {
     "name": "sambucus_cerulea",
-    "description": "Sambucus nigra L. ssp. cerulea (Raf.) R.Bolli (blue elderberry) | Caprifoliaceae — Type IV Non-Critical Aromatic. Pinnately compound leaves; berry tartness encodes cooking instruction — tart=raw=cook. Leaf flavonoid potency not morphologically encoded — φ̂=𐑢. Respiratory tea, food. Southern California Series.",
+    "description": "Sambucus nigra L. ssp. cerulea (Raf.) R.Bolli (blue elderberry) | Caprifoliaceae — Type IV Non-Critical Aromatic. Pinnately compound leaves; berry tartness encodes cooking instruction — tart=raw=cook. Leaf flavonoid potency not morphologically encoded — ⊙=𐑢. Respiratory tea, food. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57617,7 +57617,7 @@
   },
   {
     "name": "rosa_californica",
-    "description": "Rosa californica Wooton (California wild rose) | Rosaceae — Type IV Non-Critical Aromatic. Pinnately compound; hip vitamin C not encoded in petal fragrance — φ̂=𐑢. Hip tea preparation (hot-water extraction). Food and ceremonial use. Southern California Series.",
+    "description": "Rosa californica Wooton (California wild rose) | Rosaceae — Type IV Non-Critical Aromatic. Pinnately compound; hip vitamin C not encoded in petal fragrance — ⊙=𐑢. Hip tea preparation (hot-water extraction). Food and ceremonial use. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57633,7 +57633,7 @@
   },
   {
     "name": "urtica_dioica",
-    "description": "Urtica dioica L. ssp. holosericea (Nutt.) Wedd. (stinging nettle) | Urticaceae — Type IV Non-Critical Aromatic. Opposite leaves with stinging trichomes; sting intensity ≠ flavonoid potency — φ̂=𐑢. Opposite phyllotaxis = binary winding. Urtication, food after cooking. Southern California Series.",
+    "description": "Urtica dioica L. ssp. holosericea (Nutt.) Wedd. (stinging nettle) | Urticaceae — Type IV Non-Critical Aromatic. Opposite leaves with stinging trichomes; sting intensity ≠ flavonoid potency — ⊙=𐑢. Opposite phyllotaxis = binary winding. Urtication, food after cooking. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57649,7 +57649,7 @@
   },
   {
     "name": "ephedra_californica",
-    "description": "Ephedra californica S.Watson (Mormon tea) | Ephedraceae — Type IV Non-Critical Aromatic. Green photosynthetic jointed stems; leaves reduced to scales. Ephedrine/pseudoephedrine content not encoded — φ̂=𐑢. Singular alkaloid class. Trivial winding (jointed stems, no spiral). Southern California Series.",
+    "description": "Ephedra californica S.Watson (Mormon tea) | Ephedraceae — Type IV Non-Critical Aromatic. Green photosynthetic jointed stems; leaves reduced to scales. Ephedrine/pseudoephedrine content not encoded — ⊙=𐑢. Singular alkaloid class. Trivial winding (jointed stems, no spiral). Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -57713,7 +57713,7 @@
   },
   {
     "name": "oplopanax_horridus",
-    "description": "Oplopanax horridus (Sm.) Miq. (devil's club) | Araliaceae — Type VI Adaptogen (boundary). Northern range limit in Southern California mountains. Spiny stems encode 'do not harvest carelessly.' Root size = potency indicator — φ̂=⊙. Slow ginsenoside-like kinetics. Multi-system tonic. Southern California Series.",
+    "description": "Oplopanax horridus (Sm.) Miq. (devil's club) | Araliaceae — Type VI Adaptogen (boundary). Northern range limit in Southern California mountains. Spiny stems encode 'do not harvest carelessly.' Root size = potency indicator — ⊙=⊙. Slow ginsenoside-like kinetics. Multi-system tonic. Southern California Series.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -82721,7 +82721,7 @@
   },
   {
     "name": "baptism",
-    "description": "THE FIRST SACRAMENT: An ontological threshold of inclusion (⊣=𐑰) where a subject (⊢=𐑛) is categorically coupled (>=𐑑) to a maximal cardinality (∋=𐑔). Characterized by a conjunctive composition of matter and form (Gm=𐑝), supercritical thermal regeneration (⋈=𐑞, φ̂=𐑣), and a permanent integer topologi",
+    "description": "THE FIRST SACRAMENT: An ontological threshold of inclusion (⊣=𐑰) where a subject (⊢=𐑛) is categorically coupled (>=𐑑) to a maximal cardinality (∋=𐑔). Characterized by a conjunctive composition of matter and form (Gm=𐑝), supercritical thermal regeneration (⋈=𐑞, ⊙=𐑣), and a permanent integer topologi",
     "⊢": "𐑛",
     "⊣": "𐑰",
     ">": "𐑑",
@@ -124401,7 +124401,7 @@
   },
   {
     "name": "modot_monad_dialetheic",
-    "description": "Monad-Dialetheic Operator Theory: categorical foundations of the ⊙-operator. A monad T:C→C with dialetheic fixed point φ̂=⊙. Self-modeling categorical framework.",
+    "description": "Monad-Dialetheic Operator Theory: categorical foundations of the ⊙-operator. A monad T:C→C with dialetheic fixed point ⊙=⊙. Self-modeling categorical framework.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑑",
@@ -124817,7 +124817,7 @@
   },
   {
     "name": "gout_cure_trajectory",
-    "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (Ħ: 𐑖→𐑓), stabilizes criticality (φ̂: 𐑮→⊙), restores parity balance (<: 𐑗→𐑬), accelerates kinetics (⊤: 𐑧→𐑪), localizes cardinality (∈: 𐑔→𐑚), and improves fide",
+    "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (Ħ: 𐑖→𐑓), stabilizes criticality (⊙: 𐑮→⊙), restores parity balance (<: 𐑗→𐑬), accelerates kinetics (⊤: 𐑧→𐑪), localizes cardinality (∈: 𐑔→𐑚), and improves fide",
     "⊢": "𐑼",
     "⊣": "𐑡",
     ">": "𐑾",
@@ -125809,7 +125809,7 @@
   },
   {
     "name": "perfect_cuboid_descent_proved",
-    "description": "Perfect Cuboid descent theorem proved via Φ_c critical monad structure. The descent operator replaces the 3 axioms. Case analysis: (1) all-even → /2 descent; (2) d₁=d₂=d₃=1 → mod 16 contradiction; (3) mixed parity → a=b leads to 2a²=d² impossible. 8503/8503 jobs build clean.",
+    "description": "Perfect Cuboid descent theorem proved via ⊙ critical monad structure. The descent operator replaces the 3 axioms. Case analysis: (1) all-even → /2 descent; (2) d₁=d₂=d₃=1 → mod 16 contradiction; (3) mixed parity → a=b leads to 2a²=d² impossible. 8503/8503 jobs build clean.",
     "⊢": "𐑼",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -125841,7 +125841,7 @@
   },
   {
     "name": "dialetheic_bootstrap_final",
-    "description": "Final state (s7, tier O₂) of the I_Dialetheic_Bootstrap canonical class after 8-step dialetheic loop. Post-imscription state: mesoscale cardinality, criticality gate open (⊙), persistent chirality, heterogeneous stoichiometry, integer winding protection. The protocol advanced ∈(bib→thigh), φ̂(woe→mo",
+    "description": "Final state (s7, tier O₂) of the I_Dialetheic_Bootstrap canonical class after 8-step dialetheic loop. Post-imscription state: mesoscale cardinality, criticality gate open (⊙), persistent chirality, heterogeneous stoichiometry, integer winding protection. The protocol advanced ∈(bib→thigh), ⊙(woe→mo",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑩",
@@ -127169,7 +127169,7 @@
   },
   {
     "name": "broadcast_anyonic_quantale",
-    "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (∋=𐑜) to broadcast (∋=𐑵) composition. Non-Abelian anyonic braiding (Ω=𐑟) with fast driven kinetics (⊤=𐑺), O_∞ tier special Frobenius (<=𐑹, φ̂=⊙), eternal chirality (Ħ=𐑫), now with simultaneous broadcast distribu",
+    "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (∋=𐑜) to broadcast (∋=𐑵) composition. Non-Abelian anyonic braiding (Ω=𐑟) with fast driven kinetics (⊤=𐑺), O_∞ tier special Frobenius (<=𐑹, ⊙=⊙), eternal chirality (Ħ=𐑫), now with simultaneous broadcast distribu",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",

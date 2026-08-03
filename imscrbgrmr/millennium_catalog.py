@@ -16,7 +16,7 @@ character of that propagation, not the content of the statement.
 
 Key encoding choices:
 
-  Φ (Criticality):
+  ⊙ (Criticality):
     ⊙   = the problem sits ON the criticality boundary — the answer is not
               accessible via standard proof-system morphisms from Phi_softsign.
     Phi_softsign = the problem HAS been solved within standard formalism (Poincaré).

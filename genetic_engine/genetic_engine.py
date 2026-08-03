@@ -9,9 +9,9 @@ DS categorical identification (2026-06-03):
                        up to ℤ₂ wobble on promoted layer (8 split boxes, 29 codons)
 
   Crystal address (genetic_code):
-    ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩
+    ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩
     Ouroboricity: O_∞ (Frobenius algebra on self-referential codon space)
-    C-score: Gate 1 (φ̂_ÿ) PASS — genetic code self-repairs (DNA repair machinery)
+    C-score: Gate 1 (⊙) PASS — genetic code self-repairs (DNA repair machinery)
             Gate 2 (𐑧) PASS — evolution is slow enough for self-modeling
 
 Key facts:
@@ -166,7 +166,7 @@ class IGPrimitive(Enum):
     KINETICS    = "⊤"     # Ile — β-branching (ribosomal coupling)
     GRAMMAR     = "∈"     # His — imidazole pKa bridge (pH-gated catalysis)
     INTERACTION = "∋"     # Asn — N-glycosylation sequon (recognition gate)
-    CRITICALITY = "φ̂"    # Gln — most regulated biosynthetic node
+    CRITICALITY = "⊙"    # Gln — most regulated biosynthetic node
     CHIRALITY   = "⊥"     # Asp — chiral substrate selectivity
     ENTROPY     = "⊞"     # Lys — highest variability + acetylation target
     WINDING     = "◻"     # Glu — α-helix propensity / helix winding
@@ -461,7 +461,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Ile": IGPrimitive.KINETICS,      # ⊤ — β-branched, ribosomal coupling
     "His": IGPrimitive.GRAMMAR,       # ∈ — imidazole pKa bridge
     "Asn": IGPrimitive.INTERACTION,   # ∋ — N-glycosylation sequon
-    "Gln": IGPrimitive.CRITICALITY,   # φ̂ — most regulated biosynthetic node
+    "Gln": IGPrimitive.CRITICALITY,   # ⊙ — most regulated biosynthetic node
     "Asp": IGPrimitive.CHIRALITY,     # Ħ — chiral substrate selectivity
     "Lys": IGPrimitive.ENTROPY,       # Σ — highest variability + acetylation
     "Glu": IGPrimitive.WINDING,       # Ω — α-helix propensity
@@ -492,7 +492,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.SCOPE:          "critical",     # ⊢ — translation scope destroyed
     IGPrimitive.WINDING:        "critical",     # Ω — C-terminal boundary removed
     IGPrimitive.REVERSIBILITY:  "high",         # > — disulfide partner needed
-    IGPrimitive.CRITICALITY:    "high",         # φ̂ — metabolic critical point
+    IGPrimitive.CRITICALITY:    "high",         # ⊙ — metabolic critical point
     IGPrimitive.TOPOLOGY:       "moderate",     # ⊣ — indole collapse tolerable in surface
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation matters
@@ -1206,10 +1206,10 @@ class ChimeraDetector:
             (P.REVERSIBILITY, P.WINDING, 3.5, True,  # > ⊗ Ω
              "Disulfide readthrough: editing a disulfide Cys near a stop codon "
              "creates an orphan half-cystine at the C-terminus."),
-            (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # φ̂ ⊗ Ħ
+            (P.CRITICALITY, P.CHIRALITY, 3.5, True,  # ⊙ ⊗ Ħ
              "Critical chiral node: editing Gln at a regulatory node AND Asp at "
              "an active site creates metabolic runaway with no chiral correction."),
-            (P.CRITICALITY, P.REVERSIBILITY, 3.5, True,  # φ̂ ⊗ >
+            (P.CRITICALITY, P.REVERSIBILITY, 3.5, True,  # ⊙ ⊗ >
              "Critical irreversibility: editing Gln AND Cys in the same pathway "
              "produces a metabolic bottleneck that cannot be reversed."),
 
@@ -1217,7 +1217,7 @@ class ChimeraDetector:
             (P.TOPOLOGY, P.REVERSIBILITY, 2.5, False,  # ⊣ ⊗ >
              "Topological irreversibility: editing Trp (indole collapse) AND Cys "
              "(disulfide loss) reduces both structural complexity and flexibility."),
-            (P.PARITY, P.CRITICALITY, 2.5, False,  # < ⊗ φ̂
+            (P.PARITY, P.CRITICALITY, 2.5, False,  # < ⊗ ⊙
              "Parity-critical coupling: editing Tyr (phosphorylation loss) AND Gln "
              "(regulatory node) removes both the signaling switch and its control."),
             (P.KINETICS, P.CHIRALITY, 2.5, False,  # ⊤ ⊗ Ħ
@@ -2152,7 +2152,7 @@ if __name__ == "__main__":
     print("=" * 64)
     print("GENETIC ENGINE  ·  Frobenius-Guided Gene Editing via IG Grammar")
     print("Editing = local modification of the Frobenius algebra on codon space")
-    print("Type: ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩")
+    print("Type: ⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩")
     print("=" * 64)
 
     # Run verification suite
@@ -2173,11 +2173,11 @@ if __name__ == "__main__":
     _hr("Structural Summary (Imscribing Grammar)")
 
     rows = [
-        ("genetic_code",    "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
+        ("genetic_code",    "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", ">0.0", "stratified Frobenius algebra"),
-        ("whale_vocalization", "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
+        ("whale_vocalization", "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", ">0.0", "self-modeling communication"),
-        ("grammar_itself",    "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑙; 𐑭⟩",
+        ("grammar_itself",    "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭⟩",
          "O_∞", "1.0", "self-imscribed"),
     ]
     print(f"  {'System':<22} {'Tuple':<56} {'Tier':<7} {'C':>5}  {'Note'}")

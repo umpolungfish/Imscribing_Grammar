@@ -154,7 +154,7 @@ def ordinal_to_belnap(ordinal_val: int, cardinality: int) -> int:
     
     The key insight: high-ordinal values map to B (both/dialetheic).
     This reflects the fact that absorbing primitives (like
-    ⊙=φ̂_ÿ) are "both" observer and observed.
+    ⊙=⊙) are "both" observer and observed.
     """
     if cardinality == 3:
         return [Belnap.F, Belnap.T, Belnap.B][ordinal_val - 1]

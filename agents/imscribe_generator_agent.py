@@ -793,7 +793,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
     def _get_system_prompt(self) -> str:
         """Get the domain-agnostic system prompt for imscription generation."""
         return """<role>
-You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
+You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
 
 The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same type. Your task is to identify which type an input instantiates.
 
@@ -1022,7 +1022,7 @@ Use only values from the value_registry table. The `reasoning` field MUST refere
 
 {name_instruction}
 
-Work through all 12 primitives (D, T, R, P, F, K, G, ∈, Φ, H, S, Ω) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
+Work through all 12 primitives (D, T, R, P, F, K, G, ∈, ⊙, H, S, Ω) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
 
 CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "𐑛", "𐑥", "⊙"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 

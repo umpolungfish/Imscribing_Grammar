@@ -61,7 +61,7 @@ _R_MAP = {
 
 _P_MAP = {
     "𐑗": "𐑬",
-    "Φ_subdoublearrow":  "<_doublebarpipe",
+    "𐑯":  "<_doublebarpipe",
     # unchanged: P_neutral, P_plus, P_minus, P_pipevar, P_doublebarpipe, P_pm_pseudo, P_directional
 }
 

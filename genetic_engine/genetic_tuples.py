@@ -14,9 +14,9 @@ THREE RESOLUTIONS IMPLEMENTED:
      Biochemical justification: His imidazole pKa≈6 is the natural carrier of
      protein criticality; Gln H-bond networks structure interaction grammar.
   
-  3. φ̂_c GATE WITH Pro ABSORPTION: The criticality gate (φ̂=⊙ fires when ≥3 His
+  3. ⊙ GATE WITH Pro ABSORPTION: The criticality gate (⊙=⊙ fires when ≥3 His
      occupy loop positions) includes Pro as absorption mechanism — Pro at turns
-     collapses φ̂=⊙ to φ̂=EP (exceptional point) via tensor(⊙, 𐑻) = 𐑻.
+     collapses ⊙=⊙ to ⊙=EP (exceptional point) via tensor(⊙, 𐑻) = 𐑻.
 
 Canonical Unicode mapping (Deseret block U+1045B–U+1047F):
   See IG_CHARS below for the full bidirectional mapping table.
@@ -33,7 +33,7 @@ import math
 #
 # NOTE: Keys are prefixed by primitive name to avoid collisions.
 # E.g., D_super refers to 𐑩 (relational supervenience),
-# Phi_super refers to φ̂_Ţ (supercritical runaway).
+# Phi_super refers to 𐑣 (supercritical runaway).
 # Use the helper functions below to look up by (primitive, value).
 
 IG_CHARS: Dict[str, str] = {
@@ -86,12 +86,12 @@ IG_CHARS: Dict[str, str] = {
     "Gamma_seq":    "𐑠",     # 𐑝 — sequential / ordered
     "Gamma_broad":  "𐑵",     # 𐑠 — broadcast / universal
     
-    # ── Criticality (φ̂/⊙) — 5 values ──
-    "𐑢":      "𐑢",     # φ̂_ž — subcritical / stable
-    "⊙":        "⊙",     # φ̂_ÿ — critical (self-modeling gate open)
-    "𐑮":"𐑮",     # φ̂_Æ — complex-plane critical
-    "𐑻":       "𐑻",     # φ̂_3 — exceptional point
-    "Phi_super":    "𐑣",     # φ̂_Ţ — supercritical / runaway
+    # ── Criticality (⊙/⊙) — 5 values ──
+    "𐑢":      "𐑢",     # 𐑢 — subcritical / stable
+    "⊙":        "⊙",     # ⊙ — critical (self-modeling gate open)
+    "𐑮":"𐑮",     # 𐑮 — complex-plane critical
+    "𐑻":       "𐑻",     # 𐑻 — exceptional point
+    "Phi_super":    "𐑣",     # 𐑣 — supercritical / runaway
     
     # ── Chirality (Ħ) — 4 values ──
     "H_0":          "𐑓",     # 𐑓 — memoryless / achiral
@@ -219,8 +219,8 @@ def extract_kinetics_features(seq: List[Dict[str, Any]]) -> Dict[str, Any]:
 def extract_criticality_features(seq: List[Dict[str, Any]]) -> Dict[str, Any]:
     """Extract criticality-related features with Pro absorption check.
     
-    φ̂=c gate fires when ≥3 His at loop positions.
-    Pro absorption: ≥2 Pro at turns within 10 residues → φ̂=EP.
+    ⊙=c gate fires when ≥3 His at loop positions.
+    Pro absorption: ≥2 Pro at turns within 10 residues → ⊙=EP.
     Geometric suppression: Pro-rich regions redefine loop geometry.
     """
     his_at_loops = 0
@@ -416,7 +416,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
     """Generate tuple for protein secondary structure.
     
     AXIOM C FIX: T=bowtie (crossing point) instead of T=odot.
-    φ̂=c gate with Pro absorption: tensor(⊙, 𐑻) = 𐑻.
+    ⊙=c gate with Pro absorption: tensor(⊙, 𐑻) = 𐑻.
     """
     kin = features.get("kinetics", {})
     crit = features.get("criticality", {})
@@ -436,7 +436,7 @@ def generate_secondary_structure_tuple(features: Dict[str, Any]) -> Dict[str, st
     else:
         k_val = "K_fast"
     
-    # Criticality (φ̂): His at loops → self-structuring; Pro absorbs
+    # Criticality (⊙): His at loops → self-structuring; Pro absorbs
     if phi_gate and not pro_abs and not geo_sup:
         phi_val = "⊙"
     elif phi_gate and pro_abs:
@@ -568,7 +568,7 @@ def generate_quaternary_structure_tuple(features: Dict[str, Any]) -> Dict[str, s
     else:
         o_val = "O₀"
     
-    # Criticality (φ̂)
+    # Criticality (⊙)
     if phi_gate and not pro_abs and not geo_sup:
         phi_val = "⊙"
     elif phi_gate and pro_abs:
@@ -938,9 +938,9 @@ def demo_all_12() -> None:
 
 
 def demo_his_rich() -> None:
-    """Demo His-rich sequence → φ̂=c gate fires."""
+    """Demo His-rich sequence → ⊙=c gate fires."""
     print("\n" + "=" * 60)
-    print("DEMO 2: His-Rich Sequence (≥3 His at loops → φ̂=c)")
+    print("DEMO 2: His-Rich Sequence (≥3 His at loops → ⊙=c)")
     print("=" * 60)
     
     his_rich = ["His", "His", "Gly", "His", "Ala", "His", "Val", "His"]
@@ -952,7 +952,7 @@ def demo_his_rich() -> None:
     crit = features["secondary_structure"]["criticality"]
     print(f"  His at loops: {crit['his_at_loops']}")
     print(f"  Pro at turns: {crit['pro_at_turns']}")
-    print(f"  φ̂=c gate fires: {crit['phi_c_gate_fires']}")
+    print(f"  ⊙=c gate fires: {crit['phi_c_gate_fires']}")
     print(f"  Pro absorption active: {crit['pro_absorption_active']}")
     
     generated = generate_all_tuples(features)
@@ -965,7 +965,7 @@ def demo_his_rich() -> None:
 def demo_pro_absorption() -> None:
     """Demo Pro absorption: tensor(⊙, 𐑻)=𐑻."""
     print("\n" + "=" * 60)
-    print("DEMO 3: Pro Absorption (His+Pro → φ̂=EP)")
+    print("DEMO 3: Pro Absorption (His+Pro → ⊙=EP)")
     print("=" * 60)
     
     his_pro = ["His", "Pro", "His", "Pro", "His", "Gly", "His", "Ala"]
@@ -989,7 +989,7 @@ def demo_pro_absorption() -> None:
     for stage in ["secondary_structure", "tertiary_structure"]:
         assert prim_value_name("Phi", generated[stage]["Phi"]) == "EP", \
             f"Expected EP for {stage}, got {prim_value_name('Phi', generated[stage]['Phi'])}"
-    print("  ✓ Pro absorption confirmed: φ̂=EP in folding stages")
+    print("  ✓ Pro absorption confirmed: ⊙=EP in folding stages")
 
 
 def demo_poly_phe() -> None:
@@ -1058,7 +1058,7 @@ def demo_geometric_suppression() -> None:
     print(f"  Total His: {crit['total_his']}")
     print(f"  Total Pro: {crit['total_pro']}")
     print(f"  Geometric suppression: {crit['geometric_suppression']}")
-    print(f"  φ̂=c gate fires: {crit['phi_c_gate_fires']}")
+    print(f"  ⊙=c gate fires: {crit['phi_c_gate_fires']}")
 
 
 if __name__ == "__main__":
@@ -1068,7 +1068,7 @@ if __name__ == "__main__":
     print("Three Resolutions:")
     print("  1. AXIOM C: T=bowtie (not T=odot) for protein structures")
     print("  2. MAPPING: His→⊙ (criticality), Gln→∈ (grammar)")
-    print("  3. φ̂=c GATE with Pro absorption: tensor(⊙, 𐑻)=𐑻")
+    print("  3. ⊙=c GATE with Pro absorption: tensor(⊙, 𐑻)=𐑻")
     print("=" * 60)
     
     demo_all_12()

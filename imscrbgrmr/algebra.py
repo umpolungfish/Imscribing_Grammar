@@ -233,7 +233,7 @@ _PRIMITIVES_FALLBACK: Dict[str, Dict[str, str]] = {
     },
     "P": {
         "𐑗": "𐑗", "𐑬": "𐑿", "𐑬": "𐑿",
-        "𐑯": "Φ_subdoublearrow", "𐑬": "𐑬",
+        "𐑯": "𐑯", "𐑬": "𐑬",
     },
     "F": {"𐑱": "𐑱"},
     "K": {"𐑺": "𐑪"},

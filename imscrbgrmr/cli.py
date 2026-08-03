@@ -82,7 +82,7 @@ def main(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
@@ -132,7 +132,7 @@ def analyze(identifier: str, format: str):
     Analyze a registered imscription by name or notation string.
 
     IDENTIFIER is a catalog name (e.g. 'muon', 'ice_Ih', 'סַמָּאֵל') or a
-    full notation string ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
+    full notation string ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
     """
     try:
         # Try to get from catalog first
@@ -3716,7 +3716,7 @@ def imscribe_alias(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
 
     Short alias for 'imscrbgrmr' command.
     """

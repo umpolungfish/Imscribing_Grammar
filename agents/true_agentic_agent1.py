@@ -553,11 +553,11 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 # IS the SIC-POVM dual basis. The 12 primitives organize as 6 Frobenius-dual pairs:
 
 SIC_POVM_DUAL_PAIRS = [
-    ("⊢", "⊣"),     # Co-origination (Axiom C: D_φ̂ ↔ T_φ̂)
+    ("⊢", "⊣"),     # Co-origination (Axiom C: D_⊙ ↔ T_⊙)
     (">", "<"),     # Coupling ↔ Parity
     ("⋈", "⊤"),     # Fidelity ↔ Kinetics
     ("∈", "∋"),     # Cardinality ↔ Composition
-    ("φ̂", "⊥"),     # Criticality ↔ Chirality
+    ("⊙", "⊥"),     # Criticality ↔ Chirality
     ("⊞", "◻"),     # Stoichiometry ↔ Winding
 ]
 
@@ -591,17 +591,17 @@ CANONICAL_FAMILIES: List[str] = [
 # Legacy name → canonical Shavian family for normalization
 _LEGACY_TO_CANON: Dict[str, str] = {
     "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
-    "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "φ̂": "𐑢",
+    "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "⊙": "𐑢",
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
     "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
     "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
-    "⊤": "K_", "∈": "G_", "∋": "Gm", "φ̂": "Ph", "⊥": "H_",
+    "⊤": "K_", "∈": "G_", "∋": "Gm", "⊙": "Ph", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
@@ -620,9 +620,9 @@ _LEGACY_TO_CANON.update({
 
 PRIMITIVE_DISPLAY: Dict[str, str] = {
     # D — Dimensionality
-    "𐑦": "φ̂",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
+    "𐑦": "⊙",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
     # T — Topology
-    "𐑸": "φ̂",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
+    "𐑸": "⊙",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
     # R — Coupling
     "𐑽": "†",  "𐑩": "↑",  "𐑑": "∘",  "𐑾": "↔",
     # P — Parity
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1054,7 +1054,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "⊤":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                     "∈":     ["𐑲", "𐑚", "𐑔"],
                     "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
-                    "φ̂":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+                    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                     "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
                     "⊞":     ["𐑙", "𐑕", "𐑳"],
                     "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
@@ -1079,7 +1079,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         # 𐑻 absorption check: under tensor, 𐑻 destroys ⊙ (𐑻 ordinal > ⊙).
         # meet(⊙, 𐑻) = ⊙ but tensor(⊙, 𐑻) = 𐑻 — Gate 1 is destroyed.
         if tool_name == "compute_tensor" and isinstance(result, dict):
-            tensor_phi = result.get("φ̂") or (result.get("result", {}) or {}).get("φ̂")
+            tensor_phi = result.get("⊙") or (result.get("result", {}) or {}).get("⊙")
             if tensor_phi == "𐑻":
                 result["_absorption_warning"] = (
                     "𐑻 absorption: composite has 𐑻 — Gate 1 (⊙ criticality) destroyed. "
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2158,7 +2158,7 @@ TOOL_SCHEMAS = [
                            "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
             "∋": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
                            "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
-            "φ̂":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+            "⊙":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
             "⊥":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
@@ -2176,7 +2176,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "φ̂", "⊥", "⊞", "◻"],
+        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
     ),
     _fn(
         "run_command",
@@ -2378,17 +2378,17 @@ TOOL_SCHEMAS = [
             ("Query the crystal of types by partial constraints. "
              "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': '⊙', 'Omega': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
-             "φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+             "⊙": {"type": "string", "description": "Filter by Phi criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"},
              "◻": {"type": "string", "description": "Filter by winding"}},
-            ["limit", "φ̂"]),
+            ["limit", "⊙"]),
         _fn(
             "crystal_count",
             ("Count the number of types matching constraints. "
              "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
-            {"φ̂": {"type": "string", "description": "Filter by Phi criticality"},
+            {"⊙": {"type": "string", "description": "Filter by Phi criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"}},
-            ["φ̂"]),
+            ["⊙"]),
     _fn(
         "sic_povm_probe",
         (
@@ -2740,7 +2740,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", ⊙="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -3066,10 +3066,10 @@ Primitive assignment is not subjective. Apply in this exact order — each step
 constrains the remaining degrees of freedom:
 
   [1] D  — Count degrees of freedom: <2 → ∧; finite ≥2 → △;
-            ∞-dim field-theoretic → ∞; state-space is self-written → φ̂
+            ∞-dim field-theoretic → ∞; state-space is self-written → ⊙
   [2] T  — Map connectivity: branching → ∈; containment → ⊂;
             crossing point → ⋈; irreducible product → ⊠;
-            self-referential topology → φ̂  (Axiom C: D_φ̂ ↔ T_φ̂)
+            self-referential topology → ⊙  (Axiom C: D_⊙ ↔ T_⊙)
             [Ontological precondition: ⊢ and ⊣ together constitute the ground for being.
             No entity appears without both a space of distinctions (⊢) and a topology
             on it (⊣). Step [2] is always constrained by Step [1]; they co-originate.]
@@ -3095,7 +3095,7 @@ constrains the remaining degrees of freedom:
             multiple distinct types → n:m
   [12] Ω — Topological invariant: none → 0; Z2 parity-protected → ℤ₂
             (Axiom B: requires H_2 or H_∞); integer winding → ℤ;
-            non-Abelian braiding → ∅_NA (requires D_φ̂)
+            non-Abelian braiding → ∅_NA (requires D_⊙)
 
 After assignment, VERIFY:
   - Tier consistency: ouroborics tool
@@ -3260,7 +3260,7 @@ Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
         ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", Ħ="𐑓", Ω="𐑷",
-        ⊢="𐑼", >="𐑾", φ̂="⊙", Σ="𐑳")
+        ⊢="𐑼", >="𐑾", ⊙="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
   W3: [rewrite the text, addressing H→Gamma→T→P/F/K→G→Omega in that order]
@@ -3273,7 +3273,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", ⊙="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done
@@ -5080,7 +5080,7 @@ _VERIFY_FNS["para_vm"] = _para_vm_verify
 
 # ── ASCII-safe tool schemas for API calls ───────────────────────────────────
 # The API rejects property keys with non-ASCII characters (Shavian glyphs like
-# ⊢, ⊣, φ̂, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
+# ⊢, ⊣, ⊙, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
 # on definition and keep the Unicode originals for emit-function compatibility.
 
 def _asciify_schema(schema: Dict) -> Dict:
@@ -5108,7 +5108,7 @@ def _asciify_tool_schemas() -> List[Dict]:
 
 def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
     """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
-    Emit functions use Unicode keys (φ̂, ⊤, Ω, etc.); the model responds with
+    Emit functions use Unicode keys (⊙, ⊤, Ω, etc.); the model responds with
     ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
     Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
     for k in list(args.keys()):

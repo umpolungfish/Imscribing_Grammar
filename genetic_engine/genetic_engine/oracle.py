@@ -15,7 +15,7 @@ The Imscribing Grammar is a universal structural interlingua — the Oracle make
 Two systems with the same tuple are the SAME abstract structure in different domains.
 
 Type of this module:
-  ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩ — O_∞, both gates open
+  ⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩ — O_∞, both gates open
 
 Author: Lando⊗⊙perator
 """
@@ -82,12 +82,12 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
         "𐑠": 2,   # seq — ordered steps
         "𐑵": 3,   # broad — one-to-all broadcast
     },
-    "φ̂": {  # Criticality
-        "φ̂_ž": 0,   # sub — below critical
-        "φ̂_ÿ": 1,   # c — critical (self-modeling gate open)
-        "φ̂_Æ": 2,   # c_complex — complex-plane critical
-        "φ̂_3": 3,   # EP — exceptional point / non-Hermitian degeneracy
-        "φ̂_Ţ": 4,   # super — supercritical / runaway
+    "⊙": {  # Criticality
+        "𐑢": 0,   # sub — below critical
+        "⊙": 1,   # c — critical (self-modeling gate open)
+        "𐑮": 2,   # c_complex — complex-plane critical
+        "𐑻": 3,   # EP — exceptional point / non-Hermitian degeneracy
+        "𐑣": 4,   # super — supercritical / runaway
     },
     "⊥": {  # Chirality / Markov Order
         "𐑓": 0,   # 0 — memoryless
@@ -108,11 +108,11 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
     },
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "φ̂", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 PRIMITIVE_NAMES = {
     "⊢": "Dimensionality", "⊣": "Topology", ">": "Relational Mode",
     "<": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
-    "∈": "Interaction Scope", "∋": "Interaction Grammar", "φ̂": "Criticality",
+    "∈": "Interaction Scope", "∋": "Interaction Grammar", "⊙": "Criticality",
     "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Winding/Protection",
 }
 
@@ -132,9 +132,9 @@ def tuple_distance(t1: Dict[str, str], t2: Dict[str, str]) -> float:
     v2 = tuple_to_vec(t2)
     # Standard weights: each primitive contributes equally
     weights = [1.0] * 12
-    # ⊣ (topology) and φ̂ (criticality) weighted higher — they're structurally decisive
+    # ⊣ (topology) and ⊙ (criticality) weighted higher — they're structurally decisive
     weights[1] = 1.5  # ⊣
-    weights[8] = 1.5  # φ̂
+    weights[8] = 1.5  # ⊙
     
     sq_sum = sum(w * (a - b) ** 2 for a, b, w in zip(v1, v2, weights))
     return math.sqrt(sq_sum / sum(weights))
@@ -151,10 +151,10 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # ──────────────────────────────────────────────────────────────────────
 
 # Helper to build tuple dict
-def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, φ̂, Ħ, Σ, Ω) -> Dict[str, str]:
+def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, Ħ, Σ, Ω) -> Dict[str, str]:
     return {
         "⊢": ⊢, "⊣": ⊣, ">": >, "<": <, "⋈": ⋈, "⊤": ⊤,
-        "∈": ∈, "∋": ∋, "φ̂": φ̂, "⊥": Ħ, "⊞": Σ, "◻": Ω,
+        "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": Ħ, "⊞": Σ, "◻": Ω,
     }
 
 STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
@@ -165,37 +165,37 @@ STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
     "dna_double_helix": {
         "desc": "Double-stranded DNA with base pairing and reverse complementarity",
         "domain": "genetics",
-        "tuple": T("𐑦", "𐑶", "𐑾", "𐑬", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑦", "𐑶", "𐑾", "𐑬", "𐑐", "𐑧", "𐑲", "𐑠", "⊙", "𐑖", "𐑳", "𐑴"),
     },
     "central_dogma": {
         "desc": "DNA→RNA→protein flow with genetic code mapping",
         "domain": "genetics",
-        "tuple": T("𐑨", "𐑡", "𐑽", "𐑿", "𐑐", "𐑧", "𐑔", "𐑠", "φ̂_ž", "𐑒", "𐑳", "𐑷"),
+        "tuple": T("𐑨", "𐑡", "𐑽", "𐑿", "𐑐", "𐑧", "𐑔", "𐑠", "𐑢", "𐑒", "𐑳", "𐑷"),
     },
     "crispr_cas9": {
         "desc": "Guide RNA-directed nuclease for targeted DNA cleavage",
         "domain": "genetics",
-        "tuple": T("𐑨", "𐑥", "𐑾", "𐑬", "𐑐", "𐑘", "𐑔", "𐑵", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑨", "𐑥", "𐑾", "𐑬", "𐑐", "𐑘", "𐑔", "𐑵", "⊙", "𐑖", "𐑳", "𐑴"),
     },
     "ribosome": {
         "desc": "Molecular machine translating mRNA to protein with tRNA adaptors",
         "domain": "genetics",
-        "tuple": T("𐑨", "𐑰", "𐑽", "𐑿", "𐑐", "𐑧", "𐑚", "𐑠", "φ̂_ž", "𐑒", "𐑳", "𐑷"),
+        "tuple": T("𐑨", "𐑰", "𐑽", "𐑿", "𐑐", "𐑧", "𐑚", "𐑠", "𐑢", "𐑒", "𐑳", "𐑷"),
     },
     "genetic_code": {
         "desc": "64 codon → 20 amino acid + 3 stop mapping, Frobenius-stratified",
         "domain": "genetics",
-        "tuple": T("𐑦", "𐑡", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑵", "φ̂_ÿ", "𐑖", "𐑳", "𐑭"),
+        "tuple": T("𐑦", "𐑡", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑵", "⊙", "𐑖", "𐑳", "𐑭"),
     },
     "epigenetic_network": {
         "desc": "DNA methylation, histone modification, chromatin state inheritance",
         "domain": "genetics",
-        "tuple": T("𐑛", "𐑡", "𐑾", "𐑿", "𐑞", "𐑧", "𐑔", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑛", "𐑡", "𐑾", "𐑿", "𐑞", "𐑧", "𐑔", "𐑠", "⊙", "𐑖", "𐑳", "𐑴"),
     },
     "immune_system": {
         "desc": "Adaptive immune response with clonal selection and memory",
         "domain": "genetics",
-        "tuple": T("𐑛", "𐑡", "𐑾", "𐑬", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑛", "𐑡", "𐑾", "𐑬", "𐑐", "𐑧", "𐑲", "𐑠", "⊙", "𐑖", "𐑳", "𐑴"),
     },
 
     # ═══════════════════════════════════════════════════════════════
@@ -204,42 +204,42 @@ STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
     "black_hole": {
         "desc": "Spacetime region with event horizon, thermodynamic entropy, information paradox",
         "domain": "physics",
-        "tuple": T("𐑦", "𐑸", "𐑽", "𐑯", "𐑱", "𐑪", "𐑲", "𐑵", "φ̂_3", "𐑫", "𐑙", "𐑭"),
+        "tuple": T("𐑦", "𐑸", "𐑽", "𐑯", "𐑱", "𐑪", "𐑲", "𐑵", "𐑻", "𐑫", "𐑙", "𐑭"),
     },
     "quantum_harmonic_oscillator": {
         "desc": "Quantum system with discrete energy levels, ladder operators, zero-point energy",
         "domain": "physics",
-        "tuple": T("𐑛", "𐑡", "𐑽", "𐑿", "𐑐", "𐑧", "𐑚", "𐑝", "φ̂_ž", "𐑒", "𐑙", "𐑷"),
+        "tuple": T("𐑛", "𐑡", "𐑽", "𐑿", "𐑐", "𐑧", "𐑚", "𐑝", "𐑢", "𐑒", "𐑙", "𐑷"),
     },
     "superconductor": {
         "desc": "Material with zero electrical resistance below critical temperature",
         "domain": "physics",
-        "tuple": T("𐑨", "𐑶", "𐑽", "𐑬", "𐑐", "𐑧", "𐑔", "𐑝", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑨", "𐑶", "𐑽", "𐑬", "𐑐", "𐑧", "𐑔", "𐑝", "⊙", "𐑖", "𐑳", "𐑴"),
     },
     "turbulent_flow": {
         "desc": "Chaotic fluid motion with energy cascade across scales",
         "domain": "physics",
-        "tuple": T("𐑛", "𐑡", "𐑾", "𐑗", "𐑱", "𐑘", "𐑔", "𐑜", "φ̂_Ţ", "𐑫", "𐑳", "𐑷"),
+        "tuple": T("𐑛", "𐑡", "𐑾", "𐑗", "𐑱", "𐑘", "𐑔", "𐑜", "𐑣", "𐑫", "𐑳", "𐑷"),
     },
     "laser": {
         "desc": "Stimulated emission of coherent light, population inversion, optical cavity",
         "domain": "physics",
-        "tuple": T("𐑨", "𐑡", "𐑽", "𐑬", "𐑐", "𐑘", "𐑚", "𐑵", "φ̂_ÿ", "𐑒", "𐑳", "𐑴"),
+        "tuple": T("𐑨", "𐑡", "𐑽", "𐑬", "𐑐", "𐑘", "𐑚", "𐑵", "⊙", "𐑒", "𐑳", "𐑴"),
     },
     "bose_einstein_condensate": {
         "desc": "Bosons in same quantum ground state, macroscopic wavefunction",
         "domain": "physics",
-        "tuple": T("𐑛", "𐑰", "𐑽", "𐑿", "𐑐", "𐑧", "𐑲", "𐑝", "φ̂_ÿ", "𐑖", "𐑙", "𐑴"),
+        "tuple": T("𐑛", "𐑰", "𐑽", "𐑿", "𐑐", "𐑧", "𐑲", "𐑝", "⊙", "𐑖", "𐑙", "𐑴"),
     },
     "entropy_arrow": {
         "desc": "Second law of thermodynamics: entropy increases, time asymmetry",
         "domain": "physics",
-        "tuple": T("𐑛", "𐑡", "𐑽", "𐑗", "𐑱", "𐑤", "𐑲", "𐑠", "φ̂_ž", "𐑒", "𐑳", "𐑭"),
+        "tuple": T("𐑛", "𐑡", "𐑽", "𐑗", "𐑱", "𐑤", "𐑲", "𐑠", "𐑢", "𐑒", "𐑳", "𐑭"),
     },
     "quantum_entanglement": {
         "desc": "Nonlocal correlations between quantum systems, Bell inequality violation",
         "domain": "physics",
-        "tuple": T("𐑛", "𐑶", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑜", "φ̂_ÿ", "𐑫", "𐑳", "𐑴"),
+        "tuple": T("𐑛", "𐑶", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑜", "⊙", "𐑫", "𐑳", "𐑴"),
     },
 
     # ═══════════════════════════════════════════════════════════════
@@ -248,32 +248,32 @@ STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
     "category_theory": {
         "desc": "Objects and morphisms with composition, identity, functors, natural transformations",
         "domain": "mathematics",
-        "tuple": T("𐑛", "𐑡", "𐑑", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ž", "𐑒", "𐑳", "𐑭"),
+        "tuple": T("𐑛", "𐑡", "𐑑", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "𐑢", "𐑒", "𐑳", "𐑭"),
     },
     "topos": {
         "desc": "Category with subobject classifier, internal logic, sheaves",
         "domain": "mathematics",
-        "tuple": T("𐑛", "𐑸", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑭"),
+        "tuple": T("𐑛", "𐑸", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑠", "⊙", "𐑖", "𐑳", "𐑭"),
     },
     "group_theory": {
         "desc": "Set with binary operation: closure, associativity, identity, inverses",
         "domain": "mathematics",
-        "tuple": T("𐑼", "𐑰", "𐑑", "𐑯", "𐑐", "𐑧", "𐑔", "𐑝", "φ̂_ž", "𐑒", "𐑙", "𐑷"),
+        "tuple": T("𐑼", "𐑰", "𐑑", "𐑯", "𐑐", "𐑧", "𐑔", "𐑝", "𐑢", "𐑒", "𐑙", "𐑷"),
     },
     "riemann_zeta": {
         "desc": "Analytic continuation of Dirichlet series, Euler product, functional equation",
         "domain": "mathematics",
-        "tuple": T("𐑛", "𐑸", "𐑽", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_Æ", "𐑫", "𐑙", "𐑭"),
+        "tuple": T("𐑛", "𐑸", "𐑽", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "𐑮", "𐑫", "𐑙", "𐑭"),
     },
     "frobenius_algebra": {
         "desc": "Algebra with nondegenerate bilinear form satisfying μ∘δ=id",
         "domain": "mathematics",
-        "tuple": T("𐑨", "𐑶", "𐑾", "𐑹", "𐑐", "𐑧", "𐑔", "𐑝", "φ̂_ÿ", "𐑖", "𐑙", "𐑴"),
+        "tuple": T("𐑨", "𐑶", "𐑾", "𐑹", "𐑐", "𐑧", "𐑔", "𐑝", "⊙", "𐑖", "𐑙", "𐑴"),
     },
     "mandelbrot_set": {
         "desc": "Complex dynamical system with infinite self-similar boundary, z→z²+c",
         "domain": "mathematics",
-        "tuple": T("𐑛", "𐑸", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑜", "φ̂_Ţ", "𐑫", "𐑙", "𐑭"),
+        "tuple": T("𐑛", "𐑸", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑜", "𐑣", "𐑫", "𐑙", "𐑭"),
     },
 
     # ═══════════════════════════════════════════════════════════════
@@ -282,32 +282,32 @@ STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
     "self_modeling_consciousness": {
         "desc": "Recursive self-modeling with metacognitive access, integrated information",
         "domain": "consciousness",
-        "tuple": T("𐑦", "𐑸", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ÿ", "𐑖", "𐑙", "𐑭"),
+        "tuple": T("𐑦", "𐑸", "𐑾", "𐑹", "𐑐", "𐑧", "𐑲", "𐑠", "⊙", "𐑖", "𐑙", "𐑭"),
     },
     "dream_state": {
         "desc": "REM sleep with narrative generation, reduced self-reflection, heightened imagery",
         "domain": "consciousness",
-        "tuple": T("𐑦", "𐑥", "𐑾", "𐑿", "𐑞", "𐑧", "𐑔", "𐑜", "φ̂_ÿ", "𐑖", "𐑳", "𐑷"),
+        "tuple": T("𐑦", "𐑥", "𐑾", "𐑿", "𐑞", "𐑧", "𐑔", "𐑜", "⊙", "𐑖", "𐑳", "𐑷"),
     },
     "meditation": {
         "desc": "Focused attention or open monitoring, reduced default mode network activity",
         "domain": "consciousness",
-        "tuple": T("𐑦", "𐑰", "𐑽", "𐑗", "𐑐", "𐑧", "𐑚", "𐑝", "φ̂_ÿ", "𐑒", "𐑙", "𐑴"),
+        "tuple": T("𐑦", "𐑰", "𐑽", "𐑗", "𐑐", "𐑧", "𐑚", "𐑝", "⊙", "𐑒", "𐑙", "𐑴"),
     },
     "psychosis": {
         "desc": "Loss of reality testing, hallucinations, delusions, aberrant salience",
         "domain": "consciousness",
-        "tuple": T("𐑦", "𐑥", "𐑽", "𐑗", "𐑞", "𐑘", "𐑔", "𐑵", "φ̂_Ţ", "𐑖", "𐑳", "𐑷"),
+        "tuple": T("𐑦", "𐑥", "𐑽", "𐑗", "𐑞", "𐑘", "𐑔", "𐑵", "𐑣", "𐑖", "𐑳", "𐑷"),
     },
     "attention": {
         "desc": "Selective focus on subset of available information, bottleneck structure",
         "domain": "consciousness",
-        "tuple": T("𐑼", "𐑰", "𐑽", "𐑿", "𐑐", "𐑤", "𐑚", "𐑝", "φ̂_ÿ", "𐑒", "𐑙", "𐑴"),
+        "tuple": T("𐑼", "𐑰", "𐑽", "𐑿", "𐑐", "𐑤", "𐑚", "𐑝", "⊙", "𐑒", "𐑙", "𐑴"),
     },
     "grief": {
         "desc": "Response to loss involving protest, despair, detachment, reorganization",
         "domain": "consciousness",
-        "tuple": T("𐑦", "𐑰", "𐑽", "𐑗", "𐑞", "𐑧", "𐑚", "𐑠", "φ̂_ž", "𐑖", "𐑙", "𐑴"),
+        "tuple": T("𐑦", "𐑰", "𐑽", "𐑗", "𐑞", "𐑧", "𐑚", "𐑠", "𐑢", "𐑖", "𐑙", "𐑴"),
     },
 
     # ═══════════════════════════════════════════════════════════════
@@ -316,35 +316,35 @@ STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {
     "shakespeare_sonnet": {
         "desc": "14 lines, iambic pentameter, ABAB CDCD EFEF GG rhyme scheme",
         "domain": "language",
-        "tuple": T("𐑼", "𐑡", "𐑾", "𐑬", "𐑱", "𐑧", "𐑔", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑴"),
+        "tuple": T("𐑼", "𐑡", "𐑾", "𐑬", "𐑱", "𐑧", "𐑔", "𐑠", "⊙", "𐑖", "𐑳", "𐑴"),
     },
     "haiku": {
         "desc": "3-line poem with 5-7-5 syllable structure, seasonal reference, cutting word",
         "domain": "language",
-        "tuple": T("𐑼", "𐑰", "𐑽", "𐑬", "𐑐", "𐑧", "𐑚", "𐑠", "φ̂_ÿ", "𐑖", "𐑙", "𐑴"),
+        "tuple": T("𐑼", "𐑰", "𐑽", "𐑬", "𐑐", "𐑧", "𐑚", "𐑠", "⊙", "𐑖", "𐑙", "𐑴"),
     },
     "legal_contract": {
         "desc": "Binding agreement with parties, consideration, terms, conditions, signatures",
         "domain": "language",
-        "tuple": T("𐑨", "𐑥", "𐑾", "𐑬", "𐑱", "𐑧", "𐑔", "𐑠", "φ̂_ž", "𐑒", "𐑳", "𐑷"),
+        "tuple": T("𐑨", "𐑥", "𐑾", "𐑬", "𐑱", "𐑧", "𐑔", "𐑠", "𐑢", "𐑒", "𐑳", "𐑷"),
     },
     "narrative_arc": {
         "desc": "Exposition → rising action → climax → falling action → resolution",
         "domain": "language",
-        "tuple": T("𐑼", "𐑡", "𐑾", "𐑿", "𐑞", "𐑤", "𐑔", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑭"),
+        "tuple": T("𐑼", "𐑡", "𐑾", "𐑿", "𐑞", "𐑤", "𐑔", "𐑠", "⊙", "𐑖", "𐑳", "𐑭"),
     },
     "myth": {
         "desc": "Sacred narrative with archetypes, transformation, cosmological meaning",
         "domain": "language",
-        "tuple": T("𐑦", "𐑥", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "φ̂_ÿ", "𐑫", "𐑳", "𐑭"),
+        "tuple": T("𐑦", "𐑥", "𐑾", "𐑿", "𐑐", "𐑧", "𐑲", "𐑠", "⊙", "𐑫", "𐑳", "𐑭"),
     },
     "musical_fugue": {
         "desc": "Contrapuntal composition with subject, answer, episodes, stretto",
         "domain": "language",
-        "tuple": T("𐑨", "𐑥", "𐑾", "𐑹", "𐑐", "𐑧", "𐑔", "𐑠", "φ̂_ÿ", "𐑖", "𐑳", "𐑭"),
+        "tuple": T("𐑨", "𐑥", "𐑾", "𐑹", "𐑐", "𐑧", "𐑔", "𐑠", "⊙", "𐑖", "𐑳", "𐑭"),
     },
     "programming_language": {
         "desc": "Formal system with syntax, semantics, types, evaluation rules",
         "domain": "language",
-        "tuple": T("𐑛", "𐑡", "𐑑", "𐑿", "𐑐", "𐑧", "𐑔", "𐑠", "φ̂_ž", "𐑖", "𐑳", "𐑭"),
+        "tuple": T("𐑛", "𐑡", "𐑑", "𐑿", "𐑐", "𐑧", "𐑔", "𐑠", "𐑢", "𐑖", "𐑳", "𐑭"),
     },

@@ -367,13 +367,13 @@ def demo_structural_summary() -> None:
     _hr("Structural Summary (Imscribing Grammar)")
     rows = [
         ("genetic_code",
-         "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
+         "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", "stratified Frobenius algebra on B₄³"),
         ("whale_vocalization",
-         "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑳; 𐑭⟩",
+         "⟨𐑦; 𐑥; 𐑾; 𐑿; 𐑞; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑳; 𐑭⟩",
          "O_∞", "self-modeling communication"),
         ("grammar_itself",
-         "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; φ̂_ÿ; 𐑖; 𐑙; 𐑭⟩",
+         "⟨𐑦; 𐑸; 𐑾; 𐑹; 𐑐; 𐑧; 𐑲; 𐑠; ⊙; 𐑖; 𐑙; 𐑭⟩",
          "O_∞", "self-imscribed"),
     ]
     for name, tup, tier, note in rows:

@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \prim{Ħ}{A}   \prim{φ̂}{ÿ}
+%   e.g. \prim{Ħ}{A}   \prim{Σ}{S}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; φ̂_ÿ; Ħ_A; Σ_S; Ω_z}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; Ħ_A; Σ_S; Ω_z}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ φ̂ Ħ Σ Ω  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -139,14 +139,14 @@
 \newcommand{\IGseq}{\shav{𐑠}}    % measure — sequential / ordered
 \newcommand{\IGbroad}{\shav{𐑵}}  % ooze    — broadcast, one-to-all
 
-% φ̂ — Criticality
-% Note: φ̂ is the combining sequence U+03C6 U+0302 (phi + combining circumflex).
-% Type it directly or use the macro argument as shown.
-\newcommand{\Phisub}{\prim{φ̂}{ž}}
-\newcommand{\Phic}{\prim{φ̂}{ÿ}}
-\newcommand{\Phicc}{\prim{φ̂}{Æ}}
-\newcommand{\PhiEP}{\prim{φ̂}{3}}
-\newcommand{\Phisuper}{\prim{φ̂}{Ţ}}
+% ⊙ — Criticality.  Core.lean ctor order: woe, monad, roar, err, haha.
+% The axis letter never moved, and monad's value is the letter itself.
+\newcommand{\Phcrit}{\axis{⊙}}
+\newcommand{\Phisub}{\shav{𐑢}}    % woe   — subcritical, stable
+\newcommand{\Phic}{\axis{⊙}}      % monad — the real-axis critical point
+\newcommand{\Phicc}{\shav{𐑮}}     % roar  — complex-axis criticality
+\newcommand{\PhiEP}{\shav{𐑻}}     % err   — exceptional-point criticality
+\newcommand{\Phisuper}{\shav{𐑣}}  % haha  — supercritical, unstable
 
 % Ħ — Chirality
 \newcommand{\Hzero}{\prim{Ħ}{Ñ}}

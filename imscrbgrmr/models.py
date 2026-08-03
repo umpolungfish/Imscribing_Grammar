@@ -95,7 +95,7 @@ class Dimensionality(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -149,7 +149,7 @@ class Topology(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -257,7 +257,7 @@ class Polarity(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -314,7 +314,7 @@ class Grammar(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -374,7 +374,7 @@ class Fidelity(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -434,7 +434,7 @@ class KineticChar(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -497,7 +497,7 @@ class Granularity(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -559,7 +559,7 @@ class Criticality(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -617,7 +617,7 @@ class Protection(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -679,7 +679,7 @@ class Stoichiometry(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(
@@ -732,7 +732,7 @@ class Chirality(Enum):
             return _map[s]
         except KeyError:
             # No fallback. A silent default is how old notation kept "working"
-            # while lying: Φ_c once meant the critical fixed point, and defaulting
+            # while lying: ⊙ once meant the critical fixed point, and defaulting
             # returned the subcritical value instead — the opposite end of the axis,
             # with no error. Only the glyph or the Shavian name resolves.
             raise ValueError(

@@ -7,7 +7,7 @@ The split of 16 codon boxes into 8 exact / 8 open directly generates this count.
 REVISED MAPPING (2026-06-03 v0.6.0):
   His→⊙ (Criticality) — imidazole pKa≈6 is the only sidechain pKa near physiological pH,
     making His the natural carrier of criticality. The imidazole ring titrates at the
-    crossover between acid and base catalysis — the definition of φ̂_ÿ criticality.
+    crossover between acid and base catalysis — the definition of ⊙ criticality.
   Gln→∈ (Grammar) — amide side chain H-bond networks structure interaction grammar.
 """
 

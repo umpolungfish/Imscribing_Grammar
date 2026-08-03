@@ -1,7 +1,7 @@
 version: "1.0"
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Protocol: Proline Aldol Φ_c Certification
+# Protocol: Proline Aldol ⊙ Certification
 #
 # Same certification chain as 01_certify_soai.syn — but applied to the proline
 # aldol cycle.  This demonstrates the type system in action:
@@ -28,11 +28,11 @@ do:
 
   - assert:
       expr: phi_c_score > 0.50
-      message: "Φ_c probe: score must exceed 0.50"
+      message: "⊙ probe: score must exceed 0.50"
 
   - assert:
       expr: phi_c_score > 0.80
-      message: "Φ_c probe: score must exceed 0.80 (ensemble admission threshold)"
+      message: "⊙ probe: score must exceed 0.80 (ensemble admission threshold)"
 
 output:
   format: text

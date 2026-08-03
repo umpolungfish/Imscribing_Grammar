@@ -66,10 +66,10 @@ LEGACY_KEY_MAP = {
 }
 
 # Old Criticality glyph → canonical
-PRIM_GLYPH_NORM = {"φ̂": "⊙"}
+PRIM_GLYPH_NORM = {"⊙": "⊙"}
 
 # Canonical prim glyphs for regex split
-_PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "φ̂", "⊥", "⊞", "◻"]
+_PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊙", "⊥", "⊞", "◻"]
 _PRIM_PAT = "|".join(re.escape(p) for p in sorted(_PRIMS, key=len, reverse=True))
 _TUPLE_SPLIT = re.compile(f';(?={_PRIM_PAT})')
 

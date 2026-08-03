@@ -4,7 +4,7 @@
 -- Crystal: 3³ × 4⁵ × 5⁴ = 17,280,000 types.
 --   𝓕₃ (3 values): F, G, S
 --   𝓕₄ (4 values): D, R, ∈, H, Ω
---   𝓕₅ (5 values): T, P, Φ, K
+--   𝓕₅ (5 values): T, P, ⊙, K
 
 import Mathlib.Order.Lattice
 import Mathlib.Order.BoundedOrder.Basic
@@ -194,7 +194,7 @@ instance instLEStoichiometry  : LE Stoichiometry  := ⟨fun a b => compare a b �
 -- Exponent = count of primitives in each family (Arithmetic Ouroboros §68).
 -- 𝓕₃: {F, G, S}         3 primitives × 3 values = 3³ = 27
 -- 𝓕₄: {D, R, ∈, H, Ω}  5 primitives × 4 values = 4⁵ = 1,024
--- 𝓕₅: {T, P, Φ, K}     4 primitives × 5 values = 5⁴ = 625
+-- 𝓕₅: {T, P, ⊙, K}     4 primitives × 5 values = 5⁴ = 625
 -- Total: 27 × 1,024 × 625 = 17,280,000
 
 theorem crystal_F3_card : 3 ^ 3 = 27 := by decide

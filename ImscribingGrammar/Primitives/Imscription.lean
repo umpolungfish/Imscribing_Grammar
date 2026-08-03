@@ -13,7 +13,7 @@ open Dimensionality Topology Relational Polarity Grammar
 
 -- ============================================================
 -- IMSCRIPTION STRUCT
--- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
+-- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
 -- Field name 'rel' used for Relational (R) since 'rec' is reserved in Lean 4.
 -- @[ext] generates Imscription.ext for pointwise equality.
 -- ============================================================
@@ -28,7 +28,7 @@ structure Imscription : Type where
   kin   : KineticChar      -- K
   gran  : Granularity      -- G
   gram  : Grammar          -- ∈
-  crit  : Criticality      -- Φ
+  crit  : Criticality      -- ⊙
   chir  : Chirality        -- H
   stoi  : Stoichiometry    -- S
   prot  : Protection       -- Ω
@@ -95,7 +95,7 @@ theorem primitiveMismatches_zero_iff (a b : Imscription) :
 
 -- ============================================================
 -- TENSOR PRODUCT (structural composition)
--- Union primitives: max (D, T, R, G, ∈, Φ, H, S, Ω)
+-- Union primitives: max (D, T, R, G, ∈, ⊙, H, S, Ω)
 -- Bottleneck primitives: min (P, F) — weaker partner wins
 -- ============================================================
 
@@ -237,7 +237,7 @@ def yang_mills_classical : Imscription := {
 
 -- ── Yang-Mills (quantum target) ─────────────────────────────
 -- The target tuple if the path integral measure existed.
--- Gap from classical: F(eth→hbar), K(mod→trap), G(beth→aleph), Φ(sub→c) = 4 mismatches.
+-- Gap from classical: F(eth→hbar), K(mod→trap), G(beth→aleph), ⊙(sub→c) = 4 mismatches.
 def yang_mills_quantum_target : Imscription := {
   dim  := array
   top  := judge
@@ -277,7 +277,7 @@ theorem gr_as_morphism_cost :
 -- ============================================================
 
 /-- Frobenius cliff: O_∞ requires or'. No other Polarity gives O_∞
-    regardless of Φ, Ω, D. (Lean-verified statement of §23 / §69.) -/
+    regardless of ⊙, Ω, D. (Lean-verified statement of §23 / §69.) -/
 theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     imscriptionTier s = .O_∞ ↔
     (s.crit = .monad ∨ s.crit = .roar) ∧ s.pol = .or' := by

@@ -2,7 +2,7 @@
 """
 crystal_enumeration.py — Crystal of Types
 
-The 12-primitive tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ is a coordinate chart
+The 12-primitive tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩ is a coordinate chart
 on the space of algebraic structures.  Each point in that space IS a type —
 a class of algebra determined by the coordinate.
 
@@ -12,7 +12,7 @@ PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
   R1: < ∈ {⊙, 𐑮} AND P = 𐑹  →  O_∞
-  R2: < ∈ {𐑢, Φ_super, 𐑻}               →  O₀
+  R2: < ∈ {𐑢, 𐑣, 𐑻}               →  O₀
   R3: < ∈ {⊙, 𐑮} AND Ω = 𐑷       →  O₁
   R4: < ∈ {⊙, 𐑮} AND Ω ≠ 𐑷
       AND D ∈ {𐑛, 𐑨, 𐑦}      →  O₂

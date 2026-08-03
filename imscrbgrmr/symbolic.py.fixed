@@ -156,7 +156,7 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "F": imscription.fidelity.value,
         "K": imscription.kinetic_character.value,
         "G": imscription.granularity.value,        "∈": imscription.grammar.value,
-        "<": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+        "<": imscription.criticality_phase.value if imscription.criticality_phase else "𐑢",
     }
     return mapping.get(name, "")
 

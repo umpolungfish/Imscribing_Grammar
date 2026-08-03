@@ -663,8 +663,8 @@ _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `φ̂` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω, and the
-# criticality slot is ⊙; `φ̂` was its pre-migration spelling and was still being
+# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω, and the
+# criticality slot is ⊙; `⊙` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
 _ASCII_KEY_TO_UNICODE["Ph"] = "⊙"

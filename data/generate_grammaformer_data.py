@@ -665,7 +665,7 @@ def main():
     write_jsonl(OUT_DIR / 'trajectory_val.jsonl', val_steps)
 
     # Verify no legacy notation leaked in
-    legacy_markers = ['_ω', '_¨', '_ż', 'φ̂', 'phi_hat']
+    legacy_markers = ['_ω', '_¨', '_ż', '⊙', 'phi_hat']
     violations = 0
     for s in all_steps:
         line = json.dumps(s, ensure_ascii=False)

@@ -24,7 +24,7 @@ The Seven Primitives (EXTENDED to nine):
 
     - Stoichiometry (S): Valency ratio primitive — NEW (v2.2)
 
-Extended Notation: ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
+Extended Notation: ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩  (H/Ω optional, default H_closeomega/None)
 """
 
 from .models import (

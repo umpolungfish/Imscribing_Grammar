@@ -70,12 +70,12 @@ for i, l in enumerate(lines):
             # Skip non-functional lines and comments
             old = line
             # Update comparison strings: display → Shavian
-            line = line.replace('"φ̂_ÿ"', '"⊙"')
-            line = line.replace('"φ̂_Æ"', '"𐑮"')
+            line = line.replace('"⊙"', '"⊙"')
+            line = line.replace('"𐑮"', '"𐑮"')
             line = line.replace('"𐑹"', '"𐑹"')
-            line = line.replace('"φ̂_ž"', '"𐑢"')
-            line = line.replace('"φ̂_Ţ"', '"𐑣"')
-            line = line.replace('"φ̂_3"', '"𐑻"')
+            line = line.replace('"𐑢"', '"𐑢"')
+            line = line.replace('"𐑣"', '"𐑣"')
+            line = line.replace('"𐑻"', '"𐑻"')
             line = line.replace('"𐑷"', '"𐑷"')
             line = line.replace('"𐑛"', '"𐑛"')
             line = line.replace('"𐑦"', '"𐑦"')

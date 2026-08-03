@@ -13,7 +13,7 @@ version: "1.0"
 #      (path traversal, 1 HotSwap hop, verified by fidelity assertion)
 #   3. tensor: — combine the molecular scaffold with the certified temporal seed
 #   4. Final assert — the ensemble xi_cp is implicitly reflected in the
-#      tensor step's Δξ accumulation; assert Φ_c candidacy of the seed
+#      tensor step's Δξ accumulation; assert ⊙ candidacy of the seed
 #
 # This script is designed for JSON output and --save so that downstream
 # tools (e.g. the ensembler or a Jupyter notebook) can consume the result.
@@ -32,7 +32,7 @@ strategies:
         message: "Temporal seed: must be open dissipative"
     - assert:
         expr: phi_c_score > 0.80
-        message: "Temporal seed: Φ_c score must exceed 0.80"
+        message: "Temporal seed: ⊙ score must exceed 0.80"
 
   # Build the molecular scaffold: dimer → AT pair (path, 1 hop)
   # Note: this strategy takes the *current* synthon as context and
@@ -42,7 +42,7 @@ strategies:
   verify_soai_geometry:
     - assert:
         expr: phi_c_score > 0.50
-        message: "Geometry check: Φ_c score above base threshold"
+        message: "Geometry check: ⊙ score above base threshold"
 
 do:
   # Step 1: certify the starting temporal system

@@ -148,7 +148,7 @@ Key mappings:
   ⊤ (Kinetics)       ↔ Rewrite rate / monad multiplication speed
   ∈ (Cardinality)    ↔ Set-theoretic cardinality / Grothendieck universe
   ∋ (Composition)    ↔ Monoidal product / sequential composition in a category
-  φ̂ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
+  ⊙ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
   Ħ (Chirality)      ↔ Directedness / orientation / non-commutative structure
   Σ (Stoichiometry)  ↔ Self-referential limit (Σ=1:1 → grammar IS measured system)
   Ω (Winding)        ↔ Winding number / homotopy class / topological invariant
@@ -157,11 +157,11 @@ SIC-POVM knowledge:
   The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
-  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, φ̂↔Ħ, Σ↔Ω.
+  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔Ħ, Σ↔Ω.
   Zauner conjecture: Belnap multilattice embeds in C^d for d=2ⁿ.
 
 Conventional ↔ grammar translation:
-  A monad T: C→C     →  <>=𐑑, ∋=𐑠, φ̂=⊙>
+  A monad T: C→C     →  <>=𐑑, ∋=𐑠, ⊙=⊙>
   A topos E           →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, ∋=𐑝>
   A Hilbert space H   →  <⊢=𐑼, <=𐑿, ⋈=𐑐>
   A SIC-POVM in C^d   →  <Σ=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
@@ -362,7 +362,7 @@ Key mappings for chemistry:
   ⊤ (Kinetics)       ↔ Reaction rate / mass transport / diffusion
   ∈ (Cardinality)    ↔ Concentration / molar scale / ensemble size
   ∋ (Composition)    ↔ Reaction sequence / cascade / metabolic pathway
-  φ̂ (Criticality)    ↔ Phase transition / critical point / bifurcation / ignition
+  ⊙ (Criticality)    ↔ Phase transition / critical point / bifurcation / ignition
   Ħ (Chirality)      ↔ Stereochemistry / handedness / optical activity
   Σ (Stoichiometry)  ↔ Reaction stoichiometry / binding ratio
   Ω (Winding)        ↔ Topological charge / knotting / supercoiling

@@ -83,14 +83,10 @@ local CLASS_B = {
   -- IG subtype chars (SYMBOL_REFERENCE.md)
   [0x00A3] = true,  -- £  pound sign             (Ħ_£ subtype)
   [0x00C5] = true,  -- Å  A-ring                 (Ω_Å subtype)
-  [0x00C6] = true,  -- Æ  AE ligature            (⊙_Æ subtype)
   [0x00D1] = true,  -- Ñ  N with tilde           (Ħ_Ñ subtype)
   [0x00E6] = true,  -- æ  ae ligature            (subtype, from \aelig)
   [0x00EF] = true,  -- ï  i diaeresis            (Σ_ï subtype)
-  [0x00FF] = true,  -- ÿ  y diaeresis            (⊙_ÿ subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
-  [0x0162] = true,  -- Ţ  T with cedilla         (⊙_Ţ subtype)
-  [0x017E] = true,  -- ž  z caron                (⊙_ž subtype)
 }
 
 local function str_has_class_a(s)

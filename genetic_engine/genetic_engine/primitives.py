@@ -18,7 +18,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
     level (Gln synthetase is the most regulated biosynthetic node) but biochemically incorrect
     at the protein function level. His IS the critical residue — its imidazole ring titrates
     at the crossover between acid and base catalysis (protonated/deprotonated equilibrium),
-    which is the definition of φ̂_ÿ criticality in the protein context.
+    which is the definition of ⊙ criticality in the protein context.
 
   Previous mapping (preserved for reference):
     His→∈ (Grammar), Gln→⊙ (Criticality) — original assignment

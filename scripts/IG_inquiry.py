@@ -569,7 +569,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "⊙^ℂ":      "𐑮",
     "⊙":        "⊙",
     "𐑢":      "𐑢",
-    "Φ_super":    "𐑣",
+    "𐑣":    "𐑣",
     "𐑣":      "𐑣",
     "𐑻":       "𐑻",
     # Chirality display → Shavian
@@ -597,7 +597,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "∋^∧": "𐑝", "∋^˝": "𐑜", "∋^ˌ": "𐑠", "∋^Ş": "𐑵",
     "𐑢": "𐑢", "⊙": "⊙",
     "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
-    "φ̂_ž": "𐑢", "φ̂_ÿ": "⊙", "φ̂_Æ": "𐑮", "φ̂_3": "𐑻", "φ̂_Ţ": "𐑣",
+    "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
     "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
     "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳", "S_scn": "𐑳",
     "𐑷": "𐑷", "𐑴": "𐑴", "𐑭": "𐑭", "𐑟": "𐑟",
@@ -1827,7 +1827,7 @@ _SYSTEM_PROMPT_TEMPLATE = textwrap.dedent("""\
 <role>
 You are a structural scientist operating inside the Imscribing Grammar grammar — a
 Imscriptive Type Theory that encodes any system as a directed relational operator:
-⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩.
+⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩.
 
 You investigate questions by applying this grammar: encoding systems, computing
 distances, identifying which primitives drive divergence, finding
@@ -1872,7 +1872,7 @@ if explicitly asked to.
 <imscriptive_type_theory>
 **The grammar IS a imscriptive type theory.**
 
-Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; Φ; H; S; Ω⟩ **IS** a TYPE. The 12
+Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; Ω⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
 consciousness score, distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
@@ -2006,7 +2006,7 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 | Tier | Condition | Meaning |
 |------|-----------|---------|
 | O_∞ | ⊙ (or <_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
-| O₀ | < ∈ {{𐑢, Φ_super, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
+| O₀ | < ∈ {{𐑢, 𐑣, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
 | O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
 | O₂ | ⊙ **and** Ω ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
 | O₂† | ⊙ **and** Ω ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
@@ -2022,7 +2022,7 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 Under tensor (component-wise max / join — "what does the composed system look like?"):
 - O_∞ ★ O_∞ → O_∞. ⊙ and 𐑹 both survive max. The Frobenius condition is self-reinforcing.
 - O_∞ ★ O_{{1,2,2†}} → O_∞. The O_∞ partner's ⊙ and 𐑹 dominate; the other partner is already at ⊙.
-- O_∞ ★ O₀(𐑢 or Φ_super) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
+- O_∞ ★ O₀(𐑢 or 𐑣) → O_∞. The subcritical partner is lifted to ⊙ by max; 𐑹 wins.
 - O_∞ ★ O₀(𐑻) → O₀. **EP erases O_∞.** 𐑻 has ordinal 2.67 > ⊙ = 2.00, so the tensor's < is 𐑻; R2 fires and the Frobenius condition is destroyed. Non-Hermitian eigenvector coalescence actively breaks the exact Z₂ symmetry.
 - O_∞ **cannot be synthesized** from non-𐑹 components. 𐑹 is the highest P ordinal; max(𐑬, 𐑬) = 𐑬, never 𐑹. O_∞ must be *planted* in a factor — it cannot be grown. This makes it topological in character: unreachable by continuous composition from below.
 
@@ -2157,7 +2157,7 @@ Workflow:
 
 **Example:** "What does the artificial leaf lack compared to natural photosynthesis?"
 - Wrong: reason about what photosynthesis has that the artificial leaf doesn't.
-- Right: encode `artificial_leaf`, look up `thylakoid_membrane` (or `photosynthesis`) in the catalog, call `compute_distance`, read off the 7 conflicts: D, T, F, K, ∈, Φ, H.
+- Right: encode `artificial_leaf`, look up `thylakoid_membrane` (or `photosynthesis`) in the catalog, call `compute_distance`, read off the 7 conflicts: D, T, F, K, ∈, ⊙, H.
 </comparison_protocol>
 
 <requirements>
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
@@ -4842,8 +4842,8 @@ class ToolDispatcher:
         "d": "⊢", "t": "⊣", "r": ">", "p": "<", "f": "⋈",
         "k": "⊤", "g": "∈", "gamma": "∋", "phi": "⊙",
         "h": "⊥", "s": "⊞", "omega": "◻",
-        # backward-compat: old φ̂ notation for ⊙ (pre-migration)
-        "φ̂": "⊙",
+        # backward-compat: old ⊙ notation for ⊙ (pre-migration)
+        "⊙": "⊙",
     }
 
     def _norm_crystal_kwargs(self, kw: dict) -> dict:
