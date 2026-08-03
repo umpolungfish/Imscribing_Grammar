@@ -131,6 +131,21 @@ The WhaleVM operates over a four-valued logic (Belnap 1977):
 
 The B state is not a bug. Systems at O₂† and ${O}_\infty$ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
 
+### `sentry` — the golem that keeps watch
+
+`./sentry` runs the verification battery and speaks one fused Belnap verdict over
+it: the catalog subset, consumer agreement, the Loki/Odin join and meet, ordinal
+faithfulness against the Lean table, the IMASM round trip, address safety, and
+whether the kernel compiles. `./sentry --quick` drops the two that compile.
+
+It does not resolve disagreement. A watch that closes and a watch that breaks
+join to B and stay there.
+
+N is the verdict it exists for. The unmarked is the bottom of the lattice, so
+joining N into T yields T, and a watch that cannot run disappears into a clean
+verdict without a sound. So the golem counts the mute separately and will not
+say T while any watch is standing silent.
+
 ---
 
 ## Engines

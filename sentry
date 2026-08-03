@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+# sentry — a golem that keeps watch over the closure.
+#
+# It runs the verification battery and speaks ONE verdict, in Belnap four:
+#
+#   T  every watch closed
+#   F  a watch reports the closure broken
+#   B  watches disagree: some close while another breaks
+#   N  unmarked — a watch could not speak at all
+#
+# The golem does not decide. It reports what the checks say and fuses them.
+# Conflict is not resolved into a preference; T and F join to B and stay there.
+#
+# N is the dangerous one and is why this exists. Joining N into T yields T,
+# because the unmarked is the bottom of the lattice, so a watch that cannot run
+# vanishes into a clean verdict without a sound. Every axis of the alphabet
+# migration was verified that way, with the ordinal guard silently unmarked
+# throughout. So the golem counts the unmarked separately and refuses to report
+# T while any watch is standing mute.
+#
+#   sentry           full watch
+#   sentry --quick   skip the watches that compile
+
+set -uo pipefail
+cd "$(dirname "$(readlink -f "$0")")/.." || exit 2
+ROOT="$PWD"
+QUICK=0; [ "${1:-}" = "--quick" ] && QUICK=1
+
+T_=0; F_=0; N_=0
+declare -a LINES
+
+watch() {                       # watch <name> <verdict> <detail>
+    local name="$1" v="$2" detail="${3:-}"
+    case "$v" in
+        T) T_=$((T_+1)) ;;
+        F) F_=$((F_+1)) ;;
+        *) v=N; N_=$((N_+1)) ;;
+    esac
+    LINES+=("  $v  $name${detail:+  — $detail}")
+}
+
+# ── 1. the subset regenerates and is whole ──────────────────────────────────
+out=$(python3 mOMonadOS/tools/gen_catalog_subset.py 2>&1 | tail -1)
+n=$(printf '%s' "$out" | grep -oE '[0-9]+ entries' | grep -oE '[0-9]+')
+if [ -z "$n" ]; then watch "catalog subset" N "generator said nothing"
+elif [ "$n" -ge 8017 ]; then watch "catalog subset" T "$n entries"
+else watch "catalog subset" F "$n entries, below the floor"; fi
+
+# ── 2. every consumer carries the same catalog ──────────────────────────────
+if out=$(cd imscribing_grammar && ./sync_catalog.sh --check 2>&1); then
+    if printf '%s' "$out" | grep -q 'all 8 consumers match'; then
+        watch "catalog consumers" T
+    else watch "catalog consumers" F "drift"; fi
+else watch "catalog consumers" F "drift"; fi
+
+# ── 3. the lattice still joins and meets where it did ───────────────────────
+j=$(imscribe join loki_laufeyjarson odinn_allfather 2>/dev/null | grep -m1 'Result')
+m=$(imscribe meet loki_laufeyjarson odinn_allfather 2>/dev/null | grep -m1 'Result')
+if [ -z "$j$m" ]; then watch "join / meet" N "imscribe did not answer"
+elif [[ "$j" == *𐑻* && "$m" == *𐑮* ]]; then watch "join / meet" T "𐑻 / 𐑮"
+else watch "join / meet" F "moved off 𐑻 / 𐑮"; fi
+
+# ── 4. the ordinals are faithful to the Lean table ──────────────────────────
+if [ "$QUICK" = 1 ]; then
+    watch "ordinal faithfulness" N "skipped by --quick"
+else
+    out=$(cd mOMonadOS && timeout 200 make ordinals 2>&1)
+    if printf '%s' "$out" | grep -q 'ALL 44 VALUES MATCH'; then
+        watch "ordinal faithfulness" T "44 of 44"
+    elif printf '%s' "$out" | grep -q 'ORDINAL DRIFT'; then
+        watch "ordinal faithfulness" F "drift"
+    else watch "ordinal faithfulness" N "the kernel did not boot"; fi
+fi
+
+# ── 5. a tuple survives the round trip through IMASM ────────────────────────
+out=$(cd 2m3iosis && ./ask --imasm cycle "tuple=⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩" 2>&1 | tail -1)
+if [ -z "$out" ]; then watch "IMASM cycle" N "ask did not answer"
+elif printf '%s' "$out" | grep -q '12 of 12 axes recovered exactly'; then
+    watch "IMASM cycle" T "12 of 12"
+else watch "IMASM cycle" F "$(printf '%s' "$out" | head -c 60)"; fi
+
+# ── 6. no address has moved ─────────────────────────────────────────────────
+out=$(cd imscribing_grammar && python3 - <<'PY' 2>&1 | tail -1
+import sys, json, subprocess
+sys.path.insert(0, "."); sys.path.insert(0, "tools")
+try:
+    from tools.numerical_encode import encode_crystal_address
+except Exception as e:
+    print("UNMARKED", e); raise SystemExit
+head = subprocess.run(["git", "show", "HEAD:IG_catalog.json"],
+                      capture_output=True, text=True).stdout
+if not head:
+    print("UNMARKED no HEAD catalog"); raise SystemExit
+def as_map(d):
+    c = d.get("entries", d) if isinstance(d, dict) else d
+    return c if isinstance(c, dict) else {e.get("name"): e for e in c}
+b = as_map(json.loads(head))
+a = as_map(json.load(open("IG_catalog.json", encoding="utf-8")))
+moved = []
+for k in set(b) & set(a):
+    try:
+        if encode_crystal_address(b[k]) != encode_crystal_address(a[k]):
+            moved.append(k)
+    except Exception:
+        pass
+print(f"MOVED {len(moved)} OF {len(a)}")
+PY
+)
+if [[ "$out" == UNMARKED* ]]; then watch "address safety" N "${out#UNMARKED }"
+elif [[ "$out" == "MOVED 0 OF"* ]]; then watch "address safety" T "${out#MOVED 0 OF }"
+else watch "address safety" F "$out"; fi
+
+# ── 7. the kernel compiles ──────────────────────────────────────────────────
+if [ "$QUICK" = 1 ]; then
+    watch "kernel compiles" N "skipped by --quick"
+elif (cd mOMonadOS && timeout 400 cargo check --offline >/dev/null 2>&1); then
+    watch "kernel compiles" T
+else watch "kernel compiles" F; fi
+
+# ── the fused verdict ───────────────────────────────────────────────────────
+printf '%s\n' "${LINES[@]}"
+echo
+if   [ "$F_" -gt 0 ] && [ "$T_" -gt 0 ]; then V=B; W="watches disagree"
+elif [ "$F_" -gt 0 ];                    then V=F; W="the closure is broken"
+elif [ "$N_" -gt 0 ];                    then V=N; W="$N_ standing mute — the watch is not whole"
+else                                          V=T; W="every watch closed"
+fi
+echo "  ⊙  sentry: $V   $W"
+case "$V" in T) exit 0 ;; N) exit 3 ;; B) exit 2 ;; *) exit 1 ;; esac
