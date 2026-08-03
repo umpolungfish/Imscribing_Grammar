@@ -35,7 +35,7 @@ def example_1_basic_imscription():
         polarity=Polarity.SELF_COMPLEMENTARY,  # P_± — self-complementary
         fidelity=Fidelity.peep,  # F_ℏ — dominant, geometry-enforcing
         granularity=Granularity.ice,  # G_ב — local control
-        interaction_grammar=InteractionGrammar.SPECIFIC,  # Γ_⊗ — one specific partner
+        interaction_grammar=InteractionGrammar.SPECIFIC,  # 𐑝 — one specific partner
         description="Classic R₂²(8) hydrogen-bonded dimer",
         metadata={
             "csd_entries": 15000,
@@ -115,7 +115,7 @@ def example_3_catalog_and_search():
         polarity="𐑬",
         fidelity="𐑱",  # Lower fidelity than carboxylic acid
         granularity="𐑚",
-        interaction_grammar="ɢ_otimes",
+        interaction_grammar="𐑝",
         description="Weaker amide dimer (F_ℓ)",
     )
     
@@ -127,7 +127,7 @@ def example_3_catalog_and_search():
         polarity="𐑗",
         fidelity="𐑐",  # HIGH fidelity due to cooperativity
         granularity="𐑔",  # Mesoscale
-        interaction_grammar="ɢ_otimes",
+        interaction_grammar="𐑝",
         description="DAD·ADA triple H-bond array (Watson-Crick like)",
     )
     
@@ -139,7 +139,7 @@ def example_3_catalog_and_search():
         polarity="𐑗",
         fidelity="𐑞",
         granularity="𐑔",
-        interaction_grammar="ɢ_selective",
+        interaction_grammar="∋_selective",
         description="Proline-catalyzed aldol cycle (temporal imscription)",
     )
     

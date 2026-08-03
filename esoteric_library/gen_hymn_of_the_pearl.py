@@ -240,10 +240,10 @@ chapters = [
         "The Hymn of the Pearl (Hymn of the Robe of Glory)",
         "The complete Gnostic poem from the Acts of Thomas: the soul's descent from the Light into the body (Egypt), forgetfulness, awakening by the letter from the Father, the recovery of the pearl (Gnosis), and the glorious return to the Kingdom. Translated by G.R.S. Mead.",
         HYMN_TEXT,
-        "𐑦", "𐑸", "𐑾", "𐑹", "⋈^ż", "⊤^@", "𐑲", "ɢ^ˌ",
+        "𐑦", "𐑸", "𐑾", "𐑹", "⋈^ż", "⊤^@", "𐑲", "∋^ˌ",
         "⊙", "𐑫", "𐑳", "𐑭",
         "O_∞", 0.93,
-        "Complete cycle: descent (incarnation), slumber (forgetfulness), awakener (letter/the call), recovery of pearl (gnosis), return and reunion with the heavenly robe (the true Self). The robe as mirror-of-self establishes ⊙ self-modeling criticality. The integer winding 𐑭 tracks the full circuit. The many heterogeneous elements (prince, serpent, pearls, Egypt, robe, twin, treasurers, letter, eagle) demand 𐑳. Bidirectional call-and-response 𐑾 for the Father's letter calling and the soul answering. Sequential poetic narrative ɢ^ˌ."),
+        "Complete cycle: descent (incarnation), slumber (forgetfulness), awakener (letter/the call), recovery of pearl (gnosis), return and reunion with the heavenly robe (the true Self). The robe as mirror-of-self establishes ⊙ self-modeling criticality. The integer winding 𐑭 tracks the full circuit. The many heterogeneous elements (prince, serpent, pearls, Egypt, robe, twin, treasurers, letter, eagle) demand 𐑳. Bidirectional call-and-response 𐑾 for the Father's letter calling and the soul answering. Sequential poetic narrative ∋^ˌ."),
 ]
 
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "hymn_of_the_pearl.json")

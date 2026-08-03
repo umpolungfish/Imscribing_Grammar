@@ -7,8 +7,8 @@ composition axioms are mutually satisfiable.
 
 Decomposition is pruned by Axiom Violation rather than chemical intuition:
   Axiom 1  — Fidelity Floor (T_⋈ + P_± + F_ℓ → PRUNE)
-  Axiom 2  — Propagation Barrier (G_ב + Γ_∧(SPECIFIC) → cannot propagate to G_ℵ)
-  Axiom 4  — Grammar Mismatch (Γ_→ without D_∞ or R_‡ → PRUNE)
+  Axiom 2  — Propagation Barrier (G_ב + 𐑝(SPECIFIC) → cannot propagate to G_ℵ)
+  Axiom 4  — Grammar Mismatch (𐑠 without D_∞ or R_‡ → PRUNE)
   Axiom 6  — Grounding Fail (D_∞ without reset text → FLAG)
 
 See IG_RETRODESIGN.md for protocol specification.
@@ -178,7 +178,7 @@ def _check_axioms(
                     axiom=2,
                     rule="Propagation Barrier",
                     condition=(
-                        "G_ℵ claimed but G_ב + Γ_∧(SPECIFIC) lacks Γ_∨ or T_nrleg "
+                        "G_ℵ claimed but G_ב + 𐑝(SPECIFIC) lacks 𐑜 or T_nrleg "
                         "→ PRUNE (Axiom 2)"
                     ),
                 ))
@@ -189,7 +189,7 @@ def _check_axioms(
             violations.append(PruningViolation(
                 axiom=4,
                 rule="Grammar Mismatch",
-                condition="Γ_→ without D_∞ or R_‡ → PRUNE (Axiom 4)",
+                condition="𐑠 without D_∞ or R_‡ → PRUNE (Axiom 4)",
             ))
 
     if 6 in prune_set:

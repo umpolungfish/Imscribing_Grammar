@@ -703,10 +703,10 @@ class AxiomValidator:
         """
         Axiom 2: Local grammar blocks network propagation (G_ב–∈ barrier rule).
         
-        A imscription with G_ב and Γ_⊗ cannot propagate constraint beyond
+        A imscription with G_ב and 𐑝 cannot propagate constraint beyond
         its immediate recognition pair.
         
-        Prediction: no single G_ב/Γ_⊗ imscription will be found as the sole
+        Prediction: no single G_ב/𐑝 imscription will be found as the sole
         organizing element of a MOF, polymer, or oscillatory network.
         """
         is_local = imscription.granularity == Granularity.ice
@@ -801,7 +801,7 @@ class AxiomValidator:
         """
         Axiom 4: Sequential grammar requires temporal or catalytic dimension.
         
-        Γ_→ (ordered sequential recognition) is only physically realizable
+        𐑠 (ordered sequential recognition) is only physically realizable
         if the imscription possesses D_∞ or R_‡, or both.
         
         Prediction: all documented allosteric systems with ordered binding

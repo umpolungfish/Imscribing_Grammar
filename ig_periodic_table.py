@@ -82,7 +82,7 @@ PRIM_LABEL = {
     'H':  '⊥',
     # He: doubly-magic nucleus, 𐑢 — the archetypal subcritical
     'He': '⊙',
-    # Alkali metals: pure ionic donors, ɢ_or coupling
+    # Alkali metals: pure ionic donors, 𐑜 coupling
     'Li': '∋', 'Na': '∋', 'K':  '∋',
     'Rb': '∋', 'Cs': '∋', 'Fr': '∋',
     # Alkaline earths: fixed Σ=2
@@ -457,7 +457,7 @@ def generate_tex():
         f'\\node[anchor=west, font=\\scriptsize, text=black!60] '
         f'at (0cm,{prim_y:.3f}cm) {{'
         r'Cell annotation (bottom): dominant IG primitive --- '
-        r'{\igprimfont Ħ}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ɢ}=Coupling $\cdot$ '
+        r'{\igprimfont Ħ}=Chirality $\cdot$ {\igprimfont ⊙}=Criticality $\cdot$ {\igprimfont ∋}=Coupling $\cdot$ '
         r'{\igprimfont Σ}=Stoichiometry $\cdot$ {\igprimfont ⊣}=Topology $\cdot$ {\igprimfont <}=Parity $\cdot$ {\igprimfont ⊤}=Kinetics $\cdot$ '
         r'{\igprimfont ⊢}=Dimensionality'
         '. Dashed border = radioactive.};\n'

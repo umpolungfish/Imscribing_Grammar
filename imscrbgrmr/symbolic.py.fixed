@@ -171,9 +171,9 @@ class GrammarAlgebra:
     Implements the Boolean algebra of interaction grammars.
     
     From QUANTIG.md Section II:
-    - Γ_∧ (AND): all partners required simultaneously
-    - Γ_∨ (OR): any one partner suffices
-    - Γ_→ (SEQUENTIAL): partner A required before B
+    - 𐑝 (AND): all partners required simultaneously
+    - 𐑜 (OR): any one partner suffices
+    - 𐑠 (SEQUENTIAL): partner A required before B
     """    
     @staticmethod
     def apply_operator(

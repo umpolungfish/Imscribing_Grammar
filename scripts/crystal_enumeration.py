@@ -36,7 +36,7 @@ VALUES = {
     "⋈":     ["⋈^ì", "⋈^ð", "⋈^ż"],
     "⊤":     ["⊤^-", "⊤^W", "⊤^@", "⊤^Ù"],
     "∈":     ["𐑚", "𐑔", "𐑲"],
-    "∋": ["ɢ^∧", "ɢ^˝", "ɢ^ˌ", "ɢ^Ş"],
+    "∋": ["∋^∧", "∋^˝", "∋^ˌ", "∋^Ş"],
     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
     "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
     "⊞":     ["𐑙", "𐑕", "𐑳"],
@@ -216,7 +216,7 @@ print("PERIODIC CRYSTAL OF ALGEBRAS — SUMMARY")
 print("═"*70)
 print(f"  Total types:   {total:>12,}")
 print(f"  Tier-determining axes:     < (5) × P (5) × Ω (3) × D (4) = {5*5*3*4:,} tier cells")
-print(f"  Free inner dimensions:     T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3) = {free_count:,} per cell")
+print(f"  Free inner dimensions:     T(5)×R(4)×F(3)×K(4)×G(3)×∋(4)×H(4)×S(3) = {free_count:,} per cell")
 print()
 for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     n     = tier_counts[t]

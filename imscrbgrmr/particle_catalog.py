@@ -118,7 +118,7 @@ def _graviton() -> Imscription:
     """
     Graviton — hypothetical spin-2 massless carrier of gravity.
 
-    ⟨D_holo; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(BROAD); ⊙⟩
+    ⟨D_holo; T_∈(sym); R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ℵ; 𐑜(BROAD); ⊙⟩
 
     Structural derivation (METAPHYSICS.md §XXVII.3):
 
@@ -195,7 +195,7 @@ def _photon() -> Imscription:
     """
     Photon — spin-1 massless carrier of electromagnetism.
 
-    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; Γ_∨(SELECTIVE); 𐑢⟩
+    ⟨D_∞; T_|; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑜(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §XXVI):
 
@@ -252,7 +252,7 @@ def _gluon() -> Imscription:
     """
     Gluon — spin-1 massless carrier of the strong force (QCD).
 
-    ⟨D_△; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ג; Γ_∨(BROAD); ⊙⟩
+    ⟨D_△; T_∈; R_†; P_±^sym; F_ℏ; K_frtailgamma; G_ג; 𐑜(BROAD); ⊙⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.3, XXVII.8):
 
@@ -318,7 +318,7 @@ def _w_boson() -> Imscription:
     """
     W± boson — charged massive carrier of the weak force.
 
-    ⟨D_∧; T_|; R_†; P_+-; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
+    ⟨D_∧; T_|; R_†; P_+-; F_ℏ; K_teshlig; G_ב; 𐑝(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 
@@ -376,7 +376,7 @@ def _z_boson() -> Imscription:
     """
     Z⁰ boson — neutral massive carrier of the weak force.
 
-    ⟨D_∧; T_|; R_†; P_±^sym; F_ℏ; K_teshlig; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
+    ⟨D_∧; T_|; R_†; P_±^sym; F_ℏ; K_teshlig; G_ב; 𐑝(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 
@@ -429,7 +429,7 @@ def _higgs() -> Imscription:
     """
     Higgs boson / Higgs field — K_teshlig spatial localisation installer.
 
-    ⟨D_∧; T_⋈; R_†; P_±^sym; F_ℏ; K_schwa; G_ב; Γ_∧(SELECTIVE); 𐑢⟩
+    ⟨D_∧; T_⋈; R_†; P_±^sym; F_ℏ; K_schwa; G_ב; 𐑝(SELECTIVE); 𐑢⟩
 
     Structural derivation (METAPHYSICS.md §§XXVI.2, XXVII.8):
 

@@ -89,7 +89,7 @@ Key mappings:
    ⋈ (Fidelity)       ↔ Quantum channel fidelity / braid approximation error
    ⊤ (Kinetics)       ↔ Braid word length / circuit depth / T-count
    ∈ (Cardinality)    ↔ Anyon number / strand count / Grothendieck universe of MTC
-   ɢ (Composition)    ↔ Sequential braid composition / tensor product of anyons
+   ∋ (Composition)    ↔ Sequential braid composition / tensor product of anyons
    φ̂ (Criticality)    ↔ Fibonacci anyon fixed point / golden ratio / ⊙ fixed point
    Ħ (Chirality)      ↔ Braid orientation / non-Abelian exchange statistics
    Σ (Stoichiometry)  ↔ Self-referential limit Σ=1:1 (grammar IS measured quantum system)
@@ -98,17 +98,17 @@ Key mappings:
 SIC-POVM knowledge:
    Grammar IS Σ=1:1 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔ɢ, φ̂↔Ħ, Σ↔Ω.
+   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, φ̂↔Ħ, Σ↔Ω.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
 Conventional ↔ grammar translation:
    Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ⋈=𐑐, Ω=𐑭>
-   Braid word B_n         → <>=𐑽, ɢ=𐑠, Ħ=𐑖, Ω=𐑭>
+   Braid word B_n         → <>=𐑽, ∋=𐑠, Ħ=𐑖, Ω=𐑭>
    Jones polynomial V(t)  → <Ω=𐑭, Θ=𐑦, φ̂=⊙>
    SIC-POVM in C^d        → <Σ=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
    Belnap QFT (no gates)  → <<=𐑹, ⋈=𐑞, ⊤=𐑧, Ω=𐑴>
-   IMASM ring walk        → <>=𐑽, ɢ=𐑝, Ω=𐑭, φ̂=⊙>
+   IMASM ring walk        → <>=𐑽, ∋=𐑝, Ω=𐑭, φ̂=⊙>
 </domain_knowledge>
 
 <commitments>
@@ -298,7 +298,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Quantum⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

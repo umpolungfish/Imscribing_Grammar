@@ -68,7 +68,7 @@ Are there any odd ones?
 
 **SynthOmnicon structural note:**
 
-  OPN has primitive tuple if' · mime · peep · Γ_and · ⊙ · Ω_Z.
+  OPN has primitive tuple if' · mime · peep · 𐑝 · ⊙ · Ω_Z.
   · if': the problem lives in multiplicative structure of ℕ (number-theoretic holomorphic).
   · mime: the sigma constraint creates a balance condition (σ = 2N is symmetric).
   · ⊙ + Ω_Z: the interaction between the prime factorization (⊙ charge carriers)

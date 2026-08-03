@@ -179,7 +179,7 @@ G — Granularity (correlation length)
   𐑲   global / non-local
 
 ∈ — Coupling
-  ɢ^∧ / ɢ^˝ / ɢ^ˌ / Gamma_diss
+  ∋^∧ / ∋^˝ / ∋^ˌ / Gamma_diss
   Tiers: SPECIFIC / SELECTIVE / BROAD / QUANTUM
 
 < — Criticality Phase

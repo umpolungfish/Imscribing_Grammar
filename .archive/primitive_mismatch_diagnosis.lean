@@ -5,7 +5,7 @@
 This file formalizes the 12-primitive structural framework of the Imscribing Grammar (IG),
 with specific emphasis on:
 1. The measurement problem as primitive mismatch (P_upsilon vs P_aolig)
-2. Wick rotation as primitive substitution (Γ_seq → K_schwa)
+2. Wick rotation as primitive substitution (𐑠 → K_schwa)
 3. Berry phase as Ω_ℤ emergent vs constitutive
 4. The H_∞ line: genuine memory vs Markovian approximation
 5. Temporal primitive sorting of physics problems
@@ -86,9 +86,9 @@ inductive Scope where
 
 /-- ∈: Interaction grammar — composition logic -/
 inductive InteractionGrammar where
-  | and   -- Γ_∧: conjunctive
-  | or    -- Γ_∨: disjunctive
-  | seq   -- Γ_seq: sequential
+  | and   -- 𐑝: conjunctive
+  | or    -- 𐑜: disjunctive
+  | seq   -- 𐑠: sequential
   | broad -- ∈_brd: broadcast
   deriving DecidableEq, Repr, Inhabited
 
@@ -314,7 +314,7 @@ def tensorProduct (a b : StructuralType) : StructuralType where
 Each constant matches a system imscribed via encode_system in the IG catalog.
 -/
 
-/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; 𐑢; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; 𐑠; 𐑢; H₁; 1:1; Ω₀⟩ -/
 def schrodingerDynamics : StructuralType where
   D     := Dimension.triangle
   T     := Topology.inclusion
@@ -329,7 +329,7 @@ def schrodingerDynamics : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; Γ_seq; ⊙; H₀; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; 𐑠; ⊙; H₀; 1:1; Ω₀⟩ -/
 def measurementOutcome : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -344,7 +344,7 @@ def measurementOutcome : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₁; 1:1; Ω₀⟩ -/
 def wickRotation : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -359,7 +359,7 @@ def wickRotation : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; 𐑠; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
 def berryPhase : StructuralType where
   D     := Dimension.triangle
   T     := Topology.inclusion
@@ -374,7 +374,7 @@ def berryPhase : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.z
 
-/-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def tqft : StructuralType where
   D     := Dimension.infinity
   T     := Topology.odot
@@ -389,7 +389,7 @@ def tqft : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; Γ_seq; ⊙; H_∞; n:m; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; 𐑠; ⊙; H_∞; n:m; Ω₀⟩ -/
 def nonmarkovianOpenSystems : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -404,7 +404,7 @@ def nonmarkovianOpenSystems : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; Γ_∧; ⊙; H₁; n:n; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; 𐑝; ⊙; H₁; n:n; Ω₀⟩ -/
 def statisticalMechanics : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -419,7 +419,7 @@ def statisticalMechanics : StructuralType where
   S     := Stoichiometry.S_ctn
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def quantumGravityCandidate : StructuralType where
   D     := Dimension.infinity
   T     := Topology.odot
@@ -434,7 +434,7 @@ def quantumGravityCandidate : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₂; n:m; Ω₀⟩ -/
 def measurementProblemMismatch : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -449,7 +449,7 @@ def measurementProblemMismatch : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_⊠; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊠; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₂; n:m; Ω_ℤ⟩ -/
 def temporalPrimitivesFramework : StructuralType where
   D     := Dimension.infinity
   T     := Topology.boxtimes
@@ -467,7 +467,7 @@ def temporalPrimitivesFramework : StructuralType where
 /-
 ## 7. The Measurement Problem: Formal Statement
 
-Theorem: No mechanism operating purely within Γ_seq + K_schwa dynamics with P_upsilon
+Theorem: No mechanism operating purely within 𐑠 + K_schwa dynamics with P_upsilon
 can produce P_aolig. The tensor product schrodingerDynamics ⊗ measurementOutcome
 resolves P to P_aolig via bottleneck (min), confirming the problem is structural.
 -/
@@ -516,7 +516,7 @@ theorem measurement_problem_is_structural :
 /-
 ## 8. Wick Rotation as Primitive Substitution
 
-The Wick rotation t → -iτ converts Γ_seq (directed sequential evolution) into
+The Wick rotation t → -iτ converts 𐑠 (directed sequential evolution) into
 K_schwa (relational/equilibration timescale). In the formalism, this is modeled
 as a primitive substitution operation on the StructuralType.
 -/
@@ -617,7 +617,7 @@ Physics problems are sorted by which subset they activate.
 -/
 
 inductive TemporalPrimitive where
-  | gammaSeq  -- Γ_seq: sequential composition
+  | gammaSeq  -- 𐑠: sequential composition
   | kSlow     -- K_schwa: relaxation/adiabatic timescale
   | pAsym     -- P_aolig: irreversibility/parity breaking
   | omegaZ    -- Ω_ℤ: integer winding/topological protection
@@ -760,11 +760,11 @@ theorem schrodinger_consciousness_gate1_fails : consciousnessScore schrodingerDy
 
 | Theory                      | Activated Primitives     | Complexity |
 |----------------------------|--------------------------|------------|
-| Newtonian mechanics         | Γ_seq                    | 1          |
-| Standard QM                 | Γ_seq, K_schwa            | 2          |
-| Statistical mechanics       | Γ_seq, K_schwa, P_aolig    | 3          |
-| Topological QFT             | Γ_seq, K_schwa, Ω_ℤ       | 3          |
-| Non-Markovian open systems  | Γ_seq, K_schwa, H_∞       | 3          |
+| Newtonian mechanics         | 𐑠                    | 1          |
+| Standard QM                 | 𐑠, K_schwa            | 2          |
+| Statistical mechanics       | 𐑠, K_schwa, P_aolig    | 3          |
+| Topological QFT             | 𐑠, K_schwa, Ω_ℤ       | 3          |
+| Non-Markovian open systems  | 𐑠, K_schwa, H_∞       | 3          |
 | Quantum gravity (candidate) | all 5                    | 5          |
 -/
 
@@ -792,7 +792,7 @@ theorem newtonian_complexity_1 : temporalComplexity newtonianMechanics ≤ 1 := 
 These theorems formalize the core diagnostic claims from the task.
 -/
 
-/-- Theorem: No mechanism within (Γ_seq, K_schwa, P_upsilon) can produce P_aolig.
+/-- Theorem: No mechanism within (𐑠, K_schwa, P_upsilon) can produce P_aolig.
 This is the structural diagnosis of the measurement problem. -/
 theorem no_asym_from_psi :
   ∀ (mechanism : StructuralType),
@@ -815,7 +815,7 @@ theorem measurement_requires_external_asymmetry :
   -- schrodingerDynamics.P = P_upsilon, composite.P = P_aolig
   rfl
 
-/-- The Wick rotation is a primitive substitution Γ_seq → K_schwa with
+/-- The Wick rotation is a primitive substitution 𐑠 → K_schwa with
 F_hardsign → F_dh (thermalization). -/
 theorem wick_rotation_is_primitive_substitution :
   let rotated := wickRotate schrodingerDynamics
@@ -858,7 +858,7 @@ theorem axiom_c_uig :
   sorry  -- Need to define universal_imscriptive_grammar_typed first
 
 -- Define it here since we imscribed it earlier:
-/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; Γ_seq; ⊙; H₂; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_⊙; T_⊙; R_↔; P_±^sym; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₂; n:m; Ω_ℤ⟩ -/
 def universalImscriptiveGrammar : StructuralType where
   D     := Dimension.odot
   T     := Topology.odot

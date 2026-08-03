@@ -66,10 +66,10 @@ _P_MAP = {
 }
 
 _GAMMA_MAP = {
-    "ɢ_and":         "ɢ_corner",
-    "ɢ_or":          "ɢ_spleftarrow",
-    "ɢ_seq":         "ɢ_secstress",
-    "ɢ_dissipative": "Γ_dissipative",
+    "𐑝":         "𐑠",
+    "𐑜":          "𐑜",
+    "𐑠":         "∋_secstress",
+    "𐑵": "𐑵",
     # already canonical: Gamma_corner, Gamma_spleftarrow, Gamma_secstress, G_xor, G_impl, G_dissipative
     # compound forms like "Gamma_and(SPECIFIC)" -> extract operator part
 }

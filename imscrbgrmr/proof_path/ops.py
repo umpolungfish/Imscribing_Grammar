@@ -61,10 +61,10 @@ _C_sub    = "𐑻"   # sub-critical (open-mid front)
 _C_super  = "𐑣"   # supercritical (long open)
 
 # ∋ — Interaction Grammar
-_G_and    = "ɢ^∧"   # conjunction / sharp
-_G_alt    = "ɢ^˝"   # alternating / cyclic
-_G_sub    = "ɢ^ˌ"   # subordinate / secondary
-_G_broad  = "ɢ^Ş"   # broadcast / full
+_G_and    = "∋^∧"   # conjunction / sharp
+_G_alt    = "∋^˝"   # alternating / cyclic
+_G_sub    = "∋^ˌ"   # subordinate / secondary
+_G_broad  = "∋^Ş"   # broadcast / full
 
 # < — Parity / Symmetry
 _P_weak   = "𐑗"   # weak / partial

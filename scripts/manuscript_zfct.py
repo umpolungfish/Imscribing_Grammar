@@ -13,7 +13,7 @@ Per-element primitive derivation
   Variable (element-level):
     ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     <  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
-    ɢ  — broadcast vs sequential vs conjunctive (FSPLIT>>FFUSE→Ş; CLINK→ˌ; VINIT→^)
+    ∋  — broadcast vs sequential vs conjunctive (FSPLIT>>FFUSE→Ş; CLINK→ˌ; VINIT→^)
     Ħ  — instruction count as state-depth proxy (<30→Ñ; <60→£; <120→A; ≥120→!)
 
 Outputs
@@ -53,17 +53,17 @@ from navigators.zfct_navigator import (
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
         '⊢': '𐑦', '⊣': '𐑸', '>': '𐑾',  '<': '𐑹',
-        '⋈': '⋈^ì', '⊤': '⊤^Ù', '∈': '𐑲',  '∋': 'ɢ^Ş',
+        '⋈': '⋈^ì', '⊤': '⊤^Ù', '∈': '𐑲',  '∋': '∋^Ş',
         '⊙': '⊙', '⊥': '𐑫', '⊞': '𐑙',  '◻': '𐑭',
     },
     'rohonc': {
         '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
-        '⋈': '⋈^ì', '⊤': '⊤^@', '∈': '𐑲', '∋': 'ɢ^ˌ',
+        '⋈': '⋈^ì', '⊤': '⊤^@', '∈': '𐑲', '∋': '∋^ˌ',
         '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
     'linear_a': {
         '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
-        '⋈': '⋈^ż', '⊤': '⊤^W', '∈': '𐑲', '∋': 'ɢ^ˌ',
+        '⋈': '⋈^ż', '⊤': '⊤^W', '∈': '𐑲', '∋': '∋^ˌ',
         '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
 }
@@ -121,18 +121,18 @@ def _derive_<(counts: Counter, corpus: str) -> str:
     return '𐑿'                       # slight asymmetry
 
 
-def _derive_ɢ(counts: Counter, corpus: str) -> str:
+def _derive_∋(counts: Counter, corpus: str) -> str:
     total = sum(counts.values()) or 1
     vinit = counts['VINIT'] / total
     clink = counts['CLINK'] / total
     net_split = counts['FSPLIT'] - counts['FFUSE']
 
     if vinit > 0.20:
-        return 'ɢ^∧'                   # conjunctive / initiating
+        return '∋^∧'                   # conjunctive / initiating
     if net_split > max(5, 0.10 * total):
-        return 'ɢ^Ş'                   # broadcast (more splits than fuses)
+        return '∋^Ş'                   # broadcast (more splits than fuses)
     if clink > 0.15:
-        return 'ɢ^ˌ'                   # sequential composition
+        return '∋^ˌ'                   # sequential composition
     return CORPUS_BASE[corpus]['∋']    # corpus default
 
 
@@ -152,7 +152,7 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     base   = dict(CORPUS_BASE[corpus])
     base['⊣'] = _derive_⊣(counts, corpus)
     base['<'] = _derive_<(counts, corpus)
-    base['∋'] = _derive_ɢ(counts, corpus)
+    base['∋'] = _derive_∋(counts, corpus)
     base['⊥'] = _derive_Ħ(len(instructions), corpus)
     return base
 
@@ -265,7 +265,7 @@ def process_corpus(
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
                   f'⊣={tuple_["⊣"]}  <={tuple_["<"]}  '
-                  f'ɢ={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
+                  f'∋={tuple_["∋"]}  Ħ={tuple_["⊥"]}')
     return records
 
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ɢ={t["∋"]}  Ħ={t["⊥"]}\n')
+                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ∋={t["∋"]}  Ħ={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

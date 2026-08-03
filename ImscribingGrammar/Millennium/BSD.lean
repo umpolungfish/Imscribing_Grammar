@@ -81,7 +81,7 @@ Tate-Shafarevich group Ш(E/ℚ), Tamagawa numbers c_v, and torsion:
 
 **SynthOmnicon structural note:**
 
-  BSD has primitive tuple if' · mime · they · Γ_and · ⊙ · Ω_Z.
+  BSD has primitive tuple if' · mime · they · 𐑝 · ⊙ · Ω_Z.
   · if': the modularity theorem makes E/ℚ ↔ modular form a holographic duality.
     Boundary-to-bulk: the L-function on the analytic side corresponds to the rank on the algebraic side.
   · mime: the functional equation of L(E,s) (symmetry s ↔ 2-s) is a bowtie structure.

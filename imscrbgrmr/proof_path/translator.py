@@ -82,7 +82,7 @@ You are a mathematical proof assistant working with the Imscribing Grammar (IG),
 a 12-primitive coordinate system for mathematical and physical objects. \
 IG primitives: ⊢ (Dimensionality), ⊣ (Topology), > (Relational Mode), \
 < (Parity/Symmetry), ⋈ (Fidelity), ⊤ (Kinetics), ∈ (Scope), \
-ɢ (Interaction Grammar), ⊙ (Criticality), Ħ (Chirality), \
+∋ (Interaction Grammar), ⊙ (Criticality), Ħ (Chirality), \
 Σ (Stoichiometry), Ω (Topological Invariant).
 
 A proof path in IG is a sequence of named mathematical operations that transform \

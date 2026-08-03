@@ -876,7 +876,7 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
+        """Canonical tuple string: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω⟩ (concatenated, no separators).
 
         Ħ (chirality) is slot 10 and Ω (protection) is slot 12. Emitting protection at
         10 and chirality at 12 transposes them: the VALUES stay correct but land in each
@@ -936,7 +936,7 @@ class Imscription:
             v = d.get(glyph) or d.get(long) or d.get(short)
             if v is None:
                 return default
-            # Handle old compound interaction_grammar dict: {"operator": "ɢ_and", "tier": "SELECTIVE"}
+            # Handle old compound interaction_grammar dict: {"operator": "𐑝", "tier": "SELECTIVE"}
             if isinstance(v, dict):
                 v = v.get("operator", default)
             return str(v)

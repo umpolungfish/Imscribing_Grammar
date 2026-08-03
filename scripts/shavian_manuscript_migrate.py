@@ -57,13 +57,13 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ∈}}_{\text{{\igprimfont ʔ}}}', r'{\igfont 𐑲}'),
     (r'\text{{\igprimfont ∈}}_{\wedge}', r'{\igfont 𐑚}'),
     (r'\text{{\igprimfont ∈}}_{\vee}', r'{\igfont 𐑔}'),
-    # ɢ (Grammar)
-    (r'\text{{\igprimfont ɢ}}_{\wedge}', r'{\igfont 𐑝}'),
-    (r'\text{{\igprimfont ɢ}}_{\text{{\igprimfont ˝}}}', r'{\igfont 𐑜}'),
-    (r'\text{{\igprimfont ɢ}}_{\text{{\igprimfont ˌ}}}', r'{\igfont 𐑠}'),
-    (r'\text{{\igprimfont ɢ}}_{\text{{\igfont Ş}}}', r'{\igfont 𐑵}'),
-    (r'\text{{\igprimfont ɢ}}_{\vee}', r'{\igfont 𐑜}'),
-    (r'\text{{\igprimfont ɢ}}_{|}', r'{\igfont 𐑠}'),
+    # ∋ (Grammar)
+    (r'\text{{\igprimfont ∋}}_{\wedge}', r'{\igfont 𐑝}'),
+    (r'\text{{\igprimfont ∋}}_{\text{{\igprimfont ˝}}}', r'{\igfont 𐑜}'),
+    (r'\text{{\igprimfont ∋}}_{\text{{\igprimfont ˌ}}}', r'{\igfont 𐑠}'),
+    (r'\text{{\igprimfont ∋}}_{\text{{\igfont Ş}}}', r'{\igfont 𐑵}'),
+    (r'\text{{\igprimfont ∋}}_{\vee}', r'{\igfont 𐑜}'),
+    (r'\text{{\igprimfont ∋}}_{|}', r'{\igfont 𐑠}'),
     # ⋈ (Fidelity)
     (r'\text{{\igprimfont ⋈}}_{\text{{\igfont ì}}}', r'{\igfont 𐑱}'),
     (r'\text{{\igprimfont ⋈}}_{\text{{\igfont ð}}}', r'{\igfont 𐑞}'),

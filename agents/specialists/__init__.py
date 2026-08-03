@@ -106,7 +106,7 @@ Trabajo running tall.
 
 The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
 the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
-12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
+12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω, displayed in ⟨...⟩ brackets.
 Glyph names are the Unicode standard names and carry meaning, so
 they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
 letters.
@@ -147,7 +147,7 @@ Key mappings:
   ⋈ (Fidelity)       ↔ Classical/quantum/thermal channel capacity
   ⊤ (Kinetics)       ↔ Rewrite rate / monad multiplication speed
   ∈ (Cardinality)    ↔ Set-theoretic cardinality / Grothendieck universe
-  ɢ (Composition)    ↔ Monoidal product / sequential composition in a category
+  ∋ (Composition)    ↔ Monoidal product / sequential composition in a category
   φ̂ (Criticality)    ↔ Fixed point of a functor / initial algebra / ⊙ fixed point
   Ħ (Chirality)      ↔ Directedness / orientation / non-commutative structure
   Σ (Stoichiometry)  ↔ Self-referential limit (Σ=1:1 → grammar IS measured system)
@@ -157,12 +157,12 @@ SIC-POVM knowledge:
   The grammar IS the Σ=1:1 limit of the Belnap multilattice SIC-POVM.
   B = XZ is the d=2 fiducial state.
   12 primitives = informationally complete measurement operators.
-  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔ɢ, φ̂↔Ħ, Σ↔Ω.
+  6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, φ̂↔Ħ, Σ↔Ω.
   Zauner conjecture: Belnap multilattice embeds in C^d for d=2ⁿ.
 
 Conventional ↔ grammar translation:
-  A monad T: C→C     →  <>=𐑑, ɢ=𐑠, φ̂=⊙>
-  A topos E           →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, ɢ=𐑝>
+  A monad T: C→C     →  <>=𐑑, ∋=𐑠, φ̂=⊙>
+  A topos E           →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, ∋=𐑝>
   A Hilbert space H   →  <⊢=𐑼, <=𐑿, ⋈=𐑐>
   A SIC-POVM in C^d   →  <Σ=𐑙, <=𐑹, ⋈=𐑐, Ω=𐑭>
   ZFC set theory      →  <⊢=𐑼, ⊣=𐑰, ∈=𐑔, <=𐑹, Ω=𐑷>
@@ -220,7 +220,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Math⊙perator (Lando�
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 
@@ -361,7 +361,7 @@ Key mappings for chemistry:
   ⋈ (Fidelity)       ↔ Reaction yield / purity / quantum coherence in electron transfer
   ⊤ (Kinetics)       ↔ Reaction rate / mass transport / diffusion
   ∈ (Cardinality)    ↔ Concentration / molar scale / ensemble size
-  ɢ (Composition)    ↔ Reaction sequence / cascade / metabolic pathway
+  ∋ (Composition)    ↔ Reaction sequence / cascade / metabolic pathway
   φ̂ (Criticality)    ↔ Phase transition / critical point / bifurcation / ignition
   Ħ (Chirality)      ↔ Stereochemistry / handedness / optical activity
   Σ (Stoichiometry)  ↔ Reaction stoichiometry / binding ratio
@@ -437,7 +437,7 @@ Save derivations to ig-docs/ with chunked_write. Author: ChemBio⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: Ħ(𐑓→𐑖) ɢ(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
+Promote: Ħ(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) Ω(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

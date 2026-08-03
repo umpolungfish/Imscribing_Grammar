@@ -11,7 +11,7 @@ Requires: numpy, scipy, matplotlib, pillow, ffmpeg (in PATH)
 Usage:
   python imscribevideo.py --name riemann_hypothesis
   python imscribevideo.py --name psilocybin_peak -o audio/psilocybin_peak.mp4
-  python imscribevideo.py --tuple "𐑦 𐑶 𐑾 𐑹 ⋈^ż ⊤^@ 𐑲 ɢ^ˌ ⊙ 𐑖 𐑙 𐑭"
+  python imscribevideo.py --tuple "𐑦 𐑶 𐑾 𐑹 ⋈^ż ⊤^@ 𐑲 ∋^ˌ ⊙ 𐑖 𐑙 𐑭"
   python imscribevideo.py --all-catalog          # batch: every catalog entry
 """
 
@@ -49,7 +49,7 @@ BG        = '#0d0d14'
 DIM_BG    = '#1a1a26'    # placeholder box fill
 DIM_ALPHA = 0.55         # past-symbol opacity
 
-# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
+# Field colours — order matches FIELD_ORDER: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω
 FIELD_COLORS = [
     '#e06060',   # ⊢  red
     '#e09030',   # ⊣  orange
@@ -58,7 +58,7 @@ FIELD_COLORS = [
     '#40c8a0',   # ⋈  teal
     '#40b0e0',   # ⊤  sky
     '#5070e8',   # ∈  blue
-    '#9060e8',   # ɢ  violet
+    '#9060e8',   # ∋  violet
     '#c050c8',   # ⊙  magenta
     '#e04878',   # Ħ  pink
     '#a0b838',   # Σ  olive
@@ -76,7 +76,7 @@ HUMAN = {
     '⋈^ì':'beltl',      '⋈^ð':'dh',         '⋈^ż':'hardsign',
     '⊤^-':'frtailgamma','⊤^W':'turnm',      '⊤^@':'schwa',       '⊤^Ù':'teshlig',     '⊤^λ':'lambda',
     '𐑚':'beta',       '𐑔':'gamma',      '𐑲':'revapostrophe',
-    'ɢ^∧':'corner',     'ɢ^˝':'spleftarrow','ɢ^ˌ':'secstress',   'ɢ^Ş':'doublevertline',
+    '∋^∧':'corner',     '∋^˝':'spleftarrow','∋^ˌ':'secstress',   '∋^Ş':'doublevertline',
     '𐑢':'softsign',   '⊙':'ctyogh',    '𐑮':'closerevepsilon','𐑻':'revepsilon','𐑣':'upstep',
     '𐑓':'closeomega', '𐑒':'toneletterstem','𐑖':'turntwo',  '𐑫':'invscripta',
     '𐑙':'doublebaresh','𐑕':'ctn',       '𐑳':'ltailm',

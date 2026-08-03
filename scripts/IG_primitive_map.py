@@ -108,12 +108,12 @@ ORDINALS = {
         "𐑲": 3.0,
     },
     "Gamma": {
-        "ɢ^∧":   1.0,
-        "ɢ^˝":    2.0,
-        "Γ_xor":   2.5,
-        "ɢ^ˌ":   3.0,
-        "Γ_impl":  3.5,
-        "ɢ^Ş": 4.0,
+        "∋^∧":   1.0,
+        "∋^˝":    2.0,
+        "𐑜":   2.5,
+        "∋^ˌ":   3.0,
+        "𐑠":  3.5,
+        "∋^Ş": 4.0,
         "∈_disc":  4.5,
     },
     "Phi": {
@@ -253,18 +253,18 @@ print("MDS projection done.")
 # and PrimitiveBridge.lean (encoded in catalog-compatible format).
 KEY_imscriptions: dict[str, dict] = {
     # ── Millennium Prize encodings (PrimitiveBridge.lean) ─────────────────
-    "YM classical":      {"D":"𐑨",  "T":"𐑡","R":"𐑑",     "P":"𐑬",     "F":"⋈^ð",  "K":"⊤^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
-    "YM quantum\n(target)": {"D":"𐑨","T":"𐑡","R":"𐑑",    "P":"𐑬",     "F":"⋈^ż", "K":"⊤^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
-    "RH (ζ zeros)":      {"D":"𐑛",  "T":"𐑡","R":"𐑑",     "P":"𐑯","F":"⋈^ż", "K":"⊤^@", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
-    "Lee-Yang\n(proved)":{"D":"𐑛",  "T":"𐑥", "R":"𐑑",     "P":"𐑿",    "F":"⋈^ì",  "K":"⊤^W",  "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑮", "H":"𐑒",  "S":"𐑳",   "Omega":"𐑷"},
-    "NS smooth\nsoln":   {"D":"𐑨",  "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ð",  "K":"⊤^W",  "G":"𐑚",  "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑓",  "S":"𐑳",   "Omega":"𐑷"},
-    "OPN\nconstraint":   {"D":"𐑛", "T":"𐑰", "R":"𐑑",     "P":"𐑯","F":"⋈^ì",  "K":"⊤^Ù", "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
+    "YM classical":      {"D":"𐑨",  "T":"𐑡","R":"𐑑",     "P":"𐑬",     "F":"⋈^ð",  "K":"⊤^W",  "G":"𐑚",  "Gamma":"∋^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
+    "YM quantum\n(target)": {"D":"𐑨","T":"𐑡","R":"𐑑",    "P":"𐑬",     "F":"⋈^ż", "K":"⊤^Ù", "G":"𐑲", "Gamma":"∋^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑭"},
+    "RH (ζ zeros)":      {"D":"𐑛",  "T":"𐑡","R":"𐑑",     "P":"𐑯","F":"⋈^ż", "K":"⊤^@", "G":"𐑲", "Gamma":"∋^∧",  "Phi":"𐑮", "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
+    "Lee-Yang\n(proved)":{"D":"𐑛",  "T":"𐑥", "R":"𐑑",     "P":"𐑿",    "F":"⋈^ì",  "K":"⊤^W",  "G":"𐑔", "Gamma":"∋^∧",  "Phi":"𐑮", "H":"𐑒",  "S":"𐑳",   "Omega":"𐑷"},
+    "NS smooth\nsoln":   {"D":"𐑨",  "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ð",  "K":"⊤^W",  "G":"𐑚",  "Gamma":"∋^∧",  "Phi":"𐑢",       "H":"𐑓",  "S":"𐑳",   "Omega":"𐑷"},
+    "OPN\nconstraint":   {"D":"𐑛", "T":"𐑰", "R":"𐑑",     "P":"𐑯","F":"⋈^ì",  "K":"⊤^Ù", "G":"𐑲", "Gamma":"∋^∧",  "Phi":"⊙",         "H":"𐑓",  "S":"one_n", "Omega":"𐑷"},
     # ── Field-theory imscriptions (Imscription.lean) ──────────────────────────────
-    "Higgs / axion\n/ inflaton":{"D":"𐑛","T":"𐑥","R":"𐑽","P":"𐑹","F":"⋈^ż","K":"⊤^@","G":"𐑚","Gamma":"ɢ^∧","Phi":"⊙","H":"𐑒","S":"one_n","Omega":"𐑷"},
-    "Standard\nModel":   {"D":"𐑨",  "T":"𐑡","R":"𐑽", "P":"𐑬",     "F":"⋈^ð",  "K":"⊤^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑖",  "S":"𐑳",   "Omega":"𐑭"},
-    "Quantum\nGravity":  {"D":"𐑦",  "T":"𐑸",   "R":"𐑑",     "P":"𐑯","F":"⋈^ż", "K":"⊤^Ù", "G":"𐑲", "Gamma":"Γ_impl", "Phi":"⊙",         "H":"𐑫","S":"𐑳",  "Omega":"𐑟"},
-    "General\nRelativity":{"D":"𐑨", "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ż", "K":"⊤^@", "G":"𐑔", "Gamma":"ɢ^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
-    "Asymptotic\nSafety":{"D":"𐑨",  "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ż", "K":"⊤^W",  "G":"𐑲", "Gamma":"ɢ^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
+    "Higgs / axion\n/ inflaton":{"D":"𐑛","T":"𐑥","R":"𐑽","P":"𐑹","F":"⋈^ż","K":"⊤^@","G":"𐑚","Gamma":"∋^∧","Phi":"⊙","H":"𐑒","S":"one_n","Omega":"𐑷"},
+    "Standard\nModel":   {"D":"𐑨",  "T":"𐑡","R":"𐑽", "P":"𐑬",     "F":"⋈^ð",  "K":"⊤^W",  "G":"𐑲", "Gamma":"∋^∧",  "Phi":"⊙",         "H":"𐑖",  "S":"𐑳",   "Omega":"𐑭"},
+    "Quantum\nGravity":  {"D":"𐑦",  "T":"𐑸",   "R":"𐑑",     "P":"𐑯","F":"⋈^ż", "K":"⊤^Ù", "G":"𐑲", "Gamma":"𐑠", "Phi":"⊙",         "H":"𐑫","S":"𐑳",  "Omega":"𐑟"},
+    "General\nRelativity":{"D":"𐑨", "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ż", "K":"⊤^@", "G":"𐑔", "Gamma":"∋^∧",  "Phi":"𐑢",       "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
+    "Asymptotic\nSafety":{"D":"𐑨",  "T":"𐑡","R":"𐑽",  "P":"𐑯","F":"⋈^ż", "K":"⊤^W",  "G":"𐑲", "Gamma":"∋^∧",  "Phi":"⊙",         "H":"𐑒",  "S":"one_n", "Omega":"𐑷"},
 }
 
 # Supplement with catalog entries by name

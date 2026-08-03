@@ -105,7 +105,7 @@ def build_network_composite(
         "⋈": composite.get("F", "⋈^ì"),
         "⊤": composite.get("K", "⊤^-"),
         "∈": composite.get("G", "𐑔"),
-        "∋": composite.get("Gamma", "ɢ^∧"),
+        "∋": composite.get("Gamma", "∋^∧"),
         "⊙": composite.get("Phi", "𐑢"),
         "⊥": composite.get("H", "𐑓"),
         "⊞": composite.get("S", "𐑙"),

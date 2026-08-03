@@ -51,7 +51,7 @@ def normalize(signal, peak=0.8):
 #   ⋈  Fidelity        — signal clarity      (noise floor vs clean tone)
 #   ⊤  Kinetics        — temporal envelope   (attack/decay shape = speed)
 #   ∈  Scope           — bandwidth           (narrow → full spectrum)
-#   ɢ  Grammar         — temporal structure  (how events compose in time)
+#   ∋  Grammar         — temporal structure  (how events compose in time)
 #   ⊙  Criticality     — stability           (damped → sustained → growing)
 #   Ħ  Chirality  — reverberation       (dry → long decay = deep memory)
 #   Σ  Stoichiometry   — multiplicity        (one voice → many at fixed ratio)
@@ -300,7 +300,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
             sig = sine(f0, t) * env
 
     # =========================================================================
-    # ɢ — Coupling
+    # ∋ — Coupling
     # How events compose in time:
     # simultaneous chord (and) → alternating (or) → ascending steps (seq) →
     # wide reverberant wash (broad)
@@ -469,7 +469,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     return normalize(sig[:n])
 
 # =============================================================================
-# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
+# Canonical 49-symbol list — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω
 # =============================================================================
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
@@ -479,7 +479,7 @@ symbol_list = [
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ⋈ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # ⊤ Kinetics
     ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # ∈ Scope
-    ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ɢ Grammar
+    ('∋', '∧'), ('∋', '˝'), ('∋', 'ˌ'), ('∋', 'Ş'),             # ∋ Grammar
     ('⊙', 'ž'), ('⊙', 'ÿ'), ('⊙', 'Æ'), ('⊙', '3'), ('⊙', 'Ţ'),# ⊙ Criticality
     ('⊥', 'Ñ'), ('⊥', '£'), ('⊥', 'A'), ('⊥', '!'),             # Ħ Chirality
     ('⊞', 'S'), ('⊞', 'ő'), ('⊞', 'ï'),                          # Σ Stoichiometry
@@ -509,9 +509,9 @@ PRIMITIVE_MAP = {
     '⊤^Ù': ('⊤', 'Ù'),   '⊤^λ': ('⊤', 'λ'),
     # ∈ Scope
     '𐑚': ('∈', 'β'),   '𐑔': ('∈', 'γ'),   '𐑲': ('∈', 'ʔ'),
-    # ɢ Grammar
-    'ɢ^∧': ('∋', '∧'),   'ɢ^˝': ('∋', '˝'),
-    'ɢ^ˌ': ('∋', 'ˌ'),   'ɢ^Ş': ('∋', 'Ş'),
+    # ∋ Grammar
+    '∋^∧': ('∋', '∧'),   '∋^˝': ('∋', '˝'),
+    '∋^ˌ': ('∋', 'ˌ'),   '∋^Ş': ('∋', 'Ş'),
     # ⊙ Criticality
     '𐑢': ('⊙', 'ž'),   '⊙': ('⊙', 'ÿ'),   '𐑮': ('⊙', 'Æ'),
     '𐑻': ('⊙', '3'),   '𐑣': ('⊙', 'Ţ'),
@@ -536,8 +536,8 @@ OLD_ID_MAP = {
     'K_fast': '⊤^-',     'K_mod': '⊤^W',          'K_slow': '⊤^@',
     'K_trap': '⊤^Ù',     'K_MBL': '⊤^λ',
     'G_beth': '𐑚',     'G_gimel': '𐑔',        'G_aleph': '𐑲',
-    'G_and': 'ɢ^∧',      'Gamma_and': 'ɢ^∧',      'G_or': 'ɢ^˝',      'Gamma_or': 'ɢ^˝',
-    'G_seq': 'ɢ^ˌ',      'Gamma_seq': 'ɢ^ˌ',      'G_broad': 'ɢ^Ş',   'Gamma_broad': 'ɢ^Ş',
+    'G_and': '∋^∧',      'Gamma_and': '∋^∧',      'G_or': '∋^˝',      'Gamma_or': '∋^˝',
+    'G_seq': '∋^ˌ',      'Gamma_seq': '∋^ˌ',      'G_broad': '∋^Ş',   'Gamma_broad': '∋^Ş',
     '𐑢': '𐑢',    '⊙': '⊙',          '𐑮': '𐑮',
     '𐑻': '𐑻',     'Phi_super': '𐑣',
     'H0': '𐑓',         'H_0': '𐑓',            'H1': '𐑒',        'H_1': '𐑒',

@@ -172,10 +172,10 @@ ENTRIES: list[tuple[str, str, str, str, str | None]] = [
     ("G", "𐑲",  "[[?]]",        "/ʔ/ glottal stop",                     None),
 
     # Gamma — Interaction grammar
-    ("Gamma", "ɢ^∧",  "[[k]]",    "/k/ velar stop",                       None),
-    ("Gamma", "ɢ^˝",  "[[r r]]",  "/r r/ alternating rhotic",             None),
-    ("Gamma", "ɢ^ˌ",  "[[@]]",    "/ə/ secondary stress schwa",           None),
-    ("Gamma", "ɢ^Ş",  "[[a:]]",   "/aː/ open broadcast vowel",            None),
+    ("Gamma", "∋^∧",  "[[k]]",    "/k/ velar stop",                       None),
+    ("Gamma", "∋^˝",  "[[r r]]",  "/r r/ alternating rhotic",             None),
+    ("Gamma", "∋^ˌ",  "[[@]]",    "/ə/ secondary stress schwa",           None),
+    ("Gamma", "∋^Ş",  "[[a:]]",   "/aː/ open broadcast vowel",            None),
 
     # Phi — Criticality
     ("Phi", "𐑢",  "[[j]]",     "/j/ palatalization",                   None),

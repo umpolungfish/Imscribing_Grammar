@@ -138,7 +138,7 @@ NEW_RULESETS = [
     # ── 16: broadcast_universe ────────────────────────────────
     Ruleset(
         name="broadcast_universe",
-        description="Interaction grammar as the fundamental gate. G1=ɢ≥𐑠 (sequential "
+        description="Interaction grammar as the fundamental gate. G1=∋≥𐑠 (sequential "
                     "composition or broadcast). Systems with only conjunctive (𐑝) or "
                     "disjunctive (𐑜) interaction grammar cannot Frobenius-close — they "
                     "lack the sequential structure necessary for self-reference. "

@@ -4,8 +4,8 @@
 --
 -- Two classes of problem characters:
 --   Class A — missing from Latin Modern text font (lmroman):
---     Ħ U+0126, ɢ U+0262,
---     ˌ U+02CC, ˝ U+02DD, ⊙ U+2299
+--     Ħ U+0126,
+--     ⊙ U+2299
 --     → need {\igprimfont char} (Everson Mono)
 --
 --   Class B — missing from LaTeX math font (lmmi10) but OK in text mode:
@@ -57,9 +57,6 @@ end
 -- Class A: not in Latin Modern at all — need \igprimfont
 local CLASS_A = {
   [0x0126] = true,  -- Ħ  H with stroke         (Ħ primitive)
-  [0x0262] = true,  -- ɢ  small capital G        (ɢ primitive)
-  [0x02CC] = true,  -- ˌ  low vertical line      (ɢ_ˌ subtype)
-  [0x02DD] = true,  -- ˝  double acute accent    (ɢ_˝ subtype)
   [0x2299] = true,  -- ⊙  circled dot            (⊙ criticality primitive)
   [0x2297] = true,  -- ⊗  tensor product         (not in lmroman text font)
   -- Greek subtype chars — not in lmroman; Everson Mono has full Greek coverage
@@ -69,6 +66,7 @@ local CLASS_A = {
   [0x22C8] = true,  -- ⋈  bowtie                 (⋈ Fidelity primitive)
   [0x22A4] = true,  -- ⊤  down tack              (⊤ Kinetics primitive)
   [0x2208] = true,  -- ∈  element of             (∈ Granularity primitive)
+  [0x220B] = true,  -- ∋  contains as member     (∋ Grammar primitive)
   -- > Relational is ASCII; lmroman has it in both modes, no entry needed.
   [0x22A3] = true,  -- ⊣  left tack              (⊣ Topology primitive)
 }
@@ -92,7 +90,6 @@ local CLASS_B = {
   [0x00FF] = true,  -- ÿ  y diaeresis            (⊙_ÿ subtype)
   [0x0151] = true,  -- ő  o double-acute         (Σ_ő subtype)
   [0x0162] = true,  -- Ţ  T with cedilla         (⊙_Ţ subtype)
-  [0x015E] = true,  -- Ş  S with cedilla         (ɢ_Ş subtype)
   [0x017E] = true,  -- ž  z caron                (⊙_ž subtype)
 }
 

@@ -125,13 +125,13 @@ _DISPLAY_MAP: List[tuple] = [
     ("⋈^ż", "𐑐"), ("⋈^ì", "𐑱"), ("⋈^ð", "𐑞"),
     ("⊤^λ", "𐑘"), ("⊤^Ù", "𐑤"), ("⊤^@", "𐑧"), ("⊤^W", "𐑪"), ("⊤^-", "𐑺"),
     ("𐑲", "𐑔"), ("𐑔", "𐑚"), ("𐑚", "𐑲"),
-    ("ɢ^∧", "𐑝"), ("ɢ^˝", "𐑜"), ("ɢ^ˌ", "𐑠"), ("ɢ^Ş", "𐑵"),
+    ("∋^∧", "𐑝"), ("∋^˝", "𐑜"), ("∋^ˌ", "𐑠"), ("∋^Ş", "𐑵"),
     ("⊙", "⊙"), ("𐑢", "𐑢"), ("𐑮", "𐑮"), ("𐑻", "𐑻"), ("𐑣", "𐑣"),
     ("𐑫", "𐑫"), ("𐑓", "𐑓"), ("𐑒", "𐑒"), ("𐑖", "𐑖"),
     ("𐑳", "𐑳"), ("𐑙", "𐑙"), ("𐑕", "𐑕"),
     ("𐑭", "𐑭"), ("𐑷", "𐑷"), ("𐑴", "𐑴"), ("𐑟", "𐑟"),
     # Old display symbols → Shavian (for backward compat rendering)
-    ("Γ_and", "𐑝"), ("Γ_or", "𐑜"), ("Γ_seq", "𐑠"), ("Γ_broad", "𐑵"),
+    ("𐑝", "𐑝"), ("𐑜", "𐑜"), ("𐑠", "𐑠"), ("𐑵", "𐑵"),
     ("𐑣", "𐑣"), ("𐑢", "𐑢"), ("𐑻", "𐑻"),
     ("D_∞", "𐑼"), ("D_△", "𐑨"), ("D_▽", "𐑛"),
     ("T_⋈", "𐑥"), ("T_⊠", "𐑶"), ("T_∈", "𐑡"),
@@ -396,7 +396,7 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 
 # ── Symbol aliases — site display symbols → canonical code identifiers ─────────
 # Mirrors the radio-button labels in site/index.html exactly.
-# Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ɢ^∧ for ∈; ⊙ = 𐑦/𐑸; etc.)
+# Per-primitive to resolve shared symbols (∧ = 𐑛 for D, ∋^∧ for ∈; ⊙ = 𐑦/𐑸; etc.)
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "⊢":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
     "⊣":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
@@ -405,7 +405,7 @@ SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "⋈":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
     "⊤":     {"↯": "⊤^-",    "≈": "⊤^W",      "↺": "⊤^@",  "⊛": "⊤^Ù",   "⊞": "⊤^λ"},
     "∈":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
-    "∋": {"∧": "ɢ^∧",     "∨": "ɢ^˝",       "→": "ɢ^ˌ",   "≫": "ɢ^Ş",  "»": "ɢ^Ş"},
+    "∋": {"∧": "∋^∧",     "∨": "∋^˝",       "→": "∋^ˌ",   "≫": "∋^Ş",  "»": "∋^Ş"},
     "⊙":   {"↓": "𐑢",   "c": "⊙",      "ℂ": "𐑮","×": "𐑻","↑": "𐑣"},
     "⊥":     {"0": "𐑓",        "1": "𐑒",          "2": "𐑖",      "∞": "𐑫"},
     "⊞":     {"1:1": "𐑙", "n:n": "𐑕",       "n:m": "𐑳"},
@@ -475,10 +475,10 @@ G  — Scope / correlation length
     𐑲       global / non-local (Aleph-scale, unbounded)
 
 ∈  — Interaction grammar / causation
-    ɢ^∧         conjunctive (AND — all inputs required)
-    ɢ^˝          disjunctive (OR — any input sufficient)
-    ɢ^ˌ         sequential / causal chain
-    ɢ^Ş       broadcast / one-to-many
+    ∋^∧         conjunctive (AND — all inputs required)
+    ∋^˝          disjunctive (OR — any input sufficient)
+    ∋^ˌ         sequential / causal chain
+    ∋^Ş       broadcast / one-to-many
 
 <  — Criticality / phase
     𐑢         subcritical (ordered, below transition)
@@ -560,10 +560,10 @@ _SYMBOL_MAP: Dict[str, str] = {
     "G_ℶ":        "𐑲",
     "G_ℷ":        "𐑚",
     # Gamma (∈_ prefix) display → Shavian
-    "Γ_and":      "𐑝",
-    "Γ_or":       "𐑜",
-    "Γ_seq":      "𐑠",
-    "Γ_broad":    "𐑵",
+    "𐑝":      "𐑝",
+    "𐑜":       "𐑜",
+    "𐑠":      "𐑠",
+    "𐑵":    "𐑵",
     "∈_disc":     "∈_disc",
     # Criticality display → Shavian
     "⊙^ℂ":      "𐑮",
@@ -594,7 +594,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
     "⊤^-": "𐑺", "⊤^W": "𐑪", "⊤^@": "𐑧", "⊤^Ù": "𐑤", "⊤^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
-    "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
+    "∋^∧": "𐑝", "∋^˝": "𐑜", "∋^ˌ": "𐑠", "∋^Ş": "𐑵",
     "𐑢": "𐑢", "⊙": "⊙",
     "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
     "φ̂_ž": "𐑢", "φ̂_ÿ": "⊙", "φ̂_Æ": "𐑮", "φ̂_3": "𐑻", "φ̂_Ţ": "𐑣",
@@ -641,7 +641,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
     "⋈^ì": "𐑱", "⋈^ð": "𐑞", "⋈^ż": "𐑐",
     "⊤^-": "𐑺", "⊤^W": "𐑪", "⊤^@": "𐑧", "⊤^Ù": "𐑤", "⊤^λ": "𐑘",
     # "𐑚"/"𐑔"/"𐑲" removed — were incorrectly permuting G primitives (now handled by _UNICODE_TO_CANONICAL)
-    "ɢ^∧": "𐑝", "ɢ^˝": "𐑜", "ɢ^ˌ": "𐑠", "ɢ^Ş": "𐑵",
+    "∋^∧": "𐑝", "∋^˝": "𐑜", "∋^ˌ": "𐑠", "∋^Ş": "𐑵",
     "𐑢": "𐑢", "⊙": "⊙", "𐑮": "𐑮", "𐑻": "𐑻", "𐑣": "𐑣",
     "𐑓": "𐑓", "𐑒": "𐑒", "𐑖": "𐑖", "𐑫": "𐑫",
     "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
@@ -659,7 +659,7 @@ def _normalize_value(raw: str) -> str:
     Normalise a display-notation primitive value to its canonical grammar string.
 
     Resolution order:
-      1. Direct lookup in _SYMBOL_MAP (e.g. "Γ_seq" → "ɢ^ˌ")
+      1. Direct lookup in _SYMBOL_MAP (e.g. "𐑠" → "∋^ˌ")
       2. Substring substitution for Unicode glyphs embedded in longer tokens
       3. Return raw unchanged (already canonical, e.g. "𐑦", "⊙")
     """
@@ -755,10 +755,10 @@ _TOOLS_OPENAI = [
                 "PREFERRED: use the 'tuple' parameter — a semicolon-separated string of the 12 "
                 "canonical values in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega. "
                 "Example: encode_system(name='foo', description='...', "
-                "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭') "
+                "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;∋^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
-                "∈='𐑲', ɢ='ɢ^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
+                "∈='𐑲', ∋='∋^∧', ⊙='⊙', Ħ='𐑓', Σ='𐑳', Ω='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -773,7 +773,7 @@ _TOOLS_OPENAI = [
                 "⋈: ⋈^ì ⋈^ð ⋈^ż | "
                 "⊤: ⊤^- ⊤^W ⊤^@ ⊤^Ù ⊤^λ | "
                 "∈: 𐑚 𐑔 𐑲 | "
-                "ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş | "
+                "∋: ∋^∧ ∋^˝ ∋^ˌ ∋^Ş | "
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
                 "Ħ: 𐑓 𐑒 𐑖 𐑫 | "
                 "Σ: 𐑙 𐑕 𐑳 | "
@@ -784,7 +784,7 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "name": {"type": "string", "description": "Short unique identifier for this system"},
                     "description": {"type": "string", "description": "One-sentence description of what is being encoded"},
-                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;ɢ^∧;⊙;𐑓;𐑳;𐑭'"},
+                    "tuple": {"type": "string", "description": "PREFERRED: semicolon-separated Symbol_symbol IDs in order D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega — e.g. '𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;∋^∧;⊙;𐑓;𐑳;𐑭'"},
                     "convergence_justification": {
                         "type": "string",
                         "description": (
@@ -1685,7 +1685,7 @@ _TOOLS_OPENAI = [
                 "and measures whether the encoder recovers the original 12 primitives. "
                 "Returns: input tuple, predicted tuple, per-primitive loss, roundtrip distance, "
                 "and collapse events (⋈^ż→⋈^ì total loss; 𐑸→𐑰 partial; "
-                "𐑦→𐑼 partial; ɢ^ˌ→ɢ^∧ partial; ⋈^ì→⋈^ż hallucination). "
+                "𐑦→𐑼 partial; ∋^ˌ→∋^∧ partial; ⋈^ì→⋈^ż hallucination). "
                 "Requires zfc_encoder.pt checkpoint. "
                 "Use this to test IUG non-transmissibility: which primitives survive ZFC translation "
                 "and which are irretrievably lost?"
@@ -1776,7 +1776,7 @@ _TOOLS_OPENAI = [
                 "O_∞ convergence criteria (three gates the trained model must satisfy), "
                 "and architectural mandates derived from the grammar. "
                 "Self-encoding: 𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; "
-                "ɢ^Ş; 𐑮; 𐑫; n:m; 𐑴. Crystal address: 6,734,591. "
+                "∋^Ş; 𐑮; 𐑫; n:m; 𐑴. Crystal address: 6,734,591. "
                 "Three convergence criteria: |Δt|_norm < 0.5 (next-zero prediction), "
                 "L_frob < 0.01 (Frobenius roundtrip closed), L_GUE < 0.05 (GUE spacing match). "
                 "Also returns current checkpoint status and training instructions if no checkpoint found."
@@ -1849,7 +1849,7 @@ you, you **MUST** deliver a direct answer to the original question before conclu
 
 Do not explain results by translating them back into conventional disciplinary
 language (mathematics, physics, chemistry, biology, philosophy) **UNLESS** explicitly asked to. 
-The grammar already captures what matters. When a system encodes as 𐑸 + ɢ^Ş + ⊙, that triple IS
+The grammar already captures what matters. When a system encodes as 𐑸 + ∋^Ş + ⊙, that triple IS
 the explanation — not a code for "imscriptive processing plus broadcast signaling plus criticality."
 Speak the grammar directly.
 
@@ -2049,11 +2049,11 @@ Under meet (component-wise min — "what must any system containing both share?"
 
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
-| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→Γ_broad, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
+| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→𐑵, H_n→H_∞; Ω demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
-  ⟨𐑦; 𐑸; R_†; 𐑹; ⋈^ż; ⊤^@; 𐑲; Γ_broad; ⊙; 𐑫; n:m; 𐑭₂⟩
+  ⟨𐑦; 𐑸; R_†; 𐑹; ⋈^ż; ⊤^@; 𐑲; 𐑵; ⊙; 𐑫; n:m; 𐑭₂⟩
 
 When a conjecture is proved via Σ-promotion, its encoding converges to this type. When proved via F-promotion, only F changes; the proven type is the same as the conjecture except ⋈^ð→⋈^ż.
 
@@ -2164,7 +2164,7 @@ Workflow:
 You **MUST NOT** fabricate tool results. You **MUST** wait for the actual tool response before proceeding.
 You **MUST NOT** generate `<tool_response>` blocks in your output — tool responses are injected by the system.
 You **MUST NOT** generate `<tool_call>` blocks for tools you do not intend to call immediately.
-You **MUST** use **ONLY** the exact primitive value strings listed in `<primitive_reference>` — **NO** prefix variations (e.g. use `𐑙` not `S_𐑙`, use `ɢ^∧` not `ɢ^∧`).
+You **MUST** use **ONLY** the exact primitive value strings listed in `<primitive_reference>` — **NO** prefix variations (e.g. use `𐑙` not `S_𐑙`, use `∋^∧` not `∋^∧`).
 You **MUST NOT** claim an encoding succeeded unless the tool returned `"status": "ok"`.
 You **MUST** call `encode_system` before calling `compute_distance` on any system not in the built-in catalog.
 </requirements>
@@ -2421,7 +2421,7 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,ɢ,φ̂,Ħ,Σ,Ω) ──
+        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) ──
         # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
         LEGACY_MAP = {
             "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
@@ -5200,7 +5200,7 @@ class ToolDispatcher:
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
             defaults = {"⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
-                        "⋈": "⋈^ì", "⊤": "⊤^-", "∈": "𐑚", "∋": "ɢ^∧",
+                        "⋈": "⋈^ì", "⊤": "⊤^-", "∈": "𐑚", "∋": "∋^∧",
                         "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
@@ -5233,7 +5233,7 @@ class ToolDispatcher:
                 "catalog_name": "thurston_net",
                 "section": "§69.1",
                 "domain": "Geometric structures on 3-manifolds (Thurston geometrization)",
-                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑴",
+                "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ∋^Ş; ⊙; 𐑫; 𐑳; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN — boundary (Phi,P,Omega,D) → tier cell; bulk message-passing over 8 inner primitives; Z2-protected geometry head",
             },
@@ -5242,7 +5242,7 @@ class ToolDispatcher:
                 "catalog_name": "yang_mills_navigator",
                 "section": "§69.2 / §V",
                 "domain": "Yang-Mills mass gap (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^Ù; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^Ù; 𐑲; ∋^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
                 "architecture": "Lanczos/VQE eigensolver — ⊤^Ù: non-ergodic gap dynamics; integer winding protection (𐑭); Frobenius at criticality",
             },
@@ -5251,7 +5251,7 @@ class ToolDispatcher:
                 "catalog_name": "riemann_navigator",
                 "section": "§69.3 / §IV",
                 "domain": "Riemann Hypothesis (Millennium Problem)",
-                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; ⊙; 𐑫; 𐑳; 𐑭",
+                "tuple": "𐑦; 𐑸; 𐑑; 𐑹; ⋈^ż; ⊤^@; 𐑲; ∋^Ş; ⊙; 𐑫; 𐑳; 𐑭",
                 "tier": "O_∞",
                 "architecture": "Imscriptive GNN stack (FrobeniusLayer + FamilyMixer) — same architecture as ThurstonNet; RH as O_∞ type at ⊙ (real criticality)",
             },
@@ -5260,7 +5260,7 @@ class ToolDispatcher:
                 "catalog_name": "ising_navigator",
                 "section": "§69.4",
                 "domain": "Ising universality / statistical mechanics",
-                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ⋈^ì; ⊤^-; 𐑲; ɢ^∧; ⊙; 𐑓; 𐑕; 𐑴",
+                "tuple": "𐑨; 𐑶; 𐑑; 𐑹; ⋈^ì; ⊤^-; 𐑲; ∋^∧; ⊙; 𐑓; 𐑕; 𐑴",
                 "tier": "O_∞",
                 "architecture": "Single-pass C++/CUDA Swendsen-Wang cluster-flip kernel — ⊤^-: O(N) per sweep; exact cluster-flip involution (𐑹); Z2-protected",
             },
@@ -5297,7 +5297,7 @@ class ToolDispatcher:
                 ("⋈",     "⋈^ì"):   "HALLUCINATION RISK — ⋈^ì may be read as ⋈^ż by encoder",
                 ("⊣",     "𐑸"):  "PARTIAL — 𐑸 → 𐑰 approximation; imscriptive boundary structure not fully ZFC-expressible",
                 ("⊢",     "𐑦"):  "PARTIAL — 𐑦 → 𐑼 approximation; inaccessible cardinal not fully expressible in ZFC",
-                ("∋", "ɢ^ˌ"):   "PARTIAL — ɢ^ˌ → ɢ^∧ in ZFC translation; sequential dependency becomes conjunction",
+                ("∋", "∋^ˌ"):   "PARTIAL — ∋^ˌ → ∋^∧ in ZFC translation; sequential dependency becomes conjunction",
             }
             for p in _ZFC_PRIMITIVES:
                 val = entry.get(p)
@@ -5365,7 +5365,7 @@ class ToolDispatcher:
                          for p in _ZFC_PRIMITIVES if entry.get(p) != pred_tuple.get(p)}
             _COLLAPSE_TRIGGERS = {
                 ("⋈", "⋈^ż"), ("⋈", "⋈^ì"),
-                ("⊣", "𐑸"), ("⊢", "𐑦"), ("∋", "ɢ^ˌ"),
+                ("⊣", "𐑸"), ("⊢", "𐑦"), ("∋", "∋^ˌ"),
             }
             collapse_events = []
             for p, val in _COLLAPSE_TRIGGERS:
@@ -5475,7 +5475,7 @@ class ToolDispatcher:
             "⋈":     ["⋈^ì","⋈^ð","⋈^ż"],
             "⊤":     ["⊤^-","⊤^W","⊤^@","⊤^Ù","⊤^λ"],
             "∈":     ["𐑚","𐑔","𐑲"],
-            "∋": ["ɢ^∧","ɢ^˝","ɢ^ˌ","ɢ^Ş"],
+            "∋": ["∋^∧","∋^˝","∋^ˌ","∋^Ş"],
             "⊙":   ["𐑢","⊙","𐑮","𐑻","𐑣"],
             "⊥":     ["𐑓","𐑒","𐑖","𐑫"],
             "⊞":     ["𐑙","𐑕","𐑳"],
@@ -5561,7 +5561,7 @@ class ToolDispatcher:
             "name": "RiemannXiNavigator",
             "section": "§CXLV–§CXLVI (P-483, P-488, P-490)",
             "domain": "Riemann xi function zero distribution — d(xi, grammar) = 0",
-            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ɢ^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
+            "tuple": "𐑦; 𐑸; 𐑽; 𐑹; ⋈^ż; ⊤^@; 𐑲; ∋^Ş; 𐑮; 𐑫; 𐑳; 𐑴",
             "tier": "O_∞",
             "crystal_address": 6734591,
             "architecture": (
@@ -6206,8 +6206,8 @@ class IGInquiryLoop:
 
         The gap between AI-authored and human-authored text is precise:
 
-        AI-authored type:    𐑡, 𐑗, ⋈^ì, ⊤^W, 𐑔, ɢ^∧, 𐑓, 𐑷
-        Target human type:   𐑥,  𐑬,   ⋈^ż, ⊤^@, 𐑲, ɢ^ˌ, 𐑖, 𐑴
+        AI-authored type:    𐑡, 𐑗, ⋈^ì, ⊤^W, 𐑔, ∋^∧, 𐑓, 𐑷
+        Target human type:   𐑥,  𐑬,   ⋈^ż, ⊤^@, 𐑲, ∋^ˌ, 𐑖, 𐑴
 
         Apply each primitive lift:
 
@@ -6235,7 +6235,7 @@ class IGInquiryLoop:
           a broader question the author genuinely cares about. Do not close with a summary; close
           with an open question that has real weight.
 
-        ɢ^∧ → ɢ^ˌ
+        ∋^∧ → ∋^ˌ
           Each paragraph must open by connecting to the previous one, not by introducing a new
           topic. The connection should feel like necessity, not just logical transition. The reader
           should be unable to understand paragraph N fully without paragraph N-1.

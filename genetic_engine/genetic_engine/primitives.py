@@ -26,7 +26,7 @@ REVISED MAPPING (2026-06-03 v0.6.0):
 Promoted AAs (split stratum):
   Met→⊢ (Scope),     Trp→⊣ (Topology),     Cys→> (Reversibility),
   Tyr→< (Parity),    Phe→⋈ (Force),        Ile→⊤ (Kinetics),
-  His→⊙ (Criticality), Asn→ɢ (Interaction), Gln→∈ (Grammar/Scope),
+  His→⊙ (Criticality), Asn→∋ (Interaction), Gln→∈ (Grammar/Scope),
   Asp→Ħ (Chirality), Lys→Σ (Entropy),     Glu→Ω (Winding)
 
 Ground AAs (exact stratum): Leu, Pro, Arg, Thr, Ala, Ser, Val, Gly
@@ -98,7 +98,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation
     IGPrimitive.GRAMMAR:        "moderate",     # ∈ — H-bond grammar redesign
-    IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss pathological
+    IGPrimitive.INTERACTION:    "moderate",     # ∋ — glycosylation loss pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
     IGPrimitive.FORCE:          "low",          # ⋈ — hydrophobic class preserved
     None:                       "low",          # Ground layer — no primitive
@@ -161,7 +161,7 @@ def get_aa_primitive_description(aa: str) -> str:
         "Tyr": "< (Parity) — phosphorylation switch, aromatic OH toggle",
         "Phe": "⋈ (Force) — maximally hydrophobic aromatic, no heteroatoms",
         "Ile": "⊤ (Kinetics) — β-branched, tightest ribosomal coupling",
-        "Asn": "ɢ (Interaction) — N-glycosylation sequon, extracellular recognition",
+        "Asn": "∋ (Interaction) — N-glycosylation sequon, extracellular recognition",
         "Asp": "Ħ (Chirality) — chiral selectivity in active site catalysis",
         "Lys": "Σ (Entropy) — most variable charged residue, acetylation target",
         "Glu": "Ω (Winding) — highest helix propensity, helix dipole stabilizer",

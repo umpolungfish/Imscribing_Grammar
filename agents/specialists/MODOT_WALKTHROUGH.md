@@ -75,7 +75,7 @@ closed sublattice against its rejected mother-pool.
 the reference floor. A necessary condition, an upper bound — not a solution.
 
 **Everything this touches at once** → `broadcast SOURCE`. One catalog sweep,
-the ɢ broadcast primitive.
+the ∋ broadcast primitive.
 
 **Read it as a plasma** → `plasma ENTRY`. Another lossless face of the same
 tuple, not a separate model.

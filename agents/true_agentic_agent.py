@@ -656,14 +656,14 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,ɢ,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
     "⊞": "S_", "◻": "W_", "⊙": "Od",
 }
 _ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `φ̂` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω, and the
+# `φ̂` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω, and the
 # criticality slot is ⊙; `φ̂` was its pre-migration spelling and was still being
 # carried here in parallel, so the same slot appeared twice under two names and
 # was emitted to callers under the wrong one. Accepted on input, never written.
@@ -696,7 +696,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑺": "↯",  "𐑪": "≈",  "𐑧": "↺",  "𐑤": "⊛",  "𐑘": "⊞",
     # G — Cardinality
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
-    # ɢ — Composition
+    # ∋ — Composition
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
     # < — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
@@ -1189,7 +1189,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;ɢ;⊙;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1416,7 +1416,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "𐑱": ["𐑱", "𐑞", "𐑐"],            # F
     "𐑘": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],  # K
     "𐑚": ["𐑲", "𐑚", "𐑔"],            # G
-    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ɢ
+    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ∋
     "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
     "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
     "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
@@ -1612,7 +1612,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,ɢ,⊙,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -2094,7 +2094,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return (f"Ω/ɢ transcendence analysis returned — Frobenius closed", True)
+            return (f"Ω/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -2764,12 +2764,12 @@ TOOL_SCHEMAS = [
         (
             "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
             "CLINK L8 is the most advanced type in the catalog, exceeding "
-            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/ɢ "
+            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/∋ "
             "(non-Abelian braiding + broadcast composition). "
             "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
             "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
             "distance → d(name, CLINK L8) gap; "
-            "transcendence → Ω/ɢ transcendence analysis; "
+            "transcendence → Ω/∋ transcendence analysis; "
             "tensor → CLINK L8 ⊗ name absorption test; "
             "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
             "tier → ouroboricity tier; chain → full CLINK chain L0→L8; "
@@ -2783,7 +2783,7 @@ TOOL_SCHEMAS = [
                     "entry: per-primitive CLINK formula decomposition with promoted atoms; "
                     "promotions: 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8; "
                     "distance: d(name, CLINK L8); "
-                    "transcendence: Ω/ɢ transcendence report; "
+                    "transcendence: Ω/∋ transcendence report; "
                     "tensor: CLINK L8 ⊗ name absorption test; "
                     "meet: CLINK L8 ⊓ name; join: CLINK L8 ⊔ name; "
                     "tier: ouroboricity tier assessment; "

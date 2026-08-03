@@ -267,7 +267,7 @@ class EnsembleCatalog:
             for s in self._imscriptions
         )
         props["Axiom 2 (Grammar Barrier)"] = (
-            "Global propagation (G_ℵ) supported — Γ_∨ or T_nrleg present."
+            "Global propagation (G_ℵ) supported — 𐑜 or T_nrleg present."
             if has_global_grammar else
             "Local grammar only — ensemble cannot propagate to G_ℵ."
         )

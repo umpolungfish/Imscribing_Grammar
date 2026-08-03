@@ -256,7 +256,7 @@ def cmd_validate(args):
         '⋈': {'⋈^ì', '⋈^ð', '⋈^ż'},
         '⊤': {'⊤^-', '⊤^W', '⊤^@', '⊤^Ù', '⊤^λ'},
         '∈': {'𐑚', '𐑔', '𐑲'},
-        '∋': {'ɢ^∧', 'ɢ^˝', 'ɢ^ˌ', 'ɢ^Ş'},
+        '∋': {'∋^∧', '∋^˝', '∋^ˌ', '∋^Ş'},
         CRIT_LEGACY: {'𐑢', '⊙', '𐑮', '𐑻', '𐑣'},
         '⊥': {'𐑓', '𐑒', '𐑖', '𐑫'},
         '⊞': {'𐑙', '𐑕', '𐑳'},
@@ -474,7 +474,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ [⊙=crit] Ħ Σ Ω
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] Ħ Σ Ω
 #   ⊢: 𐑛 𐑨 𐑼 𐑦
 #   ⊣: 𐑡 𐑰 𐑥 𐑶 𐑸
 #   >: 𐑩 𐑑 𐑽 𐑾
@@ -482,7 +482,7 @@ PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 #   ⋈: ⋈^ì ⋈^ð ⋈^ż
 #   ⊤: ⊤^- ⊤^W ⊤^@ ⊤^Ù ⊤^λ
 #   ∈: 𐑚 𐑔 𐑲
-#   ɢ: ɢ^∧ ɢ^˝ ɢ^ˌ ɢ^Ş
+#   ∋: ∋^∧ ∋^˝ ∋^ˌ ∋^Ş
 #   ⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣
 #   Ħ: 𐑓 𐑒 𐑖 𐑫
 #   Σ: 𐑙 𐑕 𐑳
@@ -507,7 +507,7 @@ chapters = [
     entry(1, "Section title",
         "One-line description",
         "Verbatim source text.",
-        "𐑦","𐑸","𐑽","𐑹}","⋈^ì","⊤^@","𐑲","ɢ^∧","𐑻","𐑫","𐑙","𐑭",
+        "𐑦","𐑸","𐑽","𐑹}","⋈^ì","⊤^@","𐑲","∋^∧","𐑻","𐑫","𐑙","𐑭",
         "T_inf", 0.95,
         "Why these coordinates: ..."),
 ]

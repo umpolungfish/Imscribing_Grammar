@@ -84,7 +84,7 @@ def build_universes():
         ("⊥", "⊙", "chirality_criticality", "Ħ≥ord3.0 → ⊙≥ord2.0: memory then self-model"),
         ("⊤", "⊙", "kinetics_criticality", "⊤≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
         ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → ⊢≥ord4.0: topology then dimension"),
-        ("∈", "∋", "scope_grammar", "∈≥ord3.0 → ɢ≥ord4.0: universal scope then broadcast"),
+        ("∈", "∋", "scope_grammar", "∈≥ord3.0 → ∋≥ord4.0: universal scope then broadcast"),
         ("<", "⋈", "parity_fidelity", "<≥ord5.0 → ⋈≥ord3.0: Frobenius parity then quantum fidelity"),
         ("◻", "⊥", "winding_chirality", "Ω≥ord4.0 → Ħ≥ord4.0: non-Abelian winding then eternal chirality"),
     ]

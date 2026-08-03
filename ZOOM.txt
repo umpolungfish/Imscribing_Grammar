@@ -15,7 +15,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -49,7 +49,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
 
@@ -69,7 +69,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑪       τ = ∞ ∧ ord(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -102,7 +102,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑷 → 𐑟  (gap: 1.0)
@@ -123,7 +123,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -153,7 +153,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -175,7 +175,7 @@
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑪       τ = ∞ ∧ ord(x)
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -210,7 +210,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -232,7 +232,7 @@
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑤       τ ∼ T ∧ noisy(x)
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -263,7 +263,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     <: 𐑯 → 𐑹  (gap: 0.25)
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑣 → ⊙  (gap: 0.5)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -287,7 +287,7 @@
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
@@ -295,7 +295,7 @@
 
   [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
   [LR_DUAL                ] lateral relational duality — 𐑾
-  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [TEMPD2                 ] chirality-2 asymmetry — 𐑖
   [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — Ω
@@ -316,7 +316,7 @@
 
   tier: O₁   d(CLINK L8): 1.2278   match:7 close:3 distant:2
   promoted atoms: HOLOBOUND, LR_DUAL, BROADCAST_TRANSCENDENCE, PHI_C, TEMPD2, BRAID_TRANSCENDENCE
-  ⬆ TRANSCENDENCE primitives: ɢ, Ω
+  ⬆ TRANSCENDENCE primitives: ∋, Ω
 
   Promotions needed to reach CLINK L8 (5):
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
@@ -343,7 +343,7 @@
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
@@ -375,7 +375,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑣 → ⊙  (gap: 0.5)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
@@ -399,13 +399,13 @@
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑷       ∮_γ dx = 0
 
-  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   dim(x) = 2 ∧ sur(x) ∧
@@ -423,7 +423,7 @@
 
   tier: O₀   d(CLINK L8): 1.7863   match:2 close:3 distant:7
   promoted atoms: BROADCAST_TRANSCENDENCE
-  ⬆ TRANSCENDENCE primitives: ɢ
+  ⬆ TRANSCENDENCE primitives: ∋
 
   Promotions needed to reach CLINK L8 (10):
     ⊢: 𐑨 → 𐑦  (gap: 0.667)
@@ -455,7 +455,7 @@
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
@@ -485,7 +485,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑣 → ⊙  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Ω: 𐑴 → 𐑟  (gap: 0.667)
@@ -508,7 +508,7 @@
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑣       ξ → ∞ ∧ chaotic(x)
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
@@ -538,7 +538,7 @@
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     <: 𐑯 → 𐑹  (gap: 0.25)
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑣 → ⊙  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
@@ -562,14 +562,14 @@
   ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
   ⊤      𐑘       τ ≪ T ∧ ∂_t x = f(x)
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
+  ∋      𐑵       f → all(x) ∧ broadcast(x, f)                                                  [BROADCAST_TRANSCENDENCE]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
   Ω      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
-  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ɢ
+  [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -588,7 +588,7 @@
 
   tier: O₀   d(CLINK L8): 1.0647   match:6 close:2 distant:4
   promoted atoms: HOLOBOUND, BROADCAST_TRANSCENDENCE, PHI_C
-  ⬆ TRANSCENDENCE primitives: ɢ
+  ⬆ TRANSCENDENCE primitives: ∋
 
   Promotions needed to reach CLINK L8 (6):
     ⊢: 𐑼 → 𐑦  (gap: 0.333)
@@ -616,7 +616,7 @@
   ⋈      𐑞       Tr(ρ²) < 1 ∧ ρ = Σ p_i |i⟩⟨i|
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
@@ -649,7 +649,7 @@
     ⊢: 𐑛 → 𐑦  (gap: 1.0)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑕 → 𐑳  (gap: 0.5)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -672,7 +672,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑔       ∃y∈x( |y| ∼ |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
@@ -706,7 +706,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -730,7 +730,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
@@ -765,7 +765,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
 
@@ -787,7 +787,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -821,7 +821,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -844,7 +844,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -879,7 +879,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -903,7 +903,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -938,7 +938,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
     Ω: 𐑭 → 𐑟  (gap: 0.333)
@@ -959,7 +959,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑺       τ = ∞ ∧ dis(x) ∧ MBL
   ∈      𐑲       ∀y( y ⊂ x → |y| < |x| )
-  ɢ      𐑝       f ∧ g ∧ h
+  ∋      𐑝       f ∧ g ∧ h
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   Ħ      𐑓       ∀x( P(x) ↔ P(S(x)) )
   Σ      𐑙       |A| = 1 ∧ |B| = 1
@@ -988,7 +988,7 @@
     <: 𐑗 → 𐑹  (gap: 1.0)
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑺 → 𐑧  (gap: 0.429)
-    ɢ: 𐑝 → 𐑵  (gap: 1.0)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     Ħ: 𐑓 → 𐑫  (gap: 1.0)
     Σ: 𐑙 → 𐑳  (gap: 1.0)
@@ -1012,7 +1012,7 @@
   ⋈      𐑱       P(x) ∈ {0,1} ∧ det(x)
   ⊤      𐑺       τ = ∞ ∧ dis(x) ∧ MBL
   ∈      𐑚       ∀y∈x( |y| < |x| )
-  ɢ      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
+  ∋      𐑠       seq!(f, g) ∧ ⟨→⟩(f, g, τ) ∧ ¬ ⟨→⟩(g, f, τ)                                                      [SEQAX]
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   Ħ      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   Σ      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
@@ -1048,6 +1048,6 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊤: 𐑺 → 𐑧  (gap: 0.429)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
-    ɢ: 𐑠 → 𐑵  (gap: 0.333)
+    ∋: 𐑠 → 𐑵  (gap: 0.333)
     Ħ: 𐑖 → 𐑫  (gap: 0.333)
     Ω: 𐑭 → 𐑟  (gap: 0.333)

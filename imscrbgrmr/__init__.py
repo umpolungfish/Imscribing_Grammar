@@ -235,7 +235,7 @@ from .decompose import (  # Decomposition algebra — inverse of build-up operat
 #   from imscrbgrmr import register_cross_domain_imscriptions; register_cross_domain_imscriptions()
 # (auto-registration removed to avoid ~200ms startup overhead)
 
-__version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · Γ(QUANTUM) · Ω · Factor 8
+__version__ = "0.5.0"  # Quantum primitives: T_braid · K_lambda · ∋(QUANTUM) · Ω · Factor 8
 __author__ = "Imscribing Grammar Contributors"
 
 __all__ = [

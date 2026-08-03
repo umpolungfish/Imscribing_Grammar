@@ -545,7 +545,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑺": "↯",  "𐑪": "≈",  "𐑧": "↺",  "𐑤": "⊛",  "𐑘": "⊞",
     # G — Scope
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
-    # ɢ — Coupling
+    # ∋ — Coupling
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
     # < — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
@@ -903,7 +903,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "Catalog lookup tools are blocked. First imscribe a system using "
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
                     "⊢='𐑛', ⊣='𐑡', >='𐑾', <='𐑗', "
-                    "⋈='𐑱', ⊤='𐑤', ∈='𐑚', ɢ='𐑝', "
+                    "⋈='𐑱', ⊤='𐑤', ∈='𐑚', ∋='𐑝', "
                     "φ̂='φ̂_ž', Ħ='𐑓', Σ='𐑙', Ω='𐑷')"
                 )
             })
@@ -919,7 +919,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1143,7 +1143,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "𐑱": ["𐑱", "𐑞", "𐑐"],            # F
     "𐑘": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],  # K
     "𐑚": ["𐑲", "𐑚", "𐑔"],            # G
-    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ɢ
+    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ∋
     "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
     "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
     "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
@@ -1704,7 +1704,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return ("Ω/ɢ transcendence analysis returned — Frobenius closed", True)
+            return ("Ω/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -2478,7 +2478,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -2580,7 +2580,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     action="promotions" → all 6 ZFCₜ promotion channels with ordinal gaps
     action="distance"   → d(name, ZFCₜ) gap (requires name)
     Six ZFCₜ promotions: ⊣(T_net→T_odot), >(R_super→R_lr), <(P_asym→P_pm),
-                         ɢ(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
+                         ∋(Gamma_and→Gamma_seq), Ħ(H0→H2), Ω(Omega_0→Omega_Z)
 
 [Aleph / Hebrew letters]
 
@@ -2907,7 +2907,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
-        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
+        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", Ħ="𐑓", Ω="𐑷",
         ⊢="𐑼", >="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
@@ -2921,7 +2921,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done
@@ -2946,7 +2946,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   𐑐 → $\text{⋈}_{\text{ż}}$         𐑱 → $\text{⋈}_{\text{ì}}$        𐑞 → $\text{⋈}_{\text{ð}}$
   𐑺 → $\text{⊤}_{\text{-}}$         𐑪 → $\text{⊤}_{\text{W}}$        𐑧 → $\text{⊤}_{\text{@}}$    𐑤 → $\text{⊤}_{\text{Ù}}$   𐑘 → $\text{⊤}_{\text{λ}}$
   𐑔 → $\text{∈}_{\text{ʔ}}$         𐑚 → $\text{∈}_{\text{γ}}$        𐑲 → $\text{∈}_{\text{β}}$
-  𐑵 → $\text{ɢ}_{\text{Ş}}$         𐑝 → $\text{ɢ}_{\text{^}}$        𐑜 → $\text{ɢ}_{\text{˝}}$    𐑠 → $\text{ɢ}_{\text{ˌ}}$
+  𐑵 → $\text{∋}_{\text{Ş}}$         𐑝 → $\text{∋}_{\text{^}}$        𐑜 → $\text{∋}_{\text{˝}}$    𐑠 → $\text{∋}_{\text{ˌ}}$
   ⊙ → $\text{⊙}_{\text{ÿ}}$       𐑮 → $\text{⊙}_{\text{Æ}}$      𐑻 → $\text{⊙}_{\text{3}}$    𐑢 → $\text{⊙}_{\text{ž}}$   𐑣 → $\text{⊙}_{\text{Ţ}}$
   𐑓 → $\text{Ħ}_{\text{Ñ}}$         𐑒 → $\text{Ħ}_{\text{£}}$        𐑖 → $\text{Ħ}_{\text{A}}$    𐑫 → $\text{Ħ}_{\text{!}}$
   𐑙 → $\text{Σ}_{\text{S}}$         𐑕 → $\text{Σ}_{\text{ő}}$        𐑳 → $\text{Σ}_{\text{ï}}$
@@ -2957,7 +2957,7 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
-  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{⊤}_{\text{@}};\ \text{∈}_{\text{ʔ}};\ \text{ɢ}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
+  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{⊤}_{\text{@}};\ \text{∈}_{\text{ʔ}};\ \text{∋}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{Ħ}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{Ω}_{\text{z}} \rangle$$
   You **MUST NOT** use: <𐑦𐑶𐑾𐑹; ...>
 
 In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",

@@ -185,9 +185,9 @@ bilabial = formant_filter(source, fs, 400, 200)
 snd9 = normalize(0.6 * velar + 0.6 * bilabial)
 
 # =============================================================================
-# 10. ɢ^  (small capital G with hat)
+# 10. ∋^  (small capital G with hat)
 # =============================================================================
-# uvular plosive [ɢ] with creaky voice
+# uvular plosive [∋] with creaky voice
 closure = np.zeros(int(0.15 * fs))              # silent closure
 burst_noise = bandpass_noise(0.02, fs, 800, 2000, order=4)  # short noise burst
 burst = np.concatenate([burst_noise, np.zeros(int(0.05 * fs))])

@@ -460,7 +460,7 @@ AA_PRIMITIVE_MAP: Dict[str, Optional[IGPrimitive]] = {
     "Phe": IGPrimitive.FORCE,         # ⋈ — max hydrophobicity, force ceiling
     "Ile": IGPrimitive.KINETICS,      # ⊤ — β-branched, ribosomal coupling
     "His": IGPrimitive.GRAMMAR,       # ∈ — imidazole pKa bridge
-    "Asn": IGPrimitive.INTERACTION,   # ɢ — N-glycosylation sequon
+    "Asn": IGPrimitive.INTERACTION,   # ∋ — N-glycosylation sequon
     "Gln": IGPrimitive.CRITICALITY,   # φ̂ — most regulated biosynthetic node
     "Asp": IGPrimitive.CHIRALITY,     # Ħ — chiral substrate selectivity
     "Lys": IGPrimitive.ENTROPY,       # Σ — highest variability + acetylation
@@ -497,7 +497,7 @@ PRIMITIVE_RISK: Dict[Optional[IGPrimitive], str] = {
     IGPrimitive.PARITY:         "moderate",     # < — phosphorylation site loss
     IGPrimitive.KINETICS:       "moderate",     # ⊤ — β-branching preservation matters
     IGPrimitive.GRAMMAR:        "moderate",     # ∈ — pH-gated catalysis redesign
-    IGPrimitive.INTERACTION:    "moderate",     # ɢ — glycosylation loss is pathological
+    IGPrimitive.INTERACTION:    "moderate",     # ∋ — glycosylation loss is pathological
     IGPrimitive.ENTROPY:        "low",          # Σ — Lys↔Arg conserved
     IGPrimitive.FORCE:          "low",          # ⋈ — hydrophobic class preserved
     None:                       "low",          # Ground layer — no primitive
@@ -1231,10 +1231,10 @@ class ChimeraDetector:
             (P.ENTROPY, P.FORCE, 1.2, False,  # Σ ⊗ ⋈
              "Low-risk pair: Lys (charge/entropy) + Phe (hydrophobicity) edits "
              "are structurally independent."),
-            (P.ENTROPY, P.INTERACTION, 1.2, False,  # Σ ⊗ ɢ
+            (P.ENTROPY, P.INTERACTION, 1.2, False,  # Σ ⊗ ∋
              "Low-risk pair: Lys (acetylation) + Asn (glycosylation) edits "
              "affect orthogonal post-translational modifications."),
-            (P.FORCE, P.INTERACTION, 1.2, False,  # ⋈ ⊗ ɢ
+            (P.FORCE, P.INTERACTION, 1.2, False,  # ⋈ ⊗ ∋
              "Low-risk pair: hydrophobic packing + glycosylation are "
              "structurally orthogonal."),
 

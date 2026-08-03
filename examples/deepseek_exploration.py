@@ -166,7 +166,7 @@ else:
 header("2 · Water's Hydrogen Bond Network: Varma Probe")
 
 info("Encoding bulk liquid water as a supramolecular network imscription:")
-info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, Γ_∨(BROAD), 𐑢, n:m")
+info("  D_△, T_∈, R_⊇, P_±^ψ, F_ℏ, K_frtailgamma, G_revapostrophe, 𐑜(BROAD), 𐑢, n:m")
 info("  ΔG per H-bond ≈ -18 kJ/mol (gas-phase benchmark)")
 
 water = make_imscription(
@@ -248,7 +248,7 @@ bold("Testable: supercooled water or high pressure should show diverging ξ_r ma
 header("3 · Formose Reaction: Factor 7 Check")
 
 info("Encoding the formose aldol autocatalytic cycle:")
-info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, Γ_→(SELECTIVE), 𐑢, 1:1")
+info("  D_∞, T_⋈, R_‡, P_±^ψ, F_dh, K_turnm, G_ג, 𐑠(SELECTIVE), 𐑢, 1:1")
 
 formose = make_imscription(
     name="formose_aldol_autocatalytic_cycle",
@@ -411,7 +411,7 @@ header("6 · Mechanical Bond Information Content (DB24C8 Steric Cliff)")
 
 info("DB24C8 pseudorotaxane: steric cliff → angular window σ_steric → I_angle")
 info("Framework encoding:")
-info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_turnm, G_ב, Γ_∧(SPECIFIC), 𐑢, 1:1")
+info("  D_∧, T_⋈, R_⇔, P_±^ψ, F_ℏ, K_turnm, G_ב, 𐑝(SPECIFIC), 𐑢, 1:1")
 
 # I_angle uses the solid-angle (3D cone) formula:
 #   I = log₂( 2 / (1 - cos(σ)) )
@@ -452,7 +452,7 @@ else:
 
 header("7 · Axiom 4 Scan: Sequential Grammar Without Temporal/Catalytic Dimension")
 
-info("Axiom 4: Γ_→ (SEQUENTIAL grammar) requires D_∞ (temporal) OR R_‡ (dynamic-catalytic).")
+info("Axiom 4: 𐑠 (SEQUENTIAL grammar) requires D_∞ (temporal) OR R_‡ (dynamic-catalytic).")
 info("Any entry with sequential grammar but neither qualifier is a candidate misassignment.")
 info("These represent allosteric systems where stepwise binding may be mislabelled as ordered.")
 
@@ -468,7 +468,7 @@ for s in global_catalog:
         ax4_violations.append(s)
 
 if ax4_violations:
-    warn(f"Found {len(ax4_violations)} Axiom 4 candidate violation(s) — Γ_→ without D_∞ or R_‡:")
+    warn(f"Found {len(ax4_violations)} Axiom 4 candidate violation(s) — 𐑠 without D_∞ or R_‡:")
     if Table and console:
         a4t = Table(title="Axiom 4 Candidates")
         a4t.add_column("Imscription", style="yellow")
@@ -497,7 +497,7 @@ if ax4_violations:
     bold("  (b) Missing D_∞ or R_‡: temporal or catalytic dimension was omitted from encoding → add it")
     bold("  (c) Genuine falsification: system is truly sequential without temporal coupling → investigate")
 else:
-    result("No Axiom 4 violations found — all Γ_→ entries have D_∞ or R_‡. Axiom 4 is intact.")
+    result("No Axiom 4 violations found — all 𐑠 entries have D_∞ or R_‡. Axiom 4 is intact.")
 
 
 # =============================================================================

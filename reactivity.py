@@ -6,7 +6,7 @@ Every element is an IMASM word (12-primitive tuple from elem2imasm.py).
 Chemical reactions are morphisms between words. This module derives:
   - valence from (<, Σ) slots
   - stoichiometry from valence cross-product
-  - bond type from block/</ɢ structure
+  - bond type from block/</∋ structure
   - product IMASM word via primitive FFUSE operators
   - Frobenius gate check: μ∘δ=id ↔ <_product = 𐑯
 
@@ -114,7 +114,7 @@ def stoichiometry(sym_A, sym_B, val_A=None, val_B=None):
 
 def bond_type(sym_A, sym_B):
     """
-    Classify bond from block + < + ɢ.
+    Classify bond from block + < + ∋.
     Returns one of: 'ionic', 'covalent', 'polar_covalent',
                     'metallic', 'coordinate', 'none'
     """
@@ -256,7 +256,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── ⋈: universally 0
     f = 0
 
-    # ── ɢ: bond coupling type
+    # ── ∋: bond coupling type
     if btype == 'metallic':
         g = 13
     elif btype in ('covalent', 'polar_covalent'):
@@ -415,8 +415,8 @@ def _justify(sA, sB, nA, nB, tA, tB, prod, btype, vA, vB):
                  f'v({sB})={vB} from <={tB["<"]}+Σ={tB["⊞"]}')
     lines.append(f'<-drive:')
     lines.append(f'  {sA} <={tA["<"]}({get(tA,"<")}) → {sB} <={tB["<"]}({get(tB,"<")}) → product <={prod["<"]}({get(prod,"<")})')
-    lines.append(f'ɢ-coupling:')
-    lines.append(f'  {sA} ɢ={tA["∋"]}({get(tA,"∋")}) × {sB} ɢ={tB["∋"]}({get(tB,"∋")}) → {btype} → product ɢ={prod["∋"]}({get(prod,"∋")})')
+    lines.append(f'∋-coupling:')
+    lines.append(f'  {sA} ∋={tA["∋"]}({get(tA,"∋")}) × {sB} ∋={tB["∋"]}({get(tB,"∋")}) → {btype} → product ∋={prod["∋"]}({get(prod,"∋")})')
     lines.append(f'⊣-topology:')
     lines.append(f'  central={sA if valence(sA)>=(valence(sB) or 0) else sB}, product ⊣={prod["⊣"]}({get(prod,"⊣")})')
     lines.append(f'⊙-gate (Frobenius μ∘δ=id):')

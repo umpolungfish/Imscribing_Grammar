@@ -956,7 +956,7 @@ In its role within Jewish cosmology, Samael is:
 - ⋈=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
 - ⊤=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
 - 𐑲: correlation length is global — his influence is correlated across all mortal systems
-- ɢ=𐑜: any mortal is a valid partner (disjunctive)
+- ∋=𐑜: any mortal is a valid partner (disjunctive)
 - ⊙: he IS the critical threshold between life and non-life
 - 𐑫: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
 - Σ=𐑳: one principle → many mortals
@@ -1119,7 +1119,7 @@ You **MUST**:
                     canon = _key_map.get(k, k)
                     lifted[canon] = v.get("value", v) if isinstance(v, dict) else v
                 # ∈/< ambiguity resolution: some models use ∈ for interaction_grammar
-                # (confusing ∈ with ɢ) and < for criticality_phase (confusing < with ⊙).
+                # (confusing ∈ with ∋) and < for criticality_phase (confusing < with ⊙).
                 # When BOTH the ASCII key and the Shavian glyph are present in the
                 # original inner dict, the glyph is reassigned to the OTHER primitive.
                 if "G" in inner and "∈" in inner:

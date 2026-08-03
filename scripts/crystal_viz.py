@@ -62,7 +62,7 @@ def get_tier(phi, p, omega, d):
         return "O₂"
     return "O₂†"
 
-INNER_PER_CELL = 34_560   # T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3)
+INNER_PER_CELL = 34_560   # T(5)×R(4)×F(3)×K(4)×G(3)×∋(4)×H(4)×S(3)
 
 def cell_tier_breakdown(phi, omega):
     """Return {tier: count} for one (Phi, Omega) cell — all P and D values."""
@@ -268,7 +268,7 @@ ax2.text(0.5, 0.94,
          ha="center", va="top", color="#AAAACC", fontsize=13,
          transform=ax2.transAxes)
 ax2.text(0.5, 0.88,
-         "Inner crystal:  T(5)×R(4)×F(3)×K(4)×G(3)×Γ(4)×H(4)×S(3)  =  34,560  per tier cell",
+         "Inner crystal:  T(5)×R(4)×F(3)×K(4)×G(3)×∋(4)×H(4)×S(3)  =  34,560  per tier cell",
          ha="center", va="top", color="#888899", fontsize=11,
          transform=ax2.transAxes)
 

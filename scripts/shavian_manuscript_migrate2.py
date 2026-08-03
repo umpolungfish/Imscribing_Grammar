@@ -57,10 +57,10 @@ MISSING = [
     (r'\text{{\igprimfont Σ}}_{\text{{\igfont ő}}}', r'{\igfont 𐑕}'),  # one:n = S_ctn
     (r'\text{{\igprimfont Σ}}_{\text{{\igfont ï}}}', r'{\igfont 𐑳}'),  # n:m = S_ltailm
 
-    # ɢ (Grammar) — sequential in various notation forms
-    (r'\text{{\igprimfont ɢ}}_{\to}',             r'{\igfont 𐑠}'),   # G_seq, arrow subscript
-    (r'\text{{\igprimfont ɢ}}_{\gg}',             r'{\igfont 𐑵}'),   # G_broad, double-arrow
-    (r'\text{{\igprimfont ɢ}}_{\text{seq}}',      r'{\igfont 𐑠}'),   # G_seq, text subscript
+    # ∋ (Grammar) — sequential in various notation forms
+    (r'\text{{\igprimfont ∋}}_{\to}',             r'{\igfont 𐑠}'),   # G_seq, arrow subscript
+    (r'\text{{\igprimfont ∋}}_{\gg}',             r'{\igfont 𐑵}'),   # G_broad, double-arrow
+    (r'\text{{\igprimfont ∋}}_{\text{seq}}',      r'{\igfont 𐑠}'),   # G_seq, text subscript
 
     # Ω (Protection) — varnothing variant = Omega_0 = "not applicable"
     (r'\text{{\igprimfont Ω}}_{\varnothing}',     r'{\igfont 𐑷}'),   # Omega_0 / NA
@@ -88,7 +88,7 @@ SO_BELOW_MACROS = [
     ),
     # \GamSeq: G_seq → 𐑠
     (
-        r'\newcommand{\GamSeq}{\text{{\igprimfont ɢ}}_{\to}}',
+        r'\newcommand{\GamSeq}{\text{{\igprimfont ∋}}_{\to}}',
         r'\newcommand{\GamSeq}{{\igfont 𐑠}}',
     ),
     # \Tbw: T_bullseye (bowtie) → 𐑥

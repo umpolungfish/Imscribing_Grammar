@@ -292,7 +292,7 @@ RULESETS: List[Ruleset] = [
     Ruleset(
         name="t_structural",
         description="Time constituted by structural/geometric primitives: "
-                    "T=lim(⊢,⊣,>,ɢ,⊙) instead of the dynamic T=lim(<,⋈,⊤,Ħ,Ω). "
+                    "T=lim(⊢,⊣,>,∋,⊙) instead of the dynamic T=lim(<,⋈,⊤,Ħ,Ω). "
                     "In this universe time is geometry, not process. "
                     "Gate structure unchanged (canonical).",
         t_prims=dict(_T_STRUCTURAL),

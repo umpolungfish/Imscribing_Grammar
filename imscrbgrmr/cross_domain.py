@@ -266,7 +266,7 @@ def _autonomous_drone_swarm() -> Imscription:
         S  → "n:m"              (flexible drone-to-task ratio)
 
     Axiom grounding:
-        Axiom 4 — Γ_→ (SEQ) satisfied: R‡ (non-equilibrium motion) present
+        Axiom 4 — 𐑠 (SEQ) satisfied: R‡ (non-equilibrium motion) present
         Axiom 5 — ⊙ assigned: flocking correlation length ξ_r ~ N^(ν) (scale-free)
     """
     return Imscription(
@@ -333,7 +333,7 @@ def _db24c8_pseudorotaxane() -> Imscription:
     DB24C8/dialkylammonium pseudorotaxane — Transformation #8 ⊙ probe system.
 
     Formal tuple:
-        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_turnm ; G_ב ; Γ_∧(SPECIFIC) ; 𐑢→⊙ ; 1:1 ⟩
+        ⟨ D_∧ ; T_⋈ ; R_⇔ ; P_+ ; F_ℏ ; K_turnm ; G_ב ; 𐑝(SPECIFIC) ; 𐑢→⊙ ; 1:1 ⟩
 
     This is the primary-tier molecular system used as the Transformation #8
     literature-grounded partial ⊙ anchor.

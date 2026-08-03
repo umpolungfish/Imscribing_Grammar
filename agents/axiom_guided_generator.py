@@ -104,9 +104,9 @@ class AxiomGuidedGeneratorAgent(BaseAgent):
     This agent ensures generated imscriptions satisfy all five composition axioms:
     
     **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ⋈^ð
-    **Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ → no global propagation
+    **Axiom 2 (Local Grammar Barrier):** G_ב + 𐑝 → no global propagation
     **Axiom 3 (Cooperative Induction):** Superlinear induction → G_ג reclassification
-    **Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡
+    **Axiom 4 (Sequential Grammar):** 𐑠 requires D_∞ or R_‡
     **Axiom 5 (Criticality):** At criticality, G-D degenerate
     
     Usage:
@@ -330,13 +330,13 @@ You **MUST NOT** return a tuple that violates **ANY** of the axioms below.
 **Axiom 1 (Cyclic Closure):** T_⋈ + P_± → F ≥ ⋈^ð.
 Falsified by: cyclic self-complementary motif with ⋈^ì or ξ_CP > 10.5 nats.
 
-**Axiom 2 (Local Grammar Barrier):** G_ב + Γ_⊗ propagates constraint locally; global propagation requires G_ג or above.
+**Axiom 2 (Local Grammar Barrier):** G_ב + 𐑝 propagates constraint locally; global propagation requires G_ג or above.
 Falsified by: local specific imscription driving global assembly alone.
 
 **Axiom 3 (Cooperative Induction):** Superlinear SAPT induction signals G_ב → G_ג transition.
 Falsified by: superlinear induction with G_ב classification retained.
 
-**Axiom 4 (Sequential Grammar):** Γ_→ requires D_∞ or R_‡ (or both).
+**Axiom 4 (Sequential Grammar):** 𐑠 requires D_∞ or R_‡ (or both).
 Falsified by: purely spatial imscription with ordered partner binding.
 
 **Axiom 5 (Criticality):** At criticality, G and D degenerate (scale-free behavior).
@@ -495,7 +495,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
             fidelity=Fidelity.from_symbol(data.get("fidelity", "𐑞")),
             kinetic_character=KineticCharacter.from_symbol(data.get("kinetic_character", "⊤^W")),
             granularity=Granularity.from_symbol(data.get("granularity", "𐑚")),
-            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "ɢ^∧(SELECTIVE)")),
+            grammar=InteractionGrammar.from_symbol(data.get("interaction_grammar", "∋^∧(SELECTIVE)")),
             criticality_phase=CriticalityPhase.from_symbol(data.get("criticality_phase") or "𐑢"),
             protection=Protection.from_symbol(data.get("protection") or "𐑷"),
             stoichiometry=Stoichiometry.from_symbol(data.get("stoichiometry") or "n:m"),

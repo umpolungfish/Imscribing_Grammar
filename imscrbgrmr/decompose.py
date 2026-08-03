@@ -333,7 +333,7 @@ def primitive_peel(
     Checks post-peel invariants:
       • ⊙ preserved?  If lost and strict=True → blocked; else → cost += phi_c_cost
       • Ω preserved?    If degraded and strict=True → blocked; else → cost += omega_cost × levels
-      • Axiom 2 (G_ב + Γ_∧(SPECIFIC) cannot reach G_ℵ)?  → blocked always
+      • Axiom 2 (G_ב + 𐑝(SPECIFIC) cannot reach G_ℵ)?  → blocked always
 
     Returns PeelResult with the peeled imscription, cost, and flags.
     """
@@ -401,7 +401,7 @@ def primitive_peel(
     if (peeled.granularity == Granularity.ice
             and peeled.interaction_grammar == InteractionGrammar.vow
             and imscription.granularity != Granularity.ice):
-        reason = "Axiom 2 violation: peeling G to LOCAL with Γ_∧(SPECIFIC) blocks propagation"
+        reason = "Axiom 2 violation: peeling G to LOCAL with 𐑝(SPECIFIC) blocks propagation"
         notes.append(reason)
         if strict:
             return PeelResult(

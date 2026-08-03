@@ -4,7 +4,7 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ɢ ⊙ Ħ Σ Ω
+Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ Ħ Σ Ω
 """
 
 import wave
@@ -186,22 +186,22 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     ),
 
     # ∋ — Interaction grammar
-    "ɢ^∧": (
+    "∋^∧": (
         "/k/",
         "like 'k' in 'key'",
         "Voiceless velar stop. Back of tongue presses against the velum, air pressure builds, then releases abruptly with no voice — 'k' in 'key', 'cat', 'back'.",
     ),
-    "ɢ^˝": (
+    "∋^˝": (
         "/r…r/",
         "alternating rolled 'r'",
         "Repeated alveolar trill. Two rapid tongue-tip flutters in sequence, separated by a brief voiced interval — the oscillation of an alternating path.",
     ),
-    "ɢ^ˌ": (
+    "∋^ˌ": (
         "/ə/",
         "weak schwa — unstressed beat",
         "Mid central vowel at secondary stress. The same neutral 'uh' as ⊤^@, but positioned at the lighter of two stress beats — the secondary pulse in a compound word or polysyllabic sequence.",
     ),
-    "ɢ^Ş": (
+    "∋^Ş": (
         "/aː/",
         "long open 'aah'",
         "Long open vowel. Mouth fully open, tongue low, voice sustained — 'aah' said at full volume and held. The sound of broadcast: maximum acoustic projection.",
@@ -231,7 +231,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
     "𐑣": (
         "/aː/",
         "long open 'aah' — rising or sustained",
-        "Long open vowel, same acoustic quality as ɢ^Ş. Here the connotation is supercritical: the voice is at full aperture, sustained or rising — past the threshold into the runaway state.",
+        "Long open vowel, same acoustic quality as ∋^Ş. Here the connotation is supercritical: the voice is at full aperture, sustained or rising — past the threshold into the runaway state.",
     ),
 
     # ⊥ — Chirality

@@ -192,7 +192,7 @@ def name_fragment(seq: str, start: int, end: int,
     # Generic
     dom = (profile or {}).get('dominant')
     desc = {'◻':'Winding/closure','φ̂':'Criticality signal','>':'Disulfide scaffold','Ħ':'Substrate recognition',
-            '⊞':'Variable region','⋈':'Hydrophobic anchor','ɢ':'Glycosylation target','<':'Phosphorylation switch',
+            '⊞':'Variable region','⋈':'Hydrophobic anchor','∋':'Glycosylation target','<':'Phosphorylation switch',
             '∈':'Catalytic','⊤':'Kinetic regulator','⊢':'Initiation','⊣':'Topological anchor'}
     return desc.get(dom, f'Fragment {idx+1}')
 
@@ -212,7 +212,7 @@ def predict_phosphorylation(seq: str) -> list:
     return sites
 
 def predict_n_glycosylation(seq: str) -> list:
-    """N (ɢ) glycosylation sites: N-X-[ST] where X≠P."""
+    """N (∋) glycosylation sites: N-X-[ST] where X≠P."""
     return [{'position':m.start()+1, 'sequon':seq[m.start():m.end()], 'type':'N-glycosylation'}
             for m in re.finditer(r'N[^P][ST]', seq)]
 

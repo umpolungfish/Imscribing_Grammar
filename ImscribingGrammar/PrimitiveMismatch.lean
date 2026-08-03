@@ -1,7 +1,7 @@
 -- ImscribingGrammar/PrimitiveMismatch.lean
 -- Formalizes the five temporal primitive diagnostics from the task:
 --   1. Measurement problem as yew vs church mismatch
---   2. Wick rotation as Γ_seq → egg primitive substitution
+--   2. Wick rotation as 𐑠 → egg primitive substitution
 --   3. Berry phase as Ω_ℤ emergent vs constitutive
 --   4. H_∞ line: genuine memory vs Markovian approximation
 --   5. Temporal primitive sorting of physics problems
@@ -19,7 +19,7 @@ open ImscribingGrammar.Primitives
 -- Catalog entries (verified via encode_system)
 -- ============================================================
 
-/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; 𐑢; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; 𐑠; 𐑢; H₁; 1:1; Ω₀⟩ -/
 def schrodingerDynamics : Imscription := {
   dim  := .ash
   top  := .eat
@@ -35,7 +35,7 @@ def schrodingerDynamics : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; T_⋈; R_†; church; F_ℓ; yea; bib; Γ_seq; ⊙; H₀; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; church; F_ℓ; yea; bib; 𐑠; ⊙; H₀; 1:1; Ω₀⟩ -/
 def measurementOutcome : Imscription := {
   dim  := .ash
   top  := .mime
@@ -51,7 +51,7 @@ def measurementOutcome : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; egg; ice; Γ_seq; ⊙; H₁; 1:1; Ω₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; egg; ice; 𐑠; ⊙; H₁; 1:1; Ω₀⟩ -/
 def wickRotation : Imscription := {
   dim  := .ash
   top  := .mime
@@ -67,7 +67,7 @@ def wickRotation : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
+/-- ⟨D_△; eat; tot; P_ψ; F_ℏ; egg; ice; 𐑠; 𐑢; H₁; 1:1; Ω_ℤ⟩ -/
 def berryPhase : Imscription := {
   dim  := .ash
   top  := .eat
@@ -83,7 +83,7 @@ def berryPhase : Imscription := {
   prot := .ah
 }
 
-/-- ⟨D_∞; T_⊙; tot; P_ψ; F_ℏ; egg; ice; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; tot; P_ψ; F_ℏ; egg; ice; 𐑠; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def tqft : Imscription := {
   dim  := .array
   top  := .are
@@ -99,7 +99,7 @@ def tqft : Imscription := {
   prot := .ah
 }
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; loll; thigh; Γ_seq; ⊙; H_∞; n:m; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; loll; thigh; 𐑠; ⊙; H_∞; n:m; Ω₀⟩ -/
 def nonmarkovianOpenSystems : Imscription := {
   dim  := .array
   top  := .judge
@@ -115,7 +115,7 @@ def nonmarkovianOpenSystems : Imscription := {
   prot := .awe
 }
 
-/-- ⟨D_∞; T_net; R_sup; church; F_ϑ; egg; ice; Γ_∧; ⊙; H₁; n:n; Ω₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; church; F_ϑ; egg; ice; 𐑝; ⊙; H₁; n:n; Ω₀⟩ -/
 def statisticalMechanics : Imscription := {
   dim  := .array
   top  := .judge
@@ -131,7 +131,7 @@ def statisticalMechanics : Imscription := {
   prot  := .awe
 }
 
-/-- ⟨D_∞; T_⊙; R_↔; church; F_ℏ; egg; ice; Γ_seq; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
+/-- ⟨D_∞; T_⊙; R_↔; church; F_ℏ; egg; ice; 𐑠; ⊙; H_∞; n:m; Ω_ℤ⟩ -/
 def quantumGravityCandidate : Imscription := {
   dim  := .array
   top  := .are
@@ -177,7 +177,7 @@ theorem measurement_problem_is_structural :
     decide
 
 -- ============================================================
--- 2. Wick Rotation as Primitive Substitution (Γ_seq → egg)
+-- 2. Wick Rotation as Primitive Substitution (𐑠 → egg)
 -- ============================================================
 
 /-- The Wick rotation converts quantum coherence to thermal weight. -/
@@ -345,7 +345,7 @@ theorem measurement_tensor_result :
   (tensorProduct schrodingerDynamics measurementOutcome).chir = .kick := by
   repeat constructor <;> decide
 
-/-- No mechanism operating purely within Γ_seq + egg with yew
+/-- No mechanism operating purely within 𐑠 + egg with yew
 can produce church — the measurement problem diagnosis. -/
 theorem no_asym_from_psi :
   ∀ (mech : Imscription),

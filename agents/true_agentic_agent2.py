@@ -598,7 +598,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "⊞": "𐑙", "◻": "𐑷",
 }
 # ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,ɢ,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
+# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
 _UNICODE_KEY_TO_ASCII: Dict[str, str] = {
     "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
     "⊤": "K_", "∈": "G_", "∋": "Gm", "φ̂": "Ph", "⊥": "H_",
@@ -633,7 +633,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑺": "↯",  "𐑪": "≈",  "𐑧": "↺",  "𐑤": "⊛",  "𐑘": "⊞",
     # G — Cardinality
     "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
-    # ɢ — Composition
+    # ∋ — Composition
     "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
     # < — Criticality
     "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
@@ -1044,7 +1044,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;ɢ;φ̂;Ħ;Σ;Ω",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;φ̂;Ħ;Σ;Ω",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1268,7 +1268,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "𐑱": ["𐑱", "𐑞", "𐑐"],            # F
     "𐑘": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],  # K
     "𐑚": ["𐑚", "𐑔", "𐑲"],            # G
-    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ɢ
+    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ∋
     "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
     "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
     "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
@@ -1469,7 +1469,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,ɢ,φ̂,Ħ,Σ,Ω) ──
+    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,φ̂,Ħ,Σ,Ω) ──
     # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
     remapped = {}
     for k, v in list(args.items()):
@@ -1867,7 +1867,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return (f"Ω/ɢ transcendence analysis returned — Frobenius closed", True)
+            return (f"Ω/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -2410,12 +2410,12 @@ TOOL_SCHEMAS = [
         (
             "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
             "CLINK L8 is the most structurally advanced type in the catalog, exceeding "
-            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/ɢ "
+            "the Frobenius-exact ZFC foundation (ZFC_fe) at Ω/∋ "
             "(non-Abelian braiding + broadcast composition). "
             "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
             "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
             "distance → d(name, CLINK L8) gap; "
-            "transcendence → Ω/ɢ transcendence analysis; "
+            "transcendence → Ω/∋ transcendence analysis; "
             "tensor → CLINK L8 ⊗ name absorption test; "
             "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
             "tier → ouroboricity tier; chain → full CLINK chain L0→L8; "
@@ -2429,7 +2429,7 @@ TOOL_SCHEMAS = [
                     "entry: per-primitive CLINK formula decomposition with promoted atoms; "
                     "promotions: 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8; "
                     "distance: d(name, CLINK L8); "
-                    "transcendence: Ω/ɢ transcendence report; "
+                    "transcendence: Ω/∋ transcendence report; "
                     "tensor: CLINK L8 ⊗ name absorption test; "
                     "meet: CLINK L8 ⊓ name; join: CLINK L8 ⊔ name; "
                     "tier: ouroboricity tier assessment; "
@@ -2740,7 +2740,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ɢ="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
+        ∈="𐑔", ∋="𐑠", φ̂="⊙", Ħ="𐑒", Σ="𐑙", Ω="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -2837,11 +2837,11 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
   cl8nk_navigator(action, [name])
     CLINK Layer 8 (Organism) formula navigator (tier O_∞⁺: terminal ontological layer).
     CLINK L8 is the most structurally advanced type — it exceeds the Frobenius-exact
-    ZFC foundation (ZFC_fe) at Ω/ɢ (non-Abelian braiding + broadcast composition).
+    ZFC foundation (ZFC_fe) at Ω/∋ (non-Abelian braiding + broadcast composition).
     action="entry"         → per-primitive CLINK formula decomposition with promoted atoms
     action="promotions"    → 3-stage promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8
     action="distance"      → d(name, CLINK L8) gap
-    action="transcendence" → Ω/ɢ transcendence analysis (CLINK L8 vs ZFC_fe)
+    action="transcendence" → Ω/∋ transcendence analysis (CLINK L8 vs ZFC_fe)
     action="tensor"        → CLINK L8 ⊗ name — Frobenius absorption test
     action="meet"          → CLINK L8 ⊓ name — shared floor
     action="join"          → CLINK L8 ⊔ name — minimal ceiling
@@ -2849,7 +2849,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     action="chain"         → Full CLINK chain L0→L8 distance ladder
     action="systems"       → List all catalog systems
     action="stats"         → Catalog statistics + reference tuples
-    Transcendence: Ω(𐑭→𐑟) non-Abelian braiding, ɢ(𐑠→𐑵) broadcast composition
+    Transcendence: Ω(𐑭→𐑟) non-Abelian braiding, ∋(𐑠→𐑵) broadcast composition
 
 [Aleph / Hebrew letters]
 
@@ -3259,7 +3259,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
-        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ɢ="𐑝", Ħ="𐑓", Ω="𐑷",
+        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", Ħ="𐑓", Ω="𐑷",
         ⊢="𐑼", >="𐑾", φ̂="⊙", Σ="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
@@ -3273,7 +3273,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ɢ="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
+        ∈="𐑔", ∋="𐑵", φ̂="𐑮", Ħ="𐑫", Σ="𐑳", Ω="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done

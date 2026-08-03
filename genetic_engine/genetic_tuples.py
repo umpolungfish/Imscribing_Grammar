@@ -80,7 +80,7 @@ IG_CHARS: Dict[str, str] = {
     "G_gimel":      "𐑚",     # 𐑔 — intermediate
     "G_aleph":      "𐑔",     # 𐑲 — global / maximal
     
-    # ── Interaction Grammar (ɢ) — 4 values ──
+    # ── Interaction Grammar (∋) — 4 values ──
     "Gamma_and":    "𐑝",     # 𐑜 — conjunctive / simultaneous
     "Gamma_or":     "𐑜",     # 𐑵 — disjunctive / alternative
     "Gamma_seq":    "𐑠",     # 𐑝 — sequential / ordered
@@ -193,7 +193,7 @@ AA_PRIMITIVE_ACTIVATION: Dict[str, str] = {
     "Tyr": "P",         # < — parity
     "Phe": "F",         # ⋈ — force
     "Ile": "K",         # ⊤ — kinetics
-    "Asn": "Gamma",     # ɢ — interaction
+    "Asn": "Gamma",     # ∋ — interaction
     "Asp": "H",         # Ħ — chirality
     "Lys": "S",         # Σ — entropy
     "Glu": "O",         # Ω — winding
