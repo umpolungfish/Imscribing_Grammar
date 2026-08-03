@@ -1,0 +1,375 @@
+"""
+Symbolic Reasoning Engine — Formal algebra and theorem proving for the Imscriptiveon grammar.
+
+This module implements:
+1. Primitive algebra (Γ Boolean operators, G-D tensor operations)
+2. Automated theorem prover for axiom validation
+3. Cross-domain analogy detection with formal similarity metrics
+4. Predictive rule generation and testing
+5. Counter-example search (falsification attempts)
+
+From QUANTIG.md Section II:
+"A classification system need only assign labels; a predictive grammar must compose
+primitives and derive non-obvious consequences about assembled system behavior."
+"""
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Dict, List, Optional, Set, Tuple, Any, Union
+from enum import Enum
+import itertools
+
+from imscrbgrmr.models import (
+    Imscription,
+    Dimensionality,
+    Topology,
+    RecognitionMode,
+    Polarity,
+    Fidelity,
+    Granularity,
+    InteractionGrammar,
+    GrammarOperator,
+    KineticCharacter,
+    CriticalityPhase,
+)
+from imscrbgrmr.constraints import AxiomValidator
+from imscrbgrmr.thermodynamics import compute_eta_CP, compute_xi_CP
+
+
+# =============================================================================
+# Symbolic Expressions and Algebra
+# =============================================================================
+
+class SymbolicOperator(Enum):
+    """Operators for symbolic expressions."""
+    # Boolean operators
+    AND = "∧"
+    OR = "∨"
+    NOT = "¬"
+    IMPLIES = "→"
+    IFF = "↔"
+    
+    # Quantifiers
+    FOR_ALL = "∀"
+    EXISTS = "∃"
+    
+    # Arithmetic
+    EQ = "="
+    NEQ = "≠"
+    LT = "<"
+    GT = ">"
+    LEQ = "≤"
+    GEQ = "≥"
+    
+    # Imscription-specific
+    COMPATIBLE = "⊕"  # Compatibility relation
+    AMPLIFIES = "↑"   # Amplification relation
+    DEGENERATES = "≡"  # Degeneracy relation
+
+
+@dataclass
+class SymbolicExpression:
+    """
+    Represents a symbolic expression in the Imscriptiveon algebra.
+    
+    Examples:
+        - Primitive assertion: Primitive("F", "ƒ_hardsign")
+        - Boolean combination: And(Primitive("T", "Þ_bullseye"), Primitive("P", "Φ_pipevar"))
+        - Implication: Implies(Primitive("T", "Þ_bullseye"), Primitive("F", "ƒ_dh"))
+    """
+    operator: SymbolicOperator
+    operands: List[Any]
+    
+    def __str__(self) -> str:
+        if len(self.operands) == 1:
+            return f"{self.operator.value}{self.operands[0]}"
+        elif len(self.operands) == 2:
+            return f"({self.operands[0]} {self.operator.value} {self.operands[1]})"
+        else:
+            return f"{self.operator.value}({', '.join(map(str, self.operands))})"
+    
+    def evaluate(self, imscription: Imscription) -> bool:
+        """Evaluate the expression against a imscription."""
+        return _evaluate_expression(self, imscription)
+    
+    @classmethod
+    def primitive(cls, name: str, value: str) -> SymbolicExpression:
+        """Create a primitive assertion expression."""
+        return cls(SymbolicOperator.EQ, [f"{name}", value])
+    
+    @classmethod
+    def And(cls, *exprs) -> SymbolicExpression:
+        """Create AND expression."""
+        return cls(SymbolicOperator.AND, list(exprs))
+    
+    @classmethod
+    def Or(cls, *exprs) -> SymbolicExpression:
+        """Create OR expression."""
+        return cls(SymbolicOperator.OR, list(exprs))
+    
+    @classmethod
+    def Not(cls, expr) -> SymbolicExpression:
+        """Create NOT expression."""
+        return cls(SymbolicOperator.NOT, [expr])
+    
+    @classmethod
+    def Implies(cls, antecedent, consequent) -> SymbolicExpression:
+        """Create implication expression."""
+        return cls(SymbolicOperator.IMPLIES, [antecedent, consequent])
+
+
+def _evaluate_expression(expr: SymbolicExpression, imscription: Imscription) -> bool:
+    """Internal expression evaluation."""
+    op = expr.operator
+    
+    if op == SymbolicOperator.EQ:
+        # Primitive assertion: F = F_hardsign
+        primitive_name = expr.operands[0]
+        expected_value = expr.operands[1]
+        actual_value = _get_primitive_value(imscription, primitive_name)
+        return actual_value == expected_value
+    
+    elif op == SymbolicOperator.AND:
+        return all(_evaluate_expression(o, imscription) for o in expr.operands)
+    
+    elif op == SymbolicOperator.OR:
+        return any(_evaluate_expression(o, imscription) for o in expr.operands)
+    
+    elif op == SymbolicOperator.NOT:
+        return not _evaluate_expression(expr.operands[0], imscription)
+    
+    elif op == SymbolicOperator.IMPLIES:
+        antecedent = _evaluate_expression(expr.operands[0], imscription)
+        consequent = _evaluate_expression(expr.operands[1], imscription)
+        return (not antecedent) or consequent  # Material implication
+    
+    return False
+
+
+def _get_primitive_value(imscription: Imscription, name: str) -> str:
+    """Get primitive value from imscription by name."""
+    mapping = {
+        "D": imscription.dimensionality.value,
+        "T": imscription.topology.value,
+        "R": imscription.recognition_mode.value,
+        "P": imscription.polarity.value,
+        "F": imscription.fidelity.value,
+        "K": imscription.kinetic_character.value,
+        "G": imscription.granularity.value,        "Γ": imscription.grammar.value,
+        "Φ": imscription.criticality_phase.value if imscription.criticality_phase else "φ̂_softsign",
+    }
+    return mapping.get(name, "")
+
+
+# =============================================================================
+# Grammar Operator Algebra (Γ Algebra)
+# =============================================================================
+
+@dataclass
+class GrammarAlgebra:
+    """
+    Implements the Boolean algebra of interaction grammars.
+    
+    From QUANTIG.md Section II:
+    - Γ_∧ (AND): all partners required simultaneously
+    - Γ_∨ (OR): any one partner suffices
+    - Γ_→ (SEQUENTIAL): partner A required before B
+    """    
+    @staticmethod
+    def apply_operator(
+        grammar: InteractionGrammar,
+        operator: GrammarOperator,
+    ) -> InteractionGrammar:
+        """
+        Apply a Boolean operator to an interaction grammar.
+        
+        Args:
+            grammar: Original interaction grammar
+            operator: Boolean operator to apply
+        
+        Returns:
+            New interaction grammar with operator applied
+        """
+        # Find matching grammar with new operator
+        for ig in InteractionGrammar:
+            if ig.operator == operator and ig.tier == grammar.tier:
+                return ig
+        
+        # Default fallback
+        if operator == GrammarOperator.AND:
+            return InteractionGrammar.SELECTIVE_AND
+        elif operator == GrammarOperator.OR:
+            return InteractionGrammar.SELECTIVE_OR
+        else:
+            return InteractionGrammar.SELECTIVE_SEQ
+    
+    @staticmethod
+    def compose_grammars(
+        grammar1: InteractionGrammar,
+        grammar2: InteractionGrammar,
+    ) -> InteractionGrammar:
+        """
+        Compose two interaction grammars.
+        
+        Composition rules:
+        - AND + AND = AND (both partners required)
+        - OR + OR = OR (either partner from either set)
+        - SEQ + SEQ = SEQ (longer sequence)
+        - AND + OR = SELECTIVE (refined selection)
+        - etc.
+        """
+        op1 = grammar1.operator
+        op2 = grammar2.operator
+        
+        # Composition table
+        composition_table = {
+            (GrammarOperator.AND, GrammarOperator.AND): GrammarOperator.AND,
+            (GrammarOperator.OR, GrammarOperator.OR): GrammarOperator.OR,
+            (GrammarOperator.SEQUENTIAL, GrammarOperator.SEQUENTIAL): GrammarOperator.SEQUENTIAL,
+            (GrammarOperator.AND, GrammarOperator.OR): GrammarOperator.SELECTIVE,
+            (GrammarOperator.OR, GrammarOperator.AND): GrammarOperator.SELECTIVE,
+            (GrammarOperator.SEQUENTIAL, GrammarOperator.AND): GrammarOperator.SEQUENTIAL,
+            (GrammarOperator.AND, GrammarOperator.SEQUENTIAL): GrammarOperator.SEQUENTIAL,
+        }
+        
+        result_op = composition_table.get((op1, op2), GrammarOperator.SEQUENTIAL)
+        
+        # Use more specific tier
+        tier1_val = {"SPECIFIC": 0, "SELECTIVE": 1, "BROAD": 2}.get(grammar1.tier, 1)
+        tier2_val = {"SPECIFIC": 0, "SELECTIVE": 1, "BROAD": 2}.get(grammar2.tier, 1)
+        result_tier = grammar1.tier if tier1_val <= tier2_val else grammar2.tier
+        
+        # Find matching grammar
+        for ig in InteractionGrammar:
+            if ig.operator == result_op and ig.tier == result_tier:
+                return ig
+        
+        return InteractionGrammar.SELECTIVE_AND
+    
+    @staticmethod
+    def check_grammar_implication(
+        grammar1: InteractionGrammar,
+        grammar2: InteractionGrammar,
+    ) -> bool:
+        """
+        Check if grammar1 implies grammar2.
+        
+        Implication holds if grammar1 is more restrictive than grammar2.
+        """
+        # Tier implication (more specific → less specific)
+        tier_order = {"SPECIFIC": 0, "SELECTIVE": 1, "BROAD": 2}
+        tier_implies = tier_order.get(grammar1.tier, 1) <= tier_order.get(grammar2.tier, 1)
+        
+        # Operator implication
+        operator_implies = grammar1.operator == grammar2.operator or \
+                          (grammar1.operator == GrammarOperator.AND and 
+                           grammar2.operator == GrammarOperator.OR)
+        
+        return tier_implies and operator_implies
+
+
+# =============================================================================
+# G-D Tensor and Criticality Analysis
+# =============================================================================
+
+@dataclass
+class GDTensor:
+    """
+    Implements the G-D tensor for criticality analysis.
+    
+    From QUANTIG.md Section VIII:
+    At criticality, G and D degenerate (become dependent).
+    """
+    
+    # G-D compatibility matrix
+    COMPATIBILITY = {
+        (Granularity.LOCAL, Dimensionality.MOLECULAR): 1.0,
+        (Granularity.LOCAL, Dimensionality.SUPRAMOLECULAR): 0.7,
+        (Granularity.LOCAL, Dimensionality.TEMPORAL): 0.5,
+        (Granularity.MESOSCALE, Dimensionality.MOLECULAR): 0.7,
+        (Granularity.MESOSCALE, Dimensionality.SUPRAMOLECULAR): 1.0,
+        (Granularity.MESOSCALE, Dimensionality.TEMPORAL): 0.7,
+        (Granularity.GLOBAL, Dimensionality.MOLECULAR): 0.3,
+        (Granularity.GLOBAL, Dimensionality.SUPRAMOLECULAR): 1.0,
+        (Granularity.GLOBAL, Dimensionality.TEMPORAL): 1.0,
+    }
+    
+    @classmethod
+    def compute_independence(cls, imscription: Imscription) -> float:
+        """
+        Compute G-D independence score (0-1).
+        
+        1.0 = fully independent (normal)
+        0.0 = fully degenerate (critical)
+        """
+        g = imscription.granularity
+        d = imscription.dimensionality
+        
+        # Check if at criticality
+        if imscription.criticality_phase == CriticalityPhase.CRITICAL:
+            return 0.0
+        
+        # Get compatibility for each domain
+        compatibilities = []
+        for domain in d.domains:
+            d_enum = cls._domain_to_dimensionality(domain)
+            compat = cls.COMPATIBILITY.get((g, d_enum), 0.5)
+            compatibilities.append(compat)
+        
+        # Average compatibility (higher = more independent)
+        return sum(compatibilities) / len(compatibilities)
+    
+    @classmethod
+    def check_degeneracy(cls, imscription: Imscription) -> bool:
+        """Check if G and D are degenerate (at criticality)."""
+        return imscription.criticality_phase == CriticalityPhase.CRITICAL
+    
+    @staticmethod
+    def _domain_to_dimensionality(domain: str) -> Dimensionality:
+        """Convert domain string to Dimensionality enum."""
+        mapping = {
+            "molecular": Dimensionality.MOLECULAR,
+            "supramolecular": Dimensionality.SUPRAMOLECULAR,
+            "temporal": Dimensionality.TEMPORAL,
+        }
+        return mapping.get(domain, Dimensionality.MOLECULAR)
+
+
+# =============================================================================
+# Automated Theorem Prover for Axioms
+# =============================================================================
+
+@dataclass
+class TheoremProof:
+    """Result of theorem proving."""
+    theorem_name: str
+    statement: SymbolicExpression
+    proven: bool
+    proof_steps: List[str]
+    counter_examples: List[Dict[str, Any]] = field(default_factory=list)
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary."""
+        return {
+            "theorem": self.theorem_name,
+            "statement": str(self.statement),
+            "proven": self.proven,
+            "proof_steps": self.proof_steps,
+            "counter_examples": self.counter_examples,
+        }
+
+
+class AxiomTheoremProver:
+    """
+    Automated theorem prover for composition axioms.
+    
+    Validates axioms through:
+    1. Symbolic evaluation
+    2. Model checking against imscription catalog
+    3. Counter-example search
+    """
+    
+    def __init__(self, catalog=None):
+        """Initialize prover with optional imscription catalog."""
+        self.catalog = catalog
+        self.proven_theorems: Dict[str, TheoremProof] = {}
