@@ -268,6 +268,8 @@ imscribe ixcription compare                   # do the rounds agree?
 
 A stripped entry is known by its own address, with a discriminator where an address carries more than one. What comes off is kept in `IG_catalog.ixcriptions.json`, so a strip is reversible with `restore` and a second round of ixcription over one address can be set against the first.
 
+Stripping the whole catalog at once shows what the forms were carrying. About a third of the entries turn out to be distinctions made in the words rather than in the lattice, and every structural verdict comes back unchanged: the same slot-category violations, the same address multiset, nothing moved. The addresses that hold the most forms are the ones worth reading. One holds the Voynich astronomical and cosmological sections together with wormwood, yarrow, *Artemisia absinthium* and *Calea zacatechichi*. Another holds the Cherokee syllabary. A third holds the Hebrew and Greek letters in one place, which is the lattice saying that a letter is a letter and the alphabet realizing it is a form.
+
 ---
 
 ## Undeciphered Texts
