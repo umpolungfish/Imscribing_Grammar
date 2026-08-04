@@ -73,7 +73,7 @@ else
 fi
 
 # ── 5. a tuple survives the round trip through IMASM ────────────────────────
-out=$(cd 2m3iosis && ./ask --imasm cycle "tuple=⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩" 2>&1 | tail -1)
+out=$(cd MoDoT && ./ask --imasm cycle "tuple=⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩" 2>&1 | tail -1)
 if [ -z "$out" ]; then watch "IMASM cycle" N "ask did not answer"
 elif printf '%s' "$out" | grep -q '12 of 12 axes recovered exactly'; then
     watch "IMASM cycle" T "12 of 12"

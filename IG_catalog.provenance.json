@@ -5177,6 +5177,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c279fe8fc49d3a9a"
   },
+  "belnap_phase_shor": {
+    "changes": 0,
+    "first_seen": "2026-08-04T05:46:42+00:00",
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "62a6e1ffce5ea758"
+  },
+  "belnap_shor_dialetheic": {
+    "changes": 0,
+    "first_seen": "2026-08-04T05:46:42+00:00",
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "2e776870a6217a6f"
+  },
   "belnap_shor_pipeline": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -16098,10 +16110,10 @@
     "tuple_hash": "6f699cf8f6c42877"
   },
   "family_of_sets": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "460a6995632d1069"
   },
   "faradaiccurrent": {
     "changes": 0,
@@ -16384,6 +16396,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6125895efc6aff4e"
+  },
+  "fibonacci_shor_dialetheic": {
+    "changes": 0,
+    "first_seen": "2026-08-04T05:46:42+00:00",
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "10293d3a9bfd8ee8"
   },
   "fibroblastgrowthfactor(fgf)": {
     "changes": 0,
@@ -28955,6 +28973,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "89f31c23c9239a50"
   },
+  "multiplied_by": {
+    "changes": 0,
+    "first_seen": "2026-08-04T05:46:42+00:00",
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "3df1d3ea1b347857"
+  },
   "multiverse": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -29388,10 +29412,10 @@
     "tuple_hash": "89f7c84169f1540e"
   },
   "navier_solves_navigator_resolved": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "7e01895a9cc03ffa"
   },
   "navier_stokes": {
     "changes": 0,
@@ -29424,10 +29448,10 @@
     "tuple_hash": "f6e068d17051de67"
   },
   "navier_stokes_regularity_problem": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "48ff9f3b0a7948a7"
   },
   "navier_stokes_smooth": {
     "changes": 0,
@@ -30330,28 +30354,28 @@
     "tuple_hash": "ad67eeec84a503cd"
   },
   "ns_regularity_field_target": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "1f6dadcb7de9d762"
   },
   "ns_regularity_frontier_v1": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "65de703e7ca7ee39"
   },
   "ns_regularity_refined": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "65de703e7ca7ee39"
   },
   "ns_regularity_refined_v2": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "1f6dadcb7de9d762"
   },
   "nu": {
     "changes": 0,
@@ -47754,16 +47778,16 @@
     "tuple_hash": "e313e427a0eff8ab"
   },
   "zfc_t_ref": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "d0bcd8431a96513e"
   },
   "zfc_t_system": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "e3b0c44298fc1c14"
+    "last_changed": "2026-08-04T05:46:42+00:00",
+    "tuple_hash": "d0bcd8431a96513e"
   },
   "zfc_tutorial": {
     "changes": 0,
