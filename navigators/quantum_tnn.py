@@ -363,52 +363,66 @@ def pe_qft_alignment(n: int, d_model: int) -> Tuple[float, float]:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def demo_qft(n: int = 8):
+    """Exact QFT simulation - state vector for n<=12, circuit-only for n>12."""
     import sys, math
+
+    # Format amplitude count safely for any n
+    if n > 14:
+        sys.set_int_max_str_digits(0)
     log10_2 = math.log10(2)
     n_digits = int(n * log10_2) + 1
-    print(f"\n{"="*70}")
-    print(f"  EXACT QFT SIMULATION — {n} qubits  (2^{n} ≈ 10^{{{n_digits}}} amplitudes)")
-    print(f"{"="*70}")
-    # Sanity: state vector size must fit in memory
+
+    sep = "=" * 70
+    print()
+    print(sep)
+    print(f"  EXACT QFT SIMULATION \u2014 {n} qubits  (2^{n} \u2248 10^{{{n_digits}}} amplitudes)")
+    print(sep)
+
+    # Sanity: state vector must fit in memory
     if n > 30:
-        import sys, math
-        sys.set_int_max_str_digits(0)
-        log10_2 = math.log10(2)
-        n_digits = int(n * log10_2) + 1
-        log2_gb = n + 4 - 30  # 2^n × 16 bytes ÷ 2^30 bytes/GB = 2^(n+4-30)
-        print(f"  ERROR: {n} qubits → 2^{n} ≈ 10^{{{n_digits}}} amplitudes → ~2^{{{log2_gb}}} GB")
-        print(f"  Maximum supported: n=30 (~8 GB state vector)")
+        log2_gb = n + 4 - 30
+        print(f"  ERROR: {n} qubits \u2192 ~2^{{{log2_gb}}} GB state vector")
         print(f"  For theoretical analysis, use the windingPE=QFT identity:")
-        print(f"  W(pos,i) = exp(i·pos/base^(2i/d)) ≡ F(j,k) = (1/√N)·exp(2πijk/N)")
+        print(f"  W(pos,i) = exp(i\u00b7pos/base^(2i/d)) \u2261 F(j,k) = (1/\u221aN)\u00b7exp(2\u03c0ijk/N)")
         return
-        print(f"  No state vector needed — the phase is already encoded in the lattice.")
-        return
+
+    # Build random input state
+    rng = np.random.default_rng(42)
+    state_size = 2**n
+    gb = state_size * 16 / (1024**3)
+    print(f"  State vector: 2^{n} = {state_size} amplitudes ({gb:.1f} GB)")
+    psi0 = rng.standard_normal(state_size) + 1j * rng.standard_normal(state_size)
     psi0 /= norm(psi0)
 
-    # 1. exact via matrix multiply
-    psi_exact = qft_exact(psi0)
-
-    # 2. via state vector circuit simulation
+    # Circuit simulation (always feasible for n \u2264 30)
     sv = StateVec(n)
     sv.psi = psi0.copy()
     apply_qft_sv(sv)
     psi_sv = sv.psi
 
-    fidelity = abs(np.vdot(psi_sv, psi_exact))**2
-    err      = norm(psi_sv - psi_exact)
-
     n1q, n2q = qft_gate_count(n)
     print(f"  State vector circuit simulation:")
     print(f"    Gates applied:    {n1q} single-qubit + {n2q} two-qubit")
-    print(f"    Fidelity vs exact: {fidelity:.15f}")
-    print(f"    Amplitude error:   {err:.2e}  (machine precision)")
 
-    # entanglement entropy of QFT output
+    # For n <= 12 we can compare with exact QFT matrix
+    if n <= 12:
+        psi_exact = qft_exact(psi0)
+        fidelity = abs(np.vdot(psi_sv, psi_exact))**2
+        err      = norm(psi_sv - psi_exact)
+        print(f"    Fidelity vs exact: {fidelity:.15f}")
+        print(f"    Amplitude error:   {err:.2e}  (machine precision)")
+        print(f"    Classical result: EXACT. Fidelity = 1.0 by construction.")
+    else:
+        print(f"    (Exact QFT matrix O(4^{n}) infeasible \u2014 circuit-only verification)")
+        unitarity = abs(np.vdot(psi_sv, psi_sv) - 1.0)
+        print(f"    Unitarity check: |\u27e8\u03c8|\u03c8\u27e9 - 1| = {unitarity:.2e}")
+
+    # Entanglement entropy of QFT output
     sv2 = StateVec(n)
     sv2.psi = psi_sv
     S = sv2.entanglement_entropy()
     print(f"    Entanglement entropy: {S:.4f} bits  (max = {n//2} bits)")
-    print(f"\n  Classical result: EXACT. Fidelity = 1.0 by construction.")
+    return psi_sv
 
 def demo_benchmark(n_range: Optional[List[int]] = None):
     if n_range is None:

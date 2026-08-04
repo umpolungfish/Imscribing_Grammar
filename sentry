@@ -96,19 +96,47 @@ def as_map(d):
     return c if isinstance(c, dict) else {e.get("name"): e for e in c}
 b = as_map(json.loads(head))
 a = as_map(json.load(open("IG_catalog.json", encoding="utf-8")))
-moved = []
+MAX = 3 * 3 * 3 * 4 * 4 * 4 * 4 * 4 * 5 * 5 * 5 * 5   # the crystal's own count
+def valid(n):
+    return 0 <= n < 17280000
+moved, gained, off = [], [], []
 for k in set(b) & set(a):
     try:
-        if encode_crystal_address(b[k]) != encode_crystal_address(a[k]):
-            moved.append(k)
+        x, y = encode_crystal_address(b[k]), encode_crystal_address(a[k])
     except Exception:
-        pass
-print(f"MOVED {len(moved)} OF {len(a)}")
+        continue
+    if x == y:
+        if not valid(y): off.append(k)
+        continue
+    # An entry that had no valid address and now has one has not moved; it has
+    # arrived. Only a move between two real addresses is drift.
+    if valid(x) and valid(y): moved.append(k)
+    elif valid(y): gained.append(k)
+    else: off.append(k)
+print(f"MOVED {len(moved)} OF {len(a)} GAINED {len(gained)} OFFCRYSTAL {len(off)}")
 PY
 )
 if [[ "$out" == UNMARKED* ]]; then watch "address safety" N "${out#UNMARKED }"
-elif [[ "$out" == "MOVED 0 OF"* ]]; then watch "address safety" T "${out#MOVED 0 OF }"
+elif [[ "$out" == "MOVED 0 OF"* ]]; then
+    det="${out#MOVED 0 OF }"; det="${det%% GAINED*}"
+    extra=""
+    [[ "$out" == *"GAINED 0"* ]] || extra="${extra}, ${out#*GAINED }"
+    watch "address safety" T "${det}${extra%% OFFCRYSTAL*} entries"
 else watch "address safety" F "$out"; fi
+# Entries deliberately outside the crystal's 3³×4⁵×5⁴ cardinality. The group 13
+# and 15 elements carry 𐑛 in ⊞, the transactinides carry 𐑧 in ⊙, and two winding
+# partners hold a polarity value in ◻. Each is a determination about the entry,
+# not something a sweep may delete, so the watch holds a baseline and only
+# breaks if the count grows.
+OFFCRYSTAL_BASELINE=20
+if [[ "$out" != UNMARKED* ]]; then
+    oc="${out#*OFFCRYSTAL }"
+    if [ "$oc" -le "$OFFCRYSTAL_BASELINE" ]; then
+        watch "on the crystal" T "$oc off-crystal, at or under the baseline"
+    else
+        watch "on the crystal" F "$oc off-crystal, above the baseline of $OFFCRYSTAL_BASELINE"
+    fi
+fi
 
 # ── 7. the kernel compiles ──────────────────────────────────────────────────
 if [ "$QUICK" = 1 ]; then
