@@ -256,6 +256,18 @@ p = Primitive.from_symbol("⊙")            # Criticality
 addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirmed
 ```
 
+### The outward form
+
+An entry carries an address and an ixcription: the twelve glyphs, and the name and description written over them. Every operation reads the address; nothing reads the words except as a handle to reach it. So the words can come off without the tuple moving and without the entry leaving the catalog.
+
+```bash
+imscribe ixcription strip badly_named_entry   # the address stays, called by itself
+imscribe ixcription set 𐑛𐑡𐑩𐑬𐑱𐑘𐑲𐑝𐑢𐑓𐑙𐑷 better_name -d "..."
+imscribe ixcription compare                   # do the rounds agree?
+```
+
+A stripped entry is known by its own address, with a discriminator where an address carries more than one. What comes off is kept in `IG_catalog.ixcriptions.json`, so a strip is reversible with `restore` and a second round of ixcription over one address can be set against the first.
+
 ---
 
 ## Undeciphered Texts

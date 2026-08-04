@@ -660,6 +660,238 @@ def delete_imscriptions(names: tuple, yes: bool):
 
 
 # =============================================================================
+# Subcommand group: ixcription  — the outward form, on and off the address
+# =============================================================================
+
+def _ixc_catalog_path() -> Path:
+    """The canonical catalog, or whatever IG_CATALOG points at.
+
+    The override exists so a round of stripping and re-ixcribing can be
+    rehearsed on a copy. Only the canonical path propagates to the consumer
+    repositories, so a copy stays a copy.
+    """
+    import os
+    p = Path(os.environ.get("IG_CATALOG") or (_PROJECT_ROOT / "IG_catalog.json"))
+    if not p.exists():
+        console.print(f"[red]Catalog not found: {p}[/red]")
+        raise SystemExit(1)
+    return p
+
+
+def _ixc_load(path: Path) -> list:
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def _ixc_write(entries: list, path: Path) -> None:
+    from .registry import write_canonical_catalog
+    try:
+        write_canonical_catalog(entries, path)
+    except OSError as e:
+        console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
+        raise SystemExit(1)
+
+
+@main.group("ixcription")
+def ixcription_group():
+    """The outward form of an entry: put it on, take it off, compare rounds.
+
+    \b
+    An entry carries an address, twelve glyphs, and an ixcription, the name and
+    description written over it. Every operation in the framework reads the
+    address; nothing reads the words except as a handle. So the words come off
+    without the tuple moving and without the entry leaving the catalog.
+
+    \b
+    A stripped entry is called by its own address. What came off is kept in
+    IG_catalog.ixcriptions.json, so a strip is reversible and a second round of
+    ixcription over the same address can be set against the first.
+
+    \b
+    Names are handles the rest of the constellation may hold. Stripping one
+    breaks any reference to it by name until the address is ixcribed again.
+
+    \b
+    Acts on IG_catalog.json, or on IG_CATALOG when that is set, so a round can
+    be rehearsed on a copy. Writing the canonical catalog propagates it to the
+    consumer repositories; writing a copy does not.
+    """
+    pass
+
+
+@ixcription_group.command("strip")
+@click.argument("names", nargs=-1, required=True)
+@click.option("--yes", "-y", is_flag=True, help="Skip confirmation prompt.")
+def ixcription_strip(names: tuple, yes: bool):
+    """Take the outward form off NAMES, leaving each address in the catalog.
+
+    \b
+    Examples:
+        imscribe ixcription strip misnamed_entry
+        imscribe ixcription strip kp1_secp256k1 kp2_secp256k1 --yes
+    """
+    from . import ixcription as ixc
+
+    path = _ixc_catalog_path()
+    entries = _ixc_load(path)
+    sidecar = ixc.load_sidecar(path)
+
+    known = {e.get("name") for e in entries if isinstance(e, dict)}
+    missing = [n for n in names if n not in known]
+    found = [n for n in names if n in known]
+    for n in missing:
+        console.print(f"[yellow]Not found in catalog: '{n}'[/yellow]")
+    if not found:
+        console.print("[red]Nothing to strip.[/red]")
+        raise SystemExit(1)
+
+    if not yes:
+        console.print(f"[bold]Will strip the outward form from:[/bold] {', '.join(found)}")
+        console.print("[dim]The addresses stay in the catalog and do not move.[/dim]")
+        click.confirm("Proceed?", abort=True)
+
+    entries, stripped, _ = ixc.strip(entries, found, sidecar)
+    if not stripped:
+        console.print("[yellow]Every named entry was already bare.[/yellow]")
+        return
+
+    ixc.save_sidecar(sidecar, path)
+    _ixc_write(entries, path)
+
+    table = Table(title=f"Stripped {len(stripped)} ixcription(s)")
+    table.add_column("Was", style="yellow")
+    table.add_column("Now addressed as", style="cyan")
+    for old, handle in stripped:
+        table.add_row(old, handle)
+    console.print(table)
+    console.print(f"[dim]Kept in {ixc.sidecar_path(path).name}. "
+                  f"Catalog still holds {len(entries)} entries.[/dim]")
+
+
+@ixcription_group.command("list")
+@click.option("--limit", "-n", default=50, show_default=True, help="Max rows (0 = all).")
+def ixcription_list(limit: int):
+    """List the entries currently standing bare, by address."""
+    from . import ixcription as ixc
+
+    path = _ixc_catalog_path()
+    entries = _ixc_load(path)
+    sidecar = ixc.load_sidecar(path)
+    bare = ixc.bare_entries(entries)
+
+    if not bare:
+        console.print("No bare entries. Every address in the catalog carries an ixcription.")
+        return
+
+    rows = bare if limit <= 0 else bare[:limit]
+    table = Table(title=f"Bare addresses — {len(rows)} of {len(bare)}")
+    table.add_column("Address", style="cyan")
+    table.add_column("Rounds", justify="right")
+    table.add_column("Last name it held", style="yellow")
+    for e in rows:
+        handle = e.get("name", "")
+        rs = ixc.rounds(sidecar, handle)
+        table.add_row(handle, str(len(rs)), rs[-1].get("name", "") if rs else "")
+    console.print(table)
+
+
+@ixcription_group.command("restore")
+@click.argument("handles", nargs=-1, required=True)
+@click.option("--round", "round_no", type=int, default=0,
+              help="Which round to restore, counting from 1. Default is the most recent.")
+def ixcription_restore(handles: tuple, round_no: int):
+    """Put a stripped outward form back on the address it came off."""
+    from . import ixcription as ixc
+
+    path = _ixc_catalog_path()
+    entries = _ixc_load(path)
+    sidecar = ixc.load_sidecar(path)
+
+    index = -1 if round_no <= 0 else round_no - 1
+    entries, restored, unresolved = ixc.restore(entries, handles, sidecar, index)
+
+    for h in unresolved:
+        console.print(f"[yellow]Nothing to restore for '{h}'[/yellow]")
+    if not restored:
+        console.print("[red]Nothing restored.[/red]")
+        raise SystemExit(1)
+
+    _ixc_write(entries, path)
+    for handle, name in restored:
+        console.print(f"[green]✓ {handle}[/green] → {name}")
+
+
+@ixcription_group.command("set")
+@click.argument("handle")
+@click.argument("name")
+@click.option("--description", "-d", default="", help="The description for this round.")
+@click.option("--justification", "-j", default="", help="Optional justification.")
+def ixcription_set(handle: str, name: str, description: str, justification: str):
+    """Write a fresh round of ixcription onto a bare address.
+
+    \b
+    The address is not touched, only the words over it, so a later comparison
+    is between two namings of one address rather than between two entries.
+    """
+    from . import ixcription as ixc
+
+    path = _ixc_catalog_path()
+    entries = _ixc_load(path)
+
+    clash = next((e for e in entries if isinstance(e, dict) and e.get("name") == name), None)
+    if clash is not None:
+        console.print(f"[red]'{name}' already names an entry in the catalog.[/red]")
+        raise SystemExit(1)
+
+    entry = ixc.set_ixcription(entries, handle, name, description, justification)
+    if entry is None:
+        console.print(f"[red]No entry addressed '{handle}'.[/red]")
+        raise SystemExit(1)
+
+    _ixc_write(entries, path)
+    console.print(f"[green]✓ {handle}[/green] → {name}")
+    console.print("[dim]Strip it again to record this round for comparison.[/dim]")
+
+
+@ixcription_group.command("compare")
+@click.argument("handles", nargs=-1)
+def ixcription_compare(handles: tuple):
+    """Set the rounds of ixcription over an address against each other.
+
+    \b
+    With no arguments, reports every address that has been ixcribed more than
+    once. Agreement means each round chose the same name for the same address.
+    """
+    from . import ixcription as ixc
+
+    path = _ixc_catalog_path()
+    sidecar = ixc.load_sidecar(path)
+
+    keys = list(handles) if handles else [h for h in sidecar if len(sidecar[h]) > 1]
+    if not keys:
+        console.print("No address has been ixcribed more than once yet.")
+        return
+
+    for handle in keys:
+        rs = ixc.rounds(sidecar, handle)
+        if not rs:
+            console.print(f"[yellow]Nothing recorded for '{handle}'[/yellow]")
+            continue
+        agreed = ixc.agreement(sidecar, handle)
+        mark = {True: "[green]agrees[/green]", False: "[red]differs[/red]",
+                None: "[dim]one round only[/dim]"}[agreed]
+        table = Table(title=f"{handle}  —  {len(rs)} round(s), {mark}")
+        table.add_column("#", justify="right")
+        table.add_column("Name", style="cyan")
+        table.add_column("Description")
+        table.add_column("Stripped", style="dim")
+        for i, r in enumerate(rs, 1):
+            table.add_row(str(i), r.get("name", ""), r.get("description", ""),
+                          r.get("stripped", ""))
+        console.print(table)
+
+
+# =============================================================================
 # JSON-catalog conflict-resolution helper
 # =============================================================================
 
@@ -3015,6 +3247,7 @@ def imscribe_alias(ctx):
 imscribe_alias.add_command(menu_command, name="menu")
 imscribe_alias.add_command(analyze)
 imscribe_alias.add_command(catalog)
+imscribe_alias.add_command(ixcription_group, name="ixcription")
 imscribe_alias.add_command(generate)
 imscribe_alias.add_command(compare)
 imscribe_alias.add_command(export)
