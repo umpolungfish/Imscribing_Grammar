@@ -14,16 +14,16 @@ never assert arithmetic from memory.
 
 ## Chemistry, biology, materials, plasmas tools
 
-- **red-hot_rebis — the 18 entry points** — `rebis`
-- **red-hot_rebis — gateway subcommands** — `gene-pipeline`
-- **red-hot_rebis — engines** — `ch3mpiler`
-- **v3ssel** — `python -m vessel.run <cmd>`
-- **vae_vita** — `cargo build --release`
-- **Ars_Therapeutica** — `at`
-- **Ars_Fungiglyphica** — `fg`
-- **Ars_Phytoglyphica** — `ap`
-- **gene_imscriber** — `genetic-engine`
-- **cetaceanspeak** — `cetacean-speak`
+- **red-hot_rebis — the 18 entry points** — `python3`, `rebis.py`, `--file/-f`, `--stdin/-i`, `gene-pipeline`, `in-tree`, `ch3mpiler`, `p4ra`, `--file`, `--stdin`, `--version`, `--help`, `rebis`, `rebis.chain`, `rebis.gene`, `rebis.ch3mpiler`, `rebis.serpentrod`, `rebis.ligand`, `rebis.sidechain`, `rebis.therapeutics`, `rebis.materials`, `rebis.biology`, `rebis.pipeline`, `rebis.alchemy`, `rebis.clink`, `rebis.p4ra`, `rebis.demo`, `rebis.status`, `rebis.verify`
+- **red-hot_rebis — gateway subcommands** — `gene-pipeline`, `b4_lattice`, `ch3mpiler`, `--test`, `--dna`, `--seq`, `--target`, `--depth`, `--all`, `--verbose`, `--json`, `gene`, `chain`, `reference`, `constants`, `predict`, `status`, `verify`, `demo`
+- **red-hot_rebis — engines** — `rebis.p4ra`, `python3`, `rebis`, `rebis demo ligand`, `rebis demo sicpovm`, `rebis alchemy map`, `alchemy`, `alchemy treatise`, `rebis materials sim`, `materials`, `materials metamaterial`, `bin/qp`, `MANUAL.md`, `pdb-file`, `auto-active`, `top-n`, `drug-conc`, `no-active`, `from-catalog`, `heal-steps`, `n-grains`, `target-gap`, `genome-size`, `n-genes`, `n-adaptive`, `morphogenesis-steps`, `grid-size`, `n-types`, `skip-ch3mpile`, `skip-serpentrod`, `therapy-all`, `grand-seq`, `decode-mol`, `gene-pipeline`, `ch3mpiler`, `foldv2`, `ch3mpile`, `b4`, `p4ra`, `--name`, `--pdb`, `--pdb-file`, `--active`, `--auto-active`, `--top-n`, `--cutoff`, `--improved`, `--json`, `--verbose`, `--batch`, `--list`, `--info`, `--mutation`, `--time`, `--drug-conc`, `--dt`, `--noise`, `--disease`, `--no-active`, `--rounds`, `--diversity`, `--weeks`, `--edits`, `--loci`, `--tuple`, `--from-catalog`, `--size`, `--cycles`, `--heal-steps`, `--kappa`, `--nonlinear`, `--n-grains`, `--target-gap`, `--cas`, `--generations`, `--genome-size`, `--n-genes`, `--n-adaptive`, `--morphogenesis-steps`, `--grid-size`, `--steps`, `--n-types`, `--file`, `--description`, `--depth`, `--skip-ch3mpile`, `--skip-serpentrod`, `--translate`, `--orfs`, `--tier`, `--protein`, `--molecule`, `--gene`, `--op`, `--layer`, `--sequence`, `--compare`, `--all`, `retrosynth`, `fg`, `cdxml`, `analyze`, `list`, `info`, `help`, `classify`, `finger`, `process`, `fold`, `spectrum`, `sim`, `neurotrophic`, `antidote`, `quantum`, `metamaterial`, `critical`, `alloy`, `nonqubit`, `sophick`, `casimir`, `molecule`, `status`, `morphogenesis`, `telomeres`, `imscribe`, `retro`, `therapy`, `lift`, `quality`, `tuples`, `translate`, `pipeline`, `opus`, `stilling`, `structure`, `grand`, `catalyst`, `wavelength`, `screen`, `binding`, `host`, `decode`, `treatise`, `operations`, `portico`, `chain`, `cscore`, `bridge`, `algebra`, `integrate`, `energy`, `genetics`, `verify`, `hadrons`, `ligands`, `sidechain`, `gene`, `serpent`, `sicpovm`, `combinatorial`, `heterocycles`
+- **v3ssel** — `python`, `vessel.run`, `--live`, `vessel.frobenius_pairs`, `vessel.hard_lefschetz`, `min-conviction`, `--json`, `--ledger`, `--tail`, `--fresh`, `--stride`, `--limit`, `--symbol`, `--capital`, `--min-conviction`, `--directional`, `--interval`, `--cycles`, `--once`, `step`, `ledger`, `organism`, `backfill`, `trade`, `path`
+- **vae_vita** — `cargo`, `vita-gen`, `vita-train`, `vita-speak`, `vita-corpus`, `vita-bake`, `vita-probe`, `melt-range`, `melt-eps`, `--release`, `--weights`, `--seeds`, `--start`, `--temps`, `--cap`, `--spider`, `--out`, `--one`, `--melt`, `--melt-range`, `--melt-eps`, `vita`
+- **Ars_Therapeutica** — `at`, `diagnose`, `therapy`, `tensor`, `meet`, `compare`, `spectrum`, `operate`, `help`
+- **Ars_Fungiglyphica** — `fg`, `fungus`, `types`, `lattice`, `morphology`, `distance`, `list`
+- **Ars_Phytoglyphica** — `ap`, `plant`, `types`, `lattice`, `morphology`, `distance`, `list`, `novel`
+- **gene_imscriber** — `genetic-engine`, `base_editor_stratum_analysis.py`, `clinical_safety_analysis.py`, `sra_guide_seq_pipeline.py`, `guide_seq_analyzer.py`, `guide_seq_refined.py`, `max-runs`, `--guide`, `--cbe`, `--abe`, `--json`, `--mode`, `--sra`, `--genome`, `--output`, `--threads`, `--max-runs`, `--reanalyze`, `compile`, `guide`, `verify`, `chimera`, `stratum`, `demo`, `test`
+- **cetaceanspeak** — `cetacean-speak`, `cetacean-engine`, `cetacean-speaker`, `--species`, `--expression`, `--respond`, `--output`, `--list`, `--quiet`, `cetacean`
 - **No code in these** — `rionrebis`
 
 

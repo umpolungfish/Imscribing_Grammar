@@ -746,13 +746,89 @@ def main() -> int:
 
 # ── compact inline manifest ───────────────────────────────────────────
 
+def entry_names(body: str) -> list[str]:
+    """Every invocable name in a curated entry: verbs, sub-verbs and flags.
+
+    This used to read the FIRST LINE only and take up to four backticked spans
+    from it, while the docstring claimed nothing was invisible. It was not true.
+    Not one of MoDoT's ~90 ./ask flags, none of the ~50 structural verbs, and
+    none of the imasm sub-verbs appeared in any inline manifest, so a specialist
+    could not know they existed without a file_read it had no reason to make.
+    That is why the flag list kept being pasted in by hand.
+
+    Names are cheap; it is the prose and the argument shapes that are expensive,
+    and those still live one file_read away in TOOLS_<domain>.md. So harvest the
+    whole body for names and inline all of them.
+    """
+    names: list[str] = []
+
+    def add(n: str) -> None:
+        n = n.strip().strip(".,;:()")
+        if n and n not in names:
+            names.append(n)
+
+    # Backticked spans, anywhere in the body. Keep the leading token, and also
+    # keep any token that carries a name shape (a dot, a hyphen, or a path), so
+    # `python3 ~/…/build_skeleton.py` yields build_skeleton.py and not python3.
+    # Short all-lowercase phrases are kept whole, because `la lookup` is the
+    # invocation and `la` alone is not.
+    for span in re.findall(r"`([^`]+)`", body):
+        toks = span.split()
+        if not toks:
+            continue
+        add(toks[0])
+        for tok in toks:
+            bare = tok.rsplit("/", 1)[-1].strip("<>[]{}()")
+            if re.fullmatch(r"[A-Za-z][A-Za-z0-9_.-]*[.-][A-Za-z0-9_.-]*", bare):
+                add(bare)
+        # A short lowercase phrase is the invocation; `la lookup` is the name and
+        # `la` alone is not. Placeholders (CODE, <path>, [name]) are not part of it.
+        words = [x for x in toks if not re.fullmatch(r"[A-Z0-9_]{2,}|[<\[].*", x)]
+        if 2 <= len(words) <= 3 and all(re.fullmatch(r"[a-z][a-z0-9_-]*", x) for x in words):
+            add(" ".join(words))
+    # Bare file names and hyphenated commands written in prose: IG_catalog.json,
+    # vita-probe, cetacean-speaker. Nothing else reaches a name that is neither
+    # backticked nor flagged nor dot-separated.
+    for tok in re.findall(r"\b[A-Za-z][A-Za-z0-9_-]*\.(?:py|json|sh|md|rs|lean|toml|txt)\b", body):
+        add(tok)
+    for tok in re.findall(r"\b[a-z][a-z0-9]*(?:-[a-z0-9]+)+\b", body):
+        add(tok)
+    # Identifiers carrying a digit — cl8nk, cl9nk, ob3ect, m3iosis, imasm16_3.
+    # This shape is distinctive to the constellation and near noise-free, and it
+    # catches names written bare in prose that no other rule reaches.
+    for tok in re.findall(r"\b[a-z][a-z0-9]*[0-9][a-z0-9_]*\b", body):
+        add(tok)
+    # Long-form flags.
+    for flag in re.findall(r"--[A-Za-z0-9][A-Za-z0-9-]*", body):
+        add(flag)
+    # Parenthetical enumerations: "(PARI/GP: bnfinit, bnrinit, quadhilbert, …)"
+    # and "(constants pi tau e phi; functions sqrt cbrt ln …)". These are the
+    # sub-surfaces of a single verb and are invocable exactly like the verb is.
+    for group in re.findall(r"\(([^()]*:[^()]*)\)", body, re.S):
+        for chunk in group.split(":")[1:]:
+            for tok in re.findall(r"[a-z][a-z0-9_.]{2,}", chunk):
+                add(tok)
+    # Verb runs separated by the middle dot, and pipe-alternated aliases within
+    # them: `rotat|rotate|shift · arev|hop|door · …`.
+    for seg in body.split("·"):
+        head = seg.strip().splitlines()[0].strip() if seg.strip() else ""
+        # Dotted heads are real names: `rebis.serpentrod · rebis.ligand · …`.
+        m = re.match(r"^([a-z][a-z0-9_.]*(?:\|[a-z][a-z0-9_.]*)*)", head)
+        if m:
+            for alias in m.group(1).split("|"):
+                add(alias)
+    return names
+
+
 def render_inline(domain: str) -> str:
-    """Names only, plus a pointer to the full reference.
+    """Every name, plus a pointer to the full reference for the syntax.
 
     The full detail used to be inlined, which put ~4.9k tokens into every
     winding's prompt — three times the base agent's whole prompt, resent on
-    every turn and compounding with the session history. Every tool is still
-    named here, so nothing is invisible; the syntax lives one file_read away.
+    every turn and compounding with the session history. What replaced it was
+    supposed to be names-only. It was first-line-only, which is a different and
+    much smaller thing, and the difference is the whole reason a specialist
+    could not see the tool surface it was standing on.
     """
     label, entries = DOMAINS[domain]
     ref = HERE / f"TOOLS_{domain}.md"
@@ -762,9 +838,11 @@ def render_inline(domain: str) -> str:
            ", ".join(f"`{n}`" for n in grammar_tools()),
            f"\n\n## {label} tools\n"]
     for _path, heading, body in entries:
-        first = body.strip().splitlines()[0]
-        cmds = re.findall(r"`([^`]+)`", first) or re.findall(r"^([a-z0-9_.-]+)", first)
-        out.append(f"- **{heading}** — {', '.join('`'+c+'`' for c in cmds[:4]) if cmds else first[:80]}")
+        names = entry_names(body)
+        if names:
+            out.append(f"- **{heading}** — " + ", ".join(f"`{n}`" for n in names))
+        else:
+            out.append(f"- **{heading}** — {body.strip().splitlines()[0][:80]}")
     out.append(
         f"\n\nFull syntax, every flag and subcommand: `file_read` "
         f"`{ref}`. Read it before using a tool whose invocation you are unsure of.\n"

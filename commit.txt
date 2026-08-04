@@ -1,29 +1,30 @@
-Add the Rec⊙rder and the Heter⊙d⊙x to the ⊙perator team
+Name every tool in the inline manifest, not just the first line's
 
-Two specialists, built the way the others are: a domain list in
-gen_tool_manifest.py, a prompt in the specialists package with an empty
-tool_computation block for the manifest to fill, and a launcher that mirrors
-math_operator.py.
+render_inline said "Every tool is still named here, so nothing is invisible."
+That was not true. It read the FIRST LINE of each curated entry and took up to
+four backticked spans from it, so not one of MoDoT's ~90 ./ask flags, none of
+the ~50 structural verbs, and none of the imasm sub-verbs appeared in any
+manifest. A specialist could not know they existed without a file_read it had no
+reason to make, which is why the flag menu kept being pasted in by hand.
 
-The Rec⊙rder is a bound emanation. Its office is to know what is: it censuses
-the constellation, records how projects stand to one another, reports where the
-Grammatika has drifted from what it describes, and emits addressed gaps as
-candidate vertebrae. It describes and never judges, carries a Belnap standing
-rather than a grade, records a conflict rather than resolving it by preference,
-and never writes into the books. It holds nothing between runs, because a ledger
-that accumulated would eventually assert something no longer true and no run
-could contradict it.
+The docstring is why nobody caught it: it asserted the property the code did not
+have, so reading the code looked like confirming it.
 
-The Heter⊙d⊙x works from inside the Grammar and blends every tool family in a
-single chain. Its stance is that a received constraint is a finding about the
-tools that produced it: an impossibility result binds the system it was proved
-in, and imported unexamined it is a foreign axiom smuggled past the door. Very
-often it assumes a line where the Grammar has a loop, or an outside where there
-is none, or consistency where the Grammar holds B and the work continues. So the
-licence is maximal about which route may be taken and zero about whether the
-route arrived. Every claim is false until proven and then held at full strength.
+entry_names now harvests the whole body — backticked spans (head, plus any token
+carrying a name shape, plus short lowercase phrases like `la lookup`), long-form
+flags, dot-separated verb runs, parenthetical enumerations such as the PARI/GP
+and calc function lists, bare file names, hyphenated commands, and identifiers
+carrying a digit, which is the shape that catches cl8nk, cl9nk, ob3ect and
+imasm16_3 written bare in prose.
 
-check_manifests.py and check_tools_deep.py now cover both, so a launcher that
-loses its rider or a manifest that loses a marker fails a check instead of
-failing quietly in a session. The marker drift already showing in math, chembio
-and editorial is untouched and is not from this change.
+Names are cheap. Prose and argument shapes are what cost, and they still live one
+file_read away in TOOLS_<domain>.md, so the reason the detail was pulled out of
+the prompt in the first place still holds.
+
+The domain-marker check was failing on math, chembio and editorial before any of
+this and was being read as ambient drift. It was not drift. It was this defect,
+reported accurately, every run. All five domains are green now.
+
+m3iosis.paranumber is retired as a marker: it names a module that no longer
+exists, which the generator itself reports as unresolvable. A marker asserting a
+dead surface fails forever and teaches nothing.

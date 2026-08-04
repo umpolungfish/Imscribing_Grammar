@@ -14,11 +14,11 @@ never assert arithmetic from memory.
 
 ## Census, relation, drift tools
 
-- **The census walk** — `python3 ~/imsgct/Grammatika/recorder_census.py`
-- **The book skeleton emitter** — `python3 ~/imsgct/Grammatika/build_skeleton.py`
-- **The Grammatika itself** — ~/imsgct/Grammatika/ — PROLOGUE.md, books/ (twelve, six braided pairs),
-- **The unified catalog** — One canonical IG_catalog.json in imscribing_grammar/. Two projects keying to
-- **Census by shell** — `command grep`, `grep`
+- **The census walk** — `python3`, `recorder_census.py`, `README.md`, `STATE.md`, `MANUAL.md`, `DEVOLUTION.md`, `Cargo.toml`, `pyproject.toml`, `LEDGER.md`, `hand-patched`, `re-runs`
+- **The book skeleton emitter** — `python3`, `build_skeleton.py`, `CONTENTS.md`, `hand-edit`
+- **The Grammatika itself** — `PROLOGUE.md`, `INTERWEAVE.md`, `EPILOGUE.md`, `DJED.md`, `LEDGER.md`, `CONTENTS.md`
+- **The unified catalog** — `sync_catalog.sh`, `IG_catalog.json`
+- **Census by shell** — `command`, `command grep`, `grep`, `git`, `load-bearing`, `--format`
 
 
 Full syntax, every flag and subcommand: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/TOOLS_recorder.md`. Read it before using a tool whose invocation you are unsure of.

@@ -28,7 +28,11 @@ for d, p in prompts.items():
 
 # domain markers that must appear in their own manifest and nowhere it'd be wrong
 markers = {
-    "math":      ["./ask", "imasm16_3", "m3iosis.paranumber", "la lookup",
+    # m3iosis.paranumber was a marker for a module that no longer exists — the
+    # m3iosis entry is now derived from its own argparse tree, which is why the
+    # generator reports the module as unresolvable. A marker asserting a dead
+    # surface fails forever and teaches nothing, so it is retired here.
+    "math":      ["./ask", "imasm16_3", "la lookup",
                   "verify_sic_moduli.sh", "cl9nk"],
     "chembio":   ["rebis.serpentrod", "rebis.p4ra", "vita-probe", "genetic-engine",
                   "cetacean-speaker", "vessel.run"],

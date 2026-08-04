@@ -14,9 +14,9 @@ never assert arithmetic from memory.
 
 ## Editorial tools
 
-- **ltx — the LaTeX compiler** — `ltx <input.md|input.tex> [--font-size N] [-o out.pdf] [extra…]`
-- **zdd — the Zenodo document compiler** — `zdd paper.md [--out out.pdf] [--tex-only] [--open]`
-- **Publication tooling** — `zenodo_upload.py paper.pdf`
+- **ltx — the LaTeX compiler** — `ltx`, `out.pdf`, `latextiler`, `latextiler convert`, `latextiler.toml`, `lualatex`, `--font-size`, `input.md`, `font-size`, `v2`, `--interaction`
+- **zdd — the Zenodo document compiler** — `zdd`, `paper.md`, `out.pdf`, `zenodo_draft.py`, `ig_figures.py`, `tex-only`, `--out`, `--tex-only`, `--open`, `--citeproc`
+- **Publication tooling** — `zenodo_upload.py`, `paper.pdf`, `zenodo_manuscripts3_upload.py`, `ig_figures.py`, `IG_latex.py`, `gen_ig_reference.py`, `ig_periodic_table.py`, `latextiler.toml`, `new-version`, `--live`, `--draft`, `--list`, `--update`, `--new-version`
 
 
 Full syntax, every flag and subcommand: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/TOOLS_editorial.md`. Read it before using a tool whose invocation you are unsure of.
