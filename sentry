@@ -67,9 +67,9 @@ else
     out=$(cd mOMonadOS && timeout 200 make ordinals 2>&1)
     if printf '%s' "$out" | grep -q 'ALL 44 VALUES MATCH'; then
         watch "ordinal faithfulness" T "44 of 44"
-    elif printf '%s' "$out" | grep -q 'ORDINAL DRIFT'; then
+    elif printf '%s' "$out" | grep -q 'ORDINAL DRIFT DETECTED'; then
         watch "ordinal faithfulness" F "drift"
-    else watch "ordinal faithfulness" N "the kernel did not boot"; fi
+    else watch "ordinal faithfulness" N "the guard did not speak"; fi
 fi
 
 # ── 5. a tuple survives the round trip through IMASM ────────────────────────

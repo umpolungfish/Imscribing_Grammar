@@ -363,13 +363,26 @@ def pe_qft_alignment(n: int, d_model: int) -> Tuple[float, float]:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def demo_qft(n: int = 8):
-    print(f"\n{'='*70}")
-    print(f"  EXACT QFT SIMULATION — {n} qubits  ({2**n} amplitudes)")
-    print(f"{'='*70}")
-
-    # build random input state
-    rng = np.random.default_rng(42)
-    psi0 = rng.standard_normal(2**n) + 1j * rng.standard_normal(2**n)
+    import sys, math
+    log10_2 = math.log10(2)
+    n_digits = int(n * log10_2) + 1
+    print(f"\n{"="*70}")
+    print(f"  EXACT QFT SIMULATION — {n} qubits  (2^{n} ≈ 10^{{{n_digits}}} amplitudes)")
+    print(f"{"="*70}")
+    # Sanity: state vector size must fit in memory
+    if n > 30:
+        import sys, math
+        sys.set_int_max_str_digits(0)
+        log10_2 = math.log10(2)
+        n_digits = int(n * log10_2) + 1
+        log2_gb = n + 4 - 30  # 2^n × 16 bytes ÷ 2^30 bytes/GB = 2^(n+4-30)
+        print(f"  ERROR: {n} qubits → 2^{n} ≈ 10^{{{n_digits}}} amplitudes → ~2^{{{log2_gb}}} GB")
+        print(f"  Maximum supported: n=30 (~8 GB state vector)")
+        print(f"  For theoretical analysis, use the windingPE=QFT identity:")
+        print(f"  W(pos,i) = exp(i·pos/base^(2i/d)) ≡ F(j,k) = (1/√N)·exp(2πijk/N)")
+        return
+        print(f"  No state vector needed — the phase is already encoded in the lattice.")
+        return
     psi0 /= norm(psi0)
 
     # 1. exact via matrix multiply
