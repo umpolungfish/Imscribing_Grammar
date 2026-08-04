@@ -95,14 +95,16 @@ def probe_specialists():
     --help exits before __init__ runs, so a missing import in the constructor
     passes every --help check and dies the moment anyone launches the operator.
     That is exactly how a NameError on _PARTNERSHIP_RIDER shipped in two of the
-    three launchers.
+    every launcher.
     """
     import importlib
     sys.path.insert(0, str(HERE))
     out = []
     for mod, cls in (("math_operator", "MathOperator"),
                      ("editorial_operator", "EditorialOperator"),
-                     ("chembio_operator", "ChemBioOperator")):
+                     ("chembio_operator", "ChemBioOperator"),
+                     ("recorder_operator", "RecorderOperator"),
+                     ("heterodox_operator", "HeterodoxOperator")):
         m = importlib.import_module(mod)
         a = getattr(m, cls)(model="probe:none", max_windings=0, verbose=False)
         assert "PARTNERSHIP RIDER" in a._custom_system_prompt, f"{cls}: rider missing"

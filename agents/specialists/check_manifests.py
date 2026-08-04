@@ -9,7 +9,9 @@ from gen_tool_manifest import base_tools, grammar_tools
 
 prompts = {"math": S.MATH_SPECIALIST_PROMPT,
            "editorial": S.EDITORIAL_SPECIALIST_PROMPT,
-           "chembio": S.CHEMBIO_SPECIALIST_PROMPT}
+           "chembio": S.CHEMBIO_SPECIALIST_PROMPT,
+           "recorder": S.RECORDER_SPECIALIST_PROMPT,
+           "heterodox": S.HETERODOX_SPECIALIST_PROMPT}
 
 base = [n for n, _ in base_tools()]
 gram = grammar_tools()
@@ -31,6 +33,10 @@ markers = {
     "chembio":   ["rebis.serpentrod", "rebis.p4ra", "vita-probe", "genetic-engine",
                   "cetacean-speaker", "vessel.run"],
     "editorial": ["ltx", "zdd", "zenodo_upload.py", "ig_figures.py"],
+    "recorder":  ["recorder_census.py", "build_skeleton.py", "LEDGER.md",
+                  "DJED.md", "IG_catalog.json", "command grep"],
+    "heterodox": ["./ask", "mOMonadOS", "m3iosis", "p4ramill", "ob3ect",
+                  "cl9nk", "para_vm"],
 }
 print()
 for d, ms in markers.items():

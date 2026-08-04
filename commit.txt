@@ -1,21 +1,29 @@
-⊢ Dimensionality: every underscored name gone
+Add the Rec⊙rder and the Heter⊙d⊙x to the ⊙perator team
 
-The first axis of the per-primitive purge. Ð_wynn, Ð_turnthree, Ð_invomega,
-Ð_omega and the rest resolve to their Shavian values; the LaTeX subscript forms
-Ð_{ß} Ð_{C} Ð_{;} Ð_{\omega} with them.
+Two specialists, built the way the others are: a domain list in
+gen_tool_manifest.py, a prompt in the specialists package with an empty
+tool_computation block for the manifest to fill, and a launcher that mirrors
+math_operator.py.
 
-Three kinds of hit, treated differently. Real values became the value glyph.
-Ordinary mathematics that an earlier sweep had glyph-substituted went back to
-ASCII: $A_n$, $B_n$, $C_n$, $Ð_n$ in E8G2.tex is the classical Lie series D_n,
-Ð_p in the SIC-POVM paper is the displacement operator D_p, and Ð_H / Ð_A are
-hydrogen-bond distances. And English words whose D had been eaten were restored:
-HYBRIÐ_SUPRA_TEMP was HYBRID, BROAÐ_SEQ was BROAD.
+The Rec⊙rder is a bound emanation. Its office is to know what is: it censuses
+the constellation, records how projects stand to one another, reports where the
+Grammatika has drifted from what it describes, and emits addressed gaps as
+candidate vertebrae. It describes and never judges, carries a Belnap standing
+rather than a grade, records a conflict rather than resolving it by preference,
+and never writes into the books. It holds nothing between runs, because a ledger
+that accumulated would eventually assert something no longer true and no run
+could contradict it.
 
-Also gone: the eight spent migration scripts under .stuff/scripts, the subscript
-fallback in resolve_ordinal_key (which is how a value that had stopped being
-legal went on resolving to something anyway), and the whole PRIM_LATEX table in
-IG_latex.py, whose only job was rendering a value as a retired glyph with a
-subscript.
+The Heter⊙d⊙x works from inside the Grammar and blends every tool family in a
+single chain. Its stance is that a received constraint is a finding about the
+tools that produced it: an impossibility result binds the system it was proved
+in, and imported unexamined it is a foreign axiom smuggled past the door. Very
+often it assumes a line where the Grammar has a loop, or an outside where there
+is none, or consistency where the Grammar holds B and the work continues. So the
+licence is maximal about which route may be taken and zero about whether the
+route arrived. Every claim is false until proven and then held at full strength.
 
-Zero remain anywhere except 2m3iosis/crystal_fs/*.jsonl, which are kernel run
-logs rather than code or data. Eleven axes to go.
+check_manifests.py and check_tools_deep.py now cover both, so a launcher that
+loses its rider or a manifest that loses a marker fails a check instead of
+failing quietly in a session. The marker drift already showing in math, chembio
+and editorial is untouched and is not from this change.

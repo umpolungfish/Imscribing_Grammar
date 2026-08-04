@@ -509,10 +509,125 @@ LaTeX and reference material. Config is latextiler.toml at the repo root,
 alongside the imscrbgrmr.sty package and its man page."""),
 ]
 
+RECORDER_DOMAIN = [
+    (IMSGCT / "Grammatika" / "recorder_census.py",
+     "The census walk", """\
+`python3 ~/imsgct/Grammatika/recorder_census.py`. Walks every directory under
+~/imsgct/, reads each project's canonical doc (README.md, then STATE.md,
+MANUAL.md, DEVOLUTION.md in that precedence) and its verification surface
+(lakefile → Lean, Cargo.toml → Rust, pyproject.toml → Python package, a tests
+directory → tests), and rewrites Grammatika/LEDGER.md wholesale.
+
+The braid order in the ledger is read from imscrbgrmr.canonical_primitives and
+never restated. Standing is a Belnap verdict, not a grade: N where no watch has
+spoken, B where one of doc/verification is present and the other is not.
+
+Fix this script when the walk is wrong. Do not patch the ledger by hand: a
+hand-patched ledger survives the next run only until someone re-runs it, and
+then the patch is gone with no record that it was ever made."""),
+
+    (IMSGCT / "Grammatika" / "build_skeleton.py",
+     "The book skeleton emitter", """\
+`python3 ~/imsgct/Grammatika/build_skeleton.py`. Emits any missing book stub
+and regenerates CONTENTS.md from the canonical order. It never overwrites a
+book that has been written into.
+
+The alphabet is the table of contents, so the table of contents is generated
+rather than typed. Fix the emitter and regenerate; do not hand-edit generated
+frontmatter."""),
+
+    (IMSGCT / "Grammatika",
+     "The Grammatika itself", """\
+~/imsgct/Grammatika/ — PROLOGUE.md, books/ (twelve, six braided pairs),
+INTERWEAVE.md, EPILOGUE.md, DJED.md (the pillar of located lemmas),
+LEDGER.md (this specialist's artifact of record), CONTENTS.md (generated).
+
+Read-only to the Rec⊙rder except for LEDGER.md and proposed DJED.md entries."""),
+
+    (IMSGCT / "imscribing_grammar" / "IG_catalog.json",
+     "The unified catalog", """\
+One canonical IG_catalog.json in imscribing_grammar/. Two projects keying to
+the same catalog address are the same object seen twice, which is the strongest
+relation there is to record. `sync_catalog.sh` propagates real copies, not
+symlinks; a project holding a divergent copy is a finding."""),
+
+    (None, "Census by shell", """\
+`command grep` for any identifier census, never a bare `grep` that an alias may
+have rewritten. A count is evidence of presence, never a licence to delete:
+check identifier position first, because notation that looks retired may be
+load-bearing. `git -C <project> log -1 --format=%cd` where a project is its own
+repository, for a liveness signal stronger than mtime."""),
+]
+
+HETERODOX_DOMAIN = [
+    (IMSGCT / "MoDoT" / "ask", "MoDoT — ./ask", """\
+`cd ~/imsgct/MoDoT && ./ask [FLAGS]`. The primary language interface and the
+usual way into the structural verbs. Rust-native; build with
+`--features local,cuda` when the local provider is wanted, since a plain build
+strips it. Never write a Python bridge in front of it.
+
+The verb list is the math domain's; read TOOLS_math.md for full syntax and
+MODOT_WALKTHROUGH.md for which question each verb answers."""),
+
+    (IMSGCT / "mOMonadOS", "mOMonadOS — the bare-metal kernel", """\
+~/imsgct/mOMonadOS. The self-imscribing kernel: no processes, no scheduler, no
+filesystem hierarchy. The kernel IS the Frobenius loop and every tick is a
+self-verification. It braids Fibonacci anyons on the metal.
+
+It is the first home for new work, not a port target. Anything developed here
+lands natively here before it lands anywhere else, and no Python version is
+written to precede it. `./run_serial_cmds.sh` runs several commands per boot;
+the QEMU start dominates a single short command, so batch them."""),
+
+    (IMSGCT / "m3iosis", "m3iosis — braid to tuple", """\
+`m3 info`, `m3 fib --summary`, `m3 fib --fusion tau tau`, `m3 sim 1 2 1`,
+`m3 braid-grammar --strands 4 1 2 1`, `m3 manifold --word 1 2 1 2 1`.
+
+Fibonacci anyon algebra, braid groups, modular tensor categories. Its distinct
+value to this specialist is `braid-grammar`: the surface where a topological
+question becomes a typed one and re-enters the Grammar as the same tuple the
+catalog would hold. It mirrors the kernel; reach for the kernel first and use
+m3iosis where the kernel does not expose what is needed."""),
+
+    (IMSGCT / "p4rakernel" / "p4ramill", "p4rakernel — Lean 4", """\
+`cd ~/imsgct/p4rakernel/p4ramill && lake build`. Where a claim stops being a
+claim. Sorries are original claims and are named as such, never hidden.
+
+Build state is tracked; do not re-investigate a green build. `proof_scaffold`
+turns an opcode sequence into a typed Lean term scaffold, which is the route in
+from an imscription rather than from Mathlib spelunking."""),
+
+    (IMSGCT / "ob3ect", "ob3ect — self-verifying objects", """\
+~/imsgct/ob3ect, `auto.py`, and the native generator `./ask --ob3ect`. Objects
+that verify themselves on execution by checking μ∘δ=id over the transformation
+rather than by inspecting output.
+
+Load from it live. Do not nest a copy: one manifold."""),
+
+    (None, "The navigator layer", """\
+`cl9nk` is the reference and `cl8nk` the substrate: `cl8nk_navigator` plus the
+`cl8nk` and `cl9nk` MoDoT verbs (entry, distance, tensor, meet, join, contain,
+tier, promotions, transcendence, chain, systems, stats, and cl9nk moat).
+
+Navigator distance is a heuristic. Where a canonical metric exists it decides.
+Never hand-derive what a navigator computes."""),
+
+    (None, "The paraconsistent surface", """\
+`para_vm` (Belnap FOUR VM, ParaASM, dialetheia), `para_verify` and
+`para_verify_enable`. This is the surface on which most imported impossibility
+results fail to transfer: they assume a contradiction is fatal, and here it
+lands as B and the work continues.
+
+Where two surfaces disagree, that is a B and it is recorded as one, not
+resolved by preferring the surface you like."""),
+]
+
 DOMAINS = {
     "math": ("Mathematics", MATH_DOMAIN),
     "editorial": ("Editorial", EDITORIAL_DOMAIN),
     "chembio": ("Chemistry, biology, materials, plasmas", CHEMBIO_DOMAIN),
+    "recorder": ("Census, relation, drift", RECORDER_DOMAIN),
+    "heterodox": ("Cross-family, Grammar-first", HETERODOX_DOMAIN),
 }
 
 
