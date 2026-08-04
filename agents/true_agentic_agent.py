@@ -1642,37 +1642,64 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     if justification:
         tool_args["convergence_justification"] = justification
 
-    # ── SHUNT: this agent proposes, the pipeline imscribes ───────────────────
-    # Both commit paths below wrote straight to the catalog with no
-    # cross-primitive axiom check. The generator pipeline
-    # (agents/imscribe_generator_agent.py, run via agents_cli
-    # "imscription_generator") validates Axioms A/B/C and auto-corrects, e.g.
-    # it refuses ◻=𐑭 with ⊥ below 𐑖 and downgrades the protection. Nothing on
-    # this path did. That is how `sic_novm` reached the catalog at ⊥=𐑒 with
-    # ◻=𐑭, an address the generator would decline to emit — 227 catalog entries
-    # currently violate Axiom B.
+    # ── THE AXIOM GATE ───────────────────────────────────────────────────────
+    # This path used to refuse outright and hand the caller to the generator
+    # pipeline. The reason given was exact and worth keeping: both commit paths
+    # below write to the catalog, and neither checked the cross-primitive
+    # axioms. That is how entries reached the catalog at ⊥=𐑒 with ◻=𐑭, an
+    # address the generator would decline to emit.
     #
-    # So the tuple is derived here and handed on; it is not committed here.
-    if not _AGENT_MAY_IMSCRIBE:
-        proposal = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
-        return json.dumps({
-            "status": "shunted_to_pipeline",
-            "name": name,
-            "proposed_tuple": proposal,
-            "proposed_notation": "⟨" + "".join(proposal.get(k, "?") for k in order) + "⟩",
-            "committed": False,
-            "message": (
-                "The catalog has NOT been written. Imscription is the pipeline's to "
-                "commit, not this agent's: the pipeline validates the cross-primitive "
-                "axioms and this path does not. The derivation above is preserved — "
-                "hand it to the generator, which will triangulate and commit, or "
-                "report the axiom that blocks it."
-            ),
-            "pipeline": (
-                "python -m imscribing_grammar.agents.agents_cli imscription_generator "
-                f"--description {name!r}"
-            ),
-        }, indent=2, ensure_ascii=False)
+    # But refusing is not the gate; the gate is the check. So the check runs
+    # here now, the same validate_structural the generator uses — slot
+    # membership plus Axioms A through D. A tuple that is a point in the Crystal
+    # goes on to the Tetractys protocol below and commits like any other. A
+    # tuple that is not gets refused HERE, by name, which is what the shunt
+    # message used to promise the pipeline would do.
+    proposed_now: Dict[str, str] = {
+        k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order
+    }
+    if all(proposed_now.values()):
+        try:
+            from agents.imscribe_generator_agent import validate_structural  # noqa: E402
+        except Exception:
+            try:
+                from imscribing_grammar.agents.imscribe_generator_agent import (  # noqa: E402
+                    validate_structural,
+                )
+            except Exception:
+                validate_structural = None  # type: ignore
+        if validate_structural is not None:
+            _fam_to_axis = {
+                "𐑛": "⊢", "𐑡": "⊣", "𐑩": ">", "𐑗": "<", "𐑱": "⋈", "𐑘": "⊤",
+                "𐑚": "∈", "𐑝": "∋", "𐑢": "⊙", "𐑓": "⊥", "𐑙": "⊞", "𐑷": "◻",
+            }
+            axis_dict = {"name": name}
+            axis_dict.update(
+                {_fam_to_axis[k]: v for k, v in proposed_now.items() if k in _fam_to_axis}
+            )
+            try:
+                from imscrbgrmr.models import Imscription as _Imscr  # noqa: E402
+                _errs = validate_structural(_Imscr.from_dict(axis_dict))
+            except Exception as _e:
+                _errs = [f"could not build the tuple to check it: {_e}"]
+            if _errs:
+                return json.dumps({
+                    "status": "axiom_blocked",
+                    "name": name,
+                    "proposed_tuple": proposed_now,
+                    "proposed_notation": "⟨" + "".join(
+                        proposed_now.get(k, "?") for k in order) + "⟩",
+                    "committed": False,
+                    "blocking": _errs,
+                    "message": (
+                        "The catalog has NOT been written. This tuple is not a point "
+                        "in the Crystal: the cross-primitive axioms above are what it "
+                        "violates. Fix the named slots and call again; the axioms are "
+                        "the same ones the generator pipeline enforces, so nothing is "
+                        "gained by routing around this."
+                    ),
+                }, indent=2, ensure_ascii=False)
+
 
     # If convergence_justification already provided, the caller has resolved Tetractys
     # conflicts — commit directly without re-triangulating.
@@ -1752,15 +1779,16 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
 
 def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
-    # Shunted to the pipeline — the derivation succeeded and was handed on.
-    # Closed, not OPEN: nothing failed and re-calling will not commit it either.
-    if '"status": "shunted_to_pipeline"' in emit_output or \
-       '"status":"shunted_to_pipeline"' in emit_output:
+    # Blocked by a cross-primitive axiom. The tuple is not a point in the
+    # Crystal, so this is OPEN: it is a real refusal with a named cause, and
+    # re-calling with the same tuple will be refused again for the same reason.
+    if '"status": "axiom_blocked"' in emit_output or \
+       '"status":"axiom_blocked"' in emit_output:
         return (
-            "Derivation complete and handed to the generator pipeline. Catalog NOT "
-            "written by this agent — the pipeline commits, after validating the "
-            "cross-primitive axioms. Continue the task. — Frobenius closed",
-            True,
+            "Axiom BLOCKED — the tuple is not a point in the Crystal. The catalog was "
+            "NOT written. The violated axiom is named in the output; fix those slots "
+            "and call again. — Frobenius OPEN",
+            False,
         )
 
     # Triangulation failure — sub-calls could not reach LLM, catalog not updated
