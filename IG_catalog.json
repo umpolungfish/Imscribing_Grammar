@@ -128723,5 +128723,21 @@
     "⊥": "𐑓",
     "⊞": "𐑙",
     "◻": "𐑷"
+  },
+  {
+    "name": "sk_kp1_secp256k1",
+    "description": "Private key of secp256k1 Key Pair 1. 256-bit scalar n in Z/qZ where q is the curve order. Acts via scalar multiplication n×G to generate the public key. B4 class: T (n less than order/2). Two-step chirality: sign then verify.",
+    "⊢": "𐑨",
+    "⊣": "𐑶",
+    ">": "𐑽",
+    "<": "𐑿",
+    "⋈": "𐑱",
+    "⊤": "𐑤",
+    "∈": "𐑲",
+    "∋": "𐑠",
+    "⊙": "𐑢",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
   }
 ]
