@@ -359,66 +359,6 @@ def test_thermodynamics():
 # Test 5: Domain Agents
 # =============================================================================
 
-def test_domain_agents():
-    """Test domain-specific imscription agents."""
-    print("\nTesting Domain Agents...")
-    
-    try:
-        from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
-        from imscrbgrmr.domains.supramolecular import SupramolecularImscriptionAgent
-        from imscrbgrmr.domains.temporal import TemporalImscriptionAgent
-        from imscrbgrmr.domains.hybrid import HybridImscriptionAgent
-        from imscrbgrmr.models import Fidelity
-        
-        # Test Molecular agent
-        mol_agent = MolecularImscriptionAgent()
-        imscriptions = mol_agent.list_molecular_imscriptions()
-        assert len(imscriptions) > 0
-        print(f"  ✓ Molecular agent: {len(imscriptions)} imscriptions listed")
-        
-        # Test Supramolecular agent
-        supra_agent = SupramolecularImscriptionAgent()
-        hbond_analysis = supra_agent.analyze_hydrogen_bond_network("test.cif")
-        assert "motif" in hbond_analysis
-        print(f"  ✓ Supramolecular agent: H-bond analysis works")
-        
-        # Test cooperativity computation
-        coop = supra_agent.compute_cooperativity_induction(3)
-        assert coop["is_superlinear"]
-        print(f"  ✓ Triple H-bond cooperativity: superlinear detected")
-        
-        # Test Temporal agent
-        temp_agent = TemporalImscriptionAgent()
-        cycle_analysis = temp_agent.analyze_reaction_cycle("proline_aldol", "L-proline")
-        assert "cycle_name" in cycle_analysis
-        print(f"  ✓ Temporal agent: Cycle analysis works")
-        
-        # Test fidelity computation
-        fidelity_result = temp_agent.compute_fidelity_per_cycle(1.0, 0.001)
-        assert fidelity_result["f_cycle"] > 0.99
-        print(f"  ✓ Fidelity per cycle: {fidelity_result['f_cycle']:.4f}")
-        
-        # Test Hybrid agent
-        hybrid_agent = HybridImscriptionAgent()
-        spatial = hybrid_agent.analyze_spatial_framework("MOF", "pcu")
-        assert "framework_type" in spatial
-        print(f"  ✓ Hybrid agent: Spatial framework analysis works")
-        
-        # Test granularity amplification
-        from imscrbgrmr.models import Granularity
-        gran_amp = hybrid_agent.compute_granularity_amplification(
-            Granularity.thigh, Granularity.bib
-        )
-        assert gran_amp["amplification_factor"] >= 1
-        print(f"  ✓ Granularity amplification: {gran_amp['amplification_factor']}×")
-        
-        return True
-        
-    except Exception as e:
-        print(f"  ✗ Error testing domain agents: {e}")
-        import traceback
-        traceback.print_exc()
-        return False
 
 
 # =============================================================================

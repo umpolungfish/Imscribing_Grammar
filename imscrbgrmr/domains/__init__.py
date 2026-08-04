@@ -2,18 +2,14 @@
 Imscribing Grammar Domains — Domain-specific imscription implementations.
 
 Subpackages:
-- molecular: Retrosynthetic analysis, bond disconnection
-- supramolecular: Crystal packing, non-covalent interactions
-- temporal: Oscillatory reactions, catalytic cycles
-- hybrid: Multi-dimensional systems (MOFs, programmable matter)
+- quantum: Quantum particles and topological matter
+
+The molecular, supramolecular, temporal and hybrid domains were chemistry:
+retrosynthesis, crystal packing, catalytic cycles, MOFs. That work lives in
+red-hot_rebis, which supersedes it. What the Grammar keeps here is the
+domain-agnostic algebra — tensor, meet, join, distance, ouroborics.
 """
 
-from .molecular import MolecularImscriptionAgent
-from .supramolecular import SupramolecularImscriptionAgent
-from .temporal import TemporalImscriptionAgent
+from .quantum import *  # noqa: F401,F403
 
-__all__ = [
-    "MolecularImscriptionAgent",
-    "SupramolecularImscriptionAgent",
-    "TemporalImscriptionAgent",
-]
+__all__ = []

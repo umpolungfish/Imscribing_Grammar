@@ -7,7 +7,6 @@ Architecture:
   - example_agent.py          → Framework BaseAgent examples
   - imscribe_generator_agent.py   → Universal imscription from descriptions
   - axiom_guided_generator.py     → Axiom-validated imscription generation
-  - retrodesign_agent.py          → Retrosynthetic decomposition analysis
   - perturbation_design_agent.py  → Primitive Jacobian interpretation
   - criticality_hunting_agent.py  → Automated ⊙ hunting
   - ensemble_design_agent.py      → Goal-directed multi-imscription composition
@@ -43,7 +42,6 @@ except ImportError:
 # Protocol-layer agents (v0.3.0+)
 from .perturbation_design_agent import PerturbationDesignAgent, PerturbationDesignResult
 from .ensemble_design_agent import EnsembleDesignAgent, EnsembleDesignResult
-from .retrodesign_agent import RetrodesignAgent, RetrodesignAnalysisResult
 from .criticality_hunting_agent import CriticalityHuntingAgent, CriticalityHuntReport
 
 # Grammar-optimal agent — O_∞ harness
@@ -77,8 +75,6 @@ __all__ = [
     "PerturbationDesignResult",
     "EnsembleDesignAgent",
     "EnsembleDesignResult",
-    "RetrodesignAgent",
-    "RetrodesignAnalysisResult",
     "CriticalityHuntingAgent",
     "CriticalityHuntReport",
     # Grammar-optimal agent (O_∞)

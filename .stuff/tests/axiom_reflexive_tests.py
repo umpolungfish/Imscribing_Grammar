@@ -45,10 +45,8 @@ from imscrbgrmr.registry import global_catalog
 from imscrbgrmr.algebra import find_path, meet, tensor, tuple_distance
 from imscrbgrmr.thermodynamics import compute_xi_CP
 from imscrbgrmr.varma_probe import VarmaCorrelationData, score_phi_c_candidacy
-from imscrbgrmr.domains.molecular import register_molecular_imscriptions
 from imscrbgrmr.domains.quantum import register_quantum_imscriptions
 
-register_molecular_imscriptions()
 register_quantum_imscriptions()
 
 # ── 1. Encode each axiom as a imscription tuple ────────────────────────────────────

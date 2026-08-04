@@ -464,7 +464,6 @@ class ImscriptionGeneratorAgent(BaseAgent):
         delta_g: Optional[float] = None,
         auto_register: bool = True,
         require_grounding: bool = False,  # NEW: Require mechanistic grounding
-        smiles: Optional[str] = None,  # NEW: For RDKit ΔG estimation
     ) -> ImscriptionGenerationResult:
         """
         Generate a imscription from a natural language description.
@@ -475,27 +474,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
             delta_g: Optional free energy value for thermodynamic analysis
             auto_register: Whether to automatically register to catalog
             require_grounding: Whether to require mechanistic grounding validation
-            smiles: Optional SMILES for RDKit-based ΔG estimation
 
         Returns:
             ImscriptionGenerationResult with generated imscription and analysis
         """
         # Extract mechanistic justifications if grounding requested
-        grounding_result = None
-        if require_grounding or smiles:
-            try:
-                from imscrbgrmr.llm_grounding import extract_and_validate
-                is_valid, grounding_result = extract_and_validate(
-                    description, smiles=smiles, require_full_grounding=require_grounding
-                )
-                
-                # Use extracted ΔG if not provided
-                if delta_g is None and grounding_result.delta_g_value is not None:
-                    delta_g = grounding_result.delta_g_value
-                    
-            except ImportError:
-                if require_grounding:
-                    raise RuntimeError("LLM grounding module not available but required")
                 # Otherwise continue without grounding
 
         # Build the analysis prompt
@@ -589,17 +572,6 @@ class ImscriptionGeneratorAgent(BaseAgent):
         grounding_status = "unverified"
         failed_primitives = []
 
-        if grounding_result is not None:
-            if grounding_result.is_fully_grounded:
-                grounding_status = "full"
-            else:
-                grounding_status = "partial"
-                # Extract which primitives failed if the grounding result provides them
-                if hasattr(grounding_result, "failed_primitives"):
-                    failed_primitives = grounding_result.failed_primitives
-                else:
-                    # Fall back: mark all as suspect if we can't determine specifics
-                    failed_primitives = ["unspecified — run with --use-llm-grounding for details"]
 
         # Axiom 6: D_∞ requires a named closed cycle or recurring role — domain-agnostic check
         if imscription.dimensionality == Dimensionality.array:
@@ -679,14 +651,6 @@ class ImscriptionGeneratorAgent(BaseAgent):
             "model": self.config.get("model"),
         }
 
-        if grounding_result:
-            metadata["grounding"] = {
-                "is_fully_grounded": grounding_result.is_fully_grounded,
-                "justifications": grounding_result.justifications,
-                "delta_g_value": grounding_result.delta_g_value,
-                "delta_g_justification": grounding_result.delta_g_justification,
-                "confidence": grounding_result.confidence,
-            }
 
         return ImscriptionGenerationResult(
             imscription=imscription,
@@ -699,61 +663,6 @@ class ImscriptionGeneratorAgent(BaseAgent):
             failed_primitives=failed_primitives,
         )
 
-    async def generate_from_smiles(
-        self,
-        smiles: str,
-        name: Optional[str] = None,
-        functional_groups: Optional[List[str]] = None,
-        auto_register: bool = True,
-    ) -> ImscriptionGenerationResult:
-        """
-        Generate a imscription from a SMILES string.
-
-        Args:
-            smiles: SMILES string of the molecule
-            name: Optional name for the imscription
-            functional_groups: Optional list of functional groups to consider
-            auto_register: Whether to automatically register to catalog
-
-        Returns:
-            ImscriptionGenerationResult with generated imscription and analysis
-        """
-        # Build the SMILES analysis prompt
-        prompt = self._build_smiles_prompt(smiles, functional_groups)
-
-        # Call LLM for SMILES analysis
-        raw_response = await self.call_llm(
-            prompt=prompt,
-            max_tokens=self.config.get("max_tokens", 4000),
-            temperature=0.2,  # Even lower for structure analysis
-            system=self._get_system_prompt()
-        )
-
-        # Parse the response
-        imscription_data, reasoning, confidence, alternatives = self._parse_llm_response(raw_response)
-
-        # Create the imscription — explicit name or derive from SMILES prefix
-        safe_prefix = smiles[:20].replace('/', '_').replace('\\', '_')
-        imscription_name = name or f"imscription_{safe_prefix}"
-        imscription = self._create_imscription_from_data(imscription_data, f"SMILES: {smiles}", explicit_name=imscription_name)
-        imscription.metadata["smiles"] = smiles
-
-        # Register to catalog if requested
-        if auto_register and imscription.name not in global_catalog:
-            global_catalog.register(imscription)
-
-        return ImscriptionGenerationResult(
-            imscription=imscription,
-            confidence=confidence,
-            reasoning=reasoning,
-            alternatives=alternatives,
-            metadata={
-                "input_smiles": smiles,
-                "functional_groups": functional_groups or [],
-                "provider": self.config.get("provider"),
-                "model": self.config.get("model"),
-            }
-        )
 
     async def generate_batch(
         self,
@@ -1028,33 +937,6 @@ CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact 
 
 Respond with the JSON object specified in output_format. Outer key must be "imscription". Confidence must reflect genuine uncertainty, not refusal to encode."""
 
-    def _build_smiles_prompt(self, smiles: str, functional_groups: Optional[List[str]]) -> str:
-        """Build the prompt for imscription generation from SMILES."""
-        fg_section = f"<functional_groups>**Functional Groups:** {functional_groups}</functional_groups>" if functional_groups else ""
-        return f"""<task>You **MUST** analyze the following molecular structure and generate a imscription representation.</task>
-
-<input>
-**SMILES String:**
-{smiles}
-{fg_section}
-</input>
-
-<instructions>
-You **MUST**:
-1. **PARSE** the SMILES to identify key features
-2. **DETERMINE** the dominant functional groups and their interactions
-3. **MAP** to all ten primitives based on:
-   - Molecular structure → **𐑛** (typically)
-   - Functional group geometry → **Topology**
-   - Interaction type → **Recognition Mode**
-   - Electronic character → **Polarity**
-   - Bond strength/specificity → **Fidelity**
-   - Size of motif → **Granularity**
-   - Partner specificity → **Coupling**
-</instructions>
-
-<output>You **MUST** provide your analysis as a **JSON OBJECT**.</output>
-"""
 
     @staticmethod
     def _has_string_primitive_values(d: Dict[str, Any]) -> bool:
@@ -1337,20 +1219,6 @@ You **MUST**:
             # Parse the task to determine the generation mode
             task_lower = task.lower()
 
-            if "smiles" in task_lower:
-                # Extract SMILES from task
-                smiles_match = re.search(r'[A-Za-z0-9@+\-\[\]\(\)=#]+', task)
-                if smiles_match:
-                    smiles = smiles_match.group(0)
-                    result = await self.generate_from_smiles(smiles)
-                else:
-                    return {
-                        "status": "error",
-                        "error": "Could not extract SMILES string from task",
-                    }
-            else:
-                # Treat as natural language description
-                result = await self.generate_from_description(task)
 
             return {
                 "status": "success",

@@ -301,46 +301,6 @@ def example_5_constraint_compatibility():
     return report
 
 
-def example_6_domain_agents():
-    """Example 6: Using domain-specific analysis agents."""
-    print("\n" + "=" * 60)
-    print("Example 6: Domain-Specific Analysis Agents")
-    print("=" * 60)
-    
-    from imscrbgrmr.domains.molecular import MolecularImscriptionAgent
-    from imscrbgrmr.domains.supramolecular import SupramolecularImscriptionAgent
-    from imscrbgrmr.domains.temporal import TemporalImscriptionAgent
-    
-    # Molecular agent
-    mol_agent = MolecularImscriptionAgent()
-    print("\n[Molecular Domain]")
-    imscriptions = mol_agent.list_molecular_imscriptions()
-    print(f"Available molecular imscriptions: {len(imscriptions)}")
-    for s in imscriptions:
-        print(f"  - {s.name}: {s.polarity.value}, {s.fidelity.value}")
-    
-    # Supramolecular agent
-    supra_agent = SupramolecularImscriptionAgent()
-    print("\n[Supramolecular Domain]")
-    coop = supra_agent.compute_cooperativity_induction(3)
-    print(f"Triple H-bond array cooperativity:")
-    print(f"  Induction percentage: {coop['induction_percentage']:.1f}%")
-    print(f"  Superlinear: {coop['is_superlinear']}")
-    print(f"  Note: {coop['note']}")
-    
-    # Temporal agent
-    temp_agent = TemporalImscriptionAgent()
-    print("\n[Temporal Domain]")
-    fidelity_result = temp_agent.compute_fidelity_per_cycle(
-        k_cat=1.0,  # s^-1
-        k_side=0.001,  # s^-1
-    )
-    print(f"Proline aldol cycle fidelity:")
-    print(f"  F_cycle = {fidelity_result['f_cycle']:.4f}")
-    print(f"  ξ_CP = {fidelity_result['xi_CP_nats']:.2f} nats")
-    print(f"  Interpretation: {fidelity_result['interpretation']}")
-    
-    return True
 
 
 def main():
@@ -356,8 +316,6 @@ def main():
     catalog = example_3_catalog_and_search()
     example_4_cross_domain_analogy()
     example_5_constraint_compatibility()
-    example_6_domain_agents()
-    
     print("\n" + "=" * 60)
     print("  Examples Complete!")
     print("=" * 60)

@@ -12,7 +12,6 @@ Agents:
     aider_code_agent      - Git-native code operations (requires aider)
     perturbation_agent    - Primitive Jacobian interpretation
     ensemble_agent        - Goal-directed multi-imscription composition
-    retrodesign_agent     - Retrosynthetic analysis
     criticality_agent     - ⊙ criticality hunting
     imscription_generator     - Imscription structure generation
     axiom_generator       - Axiom-guided generation
@@ -169,7 +168,6 @@ def build_parser():
             "aider_code_agent",
             "perturbation_agent",
             "ensemble_agent",
-            "retrodesign_agent",
             "criticality_agent",
             "imscription_generator",
             "axiom_generator",
@@ -433,33 +431,6 @@ def run_ensemble_agent(task: str, args):
     }
 
 
-def run_retrodesign_agent(task: str, args):
-    """Run RetrodesignAgent."""
-    from agents import RetrodesignAgent
-    from imscrbgrmr.provider_config import build_agent_config
-    
-    model_id, base_url, api_key = resolve_model(args.model)
-    
-    config = build_agent_config(provider=_provider_for(args.model, base_url), model=model_id)
-    if base_url:
-        config["base_url"] = base_url
-    if api_key and api_key != "local":
-        config["api_key"] = api_key
-    if args.config:
-        config.update(load_config(args.config))
-    
-    agent = RetrodesignAgent(config)
-    result = agent.run_sync(task)
-    
-    print("\n" + "="*72)
-    print("RETRODESIGN RESULTS:")
-    for step in result.steps:
-        print(f"  {step}")
-    
-    return {
-        "agent": "retrodesign_agent",
-        "result": result.to_dict(),
-    }
 
 
 def run_criticality_agent(task: str, args):
@@ -616,7 +587,6 @@ def main():
         "aider_code_agent": run_aider_code_agent,
         "perturbation_agent": run_perturbation_agent,
         "ensemble_agent": run_ensemble_agent,
-        "retrodesign_agent": run_retrodesign_agent,
         "criticality_agent": run_criticality_agent,
         "imscription_generator": run_imscribe_generator_agent,
         "axiom_generator": run_axiom_generator_agent,

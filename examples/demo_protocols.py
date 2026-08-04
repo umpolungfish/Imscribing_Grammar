@@ -8,7 +8,6 @@ imscriptions and ΔG values from QUANTIG.md Section VI:
   Protocol 1 — IG_PERTURBATION : PerturbationEngine
   Protocol 2 — IG_TRAJECTORY   : TemporalImscriptionAgent
   Protocol 3 — IG_ENSEMBLER    : EnsembleCatalog
-  Protocol 4 — IG_RETRODESIGN  : RetrodesignEngine
 
 Reference values used throughout:
   carboxylic_acid_dimer  ΔG(298K, gas) = -12.0 kJ/mol  → ξ_CP ≈ 6.66 nats [HIGH]
@@ -275,64 +274,6 @@ def demo_ensembler() -> None:
 # Protocol 4 — IG_RETRODESIGN
 # ---------------------------------------------------------------------------
 
-def demo_retrodesign() -> None:
-    section("Protocol 4 · IG_RETRODESIGN — Retrosynthetic Decomposition")
-
-    from imscrbgrmr import RetrodesignEngine
-
-    engine = RetrodesignEngine()
-
-    # --- 4a. Catalog name lookup ---
-    subsection("4a. Decompose 'carboxylic_acid_dimer' (depth=3, axioms 1,2,4,6)")
-    tree = engine.decompose(
-        "carboxylic_acid_dimer",
-        max_depth=3,
-        prune_axioms=[1, 2, 4, 6],
-    )
-    print(f"  Target              : {tree.target_notation}")
-    print(f"  Valid decompositions: {len(tree.valid_leaves)}")
-    print(f"  Pruned branches     : {tree.pruned_count}")
-    print(f"  Prune axioms        : {tree.prune_axioms}")
-    if tree.valid_leaves:
-        print("  Valid imscription set:")
-        for leaf in tree.valid_leaves:
-            name = leaf.imscription.name if leaf.imscription else leaf.notation
-            print(f"    · {name}")
-    for w in tree.warnings:
-        print(f"  ⚠  {w}")
-
-    # --- 4b. Notation string decomposition (9-primitive format) ---
-    subsection("4b. Decompose a hybrid D‐type notation string (depth=2)")
-    notation = (
-        "⟨{D_turnthree, D_infinity}; T_cage; R_superset+ddagger; "
-        "P_pipevar; F_dh; K_turnm; G_gamma; Gamma_and(SELECTIVE); Phi_softsign⟩"
-    )
-    tree2 = engine.decompose(notation, max_depth=2, prune_axioms=[1, 4, 6])
-    print(f"  Notation            : {notation[:65]}…")
-    print(f"  Valid decompositions: {len(tree2.valid_leaves)}")
-    print(f"  Pruned branches     : {tree2.pruned_count}")
-    if tree2.valid_leaves:
-        print("  Valid imscription set:")
-        for leaf in tree2.valid_leaves:
-            name = leaf.imscription.name if leaf.imscription else leaf.notation
-            print(f"    · {name}")
-    for w in tree2.warnings:
-        print(f"  ⚠  {w}")
-
-    # --- 4c. Temporal target ---
-    subsection("4c. Decompose 'proline_aldol_cycle' (depth=2, axioms 1,4,6)")
-    tree3 = engine.decompose(
-        "proline_aldol_cycle",
-        max_depth=2,
-        prune_axioms=[1, 4, 6],
-    )
-    print(f"  Valid decompositions: {len(tree3.valid_leaves)}")
-    print(f"  Pruned branches     : {tree3.pruned_count}")
-    if tree3.valid_leaves:
-        print("  Valid imscription set:")
-        for leaf in tree3.valid_leaves:
-            name = leaf.imscription.name if leaf.imscription else leaf.notation
-            print(f"    · {name}")
 
 
 # ---------------------------------------------------------------------------
@@ -350,8 +291,6 @@ def main() -> None:
     demo_perturbation()
     demo_trajectory()
     demo_ensembler()
-    demo_retrodesign()
-
     section("Demo complete")
     print()
 

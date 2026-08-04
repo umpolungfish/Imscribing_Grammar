@@ -93,27 +93,6 @@ def main(ctx):
 
 
 # =============================================================================
-# CLI Alias (imscribe) - Registered at end after all commands defined
-# =============================================================================
-
-
-# =============================================================================
-# Subcommand group: chem — Chemistry-domain specializations
-# =============================================================================
-
-@main.group("chem")
-def chem_group():
-    """Chemistry-domain specializations: thermodynamics, I(bits), SMILES encoding,
-    hotswap validation, and retrosynthetic design.
-
-    These commands apply the grammar within the molecular/supramolecular domain
-    and use chemistry-specific quantities (ΔG, ξ_CP, SMILES notation).
-    For domain-agnostic algebra use: tensor, meet, join, distance, ouroborics.
-    """
-    pass
-
-
-# =============================================================================
 # Subcommand: analyze
 # =============================================================================
 
@@ -681,66 +660,6 @@ def delete_imscriptions(names: tuple, yes: bool):
 
 
 # =============================================================================
-# Subcommand: thermo
-# =============================================================================
-
-@chem_group.command("thermo")
-@click.argument("identifier")
-@click.option("--delta-g", "-g", type=float, help="Free energy of interaction (kJ/mol).")
-@click.option("--temp", "-t", type=float, default=298.15, help="Temperature in Kelvin.")
-def thermo(identifier: str, delta_g: Optional[float], temp: float):
-    """
-    Calculate thermodynamic efficiency metrics (η_CP and ξ_CP).
-    
-    If delta-g is not provided, the tool will attempt to find reference values.
-    """
-    try:
-        imscription = global_catalog.get(identifier)
-        if not imscription:
-            console.print(f"[red]Error: Imscription '{identifier}' not found in catalog.[/red]")
-            sys.exit(1)
-            
-        if delta_g is None:
-            # Try to get reference
-            ref = get_reference(identifier)
-            if ref:
-                # Use the midpoint or typical value if available, or just error out if multiple
-                # For simplicity, we'll ask the user to provide it if not found
-                console.print(f"[yellow]Reference found for {identifier}, but specific ΔG varies. Please provide --delta-g explicitly.[/yellow]")
-                console.print(f"Typical ξ_CP range: {ref['xi_CP'][0]} - {ref['xi_CP'][1]} nats")
-                return
-            else:
-                console.print(f"[red]Error: Please provide --delta-g explicitly.[/red]")
-                sys.exit(1)
-                
-        result = compute_eta_CP(imscription, delta_g, temp)
-        
-        console.print(Panel(f"[bold]Thermodynamic Analysis: {imscription.name}[/bold]\n"
-                            f"ΔG: {delta_g:.2f} kJ/mol\n"
-                            f"T: {temp:.2f} K"))
-        
-        table = Table()
-        table.add_column("Metric", style="cyan")
-        table.add_column("Value", style="magenta")
-        table.add_column("Description", style="white")
-        
-        table.add_row("η_CP", f"{result.eta_CP:.2e}", "Constraint Propagation Efficiency")
-        table.add_row("ξ_CP", f"{result.xi_CP:.4f} nats", "Inefficiency Index")
-        table.add_row("Efficiency", result.efficiency_description, "Qualitative assessment")
-        
-        console.print(table)
-        
-        # Landauer benchmark
-        from imscrbgrmr.thermodynamics import benchmark_against_landauer
-        bench = benchmark_against_landauer(imscription, delta_g)
-        console.print(f"\n[bold]Landauer Overhead:[/bold] {bench['overhead_ratio']:.1e}× theoretical limit")
-        
-    except Exception as e:
-        console.print(f"[red]Error calculating thermodynamics: {e}[/red]")
-        sys.exit(1)
-
-
-# =============================================================================
 # JSON-catalog conflict-resolution helper
 # =============================================================================
 
@@ -955,39 +874,23 @@ def _register_to_json_catalog(
 @main.command()
 @click.argument("description")
 @click.option("--name", "-n", help="Name for the generated imscription.")
-@click.option("--delta-g", "-g", type=float, help="Free energy (kJ/mol) for thermodynamic analysis.")
-@click.option("--smiles", "-s", help="SMILES string for RDKit-based ΔG estimation (molecular systems only).")
 @click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral, openrouter.")
 @click.option("--model", "-m", default=None, envvar="IG_MODEL", help="Model ID (env: IG_MODEL). Uses provider default if unset.")
 @click.option("--no-register", is_flag=True, help="Do not auto-register to catalog.")
 @click.option("--output", "-o", type=click.Path(), help="Save result to file.")
 @click.option("--config-file", "-c", type=click.Path(exists=True), default=None, help="Path to provider config YAML (default: provider_defaults.yaml).")
 @click.option("--axiom-guided", "-a", is_flag=True, help="Use axiom-guided generation (validates against composition axioms).")
-@click.option("--require-grounding", is_flag=True, help="Require structural grounding for all primitive assignments.")
-@click.option("--use-llm-grounding", is_flag=True, help="Use LLM to extract structural justifications from description.")
-@click.option("--adversarial-check", is_flag=True, help="Run adversarial axiom validation (rejects inconsistent assignments).")
-@click.option("--strict-grounding", is_flag=True, help="Block registration if any primitives fail grounding validation.")
-@click.option("--override-grounding", is_flag=True, help="Allow registration despite grounding failures (requires --override-reason).")
-@click.option("--override-reason", default=None, help="Justification for overriding grounding failure (required with --override-grounding).")
 @click.option("--speculative", is_flag=True, help="Register imscription in the 'speculative' domain (non-canonical or hypothetical systems).")
 @click.option("--guided/--no-guided", default=True, help="Step-by-step guided generation (default ON): assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values. Use --no-guided to revert to single-shot generation.")
 def generate(
     description: str,
     name: Optional[str],
-    delta_g: Optional[float],
-    smiles: Optional[str],
     provider: Optional[str],
     model: Optional[str],
     no_register: bool,
     output: Optional[str],
     config_file: Optional[str],
     axiom_guided: bool,
-    require_grounding: bool,
-    use_llm_grounding: bool,
-    adversarial_check: bool,
-    strict_grounding: bool,
-    override_grounding: bool,
-    override_reason: Optional[str],
     speculative: bool,
     guided: bool,
 ):
@@ -1004,11 +907,7 @@ def generate(
     Options:
         --guided          One primitive at a time; numbered canonical choices eliminate hallucinated values.
         --axiom-guided    Validates assignments against the 4 cross-primitive axioms.
-        --require-grounding  Require structural justification for all primitives.
-        --strict-grounding   Block catalog registration on grounding failure.
-        --override-grounding Allow registration despite failure (requires --override-reason).
         --speculative     Register in the 'speculative' domain.
-        --smiles          Molecular-domain only: RDKit ΔG estimation from SMILES.
         --delta-g         Thermodynamic free energy for physical/chemical systems (kJ/mol).
 
     Examples:
@@ -1021,9 +920,6 @@ def generate(
         imscribe generate "the Tao that can be named"      # Daoist principle
         imscribe generate "Gödel's incompleteness theorem" # mathematical structure
     """
-    if override_grounding and not override_reason:
-        console.print("[red]Error: --override-grounding requires --override-reason[/red]")
-        sys.exit(1)
     # The self-family is circularly defined by necessity: the Grammar has no
     # outside, so its own names resolve only to each other. A bare member of the
     # family is expanded to its circular definition so the agent reasons over the
@@ -1098,47 +994,6 @@ def generate(
 
         agent = AgentClass(agent_config)
 
-        # Run grounding extraction if requested
-        grounding_result = None
-        if require_grounding or use_llm_grounding or smiles:
-            console.print("[cyan]Extracting mechanistic justifications...[/cyan]")
-            try:
-                from imscrbgrmr.llm_grounding import extract_and_validate
-                
-                # Use LLM grounding if requested, otherwise use rule-based
-                is_valid, grounding_result = extract_and_validate(
-                    description,
-                    smiles=smiles,
-                    require_full_grounding=require_grounding,
-                )
-                
-                if is_valid:
-                    console.print("[green]✓ All primitives and ΔG mechanistically grounded[/green]")
-                else:
-                    if require_grounding:
-                        console.print("[red]✗ Grounding validation failed[/red]")
-                        if grounding_result and grounding_result.validation_result:
-                            ungrounded = grounding_result.validation_result.ungrounded_primitives
-                            console.print(f"[red]  Ungrounded: {', '.join(ungrounded)}[/red]")
-                            if grounding_result.validation_result.delta_g_grounding:
-                                if grounding_result.validation_result.delta_g_grounding.status.name != "GROUNDED":
-                                    console.print(f"[red]  ΔG ungrounded: {grounding_result.validation_result.delta_g_grounding.warning}[/red]")
-                        sys.exit(1)
-                    else:
-                        console.print("[yellow]⚠ Some primitives lack mechanistic grounding[/yellow]")
-                
-                # Use extracted ΔG if not provided
-                if delta_g is None and grounding_result.delta_g_value is not None:
-                    delta_g = grounding_result.delta_g_value
-                    console.print(f"[dim]Using RDKit-estimated ΔG = {delta_g} kJ/mol[/dim]")
-                    
-            except ImportError:
-                if require_grounding:
-                    console.print("[red]Error: LLM grounding module not available[/red]")
-                    sys.exit(1)
-                else:
-                    console.print("[yellow]⚠ LLM grounding not available, skipping[/yellow]")
-
         # Run generation
         # Use resolved (cleaned) provider and model for the log line
         resolved_prov = provider
@@ -1147,8 +1002,7 @@ def generate(
 
         # CLI always handles JSON-catalog registration with conflict resolution.
         # Agent auto-register writes only to in-memory global_catalog (legacy path).
-        # Grounding-flag path (use_cli_register) keeps its existing behavior.
-        use_cli_register = (strict_grounding or override_grounding or speculative) and not no_register
+        use_cli_register = speculative and not no_register
         agent_auto_register = not no_register and not use_cli_register
 
         if axiom_guided:
@@ -1157,7 +1011,6 @@ def generate(
                 agent.generate_validated_imscription(
                     description,
                     name=name,
-                    delta_g=delta_g,
                     auto_register=agent_auto_register,
                 )
             )
@@ -1175,7 +1028,6 @@ def generate(
                 agent.generate_guided(
                     description,
                     name=name,
-                    delta_g=delta_g,
                     auto_register=agent_auto_register,
                 )
             )
@@ -1188,7 +1040,6 @@ def generate(
                 agent.generate_from_description(
                     description,
                     name=name,
-                    delta_g=delta_g,
                     auto_register=agent_auto_register,
                 )
             )
@@ -1196,18 +1047,13 @@ def generate(
             console.print(Panel(f"[bold green]Imscription Generated Successfully![/bold green]",
                                 title="Generation Result"))
 
-        # CLI-level registration with grounding flags (Fix 1)
+        # CLI-level registration
         if use_cli_register:
-            domain = "speculative" if speculative else "molecular"
             try:
                 global_catalog.register(
                     result.imscription,
-                    grounding_result=grounding_result.validation_result if grounding_result else None,
-                    strict_grounding=strict_grounding,
-                    override_grounding=override_grounding,
-                    override_reason=override_reason,
                     registered_by=provider or "cli",
-                    domain=domain,
+                    domain="speculative",
                 )
             except Exception as e:
                 console.print(f"[red]✗ Registration blocked: {e}[/red]")
@@ -1261,67 +1107,6 @@ def generate(
         console.print(Markdown(result.reasoning))
         
         # Grounding validation results (if extracted)
-        if grounding_result:
-            console.print(f"\n[bold]Mechanistic Grounding:[/bold]")
-            if grounding_result.is_fully_grounded:
-                console.print("[green]✓ All primitives mechanistically grounded[/green]")
-            else:
-                console.print("[yellow]⚠ Partial grounding[/yellow]")
-            
-            # Show ΔG grounding
-            if grounding_result.delta_g_justification:
-                console.print(f"\n[bold]ΔG Justification:[/bold]")
-                console.print(f"  Value: {grounding_result.delta_g_value} kJ/mol")
-                console.print(f"  Source: {grounding_result.delta_g_justification[:150]}...")
-            
-            # Show key justifications — derived from assigned primitives, not description fallback
-            console.print(f"\n[bold]Key Justifications:[/bold]")
-            _D_JUST = {
-                "MOLECULAR": "D_∧ — constraint operates on molecular DOFs (point-like, no spatial packing or temporal cycle)",
-                "SUPRAMOLECULAR": "D_△ — constraint propagates through spatial assembly / crystal packing",
-                "TEMPORAL": "D_∞ — constraint recurs through a temporal cycle with a named reset mechanism",
-            }
-            _T_JUST = {
-                "CYCLIC_BOWTIE": "T_⋈ — planar cyclic dimer; two partners form a closed ring of contacts at their interface",
-                "CAGE": "T_□□ — fully enclosed 3D cage; guest egress requires framework distortion (K_schwa/K_teshlig default)",
-                "BOWL": "T_∪ — open concave cavity, single portal; guest enters/exits freely (K_frtailgamma default)",
-                "NETWORK": "T_∈ — multiply-connected network; ring topology unspecified",
-                "NETWORK_HEX": "T_∈(hex) — 6-membered rings only; tetrahedral coordination (e.g. ice Ih, graphene)",
-                "NETWORK_MIXED": "T_∈(mixed) — mixed ring sizes; distorted coordination (e.g. ice III/V)",
-                "NETWORK_INTERPENETRATING": "T_∈(×2) — two independent interpenetrating sub-networks (e.g. ice VI/VII)",
-                "NETWORK_SYM": "T_∈(sym) — centrosymmetric bonding; symmetric H-bridge (e.g. ice X)",
-                "HUB_NODE": "T_□ — hub/node structure; central coordination point connecting multiple branches",
-                "LINEAR": "T_| — strict 1D head-to-tail arrangement, no branching",
-                "BRANCHED": "T_⊥ — branched acyclic topology with junction nodes",
-                "CHAIN": "T_≫ — open-ended chain growth (polymers, columnar stacks)",
-            }
-            _R_JUST = {
-                "NON_COVALENT": "R_⊇ — non-covalent recognition: H-bonds, halogen bonds, π-stacking, host-guest, coordination",
-                "COVALENT": "R_⊆ — covalent bond formation: σ/π bond making/breaking (condensation, aldol, polymerisation)",
-                "DYNAMIC_CATALYTIC": "R_‡ — catalytic/dynamic: transition-state stabilisation, autocatalysis, reversible covalent",
-                "MECHANICAL": "R_⇔ — mechanical bond: topological entanglement (rotaxane, catenane); steric clipping",
-            }
-            _K_JUST = {
-                "FAST": "K_frtailgamma — ΔG‡ < 60 kJ/mol: system explores configuration space on experimental timescales",
-                "MODERATE": "K_turnm — ΔG‡ 60–100 kJ/mol: accessible under mild conditions",
-                "SLOW": "K_schwa — ΔG‡ > 100 kJ/mol: constraint kinetically frozen; requires external driving to rearrange",
-                "TRAP": "K_teshlig — kinetically trapped in metastable state; cannot reach thermodynamic minimum without perturbation",
-            }
-            _F_JUST = {
-                "HIGH": "F_ℏ — I_net > 9 bits / ξ_CP ≤ 8.5 nats: geometry-enforcing, dominant constraint",
-                "MEDIUM": "F_ℇ — I_net 6–9 bits / ξ_CP 8.5–11.0 nats: context-dependent, reliable under right conditions",
-                "LOW": "F_ℓ — I_net < 6 bits / ξ_CP > 11.0 nats: probabilistic, fires unreliably",
-            }
-            s = result.imscription
-            _justifications = {
-                "dimensionality": _D_JUST.get(s.dimensionality.name, s.dimensionality.value),
-                "topology": _T_JUST.get(s.topology.name, s.topology.value),
-                "recognition_mode": _R_JUST.get(s.recognition_mode.name, s.recognition_mode.value),
-                "kinetic_character": _K_JUST.get(s.kinetic_character.name, s.kinetic_character.value),
-                "fidelity": _F_JUST.get(s.fidelity.name, s.fidelity.value),
-            }
-            for prim, just in _justifications.items():
-                console.print(f"  • {prim}: {just}")
 
         # Axiom validation report (for axiom-guided generation)
         if axiom_guided and hasattr(result, 'axiom_report'):
@@ -1337,56 +1122,8 @@ def generate(
                     console.print(f"  ⚠ {warning}")
         
         # Adversarial axiom validation (NEW)
-        if adversarial_check:
-            console.print(f"\n[bold]Adversarial Axiom Validation:[/bold]")
-            try:
-                from imscrbgrmr.adversarial_grounding import validate_full_imscription
-                
-                imscription_data = result.imscription.to_dict()
-                adversarial_results = validate_full_imscription(
-                    imscription_data, description, smiles
-                )
-                
-                violations = [
-                    (prim, res) for prim, res in adversarial_results.items()
-                    if not res.is_valid
-                ]
-                
-                if violations:
-                    console.print("[red]✗ ADVERSARIAL CHECK FAILED[/red]")
-                    for prim, res in violations:
-                        console.print(f"\n  [bold red]{prim.upper()}[/bold red]: {res.assigned_value}")
-                        console.print(f"  Axiom violated: {res.axiom_violated}")
-                        console.print(f"  Reason: {res.reason}")
-                        if res.alternative_value:
-                            console.print(f"  [green]Suggested alternative: {res.alternative_value}[/green]")
-                    
-                    if require_grounding:
-                        console.print("\n[red]Generation rejected due to axiom violations.[/red]")
-                        sys.exit(1)
-                else:
-                    console.print("[green]✓ All adversarial checks passed[/green]")
-                    for prim, res in adversarial_results.items():
-                        if res.confidence > 0.7:
-                            console.print(f"  ✓ {prim}: {res.assigned_value} (high confidence)")
-                        else:
-                            console.print(f"  ⚠ {prim}: {res.assigned_value} (review recommended)")
-                            
-            except ImportError:
-                console.print("[yellow]⚠ Adversarial grounding module not available[/yellow]")
         
         # Thermodynamic metrics
-        if result.thermodynamic_metrics:
-            thermo = result.thermodynamic_metrics
-            console.print(f"\n[bold]Thermodynamic Analysis:[/bold]")
-            if "error" not in thermo:
-                console.print(f"  ΔG: {thermo['delta_g']:.2f} kJ/mol")
-                console.print(f"  η_CP: {thermo['eta_CP']:.2e}")
-                console.print(f"  ξ_CP: {thermo['xi_CP']:.4f} nats")
-                if 'efficiency_description' in thermo:
-                    console.print(f"  Assessment: {thermo['efficiency_description']}")
-            else:
-                console.print(f"  [yellow]{thermo['error']}[/yellow]")
 
         # Alternatives
         if result.alternatives:
@@ -1435,120 +1172,11 @@ def generate(
 
 
 # =============================================================================
-# Subcommand: generate-smiles (AI-powered from SMILES)
-# =============================================================================
-
-@chem_group.command("generate-smiles")
-@click.argument("smiles")
-@click.option("--name", "-n", help="Name for the generated imscription.")
-@click.option("--functional-groups", "-f", help="Comma-separated list of functional groups.")
-@click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral.")
-@click.option("--model", "-m", default=None, envvar="IG_MODEL", help="Model ID (env: IG_MODEL). Uses provider default if unset.")
-@click.option("--no-register", is_flag=True, help="Do not auto-register to catalog.")
-@click.option("--config-file", "-c", type=click.Path(exists=True), default=None, help="Path to provider config YAML.")
-def generate_smiles(
-    smiles: str,
-    name: Optional[str],
-    functional_groups: Optional[str],
-    provider: Optional[str],
-    model: Optional[str],
-    no_register: bool,
-    config_file: Optional[str],
-):
-    """
-    Molecular-domain specialization: encode a SMILES structure as a 12-primitive coordinate.
-
-    For non-molecular systems use 'imscribe generate' with a text description instead.
-
-    Examples:
-        imscribe generate-smiles "CC(=O)O" --name acetic_acid
-        imscribe generate-smiles "CC(=O)OC1=CC=CC=C1C(=O)O" --functional-groups carboxylic_acid,ester
-        imscribe generate-smiles "CC(=O)O" --provider deepseek --name acetic_acid
-    """
-    try:
-        from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
-        from imscrbgrmr.provider_config import build_agent_config, get_provider_config
-
-        # Load provider configuration
-        config_path = Path(config_file) if config_file else None
-        prov_config = get_provider_config(config_path)
-        
-        # Provider is required — no default (env: IG_PROVIDER)
-        cli_defaults = prov_config.get_cli_defaults()
-        if provider is None:
-            provider = cli_defaults.get("default_provider")
-        if not provider:
-            raise click.UsageError(
-                "No provider specified. Use --provider (-p) or set IG_PROVIDER "
-                "(e.g. deepseek, qwen, anthropic, mistral)."
-            )
-        if model is None:
-            model = cli_defaults.get("default_model") or None
-        
-        # Build agent config with provider-aware defaults
-        agent_config = build_agent_config(
-            provider=provider,
-            model=model,
-            max_tokens=4000,
-        )
-        
-        agent = ImscriptionGeneratorAgent(agent_config)
-
-        fg_list = functional_groups.split(",") if functional_groups else None
-
-        console.print(f"[cyan]Analyzing SMILES and generating imscription...[/cyan]")
-        console.print(f"[dim]SMILES: {smiles}[/dim]")
-        # Use resolved (cleaned) provider and model for the log line
-        resolved_prov = provider
-        resolved_mod = agent_config.get('model', model or 'default')
-        console.print(f"[dim]Provider: {resolved_prov}/{resolved_mod}[/dim]\n")
-
-        result = asyncio.run(
-            agent.generate_from_smiles(
-                smiles,
-                name=name,
-                functional_groups=fg_list,
-                auto_register=not no_register,
-            )
-        )
-
-        # Display results
-        console.print(Panel(f"[bold green]Imscription Generated from SMILES![/bold green]",
-                            title="Generation Result"))
-
-        table = Table(title=f"Imscription: {result.imscription.name}")
-        table.add_column("Primitive", style="cyan")
-        table.add_column("Value", style="magenta")
-
-        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Coupling"]:
-            key = prim.lower().replace(" ", "_")
-            value = getattr(result.imscription, key)
-            table.add_row(prim, value.value)
-
-        console.print(table)
-        console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
-        console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
-        console.print(f"\n[bold]AI Reasoning:[/bold]")
-        console.print(Markdown(result.reasoning))
-
-        if not no_register:
-            console.print(f"\n[green]✓ Registered to catalog as '{result.imscription.name}'[/green]")
-
-    except ImportError:
-        console.print("[red]Error: AjintK framework not available.[/red]")
-        sys.exit(1)
-    except Exception as e:
-        console.print(f"[red]Error generating imscription from SMILES: {e}[/red]")
-        sys.exit(1)
-
-
-# =============================================================================
 # Subcommand: compare
 # =============================================================================
 
 @main.command()
 @click.argument("imscriptions", nargs=-1, required=True)
-@click.option("--delta-g", "-g", type=float, multiple=True, help="ΔG values for each imscription.")
 @click.option("--include-thermo", "-t", is_flag=True, help="Include thermodynamic comparison.")
 def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
     """
@@ -1823,7 +1451,6 @@ def agents():
 @click.option("--agent", "-a", "agent_opt", default=None,
               help="Agent to run. Use 'imscribe agents list' to see all available agents.")
 @click.option("--description", "-d", "desc", default=None, help="System description or catalog entry name (any domain).")
-@click.option("--delta-g", "-g", type=float, help="Free energy for thermodynamic analysis.")
 @click.option("--output", "-o", type=click.Path(), help="Save result to file.")
 def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
     """
@@ -1837,7 +1464,6 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
         imscribe agents run -d "סַמָּאֵל" -p openrouter
         imscribe agents run PerturbationDesignAgent -d proline_aldol_cycle -g -12.0
         imscribe agents run EnsembleDesignAgent -d "emergent_criticality" -p deepseek
-        imscribe agents run RetrodesignAgent -d carboxylic_acid_dimer
         imscribe agents run CriticalityHuntingAgent -p deepseek
     """
     # Positional arg takes priority over -a flag; default to ImscriptionGeneratorAgent
@@ -1881,7 +1507,7 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
         }
         PROTOCOL_AGENTS = {
             "PerturbationDesignAgent", "EnsembleDesignAgent",
-            "RetrodesignAgent", "CriticalityHuntingAgent",
+            "CriticalityHuntingAgent",
         }
 
         console.print(f"[cyan]Running {agent_name}...[/cyan]")
@@ -1921,17 +1547,6 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
                 console.print(f"\n[bold]Rationale:[/bold]")
                 console.print(Markdown(result.llm_rationale))
 
-        elif agent_name == "RetrodesignAgent":
-            from agents.retrodesign_agent import RetrodesignAgent
-            agent_obj = RetrodesignAgent(config)
-            result = asyncio.run(agent_obj.analyze(desc))
-            console.print(Panel(f"[bold green]Retrodesign complete[/bold green]",
-                                title="Agent Result"))
-            console.print(f"  Routes found: {len(result.ranked_routes)}")
-            for route in result.ranked_routes[:5]:
-                console.print(f"  [{route.rank}] {route.leaf_name}  [{route.accessibility}]")
-                if route.reasoning:
-                    console.print(f"      {route.reasoning[:120]}")
 
         elif agent_name == "CriticalityHuntingAgent":
             from agents.criticality_hunting_agent import CriticalityHuntingAgent
@@ -2047,17 +1662,6 @@ def run(agent_arg, provider, model, agent_opt, desc, delta_g, output):
                     "llm_rationale": result.llm_rationale,
                     "suggestions": result.suggestions,
                 }
-            elif agent_name == "RetrodesignAgent":
-                output_data = {
-                    "agent": agent_name, "target": desc,
-                    "routes": [
-                        {"rank": r.rank, "leaf_name": r.leaf_name,
-                         "accessibility": r.accessibility, "reasoning": r.reasoning,
-                         "catalog_gaps": r.catalog_gaps, "flags": r.flags}
-                        for r in result.ranked_routes
-                    ],
-                    "suggested_catalog_additions": result.suggested_catalog_additions,
-                }
             elif agent_name == "CriticalityHuntingAgent":
                 output_data = {
                     "agent": agent_name,
@@ -2136,47 +1740,6 @@ def list_agents():
             ]
         },
         # ── Domain analysis agents ────────────────────────────────────────────
-        {
-            "name": "MolecularImscriptionAgent",
-            "group": "Domain",
-            "description": "Molecular domain analysis and retrosynthesis",
-            "capabilities": [
-                "reaction_center_analysis",
-                "bond_disconnection",
-                "polarity_assignment",
-                "bde_estimation",
-            ]
-        },
-        {
-            "name": "SupramolecularImscriptionAgent",
-            "group": "Domain",
-            "description": "Supramolecular assembly and crystal packing analysis",
-            "capabilities": [
-                "hydrogen_bond_network_analysis",
-                "cooperativity_computation",
-                "packing_analysis",
-            ]
-        },
-        {
-            "name": "TemporalImscriptionAgent",
-            "group": "Domain",
-            "description": "Temporal domain and catalytic cycle analysis",
-            "capabilities": [
-                "reaction_cycle_analysis",
-                "fidelity_per_cycle",
-                "oscillator_detection",
-            ]
-        },
-        {
-            "name": "HybridImscriptionAgent",
-            "group": "Domain",
-            "description": "Multi-dimensional imscription analysis (MOFs, etc.)",
-            "capabilities": [
-                "spatial_framework_analysis",
-                "granularity_amplification",
-                "hybrid_system_modeling",
-            ]
-        },
         # ── Protocol-layer agents (v0.3.0+) ──────────────────────────────────
         {
             "name": "PerturbationDesignAgent",
@@ -2201,17 +1764,6 @@ def list_agents():
             ]
         },
         {
-            "name": "RetrodesignAgent",
-            "group": "Protocol",
-            "description": "Axiom-pruned retrosynthetic decomposition with LLM route ranking",
-            "capabilities": [
-                "axiom_pruned_decomposition",
-                "synthetic_accessibility_ranking",
-                "catalog_gap_identification",
-                "retro_route_scoring",
-            ]
-        },
-        {
             "name": "CriticalityHuntingAgent",
             "group": "Protocol",
             "description": "Catalog-wide ⊙ candidacy scan with perturbation pathfinding",
@@ -2233,97 +1785,6 @@ def list_agents():
         console.print(f"  [bold cyan]{agent['name']}[/bold cyan]")
         console.print(f"    {agent['description']}")
         console.print(f"    [dim]Capabilities: {', '.join(agent['capabilities'])}[/dim]\n")
-
-
-@agents.command()
-@click.option("--provider", "-p", default=None, envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral.")
-@click.option("--model", "-m", default=None, envvar="IG_MODEL", help="Model ID (env: IG_MODEL). Uses provider default if unset.")
-@click.argument("smiles")
-@click.option("--name", "-n", help="Name for the imscription.")
-@click.option("--output", "-o", type=click.Path(), help="Save result to file.")
-def from_smiles(provider, model, smiles, name, output):
-    """
-    Generate a imscription from SMILES using the agent.
-
-    Examples:
-        imscribe agents from-smiles "CC(=O)O" --name acetic_acid
-        imscribe agents from-smiles "CC(=O)O" -o result.json
-        imscribe agents from-smiles "CC(=O)O" --provider deepseek --name acetic_acid
-    """
-    try:
-        from agents.imscribe_generator_agent import ImscriptionGeneratorAgent
-        from imscrbgrmr.provider_config import build_agent_config, get_provider_config
-
-        # Load provider configuration
-        prov_config = get_provider_config()
-
-        # Provider is required — no default (env: IG_PROVIDER)
-        cli_defaults = prov_config.get_cli_defaults()
-        if provider is None:
-            provider = cli_defaults.get("default_provider")
-        if not provider:
-            raise click.UsageError(
-                "No provider specified. Use --provider (-p) or set IG_PROVIDER "
-                "(e.g. deepseek, qwen, anthropic, mistral)."
-            )
-        if model is None:
-            model = cli_defaults.get("default_model") or None
-
-        # Build agent config with provider-aware defaults
-        config = build_agent_config(
-            provider=provider,
-            model=model,
-            max_tokens=4000,
-        )
-        agent = ImscriptionGeneratorAgent(config)
-
-        console.print(f"[cyan]Analyzing SMILES with agent...[/cyan]")
-        console.print(f"[dim]SMILES: {smiles}[/dim]")
-        console.print(f"[dim]Provider: {provider}/{config['model']}[/dim]\n")
-        
-        result = asyncio.run(
-            agent.generate_from_smiles(
-                smiles,
-                name=name,
-                auto_register=True
-            )
-        )
-        
-        console.print(Panel(f"[bold green]Imscription Generated from SMILES![/bold green]",
-                            title="Agent Result"))
-        
-        table = Table(title=f"Imscription: {result.imscription.name}")
-        table.add_column("Primitive", style="cyan")
-        table.add_column("Value", style="magenta")
-        
-        for prim in ["Dimensionality", "Topology", "Recognition Mode", "Polarity", "Fidelity", "Granularity", "Coupling"]:
-            key = prim.lower().replace(" ", "_")
-            value = getattr(result.imscription, key)
-            table.add_row(prim, value.value)
-
-        console.print(table)
-        console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
-        console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
-        console.print(f"\n[bold]AI Reasoning:[/bold]")
-        console.print(Markdown(result.reasoning))
-
-        if output:
-            output_path = Path(output)
-            output_data = {
-                "imscription": result.imscription.to_dict(),
-                "smiles": smiles,
-                "confidence": result.confidence,
-                "reasoning": result.reasoning,
-            }
-            with open(output_path, "w") as f:
-                json.dump(output_data, f, indent=2)
-            console.print(f"\n[green]✓ Saved to {output_path}[/green]")
-        
-        console.print(f"\n[green]✓ Registered to catalog as '{result.imscription.name}'[/green]")
-        
-    except Exception as e:
-        console.print(f"[red]Error running agent: {e}[/red]")
-        sys.exit(1)
 
 
 @agents.command()
@@ -3529,182 +2990,6 @@ def criticality_probe(
 
 
 # =============================================================================
-# Subcommand: info-bits — Rigorous I(bits) prototype
-# =============================================================================
-
-@chem_group.command("info-bits")
-@click.argument("entry_name", required=False)
-@click.option("--n-contacts", "-n", type=int, default=None,
-              help="Override number of recognition contacts (default: inferred from topology).")
-@click.option("--heuristic", type=float, default=None,
-              help="Override heuristic I(bits) estimate for comparison.")
-@click.option("--solvent", "solvent_model", default="vacuum",
-              type=click.Choice(["vacuum", "chloroform", "THF", "DMSO", "water", "generic"]),
-              help="Solvent model for ΔS_solv correction (default: vacuum).")
-@click.option("--calibrate", is_flag=True, default=False,
-              help="Run full calibration pipeline on all three reference targets "
-                   "(acid dimer, triple H-bond array, proline cycle) and print table.")
-@click.option("--output", "-o", type=click.Path(), default=None,
-              help="Save full report to JSON file.")
-def info_bits(
-    entry_name: Optional[str],
-    n_contacts: Optional[int],
-    heuristic: Optional[float],
-    solvent_model: str,
-    calibrate: bool,
-    output: Optional[str],
-):
-    """
-    Compute rigorous I(bits) from degree-of-freedom counting.
-
-    Decomposes information content into:
-    - I_recognition: recognition-specific DOFs (H-bond geometry, torsions)
-    - I_orientation: rigid-body overhead (coplanarity)
-    - I_net = I_recognition – 0.3 × I_orientation
-    - I_total_with_solvent (when --solvent is set)
-
-    Default I range: 6–11 bits (domain-dependent).
-
-    \b
-    Use --calibrate to run the full pipeline on the three reference targets
-    and verify the calibrated values against expected ranges.
-
-    \b
-    Examples:
-        imscribe info-bits
-        imscribe info-bits --calibrate
-        imscribe info-bits --calibrate --solvent chloroform
-        imscribe info-bits carboxylic_acid_dimer
-        imscribe info-bits my_entry --n-contacts 3 -o report.json
-    """
-    from imscrbgrmr.information import (
-        compute_I_hbond_dimer,
-        compute_I_from_imscription,
-        calibrate_I_pipeline,
-    )
-
-    # -----------------------------------------------------------------------
-    # --calibrate mode: run all three reference targets
-    # -----------------------------------------------------------------------
-    if calibrate:
-        console.print(Panel.fit(
-            "[bold]I(bits) Calibration Pipeline[/bold]\n"
-            "Targets: acid dimer / triple H-bond / proline cycle",
-            border_style="cyan",
-        ))
-        report = calibrate_I_pipeline(solvent_model=solvent_model)
-        summary = report.summary()
-
-        cal_table = Table(title="Calibration Summary")
-        cal_table.add_column("Target", style="cyan", max_width=35)
-        cal_table.add_column("I_recognition", justify="right", style="green")
-        cal_table.add_column("I_net", justify="right")
-        cal_table.add_column("I+solvent", justify="right")
-        cal_table.add_column("Expected range")
-        cal_table.add_column("Status")
-
-        for entry in summary["calibration_targets"]:
-            ok_color = "green" if entry["in_range"] else "yellow"
-            cal_table.add_row(
-                entry["system"],
-                f"{entry['I_recognition_bits']:.2f} bits",
-                f"{entry['I_net_bits']:.2f} bits",
-                f"{entry['I_total_with_solvent_bits']:.2f} bits",
-                f"{entry['expected_range_bits'][0]}–{entry['expected_range_bits'][1]} bits",
-                f"[{ok_color}]{entry['verdict']}[/{ok_color}]",
-            )
-        console.print(cal_table)
-        console.print(f"\n[dim]{summary['note']}[/dim]")
-        console.print(f"[dim]Default I range: {summary['default_I_range_bits']}[/dim]")
-
-        if output:
-            with open(output, "w") as f:
-                json.dump(report.to_dict(), f, indent=2)
-            console.print(f"\n[green]✓ Calibration report saved to {output}[/green]")
-        return
-
-    # -----------------------------------------------------------------------
-    # Single-entry or default prototype
-    # -----------------------------------------------------------------------
-    if entry_name is None:
-        result = compute_I_hbond_dimer(
-            n_hbonds=2,
-            system_name="carboxylic_acid_homodimer (R²₂(8) motif)",
-            heuristic_bits=heuristic if heuristic else 9.4,
-            solvent_model=solvent_model,
-        )
-    else:
-        imscription = global_catalog.get(entry_name)
-        if not imscription:
-            console.print(f"[red]Entry '{entry_name}' not found.[/red]")
-            sys.exit(1)
-        result = compute_I_from_imscription(
-            imscription,
-            n_contacts=n_contacts,
-            solvent_model=solvent_model,
-        )
-        if heuristic is not None:
-            result.heuristic_bits = heuristic
-
-    # Display
-    console.print(Panel.fit(
-        f"[bold]I(bits) Calibration: {result.system_name}[/bold]",
-        border_style="cyan",
-    ))
-
-    # Summary rows
-    console.print(f"\n[bold]Heuristic / reference:[/bold]  {result.heuristic_bits:.2f} bits")
-    console.print(f"[bold]I_recognition:[/bold]          {result.recognition_bits:.2f} bits  "
-                  f"(selectivity-determining)")
-    console.print(f"[bold]I_orientation overhead:[/bold] {result.orientation_bits:.2f} bits  "
-                  f"(rigid-body coplanarity)")
-    console.print(f"[bold]I_net:[/bold]                  {result.I_net:.2f} bits  "
-                  f"(= I_rec − 0.3 × I_orient)")
-    console.print(f"[bold]I_total:[/bold]                {result.total_bits:.2f} bits")
-    if result.solvent_correction:
-        console.print(
-            f"[bold]I_total + solvent:[/bold]      {result.I_total_with_solvent:.2f} bits  "
-            f"(ΔS_solv = {result.solvent_correction.delta_S_J_mol_K:.1f} J/mol·K)"
-        )
-    console.print(f"[bold]ΔS_conf:[/bold]               {result.delta_S_J_mol_K:.1f} J·mol⁻¹·K⁻¹")
-
-    # DOF table
-    table = Table(title="Degree-of-Freedom Breakdown")
-    table.add_column("Type", style="cyan")
-    table.add_column("DOF", style="dim", max_width=60)
-    table.add_column("N_free", justify="right")
-    table.add_column("N_bound", justify="right")
-    table.add_column("Bits", justify="right", style="green")
-    table.add_column("Category")
-
-    for dof in result.recognition_dofs:
-        table.add_row(
-            dof.dof_type, dof.label,
-            f"{dof.n_free:.2f}", f"{dof.n_bound:.2f}",
-            f"{dof.bits:.3f}", "[green]recognition[/green]",
-        )
-    for dof in result.orientation_dofs:
-        table.add_row(
-            dof.dof_type, dof.label,
-            f"{dof.n_free:.2f}", f"{dof.n_bound:.2f}",
-            f"{dof.bits:.3f}", "[dim]overhead[/dim]",
-        )
-    console.print(table)
-
-    # Verdict
-    v_color = "green" if abs(result.recognition_bits - result.heuristic_bits) / max(1, result.heuristic_bits) < 0.25 else "yellow"
-    console.print(f"\n[{v_color}]{result._verdict()}[/{v_color}]")
-
-    for note in result.notes:
-        console.print(f"  [dim]{note}[/dim]")
-
-    if output:
-        with open(output, "w") as f:
-            json.dump(result.to_dict(), f, indent=2)
-        console.print(f"\n[green]✓ Report saved to {output}[/green]")
-
-
-# =============================================================================
 # Register imscribe alias with all commands
 # =============================================================================
 
@@ -3730,7 +3015,6 @@ def imscribe_alias(ctx):
 imscribe_alias.add_command(menu_command, name="menu")
 imscribe_alias.add_command(analyze)
 imscribe_alias.add_command(catalog)
-imscribe_alias.add_command(chem_group, name="chem")
 imscribe_alias.add_command(generate)
 imscribe_alias.add_command(compare)
 imscribe_alias.add_command(export)
@@ -3801,7 +3085,6 @@ def perturb():
 
 @perturb.command(name="sweep")
 @click.argument("imscription_name")
-@click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol, ΔG(298K,gas) basis).")
 @click.option("--metric", default="xi_CP", show_default=True, help="Metric to track.")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def perturb_sweep(imscription_name: str, delta_g: float, metric: str, format: str):
@@ -3860,7 +3143,6 @@ def perturb_sweep(imscription_name: str, delta_g: float, metric: str, format: st
 
 @perturb.command(name="fault-injection")
 @click.argument("imscription_name")
-@click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
 def perturb_fault(imscription_name: str, delta_g: float, format: str):
     """
@@ -3902,7 +3184,6 @@ def perturb_fault(imscription_name: str, delta_g: float, format: str):
 
 @perturb.command(name="pathfind")
 @click.argument("imscription_name")
-@click.option("--delta-g", "-g", type=float, required=True, help="ΔG (kJ/mol).")
 @click.option("--target", "-t", type=float, required=True, help="Target ξ_CP (nats).")
 @click.option("--optimize", "-o", default=None, help="Comma-separated primitives (e.g. F,K).")
 @click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
@@ -4187,215 +3468,9 @@ def ensemble_thermo(components: str, delta_g_assembly: float, interface_overhead
         sys.exit(1)
 
 
-# =============================================================================
-# Subcommand: retrodesign
-# =============================================================================
-
-@chem_group.command("retrodesign")
-@click.argument("target")
-@click.option("--max-depth", "-d", type=int, default=3, show_default=True, help="Maximum decomposition depth.")
-@click.option("--prune-axioms", "-p", default="1,2,4,6", show_default=True, help="Comma-separated axiom numbers to enforce.")
-@click.option("--strict-grounding", is_flag=True, default=False,
-              help="Block decomposition if D_∞ target lacks Axiom 6 grounding metadata.")
-@click.option("--allow-ktrap", is_flag=True, default=False,
-              help="Demote K_teshlig leaves to warning instead of pruning them.")
-@click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def retrodesign(target: str, max_depth: int, prune_axioms: str, strict_grounding: bool, allow_ktrap: bool, format: str):
-    """
-    Constraint-directed retrosynthetic decomposition of a target notation.
-
-    TARGET is a ⟨...⟩ notation string or a catalog imscription name.
-
-    \b
-    Examples:
-        imscribe retrodesign proline_aldol_cycle
-        imscribe retrodesign proline_aldol_cycle --strict-grounding
-        imscribe retrodesign acetic_acid_homodimer --max-depth 2 --prune-axioms 1,4,6
-    """
-    from imscrbgrmr.retrodesign import RetrodesignEngine
-    try:
-        axiom_list = [int(a.strip()) for a in prune_axioms.split(",") if a.strip().isdigit()]
-        engine = RetrodesignEngine()
-        tree = engine.decompose(
-            target,
-            max_depth=max_depth,
-            prune_axioms=axiom_list,
-            strict_grounding=strict_grounding,
-            prune_ktrap=not allow_ktrap,
-        )
-
-        if format == "json":
-            console.print_json(json.dumps(tree.to_dict(), indent=2))
-            return
-
-        console.print(f"\n[bold]Retrodesign:[/bold] {tree.target_notation}")
-        console.print(
-            f"  Max depth: {max_depth}  |  Prune axioms: {prune_axioms}  |  "
-            f"Valid leaves: [green]{len(tree.valid_leaves)}[/green]  |  "
-            f"Pruned: [red]{tree.pruned_count}[/red]"
-        )
-
-        for w in tree.warnings:
-            console.print(f"  [yellow]⚠ {w}[/yellow]")
-
-        if tree.valid_leaves:
-            console.print(f"\n[bold]Valid Imscription Set:[/bold]")
-            for leaf in tree.valid_leaves:
-                name = leaf.imscription.name if leaf.imscription else leaf.notation or "?"
-                console.print(f"  [green]✓[/green] {leaf.branch_name}: [cyan]{name}[/cyan]")
-                for lw in leaf.warnings:
-                    console.print(f"    [yellow]⚠ {lw}[/yellow]")
-
-        if tree.pruned_count > 0:
-            console.print(f"\n[dim]{tree.pruned_count} branch(es) pruned by axiom enforcement.[/dim]")
-
-    except Exception as exc:
-        console.print(f"[red]Error: {exc}[/red]")
-        sys.exit(1)
-
-
-# =============================================================================
-# Subcommand: hotswap
-# =============================================================================
-
-@chem_group.command("hotswap")
-@click.argument("target")
-@click.argument("candidate")
-@click.option("--delta-g", "-g", type=float, default=-12.0, show_default=True,
-              help="ΔG basis for ξ_CP computation (kJ/mol).")
-@click.option("--allow-defect-fraction", type=float, default=None,
-              help="Defect tolerance for G_ℵ assemblies (0.0–1.0). Relaxes S matching.")
-@click.option("--new-pathway-count", type=int, default=0, show_default=True,
-              help="New low-energy pathways S_new introduces near operative TS (>2 triggers +0.5 nat penalty).")
-@click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def hotswap(
-    target: str,
-    candidate: str,
-    delta_g: float,
-    allow_defect_fraction,
-    new_pathway_count: int,
-    format: str,
-):
-    """
-    Validate a imscription hot-swap using the full HotSwap protocol.
-
-    TARGET and CANDIDATE are catalog imscription names.
-
-    Enforces all criteria from IG_HOTSWAP.md:
-    D/T/S exact match, F_new ≥ F_old, |Δξ_CP| < 1.0 nat, K accessible,
-    grounding status full/override, and Varma probe when ⊙ is suspected.
-
-    \b
-    Examples:
-        imscribe hotswap proline_aldol_cycle allene_crown_catalyst
-        imscribe hotswap carboxylic_acid_dimer mof_terephthalate_linker --allow-defect-fraction 0.25
-        imscribe hotswap proline_aldol_cycle macmillan_catalyst --new-pathway-count 3
-    """
-    from imscrbgrmr.hotswap import HotSwapEngine, HotSwapDecision
-    from imscrbgrmr.registry import global_catalog
-
-    target_syn = global_catalog.get(target)
-    if target_syn is None:
-        console.print(f"[red]Target imscription '{target}' not found in catalog.[/red]")
-        sys.exit(1)
-    cand_syn = global_catalog.get(candidate)
-    if cand_syn is None:
-        console.print(f"[red]Candidate imscription '{candidate}' not found in catalog.[/red]")
-        sys.exit(1)
-
-    try:
-        engine = HotSwapEngine()
-        report = engine.validate_candidate(
-            target_syn, cand_syn,
-            delta_g=delta_g,
-            allow_defect_fraction=allow_defect_fraction,
-            new_pathway_count=new_pathway_count,
-        )
-
-        if format == "json":
-            console.print_json(json.dumps(report.to_dict(), indent=2))
-            return
-
-        # Text output
-        decision_color = {
-            HotSwapDecision.APPROVED: "green",
-            HotSwapDecision.CONDITIONAL: "yellow",
-            HotSwapDecision.BLOCKED: "red",
-        }.get(report.decision, "white")
-
-        console.print(f"\n[bold]HotSwap Analysis[/bold]")
-        console.print(f"  S_old  : [cyan]{report.target_name}[/cyan]")
-        console.print(f"  S_new  : [cyan]{report.candidate_name}[/cyan]")
-        console.print(f"  Decision: [{decision_color}][bold]{report.decision.value}[/bold][/{decision_color}]")
-
-        # Thermodynamics
-        if report.xi_old is not None and report.xi_new is not None:
-            delta_str = f"{report.delta_xi:+.3f}"
-            eff_str = f"{report.effective_delta_xi:+.3f}"
-            penalty_str = (
-                f" (+{report.k_multiplicity_penalty:.1f} nat K-penalty)"
-                if report.k_multiplicity_penalty > 0 else ""
-            )
-            console.print(
-                f"\n  ξ_CP: {report.xi_old:.4f} → {report.xi_new:.4f} nats  "
-                f"| Δξ = {delta_str}{penalty_str}  | Effective Δξ = {eff_str} nats"
-            )
-
-        # Primitive checks
-        console.print(f"\n[bold]Primitive Checks:[/bold]")
-        for c in report.primitive_checks:
-            mark = "[green]✓[/green]" if c.passed else "[red]✗[/red]"
-            line = f"  {mark} {c.primitive}: {c.old_value} → {c.new_value}"
-            if c.note:
-                line += f"  [dim]({c.note})[/dim]"
-            console.print(line)
-
-        # Axioms
-        ax_ok = report.axiom_report.get("all_satisfied", False)
-        ax_violations = report.axiom_report.get("violations", 0)
-        ax_mark = "[green]✓[/green]" if ax_ok else "[red]✗[/red]"
-        console.print(f"\n  {ax_mark} Axiom validation: {'PASS' if ax_ok else f'FAIL ({ax_violations} violation(s))'}")
-
-        # Grounding
-        g = report.grounding_check
-        g_mark = "[green]✓[/green]" if g["passed"] else "[red]✗[/red]"
-        console.print(f"  {g_mark} Grounding status: {g['status']}")
-
-        # Varma
-        if report.varma_required:
-            console.print(
-                f"\n  [yellow]⚠ Varma probe required[/yellow] "
-                f"(degeneracy_strength = {report.varma_score:.3f})"
-            )
-
-        # Violations
-        if report.violations:
-            console.print(f"\n[bold red]Violations:[/bold red]")
-            for v in report.violations:
-                console.print(f"  [red]• {v}[/red]")
-
-        # Warnings
-        if report.warnings:
-            console.print(f"\n[bold yellow]Warnings:[/bold yellow]")
-            for w in report.warnings:
-                console.print(f"  [yellow]• {w}[/yellow]")
-
-        # Checklist
-        console.print(f"\n[bold]§8.0 Checklist:[/bold]")
-        for item, ok in report.checklist.items():
-            mark = "[green]✓[/green]" if ok else "[red]✗[/red]"
-            label = item.replace("_", " ")
-            console.print(f"  {mark} {label}")
-
-    except Exception as exc:
-        console.print(f"[red]Error: {exc}[/red]")
-        sys.exit(1)
-
-
 # Register all commands with the imscribe alias
 imscribe_alias.add_command(analyze)
 imscribe_alias.add_command(catalog)
-imscribe_alias.add_command(chem_group, name="chem")
 imscribe_alias.add_command(generate)
 imscribe_alias.add_command(compare)
 imscribe_alias.add_command(export)
@@ -5260,7 +4335,6 @@ imscribe_alias.add_command(phase_diagram_cmd, name="phase-diagram")
 @click.option("--xi-tau",             default=None,  type=float, help="Temporal correlation length (criticality).")
 @click.option("--limit",       "-l",  default=5,     type=int,   help="Max isomorphs to return (default 5).")
 @click.option("--max-hops",    "-m",  default=6,     type=int,   help="Max HotSwap hops for path (default 6).")
-@click.option("--delta-g",            default=None,  type=float, help="ΔG (kJ/mol) for generate.")
 @click.option("--provider",    "-p",  default=None,  envvar="IG_PROVIDER", help="LLM provider (env: IG_PROVIDER). E.g. deepseek, qwen, anthropic, mistral.")
 @click.option("--model",              default=None,  envvar="IG_MODEL",    help="Model ID (env: IG_MODEL). Uses provider default if unset.")
 @click.option("--format",      "-f",  type=click.Choice(["text", "json"]), default="text")
@@ -5870,62 +4944,12 @@ def cofactor(composite: str, factor_a: str, format: str):
     click.echo()
 
 
-@chem_group.command("retrosyn")
-@click.argument("target")
-@click.option("--top", "-n", type=int, default=5, show_default=True,
-              help="Number of top candidates to show.")
-@click.option("--max-factors", type=int, default=2, show_default=True,
-              help="Maximum number of catalog imscriptions to combine per candidate.")
-@click.option("--format", "-f", type=click.Choice(["text", "json"]), default="text")
-def retrosyn_cmd(target: str, top: int, max_factors: int, format: str):
-    """Retrosynthetic search: find catalog pairs that tensor toward TARGET.
-
-    Searches the catalog for imscriptions (or pairs) whose tensor product
-    most closely approaches the target tuple. Ranked by distance to target.
-
-    \b
-    Example:
-      imscribe retrosyn quantum_gravity --top 5
-      imscribe retrosyn allosteric_domain --top 3 --max-factors 1
-    """
-    from .decompose import retrosynthetic_path as _retro
-    from .registry import global_catalog
-    t = _load_imscription_by_name(target)
-    catalog = global_catalog.search()
-    r = _retro(t, catalog, max_factors=max_factors)
-    candidates = r.candidates[:top]
-    if format == "json":
-        import json
-        click.echo(json.dumps({
-            "target": target,
-            "candidates": [
-                {"rank": i + 1, "distance": c.distance_to_target,
-                 "factor_names": c.factor_names}
-                for i, c in enumerate(candidates)
-            ],
-            "notes": r.notes,
-        }, indent=2))
-        return
-    click.echo()
-    click.echo(f"  retrosynthetic_path({target})  — top {top}, max_factors={max_factors}")
-    click.echo()
-    click.echo(f"  {'Rank':<6}  {'d to target':>11}  Factors")
-    click.echo(f"  {'─'*6}  {'─'*11}  {'─'*50}")
-    for i, c in enumerate(candidates, 1):
-        names = " ⊗ ".join(c.factor_names)
-        click.echo(f"  {i:<6}  {c.distance_to_target:>11.3f}  {names}")
-    for n in r.notes:
-        click.echo(f"  Note : {n}")
-    click.echo()
-
-
 # Register decomposition commands with imscribe alias
 imscribe_alias.add_command(project)          # DECOMPOSE_PROJECT
 imscribe_alias.add_command(peel)             # DECOMPOSE_PEEL
 imscribe_alias.add_command(factor)           # DECOMPOSE_FACTOR
 imscribe_alias.add_command(principal_decomp_cmd, name="principal-decomp")  # DECOMPOSE_PD
 imscribe_alias.add_command(cofactor)         # DECOMPOSE_COFACTOR
-# retrosyn is registered under chem_group
 
 
 # =============================================================================

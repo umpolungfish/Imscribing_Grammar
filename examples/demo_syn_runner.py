@@ -196,7 +196,7 @@ def demo5_ensemble_json() -> None:
         "tensors it with the adenine-thymine molecular pair to form a "
         "molecular/temporal ensemble. The output: format: json block writes a "
         "machine-readable result to ensemble_result.json for downstream tooling "
-        "(the Ensembler, Retrodesign, or a Jupyter notebook)."
+        "(the Ensembler or a Jupyter notebook)."
     )
 
     # Run programmatically so we can read and display the saved JSON

@@ -43,7 +43,6 @@ import anthropic
 import imscrbgrmr
 from imscrbgrmr.algebra import tuple_distance, find_path
 from imscrbgrmr.constraints import AxiomValidator
-from imscrbgrmr.domains.molecular import register_molecular_imscriptions
 from imscrbgrmr.domains.quantum import register_quantum_imscriptions
 from imscrbgrmr.registry import global_catalog
 from imscrbgrmr.thermodynamics import compute_xi_CP
@@ -51,7 +50,6 @@ from imscrbgrmr.varma_probe import VarmaCorrelationData, score_phi_c_candidacy
 
 from imscribe_tool import IGTool as ImscribeTool, IG_TOOL_SCHEMA as imscription_TOOL_SCHEMA, ToolResponse
 
-register_molecular_imscriptions()
 register_quantum_imscriptions()
 
 

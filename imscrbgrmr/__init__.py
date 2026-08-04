@@ -95,29 +95,6 @@ from .symbolic import (  # NEW - Symbolic reasoning engine
     PredictiveRule,
     TheoremProof,
 )
-from .grounding import (  # NEW - Grounding validation layer
-    GroundingValidator,
-    GroundingStatus,
-    GroundingResult,
-    PrimitiveGrounding,
-    validate_imscription_with_grounding,
-)
-from .rdkit_utils import (  # RDKit-based ΔG estimation and structural flag extraction
-    estimate_delta_g_from_smiles,
-    validate_imscription_structure,
-    generate_rdkit_grounding,
-    DeltaGEstimationResult,
-    RDKit_AVAILABLE,
-    StructuralFlags,
-    smiles_to_structural_flags,
-    smiles_to_measurements,
-)
-from .llm_grounding import (  # NEW - LLM-grounded justification extraction
-    extract_grounding_from_description,
-    extract_and_validate,
-    LLMGroundingResult,
-    LLM_GROUNDING_AVAILABLE,
-)
 from .perturbation import (  # IG_PERTURBATION
     PerturbationEngine,
     PerturbationResult,
@@ -137,13 +114,6 @@ from .ensembler import (  # IG_ENSEMBLER
     EnsembleCompatibilityEntry,
     EmergentPropertyResult,
 )
-from .retrodesign import (  # IG_RETRODESIGN
-    RetrodesignEngine,
-    DecompositionTree,
-    DecompositionNode,
-    PruningViolation,
-    parse_notation_from_string,
-)
 from .hotswap import (  # IG_HOTSWAP
     HotSwapEngine,
     HotSwapReport,
@@ -155,10 +125,7 @@ from .hotswap import (  # IG_HOTSWAP
 )
 from .cross_domain import register_cross_domain_imscriptions  # Phase 1 cross-domain entries
 from .domains.quantum import register_quantum_imscriptions      # v0.4.0 quantum/topological entries
-from .domains.molecular import register_molecular_imscriptions  # v0.4.0 molecular catalog (.syn design files)
-from .psychedelic_catalog import register_psychedelic_imscriptions  # v0.4.9 psychedelic imscriptions
 from .stellar_catalog import register_stellar_imscriptions          # v0.4.10 stellar/compact-object catalog
-from .ice_catalog import register_ice_imscriptions                  # v0.4.13 ice phase ladder catalog
 from .particle_catalog import register_particle_imscriptions        # v0.4.21 fundamental particle catalog
 from .millennium_catalog import register_millennium_imscriptions, millennium_distance_report  # v0.5.0
 from .translate import (  # Translation Protocol v0.4 — structural→classical cost layer
@@ -294,23 +261,6 @@ __all__ = [
     "PredictiveRule",
     "TheoremProof",
     # Grounding Validation (NEW)
-    "GroundingValidator",
-    "GroundingStatus",
-    "GroundingResult",
-    "PrimitiveGrounding",
-    "validate_imscription_with_grounding",
-    # RDKit Utilities (NEW)
-    "estimate_delta_g_from_smiles",
-    "validate_imscription_structure",
-    "generate_rdkit_grounding",
-    "DeltaGEstimationResult",
-    "RDKit_AVAILABLE",
-    # LLM Grounding (NEW)
-    "extract_grounding_from_description",
-    "extract_and_validate",
-    "LLMGroundingResult",
-    "LLM_GROUNDING_AVAILABLE",
-    # Perturbation (NEW)
     "PerturbationEngine",
     "PerturbationResult",
     "PrimitiveJacobian",
@@ -326,13 +276,6 @@ __all__ = [
     "EnsembleReport",
     "EnsembleCompatibilityEntry",
     "EmergentPropertyResult",
-    # Retrodesign (NEW)
-    "RetrodesignEngine",
-    "DecompositionTree",
-    "DecompositionNode",
-    "PruningViolation",
-    "parse_notation_from_string",
-    # HotSwap (NEW)
     "HotSwapEngine",
     "HotSwapReport",
     "HotSwapDecision",

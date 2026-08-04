@@ -30,10 +30,8 @@ from imscrbgrmr.constraints import AxiomValidator
 from imscrbgrmr.registry import global_catalog
 from imscrbgrmr.thermodynamics import compute_xi_CP
 from imscrbgrmr.varma_probe import VarmaCorrelationData, score_phi_c_candidacy
-from imscrbgrmr.domains.molecular import register_molecular_imscriptions
 from imscrbgrmr.domains.quantum import register_quantum_imscriptions
 
-register_molecular_imscriptions()
 register_quantum_imscriptions()
 
 
