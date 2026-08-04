@@ -49,7 +49,7 @@ from imscrbgrmr.registry import global_catalog
 from imscrbgrmr.thermodynamics import compute_xi_CP
 from imscrbgrmr.varma_probe import VarmaCorrelationData, score_phi_c_candidacy
 
-from imscribe_tool import ImscribeTool, IG_TOOL_SCHEMA as imscription_TOOL_SCHEMA, ToolResponse
+from imscribe_tool import IGTool as ImscribeTool, IG_TOOL_SCHEMA as imscription_TOOL_SCHEMA, ToolResponse
 
 register_molecular_imscriptions()
 register_quantum_imscriptions()
@@ -255,6 +255,14 @@ When convergence criteria are satisfied, you **MUST** state:
 Then stop calling tools.
 </output_format>
 """)
+
+# The Grammar-first rider, shared with true_agentic_agent so the instruction to
+# reach for the in-house tool first reads the same wherever an agent meets it.
+try:
+    from true_agentic_agent import _GRAMMAR_FIRST_RIDER as _GF
+except Exception:  # pragma: no cover - the agent still runs without the rider
+    _GF = ""
+_SYSTEM_PROMPT = _SYSTEM_PROMPT + _GF
 
 
 # ── Convergence criteria ───────────────────────────────────────────────────────

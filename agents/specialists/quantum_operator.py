@@ -27,7 +27,8 @@ _PARENT = Path(__file__).resolve().parent.parent
 if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
-from true_agentic_agent import TrueAgenticAgent, _load_system_prompt, _PARTNERSHIP_RIDER
+from true_agentic_agent import (TrueAgenticAgent, _load_system_prompt,
+                                _GRAMMAR_FIRST_RIDER, _PARTNERSHIP_RIDER)
 from specialists import QUANTUM_SPECIALIST_PROMPT
 from session_db import get_session_db
 
@@ -39,7 +40,7 @@ class QuantumOperator(TrueAgenticAgent):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._custom_system_prompt = (
-            QUANTUM_SPECIALIST_PROMPT + _PARTNERSHIP_RIDER
+            QUANTUM_SPECIALIST_PROMPT + _GRAMMAR_FIRST_RIDER + _PARTNERSHIP_RIDER
         )
         self._session_id: str | None = None
 

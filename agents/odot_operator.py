@@ -2201,8 +2201,33 @@ TOOL_SCHEMAS = [
             {},
             []),
     _fn(
-        "zfct_navigator",
         "cl8nk_navigator",
+        (
+            "CL8NK substrate navigator — the same three probes run against the "
+            "CL8NK reference rather than the ZFCₜ one. "
+            "entry → per-primitive decomposition for a named CL8NK entry; "
+            "promotions → the promotion channels with ordinal gaps and weighted "
+            "distances; distance → d(named_entry, CL8NK)."
+        ),
+        {
+            "action": {
+                "type": "string",
+                "enum": ["entry", "promotions", "distance"],
+                "description": (
+                    "entry: per-primitive decomposition; "
+                    "promotions: promotion probe from the baseline; "
+                    "distance: d(name, CL8NK) gap"
+                ),
+            },
+            "name": {
+                "type": "string",
+                "description": "For action=entry or action=distance: CL8NK reference entry name.",
+            },
+        },
+        ["action"],
+    ),
+    _fn(
+        "zfct_navigator",
         (
             "ZFCₜ formula navigator — decomposes types into ZFC set-theoretic formulas "
             "extended with the six ZFCₜ promotion atoms "
@@ -2989,10 +3014,23 @@ def _load_system_prompt() -> str:
             if _p.exists():
                 _content = _p.read_text(encoding="utf-8").strip()
                 if _content:
-                    return _content
+                    return _content + _grammar_first()
         except (OSError, IOError):
             continue
-    return _SYSTEM_PROMPT
+    return _SYSTEM_PROMPT + _grammar_first()
+
+
+def _grammar_first() -> str:
+    """The Grammar-first rider, shared with true_agentic_agent.
+
+    Kept as one text in one place: an agent told to reach for the in-house tool
+    first, in wording that drifts between agents, is an agent told two things.
+    """
+    try:
+        from true_agentic_agent import _GRAMMAR_FIRST_RIDER
+        return _GRAMMAR_FIRST_RIDER
+    except Exception:
+        return ""
 
 
 # ── Message history helpers ────────────────────────────────────────────────────

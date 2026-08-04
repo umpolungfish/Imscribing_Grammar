@@ -179,7 +179,7 @@ def _protostar() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Protostar / T Tauri star. Pre-main-sequence object still accreting from "
             "molecular cloud core. T_nrleg: accretion disk + magnetosphere + bipolar jets "
@@ -237,7 +237,7 @@ def _brown_dwarf() -> Imscription:
         granularity=Granularity.bib,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Brown dwarf (13-80 M_Jup). Failed star: deuterium burns briefly then "
             "object enters K_teshlig monotonic cooling. G_mesoscale: insufficient stellar "
@@ -296,7 +296,7 @@ def _star_m_dwarf() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "M-dwarf (red dwarf, 0.08-0.6 M_☉). Most common stellar class (75%). "
             "K_frtailgamma dominates: superflares frequent, magnetic cycle short/irregular. "
@@ -364,7 +364,7 @@ def _star_k_dwarf() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "K-dwarf (orange dwarf, 0.6-0.9 M_☉). 'Superhabitable' class — combines "
             "lower flare activity than M-dwarfs with longer lifetime than G-dwarfs "
@@ -423,7 +423,7 @@ def _star_g_dwarf() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "G-dwarf (yellow dwarf, 0.9-1.1 M_☉). The Sun class. Reference stellar "
             "imscription — see METAPHYSICS.md §XVIII for full primitive derivation. "
@@ -481,7 +481,7 @@ def _star_f_dwarf() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "F-dwarf (1.1-1.4 M_☉). UV-rich grammar (peak 380-450 nm), 2-8 Gyr lifetime. "
             "F_HIGH, K_turnm, ∋_SELECTIVE. Framework: shorter K_schwa organizational memory "
@@ -534,7 +534,7 @@ def _star_a_dwarf() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "A-type star (1.4-2.1 M_☉, e.g. Vega, Sirius). Strong UV output, "
             "no deep convective dynamo → 𐑵 (unstructured grammar), 𐑢. "
@@ -589,7 +589,7 @@ def _star_b_star() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "B-type star (2-16 M_☉). Extreme UV/X-ray grammar, strong winds, "
             "decretion disks (Be stars). K_frtailgamma: 10 Myr-1 Gyr lifetime. "
@@ -647,7 +647,7 @@ def _star_o_star() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "O-type star (16-150+ M_☉). Most massive, most luminous, shortest-lived "
             "(1-10 Myr). Ionizes surrounding ISM, drives kiloparsec turbulence. "
@@ -714,7 +714,7 @@ def _star_red_giant() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Red giant (post-MS, 0.8-8 M_☉, 10-100 R_☉). Expanded convective envelope "
             "loses Hale-cycle hemispheric asymmetry → P_subdoublearrow (symmetric). Dredge-up "
@@ -774,7 +774,7 @@ def _star_agb() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "AGB star. Thermal pulses (100-300 yr He-shell flashes) at K_frtailgamma "
             "superimposed on K_schwa interpulse periods. T_network_mixed: degenerate "
@@ -834,7 +834,7 @@ def _star_wolf_rayet() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Wolf-Rayet star. Stripped evolved massive star, H-envelope lost, "
             "nuclear-burning core exposed. Mass loss 10^-5 M_☉/yr at 1000-3000 km/s. "
@@ -890,7 +890,7 @@ def _star_red_supergiant() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Red Supergiant (8-30 M_☉, 500-1500 R_☉, e.g. Betelgeuse). Giant sparse "
             "convective cells (~10 cells vs 10^6 solar granules) → T_network_mixed. "
@@ -951,7 +951,7 @@ def _star_blue_supergiant() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Blue Supergiant / LBV (10-100 M_☉, e.g. Rigel, Deneb, Eta Carinae). "
             "Organized bipolar wind → ∋_SELECTIVE. K_frtailgamma: LBV eruptions (Eta Car 1843 "
@@ -1020,7 +1020,7 @@ def _white_dwarf() -> Imscription:
         granularity=Granularity.bib,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "White dwarf. Electron degeneracy-supported remnant of 0.8-8 M_☉ stars. "
             "T_network_hex: crystallizes to C/O FCC lattice (Gyr timescale). "
@@ -1089,7 +1089,7 @@ def _supernova_type_ia() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Type Ia supernova. Thermonuclear explosion of WD at Chandrasekhar limit. "
             "D_hybrid: nuclear ignition front (D_∧) → cosmological light curve (D_△). "
@@ -1149,7 +1149,7 @@ def _supernova_type_ii() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Type II / core-collapse supernova (>8 M_☉ progenitor). Core collapse in "
             "0.1 sec releasing 3×10^46 J (99% neutrinos). R_mechanical: gravity/bounce "
@@ -1217,7 +1217,7 @@ def _gamma_ray_burst() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Gamma-Ray Burst (GRB): most energetic event since the Big Bang. "
             "T_linear: relativistic jet (opening angle 1-10°, Γ_L 100-1000) — the "
@@ -1355,7 +1355,7 @@ def _neutron_star() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Neutron star (1.4 M_☉, 12 km). T_braid: superfluid vortex lattice + "
             "superconducting flux tubes + braided B-field through crystalline crust — "
@@ -1424,7 +1424,7 @@ def _pulsar_millisecond() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Millisecond pulsar (recycled, P=1-10 ms). Most precise clock in the universe "
             "(exceeds atomic clocks). T_braid: all NS topology preserved + accretion "
@@ -1497,7 +1497,7 @@ def _magnetar() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Magnetar (B ~ 10^15 G = 10^11 T). T_braid at physical limit: B-field "
             "stresses crystalline crust to fracture → starquakes → giant gamma flares. "
@@ -1572,7 +1572,7 @@ def _black_hole_stellar() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Stellar-mass black hole (3-100 M_☉). D_holographic: no-hair theorem — "
             "all bulk information encoded on the horizon. T_bowl: event horizon as "
@@ -1654,7 +1654,7 @@ def _quasar_agn() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Quasar / AGN (SMBH 10^6-10^10 M_☉ accreting near Eddington). "
             "D_holographic + T_nrleg: the full AGN (disk + jets + BLR + NLR + torus). "
@@ -1727,7 +1727,7 @@ def _quark_star() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Quark/Strange star (hypothetical). Strange quark matter (uds) as ground "
             "state of matter if Bodmer-Witten hypothesis holds. R_covalent_dynamic: "
@@ -1807,7 +1807,7 @@ def _gravastar() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Gravastar / 'Black Shell' (Mazur & Mottola 2001). Hypothetical BH "
             "alternative: de Sitter interior + thin shell at Schwarzschild radius + "
@@ -1884,7 +1884,7 @@ def _dark_star() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Dark Star (Spolyar, Freese, Gondolo 2008). First-generation Pop III "
             "protostar powered by WIMP dark matter annihilation (not nuclear fusion). "

@@ -148,7 +148,7 @@ def _lsd_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "LSD (lysergic acid diethylamide) as receptor ligand. Tetracyclic ergoline "
             "scaffold with β-arrestin-biased 5-HT2A agonism. Extreme potency (25-75 μg), "
@@ -221,7 +221,7 @@ def _lsd_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain constraint-propagation state induced by LSD. T_nrleg: "
             "default mode, executive, and sensory networks globally coupled. "
@@ -288,7 +288,7 @@ def _dmt_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "DMT (N,N-dimethyltryptamine) as receptor ligand. Simple tryptamine with "
             "bicyclic indole core. Endogenous mammalian compound. K_frtailgamma: 5-15 min "
@@ -358,7 +358,7 @@ def _dmt_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain state induced by DMT. Primitive-identical to LSD brain-state "
             "except K_frtailgamma (5-15 min total window vs 8-12 hr). Most rapid known ⊙ "
@@ -431,7 +431,7 @@ def _five_meo_dmt_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "5-MeO-DMT as receptor ligand. Tryptamine with 5-methoxy substitution. "
             "The OMe group shifts receptor grammar from 5-HT2A (excitatory, DMT) "
@@ -502,7 +502,7 @@ def _five_meo_dmt_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain state induced by 5-MeO-DMT. T_network_sym + P_subdoublearrow: "
             "directional asymmetry collapses ('white-out', content dissolution). "
@@ -577,7 +577,7 @@ def _psilocin_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Psilocin (4-OH-DMT, active form of psilocybin) as receptor ligand. "
             "Most selective tryptamine for 5-HT2A. F_MEDIUM: active at mg doses. "
@@ -641,7 +641,7 @@ def _psilocin_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain state induced by psilocin. Primitive-identical to LSD brain-state "
             "except F_MEDIUM and K_turnm. The 4-6 hr moderate-kinetics window is the "
@@ -718,7 +718,7 @@ def _mescaline_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Mescaline (3,4,5-trimethoxyphenethylamine) as receptor ligand. "
             "Phenethylamine scaffold — T_linear (vs tryptamines' T_nrleg). "
@@ -789,7 +789,7 @@ def _mescaline_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain state induced by mescaline. 𐑵 preserved from molecular "
             "level — broader receptor grammar → more simultaneous constraint-propagation "
@@ -875,7 +875,7 @@ def _salvinorin_a_molecular() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         description=(
             "Salvinorin A (neoclerodane diterpene) as receptor ligand. "
             "THE OUTLIER: no nitrogen, κ-opioid receptor (KOR) agonist — "
@@ -952,7 +952,7 @@ def _salvinorin_a_brain_state() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Whole-brain state induced by Salvinorin A (KOR). ∋_SPECIFIC preserved: "
             "single high-precision constraint-propagation channel (vs serotonergic "

@@ -212,12 +212,12 @@ class SupramolecularImscriptionAgent:
         known_motifs = {
             "carboxylic_acid_dimer": {
                 "topology": Topology.mime,
-                "polarity": Polarity.SELF_COMPLEMENTARY,
+                "polarity": Polarity.out,
                 "fidelity": Fidelity.peep,
             },
             "amide_dimer": {
                 "topology": Topology.mime,
-                "polarity": Polarity.SELF_COMPLEMENTARY,
+                "polarity": Polarity.out,
                 "fidelity": Fidelity.they,
             },
             "halogen_bond": {
@@ -249,7 +249,7 @@ class SupramolecularImscriptionAgent:
             fidelity=motif_data["fidelity"],
             kinetic_character=KineticCharacter.loll,
             granularity=Granularity.bib,
-            interaction_grammar=InteractionGrammar.SELECTIVE,
+            interaction_grammar=InteractionGrammar.vow,
             criticality_phase=CriticalityPhase.woe,
             description=f"Supramolecular imscription: {motif_type}",
             metadata={"motif_type": motif_type},

@@ -112,7 +112,7 @@ def _tide_pool() -> Imscription:
         granularity=Granularity.bib,
         interaction_grammar=InteractionGrammar.gag,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Intertidal rock-pool ecosystem: open dissipative system with "
             "diurnal tidal flushing, solar energy input, and closed trophic cycle "
@@ -280,7 +280,7 @@ def _autonomous_drone_swarm() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.measure,
         criticality_phase=CriticalityPhase.monad,
-        stoichiometry="n:m",
+        stoichiometry="𐑳",
         description=(
             "Autonomous UAV swarm: N-agent robotic system with consensus-protocol "
             "recognition, non-equilibrium physical dynamics, and emergent flocking "
@@ -377,7 +377,7 @@ def _db24c8_pseudorotaxane() -> Imscription:
         granularity=Granularity.ice,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         metadata={
             "validation_tier": "primary",
             "grounding_status": "partial",

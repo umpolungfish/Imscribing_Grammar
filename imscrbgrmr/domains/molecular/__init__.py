@@ -115,7 +115,7 @@ class MolecularImscriptionAgent:
         if functional_groups:
             for fg in functional_groups:
                 if fg.lower() in self_complementary:
-                    return Polarity.SELF_COMPLEMENTARY
+                    return Polarity.out
         
         # Default: analyze electronic properties
         # In full implementation, this would use RDKit to:
@@ -249,7 +249,7 @@ class MolecularImscriptionAgent:
         
         # Determine interaction grammar based on specificity
         # (In full implementation, would analyze steric/electronic constraints)
-        grammar = InteractionGrammar.SELECTIVE
+        grammar = InteractionGrammar.vow
 
         from imscrbgrmr.models import KineticCharacter, CriticalityPhase
         
@@ -340,16 +340,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_redox_imscription_pair",
-            dimensionality=D.TEMPORAL,
-            topology=T.CYCLIC_BOWTIE,
-            recognition_mode=R.DYNAMIC_CATALYTIC,
-            polarity=P.DONOR_ACCEPTOR,
-            fidelity=F.HIGH,
-            kinetic_character=K.MODERATE,
-            granularity=G.MESOSCALE,
-            interaction_grammar=Gr.SELECTIVE_SEQ,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.array,
+            topology=T.mime,
+            recognition_mode=R.ear,
+            polarity=P.out,
+            fidelity=F.peep,
+            kinetic_character=K.loll,
+            granularity=G.thigh,
+            interaction_grammar=Gr.measure,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Nitroso-radical redox pair: enantiospecific closed autocatalytic cycle "
                 "(D_∞, T_⋈, P_directional, F_ℏ). Frank-model bifurcation candidate; "
@@ -368,16 +368,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="amide_dimer",
-            dimensionality=D.MOLECULAR,
-            topology=T.CYCLIC_BOWTIE,
-            recognition_mode=R.NON_COVALENT,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.MEDIUM,
-            kinetic_character=K.MODERATE,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SELECTIVE_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.dead,
+            topology=T.mime,
+            recognition_mode=R.ado,
+            polarity=P.out,
+            fidelity=F.they,
+            kinetic_character=K.loll,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Amide N–H···O=C hydrogen-bonded dimer (R₂²(8) motif). "
                 "F_dh: weaker H-bond donor than carboxylic acid. "
@@ -395,16 +395,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_anion_π_cavitand_cage_imscription",
-            dimensionality=D.SUPRAMOLECULAR,
-            topology=T.CAGE,
-            recognition_mode=R.MECHANICAL,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.HIGH,
-            kinetic_character=K.SLOW,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SPECIFIC_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.ash,
+            topology=T.oil,
+            recognition_mode=R.ian,
+            polarity=P.out,
+            fidelity=F.peep,
+            kinetic_character=K.egg,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Cavitand cage with nitroso-radical anion–π recognition motif. "
                 "Deep-cavity enclosure (T_cage), high rigidity (F_ℏ), slow guest "
@@ -422,16 +422,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_calixarene_anion_π_sandwich_imscription",
-            dimensionality=D.SUPRAMOLECULAR,
-            topology=T.BOWL,
-            recognition_mode=R.MECHANICAL,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.HIGH,
-            kinetic_character=K.SLOW,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SPECIFIC_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.ash,
+            topology=T.eat,
+            recognition_mode=R.ian,
+            polarity=P.out,
+            fidelity=F.peep,
+            kinetic_character=K.egg,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Calixarene bowl with anion–π sandwich recognition. "
                 "T_bowl: open cup geometry; guest access from one face. "
@@ -450,16 +450,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_crown_ether_host_guest_imscription",
-            dimensionality=D.SUPRAMOLECULAR,
-            topology=T.CAGE,
-            recognition_mode=R.MECHANICAL,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.MEDIUM,
-            kinetic_character=K.MODERATE,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SPECIFIC_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.ash,
+            topology=T.oil,
+            recognition_mode=R.ian,
+            polarity=P.out,
+            fidelity=F.they,
+            kinetic_character=K.loll,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Crown ether host–guest complex with nitroso-radical recognition. "
                 "F_dh: flexible macrocycle conformational entropy limits fidelity "
@@ -477,16 +477,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_anion_π_cryptand_cage_imscription",
-            dimensionality=D.SUPRAMOLECULAR,
-            topology=T.CAGE,
-            recognition_mode=R.MECHANICAL,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.HIGH,
-            kinetic_character=K.SLOW,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SPECIFIC_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.ash,
+            topology=T.oil,
+            recognition_mode=R.ian,
+            polarity=P.out,
+            fidelity=F.peep,
+            kinetic_character=K.egg,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Cryptand cage host with nitroso-radical anion–π recognition. "
                 "3D bicyclic preorganisation → F_ℏ (high binding affinity). "
@@ -504,16 +504,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="nitroso_radical_cucurbituril_anion_rotaxane_imscription",
-            dimensionality=D.SUPRAMOLECULAR,
-            topology=T.CAGE,
-            recognition_mode=R.MECHANICAL,
-            polarity=P.SELF_COMPLEMENTARY_PSEUDO,
-            fidelity=F.HIGH,
-            kinetic_character=K.SLOW,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.SPECIFIC_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.ash,
+            topology=T.oil,
+            recognition_mode=R.ian,
+            polarity=P.out,
+            fidelity=F.peep,
+            kinetic_character=K.egg,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Cucurbit[n]uril barrel encapsulating nitroso-radical anion via "
                 "ion–dipole and hydrophobic interactions. High rigidity (F_ℏ), "
@@ -532,16 +532,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="methyl_anion_nucleophile_CH3",
-            dimensionality=D.MOLECULAR,
-            topology=T.LINEAR,
-            recognition_mode=R.COVALENT,
-            polarity=P.DONOR,
-            fidelity=F.MEDIUM,
-            kinetic_character=K.MODERATE,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.BROAD_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.dead,
+            topology=T.eat,
+            recognition_mode=R.tot,
+            polarity=P.church,
+            fidelity=F.they,
+            kinetic_character=K.loll,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Methyl carbanion (CH₃⁻): archetypal anionic nucleophile. "
                 "P_minus: electron-pair donor. T_linear: single reactive carbon centre. "
@@ -558,16 +558,16 @@ def register_molecular_imscriptions() -> list:
         # ------------------------------------------------------------------
         Imscription(
             name="methyl_cation_electrophile_CH3",
-            dimensionality=D.MOLECULAR,
-            topology=T.LINEAR,
-            recognition_mode=R.COVALENT,
-            polarity=P.ACCEPTOR,
-            fidelity=F.MEDIUM,
-            kinetic_character=K.MODERATE,
-            granularity=G.LOCAL,
-            interaction_grammar=Gr.BROAD_AND,
-            criticality_phase=Ph.SUBCRITICAL,
-            stoichiometry="1:1",
+            dimensionality=D.dead,
+            topology=T.eat,
+            recognition_mode=R.tot,
+            polarity=P.church,
+            fidelity=F.they,
+            kinetic_character=K.loll,
+            granularity=G.bib,
+            interaction_grammar=Gr.vow,
+            criticality_phase=Ph.woe,
+            stoichiometry="𐑙",
             description=(
                 "Methyl carbocation (CH₃⁺): archetypal cationic electrophile. "
                 "P_plus: electron-pair acceptor. T_linear: single reactive carbon centre. "
@@ -577,14 +577,30 @@ def register_molecular_imscriptions() -> list:
         ),
     ]
 
-    registered = []
+    # IG_catalog.json is the single source of truth. These entries are literals
+    # left over from the .syn design scripts, so where canon holds the same name
+    # canon wins outright and the literal is not registered at all. Without this
+    # the literal shadows canon in any process that imports the domain before
+    # the catalog loads, and the shadow is silent.
+    import json as _json
+    from pathlib import Path as _Path
+    _canon = {}
+    _p = _Path(__file__).resolve().parents[3] / "IG_catalog.json"
+    if _p.exists():
+        _canon = {e["name"] for e in _json.loads(_p.read_text(encoding="utf-8"))}
+
+    registered, deferred = [], []
     for s in entries:
+        if s.name in _canon:
+            deferred.append(s.name)
+            continue
         if s.name not in global_catalog._imscriptions:
             global_catalog.register(
                 s,
                 domain="molecular",
                 override_grounding=True,
-                override_reason="Canonical molecular domain catalog entry (v0.4.0)",
+                override_reason="Molecular domain literal with no canonical entry",
             )
             registered.append(s.name)
+    register_molecular_imscriptions.deferred_to_canon = deferred
     return registered

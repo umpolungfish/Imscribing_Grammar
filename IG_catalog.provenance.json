@@ -6203,6 +6203,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "43d205fdae19c2aa"
   },
+  "braid_4strand_trefoil": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "96cce5fe8467b2e9"
+  },
   "braid_filter": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6268,6 +6274,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "489951741c2e9e2b"
+  },
+  "braid_trefoil_critical": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "61ae1d18f66c0819"
+  },
+  "braid_trefoil_thermal": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "217b253b13b51597"
   },
   "braid_winding_projector": {
     "changes": 0,
@@ -13318,6 +13336,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2520ad9184e9b68e"
+  },
+  "divided_by": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "033020e1cffd2d25"
   },
   "divina_caligo": {
     "changes": 0,
@@ -29962,6 +29986,30 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0e3239ce43241b5d"
+  },
+  "nice_t1_frozen_critical_seq": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "fdb7ab04e378cd0e"
+  },
+  "nice_t2_subcritical_slow_net": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "cdd7dbc30c45f8a0"
+  },
+  "nice_t3_ep_eternal_frob": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "6f8589110f94d0cc"
+  },
+  "nice_t4_point_mesoscale_sym": {
+    "changes": 0,
+    "first_seen": "2026-08-04T09:30:08+00:00",
+    "last_changed": "2026-08-04T09:30:08+00:00",
+    "tuple_hash": "28c8bea325d8098f"
   },
   "nickel": {
     "changes": 0,

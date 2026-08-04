@@ -198,7 +198,7 @@ def _proton() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         topo_index=TopoIndex.awe,
         description=(
             "Bare proton (H⁺); fundamental charge carrier in acid-base chemistry. "
@@ -243,7 +243,7 @@ def _electron() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         topo_index=TopoIndex.awe,
         description=(
             "Bare electron; fundamental charge carrier. Mass 9.11×10⁻³¹ kg; "
@@ -300,7 +300,7 @@ def _spin_singlet() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         topo_index=TopoIndex.awe,
         description=(
             "Maximally entangled two-spin Bell state |Ψ⁻⟩ = (|↑↓⟩−|↓↑⟩)/√2. "
@@ -415,7 +415,7 @@ def _kitaev_chain_majorana() -> Imscription:
         granularity=Granularity.thigh,
         interaction_grammar=InteractionGrammar.vow,
         criticality_phase=CriticalityPhase.woe,
-        stoichiometry="1:1",
+        stoichiometry="𐑙",
         topo_index=TopoIndex.ah,
         description=(
             "Kitaev chain: 1D spinless p-wave superconductor in its topological phase "

@@ -26,7 +26,8 @@ _PARENT = Path(__file__).resolve().parent.parent
 if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
-from true_agentic_agent import TrueAgenticAgent, _load_system_prompt, _PARTNERSHIP_RIDER
+from true_agentic_agent import (TrueAgenticAgent, _load_system_prompt,
+                                _GRAMMAR_FIRST_RIDER, _PARTNERSHIP_RIDER)
 from specialists import CHEMBIO_SPECIALIST_PROMPT
 from session_db import get_session_db
 
@@ -41,7 +42,7 @@ class ChemBioOperator(TrueAgenticAgent):
         # on every base load path (§P-652); the swap bypasses that, so it is
         # carried explicitly.
         self._custom_system_prompt = (
-            CHEMBIO_SPECIALIST_PROMPT + _PARTNERSHIP_RIDER
+            CHEMBIO_SPECIALIST_PROMPT + _GRAMMAR_FIRST_RIDER + _PARTNERSHIP_RIDER
         )
         self._session_id: str | None = None
 

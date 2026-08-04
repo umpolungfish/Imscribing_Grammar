@@ -338,7 +338,7 @@ def auto_stoichiometry(dry_run: bool, limit: int):
         if s.polarity in SELF_COMP_POLARITY:
             assigned.append(s.name)
             if not dry_run:
-                s.stoichiometry = "1:1"
+                s.stoichiometry = "𐑙"
         else:
             flagged_manual.append(s.name)
 

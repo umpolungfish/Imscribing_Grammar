@@ -277,7 +277,7 @@ class HybridImscriptionAgent:
             fidelity=Fidelity.they,
             kinetic_character=KineticCharacter.loll,
             granularity=Granularity.thigh,
-            interaction_grammar=InteractionGrammar.SELECTIVE,
+            interaction_grammar=InteractionGrammar.vow,
             criticality_phase=CriticalityPhase.woe,
             description=description or f"Hybrid imscription: {', '.join(domains)}",
             metadata={"domains": domains},
