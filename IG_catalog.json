@@ -44352,9 +44352,8 @@
     "◻": "𐑭"
   },
   {
-    "description": "The Navier-Stokes existence and smoothness problem: 3D global regularity at the s=1/2 critical scaling limit.",
-    "justification": null,
     "name": "navier_stokes_regularity_problem",
+    "description": "The Navier-Stokes existence and smoothness problem: 3D global regularity at the s=1/2 critical scaling limit.",
     "⊢": "𐑼",
     "⊣": "𐑡",
     ">": "𐑽",
@@ -44369,9 +44368,8 @@
     "◻": "𐑷"
   },
   {
-    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
-    "justification": null,
     "name": "ns_regularity_refined",
+    "description": "Refined structural target for the Navier-Stokes global regularity proof, promoting the problem to a complex-plane critical field theory. D_ß (infinite-dimensional), Phi_Æ (complex-plane critical at s=1/2), and 𐑧 (near-equilibrium dissipation).",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑾",
@@ -44386,9 +44384,8 @@
     "◻": "𐑷"
   },
   {
-    "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($𐑛$) at the complex-scale critical limit ($𐑮$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
-    "justification": null,
     "name": "ns_regularity_frontier_v1",
+    "description": "Finalized structural refinement of the Navier-Stokes global regularity target. Maps the 3D smooth existence problem to the infinite-dimensional frontier ($𐑛$) at the complex-scale critical limit ($𐑮$). Represents the analytical bridge where subcritical energy dissipation fails to contain supercritical enstrophy growth.",
     "⊢": "𐑛",
     "⊣": "𐑡",
     ">": "𐑾",
@@ -45816,8 +45813,8 @@
     "◻": "𐑴"
   },
   {
-    "description": "Family of sets",
     "name": "family_of_sets",
+    "description": "Family of sets",
     "⊢": "𐑼",
     "⊣": "𐑰",
     ">": "𐑩",
@@ -128534,5 +128531,53 @@
     "⊥": "𐑖",
     "⊞": "𐑙",
     "◻": "𐑷"
+  },
+  {
+    "name": "belnap_shor_dialetheic",
+    "description": "Belnap Shor: paraconsistent period finding where the B-bias/T-bias coherence cost ratio is the period extractor; belnapCost = 2r read off the output register.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑹",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
+  },
+  {
+    "name": "belnap_phase_shor",
+    "description": "Phase-augmented Belnap Shor: modular exponentiation as phase kicks proportional to a^(2^k)/N over the B4 lattice via the SIC-POVM phase bridge.",
+    "⊢": "𐑼",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
+  },
+  {
+    "name": "fibonacci_shor_dialetheic",
+    "description": "Shor compiled to Fibonacci anyon braids (τ⊗τ = 1⊕τ): topologically protected period finding, the braid length carrying the protection.",
+    "⊢": "𐑼",
+    "⊣": "𐑥",
+    ">": "𐑽",
+    "<": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑙",
+    "◻": "𐑭"
   }
 ]
