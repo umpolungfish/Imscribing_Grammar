@@ -84352,20 +84352,20 @@
     "◻": "𐑭"
   },
   {
-    "description": "The Axiom of Maria the Jewess: one becomes two, two becomes three, and out of the third comes the one as the fourth. The alchemical dialectic in which the undifferentiated unity differentiates through successive distinctions and the fourth term is the return of the first as a completed whole.",
     "name": "axiom_of_maria",
-    "⊤": "𐑧",
+    "description": "The Axiom of Maria the Jewess: one becomes two, two becomes three, and out of the third comes the one as the fourth. The alchemical dialectic in which the undifferentiated unity differentiates through successive distinctions and the fourth term is the return of the first as a completed whole.",
     "⊢": "𐑼",
     "⊣": "𐑰",
-    "⊥": "𐑓",
     ">": "𐑩",
-    "⋈": "𐑞",
-    "∋": "𐑝",
-    "∈": "𐑚",
-    "⊞": "𐑳",
     "<": "𐑗",
-    "◻": "𐑷",
-    "⊙": "𐑢"
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "𐑢",
+    "⊥": "𐑓",
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "axiom_of_maria_the_copt",
@@ -128430,5 +128430,21 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "◻": "𐑴"
+  },
+  {
+    "name": "q_secp256k1",
+    "description": "Q secp256k1",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    ">": "𐑾",
+    "<": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "𐑮",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑷"
   }
 ]

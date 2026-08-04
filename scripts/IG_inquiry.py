@@ -2421,15 +2421,14 @@ class SessionCatalog:
         # Strip erroneous "imscription_" prefix the model sometimes prepends to names
         if name.startswith("imscription_"):
             name = name[len("imscription_"):]
-        # ── Remap legacy Latin/Greek keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) ──
-        # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
+        # ── Remap the short ASCII axis names onto the canonical marks ──
+        # PRIMITIVE_ORDER is the marks, so this only has to carry callers that
+        # still name axes the short way. It used to map the marks themselves
+        # onto Shavian value glyphs, which added keys no lookup ever reads.
         LEGACY_MAP = {
-            "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
-            "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
-            "⊞": "𐑙", "◻": "𐑷",
-            "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
-            "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢",
-            "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
+            "D": "⊢", "T": "⊣", "R": ">", "P": "<", "F": "⋈",
+            "K": "⊤", "G": "∈", "Gamma": "∋", "Phi": "⊙",
+            "H": "⊥", "S": "⊞", "Omega": "◻",
         }
         remapped_primitives = {}
         for k, v in primitives.items():
@@ -3174,7 +3173,22 @@ class ToolDispatcher:
         primitives = {self._PRIM_CANONICAL.get(k, k): v for k, v in primitives.items()}
         # If 'tuple' string provided, parse it into primitives (preferred path)
         if tuple:
-            parts = [p.strip() for p in tuple.replace("⟨", "").replace("⟩", "").split(";")]
+            body = tuple.replace("⟨", "").replace("⟩", "").strip()
+            parts = [p.strip() for p in body.split(";")]
+            if len(parts) != len(PRIMITIVE_ORDER):
+                # The notation this system prints is not semicolon-separated.
+                # `imscribe join` emits ⟨⊤𐑥𐑾⊤𐑱𐑧𐑲⊤𐑻𐑫⊤𐑭⟩ and the kernel REPL emits
+                # ⟨𐑼 · 𐑸 · 𐑾 · …⟩, so a caller copying what it was shown got twelve
+                # "Missing primitive" errors and no clue why. Every value is one
+                # codepoint, so once the separators are gone a bare run of exactly
+                # twelve characters is unambiguous.
+                stripped = re.sub(r"[\s;,·]+", "", body)
+                if len(stripped) == len(PRIMITIVE_ORDER):
+                    parts = list(stripped)
+                else:
+                    alt = [p for p in re.split(r"[\s;,·]+", body) if p]
+                    if len(alt) == len(PRIMITIVE_ORDER):
+                        parts = alt
             if len(parts) == len(PRIMITIVE_ORDER):
                 for prim, val in zip(PRIMITIVE_ORDER, parts):
                     # Strip "PRIM=" prefix if present (e.g. ">=𐑾"), but only when
