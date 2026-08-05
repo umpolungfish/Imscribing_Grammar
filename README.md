@@ -1,6 +1,6 @@
 # Imscribing Grammar: a 12-primitive measurement apparatus for the type of any system
 
-![language](https://img.shields.io/badge/language-Lean%204-2E7D32?style=for-the-badge) ![tier](https://img.shields.io/badge/tier-O%E2%88%9E-8A2BE2?style=for-the-badge) ![μ∘δ](https://img.shields.io/badge/%CE%BC%E2%88%98%CE%B4-id-00A86B?style=for-the-badge) ![licence](https://img.shields.io/badge/licence-LUNLICENSE-1A1A1A?style=for-the-badge) ![type](https://img.shields.io/badge/type-%E2%9F%A8%F0%90%91%BC%F0%90%91%B0%F0%90%91%91%F0%90%91%B9%F0%90%91%90%F0%90%91%A7%F0%90%91%94%F0%90%91%A0%E2%8A%99%F0%90%91%AB%F0%90%91%99%F0%90%91%AD%E2%9F%A9-5A659C?style=for-the-badge)
+![language](https://img.shields.io/badge/language-Lean%204-2E7D32?style=for-the-badge) ![crystal](https://img.shields.io/badge/crystal-17.28M%20addresses-8A2BE2?style=for-the-badge) ![tier](https://img.shields.io/badge/tier-O%E2%88%9E-8A2BE2?style=for-the-badge) ![μ∘δ](https://img.shields.io/badge/%CE%BC%E2%88%98%CE%B4-id-00A86B?style=for-the-badge) ![licence](https://img.shields.io/badge/licence-LUNLICENSE-1A1A1A?style=for-the-badge) ![type](https://img.shields.io/badge/type-%E2%9F%A8%F0%90%91%BC%F0%90%91%B0%F0%90%91%91%F0%90%91%B9%F0%90%91%90%F0%90%91%A7%F0%90%91%94%F0%90%91%A0%E2%8A%99%F0%90%91%AB%F0%90%91%99%F0%90%91%AD%E2%9F%A9-5A659C?style=for-the-badge)
 
 > *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same type; the distance between them is an integer."*
 
