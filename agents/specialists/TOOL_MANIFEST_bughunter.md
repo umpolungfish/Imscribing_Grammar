@@ -9,6 +9,7 @@ Live findings: p4rapend/scan_report.md, p4rapend/MOZILLA_WEB_FINDING_2026.md
 | Tool | Purpose | Pipeline stage | Verification |
 |---|---|---|---|
 | b4_diff_scanner.py | B4 differential scan of target pair | 1 probe | μ∘δ=id parity; Lean twin |
+| binary_closure_parser.py | binary container closure auditor (ELF/PE/Mach-O/generic; CWE-125/190/754/787/835 cells, dynamic-section lane) | 1 probe | parity testbed 25/25; live 12/12 clean; catalog-registered (distance 0.0 to scanner family); ob3ect PASS; kernel-elaborated Lean scaffold (lake env lean EXIT=0, ERRORS=0) |
 | live_scan.py | SAFE transport/safety wrapper | 1 probe | read-only enforcement |
 | braid_race_enumerator.py | interleaving/race enumeration | 4 race | race_testbed zero-FP |
 | parity_testbed.py | split/fuse identity check | 2 verify | B4 round-trip |

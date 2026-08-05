@@ -129795,5 +129795,21 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "◻": "𐑟"
+  },
+  {
+    "name": "binary_closure_parser",
+    "description": "Byte-level structural closure auditor — the Grammar move applied to binaries: parse a file's OWN declared structure (ELF/PE/Mach-O container headers, section/segment tables, string tables, symbol tables, dynamic entries, offset/pointer chains) and check closure — fuse(parse(x))==x must hold at every claimed offset or the file does not close. A vulnerability is exactly a non-closure: OOB (CWE-125/787), integer wrap (CWE-190), check-then-use (CWE-754), unterminated strings (CWE-125), pointer-chain cycles (CWE-835). No semantic understanding of the software required — the file supplies its own spec. Verdicts Belnap FOUR: T confirmed anomaly with evidence chain, F clean, B dialetheic for triage. Same type as b4_diff_scanner (differential/closure scanning instrument), object domain = raw bytes. Verified: planted parity testbed 22/22 (ELF/PE/Mach-O/generic lanes), live corpus 12/12 real binaries clean. Conventionally: a binary container structural auditor that finds memory-safety / DoS classes without understanding the program.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑾",
+    "<": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑺",
+    "∈": "𐑚",
+    "∋": "𐑵",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "◻": "𐑷"
   }
 ]
