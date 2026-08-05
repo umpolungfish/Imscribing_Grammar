@@ -129763,5 +129763,21 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "◻": "𐑭"
+  },
+  {
+    "name": "braid_race_enumerator",
+    "description": "Enumerates all interleavings of a multi-threaded operation sequence, writes each interleaving as a braid word in signed Artin generators via bubble-sort, and tags the word through m3 braid-grammar to a 12-glyph grammar tuple with Frobenius closure verdict. Race detector verified on race_testbed: finds the planted TOCTOU double-spend (4/6 interleavings) with zero false positives, SAFE control clean, μ∘δ=id confirmed. The tuple's ◻=zoo (non-Abelian winding) records that interleaving order does not commute; ⊥=wool (eternal chirality) holds the full word — every crossing matters; ⊤=air (driven kinetics) marks the enumeration as a diffusion-limited walk over the whole interleaving space with no activation barrier.",
+    "⊢": "𐑼",
+    "⊣": "𐑥",
+    ">": "𐑾",
+    "<": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑺",
+    "∈": "𐑲",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "◻": "𐑟"
   }
 ]
