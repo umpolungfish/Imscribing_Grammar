@@ -1,14 +1,27 @@
-bughunter: read IG_PROVIDER/IG_MODEL like every other operator
+Specialist prompts: affirmative, minimal, instructive
 
-The launcher's --model help said "Taken from $IG_PROVIDER and $IG_MODEL", and
-it was not. --model defaulted to None and nothing read the environment, so a
-flagless run fell through to the base constructor's hardcoded default and ignored
-the shell's provider entirely — the env every other operator honours and the
-whole constellation is configured through.
+Rewrote the two prompts that actually run — heterodox and bughunter — to say
+what to do rather than what to avoid. A rule phrased as a prohibition asks the
+model to hold the forbidden thing in mind, and it signals that the affirmative
+form was not made clear enough. Every negation is recast into the positive
+command that makes it unneeded.
 
-Resolution copied from the working operators: absent --model, read IG_MODEL and
-IG_PROVIDER, compose provider:model, and exit with the same clear instruction
-when IG_MODEL is unset. os was not even imported; it is now.
+Heterodox drops from ten prose sections to five (role, epistemic_stance, method,
+commitments, output), about a third shorter. The epistemic stance stays as the
+author wrote it. "Never a verdict before the check" becomes "reach a verdict
+after the check"; "unprovable does not appear" becomes "report the budget a hard
+thing will take"; the six-step lattice loop and the blending section fold into
+one method paragraph; four trailing sections merge into one output block.
 
-check_tools_deep.py now asserts every launcher's source reads IG_MODEL, so a
-launcher that silently ignores the environment fails the check rather than a run.
+The bughunter constitution keeps its reference material — tuple table, email
+template, invocations, live ledger — and recasts the mission, pipeline, and
+discipline into affirmatives. "SAFE mode only: no state change, no auth" becomes
+"issue read-only GET, leaving state, auth, and data untouched"; "Terminal state:
+no send" becomes "prepared and handed to the human, who sends"; the WAIT protocol
+states the standing plainly instead of listing what is undone.
+
+Also in this change: the Tesla precedent is reframed from "skip bot-blocked
+programs" to "an edge block is a routing problem — try the battery's alternate
+routes before setting a program aside", and edge_probe in bughunter_agent.py
+carries edge-gated hosts forward to be routed around rather than dropping them,
+always within scope.
