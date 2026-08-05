@@ -95,6 +95,44 @@ import sys
 import textwrap
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Tuple
+from pathlib import Path
+# ── the emergence seed store ────────────────────────────────────────────────
+# One file, read by the tool that reports on it and written by the tool that
+# produces it. The frontier is a claim about an accumulated landscape; holding
+# the seeds in a process variable made that claim unstateable.
+# scripts/ -> imscribing_grammar/ -> imsgct/, where ig-docs lives. The store
+# is the constellation's, not this repo's: the frontier spans the landscape.
+_EMERGENCE_SEEDS = Path(__file__).resolve().parents[2] / "ig-docs" / "emergence_seeds.json"
+
+
+def _load_emergence_seeds() -> List[Dict[str, Any]]:
+    """Every seeded conflict pair on disk. A missing or unreadable store is an
+    empty landscape, not an error: the frontier is still well defined over the
+    session's own pairs."""
+    try:
+        with open(_EMERGENCE_SEEDS, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+    except Exception:
+        return []
+    seeds = data.get("seeds", data) if isinstance(data, dict) else data
+    return [s for s in seeds if isinstance(s, dict)]
+
+
+def _persist_emergence_seed(seed: Dict[str, Any]) -> None:
+    """Append a pair, replacing any earlier round on the same (holistic,
+    compositional) address so a recomputation corrects the record rather than
+    doubling it."""
+    seeds = _load_emergence_seeds()
+    key = (seed.get("holistic"), seed.get("compositional"))
+    seeds = [s for s in seeds if (s.get("holistic"), s.get("compositional")) != key]
+    seeds.append(seed)
+    try:
+        _EMERGENCE_SEEDS.parent.mkdir(parents=True, exist_ok=True)
+        with open(_EMERGENCE_SEEDS, "w", encoding="utf-8") as fh:
+            json.dump(seeds, fh, ensure_ascii=False, indent=2)
+    except Exception:
+        pass  # a read-only store must not break the computation it records
+
 
 try:
     from rich.console import Console as _RichConsole
@@ -2274,6 +2312,7 @@ def _build_system_prompt(catalog: "SessionCatalog") -> str:
 # ── Data structures ───────────────────────────────────────────────────────────
 
 @dataclass
+
 class Insight:
     text: str
     plane: str          # TOPO / DIAPH / ONTO
@@ -4669,44 +4708,100 @@ class ToolDispatcher:
             ),
         }
 
-        # Register for emergence_frontier tracking
-        self._conflict_pairs.append({
-            "name_holistic": name_holistic,
-            "name_compositional": name_compositional,
-            "conflict_set": conflict_set,
+        # Register for emergence_frontier tracking, in memory AND on disk.
+        # In-memory alone was the defect: the frontier could only ever see pairs
+        # computed inside one process, so a caller that seeded three pairs and
+        # then asked for the frontier in a later turn got "no computations yet".
+        # The seeds are the accumulated record of the landscape, not a scratch
+        # variable, so they belong in a file the tool reads back.
+        _asp = [c["primitive"] for c in conflicts if c.get("conflict_type") == "aspirational"]
+        _red = [c["primitive"] for c in conflicts if c.get("conflict_type") == "reductive"]
+        _seed = {
+            "holistic": name_holistic,
+            "compositional": name_compositional,
             "d_c": round(d_c, 4),
+            "aspirational": _asp,
+            "reductive": _red,
+            "conflict_set": conflict_set,
             "veracity_class": veracity_class,
-        })
+        }
+        self._conflict_pairs.append(_seed)
+        _persist_emergence_seed(_seed)
 
         return result
 
     def _emergence_frontier(self) -> Dict[str, Any]:
         """
-        Report which primitives appear most frequently in conflict sets across all
-        compute_conflict_distance calls in this session.
+        Report which primitives appear most frequently in conflict sets, over the
+        persisted seed store unioned with this session's own pairs.
+
+        It used to read the session list alone, which made the tool's contract
+        impossible to satisfy: the frontier is a statement about an accumulated
+        landscape, and a stateless reader can only ever see one process's worth
+        of it. Seeds now persist, so a frontier computed today includes the pairs
+        seeded yesterday, and a session that seeds nothing still reports the
+        landscape rather than an empty list.
         """
-        if not self._conflict_pairs:
+        pairs = _load_emergence_seeds()
+        _seen = {(s.get("holistic"), s.get("compositional")) for s in pairs}
+        for pair in self._conflict_pairs:
+            key = (pair.get("holistic"), pair.get("compositional"))
+            if key not in _seen:
+                pairs.append(pair)
+                _seen.add(key)
+
+        if not pairs:
             return {
                 "status": "ok",
                 "frontier": [],
-                "note": "No conflict distance computations in this session yet. "
+                "note": "No conflict pairs seeded yet, here or in the store. "
                         "Call compute_conflict_distance on holistic/compositional encoding pairs first.",
             }
 
         from collections import Counter
         counter: Counter = Counter()
-        for pair in self._conflict_pairs:
-            for p in pair["conflict_set"]:
+        asp_counter: Counter = Counter()
+        red_counter: Counter = Counter()
+        for pair in pairs:
+            for p in pair.get("aspirational", []):
+                asp_counter[p] += 1
+            for p in pair.get("reductive", []):
+                red_counter[p] += 1
+            cs = pair.get("conflict_set")
+            if cs is None:
+                cs = list(pair.get("aspirational", [])) + list(pair.get("reductive", []))
+            for p in cs:
                 counter[p] += 1
 
         frontier = [
-            {"primitive": p, "conflict_count": count, "fraction": round(count / len(self._conflict_pairs), 3)}
+            {"primitive": p, "conflict_count": count, "fraction": round(count / len(pairs), 3)}
             for p, count in counter.most_common()
         ]
 
         # Summary statistics
-        total_pairs = len(self._conflict_pairs)
-        classes = Counter(pair["veracity_class"] for pair in self._conflict_pairs)
+        total_pairs = len(pairs)
+        # Seeds written before the store carried a class still have a d_c, and the
+        # class is a function of it, so it is derived rather than reported unknown.
+        def _veracity(pair):
+            v = pair.get("veracity_class")
+            if v:
+                return v
+            d = pair.get("d_c")
+            if d is None:
+                return "unknown"
+            if d == 0:
+                return "transparent"
+            if d <= 2 ** 0.5:
+                return "near-grounded"
+            if d <= 6 ** 0.5:
+                return "partial-emergence"
+            return "aspirational"
+
+        classes = Counter(_veracity(p) for p in pairs)
+        # A primitive that claims in BOTH directions across the landscape is
+        # contested rather than merely open; the set of those is the finding the
+        # frontier is usually asked for.
+        two_faced = sorted(set(asp_counter) & set(red_counter))
 
         return {
             "status": "ok",
@@ -4714,6 +4809,10 @@ class ToolDispatcher:
             "veracity_distribution": dict(classes),
             "frontier": frontier,
             "frontier_primitives": [f["primitive"] for f in frontier],
+            "aspirational_counts": dict(asp_counter.most_common()),
+            "reductive_counts": dict(red_counter.most_common()),
+            "two_faced": two_faced,
+            "seed_store": str(_EMERGENCE_SEEDS),
             "interpretation": (
                 f"Emergence frontier across {total_pairs} conflict pair(s): "
                 + (

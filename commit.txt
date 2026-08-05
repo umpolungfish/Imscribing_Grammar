@@ -1,30 +1,28 @@
-Name every tool in the inline manifest, not just the first line's
+The emergence frontier reads its own seeds
 
-render_inline said "Every tool is still named here, so nothing is invisible."
-That was not true. It read the FIRST LINE of each curated entry and took up to
-four backticked spans from it, so not one of MoDoT's ~90 ./ask flags, none of
-the ~50 structural verbs, and none of the imasm sub-verbs appeared in any
-manifest. A specialist could not know they existed without a file_read it had no
-reason to make, which is why the flag menu kept being pasted in by hand.
+emergence_frontier reported on a list held in the process that computed it, so
+the tool's contract could not be met: the frontier is a claim about an
+accumulated landscape, and a stateless reader only ever sees one session's worth
+of one. A caller that seeded pairs and asked for the frontier a turn later got
+"no conflict distance computations in this session yet", and the eighteen-seed
+file it was meant to summarise was never opened.
 
-The docstring is why nobody caught it: it asserted the property the code did not
-have, so reading the code looked like confirming it.
+compute_conflict_distance now writes each pair to ig-docs/emergence_seeds.json
+with the aspirational/reductive split the frontier actually reports on, replacing
+any earlier round on the same holistic/compositional address so a recomputation
+corrects the record instead of doubling it. emergence_frontier reads that store,
+unions the session's own pairs onto it, and counts the two directions separately,
+which is what makes the two-faced set — the primitives that claim in BOTH
+directions — computable rather than assembled by hand afterwards.
 
-entry_names now harvests the whole body — backticked spans (head, plus any token
-carrying a name shape, plus short lowercase phrases like `la lookup`), long-form
-flags, dot-separated verb runs, parenthetical enumerations such as the PARI/GP
-and calc function lists, bare file names, hyphenated commands, and identifiers
-carrying a digit, which is the shape that catches cl8nk, cl9nk, ob3ect and
-imasm16_3 written bare in prose.
+The store is the constellation's ig-docs, not this repo's: the landscape spans
+repositories, and pointing it at imscribing_grammar/ig-docs silently found
+nothing.
 
-Names are cheap. Prose and argument shapes are what cost, and they still live one
-file_read away in TOOLS_<domain>.md, so the reason the detail was pulled out of
-the prompt in the first place still holds.
+Verification: run against the store with an EMPTY session it reproduces the
+recorded eighteen-pair frontier exactly, both counts and the ten-element
+two-faced set. The hand recomputation and the tool now agree, so the recorded
+baseline is a check on the tool and not only on the script that stood in for it.
 
-The domain-marker check was failing on math, chembio and editorial before any of
-this and was being read as ambient drift. It was not drift. It was this defect,
-reported accurately, every run. All five domains are green now.
-
-m3iosis.paranumber is retired as a marker: it names a module that no longer
-exists, which the generator itself reports as unresolvable. A marker asserting a
-dead surface fails forever and teaches nothing.
+Seeds written before the store carried a veracity class keep their d_c, and the
+class is a function of d_c, so it is derived rather than reported unknown.
