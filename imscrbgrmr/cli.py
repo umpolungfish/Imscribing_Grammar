@@ -203,20 +203,13 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
         with open(json_path, "r", encoding="utf-8") as f:
             entries = json.load(f)
 
-        # Merge live crawler catalog (writes here via _persist_to_catalog)
-        _live_path = Path.home() / ".imscrbgrmr" / "catalog.json"
-        _seen_names = {e.get("name") for e in entries if isinstance(e, dict)}
-        if _live_path.exists():
-            try:
-                with open(_live_path, "r", encoding="utf-8") as _lf:
-                    _live = json.load(_lf)
-                _live_imscriptions = _live.get("imscriptions", _live) if isinstance(_live, dict) else _live
-                for _e in _live_imscriptions:
-                    if isinstance(_e, dict) and _e.get("name") not in _seen_names:
-                        entries.append(_e)
-                        _seen_names.add(_e.get("name"))
-            except Exception:
-                pass
+        # No second store. This used to merge ~/.imscrbgrmr/catalog.json, which
+        # made `list` see a strictly larger namespace than every other command:
+        # an entry the crawler had written showed in the table, could be read off
+        # the screen, and could not be stripped, restored or compared, because
+        # the ixcription commands read the canonical catalog alone. Those 41
+        # entries are merged into IG_catalog.json; the crawler's file is a cache
+        # to be folded in, never a source `list` reads behind the tools' backs.
 
         total = len(entries)
         if name_filter:

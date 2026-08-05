@@ -563,11 +563,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "05e124edee91dc5f"
   },
+  "Antisymmetric_Information_Paracomplete_Oscillating_Operator": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "becb584c56395aba"
+  },
   "Arrow's_Paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8900bb9230764846"
+  },
+  "Asymmetric_Information_Complete_Negative_Operator_Valued": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "9ac4da420333d80d"
+  },
+  "Asymmetric_Information_Complete_Positive_Operator_Valued": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "b60f274c9155430f"
   },
   "AtHv1_primed": {
     "changes": 0,
@@ -983,6 +1001,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4ae41d30418b5111"
   },
+  "Holomorphic_Semiotic_Operator_Algebra": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "6395af722b4aedcc"
+  },
   "Hume's_Problem_of_Induction": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -1349,6 +1373,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f08b131253565633"
   },
+  "Q_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "deb463018decd5b2"
+  },
   "Quine's_Paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -1432,6 +1462,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2f0bccef38c8540f"
+  },
+  "Symmetric_Information_Complete_Negative_Operator_Valued": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "f0d83f6559e9a01e"
   },
   "TA_hotspot_composition_puzzle": {
     "changes": 0,
@@ -2656,6 +2692,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c3254f944258a8eb"
+  },
+  "amide_dimer": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "45cf68ba73a763c4"
   },
   "amine_fg": {
     "changes": 0,
@@ -4271,6 +4313,12 @@
     "last_changed": "2026-07-30T15:14:02+00:00",
     "tuple_hash": "1a2770ab24a9092e"
   },
+  "asymmetric_paracomplete_negative_static_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "59b53003b07fcaf6"
+  },
   "asymmetric_paracomplete_non_positive_operator_valued_measure": {
     "changes": 0,
     "first_seen": "2026-07-30T14:56:05+00:00",
@@ -4696,6 +4744,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "540c7e1807c11bc5"
+  },
+  "b4_factor_v2_engine": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "eb72ff4962c73e20"
+  },
+  "b4_measurement_projection": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "eb72ff4962c73e20"
+  },
+  "b4_t_optimizer": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "eb72ff4962c73e20"
   },
   "b_0": {
     "changes": 0,
@@ -5206,6 +5272,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "53c81fe172b11d9b"
+  },
+  "belnap_tensor_simplifier": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "e1063716b466d5bb"
   },
   "belyi_cuspidalization": {
     "changes": 0,
@@ -12215,6 +12287,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fbd87aefd959f692"
   },
+  "d2048_rsa_factoring_programme_complete": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "cdee8448cc28297a"
+  },
   "d2048_sic_closed_ring": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17128,6 +17206,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f3ff93192ca31ee1"
+  },
+  "fqh_moore_read": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "fad49f09d03aaeac"
   },
   "fractal_structure": {
     "changes": 0,
@@ -24485,6 +24569,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "63928b42c430fa6d"
   },
+  "kitaev_chain_majorana": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "5a8dfdbce1e9e0b2"
+  },
   "kleene_rosser_paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24598,6 +24688,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5f375e5ebb47ede5"
+  },
+  "kp1_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "8b3e0a0c0d02d06a"
+  },
+  "kp2_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "8b3e0a0c0d02d06a"
+  },
+  "kp3_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "8b3e0a0c0d02d06a"
   },
   "kratom": {
     "changes": 0,
@@ -28103,6 +28211,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a85e2afea3e2a529"
   },
+  "methyl_anion_nucleophile_CH3": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "cbe2d99c72f39480"
+  },
+  "methyl_cation_electrophile_CH3": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "cbe2d99c72f39480"
+  },
   "metropolis_ising": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -30101,6 +30221,42 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2d02eff8c86c6444"
   },
+  "nitroso_radical_anion_\u03c0_cavitand_cage_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "d58f8894f8ca90c1"
+  },
+  "nitroso_radical_anion_\u03c0_cryptand_cage_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "d58f8894f8ca90c1"
+  },
+  "nitroso_radical_calixarene_anion_\u03c0_sandwich_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "8ad7d46f6e41bf3c"
+  },
+  "nitroso_radical_crown_ether_host_guest_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "40e8c216bb075530"
+  },
+  "nitroso_radical_cucurbituril_anion_rotaxane_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "d58f8894f8ca90c1"
+  },
+  "nitroso_radical_redox_imscription_pair": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "a25e68fac856dfb8"
+  },
   "nkisi_kongo": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -30676,6 +30832,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9d7540aeb86caed2"
+  },
+  "obtaining_\u2208\u22a2\u22a5<\u25fb><\u229e\u2208\u2299\u22a3<\u22c8\u229e\u22a3<<>\u22a2\u220b\u229e\u22a2\u22a3<\u220b\u220b\u22a5\u2208<\u22a3\u229e<\u22a3\u25fb\u220b\u22c8\u22a3<\u22a4\u229e\u22a3\u22a3\u22a5\u2208\u220b\u22a4\u22a2\u22a3\u25fb<\u25fb>\u22c8\u22c8>\u220b\u2299\u22a3\u2299\u22a4\u2208\u22a3<\u22a2_from": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "1081dfbc4acebd47"
   },
   "occupation_civilization_coupled": {
     "changes": 0,
@@ -33917,6 +34079,24 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "81d4279b2fa0b242"
   },
+  "pk_kp1_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "9dbee977875ee697"
+  },
+  "pk_kp2_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "9dbee977875ee697"
+  },
+  "pk_kp3_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "9dbee977875ee697"
+  },
   "planck_constant": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34919,6 +35099,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c4cfe61891d01e15"
   },
+  "profit_via_use": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "ade9f984c4086e48"
+  },
   "programmed_cell_death": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35621,6 +35807,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "63ad714e0c58bcd0"
   },
+  "qm_shadow_of_fde": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "f131f982a28a8b3f"
+  },
   "quad_join_de_inf_ax_higgs": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35866,6 +36058,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2806b891875cd59a"
+  },
+  "qubit_logical": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "fd3a3932bf53928d"
   },
   "quersitanus_phantom_plants": {
     "changes": 0,
@@ -38297,6 +38495,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "17b006fa78af4f91"
   },
+  "secp256k1_horn_torus_dlog": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "aa82e561c794e741"
+  },
   "secretome": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39617,6 +39821,24 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e29d8bafac095de2"
   },
+  "sk_kp1_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "5aab2ae719f0aa4c"
+  },
+  "sk_kp2_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "5aab2ae719f0aa4c"
+  },
+  "sk_kp3_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "5aab2ae719f0aa4c"
+  },
   "skin_boundary": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40192,6 +40414,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d0b0f3614b3899d5"
+  },
+  "spin_singlet": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "ac611878ee0ca3a7"
   },
   "spinnerflask": {
     "changes": 0,
@@ -44237,6 +44465,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8348a23e20db45b9"
   },
+  "topological_insulator_bi2se3": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "08e347112d7e5431"
+  },
   "topological_invariant": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -47003,6 +47237,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bbaa490ff735ca34"
   },
+  "winding_period_finder": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "c549438bc8df87dd"
+  },
   "wing_delivery_drone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48406,6 +48646,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "940967bdadf6f3cc"
+  },
+  "\ud801\udc66\ud801\udc78\ud801\udc7d\ud801\udc57\ud801\udc50\ud801\udc67\ud801\udc54\ud801\udc75\u2299\ud801\udc56\ud801\udc59\ud801\udc77": {
+    "changes": 0,
+    "first_seen": "2026-08-05T03:21:28+00:00",
+    "last_changed": "2026-08-05T03:21:28+00:00",
+    "tuple_hash": "1c38c80e02d06cc2"
   },
   "\ud801\udc6a": {
     "changes": 0,
