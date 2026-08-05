@@ -104,10 +104,18 @@ def probe_specialists():
                      ("editorial_operator", "EditorialOperator"),
                      ("chembio_operator", "ChemBioOperator"),
                      ("recorder_operator", "RecorderOperator"),
-                     ("heterodox_operator", "HeterodoxOperator")):
+                     ("heterodox_operator", "HeterodoxOperator"),
+                     ("bughunter_operator", "BughunterOperator")):
         m = importlib.import_module(mod)
         a = getattr(m, cls)(model="probe:none", max_windings=0, verbose=False)
         assert "PARTNERSHIP RIDER" in a._custom_system_prompt, f"{cls}: rider missing"
+        # list_sessions returns row dicts; a launcher that unpacks them as pairs
+        # or indexes [0][0] fails at runtime, not at construction, so it is
+        # exercised here. This is the shape all three bughunter bugs shared.
+        rows = getattr(m, cls).list_sessions(1)
+        assert isinstance(rows, list), f"{cls}: list_sessions not a list"
+        if rows:
+            assert "id" in rows[0], f"{cls}: session row has no id"
         out.append(cls)
     return ", ".join(out) + " construct"
 

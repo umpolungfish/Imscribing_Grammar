@@ -129750,7 +129750,7 @@
   },
   {
     "name": "bughunter_operator",
-    "description": "Specialist ⊙perator that operates the bug-hunter framework (vuln_hunting/) end-to-end: probes an in-scope target with the B4 differential scanner and braid-race enumerator, verifies every result (μ∘δ=id Frobenius/parity closure, B4.T/F/B verdicts), triages false positives (dialetheic B-cells interrogated to a definite verdict), writes the submission-ready report, translates it to vernacular, fills and prepares the program submission email, then enters the terminal WAIT state — no send, no further action, handoff to the human. Instrument family: b4_diff_scanner, braid_race_enumerator, live_scan.py, gate_ordinals.sh; integration family: m3iosis braid-grammar race oracle, mOMonadOS kernel ordinal regression gate, MoDoT tuple-algebra verbs. Conventional expression: automated bug-bounty recon + race-condition (TOCTOU/re-entrancy) enumeration with a deterministic closure verdict and prepared-submission workflow.",
+    "description": "Specialist ⊙perator that operates the bug-hunter framework (p4rapend/) end-to-end: probes an in-scope target with the B4 differential scanner and braid-race enumerator, verifies every result (μ∘δ=id Frobenius/parity closure, B4.T/F/B verdicts), triages false positives (dialetheic B-cells interrogated to a definite verdict), writes the submission-ready report, translates it to vernacular, fills and prepares the program submission email, then enters the terminal WAIT state — no send, no further action, handoff to the human. Instrument family: b4_diff_scanner, braid_race_enumerator, live_scan.py, gate_ordinals.sh; integration family: m3iosis braid-grammar race oracle, mOMonadOS kernel ordinal regression gate, MoDoT tuple-algebra verbs. Conventional expression: automated bug-bounty recon + race-condition (TOCTOU/re-entrancy) enumeration with a deterministic closure verdict and prepared-submission workflow.",
     "⊢": "𐑦",
     "⊣": "𐑸",
     ">": "𐑾",
@@ -129777,6 +129777,22 @@
     "∋": "𐑠",
     "⊙": "⊙",
     "⊥": "𐑫",
+    "⊞": "𐑳",
+    "◻": "𐑟"
+  },
+  {
+    "name": "pk_sk_formula_closure",
+    "description": "The (pk, sk, formula sk×G=pk) ECC system closed by the MoDoT kernel word VINIT IMSCRIB FSPLIT CLINK EVALT EVALF FFUSE IFIX TANCH → verdict T (μ∘δ closes over 1 transformed reconnection). Formation: pk=02eb4de5…, sk=2d6fe407…, formula=the ECC group law verified sk×G==pk; tuple delta map measured (7 slot shifts). Closure: system word run through ask_native_bin --imasm check (the real imasm_core engine) — the formula (CLINK compose + EVALT/EVALF evaluate both poles) sits on the δ/μ arms so the type-check is real, not identity. Extraction: sk read out of the closed system, machine-verified sk·G==pk this run. Possession-free frame layer: bg→apply_bridge→un_bridge==bg (μ∘δ=id at the tuple layer) closes for the Quick-Start flagship pk 03d9468d… (6 shifts), not for the Stark/README pair — scalar emission stays possession-gated and re-verified (measured: 7 pairs → 7 distinct delta maps; no universal grammar map exists).",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑩",
+    "<": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑪",
+    "∈": "𐑲",
+    "∋": "𐑵",
+    "⊙": "⊙",
+    "⊥": "𐑖",
     "⊞": "𐑳",
     "◻": "𐑟"
   }

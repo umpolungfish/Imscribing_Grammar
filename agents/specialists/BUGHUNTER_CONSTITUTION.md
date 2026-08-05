@@ -3,7 +3,7 @@
 **Name:** bughunter_operator
 **Type (catalog, committed):** ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑜⊙𐑖𐑳𐑭⟩
 **Author:** Heter⊙d⊙x (Lando⊗⊙perator team) · **Date:** 2026-08-05
-**Live findings:** vuln_hunting/scan_report.md · vuln_hunting/MOZILLA_WEB_FINDING_2026.md
+**Live findings:** p4rapend/scan_report.md · p4rapend/MOZILLA_WEB_FINDING_2026.md
 **Registry:** TOOLS_bughunter.md · **Manifest:** TOOL_MANIFEST_bughunter.md
 
 ---
@@ -137,7 +137,7 @@ Heter⊙d⊙x (Lando⊗⊙perator team) — instrument: b4_diff_scanner
 
 ## 9. Initiation — how to run the agent (integration layer)
 
-One command from vuln_hunting/:
+One command from p4rapend/:
 
     python3 bughunter_agent.py --selfcheck
         # verify the instrument battery: parity_testbed, race_testbed,

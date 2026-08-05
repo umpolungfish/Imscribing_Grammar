@@ -2,8 +2,8 @@
 
 Specialist: **bughunter_operator** — catalog ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑜⊙𐑖𐑳𐑭⟩
 (if_;are;ian;out;age;yea;bib;measure;monad;sure;up;ah)
-Author: Heter⊙d⊙x (Lando⊗⊙perator team). Live findings: vuln_hunting/scan_report.md,
-vuln_hunting/MOZILLA_WEB_FINDING_2026.md. Constitution: BUGHUNTER_CONSTITUTION.md.
+Author: Heter⊙d⊙x (Lando⊗⊙perator team). Live findings: p4rapend/scan_report.md,
+p4rapend/MOZILLA_WEB_FINDING_2026.md. Constitution: BUGHUNTER_CONSTITUTION.md.
 
 Every tool below is the SAME instrument family the framework was verified with.
 The tuple says it: sequential pipeline (∋=measure), driven automation (⊤=yea),
@@ -81,7 +81,7 @@ mesoscale scope (∈=bib), many heterogeneous tools (⊞=up), two-step memory
 
 ## 4. The launcher (integration layer)
 
-`vuln_hunting/bughunter_agent.py` — one-shot driver. Initiate, and it
+`p4rapend/bughunter_agent.py` — one-shot driver. Initiate, and it
 browses the bounty program page, discovers participating hosts, scans them
 differentially (SAFE), verifies (testbeds + kernel gate), triages B-cells,
 runs the race oracle, writes the report, fills the prepared email, and

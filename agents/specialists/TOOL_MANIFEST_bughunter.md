@@ -2,7 +2,7 @@
 
 Specialist: **bughunter_operator** — ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑜⊙𐑖𐑳𐑭⟩
 Constitution: BUGHUNTER_CONSTITUTION.md · Registry: TOOLS_bughunter.md
-Live findings: vuln_hunting/scan_report.md, vuln_hunting/MOZILLA_WEB_FINDING_2026.md
+Live findings: p4rapend/scan_report.md, p4rapend/MOZILLA_WEB_FINDING_2026.md
 
 ## Tool registry
 

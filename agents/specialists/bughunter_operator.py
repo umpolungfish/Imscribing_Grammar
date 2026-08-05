@@ -44,7 +44,7 @@ def _load_constitution() -> str:
 
 
 class BughunterOperator(TrueAgenticAgent):
-    """The bug-hunter specialist. Operates the vuln_hunting framework
+    """The bug-hunter specialist. Operates the p4rapend framework
     end-to-end: browse bounty sites, discover participating hosts, scan
     (SAFE), verify, triage, race, report, translate, email, WAIT.
     Session-aware: auto-saves trajectory and message history."""
@@ -114,8 +114,10 @@ def main():
     a = p.parse_args()
 
     if a.list_sessions:
-        for sid, meta in BughunterOperator.list_sessions():
-            print(f"{sid}\t{meta.get('task', '')[:80]}")
+        # list_sessions returns a list of row dicts, not (id, meta) pairs.
+        for s in BughunterOperator.list_sessions():
+            print(f"{s['id']}\t{s.get('created_at', '')[:19]}\t"
+                  f"{s.get('task', '')[:60]}")
         return
 
     kw = {}
@@ -123,27 +125,42 @@ def main():
         kw["model"] = a.model
     if a.max_windings:
         kw["max_windings"] = a.max_windings
+    # The base constructor names it max_think_tokens; max_tokens is the flag,
+    # not the parameter, and passing the flag name raised TypeError on every run.
     if a.max_tokens:
-        kw["max_tokens"] = a.max_tokens
+        kw["max_think_tokens"] = a.max_tokens
     if a.base_url:
         kw["base_url"] = a.base_url
     if a.api_key:
         kw["api_key"] = a.api_key
-    if a.output:
-        kw["output_path"] = a.output
-    if a.quiet:
-        kw["quiet"] = True
+    # verbose is the base's knob; quiet is this launcher's flag, resolved here.
+    # output has no constructor slot — the trajectory is written after the run.
+    kw["verbose"] = not a.quiet
 
     op = BughunterOperator(**kw)
 
-    sid = a.session_id or (BughunterOperator.list_sessions(1)[0][0] if a.continue_ else "")
+    # list_sessions returns row dicts; the most recent id is [0]["id"], not [0][0].
+    _recent = BughunterOperator.list_sessions(1)
+    sid = a.session_id or (_recent[0]["id"] if (a.continue_ and _recent) else "")
     if sid:
         op._session_id = sid
 
     def _one(task):
-        asyncio.run(op.run(task))
+        result = asyncio.run(op.run(task))
         if not a.no_save:
             op.save_session(task)
+        # --output was accepted and then ignored; honour it. The trajectory is
+        # written after the run, as the other operators do, not passed in.
+        if a.output:
+            import json as _json
+            with open(a.output, "w", encoding="utf-8") as fh:
+                _json.dump({
+                    "specialist": "bughunter_operator",
+                    "task": task,
+                    "result": result,
+                    "structural_type": getattr(op, "structural_type", None),
+                }, fh, indent=2, ensure_ascii=False)
+            print(f"  trajectory saved to {a.output}")
 
     if a.interactive or not a.task:
         print("bughunter operator — interactive. Enter a task, or 'quit' to end.")
