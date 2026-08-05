@@ -129008,20 +129008,9 @@
     "∈": "𐑲",
     "∋": "𐑵",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑒",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "Φ_NP_duality_relative",
@@ -129035,20 +129024,9 @@
     "∈": "𐑲",
     "∋": "𐑵",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑒",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "Φ_join_NP",
@@ -129062,20 +129040,9 @@
     "∈": "𐑲",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "Φ_equals_NP_assumption",
@@ -129089,20 +129056,9 @@
     "∈": "𐑲",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑕",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑕",
+    "◻": "𐑴"
   },
   {
     "name": "Φ_not_equals_NP_claim",
@@ -129116,20 +129072,9 @@
     "∈": "𐑚",
     "∋": "𐑜",
     "⊙": "𐑢",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "Φ_NP_tensor",
@@ -129143,20 +129088,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "Γ_aleph_rep",
@@ -129170,20 +129104,9 @@
     "∈": "𐑲",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "Γ_beth_rep",
@@ -129197,20 +129120,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "ɢ_broad_rep",
@@ -129224,20 +129136,9 @@
     "∈": "𐑚",
     "∋": "𐑵",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "ɢ_and_rep",
@@ -129251,20 +129152,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "ɢ",
@@ -129278,20 +129168,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑙",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑴"
   },
   {
     "name": "ƒ",
@@ -129305,20 +129184,9 @@
     "∈": "𐑲",
     "∋": "𐑝",
     "⊙": "⊙",
-    "◻": "𐑭",
-    "⊞": "𐑙",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑭"
   },
   {
     "name": "Ω_stability_proof_kernel*",
@@ -129332,20 +129200,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑻",
-    "◻": "𐑭",
-    "⊞": "𐑳",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑭"
   },
   {
     "name": "Holomorphic_Semiotic_Operator_Algebra",
@@ -129359,20 +129216,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑮",
-    "◻": "𐑭",
-    "⊞": "𐑕",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑕",
+    "◻": "𐑭"
   },
   {
     "name": "asymmetric_information_incomplete_negative_operator_valued",
@@ -129386,20 +129232,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "Asymmetric_Information_Complete_Negative_Operator_Valued",
@@ -129413,20 +129248,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑭",
-    "⊞": "𐑳",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑭"
   },
   {
     "name": "asymmetric_information_complete_negative_operator_valued",
@@ -129440,20 +129264,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑭",
-    "⊞": "𐑳",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑭"
   },
   {
     "name": "Asymmetric_Information_Complete_Positive_Operator_Valued",
@@ -129467,20 +129280,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "asymmetric_information_complete_positive_operator_valued",
@@ -129494,20 +129296,9 @@
     "∈": "𐑲",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "Symmetric_Information_Complete_Negative_Operator_Valued",
@@ -129521,20 +129312,9 @@
     "∈": "𐑔",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "symmetric_information_complete_negative_operator_valued",
@@ -129548,20 +129328,9 @@
     "∈": "𐑔",
     "∋": "𐑠",
     "⊙": "𐑻",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑫",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "Antisymmetric_Information_Paracomplete_Oscillating_Operator",
@@ -129575,20 +129344,9 @@
     "∈": "𐑔",
     "∋": "𐑠",
     "⊙": "⊙",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑒",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "asymmetric_paracomplete_negative_static_ovm",
@@ -129602,20 +129360,9 @@
     "∈": "𐑚",
     "∋": "𐑜",
     "⊙": "⊙",
-    "◻": "𐑭",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑭"
   },
   {
     "name": "profit_via_use",
@@ -129629,20 +129376,9 @@
     "∈": "𐑚",
     "∋": "𐑵",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "Q_secp256k1",
@@ -129656,20 +129392,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑮",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_redox_imscription_pair",
@@ -129683,20 +129408,9 @@
     "∈": "𐑔",
     "∋": "𐑠",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Molecular domain literal with no canonical entry",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "amide_dimer",
@@ -129710,20 +129424,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_anion_π_cavitand_cage_imscription",
@@ -129737,20 +129440,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_calixarene_anion_π_sandwich_imscription",
@@ -129764,20 +129456,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_crown_ether_host_guest_imscription",
@@ -129791,20 +129472,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_anion_π_cryptand_cage_imscription",
@@ -129818,20 +129488,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "nitroso_radical_cucurbituril_anion_rotaxane_imscription",
@@ -129845,20 +129504,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "methyl_anion_nucleophile_CH3",
@@ -129872,20 +129520,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "methyl_cation_electrophile_CH3",
@@ -129899,20 +129536,9 @@
     "∈": "𐑚",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical molecular domain catalog entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "spin_singlet",
@@ -129926,20 +129552,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical quantum domain entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "quantum",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑷"
   },
   {
     "name": "qubit_logical",
@@ -129953,20 +129568,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑷",
-    "⊞": "𐑳",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical quantum domain entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "quantum",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑷"
   },
   {
     "name": "kitaev_chain_majorana",
@@ -129980,20 +129584,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑭",
-    "⊞": "𐑙",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical quantum domain entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "quantum",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑙",
+    "◻": "𐑭"
   },
   {
     "name": "fqh_moore_read",
@@ -130007,20 +129600,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑟",
-    "⊞": "𐑳",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical quantum domain entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "quantum",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑟"
   },
   {
     "name": "topological_insulator_bi2se3",
@@ -130034,20 +129616,9 @@
     "∈": "𐑔",
     "∋": "𐑝",
     "⊙": "𐑢",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑓",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": "Canonical quantum domain entry (v0.4.0)",
-      "registered_by": "unknown",
-      "domain": "quantum",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "obtaining_∈⊢⊥<◻><⊞∈⊙⊣<⋈⊞⊣<<>⊢∋⊞⊢⊣<∋∋⊥∈<⊣⊞<⊣◻∋⋈⊣<⊤⊞⊣⊣⊥∈∋⊤⊢⊣◻<◻>⋈⋈>∋⊙⊣⊙⊤∈⊣<⊢_from",
@@ -130061,20 +129632,9 @@
     "∈": "𐑚",
     "∋": "𐑠",
     "⊙": "⊙",
-    "◻": "𐑴",
-    "⊞": "𐑳",
     "⊥": "𐑖",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "⊞": "𐑳",
+    "◻": "𐑴"
   },
   {
     "name": "𐑦𐑸𐑽𐑗𐑐𐑧𐑔𐑵⊙𐑖𐑙𐑷",
@@ -130090,17 +129650,22 @@
     "⊙": "⊙",
     "⊥": "𐑖",
     "⊞": "𐑙",
-    "◻": "𐑷",
-    "grounding": null,
-    "is_grounded": false,
-    "metadata": {
-      "grounding_status": "unverified",
-      "failed_primitives": [],
-      "override_reason": null,
-      "registered_by": "unknown",
-      "domain": "molecular",
-      "excluded_from_analogies": false,
-      "flagged_by": null
-    }
+    "◻": "𐑷"
+  },
+  {
+    "name": "seekpeek_pipeline",
+    "description": "1/16 winding bridge for secp256k1 on perfect horn torus (R=r, d=12, 16 sectors, 3 evaluators at [0,5,11], tilt=arctan(1/4)). Implements dual-layer bridge: Frame layer (δ: pk→bg→hqe, μ: un_bridge(hqe)→bg, verdict un_bridge(hqe)==imscription(pk)) and Scalar layer (δ: sk→pk=sk×G, μ: reconstruct P, verdict P==input PK). 6 Frobenius dual pairs shift at positions 2,3,5,7,9,11; 6 invariants at 0,1,4,6,8,10. Test suite: 28 passed. Frame always recoverable from PK; scalar only on verified possession.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑹",
+    "⋈": "𐑞",
+    "⊤": "𐑪",
+    "∈": "𐑚",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
   }
 ]
