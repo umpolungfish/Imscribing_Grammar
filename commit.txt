@@ -1,25 +1,14 @@
-Fix the bughunter specialist: crashing kwargs, and a dead workspace path
+bughunter: read IG_PROVIDER/IG_MODEL like every other operator
 
-Two faults, one that crashed on launch and one that would have misdirected the
-agent on every run.
+The launcher's --model help said "Taken from $IG_PROVIDER and $IG_MODEL", and
+it was not. --model defaulted to None and nothing read the environment, so a
+flagless run fell through to the base constructor's hardcoded default and ignored
+the shell's provider entirely — the env every other operator honours and the
+whole constellation is configured through.
 
-The launcher passed max_tokens to a base constructor that names the parameter
-max_think_tokens, so every invocation raised TypeError before doing anything.
-Along the same path, --list-sessions and --continue unpacked list_sessions()
-rows as (id, meta) pairs and indexed [0][0], but the method returns row dicts;
-both are corrected to read row["id"]. output was accepted and silently dropped;
-it now writes the trajectory after the run, as the other operators do, and quiet
-maps to verbose rather than a nonexistent kwarg.
+Resolution copied from the working operators: absent --model, read IG_MODEL and
+IG_PROVIDER, compose provider:model, and exit with the same clear instruction
+when IG_MODEL is unset. os was not even imported; it is now.
 
-The deeper fault: the specialist's whole instrument battery lives in p4rapend/,
-and the constitution, the registry, the manifest, the operator docstring, the
-agent's own exit message, and the catalog entry all still pointed at
-vuln_hunting/ — the directory's former name. An agent reading its constitution
-was told to run its tools from a directory that does not exist. All twelve
-references are updated; every path the constitution and registry name now
-resolves, and bughunter_agent.py --selfcheck passes all three lanes (parity,
-race, kernel ordinal gate).
-
-bughunter is added to check_tools_deep.py, which now also asserts each operator's
-list_sessions returns row dicts with an id — the exact shape the two unpack bugs
-violated, so a regression fails a check instead of a run.
+check_tools_deep.py now asserts every launcher's source reads IG_MODEL, so a
+launcher that silently ignores the environment fails the check rather than a run.

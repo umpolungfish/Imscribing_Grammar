@@ -25,6 +25,7 @@ Usage:
 from __future__ import annotations
 
 import asyncio
+import os
 import sys
 from pathlib import Path
 
@@ -112,6 +113,20 @@ def main():
     p.add_argument("--no-save", action="store_true",
                    help="Do not save the session.")
     a = p.parse_args()
+
+    # Resolve the model from IG_PROVIDER/IG_MODEL when --model is absent, as every
+    # other operator does. Without this the help text lied — it claimed the env
+    # was read — and a flagless run fell through to the base constructor's
+    # hardcoded default, ignoring the shell's provider entirely.
+    if not a.model:
+        _m = os.environ.get("IG_MODEL", "")
+        _pv = os.environ.get("IG_PROVIDER", "")
+        if not _m:
+            raise SystemExit(
+                "IG_MODEL is not set. Set IG_PROVIDER and IG_MODEL, or pass --model.\n"
+                "  export IG_PROVIDER=openrouter\n"
+                "  export IG_MODEL=<model-id>")
+        a.model = f"{_pv}:{_m}" if _pv and ":" not in _m else _m
 
     if a.list_sessions:
         # list_sessions returns a list of row dicts, not (id, meta) pairs.

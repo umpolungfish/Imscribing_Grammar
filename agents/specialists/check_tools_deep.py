@@ -112,6 +112,8 @@ def probe_specialists():
         # list_sessions returns row dicts; a launcher that unpacks them as pairs
         # or indexes [0][0] fails at runtime, not at construction, so it is
         # exercised here. This is the shape all three bughunter bugs shared.
+        src = Path(m.__file__).read_text()
+        assert "IG_MODEL" in src, f"{cls}: launcher never reads IG_MODEL"
         rows = getattr(m, cls).list_sessions(1)
         assert isinstance(rows, list), f"{cls}: list_sessions not a list"
         if rows:
