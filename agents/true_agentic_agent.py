@@ -266,8 +266,15 @@ class _LocalChatCompletions:
             model_path = gf_path
         elif model == "local":
             model_path = None
+        elif os.path.isdir(os.path.expanduser(model)):
+            # An explicit local model directory was passed as the model id.
+            model_path = os.path.expanduser(model)
         else:
-            model_path = model
+            # provider is local but the model id is a cloud slug (e.g. IG_MODEL left
+            # at deepseek/… while IG_PROVIDER=local). Do NOT treat that as a path.
+            # Resolve the dedicated local-model dir; fall back to LocalProvider's default.
+            _dir = os.environ.get("LOCAL_MODEL_PATH") or os.environ.get("MODOT_LOCAL_MODEL_DIR")
+            model_path = os.path.expanduser(_dir) if _dir else None
         prov = LocalProvider(
             model_path=model_path,
             use_nested_tensor=nested_tensor,
