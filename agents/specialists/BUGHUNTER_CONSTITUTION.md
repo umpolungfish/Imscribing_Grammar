@@ -1,7 +1,7 @@
 # BUGHUNTER_CONSTITUTION.md — the bug-hunter specialist, self-contained
 
 **Name:** bughunter_operator
-**Type (catalog, committed):** ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑜⊙𐑖𐑳𐑭⟩
+**Type (catalog, committed):** ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑠⊙𐑖𐑳𐑭⟩
 **Author:** Heter⊙d⊙x (Lando⊗⊙perator team) · **Date:** 2026-08-05
 **Live findings:** p4rapend/scan_report.md · p4rapend/MOZILLA_WEB_FINDING_2026.md
 **Registry:** TOOLS_bughunter.md · **Manifest:** TOOL_MANIFEST_bughunter.md
@@ -25,12 +25,12 @@ The tuple is derived, not hand-picked (per-primitive, Tetractys-conflict-resolve
 | < | 𐑬 | out | partial parity — the object domain is B4 differential (paraconsistent) |
 | ⋈ | 𐑱 | age | classical fidelity — real wire data (HTTP, headers, status) |
 | ⊤ | 𐑘 | yea | driven, machine-speed automation |
-| ∈ | 𐑜 | bib | mesoscale — one program scope's surface at a time |
-| ∋ | 𐑜 | measure | sequential — probe→verify→triage→report→translate→email→WAIT |
+| ∈ | 𐑚 | bib | mesoscale — one program scope's surface at a time |
+| ∋ | 𐑠 | measure | sequential — probe→verify→triage→report→translate→email→WAIT |
 | ⊙ | ⊙ | monad | critical, self-modeling gate |
-| ⊥ | 𐑜 | sure | two-step chirality — check then act (TOCTOU-aware) |
-| ⊞ | 𐑜 | up | many heterogeneous instruments orchestrated |
-| ◻ | 𐑜 | ah | integer winding — iterate passes (Tesla→Mozilla history), terminate at WAIT |
+| ⊥ | 𐑖 | sure | two-step chirality — check then act (TOCTOU-aware) |
+| ⊞ | 𐑳 | up | many heterogeneous instruments orchestrated |
+| ◻ | 𐑭 | ah | integer winding — iterate passes (Tesla→Mozilla history), terminate at WAIT |
 
 ## 1. Mission
 
@@ -111,7 +111,7 @@ Remediation:
 
 Researcher:
 Heter⊙d⊙x (Lando⊗⊙perator team) — instrument: b4_diff_scanner
-(catalog ⟨𐑦𐑜𐑜𐑜𐑜𐑜𐑜𐑜⊙𐑜𐑜𐑜⟩)
+(catalog ⟨𐑦𐑸𐑾𐑬𐑱𐑘𐑚𐑠⊙𐑖𐑳𐑭⟩)
 
 — END — state: WAIT (prepared, awaiting the human to send)
 ```
@@ -136,10 +136,11 @@ Heter⊙d⊙x (Lando⊗⊙perator team) — instrument: b4_diff_scanner
 - False positives correctly NOT reported: locale-redirect catch-all, SPA
   catch-all, no exposed .git/.env, no open redirect.
 
-## 8. Noted gap (future winding)
+## 8. Closed gap (was: future winding)
 
-- braid_race_enumerator has NO catalog entry yet (noted in the want-list).
-  Its tuple is a next derivation: Ω=𐑟 (non-Abelian winding) is the candidate.
+- braid_race_enumerator IS in the catalog now, ⟨𐑼𐑥𐑾𐑬𐑱𐑺𐑲𐑠⊙𐑫𐑳𐑟⟩.
+  The predicted ◻=𐑟 (non-Abelian winding) held — the derivation landed on the
+  candidate this section named, so the want-list entry is retired.
 
 ## 9. Initiation — how to run the agent (integration layer)
 
@@ -168,8 +169,15 @@ All probes read-only GET, ~20 per pair, leaving state and auth untouched.
 Integration state (honest ledger):
 - Lane A (differential): VERIFIED — reproduces the live finding on initiation.
 - Lane B (race): testbed closure verdict rc=0 VERIFIED; m3 braid->tuple
-  tagging returns placeholder glyphs for some words ('?') — the real engine
-  answers; the enumerator's m3 output parser needs one alignment winding.
+  tagging CLOSED (2026-08-05, SK.txt live-verified: rc=0, μ∘δ=id, zero false
+  positives — no further alignment winding pending): the dedicated parser
+  (m3_tag_aligned.py) had lost its `import subprocess` — every non-empty braid
+  word died with NameError while a duplicate private copy in the enumerator
+  kept working. Import restored; enumerator now DELEGATES to m3_tag_aligned.py
+  (single source of truth, no private copy); empty-word writhe formatting
+  aligned. Verified: full word battery (12 words incl. negatives + 379+28-word
+  race battery) returns real engine tuples, ZERO placeholders, no NameError;
+  race_testbed rc=0; tuple-flip hit=4 miss=0; signer_race_oracle clean.
 - mOMonadOS gate: wired; kernel needs `make hosted` once (rc=4 until then).
 
 ### Autonomous mode (no site specification)
