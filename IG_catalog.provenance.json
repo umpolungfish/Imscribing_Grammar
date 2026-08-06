@@ -4745,6 +4745,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "540c7e1807c11bc5"
   },
+  "b4_diff_scanner": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "4a4ae5cc4bfc873c"
+  },
   "b4_factor_v2_engine": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
@@ -5518,6 +5524,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dd32bb87d9f98009"
+  },
+  "binary_closure_parser": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "4a4ae5cc4bfc873c"
   },
   "binary_singular_series_gate": {
     "changes": 0,
@@ -6335,6 +6347,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "44bafef7ea224c6b"
   },
+  "braid_race_enumerator": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "ed39e7e1231b95e0"
+  },
   "braid_reversal": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6892,6 +6910,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "900bac350cde4068"
+  },
+  "bughunter_operator": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "93f85d75940f953d"
   },
   "bulk_aqueous_reaction": {
     "changes": 0,
@@ -9750,10 +9774,10 @@
     "tuple_hash": "5dcb8bd64c2ea69b"
   },
   "christian_theosophy": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-08-02T09:07:27+00:00",
-    "last_changed": "2026-08-02T09:07:27+00:00",
-    "tuple_hash": "f67547463eb5aca4"
+    "last_changed": "2026-08-06T05:20:40+00:00",
+    "tuple_hash": "47ffb7beaf2b300a"
   },
   "christian_unio_mystica": {
     "changes": 0,
@@ -12898,6 +12922,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9beaf78d5f3a9a57"
+  },
+  "descent_operator_exists_proof": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "3d20139ca120291c"
   },
   "descent_operator_mapping_a_perfect_cuboid_to_a_s_3701f582": {
     "changes": 0,
@@ -16199,6 +16229,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d34a50cae7ed727a"
   },
+  "false_flag_filter": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:18:44+00:00",
+    "last_changed": "2026-08-06T05:18:44+00:00",
+    "tuple_hash": "108411efef9a2717"
+  },
   "false_statement": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -16816,6 +16852,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "53c81fe172b11d9b"
+  },
+  "fixed_point_nesting_rule": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "aa82e561c794e741"
   },
   "fixed_point_ob3ect": {
     "changes": 0,
@@ -22331,6 +22373,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "635bf827ebf7e6ad"
   },
+  "hypercyclotomic_topos_algebra": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:18:44+00:00",
+    "last_changed": "2026-08-06T05:18:44+00:00",
+    "tuple_hash": "bb2a8db7b86aa8cf"
+  },
   "hypergame_paradox,": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -23477,6 +23525,30 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6e1ba3d345576dd6"
   },
+  "is_nested_within": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:49:53+00:00",
+    "last_changed": "2026-08-06T05:49:53+00:00",
+    "tuple_hash": "85fb4be764b6c09b"
+  },
+  "is_orthogonal_to": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:49:06+00:00",
+    "last_changed": "2026-08-06T05:49:06+00:00",
+    "tuple_hash": "2fd0b4fb7ce499fb"
+  },
+  "is_proportional_to": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:48:05+00:00",
+    "last_changed": "2026-08-06T05:48:05+00:00",
+    "tuple_hash": "85fb4be764b6c09b"
+  },
+  "is_the_reciprocal_of": {
+    "changes": 0,
+    "first_seen": "2026-08-06T05:47:20+00:00",
+    "last_changed": "2026-08-06T05:47:20+00:00",
+    "tuple_hash": "234840c7c78e21e4"
+  },
   "isaiah_book": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -23800,6 +23872,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d2f7d2095b3ac99e"
+  },
+  "jacobian_counterexample_alpoge": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "166ce2edd4a4d0ac"
+  },
+  "jacobian_counterexample_n3": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "6e343d2c5869d971"
   },
   "jacobian_finite_field": {
     "changes": 0,
@@ -33137,6 +33221,24 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "de581d30129ea6f2"
   },
+  "perfect_cuboid_descent_closed": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "a5b24b6b4f641dd7"
+  },
+  "perfect_cuboid_descent_completed": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "a5b24b6b4f641dd7"
+  },
+  "perfect_cuboid_descent_operator_proof": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "a5b24b6b4f641dd7"
+  },
   "perfect_cuboid_descent_proved": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34096,6 +34198,12 @@
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "9dbee977875ee697"
+  },
+  "pk_sk_formula_closure": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "f0f54edb045b2adb"
   },
   "planck_constant": {
     "changes": 0,
@@ -35764,6 +35872,12 @@
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "deb463018decd5b2"
+  },
+  "q_secp256k1_ascended": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "10462741c7f65af5"
   },
   "qcd_cp_conserving": {
     "changes": 0,
@@ -38531,6 +38645,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "106e85a80e15f270"
   },
+  "seekpeek_pipeline": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "c7da7789e5c0fadf"
+  },
   "sefer_ha_iyun": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40630,6 +40750,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "36389e3e5c951d40"
+  },
+  "stacks_core_node": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "188cd18e8ab98a0c"
+  },
+  "stacks_source_scanner": {
+    "changes": 0,
+    "first_seen": "2026-08-06T04:02:34+00:00",
+    "last_changed": "2026-08-06T04:02:34+00:00",
+    "tuple_hash": "4a4ae5cc4bfc873c"
   },
   "stag___a_sadistic,_mute,_antlered_magic_user": {
     "changes": 0,

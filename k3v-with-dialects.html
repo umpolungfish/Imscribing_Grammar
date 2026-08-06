@@ -3727,6 +3727,21 @@ const exec = {
             }
             dsel.value = currentDialect;
         })();
+
+        // ─── Build dialect <select> from DIALECTS (89 dialects) ───
+        (function populateDialectSelect() {
+            const dsel = document.getElementById('dialect-sel');
+            if (!dsel) return;
+            dsel.innerHTML = '';
+            for (let i = 0; i < DIALECTS.length; i++) {
+                const kn = KNOT_MAP[i];
+                const opt = document.createElement('option');
+                opt.value = i;
+                opt.textContent = 'U' + i + ' ' + DIALECTS[i].name + ' (' + kn.p + ',' + kn.q + ')';
+                dsel.appendChild(opt);
+            }
+            dsel.value = currentDialect;
+        })();
         // ─── Populate knot legend ───
         (function populateKnotLegend() {
             const klegend = document.getElementById('knot-legend');
