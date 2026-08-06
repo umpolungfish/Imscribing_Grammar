@@ -266,6 +266,12 @@ class _LocalChatCompletions:
             except Exception:
                 pass
 
+        # Set once the fallback below has moved generation to the host: after a
+        # CUDA fault the context is sticky, so every later CUDA call in this
+        # process raises again — including the empty_cache() after decode, which
+        # would kill a request the CPU had already answered.
+        _on_cpu = False
+
         with torch.no_grad():
             try:
                 _gen_kwargs: dict = dict(
@@ -288,6 +294,15 @@ class _LocalChatCompletions:
                     from framework.enhanced_llm_provider import LocalProvider
                     LocalProvider._model = None
                     LocalProvider._loaded_path = None
+                    _on_cpu = True
+                    # Drop the GPU copy before the host copy is allocated. The
+                    # caching allocator holds the VRAM until empty_cache(), and
+                    # on a dead context even that raises, so it is best-effort.
+                    del mdl
+                    try:
+                        torch.cuda.empty_cache()
+                    except Exception:
+                        pass
                     if _is_gf:
                         from framework.grammaformer import GrammaFormerForCausalLM
                         mdl = GrammaFormerForCausalLM.from_pretrained(prov.model_path)
@@ -308,7 +323,10 @@ class _LocalChatCompletions:
                     )
                     cpu_inputs = tok(_cpu_text, return_tensors="pt")
                     if _is_gf and cpu_inputs.input_ids.shape[1] > _GF_MAX_CTX:
+                        _cpu_mask = cpu_inputs.get("attention_mask")
                         cpu_inputs = {"input_ids": cpu_inputs.input_ids[:, -_GF_MAX_CTX:]}
+                        if _cpu_mask is not None:
+                            cpu_inputs["attention_mask"] = _cpu_mask[:, -_GF_MAX_CTX:]
                     outputs = mdl.generate(**cpu_inputs, **_gen_kwargs)
                     n_input = list(cpu_inputs.values())[0].shape[1]
                 else:
@@ -316,8 +334,11 @@ class _LocalChatCompletions:
 
         # Prevent OOM on small-VRAM: free GPU tensors before decode
         del inputs
-        if _dev.type == "cuda":
-            torch.cuda.empty_cache()
+        if _dev.type == "cuda" and not _on_cpu:
+            try:
+                torch.cuda.empty_cache()
+            except Exception:
+                pass
         new_tokens = outputs[0][n_input:]
         raw = tok.decode(new_tokens, skip_special_tokens=True).strip()
 

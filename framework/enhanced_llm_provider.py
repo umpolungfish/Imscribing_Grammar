@@ -763,7 +763,34 @@ class LocalProvider(LLMProvider):
                 gen_kwargs["top_p"] = 0.8
             if attention_mask is not None:
                 gen_kwargs["attention_mask"] = attention_mask
-            outputs = mdl.generate(**gen_kwargs)
+            try:
+                outputs = mdl.generate(**gen_kwargs)
+            except RuntimeError as _cuda_err:
+                if _dev.type != "cuda" or not (
+                    "cuda" in str(_cuda_err).lower() or "device" in str(_cuda_err).lower()
+                ):
+                    raise
+                logger.warning(f"GPU generate failed ({_cuda_err}); reloading on CPU.")
+                # A CUDA fault leaves the context sticky: every later CUDA call in
+                # this process raises again, so the whole process stays on the host
+                # from here. FORCE_CPU is how _ensure_loaded is already told that,
+                # which is why the reload goes back through it rather than
+                # duplicating the GrammaFormer/AutoModel branch.
+                os.environ["FORCE_CPU"] = "1"
+                LocalProvider._model = None
+                LocalProvider._loaded_path = None
+                del mdl
+                try:
+                    torch.cuda.empty_cache()
+                except Exception:
+                    pass
+                self._ensure_loaded()
+                mdl = LocalProvider._model
+                _dev = mdl.device
+                gen_kwargs["input_ids"] = input_ids = input_ids.to(_dev)
+                if attention_mask is not None:
+                    gen_kwargs["attention_mask"] = attention_mask.to(_dev)
+                outputs = mdl.generate(**gen_kwargs)
 
         new_tokens = outputs[0][input_ids.shape[1]:]
         response = tok.decode(new_tokens, skip_special_tokens=True).strip()
