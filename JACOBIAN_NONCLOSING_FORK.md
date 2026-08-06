@@ -69,6 +69,36 @@ the fuse. A δ that forks and provides no μ reads B, and B is where this map
 lives. The counterexample sits at the Composition axis (∋) in its non-closing
 value.
 
+## Where it sits in the crystal
+
+Imscribed procedurally (guided generation, one primitive at a time), the map is
+
+    jacobian_counterexample_alpoge = ⟨𐑨𐑰𐑾𐑗𐑞𐑪𐑔𐑜𐑢𐑫𐑕𐑷⟩
+
+registered in IG_catalog.json. Distance run against the δ/μ-family entries
+localizes the non-closing fork to a single axis.
+
+Its nearest conceptual sibling is `covering_space_theory`, sharing the
+load-bearing slots — Topology 𐑰, Kinetics 𐑪, Scope 𐑔, Criticality 𐑢,
+Chirality 𐑫. The decisive difference is Composition ∋:
+
+- `covering_space_theory`: ∋ = 𐑝 (∧, conjunctive — sheets glue, a proper
+  covering, μ exists).
+- this map: ∋ = 𐑜 (∨, disjunctive — alternative preimages, any one branch
+  suffices, sheets never glue).
+
+So the counterexample is covering-space theory with Composition demoted ∧ → ∨.
+An étale map is locally a covering; this is the one that carries the covering's
+whole criticality/scope/kinetics signature yet fails to close, because its
+sheets are alternatives that never fuse. The missing ∋ of the IMASM word
+(`⊢∈>⊤<∋⊣` closes to T, `⊢∈>⊤<⊣` opens to B) is exactly this ∧ → ∨ flip.
+
+Against the pure fork archetype `fork_alpha` the map agrees on Topology 𐑰 and
+on ∋ = 𐑜 (the shared fork DNA) and parts at Criticality: `fork_alpha` is ⊙
+(ramified, with branch points), this map is ⊙ = 𐑢 (no critical points, far from
+threshold). A fork with no ramification — which is what étale means: a branching
+locally invisible and globally unclosable.
+
 ## The survivor
 
 n = 1 is trivial, n ≥ 3 is now dead (M and the collision extend by the identity

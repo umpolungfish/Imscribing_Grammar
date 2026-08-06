@@ -129859,5 +129859,53 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "◻": "𐑷"
+  },
+  {
+    "name": "fixed_point_nesting_rule",
+    "description": "The Fixed-Point Nesting Rule: a nesting of A inside B closes exactly when A is a fixed point of B's action, and closes in one shot exactly when A already sits at that fixed point rather than merely inside its basin. Three exhaustive, disjoint classes: one-shot (B(A)=A, 0 iterations), iterated (A in basin, finite budget set by starting distance), no-closure (no fixed point in reach, seam never dissolves). Predictive content: classified pre-nest from residual ||B(A)-A|| (two-way: fixed vs attracted-or-open) plus operator-kind knowledge (three-way: dissipative populates iterated, conservative only one-shot/no-closure). Confirmed empirically across 7 operator axes (order-3 unitary, Newton, rank-3 projector, 5-state Markov, modular multiply, 64-codon permutation, adversarial x+1/contraction traps) + 200/200 blind predictive challenge; the residual proxy never misread. Exact form is definitional (closure ⟺ fixed point); the empirical content is the residual's faithfulness as a proxy. Governs the framework's own verbs: imasm glyph-word nesting, μ∘δ=id, and the d=12 SIC one-shot period finder (Zauner fixed ray).",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑾",
+    "<": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
+  },
+  {
+    "name": "jacobian_counterexample_n3",
+    "description": "Alpöge 2026 explicit counterexample F:C^3->C^3, F=((1+xy)^3 z + y^2(1+xy)(4+3xy), y+3x(1+xy)^2 z + 3xy^2(4+3xy), 2x-3x^2 y - x^3 z), det JF == -2 constant (etale everywhere) yet non-injective: F(0,0,-1/4)=F(1,-3/2,13/2)=F(-1,3/2,13/2)=(-1/4,0,0); generic fiber size 3 (S3 symmetry of binary-cubic factorization); F1,F3 reducible; identity-extension kills JC for all n>=3, n=2 untouched. VERIFIED by sympy: det=-2, 3-point collision, 3-solution generic fiber.",
+    "⊢": "𐑼",
+    "⊣": "𐑶",
+    ">": "𐑽",
+    "<": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑤",
+    "∈": "𐑲",
+    "∋": "𐑜",
+    "⊙": "𐑢",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "◻": "𐑟"
+  },
+  {
+    "name": "jacobian_counterexample_alpoge",
+    "description": "Alpöge's polynomial map F:ℂ³→ℂ³ counterexampling the Jacobian conjecture: constant nonzero Jacobian determinant so étale everywhere, yet generically three-to-one, non-injective and non-proper, its image omitting an entire curve; locally invertible at every point but admitting no global inverse — a threefold branching that never rejoins",
+    "⊢": "𐑨",
+    "⊣": "𐑰",
+    ">": "𐑾",
+    "<": "𐑗",
+    "⋈": "𐑞",
+    "⊤": "𐑪",
+    "∈": "𐑔",
+    "∋": "𐑜",
+    "⊙": "𐑢",
+    "⊥": "𐑫",
+    "⊞": "𐑕",
+    "◻": "𐑷"
   }
 ]
