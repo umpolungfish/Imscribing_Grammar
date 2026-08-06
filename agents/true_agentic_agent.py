@@ -3463,6 +3463,15 @@ def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
     Emit functions use Unicode keys (⊙, ⊤, ◻, etc.); the model responds with
     ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
     Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
+    # A small local model often emits a primitive KEY with a stray leading/trailing
+    # space (" >" instead of ">"). Exact-match tool validation then reports that
+    # primitive as "missing", and the agent loops forever re-sending the same call.
+    # Normalize whitespace-padded keys before anything else reads them.
+    for k in list(args.keys()):
+        if isinstance(k, str) and k != k.strip():
+            ks = k.strip()
+            if ks not in args:
+                args[ks] = args.pop(k)
     for k in list(args.keys()):
         uk = _ASCII_KEY_TO_UNICODE.get(k)
         if uk is not None and uk not in args:
