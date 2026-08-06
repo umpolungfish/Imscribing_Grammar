@@ -83,6 +83,11 @@ class ProviderConfig:
                     "max_tokens_default": 4000,
                     "temperature_default": 0.7,
                 },
+                "groq": {
+                    "default_model": "llama-3.3-70b-versatile",
+                    "max_tokens_default": 4000,
+                    "temperature_default": 0.7,
+                },
                 "local": {
                     "default_model": "Imscriptiveon_qlora_merged2",
                     "max_tokens_default": 512,
@@ -118,6 +123,7 @@ class ProviderConfig:
             "qwen": "qwen3-max",
             "mistral": "codestral-2508",
             "google": "gemini-2.0-flash-exp",
+            "groq": "llama-3.3-70b-versatile",
         }
         return fallbacks.get(provider.lower(), "deepseek-v4-pro")
     

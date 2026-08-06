@@ -94,6 +94,10 @@ def _load_provider_defaults() -> Dict[str, Any]:
             "default_model": "deepseek/deepseek-chat",
             "base_url": "https://openrouter.ai/api/v1/chat/completions",
         },
+        "groq": {
+            "default_model": "llama-3.3-70b-versatile",
+            "base_url": "https://api.groq.com/openai/v1/chat/completions",
+        },
     }
     logger.info("Using built-in provider defaults")
     return _provider_defaults
@@ -285,6 +289,15 @@ class DeepSeekProvider(HttpProvider):
 class QwenProvider(HttpProvider):
     def __init__(self, api_key: str, model: Optional[str] = None):
         super().__init__(api_key, model, "https://api.mulerouter.ai/vendors/openai/v1/chat/completions", "qwen")
+
+
+class GroqProvider(HttpProvider):
+    """Groq — OpenAI-compatible, LPU inference (very low latency). API key: GROQ_API_KEY.
+    Model slugs may carry a vendor prefix (moonshotai/kimi-k2-instruct,
+    openai/gpt-oss-120b); the slash is part of the id and is not stripped."""
+    def __init__(self, api_key: str, model: Optional[str] = None):
+        model = model or "llama-3.3-70b-versatile"
+        super().__init__(api_key, model, "https://api.groq.com/openai/v1/chat/completions", "groq")
 
 
 class OpenRouterProvider(HttpProvider):
@@ -918,6 +931,8 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
         return DeepSeekProvider(api_key=api_key, **kwargs)
     elif provider_name == 'openrouter':
         return OpenRouterProvider(api_key=api_key, **kwargs)
+    elif provider_name == 'groq':
+        return GroqProvider(api_key=api_key, **kwargs)
     else:
         raise ValueError(f"Unsupported LLM provider: {provider_name}")
 
