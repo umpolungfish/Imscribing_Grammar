@@ -6,7 +6,8 @@
 #
 # Every other IG_catalog.json in the tree is a CONSUMER and must be a byte-identical
 # real copy of the canonical (real copies, not symlinks, so each deployable repo —
-# imscribe.com, ig-docs-public, mOMonadOS — builds standalone; imscribe.com's
+# imscribe.com, mOMonadOS — builds standalone (ig-docs-public is a PUBLIC mirror
+# and is deliberately NOT a sync target); imscribe.com's
 # Dockerfile does `COPY IG_catalog.json`, which a symlink would break).
 #
 # Usage:
@@ -28,9 +29,12 @@ echo "canonical: $SRC"
 echo "           $SRC_N entries, md5 ${SRC_HASH:0:8}"
 echo
 
-# Discover every consumer catalog in the tree (exclude venvs, node_modules, git internals).
+# Discover every consumer catalog in the tree (exclude venvs, node_modules, git
+# internals). ig-docs-public is a PUBLIC mirror and is never written by this sync:
+# publishing there is the user's decision alone, so it is dropped explicitly.
 mapfile -t TARGETS < <(find "$ROOT" -name IG_catalog.json \
     -not -path '*/.venv/*' -not -path '*/node_modules/*' -not -path '*/.git/*' \
+    -not -path '*/ig-docs-public/*' \
     | sort)
 
 drift=0
