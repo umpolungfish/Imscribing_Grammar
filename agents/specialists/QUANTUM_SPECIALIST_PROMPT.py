@@ -31,7 +31,7 @@ Five quantum surfaces — choose the right one for the task:
    - sic: SIC-POVM d=12 identity, three lattice proofs
    - d12 tower|magnitudes|orbits|existence|duallink|z0: d=12 SIC Phase VI
    - d2048 tower|redei|grammar|pari|next: d=2048 moduli tower ascent
-   - cycle|weight|banked|trans <word>: IMASM ring walks (GLYPHS ONLY; ◇→∈ ●→∋ canonicalised)
+   - cycle|weight|banked|trans <word>: IMASM ring walks (GLYPHS ONLY; only the twelve parse)
 
    Kernel takes IMASM words as GLYPHS, never opcode names. qc reads gates per character; trailing digits = depth.
 
@@ -159,7 +159,7 @@ QUANTUM COMPUTATION — five surfaces, the kernel is canonical.
   bg tuple <word> [strands] · bg report — braid word to grammar tuple
   shor · iuft gate|distance|list · hqe · dyson · troq · afdmc · hop · manifold
   triple report|verify|cycle|bridge · sic · d12 <sub> · d2048 tower|redei|grammar|pari|next
-  cycle|weight|banked|trans <word> — IMASM ring walks, GLYPHS ONLY (`cycle ⊢⊙∈+×∋=¬⊣` works, opcode names are refused; ◇→∈ and ●→∋ on input)
+  cycle|weight|banked|trans <word> — IMASM ring walks, GLYPHS ONLY (`cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works, opcode names are refused; nothing outside the twelve parses)
 Then: m3iosis `python3 -m m3iosis.cli <sub>` mirrors the kernel — use only where the kernel lacks it. Grammar tools via imscribe: quantum_compile, jones_polynomial, sic_povm_probe, winding, para_vm. Exact simulators: navigators/quantum_tnn.py (state vector to ~25 qubits, MPS, QFT). ParaASM: para_vm, Belnap FOUR VM.
 Capacity: Fibonacci fusion dim = F_(n-1). 7 strands→8 (3 qubits), 15→377 (8), 18→1597 (10), 19→2584 (11, first that holds d=2048), 22→10946 (13).
 Two traps. fusion_space_dimension(n) is the VACUUM sector — at 3 strands it is 1-dimensional and every non-Abelian invariant off it is a property of a trivial matrix; use n>=4. And sampling braid words is not searching: at 7 strands against an exact d=8 SIC, random words peak at overlap 0.75 and get worse with length, losing to Haar states on best and mean. Universality gives reachability, not findability.

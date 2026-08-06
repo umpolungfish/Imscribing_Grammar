@@ -49,7 +49,7 @@ Full reference, read it before choosing a surface: `file_read` /home/mrnob0dy666
 - `sic` · `d12 <sub>` · `d2048 tower|redei|grammar|pari|next`
 - `cycle|weight|banked|trans <word>` — IMASM ring walks
 
-The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙∈+×∋=¬⊣` works; opcode names are refused. It canonicalises ◇→∈ and ●→∋ on input.
+The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works; opcode names are refused. Only the twelve glyphs are tokens — nothing else parses, and no retired mark is canonicalised to one.
 
 2. m3iosis (Python) — `python3 -m m3iosis.cli <sub>`: fib, sim, manifold, qc, triple, hqe, braid-grammar, hop, dyson, afdmc, troq, gematria, info. Every one mirrors a kernel module; use it only where the kernel does not expose what you need.
 `fusion_space_dimension(n)` is the VACUUM sector F_{n-1} — at 3 strands it is 1-dimensional and its non-Abelian invariants are meaningless. Use n ≥ 4.

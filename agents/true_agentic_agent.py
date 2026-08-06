@@ -196,6 +196,14 @@ def _set_log_level(level: str) -> None:
 
 from typing import Any, Dict, List, Optional, Tuple
 
+# The twelve, rendered from canonical_primitives — see notation_cheatsheet.
+# Imported both flat (specialists put agents/ on the path) and as a package
+# member (imscrbgrmr.cli and web/api import agents.true_agentic_agent).
+try:
+    from notation_cheatsheet import NOTATION_CHEATSHEET
+except ImportError:  # pragma: no cover - import-path shape, not logic
+    from agents.notation_cheatsheet import NOTATION_CHEATSHEET
+
 # ── Local tensor-inference client (no API key, no HTTP) ──────────────────────
 
 class _LocalTC:
@@ -1086,7 +1094,7 @@ _EMISSION_GATE_LIMIT = 3
 
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
-    "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>", "insert": "<glyph, optional>"},
+    "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣>", "insert": "<glyph, optional>"},
     "weight_flow":            {"word": "<IMASM word as glyphs>"},
     "banked_count":           {"word": "<IMASM word as glyphs>"},
     "imasm_transitions":      {"word": "<IMASM word as glyphs>"},
@@ -3611,6 +3619,12 @@ class TrueAgenticAgent:
         # Inject persistent imsgct context so every winding is aware of
         # TOOL_INVENTORY.md, DESIGN_GENERALIZED.md, and the repo list.
         system_content += _load_imsgct_context()
+        # The alphabet, in every prompt. A specialist swaps _load_system_prompt
+        # for its own text, so anything carried only by the base prompt never
+        # reaches it; appending here is the one path all of them share. Agents
+        # were treating the opcodes and the primitive axes as two notations and
+        # decoding Shavian by hand for want of this table.
+        system_content += NOTATION_CHEATSHEET
         # Imscriptive context IS the message list — accumulated across windings.
         # If loading a prior session, inject preloaded messages as imscriptive context
         preloaded_msgs = self.preloaded_messages or []
@@ -4387,7 +4401,7 @@ class TrueAgenticAgent:
         lines.append("  └────────────────────────────────────────────────────────────────")
         lines.append(
             "  |  SIC-POVM  : self-referential limit -- grammar IS SIC-POVM; "
-            "6 dual-pairs (D<->Th R<->Phi f<->C Gamma<->G phi_c<->H Sigma<->Omega)"
+            "6 dual-pairs ( ⊢ ↔ ⊣ )( > ↔ < )( ⋈ ↔ ⊤ )( ∈ ↔ ∋ )( ⊙ ↔ ⊥ )( ⊞ ↔ ◻ )"
         )
         lines.append(
             "  |  fiducial  : B=XZ -- Belnap B is d=2 SIC-POVM fiducial; "

@@ -237,8 +237,9 @@ per boot; the QEMU start dominates a single short one.
 - `sic` · `d12 <sub>` · `d2048 tower|redei|grammar|pari|next`
 - `cycle|weight|banked|trans <word>` — IMASM ring walks
 
-The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙∈+×∋=¬⊣` works; opcode names are
-refused. It canonicalises ◇->∈ and ●->∋ on input.
+The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works; opcode names
+are refused. Only the twelve glyphs are tokens — nothing else parses, and no retired
+mark is canonicalised to one.
 
 2. m3iosis (Python) — `python3 -m m3iosis.cli <sub>`: fib, sim, manifold, qc, triple,
 hqe, braid-grammar, hop, dyson, afdmc, troq, gematria, info. Every one mirrors a kernel

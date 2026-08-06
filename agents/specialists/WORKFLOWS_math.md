@@ -28,10 +28,11 @@ Before trusting any braid-derived claim, state the strand count and the sector.
 
 ## Trap 2 — glyphs, never opcode names
 
-The kernel's IMASM verbs take glyphs. `cycle ⊢⊙∈+×∋=¬⊣` works;
-`cycle VINIT IMSCRIB …` returns "no IMASM glyphs in that word". `◇→∈` and
-`●→∋` are canonicalised on input. If a ring walk comes back empty, check this
-before concluding anything about the word.
+The kernel's IMASM verbs take glyphs. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works;
+`cycle VINIT IMSCRIB …` returns "no IMASM glyphs in that word". Only the twelve
+are tokens — a retired mark is not canonicalised to one, it reads as nothing.
+If a ring walk comes back empty, check this before concluding anything about
+the word.
 
 ## Trap 3 — braid sampling does not search
 

@@ -79,7 +79,7 @@ never assert arithmetic from memory.
 - `revise_insight`
 - `search_insights`
 - `winding` — of=<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: "2/5"  OR  angle: <radians>, power=<integer, optional>
-- `lattice_cycle` — word=<IMASM word as glyphs, e.g. ⊢⊙=>◇+×<⊞●×¬⊣>, insert=<glyph, optional>
+- `lattice_cycle` — word=<IMASM word as glyphs, e.g. ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣>, insert=<glyph, optional>
 - `weight_flow` — word=<IMASM word as glyphs>
 - `banked_count` — word=<IMASM word as glyphs>
 - `imasm_transitions` — word=<IMASM word as glyphs>
@@ -184,8 +184,9 @@ per boot; the QEMU start dominates a single short one.
 - `sic` · `d12 <sub>` · `d2048 tower|redei|grammar|pari|next`
 - `cycle|weight|banked|trans <word>` — IMASM ring walks
 
-The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙∈+×∋=¬⊣` works; opcode names are
-refused. It canonicalises ◇->∈ and ●->∋ on input.
+The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works; opcode names
+are refused. Only the twelve glyphs are tokens — nothing else parses, and no retired
+mark is canonicalised to one.
 
 2. m3iosis (Python) — `python3 -m m3iosis.cli <sub>`: fib, sim, manifold, qc, triple,
 hqe, braid-grammar, hop, dyson, afdmc, troq, gematria, info. Every one mirrors a kernel
