@@ -16,7 +16,7 @@ import math
 from dataclasses import dataclass
 from typing import Dict, Any, List, Optional, Tuple, Union
 
-from .models import Imscription, Fidelity, KineticCharacter
+from .models import Imscription, Fidelity, KineticCharacter, Granularity, Topology
 
 
 # =============================================================================
@@ -237,23 +237,21 @@ def compute_information_gain(
         # Heuristic fallback with updated coordinate scaling
         if num_coordinates is None:
             coord_map = {
-                imscription.granularity.LOCAL: 2,
-                imscription.granularity.MESOSCALE: 4,
-                imscription.granularity.GLOBAL: 6,
+                Granularity.ice: 2,    # fine-grained/local
+                Granularity.bib: 4,    # mesoscale
+                Granularity.thigh: 6,  # coarse/global
             }
             num_coordinates = coord_map.get(imscription.granularity, 3)
 
         # Updated base: 3.5 bits/coord (previously 2.5) to reflect calibration
         base_bits = num_coordinates * 3.5
 
+        # judge/mime/are are the 3 canonical Topology members; oil/eat (chemistry
+        # extras) have no calibrated bonus and fall through to the 0.5 default below.
         topology_bonus = {
-            imscription.topology.CYCLIC_BOWTIE: 1.5,
-            imscription.topology.CHAIN: 0.5,
-            imscription.topology.HUB_NODE: 2.0,
-            imscription.topology.LINEAR: 0.0,
-            imscription.topology.BRANCHED: 1.0,
-            imscription.topology.NETWORK: 3.0,
-            imscription.topology.CAGE: 2.5,
+            Topology.mime: 1.5,   # cyclic closure / figure-8, was CYCLIC_BOWTIE
+            Topology.judge: 3.0,  # general graph, was NETWORK
+            Topology.are: 2.5,    # non-local boundary-bulk (T_openo), was CAGE
         }
 
         return base_bits + topology_bonus.get(imscription.topology, 0.5)

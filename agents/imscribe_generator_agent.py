@@ -275,18 +275,48 @@ class ImscriptionGeneratorAgent(BaseAgent):
     # Guided (step-by-step) generation — one primitive per LLM call
     # ------------------------------------------------------------------
 
+    # Assignment order is NOT canonical display order. The cross-primitive axioms
+    # in Core.lean are directed and run backward through the canonical order (Þ
+    # determines Ð; Ω determines Ħ; Ð+Þ+Ω determine Φ) — see
+    # project_dual_pairs_and_order. Asking in canonical order decides a
+    # constrained primitive before its determiner exists in "assigned so far",
+    # which is what the post-hoc Axiom-auto-correction below is patching over.
+    # Ask by dual pair, pairs ordered by dependency: pair 1 (Þ before Ð, per
+    # Axiom C), then pair 6, pair 5, pair 2, then the unconstrained pairs 3, 4.
+    # Display order (built from the resulting Imscription's named fields, not
+    # from this list's order) stays canonical.
     GUIDED_PRIMITIVES: List[Dict[str, Any]] = [
-        {"short": "⊢",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
-         "options": [("𐑼","Point-like — local, operates on a single unit"),
-                     ("𐑨","Spatial — constraint propagates through an extended 3D arrangement"),
-                     ("𐑛","Temporal/iterative — recurs through a closed cycle with a reset step"),
-                     ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (requires 𐑸 topology)")]},
         {"short": "⊣",  "long": "topology",             "question": "What is the connectivity pattern of influence?",
          "options": [("𐑡","Generic network — connected graph, hub-spoke, mixed connectivity"),
                      ("𐑰","Containment / branched tree — partners enter a container or nested hierarchy"),
                      ("𐑥","Cyclic closure — cyclic interface, figure-8, double-well"),
                      ("𐑶","Fully enclosed — partner cannot exit without distorting the container"),
                      ("𐑸","Scale-collapse — connectivity in which the boundary carries the full bulk content losslessly (requires 𐑦 dimensionality)")]},
+        {"short": "⊢",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
+         "options": [("𐑼","Point-like — local, operates on a single unit"),
+                     ("𐑨","Spatial — constraint propagates through an extended 3D arrangement"),
+                     ("𐑛","Temporal/iterative — recurs through a closed cycle with a reset step"),
+                     ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (requires 𐑸 topology)")]},
+        {"short": "⊞",  "long": "stoichiometry",        "question": "What is the participation ratio?",
+         "options": [("𐑙","Equal symmetric pairing"),
+                     ("𐑕","Higher-order symmetric — oligomers, committees"),
+                     ("𐑳","Asymmetric — different counts on each side")]},
+        {"short": "◻",  "long": "protection",           "question": "Can the role be continuously deformed away?",
+         "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
+                     ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
+                     ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
+                     ("𐑟","Non-Abelian protection — most robust; requires 𐑦 dimensionality")]},
+        {"short": "⊙",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
+         "options": [("𐑢","Subcritical — normal regime, no scale-free behavior"),
+                     ("⊙","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
+                     ("𐑮","Complex critical — criticality with complex eigenvalues"),
+                     ("𐑻","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
+                     ("𐑣","Supercritical / post-threshold — system has passed through criticality")]},
+        {"short": "⊥",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
+         "options": [("𐑓","Achiral — mirror image accessible; no persistent symmetry breaking"),
+                     ("𐑒","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
+                     ("𐑖","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
+                     ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (implies 𐑪 kinetics)")]},
         {"short": ">",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
          "options": [("𐑩","Soft association — non-covalent, reversible, analogical similarity"),
                      ("𐑑","Bond formation / structural transformation — irreversible or semi-reversible"),
@@ -317,26 +347,6 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑜","Disjunctive — any partner from a set suffices"),
                      ("𐑠","Sequential — ordered steps; partners engaged in sequence"),
                      ("𐑵","Broad conjunctive — many required partners (>10), cooperative assembly")]},
-        {"short": "⊙",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
-         "options": [("𐑢","Subcritical — normal regime, no scale-free behavior"),
-                     ("⊙","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
-                     ("𐑮","Complex critical — criticality with complex eigenvalues"),
-                     ("𐑻","Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry"),
-                     ("𐑣","Supercritical / post-threshold — system has passed through criticality")]},
-        {"short": "⊥",  "long": "chirality",            "question": "How persistent is the broken orientational symmetry — memory depth?",
-         "options": [("𐑓","Achiral — mirror image accessible; no persistent symmetry breaking"),
-                     ("𐑒","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
-                     ("𐑖","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
-                     ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (implies 𐑪 kinetics)")]},
-        {"short": "⊞",  "long": "stoichiometry",        "question": "What is the participation ratio?",
-         "options": [("𐑙","Equal symmetric pairing"),
-                     ("𐑕","Higher-order symmetric — oligomers, committees"),
-                     ("𐑳","Asymmetric — different counts on each side")]},
-        {"short": "◻",  "long": "protection",           "question": "Can the role be continuously deformed away?",
-         "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
-                     ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
-                     ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
-                     ("𐑟","Non-Abelian protection — most robust; requires 𐑦 dimensionality")]},
     ]
 
     async def generate_guided(
