@@ -158,7 +158,7 @@ The engine does not claim to "decode" whale song. It maps acoustic structure to 
 
 ### Genetic (`genetic_engine.py`)
 
-The genetic code as an IG model. 20 amino acids, 64 codons, B₄² lattice. All five canonical open questions resolved (May 2026):
+The genetic code as an IG model. 20 amino acids, 64 codons, B₄² lattice. Five canonical questions, each answered by a crystal address computation:
 
 1. Why 20 amino acids and not more?
 2. Why the specific degeneracy pattern (2-2-1-3-4-6)?
@@ -166,7 +166,7 @@ The genetic code as an IG model. 20 amino acids, 64 codons, B₄² lattice. All 
 4. Why stop codons occupy exactly three addresses?
 5. Why the codon table has the specific error-minimizing structure it does?
 
-Each answer is a crystal address computation. See `manuscripts/genetics_ig.md`.
+See `manuscripts/genetics_ig.md`.
 
 ### ZFCₜ Navigator (`zfct_navigator.py`)
 
@@ -219,7 +219,7 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 ## Lean Formalization — p4rakernel
 
-`imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. (It supersedes the former MillenniumAnkh repo; classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `imsgct/p4rakernel/ClassicalRestriction.lean`.)
+`imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. Classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `imsgct/p4rakernel/ClassicalRestriction.lean`.
 
 **~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (sorry-free), and the Millennium cluster.
 
@@ -234,9 +234,9 @@ Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge,
                               plus Beal, Collatz, Dixmier, E8/G2 vessel, and more
 ```
 
-### Millennium cluster — honest sorries
+### Millennium cluster — where the sorries sit
 
-Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted; it does not pretend those proofs are done. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries are the honest statement of remaining work. Full detail: `imsgct/p4rakernel/README.md`.
+Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted, and stops there. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries state the remaining work. Full detail: `imsgct/p4rakernel/README.md`.
 
 ---
 
