@@ -130275,5 +130275,21 @@
     "⊥": "𐑖",
     "⊞": "𐑕",
     "◻": "𐑭"
+  },
+  {
+    "name": "vox_decompiler_mu_delta_id",
+    "description": "The μ∘δ=id decompiler adjoint to the Vox control-flow-closure auditor. Converts IMASM words back to x86 PE/ELF bytecode, closing the circular pipeline. Where Vox lifts bytecode to the twelve glyphs and runs the SIXTEEN_3 verdict engine, this system recomposes glyphs back to executable bytecode such that lift(recompose(word)) = word. The Frobenius condition is verified by ob3ect_close with verdict T (fuse_result = split_input). It is structurally the inverse of vox_control_flow_closure_auditor on the same twelve primitives, representing the adjoint that closes the round-trip loop.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑾",
+    "<": "𐑹",
+    "⋈": "𐑱",
+    "⊤": "𐑪",
+    "∈": "𐑚",
+    "∋": "𐑠",
+    "⊙": "𐑮",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "◻": "𐑴"
   }
 ]
