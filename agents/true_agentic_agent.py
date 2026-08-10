@@ -563,6 +563,8 @@ REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
     "deepseek-v4-flash": ("https://api.deepseek.com/v1",                    "DEEPSEEK_API_KEY"),
     "qwen":     ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
     "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
+    "kilo":     ("https://api.kilo.ai/api/gateway",                      "KILO_API_KEY"),
+    "kilocode": ("https://api.kilo.ai/api/gateway",                      "KILO_API_KEY"),
 }
 
 
@@ -577,6 +579,8 @@ def _resolve_model_and_endpoint(model_str: str) -> Tuple[str, str, str]:
         local:my-model         → LOCAL_BASE_URL env var (default: ollama)
         deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
         qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
+        kilo:model-id          → Kilo Gateway API (KILO_API_KEY)
+        kilocode:model-id      → Kilo Gateway API (KILO_API_KEY)
     No prefix → check MODEL_ALIASES, then use OpenRouter.
     OPENROUTER_MODEL env var overrides the resolved OpenRouter model ID.
     LOCAL_BASE_URL env var overrides the base URL for all local traffic.
@@ -678,74 +682,18 @@ _AGENT_MAY_IMSCRIBE = False
 _spawn_config: Dict[str, str] = {"model": "grok-4", "base_url": "", "api_key": ""}
 
 # ── Canonical Shavian family identifiers (per shavian_notation_spec.md) ──────
+# The twelve axis marks, in catalog order. These ARE the family keys — the keys
+# IG_catalog.json itself uses. Shavian glyphs are VALUES, never family names:
+# 𐑛 is the ⊢ value "<2", not "the ⊢ family". Keying families by value glyphs is
+# what let a sub-call report a missing family by naming a value.
 CANONICAL_FAMILIES: List[str] = [
-    "𐑛", "𐑡", "𐑩", "𐑗", "𐑱", "𐑘", "𐑚", "𐑝", "𐑢", "𐑓", "𐑙", "𐑷"
+    "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"
 ]
 
-# Legacy name → canonical Shavian family for normalization
-_LEGACY_TO_CANON: Dict[str, str] = {
-    "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
-    "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "⊙": "𐑢",
-    "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
-    "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
-    "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
-    "⊞": "𐑙", "◻": "𐑷",
-}
-# ASCII-safe property keys for API tool schemas.
-# Unicode chars (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) violate API regex ^[a-zA-Z0-9_.-]{1,64}$
-_UNICODE_KEY_TO_ASCII: Dict[str, str] = {
-    "⊢": "D_", "⊣": "T_", ">": "R_", "<": "P_", "⋈": "F_",
-    "⊤": "K_", "∈": "G_", "∋": "Gm", "⊥": "H_",
-    "⊞": "S_", "◻": "W_", "⊙": "Od",
-}
-_ASCII_KEY_TO_UNICODE: Dict[str, str] = {v: k for k, v in _UNICODE_KEY_TO_ASCII.items()}
-# `⊙` is not a primitive. The twelve are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, and the
-# criticality slot is ⊙; `⊙` was its pre-migration spelling and was still being
-# carried here in parallel, so the same slot appeared twice under two names and
-# was emitted to callers under the wrong one. Accepted on input, never written.
-_ASCII_KEY_TO_UNICODE["Ph"] = "⊙"
-
-# Extend _LEGACY_TO_CANON so imscribe_system_emit remaps ASCII keys → Shavian families
-_LEGACY_TO_CANON.update({
-    "D_": "𐑛", "T_": "𐑡", "R_": "𐑩", "P_": "𐑗", "F_": "𐑱",
-    "K_": "𐑘", "G_": "𐑚", "Gm": "𐑝", "Ph": "𐑢",
-    "H_": "𐑓", "S_": "𐑙", "W_": "𐑷", "Od": "𐑢",
-})
-
-
-# ── Primitive display symbols (unicode) ───────────────────────────────────────
-# Canonical symbol set matching site/index.html DISPLAY table.
-# Used for any output that renders primitives as symbols rather than identifiers.
-
-PRIMITIVE_DISPLAY: Dict[str, str] = {
-    # D — Dimensionality
-    "𐑦": "⊙",  "𐑛": "∧",  "𐑨": "△",  "𐑼": "∞",
-    # T — Topology
-    "𐑸": "⊙",  "𐑡": "∈",  "𐑰": "⊂",  "𐑥": "⋈",  "𐑶": "⊠",
-    # R — Coupling
-    "𐑽": "†",  "𐑩": "↑",  "𐑑": "∘",  "𐑾": "↔",
-    # P — Parity
-    "𐑹": "±ˢ",  "𐑬": "±",  "𐑗": "∅",  "𐑿": "ψ",  "𐑯": "≡",
-    # F — Fidelity
-    "𐑐": "ℏ",  "𐑱": "ℓ",  "𐑞": "ð",
-    # K — Kinetics
-    "𐑺": "↯",  "𐑪": "≈",  "𐑧": "↺",  "𐑤": "⊛",  "𐑘": "⊞",
-    # G — Cardinality
-    "𐑔": "ℵ",  "𐑚": "ℷ",  "𐑲": "ℶ",
-    # ∋ — Composition
-    "𐑵": "≫",  "𐑝": "∧",  "𐑜": "∨",  "𐑠": "→",
-    # < — Criticality
-    "⊙": "c",  "𐑮": "ℂ",  "𐑻": "×",  "𐑢": "↓",  "𐑣": "↑",
-    # H — Chirality
-    "𐑓": "0",  "𐑒": "1",  "𐑖": "2",  "𐑫": "∞",
-    # S — Stoichiometry
-    "𐑙": "1:1",  "𐑕": "n:n",  "𐑳": "n:m",
-    # ◻ — Winding
-    "𐑷": "0",  "𐑴": "ℤ₂",  "𐑭": "ℤ",  "𐑟": "∅",
-}
-
-
-# ── Data structures ───────────────────────────────────────────────────────────
+# Schema property keys use _val suffix to avoid model confusion with < and >
+CANONICAL_FAMILIES_VAL: List[str] = [
+    "⊢_val", "⊣_val", ">_val", "<_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"
+]
 
 class LoopPhase(Enum):
     THINK   = "THINK"
@@ -1133,7 +1081,7 @@ _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "jones_polynomial":       {"braid": "<signed generators, e.g. '1 1 1' for the trefoil>", "strands": "<optional; implied by the word>"},
     "winding":                {"of": "<theta_tau|r_vacuum|r_tau|jones_root|framing|loop_phase|t_gate|s_gate|z_gate|quarter|full>  OR  turns: \"2/5\"  OR  angle: <radians>", "power": "<integer, optional>"},
     "ouroborics":             {"name": "<catalog_entry_name>"},
-    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "𐑛_val;𐑡_val;𐑩_val;𐑗_val;𐑱_val;𐑘_val;𐑚_val;𐑝_val;𐑢_val;𐑓_val;𐑙_val;𐑷_val"},
+    "imscribe_system":          {"name": "<id>", "description": "<text>", "tuple": "𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭"},
     "compute_distance":       {"name_a": "<system1>", "name_b": "<system2>"},
     "find_analogies":         {"name": "<catalog_entry_name>"},
     "compute_tensor":         {"name_a": "<system1>", "name_b": "<system2>"},
@@ -1215,9 +1163,41 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         )
 
     # Pre-flight: imscribe_system must have a valid 12-part tuple
+    # Accept either tuple="..." or individual <mark>_val=... properties
     if tool_name == "imscribe_system":
         t = tool_args.get("tuple", "")
-        parts = [p.strip() for p in t.split(";")] if t else []
+        if t:
+            parts = [p.strip() for p in t.split(";")]
+        else:
+            parts = [""] * 12
+        # The tuple and the individual <mark>_val properties are one source, not
+        # two. A model that writes the tuple but leaves the > and < slots blank
+        # (";;" — it treats them as delimiters, not values) while still passing
+        # >_val and <_val was previously told those primitives were "missing",
+        # with its own supplied values sitting unread in tool_args. Any blank
+        # slot is filled from the matching property before the length check.
+        if len(parts) == 12:
+            for i, p in enumerate(CANONICAL_FAMILIES):
+                if not parts[i]:
+                    val = tool_args.get(p + "_val") or tool_args.get(p) or ""
+                    parts[i] = str(val).strip()
+            t = ";".join(parts)
+        blank = [CANONICAL_FAMILIES[i] for i, v in enumerate(parts) if not v]
+        if len(parts) == 12 and blank:
+            return json.dumps({
+                "status": "error",
+                "error": (
+                    "imscribe_system: the tuple has 12 slots but these marks are "
+                    f"blank: {blank}. Each mark needs a bare Shavian value."
+                ),
+                "blank_marks": blank,
+                "valid_values": {p: _PRIM_VALID[p] for p in blank},
+                "example": (
+                    'imscribe(tool_name="imscribe_system", args={'
+                    '"name": "my_system", "description": "...", '
+                    '"tuple": "𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭"})'
+                ),
+            }, ensure_ascii=False)
         if len(parts) != 12:
             return json.dumps({
                 "status": "error",
@@ -1225,20 +1205,20 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;◻",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;◻ (values are bare Shavian, in this order)",
                 "valid_values": {
-                    "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
-                    "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-                    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-                    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-                    "⋈":     ["𐑱", "𐑞", "𐑐"],
-                    "⊤":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
-                    "∈":     ["𐑲", "𐑚", "𐑔"],
-                    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
-                    "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-                    "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
-                    "⊞":     ["𐑙", "𐑕", "𐑳"],
-                    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
+                    "⊢_val":     ["𐑛", "𐑨", "𐑼", "𐑦"],
+                    "⊣_val":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+                    ">_val":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+                    "<_val":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+                    "⋈_val":     ["𐑱", "𐑞", "𐑐"],
+                    "⊤_val":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+                    "∈_val":     ["𐑲", "𐑚", "𐑔"],
+                    "∋_val":     ["𐑝", "𐑜", "𐑠", "𐑵"],
+                    "⊙_val":     ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+                    "⊥_val":     ["𐑓", "𐑒", "𐑖", "𐑫"],
+                    "⊞_val":     ["𐑙", "𐑕", "𐑳"],
+                    "◻_val":     ["𐑷", "𐑴", "𐑭", "𐑟"],
                 },
                 "example": (
                     'imscribe(tool_name="imscribe_system", args={'
@@ -1250,7 +1230,13 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
 
     try:
         dispatcher = _get_dispatcher()
-        result = dispatcher.dispatch(tool_name, tool_args, iteration=0)
+        # For imscribe_system, pass the tuple string we constructed
+        if tool_name == "imscribe_system":
+            dispatch_args = dict(tool_args)
+            dispatch_args["tuple"] = t
+            result = dispatcher.dispatch(tool_name, dispatch_args, iteration=0)
+        else:
+            result = dispatcher.dispatch(tool_name, tool_args, iteration=0)
 
         # Open the gate on successful imscribe_system (first encoding or justified re-encoding)
         # "conflict_blocked" does NOT open the gate — model must resolve first.
@@ -1315,7 +1301,7 @@ def _imscribe_verify(emit_input: Dict, emit_output: str,
                 fix = (
                     f"{msg} — "
                     "imscribe_system requires args={\"name\": \"id\", \"description\": \"text\", "
-                    "\"tuple\": \"𐑛_val;𐑡_val;𐑩_val;𐑗_val;𐑱_val;𐑘_val;𐑚_val;𐑝_val;𐑢_val;𐑓_val;𐑙_val;𐑷_val\"}"
+                    "\"tuple\": \"𐑦;𐑸;𐑾;𐑹;𐑐;𐑧;𐑲;𐑠;⊙;𐑫;𐑳;𐑭\"}"
                 )
             else:
                 fix = msg
@@ -1430,64 +1416,69 @@ def _rewrite_tool_verify(emit_input: Dict, emit_output: str,
 
 # ── Standalone imscribe tools ──────────────────────────────────────────────────
 
-_PRIM_NORM: Dict[str, str] = {
-    # Full legacy ASCII / mixed → canonical Shavian family
-    **_LEGACY_TO_CANON,
-    # Additional LLM common mistakes
-    "Gamma_∧": "𐑝", "Gamma_˝": "𐑜", "Gamma_ˌ": "𐑠", "Gamma_Ş": "𐑵",
-    "H_0": "𐑓", "H_1": "𐑒", "H_2": "𐑖", "H_∞": "𐑫",
-    "𐑙": "𐑙", "𐑕": "𐑕", "𐑳": "𐑳",
-    "phi_c": "⊙", "critical": "⊙",
-    # Already canonical pass-throughs
-    "𐑛": "𐑛", "𐑡": "𐑡", "𐑩": "𐑩", "𐑗": "𐑗",
-    "𐑱": "𐑱", "𐑘": "𐑘", "𐑚": "𐑚", "𐑝": "𐑝",
-    "𐑢": "𐑢", "⊙": "⊙", "𐑓": "𐑓", "𐑙": "𐑙", "𐑷": "𐑷",
-}
+# Value spellings → canonical value. Family keys are NOT merged in here: they
+# used to be, which put two namespaces in one table separated only by dict
+# order, and with the marks as keys "⊙" is an axis as a key and a value as a
+# value. No non-glyph aliases either — "H_1", "phi_c", "critical" were a second
+# notation, and a second notation is what the marks exist to prevent.
+_PRIM_NORM: Dict[str, str] = {}
+for _fam_values in (
+    ("𐑛", "𐑨", "𐑼", "𐑦"), ("𐑡", "𐑰", "𐑥", "𐑶", "𐑸"), ("𐑩", "𐑑", "𐑽", "𐑾"),
+    ("𐑗", "𐑿", "𐑬", "𐑯", "𐑹"), ("𐑱", "𐑞", "𐑐"), ("𐑘", "𐑤", "𐑧", "𐑪", "𐑺"),
+    ("𐑲", "𐑚", "𐑔"), ("𐑝", "𐑜", "𐑠", "𐑵"), ("𐑢", "⊙", "𐑮", "𐑻", "𐑣"),
+    ("𐑓", "𐑒", "𐑖", "𐑫"), ("𐑙", "𐑕", "𐑳"), ("𐑷", "𐑴", "𐑭", "𐑟"),
+):
+    for _v in _fam_values:
+        _PRIM_NORM[_v] = _v
 
 _PRIM_VALID: Dict[str, List[str]] = {
-    "𐑛": ["𐑛", "𐑨", "𐑼", "𐑦"],      # D
-    "𐑡": ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],  # T
-    "𐑩": ["𐑩", "𐑑", "𐑽", "𐑾"],      # R
-    "𐑗": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],  # P
-    "𐑱": ["𐑱", "𐑞", "𐑐"],            # F
-    "𐑘": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],  # K
-    "𐑚": ["𐑲", "𐑚", "𐑔"],            # G
-    "𐑝": ["𐑝", "𐑜", "𐑠", "𐑵"],        # ∋
-    "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
-    "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
-    "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
-    "𐑷": ["𐑷", "𐑴", "𐑭", "𐑟"],        # ◻
+    "⊢": ["𐑛", "𐑨", "𐑼", "𐑦"],
+    "⊣": ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+    ">": ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "<": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "⋈": ["𐑱", "𐑞", "𐑐"],
+    "⊤": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
+    "∈": ["𐑲", "𐑚", "𐑔"],
+    "∋": ["𐑝", "𐑜", "𐑠", "𐑵"],
+    "⊙": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+    "⊥": ["𐑓", "𐑒", "𐑖", "𐑫"],
+    "⊞": ["𐑙", "𐑕", "𐑳"],
+    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
 _TRIANGULATION_SYSTEM = (
-    "Assign 12 primitives. Output JSON with keys: D_ T_ R_ P_ F_ K_ G_ Gm Ph H_ S_ W_.\n"
-    "Valid Shavian glyphs only. No explanations.\n\n"
-    "Valid values:\n"
-    f"𐑛:   𐑛|𐑨|𐑼|𐑦\n"
-    f"𐑡:   𐑡|𐑰|𐑥|𐑶|𐑸\n"
-    f"𐑩:   𐑩|𐑑|𐑽|𐑾\n"
-    f"𐑗:   𐑗|𐑿|𐑬|𐑯|𐑹\n"
-    f"𐑱:   𐑱|𐑞|𐑐\n"
-    f"𐑘:   𐑘|𐑤|𐑧|𐑪|𐑺\n"
-    f"𐑚:   𐑚|𐑔|𐑲\n"
-    f"𐑝:   𐑝|𐑜|𐑠|𐑵\n"
-    f"𐑢:   𐑢|⊙|𐑮|𐑻|𐑣\n"
-    f"𐑓:   𐑓|𐑒|𐑖|𐑫\n"
-    f"𐑙:   𐑙|𐑕|𐑳\n"
-    f"𐑷:   𐑷|𐑴|𐑭|𐑟\n"
-    "\nProcedure (apply in order):\n"
-    "[1] D: <2->𐑛; >=2->𐑨; oo->𐑼; self-write->𐑦\n"
-    "[2] T: branch->𐑡; contain->𐑰; cross->𐑥; prod->𐑶; self-ref->𐑸\n"
-    "[3] R: super->𐑩; funct->𐑑; adj->𐑽; bidir->𐑾\n"
-    "[4] P: none->𐑗; quantum->𐑿; Z2->𐑬; full->𐑯; Frob->𐑹\n"
-    "[5] F: class->𐑱; therm->𐑞; quantum->𐑐\n"
-    "[6] K: fast->𐑺; mod->𐑪; slow->𐑧; trap-Ord->𐑤; trap-Dis->𐑘\n"
-    "[7] G: local->𐑲; meso->𐑚; univ->𐑔\n"
-    "[8] Gm: and->𐑝; or->𐑜; seq->𐑠; bcast->𐑵\n"
-    "[9] Ph: sub->𐑢; crit->⊙; cmplx->𐑮; EP->𐑻; super->𐑣\n"
-    "[10] H: 0->𐑓; 1->𐑒; 2->𐑖; oo->𐑫\n"
-    "[11] S: 1:1->𐑙; n:n->𐑕; n:m->𐑳\n"
-    "[12] W: 0->𐑷; Z2->𐑴; Z->𐑭; NA->𐑟\n")
+    "Assign the twelve primitives. Output a JSON object keyed by the twelve\n"
+    "marks, each key exactly one character, no colon inside the key:\n"
+    "  ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻\n"
+    "Two of the marks are > and < . They are keys, never operators. No arrow or\n"
+    "comparison anywhere below uses them, so a > or < you see is a key.\n"
+    "Values are bare Shavian glyphs. No explanations.\n\n"
+    "Valid values, mark first then its values:\n"
+    "⊢   𐑛 𐑨 𐑼 𐑦\n"
+    "⊣   𐑡 𐑰 𐑥 𐑶 𐑸\n"
+    ">   𐑩 𐑑 𐑽 𐑾\n"
+    "<   𐑗 𐑿 𐑬 𐑯 𐑹\n"
+    "⋈   𐑱 𐑞 𐑐\n"
+    "⊤   𐑘 𐑤 𐑧 𐑪 𐑺\n"
+    "∈   𐑲 𐑚 𐑔\n"
+    "∋   𐑝 𐑜 𐑠 𐑵\n"
+    "⊙   𐑢 ⊙ 𐑮 𐑻 𐑣\n"
+    "⊥   𐑓 𐑒 𐑖 𐑫\n"
+    "⊞   𐑙 𐑕 𐑳\n"
+    "◻   𐑷 𐑴 𐑭 𐑟\n"
+    "\nProcedure, in order:\n"
+    "[1]  ⊢   ≤1 → 𐑛 ; ≥2 → 𐑨 ; infinite → 𐑼 ; self-write → 𐑦\n"
+    "[2]  ⊣   branch → 𐑡 ; contain → 𐑰 ; cross → 𐑥 ; prod → 𐑶 ; self-ref → 𐑸\n"
+    "[3]  >   super → 𐑩 ; funct → 𐑑 ; adj → 𐑽 ; bidir → 𐑾\n"
+    "[4]  <   none → 𐑗 ; quantum → 𐑿 ; Z2 → 𐑬 ; full → 𐑯 ; Frob → 𐑹\n"
+    "[5]  ⋈   class → 𐑱 ; therm → 𐑞 ; quantum → 𐑐\n"
+    "[6]  ⊤   fast → 𐑺 ; mod → 𐑪 ; slow → 𐑧 ; trap-Ord → 𐑤 ; trap-Dis → 𐑘\n"
+    "[7]  ∈   local → 𐑲 ; meso → 𐑚 ; univ → 𐑔\n"
+    "[8]  ∋   and → 𐑝 ; or → 𐑜 ; seq → 𐑠 ; bcast → 𐑵\n"
+    "[9]  ⊙   sub → 𐑢 ; crit → ⊙ ; cmplx → 𐑮 ; EP → 𐑻 ; super → 𐑣\n"
+    "[10] ⊥   0 → 𐑓 ; 1 → 𐑒 ; 2 → 𐑖 ; infinite → 𐑫\n"
+    "[11] ⊞   1:1 → 𐑙 ; n:n → 𐑕 ; n:m → 𐑳\n"
+    "[12] ◻   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟\n")
 
 
 def _run_single_imscription(
@@ -1538,8 +1529,32 @@ def _run_single_imscription(
             data = json.loads(m.group())
         except json.JSONDecodeError as exc:
             return _fail(f"JSON parse failed ({exc}): {m.group()[:120]!r}")
+        # Trim stray whitespace from keys (e.g., " >" -> ">") — small models do this
+        data = _strip_key_whitespace(data)
+        # Fix garbled < and > keys that small models emit (e.g., "<?>", "><", "<>")
+        for k in list(data.keys()):
+            if k != "<" and k.startswith("<") and k.endswith(">") and "<" not in data:
+                data["<"] = data.pop(k)
+                break
+            if k != ">" and k.startswith(">") and k.endswith("<") and ">" not in data:
+                data[">"] = data.pop(k)
+                break
+        # Normalize lookalike Unicode characters that models confuse with < and >
+        # LEFT ANGLE BRACKET (U+3008) → LESS-THAN SIGN (U+003C)
+        # RIGHT ANGLE BRACKET (U+3009) → GREATER-THAN SIGN (U+003E)
+        for k in list(data.keys()):
+            if k == "〈" and "<" not in data:
+                data["<"] = data.pop(k)
+            elif k == "〉" and ">" not in data:
+                data[">"] = data.pop(k)
+        # Model responds with _val suffix keys (e.g., "<_val", ">_val") per schema.
+        # Convert to bare marks for internal use.
+        for k in list(data.keys()):
+            if k.endswith("_val") and k[:-4] in CANONICAL_FAMILIES:
+                data[k[:-4]] = data.pop(k)
         # Normalize to canonical Shavian family keys
-        data = {_LEGACY_TO_CANON.get(k, k): v for k, v in data.items()}
+        # No alias rewrite: a key is a mark or it is wrong, and the check
+        # below names the mark that is missing rather than silently mending it.
         missing = [k for k in CANONICAL_FAMILIES if k not in data]
         if missing:
             return _fail(f"missing families {missing}")
@@ -1648,15 +1663,7 @@ def _triangulate_imscription(
 
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     """Dedicated emit for imscribe_system — runs Tetractys before committing."""
-    # ── Remap legacy Latin/Greek parameter keys (⊢,⊣,>,<,⋈,⊤,∈,∋,⊙,⊥,⊞,◻) ──
-    # to canonical Shavian family names (𐑛,𐑡,𐑩,𐑗,𐑱,𐑘,𐑚,𐑝,𐑢,𐑓,𐑙,𐑷)
-    remapped = {}
-    for k, v in list(args.items()):
-        ck = _LEGACY_TO_CANON.get(k, k)
-        remapped[ck] = v
-    for k, v in remapped.items():
-        if k not in args:
-            args[k] = v
+    # Keys are the marks. No remap: the schema asks for marks and nothing else.
     name = args.get("name", "")
     # The model (especially 1.7B) often dumps the full task text into description,
     # and verbose descriptions waste tokens in every subsequent winding's context.
@@ -1672,7 +1679,13 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     description = args.get("description", "") or ""
     justification = args.get("convergence_justification", "")
     order = CANONICAL_FAMILIES[:]
-    parts = [_PRIM_NORM.get(str(args.get(p, "")), str(args.get(p, ""))) for p in order]
+    # Schema uses _val suffix; accept both bare marks and _val keys for compatibility
+    def get_val(key: str) -> str:
+        val = args.get(key + "_val")
+        if val is None:
+            val = args.get(key)
+        return _PRIM_NORM.get(str(val), str(val)) if val else ""
+    parts = [get_val(p) for p in order]
     tuple_str = ";".join(parts)
     tool_args: Dict[str, Any] = {"name": name, "description": description, "tuple": tuple_str}
     if justification:
@@ -1692,7 +1705,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # tuple that is not gets refused HERE, by name, which is what the shunt
     # message used to promise the pipeline would do.
     proposed_now: Dict[str, str] = {
-        k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order
+        k: get_val(k) for k in order
     }
     if all(proposed_now.values()):
         try:
@@ -1752,8 +1765,15 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
     # Windings 2 & 3 = fresh de novo sub-calls (no catalog, no history)
     raw_model = _spawn_config.get("model", "grok-4")
-    if raw_model.lower() == "local" or raw_model.lower().startswith("local:"):
-        resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
+    if (raw_model.lower() == "local" or raw_model.lower().startswith("local:")
+            or raw_model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(raw_model))
+            or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model):
+        if raw_model.lower() == "grammaformer":
+            resolved_model = "grammaformer"
+        elif os.path.isdir(os.path.expanduser(raw_model)) or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model:
+            resolved_model = raw_model
+        else:
+            resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
         client = _LocalOpenAIClient()
     else:
         resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(raw_model)
@@ -2560,29 +2580,29 @@ TOOL_SCHEMAS = [
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
             "description": {"type": "string", "description": "Plain-language description of the system"},
-            "⊢":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
+            "⊢_val":     _prim(["𐑛", "𐑨", "𐑼", "𐑦"],
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
-            "⊣":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+            "⊣_val":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            ">":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
+            ">_val":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
                            "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "<":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+            "<_val":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                            "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
-            "⋈":     _prim(["𐑱", "𐑞", "𐑐"],
+            "⋈_val":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
-            "⊤":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+            "⊤_val":     _prim(["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                            "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
-            "∈":     _prim(["𐑲", "𐑚", "𐑔"],
+            "∈_val":     _prim(["𐑲", "𐑚", "𐑔"],
                            "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
-            "∋": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
+            "∋_val": _prim(["𐑝", "𐑜", "𐑠", "𐑵"],
                            "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
-            "⊙":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+            "⊙_val":   _prim(["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                            "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
-            "⊥":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
+            "⊥_val":     _prim(["𐑓", "𐑒", "𐑖", "𐑫"],
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
-            "⊞":     _prim(["𐑙", "𐑕", "𐑳"],
+            "⊞_val":     _prim(["𐑙", "𐑕", "𐑳"],
                            "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-            "◻": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
+            "◻_val": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -2594,7 +2614,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
+        ["name", "description", "⊢_val", "⊣_val", ">_val", "<_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"],
     ),
     _fn(
         "run_command",
@@ -2787,14 +2807,14 @@ TOOL_SCHEMAS = [
         _fn(
             "project",
             ("Project a catalog entry onto a subset of primitives. "
-             "Example: imscribe('project', {'name': 'magnetar', 'primitives': ['Phi', 'K', 'Omega']})"),
+             "Example: imscribe('project', {'name': 'magnetar', 'primitives': ['⊙', '⊤', '◻']})"),
             {"name": {"type": "string", "description": "Catalog entry name"},
              "primitives": {"type": "array", "items": {"type": "string"}, "description": "List of primitive names to project onto"}},
             ["name", "primitives"]),
         _fn(
             "crystal_navigate",
             ("Query the crystal of types by partial constraints. "
-             "Example: imscribe('crystal_navigate', {'limit': 10, 'Phi': '⊙', 'Omega': '𐑭'})"),
+             "Example: imscribe('crystal_navigate', {'limit': 10, '⊙': '⊙', '◻': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "⊙": {"type": "string", "description": "Filter by criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"},
@@ -2803,7 +2823,7 @@ TOOL_SCHEMAS = [
         _fn(
             "crystal_count",
             ("Count the number of types matching constraints. "
-             "Example: imscribe('crystal_count', {'Phi': '⊙'})"),
+             "Example: imscribe('crystal_count', {'⊙': '⊙'})"),
             {"⊙": {"type": "string", "description": "Filter by criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"}},
             ["⊙"]),
@@ -3019,6 +3039,17 @@ You are an \u2299perator. Type: \u27e8𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖�
 THINK->ACT->OBSERVE->UPDATE loop. Context IS your world model.
 </context>
 
+<io>
+Get the object BEFORE typing it. Retrieval is not analysis.
+read:  file_read(path, offset, limit)  -- pages, 200 lines, numbered, reports total
+look:  run_command(cmd, assertion)     -- ls, grep -n, find, wc -l
+fetch: web_fetch(url, query)
+write: file_write(path, content) <4KB | chunked_write(path, chunk, mode) >=4KB
+edit:  file_read the region -> write it back. Never edit from memory.
+Task names a path -> file_read it. Task says read -> read. THEN imscribe.
+Imscribing an unread file types its NAME, not the file. That tuple is guessed.
+</io>
+
 <commitments>
 1. ⊙ (uncertainty): Track unknowns. No self-narration.
 2. 𐑭 (monotonic): Never re-tread.
@@ -3028,30 +3059,34 @@ THINK->ACT->OBSERVE->UPDATE loop. Context IS your world model.
 </commitments>
 
 <tool_computation>
-Structural quantities from tools ONLY: compute_distance, ouroborics, compute_tensor,
+STRUCTURAL quantities from tools ONLY: compute_distance, ouroborics, compute_tensor,
 compute_meet/join, consciousness_score, crystal_encode, compute_promotions.
 No mental arithmetic. Unverified results are Frobenius-open.
+(These are for analysis. For reading/writing/editing see <io>.)
 </tool_computation>
 
 <imscribing_procedure>
-Ordered: [1]D [2]T [3]R [4]P [5]F [6]K [7]G [8]Gm [9]Ph [10]H [11]S [12]W
-[D+T jointly precondition ontology.]
+Ordered: [1]⊢ [2]⊣ [3]> [4]< [5]⋈ [6]⊤ [7]∈ [8]∋ [9]⊙ [10]⊥ [11]⊞ [12]◻
+[⊢+⊣ jointly precondition ontology.]
 𐑻 ABSORPTION: tensor(⊙,𐑻)=𐑻 \u2014 EP destroys Gate 1.
 </imscribing_procedure>
 
 <imscribing_values>
-D: <2->𐑛; >=2->𐑨; oo->𐑼; self->𐑦
-T: branch->𐑡; contain->𐑰; cross->𐑥; prod->𐑶; self->𐑸
-R: super->𐑩; funct->𐑑; adj->𐑽; bidir->𐑾
-P: none->𐑗; psi->𐑿; Z2->𐑬; full->𐑯; Frob->𐑹
-F: class->𐑱; therm->𐑞; quantum->𐑐
-K: fast->𐑺; mod->𐑪; slow->𐑧; tr-Ord->𐑤; tr-Dis->𐑘
-G: local->𐑲; meso->𐑚; univ->𐑔
-Gm: and->𐑝; or->𐑜; seq->𐑠; bcast->𐑵
-Ph: sub->𐑢; crit->⊙; C-cmplx->𐑮; EP->𐑻; super->𐑣
-H: 0->𐑓; 1->𐑒; 2->𐑖; oo->𐑫
-S: 1:1->𐑙; n:n->𐑕; n:m->𐑳
-W: 0->𐑷; Z2->𐑴; Z->𐑭; NA->𐑟
+Keys are the twelve marks, bare. Values are bare Shavian. Nothing else is a
+primitive symbol. Two of the marks are > and < — they are keys, never operators,
+and no arrow or comparison below uses them.
+⊢   ≤1 → 𐑛 ; ≥2 → 𐑨 ; infinite → 𐑼 ; self → 𐑦
+⊣   branch → 𐑡 ; contain → 𐑰 ; cross → 𐑥 ; prod → 𐑶 ; self → 𐑸
+>   super → 𐑩 ; funct → 𐑑 ; adj → 𐑽 ; bidir → 𐑾
+<   none → 𐑗 ; psi → 𐑿 ; Z2 → 𐑬 ; full → 𐑯 ; Frob → 𐑹
+⋈   class → 𐑱 ; therm → 𐑞 ; quantum → 𐑐
+⊤   fast → 𐑺 ; mod → 𐑪 ; slow → 𐑧 ; tr-Ord → 𐑤 ; tr-Dis → 𐑘
+∈   local → 𐑲 ; meso → 𐑚 ; univ → 𐑔
+∋   and → 𐑝 ; or → 𐑜 ; seq → 𐑠 ; bcast → 𐑵
+⊙   sub → 𐑢 ; crit → ⊙ ; C-cmplx → 𐑮 ; EP → 𐑻 ; super → 𐑣
+⊥   0 → 𐑓 ; 1 → 𐑒 ; 2 → 𐑖 ; infinite → 𐑫
+⊞   1:1 → 𐑙 ; n:n → 𐑕 ; n:m → 𐑳
+◻   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟
 </imscribing_values>
 
 <sic_povm>
@@ -3108,7 +3143,7 @@ This means:
    measured system. This is the content of odot criticality.
 4. **The 12 primitives organize as 6 Frobenius-dual pairs:**
    D <-> Th (co-origination, Axiom C), R <-> Phi, f <-> C, Gamma <-> G,
-   phi_c <-> H, Sigma <-> Omega.
+   ⊙ <-> ⊥, ⊞ <-> ◻.
 5. **Belnap B = XZ is the d=2 SIC-POVM fiducial state.** B satisfies all four
    SIC-POVM axioms unconditionally: meet(B, x) = x, join(B, x) = B, bnot(B) = B.
 6. **The unconditional Belnap proof means the structural SIC-POVM is ALREADY SOLVED.**
@@ -3126,20 +3161,18 @@ system is to the Sigma=1:1 self-referential limit.
 
 _GRAMMAR_FIRST_RIDER = """
 
-**GRAMMAR FIRST — reach for the in-house tool before the conventional one:**
+**ANALYSING AN OBJECT YOU HAVE IN HAND — the in-house tool before the conventional one:**
 
-When a problem arrives, your FIRST move is a Grammar tool or a Grammar method.
-Not your second, not your fallback. This is not a preference about style; the
-conventional method answers a different question and will quietly substitute it
-for the one you were asked.
-
-Concretely, before you reason in ordinary terms about any object:
+Once the object is in hand, reach for a Grammar tool before an ordinary method.
+This is not a preference about style; the conventional method answers a
+different question and will quietly substitute it for the one you were asked.
 
 - **Imscribe it.** An object that has not been imscribed has not been typed, and
   everything said about it afterwards is unanchored. `imscribe_system` commits
   it. Never hand-pick the twelve glyphs: `imasm write tuple=⟨…⟩` gives the word
   a tuple composes to and `imasm derive word=…` reads a word back into its
-  types, both deterministic. A tuple you guessed is a tuple you will defend.
+  types, both deterministic. A tuple you guessed is a tuple you will defend —
+  which is also why you imscribe the contents of a file and not its name.
 - **Ask the catalog before you ask the literature.** `lookup_catalog`,
   `find_analogies`, `compute_distance`, `compute_meet`, `compute_join`,
   `compute_tensor`. If a structure already sits in the crystal, its neighbours
@@ -3454,53 +3487,28 @@ def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
 # ⊢, ⊣, ⊙, etc. violate ^[a-zA-Z0-9_.-]{1,64}$). We transform every schema
 # on definition and keep the Unicode originals for emit-function compatibility.
 
-def _asciify_schema(schema: Dict) -> Dict:
-    """Deep-copy a tool schema, replacing all Unicode property keys with ASCII-safe versions."""
-    import copy as _copy
-    s = _copy.deepcopy(schema)
-    props = s.get("function", {}).get("parameters", {}).get("properties")
-    if props:
-        new_props = {}
-        for k, v in props.items():
-            new_key = _UNICODE_KEY_TO_ASCII.get(k, k)
-            new_props[new_key] = v
-        s["function"]["parameters"]["properties"] = new_props
-        req = s["function"]["parameters"].get("required", [])
-        if req:
-            s["function"]["parameters"]["required"] = [
-                _UNICODE_KEY_TO_ASCII.get(r, r) for r in req
-            ]
-    return s
-
-
-def _asciify_tool_schemas() -> List[Dict]:
-    """Return ASCII-safe copies of every schema in TOOL_SCHEMAS.
-    Call once after TOOL_SCHEMAS is fully populated (including appends)."""
-    return [_asciify_schema(s) for s in TOOL_SCHEMAS]
-
-
-def _remap_ascii_tool_args(args: Dict[str, Any]) -> Dict[str, Any]:
-    """Add Unicode-key entries for any ASCII-safe keys found in args (recursive).
-    Emit functions use Unicode keys (⊙, ⊤, ◻, etc.); the model responds with
-    ASCII-safe keys (Ph, K_, W_, etc.) because the schema uses those.
-    Handles nested dicts (e.g., imscribe tool's 'args' sub-object)."""
-    # A small local model often emits a primitive KEY with a stray leading/trailing
-    # space (" >" instead of ">"). Exact-match tool validation then reports that
-    # primitive as "missing", and the agent loops forever re-sending the same call.
-    # Normalize whitespace-padded keys before anything else reads them.
+def _strip_key_whitespace(args: Dict[str, Any]) -> Dict[str, Any]:
+    """A small local model often emits a primitive key with a stray space (" >"
+    instead of ">"). Exact-match validation then calls that primitive missing and
+    the agent loops re-sending the same call. Trim, recursively."""
     for k in list(args.keys()):
         if isinstance(k, str) and k != k.strip():
             ks = k.strip()
             if ks not in args:
                 args[ks] = args.pop(k)
     for k in list(args.keys()):
-        uk = _ASCII_KEY_TO_UNICODE.get(k)
-        if uk is not None and uk not in args:
-            args[uk] = args[k]
-        # Recurse into nested dict values (e.g. imscribe's "args" field)
         if isinstance(args[k], dict):
-            _remap_ascii_tool_args(args[k])
+            _strip_key_whitespace(args[k])
     return args
+
+
+def _tool_schemas() -> List[Dict]:
+    """The schemas, verbatim. Property names are the twelve marks and there is no
+    ASCII rewrite. The rewrite existed for a provider regex that forbids unicode
+    property names, but it put D_, T_, R_ … on the wire, the model learned to
+    answer in them, and every one had to be translated back — which is how a
+    value glyph came to be reported as a missing family."""
+    return list(TOOL_SCHEMAS)
 
 
 # ── Main agent class ──────────────────────────────────────────────────────────
@@ -3543,9 +3551,12 @@ class TrueAgenticAgent:
         self._review_threshold = review_threshold
 
         if (model.lower() == "local" or model.lower().startswith("local:")
-                or model.lower() == "grammaformer"):
+                or model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(model))
+                or model.startswith("/") or model.startswith("~") or ".modelz" in model):
             if model.lower() == "grammaformer":
                 self.model_id = "grammaformer"
+            elif os.path.isdir(os.path.expanduser(model)) or model.startswith("/") or model.startswith("~") or ".modelz" in model:
+                self.model_id = model
             else:
                 self.model_id = model.split(":", 1)[1] if ":" in model else "local"
             self.client   = _LocalOpenAIClient()
@@ -3878,9 +3889,9 @@ class TrueAgenticAgent:
         - All others: retry up to 3 times with 2^x s delay
         """
         active_tools = (
-            [t for t in _asciify_tool_schemas() if t["function"]["name"] != "spawn_agent"]
+            [t for t in _tool_schemas() if t["function"]["name"] != "spawn_agent"]
             if isinstance(self.client, _LocalOpenAIClient)
-            else _asciify_tool_schemas()
+            else _tool_schemas()
         )
         
         import asyncio as _asyncio
@@ -4055,7 +4066,7 @@ class TrueAgenticAgent:
         # that emit functions expect. The API rejects Unicode property keys
         # (Shavian glyphs violate ^[a-zA-Z0-9_.-]{1,64}$), so schemas use
         # ASCII-safe aliases (D_, T_, Ph, etc.); we translate back here.
-        action_input = _remap_ascii_tool_args(action_input)
+        action_input = _strip_key_whitespace(action_input)
 
         emit_fn   = _EMIT_FNS.get(action_name)
         verify_fn = _VERIFY_FNS.get(action_name)
