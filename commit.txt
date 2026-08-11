@@ -1,4 +1,6 @@
-Kilo provider
+crossover_cli: quantum advantage certification, standalone
 
-Kilo Code / Kilo AI Gateway, OpenAI-compatible, reading KILO_API_KEY. Registered
-under both 'kilo' and 'kilocode' so either spelling resolves.
+Packages the quantum_tnn.py crossover metric as its own CLI for the Fibonacci
+anyon pipeline. Takes strands and depth with a gate string, or a braid word
+directly, or --certify. The boundary is t_gate × n_gates × ε_2q > 0.1: above it
+the circuit is classically simulable, below it the hardware certifies advantage.
