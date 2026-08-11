@@ -892,7 +892,18 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
 
 def _file_read_verify(emit_input: Dict, emit_output: str,
                       verify_args: Dict) -> Tuple[str, bool]:
-    return ("(read is idempotent — Frobenius trivially closed)", True)
+    """A read that FAILED is not closed.
+
+    This returned True unconditionally, so `file_read` on a directory — which
+    this module's own emit function answers with `(error reading …)` — was
+    stamped `Frobenius closed B4=T`. A verifier that does not read its own
+    output verifies nothing, and the 100% Frobenius readout downstream of it
+    measures nothing. The `imscribe` verifier in this same file already checks
+    for error text; this one now does too.
+    """
+    if emit_output.startswith("(error reading ") or emit_output.startswith("(unknown tool"):
+        return (f"read FAILED — Frobenius OPEN: {emit_output[:120]}", False)
+    return ("(read returned content — Frobenius closed)", True)
 
 
 _PRIM_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
@@ -1394,7 +1405,34 @@ def _done_emit(args: Dict[str, Any]) -> str:
 
 def _done_verify(emit_input: Dict, emit_output: str,
                  verify_args: Dict) -> Tuple[str, bool]:
-    return ("(terminal action — Frobenius trivially closed)", True)
+    """A conclusion is closed only if this session GROUNDED it.
+
+    `done` used to close unconditionally, so a trajectory could contradict every
+    observation it made and still report Frobenius 100% — the metric said
+    nothing about the answer. The golem rule is that a report may state only what
+    a tool returned, and the cheapest honest test of it is whether any tool
+    returned anything at all before the conclusion was written.
+
+    `_DONE_GROUNDING` is set by the loop to the observations of THIS session.
+    Empty means the conclusion was written without looking, which is the failure
+    seen when a restored prior conclusion is copied verbatim over a fresh `pwd`.
+    """
+    obs = _DONE_GROUNDING.get("observations", None)
+    if obs is None:
+        return ("(no grounding record — Frobenius closed)", True)
+    if len(obs) == 0:
+        return ("conclusion written with no tool observation this session — Frobenius OPEN", False)
+    conclusion = (emit_input.get("conclusion") or "").strip()
+    restored = _DONE_GROUNDING.get("restored_conclusions", [])
+    if conclusion and any(conclusion == r.strip() for r in restored):
+        return ("conclusion is a verbatim copy of a prior session's, with new "
+                "observations unaccounted for — Frobenius OPEN", False)
+    return ("(conclusion follows observations taken this session — Frobenius closed)", True)
+
+
+# Set by the agent loop before each verify: what this session actually observed,
+# and what a restored session already concluded. Read by `_done_verify`.
+_DONE_GROUNDING: Dict[str, Any] = {}
 
 
 def _context_review_emit(args: Dict[str, Any]) -> str:
@@ -3763,6 +3801,17 @@ class TrueAgenticAgent:
 
     async def run(self, task: str) -> str:
         self.trajectory = []
+        # What this session has actually observed, and what a restored session
+        # already concluded. `_done_verify` reads both: a conclusion written
+        # before any tool returned, or copied verbatim from a prior session
+        # while new observations sit unaccounted for, is not closed.
+        _DONE_GROUNDING.clear()
+        _DONE_GROUNDING["observations"] = []
+        _DONE_GROUNDING["restored_conclusions"] = [
+            (m.get("content") or "")
+            for m in (self.preloaded_messages or [])
+            if isinstance(m, dict) and m.get("role") == "assistant" and m.get("content")
+        ]
         self._omega_z_violation_count = 0
         self._review_pending = False
         self._review_count = 0
@@ -3842,6 +3891,11 @@ class TrueAgenticAgent:
                     return f"[Fatal error — run aborted: {exc}]"
 
                 self.trajectory.append(cycle)
+                # A cycle whose action was not `done` and whose verification
+                # closed is an observation this session may conclude from.
+                if not cycle.done and getattr(cycle, "frobenius_closed", False):
+                    _DONE_GROUNDING.setdefault("observations", []).append(
+                        getattr(cycle, "observation", "") or "")
 
                 if cycle.done:
                     self._log(f"\n  ✓ DONE at winding {winding}  (Frobenius: {'closed' if cycle.frobenius_closed else 'open'})")

@@ -1,8 +1,23 @@
-Sample a local model the way its own card asks
+The operator's two verifiers now read their own evidence
 
-Qwen3.5 thinks at temperature 1.0 and asks for a presence penalty of 1.5 where
-Qwen3 asked for none; both keep top_k=20. The transformers path now takes those
-numbers from the checkpoint it loaded rather than from one hardcoded default, and
-where the installed transformers has no presence_penalty it says so and leaves it
-off — a repetition penalty is a different operation and substituting it silently
-would be worse than the gap.
+file_read on a directory returns "(error reading …: Is a directory)" from this
+module's own emit function, and _file_read_verify stamped it Frobenius closed
+B4=T. It returned True unconditionally — it never looked at the output it was
+verifying. The imscribe verifier in the same file already tests for error text;
+this one does now.
+
+_done_verify was worse: it closed every conclusion as a "terminal action", so a
+trajectory could contradict every observation it made and still report Frobenius
+100%. That number was measuring nothing. A conclusion is closed now only if this
+session observed something first, and a conclusion copied verbatim out of a
+restored prior session while fresh observations sit unaccounted for is OPEN.
+The loop keeps the record the check reads.
+
+This is the run that showed it: the operator was asked to explore the current
+directory, called file_read on a directory, was told it was a directory, closed
+that as T, concluded from the system prompt instead, and then repeated the same
+conclusion twice more — once after `pwd` had returned a different directory into
+its own context. The model is a 4B and it copies the strongest pattern in the
+window, which after a session restore is its own previous answer. But nothing in
+the loop ever told it it was wrong, because both gates it passed through were
+answering True without reading.
