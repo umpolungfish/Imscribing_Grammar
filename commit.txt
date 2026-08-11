@@ -1,6 +1,11 @@
-crossover_cli: quantum advantage certification, standalone
+Catalog: new entries, and the two copies still diverge
 
-Packages the quantum_tnn.py crossover metric as its own CLI for the Fibonacci
-anyon pipeline. Takes strands and depth with a gate string, or a braid word
-directly, or --certify. The boundary is t_gate × n_gates × ε_2q > 0.1: above it
-the circuit is classically simulable, below it the hardware certifies advantage.
+IG_catalog.json gains 256 lines and scripts/IG_catalog.json gains 128, which
+tells you they were written by different runs and not synced afterward.
+
+Committing the state, not fixing it. Canonical holds 8177 entries and scripts
+holds 8169: 16 names exist only in canonical — EllipticCurveDiscreteLog and its
+retired address, btc_dlog_recovery_pipeline, discrete_logarithm among them — and
+8 exist only in scripts. This is the drift the pre-commit hook has been blocking
+on, across six copies constellation-wide. sync_catalog.sh is the repair and I
+have not run it.
