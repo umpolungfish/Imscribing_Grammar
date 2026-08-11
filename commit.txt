@@ -1,18 +1,17 @@
-Thinking was hardcoded off at both template call sites
+The reasoning toggle reaches a served model too
 
-Every winding logged an empty THINK line and I read past it. The reason is that
-enable_thinking was passed as a literal False at both apply_chat_template calls,
-so the template emitted a closed <think></think> before the model wrote a token.
-The loop has a THINK phase; the prompt was closing it in advance. A small model
-choosing between twenty tools is exactly the case that needs the reasoning, and
-this template's own instructions permit reasoning in natural language before the
-call.
+IG_THINK was reaching only the local tensor lane, because that lane renders the
+chat template itself. A model behind an OpenAI-compatible server never saw it:
+the flag does not travel in the standard request body, so each deployment spells
+it its own way and a request that omits it gets that server's default instead of
+ours.
 
-It reads IG_THINK now, on both call sites and in the provider, defaulting ON,
-with the legacy MODOT_THINK still honoured. Verified against the template: on
-emits an open <think>, off emits the closed pair.
+The three spellings, from Qwen's own agent configuration and OpenRouter's:
 
-The CPU fallback was also still rendering with the checkpoint's template rather
-than the canonical one — the copy that gets forgotten, and a fallback speaking a
-different protocol from the main path is a desync that only appears once the GPU
-is gone. It renders through the same template and the same flag now.
+  vLLM / SGLang   extra_body={"chat_template_kwargs": {"enable_thinking": …}}
+  DashScope       extra_body={"enable_thinking": …}
+  OpenRouter      extra_body={"reasoning": {"enabled": …}}
+
+The loop picks by the client's base_url and passes it on every completion. This
+is what a vLLM-served Qwen3.5-27B on localhost:8000 needs, and it is the same
+IG_THINK that governs the local lane.

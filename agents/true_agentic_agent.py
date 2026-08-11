@@ -247,6 +247,32 @@ TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 # Default for local inference nested-tensor mode; overridden per-agent via TrueAgenticAgent init
 nested_tensor: bool = False
 
+def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
+    """How to ask an OpenAI-compatible SERVER for reasoning, per server.
+
+    The flag does not travel in the standard request body, so each deployment
+    spells it its own way and a request that omits it gets that server's default
+    rather than ours. Qwen document two forms and OpenRouter a third:
+
+      vLLM / SGLang   extra_body={"chat_template_kwargs": {"enable_thinking": …}}
+      DashScope       extra_body={"enable_thinking": …}
+      OpenRouter      extra_body={"reasoning": {"enabled": …}}
+
+    The local tensor lane needs none of this — it renders the template itself —
+    which is exactly why the setting was reaching only that lane before.
+    """
+    on = _thinking_enabled()
+    u = (base_url or "").lower()
+    if "dashscope" in u:
+        return {"enable_thinking": on}
+    if "openrouter.ai" in u:
+        return {"reasoning": {"enabled": on}}
+    if any(h in u for h in ("localhost", "127.0.0.1", "0.0.0.0")):
+        # A locally served model is vLLM or SGLang here; both read chat_template_kwargs.
+        return {"chat_template_kwargs": {"enable_thinking": on}}
+    return {"chat_template_kwargs": {"enable_thinking": on}}
+
+
 def _thinking_enabled() -> bool:
     """Whether the model reasons before it acts, from IG_THINK.
 
@@ -4153,7 +4179,7 @@ class TrueAgenticAgent:
         response = None
         for attempt in range(max(max_retries.values()) + 1):
             try:
-                response = self.client.chat.completions.create(
+                _create_kwargs: Dict[str, Any] = dict(
                     model       = self.model_id,
                     max_tokens  = self.max_think_tokens,
                     tools       = active_tools,
@@ -4161,6 +4187,13 @@ class TrueAgenticAgent:
                     messages    = _scrub_surrogates(self._messages),
                     timeout     = 180.0,   # 3 min per LLM call — prevents hangs
                 )
+                # The reasoning toggle rides in extra_body for a served model, in
+                # the spelling that server understands. The local shim ignores it
+                # and renders the flag into the template instead.
+                _base = str(getattr(self.client, "base_url", "") or "")
+                if _base:
+                    _create_kwargs["extra_body"] = _thinking_extra_body(_base)
+                response = self.client.chat.completions.create(**_create_kwargs)
                 break  # Success — exit retry loop
             except Exception as exc:
                 err = str(exc)
