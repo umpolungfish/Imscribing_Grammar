@@ -130979,5 +130979,37 @@
     "⊥": "𐑖",
     "⊞": "𐑕",
     "◻": "𐑭"
+  },
+  {
+    "name": "bip39_secp256k1_derivation",
+    "description": "BIP39 mnemonic → PBKDF2-HMAC-SHA512 seed → BIP32 HD key derivation → secp256k1 keypair. Full Bitcoin wallet derivation pipeline. 12-word seed phrase space (2^128) mapped to secp256k1 curve. Grover oracle marks Hilbert position pk mod d in d=2048 SIC-POVM frame.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑹",
+    "⋈": "𐑱",
+    "⊤": "𐑘",
+    "∈": "𐑲",
+    "∋": "𐑝",
+    "⊙": "𐑢",
+    "⊥": "𐑒",
+    "⊞": "𐑕",
+    "◻": "𐑟"
+  },
+  {
+    "name": "btc_address_12ib7d_heavy_accumulator",
+    "description": "Bitcoin address 12ib7dApVFvg82TXKycWBNpN8kFyiAN1dr — a heavy accumulator: 527 BTC received across 265 transactions, only 4 spent. Public key 03d6597d... revealed in 4 spending transactions. 261 unspent UTXOs remain. PK mod 2048 = 1661 → BIP39 word 'soul'. Grover oracle target for d=2048 SIC-POVM frame.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑹",
+    "⋈": "𐑱",
+    "⊤": "𐑘",
+    "∈": "𐑲",
+    "∋": "𐑝",
+    "⊙": "𐑢",
+    "⊥": "𐑒",
+    "⊞": "𐑕",
+    "◻": "𐑟"
   }
 ]
