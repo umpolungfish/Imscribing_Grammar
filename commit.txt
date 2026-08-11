@@ -1,8 +1,4 @@
-Local model resolution: paths, grammaformer, .modelz
+Kilo provider
 
-Model resolution accepted "local" and "local:<name>" and nothing else, so a
-model given as a filesystem path, a ~-relative path, a .modelz bundle or by the
-name grammaformer fell through to the remote provider chain and failed there
-rather than loading. All four now resolve locally, in odot_operator's argument
-handling and in base_agent's constructor, which had the same test written twice
-and needed both.
+Kilo Code / Kilo AI Gateway, OpenAI-compatible, reading KILO_API_KEY. Registered
+under both 'kilo' and 'kilocode' so either spelling resolves.

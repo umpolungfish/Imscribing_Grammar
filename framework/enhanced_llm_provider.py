@@ -300,6 +300,12 @@ class GroqProvider(HttpProvider):
         super().__init__(api_key, model, "https://api.groq.com/openai/v1/chat/completions", "groq")
 
 
+class KiloProvider(HttpProvider):
+    """Kilo Code / Kilo AI Gateway — OpenAI-compatible gateway. API key: KILO_API_KEY."""
+    def __init__(self, api_key: str, model: Optional[str] = None):
+        super().__init__(api_key, model, "https://api.kilo.ai/api/gateway/chat/completions", "kilo")
+
+
 class OpenRouterProvider(HttpProvider):
     """OpenRouter — OpenAI-compatible gateway to 200+ models. API key: OPENROUTER_API_KEY."""
     def __init__(self, api_key: str, model: Optional[str] = None):
@@ -960,6 +966,8 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
         return OpenRouterProvider(api_key=api_key, **kwargs)
     elif provider_name == 'groq':
         return GroqProvider(api_key=api_key, **kwargs)
+    elif provider_name in ('kilo', 'kilocode'):
+        return KiloProvider(api_key=api_key, **kwargs)
     else:
         raise ValueError(f"Unsupported LLM provider: {provider_name}")
 
