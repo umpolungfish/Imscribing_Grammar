@@ -37,6 +37,8 @@ _PROVIDER_FALLBACK = [
     # Keyed "google": that is the name the provider defaults table uses, and a
     # miss there silently hands back a foreign default model.
     ("google",     "GEMINI_API_KEY"),
+    ("kilo",       "KILO_API_KEY"),
+    ("kilocode",   "KILO_API_KEY"),
 ]
 
 

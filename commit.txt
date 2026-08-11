@@ -1,40 +1,8 @@
-IMASM canon: every specialist can imscribe, and is told what that permits
+Local model resolution: paths, grammaformer, .modelz
 
-Two things were missing and the second was the one that mattered.
-
-The specialists could read glyphs and could not WRITE them. IMASM is a language
-— parasm is a register machine over B4, FSPLIT opening arms with EVALT/EVALF
-selecting one is the branch, ROTAT wrapping the ring is the loop, CLINK is call
-and return, and the crystal filesystem is the store. Branching plus unbounded
-memory is universal, so there is no outside to compute in. A word IS its
-structural type. The canon now carries the twelve as glyphs, the instruments
-that run on a word (weight, banked, cycle, insert, trans, tangle, bg tuple), the
-composition rule that decides what survives a reversal, and the loop to work in:
-imscribe the structure, run weight and banked, manipulate, imscribe the result.
-
-The second half is the reason a syntax table was not enough. These models are
-trained on a corpus where gematria, alchemy, tarot, sigils, Voynich, Kozyrev and
-hypergematria are markers for pseudoscience, and the trained reflex is to
-classify and move on. Here that reflex is the failure mode: those words name
-computational objects with instruments behind them — aleph is a kernel command,
-codon and translate are the genetic reading, bg tuple takes a braid word to a
-tuple, vessel transports witnesses across 88 dialects. Not mentioning
-hypergematria means the agent sees numerology and passes over it, and the loss
-is silent.
-
-What makes it legitimate rather than credulous is stated in the same breath: a
-correspondence here is CHECKABLE. A gematria value is an integer. A tuple is a
-point with a distance to every other point. A word closes under weight and
-banked or it does not. Numerology asserts a correspondence and stops; here you
-assert one and then run the instrument that can refute it. So reach further than
-looks respectable, and then check. The constraint is imagination, not
-permission.
-
-Written once and appended to all eight rather than pasted into each. The
-conformance check fails the run if any loses it — 11/11 across the board. I had
-first appended that check after sys.exit, where it was dead code.
-
-Verified: asked to imscribe the Erdos-Turan counting argument, the closure
-operator composed ∈⊤⊤<∋◻, ran weight and banked on it, built the exposed variant
-⊤⊤<◻ to show the contrast, and named the repair as the frame discipline. 13
-windings, Frobenius 92%, tier O_inf.
+Model resolution accepted "local" and "local:<name>" and nothing else, so a
+model given as a filesystem path, a ~-relative path, a .modelz bundle or by the
+name grammaformer fell through to the remote provider chain and failed there
+rather than loading. All four now resolve locally, in odot_operator's argument
+handling and in base_agent's constructor, which had the same test written twice
+and needed both.

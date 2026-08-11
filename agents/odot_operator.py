@@ -1372,8 +1372,15 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
     # Windings 2 & 3 = fresh de novo sub-calls (no catalog, no history)
     raw_model = _spawn_config.get("model", "grok-4")
-    if raw_model.lower() == "local" or raw_model.lower().startswith("local:"):
-        resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
+    if (raw_model.lower() == "local" or raw_model.lower().startswith("local:")
+            or raw_model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(raw_model))
+            or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model):
+        if raw_model.lower() == "grammaformer":
+            resolved_model = "grammaformer"
+        elif os.path.isdir(os.path.expanduser(raw_model)) or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model:
+            resolved_model = raw_model
+        else:
+            resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
         client = _LocalOpenAIClient()
     else:
         resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(raw_model)
@@ -3120,9 +3127,12 @@ class TrueAgenticAgent:
         self._review_threshold = review_threshold
 
         if (model.lower() == "local" or model.lower().startswith("local:")
-                or model.lower() == "grammaformer"):
+                or model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(model))
+                or model.startswith("/") or model.startswith("~") or ".modelz" in model):
             if model.lower() == "grammaformer":
                 self.model_id = "grammaformer"
+            elif os.path.isdir(os.path.expanduser(model)) or model.startswith("/") or model.startswith("~") or ".modelz" in model:
+                self.model_id = model
             else:
                 self.model_id = model.split(":", 1)[1] if ":" in model else "local"
             self.client   = _LocalOpenAIClient()
