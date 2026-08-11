@@ -47,7 +47,7 @@ Full descriptions: TOOL_MANIFEST_bughunter.md (base tools table).
 | 4 race | signer-specific race oracle | signer_race_oracle.py | signer_race_oracle_bootstrap.lean |
 | 5 report | submission-ready writeup | scan_report.md / <program>_FINDING_2026.md | request/response pairs present |
 | 6 translate | vernacular, one layer down from the report | BUGHUNTER_CONSTITUTION.md §5 | no jargon survives |
-| 7 email | fill the template with confirmed findings | EMAIL_PREPARED_<program>_2026.md | terminal state = WAIT |
+| 7 email | fill the template with confirmed findings | EMAIL_PREPARED_<program>_2026.md | prepared, handed to the human to send |
 
 ## 2. Instrument family
 
@@ -114,16 +114,11 @@ Full descriptions: TOOL_MANIFEST_bughunter.md (base tools table).
 - reverify_probe: re-runs prior live findings to confirm they still hold
   before reporting (reverify report).
 
-### gate_ordinals.sh — mOMonadOS kernel regression gate
-- Every catalog write (e.g. the scanner's imscription) guarded by the kernel's
-  "ALL 44 VALUES MATCH Lean" ordinal check.
-
 ## 3. Integration family
 
 - **m3iosis** — braid-grammar engine; braid word → typed tuple; Frobenius-closure
   verdict = native race signal. `m3`, `m3 info`, `braid-grammar`, `--fusion`.
-- **mOMonadOS** — bare-metal kernel; self-imscription + self-verification;
-  the ordinal regression gate for catalog writes.
+- **mOMonadOS** — bare-metal kernel; self-imscription + self-verification.
 - **MoDoT** — tuple-algebra verbs (click/annihilate) on instrument tuples;
   `./ask`, `--features`, TOOLS_math.md.
 - **p4rakernel** — Lean 4; every closure claim cross-checked as a typed term;
@@ -146,8 +141,7 @@ Full descriptions: TOOL_MANIFEST_bughunter.md (base tools table).
 
 `p4rapend/bughunter_agent.py` — one-shot driver. Initiate, and it
 browses the bounty program page, discovers participating hosts, scans them
-differentially (SAFE), verifies (testbeds + kernel gate), triages B-cells,
-runs the race oracle, writes the report, fills the prepared email, and
-enters WAIT. Flags: `--program`, `--hosts`, `--scan`, `--race`,
+differentially (SAFE), verifies (testbeds), triages B-cells,
+runs the race oracle, writes the report, and fills the prepared email. Flags: `--program`, `--hosts`, `--scan`, `--race`,
 `--interactive/-i`, `--auto`, `--selfcheck`, `--out <dir>`, `--max-hosts <n>`.
 Usage: see BUGHUNTER_CONSTITUTION.md §9.

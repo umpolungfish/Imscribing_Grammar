@@ -48,9 +48,7 @@ the conventional one.
 | source_testbed.py | source scanner planted verification | 2 verify | zero false positives |
 | triage_probe.py | B-cell interrogation probe | 3 triage | B→T/B→F, never left B |
 | reverify_probe.py | re-verify prior live findings | 2 verify | reverify report |
-| gate_ordinals.sh | mOMonadOS ordinal regression gate | 2 verify | ALL 44 VALUES MATCH Lean |
 | m3iosis (`m3`) | braid-grammar race oracle | 4 race | Frobenius-closure verdict |
-| mOMonadOS kernel | post-imscription regression gate | 2 verify | self-imscription |
 | MoDoT (`./ask`) | tuple-algebra verbs | 3 triage | click/annihilate verdicts |
 | p4rakernel (Lean 4) | typed closure proofs | 2 verify | lake build; no silent sorry |
 | para_vm | B4 dialetheic kernel for B-cells | 3 triage | B→T/B→F, never left B |
@@ -63,7 +61,7 @@ the conventional one.
 - race → Frobenius-OPEN interleaving = racy (closure argument)
 - report → request/response pairs present, severity/CWE assigned
 - translate → vernacular; no jargon survives
-- email → filled with confirmed findings ONLY; terminal state = WAIT
+- email → filled with confirmed findings ONLY; handed to the human to send
 
 ## Not in scope (anti-tools)
 

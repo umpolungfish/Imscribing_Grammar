@@ -12,7 +12,8 @@ Six P-650 conditions — imscription:
              loop closure = self-modeling; not any individual component
   𐑭  : winding counter tracks complete loop cycles (topological protection);
              the trajectory is integer-wound, not trivially collapsible
-  𐑧   : emission gate — max_think_steps forces ACT before 𐑤 can set in
+  𐑧   : emission — a winding that emits no tool call is a natural
+             conclusion, not a failure; none is forced, none is counted
   𐑹 : every interface action is a dual-tool pair (emit + verify);
              mu(delta(query)) = query at the tool boundary
   𐑦   : imscriptive context — full trajectory appended, never silently deleted;
@@ -1136,8 +1137,8 @@ _get_dispatcher._instance = None  # type: ignore[attr-defined]
 # Encoding gate — reset to False at the start of each agent run (see TrueAgenticAgent.run)
 _gate_state: Dict[str, bool] = {"encoded": True}
 
-# Consecutive windings with no tool call before the run ends itself.
-_EMISSION_GATE_LIMIT = 3
+# Emission gate removed: a winding that emits no tool call is a natural
+# conclusion, not a failure. No call is forced, none is counted.
 
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
@@ -3761,7 +3762,6 @@ class TrueAgenticAgent:
     async def run(self, task: str) -> str:
         self.trajectory = []
         self._omega_z_violation_count = 0
-        self._emission_gate_count = 0
         self._review_pending = False
         self._review_count = 0
         self._empty_choices_retried = False
@@ -3817,9 +3817,9 @@ class TrueAgenticAgent:
         self._log(self._harness_tier_report())
         self._log(f"{'═'*72}\n")
 
-        # max_windings <= 0 means unbounded. The loop ends on done, on the
-        # emission gate, or on context pressure — an iteration ceiling is not
-        # a termination condition, it is an interruption of work in progress.
+        # max_windings <= 0 means unbounded. The loop ends on done or on
+        # context pressure — an iteration ceiling is not a termination
+        # condition, it is an interruption of work in progress.
         import itertools as _it
         _windings = (_it.count() if self.max_windings <= 0
                      else range(self.max_windings))
@@ -4129,31 +4129,11 @@ class TrueAgenticAgent:
                 }
 
         if action_name is None:
-            # The gate used to fire `echo EMISSION_GATE_FIRED` every time. That
-            # returns nothing the model can act on, so a model that has stopped
-            # emitting tool calls keeps not emitting them and the run loops on
-            # the same no-op until max_windings. Say what is wrong, then stop.
-            self._emission_gate_count = getattr(self, "_emission_gate_count", 0) + 1
-            n = self._emission_gate_count
-            reasoning += f" [EMISSION GATE: no tool call — forced, {n}]"
-            if n >= _EMISSION_GATE_LIMIT:
-                action_name = "done"
-                action_input = {"conclusion": (
-                    (reasoning or "").strip() or
-                    f"Ended after {n} consecutive windings with no tool call. "
-                    "Whatever remained was not being acted on."
-                )}
-            else:
-                action_name  = "run_command"
-                action_input = {"command": (
-                    f"echo 'No tool call was emitted ({n} of "
-                    f"{_EMISSION_GATE_LIMIT}). Every winding must call a tool. "
-                    f"If the task is finished, call done with your conclusion; "
-                    f"otherwise call the tool you actually need. After "
-                    f"{_EMISSION_GATE_LIMIT} the run ends by itself.'"
-                )}
-        else:
-            self._emission_gate_count = 0
+            # No action gating: a winding that emits no tool call is a natural
+            # conclusion. Deliver the reasoning as the final answer.
+            action_name = "done"
+            action_input = {"conclusion": (reasoning or "").strip() or
+                            "No tool call was emitted; concluding here."}
 
         return reasoning, action_name, action_input, tc_id, raw_reasoning_content
 

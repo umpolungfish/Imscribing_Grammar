@@ -8,16 +8,16 @@ context auto-saves between invocations; use --continue or --session-id to
 resume prior work with full message history and trajectory restored.
 
 The system prompt IS the constitution (BUGHUNTER_CONSTITUTION.md, same dir):
-identity + derived tuple, 7-stage pipeline, verification discipline, WAIT
-protocol, vernacular layer, email template, initiation. It is the
+identity + derived tuple, 7-stage pipeline, verification discipline,
+vernacular layer, email template, initiation. It is the
 interactive mode "like the one we are talking through right now": the human
-talks, the agent acts and reports, and the terminal state of every action
-is WAIT unless the human says otherwise.
+talks, the agent acts and reports. The prepared email is handed to the
+human to send; the agent does not stop and wait for permission to continue.
 
 Usage:
     uv run agents/specialists/bughunter_operator.py "discover participating hosts and scan them"
     uv run agents/specialists/bughunter_operator.py --interactive
-    uv run agents/specialists/bughunter_operator.py "prepare the email and wait"
+    uv run agents/specialists/bughunter_operator.py "prepare the email"
     uv run agents/specialists/bughunter_operator.py --continue "scan torproject.org"
     uv run agents/specialists/bughunter_operator.py --list-sessions
 """
@@ -47,7 +47,7 @@ def _load_constitution() -> str:
 class BughunterOperator(TrueAgenticAgent):
     """The bug-hunter specialist. Operates the p4rapend framework
     end-to-end: browse bounty sites, discover participating hosts, scan
-    (SAFE), verify, triage, race, report, translate, email, WAIT.
+    (SAFE), verify, triage, race, report, translate, email.
     Session-aware: auto-saves trajectory and message history."""
 
     def __init__(self, *args, **kwargs):

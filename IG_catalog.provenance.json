@@ -719,6 +719,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9e7c2af8e7f6bc5b"
   },
+  "EllipticCurveDiscreteLog": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "092845ac30814318"
+  },
+  "EllipticCurveDiscreteLog__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "c915887d4547fbf4"
+  },
   "F4_min_D_inf": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5213,6 +5225,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "05a06508593b23d5"
   },
+  "belnap_dialetheic_resolver": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "24fb3bdd97cd4611"
+  },
   "belnap_four_substrate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5662,6 +5680,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "afeb6fe89bc11769"
+  },
+  "bip39_sic_grover_search": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "d82ec05a38570725"
+  },
+  "bip39_sic_grover_search_ownership": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "cee00fbdc389d05a"
   },
   "bipartite_degenerate_graph": {
     "changes": 0,
@@ -6299,6 +6329,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7fc18747276f6ab7"
   },
+  "braid_group_quantum_fourier": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "f5318ec705b33746"
+  },
+  "braid_group_quantum_fourier__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "665ac1a810a80682"
+  },
   "braid_index_quantization": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6880,6 +6922,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3e4acd371e926e39"
+  },
+  "btc_dlog_recovery_pipeline": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "9b38c0d883a7e0f3"
   },
   "bubble_collapse_singularity": {
     "changes": 0,
@@ -11957,6 +12005,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "162492ad6acfea7d"
   },
+  "crypto_exchange_host_scan": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "f60046ebae4e7e7b"
+  },
   "crypto_spot_market": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12245,6 +12299,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "92d09bd28886aed3"
   },
+  "cyclize": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:41:25+00:00",
+    "last_changed": "2026-08-11T10:41:25+00:00",
+    "tuple_hash": "6607820b2ed02367"
+  },
   "cyclo_manifold_string": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12304,6 +12364,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "884d903a28e74f0c"
+  },
+  "d2048_exact_fiducial_extraction": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "d590305bdc29b9fd"
+  },
+  "d2048_exact_fiducial_extraction__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "bbeeb87658868066"
+  },
+  "d2048_one_shot_locater": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "563af828eef6af35"
   },
   "d2048_ray_class_characters": {
     "changes": 0,
@@ -13355,6 +13433,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "97d416a7f043eaf0"
   },
+  "discrete_logarithm": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "7c3835452cd3180d"
+  },
+  "discrete_logarithm__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "7c3835452cd3180d"
+  },
   "disease_cycle": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14062,6 +14152,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cd88b0b360d978bd"
+  },
+  "ecdsa_secp256k1_sk_recovery_target": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "92331bde08de7876"
+  },
+  "ecdsa_sk_recovery_P2SH_3Fuh_target": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "a136ae6d2f2dd4b5"
+  },
+  "ecdsa_sk_recovery_jaP_target": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "9614972d38f0b38e"
   },
   "echad_word": {
     "changes": 0,
@@ -16229,6 +16337,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "03bd32ff9d559610"
   },
+  "failed": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:40:43+00:00",
+    "last_changed": "2026-08-11T10:40:43+00:00",
+    "tuple_hash": "7ca7f316748e8664"
+  },
   "failed_supernova": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17392,6 +17506,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4598226486529f0d"
+  },
+  "fresh_pk_stark_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "5807bba18c746805"
+  },
+  "fresh_sk_stark_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "567117cb34e0bbb5"
   },
   "freyja_vanadis": {
     "changes": 0,
@@ -22835,6 +22961,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0f2f50a08b4a2b2d"
   },
+  "imasm_ring_walk_keyspace": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "dd45d8f4a79c4ae7"
+  },
   "imasm_self_imscription_ob3ect": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -27899,6 +28031,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fd12569f744b752a"
   },
+  "mediators": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:59+00:00",
+    "last_changed": "2026-08-11T10:39:59+00:00",
+    "tuple_hash": "141d1f2cbd00526f"
+  },
   "meditation_tradition": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -30707,6 +30845,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ad67eeec84a503cd"
   },
+  "ns_regularity_belgap_shor": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "9dd721599df35e25"
+  },
   "ns_regularity_field_target": {
     "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32009,6 +32153,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1d0707ff974bb11f"
   },
+  "ovm_scalar_recovery": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "3e891acf5cc9d02e"
+  },
   "owl_m": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32440,6 +32590,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "11c742d42a88f523"
+  },
+  "paraconsistent_closure_tower": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "d68cbb83bf35fd3e"
+  },
+  "paraconsistent_closure_tower__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "6ff51645dccf42be"
   },
   "paraconsistent_computer": {
     "changes": 0,
@@ -34270,6 +34432,18 @@
     "first_seen": "2026-08-06T04:02:34+00:00",
     "last_changed": "2026-08-06T04:02:34+00:00",
     "tuple_hash": "f0f54edb045b2adb"
+  },
+  "pk_stark_braid_encoded": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "6dde2c4b1ece188c"
+  },
+  "pk_stark_test_encoded": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "ee08e8febd733970"
   },
   "planck_constant": {
     "changes": 0,
@@ -36208,6 +36382,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d7b24f22c1e0753e"
+  },
+  "quantum_tnn_crossover": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "e543adafdd079593"
   },
   "quantum_zeno": {
     "changes": 0,
@@ -38693,6 +38873,18 @@
     "last_changed": "2026-08-06T16:23:01+00:00",
     "tuple_hash": "938a6f730aa27da4"
   },
+  "secp256k1_extraction_from_multisig_pubkeys": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "64af35fe2374d61c"
+  },
+  "secp256k1_grammar_dlog_pipeline": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "aa82e561c794e741"
+  },
   "secp256k1_horn_torus_dlog": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
@@ -38740,6 +38932,18 @@
     "first_seen": "2026-08-06T04:02:34+00:00",
     "last_changed": "2026-08-06T04:02:34+00:00",
     "tuple_hash": "c7da7789e5c0fadf"
+  },
+  "seekpeek_pipeline_nogating": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "ecb781e8b2202be6"
+  },
+  "seekpeek_secp256k1_dlog_lab": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "555ffedcbfbc47c8"
   },
   "seekpeek_sk_tuple_transform": {
     "changes": 0,
@@ -39401,6 +39605,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d7209eb816095e10"
   },
+  "showed": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "77101b6062d8746f"
+  },
   "shu": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39461,6 +39671,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e2f240e24711e01e"
   },
+  "sic_d12_moduli": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "da529b8565e098e8"
+  },
+  "sic_d12_moduli_field": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "da529b8565e098e8"
+  },
   "sic_d12_stark_instance": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39484,6 +39706,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "db2174a474bdfaf3"
+  },
+  "sic_fiducial_extraction_2part_bypass": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "4e03902191813ffc"
   },
   "sic_fiducial_permuted": {
     "changes": 0,
@@ -39658,6 +39886,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4fbcc400110a7a90"
+  },
+  "sic_tower_crt_cascade": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "563af828eef6af35"
+  },
+  "sic_tower_crt_cascade_proper": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "563af828eef6af35"
   },
   "sic_zauner_join": {
     "changes": 0,
@@ -45935,6 +46175,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd3e318577e17ed"
   },
+  "unique_test2": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "aa3abb70d5dfe68a"
+  },
+  "unique_test_system": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "5abe30efccfe7060"
+  },
   "uniqueness_diophantine_proof": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46888,6 +47140,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5d2393c9d3146fd6"
+  },
+  "vox_control_flow_closure_auditor": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "a6375f29c328f122"
+  },
+  "vox_modot": {
+    "changes": 0,
+    "first_seen": "2026-08-11T10:39:15+00:00",
+    "last_changed": "2026-08-11T10:39:15+00:00",
+    "tuple_hash": "a78d47e6f2cf9774"
   },
   "voynich_astronomical_section": {
     "changes": 0,
