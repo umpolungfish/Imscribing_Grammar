@@ -1,19 +1,13 @@
-A winding with no tool call is not a conclusion
+The retry writes where a tool call goes
 
-"A winding that emits no tool call is a natural conclusion" was the comment, and
-it ended the QC operator's run on a thought: the model wrote "I need to figure
-out what tools I have… I can't actually access the file system", emitted nothing,
-and the loop delivered that deliberation as the answer.
+The nudge got the model to reason its way to the right call — "the tool call
+would be file_read with the path" — and it still emitted nothing, because it
+ended its turn on </think>. Asking it to think again invites the same ending:
+the prompt hands it an open think block, and thinking is what it just finished.
 
-It is a natural conclusion only once the session has observed something. Before
-that there is nothing to conclude FROM. The loop nudges once instead, naming the
-two tools that act — run_command and file_read — and only concludes if the next
-winding is empty too.
+So the retry closes the block. The template emits <think>\n\n</think>\n\n and
+the only position left to write in is the content, which is where a tool call
+goes. One generation only; the flag is cleared in a finally.
 
-Worth recording why the model believed it had no filesystem: run_command and
-file_read are in the schemas and in the roster injected every winding, but the
-specialist REPLACES the base system prompt rather than extending it, so the
-document that describes those tools is gone and the domain prompt is all that
-remains. The nudge names them explicitly, which covers the symptom. Composing
-specialist prompts onto the base instead of substituting for it is the actual
-repair and is a design decision, not a patch.
+Verified against the template: the first attempt ends on an open <think>, the
+retry ends past a closed one.

@@ -273,6 +273,13 @@ def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
     return {"chat_template_kwargs": {"enable_thinking": on}}
 
 
+# Set for ONE generation when a winding produced reasoning and no call. The
+# thinking has already happened; the retry only needs the call, so the template
+# is asked to close the think block itself and the model writes into the
+# content position directly.
+_FORCE_NO_THINK: bool = False
+
+
 def _thinking_enabled() -> bool:
     """Whether the model reasons before it acts, from IG_THINK.
 
@@ -284,6 +291,8 @@ def _thinking_enabled() -> bool:
     own instructions permit reasoning in natural language BEFORE the call. So it
     is ON here unless IG_THINK says otherwise; the legacy MODOT_THINK still reads.
     """
+    if _FORCE_NO_THINK:
+        return False
     raw = (os.environ.get("IG_THINK") or os.environ.get("MODOT_THINK") or "").strip().lower()
     if raw in ("0", "false", "off", "no"):
         return False
@@ -4382,14 +4391,25 @@ class TrueAgenticAgent:
                 self._messages.append({
                     "role": "user",
                     "content": (
-                        "[no tool call] You emitted reasoning but no tool call, and "
+                        "[no tool call] You reasoned but emitted no tool call, and "
                         "nothing has been observed yet, so there is nothing to conclude "
                         "from. You DO have filesystem access: run_command runs a shell "
-                        "command, file_read reads a file or lists a directory. Emit one "
-                        "tool call now."
+                        "command, file_read reads a file or lists a directory. Emit the "
+                        "tool call now and nothing else."
                     ),
                 })
-                return await self._think_and_act()
+                # The retry runs with the think block CLOSED by the template. The
+                # model has already done the reasoning — it ended its turn on
+                # `</think>` having just described the call it wanted — so asking
+                # it to think again invites the same ending. With the block closed
+                # the only position left to write in is the content, which is
+                # where a tool call goes.
+                global _FORCE_NO_THINK
+                _FORCE_NO_THINK = True
+                try:
+                    return await self._think_and_act()
+                finally:
+                    _FORCE_NO_THINK = False
             action_name = "done"
             action_input = {"conclusion": (reasoning or "").strip() or
                             "No tool call was emitted; concluding here."}
