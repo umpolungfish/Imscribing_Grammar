@@ -397,7 +397,7 @@ _OPENAI_BASE_URLS: Dict[str, str] = {
     "google":      "https://generativelanguage.googleapis.com/v1beta/openai/",
     "gemini":      "https://generativelanguage.googleapis.com/v1beta/openai/",
     "openrouter":  "https://openrouter.ai/api/v1",
-    "local":       os.environ.get("LOCAL_MODEL_URL", "http://localhost:11434/v1"),
+    "local":       os.environ.get("IG_LOCAL_BASE_URL") or os.environ.get("LOCAL_MODEL_URL", "http://localhost:11434/v1"),
 }
 
 # Default path for the merged2 Imscribing Grammar fine-tune
@@ -5956,7 +5956,7 @@ class IGInquiryLoop:
 
         if self._use_local_hf:
             # Direct transformers path — no API key needed
-            model_path = os.environ.get("LOCAL_MODEL", _MERGED2_PATH)
+            model_path = os.environ.get("IG_MODEL") or os.environ.get("LOCAL_MODEL", _MERGED2_PATH)
             self._local_backend = LocalQwen3Backend(
                 model_path=model_path,
                 enable_thinking=True,
@@ -6965,8 +6965,8 @@ if __name__ == "__main__":
         "google":     "gemini-2.0-flash",
         "mistral":    "mistral-large-latest",
         "openrouter": "x-ai/grok-4.1-fast",
-        "local":      os.environ.get("LOCAL_MODEL", "qwen3:8b"),
-        "local_hf":   os.environ.get("LOCAL_MODEL", _MERGED2_PATH),
+        "local":      os.environ.get("IG_MODEL") or os.environ.get("LOCAL_MODEL", "qwen3:8b"),
+        "local_hf":   os.environ.get("IG_MODEL") or os.environ.get("LOCAL_MODEL", _MERGED2_PATH),
     }
     model = (
         args.model

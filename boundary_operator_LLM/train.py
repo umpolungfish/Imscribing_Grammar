@@ -18,6 +18,12 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from boundary_operator_LLM.model import BoundaryOperatorLLM, BoundaryConfig
 
 
+# Which card this run owns comes from IG_DEVICES, the one spelling for device
+# selection across every repo here (see framework/ig_devices.py).
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent.parent))
+from framework.ig_devices import torch_device as _ig_torch_device
+
 class TrainingConfig:
     """Training configuration with properties."""
     def __init__(self):
@@ -47,7 +53,7 @@ class TrainingConfig:
         
         # Precision
         self.mixed_precision = True
-        self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
+        self.device = str(_ig_torch_device())
 
 
 class StructureDataset:

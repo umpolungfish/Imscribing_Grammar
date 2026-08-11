@@ -1,14 +1,19 @@
-imasm tool: write and derive, not just the instruments
+Load a local model across both cards, and put device selection in one place
 
-The rider names `imasm write tuple=⟨…⟩` and `imasm derive word=…` and tells
-operators never to hand-pick glyphs. Neither existed anywhere — kernel or tool.
-An agent that followed the instruction hit nothing and reached for a
-conventional method instead, so what looked like agents ignoring grammar-first
-was the rule having no implementation to reach.
+The transformers loader picked the single card with the most VRAM free and put
+the whole model on it. Now it offers every card IG_DEVICES names the memory that
+card actually has free right now, less a working reserve, and lets accelerate
+balance the model across them — so a model too large for either card alone loads,
+and a card already busy with a display gets a smaller share instead of OOMing
+halfway through. One card still means one card. Verified end to end: Qwen3-1.7B
+split 123 tensors onto cuda:0 and 188 onto cuda:1 and generated.
 
-imasm(tuple=…) writes a tuple to its word. imasm(word=…, derive=true) reads a
-word back to its tuple with its crystal address. The instruments still run on a
-word, batched into the same boot.
+framework/ig_devices.py is now the only place that reads IG_DEVICES here, and the
+navigators, the boundary-operator trainer and the GrammaFormer trainer all take
+their device from it. A training run that fits one card does not want to be
+split: the way both cards work at once is two runs, one pinned to each, which is
+what a pinned IG_DEVICES gives. data_parallel() is there for the other case,
+where the model fits and the throughput is the constraint.
 
-Both directions are the kernel's, so a tuple an agent gets is the tuple the
-kernel computes, and nothing is guessed.
+Env: IG_MODEL and IG_PROVIDER are the names, IG_LOCAL_MODEL_DIR the weights,
+IG_LOCAL_BASE_URL the local server. The old spellings still read.

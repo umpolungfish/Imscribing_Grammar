@@ -958,7 +958,7 @@ Existing description, for reference:
 "{existing_description or description}"
 """
 
-    model = model or _os.environ.get("IG_AGENT_MODEL", "")
+    model = model or _os.environ.get("IG_MODEL") or _os.environ.get("IG_AGENT_MODEL", "")
     if not model:
         raise click.UsageError(
             "No model for conflict-resolution agent. "

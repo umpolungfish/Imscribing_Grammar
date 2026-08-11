@@ -39,7 +39,13 @@ from .navigators import (
     THURSTON_GEOMETRIES,
 )
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Which card this run owns comes from IG_DEVICES, the one spelling for device
+# selection across every repo here (see framework/ig_devices.py).
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent.parent))
+from framework.ig_devices import torch_device as _ig_torch_device
+
+DEVICE = _ig_torch_device()
 
 # ── Riemann zeros (first 100 non-trivial zeros of zeta on critical line) ────────
 # Source: standard tables; imaginary parts t where zeta(1/2 + it) = 0

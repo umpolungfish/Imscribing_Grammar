@@ -235,11 +235,17 @@ def compute_loss(model: GrammaFormer, batch: Dict,
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# Which card this run owns comes from IG_DEVICES, the one spelling for device
+# selection across every repo here (see framework/ig_devices.py).
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent.parent))
+from framework.ig_devices import torch_device as _ig_torch_device
+
 # Training loop
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def train(args):
-    device = torch.device("cuda" if torch.cuda.is_available() and not args.cpu else "cpu")
+    device = torch.device("cpu") if args.cpu else _ig_torch_device()
     print(f"Device: {device}")
 
     # Load tokenizer

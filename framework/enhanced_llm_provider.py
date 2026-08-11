@@ -103,6 +103,11 @@ def _load_provider_defaults() -> Dict[str, Any]:
     return _provider_defaults
 
 
+# Device selection lives in one place, ig_devices, so `ask --provider local`,
+# this loader and the training scripts all answer to the same IG_DEVICES.
+from .ig_devices import cpu_forced as _cpu_forced, devices as ig_devices, device_plan as ig_device_plan  # noqa: F401
+
+
 def _get_default_model(provider: str) -> str:
     """Get default model for a provider from config."""
     defaults = _load_provider_defaults()
@@ -415,7 +420,9 @@ class LocalProvider(LLMProvider):
       2. ~/imsgct/MoDoT/ask   (the wrapper that builds/execs the native binary)
 
     The model the kernel loads is selected on the Rust side via
-    MODOT_LOCAL_MODEL_DIR (default ~/models/Qwen3-1.7B, ask_native/src/local.rs);
+    IG_LOCAL_MODEL_DIR (default ~/models/Qwen3-1.7B, ask_native/src/local.rs), and
+    the cards it runs on via IG_DEVICES — with two cards open the model is SPLIT
+    across them layer by layer;
     ob3ect does not second-guess it, which is exactly what "routed the same"
     means. NOTE: the native binary must be built WITH the local provider —
     `cargo build --release --features local,cuda` (a plain build strips it).
@@ -440,7 +447,7 @@ class LocalProvider(LLMProvider):
         )
         raw = (
             model_path
-            or os.getenv("LOCAL_MODEL_PATH")
+            or os.getenv("IG_LOCAL_MODEL_DIR") or os.getenv("LOCAL_MODEL_PATH")
             or os.getenv("MODOT_LOCAL_MODEL_DIR")
             or self.DEFAULT_MODEL_PATH
         )
@@ -469,7 +476,7 @@ class LocalProvider(LLMProvider):
             if not Path(self.model_path).exists():
                 raise FileNotFoundError(
                     f"Local model path not found: {self.model_path}. "
-                    f"Set LOCAL_MODEL_PATH env var or pass model_path= to LocalProvider."
+                    f"Set IG_LOCAL_MODEL_DIR env var or pass model_path= to LocalProvider."
                 )
 
             logger.info(f"Loading local model from {self.model_path} ...")
@@ -511,39 +518,19 @@ class LocalProvider(LLMProvider):
                         "tokenizer.chat_template is None and no base model name found in "
                         "config.json / adapter_config.json. apply_chat_template will fail."
                     )
-            _force_cpu = os.getenv("FORCE_CPU", "").strip() not in ("", "0")
-
-            device_map: Any = "cpu"
-            if not _force_cpu and torch.cuda.is_available():
-                best_gpu = max(
-                    range(torch.cuda.device_count()),
-                    key=lambda i: torch.cuda.mem_get_info(i)[0],
-                )
-                free_bytes = torch.cuda.mem_get_info(best_gpu)[0]
-                if free_bytes > 2 * 1024 ** 3:
-                    # Warm up the GPU before loading: a matmul + synchronize kicks the
-                    # device out of the suspended state that causes "device not ready"
-                    # during the first generate() call on WSL2 and post-OOM contexts.
-                    try:
-                        _t = torch.randn(1000, 1000, device=f"cuda:{best_gpu}", dtype=torch.float16)
-                        torch.matmul(_t, _t)
-                        torch.cuda.synchronize(best_gpu)
-                        del _t
-                        device_map = {"": best_gpu}
-                        logger.info(f"Selected GPU {best_gpu} ({free_bytes // 1024**3} GB free).")
-                    except Exception as _warm_err:
-                        logger.warning(f"GPU {best_gpu} warm-up failed ({_warm_err}); loading on CPU.")
-                else:
-                    logger.warning("No GPU has >2 GB free; loading on CPU.")
+            device_map, max_memory = ig_device_plan(logger)
 
             # 4-bit BitsAndBytes quantization — off by default; set LOAD_IN_4BIT=1 to enable.
             load_kwargs: dict = {
                 "device_map": device_map,
+                "max_memory": max_memory,
                 "trust_remote_code": True,
                 "attn_implementation": "sdpa",  # native PyTorch SDPA; 3-5x faster than eager on long contexts
                 "dtype": torch.float16,
                 "low_cpu_mem_usage": True,
             }
+            if max_memory is None:
+                load_kwargs.pop("max_memory", None)
             if os.getenv("LOAD_IN_4BIT", "").strip() not in ("", "0"):
                 from transformers import BitsAndBytesConfig
                 load_kwargs["quantization_config"] = BitsAndBytesConfig(
@@ -582,9 +569,9 @@ class LocalProvider(LLMProvider):
                 # falls back gracefully to CPU without crashing the agent.
                 _dev_target: Any = "cpu"
                 try:
-                    if torch.cuda.is_available() and not os.getenv("FORCE_CPU", "").strip():
-                        _best = max(range(torch.cuda.device_count()),
-                                    key=lambda i: torch.cuda.mem_get_info(i)[0])
+                    if torch.cuda.is_available() and not _cpu_forced():
+                        _cands = ig_devices() or list(range(torch.cuda.device_count()))
+                        _best = max(_cands, key=lambda i: torch.cuda.mem_get_info(i)[0])
                         _free_gb = torch.cuda.mem_get_info(_best)[0] / 1024 ** 3
                         _model_gb = sum(p.numel() * p.element_size()
                                        for p in mdl.parameters()) / 1024 ** 3
@@ -609,6 +596,7 @@ class LocalProvider(LLMProvider):
                 except Exception as e:
                     logger.warning(f"Load failed ({e}); retrying on CPU.")
                     load_kwargs["device_map"] = "cpu"
+                    load_kwargs.pop("max_memory", None)
                     load_kwargs["dtype"] = torch.float32
                     load_kwargs.pop("quantization_config", None)
                     mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)

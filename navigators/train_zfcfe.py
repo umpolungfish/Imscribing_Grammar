@@ -49,7 +49,13 @@ from zfcfe_navigator import (
     resolve_system, generate_formula, tuple_to_notation,
 )
 
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Which card this run owns comes from IG_DEVICES, the one spelling for device
+# selection across every repo here (see framework/ig_devices.py).
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent.parent))
+from framework.ig_devices import torch_device as _ig_torch_device
+
+DEVICE = _ig_torch_device()
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ZFC_fe TOKEN VOCABULARY

@@ -32,7 +32,7 @@ from agents.true_agentic_agent import TrueAgenticAgent
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-MODEL  = os.environ.get("IG_ORACLE_MODEL", "groq:llama-3.3-70b-versatile")
+MODEL  = os.environ.get("IG_MODEL") or os.environ.get("IG_ORACLE_MODEL", "groq:llama-3.3-70b-versatile")
 ORIGIN = os.environ.get("IG_ORACLE_ORIGIN", "*")
 MAX_TASK_CHARS = 2000
 MAX_WINDINGS   = 20

@@ -111,8 +111,9 @@ providers:
     default_model: Imscriptiveon_qlora_merged2
     max_tokens_default: 512
     temperature_default: 0.3
-    note: Direct tensor inference via transformers — no API key. Set LOCAL_MODEL_PATH
-      env var to override model path.
+    note: Direct tensor inference via transformers — no API key. IG_LOCAL_MODEL_DIR
+      sets the model path; IG_DEVICES picks the cards ("0,1" splits a model too
+      large for one card across both, "1" pins one, "cpu" forces CPU).
     models:
     - name: Imscriptiveon_qlora_merged2
       description: imscribing QLoRA merged Qwen3 — primary local model

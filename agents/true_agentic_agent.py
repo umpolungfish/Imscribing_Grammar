@@ -274,7 +274,9 @@ class _LocalChatCompletions:
             # provider is local but the model id is a cloud slug (e.g. IG_MODEL left
             # at deepseek/… while IG_PROVIDER=local). Do NOT treat that as a path.
             # Resolve the dedicated local-model dir; fall back to LocalProvider's default.
-            _dir = os.environ.get("LOCAL_MODEL_PATH") or os.environ.get("MODOT_LOCAL_MODEL_DIR")
+            _dir = (os.environ.get("IG_LOCAL_MODEL_DIR")
+                    or os.environ.get("LOCAL_MODEL_PATH")
+                    or os.environ.get("MODOT_LOCAL_MODEL_DIR"))
             model_path = os.path.expanduser(_dir) if _dir else None
         prov = LocalProvider(
             model_path=model_path,

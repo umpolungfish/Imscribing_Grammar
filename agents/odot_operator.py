@@ -455,7 +455,7 @@ LOCAL_BASE_URLS: Dict[str, str] = {
     "lm-studio": "http://localhost:1234/v1",
     "lmstudio":  "http://localhost:1234/v1",
     "vllm":      "http://localhost:8000/v1",
-    "local":     os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
+    "local":     os.environ.get("IG_LOCAL_BASE_URL") or os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
 }
 
 # Remote API providers — used by the prefix syntax `provider:model`
