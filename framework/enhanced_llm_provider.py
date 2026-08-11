@@ -24,9 +24,19 @@ logger = logging.getLogger(__name__)
 # produces nothing — which is exactly how every winding came to log an empty
 # THINK line.
 def _thinking_default() -> bool:
+    """OFF unless asked. This global governs the ob3ect design call, whose --thinking
+    flag is documented as default off and which sets this to True only when the flag
+    is given. Defaulting it ON sent the local kernel's whole output into a think
+    block, so `--raw` returned the empty text after `</think>`, the design call
+    parsed nothing, and with --retries at its default of infinity it re-asked
+    forever. The agent loop does NOT read this — it has its own IG_THINK reader and
+    is on by default there, where a THINK phase is the point.
+
+    An explicit IG_THINK=1 still turns it on here.
+    """
     import os as _os
     raw = (_os.environ.get("IG_THINK") or _os.environ.get("MODOT_THINK") or "").strip().lower()
-    return raw not in ("0", "false", "off", "no")
+    return raw in ("1", "true", "on", "yes")
 
 
 enable_thinking: bool = _thinking_default()
