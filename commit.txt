@@ -1,14 +1,16 @@
-The provider's thinking default belongs to ob3ect, not the agent
+Local inference streams token by token, in process
 
-I flipped this module global to ON when I unified IG_THINK, and it is the global
-that governs ob3ect's design call — whose own --thinking flag is documented as
-default off and which sets this to True only when the flag is given. So every
-design call started thinking, the local kernel spent its output inside the think
-block, `ask --raw` returned the empty text after `</think>`, the JSON parse
-raised, and with --retries at its default of infinity the pipeline re-asked
-forever: a wall of "streaming from LocalProvider / stream complete" with nothing
-in between.
+What I wired first was not streaming inference — it was letting a subprocess's
+stderr through, which shows the kernel's own progress print and hands the caller
+nothing. The weights are already resident in this process, so the generation can
+be watched directly.
 
-Off unless asked, as documented, with an explicit IG_THINK=1 still turning it on.
-The agent loop never read this global — it has its own reader and stays on by
-default there, where a THINK phase is the point.
+LocalProvider._stream_generate uses transformers' TextIteratorStreamer: generate
+runs on a worker thread, decoded text lands on a queue as it is produced, and the
+drain loop calls on_token per piece while accumulating the whole answer as the
+return value. An exception on the worker is re-raised after the drain rather than
+disappearing with the thread. Sampling comes from the model's card, the same
+table the silent path uses, so streaming and not streaming are one route.
+
+Measured on Qwen3-1.7B: tokens arriving live, 40 characters returned, the text
+identical to what the callback saw.

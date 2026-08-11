@@ -683,9 +683,88 @@ class LocalProvider(LLMProvider):
         temperature: float,
         max_new_tokens: int,
         stream: bool = False,
+        on_token=None,
     ) -> str:
         """Route local inference through the Rust kernel (candle in-process)."""
+        if on_token is not None:
+            return self._stream_generate(prompt, system, temperature, max_new_tokens, on_token)
         return self._kernel_generate(prompt, system, temperature, max_new_tokens, stream)
+
+    def _stream_generate(
+        self,
+        prompt: str,
+        system: Optional[str],
+        temperature: float,
+        max_new_tokens: int,
+        on_token,
+    ) -> str:
+        """Generate in-process, handing back each token as the model produces it.
+
+        The weights are already resident here, so generation can be watched
+        directly rather than inferred from a subprocess's stderr: transformers'
+        TextIteratorStreamer puts decoded text on a queue as it is generated,
+        `generate` runs on a worker thread, and this loop drains the queue,
+        calling `on_token` per piece and accumulating the whole answer to return.
+
+        Sampling follows the model's card, the same table the non-streaming path
+        uses. The full text is still the return value, so a streaming call and a
+        silent one produce the same answer by the same route.
+        """
+        import threading
+        import torch
+        from transformers import TextIteratorStreamer
+
+        self._ensure_loaded()
+        tok = LocalProvider._tokenizer
+        mdl = LocalProvider._model
+
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        messages.append({"role": "user", "content": prompt})
+        text = tok.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True,
+            enable_thinking=enable_thinking,
+        )
+        inputs = tok(text, return_tensors="pt").to(mdl.device)
+
+        card = _sampling_card(self.model_path)
+        streamer = TextIteratorStreamer(tok, skip_prompt=True, skip_special_tokens=True)
+        gen_kwargs = dict(
+            **inputs,
+            streamer=streamer,
+            max_new_tokens=int(max_new_tokens),
+            do_sample=temperature > 0,
+            pad_token_id=tok.eos_token_id,
+            eos_token_id=tok.eos_token_id,
+        )
+        if temperature > 0:
+            gen_kwargs.update(temperature=temperature, top_p=card["top_p"], top_k=card["top_k"])
+
+        error: List[BaseException] = []
+
+        def _run():
+            try:
+                with torch.no_grad():
+                    mdl.generate(**gen_kwargs)
+            except BaseException as exc:            # surfaced after the drain
+                error.append(exc)
+
+        worker = threading.Thread(target=_run, daemon=True)
+        worker.start()
+
+        pieces: List[str] = []
+        for piece in streamer:
+            if piece:
+                pieces.append(piece)
+                on_token(piece)
+        worker.join()
+        if error:
+            raise error[0]
+
+        response = "".join(pieces).strip()
+        response = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
+        return response
 
     def _kernel_generate(
         self,
@@ -907,13 +986,14 @@ class LocalProvider(LLMProvider):
         if cached:
             return cached
 
-        # `on_token` is the streaming request. The kernel does its own streaming
-        # to the terminal, so the callback is not fed piece by piece here — the
-        # flag is what matters, and the tokens appear as the kernel writes them.
-        stream = kwargs.get("on_token") is not None
+        # `on_token` is the streaming request, and it is served in-process: the
+        # weights are already here, so the tokens are handed over as the model
+        # produces them rather than read off a subprocess's stderr.
+        on_token = kwargs.get("on_token")
         loop = asyncio.get_event_loop()
         result = await loop.run_in_executor(
-            None, self._sync_generate, prompt, system, temperature, max_tokens, stream
+            None, self._sync_generate, prompt, system, temperature, max_tokens,
+            on_token is not None, on_token,
         )
 
         await self.cache_response(
