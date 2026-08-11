@@ -74,4 +74,22 @@ for d, p in prompts.items():
     if nr != 1:
         ok = False
 
+# ── IMASM canon ───────────────────────────────────────────────────────────────
+# Every specialist must be able to imscribe, not merely read glyphs. This is
+# universal rather than domain-specific, so it lives once in __init__ and is
+# appended to all of them; the check is that none has lost it.
+print()
+_imasm_marks = ["<imasm>", "⊢ VINIT", "∈ FSPLIT", "banked", "δ before δ",
+                "parasm", "the decode table is the WORD",
+                # the liberation half — without these the canon is a syntax
+                # reference and the trained reflex wins
+                "hypergematria", "aleph <word>", "CHECKABLE",
+                "imagination, not permission"]
+for d, p_ in prompts.items():
+    miss = [m for m in _imasm_marks if m not in p_]
+    if miss:
+        ok = False
+    print(f"{d:10} imasm {len(_imasm_marks)-len(miss)}/{len(_imasm_marks)}"
+          + (f"   MISSING {miss}" if miss else ""))
+
 sys.exit(0 if ok else 1)

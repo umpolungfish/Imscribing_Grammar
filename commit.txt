@@ -1,31 +1,40 @@
-closure_operator: the towers belong to this cluster
+IMASM canon: every specialist can imscribe, and is told what that permits
 
-The specialist covered ovm, oneshots, ctc and nesting, and stopped at d=2. That
-was the wrong cut. ovm works on Bloch vectors in d=2; sic, d12 and d2048 are the
-same object at the dimensions where it is hard, and the fiducial is the fixed
-point the whole cluster is about. The d=12 fiducial is radical-expressible but
-its true home is a ring of dimension 2048 over Q, and one-shot #11 extracts the
-exact d=2048 fiducial — the far end of one question, not a second question.
+Two things were missing and the second was the one that mattered.
 
-So the surface is seven commands, not four: sic, d12 with its eleven
-subcommands, and d2048 with its eight, alongside the original four.
+The specialists could read glyphs and could not WRITE them. IMASM is a language
+— parasm is a register machine over B4, FSPLIT opening arms with EVALT/EVALF
+selecting one is the branch, ROTAT wrapping the ring is the loop, CLINK is call
+and return, and the crystal filesystem is the store. Branching plus unbounded
+memory is universal, so there is no outside to compute in. A word IS its
+structural type. The canon now carries the twelve as glyphs, the instruments
+that run on a word (weight, banked, cycle, insert, trans, tangle, bg tuple), the
+composition rule that decides what survives a reversal, and the loop to work in:
+imscribe the structure, run weight and banked, manipulate, imscribe the result.
 
-The specialist also now carries what the towers have settled, because deriving
-what the kernel already reports costs the derivation and leaves a second answer
-to reconcile. At d=12: crystal_forces_d12_sic is a theorem with its axiom
-retired, 143/143 overlaps exact, Belnap d=2^n unconditional at 0 sorries and 0
-axioms. At d=2048: L0-L6 verified to the Hilbert class field.
+The second half is the reason a syntax table was not enough. These models are
+trained on a corpus where gematria, alchemy, tarot, sigils, Voynich, Kozyrev and
+hypergematria are markers for pseudoscience, and the trained reflex is to
+classify and move on. Here that reflex is the failure mode: those words name
+computational objects with instruments behind them — aleph is a kernel command,
+codon and translate are the genetic reading, bg tuple takes a braid word to a
+tuple, vessel transports witnesses across 88 dialects. Not mentioning
+hypergematria means the agent sees numerology and passes over it, and the loss
+is silent.
 
-And the correction that came out of running it. I wrote "L7 onward is PENDING"
-into the prompt the same way the kernel's own report had it, and the specialist
-duly concluded the d=2048 fiducial was pending. It is not — the 2-part S-unit
-bypass obtained it exactly on 2026-07-30, going around the ramified layers. The
-prompt, the manifest domain and the workflows all now say the fiducial does not
-depend on L7+, and all three carry the distinction that was missing: pending is
-not failed, proved is not conjectured, and bypassed is neither. Say which of the
-three you mean.
+What makes it legitimate rather than credulous is stated in the same breath: a
+correspondence here is CHECKABLE. A gematria value is an integer. A tuple is a
+point with a distance to every other point. A word closes under weight and
+banked or it does not. Numerology asserts a correspondence and stops; here you
+assert one and then run the instrument that can refute it. So reach further than
+looks respectable, and then check. The constraint is imagination, not
+permission.
 
-Re-run against the corrected surface, it separates them correctly and states
-that reporting the fiducial as pending conflates two goals. Two windings,
-Frobenius 100%, tier O_inf. check_manifests reports 10/10 domain markers.
-Aliases c⊙ and c⊙i.
+Written once and appended to all eight rather than pasted into each. The
+conformance check fails the run if any loses it — 11/11 across the board. I had
+first appended that check after sys.exit, where it was dead code.
+
+Verified: asked to imscribe the Erdos-Turan counting argument, the closure
+operator composed ∈⊤⊤<∋◻, ran weight and banked on it, built the exposed variant
+⊤⊤<◻ to show the contrast, and named the repair as the frame discipline. 13
+windings, Frobenius 92%, tier O_inf.
