@@ -318,6 +318,57 @@ def _thinking_enabled() -> bool:
     return True
 
 
+def _coerce_by_schema(name: str, args: Dict[str, Any], tools: Any) -> Dict[str, Any]:
+    """Type each parameter by the TOOL'S OWN SCHEMA, which is what qwen_xml means.
+
+    The Qwen XML format encodes a call's parameters as that function's JSON
+    schema (xgrammar's JSONSchemaFormat with style="qwen_xml"), so the declared
+    type is the authority. Guessing from the text instead — try json.loads, keep
+    a string on failure — is wrong in both directions and silently:
+
+      a string parameter holding "123"  becomes the number 123
+      a string parameter holding "true" becomes the boolean True
+      a boolean written by the template as "True" stays the string "True",
+        because Jinja's `| string` of a Python bool is not JSON
+
+    The chat template's serialiser is the other half of this: mappings and
+    non-string sequences go through `| tojson`, everything else through
+    `| string`. So JSON is only ever expected where the schema says object or
+    array, and that is exactly where it is parsed here.
+    """
+    props: Dict[str, Any] = {}
+    for t in tools or []:
+        fn = t.get("function", t) if isinstance(t, dict) else {}
+        if fn.get("name") == name:
+            props = ((fn.get("parameters") or {}).get("properties") or {})
+            break
+    out: Dict[str, Any] = {}
+    for key, raw in args.items():
+        declared = (props.get(key) or {}).get("type")
+        if not isinstance(raw, str) or declared is None:
+            out[key] = raw
+            continue
+        text = raw.strip()
+        try:
+            if declared == "string":
+                out[key] = raw                       # raw, never re-interpreted
+            elif declared == "integer":
+                out[key] = int(text)
+            elif declared == "number":
+                out[key] = float(text)
+            elif declared == "boolean":
+                out[key] = text.lower() in ("true", "1", "yes")
+            elif declared in ("object", "array"):
+                out[key] = json.loads(text)
+            else:
+                out[key] = raw
+        except Exception:
+            # A value that does not fit its declared type is handed over as
+            # written; the tool's own validator says so better than a guess here.
+            out[key] = raw
+    return out
+
+
 def _tool_calls_for_template(tool_calls: Any) -> List[Dict[str, Any]]:
     """Turn OpenAI-shaped tool calls into what this chat template can render.
 
@@ -648,12 +699,10 @@ class _LocalChatCompletions:
                 args: Dict[str, Any] = {}
                 for pm in re.finditer(r'<parameter=(.*?)\s*>\n(.*?)\n?(?:</parameter>|\Z)',
                                       fn.group(2), re.DOTALL):
-                    key, val = pm.group(1).strip(), pm.group(2)
-                    try:
-                        args[key] = _j.loads(val)
-                    except Exception:
-                        args[key] = val
-                parsed_calls.append({"name": name, "arguments": args})
+                    args[pm.group(1).strip()] = pm.group(2)
+                # Types come from the declared schema, not from the text.
+                parsed_calls.append({"name": name,
+                                     "arguments": _coerce_by_schema(name, args, tools)})
             else:
                 # The older Qwen3 form, kept so a checkpoint mid-migration still runs.
                 try:
