@@ -1,17 +1,13 @@
-Tool-call arguments reach the template as a mapping
+THINK shows the thinking, and a missing file names its neighbours
 
-Winding 1 died with "LLM connection failed: Can only get item pairs from a
-mapping" — a Jinja error wearing a connection error's name. The template
-iterates a tool call's arguments with |items, and on the wire `arguments` is a
-JSON STRING: that is the OpenAI convention and the HTTP lane needs it that way.
-So the first winding worked, and the second — the first one with a prior tool
-call in its history — could not render at all.
+THINK logged only the message content. With this template the model reasons
+inside the think block and writes nothing outside it, so content is empty and
+the line printed blank while the reasoning sat in reasoning_content one field
+away. It logs whichever exists. The message HISTORY is unchanged and still
+carries content only — prior reasoning does not go back in, per Qwen's guidance.
 
-The conversion happens at the boundary now, where the message list is handed to
-the template, leaving the canonical list in the wire format it has to keep. A
-call whose arguments will not parse renders with none rather than taking the run
-down: the template guards on `is defined`.
-
-Rendered the exact turn that crashed: the assistant's file_read call comes back
-in the function/parameter form, the directory listing lands in a <tool_response>,
-and the next assistant turn opens its think block.
+And a read that fails on a missing file now lists its near neighbours. The run
+that prompted this asked for CORPUCT.md in a directory holding CIRCUIT.md, got
+a bare "No such file", and had nothing new to go on; the suggestion is one
+listdir away and the same shape as the unknown-tool hint already in this file.
+Checked against that exact name: CIRCUIT.md comes back first.

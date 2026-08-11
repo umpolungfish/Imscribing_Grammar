@@ -1043,6 +1043,20 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
         return (f"[{path} is a DIRECTORY — listing it instead; "
                 f"file_read reads files, run_command(\"ls -la {path}\") lists]\n"
                 f"[{len(entries)} entries]\n{body}{more}")
+    except FileNotFoundError as e:
+        # An error with no remedy re-enters THINK with nothing new, and the model
+        # guesses again. The neighbours are one listdir away, and a wrong name is
+        # usually a near miss — CORPUCT.md for CIRCUIT.md.
+        parent = os.path.dirname(path) or "."
+        try:
+            from difflib import get_close_matches
+            entries = sorted(os.listdir(parent))
+            near = get_close_matches(os.path.basename(path), entries, n=5, cutoff=0.5)
+            hint = (f" — did you mean {', '.join(near)}?" if near
+                    else f" — {parent} holds {len(entries)} entries; list it first")
+        except Exception:
+            hint = ""
+        return f"(error reading {path}: {e}){hint}"
     except Exception as e:
         return f"(error reading {path}: {e})"
 
@@ -4115,7 +4129,12 @@ class TrueAgenticAgent:
         # THINK + ACT: one LLM call over accumulated message history
         reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
 
-        self._log(f"  THINK: {reasoning}")
+        # The reasoning lives in `reasoning_content` when the model thinks inside
+        # a think block and writes nothing outside it — which, with this template,
+        # is the ordinary case. Logging only `content` left THINK blank while the
+        # thinking was right there. The message HISTORY still carries content
+        # only: Qwen's guidance is that prior reasoning does not go back in.
+        self._log(f"  THINK: {reasoning or (raw_reasoning_content or '').strip()}")
         self._log(f"  ACT:   {action_name}({json.dumps(action_input, ensure_ascii=False)})")
 
         # OBSERVE: emit + verify (dual-tool pair)
