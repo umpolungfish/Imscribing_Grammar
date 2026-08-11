@@ -290,6 +290,35 @@ def _thinking_enabled() -> bool:
     return True
 
 
+def _tool_calls_for_template(tool_calls: Any) -> List[Dict[str, Any]]:
+    """Turn OpenAI-shaped tool calls into what this chat template can render.
+
+    On the wire, `arguments` is a JSON STRING — that is the OpenAI convention and
+    the HTTP lane needs it that way. This template iterates it with `|items`, so
+    a string makes Jinja throw `Can only get item pairs from a mapping` and the
+    whole winding dies as an "LLM connection failed". The conversion belongs
+    here, at the boundary, leaving the canonical message list alone.
+    """
+    out: List[Dict[str, Any]] = []
+    for tc in tool_calls or []:
+        fn = tc.get("function", tc) if isinstance(tc, dict) else getattr(tc, "function", tc)
+        name = (fn.get("name") if isinstance(fn, dict) else getattr(fn, "name", None)) or ""
+        args = fn.get("arguments") if isinstance(fn, dict) else getattr(fn, "arguments", None)
+        if isinstance(args, str):
+            try:
+                args = json.loads(args)
+            except Exception:
+                args = None
+        call: Dict[str, Any] = {"function": {"name": name}}
+        # `arguments` is left OFF when it is not a mapping: the template guards on
+        # `is defined`, so the call still renders, with no parameters, instead of
+        # taking the run down.
+        if isinstance(args, dict):
+            call["function"]["arguments"] = args
+        out.append(call)
+    return out
+
+
 @lru_cache(maxsize=1)
 def _canonical_chat_template() -> str:
     """The one chat template the local lane renders with.
@@ -356,7 +385,7 @@ class _LocalChatCompletions:
             elif role == "assistant":
                 m: Dict[str, Any] = {"role": "assistant", "content": content}
                 if msg.get("tool_calls"):
-                    m["tool_calls"] = msg["tool_calls"]
+                    m["tool_calls"] = _tool_calls_for_template(msg["tool_calls"])
                 qwen_msgs.append(m)
             elif role == "tool":
                 tool_msg: Dict[str, Any] = {"role": "tool", "content": content}

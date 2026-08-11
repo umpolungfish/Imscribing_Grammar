@@ -1,25 +1,17 @@
-The parser threw away a tool call that was actually there
+Tool-call arguments reach the template as a mapping
 
-Qwen3.5-27B, reasoning on, asked to review a directory: it reasoned, then wrote
-a well-formed call to file_read with all three parameters — and the harness
-handed the monologue back as the answer. Two defects, both in the parsing, and a
-budget that caused the first.
+Winding 1 died with "LLM connection failed: Can only get item pairs from a
+mapping" — a Jinja error wearing a connection error's name. The template
+iterates a tool call's arguments with |items, and on the wire `arguments` is a
+JSON STRING: that is the OpenAI convention and the HTTP lane needs it that way.
+So the first winding worked, and the second — the first one with a prior tool
+call in its history — could not render at all.
 
-The template PREFILLS `<think>\n` at the end of the prompt when reasoning is
-enabled, so the model's output begins INSIDE the block and carries only the
-closing `</think>`. The extractor looked for a matched pair, found none, and left
-the entire monologue in the content. An unpaired closing tag is the normal case
-here, not an edge one. A block opened and never closed — the generation running
-out mid-thought — is all reasoning and no answer, and is treated as such.
+The conversion happens at the boundary now, where the message list is handed to
+the template, leaving the canonical list in the wire format it has to keep. A
+call whose arguments will not parse renders with none rather than taking the run
+down: the template guards on `is defined`.
 
-`</tool_call>` was required. The model stopped after `</function>`, so the regex
-did not match, `tool_calls` came back empty, and the loop read the leftover text
-as a conclusion. The closing tags are optional now at all three levels —
-tool_call, function, parameter — because a call cut short still says which tool
-it wants and with what. Replayed against the exact output from the transcript:
-reasoning separated, file_read recovered with path, offset and limit.
-
-And the budget was 4096, set when reasoning was off. Now the reasoning and the
-call share it, and a 27B spends most of it thinking before it writes the call —
-which is what cut the block before its closing tag. Default is 32768, Qwen's own
-figure for an ordinary query, overridable with IG_MAX_TOKENS.
+Rendered the exact turn that crashed: the assistant's file_read call comes back
+in the function/parameter form, the directory listing lands in a <tool_response>,
+and the next assistant turn opens its think block.
