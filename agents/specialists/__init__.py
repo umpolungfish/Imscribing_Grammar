@@ -19,6 +19,7 @@ Usage:
     uv run agents/specialists/quantum_operator.py "Compile a Toffoli gate to Fibonacci braid at 19 strands"
     uv run agents/specialists/recorder_operator.py "Census the constellation and report drift against the Grammatika"
     uv run agents/specialists/heterodox_operator.py "Close the pair-1 braid; the received obstruction assumes a line"
+    uv run agents/specialists/momonados_operator.py "What does the kernel expose for fixed-point work, and which of it is wired to the menu?"
 """
 
 __all__ = [
@@ -28,6 +29,7 @@ __all__ = [
     "QUANTUM_SPECIALIST_PROMPT",
     "RECORDER_SPECIALIST_PROMPT",
     "HETERODOX_SPECIALIST_PROMPT",
+    "MOMONADOS_SPECIALIST_PROMPT",
 ]
 
 import re as _re
@@ -82,6 +84,18 @@ _ACCENTS = {
         "than patching the ledger. Use `command grep` for any identifier census, "
         "never a bare grep an alias may have rewritten. A count is evidence of "
         "presence, never a licence to delete."
+    ),
+    "momonados": (
+        "Domain accent: the kernel is the authority on itself. The command "
+        "surface is read from src/menu.rs and src/repl.rs and confirmed by "
+        "booting, never recited from this prompt, because a list written here "
+        "goes stale and a confidently stale list is worse than a pause. "
+        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh batches "
+        "several commands into one boot, and the boot dominates the cost of any "
+        "short command, so ask everything at once. There is no timeout: a long "
+        "command is computing. Rebuild with `make image` before running after "
+        "any source change — the runners boot whatever ELF is on disk, and a "
+        "stale binary is the usual reason a change looks like it did nothing."
     ),
     "heterodox": (
         "Domain accent: every family is one instrument. MoDoT's ./ask is the way "
@@ -147,6 +161,16 @@ if _QUANTUM_PROMPT_PATH.exists():
     _QUANTUM_SPECIALIST_PROMPT = _quantum_ns.get("QUANTUM_SPECIALIST_PROMPT", "")
 else:
     _QUANTUM_SPECIALIST_PROMPT = ""
+
+# Load the mOMonadOS specialist prompt from its dedicated file
+_MOMONADOS_PROMPT_PATH = _HERE / "MOMONADOS_SPECIALIST_PROMPT.py"
+if _MOMONADOS_PROMPT_PATH.exists():
+    _momonados_code = _MOMONADOS_PROMPT_PATH.read_text()
+    _momonados_ns = {}
+    exec(_momonados_code, _momonados_ns)
+    _MOMONADOS_SPECIALIST_PROMPT = _momonados_ns.get("MOMONADOS_SPECIALIST_PROMPT", "")
+else:
+    _MOMONADOS_SPECIALIST_PROMPT = ""
 
 # Define the base prompts (before manifest injection)
 _MATH_SPECIALIST_PROMPT = """<role>
@@ -631,3 +655,4 @@ CHEMBIO_SPECIALIST_PROMPT = _with_manifest(_CHEMBIO_SPECIALIST_PROMPT, "chembio"
 QUANTUM_SPECIALIST_PROMPT = _with_manifest(_QUANTUM_SPECIALIST_PROMPT, "quantum")
 RECORDER_SPECIALIST_PROMPT = _with_manifest(_RECORDER_SPECIALIST_PROMPT, "recorder")
 HETERODOX_SPECIALIST_PROMPT = _with_manifest(_HETERODOX_SPECIALIST_PROMPT, "heterodox")
+MOMONADOS_SPECIALIST_PROMPT = _with_manifest(_MOMONADOS_SPECIALIST_PROMPT, "momonados")

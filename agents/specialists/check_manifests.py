@@ -11,7 +11,8 @@ prompts = {"math": S.MATH_SPECIALIST_PROMPT,
            "editorial": S.EDITORIAL_SPECIALIST_PROMPT,
            "chembio": S.CHEMBIO_SPECIALIST_PROMPT,
            "recorder": S.RECORDER_SPECIALIST_PROMPT,
-           "heterodox": S.HETERODOX_SPECIALIST_PROMPT}
+           "heterodox": S.HETERODOX_SPECIALIST_PROMPT,
+           "momonados": S.MOMONADOS_SPECIALIST_PROMPT}
 
 base = [n for n, _ in base_tools()]
 gram = grammar_tools()
@@ -41,6 +42,11 @@ markers = {
                   "DJED.md", "IG_catalog.json", "command grep"],
     "heterodox": ["./ask", "mOMonadOS", "m3iosis", "p4ramill", "ob3ect",
                   "cl9nk", "para_vm"],
+    # The mOMonadOS markers are the places the surface is READ FROM, not a list
+    # of commands. A command name here would be exactly the staleness the
+    # specialist is built to avoid, and the check would then enforce it.
+    "momonados": ["menu.rs", "repl.rs", "run_serial_cmds.sh", "make image",
+                  "make ordinals", "check_menu_coverage.py"],
 }
 print()
 for d, ms in markers.items():

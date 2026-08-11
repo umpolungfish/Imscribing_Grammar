@@ -86,72 +86,57 @@ never assert arithmetic from memory.
 - `quantum_compile` — gates=<circuit over H T S X, e.g. 'H T'>, depth=<recursion depth, optional>
 - `jones_polynomial` — braid=<signed generators, e.g. '1 1 1' for the trefoil>, strands=<optional; implied by the word>
 
-## Cross-family, Grammar-first tools
+## The mOMonadOS kernel tools
 
-### MoDoT — ./ask
+### The menu tables — the documented surface
 
-`cd ~/imsgct/MoDoT && ./ask [FLAGS]`. The primary language interface and the
-usual way into the structural verbs. Rust-native; build with
-`--features local,cuda` when the local provider is wanted, since a plain build
-strips it. Never write a Python bridge in front of it.
+`command grep -n 'MenuItem {' ~/imsgct/mOMonadOS/src/menu.rs`. Every entry is
+`MenuItem { name, cmd, desc, example, submenu }`, and a command that takes
+arguments carries a submenu of the same shape naming each form it accepts. This
+is what `help` prints at the `⊙>` prompt.
 
-The verb list is the math domain's; read TOOLS_math.md for full syntax and
-MODOT_WALKTHROUGH.md for which question each verb answers.
+Read this rather than recalling a command list. The surface changes, and a list
+memorised in a prompt is wrong the first time a command is added or renamed.
 
-### mOMonadOS — the bare-metal kernel
+### The dispatcher — what the kernel actually runs
 
-~/imsgct/mOMonadOS. The self-imscribing kernel: no processes, no scheduler, no
-filesystem hierarchy. The kernel IS the Frobenius loop and every tick is a
-self-verification. It braids Fibonacci anyons on the metal.
+`command grep -n '"<word>" =>' ~/imsgct/mOMonadOS/src/repl.rs`. The match arms
+on the command word. Authoritative wherever this and the menu disagree.
 
-It is the first home for new work, not a port target. Anything developed here
-lands natively here before it lands anywhere else, and no Python version is
-written to precede it. `./run_serial_cmds.sh` runs several commands per boot;
-the QEMU start dominates a single short command, so batch them.
+Arms exist that no menu entry reaches: those commands work and are undocumented.
+Menu entries exist with no arm: those are promises the kernel does not keep. Some
+arms carry `#[cfg(feature = ...)]`, which puts a command in the menu and out of
+the binary at the same time — check Cargo.toml before calling such a command
+missing.
 
-### m3iosis — braid to tuple
+### Running the kernel
 
-`m3 info`, `m3 fib --summary`, `m3 fib --fusion tau tau`, `m3 sim 1 2 1`,
-`m3 braid-grammar --strands 4 1 2 1`, `m3 manifold --word 1 2 1 2 1`.
+`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" ...]` boots
+QEMU, feeds each command to the `⊙>` prompt in order, and quits. `./run.sh
+release` gives an interactive prompt instead.
 
-Fibonacci anyon algebra, braid groups, modular tensor categories. Its distinct
-value to this specialist is `braid-grammar`: the surface where a topological
-question becomes a typed one and re-enters the Grammar as the same tuple the
-catalog would hold. It mirrors the kernel; reach for the kernel first and use
-m3iosis where the kernel does not expose what is needed.
+The QEMU boot dominates the cost of any short command, so batch: several
+commands per invocation cost barely more than one. There is no timeout — a
+command that takes minutes is computing, not hung.
 
-### p4rakernel — Lean 4
+The runner boots whatever ELF is on disk. After changing source, `make image`
+first; a stale binary is the usual reason a change appears to have done
+nothing.
 
-`cd ~/imsgct/p4rakernel/p4ramill && lake build`. Where a claim stops being a
-claim. Sorries are original claims and are named as such, never hidden.
+### The six builds
 
-Build state is tracked; do not re-investigate a green build. `proof_scaffold`
-turns an opcode sequence into a typed Lean term scaffold, which is the route in
-from an imscription rather than from Mathlib spelunking.
+`make build` debug bare target · `make release` release bare · `make image` the
+bootimage the runners boot · `make hosted` host target with the `hosted` feature
+· `make ordinals` the ordinal faithfulness guard, which passes as "all 44 values
+match Lean canonical" · `./make_proof_vehicle.sh` one emailable tarball carrying
+the ELF, a runner and the Lean sources.
 
-### ob3ect — self-verifying objects
+.cargo/config.toml pins the bare target, so a plain `cargo build --features
+hosted` compiles no_std and fails with thousands of missing-prelude errors that
+look like rot and are not. `make hosted` names the host target explicitly.
 
-~/imsgct/ob3ect, `auto.py`, and the native generator `./ask --ob3ect`. Objects
-that verify themselves on execution by checking μ∘δ=id over the transformation
-rather than by inspecting output.
+### Coverage between dispatcher and menu
 
-Load from it live. Do not nest a copy: one manifold.
-
-### The navigator layer
-
-`cl9nk` is the reference and `cl8nk` the substrate: `cl8nk_navigator` plus the
-`cl8nk` and `cl9nk` MoDoT verbs (entry, distance, tensor, meet, join, contain,
-tier, promotions, transcendence, chain, systems, stats, and cl9nk moat).
-
-Navigator distance is a heuristic. Where a canonical metric exists it decides.
-Never hand-derive what a navigator computes.
-
-### The paraconsistent surface
-
-`para_vm` (Belnap FOUR VM, ParaASM, dialetheia), `para_verify` and
-`para_verify_enable`. This is the surface on which most imported impossibility
-results fail to transfer: they assume a contradiction is fatal, and here it
-lands as B and the work continues.
-
-Where two surfaces disagree, that is a B and it is recorded as one, not
-resolved by preferring the surface you like.
+`cd ~/imsgct/mOMonadOS && python3 check_menu_coverage.py`. Reports every REPL
+command unreachable from the menu. Run it after wiring a new command; an
+unreachable command is one nobody will find.
