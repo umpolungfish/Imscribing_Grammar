@@ -96,5 +96,12 @@
     "formula": "C3H5NO",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "561-27-3": {
+    "cas": "561-27-3",
+    "name": "acetic acid [(4R,4aR,7S,7aR,12bS)-9-acetoxy-3-methyl-2,4,4a,7,7a,13-hexahydro-1H-4,12-methanobenzofuro[3,2-e]isoquinolin-7-yl] ester",
+    "formula": "C21H23NO5",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
