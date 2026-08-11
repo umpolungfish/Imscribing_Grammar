@@ -756,6 +756,64 @@ class LoopCycle:
 #   str  = verification report
 #   bool = frobenius_closed (mu(delta(q)) == q?)
 
+
+# ── imasm: the kernel's IMASM instruments, as one tool ────────────────────────
+
+_MARKS = "⊢⊣><⋈⊤∈∋⊙⊥⊞◻"
+_MOM = "/home/mrnob0dy666/imsgct/mOMonadOS"
+
+def _imasm_emit(args: Dict[str, Any]) -> str:
+    """Run the kernel's IMASM instruments on a word, in ONE boot.
+
+    Agents had the vocabulary and no instrument: reaching IMASM meant knowing
+    the QEMU incantation and writing the run_serial_cmds.sh line by hand, which
+    is not a capability, it is a thing to be told each time. This is the tool.
+
+    Everything here is the kernel's own — weight, banked, cycle, insert, trans,
+    the braid reading — so nothing can drift from what the kernel actually says.
+    """
+    word = (args.get("word") or "").strip()
+    ops = args.get("ops") or ["weight", "banked"]
+    if isinstance(ops, str):
+        ops = [o.strip() for o in ops.replace(",", " ").split() if o.strip()]
+
+    # Reject non-marks by position rather than dropping them, which would
+    # silently shorten the word and answer about a different program.
+    cleaned = "".join(c for c in word if not c.isspace())
+    if not cleaned:
+        return ("imasm: give a word in the twelve marks.\n"
+                f"  marks: {' '.join(_MARKS)}\n"
+                "  usage: imasm(word='⊢⊙∈⊤⊥∋◻⊣', ops=['weight','banked','cycle'])")
+    for i, c in enumerate(cleaned):
+        if c not in _MARKS:
+            return (f"imasm: '{c}' at position {i} is not one of the twelve marks.\n"
+                    f"  marks: {' '.join(_MARKS)}\n"
+                    "  The retired marks ◇ ● + × = ¬ are not tokens.")
+
+    known = {"weight", "banked", "cycle", "insert", "trans"}
+    bad = [o for o in ops if o not in known]
+    if bad:
+        return f"imasm: unknown op(s) {bad}. Available: {sorted(known)}"
+
+    cmds = " ".join(f'"{o} {cleaned}"' for o in ops)
+    try:
+        r = subprocess.run(
+            f"cd {_MOM} && ./run_serial_cmds.sh {cmds}",
+            shell=True, capture_output=True, text=True, timeout=args.get("timeout", 900),
+        )
+        out = r.stdout + r.stderr
+    except subprocess.TimeoutExpired:
+        return "imasm: the kernel did not finish. A boot dominates; try fewer ops."
+    except Exception as e:
+        return f"imasm: {e}"
+
+    # Keep only the REPL transcript, dropping the boot banner.
+    lines = out.split("\n")
+    start = next((i for i, l in enumerate(lines) if l.startswith("⊙>")), 0)
+    body = "\n".join(lines[start:]).replace("⊙> quit", "").rstrip()
+    return body or "(kernel produced no output — is the ELF built? `make image`)"
+
+
 def _run_command_emit(args: Dict[str, Any]) -> str:
     cmd = args["command"]
     timeout = args.get("timeout", 30)
@@ -2495,6 +2553,7 @@ def _spawn_agent_verify(emit_input: Dict, emit_output: str,
 
 
 _EMIT_FNS: Dict[str, Any] = {
+    "imasm":                _imasm_emit,
     "run_command":          _run_command_emit,
     "file_read":            _file_read_emit,
     "file_write":           _file_write_emit,
@@ -2563,6 +2622,35 @@ def _prim(values: List[str], desc: str) -> Dict:
 
 
 TOOL_SCHEMAS = [
+    _fn(
+        "imasm",
+        (
+"Run the kernel's IMASM instruments on a word, in one QEMU boot. "
+"IMASM is a language you WRITE: a word IS its structural type, so imscribing a "
+"structure and running this on it settles what prose can only assert. "
+"The twelve marks are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ — VINIT open, TANCH close, AFWD "
+"advance, AREV the clearing reverse, CLINK compose, IMSCRIB self-reference, "
+"FSPLIT/FFUSE the δ/μ frame pair, EVALT/EVALF deposit T/F, ENGAGR the Belnap "
+"diagonal, IFIX fix. Retired marks ◇ ● + × = ¬ are not tokens and are refused. "
+"OPS: weight (the movement trace — every clear, seed, frame open, deposit and "
+"fuse, with the final register and what survived); banked (did a clear fire "
+"against a live register with nothing banked — VACUOUS means nothing was ever "
+"at risk); cycle (the ROTAT orbit: period, landing register per cut, whether "
+"the word is phase-bearing); insert (every one-glyph repair for an exposed "
+"word); trans (transitions on the ring, closing edge included). "
+"THE COMPOSITION RULE: δ before δ, μ after μ — open the frame BEFORE the "
+"counting and close it AFTER the reversal. A count held in the open when an "
+"AREV fires is lost; banked in an enclosing frame it survives and the fuse "
+"restores it. Batch several ops: the boot dominates, the ops are free."
+        ),
+        {
+            "word": {"type": "string",
+                     "description": "The IMASM word, glyphs only, e.g. ⊢⊙∈⊤⊥∋◻⊣"},
+            "ops": {"type": "array", "items": {"type": "string"},
+                    "description": "Any of weight, banked, cycle, insert, trans. Default ['weight','banked']."},
+        },
+        ["word"],
+    ),
     _fn(
         "imscribe_system",
         (

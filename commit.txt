@@ -1,5 +1,21 @@
-Sync IG_catalog.json to canonical
+imasm: the instrument, not a description of one
 
-Six copies had drifted from imscribing_grammar/IG_catalog.json. Canonical now
-carries 8178 entries at md5 c8021c64 and every copy matches it. This is the
-drift the pre-commit hook has been blocking on all day.
+The agents had the vocabulary and no tool. Reaching IMASM meant knowing the
+QEMU incantation and writing the run_serial_cmds.sh line by hand, which is not a
+capability — it is a thing that has to be told each time, and telling it each
+time is what I was doing.
+
+`imasm(word, ops)` runs the kernel's own instruments in one boot: weight for the
+movement trace, banked for whether a clear fired against a live register, cycle
+for the ROTAT orbit and phase-bearing, insert for one-glyph repairs, trans for
+ring transitions. Everything is the kernel's, so nothing can drift from what the
+kernel actually says.
+
+It refuses rather than guesses. A retired mark is named with its position —
+"'◇' at position 2 is not one of the twelve" — instead of being dropped, which
+would silently shorten the word and answer about a different program.
+
+The schema carries the twelve with their opcodes and the composition rule, so a
+model that has never seen IMASM can write a correct word from the tool
+description alone. Base tools go 22 to 23 and every specialist has it already:
+the manifests are generated from TOOL_SCHEMAS, not written by hand.
