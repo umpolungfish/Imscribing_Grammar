@@ -3977,6 +3977,7 @@ class TrueAgenticAgent:
         # already concluded. `_done_verify` reads both: a conclusion written
         # before any tool returned, or copied verbatim from a prior session
         # while new observations sit unaccounted for, is not closed.
+        self._no_call_retried = False
         _DONE_GROUNDING.clear()
         _DONE_GROUNDING["observations"] = []
         _DONE_GROUNDING["restored_conclusions"] = [
@@ -4369,8 +4370,26 @@ class TrueAgenticAgent:
                 }
 
         if action_name is None:
-            # No action gating: a winding that emits no tool call is a natural
-            # conclusion. Deliver the reasoning as the final answer.
+            # A winding that emits no tool call is a natural conclusion ONLY once
+            # the session has observed something. Before that it is a model still
+            # deliberating — "I need to figure out what tools I have", "I can't
+            # actually access the file system" — and treating that as the answer
+            # ends the run on a thought. Nudge once, naming the acting tools, and
+            # only conclude if it happens again.
+            grounded = bool(_DONE_GROUNDING.get("observations"))
+            if not grounded and not getattr(self, "_no_call_retried", False):
+                self._no_call_retried = True
+                self._messages.append({
+                    "role": "user",
+                    "content": (
+                        "[no tool call] You emitted reasoning but no tool call, and "
+                        "nothing has been observed yet, so there is nothing to conclude "
+                        "from. You DO have filesystem access: run_command runs a shell "
+                        "command, file_read reads a file or lists a directory. Emit one "
+                        "tool call now."
+                    ),
+                })
+                return await self._think_and_act()
             action_name = "done"
             action_input = {"conclusion": (reasoning or "").strip() or
                             "No tool call was emitted; concluding here."}
