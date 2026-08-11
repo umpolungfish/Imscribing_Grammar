@@ -103,6 +103,21 @@ def _load_provider_defaults() -> Dict[str, Any]:
     return _provider_defaults
 
 
+def _sampling_card(model_path: str) -> dict:
+    """The sampling a local model's own card asks for, keyed off its path.
+
+    Qwen3 and Qwen3.5 differ and the difference is not cosmetic: 3.5 thinks at
+    temperature 1.0 and asks for a presence penalty of 1.5 where 3 asked for
+    none. An unrecognized checkpoint gets Qwen3's numbers, the conservative pair.
+    """
+    name = (model_path or "").lower()
+    if "qwen3.5" in name or "qwen3_5" in name or "qwen35" in name:
+        return {"think_temp": 1.0, "instruct_temp": 0.7, "top_p": 0.8, "top_k": 20,
+                "presence_penalty": 1.5}
+    return {"think_temp": 0.6, "instruct_temp": 0.7, "top_p": 0.8, "top_k": 20,
+            "presence_penalty": 0.0}
+
+
 # Device selection lives in one place, ig_devices, so `ask --provider local`,
 # this loader and the training scripts all answer to the same IG_DEVICES.
 from .ig_devices import cpu_forced as _cpu_forced, devices as ig_devices, device_plan as ig_device_plan  # noqa: F401
@@ -742,8 +757,13 @@ class LocalProvider(LLMProvider):
             # Clear max_length from generation config so max_new_tokens is unambiguous
             if hasattr(mdl, "generation_config") and hasattr(mdl.generation_config, "max_length"):
                 mdl.generation_config.max_length = None
-            # Qwen3 non-thinking mode recommended params: temp=0.7, top_p=0.8, top_k=20
+            # Sampling from the model's own card. Qwen3 non-thinking: temp=0.7,
+            # top_p=0.8, top_k=20. Qwen3.5 keeps top_k=20 and adds a PRESENCE
+            # penalty of 1.5 in both modes — additive, once per distinct token,
+            # which is not what a repetition penalty does and cannot be spelled
+            # as one. A caller temperature of 0 still means greedy.
             _is_gf = type(mdl).__name__ == "GrammaFormerForCausalLM"
+            _card = _sampling_card(self.model_path)
             gen_kwargs = {
                 "input_ids": input_ids,
                 "max_new_tokens": max_new_tokens,
@@ -752,7 +772,26 @@ class LocalProvider(LLMProvider):
                 "pad_token_id": tok.eos_token_id,
                 "eos_token_id": tok.eos_token_id,
             }
-            if _is_gf:
+            if temperature > 0:
+                gen_kwargs["top_k"] = _card["top_k"]
+                gen_kwargs["top_p"] = _card["top_p"]
+                if _card["presence_penalty"]:
+                    # transformers spells this encoder_repetition_penalty-free:
+                    # the additive form is exposed as `presence_penalty` only on
+                    # newer versions, so pass it when the installed generate()
+                    # accepts it and say so plainly when it does not.
+                    import inspect as _inspect
+                    if "presence_penalty" in _inspect.signature(mdl.generate).parameters or hasattr(
+                        mdl.generation_config, "presence_penalty"
+                    ):
+                        gen_kwargs["presence_penalty"] = _card["presence_penalty"]
+                    else:
+                        logger.info(
+                            "transformers here has no presence_penalty; the card asks for "
+                            f"{_card['presence_penalty']} and it is being left off rather than "
+                            "substituted with a repetition penalty, which is a different thing."
+                        )
+            elif _is_gf:
                 gen_kwargs["top_k"] = 20
                 gen_kwargs["top_p"] = 0.8
             if attention_mask is not None:

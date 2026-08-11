@@ -1,19 +1,8 @@
-Load a local model across both cards, and put device selection in one place
+Sample a local model the way its own card asks
 
-The transformers loader picked the single card with the most VRAM free and put
-the whole model on it. Now it offers every card IG_DEVICES names the memory that
-card actually has free right now, less a working reserve, and lets accelerate
-balance the model across them — so a model too large for either card alone loads,
-and a card already busy with a display gets a smaller share instead of OOMing
-halfway through. One card still means one card. Verified end to end: Qwen3-1.7B
-split 123 tensors onto cuda:0 and 188 onto cuda:1 and generated.
-
-framework/ig_devices.py is now the only place that reads IG_DEVICES here, and the
-navigators, the boundary-operator trainer and the GrammaFormer trainer all take
-their device from it. A training run that fits one card does not want to be
-split: the way both cards work at once is two runs, one pinned to each, which is
-what a pinned IG_DEVICES gives. data_parallel() is there for the other case,
-where the model fits and the throughput is the constraint.
-
-Env: IG_MODEL and IG_PROVIDER are the names, IG_LOCAL_MODEL_DIR the weights,
-IG_LOCAL_BASE_URL the local server. The old spellings still read.
+Qwen3.5 thinks at temperature 1.0 and asks for a presence penalty of 1.5 where
+Qwen3 asked for none; both keep top_k=20. The transformers path now takes those
+numbers from the checkpoint it loaded rather than from one hardcoded default, and
+where the installed transformers has no presence_penalty it says so and leaves it
+off — a repetition penalty is a different operation and substituting it silently
+would be worse than the gap.
