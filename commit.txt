@@ -1,16 +1,23 @@
-Local inference streams token by token, in process
+--stream for the agent and every specialist, and the observation is the
+operator's own
 
-What I wired first was not streaming inference — it was letting a subprocess's
-stderr through, which shows the kernel's own progress print and hands the caller
-nothing. The weights are already resident in this process, so the generation can
-be watched directly.
+Streaming: IG_STREAM (or --stream) shows local generation token by token as it is
+produced. TextIteratorStreamer on a worker thread, drained to stderr so stdout
+stays the agent's output; the tensor result is still what gets decoded, so the
+parsing path is untouched. Off by default — the loop's log is the normal view and
+raw tokens interleaved with it are noise. The flag is on the base agent and on all
+nine specialists, and it sets the same IG_STREAM the reader consults, so the flag
+and the variable are one switch rather than two.
 
-LocalProvider._stream_generate uses transformers' TextIteratorStreamer: generate
-runs on a worker thread, decoded text lands on a queue as it is produced, and the
-drain loop calls on_token per piece while accumulating the whole answer as the
-return value. An exception on the worker is re-raised after the drain rather than
-disappearing with the thread. Sampling comes from the model's card, the same
-table the silent path uses, so streaming and not streaming are one route.
+Identity: the operator was narrating its own tool call as somebody else's — "the
+user has already used imasm to derive a tuple", about a call it made itself. Tool
+results correctly use the tool role, and the template renders them inside a user
+turn, which is the Qwen convention; what was missing was any statement of WHOSE
+call produced them. The UPDATE line now says so: YOU called <tool>, and the
+<tool_response> above is what YOUR call returned.
 
-Measured on Qwen3-1.7B: tokens arriving live, 40 characters returned, the text
-identical to what the callback saw.
+That is a prompt change, and unlike the parser fixes it is not something I can
+verify without a run. The structural cause I flagged earlier stands and is not
+addressed here: a specialist REPLACES the base system prompt rather than
+extending it, so whatever the base establishes about who the operator is and what
+it can reach exists only in the base.

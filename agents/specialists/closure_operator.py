@@ -90,6 +90,8 @@ def main():
                    help="Interactive mode. The mathopi/editopi/chemopi aliases pass this.")
     p.add_argument("--model", default=None,
                    help="Model id, or provider:model. Taken from $IG_PROVIDER and $IG_MODEL.")
+    p.add_argument("--stream", action="store_true", default=False,
+                   help="Stream local generation token by token to stderr (also: IG_STREAM=1).")
     p.add_argument("--max-windings", type=int, default=0,
                    help="Max windings. 0 (default) runs unbounded: the loop ends on done, on the emission gate, or on context pressure.")
     p.add_argument("--max-tokens", type=int, default=32768,
@@ -108,6 +110,10 @@ def main():
     p.add_argument("--no-save", action="store_true",
                    help="Disable auto-save after run.")
     args = p.parse_args()
+    # The flag and IG_STREAM are one switch: the reader in true_agentic_agent
+    # consults the environment, so setting it here makes both spellings work.
+    if getattr(args, "stream", False):
+        os.environ["IG_STREAM"] = "1"
 
     if not args.model:
         _m = os.environ.get("IG_MODEL", "")

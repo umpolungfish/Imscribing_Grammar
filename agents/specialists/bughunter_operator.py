@@ -96,6 +96,8 @@ def main():
     p.add_argument("--interactive", "-i", action="store_true", help="Interactive mode.")
     p.add_argument("--model", default=None,
                    help="Model id, or provider:model. Taken from $IG_PROVIDER and $IG_MODEL.")
+    p.add_argument("--stream", action="store_true", default=False,
+                   help="Stream local generation token by token to stderr (also: IG_STREAM=1).")
     p.add_argument("--max-windings", type=int, default=0,
                    help="Max windings. 0 (default) runs unbounded.")
     p.add_argument("--max-tokens", type=int, default=32768,
@@ -113,6 +115,10 @@ def main():
     p.add_argument("--no-save", action="store_true",
                    help="Do not save the session.")
     a = p.parse_args()
+    # The flag and IG_STREAM are one switch: the reader in true_agentic_agent
+    # consults the environment, so setting it here makes both spellings work.
+    if getattr(a, "stream", False):
+        os.environ["IG_STREAM"] = "1"
 
     # Resolve the model from IG_PROVIDER/IG_MODEL when --model is absent, as every
     # other operator does. Without this the help text lied — it claimed the env

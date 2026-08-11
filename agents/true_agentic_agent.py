@@ -280,6 +280,25 @@ def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
 _FORCE_NO_THINK: bool = False
 
 
+def stream_tokens_enabled() -> bool:
+    """Whether local generation is shown token by token, from IG_STREAM.
+
+    Off by default: the loop's own log is the normal view, and a stream of raw
+    tokens interleaved with it is noise. On, it is the only way to see a long
+    THINK phase progress rather than watching a blank line for a minute.
+    """
+    raw = (os.environ.get("IG_STREAM") or "").strip().lower()
+    return raw in ("1", "true", "on", "yes")
+
+
+def add_stream_arg(p) -> None:
+    """`--stream` for any operator's parser. Sets IG_STREAM for the process, so
+    the flag and the environment variable are the same switch rather than two."""
+    p.add_argument("--stream", action="store_true", default=False,
+                   help="Stream local generation token by token to stderr as it is "
+                        "produced (also: IG_STREAM=1).")
+
+
 def _thinking_enabled() -> bool:
     """Whether the model reasons before it acts, from IG_THINK.
 
@@ -472,7 +491,37 @@ class _LocalChatCompletions:
                 _gen_kwargs.update(top_p=0.8, top_k=20)
                 if not _is_gf:
                     _gen_kwargs["min_p"] = 0.0
-                outputs = mdl.generate(**inputs, **_gen_kwargs)
+                if stream_tokens_enabled():
+                    # Watch generation directly: TextIteratorStreamer puts decoded
+                    # text on a queue as it is produced, generate runs on a worker
+                    # thread, and this loop drains it to stderr — stdout stays the
+                    # agent's own output. The tensor result is still what is
+                    # decoded below, so the parsing path is untouched.
+                    import threading
+                    from transformers import TextIteratorStreamer
+                    _streamer = TextIteratorStreamer(tok, skip_prompt=True,
+                                                     skip_special_tokens=True)
+                    _box: dict = {}
+
+                    def _gen():
+                        try:
+                            _box["out"] = mdl.generate(**inputs, **_gen_kwargs,
+                                                       streamer=_streamer)
+                        except BaseException as _exc:
+                            _box["err"] = _exc
+
+                    _t = threading.Thread(target=_gen, daemon=True)
+                    _t.start()
+                    for _piece in _streamer:
+                        sys.stderr.write(_piece)
+                        sys.stderr.flush()
+                    _t.join()
+                    if "err" in _box:
+                        raise _box["err"]
+                    sys.stderr.write("\n")
+                    outputs = _box["out"]
+                else:
+                    outputs = mdl.generate(**inputs, **_gen_kwargs)
             except RuntimeError as _cuda_err:
                 if "cuda" in str(_cuda_err).lower() or "device" in str(_cuda_err).lower():
                     import logging as _log
@@ -4185,9 +4234,11 @@ class TrueAgenticAgent:
                 "role": "user",
                 "content": (
                     f"[Frobenius OPEN — winding {winding}]\n"
+                    f"YOUR call to {action_name} failed; the <tool_response> above "
+                    f"is its error.\n"
                     f"UPDATE: {update_note}{b4_note}{dial_note}\n"
                     f"{dual_result.verify_output}\n"
-                    f"The tool call failed. Fix the error and emit the corrected call."
+                    f"Fix the error and emit the corrected call."
                 ),
             })
         elif action_name == "context_review" and dual_result.frobenius_closed:
@@ -4203,7 +4254,9 @@ class TrueAgenticAgent:
             self._messages.append({
                 "role": "user",
                 "content": (
-                    f"[Winding {winding}] UPDATE: {update_note}{b4_note}{dial_note}\n"
+                    f"[Winding {winding}] YOU called {action_name} and the "
+                    f"<tool_response> above is what YOUR call returned.\n"
+                    f"UPDATE: {update_note}{b4_note}{dial_note}\n"
                     f"Continue. Emit your next action or done."
                 ),
             })
@@ -4900,6 +4953,7 @@ class TrueAgenticAgent:
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def _add_run_args(p: "argparse.ArgumentParser") -> None:
+    add_stream_arg(p)
     p.add_argument("task", nargs="?", help="Task for the agent to perform.")
     p.add_argument("--file", "-f", metavar="FILE",
                    help="Read task from FILE instead of positional arg.")
