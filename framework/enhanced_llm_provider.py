@@ -17,8 +17,19 @@ from .llm_provider_abc import LLMProvider
 
 logger = logging.getLogger(__name__)
 
-# Qwen3 thinking-token toggle; set via auto.py --thinking (default off)
-enable_thinking: bool = False
+# Reasoning-token toggle. IG_THINK is the name across the repos (MODOT_THINK
+# still reads); auto.py --thinking sets this module global directly. Default ON:
+# the agent loop has a THINK phase, and with reasoning disabled the template
+# emits a closed <think></think> before the model writes a token, so that phase
+# produces nothing — which is exactly how every winding came to log an empty
+# THINK line.
+def _thinking_default() -> bool:
+    import os as _os
+    raw = (_os.environ.get("IG_THINK") or _os.environ.get("MODOT_THINK") or "").strip().lower()
+    return raw not in ("0", "false", "off", "no")
+
+
+enable_thinking: bool = _thinking_default()
 
 # Common retry configuration for all providers
 def _is_retryable_http_error(exc: BaseException) -> bool:
@@ -660,7 +671,7 @@ class LocalProvider(LLMProvider):
         # enable_thinking mirrors MoDoT's --think toggle; keep it explicit so the
         # kernel's reasoning state matches ob3ect's, not the binary's own default.
         env = dict(os.environ)
-        env["MODOT_THINK"] = "1" if enable_thinking else "0"
+        env["IG_THINK"] = env["MODOT_THINK"] = "1" if enable_thinking else "0"
         proc = subprocess.run(cmd, capture_output=True, text=True, env=env)
         if proc.returncode != 0:
             raise RuntimeError(

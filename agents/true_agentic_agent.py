@@ -247,6 +247,23 @@ TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 # Default for local inference nested-tensor mode; overridden per-agent via TrueAgenticAgent init
 nested_tensor: bool = False
 
+def _thinking_enabled() -> bool:
+    """Whether the model reasons before it acts, from IG_THINK.
+
+    This was hardcoded off at both template call sites, which is why every
+    winding logged an empty `THINK:` — the loop has a THINK phase and the
+    template was emitting a closed `<think></think>` before the model wrote a
+    token, so the phase could not produce anything. A small model choosing
+    between twenty tools benefits from the reasoning most, and this template's
+    own instructions permit reasoning in natural language BEFORE the call. So it
+    is ON here unless IG_THINK says otherwise; the legacy MODOT_THINK still reads.
+    """
+    raw = (os.environ.get("IG_THINK") or os.environ.get("MODOT_THINK") or "").strip().lower()
+    if raw in ("0", "false", "off", "no"):
+        return False
+    return True
+
+
 @lru_cache(maxsize=1)
 def _canonical_chat_template() -> str:
     """The one chat template the local lane renders with.
@@ -335,7 +352,7 @@ class _LocalChatCompletions:
             chat_template=_canonical_chat_template(),
             tokenize=False,
             add_generation_prompt=True,
-            enable_thinking=False,
+            enable_thinking=_thinking_enabled(),
         )
 
         _dev = mdl.device
@@ -424,9 +441,15 @@ class _LocalChatCompletions:
                     mdl.eval()
                     LocalProvider._model = mdl
                     LocalProvider._loaded_path = prov.model_path
+                    # The CPU fallback renders through the SAME template and the
+                    # same flag. It is the copy that gets forgotten, and a fallback
+                    # that speaks a different protocol than the main path is a
+                    # desync that only shows up once the GPU is unavailable.
                     _cpu_text = tok.apply_chat_template(
-                        qwen_msgs, tools=tools, tokenize=False,
-                        add_generation_prompt=True, enable_thinking=False,
+                        qwen_msgs, tools=tools,
+                        chat_template=_canonical_chat_template(),
+                        tokenize=False,
+                        add_generation_prompt=True, enable_thinking=_thinking_enabled(),
                     )
                     cpu_inputs = tok(_cpu_text, return_tensors="pt")
                     if _is_gf and cpu_inputs.input_ids.shape[1] > _GF_MAX_CTX:

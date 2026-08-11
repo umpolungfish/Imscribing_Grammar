@@ -1,30 +1,18 @@
-One chat template, and a parser that reads what it teaches
+Thinking was hardcoded off at both template call sites
 
-The operator repeated the same failed call forever because it was never shown
-the result. Two halves of one defect.
+Every winding logged an empty THINK line and I read past it. The reason is that
+enable_thinking was passed as a literal False at both apply_chat_template calls,
+so the template emitted a closed <think></think> before the model wrote a token.
+The loop has a THINK phase; the prompt was closing it in advance. A small model
+choosing between twenty tools is exactly the case that needs the reasoning, and
+this template's own instructions permit reasoning in natural language before the
+call.
 
-The local lane rendered with whatever template the checkpoint shipped.
-~/.modelz/4B carries the older Qwen3 template, which teaches a JSON tool call
-inside <tool_call> and renders results its own way; other checkpoints carry
-others. One agent talking to several checkpoints through one parser has to
-render ONE protocol or the loop desynchronises — the model emits a form nothing
-reads, the harness returns no observation, and the next winding repeats the last
-action with nothing new in front of it.
+It reads IG_THINK now, on both call sites and in the provider, defaulting ON,
+with the legacy MODOT_THINK still honoured. Verified against the template: on
+emits an open <think>, off emits the closed pair.
 
-framework/templates/qwen_tool_chat_template.jinja is now that one protocol, and
-it is authoritative over any template a checkpoint ships. Tool calls go out as
-<tool_call><function=NAME><parameter=K>V</parameter></function></tool_call> and
-results come back inside <tool_response> in a user turn, which is what the model
-actually reads. Rendered a full loop through it: the observation lands in the
-prompt.
-
-The parser only understood the JSON form, so with the correct template nothing
-at all would have parsed. It reads the function/parameter form now, taking a
-parameter value as JSON when it parses as JSON and as text otherwise — a path or
-a command is text. The old JSON form is still accepted so a checkpoint mid
-migration keeps running.
-
-Also here: file_read on a directory answers with the LISTING and names the verb,
-rather than returning a bare error. An error with no remedy re-enters THINK with
-no new information, which is how four identical windings happened even after the
-verifier started reporting the failure honestly.
+The CPU fallback was also still rendering with the checkpoint's template rather
+than the canonical one — the copy that gets forgotten, and a fallback speaking a
+different protocol from the main path is a desync that only appears once the GPU
+is gone. It renders through the same template and the same flag now.
