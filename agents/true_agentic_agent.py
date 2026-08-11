@@ -247,6 +247,20 @@ TC_CLOSE = r'</tool_call>'  # Qwen tool-call close tag
 # Default for local inference nested-tensor mode; overridden per-agent via TrueAgenticAgent init
 nested_tensor: bool = False
 
+@lru_cache(maxsize=1)
+def _canonical_chat_template() -> str:
+    """The one chat template the local lane renders with.
+
+    It lives in `framework/templates/qwen_tool_chat_template.jinja` and is the
+    authority over any template a checkpoint happens to ship, so that the tool
+    protocol — `<tool_call><function=NAME><parameter=K>V</parameter></function>`
+    going out, `<tool_response>` coming back — is the same on every model.
+    """
+    here = Path(__file__).resolve().parent.parent
+    path = here / "framework" / "templates" / "qwen_tool_chat_template.jinja"
+    return path.read_text()
+
+
 class _LocalChatCompletions:
     """Synchronous .create() backed by direct tensor inference via LocalProvider."""
 
@@ -307,9 +321,18 @@ class _LocalChatCompletions:
                     tool_msg["tool_call_id"] = msg["tool_call_id"]
                 qwen_msgs.append(tool_msg)
 
+        # The CANONICAL template, not the checkpoint's. A local checkpoint ships
+        # whatever template it was packaged with — `~/.modelz/4B` carries the older
+        # Qwen3 form, which teaches a JSON tool call and renders tool results
+        # differently. One agent talking to several checkpoints must speak ONE
+        # protocol or the tool loop silently desynchronises: the model emits a form
+        # the parser does not read, the parser returns no call, and the winding
+        # repeats its last action forever with nothing new in its context. That is
+        # the failure this replaces.
         text = tok.apply_chat_template(
             qwen_msgs,
             tools=tools,
+            chat_template=_canonical_chat_template(),
             tokenize=False,
             add_generation_prompt=True,
             enable_thinking=False,
@@ -450,12 +473,29 @@ class _LocalChatCompletions:
             prefix = raw[last_end:_m.start()].strip()
             if last_end == 0:
                 content_out = prefix if prefix else None
-            j = _m.group(1).strip()
-            try:
-                tc_data = _j.loads(j)
-                parsed_calls.append(tc_data)
-            except Exception:
-                pass
+            body = _m.group(1).strip()
+            # The canonical template's form: a named function whose parameters are
+            # their own tagged blocks. Values arrive as text; a value that parses as
+            # JSON is taken as JSON (objects, arrays, numbers) and everything else
+            # stays the string it was, which is what a path or a command is.
+            fn = re.search(r'<function=([^>\s]+)\s*>(.*)</function>', body, re.DOTALL)
+            if fn:
+                name = fn.group(1).strip()
+                args: Dict[str, Any] = {}
+                for pm in re.finditer(r'<parameter=([^>\s]+)\s*>\n?(.*?)\n?</parameter>',
+                                      fn.group(2), re.DOTALL):
+                    key, val = pm.group(1).strip(), pm.group(2)
+                    try:
+                        args[key] = _j.loads(val)
+                    except Exception:
+                        args[key] = val
+                parsed_calls.append({"name": name, "arguments": args})
+            else:
+                # The older Qwen3 form, kept so a checkpoint mid-migration still runs.
+                try:
+                    parsed_calls.append(_j.loads(body))
+                except Exception:
+                    pass
             last_end = _m.end()
         if parsed_calls:
             tool_calls = [_LocalTC(
@@ -886,6 +926,23 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
         if offset + limit < total:
             header += f"[use offset={offset+limit} to continue]\n"
         return header + body
+    except IsADirectoryError:
+        # Reading a directory is not a mistake to punish, it is a question asked
+        # with the wrong verb: the caller wants to know what is in there. Answer
+        # THAT, and say which verb it was. A bare error re-enters THINK with no
+        # new information, and an operator with nothing new to go on repeats the
+        # call verbatim — which is exactly what was observed, four windings deep.
+        try:
+            entries = sorted(os.listdir(path))
+        except Exception as e:
+            return f"(error listing {path}: {e})"
+        shown = entries[:200]
+        body = "\n".join(f"  {n}/" if os.path.isdir(os.path.join(path, n)) else f"  {n}"
+                          for n in shown)
+        more = f"\n  … {len(entries) - len(shown)} more" if len(entries) > len(shown) else ""
+        return (f"[{path} is a DIRECTORY — listing it instead; "
+                f"file_read reads files, run_command(\"ls -la {path}\") lists]\n"
+                f"[{len(entries)} entries]\n{body}{more}")
     except Exception as e:
         return f"(error reading {path}: {e})"
 
@@ -901,7 +958,8 @@ def _file_read_verify(emit_input: Dict, emit_output: str,
     measures nothing. The `imscribe` verifier in this same file already checks
     for error text; this one now does too.
     """
-    if emit_output.startswith("(error reading ") or emit_output.startswith("(unknown tool"):
+    if emit_output.startswith("(error reading ") or emit_output.startswith("(error listing ") \
+            or emit_output.startswith("(unknown tool"):
         return (f"read FAILED — Frobenius OPEN: {emit_output[:120]}", False)
     return ("(read returned content — Frobenius closed)", True)
 

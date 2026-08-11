@@ -1,23 +1,30 @@
-The operator's two verifiers now read their own evidence
+One chat template, and a parser that reads what it teaches
 
-file_read on a directory returns "(error reading …: Is a directory)" from this
-module's own emit function, and _file_read_verify stamped it Frobenius closed
-B4=T. It returned True unconditionally — it never looked at the output it was
-verifying. The imscribe verifier in the same file already tests for error text;
-this one does now.
+The operator repeated the same failed call forever because it was never shown
+the result. Two halves of one defect.
 
-_done_verify was worse: it closed every conclusion as a "terminal action", so a
-trajectory could contradict every observation it made and still report Frobenius
-100%. That number was measuring nothing. A conclusion is closed now only if this
-session observed something first, and a conclusion copied verbatim out of a
-restored prior session while fresh observations sit unaccounted for is OPEN.
-The loop keeps the record the check reads.
+The local lane rendered with whatever template the checkpoint shipped.
+~/.modelz/4B carries the older Qwen3 template, which teaches a JSON tool call
+inside <tool_call> and renders results its own way; other checkpoints carry
+others. One agent talking to several checkpoints through one parser has to
+render ONE protocol or the loop desynchronises — the model emits a form nothing
+reads, the harness returns no observation, and the next winding repeats the last
+action with nothing new in front of it.
 
-This is the run that showed it: the operator was asked to explore the current
-directory, called file_read on a directory, was told it was a directory, closed
-that as T, concluded from the system prompt instead, and then repeated the same
-conclusion twice more — once after `pwd` had returned a different directory into
-its own context. The model is a 4B and it copies the strongest pattern in the
-window, which after a session restore is its own previous answer. But nothing in
-the loop ever told it it was wrong, because both gates it passed through were
-answering True without reading.
+framework/templates/qwen_tool_chat_template.jinja is now that one protocol, and
+it is authoritative over any template a checkpoint ships. Tool calls go out as
+<tool_call><function=NAME><parameter=K>V</parameter></function></tool_call> and
+results come back inside <tool_response> in a user turn, which is what the model
+actually reads. Rendered a full loop through it: the observation lands in the
+prompt.
+
+The parser only understood the JSON form, so with the correct template nothing
+at all would have parsed. It reads the function/parameter form now, taking a
+parameter value as JSON when it parses as JSON and as text otherwise — a path or
+a command is text. The old JSON form is still accepted so a checkpoint mid
+migration keeps running.
+
+Also here: file_read on a directory answers with the LISTING and names the verb,
+rather than returning a bare error. An error with no remedy re-enters THINK with
+no new information, which is how four identical windings happened even after the
+verifier started reporting the failure honestly.
