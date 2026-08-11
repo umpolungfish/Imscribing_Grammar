@@ -772,8 +772,14 @@ def _imasm_emit(args: Dict[str, Any]) -> str:
     Everything here is the kernel's own — weight, banked, cycle, insert, trans,
     the braid reading — so nothing can drift from what the kernel actually says.
     """
+    # write/derive come first: they are the two the rider has always named.
+    tup = (args.get("tuple") or "").strip()
+    if tup:
+        return _imasm_kernel(f'"imasm write {tup}"')
     word = (args.get("word") or "").strip()
     ops = args.get("ops") or ["weight", "banked"]
+    if args.get("derive"):
+        ops = []
     if isinstance(ops, str):
         ops = [o.strip() for o in ops.replace(",", " ").split() if o.strip()]
 
@@ -796,10 +802,17 @@ def _imasm_emit(args: Dict[str, Any]) -> str:
         return f"imasm: unknown op(s) {bad}. Available: {sorted(known)}"
 
     cmds = " ".join(f'"{o} {cleaned}"' for o in ops)
+    if args.get("derive"):
+        cmds = f'"imasm derive {cleaned}"' + (" " + cmds if cmds else "")
+    return _imasm_kernel(cmds, args.get("timeout", 900))
+
+
+def _imasm_kernel(cmds: str, timeout: int = 900) -> str:
+    """One boot, whatever commands were asked for."""
     try:
         r = subprocess.run(
             f"cd {_MOM} && ./run_serial_cmds.sh {cmds}",
-            shell=True, capture_output=True, text=True, timeout=args.get("timeout", 900),
+            shell=True, capture_output=True, text=True, timeout=timeout,
         )
         out = r.stdout + r.stderr
     except subprocess.TimeoutExpired:
@@ -2625,7 +2638,11 @@ TOOL_SCHEMAS = [
     _fn(
         "imasm",
         (
-"Run the kernel's IMASM instruments on a word, in one QEMU boot. "
+"Write a tuple to its word, derive a word back to its tuple, and run the "
+"kernel's instruments on it — one QEMU boot. "
+"WRITE: imasm(tuple='𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭') gives the word that tuple composes to. "
+"DERIVE: imasm(word='⊢⊙∈⊤⊥∋◻⊣', derive=true) gives the tuple it imscribes to. "
+"Never hand-pick glyphs: both directions are deterministic and the kernel owns them. "
 "IMASM is a language you WRITE: a word IS its structural type, so imscribing a "
 "structure and running this on it settles what prose can only assert. "
 "The twelve marks are ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ — VINIT open, TANCH close, AFWD "
@@ -2648,8 +2665,12 @@ TOOL_SCHEMAS = [
                      "description": "The IMASM word, glyphs only, e.g. ⊢⊙∈⊤⊥∋◻⊣"},
             "ops": {"type": "array", "items": {"type": "string"},
                     "description": "Any of weight, banked, cycle, insert, trans. Default ['weight','banked']."},
+            "tuple": {"type": "string",
+                      "description": "WRITE: give a 12-glyph tuple and get the word it composes to. Slot order ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, brackets and separators optional."},
+            "derive": {"type": "boolean",
+                       "description": "DERIVE: also read the word back into the tuple it imscribes to, with its crystal address."},
         },
-        ["word"],
+        [],
     ),
     _fn(
         "imscribe_system",
