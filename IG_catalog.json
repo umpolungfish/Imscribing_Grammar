@@ -130835,5 +130835,21 @@
     "⊥": "𐑓",
     "⊞": "𐑙",
     "◻": "𐑴"
+  },
+  {
+    "name": "secp256k1_extraction_from_multisig_pubkeys",
+    "description": "Extraction of secp256k1 private scalars from the two public keys in the P2WSH 2-of-2 multisig witness script for Bitcoin address bc1qx2x5cqhymfcnjtg902ky6u5t5htmt7fvqztdsm028hkrvxcl4t2sjtpd9l. The witness script SHA256 matches the P2WSH program 328d4c02e4da71392d057aac4d728ba5d7b5f92c0096d86dea3dec361b1faad5. The two public keys are: PK1 even-Y = 02a80359c77ad54901b3412ae80fae14948c4b2aea8331ef8fbb0e8af90d266455 and PK2 odd-Y = 03ce04618bb506cb8cfc501e3b2b73ade06aaea40b0fddae5445495df2e803c4b0",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    ">": "𐑽",
+    "<": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
   }
 ]
