@@ -12,7 +12,8 @@ prompts = {"math": S.MATH_SPECIALIST_PROMPT,
            "chembio": S.CHEMBIO_SPECIALIST_PROMPT,
            "recorder": S.RECORDER_SPECIALIST_PROMPT,
            "heterodox": S.HETERODOX_SPECIALIST_PROMPT,
-           "momonados": S.MOMONADOS_SPECIALIST_PROMPT}
+           "momonados": S.MOMONADOS_SPECIALIST_PROMPT,
+           "closure": S.CLOSURE_SPECIALIST_PROMPT}
 
 base = [n for n, _ in base_tools()]
 gram = grammar_tools()
@@ -47,6 +48,11 @@ markers = {
     # specialist is built to avoid, and the check would then enforce it.
     "momonados": ["menu.rs", "repl.rs", "run_serial_cmds.sh", "make image",
                   "make ordinals", "check_menu_coverage.py"],
+    # The four commands, the four classes, and the word that keeps a report
+    # honest. "price" is in the list because a closure without its cost is the
+    # failure mode this specialist exists to prevent.
+    "closure":   ["ovm", "oneshots", "ctc", "nesting",
+                  "one-shot", "manufactured", "price"],
 }
 print()
 for d, ms in markers.items():

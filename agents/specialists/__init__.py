@@ -20,6 +20,7 @@ Usage:
     uv run agents/specialists/recorder_operator.py "Census the constellation and report drift against the Grammatika"
     uv run agents/specialists/heterodox_operator.py "Close the pair-1 braid; the received obstruction assumes a line"
     uv run agents/specialists/momonados_operator.py "What does the kernel expose for fixed-point work, and which of it is wired to the menu?"
+    uv run agents/specialists/closure_operator.py "Which operator sets reconstruct their input, and which pairings close only by manufacture?"
 """
 
 __all__ = [
@@ -30,6 +31,7 @@ __all__ = [
     "RECORDER_SPECIALIST_PROMPT",
     "HETERODOX_SPECIALIST_PROMPT",
     "MOMONADOS_SPECIALIST_PROMPT",
+    "CLOSURE_SPECIALIST_PROMPT",
 ]
 
 import re as _re
@@ -97,6 +99,18 @@ _ACCENTS = {
         "any source change — the runners boot whatever ELF is on disk, and a "
         "stale binary is the usual reason a change looks like it did nothing."
     ),
+    "closure": (
+        "Domain accent: measurement and closure are one subject here, because "
+        "the fiducial is a fixed point — the d=12 SIC fiducial is stationary "
+        "under the Zauner element, so nesting it in that action closes in one "
+        "shot and the apparatus coincides with what it measures. A measurement "
+        "that reconstructs its input is mu-delta=id under another name. "
+        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh batches "
+        "several commands into one boot; the boot dominates, so ask everything "
+        "at once. Every closure is reported with its price: one-shot costs "
+        "nothing, iterated costs steps, manufactured costs the width it smears, "
+        "and 'it closed' without one of those four is half an answer."
+    ),
     "heterodox": (
         "Domain accent: every family is one instrument. MoDoT's ./ask is the way "
         "into the structural verbs, mOMonadOS is the first home for new work and "
@@ -161,6 +175,16 @@ if _QUANTUM_PROMPT_PATH.exists():
     _QUANTUM_SPECIALIST_PROMPT = _quantum_ns.get("QUANTUM_SPECIALIST_PROMPT", "")
 else:
     _QUANTUM_SPECIALIST_PROMPT = ""
+
+# Load the closure specialist prompt from its dedicated file
+_CLOSURE_PROMPT_PATH = _HERE / "CLOSURE_SPECIALIST_PROMPT.py"
+if _CLOSURE_PROMPT_PATH.exists():
+    _closure_code = _CLOSURE_PROMPT_PATH.read_text()
+    _closure_ns = {}
+    exec(_closure_code, _closure_ns)
+    _CLOSURE_SPECIALIST_PROMPT = _closure_ns.get("CLOSURE_SPECIALIST_PROMPT", "")
+else:
+    _CLOSURE_SPECIALIST_PROMPT = ""
 
 # Load the mOMonadOS specialist prompt from its dedicated file
 _MOMONADOS_PROMPT_PATH = _HERE / "MOMONADOS_SPECIALIST_PROMPT.py"
@@ -656,3 +680,4 @@ QUANTUM_SPECIALIST_PROMPT = _with_manifest(_QUANTUM_SPECIALIST_PROMPT, "quantum"
 RECORDER_SPECIALIST_PROMPT = _with_manifest(_RECORDER_SPECIALIST_PROMPT, "recorder")
 HETERODOX_SPECIALIST_PROMPT = _with_manifest(_HETERODOX_SPECIALIST_PROMPT, "heterodox")
 MOMONADOS_SPECIALIST_PROMPT = _with_manifest(_MOMONADOS_SPECIALIST_PROMPT, "momonados")
+CLOSURE_SPECIALIST_PROMPT = _with_manifest(_CLOSURE_SPECIALIST_PROMPT, "closure")

@@ -679,6 +679,61 @@ unreachable command is one nobody will find."""),
 ]
 
 
+CLOSURE_DOMAIN = [
+    (IMSGCT / "mOMonadOS" / "src" / "ovm.rs",
+     "ovm — operator-valued measures", """\
+`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "ovm"` prints the surface. Then
+`ovm <name>` for a full report, and the specific instruments for what it leaves
+ambiguous: `frame` (frame operator S in the Pauli basis), `overlap` (Gram matrix
+G_ij = Tr(E_i E_j)), `duals` (conical 2-design duals), `spectral`, `measure`,
+`born <name> <sx> <sy> <sz>`, and `cycle` for the whole measure→reconstruct
+round trip. `ovm belnap` gives the B = XZ fiducial.
+
+Fourteen named operator sets in d=2 — POVMs, NOVMs, NPOVMs and the A-minus, AI-,
+S-PC and A-PC variants. The distinctions are real: a NOVM is not a POVM with a
+typo, and a set whose positivity or completeness fails is reporting a
+measurement, not erroring."""),
+
+    (IMSGCT / "mOMonadOS" / "src" / "ctc.rs",
+     "ctc — the manufactured fixed point", """\
+`ctc` sweeps every value in every action; `ctc <action> <T|F|N|B>` reads one
+pairing; `ctc help` lists the six actions with their fixed points computed live.
+
+Possession is tested first, then the basin, then imposition. Where the action
+leaves no value alone it lifts to SETS of values, where a fixed point always
+exists, and the price is the width it smeared: 1 is a value held outright, 4 in a
+four-valued logic is "it could be anything". Report the price with the
+closure."""),
+
+    (IMSGCT / "mOMonadOS" / "src" / "nesting.rs",
+     "nesting — the two-step observable", """\
+`nesting` runs the reference pairings; `nesting <map> <x> [y]` reads one point;
+`nesting help` lists the five maps and their dimensions.
+
+One gap says only whether the point is already the answer. Two gaps say the rest:
+q = r₂/r₁ below one arrives, at or above one never does. Attraction is a property
+of how the gap CHANGES, so one measurement cannot see it and two can. The nest is
+then run and allowed to disagree with the prediction."""),
+
+    (IMSGCT / "mOMonadOS" / "src" / "exotic_one_shots.rs",
+     "oneshots — the ten exotic nestings", """\
+`oneshots` computes all ten live. Each calls the kernel's own engine rather than
+a local copy — the period finder calls the real order-finding engine, the Belnap
+one the real negation, the factoring one the same order engine as the first — so
+the answers cannot drift from the rest of the kernel."""),
+
+    (IMSGCT / "ig-docs" / "fixed_point_menagerie" / "CONTEXT.md",
+     "The rule these commands serve", """\
+`file_read ~/imsgct/ig-docs/fixed_point_menagerie/CONTEXT.md`. The Fixed-Point
+Nesting Rule, its three classes and the fourth that was added, the conservative
+versus dissipative distinction that decides which classes a domain can populate,
+and the census of what the kernel already computes under it.
+
+The manuscript beside it, The_Fixed_Point_Menagerie.md, carries the measured
+results with figures generated from a captured kernel run."""),
+]
+
+
 DOMAINS = {
     "math": ("Mathematics", MATH_DOMAIN),
     "editorial": ("Editorial", EDITORIAL_DOMAIN),
@@ -686,6 +741,7 @@ DOMAINS = {
     "recorder": ("Census, relation, drift", RECORDER_DOMAIN),
     "heterodox": ("Cross-family, Grammar-first", HETERODOX_DOMAIN),
     "momonados": ("The mOMonadOS kernel", MOMONADOS_DOMAIN),
+    "closure": ("Measurement and fixed points", CLOSURE_DOMAIN),
 }
 
 
