@@ -1,17 +1,25 @@
-The reasoning toggle reaches a served model too
+The parser threw away a tool call that was actually there
 
-IG_THINK was reaching only the local tensor lane, because that lane renders the
-chat template itself. A model behind an OpenAI-compatible server never saw it:
-the flag does not travel in the standard request body, so each deployment spells
-it its own way and a request that omits it gets that server's default instead of
-ours.
+Qwen3.5-27B, reasoning on, asked to review a directory: it reasoned, then wrote
+a well-formed call to file_read with all three parameters — and the harness
+handed the monologue back as the answer. Two defects, both in the parsing, and a
+budget that caused the first.
 
-The three spellings, from Qwen's own agent configuration and OpenRouter's:
+The template PREFILLS `<think>\n` at the end of the prompt when reasoning is
+enabled, so the model's output begins INSIDE the block and carries only the
+closing `</think>`. The extractor looked for a matched pair, found none, and left
+the entire monologue in the content. An unpaired closing tag is the normal case
+here, not an edge one. A block opened and never closed — the generation running
+out mid-thought — is all reasoning and no answer, and is treated as such.
 
-  vLLM / SGLang   extra_body={"chat_template_kwargs": {"enable_thinking": …}}
-  DashScope       extra_body={"enable_thinking": …}
-  OpenRouter      extra_body={"reasoning": {"enabled": …}}
+`</tool_call>` was required. The model stopped after `</function>`, so the regex
+did not match, `tool_calls` came back empty, and the loop read the leftover text
+as a conclusion. The closing tags are optional now at all three levels —
+tool_call, function, parameter — because a call cut short still says which tool
+it wants and with what. Replayed against the exact output from the transcript:
+reasoning separated, file_read recovered with path, offset and limit.
 
-The loop picks by the client's base_url and passes it on every completion. This
-is what a vLLM-served Qwen3.5-27B on localhost:8000 needs, and it is the same
-IG_THINK that governs the local lane.
+And the budget was 4096, set when reasoning was off. Now the reasoning and the
+call share it, and a 27B spends most of it thinking before it writes the call —
+which is what cut the block before its closing tag. Default is 32768, Qwen's own
+figure for an ordinary query, overridable with IG_MAX_TOKENS.

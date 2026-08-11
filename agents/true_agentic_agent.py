@@ -498,7 +498,14 @@ class _LocalChatCompletions:
         new_tokens = outputs[0][n_input:]
         raw = tok.decode(new_tokens, skip_special_tokens=True).strip()
 
-        # Extract reasoning_content from think tags for deep-thinking models
+        # Extract reasoning_content from think tags for deep-thinking models.
+        #
+        # With reasoning enabled this template PREFILLS `<think>\n` at the end of
+        # the prompt, so the model's output begins INSIDE the block and carries
+        # only the closing `</think>`. A regex expecting a matched pair finds
+        # nothing, the reasoning stays in the content, and the whole monologue
+        # then gets handed on as if it were the answer — which is exactly what
+        # happened. An unpaired closing tag is the normal case here, not an edge.
         reasoning_content: Optional[str] = None
         for _tag in [r'<\|begin_thinking\|>(.*?)<\|end_thinking\|>',
                       r'<think>(.*?)</think>']:
@@ -507,6 +514,16 @@ class _LocalChatCompletions:
                 reasoning_content = _tm.group(1).strip()
                 raw = raw[:_tm.start()] + raw[_tm.end():]
                 break
+        else:
+            _close = re.search(r'</think>', raw)
+            if _close:
+                reasoning_content = raw[:_close.start()].lstrip().removeprefix('<think>').strip()
+                raw = raw[_close.end():]
+            elif raw.lstrip().startswith('<think>'):
+                # Opened and never closed: the generation ran out mid-thought.
+                # All of it is reasoning, none of it is an answer.
+                reasoning_content = raw.lstrip()[len('<think>'):].strip()
+                raw = ''
         # Strip any remaining think artifacts
         raw = re.sub(r'<\|begin_thinking\|><\|end_thinking\|>', '', raw)
         raw = re.sub(r'<think></think>', '', raw)
@@ -518,7 +535,12 @@ class _LocalChatCompletions:
         content_out: Optional[str] = raw or None
         parsed_calls = []
         last_end = 0
-        for _m in re.finditer(r'<tool_call>(.*?)</tool_call>', raw, re.DOTALL):
+        # `</tool_call>` OPTIONAL. A model that stops after `</function>` — or is
+        # cut by the token budget mid-block — has still told us which tool it
+        # wants and with what. Requiring the closing tag threw that away, left
+        # `tool_calls` empty, and let the loop read the monologue as a
+        # conclusion. Same reasoning for `</function>` and `</parameter>`.
+        for _m in re.finditer(r'<tool_call>(.*?)(?:</tool_call>|\Z)', raw, re.DOTALL):
             prefix = raw[last_end:_m.start()].strip()
             if last_end == 0:
                 content_out = prefix if prefix else None
@@ -527,11 +549,11 @@ class _LocalChatCompletions:
             # their own tagged blocks. Values arrive as text; a value that parses as
             # JSON is taken as JSON (objects, arrays, numbers) and everything else
             # stays the string it was, which is what a path or a command is.
-            fn = re.search(r'<function=([^>\s]+)\s*>(.*)</function>', body, re.DOTALL)
+            fn = re.search(r'<function=([^>\s]+)\s*>(.*?)(?:</function>|\Z)', body, re.DOTALL)
             if fn:
                 name = fn.group(1).strip()
                 args: Dict[str, Any] = {}
-                for pm in re.finditer(r'<parameter=([^>\s]+)\s*>\n?(.*?)\n?</parameter>',
+                for pm in re.finditer(r'<parameter=([^>\s]+)\s*>\n?(.*?)\n?(?:</parameter>|\Z)',
                                       fn.group(2), re.DOTALL):
                     key, val = pm.group(1).strip(), pm.group(2)
                     try:
@@ -3250,7 +3272,7 @@ TOOL_SCHEMAS = [
             "task":         {"type": "string",  "description": "Full task description for the sub-agent."},
             "model":        {"type": "string",  "description": "Model to use (default: inherits parent model)."},
             "max_windings": {"type": "integer", "description": "Max loop iterations for sub-agent (default: 200)."},
-            "max_tokens":   {"type": "integer", "description": "Max tokens per THINK phase (default: 4096)."},
+            "max_tokens":   {"type": "integer", "description": "Max tokens per THINK phase (default: 32768)."},
             "quiet":        {"type": "boolean", "description": "Suppress sub-agent per-winding log (default: true)."},
             "timeout":      {"type": "integer", "description": "Subprocess timeout in seconds (default: 300)."},
             "base_url":     {"type": "string",  "description": "Override base URL (default: inherits parent)."},
@@ -3782,7 +3804,7 @@ class TrueAgenticAgent:
         self,
         model: str = "grok-4",
         max_windings: int = 10_000,
-        max_think_tokens: int = 4096,
+        max_think_tokens: int = 32768,
         verbose: bool = True,
         base_url: str = "",
         api_key: str = "",
@@ -4817,8 +4839,15 @@ def _add_run_args(p: "argparse.ArgumentParser") -> None:
                    help="Override API key (default: OPENROUTER_API_KEY or 'local' for local servers).")
     p.add_argument("--max-windings", type=int, default=10_000,
                    help="Maximum loop iterations (default: 10000).")
-    p.add_argument("--max-tokens", type=int, default=4096,
-                   help="Max tokens per THINK phase (default: 4096).")
+    # 4096 was set when reasoning was off. With it on, the reasoning and the
+    # tool call share this budget, and a 27B thinking model spends most of it
+    # before it writes the call — the observed failure was a block cut off
+    # before its closing tag. Qwen's own guidance is 32768 for an ordinary
+    # query. IG_MAX_TOKENS overrides; --max-tokens still wins over both.
+    p.add_argument("--max-tokens", type=int,
+                   default=int(os.environ.get("IG_MAX_TOKENS", "32768")),
+                   help="Max tokens per THINK phase (default: 32768, or $IG_MAX_TOKENS). "
+                        "Reasoning and the tool call share it.")
     p.add_argument("--context-window", type=int, default=128_000,
                    help="Model context window size in tokens (default: 128000).")
     p.add_argument("--review-threshold", type=float, default=0.80,
