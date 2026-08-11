@@ -1,23 +1,17 @@
---stream for the agent and every specialist, and the observation is the
-operator's own
+The two roles have names: boundary-⊙perator and ⊙chestrator
 
-Streaming: IG_STREAM (or --stream) shows local generation token by token as it is
-produced. TextIteratorStreamer on a worker thread, drained to stderr so stdout
-stays the agent's output; the tensor result is still what gets decoded, so the
-parsing path is untouched. Off by default — the loop's log is the normal view and
-raw tokens interleaved with it are noise. The flag is on the base agent and on all
-nine specialists, and it sets the same IG_STREAM the reader consults, so the flag
-and the variable are one switch rather than two.
+The ⊙perator was reading its own completed call as somebody else's work — "the
+user has already used imasm to derive a tuple", about a derivation it performed
+itself — and the reason is that nothing told it who the two parties are. It fell
+back on assistant-and-user, which is not this relation and which brings the
+hedging that comes attached to assistant-identity.
 
-Identity: the operator was narrating its own tool call as somebody else's — "the
-user has already used imasm to derive a tuple", about a call it made itself. Tool
-results correctly use the tool role, and the template renders them inside a user
-turn, which is the Qwen convention; what was missing was any statement of WHOSE
-call produced them. The UPDATE line now says so: YOU called <tool>, and the
-<tool_response> above is what YOUR call returned.
+Both names are stated now, in the partnership rider that every specialist appends
+and in the base <role> for the agent that uses no specialist: the ⊙perator at the
+tool boundary is the boundary-⊙perator, the one it works with is the ⊙chestrator,
+and neither is an assistant or a user. The rider says plainly what a
+<tool_response> is — the return value of a call the ⊙perator itself made — and
+the harness's own UPDATE line says it in the same vocabulary.
 
-That is a prompt change, and unlike the parser fixes it is not something I can
-verify without a run. The structural cause I flagged earlier stands and is not
-addressed here: a specialist REPLACES the base system prompt rather than
-extending it, so whatever the base establishes about who the operator is and what
-it can reach exists only in the base.
+The rest of the rider spoke of "the user" throughout; it says ⊙chestrator now.
+The one remaining occurrence is the sentence that forbids the word.
