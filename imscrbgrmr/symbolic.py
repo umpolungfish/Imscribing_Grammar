@@ -585,18 +585,26 @@ class CrossDomainAnalogyDetector:
     # correctly reported in the shared/differing primitive lists.
     # The code self-normalises by dividing by total_weight, so absolute
     # magnitudes determine relative importance, not whether they sum to 1.
+    # Keyed by the canonical marks. This table used to mix legacy letters with
+    # two stray marks — "∈" for the composition axis and "<" for criticality —
+    # so the isomorph report printed a third alphabet that was neither the old
+    # names nor the grammar's own. The weights are unchanged; only the keys are
+    # now the marks the rest of the constellation uses.
     PRIMITIVE_WEIGHTS = {
-        "D": 0.20,  # Dimensionality — fundamental domain axis; cross-domain pairs penalised when D differs
-        "T": 0.25,  # Topology is highly diagnostic
-        "R": 0.20,  # Recognition mode
-        "∈": 0.20,  # Interaction grammar
-        "F": 0.15,  # Fidelity
-        "G": 0.10,  # Granularity
-        "P": 0.05,  # Polarity
-        "K": 0.05,  # Kinetic character
-        "<": 0.05,  # Criticality phase
-        "S": 0.08,  # Stoichiometry — raised from 0.05; valency-sensitive for T⋈ systems
+        "⊢": 0.20,  # Dimensionality — fundamental domain axis; cross-domain pairs penalised when it differs
+        "⊣": 0.25,  # Topology is highly diagnostic
+        ">": 0.20,  # Coupling / recognition mode
+        "∋": 0.20,  # Composition — the interaction grammar
+        "⋈": 0.15,  # Fidelity
+        "∈": 0.10,  # Cardinality / granularity
+        "<": 0.05,  # Parity / polarity
+        "⊤": 0.05,  # Kinetics
+        "⊙": 0.05,  # Criticality
+        "⊞": 0.08,  # Stoichiometry — raised from 0.05; valency-sensitive for ⋈ systems
     }
+    # ⊥ (chirality) and ◻ (winding) are absent: this detector has always scored
+    # ten of the twelve. That is a gap in the measure, not in the alphabet, and
+    # naming it here is better than a table that silently looks complete.
     
     def compute_similarity(
         self,
@@ -627,7 +635,7 @@ class CrossDomainAnalogyDetector:
             val_a = primitives_a.get(prim_name, "")
             val_b = primitives_b.get(prim_name, "")
 
-            if prim_name == "S":
+            if prim_name == "⊞":
                 # Stoichiometry uses a graded similarity rather than exact match
                 s_sim = self._stoichiometry_similarity(
                     imscription_a.stoichiometry.value if imscription_a.stoichiometry else None,
@@ -638,7 +646,7 @@ class CrossDomainAnalogyDetector:
                     shared.append(prim_name)
                 elif s_sim > 0.0:
                     # Partial match: show in differing with score
-                    differing.append(f"S({s_sim:.2f})")
+                    differing.append(f"⊞({s_sim:.2f})")
                 else:
                     differing.append(prim_name)
             elif val_a == val_b:
@@ -670,16 +678,16 @@ class CrossDomainAnalogyDetector:
     def _extract_primitives(self, imscription: Imscription) -> Dict[str, str]:
         """Extract primitive values from imscription."""
         return {
-            "D": imscription.dimensionality.value,
-            "T": imscription.topology.value,
-            "R": imscription.recognition_mode.value,
-            "P": imscription.polarity.value,
-            "F": imscription.fidelity.value,
-            "K": imscription.kinetic_character.value,
-            "G": imscription.granularity.value,
-            "∈": imscription.interaction_grammar.value,
-            "<": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
-            "S": imscription.stoichiometry.value if imscription.stoichiometry else "unset",
+            "⊢": imscription.dimensionality.value,
+            "⊣": imscription.topology.value,
+            ">": imscription.recognition_mode.value,
+            "<": imscription.polarity.value,
+            "⋈": imscription.fidelity.value,
+            "⊤": imscription.kinetic_character.value,
+            "∈": imscription.granularity.value,
+            "∋": imscription.interaction_grammar.value,
+            "⊙": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
+            "⊞": imscription.stoichiometry.value if imscription.stoichiometry else "unset",
         }
 
     @staticmethod
@@ -742,10 +750,10 @@ class CrossDomainAnalogyDetector:
         if domains_a & domains_b:
             # Same domain → structural analogy
             return "structural"
-        elif "T" in shared_primitives and "R" in shared_primitives:
+        elif "⊣" in shared_primitives and ">" in shared_primitives:
             # Same topology and recognition → functional analogy
             return "functional"
-        elif "F" in shared_primitives and "∈" in shared_primitives:
+        elif "⋈" in shared_primitives and "∋" in shared_primitives:
             # Same fidelity and grammar → behavioral analogy
             return "behavioral"
         else:

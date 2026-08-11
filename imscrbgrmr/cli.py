@@ -2415,8 +2415,8 @@ def isomorphs(
         
         # Display results
         console.print(Panel.fit(
-            f"[bold]Cross-Domain Analogies: {imscription_name}[/bold]\n"
-            f"Found {len(results)} analogy(ies) with similarity ≥ {min_similarity:.0%}",
+            f"[bold]Cross-Domain Isomorphs: {imscription_name}[/bold]\n"
+            f"Found {len(results)} isomorph(s) with similarity ≥ {min_similarity:.0%}",
             border_style="cyan",
         ))
         
