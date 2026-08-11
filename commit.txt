@@ -1,34 +1,31 @@
-closure_operator: measurement and fixed points as one subject
+closure_operator: the towers belong to this cluster
 
-The ninth ⊙perator, for the cluster that ovm, oneshots, ctc and nesting make
-between them.
+The specialist covered ovm, oneshots, ctc and nesting, and stopped at d=2. That
+was the wrong cut. ovm works on Bloch vectors in d=2; sic, d12 and d2048 are the
+same object at the dimensions where it is hard, and the fiducial is the fixed
+point the whole cluster is about. The d=12 fiducial is radical-expressible but
+its true home is a ring of dimension 2048 over Q, and one-shot #11 extracts the
+exact d=2048 fiducial — the far end of one question, not a second question.
 
-They are one cluster and not four commands. The d=12 SIC fiducial is stationary
-under the Zauner element, so nesting it in the action carrying that symmetry
-closes in one shot — the apparatus coincides with what it measures. A
-measurement that reconstructs its input is mu-delta=id wearing measurement
-clothing, and a fixed point that survives its own operator is a measurement that
-lost nothing. Split them and you prove the same thing twice under two names,
-which is what a specialist for each would have produced.
+So the surface is seven commands, not four: sic, d12 with its eleven
+subcommands, and d2048 with its eight, alongside the original four.
 
-The prompt carries the rule those commands serve — the three classes and the
-fourth that was added, and the conservative/dissipative distinction that decides
-which classes a domain can populate at all. That distinction is why a flat
-reading is not an absent reading: a whole parameter range in the one-shot class
-with nothing in a basin is what a conservative system looks like, not what a
-broken instrument looks like.
+The specialist also now carries what the towers have settled, because deriving
+what the kernel already reports costs the derivation and leaves a second answer
+to reconcile. At d=12: crystal_forces_d12_sic is a theorem with its axiom
+retired, 143/143 overlaps exact, Belnap d=2^n unconditional at 0 sorries and 0
+axioms. At d=2048: L0-L6 verified to the Hilbert class field.
 
-Price is a commitment, not a nicety. One-shot costs nothing, iterated costs
-steps, manufactured costs the width it smeared, and "it closed" without one of
-those four is half an answer. The conformance check enforces it: "price" is in
-the marker list beside the four commands and the four class names, because a
-closure reported without its cost is the failure mode this specialist exists to
-prevent.
+And the correction that came out of running it. I wrote "L7 onward is PENDING"
+into the prompt the same way the kernel's own report had it, and the specialist
+duly concluded the d=2048 fiducial was pending. It is not — the 2-part S-unit
+bypass obtained it exactly on 2026-07-30, going around the ramified layers. The
+prompt, the manifest domain and the workflows all now say the fiducial does not
+depend on L7+, and all three carry the distinction that was missing: pending is
+not failed, proved is not conjectured, and bypassed is neither. Say which of the
+three you mean.
 
-It also states what does not exist. Postselection is nowhere in the kernel,
-closed timelike curves appear once in the constellation as a catalog description
-string, and ctc is a fixed-point-imposing machine over Belnap FOUR rather than a
-simulation of spacetime. Better said plainly than discovered by someone acting
-on the name.
-
-check_manifests reports 7/7 domain markers. Aliases c⊙ and c⊙i.
+Re-run against the corrected surface, it separates them correctly and states
+that reporting the fiducial as pending conflates two goals. Two windings,
+Frobenius 100%, tier O_inf. check_manifests reports 10/10 domain markers.
+Aliases c⊙ and c⊙i.

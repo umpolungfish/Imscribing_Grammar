@@ -51,7 +51,7 @@ markers = {
     # The four commands, the four classes, and the word that keeps a report
     # honest. "price" is in the list because a closure without its cost is the
     # failure mode this specialist exists to prevent.
-    "closure":   ["ovm", "oneshots", "ctc", "nesting",
+    "closure":   ["ovm", "oneshots", "ctc", "nesting", "sic", "d12", "d2048",
                   "one-shot", "manufactured", "price"],
 }
 print()

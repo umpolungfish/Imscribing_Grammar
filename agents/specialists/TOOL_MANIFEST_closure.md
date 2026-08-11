@@ -18,6 +18,8 @@ never assert arithmetic from memory.
 - **ctc — the manufactured fixed point** — `ctc`, `ctc help`, `four-valued`
 - **nesting — the two-step observable** — `nesting`, `nesting help`
 - **oneshots — the ten exotic nestings** — `oneshots`, `order-finding`
+- **sic and d12 — the fiducial at d=12** — `sic`, `d12`, `lean-status`, `radical-expressible`, `z0`
+- **d2048 — the moduli tower ascent** — `d2048`, `d-3`, `grammar-native`, `moduli-field`, `c16`, `c32`, `d2k`
 - **The rule these commands serve** — `file_read`, `CONTEXT.md`, `The_Fixed_Point_Menagerie.md`, `ig-docs`
 
 

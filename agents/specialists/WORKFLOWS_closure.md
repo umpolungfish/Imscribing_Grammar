@@ -56,6 +56,48 @@ completeness on that state — a fixed point of the measure-then-rebuild map.
 rest: the fiducial is stationary under the symmetry it is nested in, which is why
 period finding here is one-shot rather than iterative.
 
+### Read the tower before deriving anything on it
+
+    ./run_serial_cmds.sh "sic" "d12" "d2048"
+
+All three print their own standing and their own subcommand lists. Read that
+first: at d=12 the crystal_forces_d12_sic axiom is retired and the statement is a
+THEOREM, 143/143 overlaps are exact, and Belnap d=2^n is unconditional at 0
+sorries and 0 axioms. At d=2048, L0-L6 are verified up to the Hilbert class field
+and L7+ pending.
+
+Do not stop reading there. The d=2048 FIDUCIAL does not depend on L7+ — it was
+extracted exactly on 2026-07-30 by the 2-part S-unit bypass, which goes around
+the ramified layers. Reporting "the fiducial is pending" is a wrong answer that
+the tower output alone will lead you to. L7+ is the moduli-field ascent as a goal
+in itself, not a blocker.
+
+Deriving something the tower already settled costs the derivation and produces a
+second answer that now has to be reconciled. Say which level you stand on, and
+say whether you mean pending, proved, or bypassed — they are three states, not
+two.
+
+### Follow one fiducial across dimensions
+
+    ./run_serial_cmds.sh "ovm belnap" "sic" "d12 duallink" "d2048 next"
+
+The same object at four scales. `ovm belnap` is B = XZ, the d=2 fiducial, in
+Bloch coordinates. `sic` is the d=12 identity. `d12 duallink` gives the dual-link
+norm. `d2048 next` names the next rung of the climb. One-Shot #11 in `oneshots`
+extracts the exact d=2048 fiducial — the far end of the same question.
+
+The d=12 fiducial is radical-expressible, but its true home is a ring of
+dimension 2048 over Q. That is why the towers belong to this cluster rather than
+to a separate specialty: they are where the fixed point lives.
+
+### Cross-check the kernel's Lean claim
+
+    ./run_serial_cmds.sh "d12 lean-status"
+
+Then check the library at ~/imsgct/p4rakernel/p4ramill rather than trusting
+either alone. An axiom retired to a theorem is the strongest result available
+here, and `#print axioms <name>` in Lean is what settles whether it happened.
+
 ### Batch, always
 
     ./run_serial_cmds.sh "ovm sic-povm" "ovm frame sic-povm" "ovm duals sic-povm"

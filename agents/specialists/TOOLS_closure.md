@@ -130,6 +130,38 @@ a local copy — the period finder calls the real order-finding engine, the Beln
 one the real negation, the factoring one the same order engine as the first — so
 the answers cannot drift from the rest of the kernel.
 
+### sic and d12 — the fiducial at d=12
+
+`sic` prints the d=12 SIC-POVM identity and its three lattice proofs. `d12`
+prints the tower status and its subcommands: tower, magnitudes, orbits,
+existence, duallink, z0, ordinals, verify, symmetric, embedding, lean-status.
+
+Standing as the kernel reports it: crystal_forces_d12_sic is a THEOREM with its
+axiom retired and the audit clean, all 143 overlaps proved exactly, and the
+Belnap d=2^n result unconditional at 0 sorries and 0 axioms. The fiducial is
+radical-expressible but its true home is the ring R of dimension 2048 over Q,
+which is what makes the d=2048 ascent the same question at the hard end.
+
+### d2048 — the moduli tower ascent
+
+`d2048` prints the ascent and its subcommands: tower, c16, c32, ramified, redei,
+grammar, pari, next. Alias d2k.
+
+F = Q(sqrt 4190205), m_d = (d+1)(d-3), Hilbert h=64, ray class at (2048)·∞ of
+order 2^27. L0 through L6 are verified and end at the Hilbert class field where
+h=64 is reached; L7 onward is PENDING, ramified at (2048)·∞ with roughly 2^21
+steps to the moduli field.
+
+The climb is grammar-native and explicitly NOT numerical polish — a numerical
+descent finds a spurious local minimum here.
+
+The fiducial does NOT depend on L7+. It was extracted exactly on 2026-07-30 by
+the 2-part structural S-unit bypass (Stark unit eps = (2047 + sqrt 4190205)/2,
+exponents [-1,3,2], 1000 digits), which goes around the ramified layers rather
+than through them. L7+ is open as the moduli-field ascent in its own right, not
+as a blocker. Pending is not failed, proved is not conjectured, and bypassed is
+neither — say which you mean.
+
 ### The rule these commands serve
 
 `file_read ~/imsgct/ig-docs/fixed_point_menagerie/CONTEXT.md`. The Fixed-Point
