@@ -282,6 +282,39 @@ class HttpProvider(LLMProvider):
         # NOTE: no reasoning switch here. `reasoning`/`reasoning_effort` is OpenRouter's
         # unified field and DeepSeek's own API 400s on it, so it is NOT vendor-neutral and
         # cannot live in the shared payload. OpenRouterProvider sends it; see there.
+        # Streaming: the caller passes on_token and gets each delta as it lands.
+        # The full text is still returned, so every caller downstream — the JSON
+        # extractor, the cache — is unchanged; streaming is a view of the same
+        # answer, not a different path through it.
+        on_token = kwargs.get("on_token")
+        if on_token is not None:
+            data["stream"] = True
+            chunks: List[str] = []
+            async with httpx.AsyncClient(timeout=None) as client:
+                async with client.stream("POST", self.base_url, headers=headers, json=data) as resp:
+                    resp.raise_for_status()
+                    async for line in resp.aiter_lines():
+                        if not line.startswith("data:"):
+                            continue
+                        payload = line[5:].strip()
+                        if payload == "[DONE]":
+                            break
+                        try:
+                            evt = json.loads(payload)
+                        except Exception:
+                            continue
+                        for choice in evt.get("choices") or []:
+                            piece = (choice.get("delta") or {}).get("content")
+                            if piece:
+                                chunks.append(piece)
+                                on_token(piece)
+            content = "".join(chunks)
+            if not content:
+                raise ValueError("stream produced no content")
+            await self.cache_response(prompt, content, model=self.model,
+                                      temperature=temp, max_tokens=max_tokens)
+            return content
+
         try:
             async with httpx.AsyncClient(timeout=60.0) as client:
                 response = await client.post(self.base_url, headers=headers, json=data)
@@ -639,9 +672,10 @@ class LocalProvider(LLMProvider):
         system: Optional[str],
         temperature: float,
         max_new_tokens: int,
+        stream: bool = False,
     ) -> str:
         """Route local inference through the Rust kernel (candle in-process)."""
-        return self._kernel_generate(prompt, system, temperature, max_new_tokens)
+        return self._kernel_generate(prompt, system, temperature, max_new_tokens, stream)
 
     def _kernel_generate(
         self,
@@ -649,6 +683,7 @@ class LocalProvider(LLMProvider):
         system: Optional[str],
         temperature: float,
         max_new_tokens: int,
+        stream: bool = False,
     ) -> str:
         import subprocess
 
@@ -672,11 +707,20 @@ class LocalProvider(LLMProvider):
         # kernel's reasoning state matches ob3ect's, not the binary's own default.
         env = dict(os.environ)
         env["IG_THINK"] = env["MODOT_THINK"] = "1" if enable_thinking else "0"
-        proc = subprocess.run(cmd, capture_output=True, text=True, env=env)
+        # The kernel writes its live token stream to STDERR (IG_LOCAL_STREAM, on
+        # by default) and the finished answer to stdout. Capturing stderr is what
+        # swallows the stream, so under `stream` it is left attached to the
+        # terminal and the tokens appear as they are generated. stdout is still
+        # captured — the answer is a return value, not a display.
+        if stream:
+            env.setdefault("IG_LOCAL_STREAM", "1")
+            proc = subprocess.run(cmd, stdout=subprocess.PIPE, text=True, env=env)
+        else:
+            proc = subprocess.run(cmd, capture_output=True, text=True, env=env)
         if proc.returncode != 0:
             raise RuntimeError(
                 f"kernel ask (local/raw) failed [{proc.returncode}]: "
-                f"{proc.stderr.strip() or proc.stdout.strip()}"
+                f"{(proc.stderr or '').strip() or proc.stdout.strip()}"
             )
         response = proc.stdout.strip()
         response = re.sub(r"<think>.*?</think>", "", response, flags=re.DOTALL).strip()
@@ -853,9 +897,13 @@ class LocalProvider(LLMProvider):
         if cached:
             return cached
 
+        # `on_token` is the streaming request. The kernel does its own streaming
+        # to the terminal, so the callback is not fed piece by piece here — the
+        # flag is what matters, and the tokens appear as the kernel writes them.
+        stream = kwargs.get("on_token") is not None
         loop = asyncio.get_event_loop()
         result = await loop.run_in_executor(
-            None, self._sync_generate, prompt, system, temperature, max_tokens
+            None, self._sync_generate, prompt, system, temperature, max_tokens, stream
         )
 
         await self.cache_response(

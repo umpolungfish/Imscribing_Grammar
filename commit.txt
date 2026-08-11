@@ -1,13 +1,6 @@
-The retry writes where a tool call goes
+Providers can stream when the caller asks
 
-The nudge got the model to reason its way to the right call — "the tool call
-would be file_read with the path" — and it still emitted nothing, because it
-ended its turn on </think>. Asking it to think again invites the same ending:
-the prompt hands it an open think block, and thinking is what it just finished.
-
-So the retry closes the block. The template emits <think>\n\n</think>\n\n and
-the only position left to write in is the content, which is where a tool call
-goes. One generation only; the flag is cleared in a finally.
-
-Verified against the template: the first attempt ends on an open <think>, the
-retry ends past a closed one.
+`on_token` is the request. HttpProvider sets stream:true and parses SSE deltas,
+calling back per piece and still returning the whole text so nothing downstream
+changes. LocalProvider passes the flag to the kernel, which already streams its
+own tokens to stderr — capturing that pipe was the only reason they were unseen.
