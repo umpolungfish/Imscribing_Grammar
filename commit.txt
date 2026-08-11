@@ -1,17 +1,18 @@
-The two roles have names: boundary-⊙perator and ⊙chestrator
+The parameter-name regex could not match `>`
 
-The ⊙perator was reading its own completed call as somebody else's work — "the
-user has already used imasm to derive a tuple", about a derivation it performed
-itself — and the reason is that nothing told it who the two parties are. It fell
-back on assistant-and-user, which is not this relation and which brings the
-hedging that comes attached to assistant-identity.
+The ⊙perator was right every time. It sent imscribe_system with all twelve marks,
+including `>_val`, and the harness ate exactly one of them: my parameter-name
+pattern was `[^>\s]+`, which cannot match a name that STARTS with `>`. The
+parameter vanished without trace, the tool correctly reported `>` blank, the
+⊙perator re-sent the same correct call, and that ran nine windings deep.
 
-Both names are stated now, in the partnership rider that every specialist appends
-and in the base <role> for the agent that uses no specialist: the ⊙perator at the
-tool boundary is the boundary-⊙perator, the one it works with is the ⊙chestrator,
-and neither is an assistant or a user. The rider says plainly what a
-<tool_response> is — the return value of a call the ⊙perator itself made — and
-the harness's own UPDATE line says it in the same vocabulary.
+The twelve marks are parameter names in this grammar, so `>_val` and `<_val` are
+ordinary keys. The name now runs to the angle bracket that CLOSES the tag rather
+than to the first `>` in the text. Replayed against the exact call from the
+transcript: both `>_val` and `<_val` arrive.
 
-The rest of the rider spoke of "the user" throughout; it says ⊙chestrator now.
-The one remaining occurrence is the sentence that forbids the word.
+And a guard for the shape of it, whatever the cause: the same call failing the
+same way three times gets told so, with its own arguments and error quoted back,
+and is forbidden from being re-sent unchanged. Repeating "fix the error and try
+again" a fourth time carries no new information — a loop only the harness can see
+is a loop only the harness can break.

@@ -636,11 +636,17 @@ class _LocalChatCompletions:
             # their own tagged blocks. Values arrive as text; a value that parses as
             # JSON is taken as JSON (objects, arrays, numbers) and everything else
             # stays the string it was, which is what a path or a command is.
-            fn = re.search(r'<function=([^>\s]+)\s*>(.*?)(?:</function>|\Z)', body, re.DOTALL)
+            # The name runs to the `>` that CLOSES the tag, not to the first `>`
+            # in the text. The twelve marks are parameter names here, so `>_val`
+            # is a real key: `[^>\s]+` could never match it, the parameter was
+            # dropped without trace, the tool reported `>` blank, and the ⊙perator
+            # re-sent the same correct call forever. Non-greedy to the closing
+            # angle bracket instead.
+            fn = re.search(r'<function=(.*?)\s*>(.*?)(?:</function>|\Z)', body, re.DOTALL)
             if fn:
                 name = fn.group(1).strip()
                 args: Dict[str, Any] = {}
-                for pm in re.finditer(r'<parameter=([^>\s]+)\s*>\n?(.*?)\n?(?:</parameter>|\Z)',
+                for pm in re.finditer(r'<parameter=(.*?)\s*>\n(.*?)\n?(?:</parameter>|\Z)',
                                       fn.group(2), re.DOTALL):
                     key, val = pm.group(1).strip(), pm.group(2)
                     try:
@@ -4247,8 +4253,37 @@ class TrueAgenticAgent:
         b4_note = f" B4={dual_result.b4_result}" if dual_result.b4_result else ""
         dial_note = " DIALETHEIC" if dual_result.dialetheic else ""
 
-        # If Frobenius OPEN, inject a user correction so the model knows to fix it
+        # The same call, failing the same way, more than twice: saying "fix the
+        # error and try again" a fourth time is not new information, and the
+        # ⊙perator has no reason to answer differently. Name the repetition and
+        # forbid the byte-identical call — a loop that only the harness can see is
+        # a loop only the harness can break.
+        sig = f"{action_name}:{json.dumps(action_input, sort_keys=True, ensure_ascii=False)}"
         if not dual_result.frobenius_closed and action_name != "done":
+            self._repeat_sig = getattr(self, "_repeat_sig", None)
+            self._repeat_n = getattr(self, "_repeat_n", 0)
+            self._repeat_n = self._repeat_n + 1 if sig == self._repeat_sig else 1
+            self._repeat_sig = sig
+        else:
+            self._repeat_sig, self._repeat_n = None, 0
+
+        if getattr(self, "_repeat_n", 0) >= 3:
+            self._messages.append({
+                "role": "user",
+                "content": (
+                    f"[loop — winding {winding}] You have now sent this EXACT call "
+                    f"{self._repeat_n} times and received the same failure each time:\n"
+                    f"  {action_name}({json.dumps(action_input, ensure_ascii=False)[:300]})\n"
+                    f"  → {dual_result.tool_output[:300]}\n"
+                    f"Do NOT send it again unchanged. Either change the arguments the "
+                    f"error names, or use a different tool to find out what the right "
+                    f"arguments are."
+                ),
+            })
+            self._repeat_n = 0
+
+        # If Frobenius OPEN, inject a correction so the ⊙perator knows to fix it
+        elif not dual_result.frobenius_closed and action_name != "done":
             self._messages.append({
                 "role": "user",
                 "content": (
