@@ -610,6 +610,16 @@ class LocalProvider(LLMProvider):
                 )
                 load_kwargs.pop("torch_dtype", None)
                 logger.info("4-bit BitsAndBytes quantization enabled.")
+            elif os.getenv("LOAD_IN_8BIT", "").strip() not in ("", "0"):
+                # LOAD_IN_8BIT was documented nowhere and implemented nowhere: only
+                # the 4-bit branch existed, so exporting it changed nothing and a
+                # 27B kept loading at full width. Measured: the same run OOM'd
+                # byte-for-byte with the variable set and unset.
+                from transformers import BitsAndBytesConfig
+                load_kwargs["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+                load_kwargs.pop("torch_dtype", None)
+                load_kwargs.pop("dtype", None)
+                logger.info("8-bit BitsAndBytes quantization enabled.")
 
             load_kwargs["local_files_only"] = True
             # ── GrammaFormer detection ──────────────────────────────────
@@ -663,6 +673,30 @@ class LocalProvider(LLMProvider):
                     mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                     logger.info(f"Local model loaded (device_map={device_map}).")
                 except Exception as e:
+                    # A CPU fallback is not a detail. It is the difference between
+                    # an ⊙perator that answers and one that appears to hang or to
+                    # return nothing, because a 27B on CPU cannot finish a winding
+                    # in any time the loop will wait — which is exactly how "the
+                    # model returns an empty turn" was produced, with the real
+                    # cause a quiet line in a log nobody reads. Say it loudly, on
+                    # stderr, with the size that did not fit.
+                    import sys as _sys
+                    try:
+                        _n_gb = sum(
+                            f.stat().st_size for f in Path(self.model_path).glob("*.safetensors")
+                        ) / 1024 ** 3
+                    except Exception:
+                        _n_gb = 0.0
+                    _banner = (
+                        "\n" + "!" * 72 +
+                        f"\n!! LOCAL MODEL FELL BACK TO CPU — generation will be minutes per token."
+                        f"\n!! model : {self.model_path} ({_n_gb:.1f} GB on disk)"
+                        f"\n!! reason: {str(e)[:300]}"
+                        f"\n!! This model does not fit the GPUs as configured. Use a smaller"
+                        f"\n!! checkpoint, LOAD_IN_4BIT=1, or serve it with vLLM instead."
+                        "\n" + "!" * 72 + "\n"
+                    )
+                    print(_banner, file=_sys.stderr, flush=True)
                     logger.warning(f"Load failed ({e}); retrying on CPU.")
                     load_kwargs["device_map"] = "cpu"
                     load_kwargs.pop("max_memory", None)

@@ -1,29 +1,20 @@
-Parameter types come from the tool's schema, which is what qwen_xml means
+LOAD_IN_8BIT is real, and a CPU fallback announces itself
 
-I had been hand-rolling a parser against a format that has a specification. The
-model card names it: --tool-call-parser qwen3_coder. vLLM delegates that to
-xgrammar, whose builtin structural tag for qwen_3_5 / qwen_3_coder gives the
-grammar exactly:
+Two measured findings, after reading the model card and the canonical parser
+rather than guessing again.
 
-  begin  <tool_call>\n<function=NAME>\n
-  end    \n</function>\n</tool_call>
-  content  JSONSchemaFormat(json_schema=<the function's parameters>,
-                            style="qwen_xml")
-  reasoning  AnyText ending </think> then \n\n
+LOAD_IN_8BIT was implemented nowhere. Only the 4-bit branch existed, so exporting
+it changed nothing: the same probe OOM'd byte-for-byte with the variable set and
+unset. It builds a BitsAndBytesConfig now.
 
-The last two lines are the ones I had wrong. Parameters are encoded as the
-FUNCTION'S OWN JSON SCHEMA, so the declared type is the authority; guessing from
-the text — try json.loads, keep a string on failure — is wrong in both directions
-and silently. A string parameter holding "123" became the number 123. A string
-holding "true" became a boolean. A boolean written by the chat template as "True"
-stayed the string "True", because Jinja's `| string` of a Python bool is not JSON.
-The template's serialiser is the other half of the same rule: `| tojson` for
-mappings and non-string sequences, `| string` for everything else — so JSON is
-expected only where the schema says object or array, and that is now the only
-place it is parsed.
+With 8-bit genuinely applied, the 27B still does not fit: 27 billion parameters at
+one byte each is ~27 GB against 24 GB of card, accelerate tries to dispatch the
+remainder to CPU or disk, bitsandbytes refuses without an explicit offload flag,
+and the loader quietly retried on CPU. That is the whole explanation of the
+⊙perator's empty turns — a 27B on CPU cannot finish a winding in any time the
+loop waits. Not the parser, not the chat template, not the identity framing.
 
-Checked: a string "123" stays a string, an integer parameter becomes an int, a
-boolean written "True" becomes True, an object parses, and a value that does not
-fit its declared type is passed through as written for the tool's own validator
-to reject. Full parse against the canonical layout returns
-file_read(path="/home/x/f.md", offset=0).
+So the fallback is loud now: a banner on stderr naming the model, its size on
+disk, the reason it did not fit, and what to do instead. A silent fallback turns
+a hardware limit into an inscrutable empty answer, which is what cost most of
+today.
