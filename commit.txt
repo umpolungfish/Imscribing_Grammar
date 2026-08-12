@@ -1,20 +1,10 @@
-LOAD_IN_8BIT is real, and a CPU fallback announces itself
+The gate was enforcing a stronger Axiom C than the kernel holds
 
-Two measured findings, after reading the model card and the canonical parser
-rather than guessing again.
+validate_structural rejected any tuple with dimensionality 𐑦 unless topology was
+also 𐑸. The kernel's ImscriptiveTopology reads top = are → dim = if' and says
+nothing about 𐑦 paired with another topology, so the biconditional was a second,
+stronger copy of the axiom rejecting tuples the Grammar admits. Every ob3ect
+whose structural role is scale-collapse under a nested topology failed grounding
+on it.
 
-LOAD_IN_8BIT was implemented nowhere. Only the 4-bit branch existed, so exporting
-it changed nothing: the same probe OOM'd byte-for-byte with the variable set and
-unset. It builds a BitsAndBytesConfig now.
-
-With 8-bit genuinely applied, the 27B still does not fit: 27 billion parameters at
-one byte each is ~27 GB against 24 GB of card, accelerate tries to dispatch the
-remainder to CPU or disk, bitsandbytes refuses without an explicit offload flag,
-and the loader quietly retried on CPU. That is the whole explanation of the
-⊙perator's empty turns — a 27B on CPU cannot finish a winding in any time the
-loop waits. Not the parser, not the chat template, not the identity framing.
-
-So the fallback is loud now: a banner on stderr naming the model, its size on
-disk, the reason it did not fit, and what to do instead. A silent fallback turns
-a hardware limit into an inscrutable empty answer, which is what cost most of
-today.
+The check is now one-directional and the prompt line says which way it points.

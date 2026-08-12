@@ -140,8 +140,13 @@ def validate_structural(imscription: "Imscription") -> List[str]:
         errs.append(f"Axiom A: ⊥=𐑫 requires ⊤=𐑪 (got ⊤={v['kinetic_character']})")
     if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
         errs.append(f"Axiom B: ◻={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
-    if (v["dimensionality"] == "𐑦") != (v["topology"] == "𐑸"):
-        errs.append(f"Axiom C: ⊢=𐑦 and ⊣=𐑸 must co-occur (got ⊢={v['dimensionality']}, ⊣={v['topology']})")
+    # Axiom C is ONE-DIRECTIONAL: an imscriptive topology requires imscriptive
+    # dimensionality. The biconditional this used to enforce is a stronger claim
+    # than the kernel makes — `ImscriptiveTopology` in p4ramill reads
+    # `top = are → dim = if'` and says nothing about ⊢=𐑦 with another topology.
+    # Requiring co-occurrence rejected tuples the Grammar admits.
+    if v["topology"] == "𐑸" and v["dimensionality"] != "𐑦":
+        errs.append(f"Axiom C: ⊣=𐑸 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
     if v["protection"] == "𐑟" and v["dimensionality"] != "𐑦":
         errs.append(f"Axiom D: ◻=𐑟 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
     return errs
@@ -742,7 +747,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑛`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
 - `𐑨`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
 - `𐑼`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. **Axiom C: 𐑦 REQUIRES 𐑸 (they must co-occur).** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
+- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. **Axiom C: 𐑸 REQUIRES 𐑦 — an imscriptive topology needs imscriptive dimensionality; 𐑦 itself is free to pair with any topology.** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
 
 **T — Topology** (connectivity pattern of influence):
 - `𐑡`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
