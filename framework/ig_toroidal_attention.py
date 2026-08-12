@@ -35,6 +35,19 @@ from typing import Optional, Tuple
 
 import numpy as np
 
+# GPU auto-dispatch: when daydr33m is importable, attention_fft_1d and
+# attention_fft_2d auto-detect torch/cuda and stay on GPU without CPU round-trips.
+try:
+    import sys
+    _daydr33m_path = __file__.rsplit('/', 3)[0] + '/daydr33m'
+    if _daydr33m_path not in sys.path:
+        sys.path.insert(0, _daydr33m_path)
+    from toroidal_attention import attention_fft_1d as _attn_fft_1d_dispatch
+    from toroidal_attention import attention_fft as _attn_fft_2d_dispatch
+    _HAS_DISPATCH = True
+except ImportError:
+    _HAS_DISPATCH = False
+
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # 1. Geometry — positions and distances in windings
@@ -205,10 +218,22 @@ def regime_1d(n: int) -> dict:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# 5.5. PyTorch availability
+# ═══════════════════════════════════════════════════════════════════════════════
+
+try:
+    import torch
+    import torch.nn as nn
+    _HAS_TORCH = True
+except ImportError:
+    _HAS_TORCH = False
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # 6. HuggingFace integration — post-load attention patching
 # ═══════════════════════════════════════════════════════════════════════════════
 
-class ToroidalAttentionWrapper:
+class ToroidalAttentionWrapper(nn.Module if _HAS_TORCH else object):
     """Wraps a HuggingFace attention layer, replacing the forward pass with
     toroidal FFT attention.
 
@@ -227,11 +252,59 @@ class ToroidalAttentionWrapper:
         mode: "1d" (cyclic Z_N) or "2d" (torus Z_m × Z_n)
         m, n: torus grid dimensions (for 2D mode; auto-computed in 1D)
         """
-        self._orig = original_module
+        if _HAS_TORCH:
+            super().__init__()
+        # Move projection/param attributes from original to wrapper so state
+        # dict paths are preserved (self.q_proj, NOT self.q_proj).
+        _proj_attrs = [
+            "q_proj", "k_proj", "v_proj", "o_proj", "qkv_proj",
+            "num_heads", "head_dim", "num_key_value_heads",
+            "num_attention_heads", "attention_dropout", "rotary_emb",
+            "rotary_ndims", "kv_heads", "hidden_size",
+            "num_key_value_groups",
+        ]
+        for _a in _proj_attrs:
+            if hasattr(original_module, _a):
+                setattr(self, _a, getattr(original_module, _a))
+        # Hold the original module WITHOUT auto-registration (so _orig does
+        # NOT appear in named_modules / state_dict).
+        object.__setattr__(self, "_orig", original_module)
         self.sigma = sigma
         self.mode = mode
         self._m = m
         self._n = n
+        # Cache num_heads if not directly found on original_module.
+        # attn_output_gate (Qwen3.5, Olmo3) doubles q_proj output: Q + gate.
+        if not hasattr(self, "num_heads"):
+            if hasattr(self, "num_attention_heads"):
+                object.__setattr__(self, "num_heads", self.num_attention_heads)
+            elif hasattr(self, "q_proj") and hasattr(self, "head_dim"):
+                q_out = self.q_proj.out_features
+                hd = self.head_dim
+                n = q_out // hd
+                # Detect gate-doubling (Qwen3.5, Olmo3): q_proj output is
+                # doubled when attn_output_gate=true (Q + gate, each
+                # num_attention_heads * head_dim wide).  Use k_proj (which
+                # is never gate-doubled) to find the real num_kv_heads,
+                # compute the expected non-gate Q width, and only halve n
+                # when q_out exceeds that.  This prevents the old heuristic
+                # (n % 2 == 0) from falsely halving plain GQA models like
+                # Qwen3-1.7B that have no gate at all.
+                n_kv_groups = getattr(self, "num_key_value_groups", None)
+                if n_kv_groups is not None and n_kv_groups > 1:
+                    if hasattr(self, "k_proj"):
+                        k_out = self.k_proj.out_features
+                        num_kv_actual = k_out // hd
+                        expected_q = num_kv_actual * n_kv_groups * hd
+                        if q_out > expected_q:
+                            n = n // 2
+                    elif n % 2 == 0:
+                        # No k_proj to cross-check: use the old heuristic
+                        # as a fallback (should be rare).
+                        n = n // 2
+                object.__setattr__(self, "num_heads", n)
+            else:
+                object.__setattr__(self, "num_heads", 1)
 
     @property
     def m(self):
@@ -254,18 +327,18 @@ class ToroidalAttentionWrapper:
 
         # Run original projections (Q, K, V, O are learned)
         # Try standard HuggingFace attribute names
-        if hasattr(self._orig, 'q_proj'):
-            Q = self._orig.q_proj(hidden_states)
-            K = self._orig.k_proj(hidden_states)
-            V = self._orig.v_proj(hidden_states)
-            o_proj = self._orig.o_proj
-        elif hasattr(self._orig, 'qkv_proj'):
-            qkv = self._orig.qkv_proj(hidden_states)
+        if hasattr(self, "q_proj"):
+            Q = self.q_proj(hidden_states)
+            K = self.k_proj(hidden_states)
+            V = self.v_proj(hidden_states)
+            o_proj = self.o_proj
+        elif hasattr(self, "qkv_proj"):
+            qkv = self.qkv_proj(hidden_states)
             # Split — heuristics for common split patterns
             d = qkv.shape[-1] // 3
             Q, K, V = qkv[..., :d], qkv[..., d:2*d], qkv[..., 2*d:]
-            if hasattr(self._orig, 'o_proj'):
-                o_proj = self._orig.o_proj
+            if hasattr(self, "o_proj"):
+                o_proj = self.o_proj
             else:
                 o_proj = lambda x: x  # noqa: E731
         else:
@@ -277,31 +350,78 @@ class ToroidalAttentionWrapper:
                             **kwargs)
 
         batch, n_tok, d_model = V.shape
-        num_heads = getattr(self._orig, 'num_heads', 1)
-        head_dim = d_model // num_heads
+        num_heads = getattr(self, "num_heads", 1)
+        num_kv_heads = getattr(self, "num_key_value_heads", None)
+        if num_kv_heads is None:
+            # Derive from q_proj: for GQA, num_kv_heads = num_heads / num_key_value_groups
+            n_kv_groups = getattr(self, "num_key_value_groups", None)
+            if n_kv_groups is not None and n_kv_groups > 1:
+                num_kv_heads = num_heads // n_kv_groups
+            else:
+                num_kv_heads = num_heads  # non-GQA: KV heads == Q heads
+        n_rep = num_heads // num_kv_heads if num_kv_heads > 0 else 1
 
-        # Reshape to (batch, n_tok, num_heads, head_dim)
-        V_np = V.detach().cpu().numpy().reshape(batch, n_tok, num_heads, head_dim)
-
-        if self.mode == "2d" and self._m > 0 and self._n > 0:
-            # 2D torus
-            V_flat = V_np.reshape(batch, self._m * self._n, num_heads * head_dim)
-            y_np = attention_fft_2d(V_flat, self._m, self._n, self.sigma, num_heads)
+        # Toroidal attention on V with KV head count.
+        # Uses the V-projected tensor whose last dim is num_kv_heads * head_dim,
+        # which is exactly divisible by num_kv_heads.
+        if _HAS_DISPATCH:
+            if self.mode == "2d" and self._m > 0 and self._n > 0:
+                y = _attn_fft_2d_dispatch(
+                    V.reshape(batch, self._m * self._n, d_model),
+                    self._m, self._n, self.sigma, num_kv_heads,
+                )
+            else:
+                y = _attn_fft_1d_dispatch(
+                    V.reshape(batch, n_tok, d_model),
+                    self.sigma, num_kv_heads,
+                )
         else:
-            # 1D cycle
-            V_flat = V_np.reshape(batch, n_tok, num_heads * head_dim)
-            y_np = attention_fft_1d(V_flat, self.sigma, num_heads)
+            # Fallback: NumPy FFT (CPU round-trip, always available)
+            V_np = V.detach().cpu().numpy().reshape(batch, n_tok, d_model)
+            if self.mode == "2d" and self._m > 0 and self._n > 0:
+                y_np = attention_fft_2d(
+                    V_np, self._m, self._n, self.sigma, num_kv_heads,
+                )
+            else:
+                y_np = attention_fft_1d(V_np, self.sigma, num_kv_heads)
+            y = torch.from_numpy(y_np).to(V.device).to(V.dtype)
 
-        # Output projection through original O weight
-        y = torch.from_numpy(y_np).to(V.device).to(V.dtype)
+        # Expand KV-grouped output to full attention-head dimension for o_proj.
+        # GQA (Grouped Query Attention) uses fewer KV heads than Q heads;
+        # each KV head serves n_rep Q heads.  The toroidal kernel is
+        # circulant, so expanding BEFORE the output projection is equivalent
+        # to computing the kernel on the expanded head dimension.
+        if n_rep > 1:
+            head_dim = d_model // num_kv_heads
+            y = y.reshape(batch, n_tok, num_kv_heads, head_dim)
+            y = y.unsqueeze(2).expand(-1, -1, n_rep, -1, -1)
+            y = y.reshape(batch, n_tok, num_heads * head_dim)
+
+        # ── Gate application (attn_output_gate: Qwen3.5, Olmo3) ──
+        # Models with attn_output_gate stash a gate signal in the second
+        # half of q_proj's output.  The gate modulates the attention output
+        # element-wise: sigmoid(gate) * y.  The toroidal kernel produces y
+        # from V alone, so the gate is extracted from Q (which we projected
+        # but haven't used yet) and applied here.
+        if hasattr(self, "q_proj"):
+            _hd = getattr(self, "head_dim", 64)
+            _q_out = Q.shape[-1]
+            _expected_q = num_heads * _hd
+            if _q_out > _expected_q:
+                # Q = [query_states | gate], each _expected_q wide
+                gate = Q[..., _expected_q:]
+                y = y * torch.sigmoid(gate)
+
 
         # Apply output projection
         y = o_proj(y)
 
-        # Match HF return format
+        # Match HF return format — always a 2-tuple (output, weights_or_None).
+        # Decoder layers unpack as hidden_states, _ = self_attn(...) and a
+        # 1-tuple here gives "not enough values to unpack (expected 2, got 1)".
         if output_attentions:
             return (y, None)
-        return (y,)
+        return (y, None)
 
 
 def patch_with_toroidal(model, sigma: float = 0.15, mode: str = "1d",
@@ -359,6 +479,7 @@ def patch_with_toroidal(model, sigma: float = 0.15, mode: str = "1d",
         setattr(parent, parts[-1], wrapper)
 
         patched += 1
+        print(f"[toroidal]   patched #{patched}: {name}", flush=True)
 
     print(f"[toroidal] patched {patched} attention layers (σ={sigma}, {mode})")
     return model
@@ -368,12 +489,6 @@ def patch_with_toroidal(model, sigma: float = 0.15, mode: str = "1d",
 # 7. Torch integration — torch.nn.Module for native HF registration
 # ═══════════════════════════════════════════════════════════════════════════════
 
-try:
-    import torch
-    import torch.nn as nn
-    _HAS_TORCH = True
-except ImportError:
-    _HAS_TORCH = False
 
 
 if _HAS_TORCH:
@@ -402,10 +517,17 @@ if _HAS_TORCH:
             batch, n_tok, _ = hidden_states.shape
             V = self.v_proj(hidden_states)
 
-            # Toroidal attention: content-independent circulant kernel via FFT
-            V_np = V.detach().cpu().numpy()
-            y_np = attention_fft_1d(V_np, self.sigma, self.num_heads)
-            y = torch.from_numpy(y_np).to(V.device).to(V.dtype)
+            # Toroidal attention: content-independent circulant kernel via FFT.
+            # Auto-dispatched: stays on GPU when available.
+            if _HAS_DISPATCH:
+                y = _attn_fft_1d_dispatch(
+                    V.reshape(batch, n_tok, self.d_model),
+                    self.sigma, self.num_heads,
+                )
+            else:
+                V_np = V.detach().cpu().numpy()
+                y_np = attention_fft_1d(V_np, self.sigma, self.num_heads)
+                y = torch.from_numpy(y_np).to(V.device).to(V.dtype)
 
             return self.o_proj(y), None
 
