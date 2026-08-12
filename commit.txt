@@ -1,12 +1,11 @@
-Axiom A admitted one kinetic value where the kernel admits two
+The provider capped every call at 4096 tokens and gave up after 60 seconds
 
-The gate rejected chirality 𐑫 unless kinetic character was 𐑪. Core.lean records
-"wool co-occurs with on" as a TENDENCY and says in the same line that it is not
-an axiom because some wool systems have egg, and
-InfiniteMemoryNeedsSlowKinetics reads chir = wool → kin = egg or on. So the check
-was a hard axiom where the kernel has a tendency, and single-valued where the
-kernel is two-valued. Every wool object whose store is slow rather than frozen
-failed grounding on it.
+An eight-phase ob3ect design does not fit in 4096 tokens, and the truncation
+arrives as unparseable JSON, which the layer above reports as "the provider
+returned no text". A working key looked like a dead lane for two runs on that
+account. max_tokens=None now means uncapped: the field leaves the payload
+entirely.
 
-Second copy of the same shape as the Axiom C fix in this repo: a gate drifted
-stronger than the kernel it is supposed to enforce.
+The non-streaming path also had a sixty-second deadline, shorter than a design
+call, and a timeout there returns empty text rather than raising — the same
+failure wearing the same disguise. Both paths now run without a deadline.

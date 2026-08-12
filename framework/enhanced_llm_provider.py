@@ -258,6 +258,11 @@ class HttpProvider(LLMProvider):
     @llm_retry
     async def query(self, prompt: str, **kwargs) -> str:
         temp = kwargs.get("temperature", 0.7)
+        # `None` means UNCAPPED: the field is left out of the payload entirely so
+        # the model answers to its own limit. A design or proof call that hits a
+        # 4096-token ceiling comes back truncated, and truncated JSON reads as
+        # "the provider returned no text" three layers up — which is how a
+        # working key looks like a dead lane.
         max_tokens = kwargs.get("max_tokens", 4096)
         system = kwargs.get("system")
         # Clamp temperature to valid range (max 2.0 for most providers including Gemini)
@@ -287,8 +292,9 @@ class HttpProvider(LLMProvider):
             "model": self.model,
             "messages": messages,
             "temperature": temp,
-            "max_tokens": max_tokens,
         }
+        if max_tokens is not None:
+            data["max_tokens"] = max_tokens
         # NOTE: no reasoning switch here. `reasoning`/`reasoning_effort` is OpenRouter's
         # unified field and DeepSeek's own API 400s on it, so it is NOT vendor-neutral and
         # cannot live in the shared payload. OpenRouterProvider sends it; see there.
@@ -326,7 +332,10 @@ class HttpProvider(LLMProvider):
             return content
 
         try:
-            async with httpx.AsyncClient(timeout=60.0) as client:
+            # No deadline on the non-streaming path either. Sixty seconds is
+            # shorter than a design call, and a timeout here returns empty text
+            # rather than an error, so the failure arrives disguised.
+            async with httpx.AsyncClient(timeout=None) as client:
                 response = await client.post(self.base_url, headers=headers, json=data)
                 response.raise_for_status()
 
