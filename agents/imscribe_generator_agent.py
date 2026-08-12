@@ -136,8 +136,15 @@ def validate_structural(imscription: "Imscription") -> List[str]:
     ]
     if errs:
         return errs  # axioms are meaningless over out-of-set values
-    if v["chirality"] == "𐑫" and v["kinetic_character"] != "𐑪":
-        errs.append(f"Axiom A: ⊥=𐑫 requires ⊤=𐑪 (got ⊤={v['kinetic_character']})")
+    # wool admits BOTH slow kinetics, not just `on`. Core.lean records
+    # "wool co-occurs with on" as a TENDENCY and says in the same breath that it
+    # is not an axiom because some wool systems have egg, and
+    # InfiniteMemoryNeedsSlowKinetics reads `chir = wool → kin = egg ∨ kin = on`.
+    # Demanding 𐑪 alone rejected every wool object whose store is slow rather
+    # than frozen.
+    if v["chirality"] == "𐑫" and v["kinetic_character"] not in {"𐑧", "𐑪"}:
+        errs.append(
+            f"Axiom A: ⊥=𐑫 requires ⊤ ∈ {{𐑧,𐑪}} (got ⊤={v['kinetic_character']})")
     if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
         errs.append(f"Axiom B: ◻={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
     # Axiom C is ONE-DIRECTIONAL: an imscriptive topology requires imscriptive

@@ -1,10 +1,12 @@
-The gate was enforcing a stronger Axiom C than the kernel holds
+Axiom A admitted one kinetic value where the kernel admits two
 
-validate_structural rejected any tuple with dimensionality 𐑦 unless topology was
-also 𐑸. The kernel's ImscriptiveTopology reads top = are → dim = if' and says
-nothing about 𐑦 paired with another topology, so the biconditional was a second,
-stronger copy of the axiom rejecting tuples the Grammar admits. Every ob3ect
-whose structural role is scale-collapse under a nested topology failed grounding
-on it.
+The gate rejected chirality 𐑫 unless kinetic character was 𐑪. Core.lean records
+"wool co-occurs with on" as a TENDENCY and says in the same line that it is not
+an axiom because some wool systems have egg, and
+InfiniteMemoryNeedsSlowKinetics reads chir = wool → kin = egg or on. So the check
+was a hard axiom where the kernel has a tendency, and single-valued where the
+kernel is two-valued. Every wool object whose store is slow rather than frozen
+failed grounding on it.
 
-The check is now one-directional and the prompt line says which way it points.
+Second copy of the same shape as the Axiom C fix in this repo: a gate drifted
+stronger than the kernel it is supposed to enforce.
