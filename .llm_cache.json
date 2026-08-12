@@ -12212,5 +12212,18 @@
   "33ffcaffcad086a5c42e7e3bff4fb7ce01ef5a6bb22dbeb08560804e92be1f7d": "2 \u2014 The system organizes spatially across an extended lattice.",
   "70997481ea4cdb90a0b529add245d8c969804526a28d2ec347737f86e05d49a0": "3 \u2014 The system is kinetically frozen and requires external driving to rearrange.",
   "665afe5c30e10bb8b22b3be1973572d1f142e0975bef8e4a2af61a7f112d97fc": "2 \u2014 The system organizes spatially across an extended lattice.",
-  "c0655d402c543db7c7deec2390fa0ab11cc30127bfdcc1ded6664767abdb00d2": "2 \u2014 The system organizes spatially across an extended lattice."
+  "c0655d402c543db7c7deec2390fa0ab11cc30127bfdcc1ded6664767abdb00d2": "2 \u2014 The system organizes spatially across an extended lattice.",
+  "3baebb11d517250e7c412df2590cde1348e33c667afbb9c28bf1381e277ec683": "1 \u2014 The symbol \u22a2\u25c7+\u00d7\u25cf\u00ac\u22a3 suggests a complex, interconnected system with multiple influences and interactions, indicating a generic network with mixed connectivity.",
+  "308b652d4d67c2a0fd7930b808b47274990c0e315477464c3bad201fbe331ebb": "3 \u2014 The primitive \u22a2 is assigned as dimensionality, indicating a temporal/iterative operation that recurs through a closed cycle with a reset step.",
+  "8af30d396b4ffaf9d2e0048c46309b0639207627a698fdfd1c07934e08b379b1": "3 \u2014 The primitives \u22a2 and \u22a3 are assigned to \ud801\udc5b and \ud801\udc61, which suggest a directional or asymmetric relationship, indicating different counts on each side.",
+  "74d7d74ebefcbfdf45ea31a205f45e904f36082faa985976a683ea066e2a6aac": "3 \u2014 The system is integer-winding-protected, meaning it is stable against perturbations that do not change the winding number.",
+  "f84af938218bc24f4b6eafcae30ad2f466dd5024ed51c46c9446c1cfb9f88964": "2 \u2014 The primitive \u2299 is assigned to criticality_phase, indicating the system is at the threshold with scale-free correlations and maximal sensitivity.",
+  "b3c5232f079daa8d54594f332cd602fce5e9669c5699a4f20df66520c6cb535e": "2 \u2014 The symbol sequence suggests a single axis of chirality that can be thermally interconverted, indicating soft chiral symmetry with memory depth 1.",
+  "72dc237dde5189cbadce511754d9ec52748cce623b0e45a355149de09fe2e0a5": "1 \u2014 The symbols suggest a soft, reversible interaction based on analogical similarity.",
+  "06e24ba588927c5c35db49d86ca1cf22a70d3baa3a471c1f964c1b932cdf7d6e": "3 \u2014 The interface is self-complementary, as both donor and acceptor roles are present simultaneously.",
+  "9fc2809c3543f958edbef9e9b6aebdf3224142f6c7b803f8bf4b69230f24a054": "3 \u2014 The symbol \u22c8 is assigned high fidelity, indicating reliable and near-certain firing with high information transmission.",
+  "47e33501716ebce64cc7d4b6b289222e6e9fc390a5950ff5c95f0fb6587c0d5e": "3 \u2014 High barrier \u2014 kinetically frozen; requires external driving to rearrange.",
+  "2643d4f9d266c23957bc721f36c411a3141e845423b5e46d9991836b7d2bf44c": "3 \u2014 The symbol \u22a2\u25c7+\u00d7\u25cf\u00ac\u22a3 suggests a global interaction due to the presence of multiple operators and negation, indicating propagation across the entire system.",
+  "d8a593943f2e7aed2968a833c59cd7a0bab3f8dc1808fb303b17923d4f9071aa": "3 \u2014 The symbol \u22a2 indicates a sequential relationship, implying ordered steps where partners are engaged in sequence.",
+  "fdc5ebbd069afff2bfd07899b823e3b666834b45c302fcd78222ff8744425540": "The three prime numbers are 2, 3, and 5."
 }

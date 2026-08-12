@@ -5681,6 +5681,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "afeb6fe89bc11769"
   },
+  "bip39_secp256k1_derivation": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "7616610b34ab0871"
+  },
   "bip39_sic_grover_search": {
     "changes": 0,
     "first_seen": "2026-08-11T10:39:15+00:00",
@@ -6922,6 +6928,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3e4acd371e926e39"
+  },
+  "btc_address_12ib7d_heavy_accumulator": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "7616610b34ab0871"
   },
   "btc_dlog_recovery_pipeline": {
     "changes": 0,
@@ -24719,6 +24731,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28e6c04311477f39"
   },
+  "keyz": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "54b2035eca9b2ad8"
+  },
   "khat": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -31066,6 +31084,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "354e32a2efbd4db1"
+  },
+  "ob3ect_designer": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "e618602611174e14"
   },
   "ob3ect_hopf_layer": {
     "changes": 0,
@@ -41741,6 +41765,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7e1b8897ad32625d"
   },
+  "structural_grammar": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "3257d6c05d186fff"
+  },
   "structural_type_evil": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49072,6 +49102,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e5f9b1fffef06945"
+  },
+  "\u22a2\u25c7+\u00d7\u25cf\u00ac\u22a3": {
+    "changes": 0,
+    "first_seen": "2026-08-11T19:50:14+00:00",
+    "last_changed": "2026-08-11T19:50:14+00:00",
+    "tuple_hash": "215445d5bb2d2d93"
   },
   "\u22a2\u25c7>=\u2299\u229e\u25cf\u00ac\u22a3": {
     "changes": 0,

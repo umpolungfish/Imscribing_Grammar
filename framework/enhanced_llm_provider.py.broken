@@ -616,10 +616,21 @@ class LocalProvider(LLMProvider):
                 # 27B kept loading at full width. Measured: the same run OOM'd
                 # byte-for-byte with the variable set and unset.
                 from transformers import BitsAndBytesConfig
-                load_kwargs["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+                # CPU offload must be PERMITTED explicitly. Unquantized, accelerate
+                # offloads whatever does not fit to host RAM without asking, which
+                # is how a 52 GB checkpoint ran on 24 GB of card at all — slowly,
+                # but it ran. bitsandbytes refuses that same offload unless this
+                # flag is set, so turning 8-bit on without it does not make the
+                # model smaller, it makes the load fail and fall all the way to
+                # CPU. Keeping the offload available preserves the path that
+                # already worked and shrinks the part that lives on the GPUs.
+                load_kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_8bit=True,
+                    llm_int8_enable_fp32_cpu_offload=True,
+                )
                 load_kwargs.pop("torch_dtype", None)
                 load_kwargs.pop("dtype", None)
-                logger.info("8-bit BitsAndBytes quantization enabled.")
+                logger.info("8-bit BitsAndBytes quantization enabled (CPU offload permitted).")
 
             load_kwargs["local_files_only"] = True
             # ── GrammaFormer detection ──────────────────────────────────
@@ -670,6 +681,13 @@ class LocalProvider(LLMProvider):
                 print(f"[GF] ready on {mdl.device}.", flush=True)
             else:
                 try:
+                    # Multi-GPU warm-up: wake every card before the first forward pass.
+                    # Under WSL2 and after an OOM, CUDA devices suspend between ops;
+                    # a matmul+synchronize on each prevents "device not ready" on generate().
+                    if device_map != "cpu":
+                        _warm_ids = [i for i in (list(max_memory.keys()) if max_memory else [device_map.get("", 0)]) if isinstance(i, int)]
+                        _warmup_devices(_warm_ids, logger)
+
                     mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                     logger.info(f"Local model loaded (device_map={device_map}).")
                 except Exception as e:
@@ -702,37 +720,16 @@ class LocalProvider(LLMProvider):
                     load_kwargs.pop("max_memory", None)
                     load_kwargs["dtype"] = torch.float32
                     load_kwargs.pop("quantization_config", None)
-                    mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
+                                # Multi-GPU warm-up: wake every card before the first forward pass.
+            # Under WSL2 and after an OOM, CUDA devices suspend between ops;
+            # a matmul+synchronize on each prevents "device not ready" on generate().
+            if device_map != "cpu":
+                _warm_ids = [i for i in (list(max_memory.keys()) if max_memory else [device_map.get("", 0)]) if isinstance(i, int)]
+                _warmup_devices(_warm_ids, logger)
+
+            mdl = AutoModelForCausalLM.from_pretrained(self.model_path, **load_kwargs)
                     logger.info("Local model loaded on CPU.")
                 mdl.eval()
-
-            # ── Toroidal attention integration ──────────────────────────
-            # IG_TOROIDAL_ATTENTION=1 replaces flash_attn/sdpa with
-            # FFT-based circulant convolution on Z_N or Z_m×Z_n.
-            # Config: IG_TOROIDAL_SIGMA=0.15 (kernel width), 
-            #         IG_TOROIDAL_MODE=1d|2d (geometry)
-            if os.getenv("IG_TOROIDAL_ATTENTION", "").strip() not in ("", "0"):
-                _sigma = float(os.getenv("IG_TOROIDAL_SIGMA", "0.15"))
-                _mode = os.getenv("IG_TOROIDAL_MODE", "1d").strip()
-                _layers_s = os.getenv("IG_TOROIDAL_LAYERS", "").strip()
-                _layers = None
-                if _layers_s:
-                    _layers = [int(x.strip()) for x in _layers_s.split(",") if x.strip().isdigit()]
-                try:
-                    from framework.ig_toroidal_attention import patch_with_toroidal
-                    patch_with_toroidal(mdl, sigma=_sigma, mode=_mode, 
-                                       layers_to_patch=_layers)
-                    logger.info(
-                        f"Toroidal attention active (σ={_sigma}, {_mode}"
-                        + (f", layers={_layers}" if _layers else ", all layers")
-                        + ")"
-                    )
-                except Exception as _tor_err:
-                    logger.warning(
-                        f"Toroidal attention patch failed ({_tor_err}); "
-                        f"using default attention ({_attn_impl()})."
-                    )
-            # ─────────────────────────────────────────────────────────
             LocalProvider._tokenizer = tok
             LocalProvider._model = mdl
             LocalProvider._loaded_path = self.model_path

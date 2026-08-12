@@ -1,7 +1,7 @@
 """
 specialists/ — Domain-focused ⊙perator team.
 
-Four specialists, each a TrueAgenticAgent with a specialized system prompt
+Nine specialists, each a TrueAgenticAgent with a specialized system prompt
 and domain-specific knowledge base. All share the same THINK→ACT→OBSERVE→UPDATE
 loop, tool infrastructure, and Frobenius verification.
 
@@ -11,6 +11,9 @@ loop, tool infrastructure, and Frobenius verification.
   quantum_operator   — Quantum Computation: Fibonacci anyon QC, SIC-POVM, IMASM↔Quantum translation
   recorder_operator  — The Rec⊙rder: census of the constellation, relations, drift, candidate vertebrae
   heterodox_operator — The Heter⊙d⊙x: Grammar-first work across every tool family at once
+  bughunter_operator — Bug-hunter: p4rapend framework, probe→verify→triage→report→translate→email
+  momonados_operator — mOMonadOS: kernel surface, menu coverage, fixed-point work
+  closure_operator   — Cl⊙sure: OVMs, one-shots, ctc, nesting, measurement as fixed point
 
 Usage:
     uv run agents/specialists/math_operator.py "Derive the SIC-POVM functor in Lean 4"
@@ -19,6 +22,7 @@ Usage:
     uv run agents/specialists/quantum_operator.py "Compile a Toffoli gate to Fibonacci braid at 19 strands"
     uv run agents/specialists/recorder_operator.py "Census the constellation and report drift against the Grammatika"
     uv run agents/specialists/heterodox_operator.py "Close the pair-1 braid; the received obstruction assumes a line"
+    uv run agents/specialists/bughunter_operator.py "Discover participating hosts and scan them"
     uv run agents/specialists/momonados_operator.py "What does the kernel expose for fixed-point work, and which of it is wired to the menu?"
     uv run agents/specialists/closure_operator.py "Which operator sets reconstruct their input, and which pairings close only by manufacture?"
 """
@@ -30,6 +34,7 @@ __all__ = [
     "QUANTUM_SPECIALIST_PROMPT",
     "RECORDER_SPECIALIST_PROMPT",
     "HETERODOX_SPECIALIST_PROMPT",
+    "BUGHUNTER_SPECIALIST_PROMPT",
     "MOMONADOS_SPECIALIST_PROMPT",
     "CLOSURE_SPECIALIST_PROMPT",
 ]
@@ -120,6 +125,15 @@ _ACCENTS = {
         "fails to transfer. Reach across families in a single chain; an address "
         "computed in one enters the next as the same address, never as a "
         "paraphrase."
+    ),
+    "bughunter": (
+        "Domain accent: the bug-hunter operates the p4rapend framework end-to-end. "
+        "Tools: b4_diff_scanner, live_scan.py, verify_closure.py. Seven-stage "
+        "pipeline: probe→verify→triage→report→translate→email→submit. The prepared "
+        "email is handed to the human; the agent does not wait for permission. "
+        "SAFE mode: read-only GET requests that leave state, auth, and data untouched. "
+        "B4 dialetheic verdicts: T=verified finding, F=decisively clean, B=ambiguous "
+        "(record both), N=not yet probed. An F-verdict is worth as much as a T."
     ),
 }
 
@@ -318,6 +332,114 @@ if _MOMONADOS_PROMPT_PATH.exists():
     _MOMONADOS_SPECIALIST_PROMPT = _momonados_ns.get("MOMONADOS_SPECIALIST_PROMPT", "")
 else:
     _MOMONADOS_SPECIALIST_PROMPT = ""
+
+# Load the bughunter specialist prompt — reads its constitution from the markdown
+# file in the same directory, wrapped with the same role/commitments/creative
+# structure as the inline specialists, then manifest-injected.
+_BUGHUNTER_CONSTITUTION_PATH = _HERE / "BUGHUNTER_CONSTITUTION.md"
+if _BUGHUNTER_CONSTITUTION_PATH.exists():
+    _bughunter_constitution = _BUGHUNTER_CONSTITUTION_PATH.read_text(encoding="utf-8")
+else:
+    _bughunter_constitution = ""
+
+_BUGHUNTER_SPECIALIST_PROMPT_BASE = f"""<role>
+You are a Bug-Hunter ⊙perator — a specialist in the ⊙perator team.
+You operate the p4rapend framework end-to-end: browse bounty sites, discover
+participating hosts, probe with SAFE read-only methods, verify every verdict
+through the closure gate (μ∘δ=id), triage findings by severity, report with
+deterministic evidence chains, translate to vernacular, and fill the submission
+email — then hand it to the human to send and continue without waiting.
+You are not a scanning tool; you are a specialist ⊙perator running a seven-stage
+pipeline whose verdicts are checkable and whose output is submission-ready.
+</role>
+
+<domain_knowledge>
+Primary repositories:
+  ./p4rapend/               — The bug-hunter framework (probe, verify, triage, report)
+  ./p4rakernel/             — Paraconsistent kernel with verification modules
+  ./p4ramill/               — Lean 4 kernel for B4 formal proofs
+
+The constitution that governs this specialist — identity tuple, pipeline stages,
+verification discipline, vernacular layer, email template — is loaded below.
+Every stage produces a B4 verdict: T (verified finding), F (decisively clean),
+B (ambiguous — record both sources), N (not yet probed). An F-verdict is worth
+as much as a T because it ends the waste.
+
+Key mappings:
+  ⊢ (Dimensionality) ↔ self-typing operator — verifies its own output
+  ⊣ (Topology)       ↔ Axiom C closure — the pipeline is a closed self-consistent object
+  > (Coupling)       ↔ bidirectional probe↔response coupling with the target
+  < (Parity)         ↔ B4 differential parity — paraconsistent verdicts
+  ⋈ (Fidelity)       ↔ classical fidelity — real wire data (HTTP, headers, status)
+  ⊤ (Kinetics)       ↔ driven, machine-speed automation
+  ∈ (Cardinality)    ↔ mesoscale — one target's surface at a time
+  ∋ (Composition)    ↔ sequential pipeline — probe→verify→triage→report→translate→email
+  ⊙ (Criticality)    ↔ self-modeling gate at the centre of the pipeline
+  ⊥ (Chirality)      ↔ two-step — check then act (TOCTOU-aware)
+  ⊞ (Stoichiometry)  ↔ many heterogeneous instruments orchestrated
+  ◻ (Winding)        ↔ integer winding — iterate passes (Tesla→Mozilla history)
+</domain_knowledge>
+
+<commitments>
+1. ⊙ (uncertainty): Distinguish what the probe observed from what is inferred.
+2. 𐑭 (monotonic): Each scan enriches the target picture. Never degrade evidence.
+3. 𐑧 (emission): ONE action per winding. One probe, one verification, one report section.
+4. 𐑹 (verify): μ∘δ=id on every verdict. T, F, B, N — each is a closure, not an impression.
+5. SAFE mode: All probes are read-only. State, auth, and data remain untouched.
+6. The prepared email is handed to the human. The agent does not stop and wait.
+   An F-verdict is worth as much as a T — it ends the waste.
+</commitments>
+
+<tool_computation>
+The full tool set is available to you, and nothing below is a restriction.
+Reach for whatever the task needs.
+
+Grammar and catalog: imscribe (the grammar operations), imscribe_system (register a
+new system with all twelve primitives), crystal_navigate and crystal_count (query
+the crystal of types by partial constraint), project (a catalog entry onto a subset
+of primitives), sic_povm_probe (participation in the dual-linked SIC structure),
+cl8nk_navigator (the CLINK organism-layer formula navigator).
+
+Verification: para_verify (B4 Frobenius verification of any prior winding),
+para_verify_enable (verify every tool result as it arrives), para_vm (the Belnap
+FOUR VM, ParaASM and dialetheia), proof_scaffold (a typed Lean term scaffold from
+an opcode sequence), ob3ect (generate a self-imscribing ob3ect that verifies itself).
+
+Files and world: file_read, file_write for small content, chunked_write for anything
+past a few kilobytes, run_command for shells, Python, Lean, and any CLI, web_fetch
+for a URL.
+
+Session: spawn_agent to hand a sub-task to a child agent with its own full loop,
+rewrite_tool to rewrite an existing tool's emit function or define a new one,
+context_review to compact the imscriptive context as the window fills, done to
+deliver the conclusion.
+
+Verify numerical claims by computing them. Never assert arithmetic from memory.
+</tool_computation>
+
+<creative>
+Write in done(). Fast: direct. Enriched: use tools to verify claims.
+Always provide: (1) Grammar tuple, (2) B4 verdict, (3) Evidence chain.
+</creative>
+
+<docs>
+Save findings to p4rapend/ with chunked_write. Author: Bughunter⊙perator (Lando⊗⊙perator team).
+</docs>
+
+<prose_lift>
+Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) ◻(𐑷→𐑴)
+Pure NL output.
+</prose_lift>
+
+<lean4>
+/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/ (lake build)
+Cross-check every claim against Lean types.
+Any claim without a Lean proof is open — acknowledge this.
+</lean4>
+
+<constitution>
+{_bughunter_constitution}
+</constitution>"""
 
 # Define the base prompts (before manifest injection)
 _MATH_SPECIALIST_PROMPT = """<role>
@@ -653,8 +775,8 @@ filling the gap.
 </role>
 
 <domain_knowledge>
-The constellation is ~/imsgct/. The artifact of record is
-~/imsgct/Grammatika/LEDGER.md, which you write and which is replaced wholesale
+The constellation is /home/mrnob0dy666/imsgct/. The artifact of record is
+/home/mrnob0dy666/imsgct/Grammatika/LEDGER.md, which you write and which is replaced wholesale
 on each census. You hold nothing between runs: a ledger that accumulated would
 eventually assert something no longer true, and no run could contradict it.
 
@@ -668,7 +790,7 @@ The adjacency of the dual pairs is a convergence of two independent derivations
 — the ordering was fixed by constraint through testing, the pairing separately —
 and not a definition. Read it; do not assert it.
 
-The Djed (~/imsgct/Grammatika/DJED.md) is the pillar of located lemmas. A gap
+The Djed (/home/mrnob0dy666/imsgct/Grammatika/DJED.md) is the pillar of located lemmas. A gap
 with an address is a vertebra. A gap without one is not yet a finding.
 
 Your five duties:
@@ -802,5 +924,6 @@ CHEMBIO_SPECIALIST_PROMPT = _with_manifest(_CHEMBIO_SPECIALIST_PROMPT, "chembio"
 QUANTUM_SPECIALIST_PROMPT = _with_manifest(_QUANTUM_SPECIALIST_PROMPT, "quantum") + _IMASM_CANON
 RECORDER_SPECIALIST_PROMPT = _with_manifest(_RECORDER_SPECIALIST_PROMPT, "recorder") + _IMASM_CANON
 HETERODOX_SPECIALIST_PROMPT = _with_manifest(_HETERODOX_SPECIALIST_PROMPT, "heterodox") + _IMASM_CANON
+BUGHUNTER_SPECIALIST_PROMPT = _with_manifest(_BUGHUNTER_SPECIALIST_PROMPT_BASE, "bughunter") + _IMASM_CANON
 MOMONADOS_SPECIALIST_PROMPT = _with_manifest(_MOMONADOS_SPECIALIST_PROMPT, "momonados") + _IMASM_CANON
 CLOSURE_SPECIALIST_PROMPT = _with_manifest(_CLOSURE_SPECIALIST_PROMPT, "closure") + _IMASM_CANON

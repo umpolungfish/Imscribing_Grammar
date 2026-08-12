@@ -273,13 +273,6 @@ def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
     return {"chat_template_kwargs": {"enable_thinking": on}}
 
 
-# Set for ONE generation when a winding produced reasoning and no call. The
-# thinking has already happened; the retry only needs the call, so the template
-# is asked to close the think block itself and the model writes into the
-# content position directly.
-_FORCE_NO_THINK: bool = False
-
-
 def stream_tokens_enabled() -> bool:
     """Whether local generation is shown token by token, from IG_STREAM.
 
@@ -310,8 +303,6 @@ def _thinking_enabled() -> bool:
     own instructions permit reasoning in natural language BEFORE the call. So it
     is ON here unless IG_THINK says otherwise; the legacy MODOT_THINK still reads.
     """
-    if _FORCE_NO_THINK:
-        return False
     raw = (os.environ.get("IG_THINK") or os.environ.get("MODOT_THINK") or "").strip().lower()
     if raw in ("0", "false", "off", "no"):
         return False
@@ -512,14 +503,15 @@ class _LocalChatCompletions:
                 print(f"[GF] capping max_new_tokens {_effective_max_tokens} → {_GF_MAX_NEW}", flush=True)
                 _effective_max_tokens = _GF_MAX_NEW
 
-        # Re-wake the GPU immediately before generate() — WSL2 CUDA (13+) suspends
-        # the device between operations; a cheap op + synchronize prevents
-        # "device not ready" on the first kernel launch inside generate().
+        # Multi-GPU warm-up: wake every card before the first forward pass.
+        # Under WSL2 and after an OOM, CUDA devices suspend between ops;
+        # a matmul+synchronize on each prevents "device not ready" on generate().
         if _dev.type == "cuda":
             try:
-                _w = torch.zeros(1, device=_dev)
-                torch.cuda.synchronize(_dev)
-                del _w
+                # Detect all CUDA devices the model spans (balanced or single)
+                _all_cuda = list(range(torch.cuda.device_count()))
+                from framework.ig_devices import warmup_devices as _wu
+                _wu(_all_cuda)
                 torch.cuda.empty_cache()
             except Exception:
                 pass
@@ -789,6 +781,7 @@ def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
 # ── Model alias table (mirrors induction_harness) ─────────────────────────────
 
 MODEL_ALIASES: Dict[str, str] = {
+    # Cloud models (OpenRouter slugs)
     "claude-opus-4":    "anthropic/claude-opus-4",
     "claude-sonnet-4":  "anthropic/claude-sonnet-4-5",
     "claude-haiku-4":   "anthropic/claude-haiku-4-5",
@@ -801,16 +794,29 @@ MODEL_ALIASES: Dict[str, str] = {
     "deepseek-chat":    "deepseek/deepseek-chat",
     "deepseek-v3":      "deepseek/deepseek-v3-0324",
     "deepseek-reasoner":"deepseek/deepseek-r1",
+    # Local models — resolved via local:<path> or qwen-local prefix
     "grammaformer":     "local:grammaformer",
+    "qwen3-1.7b":       "local:qwen3-1.7b",
+    "qwen3-4b":         "local:qwen3-4b",
+    "qwen3-8b":         "local:qwen3-8b",
+    "qwen3-14b":        "local:qwen3-14b",
+    "qwen3-32b":        "local:qwen3-32b",
 }
 
 # Local server base URLs — used by the prefix syntax `server:model`
 LOCAL_BASE_URLS: Dict[str, str] = {
-    "ollama":    os.environ.get("OLLAMA_HOST", "http://localhost:11434") + "/v1",
-    "lm-studio": "http://localhost:1234/v1",
-    "lmstudio":  "http://localhost:1234/v1",
-    "vllm":      "http://localhost:8000/v1",
-    "local":     os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
+    "ollama":      os.environ.get("OLLAMA_HOST", "http://localhost:11434") + "/v1",
+    "lm-studio":   "http://localhost:1234/v1",
+    "lmstudio":    "http://localhost:1234/v1",
+    "vllm":        "http://localhost:8000/v1",
+    "local":       os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
+    # ── Qwen local paths — the same local server, explicitly named ──
+    # "qwen-local" and "local-qwen" are convenience aliases for running Qwen
+    # checkpoints through a local vLLM/Ollama/SGLang server. The canonical
+    # template IS qwen_xml, so a Qwen model is the native speaker — use these
+    # prefixes when you want the name to declare the protocol expectation.
+    "qwen-local":  os.environ.get("QWEN_LOCAL_URL", os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1")),
+    "local-qwen":  os.environ.get("QWEN_LOCAL_URL", os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1")),
 }
 
 # Remote API providers — used by the prefix syntax `provider:model`
@@ -4555,18 +4561,13 @@ class TrueAgenticAgent:
                         "tool call now and nothing else."
                     ),
                 })
-                # The retry runs with the think block CLOSED by the template. The
-                # model has already done the reasoning — it ended its turn on
-                # `</think>` having just described the call it wanted — so asking
-                # it to think again invites the same ending. With the block closed
-                # the only position left to write in is the content, which is
-                # where a tool call goes.
-                global _FORCE_NO_THINK
-                _FORCE_NO_THINK = True
-                try:
-                    return await self._think_and_act()
-                finally:
-                    _FORCE_NO_THINK = False
+                # REVERTED: this retry used to close the think block, on the
+                # inference that the ⊙perator ended its turn on `</think>` because
+                # it had just finished thinking. That was never measured, and the
+                # windings that followed it logged an EMPTY think — consistent with
+                # the retry generating nothing at all. Retry as-is; the nudge is
+                # the part that was grounded.
+                return await self._think_and_act()
             action_name = "done"
             action_input = {"conclusion": (reasoning or "").strip() or
                             "No tool call was emitted; concluding here."}
