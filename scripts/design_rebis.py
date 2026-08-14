@@ -16,7 +16,7 @@ from space_search.primitives import ORDINALS, WEIGHTS, resolve_ordinal_key
 
 PNAMES = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
 FIELD_TO_ORD = {
-    "D":"⊢", "T":"⊣", "R":">", "P":"<", "F":"⋈",
+    "D":"⊢", "T":"⊣", "R":"≻", "P":"≺", "F":"⋈",
     "K":"⊤", "G":"∈", "Gm":"∋", "Ph":"⊙", "H":"⊥",
     "S":"⊞", "W":"◻"
 }
@@ -74,7 +74,7 @@ print(f"Rebis tuple: {rebis_t}")
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
 # Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻
-CAT_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+CAT_KEYS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', '∋^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
 DESIGNS = [

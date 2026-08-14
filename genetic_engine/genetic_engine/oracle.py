@@ -46,13 +46,13 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
         "𐑶": 3,   # boxtimes — irreducible product
         "𐑸": 4,   # odot — self-referential closure
     },
-    ">": {  # Relational mode
+    "≻": {  # Relational mode
         "𐑩": 0,   # super — supervenience
         "𐑑": 1,   # cat — functorial
         "𐑽": 2,   # dagger — adjoint pair (one-way)
         "𐑾": 3,   # lr — bidirectional feedback
     },
-    "<": {  # Parity / Symmetry
+    "≺": {  # Parity / Symmetry
         "𐑗": 0,   # asym — none
         "𐑿": 1,   # psi — quantum superposition
         "𐑬": 2,   # pm — one Z2 symmetry
@@ -108,10 +108,10 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
     },
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 PRIMITIVE_NAMES = {
-    "⊢": "Dimensionality", "⊣": "Topology", ">": "Relational Mode",
-    "<": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
+    "⊢": "Dimensionality", "⊣": "Topology", "≻": "Relational Mode",
+    "≺": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
     "∈": "Interaction Scope", "∋": "Interaction Grammar", "⊙": "Criticality",
     "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Winding/Protection",
 }
@@ -153,7 +153,7 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # Helper to build tuple dict
 def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻) -> Dict[str, str]:
     return {
-        "⊢": ⊢, "⊣": ⊣, ">": >, "<": <, "⋈": ⋈, "⊤": ⊤,
+        "⊢": ⊢, "⊣": ⊣, "≻": >, "≺": <, "⋈": ⋈, "⊤": ⊤,
         "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": ⊥, "⊞": ⊞, "◻": ◻,
     }
 

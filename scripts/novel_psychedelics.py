@@ -36,27 +36,27 @@ from psychedelic_navigator import (
 
 NOVEL_COMPOUNDS: Dict[str, Dict[str, str]] = {
     "verticullum": {
-        "⊢": "𐑦", "⊣": "𐑥", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊢": "𐑦", "⊣": "𐑥", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑫",
         "⊞": "𐑳", "◻": "𐑟",
     },
     "chimerium": {
-        "⊢": "𐑦", "⊣": "𐑸", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑵", "⊙": "𐑣", "⊥": "𐑫",
         "⊞": "𐑳", "◻": "𐑭",
     },
     "apertix": {
-        "⊢": "𐑦", "⊣": "𐑥", ">": "𐑽", "<": "𐑬", "⋈": "𐑐",
+        "⊢": "𐑦", "⊣": "𐑥", "≻": "𐑽", "≺": "𐑬", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑖",
         "⊞": "𐑳", "◻": "𐑴",
     },
     "retiarius": {
-        "⊢": "𐑼", "⊣": "𐑡", ">": "𐑾", "<": "𐑿", "⋈": "𐑞",
+        "⊢": "𐑼", "⊣": "𐑡", "≻": "𐑾", "≺": "𐑿", "⋈": "𐑞",
         "⊤": "𐑺", "∈": "𐑚", "∋": "𐑜", "⊙": "𐑮", "⊥": "𐑒",
         "⊞": "𐑕", "◻": "𐑷",
     },
     "praxeum": {
-        "⊢": "𐑦", "⊣": "𐑶", ">": "𐑾", "<": "𐑹", "⋈": "𐑐",
+        "⊢": "𐑦", "⊣": "𐑶", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑻", "⊥": "𐑫",
         "⊞": "𐑳", "◻": "𐑭",
     },
@@ -368,7 +368,7 @@ def adjoint_steer(compound_key: str, direction_primitive: str, target_value: str
 
     Args:
         compound_key: Base compound.
-        direction_primitive: Which primitive to steer (e.g., "⊙", "⊥", "<").
+        direction_primitive: Which primitive to steer (e.g., "⊙", "⊥", "≺").
         target_value: The target glyph for that primitive.
     """
     compounds = all_compounds()
@@ -395,7 +395,7 @@ def adjoint_steer(compound_key: str, direction_primitive: str, target_value: str
     modified = dict(base)
     modified[direction_primitive] = target_value
     # Set coupling to adjoint to indicate directed steering
-    modified[">"] = "𐑽"
+    modified["≻"] = "𐑽"
 
     universes = get_psychedelic_universes()
     base_access = set()
@@ -622,8 +622,8 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['<']}  ◻={ctuple['◻']}")
-        lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['>']}{ctuple['<']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['≺']}  ◻={ctuple['◻']}")
+        lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['≻']}{ctuple['≺']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
         lines.append("")
@@ -632,7 +632,7 @@ def show_novel_compounds():
     lines.append("-" * 78)
     lines.append("  Structural Deltas from Baselines:")
     lines.append("")
-    lines.append(f"  {'Compound':<24} {'⊙':>4} {'⊥':>4} {'<':>4} {'◻':>4}  Distinguishing Feature")
+    lines.append(f"  {'Compound':<24} {'⊙':>4} {'⊥':>4} {'≺':>4} {'◻':>4}  Distinguishing Feature")
     lines.append(f"  {'-'*24} {'-'*4} {'-'*4} {'-'*4} {'-'*4}  {'-'*28}")
     lines.append(f"  {'Verticullum':<24} {'⊙':>4} {'𐑫':>4} {'𐑹':>4} {'𐑟':>4}  EP-Lever: non-Abelian winding + ⊙")
     lines.append(f"  {'Chimerium':<24} {'𐑣':>4} {'𐑫':>4} {'𐑹':>4} {'𐑭':>4}  Supercritical catalyst")

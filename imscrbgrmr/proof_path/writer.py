@@ -97,8 +97,8 @@ _OP_TACTIC: dict[str, str] = {
 _PRIM_TACTIC: dict[str, str] = {
     "⊢": "have h_dim : ComplexDim X = _ := by sorry",
     "⊣": "have h_top : TopologicallyComplete X := by sorry",
-    ">": "have h_rel : ∃ (Z : AlgebraicCycle X p), cycleClass X p Z = α := by sorry",
-    "<": "have h_sym : Symmetric (pairingForm X) := by sorry",
+    "≻": "have h_rel : ∃ (Z : AlgebraicCycle X p), cycleClass X p Z = α := by sorry",
+    "≺": "have h_sym : Symmetric (pairingForm X) := by sorry",
     "⋈": "have h_coh : CoherentSheaves X := by sorry",
     "⊤": "have h_kin : Equidistributed (flow X) := by sorry",
     "∈": "have h_scope : ∀ x ∈ domain X, property x := by sorry",

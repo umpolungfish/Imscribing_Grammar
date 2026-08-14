@@ -28,12 +28,12 @@ def build_data():
         v = ICO_VERTS[vi]
         primitives[prim] = {
             'pos': [round(c * 6.5 * WS, 4) for c in v],
-            'empty': prim in ('Omega', 'R', 'Gamma', 'f') or prim in ('Ŋ', '>', '∈', '⋈'),
+            'empty': prim in ('Omega', 'R', 'Gamma', 'f') or prim in ('Ŋ', '≻', '∈', '⋈'),
         }
     # Correct empty check using actual prim names
     EMPTY_PRIMS = {'Omega', 'R', 'Gamma', 'f'}
     for prim in primitives:
-        primitives[prim]['empty'] = (prim in ('◻', '>', '∈', '⋈'))
+        primitives[prim]['empty'] = (prim in ('◻', '≻', '∈', '⋈'))
     return {
         'elements': elements,
         'primitives': primitives,

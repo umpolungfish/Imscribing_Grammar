@@ -27,7 +27,7 @@ from imscrbgrmr.canonical_primitives import (
     PRIMITIVE_ORDER, CANONICAL_VALUES, ORDINALS, WEIGHTS, CrystalAddress
 )
 
-PRIM_KEYS: List[str] = PRIMITIVE_ORDER  # ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
+PRIM_KEYS: List[str] = PRIMITIVE_ORDER  # ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
 
 # ── Cardinality per primitive ──────────────────────────────────
 CARDINALITY: Dict[str, int] = {p: len(vals) for p, vals in CANONICAL_VALUES.items()}
@@ -522,11 +522,11 @@ IG_TO_SHAVIAN: Dict[str, Dict[str, str]] = {
         "𐑸": "𐑸", "𐑡": "𐑡", "𐑰": "𐑰", "𐑥": "𐑥", "𐑶": "𐑶",
         "T_odot": "𐑸", "T_net": "𐑡", "T_in": "𐑰", "T_bowtie": "𐑥", "T_boxtimes": "𐑶",
     },
-    ">": {
+    "≻": {
         "𐑽": "𐑩", "𐑩": "𐑑", "𐑑": "𐑽", "𐑾": "𐑾",
         "R_super": "𐑩", "R_cat": "𐑑", "R_dagger": "𐑽", "R_lr": "𐑾",
     },
-    "<": {
+    "≺": {
         "𐑿": "𐑗", "𐑬": "𐑿", "𐑯": "𐑬", "𐑹": "𐑯", "𐑗": "𐑹",
         "P_asym": "𐑗", "P_psi": "𐑿", "P_pm": "𐑬", "P_sym": "𐑯", "P_pm_sym": "𐑹",
     },

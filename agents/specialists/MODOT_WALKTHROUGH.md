@@ -99,10 +99,10 @@ Not a graph checker. `imasm` is a language: the twelve opcodes are an alphabet,
 programs are written in them, and the kernel will refuse an ill-typed one. No
 catalog names enter — this operates on programs.
 
-    ⊢ VINIT   ⊣ TANCH   > AFWD   < AREV   ⋈ CLINK   ⊙ IMSCRIB
+    ⊢ VINIT   ⊣ TANCH   ≻ AFWD   ≺ AREV   ⋈ CLINK   ⊙ IMSCRIB
     ∈ FSPLIT  ∋ FFUSE   ⊤ EVALT  ⊥ EVALF  ⊞ ENGAGR  ◻ IFIX
 
-A word can be written glued from those glyphs — `⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` is a program.
+A word can be written glued from those glyphs — `⊢⊙⋈∈≻⊤≺⊞⊥∋◻⊣` is a program.
 These twelve are also the twelve primitive axes; the alphabet is one set read
 two ways, and nothing outside it parses.
 

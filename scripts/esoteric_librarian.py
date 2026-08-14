@@ -35,7 +35,7 @@ from sounds import FIELD_ORDER, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
 # We accept BOTH when reading, but normalize to ⊙ for internal tuple storage.
 CRIT_LEGACY = '⊙'    # used in all catalog .json files
 CRIT_MODERN = '⊙'    # used in sounds.py FIELD_ORDER
-_FIELDS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
+_FIELDS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
 
 # ── criticality key normalization ─────────────────────────────────────────────
 def _get_crit(entry):
@@ -118,8 +118,8 @@ def hamming(a, b):
 _FIELD_LABELS = {
     '⊢': 'D  Dimensionality',
     '⊣': 'T  Topology      ',
-    '>': 'R  Relational    ',
-    '<': 'P  Polarity      ',
+    '≻': 'R  Relational    ',
+    '≺': 'P  Polarity      ',
     '⋈': 'F  Fidelity      ',
     '⊤': 'K  Kinetics      ',
     '∈': 'G  Scope         ',
@@ -251,8 +251,8 @@ def cmd_validate(args):
     valid_vals = {
         '⊢': {'𐑛', '𐑨', '𐑼', '𐑦'},
         '⊣': {'𐑡', '𐑰', '𐑥', '𐑶', '𐑸'},
-        '>': {'𐑩', '𐑑', '𐑽', '𐑾'},
-        '<': {'𐑗', '𐑿', '𐑬', '𐑯', '𐑹'},
+        '≻': {'𐑩', '𐑑', '𐑽', '𐑾'},
+        '≺': {'𐑗', '𐑿', '𐑬', '𐑯', '𐑹'},
         '⋈': {'⋈^ì', '⋈^ð', '⋈^ż'},
         '⊤': {'⊤^-', '⊤^W', '⊤^@', '⊤^Ù', '⊤^λ'},
         '∈': {'𐑚', '𐑔', '𐑲'},
@@ -497,7 +497,7 @@ def entry(num, title, desc, text,
         "title": title,
         "description": desc,
         "text": text,
-        "⊢": D, "⊣": T, ">": R, "<": P, "⋈": F,
+        "⊢": D, "⊣": T, "≻": R, "≺": P, "⋈": F,
         "⊤": K, "∈": G, "∋": Gm, PHI: C,
         "⊥": H, "⊞": S, "◻": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
@@ -694,7 +694,7 @@ def cmd_add(args):
     if len(raw) != 12:
         sys.exit(f"Error: --tuple requires exactly 12 glyph IDs, got {len(raw)}")
 
-    field_keys = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
+    field_keys = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
     entry = {}
     entry['name'] = args.name
     if args.number is not None:

@@ -143,7 +143,7 @@ OPERATIONS: list[Op] = [
             "Every holomorphic line bundle L maps to c₁(L) ∈ H²(X, Z) ∩ H^{1,1}."
         ),
         transitions={
-            ">": {_R_aff: _R_smooth, _R_trill: _R_smooth},
+            "≻": {_R_aff: _R_smooth, _R_trill: _R_smooth},
             "∋": {_G_alt: _G_sub},
         },
         direction="bridge",
@@ -172,8 +172,8 @@ OPERATIONS: list[Op] = [
             "This imposes strong symmetry constraints on the cohomology ring."
         ),
         transitions={
-            "<": {_P_neut: _P_click, _P_weak: _P_click},
-            ">": {_R_aff: _R_fall},
+            "≺": {_P_neut: _P_click, _P_weak: _P_click},
+            "≻": {_R_aff: _R_fall},
         },
         direction="transform",
     ),
@@ -187,7 +187,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊥": {_H_graded: _H_base, _H_graded: _H_base},
-            "<": {_P_neut: _P_strong},
+            "≺": {_P_neut: _P_strong},
         },
         direction="transform",
     ),
@@ -201,8 +201,8 @@ OPERATIONS: list[Op] = [
             "Algebraic cycles of codimension k are dual to cycles of codimension n-k."
         ),
         transitions={
-            "<": {_P_neut: _P_strong, _P_weak: _P_dbl},
-            ">": {_R_aff: _R_trill},
+            "≺": {_P_neut: _P_strong, _P_weak: _P_dbl},
+            "≻": {_R_aff: _R_trill},
         },
         direction="dualize",
     ),
@@ -246,7 +246,7 @@ OPERATIONS: list[Op] = [
             "Holomorphic line bundles = algebraic line bundles on projective varieties."
         ),
         transitions={
-            ">": {_R_aff: _R_smooth, _R_smooth: _R_aff},
+            "≻": {_R_aff: _R_smooth, _R_smooth: _R_aff},
             "∋": {_G_alt: _G_sub, _G_broad: _G_sub},
         },
         direction="bridge",
@@ -261,8 +261,8 @@ OPERATIONS: list[Op] = [
             "The Hodge conjecture asks this map to be surjective onto Hodge classes ⊗ Q."
         ),
         transitions={
-            ">": {_R_smooth: _R_aff, _R_trill: _R_aff},
-            "<": {_P_neut: _P_click},
+            "≻": {_R_smooth: _R_aff, _R_trill: _R_aff},
+            "≺": {_P_neut: _P_click},
         },
         direction="bridge",
     ),
@@ -276,7 +276,7 @@ OPERATIONS: list[Op] = [
             "Hodge theory beyond smooth proper varieties."
         ),
         transitions={
-            "<": {_P_neut: _P_dbl, _P_weak: _P_dbl},
+            "≺": {_P_neut: _P_dbl, _P_weak: _P_dbl},
             "∋": {_G_sub: _G_alt, _G_and: _G_alt},
         },
         direction="generalize",
@@ -292,7 +292,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊥": {_H_base: _H_iter},
-            "<": {_P_neut: _P_strong},
+            "≺": {_P_neut: _P_strong},
         },
         direction="transform",
     ),
@@ -306,7 +306,7 @@ OPERATIONS: list[Op] = [
             "Symmetry group shrinks the scope and collapses the interaction grammar."
         ),
         transitions={
-            "<": {_P_neut: _P_weak, _P_strong: _P_click},
+            "≺": {_P_neut: _P_weak, _P_strong: _P_click},
             "∈": {_S_full: _S_mid},
             "∋": {_G_alt: _G_and},
         },
@@ -367,7 +367,7 @@ OPERATIONS: list[Op] = [
             "the Galois representation of E to the harmonic analysis of modular forms."
         ),
         transitions={
-            ">": {_R_aff: _R_smooth},
+            "≻": {_R_aff: _R_smooth},
             "◻": {_W_der: _W_triv},
             "∋": {_G_and: _G_sub},
         },
@@ -458,7 +458,7 @@ OPERATIONS: list[Op] = [
             "Constrains the stoichiometry of algebraic cycles."
         ),
         transitions={
-            "<": {_P_neut: _P_click, _P_weak: _P_click},
+            "≺": {_P_neut: _P_click, _P_weak: _P_click},
             "⊞": {_STO_mix: _STO_nn},
         },
         direction="constrain",

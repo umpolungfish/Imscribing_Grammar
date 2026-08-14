@@ -45,13 +45,13 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # ── 1. Primitive ordinals (canonical v0.5.1) ────────────────────────────────
 
-PRIMITIVES = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVES = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 ORDINALS: Dict[str, Dict[str, float]] = {
     "⊢":     {"𐑛": 0, "𐑨": 1, "𐑼": 2, "𐑦": 3},
     "⊣":     {"𐑡": 0, "𐑰": 1, "𐑥": 2, "𐑶": 3, "𐑸": 4},
-    ">":     {"𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3},
-    "<":     {"𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4},
+    "≻":     {"𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3},
+    "≺":     {"𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4},
     "⋈":     {"𐑱": 0, "𐑞": 1, "𐑐": 2},
     "⊤":     {"𐑘": 0, "𐑤": 1, "𐑧": 2, "𐑪": 3, "𐑺": 4},
     "∈":     {"𐑚": 0, "𐑔": 1, "𐑲": 2},
@@ -63,7 +63,7 @@ ORDINALS: Dict[str, Dict[str, float]] = {
 }
 
 WEIGHTS = {
-    "⊢": 1.0, "⊣": 1.0, ">": 1.0, "<": 1.2,
+    "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.2,
     "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
     "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
 }
@@ -82,9 +82,9 @@ _PRIM_ALIASES: Dict[str, Dict[str, str]] = {
     "⊣": {
         "𐑶": "𐑶",    # canonical catalog name → ZFC navigator name
     },
-    ">": {
+    "≻": {
     },
-    "<": {
+    "≺": {
         "𐑯":            "𐑹",
     },
     "⊞": {
@@ -241,7 +241,7 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
         # Residual collapse: 𐑸 → 𐑰 (separation) in the encoder.
         "𐑸":     ["REFL", "VA", "VF", "AND", "HOLO", "VX", "VA"],
     },
-    ">": {
+    "≻": {
         # Output restricts input — superset containment (ZFC ∈)
         "𐑩":    ["FORALL", "VY", "LPAREN",
                        "VY", "IN", "VX", "IMPLIES", "VY", "IN", "VA", "RPAREN"],
@@ -254,7 +254,7 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
         # Left-right directional — Θ-link structure
         "𐑾":       ["THETA", "VX", "VY", "AND", "NOT", "THETA", "VY", "VX"],
     },
-    "<": {
+    "≺": {
         "𐑗":     ["EXISTS", "VX", "NOT", "VX", "EQ", "VX"],
         "𐑿":      ["EXISTS", "VY", "LPAREN",
                        "VY", "IN", "VX", "AND", "NOT", "VY", "EQ", "VX", "RPAREN"],
@@ -833,8 +833,8 @@ IUG_TUPLE = {
     "description": "Inter-Universal Teichmüller Theory (Mochizuki)",
     "⊢":     "𐑦",
     "⊣":     "𐑸",
-    ">":     "𐑾",
-    "<":     "𐑹",
+    "≻":     "𐑾",
+    "≺":     "𐑹",
     "⋈":     "𐑐",
     "⊤":     "𐑧",
     "∈":     "𐑲",
@@ -851,8 +851,8 @@ GRAMMAR_TUPLE = {
     "description": "Imscribing Grammar grammar encoding itself (O_∞, address 6734591)",
     "⊢":     "𐑦",
     "⊣":     "𐑸",
-    ">":     "𐑽",
-    "<":     "𐑹",
+    "≻":     "𐑽",
+    "≺":     "𐑹",
     "⋈":     "𐑐",
     "⊤":     "𐑧",
     "∈":     "𐑲",
@@ -869,8 +869,8 @@ ZFC_TUPLE = {
     "description": "Zermelo-Fraenkel set theory with Choice",
     "⊢":     "𐑨",
     "⊣":     "𐑰",
-    ">":     "𐑩",
-    "<":     "𐑯",
+    "≻":     "𐑩",
+    "≺":     "𐑯",
     "⋈":     "𐑱",
     "⊤":     "𐑧",
     "∈":     "𐑚",

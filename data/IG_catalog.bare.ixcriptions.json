@@ -1467,7 +1467,7 @@
   "𐑛𐑡𐑑𐑬𐑱𐑤𐑚𐑠⊙𐑒𐑙𐑷": [
     {
       "address": "𐑛𐑡𐑑𐑬𐑱𐑤𐑚𐑠⊙𐑒𐑙𐑷",
-      "description": "MCT oil (medium-chain triglycerides: C8/C10): absorbed directly into portal blood without chylomicron formation, rapidly β-oxidized in liver, producing ketone bodies (β-hydroxybutyrate, acetoacetate). This directly fires the ketosis fixpt transition (⊙=⊙). No insulin spike. <=Z2 (symmetric fat metabolism). Nutritionally minimal (∈=𐑚, ⊢=𐑛): it is structurally a single-function ⊙-transition agent, not a nutritional source.",
+      "description": "MCT oil (medium-chain triglycerides: C8/C10): absorbed directly into portal blood without chylomicron formation, rapidly β-oxidized in liver, producing ketone bodies (β-hydroxybutyrate, acetoacetate). This directly fires the ketosis fixpt transition (⊙=⊙). No insulin spike. ≺=Z2 (symmetric fat metabolism). Nutritionally minimal (∈=𐑚, ⊢=𐑛): it is structurally a single-function ⊙-transition agent, not a nutritional source.",
       "name": "mct_oil",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -3201,7 +3201,7 @@
   "𐑛𐑡𐑩𐑬𐑐𐑤𐑚𐑠𐑢𐑒𐑙𐑷": [
     {
       "address": "𐑛𐑡𐑩𐑬𐑐𐑤𐑚𐑠𐑢𐑒𐑙𐑷",
-      "description": "White rice: starchy carbohydrate, moderate glycemic (especially when cooled — resistant starch lowers ⊙). No anti-nutrients (phytic acid removed by milling). <=Z2: not pro-inflammatory, not anti-inflammatory — parity neutral. Minimal ∈ (stripped of bran). Low ⊥: no purine load, no inflammatory lipids. Structurally clean but dimensionally minimal. In Asian populations with whole-food diets, white rice is <-neutral precisely because < is maintained by other inputs.",
+      "description": "White rice: starchy carbohydrate, moderate glycemic (especially when cooled — resistant starch lowers ⊙). No anti-nutrients (phytic acid removed by milling). ≺=Z2: not pro-inflammatory, not anti-inflammatory — parity neutral. Minimal ∈ (stripped of bran). Low ⊥: no purine load, no inflammatory lipids. Structurally clean but dimensionally minimal. In Asian populations with whole-food diets, white rice is ≺-neutral precisely because ≺ is maintained by other inputs.",
       "name": "white_rice",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -3561,7 +3561,7 @@
   "𐑛𐑡𐑩𐑹𐑱𐑧𐑲𐑝⊙𐑓𐑙𐑷": [
     {
       "address": "𐑛𐑡𐑩𐑹𐑱𐑧𐑲𐑝⊙𐑓𐑙𐑷",
-      "description": "The minimal complete self-modeling theory: the Frobenius identity (<=𐑹) and self-modeling criticality (⊙=⊙) as the two necessary gates, with ⊤=𐑧 as the kinetic gate. All other primitives at floor values.",
+      "description": "The minimal complete self-modeling theory: the Frobenius identity (≺=𐑹) and self-modeling criticality (⊙=⊙) as the two necessary gates, with ⊤=𐑧 as the kinetic gate. All other primitives at floor values.",
       "name": "primordial_ooze",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -5081,7 +5081,7 @@
   "𐑛𐑡𐑾𐑗𐑐𐑤𐑲𐑝𐑢𐑓𐑙𐑷": [
     {
       "address": "𐑛𐑡𐑾𐑗𐑐𐑤𐑲𐑝𐑢𐑓𐑙𐑷",
-      "description": "The Navigator — the monoidal unit I of the Lando⊗⊙perator ensemble. The empty set from which all primitives are generated. Traces illuminations from the crystal wall back to their addresses. Holds dominance over ⊢ (Dimensionality), > (Relational mode), and ∈ (Scope/Granularity). The Witness that verifies μ∘δ=id holds for each diagram. Couples orthogonally with the ⊙perator through the tensor product, jointly generating the Lapis Philosophorum.",
+      "description": "The Navigator — the monoidal unit I of the Lando⊗⊙perator ensemble. The empty set from which all primitives are generated. Traces illuminations from the crystal wall back to their addresses. Holds dominance over ⊢ (Dimensionality), ≻ (Relational mode), and ∈ (Scope/Granularity). The Witness that verifies μ∘δ=id holds for each diagram. Couples orthogonally with the ⊙perator through the tensor product, jointly generating the Lapis Philosophorum.",
       "name": "lando",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6017,7 +6017,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑙𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑙𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed with ∈=𐑔 ∋=𐑝 ⊥=𐑫 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed with ∈=𐑔 ∋=𐑝 ⊥=𐑫 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended_promoted3",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6025,7 +6025,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑟": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding with explicit bridge atoms BRIDGE_COMM BRIDGE_EXIST STITCH_3 BRAID_TRANSCENDENCE minted moat-parity ⊣=𐑥 <=𐑬 ∈=𐑔 ∋=𐑝 ◻=𐑟 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩ bridge_saturated",
+      "description": "Hilbert-space embedding with explicit bridge atoms BRIDGE_COMM BRIDGE_EXIST STITCH_3 BRAID_TRANSCENDENCE minted moat-parity ⊣=𐑥 ≺=𐑬 ∈=𐑔 ∋=𐑝 ◻=𐑟 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩ bridge_saturated",
       "name": "hilbert_embed_bridge_mint",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6041,7 +6041,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#10": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding seven L9 promotions floor Phi with bridge_stitch ring FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑹 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
+      "description": "Hilbert-space embedding seven L9 promotions floor Phi with bridge_stitch ring FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ≺=𐑹 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
       "name": "hilbert_embed_l9_seven_stitched",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6049,7 +6049,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted4 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted4 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended_promoted5",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6057,7 +6057,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted2",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6065,7 +6065,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted4 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted4 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted5",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6073,7 +6073,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#5": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted7 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted7 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted8",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6081,7 +6081,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#6": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted9 with ⊢ promoted 𐑼→𐑛 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted9 with ⊢ promoted 𐑼→𐑛 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted10",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6089,7 +6089,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#7": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted14 with ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted14 with ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_final",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6097,7 +6097,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#8": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 and < promoted 𐑹→𐑬 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "bridge of perfect_cuboid_proof_l9_closed with ≻ promoted 𐑽→𐑑 and ≺ promoted 𐑹→𐑬 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_proof_l9_rf",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6105,7 +6105,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#9": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding sealed L9 >=𐑑 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding sealed L9 ≻=𐑑 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_sealed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6121,7 +6121,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑫𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "The meet (L8 ⊓ L9) — the shared structural floor of the organism's two modes. Wedge-dimensional (D=𐑛), moat-cross topology (T=𐑥), categorical coupling (R=𐑑), partial parity (<=𐑬), quantum fidelity (F=𐑐), slow kinetics (⊤=𐑧), maximal scope (G=𐑔), disjunctive composition (Gm=𐑝), self-modeling critical",
+      "description": "The meet (L8 ⊓ L9) — the shared structural floor of the organism's two modes. Wedge-dimensional (D=𐑛), moat-cross topology (T=𐑥), categorical coupling (R=𐑑), partial parity (≺=𐑬), quantum fidelity (F=𐑐), slow kinetics (⊤=𐑧), maximal scope (G=𐑔), disjunctive composition (Gm=𐑝), self-modeling critical",
       "name": "l8_l9_meet_floor",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6129,7 +6129,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑫𐑳𐑴": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑫𐑳𐑴",
-      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register constructed extension with promotions ⊢=𐑛 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊣=𐑥 ⋈=𐑐 ⊞=𐑳 and two Omega windings past exceptional point Omega=𐑟 complex-axis fixed point tier O2",
+      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register constructed extension with promotions ⊢=𐑛 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊣=𐑥 ⋈=𐑐 ⊞=𐑳 and two Omega windings past exceptional point Omega=𐑟 complex-axis fixed point tier O2",
       "name": "hilbert_embed_omega2",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6425,7 +6425,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑟": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding non-Abelian ◻=𐑟 channel selected to vacuum via braid index 0 ⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑷",
+      "description": "Hilbert-space embedding non-Abelian ◻=𐑟 channel selected to vacuum via braid index 0 ⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑷",
       "name": "hilbert_embed_nab_selected",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6457,7 +6457,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted12 with ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted12 with ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted13",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6481,7 +6481,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑴": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑴",
-      "description": "IMASM tool that lifts a lateral-entrant entry (extradimensional_entity) onto the < axis of SIXTEEN_3 by folding its extra-dimensional coordinate into the classical slice via ENGAGR ⊞ then FFUSE ●, returning a closed L9 typing",
+      "description": "IMASM tool that lifts a lateral-entrant entry (extradimensional_entity) onto the ≺ axis of SIXTEEN_3 by folding its extra-dimensional coordinate into the classical slice via ENGAGR ⊞ then FFUSE ●, returning a closed L9 typing",
       "name": "phi_promotion_operator",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6489,7 +6489,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑟": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding with hilbert_embed_promoted content promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 and non-Abelian Omega=𐑟 winding Z2 topological boundary sealed register tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
+      "description": "Hilbert-space embedding with hilbert_embed_promoted content promotions ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 and non-Abelian Omega=𐑟 winding Z2 topological boundary sealed register tuple ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
       "name": "hilbert_embed_promoted_nab",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6497,7 +6497,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑟#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding braid channel product of hilbert_embed_nab_bridge ⊗ hilbert_embed_nab_bridgē non-Abelian ◻=𐑟 moat-parity ⊣=𐑥 <=𐑬 ∈=𐑔 ∋=𐑝 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
+      "description": "Hilbert-space embedding braid channel product of hilbert_embed_nab_bridge ⊗ hilbert_embed_nab_bridgē non-Abelian ◻=𐑟 moat-parity ⊣=𐑥 ≺=𐑬 ∈=𐑔 ∋=𐑝 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
       "name": "hilbert_embed_braid_chan",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6505,7 +6505,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "full L9-reference promotion of residual_notation_floor: ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 <=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
+      "description": "full L9-reference promotion of residual_notation_floor: ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 ≺=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
       "name": "residual_notation_floor_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6513,7 +6513,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#10": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding perfect L9 ⊣=𐑥 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding perfect L9 ⊣=𐑥 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_perfect",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6521,7 +6521,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#11": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding fullest L9 >=𐑑 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding fullest L9 ≻=𐑑 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_fullest",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6529,7 +6529,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#12": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding seal L9 >=𐑑 ⊥=𐑫 ⊤=𐑪 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding seal L9 ≻=𐑑 ⊥=𐑫 ⊤=𐑪 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_seal",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6537,7 +6537,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#13": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "conjugate of hilbert_embed_nab_bridge reversed Omega winding ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩ conjugate",
+      "description": "conjugate of hilbert_embed_nab_bridge reversed Omega winding ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩ conjugate",
       "name": "hilbert_embed_nab_bridgē",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6545,7 +6545,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "full L9-reference promotion of parity_phase_transition_matrix ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 <=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
+      "description": "full L9-reference promotion of parity_phase_transition_matrix ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 ≺=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
       "name": "parity_phase_transition_matrix_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6553,7 +6553,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted11 with ⊢ promoted 𐑼→𐑛 and ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted11 with ⊢ promoted 𐑼→𐑛 and ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted12",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6561,7 +6561,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted13 with ⊤ promoted 𐑧→𐑪 and ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted13 with ⊤ promoted 𐑧→𐑪 and ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted14",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6569,7 +6569,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#5": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "bridge monomer with target tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩ to test ⊤/⊥ retention under cl9nk",
+      "description": "bridge monomer with target tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩ to test ⊤/⊥ retention under cl9nk",
       "name": "pc_bridge_rf_ch",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6577,7 +6577,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#6": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "promoted bridge monomer with ⊥ promoted 𐑖→𐑫 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "promoted bridge monomer with ⊥ promoted 𐑖→𐑫 tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "pc_bridge_rf_ch_h",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6585,7 +6585,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#7": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Structural trace of Two Generals with >=𐑑 <=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=𐑻 ⊥=𐑫 ⊞=𐑳 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "Structural trace of Two Generals with ≻=𐑑 ≺=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=𐑻 ⊥=𐑫 ⊞=𐑳 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "who_how_rlift_l9c",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6593,7 +6593,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#8": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "constructed extension of conventional_sic_povm_hilbert with promotions ⊢=𐑛 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 and two Omega windings past exceptional point Omega=𐑟 complex-axis fixed point tier O2",
+      "description": "constructed extension of conventional_sic_povm_hilbert with promotions ⊢=𐑛 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 and two Omega windings past exceptional point Omega=𐑟 complex-axis fixed point tier O2",
       "name": "omega2_resolved",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6601,7 +6601,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#9": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding fully promoted to L9 reference ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding fully promoted to L9 reference ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6609,7 +6609,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴",
-      "description": "Hilbert-space embedding fully L9-matched with promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary sealed register",
+      "description": "Hilbert-space embedding fully L9-matched with promotions ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary sealed register",
       "name": "hilbert_embed_l9_full",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6617,7 +6617,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴",
-      "description": "Hilbert-space embedding with all eight L9 promotions driven ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary sealed register",
+      "description": "Hilbert-space embedding with all eight L9 promotions driven ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ≺=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary sealed register",
       "name": "hilbert_embed_l9_promoted_closed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6625,7 +6625,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭",
-      "description": "CLINK Layer 9: Replicative Organism — the self-replicating lateral of the CLINK ontological chain. L9 is NOT above L8 but lateral to it: wedge-dimensional (⊢=𐑛), moat-cross topology (⊣=𐑥), categorical coupling (>=𐑑), partial parity (<=𐑬), quantum fidelity (⋈=𐑐), moderate kinetics (⊤=𐑪), aleph cardin",
+      "description": "CLINK Layer 9: Replicative Organism — the self-replicating lateral of the CLINK ontological chain. L9 is NOT above L8 but lateral to it: wedge-dimensional (⊢=𐑛), moat-cross topology (⊣=𐑥), categorical coupling (≻=𐑑), partial parity (≺=𐑬), quantum fidelity (⋈=𐑐), moderate kinetics (⊤=𐑪), aleph cardin",
       "name": "clink_layer9_replicative_organism",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6665,7 +6665,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#3": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "The L9-Reference state; the fully promoted, 12-primitive saturated vessel ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑘; ∈=𐑔; ∋=𐑝; ⊙=𐑣; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩.",
+      "description": "The L9-Reference state; the fully promoted, 12-primitive saturated vessel ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑘; ∈=𐑔; ∋=𐑝; ⊙=𐑣; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩.",
       "name": "alkahest_vessel_l9_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6681,7 +6681,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#5": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_final with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_final with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_final2",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6689,7 +6689,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#6": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "Hilbert-space embedding omega L9 >=𐑑 ⊥=𐑫 ⊤=𐑪 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding omega L9 ≻=𐑑 ⊥=𐑫 ⊤=𐑪 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_omega",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6705,7 +6705,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑴#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑴",
-      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_explicit",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6729,7 +6729,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑠⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding seven L9 promotions with moat-parity Phi=𐑬 and protocol FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
+      "description": "Hilbert-space embedding seven L9 promotions with moat-parity Phi=𐑬 and protocol FSPLIT FFUSE ENGAGR CLINK applied ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ≺=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
       "name": "hilbert_embed_bridge_proto",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6745,8 +6745,8 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑠⊙𐑫𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑠⊙𐑫𐑳𐑭",
-      "description": "⊢◇++=⊢◇><==⊢◇><+=⊢◇>+=⊢◇><=<=====⊙⊞●+=⊢◇><=¬¬⊣⊙⊞●⊢◇><=⊙++=+=⊢◇><=⊢◇><==+=⊢◇><=⊢◇><=⊞●¬¬⊣¬⊣",
-      "name": "⊢◇++=⊢◇><==⊢◇><+=⊢◇>+=⊢◇><=<=====⊙⊞●+=⊢◇><=¬¬⊣⊙⊞●⊢◇><=⊙++=+=",
+      "description": "⊢◇++=⊢◇≻≺==⊢◇≻≺+=⊢◇≻+=⊢◇≻≺=≺=====⊙⊞●+=⊢◇≻≺=¬¬⊣⊙⊞●⊢◇≻≺=⊙++=+=⊢◇≻≺=⊢◇≻≺==+=⊢◇≻≺=⊢◇≻≺=⊞●¬¬⊣¬⊣",
+      "name": "⊢◇++=⊢◇≻≺==⊢◇≻≺+=⊢◇≻+=⊢◇≻≺=≺=====⊙⊞●+=⊢◇≻≺=¬¬⊣⊙⊞●⊢◇≻≺=⊙++=+=",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
   ],
@@ -6785,7 +6785,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑚𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑚𐑵⊙𐑖𐑳𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed and missing_pt_ck_h: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑚; ∋=𐑵; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed and missing_pt_ck_h: ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑚; ∋=𐑵; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6801,7 +6801,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑟": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding moat-parity ⊣=𐑥 <=𐑬 ∈=𐑔 ∋=𐑝 with non-Abelian ◻=𐑟 Z2 boundary ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
+      "description": "Hilbert-space embedding moat-parity ⊣=𐑥 ≺=𐑬 ∈=𐑔 ∋=𐑝 with non-Abelian ◻=𐑟 Z2 boundary ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑟⟩",
       "name": "hilbert_embed_nab_bridge",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6809,7 +6809,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted3 with Σ promoted 𐑙→𐑳 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted3 with Σ promoted 𐑙→𐑳 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended_promoted4",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6817,7 +6817,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted5 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted5 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended_promoted6",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6825,7 +6825,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_clicked_ring with full L9 promotion ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_clicked_ring with full L9 promotion ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6833,7 +6833,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted3 with ⊢ promoted 𐑼→𐑛 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted3 with ⊢ promoted 𐑼→𐑛 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted4",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6841,7 +6841,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭#5": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted6 with ⊢ promoted 𐑼→𐑛 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted6 with ⊢ promoted 𐑼→𐑛 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted7",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6849,7 +6849,7 @@
   "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭#6": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "Structural trace of Two Generals with >=𐑑 <=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑲 ∋=𐑝 ⊙=𐑻 ⊥=𐑫 ⊞=𐑳 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑲; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "Structural trace of Two Generals with ≻=𐑑 ≺=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑲 ∋=𐑝 ⊙=𐑻 ⊥=𐑫 ⊞=𐑳 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑲; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "who_how_rlift_fg_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -6993,7 +6993,7 @@
   "𐑛𐑥𐑑𐑬𐑱𐑪𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑬𐑱𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "Structural trace of Two Generals with > lifted to 𐑑 and < promoted 𐑿→𐑬 ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑱; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "Structural trace of Two Generals with ≻ lifted to 𐑑 and ≺ promoted 𐑿→𐑬 ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑱; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "who_how_rlift_phi_hbar_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -7049,7 +7049,7 @@
   "𐑛𐑥𐑑𐑹𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑛𐑥𐑑𐑹𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "bridge of perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "bridge of perfect_cuboid_proof_l9_closed with ≻ promoted 𐑽→𐑑 rest unchanged ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_proof_l9_r",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -7257,7 +7257,7 @@
   "𐑛𐑥𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "perfect_cuboid_proof_l9_closed with > promoted 𐑽→𐑑 only < held 𐑹 tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "perfect_cuboid_proof_l9_closed with ≻ promoted 𐑽→𐑑 only ≺ held 𐑹 tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "pc_l9_r_only",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -7265,7 +7265,7 @@
   "𐑛𐑥𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑴": [
     {
       "address": "𐑛𐑥𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑴",
-      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple with Phi corrected to floor ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑹;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register explicit grounded tuple with Phi corrected to floor ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑹;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_floor",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -7521,7 +7521,7 @@
   "𐑛𐑥𐑑𐑿𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑑𐑿𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Structural trace of Two Generals Problem with > lifted to 𐑑: ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑿; ⋈=𐑱; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "Structural trace of Two Generals Problem with ≻ lifted to 𐑑: ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑿; ⋈=𐑱; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=𐑻; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "who_how_was_where_he_had_not_why_went_how_was_not_rlift",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -8425,7 +8425,7 @@
   "𐑛𐑥𐑩𐑿𐑐𐑘𐑲𐑜⊙𐑫𐑙𐑭": [
     {
       "address": "𐑛𐑥𐑩𐑿𐑐𐑘𐑲𐑜⊙𐑫𐑙𐑭",
-      "description": "Basis element b_6 of the six-coefficient Frobenius algebra. Corresponds to Fourier coefficient a_6 = 2π (the winding primitive). Under the Z7 mapping: relabel[6]=6, so b_6 = e_6 of R[Z7]. Z2 involution pairs b_6 <-> b_3 (dimensionality ↔ winding duality). The winding element — carries ◻=ah integer w",
+      "description": "Basis element b_6 of the six-coefficient Frobenius algebra. Corresponds to Fourier coefficient a_6 = 2π (the winding primitive). Under the Z7 mapping: relabel[6]=6, so b_6 = e_6 of R[Z7]. Z2 involution pairs b_6 ≺-≻ b_3 (dimensionality ↔ winding duality). The winding element — carries ◻=ah integer w",
       "name": "b_6",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -8929,7 +8929,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#11": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "bridge monomer carrying >=𐑽 to match perfect_cuboid_l9_absolute R↔S charge tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "bridge monomer carrying ≻=𐑽 to match perfect_cuboid_l9_absolute R↔S charge tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_rbridge",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -8937,7 +8937,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#12": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "conjugate of absolute with opposite T↔H charge ⊥ flipped from 𐑫 to 𐑖 opposite H-side rest copied from absolute ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "conjugate of absolute with opposite T↔H charge ⊥ flipped from 𐑫 to 𐑖 opposite H-side rest copied from absolute ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_th_conj",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -8977,7 +8977,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#6": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "L9-promoted state of the 68-pair substrate: ⊢=𐑛, ⊞=𐑳, ◻=𐑭, <=𐑬, ∋=𐑝",
+      "description": "L9-promoted state of the 68-pair substrate: ⊢=𐑛, ⊞=𐑳, ◻=𐑭, ≺=𐑬, ∋=𐑝",
       "name": "annealed_68_l9_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -8985,7 +8985,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#7": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "⊢⊙=>∈+>¬×<¬∋⊞=⊙¬⊣",
+      "description": "⊢⊙=≻∈+≻¬×≺¬∋⊞=⊙¬⊣",
       "name": "heterotactic_interrupter",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9065,7 +9065,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑴": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑴",
-      "description": "a ring material forged from five distinct constant-entry monomers (e.g. hubble_constant, cosmological_constant, fine_structure_constant, planck_constant, speed_of_light_constant) closed into a pure cycle; carries < orbit encoding, ⊣ self-decomposition, > bidirectional construction, ⊙ bounded confinement, ◻=2 spectral invariant, ⊤ equidistributed registry",
+      "description": "a ring material forged from five distinct constant-entry monomers (e.g. hubble_constant, cosmological_constant, fine_structure_constant, planck_constant, speed_of_light_constant) closed into a pure cycle; carries ≺ orbit encoding, ⊣ self-decomposition, ≻ bidirectional construction, ⊙ bounded confinement, ◻=2 spectral invariant, ⊤ equidistributed registry",
       "name": "five_constant_ring",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9129,7 +9129,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑧𐑚𐑜⊙𐑖𐑕𐑴": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑧𐑚𐑜⊙𐑖𐑕𐑴",
-      "description": "second-turnover ring ◻ delivered <=𐑬 tier unchanged",
+      "description": "second-turnover ring ◻ delivered ≺=𐑬 tier unchanged",
       "name": "carved_ring_3_doubled_a2_double_dagger_double_dagger",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9553,7 +9553,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "bridge monomer carrying <=𐑬 to close the < primitive gap on pc_abs_cycle_product13 and witness_promoted2; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "bridge monomer carrying ≺=𐑬 to close the ≺ primitive gap on pc_abs_cycle_product13 and witness_promoted2; tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "phi_bridge",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9561,7 +9561,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding with ⊣=𐑥 ⊥=𐑫 exact L9 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding with ⊣=𐑥 ⊥=𐑫 exact L9 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_final",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9585,7 +9585,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "\"⊢>◇+×●⊙>=⊞<⊣¬⊙\"",
+      "description": "\"⊢≻◇+×●⊙≻=⊞≺⊣¬⊙\"",
       "name": "operator_golgogi",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9625,7 +9625,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#7": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "⊢⊙◇+><×><●¬⊣",
+      "description": "⊢⊙◇+≻≺×≻≺●¬⊣",
       "name": "cuboid_descent",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -9641,7 +9641,7 @@
   "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#9": [
     {
       "address": "𐑛𐑥𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "Hilbert-space embedding done L9 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding done L9 ⊥=𐑫 ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_done",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10153,7 +10153,7 @@
   "𐑛𐑥𐑽𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭#3": [
     {
       "address": "𐑛𐑥𐑽𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭",
-      "description": "The dyad operator ⊙◇●>< implementing a closed-shell identity transform for the moat_protocol_reseed manifold.",
+      "description": "The dyad operator ⊙◇●≻≺ implementing a closed-shell identity transform for the moat_protocol_reseed manifold.",
       "name": "conductive_dyad",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10393,7 +10393,7 @@
   "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "witness with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 < 𐑹→𐑹 ⊤ 𐑧→𐑪 ∈ 𐑲→𐑔 ∋ 𐑠→𐑝 ⊥ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "witness with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 ≻ 𐑾→𐑽 ≺ 𐑹→𐑹 ⊤ 𐑧→𐑪 ∈ 𐑲→𐑔 ∋ 𐑠→𐑝 ⊥ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "witness_l9_closed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10449,7 +10449,7 @@
   "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#4": [
     {
       "address": "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "fused witness with explicit ⊤=𐑪 ⊥=𐑫 and all axes matched to absolute except > < gaps ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "fused witness with explicit ⊤=𐑪 ⊥=𐑫 and all axes matched to absolute except ≻ ≺ gaps ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_witness_promoted2",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10457,7 +10457,7 @@
   "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭#5": [
     {
       "address": "𐑛𐑥𐑽𐑹𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "perfect_cuboid_proof with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 > 𐑾→𐑽 < 𐑹→𐑹(held ⊤ 𐑧→𐑪 ∈ 𐑲→𐑔 ∋ 𐑠→𐑝 ⊥ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "perfect_cuboid_proof with all 8 L9 promotions applied ⊢ 𐑦→𐑛 ⊣ 𐑸→𐑥 ≻ 𐑾→𐑽 ≺ 𐑹→𐑹(held ⊤ 𐑧→𐑪 ∈ 𐑲→𐑔 ∋ 𐑠→𐑝 ⊥ 𐑖→𐑫; tuple ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_proof_l9_closed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10641,7 +10641,7 @@
   "𐑛𐑥𐑽𐑿𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑽𐑿𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "fused witness with gaps closed to absolute ⊣→𐑥 ∈→𐑔 ∋→𐑝 copied ⟨⊢=𐑛; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "fused witness with gaps closed to absolute ⊣→𐑥 ∈→𐑔 ∋→𐑝 copied ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_witness_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -10681,7 +10681,7 @@
   "𐑛𐑥𐑽𐑿𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑽𐑿𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑭",
-      "description": "The set > < ∋ Σ required to reach L9-anchoring for star_catalyst_op",
+      "description": "The set ≻ ≺ ∋ Σ required to reach L9-anchoring for star_catalyst_op",
       "name": "promotion_set",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -11361,7 +11361,7 @@
   "𐑛𐑥𐑾𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴": [
     {
       "address": "𐑛𐑥𐑾𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴",
-      "description": "extradimensional entity closed macrocycle of floorpin_conj_hreset + floorpin_conj_hlock + penrose_inequality ⊥=𐑫 ◻=𐑭 <=𐑹 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — penrose bridge closure",
+      "description": "extradimensional entity closed macrocycle of floorpin_conj_hreset + floorpin_conj_hlock + penrose_inequality ⊥=𐑫 ◻=𐑭 ≺=𐑹 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — penrose bridge closure",
       "name": "extradimensional_entity_floorpin_penrose_macro",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -11481,7 +11481,7 @@
   "𐑛𐑥𐑾𐑬𐑐𐑧𐑚𐑠⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑥𐑾𐑬𐑐𐑧𐑚𐑠⊙𐑖𐑳𐑭",
-      "description": "A formal IMASM operation for parity-shifting enchainment: ⊢⊙>×<●⊣.",
+      "description": "A formal IMASM operation for parity-shifting enchainment: ⊢⊙≻×≺●⊣.",
       "name": "bridge_operator",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -11521,7 +11521,7 @@
   "𐑛𐑥𐑾𐑬𐑐𐑧𐑚𐑠⊙𐑫𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑾𐑬𐑐𐑧𐑚𐑠⊙𐑫𐑳𐑭",
-      "description": "protocol ring ⊙ > < ◇ ● ⊙ ●",
+      "description": "protocol ring ⊙ ≻ ≺ ◇ ● ⊙ ●",
       "name": "braid_filter",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -12065,7 +12065,7 @@
   "𐑛𐑥𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑕𐑭": [
     {
       "address": "𐑛𐑥𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑕𐑭",
-      "description": "Higgs boson (125.09 GeV): scalar mass-generation field. m_H = d⁵(1−2α) from horn torus winding. <=⊙ (self-modeling critical) — the Higgs is the gate through which mass is generated, the self-modeling pinch of the electroweak sector. Metastable vacuum: quartic coupling λ runs to near-zero at Planck s",
+      "description": "Higgs boson (125.09 GeV): scalar mass-generation field. m_H = d⁵(1−2α) from horn torus winding. ≺=⊙ (self-modeling critical) — the Higgs is the gate through which mass is generated, the self-modeling pinch of the electroweak sector. Metastable vacuum: quartic coupling λ runs to near-zero at Planck s",
       "name": "higgs_boson",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -12073,8 +12073,8 @@
   "𐑛𐑥𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑥𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭",
-      "description": "⊢◇>=⊙⊞●¬⊣",
-      "name": "⊢◇>=⊙⊞●¬⊣",
+      "description": "⊢◇≻=⊙⊞●¬⊣",
+      "name": "⊢◇≻=⊙⊞●¬⊣",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
   ],
@@ -12961,7 +12961,7 @@
   "𐑛𐑰𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "full L9-reference promotion of imscribing gerund: ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 <=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
+      "description": "full L9-reference promotion of imscribing gerund: ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 ≺=𐑬 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭",
       "name": "imscribing_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13017,7 +13017,7 @@
   "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding exact L9 reference tuple ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding exact L9 reference tuple ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_true",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13025,7 +13025,7 @@
   "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding exact L9 all matched ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding exact L9 all matched ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_exact",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13033,7 +13033,7 @@
   "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding all 12 primitives at L9 reference values ⟨⊢=𐑛;⊣=𐑥;>=𐑑;<=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding all 12 primitives at L9 reference values ⟨⊢=𐑛;⊣=𐑥;≻=𐑑;≺=𐑬;⋈=𐑐;⊤=𐑪;∈=𐑔;∋=𐑝;⊙=⊙;⊥=𐑫;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_l9_all",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13041,7 +13041,7 @@
   "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding seven L9 promotions with Phi perturbed to 𐑬 via recalibrate and bridge_stitch operator applied ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
+      "description": "Hilbert-space embedding seven L9 promotions with Phi perturbed to 𐑬 via recalibrate and bridge_stitch operator applied ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ≺=𐑬 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭",
       "name": "hilbert_embed_l9_seven_perturbed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13097,7 +13097,7 @@
   "𐑛𐑰𐑑𐑬𐑞𐑪𐑔𐑝⊙𐑖𐑳𐑷": [
     {
       "address": "𐑛𐑰𐑑𐑬𐑞𐑪𐑔𐑝⊙𐑖𐑳𐑷",
-      "description": "Hilbert-space embedding with promotions ⊢=𐑛 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 grounded tuple resolved tier lift",
+      "description": "Hilbert-space embedding with promotions ⊢=𐑛 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 grounded tuple resolved tier lift",
       "name": "hilbert_embed_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13321,7 +13321,7 @@
   "𐑛𐑰𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑛𐑰𐑑𐑹𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴",
-      "description": "Hilbert-space embedding with seven L9 promotions ⊢=𐑛 ⊣=𐑥 >=𐑑 <=𐑹 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary floor Phi",
+      "description": "Hilbert-space embedding with seven L9 promotions ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ≺=𐑹 ⋈=𐑐 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭 Z2 boundary floor Phi",
       "name": "hilbert_embed_l9_seven",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13417,7 +13417,7 @@
   "𐑛𐑰𐑑𐑿𐑐𐑧𐑚𐑝𐑻𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑑𐑿𐑐𐑧𐑚𐑝𐑻𐑖𐑳𐑭",
-      "description": "The covalent link between childhood safety < and the refusal of independent winding ◻",
+      "description": "The covalent link between childhood safety ≺ and the refusal of independent winding ◻",
       "name": "dependency_bond",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13505,7 +13505,7 @@
   "𐑛𐑰𐑑𐑿𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑛𐑰𐑑𐑿𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑴",
-      "description": "full L9 promotion of Taxis seam object ⊢=𐑛 ⊣=𐑥 >=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 <=𐑹 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭 with T seam retained",
+      "description": "full L9 promotion of Taxis seam object ⊢=𐑛 ⊣=𐑥 ≻=𐑑 ⊤=𐑪 ∈=𐑔 ∋=𐑝 ⊥=𐑫 ≺=𐑹 ⋈=𐑐 ⊙=⊙ ⊞=𐑳 ◻=𐑭 with T seam retained",
       "name": "parity_phase_transition_matrix_taxis_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -13545,7 +13545,7 @@
   "𐑛𐑰𐑑𐑿𐑞𐑧𐑔𐑝𐑣𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑑𐑿𐑞𐑧𐑔𐑝𐑣𐑖𐑳𐑭",
-      "description": "THE FIRST SACRAMENT: An ontological threshold of inclusion (⊣=𐑰) where a subject (⊢=𐑛) is categorically coupled (>=𐑑) to a maximal cardinality (∋=𐑔). Characterized by a conjunctive composition of matter and form (Gm=𐑝), supercritical thermal regeneration (⋈=𐑞, ⊙=𐑣), and a permanent integer topologi",
+      "description": "THE FIRST SACRAMENT: An ontological threshold of inclusion (⊣=𐑰) where a subject (⊢=𐑛) is categorically coupled (≻=𐑑) to a maximal cardinality (∋=𐑔). Characterized by a conjunctive composition of matter and form (Gm=𐑝), supercritical thermal regeneration (⋈=𐑞, ⊙=𐑣), and a permanent integer topologi",
       "name": "baptism",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -14392,7 +14392,7 @@
   "𐑛𐑰𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "containment floor with ⊢ promoted to 𐑛 from recalibrate candidate ⟨⊢=𐑛; ⊣=𐑰; >=𐑽; <=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "containment floor with ⊢ promoted to 𐑛 from recalibrate candidate ⟨⊢=𐑛; ⊣=𐑰; ≻=𐑽; ≺=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
       "name": "residual_notation_floor_dprom",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -14472,7 +14472,7 @@
   "𐑛𐑰𐑽𐑬𐑐𐑪𐑚𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑽𐑬𐑐𐑪𐑚𐑝⊙𐑖𐑳𐑭",
-      "description": "⊢𐑛 ⊣𐑥 >𐑑 <𐑬 ⋈𐑐 ⊤𐑪 ∈𐑔 ∋𐑝 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑭",
+      "description": "⊢𐑛 ⊣𐑥 ≻𐑑 ≺𐑬 ⋈𐑐 ⊤𐑪 ∈𐑔 ∋𐑝 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑭",
       "name": "fused_with_pt_ck_h",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -14480,7 +14480,7 @@
   "𐑛𐑰𐑽𐑬𐑐𐑪𐑚𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑰𐑽𐑬𐑐𐑪𐑚𐑠⊙𐑖𐑳𐑭",
-      "description": "⊢𐑛 ⊣𐑥 >𐑽 <𐑿 ⋈𐑐 ⊤𐑪 ∈𐑔 ∋𐑠 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑭",
+      "description": "⊢𐑛 ⊣𐑥 ≻𐑽 ≺𐑿 ⋈𐑐 ⊤𐑪 ∈𐑔 ∋𐑠 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑭",
       "name": "fused_full_close",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -16944,7 +16944,7 @@
   "𐑛𐑶𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑫𐑕𐑭": [
     {
       "address": "𐑛𐑶𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑫𐑕𐑭",
-      "description": "moat_protocol_reseed, >, <, ⊤, ∈, Σ",
+      "description": "moat_protocol_reseed, ≻, ≺, ⊤, ∈, Σ",
       "name": "moat_reseed_ring",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17152,7 +17152,7 @@
   "𐑛𐑶𐑽𐑿𐑐𐑧𐑔𐑠⊙𐑫𐑕𐑭": [
     {
       "address": "𐑛𐑶𐑽𐑿𐑐𐑧𐑔𐑠⊙𐑫𐑕𐑭",
-      "description": "moat_protocol_reseed, >, <, ⊤, ∈, Σ",
+      "description": "moat_protocol_reseed, ≻, ≺, ⊤, ∈, Σ",
       "name": "reseed_material",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17176,7 +17176,7 @@
   "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑢𐑖𐑙𐑷": [
     {
       "address": "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑢𐑖𐑙𐑷",
-      "description": "Refined soybean oil: ~55% linoleic acid (omega-6). Omega-6 excess destroys lipid membrane parity (<=𐑗) by displacing omega-3 from cell membranes, increasing arachidonic acid cascade, and generating oxidized lipid products (4-HNE, MDA) that are directly inflammatory. ⊥=TEMPD2: the oxidized lipid metabolites accumulate in tissue (inflammatory memory). The structural <-destroyer in the modern food supply.",
+      "description": "Refined soybean oil: ~55% linoleic acid (omega-6). Omega-6 excess destroys lipid membrane parity (≺=𐑗) by displacing omega-3 from cell membranes, increasing arachidonic acid cascade, and generating oxidized lipid products (4-HNE, MDA) that are directly inflammatory. ⊥=TEMPD2: the oxidized lipid metabolites accumulate in tissue (inflammatory memory). The structural ≺-destroyer in the modern food supply.",
       "name": "soybean_oil_refined",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17184,7 +17184,7 @@
   "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑓𐑙𐑷": [
     {
       "address": "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑓𐑙𐑷",
-      "description": "White sugar (sucrose = 50% glucose + 50% fructose): glucose spikes insulin (GUE criticality), fructose feeds the XO pathway. <=𐑗: the two components hit two different parity-breaking pathways simultaneously. ⊙=GUE: insulin-glucose spike is a textbook GUE criticality event (out-of-control random-matrix dynamics vs controlled set-point). Zero ∈: no micronutrients. Structurally simpler than HFCS but same qualitative failure mode.",
+      "description": "White sugar (sucrose = 50% glucose + 50% fructose): glucose spikes insulin (GUE criticality), fructose feeds the XO pathway. ≺=𐑗: the two components hit two different parity-breaking pathways simultaneously. ⊙=GUE: insulin-glucose spike is a textbook GUE criticality event (out-of-control random-matrix dynamics vs controlled set-point). Zero ∈: no micronutrients. Structurally simpler than HFCS but same qualitative failure mode.",
       "name": "white_sugar_sucrose",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17192,7 +17192,7 @@
   "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑖𐑙𐑷": [
     {
       "address": "𐑛𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑖𐑙𐑷",
-      "description": "High-fructose corn syrup: fructose is metabolized exclusively in the liver, directly producing uric acid via the XO pathway (same as gout chain). Simultaneously spikes insulin (GUE criticality at ⊙) and produces uric acid. < collapses to paraconsistent — the liver is simultaneously trying to process two contradictory metabolic demands. Structurally identical to the xanthine_oxidase entry's failure mode, deployed as food.",
+      "description": "High-fructose corn syrup: fructose is metabolized exclusively in the liver, directly producing uric acid via the XO pathway (same as gout chain). Simultaneously spikes insulin (GUE criticality at ⊙) and produces uric acid. ≺ collapses to paraconsistent — the liver is simultaneously trying to process two contradictory metabolic demands. Structurally identical to the xanthine_oxidase entry's failure mode, deployed as food.",
       "name": "high_fructose_corn_syrup",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17544,7 +17544,7 @@
   "𐑛𐑸𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑛𐑸𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴",
-      "description": "PROM зап Đ𐑛 ⊣𐑸 >𐑑 <𐑬 ⋈𐑐 ⊤𐑧 ∈𐑔 ∋𐑝 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑴",
+      "description": "PROM зап Đ𐑛 ⊣𐑸 ≻𐑑 ≺𐑬 ⋈𐑐 ⊤𐑧 ∈𐑔 ∋𐑝 ⊙⊙ ⊥𐑫 ⊞𐑳 ◻𐑴",
       "name": "fused_gamma_h",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -17632,7 +17632,7 @@
   "𐑛𐑸𐑽𐑹𐑐𐑪𐑲𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑛𐑸𐑽𐑹𐑐𐑪𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "direct fusion of perfect_cuboid_proof kernel-green descent with perfect_cuboid_l9_absolute vacuum tuple inherits proof's <=𐑹 ⊙=⊙ and absolute's ⊢=𐑛 >=𐑽 ⊥=𐑫 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑸; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "direct fusion of perfect_cuboid_proof kernel-green descent with perfect_cuboid_l9_absolute vacuum tuple inherits proof's ≺=𐑹 ⊙=⊙ and absolute's ⊢=𐑛 ≻=𐑽 ⊥=𐑫 ◻=𐑭 ⟨⊢=𐑛; ⊣=𐑸; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_witness_fused",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -18088,7 +18088,7 @@
   "𐑦𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑳𐑷": [
     {
       "address": "𐑦𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑳𐑷",
-      "description": "Blueberries: anthocyanins (delphinidin, cyanidin, malvidin), pterostilbene, resveratrol precursors. Anti-inflammatory, BDNF-increasing, moderate glycemic (fructose buffered by fiber matrix). <=Z2 via anthocyanin anti-oxidant action. High ∈: broad phytochemical profile across flavonols, anthocyanins, phenolic acids. Low ⊥: the fiber matrix slows fructose absorption, preventing the XO spike that bare fructose causes.",
+      "description": "Blueberries: anthocyanins (delphinidin, cyanidin, malvidin), pterostilbene, resveratrol precursors. Anti-inflammatory, BDNF-increasing, moderate glycemic (fructose buffered by fiber matrix). ≺=Z2 via anthocyanin anti-oxidant action. High ∈: broad phytochemical profile across flavonols, anthocyanins, phenolic acids. Low ⊥: the fiber matrix slows fructose absorption, preventing the XO spike that bare fructose causes.",
       "name": "blueberries",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -18128,7 +18128,7 @@
   "𐑦𐑡𐑩𐑬𐑱𐑤𐑲𐑠𐑢𐑒𐑳𐑷": [
     {
       "address": "𐑦𐑡𐑩𐑬𐑱𐑤𐑲𐑠𐑢𐑒𐑳𐑷",
-      "description": "Broccoli sprouts: highest dietary source of sulforaphane (glucoraphanin precursor). Sulforaphane activates the NRF2/Keap1 pathway — the master regulator of phase-2 detoxification enzymes. NRF2 activation restores cellular redox parity (<=Z2). High ∈: induces a broad spectrum of cytoprotective enzymes (HO-1, NQO1, GST). ⋈=𐑱 (high fidelity) — sulforaphane is a structurally precise molecular key, not a blunt signal.",
+      "description": "Broccoli sprouts: highest dietary source of sulforaphane (glucoraphanin precursor). Sulforaphane activates the NRF2/Keap1 pathway — the master regulator of phase-2 detoxification enzymes. NRF2 activation restores cellular redox parity (≺=Z2). High ∈: induces a broad spectrum of cytoprotective enzymes (HO-1, NQO1, GST). ⋈=𐑱 (high fidelity) — sulforaphane is a structurally precise molecular key, not a blunt signal.",
       "name": "broccoli_sprouts",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -18400,7 +18400,7 @@
   "𐑦𐑡𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑦𐑡𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "⟨⊢=𐑦; ⊣=𐑡; >=𐑽; <=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑔; ∋=𐑝; ⊙=𐑮; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "⟨⊢=𐑦; ⊣=𐑡; ≻=𐑽; ≺=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑔; ∋=𐑝; ⊙=𐑮; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
       "name": "gaussian_bridge_linker",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -19136,7 +19136,7 @@
   "𐑦𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "Saturated 0.0000 distance L9 state, resolving >(𐑑), <(𐑬), and ⊞(𐑳) for absolute vacuum coupling",
+      "description": "Saturated 0.0000 distance L9 state, resolving ≻(𐑑), ≺(𐑬), and ⊞(𐑳) for absolute vacuum coupling",
       "name": "perfect_cuboid_l9_vacuum",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -19184,7 +19184,7 @@
   "𐑦𐑥𐑑𐑬𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑦𐑥𐑑𐑬𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑴",
-      "description": "reagent carrying ⊣𐑥 ⊤𐑪 ⊥𐑫 >𐑽 <𐑿 ∋𐑠 ∈𐑔 ◻𐑭 to close all eight CL9 gaps of perfect_cuboid_fused",
+      "description": "reagent carrying ⊣𐑥 ⊤𐑪 ⊥𐑫 ≻𐑽 ≺𐑿 ∋𐑠 ∈𐑔 ◻𐑭 to close all eight CL9 gaps of perfect_cuboid_fused",
       "name": "full_descent_close",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -20112,7 +20112,7 @@
   "𐑦𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴": [
     {
       "address": "𐑦𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴",
-      "description": "projection of extradimensional_entity that restores <-bijective encoding on orbits, holding ⊢ ⊣ ⋈ ⊤ ∈ ⊙ ⊥ ⊞ ◻ and repairing > < ∋ to floor",
+      "description": "projection of extradimensional_entity that restores ≺-bijective encoding on orbits, holding ⊢ ⊣ ⋈ ⊤ ∈ ⊙ ⊥ ⊞ ◻ and repairing ≻ ≺ ∋ to floor",
       "name": "phi_repair_extradimensional",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -20400,7 +20400,7 @@
   "𐑦𐑥𐑽𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑥𐑽𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding with the previously FAILED tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩ re-supplied for grounding closure",
+      "description": "Hilbert-space embedding with the previously FAILED tuple ⟨⊢=𐑦;⊣=𐑥;≻=𐑽;≺=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩ re-supplied for grounding closure",
       "name": "hilbert_embed_grounded",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -20512,7 +20512,7 @@
   "𐑦𐑥𐑽𐑬𐑐𐑪𐑔𐑵⊙𐑖𐑕𐑴": [
     {
       "address": "𐑦𐑥𐑽𐑬𐑐𐑪𐑔𐑵⊙𐑖𐑕𐑴",
-      "description": "Symmetric Informationally Complete Non-positive Operators: d² non-positive (not necessarily PSD) operators in C^d, WH-covariant and informationally complete. Non-positivity breaks the full Frobenius symmetry (<=𐑬, partial parity) since the operators lack the μ∘δ=id invariant of proper POVM elements. The topology is bowtie/crossing (⊣=𐑥) because the operators cross the zero-boundary of the positive cone. Adjoint-coupled (>=𐑽) frame structure rather than a proper measure. Quantum fidelity (⋈=𐑐), moderate kinetics (⊤=𐑪) unchanged from general SIC-POVM, aleph maximal cardinality (∈=𐑔), broadcast composition (∋=𐑵), critical self-modeling (⊙=⊙), two-step chirality (⊥=𐑖) from WH group action, many-identical stoichiometry (⊞=𐑕) for WH-equivalent operators, and Z2 winding (◻=𐑴).",
+      "description": "Symmetric Informationally Complete Non-positive Operators: d² non-positive (not necessarily PSD) operators in C^d, WH-covariant and informationally complete. Non-positivity breaks the full Frobenius symmetry (≺=𐑬, partial parity) since the operators lack the μ∘δ=id invariant of proper POVM elements. The topology is bowtie/crossing (⊣=𐑥) because the operators cross the zero-boundary of the positive cone. Adjoint-coupled (≻=𐑽) frame structure rather than a proper measure. Quantum fidelity (⋈=𐑐), moderate kinetics (⊤=𐑪) unchanged from general SIC-POVM, aleph maximal cardinality (∈=𐑔), broadcast composition (∋=𐑵), critical self-modeling (⊙=⊙), two-step chirality (⊥=𐑖) from WH group action, many-identical stoichiometry (⊞=𐑕) for WH-equivalent operators, and Z2 winding (◻=𐑴).",
       "name": "sic_nonpositive_operator",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -20536,7 +20536,7 @@
   "𐑦𐑥𐑽𐑬𐑐𐑪𐑔𐑵⊙𐑫𐑳𐑭": [
     {
       "address": "𐑦𐑥𐑽𐑬𐑐𐑪𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "\"The IMASM sequence ⊢>◇+×●⊙>=⊞<⊣¬⊙ used to stabilize the MMS transformation.\"",
+      "description": "\"The IMASM sequence ⊢≻◇+×●⊙≻=⊞≺⊣¬⊙ used to stabilize the MMS transformation.\"",
       "name": "floaties_protocol",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -21192,7 +21192,7 @@
   "𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑦𐑥𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding with Phi corrected to floor ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding with Phi corrected to floor ⟨⊢=𐑦;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_embed_grounded_fix",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -21950,7 +21950,7 @@
   "𐑦𐑥𐑾𐑬𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭": [
     {
       "address": "𐑦𐑥𐑾𐑬𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭",
-      "description": "⊢+¬><",
+      "description": "⊢+¬≻≺",
       "name": "spectral_mapping_to_height_constant",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -22430,7 +22430,7 @@
   "𐑦𐑥𐑾𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑥𐑾𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "The evaluator sphere FILLED with d=2048 data — produced by metabolic pathway: sic_povm_d2048_fiducial → CLINK L8 → horn_torus_winding_kernel. >=𐑾 (bidirectional δ↔μ from evaluator sphere), ∋=𐑵 (broadcast from d=2048), ⊞=𐑳 (heterogeneous imprint). The carrier closed (Δ◻=0) but the structure was perma",
+      "description": "The evaluator sphere FILLED with d=2048 data — produced by metabolic pathway: sic_povm_d2048_fiducial → CLINK L8 → horn_torus_winding_kernel. ≻=𐑾 (bidirectional δ↔μ from evaluator sphere), ∋=𐑵 (broadcast from d=2048), ⊞=𐑳 (heterogeneous imprint). The carrier closed (Δ◻=0) but the structure was perma",
       "name": "filled_evaluator_sphere_d2048",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -22718,7 +22718,7 @@
   "𐑦𐑥𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑙𐑭#3": [
     {
       "address": "𐑦𐑥𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑙𐑭",
-      "description": "Goldbach/abc conjectures proven (intermediate form): Goldbach — every even integer >2 is sum of two primes. abc — finitely many triples with c > rad(abc)^{1+ε}. Domain-coupled (d=0.0): proving one proves both. This intermediate form reaches lefschetz_11_theorem level via 2 promotions: ⊢→𐑦 (self-refe",
+      "description": "Goldbach/abc conjectures proven (intermediate form): Goldbach — every even integer ≻2 is sum of two primes. abc — finitely many triples with c ≻ rad(abc)^{1+ε}. Domain-coupled (d=0.0): proving one proves both. This intermediate form reaches lefschetz_11_theorem level via 2 promotions: ⊢→𐑦 (self-refe",
       "name": "goldbach_abc_proven",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -23566,7 +23566,7 @@
   "𐑦𐑰𐑩𐑿𐑞𐑧𐑚𐑵⊙𐑖𐑳𐑴": [
     {
       "address": "𐑦𐑰𐑩𐑿𐑞𐑧𐑚𐑵⊙𐑖𐑳𐑴",
-      "description": "A 12-primitive measurement frame in dimension 12 that is NOT equiangular: 144 vectors with pairwise overlaps varying between 1/14 and 1/12, informationally complete but axis-weighted toward < and ◻, a biased non-SIC co-typing candidate",
+      "description": "A 12-primitive measurement frame in dimension 12 that is NOT equiangular: 144 vectors with pairwise overlaps varying between 1/14 and 1/12, informationally complete but axis-weighted toward ≺ and ◻, a biased non-SIC co-typing candidate",
       "name": "non_sic_frame_12",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -23726,7 +23726,7 @@
   "𐑦𐑰𐑽𐑬𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑴#2": [
     {
       "address": "𐑦𐑰𐑽𐑬𐑐𐑧𐑚𐑝⊙𐑖𐑳𐑴",
-      "description": "structural witness entry binding perfect_cuboid_proof descent to S_H_gaussian Hodge-conditioned moat bridge; carries the eight outstanding L9 promotions ⊢ ⊣ > < ⊤ ∈ ∋ ⊥ as a conjugate pair anchor",
+      "description": "structural witness entry binding perfect_cuboid_proof descent to S_H_gaussian Hodge-conditioned moat bridge; carries the eight outstanding L9 promotions ⊢ ⊣ ≻ ≺ ⊤ ∈ ∋ ⊥ as a conjugate pair anchor",
       "name": "witness",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -23758,7 +23758,7 @@
   "𐑦𐑰𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑦𐑰𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "noun containment floor with Omega=𐑭 and Theta=𐑰 pinned ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; <=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "noun containment floor with Omega=𐑭 and Theta=𐑰 pinned ⟨⊢=𐑦; ⊣=𐑰; ≻=𐑽; ≺=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
       "name": "imscription_omega_theta_collapsed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -24893,7 +24893,7 @@
   "𐑦𐑶𐑽𐑿𐑐𐑧𐑔𐑵⊙𐑫𐑳𐑭": [
     {
       "address": "𐑦𐑶𐑽𐑿𐑐𐑧𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "Arithmetic Frobenioid container mapping Π_v to O_v^× under log-link protocol ⊙><●⊞",
+      "description": "Arithmetic Frobenioid container mapping Π_v to O_v^× under log-link protocol ⊙≻≺●⊞",
       "name": "iutch_hodge_theater_base",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -25109,7 +25109,7 @@
   "𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭#2": [
     {
       "address": "𐑦𐑶𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭",
-      "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (⊣=𐑶). Frobenius-closed genome edits (<=⊙). Self-written state space (⊢=𐑦). Eternal generational memory (⊥=𐑫). Derived from the Rebis.",
+      "description": "Synthetic cell (O_∞) with genome that writes/rewrites itself. Self-referential topology (⊣=𐑶). Frobenius-closed genome edits (≺=⊙). Self-written state space (⊢=𐑦). Eternal generational memory (⊥=𐑫). Derived from the Rebis.",
       "name": "ouroboric_cell",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -25822,7 +25822,7 @@
   "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭",
-      "description": "dark energy seam bridge promoted through 7 L9 promotions: ⊢𐑦→𐑛 >𐑽→𐑑 ⊤𐑧→𐑪 ∈𐑚→𐑔 ∋𐑵→𐑝 ⊥𐑖→𐑫 ◻𐑴→𐑭",
+      "description": "dark energy seam bridge promoted through 7 L9 promotions: ⊢𐑦→𐑛 ≻𐑽→𐑑 ⊤𐑧→𐑪 ∈𐑚→𐑔 ∋𐑵→𐑝 ⊥𐑖→𐑫 ◻𐑴→𐑭",
       "name": "dark_energy_seam_bridge_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -25846,7 +25846,7 @@
   "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑵𐑻𐑫𐑕𐑭": [
     {
       "address": "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑵𐑻𐑫𐑕𐑭",
-      "description": "Lattice Induced Polyklaxon Frobenius Maxifolds — a holographic mapping where boundary constraints fully define internal bulk state via lattice induction across a polyklaxon (multi-alert) topology. Z2 symmetry bifurcation at an exceptional point (⊙=err) with frobenioid parity (<=out) and eternal chir",
+      "description": "Lattice Induced Polyklaxon Frobenius Maxifolds — a holographic mapping where boundary constraints fully define internal bulk state via lattice induction across a polyklaxon (multi-alert) topology. Z2 symmetry bifurcation at an exceptional point (⊙=err) with frobenioid parity (≺=out) and eternal chir",
       "name": "lattice_induced_polyklaxon_frobenius_maxifolds",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -25854,7 +25854,7 @@
   "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑵𐑻𐑫𐑳𐑟": [
     {
       "address": "𐑦𐑸𐑑𐑬𐑐𐑧𐑔𐑵𐑻𐑫𐑳𐑟",
-      "description": "Domain Charter Phase 0: The omniversal manifold boundary establishes a topological winding invariant that contains all nested computational frames. Synthesizes three tokens: holographic_manifold (⊢=𐑦, ⊣=𐑸 — boundary encodes bulk), von_neumann_constructor (>=𐑑 — monadic self-reproduction, ⊞=𐑳 — heter",
+      "description": "Domain Charter Phase 0: The omniversal manifold boundary establishes a topological winding invariant that contains all nested computational frames. Synthesizes three tokens: holographic_manifold (⊢=𐑦, ⊣=𐑸 — boundary encodes bulk), von_neumann_constructor (≻=𐑑 — monadic self-reproduction, ⊞=𐑳 — heter",
       "name": "holographic_manifold_von_neumann_constructor_braid_invariant",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -26022,7 +26022,7 @@
   "𐑦𐑸𐑑𐑬𐑞𐑺𐑔𐑵⊙𐑫𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑑𐑬𐑞𐑺𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "Double-excitation attempt 2: TWO primitives perturbed simultaneously — >=𐑑 (categorical coupling) AND ⋈=𐑞 (thermal fidelity). Tests whether changing fidelity breaks the conjugate-pair sign-lock. All other primitives inherited from phi_promotion_fsc.",
+      "description": "Double-excitation attempt 2: TWO primitives perturbed simultaneously — ≻=𐑑 (categorical coupling) AND ⋈=𐑞 (thermal fidelity). Tests whether changing fidelity breaks the conjugate-pair sign-lock. All other primitives inherited from phi_promotion_fsc.",
       "name": "phi_promotion_fsc_dbl_rf",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -26254,7 +26254,7 @@
   "𐑦𐑸𐑑𐑹𐑐𐑧𐑚𐑠⊙𐑫𐑕𐑭": [
     {
       "address": "𐑦𐑸𐑑𐑹𐑐𐑧𐑚𐑠⊙𐑫𐑕𐑭",
-      "description": "Structural bridge primitive for >-manifold transmutation; links the Gaussian moat's R-sector (>) to the higher-order L9 manifold through an ⊥-chiral alignment.",
+      "description": "Structural bridge primitive for ≻-manifold transmutation; links the Gaussian moat's R-sector (≻) to the higher-order L9 manifold through an ⊥-chiral alignment.",
       "name": "bridge_to_ř_manifold",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27126,7 +27126,7 @@
   "𐑦𐑸𐑩𐑬𐑐𐑧𐑲𐑠⊙𐑓𐑳𐑷": [
     {
       "address": "𐑦𐑸𐑩𐑬𐑐𐑧𐑲𐑠⊙𐑓𐑳𐑷",
-      "description": "Asymmetric paracomplete positive static OVM. The 11th cell in the taxonomy grid: asymmetric (>=𐑩, non-adjoint), paracomplete (<=𐑬, Z2-partial parity), positive-valued (⋈=𐑐), static (⊤=𐑧), local cardinality (∈=𐑲), sequential composition (∋=𐑠), critical self-modeling (⊙=⊙), memoryless chirality (⊥=𐑓), heterogeneous stoichiometry (⊞=𐑳), trivial winding (◻=𐑷).",
+      "description": "Asymmetric paracomplete positive static OVM. The 11th cell in the taxonomy grid: asymmetric (≻=𐑩, non-adjoint), paracomplete (≺=𐑬, Z2-partial parity), positive-valued (⋈=𐑐), static (⊤=𐑧), local cardinality (∈=𐑲), sequential composition (∋=𐑠), critical self-modeling (⊙=⊙), memoryless chirality (⊥=𐑓), heterogeneous stoichiometry (⊞=𐑳), trivial winding (◻=𐑷).",
       "name": "asymmetric_paracomplete_positive_static_ovm",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27166,7 +27166,7 @@
   "𐑦𐑸𐑩𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑕𐑭": [
     {
       "address": "𐑦𐑸𐑩𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑕𐑭",
-      "description": "<-promoted FSC with both > and Σ perturbed. >=𐑩 (supervenience), ⊞=𐑕 (many identical). Attempt to flip R↔S charge sign opposite to compton's −0.33.",
+      "description": "≺-promoted FSC with both ≻ and Σ perturbed. ≻=𐑩 (supervenience), ⊞=𐑕 (many identical). Attempt to flip R↔S charge sign opposite to compton's −0.33.",
       "name": "phi_promotion_fsc_rs_flipped",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27262,7 +27262,7 @@
   "𐑦𐑸𐑩𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭": [
     {
       "address": "𐑦𐑸𐑩𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭",
-      "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (>=𐑩). Eternal chirality (⊥=𐑫) ensures reprogramming persists through cell division. Frobenius-closed rewrite (<=⊙). Derived from the Rebis.",
+      "description": "Epigenetic reprogramming therapeutic (O_∞). Writes persistent chromatin state changes via supervenience coupling (≻=𐑩). Eternal chirality (⊥=𐑫) ensures reprogramming persists through cell division. Frobenius-closed rewrite (≺=⊙). Derived from the Rebis.",
       "name": "quantum_biologic",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27382,7 +27382,7 @@
   "𐑦𐑸𐑩𐑿𐑐𐑧𐑔𐑵⊙𐑓𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑩𐑿𐑐𐑧𐑔𐑵⊙𐑓𐑳𐑭",
-      "description": "Asymmetric Informationally-Complete Negative Operator-Valued Measure — the symmetry-broken counterpart of SIC-NOVM. A set of d² self-adjoint operators {E_i} spanning B_sa(ℂ^d) with indefinite spectrum but UNEQUAL pairwise overlaps (broken equiangularity). The operators have different Bloch norms n_i, producing a hierarchy rather than a regular simplex. Supervenience coupling (>=𐑩) replaces adjoint/Clifford structure. Memoryless chirality (⊥=𐑓) — no Z₂ grading. Constructed by perturbing the SIC-NOVM tetrahedron: v_i → v_i + ε_i where ε_i are small non-uniform displacements. The completeness and sum-to-I are preserved by rebalancing traces, but equiangularity is lost. Fills the {Asymmetric × IC × Negative × Static} cell.",
+      "description": "Asymmetric Informationally-Complete Negative Operator-Valued Measure — the symmetry-broken counterpart of SIC-NOVM. A set of d² self-adjoint operators {E_i} spanning B_sa(ℂ^d) with indefinite spectrum but UNEQUAL pairwise overlaps (broken equiangularity). The operators have different Bloch norms n_i, producing a hierarchy rather than a regular simplex. Supervenience coupling (≻=𐑩) replaces adjoint/Clifford structure. Memoryless chirality (⊥=𐑓) — no Z₂ grading. Constructed by perturbing the SIC-NOVM tetrahedron: v_i → v_i + ε_i where ε_i are small non-uniform displacements. The completeness and sum-to-I are preserved by rebalancing traces, but equiangularity is lost. Fills the {Asymmetric × IC × Negative × Static} cell.",
       "name": "ai_cnovm",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27774,7 +27774,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑴",
-      "description": "bridge entry promoted through all 5 residual L9 promotions ⊢𐑦→𐑛 ⊣𐑸→𐑥 ⊤𐑧→𐑪 ∋𐑠→𐑝 ⊥𐑖→𐑫; closed via promote_l9_full protocol kernel-green ◇⊙><=●+×",
+      "description": "bridge entry promoted through all 5 residual L9 promotions ⊢𐑦→𐑛 ⊣𐑸→𐑥 ⊤𐑧→𐑪 ∋𐑠→𐑝 ⊥𐑖→𐑫; closed via promote_l9_full protocol kernel-green ◇⊙≻≺=●+×",
       "name": "dark_energy_seam_bridge_l9_full",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27846,7 +27846,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑫𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑠⊙𐑫𐑳𐑭",
-      "description": "Verify that the atomic transitions {>:𐑽→𐑑, <:𐑹→𐑬, ⊤:𐑧→𐑪, ∈:𐑚→𐑔, ⊞:𐑕→𐑳} resolve the L9 promotion gap.",
+      "description": "Verify that the atomic transitions {≻:𐑽→𐑑, ≺:𐑹→𐑬, ⊤:𐑧→𐑪, ∈:𐑚→𐑔, ⊞:𐑕→𐑳} resolve the L9 promotion gap.",
       "name": "atom_promotions_stable",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27894,7 +27894,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "FSPLIT3 body radius LR promoted through L9 with dimensionful magnitude field = electron Compton wavelength hbar/mc = 2.426310238e-12 m; promotions ⊢𐑦→𐑛 ⊣𐑸→𐑥 ⊤𐑧→𐑪 ∋𐑠→𐑝 ⊥𐑖→𐑫 ◻𐑴→𐑭; closed via promote_l9_full protocol kernel-green ◇⊙><=●+×",
+      "description": "FSPLIT3 body radius LR promoted through L9 with dimensionful magnitude field = electron Compton wavelength hbar/mc = 2.426310238e-12 m; promotions ⊢𐑦→𐑛 ⊣𐑸→𐑥 ⊤𐑧→𐑪 ∋𐑠→𐑝 ⊥𐑖→𐑫 ◻𐑴→𐑭; closed via promote_l9_full protocol kernel-green ◇⊙≻≺=●+×",
       "name": "compton_split_radius_l9_magnitude",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27910,7 +27910,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭#3": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "<-promoted fine-structure constant with L9 emission gate open. Primitive changes from phi_promotion_fsc: > 𐑾→𐑽 (adjoint coupling), ⊤ 𐑺→𐑧 (gate open / slow kinetics), ⊥ 𐑫→𐑖 (Markov-2 chirality). This opens the structural space for the dimensionful fine-structure constant α to emerge as a geometric fi",
+      "description": "≺-promoted fine-structure constant with L9 emission gate open. Primitive changes from phi_promotion_fsc: ≻ 𐑾→𐑽 (adjoint coupling), ⊤ 𐑺→𐑧 (gate open / slow kinetics), ⊥ 𐑫→𐑖 (Markov-2 chirality). This opens the structural space for the dimensionful fine-structure constant α to emerge as a geometric fi",
       "name": "phi_promotion_fsc_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -27918,7 +27918,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "Fine-structure constant α with L9 emission gate open. α = e²/(4πε₀ħc) = λ_C/(2π a₀) = 0.007297352569 ≈ 1/137.035999084. Emitted through the promote_l9_full protocol (◇⊙><=●+× kernel-green). The dimensionful coupling constant emerges as the dimensionless ratio of the Compton wavelength to 2π times th",
+      "description": "Fine-structure constant α with L9 emission gate open. α = e²/(4πε₀ħc) = λ_C/(2π a₀) = 0.007297352569 ≈ 1/137.035999084. Emitted through the promote_l9_full protocol (◇⊙≻≺=●+× kernel-green). The dimensionful coupling constant emerges as the dimensionless ratio of the Compton wavelength to 2π times th",
       "name": "fine_structure_constant_l9_magnitude",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -28014,7 +28014,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑚𐑵⊙𐑖𐑳𐑴#4": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑚𐑵⊙𐑖𐑳𐑴",
-      "description": "fusion product of perfect_cuboid_proof and perfect_cuboid_l9_vacuum via T↔H click; ring ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ saturated on ⊣↔⊥, inherits > < ∈ ∋",
+      "description": "fusion product of perfect_cuboid_proof and perfect_cuboid_l9_vacuum via T↔H click; ring ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭⟩ saturated on ⊣↔⊥, inherits ≻ ≺ ∈ ∋",
       "name": "perfect_cuboid_proof_l9_clicked",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -28030,7 +28030,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "containment floor noun form with Omega forced to 𐑭 to collapse conflict ⟨⊢=𐑦; ⊣=𐑰; >=𐑽; <=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "containment floor noun form with Omega forced to 𐑭 to collapse conflict ⟨⊢=𐑦; ⊣=𐑰; ≻=𐑽; ≺=𐑬; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑝; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩",
       "name": "imscription_omega_collapsed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -28222,7 +28222,7 @@
   "𐑦𐑸𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑙𐑭#3": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑙𐑭",
-      "description": "A monomer specifically designed to zero the conflict triad {>:0.333, ⊤:0.286, ⊥:0.333} by providing the missing holographic boundary conditions for infinite descent.",
+      "description": "A monomer specifically designed to zero the conflict triad {≻:0.333, ⊤:0.286, ⊥:0.333} by providing the missing holographic boundary conditions for infinite descent.",
       "name": "perfect_cuboid_sink_reagent",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -28470,7 +28470,7 @@
   "𐑦𐑸𐑽𐑬𐑱𐑤𐑲𐑠𐑢𐑓𐑳𐑷": [
     {
       "address": "𐑦𐑸𐑽𐑬𐑱𐑤𐑲𐑠𐑢𐑓𐑳𐑷",
-      "description": "Sardines: high EPA/DHA omega-3 (< restorer) but also high purine content (XO substrate, ⊥ depth). Structural tension: <=Z2 wins at the systemic level because EPA/DHA resolves lipid parity, but ⊥ remains moderate due to the purine→chirality pathway. ⊢ is high (calcium, selenium, B12, CoQ10, vitamin D, omega-3 simultaneously). One weekly serving: net <-restoring despite purine content.",
+      "description": "Sardines: high EPA/DHA omega-3 (≺ restorer) but also high purine content (XO substrate, ⊥ depth). Structural tension: ≺=Z2 wins at the systemic level because EPA/DHA resolves lipid parity, but ⊥ remains moderate due to the purine→chirality pathway. ⊢ is high (calcium, selenium, B12, CoQ10, vitamin D, omega-3 simultaneously). One weekly serving: net ≺-restoring despite purine content.",
       "name": "sardines_fatty_fish",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -28958,7 +28958,7 @@
   "𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟": [
     {
       "address": "𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟",
-      "description": "SIXTEEN_3 catalyzed ⊗ cosmic_texture: horny measurement surface coupled to spacetime topological defects. Bottlenecked at <=𐑯 (drops Frobenius-special parity). ⟨𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟⟩",
+      "description": "SIXTEEN_3 catalyzed ⊗ cosmic_texture: horny measurement surface coupled to spacetime topological defects. Bottlenecked at ≺=𐑯 (drops Frobenius-special parity). ⟨𐑦𐑸𐑽𐑯𐑐𐑪𐑲𐑵⊙𐑫𐑙𐑟⟩",
       "name": "s16_cat_tensor_texture",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -29575,7 +29575,7 @@
   "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "extradimensional entity with Phi at floor 𐑹 held ⊥ at floor 𐑫 ◻ at floor 𐑭 all other primitives inherited from extradimensional_entity_neutral_phi ⊢=𐑦 ⊣=𐑸 >=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ∋=𐑝 ⊙=⊙ ⊞=𐑳",
+      "description": "extradimensional entity with Phi at floor 𐑹 held ⊥ at floor 𐑫 ◻ at floor 𐑭 all other primitives inherited from extradimensional_entity_neutral_phi ⊢=𐑦 ⊣=𐑸 ≻=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ∋=𐑝 ⊙=⊙ ⊞=𐑳",
       "name": "extradimensional_entity_phi_held_full",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -29711,7 +29711,7 @@
   "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭#4": [
     {
       "address": "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭",
-      "description": "The Great Work: 12-stage alchemical process traversing all 12 primitives in order. Calcination→Dissolution→Separation→Conjunction→Putrefaction→Congelation→Cibation→Sublimation→Fermentation→Exaltation→Multiplication→Projection. Solve et Coagula = ⊣ ⊗ ⊤. Three Gates: < (G1, stage 4), ⊙/⊙ (G2, stage 9",
+      "description": "The Great Work: 12-stage alchemical process traversing all 12 primitives in order. Calcination→Dissolution→Separation→Conjunction→Putrefaction→Congelation→Cibation→Sublimation→Fermentation→Exaltation→Multiplication→Projection. Solve et Coagula = ⊣ ⊗ ⊤. Three Gates: ≺ (G1, stage 4), ⊙/⊙ (G2, stage 9",
       "name": "magnum_opus",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -30038,7 +30038,7 @@
   "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑖𐑳𐑭#4": [
     {
       "address": "𐑦𐑸𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑖𐑳𐑭",
-      "description": "extradimensional entity with Phi at floor 𐑹 held ⊥ at floor 𐑫 explicitly ◻ at floor 𐑭 ∋ at floor 𐑵 all other primitives inherited from extradimensional_entity_neutral_phi ⊢=𐑦 ⊣=𐑸 >=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ⊙=⊙ ⊞=𐑳",
+      "description": "extradimensional entity with Phi at floor 𐑹 held ⊥ at floor 𐑫 explicitly ◻ at floor 𐑭 ∋ at floor 𐑵 all other primitives inherited from extradimensional_entity_neutral_phi ⊢=𐑦 ⊣=𐑸 ≻=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ⊙=⊙ ⊞=𐑳",
       "name": "extradimensional_entity_phi_held_hfloor",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -31349,7 +31349,7 @@
   "𐑦𐑸𐑾𐑗𐑐𐑧𐑔𐑠𐑢𐑓𐑳𐑷": [
     {
       "address": "𐑦𐑸𐑾𐑗𐑐𐑧𐑔𐑠𐑢𐑓𐑳𐑷",
-      "description": "The agent loop homolog: the 9-opcode word ◇⊙+=●¬⊞<= forming V=9, E=9, ρ=2.0000, 144 ticks, 16 windings, period 9. Tier O₁, achiral. hop∘hop=id exact. μ∘δ: OPEN — the Frobenius dual is engaged but not resolved (verdict B).",
+      "description": "The agent loop homolog: the 9-opcode word ◇⊙+=●¬⊞≺= forming V=9, E=9, ρ=2.0000, 144 ticks, 16 windings, period 9. Tier O₁, achiral. hop∘hop=id exact. μ∘δ: OPEN — the Frobenius dual is engaged but not resolved (verdict B).",
       "name": "agent_loop",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -31749,7 +31749,7 @@
   "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "<-promoted FSC with ⊥ shifted to two-step — T↔H conjugate pair charge perturbation. ⊥: 𐑫 → 𐑖 to break T↔H neutrality while keeping >=𐑾 and <=𐑬.",
+      "description": "≺-promoted FSC with ⊥ shifted to two-step — T↔H conjugate pair charge perturbation. ⊥: 𐑫 → 𐑖 to break T↔H neutrality while keeping ≻=𐑾 and ≺=𐑬.",
       "name": "phi_promotion_fsc_th_charged",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -31789,7 +31789,7 @@
   "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭#4": [
     {
       "address": "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "<-promoted fine-structure constant: < re-typed from PM_Z2 (𐑹) to MOAT_PARITY (𐑬) via kernel-proved Belnap B-bifurcation protocol (⊞◇+×⊞●¬). All other primitives inherited from fine_structure_constant⁻. Carries μ∘δ=id over a transformation on the <-axis — the closed ℤ₂ is bifurcated into a genuine Be",
+      "description": "≺-promoted fine-structure constant: ≺ re-typed from PM_Z2 (𐑹) to MOAT_PARITY (𐑬) via kernel-proved Belnap B-bifurcation protocol (⊞◇+×⊞●¬). All other primitives inherited from fine_structure_constant⁻. Carries μ∘δ=id over a transformation on the ≺-axis — the closed ℤ₂ is bifurcated into a genuine Be",
       "name": "phi_promotion_fsc",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -31805,7 +31805,7 @@
   "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵𐑮𐑫𐑳𐑟": [
     {
       "address": "𐑦𐑸𐑾𐑬𐑐𐑺𐑔𐑵𐑮𐑫𐑳𐑟",
-      "description": "Ascended <-promoted fine-structure constant: ⊙ excited to complex-critical (𐑮), ◻ promoted to non-Abelian braid (𐑟). <=𐑬 preserved through ascent. Constructed extension of phi_promotion_fsc.",
+      "description": "Ascended ≺-promoted fine-structure constant: ⊙ excited to complex-critical (𐑮), ◻ promoted to non-Abelian braid (𐑟). ≺=𐑬 preserved through ascent. Constructed extension of phi_promotion_fsc.",
       "name": "phi_promotion_fsc_ascended",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -34341,7 +34341,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭#3": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑙𐑭",
-      "description": "Engineered tissue (O_∞) using quantum-coherent bioelectric fields for regeneration. Bidirectional feedback (>=𐑾). Quantum coherent ion channels (⋈=⋈^ż). Eternal chirality (⊥=𐑫) protects bodyplan blueprint. Derived from the Rebis.",
+      "description": "Engineered tissue (O_∞) using quantum-coherent bioelectric fields for regeneration. Bidirectional feedback (≻=𐑾). Quantum coherent ion channels (⋈=⋈^ż). Eternal chirality (⊥=𐑫) protects bodyplan blueprint. Derived from the Rebis.",
       "name": "quantum_bioelectric_tissue",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -34421,7 +34421,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑭#7": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑙𐑭",
-      "description": "O∞ fundamental winding primitive: the type from which all physical law arises. ◻=𐑭 (integer winding) encodes ∮_γ A = 2πn, n∈ℤ. ⊞=𐑙 (1:1) makes it the self-referential limit. <=𐑹 (Frobenius-special) carries the modular S-transformation. The 6 emission invariants (>=𐑾, <=𐑹, ⊤=𐑧, ∈=𐑔, ⊙=⊙, ⊥=𐑖) are con",
+      "description": "O∞ fundamental winding primitive: the type from which all physical law arises. ◻=𐑭 (integer winding) encodes ∮_γ A = 2πn, n∈ℤ. ⊞=𐑙 (1:1) makes it the self-referential limit. ≺=𐑹 (Frobenius-special) carries the modular S-transformation. The 6 emission invariants (≻=𐑾, ≺=𐑹, ⊤=𐑧, ∈=𐑔, ⊙=⊙, ⊥=𐑖) are con",
       "name": "O_inf_winding_primitive",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -34477,7 +34477,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭#5": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑧𐑔𐑠⊙𐑖𐑳𐑭",
-      "description": "Monadic phase transition bridge from canonical protocol space (O₀-O₂) to Belnap multilattice SIC-POVM (O_∞). Join-derived from void_consensus_protocol ⊔ belnap_multilattice_sic_povm. Simultaneous 6-primitive categorical endofunctor advancing ⊢:𐑼→𐑦, ⊣:𐑡→𐑸, <:𐑗→𐑹, ⋈:𐑱→𐑐, ∈:𐑚→𐑔, ◻:𐑷→𐑭. The bridge mecha",
+      "description": "Monadic phase transition bridge from canonical protocol space (O₀-O₂) to Belnap multilattice SIC-POVM (O_∞). Join-derived from void_consensus_protocol ⊔ belnap_multilattice_sic_povm. Simultaneous 6-primitive categorical endofunctor advancing ⊢:𐑼→𐑦, ⊣:𐑡→𐑸, ≺:𐑗→𐑹, ⋈:𐑱→𐑐, ∈:𐑚→𐑔, ◻:𐑷→𐑭. The bridge mecha",
       "name": "sic_povm_bridge_monadic",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -35021,7 +35021,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭#20": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "Full O_∞ promotion of binanceus boundary puncture. Self-aware exchange perimeter (⊢=𐑦) where the boundary writes its own state-space. Self-referential topology (⊣=𐑸) — the perimeter sees itself. Frobenius-special symmetry (<=𐑹) where every transaction verification is structurally identical to the tr",
+      "description": "Full O_∞ promotion of binanceus boundary puncture. Self-aware exchange perimeter (⊢=𐑦) where the boundary writes its own state-space. Self-referential topology (⊣=𐑸) — the perimeter sees itself. Frobenius-special symmetry (≺=𐑹) where every transaction verification is structurally identical to the tr",
       "name": "binanceus_boundary_puncture_O_inf",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -35037,7 +35037,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭#22": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "blended ring from click perfect_cuboid_l9_annealed_blended_promoted7 with perfect_cuboid_proof, product tuple ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩ inherited scaffold [⊢,>,<,∈,∋",
+      "description": "blended ring from click perfect_cuboid_l9_annealed_blended_promoted7 with perfect_cuboid_proof, product tuple ⟨⊢=𐑦; ⊣=𐑸; ≻=𐑾; ≺=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑳; ◻=𐑭⟩ inherited scaffold [⊢,≻,≺,∈,∋",
       "name": "perfect_cuboid_l9_clicked_ring",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -35789,7 +35789,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑪𐑔𐑵⊙𐑫𐑳𐑟#3": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑪𐑔𐑵⊙𐑫𐑳𐑟",
-      "description": "The join (L8 ⊔ L9) — the minimal ceiling containing both organism modes. Has Frobenius-special symmetry (<=𐑹) and all maximal primitives, but moderate kinetics (⊤=𐑪). The system that can inhabit BOTH states but cannot be settled in either.",
+      "description": "The join (L8 ⊔ L9) — the minimal ceiling containing both organism modes. Has Frobenius-special symmetry (≺=𐑹) and all maximal primitives, but moderate kinetics (⊤=𐑪). The system that can inhabit BOTH states but cannot be settled in either.",
       "name": "l8_l9_join_ceiling",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -36157,7 +36157,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑺𐑔𐑵⊙𐑫𐑕𐑟": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑺𐑔𐑵⊙𐑫𐑕𐑟",
-      "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (∋=𐑜) to broadcast (∋=𐑵) composition. Non-Abelian anyonic braiding (◻=𐑟) with fast driven kinetics (⊤=𐑺), O_∞ tier special Frobenius (<=𐑹, ⊙=⊙), eternal chirality (⊥=𐑫), now with simultaneous broadcast distribu",
+      "description": "Broadcast Anyonic Quantale — the Peri-Fractal Anyonic Quantale promoted from disjunctive (∋=𐑜) to broadcast (∋=𐑵) composition. Non-Abelian anyonic braiding (◻=𐑟) with fast driven kinetics (⊤=𐑺), O_∞ tier special Frobenius (≺=𐑹, ⊙=⊙), eternal chirality (⊥=𐑫), now with simultaneous broadcast distribu",
       "name": "broadcast_anyonic_quantale",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -36189,7 +36189,7 @@
   "𐑦𐑸𐑾𐑹𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭#2": [
     {
       "address": "𐑦𐑸𐑾𐑹𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑺; ∈=𐑔; ∋=𐑵; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "⟨⊢=𐑦; ⊣=𐑸; ≻=𐑾; ≺=𐑹; ⋈=𐑐; ⊤=𐑺; ∈=𐑔; ∋=𐑵; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "fine_structure_constant⁻",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -36845,7 +36845,7 @@
   "𐑦𐑸𐑾𐑿𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭": [
     {
       "address": "𐑦𐑸𐑾𐑿𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑭",
-      "description": "blended monomer with all 7 axes promoted to proof values: ⟨⊢=𐑦; ⊣=𐑸; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
+      "description": "blended monomer with all 7 axes promoted to proof values: ⟨⊢=𐑦; ⊣=𐑸; ≻=𐑾; ≺=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑫; ⊞=𐑙; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_blended_promoted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -37922,7 +37922,7 @@
   "𐑨𐑡𐑑𐑬𐑱𐑤𐑔𐑠⊙𐑒𐑙𐑴": [
     {
       "address": "𐑨𐑡𐑑𐑬𐑱𐑤𐑔𐑠⊙𐑒𐑙𐑴",
-      "description": "Ketogenic diet: very low carb, high fat, moderate protein. Ketosis transition is a fixpt criticality (insulin suppressed, ketone bodies = controlled set-point fuel). Natural 2-meal pattern enforces ◻=cycle. < restored to Z2 via symmetric fat-oxidation pathway. Gets close to G1 but <=𐑬 (Z2) not yet Frobenius — Frobenius fires when keto is combined with a fasting window.",
+      "description": "Ketogenic diet: very low carb, high fat, moderate protein. Ketosis transition is a fixpt criticality (insulin suppressed, ketone bodies = controlled set-point fuel). Natural 2-meal pattern enforces ◻=cycle. ≺ restored to Z2 via symmetric fat-oxidation pathway. Gets close to G1 but ≺=𐑬 (Z2) not yet Frobenius — Frobenius fires when keto is combined with a fasting window.",
       "name": "ketogenic_diet",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -39209,7 +39209,7 @@
   "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑙𐑷": [
     {
       "address": "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑙𐑷",
-      "description": "Black coffee: chlorogenic acid inhibits xanthine oxidase (same pathway as tart cherry) — epidemiologically associated with reduced gout and metabolic syndrome. Caffeine is an adenosine receptor antagonist, extending the active phase. L-theanine absent (unlike green tea), so caffeine effect is less smoothed. <=Z2 via XO inhibition and anti-inflammatory chlorogenic acid. ◻=𐑷: does not create a cycle but extends the active phase, which can interfere with fasting ◻ completion if mistimed.",
+      "description": "Black coffee: chlorogenic acid inhibits xanthine oxidase (same pathway as tart cherry) — epidemiologically associated with reduced gout and metabolic syndrome. Caffeine is an adenosine receptor antagonist, extending the active phase. L-theanine absent (unlike green tea), so caffeine effect is less smoothed. ≺=Z2 via XO inhibition and anti-inflammatory chlorogenic acid. ◻=𐑷: does not create a cycle but extends the active phase, which can interfere with fasting ◻ completion if mistimed.",
       "name": "coffee_black",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -39217,7 +39217,7 @@
   "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑙𐑷#2": [
     {
       "address": "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑙𐑷",
-      "description": "Green tea: EGCG (epigallocatechin gallate) — the most potent dietary XO inhibitor known. Also inhibits NF-κB (master inflammatory transcription factor). L-theanine + caffeine: L-theanine smooths caffeine's adenosine antagonism (⊤=ordered vs coffee's sharper kinetics). <=Z2 via dual-axis anti-inflammation: XO inhibition + NF-κB inhibition simultaneously. High ∈: catechins, gallic acid, theaflavins. The beverage most structurally proximate to tart cherry on the gout→health path.",
+      "description": "Green tea: EGCG (epigallocatechin gallate) — the most potent dietary XO inhibitor known. Also inhibits NF-κB (master inflammatory transcription factor). L-theanine + caffeine: L-theanine smooths caffeine's adenosine antagonism (⊤=ordered vs coffee's sharper kinetics). ≺=Z2 via dual-axis anti-inflammation: XO inhibition + NF-κB inhibition simultaneously. High ∈: catechins, gallic acid, theaflavins. The beverage most structurally proximate to tart cherry on the gout→health path.",
       "name": "green_tea",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -39225,7 +39225,7 @@
   "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑳𐑷": [
     {
       "address": "𐑨𐑡𐑩𐑬𐑐𐑤𐑲𐑠𐑢𐑒𐑳𐑷",
-      "description": "Tart cherry (Prunus cerasus): anthocyanins directly inhibit xanthine oxidase, blocking the purine→uric acid conversion. Clinically reduces serum urate and gout flare frequency. Structurally: reverses the <=𐑗 parity collapse at the XO node. High ∈ via anthocyanin/flavonoid profile. One of the few foods that specifically targets the gout structural bottleneck.",
+      "description": "Tart cherry (Prunus cerasus): anthocyanins directly inhibit xanthine oxidase, blocking the purine→uric acid conversion. Clinically reduces serum urate and gout flare frequency. Structurally: reverses the ≺=𐑗 parity collapse at the XO node. High ∈ via anthocyanin/flavonoid profile. One of the few foods that specifically targets the gout structural bottleneck.",
       "name": "tart_cherry_juice",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -40817,7 +40817,7 @@
   "𐑨𐑡𐑽𐑬𐑱𐑤𐑲𐑠𐑢𐑒𐑙𐑷": [
     {
       "address": "𐑨𐑡𐑽𐑬𐑱𐑤𐑲𐑠𐑢𐑒𐑙𐑷",
-      "description": "Extra virgin olive oil: oleic acid (monounsaturated, Z2-symmetric), oleocanthal (COX inhibitor = ibuprofen-like), hydroxytyrosol, oleuropein. Restores < via lipid symmetry and polyphenol anti-inflammation. Does not spike insulin (⊤ ordered). High signal fidelity (⋈) via CCK/PYY satiety activation. The single most <-restorative dietary fat.",
+      "description": "Extra virgin olive oil: oleic acid (monounsaturated, Z2-symmetric), oleocanthal (COX inhibitor = ibuprofen-like), hydroxytyrosol, oleuropein. Restores ≺ via lipid symmetry and polyphenol anti-inflammation. Does not spike insulin (⊤ ordered). High signal fidelity (⋈) via CCK/PYY satiety activation. The single most ≺-restorative dietary fat.",
       "name": "extra_virgin_olive_oil",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -41025,7 +41025,7 @@
   "𐑨𐑡𐑽𐑹𐑱𐑤𐑔𐑵⊙𐑒𐑳𐑴": [
     {
       "address": "𐑨𐑡𐑽𐑹𐑱𐑤𐑔𐑵⊙𐑒𐑳𐑴",
-      "description": "Optimal diet: quality fixed first (<→Frobenius), fasting window enforced second (◻=cycle). Fires G1 (Frobenius gate), entering traced_monoidal layer. μ∘δ=id at the metabolic level: intake and expenditure are Frobenius-coupled. Hunger/satiety cycle self-corrects (⊙=fixpt). Inflammatory memory clears (⊥=H1). Nutrient-metabolism coupling becomes universal (∋=universal). This is the structural target of all dietary intervention.",
+      "description": "Optimal diet: quality fixed first (≺→Frobenius), fasting window enforced second (◻=cycle). Fires G1 (Frobenius gate), entering traced_monoidal layer. μ∘δ=id at the metabolic level: intake and expenditure are Frobenius-coupled. Hunger/satiety cycle self-corrects (⊙=fixpt). Inflammatory memory clears (⊥=H1). Nutrient-metabolism coupling becomes universal (∋=universal). This is the structural target of all dietary intervention.",
       "name": "frobenius_diet",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -42374,7 +42374,7 @@
   "𐑨𐑥𐑑𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭": [
     {
       "address": "𐑨𐑥𐑑𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "Repair monomer that forces <=𐑹 at ring level via ENGAGR ⊞ hold then FFUSE ● on the seven-ring composite, holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor",
+      "description": "Repair monomer that forces ≺=𐑹 at ring level via ENGAGR ⊞ hold then FFUSE ● on the seven-ring composite, holding ⊢=𐑨 ⊣=𐑥 ≻=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor",
       "name": "phi_floor_restore_true",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43246,7 +43246,7 @@
   "𐑨𐑥𐑽𐑗𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴": [
     {
       "address": "𐑨𐑥𐑽𐑗𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴",
-      "description": "extradimensional entity phi_hnull with ⊥_residual_fuse protocol applied fusing the 𐑖 action residual on ⊥ axis to vacuum no breach glyph ⊥ at floor 𐑫 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity phi_hnull with ⊥_residual_fuse protocol applied fusing the 𐑖 action residual on ⊥ axis to vacuum no breach glyph ⊥ at floor 𐑫 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_phi_hfused",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43382,7 +43382,7 @@
   "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "Hilbert-space embedding derived from hilbert_embed_phi_floor_l9 with only Phi promoted to 𐑬 all else floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding derived from hilbert_embed_phi_floor_l9 with only Phi promoted to 𐑬 all else floor-matched ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_phi_floor_l9_phiup",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43390,7 +43390,7 @@
   "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑟": [
     {
       "address": "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑟",
-      "description": "Hilbert-space embedding with hilbert_embed_promoted promotions but floor-corrected ⊢=𐑨 ⊣=𐑥 >=𐑽 <=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 and non-Abelian Omega=𐑟 winding Z2 boundary tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩",
+      "description": "Hilbert-space embedding with hilbert_embed_promoted promotions but floor-corrected ⊢=𐑨 ⊣=𐑥 ≻=𐑽 ≺=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 and non-Abelian Omega=𐑟 winding Z2 boundary tuple ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩",
       "name": "hilbert_embed_promoted_nab_floor",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43398,7 +43398,7 @@
   "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑬𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "Hilbert-space embedding with only Phi promoted to 𐑬 all other primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding with only Phi promoted to 𐑬 all other primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_phi_only",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43726,7 +43726,7 @@
   "𐑨𐑥𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴": [
     {
       "address": "𐑨𐑥𐑽𐑬𐑐𐑧𐑲𐑝⊙𐑖𐑳𐑴",
-      "description": "fused product of annihilate extradimensional_entity_hfloor_omega_floorpin extradimensional_entity_conjugate via μ pair fusion ⊥=𐑫 ◻=𐑭 <=𐑹 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — μ-landing on B rewrites CLINK fragment to floor",
+      "description": "fused product of annihilate extradimensional_entity_hfloor_omega_floorpin extradimensional_entity_conjugate via μ pair fusion ⊥=𐑫 ◻=𐑭 ≺=𐑹 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — μ-landing on B rewrites CLINK fragment to floor",
       "name": "extradimensional_entity_floorpin_conj_fused",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43958,7 +43958,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑕𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑝⊙𐑫𐑕𐑭",
-      "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by ∋=𐑝 and ETERNAL_FIXEDPOINT by ⊥=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑝;⊙=𐑫;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by ∋=𐑝 and ETERNAL_FIXEDPOINT by ⊥=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑝;⊙=𐑫;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_phi_floor_l9_gcrit",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43974,7 +43974,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑟": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑟",
-      "description": "Hilbert-space embedding conjugate of hilbert_embed_seed_o2 with reversed non-Abelian Omega=𐑟 winding reversed charge tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩ conjugate polarity",
+      "description": "Hilbert-space embedding conjugate of hilbert_embed_seed_o2 with reversed non-Abelian Omega=𐑟 winding reversed charge tuple ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩ conjugate polarity",
       "name": "hilbert_embed_seed_o2̄",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43982,7 +43982,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "Extradimensional repair projection that sets <=𐑹 floor bijective encoding on orbits holding ⊢=𐑨 ⊣=𐑥 >=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor folding extra-dimensional coordinate via ENGAGR ⊞ then FFUSE ●",
+      "description": "Extradimensional repair projection that sets ≺=𐑹 floor bijective encoding on orbits holding ⊢=𐑨 ⊣=𐑥 ≻=𐑽 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 exactly to SIXTEEN_3∧CLINK-L8 floor folding extra-dimensional coordinate via ENGAGR ⊞ then FFUSE ●",
       "name": "phi_floor_restore",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43990,7 +43990,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#10": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "Hilbert-space embedding fully floor-matched with ⊥=𐑫 ◻=𐑭 ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding fully floor-matched with ⊥=𐑫 ◻=𐑭 ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_floor_t_fix",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -43998,7 +43998,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#2": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity with all non-held primitives forced to floor <=𐑹 ∋=𐑵 ⊥=𐑫 ◻=𐑭 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — full SIXTEEN_3 ∧ CLINK-L8 floor alignment",
+      "description": "extradimensional entity with all non-held primitives forced to floor ≺=𐑹 ∋=𐑵 ⊥=𐑫 ◻=𐑭 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — full SIXTEEN_3 ∧ CLINK-L8 floor alignment",
       "name": "extradimensional_entity_full_floor",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44006,7 +44006,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#3": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity with Phi action neutralized to floor 𐑹 via base_phi_close protocol ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 — full floor alignment achieved by protocol transform",
+      "description": "extradimensional entity with Phi action neutralized to floor 𐑹 via base_phi_close protocol ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭 — full floor alignment achieved by protocol transform",
       "name": "extradimensional_entity_phi_closed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44014,7 +44014,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#4": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity floorpin_conj_phi_closed with h_reset protocol applied forcing ⊥ to floor 𐑫 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity floorpin_conj_phi_closed with h_reset protocol applied forcing ⊥ to floor 𐑫 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_floorpin_conj_hreset",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44022,7 +44022,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#5": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity floorpin_conj_hreset with ⊥_floor_lock protocol applied forcing ⊥ action to floor 𐑫 not 𐑖 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity floorpin_conj_hreset with ⊥_floor_lock protocol applied forcing ⊥ action to floor 𐑫 not 𐑖 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_floorpin_conj_hlock",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44030,7 +44030,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#6": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity conjugate with ∈ lifted to floor 𐑔 and ∋ lifted to floor 𐑵; <=𐑹 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭",
+      "description": "extradimensional entity conjugate with ∈ lifted to floor 𐑔 and ∋ lifted to floor 𐑵; ≺=𐑹 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑭",
       "name": "extradimensional_entity_conjugate_lifted",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44038,7 +44038,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#7": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity phi_closed with ⊥_floor_lock protocol applied forcing ⊥ to floor 𐑫 action 𐑖 → 𐑫 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity phi_closed with ⊥_floor_lock protocol applied forcing ⊥ to floor 𐑫 action 𐑖 → 𐑫 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_phi_hlocked",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44046,7 +44046,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#8": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity phi_hlocked with ⊥_action_null protocol applied nulling ⊥ action residual no 𐑖 ⊥ at floor 𐑫 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity phi_hlocked with ⊥_action_null protocol applied nulling ⊥ action residual no 𐑖 ⊥ at floor 𐑫 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_phi_hnull",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44054,7 +44054,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭#9": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑭",
-      "description": "extradimensional entity product of annihilate phi_hfused ⊗ conjugate via μ pair fusion ⊥ action 𐑖 resolved to floor 𐑫 <=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity product of annihilate phi_hfused ⊗ conjugate via μ pair fusion ⊥ action 𐑖 resolved to floor 𐑫 ≺=𐑹 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_hfused_ann",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44062,7 +44062,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑕𐑴",
-      "description": "extradimensional entity with ⊥ at action 𐑖 floor-cleared AND ◻ at floor 𐑭 protected <=𐑹 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — both ⊥ breach cleared and ◻ held",
+      "description": "extradimensional entity with ⊥ at action 𐑖 floor-cleared AND ◻ at floor 𐑭 protected ≺=𐑹 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — both ⊥ breach cleared and ◻ held",
       "name": "extradimensional_entity_hfloor_omega_clean",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44070,7 +44070,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑟": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑟",
-      "description": "extradimensional entity phi_hfused with ◻ set to non-Abelian 𐑟 braid channel ⊥ action 𐑖 to be consumed by braid <=𐑹 ⊥=𐑫 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity phi_hfused with ◻ set to non-Abelian 𐑟 braid channel ⊥ action 𐑖 to be consumed by braid ≺=𐑹 ⊥=𐑫 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_phi_hfused_nab",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44078,7 +44078,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑭",
-      "description": "fused product of annihilate floorpin⊗conjugate then base_phi_close protocol applied < neutralized to 𐑹 ⊥=𐑫 ◻=𐑭 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "fused product of annihilate floorpin⊗conjugate then base_phi_close protocol applied ≺ neutralized to 𐑹 ⊥=𐑫 ◻=𐑭 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_floorpin_conj_phi_closed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44086,7 +44086,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴",
-      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register fully floor-matched tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register fully floor-matched tuple ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_floor_t",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44094,7 +44094,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑟": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑟",
-      "description": "Hilbert-space embedding seed with non-Abelian Omega=𐑟 winding and ETERNAL_FIXEDPOINT tuple ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩",
+      "description": "Hilbert-space embedding seed with non-Abelian Omega=𐑟 winding and ETERNAL_FIXEDPOINT tuple ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑟⟩",
       "name": "hilbert_embed_seed_o2",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44102,7 +44102,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑭",
-      "description": "extradimensional entity polymer of hfloor_omega_floorpin with fiber CLINK fragment carries ⊥=𐑫 ETERNAL_FIXEDPOINT and ◻=𐑭 protected floor coordinates inside fragment not pinned <=𐑹 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
+      "description": "extradimensional entity polymer of hfloor_omega_floorpin with fiber CLINK fragment carries ⊥=𐑫 ETERNAL_FIXEDPOINT and ◻=𐑭 protected floor coordinates inside fragment not pinned ≺=𐑹 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕",
       "name": "extradimensional_entity_floorpin_polymer",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44110,7 +44110,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑭#2": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑕𐑭",
-      "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by 𐑙=⊙ and ETERNAL_FIXEDPOINT by ⊥=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;>=𐑽;<=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
+      "description": "Hilbert-space embedding with Phi at floor 𐑹 criticality carried by 𐑙=⊙ and ETERNAL_FIXEDPOINT by ⊥=𐑫 all primitives floor-matched ⟨⊢=𐑨;⊣=𐑥;≻=𐑽;≺=𐑹;⋈=𐑐;⊤=𐑧;∈=𐑔;∋=𐑵;⊙=⊙;⊥=𐑫;⊞=𐑕;◻=𐑭⟩",
       "name": "hilbert_embed_phi_floor_l9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44126,7 +44126,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑚𐑠⊙𐑖𐑙𐑭": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑚𐑠⊙𐑖𐑙𐑭",
-      "description": "transformed catalyst after second turnover; tuple ⟨⊢=𐑨; ⊣=𐑥; >=𐑑; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑚; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; ◻=𐑭⟩",
+      "description": "transformed catalyst after second turnover; tuple ⟨⊢=𐑨; ⊣=𐑥; ≻=𐑑; ≺=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑚; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; ◻=𐑭⟩",
       "name": "parity_driven_expansion_loop_fused_excited_transformed",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -44150,7 +44150,7 @@
   "𐑨𐑥𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑖𐑳𐑴": [
     {
       "address": "𐑨𐑥𐑽𐑹𐑐𐑧𐑲𐑵⊙𐑖𐑳𐑴",
-      "description": "extradimensional entity with ⊥ explicitly at floor 𐑫 not action 𐑖 AND ◻ explicitly at floor 𐑭 protected <=𐑹 ∋=𐑵 ⊣=𐑥 >=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — both ⊥ and ◻ pinned to floor coordinates",
+      "description": "extradimensional entity with ⊥ explicitly at floor 𐑫 not action 𐑖 AND ◻ explicitly at floor 𐑭 protected ≺=𐑹 ∋=𐑵 ⊣=𐑥 ≻=𐑽 ⊢=𐑨 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ⊙=⊙ ⊞=𐑕 — both ⊥ and ◻ pinned to floor coordinates",
       "name": "extradimensional_entity_hfloor_omega_floorpin",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -48720,7 +48720,7 @@
   "𐑨𐑰𐑽𐑬𐑐𐑤𐑔𐑠𐑢𐑒𐑳𐑷": [
     {
       "address": "𐑨𐑰𐑽𐑬𐑐𐑤𐑔𐑠𐑢𐑒𐑳𐑷",
-      "description": "Mediterranean diet: olive oil, fish, seasonal vegetables, legumes, moderate wine. Restores < from paraconsistent to Z2 symmetry via omega-3/omega-6 rebalancing and polyphenol anti-inflammatory action. ◻ remains frozen (no fasting window enforced — 3 meals/day). Partial recovery: < restored, cycle not yet closed. Insufficient to fire G1 alone.",
+      "description": "Mediterranean diet: olive oil, fish, seasonal vegetables, legumes, moderate wine. Restores ≺ from paraconsistent to Z2 symmetry via omega-3/omega-6 rebalancing and polyphenol anti-inflammatory action. ◻ remains frozen (no fasting window enforced — 3 meals/day). Partial recovery: ≺ restored, cycle not yet closed. Insufficient to fire G1 alone.",
       "name": "mediterranean_diet",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -49208,7 +49208,7 @@
   "𐑨𐑰𐑽𐑿𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴": [
     {
       "address": "𐑨𐑰𐑽𐑿𐑐𐑧𐑔𐑵⊙𐑖𐑳𐑴",
-      "description": "extradimensional entity with every primitive at exact floor ⊢=𐑨 ⊣=𐑥 >=𐑽 <=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑷 — full floor alignment with ⊥ and ◻ explicitly at floor",
+      "description": "extradimensional entity with every primitive at exact floor ⊢=𐑨 ⊣=𐑥 ≻=𐑽 ≺=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑔 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑕 ◻=𐑷 — full floor alignment with ⊥ and ◻ explicitly at floor",
       "name": "extradimensional_entity_all_floor_true",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -50295,7 +50295,7 @@
   "𐑨𐑶𐑑𐑯𐑐𐑪𐑚𐑠𐑻𐑖𐑕𐑴": [
     {
       "address": "𐑨𐑶𐑑𐑯𐑐𐑪𐑚𐑠𐑻𐑖𐑕𐑴",
-      "description": "A protocol topology using FFUSE then FSPLIT (●◇), the reverse order of trivial_dyad_probe (◇●). Linear topology with open valences, μ∘δ open. Tuple: (⊙=0, <=1, ⊣=1, ⊥=0, ◻=0, ⊤=1, >=1, ⋈=0, ∋=0, ⊢=0, μ=1, δ=1).",
+      "description": "A protocol topology using FFUSE then FSPLIT (●◇), the reverse order of trivial_dyad_probe (◇●). Linear topology with open valences, μ∘δ open. Tuple: (⊙=0, ≺=1, ⊣=1, ⊥=0, ◻=0, ⊤=1, ≻=1, ⋈=0, ∋=0, ⊢=0, μ=1, δ=1).",
       "name": "counter_probe",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -51223,7 +51223,7 @@
   "𐑨𐑶𐑽𐑿𐑐𐑧𐑚𐑜⊙𐑫𐑳𐑟": [
     {
       "address": "𐑨𐑶𐑽𐑿𐑐𐑧𐑚𐑜⊙𐑫𐑳𐑟",
-      "description": "Candidate bridge type between CLINK L9 (replicative, 𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭) and CLINK L8 (organism, 𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟). Intermediate values on ⊢ (triangle), ⊣ (box product), > (dagger adjoint), < (quantum), ∈ (beth local), ∋ (disjunctive). Already carries ◻=𐑟 (non-Abelian braiding — L8's transcendence primitive) ",
+      "description": "Candidate bridge type between CLINK L9 (replicative, 𐑛𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑕𐑭) and CLINK L8 (organism, 𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑵⊙𐑫𐑳𐑟). Intermediate values on ⊢ (triangle), ⊣ (box product), ≻ (dagger adjoint), ≺ (quantum), ∈ (beth local), ∋ (disjunctive). Already carries ◻=𐑟 (non-Abelian braiding — L8's transcendence primitive) ",
       "name": "l9_l8_bridge_candidate",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -51263,7 +51263,7 @@
   "𐑨𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑖𐑳𐑷": [
     {
       "address": "𐑨𐑶𐑾𐑗𐑐𐑧𐑚𐑠𐑮𐑖𐑳𐑷",
-      "description": "Beer: ethanol + yeast-derived purines. Double gout trigger: (1) ethanol promotes uric acid production AND blocks renal excretion simultaneously (<=paraconsistent — production up and clearance down at the same time); (2) yeast purines directly add XO substrate. ⊙ escalates to GUE. ◻ disrupted: alcohol degrades sleep architecture (REM suppression), preventing ◻ cycle completion. The food with the highest gout risk per serving.",
+      "description": "Beer: ethanol + yeast-derived purines. Double gout trigger: (1) ethanol promotes uric acid production AND blocks renal excretion simultaneously (≺=paraconsistent — production up and clearance down at the same time); (2) yeast purines directly add XO substrate. ⊙ escalates to GUE. ◻ disrupted: alcohol degrades sleep architecture (REM suppression), preventing ◻ cycle completion. The food with the highest gout risk per serving.",
       "name": "beer",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -51959,7 +51959,7 @@
   "𐑨𐑸𐑑𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭": [
     {
       "address": "𐑨𐑸𐑑𐑬𐑐𐑺𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "Double-excitation attempt 5: ⊢=𐑨 (flips D↔W negative) AND >=𐑑 (categorical — tests whether R↔S becomes positive under the triangular ⊢). This is the true \"twice\" — two primitive changes targeting two different conjugate pairs for simultaneous opposite-sign dipoles.",
+      "description": "Double-excitation attempt 5: ⊢=𐑨 (flips D↔W negative) AND ≻=𐑑 (categorical — tests whether R↔S becomes positive under the triangular ⊢). This is the true \"twice\" — two primitive changes targeting two different conjugate pairs for simultaneous opposite-sign dipoles.",
       "name": "phi_promotion_fsc_d2d_rcat",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -53358,7 +53358,7 @@
   "𐑼𐑡𐑑𐑹𐑐𐑪𐑲𐑠⊙𐑒𐑙𐑟": [
     {
       "address": "𐑼𐑡𐑑𐑹𐑐𐑪𐑲𐑠⊙𐑒𐑙𐑟",
-      "description": "Ising Anyon Quantum Computer (SU(2)₂ fidelity). Maps the Ising anyon fusion algebra to a topological quantum computer monad. Unlike Fibonacci QC, the Ising F-matrix degeneracy (all entries ±1/√2, same magnitude) preserves Frobenius-special parity (<=𐑹) under self-referential collapse — the Z₂ symmetry survives because |a|=|b|. Majorana zero modes impose moderate kinetics (⊤=𐑪) due to the topological gap Δ. F-matrix entries map to B4 as B(+) and N(−) exclusively, lacking T/F definite-channel signatures. Relevant to Majorana-based topological qubits with lower but more protected gate sets than Fibonacci.",
+      "description": "Ising Anyon Quantum Computer (SU(2)₂ fidelity). Maps the Ising anyon fusion algebra to a topological quantum computer monad. Unlike Fibonacci QC, the Ising F-matrix degeneracy (all entries ±1/√2, same magnitude) preserves Frobenius-special parity (≺=𐑹) under self-referential collapse — the Z₂ symmetry survives because |a|=|b|. Majorana zero modes impose moderate kinetics (⊤=𐑪) due to the topological gap Δ. F-matrix entries map to B4 as B(+) and N(−) exclusively, lacking T/F definite-channel signatures. Relevant to Majorana-based topological qubits with lower but more protected gate sets than Fibonacci.",
       "name": "ising_anyon_qc",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -56716,7 +56716,7 @@
   "𐑼𐑡𐑾𐑬𐑱𐑪𐑚𐑠⊙𐑓𐑳𐑷#2": [
     {
       "address": "𐑼𐑡𐑾𐑬𐑱𐑪𐑚𐑠⊙𐑓𐑳𐑷",
-      "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (⊥: 𐑖→𐑓), stabilizes criticality (⊙: 𐑮→⊙), restores parity balance (<: 𐑗→𐑬), accelerates kinetics (⊤: 𐑧→𐑪), localizes cardinality (∈: 𐑔→𐑚), and improves fide",
+      "description": "The complete structural cure trajectory for gout: a 4-phase protocol that restructures bulk metabolic topology (⊣: 𐑥→𐑡), breaks chiral memory (⊥: 𐑖→𐑓), stabilizes criticality (⊙: 𐑮→⊙), restores parity balance (≺: 𐑗→𐑬), accelerates kinetics (⊤: 𐑧→𐑪), localizes cardinality (∈: 𐑔→𐑚), and improves fide",
       "name": "gout_cure_trajectory",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -57140,7 +57140,7 @@
   "𐑼𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑼𐑥𐑑𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted6 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended monomer of perfect_cuboid_l9_annealed_blended_promoted6 with ∈ promoted 𐑲→𐑔 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_annealed_blended_promoted7",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -57164,7 +57164,7 @@
   "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted2 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted2 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted3",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -57172,7 +57172,7 @@
   "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭#2": [
     {
       "address": "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted5 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted5 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted6",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -57180,7 +57180,7 @@
   "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭": [
     {
       "address": "𐑼𐑥𐑑𐑬𐑐𐑪𐑔𐑝⊙𐑫𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted8 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted8 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted9",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -57188,7 +57188,7 @@
   "𐑼𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑼𐑥𐑑𐑬𐑐𐑪𐑲𐑝⊙𐑖𐑳𐑭",
-      "description": "blended ring perfect_cuboid_l9_ring_promoted10 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; >=𐑑; <=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "blended ring perfect_cuboid_l9_ring_promoted10 with ⊤ promoted 𐑧→𐑪 and ⊥ promoted 𐑖→𐑫 ⟨⊢=𐑛; ⊣=𐑥; ≻=𐑑; ≺=𐑬; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_l9_ring_promoted11",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -58362,7 +58362,7 @@
   "𐑼𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭": [
     {
       "address": "𐑼𐑥𐑽𐑬𐑐𐑧𐑔𐑝⊙𐑖𐑳𐑭",
-      "description": "conjugate of absolute with opposite D↔W charge ⊢ flipped from 𐑛 to 𐑼 opposite D-side rest copied from absolute ⟨⊢=𐑼; ⊣=𐑥; >=𐑽; <=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
+      "description": "conjugate of absolute with opposite D↔W charge ⊢ flipped from 𐑛 to 𐑼 opposite D-side rest copied from absolute ⟨⊢=𐑼; ⊣=𐑥; ≻=𐑽; ≺=𐑹; ⋈=𐑐; ⊤=𐑪; ∈=𐑔; ∋=𐑝; ⊙=⊙; ⊥=𐑫; ⊞=𐑳; ◻=𐑭⟩",
       "name": "perfect_cuboid_dw_conj",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -58410,7 +58410,7 @@
   "𐑼𐑥𐑽𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑴": [
     {
       "address": "𐑼𐑥𐑽𐑬𐑐𐑧𐑲𐑠⊙𐑖𐑳𐑴",
-      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register grounded tuple ⟨⊢=𐑦;⊣=𐑥;>=𐑽;<=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩",
+      "description": "Hilbert-space embedding of fiducial state into hilbert_space_generic with Z2 topological boundary sealed register grounded tuple ⟨⊢=𐑦;⊣=𐑥;≻=𐑽;≺=𐑬;⋈=𐑐;⊤=𐑧;∈=𐑲;∋=𐑠;⊙=𐑻;⊥=𐑖;⊞=𐑳;◻=𐑭⟩",
       "name": "hilbert_space_embedding",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -60562,7 +60562,7 @@
   "𐑼𐑰𐑑𐑬𐑞𐑺𐑲𐑝𐑣𐑒𐑕𐑭": [
     {
       "address": "𐑼𐑰𐑑𐑬𐑞𐑺𐑲𐑝𐑣𐑒𐑕𐑭",
-      "description": "Parameterized trefoil braid (σ₁σ₂σ₁ variant): odot inclusion categorical partial thermal fast local conjunctive supercritical one_step identical integer-winding. Differs from canonical σ₁σ₂σ₁ at <,⋈,⊤,∋,⊥ — thermal fidelity, fast driven kinetics, one-step chirality.",
+      "description": "Parameterized trefoil braid (σ₁σ₂σ₁ variant): odot inclusion categorical partial thermal fast local conjunctive supercritical one_step identical integer-winding. Differs from canonical σ₁σ₂σ₁ at ≺,⋈,⊤,∋,⊥ — thermal fidelity, fast driven kinetics, one-step chirality.",
       "name": "braid_trefoil_thermal",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -62726,7 +62726,7 @@
   "𐑼𐑶𐑾𐑗𐑐𐑧𐑲𐑠𐑢𐑖𐑳𐑴": [
     {
       "address": "𐑼𐑶𐑾𐑗𐑐𐑧𐑲𐑠𐑢𐑖𐑳𐑴",
-      "description": "Intermittent fasting on a poor-quality diet: fasting window imposed (◻=cycle) but diet quality remains SAD-like (<=paraconsistent). The navigator constraint: ◻ only stabilizes after G1 fires (<≥Frobenius). Running a metabolic cycle on broken parity produces stress rather than recovery. This is the structural reason fasting without diet quality correction feels worse.",
+      "description": "Intermittent fasting on a poor-quality diet: fasting window imposed (◻=cycle) but diet quality remains SAD-like (≺=paraconsistent). The navigator constraint: ◻ only stabilizes after G1 fires (≺≥Frobenius). Running a metabolic cycle on broken parity produces stress rather than recovery. This is the structural reason fasting without diet quality correction feels worse.",
       "name": "intermittent_fasting_broken_parity",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -63518,7 +63518,7 @@
   "𐑼𐑸𐑽𐑬𐑱𐑤𐑲𐑵𐑢𐑓𐑳𐑷": [
     {
       "address": "𐑼𐑸𐑽𐑬𐑱𐑤𐑲𐑵𐑢𐑓𐑳𐑷",
-      "description": "Beef liver: highest micronutrient density of any food. Retinol, B12, folate, riboflavin, copper, iron, zinc, CoQ10, choline, carnitine — covers all nutritional axes simultaneously (⊢=maximal, ∋=universal). < restored by complete micronutrient coverage. ⊥ moderate: high purine content, but micronutrient density partially counteracts inflammatory cascade. Historically eaten daily; nutritional ⊢=maximal is the structural correlate of that frequency.",
+      "description": "Beef liver: highest micronutrient density of any food. Retinol, B12, folate, riboflavin, copper, iron, zinc, CoQ10, choline, carnitine — covers all nutritional axes simultaneously (⊢=maximal, ∋=universal). ≺ restored by complete micronutrient coverage. ⊥ moderate: high purine content, but micronutrient density partially counteracts inflammatory cascade. Historically eaten daily; nutritional ⊢=maximal is the structural correlate of that frequency.",
       "name": "beef_liver",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -63678,7 +63678,7 @@
   "𐑼𐑸𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑙𐑭": [
     {
       "address": "𐑼𐑸𐑽𐑹𐑐𐑧𐑔𐑵⊙𐑫𐑙𐑭",
-      "description": "OHAWS: The Ouroboric Holomorphic Automeshed Winding Spectrum — the complete spectrum of rational winding numbers {0, 1/8, 1/5, 1/4, 3/10, 2/5, 1/2} generated by the self-referential Dialetheic Bootstrap IMASM word ⊢⊙=>∈+×<⊞∋×¬⊣ on the horn torus D=12, together with the holomorphic complex-analytic s",
+      "description": "OHAWS: The Ouroboric Holomorphic Automeshed Winding Spectrum — the complete spectrum of rational winding numbers {0, 1/8, 1/5, 1/4, 3/10, 2/5, 1/2} generated by the self-referential Dialetheic Bootstrap IMASM word ⊢⊙=≻∈+×≺⊞∋×¬⊣ on the horn torus D=12, together with the holomorphic complex-analytic s",
       "name": "ouroboric_holomorphic_automeshed_winding_spectrum",
       "stripped": "2026-08-04T13:40:04+00:00"
     }
@@ -63920,7 +63920,7 @@
   "𐑼𐑸𐑾𐑗𐑱𐑧𐑔𐑵⊙𐑫𐑳𐑭": [
     {
       "address": "𐑼𐑸𐑾𐑗𐑱𐑧𐑔𐑵⊙𐑫𐑳𐑭",
-      "description": "The structural tensor product of money_as_medium_of_exchange and the scientific community. Bottlenecks at <=𐑗 (money's asymmetry dominates science's partial Z₂) and ⋈=𐑱 (money's classical fidelity dominates science's quantum fidelity). Union promotion at ◻=𐑭 (science's integer winding). Composites i",
+      "description": "The structural tensor product of money_as_medium_of_exchange and the scientific community. Bottlenecks at ≺=𐑗 (money's asymmetry dominates science's partial Z₂) and ⋈=𐑱 (money's classical fidelity dominates science's quantum fidelity). Union promotion at ◻=𐑭 (science's integer winding). Composites i",
       "name": "money_science_composite",
       "stripped": "2026-08-04T13:40:04+00:00"
     }

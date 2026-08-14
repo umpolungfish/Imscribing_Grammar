@@ -11,11 +11,11 @@ import wave
 import numpy as np
 from pathlib import Path
 
-PRIMITIVE_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # Glyph primary key → vocal_sounds/ subdirectory name
 PRIM_DIR: dict[str, str] = {
-    "⊢": "D", "⊣": "T", ">": "R", "<": "P",
+    "⊢": "D", "⊣": "T", "≻": "R", "≺": "P",
     "⋈": "F", "⊤": "K", "∈": "G", "∋": "Gamma",
     "⊙": "Phi", "⊥": "H", "⊞": "S", "◻": "Omega",
 }

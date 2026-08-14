@@ -61,17 +61,17 @@ PROGRAMS_DIR = HERE / "manuscript_programs"
 
 CORPUS_BASE = {
     'voynich': {
-        '⊢':'𐑦','⊣':'𐑸','>':'𐑾','<':'𐑹',
+        '⊢':'𐑦','⊣':'𐑸','≻':'𐑾','≺':'𐑹',
         '⋈':'⋈^ì','⊤':'⊤^Ù','∈':'𐑲','∋':'∋^Ş',
         '⊙':'⊙','⊥':'𐑫','⊞':'𐑙','◻':'𐑭',
     },
     'rohonc': {
-        '⊢':'𐑨','⊣':'𐑶','>':'𐑽','<':'𐑹',
+        '⊢':'𐑨','⊣':'𐑶','≻':'𐑽','≺':'𐑹',
         '⋈':'⋈^ì','⊤':'⊤^@','∈':'𐑲','∋':'∋^ˌ',
         '⊙':'⊙','⊥':'𐑖','⊞':'𐑳','◻':'𐑭',
     },
     'linear_a': {
-        '⊢':'𐑨','⊣':'𐑶','>':'𐑽','<':'𐑹',
+        '⊢':'𐑨','⊣':'𐑶','≻':'𐑽','≺':'𐑹',
         '⋈':'⋈^ż','⊤':'⊤^W','∈':'𐑲','∋':'∋^ˌ',
         '⊙':'⊙','⊥':'𐑖','⊞':'𐑳','◻':'𐑭',
     },
@@ -112,7 +112,7 @@ SECTIONS = {
     ],
 }
 
-IG_KEYS   = ['⊢','⊣','>','<','⋈','⊤','∈','∋','⊙','⊥','⊞','◻']
+IG_KEYS   = ['⊢','⊣','≻','≺','⋈','⊤','∈','∋','⊙','⊥','⊞','◻']
 IG_WEIGHTS = [10000, 10000, 10000, 12000, 9000, 8000, 10000, 10000, 11000, 8000, 10000, 7000]
 
 CORPUS_COLORS = {'voynich': 'cyan', 'rohonc': 'green', 'linear_a': 'gold1'}
@@ -464,7 +464,7 @@ def _print_section(corpus: str):
             # mode of ⊣
             t_vals = [e['tuple']['⊣'] for e in entries]
             dom_t = max(set(t_vals), key=t_vals.count)
-            phi_vals = [e['tuple']['<'] for e in entries]
+            phi_vals = [e['tuple']['≺'] for e in entries]
             dom_phi = max(set(phi_vals), key=phi_vals.count)
             console.print(f"  [bold]{sec_name:20s}[/bold]  ⊣={dom_t}  <={dom_phi}  (sample {len(present)} elements)")
         console.print()

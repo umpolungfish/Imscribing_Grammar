@@ -151,7 +151,7 @@ def derive_tuple(instructions: list[str], corpus: str) -> dict:
     counts = _count_mnemonics(instructions)
     base   = dict(CORPUS_BASE[corpus])
     base['⊣'] = _derive_⊣(counts, corpus)
-    base['<'] = _derive_<(counts, corpus)
+    base['≺'] = _derive_<(counts, corpus)
     base['∋'] = _derive_∋(counts, corpus)
     base['⊥'] = _derive_⊥(len(instructions), corpus)
     return base

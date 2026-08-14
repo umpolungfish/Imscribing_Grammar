@@ -133,7 +133,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # upward glide (supervisory) → step intervals (categorical) →
     # rise-then-mirror (dagger/reversible) → stable middle (lateral/peer)
     # =========================================================================
-    elif base == '>':
+    elif base == '≻':
         f_lo, f_hi = 196.0, 392.0  # G3 – G4  (one octave range)
         env = np.exp(-1.0 * t / dur)
 
@@ -166,7 +166,7 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
     # Waveform symmetry encodes symmetry class:
     # sawtooth (max asymmetry) → FM complex → square (±) → pure sine → Frobenius
     # =========================================================================
-    elif base == '<':
+    elif base == '≺':
         f0 = 220.0   # A3
         env = np.exp(-1.2 * t / dur)
 
@@ -474,8 +474,8 @@ def synthesize_symbol(base, sub, fs=44100, dur=0.7):
 symbol_list = [
     ('⊢', 'ß'), ('⊢', 'C'), ('⊢', ';'), ('⊢', 'ω'),             # ⊢ Dimensionality
     ('⊣', '6'), ('⊣', 'K'), ('⊣', 'ò'), ('⊣', '¨'), ('⊣', 'O'), # ⊣ Topology
-    ('>', '̄'), ('>', 'ý'), ('>', 'Ť'), ('>', '='),              # > Relational
-    ('<', 'ɐ'), ('<', 'υ'), ('<', 'F'), ('<', '̇'), ('<', '}'),  # < Polarity
+    ('≻', '̄'), ('≻', 'ý'), ('≻', 'Ť'), ('≻', '='),              # > Relational
+    ('≺', 'ɐ'), ('≺', 'υ'), ('≺', 'F'), ('≺', '̇'), ('≺', '}'),  # < Polarity
     ('⋈', 'ì'), ('⋈', 'ð'), ('⋈', 'ż'),                          # ⋈ Fidelity
     ('⊤', '-'), ('⊤', 'W'), ('⊤', '@'), ('⊤', 'Ù'), ('⊤', 'λ'), # ⊤ Kinetics
     ('∈', 'β'), ('∈', 'γ'), ('∈', 'ʔ'),                          # ∈ Scope
@@ -497,11 +497,11 @@ PRIMITIVE_MAP = {
     '𐑡': ('⊣', '6'),   '𐑰': ('⊣', 'K'),   '𐑥': ('⊣', 'ò'),
     '𐑶': ('⊣', '¨'),   '𐑸': ('⊣', 'O'),
     # > Relational
-    '𐑩': ('>', '̄'),   '𐑑': ('>', 'ý'),
-    '𐑽': ('>', 'Ť'),   '𐑾': ('>', '='),
+    '𐑩': ('≻', '̄'),   '𐑑': ('≻', 'ý'),
+    '𐑽': ('≻', 'Ť'),   '𐑾': ('≻', '='),
     # < Polarity
-    '𐑗': ('<', 'ɐ'),   '𐑿': ('<', 'υ'),   '𐑬': ('<', 'F'),
-    '𐑯': ('<', '̇'),   '𐑹': ('<', '}'),
+    '𐑗': ('≺', 'ɐ'),   '𐑿': ('≺', 'υ'),   '𐑬': ('≺', 'F'),
+    '𐑯': ('≺', '̇'),   '𐑹': ('≺', '}'),
     # ⋈ Fidelity
     '⋈^ì': ('⋈', 'ì'),   '⋈^ð': ('⋈', 'ð'),   '⋈^ż': ('⋈', 'ż'),
     # ⊤ Kinetics
@@ -548,7 +548,7 @@ OLD_ID_MAP = {
     'Omega_0': '𐑷',    'Omega_Z2': '𐑴',       'Omega_Z': '𐑭',   'Omega_NA': '𐑟',
 }
 
-FIELD_ORDER = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+FIELD_ORDER = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 def resolve_id(token):
     """Convert any primitive token (canonical or old name) to a (base, sub) pair."""

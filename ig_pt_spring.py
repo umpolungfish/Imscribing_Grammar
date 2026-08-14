@@ -174,7 +174,7 @@ def generate_tex(pos):
     # ── Primitive lines from origin ───────────────────────────────────────────
     for prim in PRIM_VERT:
         pp = pos[f'P_{prim}']
-        empty = prim in ('◻','>','∈','⋈')
+        empty = prim in ('◻','≻','∈','⋈')
         col = 'black!8' if empty else 'black!14'
         L.append(f'\\draw[{col},line width=0.35pt] (0,0) -- ({pp[0]:.3f}cm,{pp[1]:.3f}cm);\n')
 
@@ -224,7 +224,7 @@ def generate_tex(pos):
     # ── Primitive anchor nodes + labels ───────────────────────────────────────
     for prim, vi in PRIM_VERT.items():
         pp   = pos[f'P_{prim}']
-        empty = prim in ('◻','>','∈','⋈')
+        empty = prim in ('◻','≻','∈','⋈')
         col  = 'black!20' if not empty else 'black!10'
         L.append(f'\\node[circle,fill={col},minimum size=0.15cm,inner sep=0pt]'
                  f' at ({pp[0]:.3f}cm,{pp[1]:.3f}cm) {{}};\n')

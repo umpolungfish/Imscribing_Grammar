@@ -52,7 +52,7 @@ WEIGHTS = {"D": 1.0, "T": 1.0, "R": 1.0, "P": 1.0, "F": 1.0,
 PNAMES = ["D", "T", "R", "P", "F", "K", "G", "Gm", "Ph", "H", "S", "W"]
 
 # Field name mapping (Unicode keys in catalog JSON → short names)
-CAT_FIELD_MAP = {"⊢": "D", "⊣": "T", ">": "R", "<": "P", "⋈": "F",
+CAT_FIELD_MAP = {"⊢": "D", "⊣": "T", "≻": "R", "≺": "P", "⋈": "F",
                  "⊤": "K", "∈": "G", "∋": "Gm", "⊙": "Ph",
                  "⊥": "H", "⊞": "S", "◻": "W"}
 

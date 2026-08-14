@@ -31,8 +31,8 @@ ROOT = Path(__file__).parent
 VALUES = {
     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "≻":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "≺":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
     "⋈":     ["⋈^ì", "⋈^ð", "⋈^ż"],
     "⊤":     ["⊤^-", "⊤^W", "⊤^@", "⊤^Ù"],
     "∈":     ["𐑚", "𐑔", "𐑲"],
@@ -75,7 +75,7 @@ print(f"Total types: {total:,}")
 # Remaining 8 primitives (T, R, F, K, G, Gamma, H, S) are free within each tier cell.
 
 free_count = 1
-for p in ["⊣", ">", "⋈", "⊤", "∈", "∋", "⊥", "⊞"]:
+for p in ["⊣", "≻", "⋈", "⊤", "∈", "∋", "⊥", "⊞"]:
     free_count *= len(VALUES[p])
 # free_count = 5*4*3*4*3*4*4*3 = 17,280
 
@@ -83,7 +83,7 @@ tier_counts = defaultdict(int)
 tier_cells  = defaultdict(list)          # (Phi, P, Omega, D) cells per tier
 
 for phi in VALUES["⊙"]:
-    for p in VALUES["<"]:
+    for p in VALUES["≺"]:
         for omega in VALUES["◻"]:
             for d in VALUES["⊢"]:
                 t = tier(phi, p, omega, d)
@@ -106,7 +106,7 @@ print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×∈
 # Block  = ouroboricity tier
 
 print("\n\nPERIODIC TABLE STRUCTURE  (Period=< × Group=◻, counting (<,P,◻,D) tier cells)\n")
-header = f"{'<':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
+header = f"{'≺':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
 print(header)
 print("─" * len(header))
 
@@ -123,7 +123,7 @@ for phi in VALUES["⊙"]:
     dom = defaultdict(int)
     for omega in VALUES["◻"]:
         cell_types = defaultdict(int)
-        for p in VALUES["<"]:
+        for p in VALUES["≺"]:
             for d in VALUES["⊢"]:
                 t = tier(phi, p, omega, d)
                 cell_types[t] += 1
@@ -145,7 +145,7 @@ print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙ and 𐑮)\
 print(f"{'P value':12s}  {'𐑷 → tier':16s}  {'◻≠0, D_bnd → tier':22s}  {'◻≠0, D_∞ → tier':20s}")
 print("─" * 75)
 
-for p in VALUES["<"]:
+for p in VALUES["≺"]:
     t_o1    = tier("⊙", p, "𐑷",  "𐑛")
     t_o2    = tier("⊙", p, "𐑴", "𐑛")
     t_o2d   = tier("⊙", p, "𐑴", "𐑼")
@@ -163,7 +163,7 @@ with open(ROOT / "IG_catalog.json") as f:
 catalog_by_tier = defaultdict(list)
 for entry in catalog:
     phi   = entry.get("⊙", "𐑢")
-    p     = entry.get("<", "𐑗")
+    p     = entry.get("≺", "𐑗")
     omega = entry.get("◻", "𐑷")
     d     = entry.get("⊢", "𐑛")
     t     = tier(phi, p, omega, d)
@@ -184,7 +184,7 @@ print(f"\n  Total catalog: {len(catalog)} entries")
 print("\n\nINNER CRYSTAL — 8 free primitives (T, R, F, K, G, ∈, H, S)\n")
 inner_combos = {
     "⊣":     5,
-    ">":     4,
+    "≻":     4,
     "⋈":     3,
     "⊤":     4,
     "∈":     3,

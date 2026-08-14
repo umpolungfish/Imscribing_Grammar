@@ -98,8 +98,8 @@ PRIM_LABEL = {
     'N':  '⊞', 'P':  '⊞', 'As': '⊞',
     'Sb': '⊞', 'Bi': '⊞', 'Mc': '⊞',
     # Group 16 — parity (O double bond, S ring topology)
-    'O':  '<', 'S':  '<', 'Se': '<',
-    'Te': '<', 'Po': '<', 'Lv': '<',
+    'O':  '≺', 'S':  '≺', 'Se': '≺',
+    'Te': '≺', 'Po': '≺', 'Lv': '≺',
     # Group 17 halogens — fastest kinetics
     'F':  '⊤', 'Cl': '⊤', 'Br': '⊤',
     'I':  '⊤', 'At': '⊤', 'Ts': '⊤',

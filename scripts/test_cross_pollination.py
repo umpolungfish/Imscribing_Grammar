@@ -190,7 +190,7 @@ def test_catalog_millennium():
         data = json.load(f)
 
     # The catalog uses '⊙' (odot/phi-c) not '⊙'
-    primitives = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+    primitives = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
     millennium_names = ["p_vs_np", "riemann_hypothesis", "yang_mills",
                         "navier_stokes", "hodge_conjecture",
                         "birch_swinnerton_dyer", "odd_perfect_numbers",

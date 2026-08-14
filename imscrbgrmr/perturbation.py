@@ -34,7 +34,7 @@ PRIMITIVE_WEIGHTS: Dict[str, float] = {
     "R": 0.12,
     "F": 0.12,
     "P": 0.10,
-    "<": 0.10,
+    "≺": 0.10,
     "G": 0.10,
     "K": 0.08,
     "S": 0.08,
@@ -82,14 +82,14 @@ _CRITICALITY_TIERS = [
 _PRIM_LABELS: Dict[str, str] = {
     "F": "Fidelity", "K": "Kinetic Character", "T": "Topology",
     "D": "Dimensionality", "R": "Recognition Mode", "P": "Polarity",
-    "G": "Granularity", "<": "Criticality Phase", "S": "Stoichiometry",
+    "G": "Granularity", "≺": "Criticality Phase", "S": "Stoichiometry",
     "∈": "Coupling", "◻": "Topological Protection Index",
 }
 
 _PRIM_ATTR: Dict[str, str] = {
     "F": "fidelity", "K": "kinetic_character", "T": "topology",
     "D": "dimensionality", "R": "recognition_mode", "P": "polarity",
-    "G": "granularity", "<": "criticality_phase", "◻": "topo_index",
+    "G": "granularity", "≺": "criticality_phase", "◻": "topo_index",
 }
 
 
@@ -305,7 +305,7 @@ class PerturbationEngine:
             ("G", imscription.granularity,        _GRANULARITY_TIERS),
         ]
         if imscription.criticality_phase is not None:
-            perturb_map.append(("<", imscription.criticality_phase, _CRITICALITY_TIERS))
+            perturb_map.append(("≺", imscription.criticality_phase, _CRITICALITY_TIERS))
 
         results: List[PerturbationResult] = []
         fault_prims: List[str] = []

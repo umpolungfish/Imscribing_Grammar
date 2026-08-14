@@ -34,8 +34,8 @@ ROOT = Path(__file__).parent
 VALUES: dict[str, list[str]] = {
     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "≻":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "≺":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
     "⋈":     ["𐑱", "𐑞", "𐑐"],
     "⊤":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
     "∈":     ["𐑚", "𐑔", "𐑲"],
@@ -46,7 +46,7 @@ VALUES: dict[str, list[str]] = {
     "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
-PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
@@ -56,7 +56,7 @@ ORD: dict[str, dict[str, int]] = {
 ORD["⊣"]["𐑶"] = ORD["⊣"]["𐑶"]
 
 WEIGHTS: dict[str, float] = {
-    "⊢": 1.0, "⊣": 1.0, ">": 1.0, "<": 1.2,
+    "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.2,
     "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
     "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
 }
@@ -123,7 +123,7 @@ def mismatches(a: dict, b: dict) -> int:
 
 def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
-    phi, p, omega, d = e["⊙"], e["<"], e["◻"], e["⊢"]
+    phi, p, omega, d = e["⊙"], e["≺"], e["◻"], e["⊢"]
     if phi in CRITICAL and p == "𐑹":
         return "O_∞"
     if phi in NONCRITICAL:
@@ -247,8 +247,8 @@ def language_probes(cat: Catalog) -> list[str]:
 
     # Thm 74.9 — Tensor bottleneck: creole ⊗ sacred → 𐑬 (min rule)
     if "haitian_creole" in entries and "sanskrit_classical" in entries:
-        p_tensor = min(ORD["<"]["𐑬"], ORD["<"]["𐑹"])
-        tensor_p = VALUES["<"][p_tensor]
+        p_tensor = min(ORD["≺"]["𐑬"], ORD["≺"]["𐑹"])
+        tensor_p = VALUES["≺"][p_tensor]
         lines.append(f"  Thm 74.9  creole⊗Sanskrit: P_tensor={tensor_p} (min rule destroys Frobenius)")
 
     # Thm 74.10 — d(Lojban, Esperanto)
@@ -359,7 +359,7 @@ def ecology_probes(cat: Catalog) -> list[str]:
         bd = breakdown(entries["coral_reef_healthy"], entries["coral_reef_bleached"])
         lines.append(f"  Thm 76.5  d(coral healthy, coral bleached) = {d:.4f} (tipping point)")
         # Verify P-dominant
-        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "<")
+        p_wsq = sum(r["wsq"] for r in bd if r["prim"] == "≺")
         phi_wsq = sum(r["wsq"] for r in bd if r["prim"] == "⊙")
         lines.append(f"            P contribution: {p_wsq:.1f} wsq; Phi contribution: {phi_wsq:.1f} wsq (P-dominant)")
 

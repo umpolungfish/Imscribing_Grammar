@@ -60,8 +60,8 @@ def load_imscription(name: str) -> Imscription:
             mapping = {
                 'D': '⊢',
                 'T': '⊣',
-                'R': '>',
-                'P': '<',
+                'R': '≻',
+                'P': '≺',
                 'F': '⋈',
                 'K': '⊤',
                 'G': '∈',

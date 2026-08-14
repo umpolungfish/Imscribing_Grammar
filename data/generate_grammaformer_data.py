@@ -23,11 +23,11 @@ from itertools import combinations
 
 # ── Symbol sets ───────────────────────────────────────────────────────────────
 
-PRIMS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+PRIMS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 PRIM_NAMES = {
-    '⊢': 'Dimensionality', '⊣': 'Topology', '>': 'Recognition',
-    '<': 'Parity', '⋈': 'Fidelity', '⊤': 'Kinetics',
+    '⊢': 'Dimensionality', '⊣': 'Topology', '≻': 'Recognition',
+    '≺': 'Parity', '⋈': 'Fidelity', '⊤': 'Kinetics',
     '∈': 'Granularity', '∋': 'Coupling', '⊙': 'Criticality',
     '⊥': 'Chirality', '⊞': 'Stoichiometry', '◻': 'Winding',
 }
@@ -280,7 +280,7 @@ def sc_peel(sys, catalog, entry, prim):
 
     if prim == '⊙':
         new_tier, note = 'O₀', 'Criticality gate closes — self-modeling collapses.'
-    elif prim == '<':
+    elif prim == '≺':
         new_tier = 'O₁' if tier == 'O_∞' else 'O₀'
         note = 'Frobenius parity gate closes — mu-delta=id no longer holds.'
     elif prim == '◻':
@@ -434,7 +434,7 @@ def sc_load_bearing(sys, catalog, entry):
     label = name.replace('_', ' ')
     t = fmt_tuple(entry)
     tier = entry_tier(entry)
-    gate_prims = ['⊙', '<', '◻']
+    gate_prims = ['⊙', '≺', '◻']
 
     msgs = [{'role': 'user', 'content': f"Which primitives are load-bearing for {label} at {tier}?"}]
     out = []
@@ -448,7 +448,7 @@ def sc_load_bearing(sys, catalog, entry):
     for p in gate_prims:
         if p == '⊙':
             all_peels[p] = 'O₀'
-        elif p == '<':
+        elif p == '≺':
             all_peels[p] = 'O₁' if tier == 'O_∞' else 'O₀'
         else:
             rank = TIERS.index(tier)
@@ -629,7 +629,7 @@ def main():
         all_steps.extend(sc_tensor(sys_p, catalog, ea, eb))
 
     # G: Primitive peel — gate prims x sampled entries
-    gate_prims = ['⊙', '<', '◻', '⊥']
+    gate_prims = ['⊙', '≺', '◻', '⊥']
     for e in rng.sample(catalog, min(12, len(catalog))):
         for p in gate_prims:
             all_steps.extend(sc_peel(sys_p, catalog, e, p))

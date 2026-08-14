@@ -247,8 +247,8 @@ def _imscription_to_primitives_dict(s: Imscription) -> Optional[Dict[str, str]]:
     raw = {
         "⊢": s.dimensionality.value,
         "⊣": s.topology.value,
-        ">": s.recognition_mode.value,
-        "<": s.polarity.value,
+        "≻": s.recognition_mode.value,
+        "≺": s.polarity.value,
         "⋈": s.fidelity.value,
         "⊤": s.kinetic_character.value,
         "∈": s.granularity.value,

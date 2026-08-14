@@ -26,7 +26,7 @@ def from_idx(n):
     if n == 99: return CRIT
     return SH[max(0, min(47, n))]
 
-PRIMS = ['>','⊥','◻','⊢','⊞','<','⊤','⋈','∋','∈','⊣','⊙']
+PRIMS = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
 
 def word(t):
     return ''.join(t[p] for p in PRIMS)
@@ -55,7 +55,7 @@ def valence(sym):
         return 0
     Z, period, col, block, _ = ELEMENTS[sym]
     t = derive_tuple(sym)
-    phi = get(t, '<')
+    phi = get(t, '≺')
     sig = get(t, '⊞')
 
     # Closed shell (<=𐑯=31)
@@ -175,8 +175,8 @@ def bond_type(sym_A, sym_B):
 
     # Both p-block non-metals → covalent (or polar covalent)
     if blkA == 'p' and blkB == 'p':
-        phiA = get(tA, '<')
-        phiB = get(tB, '<')
+        phiA = get(tA, '≺')
+        phiB = get(tB, '≺')
         # Both closed-shell (noble) → no reaction
         if phiA == 31 and phiB == 31:
             return 'none'
@@ -217,7 +217,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     tT = derive_tuple(terminal)
 
     # ── >: max → reactive character of the compound
-    R = max(get(tA, '>'), get(tB, '>'))
+    R = max(get(tA, '≻'), get(tB, '≻'))
 
     # ── ⊥: max → SOC of most complex component
     H = max(get(tA, '⊥'), get(tB, '⊥'))
@@ -300,12 +300,12 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
                             get(tB, '⊙') if tB['⊙'] != CRIT else 0))
 
     return {
-        '>': from_idx(R),
+        '≻': from_idx(R),
         '⊥': from_idx(H),
         '◻': from_idx(Om),
         '⊢': from_idx(D),
         '⊞': from_idx(Sig),
-        '<': from_idx(Ph),
+        '≺': from_idx(Ph),
         '⊤': from_idx(C),
         '⋈': from_idx(f),
         '∋': from_idx(g),
@@ -350,8 +350,8 @@ def react(sym_A, sym_B, override_n_A=None, override_n_B=None):
     vB = valence(sym_B)
 
     # <-drive: check if reaction is favored
-    phiA = get(tA, '<')
-    phiB = get(tB, '<')
+    phiA = get(tA, '≺')
+    phiB = get(tB, '≺')
 
     if vA == 0 or vB == 0:
         return {'error': f'{sym_A if vA==0 else sym_B} is inert (<=closed, v=0)'}
@@ -384,7 +384,7 @@ def react(sym_A, sym_B, override_n_A=None, override_n_B=None):
     prod = fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype)
     mol  = formula(sym_A, n_A, sym_B, n_B)
 
-    frob_closed = prod['<'] in (from_idx(31), from_idx(7))
+    frob_closed = prod['≺'] in (from_idx(31), from_idx(7))
 
     # Opcode-level justification
     justification = _justify(sym_A, sym_B, n_A, n_B, tA, tB, prod, btype, vA, vB)
@@ -411,10 +411,10 @@ def _justify(sA, sB, nA, nB, tA, tB, prod, btype, vA, vB):
     lines.append(f'Reaction: {nA}{sA} + {nB}{sB} → {formula(sA, nA, sB, nB)}')
     lines.append(f'Bond: {btype}')
     lines.append(f'Stoichiometry from valence: {sA}(v={vA}) × {sB}(v={vB}) → {nA}:{nB}')
-    lines.append(f'  Σ derivation: v({sA})={vA} from <={tA["<"]}+Σ={tA["⊞"]}; '
-                 f'v({sB})={vB} from <={tB["<"]}+Σ={tB["⊞"]}')
+    lines.append(f'  Σ derivation: v({sA})={vA} from <={tA["≺"]}+Σ={tA["⊞"]}; '
+                 f'v({sB})={vB} from <={tB["≺"]}+Σ={tB["⊞"]}')
     lines.append(f'<-drive:')
-    lines.append(f'  {sA} <={tA["<"]}({get(tA,"<")}) → {sB} <={tB["<"]}({get(tB,"<")}) → product <={prod["<"]}({get(prod,"<")})')
+    lines.append(f'  {sA} <={tA["≺"]}({get(tA,"≺")}) → {sB} <={tB["≺"]}({get(tB,"≺")}) → product <={prod["≺"]}({get(prod,"≺")})')
     lines.append(f'∋-coupling:')
     lines.append(f'  {sA} ∋={tA["∋"]}({get(tA,"∋")}) × {sB} ∋={tB["∋"]}({get(tB,"∋")}) → {btype} → product ∋={prod["∋"]}({get(prod,"∋")})')
     lines.append(f'⊣-topology:')
@@ -470,7 +470,7 @@ def print_reaction(result):
         a, b, c = tA[p], tB[p], tp[p]
         ia, ib, ic = get(tA,p), get(tB,p), get(tp,p)
         tag = ''
-        if p == '<':
+        if p == '≺':
             tag = '← closure gate'
         elif p == '⊙':
             tag = '← Frobenius gate'

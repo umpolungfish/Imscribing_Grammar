@@ -43,11 +43,11 @@ PRIM_VERT = {
     '⊙':  4,   # right-top        — noble gases + actinides
     '⊞':  5,   # left-top         — alkaline earths + group 15
     '⊤':  8,   # right-front      — halogens + Pt/Au
-    '<':  9,   # left-front       — group 16
+    '≺':  9,   # left-front       — group 16
     '⊢':  6,   # right-bottom     — group 13
     '⊣':  7,   # left-bottom      — group 14
     '◻': 10,   # right-back       — empty
-    '>': 11,   # left-back        — empty
+    '≻': 11,   # left-back        — empty
     '∈':  2,   # back-top         — empty
     '⋈':  3,   # back-bottom      — empty
 }

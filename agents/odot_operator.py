@@ -542,7 +542,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "D": "𐑛", "T": "𐑡", "R": "𐑩", "P": "𐑗", "F": "𐑱",
     "K": "𐑘", "G": "𐑚", "Gamma": "𐑝", "Phi": "𐑢", "⊙": "𐑢",
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
-    "⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗", "⋈": "𐑱",
+    "⊢": "𐑛", "⊣": "𐑡", "≻": "𐑩", "≺": "𐑗", "⋈": "𐑱",
     "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
     "⊞": "𐑙", "◻": "𐑷",
 }
@@ -944,8 +944,8 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-                    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-                    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+                    "≻":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+                    "≺":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                     "⋈":     ["𐑱", "𐑞", "𐑐"],
                     "⊤":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                     "∈":     ["𐑲", "𐑚", "𐑔"],
@@ -1979,9 +1979,9 @@ TOOL_SCHEMAS = [
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
             "⊣":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            ">":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
+            "≻":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
                            "Relational mode: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "<":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+            "≺":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                            "Parity/symmetry: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
             "⋈":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
@@ -2009,7 +2009,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
+        ["name", "description", "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
     ),
     _fn(
         "run_command",
@@ -4287,7 +4287,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
         }, indent=2)
 
     elif op == "bridge":
-        prim = args.get("primitive", "<")
+        prim = args.get("primitive", "≺")
         val_a = args.get("value_a", "𐑹")
         val_b = args.get("value_b", "𐑗")
         is_bn = args.get("is_bottleneck", True)

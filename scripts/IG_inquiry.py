@@ -456,7 +456,7 @@ SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
 _TENSOR_RULES: Dict[str, str] = {
     "⊢":     "max",  # dimensionality union — composed system spans all dims of both
     "⊣":     "max",  # topology promotes to most complex structure
-    ">":     "max",  # recognition mode promotes to most dynamic
+    "≻":     "max",  # recognition mode promotes to most dynamic
     "≺":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
     "⋈":     "min",  # fidelity bottleneck — limited by weaker fidelity partner
     "⊤":     "max",  # kinetic bottleneck — limited by slowest/most trapped step
@@ -833,8 +833,8 @@ _TOOLS_OPENAI = [
                     },
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -1389,8 +1389,8 @@ _TOOLS_OPENAI = [
                     "tuple": {"type": "string", "description": "Semicolon-separated tuple string D;T;R;P;F;K;G;Gamma;Phi;H;S;Omega"},
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -1437,8 +1437,8 @@ _TOOLS_OPENAI = [
                     "limit": {"type": "integer", "description": "Max results to return (default 10)"},
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -1466,8 +1466,8 @@ _TOOLS_OPENAI = [
                 "properties": {
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -1512,8 +1512,8 @@ _TOOLS_OPENAI = [
                     "same_tier": {"type": "boolean", "description": "Restrict to same ouroboricity tier"},
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -1675,8 +1675,8 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of a catalog entry to look up and encode (alternative to specifying all primitives)."},
                     "⊢":     {"type": "string", "enum": VALID_VALUES["⊢"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    ">":     {"type": "string", "enum": VALID_VALUES[">"]},
-                    "<":     {"type": "string", "enum": VALID_VALUES["<"]},
+                    "≻":     {"type": "string", "enum": VALID_VALUES["≻"]},
+                    "≺":     {"type": "string", "enum": VALID_VALUES["≺"]},
                     "⋈":     {"type": "string", "enum": VALID_VALUES["⋈"]},
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
@@ -4404,7 +4404,7 @@ class ToolDispatcher:
         Uses Shavian Unicode glyphs for comparison (identity from catalog).
         """
         phi = self._shavian_to_display(s.get("⊙", ""), "⊙")
-        p = self._shavian_to_display(s.get("<", ""), "<")
+        p = self._shavian_to_display(s.get("≺", ""), "≺")
         omega = self._shavian_to_display(s.get("◻", ""), "◻")
         d = self._shavian_to_display(s.get("⊢", ""), "⊢")
         at_criticality = phi in ("⊙", "𐑮")
@@ -4462,7 +4462,7 @@ class ToolDispatcher:
             "name": name,
             "frobenius_tier": tier,
             "phi": self._shavian_to_display(s.get("⊙"), "⊙"),
-            "p": self._shavian_to_display(s.get("<"), "<"),
+            "p": self._shavian_to_display(s.get("≺"), "≺"),
             "omega": self._shavian_to_display(s.get("◻"), "◻"),
             "d": self._shavian_to_display(s.get("⊢"), "⊢"),
             "interpretation": self._FROBENIUS_DESCRIPTIONS.get(tier, tier),
@@ -5241,7 +5241,7 @@ class ToolDispatcher:
                 "name": e["name"],
                 "tier": tier,
                 "⊤": e["⊤"],
-                "<": e["<"],
+                "≺": e["≺"],
                 "⊙": e["⊙"],
                 "⊢": e["⊢"],
                 "◻": e["◻"],

@@ -41,8 +41,8 @@ import os as _os
 ORDINALS = {
     "⊢": {"𐑛": 1, "𐑨": 2, "𐑼": 3, "𐑦": 4},
     "⊣": {"𐑡": 1, "𐑰": 2, "𐑥": 3, "𐑶": 4, "𐑸": 5},
-    ">": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
-    "<": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
+    "≻": {"𐑩": 1, "𐑑": 2, "𐑽": 3, "𐑾": 4},
+    "≺": {"𐑗": 1, "𐑿": 2, "𐑬": 3, "𐑯": 4, "𐑹": 5},
     "⋈": {"𐑱": 1, "𐑞": 2, "𐑐": 3},
     "⊤": {"𐑘": 1, "𐑤": 2, "𐑧": 3, "𐑪": 4, "𐑺": 4.5},
     "∈": {"𐑚": 1, "𐑔": 2, "𐑲": 3},
@@ -53,7 +53,7 @@ ORDINALS = {
     "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 # =============================================================================
 # CATALOG LOADING — single source of truth, no hardcoded systems
@@ -108,8 +108,8 @@ def load_catalog(force=False):
     CLINK_L9_REF = {
         "⊢": "𐑛",
         "⊣": "𐑥",
-        ">": "𐑑",
-        "<": "𐑬",
+        "≻": "𐑑",
+        "≺": "𐑬",
         "⋈": "𐑐",
         "⊤": "𐑪",
         "∈": "𐑔",
@@ -142,8 +142,8 @@ def _resolve_clink_l8_reference():
     return {
         "⊢": "𐑦",
         "⊣": "𐑸",
-        ">": "𐑾",
-        "<": "𐑹",
+        "≻": "𐑾",
+        "≺": "𐑹",
         "⋈": "𐑐",
         "⊤": "𐑧",
         "∈": "𐑲",
@@ -380,7 +380,7 @@ def assess_tier(t):
     needs the constructor first).
     """
     crit = t.get("⊙")
-    pol  = t.get("<")
+    pol  = t.get("≺")
     prot = t.get("◻")
     dim  = t.get("⊢")
     if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
@@ -415,13 +415,13 @@ CL9NK_FORMULAE = {
         "𐑡": ("graph(x) ∧ branch(x)", None, "distant"),
         "𐑰": ("x ⊆ y ∧ cont(y)", None, "distant"),
     },
-    ">": {
+    "≻": {
         "𐑑": ("Fun(x, y) ∧ Nat(y, z) → Fun(x, z) — bridge composition", "BRIDGE_COMP", "match"),
         "𐑽": ("f ⊣ g ∧ L Adj(f, g)", None, "close"),
         "𐑩": ("x ↑ y ∧ ¬(y ↑ x)", None, "distant"),
         "𐑾": ("lr⇔(x, y) ∧ Θ(x, y) ∧ ¬ Θ(y, x)", "LR_DUAL", "distant"),
     },
-    "<": {
+    "≺": {
         "𐑬": ("ℤ₂(x) ∧ ¬(x = -x) — parity of moat", "MOAT_PARITY", "match"),
         "𐑿": ("|ψ⟩ = Σ c_i |e_i⟩", None, "close"),
         "𐑯": ("∀g∈G( gx = x )", None, "distant"),
@@ -605,7 +605,7 @@ def compute_tensor_op(t_sys, t_ref=None):
         ords = ORDINALS.get(key, {})
         o_ref = ords.get(v_ref, 0)
         o_sys = ords.get(v_sys, 0)
-        if key in ("<", "⋈"):
+        if key in ("≺", "⋈"):
             result[key] = v_sys if o_sys <= o_ref else v_ref
         else:
             result[key] = v_ref if o_ref >= o_sys else v_sys
@@ -715,7 +715,7 @@ def compute_transcendence():
 # =============================================================================
 
 def generate_promotions():
-    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡",">":"𐑩","<":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
+    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡","≻":"𐑩","≺":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
 
     zfc_t = None
     load_catalog()
@@ -725,7 +725,7 @@ def generate_promotions():
             zfc_t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
             break
     if zfc_t is None:
-        zfc_t = {"⊢":"𐑼","⊣":"𐑸",">":"𐑾","<":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
+        zfc_t = {"⊢":"𐑼","⊣":"𐑸","≻":"𐑾","≺":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
 
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:

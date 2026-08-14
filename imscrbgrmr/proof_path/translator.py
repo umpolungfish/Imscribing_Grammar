@@ -57,8 +57,8 @@ def _get_client():
 
 def _prim_label(prim: str) -> str:
     return {
-        "⊢": "Dimensionality", "⊣": "Topology", ">": "Relational Mode",
-        "<": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
+        "⊢": "Dimensionality", "⊣": "Topology", "≻": "Relational Mode",
+        "≺": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
         "∈": "Scope", "∋": "Interaction Grammar", "⊙": "Criticality",
         "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Topological Invariant",
     }.get(prim, prim)

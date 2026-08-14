@@ -41,8 +41,8 @@ def gen_figures():
 PRIMITIVES = [
     ("⊢", "Dimensionality", 4, ["ß","C",";","ω"],   "Gly"),
     ("⊣", "Topology",       5, ["6","K","ò","¨","O"],"Pro"),
-    (">", "Recognition",    4, ["¯","ý","Ť","="],    "His"),
-    ("<", "Parity",         5, ["ɐ","υ","F","˙","}"],"Leu"),
+    ("≻", "Recognition",    4, ["¯","ý","Ť","="],    "His"),
+    ("≺", "Parity",         5, ["ɐ","υ","F","˙","}"],"Leu"),
     ("⋈", "Fidelity",       3, ["ì","ð","ż"],         "Ile"),
     ("⊤", "Kinetics",       5, ["-","W","@","Ù","λ"], "Val"),
     ("∈", "Granularity",    3, ["β","γ","ʔ"],         "Thr"),

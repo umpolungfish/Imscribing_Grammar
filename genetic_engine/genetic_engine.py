@@ -160,8 +160,8 @@ class IGPrimitive(Enum):
     """
     SCOPE       = "⊢"     # Met — translation scope (start codon)
     TOPOLOGY    = "⊣"     # Trp — indole ceiling (topological complexity)
-    REVERSIBILITY = ">"   # Cys — disulfide bonds (reversible crosslinks)
-    PARITY      = "<"     # Tyr — phosphorylation switch (parity toggle)
+    REVERSIBILITY = "≻"   # Cys — disulfide bonds (reversible crosslinks)
+    PARITY      = "≺"     # Tyr — phosphorylation switch (parity toggle)
     FORCE       = "⋈"     # Phe — maximum hydrophobicity (force ceiling)
     KINETICS    = "⊤"     # Ile — β-branching (ribosomal coupling)
     GRAMMAR     = "∈"     # His — imidazole pKa bridge (pH-gated catalysis)

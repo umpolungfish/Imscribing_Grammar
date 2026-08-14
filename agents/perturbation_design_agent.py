@@ -395,10 +395,10 @@ Return ONLY a JSON object:
             "∈": "Use template-directed assembly or concentration effects to tune mesoscale ordering.",
             "⊣": "Explore macrocyclisation or ring-closing conditions to alter topology.",
             "⊤": "Adjust temperature or add competing kinetic pathways to modify barrier heights.",
-            ">": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
+            "≻": "Switch between reversible (dynamic covalent) and non-covalent recognition modes.",
             "⊢": "Vary solvent system or co-crystal partner to shift domain character.",
-            "<": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
-            "<": "Tune proximity to critical point via concentration or temperature ramp.",
+            "≺": "Modify protonation state or use directed H-bond arrays to adjust polarity.",
+            "≺": "Tune proximity to critical point via concentration or temperature ramp.",
         }
         recs = []
         for r in jacobian.results[:5]:

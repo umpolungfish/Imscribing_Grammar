@@ -52,7 +52,7 @@ PRIM_PHI = {   # azimuthal angle (in degrees) for each primitive family
     '⊞':  60,   # alkaline earths + group 15
     '⊢': 100,   # group 13
     '⊣': 140,   # group 14 excl C
-    '<': 200,   # group 16 excl O,S
+    '≺': 200,   # group 16 excl O,S
     '⊤': 240,   # halogens
     '⊥': 280,   # d-block non-thread + lanthanides
     '⊙': 320,   # noble gases + actinides

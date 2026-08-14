@@ -152,8 +152,8 @@ print()
 # Based on the specific chemical novelty each AA introduces
 promotions = {
     "Phe": ("⋈",  "Hydrophobic force at maximum: pure aromatic ring, no heteroatoms; defines the ⋈ field ceiling"),
-    "Tyr": ("<",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
-    "Cys": (">",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
+    "Tyr": ("≺",  "Parity switch: aromatic + OH = can flip between hydrophobic and H-bonding states; phosphorylation = phase gate"),
+    "Cys": ("≻",  "Reversibility gate: disulfide bond S-S is the only reversible covalent bond in proteins; μ∘δ=id at covalent level"),
     "Trp": ("⊣",  "Maximal topology: bicyclic indole = highest structural complexity; defines ⊣ ceiling"),
     "His": ("⊙",  "Criticality gate: imidazole pKa≈6 = pH-critical protonation equilibrium; catalytic triads, metal binding, pH sensing"),
     "Gln": ("∈",  "Grammar/Scope: long amide side chain H-bond network; structures interaction patterns and recognition grammar"),
@@ -172,7 +172,7 @@ for aa in sorted(promotions):
 print()
 print("Mapping accounts for all 12 IG primitives:")
 covered = set(prim for prim, _ in promotions.values())
-ig_prims = {"⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"}
+ig_prims = {"⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"}
 print(f"  Covered: {sorted(covered)}")
 print(f"  Missing: {sorted(ig_prims - covered)}")
 print(f"  Bijection: {covered == ig_prims}")

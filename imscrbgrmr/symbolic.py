@@ -56,8 +56,8 @@ class SymbolicOperator(Enum):
     # Arithmetic
     EQ = "="
     NEQ = "≠"
-    LT = "<"
-    GT = ">"
+    LT = "≺"
+    GT = "≻"
     LEQ = "≤"
     GEQ = "≥"
     
@@ -157,7 +157,7 @@ def _get_primitive_value(imscription: Imscription, name: str) -> str:
         "K": imscription.kinetic_character.value,
         "G": imscription.granularity.value,
         "∈": imscription.grammar.value,
-        "<": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
+        "≺": imscription.criticality_phase.value if imscription.criticality_phase else "⊙_softsign",
     }
     return mapping.get(name, "")
 
@@ -586,18 +586,18 @@ class CrossDomainAnalogyDetector:
     # The code self-normalises by dividing by total_weight, so absolute
     # magnitudes determine relative importance, not whether they sum to 1.
     # Keyed by the canonical marks. This table used to mix legacy letters with
-    # two stray marks — "∈" for the composition axis and "<" for criticality —
+    # two stray marks — "∈" for the composition axis and "≺" for criticality —
     # so the isomorph report printed a third alphabet that was neither the old
     # names nor the grammar's own. The weights are unchanged; only the keys are
     # now the marks the rest of the constellation uses.
     PRIMITIVE_WEIGHTS = {
         "⊢": 0.20,  # Dimensionality — fundamental domain axis; cross-domain pairs penalised when it differs
         "⊣": 0.25,  # Topology is highly diagnostic
-        ">": 0.20,  # Coupling / recognition mode
+        "≻": 0.20,  # Coupling / recognition mode
         "∋": 0.20,  # Composition — the interaction grammar
         "⋈": 0.15,  # Fidelity
         "∈": 0.10,  # Cardinality / granularity
-        "<": 0.05,  # Parity / polarity
+        "≺": 0.05,  # Parity / polarity
         "⊤": 0.05,  # Kinetics
         "⊙": 0.05,  # Criticality
         "⊞": 0.08,  # Stoichiometry — raised from 0.05; valency-sensitive for ⋈ systems
@@ -680,8 +680,8 @@ class CrossDomainAnalogyDetector:
         return {
             "⊢": imscription.dimensionality.value,
             "⊣": imscription.topology.value,
-            ">": imscription.recognition_mode.value,
-            "<": imscription.polarity.value,
+            "≻": imscription.recognition_mode.value,
+            "≺": imscription.polarity.value,
             "⋈": imscription.fidelity.value,
             "⊤": imscription.kinetic_character.value,
             "∈": imscription.granularity.value,
@@ -750,7 +750,7 @@ class CrossDomainAnalogyDetector:
         if domains_a & domains_b:
             # Same domain → structural analogy
             return "structural"
-        elif "⊣" in shared_primitives and ">" in shared_primitives:
+        elif "⊣" in shared_primitives and "≻" in shared_primitives:
             # Same topology and recognition → functional analogy
             return "functional"
         elif "⋈" in shared_primitives and "∋" in shared_primitives:
@@ -936,7 +936,7 @@ class PredictiveRuleGenerator:
         # ── Kinetic-thermodynamic coupling (rule_002 in prior version) ─────────
         candidates.append((
             And(P("F", "𐑐"), P("K", "𐑘")),
-            P("<", "⊙_softsign"),
+            P("≺", "⊙_softsign"),
         ))
 
         # ── R → F coupling ─────────────────────────────────────────────────────
@@ -1009,7 +1009,7 @@ class PredictiveRuleGenerator:
         # All-or-nothing steric cliff in T_⋈ → criticality candidacy
         candidates.append((
             And(P("T", "𐑥"), P("K", "𐑪")),
-            P("<", "⊙_ctyogh"),
+            P("≺", "⊙_ctyogh"),
         ))
 
         # ── Cage topology (Axiom 1 analogue + kinetic encapsulation) ───────────

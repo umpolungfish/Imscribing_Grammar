@@ -53,8 +53,8 @@ for k, v in list(OLD_TO_SHAVIAN.items()):
 LEGACY_KEY_MAP = {
     "D":     "⊢",
     "T":     "⊣",
-    "R":     ">",
-    "P":     "<",
+    "R":     "≻",
+    "P":     "≺",
     "F":     "⋈",
     "K":     "⊤",
     "G":     "∋",
@@ -69,7 +69,7 @@ LEGACY_KEY_MAP = {
 PRIM_GLYPH_NORM = {"⊙": "⊙"}
 
 # Canonical prim glyphs for regex split
-_PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊙", "⊥", "⊞", "◻"]
+_PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊙", "⊥", "⊞", "◻"]
 _PRIM_PAT = "|".join(re.escape(p) for p in sorted(_PRIMS, key=len, reverse=True))
 _TUPLE_SPLIT = re.compile(f';(?={_PRIM_PAT})')
 

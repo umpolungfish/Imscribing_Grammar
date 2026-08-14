@@ -28,13 +28,13 @@ ARM_DEG = {
     '⊥': 90,   # up       — d-block, f-lanthanides, H
     '⊙': 60,   # UR       — noble gases, He, actinides
     '⊤': 30,   # R-upper  — halogens, Pt, Au
-    '<':  0,   # right    — group 16
+    '≺':  0,   # right    — group 16
     '⊞': 330,  # R-lower  — alkaline earths + group 15
     '∋': 300,  # L-lower  — alkali metals
     '⊣': 270,  # down     — group 14
     '⊢': 240,  # DL       — group 13
     '◻': 210,  # L-lower  — empty
-    '>': 180,  # left     — empty
+    '≻': 180,  # left     — empty
     '∈': 150,  # L-upper  — empty
     '⋈': 120,  # UL       — empty
 }

@@ -32,7 +32,7 @@ for name in CLAY_NAMES:
     e = catalog.get(name)
     if e:
         clay_tuples[name] = e
-        print(f"{name}: {e['⊢']} {e['⊣']} {e['>']} {e['<']} {e['⋈']} {e['⊤']} {e['∈']} {e['∋']} {e['⊙']} {e['⊥']} {e['⊞']} {e['◻']}")
+        print(f"{name}: {e['⊢']} {e['⊣']} {e['≻']} {e['≺']} {e['⋈']} {e['⊤']} {e['∈']} {e['∋']} {e['⊙']} {e['⊥']} {e['⊞']} {e['◻']}")
     else:
         print(f"WARNING: {name} not found")
 
@@ -46,7 +46,7 @@ NEW_RULESETS_ABSORPTION = [
     ("monarchy", (
         AbsorptionRule("⊙", "⊙", ("meet", "join", "tensor")),
         AbsorptionRule("⊞", "𐑳", ("meet", "join", "tensor")),
-        AbsorptionRule("<", "𐑹", ("meet", "join", "tensor")),
+        AbsorptionRule("≺", "𐑹", ("meet", "join", "tensor")),
         AbsorptionRule("◻", "𐑭", ("meet", "join", "tensor")),
     )),
     # 24: inverted
@@ -94,7 +94,7 @@ def abs_to_dict(abs_rules):
 
 # ── Map letters to ordinals ────────────────────────────────────
 SHORT_TO_FULL = {
-    'D': '⊢', 'T': '⊣', 'R': '>', 'P': '<', 'F': '⋈',
+    'D': '⊢', 'T': '⊣', 'R': '≻', 'P': '≺', 'F': '⋈',
     'K': '⊤', 'G': '∈', 'A': '∋', 'C': '⊙', 'H': '⊥',
     'S': '⊞', 'W': '◻',
 }
@@ -103,8 +103,8 @@ SHORT_TO_FULL = {
 ORDINALS = {
     '⊢': {'𐑛': 1, '𐑨': 2, '𐑼': 3, '𐑦': 4},
     '⊣': {'𐑡': 1, '𐑰': 2, '𐑥': 3, '𐑶': 4, '𐑸': 5},
-    '>': {'𐑩': 1, '𐑑': 2, '𐑽': 3, '𐑾': 4},
-    '<': {'𐑗': 1, '𐑿': 2, '𐑬': 3, '𐑯': 4, '𐑹': 5},
+    '≻': {'𐑩': 1, '𐑑': 2, '𐑽': 3, '𐑾': 4},
+    '≺': {'𐑗': 1, '𐑿': 2, '𐑬': 3, '𐑯': 4, '𐑹': 5},
     '⋈': {'𐑱': 1, '𐑞': 2, '𐑐': 3},
     '⊤': {'𐑺': 1, '𐑪': 2, '𐑧': 3, '𐑤': 4, '𐑘': 5},
     '∈': {'𐑲': 1, '𐑚': 2, '𐑔': 3},
@@ -115,7 +115,7 @@ ORDINALS = {
     '◻': {'𐑷': 1, '𐑴': 2, '𐑭': 3, '𐑟': 4},
 }
 
-PRIM_KEYS = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+PRIM_KEYS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 
 def apply_absorption(tup, abs_dict, op):
     """Apply absorption rules to a tuple. Returns absorbed tuple."""
@@ -155,7 +155,7 @@ def tensor_with_absorption(tup_a, tup_b, abs_dict):
     return result_abs
 
 def tuple_to_str(tup):
-    return f"⟨{tup['⊢']};{tup['⊣']};{tup['>']};{tup['<']};{tup['⋈']};{tup['⊤']};{tup['∈']};{tup['∋']};{tup['⊙']};{tup['⊥']};{tup['⊞']};{tup['◻']}⟩"
+    return f"⟨{tup['⊢']};{tup['⊣']};{tup['≻']};{tup['≺']};{tup['⋈']};{tup['⊤']};{tup['∈']};{tup['∋']};{tup['⊙']};{tup['⊥']};{tup['⊞']};{tup['◻']}⟩"
 
 def tuple_diff_count(a, b):
     return sum(1 for pk in PRIM_KEYS if a[pk] != b[pk])
@@ -176,11 +176,11 @@ print("=" * 100)
 
 # ── 1. Baseline: show each Clay problem's primitives in readable notation ──
 print("\n── 1. CLAY PROBLEM TUPLES (canonical) ──")
-print(f"{'Problem':<6} {'⊢':<4} {'⊣':<4} {'>':<4} {'<':<4} {'⋈':<4} {'⊤':<4} {'∈':<4} {'∋':<4} {'⊙':<4} {'⊥':<4} {'⊞':<4} {'◻':<4}")
+print(f"{'Problem':<6} {'⊢':<4} {'⊣':<4} {'≻':<4} {'≺':<4} {'⋈':<4} {'⊤':<4} {'∈':<4} {'∋':<4} {'⊙':<4} {'⊥':<4} {'⊞':<4} {'◻':<4}")
 print("-" * 70)
 for name in CLAY_NAMES:
     t = clay_tuples[name]
-    print(f"{SHORT[name]:<6} {t['⊢']:<4} {t['⊣']:<4} {t['>']:<4} {t['<']:<4} {t['⋈']:<4} {t['⊤']:<4} {t['∈']:<4} {t['∋']:<4} {t['⊙']:<4} {t['⊥']:<4} {t['⊞']:<4} {t['◻']:<4}")
+    print(f"{SHORT[name]:<6} {t['⊢']:<4} {t['⊣']:<4} {t['≻']:<4} {t['≺']:<4} {t['⋈']:<4} {t['⊤']:<4} {t['∈']:<4} {t['∋']:<4} {t['⊙']:<4} {t['⊥']:<4} {t['⊞']:<4} {t['◻']:<4}")
 
 # ── 2. Pairwise distances (canonical) ──
 print("\n── 2. PAIRWISE DISTANCES (canonical, primitive diffs) ──")

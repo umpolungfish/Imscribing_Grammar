@@ -70,7 +70,7 @@ if __name__ == "__main__":
     # Example primitives for ascent to O₂
     primitives = [
         ("⊣", "𐑶", "network topology → self-referential"),
-        ("<", "𐑬", "partial symmetry → Frobenius-special"),
+        ("≺", "𐑬", "partial symmetry → Frobenius-special"),
         ("⊤", "⊤^@", "moderate kinetics → slow/near-equilibrium"),
         ("⊙", "⊙", "subcritical → self-modeling criticality"),
         ("⊥", "𐑖", "memoryless → two-step chirality"),

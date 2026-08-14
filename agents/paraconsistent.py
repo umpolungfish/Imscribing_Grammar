@@ -39,9 +39,9 @@ _ORDINALS = {
            "𐑛": 0, "𐑨": 1, "𐑼": 2, "𐑦": 3},
     "⊣": {"𐑡": 0, "𐑰": 1, "𐑥": 2, "𐑶": 3, "𐑸": 4,
            "𐑡": 0, "𐑰": 1, "𐑥": 2, "𐑶": 3, "𐑸": 4},
-    ">": {"𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3,
+    "≻": {"𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3,
            "𐑩": 0, "𐑑": 1, "𐑽": 2, "𐑾": 3},
-    "<": {"𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4,
+    "≺": {"𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4,
            "𐑗": 0, "𐑿": 1, "𐑬": 2, "𐑯": 3, "𐑹": 4},
     "⋈": {"𐑱": 0, "𐑞": 1, "𐑐": 2,
            "𐑱": 0, "𐑞": 1, "𐑐": 2},
@@ -61,7 +61,7 @@ _ORDINALS = {
            "𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
 }
 
-_BOTTLENECK_PRIMS = {"<", "⋈"}
+_BOTTLENECK_PRIMS = {"≺", "⋈"}
 
 def _bottleneck_min(p: str, a: str, b: str) -> str:
     """Ordinal-aware minimum for bottleneck primitives.
@@ -843,7 +843,7 @@ def belief_set_from_primitive(prim: str, value: str) -> FrozenSet[str]:
 def para_tensor_belief(belief_a: FrozenSet[str],
                         belief_b: FrozenSet[str],
                         is_bottleneck: bool = False,
-                        prim: str = "<") -> FrozenSet[str]:
+                        prim: str = "≺") -> FrozenSet[str]:
     """Paraconsistent tensor on belief sets.
 
     Bottleneck primitives (<, ⋈): min ordinal (conservative)

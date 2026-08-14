@@ -61,7 +61,7 @@ PRIM_X = {
     '⊞': -7.2,   # alkaline earths + group 15 excl N,P
     '⊢': -5.5,   # group 13
     '⊣': -4.1,   # group 14 excl C
-    '<':  4.1,   # group 16 excl O,S
+    '≺':  4.1,   # group 16 excl O,S
     '⊤':  5.4,   # halogens (F-state noble metals Pt,Au handled as thread)
     '⊥':  7.0,   # d-block non-thread (sub-f at 8.8)
     '⊙':  9.5,   # actinides (noble gases handled separately)

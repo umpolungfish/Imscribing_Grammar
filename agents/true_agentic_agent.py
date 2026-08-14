@@ -926,7 +926,7 @@ FROBENIUS_CONDITION = "mu(delta(query)) == query"
 
 SIC_POVM_DUAL_PAIRS = [
     ("⊢", "⊣"),     # Co-origination (Axiom C: D_⊙ ↔ T_⊙)
-    (">", "<"),     # Coupling ↔ Parity
+    ("≻", "≺"),     # Coupling ↔ Parity
     ("⋈", "⊤"),     # Fidelity ↔ Kinetics
     ("∈", "∋"),     # Cardinality ↔ Composition
     ("⊙", "⊥"),     # Criticality ↔ Chirality
@@ -2000,24 +2000,27 @@ def _run_single_imscription(
             data = json.loads(m.group())
         except json.JSONDecodeError as exc:
             return _fail(f"JSON parse failed ({exc}): {m.group()[:120]!r}")
-        # Trim stray whitespace from keys (e.g., " >" -> ">") — small models do this
+        # Trim stray whitespace from keys (e.g., " >" -> "≻") — small models do this
         data = _strip_key_whitespace(data)
-        # Fix garbled < and > keys that small models emit (e.g., "<?>", "><", "<>")
+        # Fix garbled keys that small models emit (e.g., "<?>", "><", "<>").
+        # The startswith tests read the model's RAW output, which is ASCII angle
+        # brackets whatever the axis is now called; the presence tests ask whether
+        # the canonical key is already filled, so those are ≺ and ≻.
         for k in list(data.keys()):
-            if k != "<" and k.startswith("<") and k.endswith(">") and "<" not in data:
-                data["<"] = data.pop(k)
+            if k != "≺" and k.startswith("<") and k.endswith(">") and "≺" not in data:
+                data["≺"] = data.pop(k)
                 break
-            if k != ">" and k.startswith(">") and k.endswith("<") and ">" not in data:
-                data[">"] = data.pop(k)
+            if k != "≻" and k.startswith(">") and k.endswith("<") and "≻" not in data:
+                data["≻"] = data.pop(k)
                 break
-        # Normalize lookalike Unicode characters that models confuse with < and >
-        # LEFT ANGLE BRACKET (U+3008) → LESS-THAN SIGN (U+003C)
-        # RIGHT ANGLE BRACKET (U+3009) → GREATER-THAN SIGN (U+003E)
+        # Normalize lookalike Unicode characters models reach for
+        # LEFT ANGLE BRACKET (U+3008) → PRECEDES (U+227A)
+        # RIGHT ANGLE BRACKET (U+3009) → SUCCEEDS (U+227B)
         for k in list(data.keys()):
-            if k == "〈" and "<" not in data:
-                data["<"] = data.pop(k)
-            elif k == "〉" and ">" not in data:
-                data[">"] = data.pop(k)
+            if k == "〈" and "≺" not in data:
+                data["≺"] = data.pop(k)
+            elif k == "〉" and "≻" not in data:
+                data["≻"] = data.pop(k)
         # Model responds with _val suffix keys (e.g., "≺_val", "≻_val") per schema.
         # Convert to bare marks for internal use.
         for k in list(data.keys()):
@@ -4037,7 +4040,7 @@ def _tool_result_msg(tool_call_id: str, content: str) -> Dict:
 
 def _strip_key_whitespace(args: Dict[str, Any]) -> Dict[str, Any]:
     """A small local model often emits a primitive key with a stray space (" >"
-    instead of ">"). Exact-match validation then calls that primitive missing and
+    instead of "≻"). Exact-match validation then calls that primitive missing and
     the agent loops re-sending the same call. Trim, recursively."""
     for k in list(args.keys()):
         if isinstance(k, str) and k != k.strip():
@@ -6180,7 +6183,7 @@ def _para_vm_emit(args: Dict[str, Any]) -> str:
         }, indent=2, ensure_ascii=False)
 
     elif op == "bridge":
-        prim = args.get("primitive", "<")
+        prim = args.get("primitive", "≺")
         val_a = args.get("value_a", "𐑹")
         val_b = args.get("value_b", "𐑗")
         is_bn = args.get("is_bottleneck", True)

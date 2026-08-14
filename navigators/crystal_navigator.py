@@ -54,8 +54,8 @@ ROOT = Path(__file__).parent
 VALUES: dict[str, list[str]] = {
     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    ">":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "<":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "≻":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "≺":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
     "⋈":     ["𐑱", "𐑞", "𐑐"],
     "⊤":     ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
     "∈":     ["𐑚", "𐑔", "𐑲"],
@@ -74,22 +74,22 @@ ORD: dict[str, dict[str, int]] = {
 
 # Primitive weights (canonical v0.4.26)
 WEIGHTS: dict[str, float] = {
-    "⊢": 1.0, "⊣": 1.0, ">": 1.0, "<": 1.2,
+    "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.2,
     "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
     "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
 }
 
 # Bottleneck primitives under ⊗ (weaker partner wins)
-BOTTLENECK = {"<", "⋈", "⊤"}
+BOTTLENECK = {"≺", "⋈", "⊤"}
 
 # Tier-determining primitives (the boundary)
-BOUNDARY_PRIMS = ["⊙", "<", "◻", "⊢"]
+BOUNDARY_PRIMS = ["⊙", "≺", "◻", "⊢"]
 
 # Inner crystal primitives (the bulk — free within each tier cell)
-INNER_PRIMS = ["⊣", ">", "⋈", "⊤", "∈", "∋", "⊥", "⊞"]
+INNER_PRIMS = ["⊣", "≻", "⋈", "⊤", "∈", "∋", "⊥", "⊞"]
 
 # Full primitive order
-PRIMS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 CRITICAL   = {"⊙", "𐑮"}
 NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
@@ -213,8 +213,8 @@ def breakdown(a: dict, b: dict) -> list[dict]:
 _SHAVIAN_TO_XTAL: dict[str, dict[str, str]] = {
     '⊢': {'𐑛':'𐑛', '𐑨':'𐑨', '𐑼':'𐑼', '𐑦':'𐑦', '𐑛':'𐑛', '𐑨':'𐑨', '𐑼':'𐑼', '𐑦':'𐑦'},
     '⊣': {'𐑡':'𐑡', '𐑰':'𐑰', '𐑥':'𐑥', '𐑶':'𐑶', '𐑸':'𐑸', '𐑡':'𐑡', '𐑰':'𐑰', '𐑥':'𐑥', '𐑶':'𐑶', '𐑸':'𐑸'},
-    '>': {'𐑩':'𐑩', '𐑑':'𐑑', '𐑽':'𐑽', '𐑾':'𐑾', '𐑩':'𐑩', '𐑑':'𐑑', '𐑽':'𐑽', '𐑾':'𐑾'},
-    '<': {'𐑗':'𐑗', '𐑿':'𐑿', '𐑬':'𐑬', '𐑯':'𐑯', '𐑹':'𐑹', '𐑗':'𐑗', '𐑿':'𐑿', '𐑬':'𐑬', '𐑯':'𐑯', '𐑹':'𐑹'},
+    '≻': {'𐑩':'𐑩', '𐑑':'𐑑', '𐑽':'𐑽', '𐑾':'𐑾', '𐑩':'𐑩', '𐑑':'𐑑', '𐑽':'𐑽', '𐑾':'𐑾'},
+    '≺': {'𐑗':'𐑗', '𐑿':'𐑿', '𐑬':'𐑬', '𐑯':'𐑯', '𐑹':'𐑹', '𐑗':'𐑗', '𐑿':'𐑿', '𐑬':'𐑬', '𐑯':'𐑯', '𐑹':'𐑹'},
     '⋈': {'⋈^ì':'𐑱', '⋈^ð':'𐑞', '⋈^ż':'𐑐', '𐑱':'𐑱', '𐑞':'𐑞', '𐑐':'𐑐'},
     '⊤': {'⊤^-':'𐑘', '⊤^W':'𐑤', '⊤^@':'𐑧', '⊤^Ù':'𐑪', '⊤^λ':'𐑺', '𐑘':'𐑘', '𐑤':'𐑤', '𐑧':'𐑧', '𐑪':'𐑪', '𐑺':'𐑺'},
     '∈': {'𐑚':'𐑚', '𐑔':'𐑔', '𐑲':'𐑲', '𐑚':'𐑚', '𐑔':'𐑔', '𐑲':'𐑲'},
@@ -316,7 +316,7 @@ def imscription_check(boundary: dict, bulk: dict) -> dict:
     t = tensor(boundary, bulk)
     floor_ok  = m == boundary
     tensor_ok = t == bulk
-    tier      = compute_tier(boundary["⊙"], boundary["<"], boundary["◻"], boundary["⊢"])
+    tier      = compute_tier(boundary["⊙"], boundary["≺"], boundary["◻"], boundary["⊢"])
     d_fwd     = directed_distance(boundary, bulk)   # upward steps boundary → bulk
     d_rev     = directed_distance(bulk, boundary)   # upward steps bulk → boundary
 
@@ -397,7 +397,7 @@ class TierCell:
 
     @property
     def boundary(self) -> dict:
-        return {"⊙": self.phi, "<": self.p, "◻": self.omega, "⊢": self.d}
+        return {"⊙": self.phi, "≺": self.p, "◻": self.omega, "⊢": self.d}
 
     @property
     def inner_size(self) -> int:
@@ -419,12 +419,12 @@ class TierCell:
 def _build_cell_index() -> list[TierCell]:
     cells = []
     for phi in VALUES["⊙"]:
-        for p in VALUES["<"]:
+        for p in VALUES["≺"]:
             for omega in VALUES["◻"]:
                 for d in VALUES["⊢"]:
                     cell_id = _encode_partial(
                         BOUNDARY_PRIMS, BOUNDARY_STRIDES,
-                        {"⊙": phi, "<": p, "◻": omega, "⊢": d}
+                        {"⊙": phi, "≺": p, "◻": omega, "⊢": d}
                     )
                     cells.append(TierCell(
                         phi=phi, p=p, omega=omega, d=d,
@@ -440,8 +440,8 @@ def _build_cell_index() -> list[TierCell]:
 NAVIGATOR_TUPLE: dict[str, str] = {
     "⊢":     "𐑦",
     "⊣":     "𐑸",
-    ">":     "𐑑",
-    "<":     "𐑹",
+    "≻":     "𐑑",
+    "≺":     "𐑹",
     "⋈":     "𐑐",
     "⊤":     "𐑧",
     "∈":     "𐑲",
@@ -455,8 +455,8 @@ NAVIGATOR_TUPLE: dict[str, str] = {
 GRAMMAR_TUPLE: dict[str, str] = {
     "⊢":     "𐑦",
     "⊣":     "𐑸",
-    ">":     "𐑽",
-    "<":     "𐑹",
+    "≻":     "𐑽",
+    "≺":     "𐑹",
     "⋈":     "𐑞",
     "⊤":     "𐑤",
     "∈":     "𐑲",
@@ -495,7 +495,7 @@ class CrystalNavigator:
     def describe(self) -> None:
         """Print the navigator's self-encoding, structural position, and crystal stats."""
         nav_tier = compute_tier(
-            NAVIGATOR_TUPLE["⊙"], NAVIGATOR_TUPLE["<"],
+            NAVIGATOR_TUPLE["⊙"], NAVIGATOR_TUPLE["≺"],
             NAVIGATOR_TUPLE["◻"], NAVIGATOR_TUPLE["⊢"]
         )
         d_grammar = distance(NAVIGATOR_TUPLE, GRAMMAR_TUPLE)
@@ -592,8 +592,8 @@ class CrystalNavigator:
         cells = self._cells
         if "⊙" in constraints:
             cells = [c for c in cells if c.phi == constraints["⊙"]]
-        if "<" in constraints:
-            cells = [c for c in cells if c.p == constraints["<"]]
+        if "≺" in constraints:
+            cells = [c for c in cells if c.p == constraints["≺"]]
         if "◻" in constraints:
             cells = [c for c in cells if c.omega == constraints["◻"]]
         if "⊢" in constraints:
@@ -616,8 +616,8 @@ class CrystalNavigator:
         cells = self._cells
         if "⊙" in constraints:
             cells = [c for c in cells if c.phi == constraints["⊙"]]
-        if "<" in constraints:
-            cells = [c for c in cells if c.p == constraints["<"]]
+        if "≺" in constraints:
+            cells = [c for c in cells if c.p == constraints["≺"]]
         if "◻" in constraints:
             cells = [c for c in cells if c.omega == constraints["◻"]]
         if "⊢" in constraints:
@@ -653,7 +653,7 @@ class CrystalNavigator:
 
     def tier_of(self, tup: dict) -> str:
         """Return the ouroboricity tier of a tuple."""
-        return compute_tier(tup["⊙"], tup["<"], tup["◻"], tup["⊢"])
+        return compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
 
     # ── Catalog nearest-neighbor ───────────────────────────────────────────────
 
@@ -711,16 +711,16 @@ class CrystalNavigator:
         Uses minimal representative tuples (canonical inner primitives).
         """
         canon_inner = {
-            "⊣": "𐑡", ">": "𐑑", "⋈": "𐑱",
+            "⊣": "𐑡", "≻": "𐑑", "⋈": "𐑱",
             "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝",
             "⊥": "𐑓", "⊞": "𐑙",
         }
         reps = {
-            "O₀":     {**canon_inner, "⊙": "𐑢",  "<": "𐑗",    "◻": "𐑷",  "⊢": "𐑛"},
-            "O₁":     {**canon_inner, "⊙": "⊙",    "<": "𐑗",    "◻": "𐑷",  "⊢": "𐑛"},
-            "O₂":     {**canon_inner, "⊙": "⊙",    "<": "𐑗",    "◻": "𐑴", "⊢": "𐑨"},
-            "O₂†": {**canon_inner, "⊙": "⊙",    "<": "𐑗",    "◻": "𐑴", "⊢": "𐑼"},
-            "O_∞":   {**canon_inner, "⊙": "⊙",    "<": "𐑹",  "◻": "𐑴", "⊢": "𐑼"},
+            "O₀":     {**canon_inner, "⊙": "𐑢",  "≺": "𐑗",    "◻": "𐑷",  "⊢": "𐑛"},
+            "O₁":     {**canon_inner, "⊙": "⊙",    "≺": "𐑗",    "◻": "𐑷",  "⊢": "𐑛"},
+            "O₂":     {**canon_inner, "⊙": "⊙",    "≺": "𐑗",    "◻": "𐑴", "⊢": "𐑨"},
+            "O₂†": {**canon_inner, "⊙": "⊙",    "≺": "𐑗",    "◻": "𐑴", "⊢": "𐑼"},
+            "O_∞":   {**canon_inner, "⊙": "⊙",    "≺": "𐑹",  "◻": "𐑴", "⊢": "𐑼"},
         }
         ladder = {}
         pairs = [("O₀","O₁"), ("O₁","O₂"), ("O₂","O₂†"), ("O₂†","O_∞")]

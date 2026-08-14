@@ -73,7 +73,7 @@ AA_DATA = {
     'Y': ('Tyr', 'Tyrosine', ('𐑿', 'Parity', 'Phosphorylation switch'), 'phenol — phosphorylation'),
 }
 
-PRIMITIVE_NAMES = ['⊢', '⊣', '>', '<', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+PRIMITIVE_NAMES = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
 AA_TO_PRIMITIVE_INDEX = {}
 for aa, (prim, _, _) in [(k,v) for k,v in PRIMITIVE_MAP.items()]:
     for i, pn in enumerate(PRIMITIVE_NAMES):
@@ -585,13 +585,13 @@ class ProteinStratifiedPredictor:
         if not dominant or dominant[0] == '—':
             return 'structural/linker'
         dom = dominant[0]
-        if dom == '>':
+        if dom == '≻':
             return 'structural_scaffold' if vec[2] >= 4 else 'redox_sensor'
         elif dom == '⊙':
             return 'metabolic_signaling'
         elif dom == '◻':
             return 'winding_closure_module'
-        elif dom == '<':
+        elif dom == '≺':
             return 'phosphorylation_switch'
         elif dom == '⊥':
             return 'substrate_recognition'

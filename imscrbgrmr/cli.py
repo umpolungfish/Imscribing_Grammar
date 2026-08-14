@@ -192,7 +192,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
     Use --source global to list the legacy in-memory global_catalog instead.
     Use -n 0 to show all entries (slow for large catalogs).
     """
-    PRIM_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+    PRIM_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
@@ -891,8 +891,8 @@ def ixcription_compare(handles: tuple):
 _PRIM_ATTR = {
     "⊢": lambda s: s.dimensionality.value,
     "⊣": lambda s: s.topology.value,
-    ">": lambda s: s.recognition_mode.value,
-    "<": lambda s: s.polarity.value,
+    "≻": lambda s: s.recognition_mode.value,
+    "≺": lambda s: s.polarity.value,
     "⋈": lambda s: s.fidelity.value,
     "⊤": lambda s: s.kinetic_character.value,
     "∈": lambda s: s.granularity.value,
@@ -902,7 +902,7 @@ _PRIM_ATTR = {
     "⊞": lambda s: s.stoichiometry.value,
     "◻": lambda s: s.protection.value,
 }
-_PRIMITIVE_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+_PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:
@@ -1551,7 +1551,7 @@ def rebuild_index(force: bool):
 
     detector = CrossDomainAnalogyDetector()
     covered = set(detector.PRIMITIVE_WEIGHTS.keys())
-    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "∈", "<", "H", "S", "◻"}
+    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "∈", "≺", "H", "S", "◻"}
     missing = all_primitives - covered
 
     console.print(f"[cyan]Analogy engine primitive coverage check[/cyan]")
@@ -4074,7 +4074,7 @@ def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
         ("K", result.kinetic_character),
         ("G", result.granularity),
         ("∈", result.grammar),
-        ("<", result.criticality_phase),
+        ("≺", result.criticality_phase),
         ("H", result.chirality),
         ("S", result.stoichiometry),
         ("◻", result.protection),
@@ -4182,7 +4182,7 @@ def lift(imscription_name: str, target: str, strength: float, format: str):
         ("K", s.kinetic_character, s2.kinetic_character),
         ("G", s.granularity, s2.granularity),
         ("∈", s.interaction_grammar, s2.interaction_grammar),
-        ("<", s.criticality_phase, s2.criticality_phase),
+        ("≺", s.criticality_phase, s2.criticality_phase),
     ]
     click.echo("  Primitive changes:")
     any_change = False

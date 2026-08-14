@@ -66,7 +66,7 @@ _REASONING_OVERRIDE_FIELDS = {
     "topology":       ("⊣", r"T_(odot|boxtimes|bowtie|in|network)\b"),
     "criticality_phase": ("⊙", r"Phi_(c_complex|EP|super|sub|c)\b"),
     "interaction_grammar": ("∋", r"G_(broad|seq|or|and)\b"),
-    "polarity":       ("<", r"P_(pm_sym|pm|sym|psi|asym)\b"),
+    "polarity":       ("≺", r"P_(pm_sym|pm|sym|psi|asym)\b"),
     "kinetic_character": ("⊤", r"K_(MBL|trap|slow|mod|fast)\b"),
     "protection":     ("◻", r"Omega_(NA|Z2|Z|0)\b"),
     "chirality":      ("⊥", r"H(0|1|2|_inf)\b"),
@@ -92,7 +92,7 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
             from space_search.primitives import ORDINALS, PRIMITIVE_ORDER
             prim_key = {
                 "dimensionality": "⊢", "topology": "⊣", "criticality_phase": "⊙",
-                "interaction_grammar": "∋", "polarity": "<", "kinetic_character": "⊤",
+                "interaction_grammar": "∋", "polarity": "≺", "kinetic_character": "⊤",
                 "protection": "◻", "chirality": "⊥",
             }[field]
             if candidate in ORDINALS[prim_key] and result.get(field) != candidate:
@@ -329,12 +329,12 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑒","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
                      ("𐑖","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
                      ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (implies 𐑪 kinetics)")]},
-        {"short": ">",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
+        {"short": "≻",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
          "options": [("𐑩","Soft association — non-covalent, reversible, analogical similarity"),
                      ("𐑑","Bond formation / structural transformation — irreversible or semi-reversible"),
                      ("𐑽","Transition-state stabilization — lowers barrier without being consumed; adjoint/catalytic"),
                      ("𐑾","Left-right asymmetric / mechanical topology — interlocking, knotting, irreversible handedness")]},
-        {"short": "<",  "long": "polarity",             "question": "What is the directional character of the interface?",
+        {"short": "≺",  "long": "polarity",             "question": "What is the directional character of the interface?",
          "options": [("𐑗","No preferred direction; no self-complementarity"),
                      ("𐑿","Signed direction — one accepting OR one donating pole"),
                      ("𐑬","Self-complementary — both donor and acceptor roles present simultaneously"),
@@ -1007,7 +1007,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
             inner = imscription_data.get("primitives")
             if isinstance(inner, dict):
                 _key_map = {
-                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⊢": "dimensionality", "⊣": "topology", "≻": "recognition_mode",
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
@@ -1016,7 +1016,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "<": "polarity",
+                    "≺": "polarity",
                 }
                 lifted: Dict[str, Any] = {"name": imscription_data.get("name", "")}
                 for k, v in inner.items():
@@ -1033,8 +1033,8 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     lifted["granularity"] = inner["G"]
                     if isinstance(lifted["granularity"], dict):
                         lifted["granularity"] = lifted["granularity"].get("value", "")
-                if "P" in inner and "<" in inner:
-                    lifted["criticality_phase"] = inner["<"]
+                if "P" in inner and "≺" in inner:
+                    lifted["criticality_phase"] = inner["≺"]
                     if isinstance(lifted["criticality_phase"], dict):
                         lifted["criticality_phase"] = lifted["criticality_phase"].get("value", "")
                     lifted["polarity"] = inner["P"]
@@ -1048,7 +1048,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
             if isinstance(pa, dict):
                 # Remap abbreviated keys to canonical field names if needed
                 _key_map = {
-                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⊢": "dimensionality", "⊣": "topology", "≻": "recognition_mode",
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
@@ -1057,7 +1057,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "<": "polarity",
+                    "≺": "polarity",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in pa.items():
@@ -1072,7 +1072,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
             prim = data.get("primitives")
             if isinstance(prim, dict):
                 _key_map = {
-                    "⊢": "dimensionality", "⊣": "topology", ">": "recognition_mode",
+                    "⊢": "dimensionality", "⊣": "topology", "≻": "recognition_mode",
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
@@ -1081,7 +1081,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
                     "W": "protection",
-                    "<": "polarity",
+                    "≺": "polarity",
                 }
                 adapted: Dict[str, Any] = {}
                 for k, v in prim.items():
@@ -1111,7 +1111,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
     _SHORT_TO_LONG: Dict[str, str] = {
         # Shavian glyph keys (unambiguous)
         "⊢": "dimensionality",    "⊣": "topology",
-        ">": "recognition_mode",   "⋈": "fidelity",
+        "≻": "recognition_mode",   "⋈": "fidelity",
         "⊤": "kinetic_character",  "∈": "granularity",
         "∋": "interaction_grammar","⊙": "criticality_phase",
         "⊥": "chirality",          "⊞": "stoichiometry",
@@ -1124,7 +1124,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
         "S": "stoichiometry",      "W": "protection",
         # < is ambiguous: when both P (ASCII) and < (glyph) are present,
         # P→polarity wins; <→criticality_phase resolved in adapter logic.
-        "<": "polarity",
+        "≺": "polarity",
     }
 
     # Legacy prompt notation → from_symbol()-compatible canonical values.

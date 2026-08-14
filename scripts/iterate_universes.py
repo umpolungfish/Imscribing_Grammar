@@ -15,8 +15,8 @@ from imscrbgrmr.registry import load_catalog_dicts
 PRIMITIVES_MAX = {
     "⊢": 4.0,  # 𐑦 = holographic (ord 4)
     "⊣": 5.0,  # 𐑸 = imscriptive closure (ord 5)
-    ">": 4.0,  # 𐑾 = bilateral (ord 4)
-    "<": 5.0,  # 𐑹 = Frobenius-special (ord 5)
+    "≻": 4.0,  # 𐑾 = bilateral (ord 4)
+    "≺": 5.0,  # 𐑹 = Frobenius-special (ord 5)
     "⋈": 3.0,  # 𐑐 = quantum/hbar (ord 3)
     "⊤": 5.0,  # 𐑘 = MBL/frozen-disorder (ord 5)
     "∈": 3.0,  # 𐑔 = aleph/maximal (ord 3)
@@ -85,7 +85,7 @@ def build_universes():
         ("⊤", "⊙", "kinetics_criticality", "⊤≥ord4.0 → ⊙≥ord2.0: slow then self-model"),
         ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → ⊢≥ord4.0: topology then dimension"),
         ("∈", "∋", "scope_grammar", "∈≥ord3.0 → ∋≥ord4.0: universal scope then broadcast"),
-        ("<", "⋈", "parity_fidelity", "<≥ord5.0 → ⋈≥ord3.0: Frobenius parity then quantum fidelity"),
+        ("≺", "⋈", "parity_fidelity", "<≥ord5.0 → ⋈≥ord3.0: Frobenius parity then quantum fidelity"),
         ("◻", "⊥", "winding_chirality", "◻≥ord4.0 → ⊥≥ord4.0: non-Abelian winding then eternal chirality"),
     ]
     for g1_prim, g2_prim, name, desc in combos:
@@ -101,8 +101,8 @@ def build_universes():
     # ═══════════════════════════════════════════════════════════
     # Batch E: T-constitution variants — every subset of dynamics
     # ═══════════════════════════════════════════════════════════
-    dynamics = ["<", "⋈", "⊤", "⊥", "◻"]
-    structure = ["⊢", "⊣", ">", "∈", "⊞"]
+    dynamics = ["≺", "⋈", "⊤", "⊥", "◻"]
+    structure = ["⊢", "⊣", "≻", "∈", "⊞"]
     
     # All dynamics only
     rulesets.append(Ruleset(

@@ -94,7 +94,7 @@ never assert arithmetic from memory.
 `command grep -n 'MenuItem {' ~/imsgct/mOMonadOS/src/menu.rs`. Every entry is
 `MenuItem { name, cmd, desc, example, submenu }`, and a command that takes
 arguments carries a submenu of the same shape naming each form it accepts. This
-is what `help` prints at the `⊙>` prompt.
+is what `help` prints at the `⊙≻` prompt.
 
 Read this rather than recalling a command list. The surface changes, and a list
 memorised in a prompt is wrong the first time a command is added or renamed.
@@ -113,7 +113,7 @@ missing.
 ### Running the kernel
 
 `cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" ...]` boots
-QEMU, feeds each command to the `⊙>` prompt in order, and quits. `./run.sh
+QEMU, feeds each command to the `⊙≻` prompt in order, and quits. `./run.sh
 release` gives an interactive prompt instead.
 
 The QEMU boot dominates the cost of any short command, so batch: several

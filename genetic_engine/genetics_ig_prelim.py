@@ -56,7 +56,7 @@ print("=" * 60)
 # 5-card primitives: ⊣, <, ⊤, ⊙  (count=4, each 5 values)
 
 prim_cards = {
-    "⊢": 4, "⊣": 5, ">": 4, "<": 5, "⋈": 3,
+    "⊢": 4, "⊣": 5, "≻": 4, "≺": 5, "⋈": 3,
     "⊤": 5, "∈": 3, "∋": 4, "⊙": 5, "⊥": 4,
     "⊞": 3, "◻": 4,
 }
@@ -319,12 +319,12 @@ print("=" * 60)
 # ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→⊞→◻
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
-ig_order = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+ig_order = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 ig_desc = {
     "⊢": "Dimensionality/scope of the system (genome ploidy/size)",
     "⊣": "Topology (DNA supercoiling, chromosome architecture)",
-    ">": "Reversibility/identity (strand complementarity, palindromes)",
-    "<": "Parity/phase (reading frame: 0/+1/+2/-1/-2/-3 = 6 frames)",
+    "≻": "Reversibility/identity (strand complementarity, palindromes)",
+    "≺": "Parity/phase (reading frame: 0/+1/+2/-1/-2/-3 = 6 frames)",
     "⋈": "Force/field (H-bonds, base stacking, molecular drive)",
     "⊤": "Kinematics/coupling (ribosomal translocation, codon usage bias)",
     "∈": "Scope/grammar (gene regulatory networks, operons, promoters)",
