@@ -23,6 +23,10 @@ logger = logging.getLogger(__name__)
 # emits a closed <think></think> before the model writes a token, so that phase
 # produces nothing — which is exactly how every winding came to log an empty
 # THINK line.
+# What "uncapped" means for an in-process generate, which needs a number.
+_LOCAL_UNCAPPED_MAX_TOKENS = 16384
+
+
 def _thinking_default() -> bool:
     """OFF unless asked. This global governs the ob3ect design call, whose --thinking
     flag is documented as default off and which sets this to True only when the flag
@@ -1079,7 +1083,12 @@ class LocalProvider(LLMProvider):
     async def query(self, prompt: str, **kwargs) -> str:
         system = kwargs.get("system")
         temperature = float(kwargs.get("temperature", 0.7))
-        max_tokens = int(kwargs.get("max_tokens", 512))
+        # None at the call site means UNCAPPED, which the HTTP route expresses by
+        # omitting the field. transformers needs a number, so uncapped becomes the
+        # largest generation this provider will do — int(None) raised TypeError
+        # and made a loaded local model read as a broken lane in the fallback chain.
+        _max_tokens = kwargs.get("max_tokens", 512)
+        max_tokens = _LOCAL_UNCAPPED_MAX_TOKENS if _max_tokens is None else int(_max_tokens)
 
         cached = await self.get_cached_response(
             prompt, model=self.model_path, temperature=temperature, max_tokens=max_tokens
@@ -1297,8 +1306,21 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
         raise ValueError(f"{api_key_env} environment variable not set.")
 
     # IG_MODEL env var → default model when not explicitly passed
+    # IG_MODEL names ONE provider's model, and it is read here by every
+    # provider the fallback chain reaches. IG_PROVIDER=llamacpp with
+    # IG_MODEL=Q3p527b meant OpenRouter and DeepSeek were both handed a local
+    # model nickname and answered 400 "not a valid model ID" — a routing fault
+    # wearing a billing fault's clothes. A `provider:model` prefix names its
+    # route explicitly; a bare value belongs to IG_PROVIDER when one is set,
+    # and is ignored by everyone else.
     if "model" not in kwargs or kwargs.get("model") is None:
         ig_model = os.environ.get("IG_MODEL", "").strip()
+        ig_provider = os.environ.get("IG_PROVIDER", "").strip().lower()
+        if ig_model and ':' in ig_model:
+            prefix, rest = ig_model.split(':', 1)
+            ig_model = rest if prefix.lower() == provider_name else ""
+        elif ig_model and ig_provider and ig_provider != provider_name:
+            ig_model = ""
         if ig_model:
             kwargs["model"] = ig_model
 

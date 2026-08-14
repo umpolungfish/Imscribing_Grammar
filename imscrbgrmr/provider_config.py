@@ -111,6 +111,28 @@ class ProviderConfig:
                     "max_tokens_default": 8192,
                     "temperature_default": 0.3,
                 },
+                # Same server, the spelling the provider factory and the ob3ect
+                # chain use. Absent, it matched no entry and silently took the
+                # generic 4000/0.7 fallback with no base_url — the one route
+                # that is now the DEFAULT for every ob3ect.
+                "llamacpp": {
+                    "default_model": "",
+                    "base_url": "http://localhost:8000/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
+                "local-http": {
+                    "default_model": "",
+                    "base_url": "http://localhost:8000/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
+                "lmstudio": {
+                    "default_model": "",
+                    "base_url": "http://localhost:1234/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
                 "ollama": {
                     "default_model": "",
                     "base_url": "http://localhost:11434/v1/chat/completions",

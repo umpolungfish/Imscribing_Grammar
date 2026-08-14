@@ -246,6 +246,21 @@ providers:
     base_url: http://localhost:8000/v1/chat/completions
     max_tokens_default: 8192
     temperature_default: 0.3
+  llamacpp:
+    default_model: ''
+    base_url: http://localhost:8000/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
+  local-http:
+    default_model: ''
+    base_url: http://localhost:8000/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
+  lmstudio:
+    default_model: ''
+    base_url: http://localhost:1234/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
   ollama:
     default_model: ''
     base_url: http://localhost:11434/v1/chat/completions
