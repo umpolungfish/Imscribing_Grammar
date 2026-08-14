@@ -89,7 +89,7 @@ providers:
       - general
       - quick-tasks
   google:
-    default_model: gemini-flash-latest  # -latest: an exp/dated slug retires and 404s
+    default_model: gemini-flash-latest
     base_url: https://generativelanguage.googleapis.com
     max_tokens_default: 4000
     temperature_default: 0.7
@@ -112,8 +112,8 @@ providers:
     max_tokens_default: 512
     temperature_default: 0.3
     note: Direct tensor inference via transformers — no API key. IG_LOCAL_MODEL_DIR
-      sets the model path; IG_DEVICES picks the cards ("0,1" splits a model too
-      large for one card across both, "1" pins one, "cpu" forces CPU).
+      sets the model path; IG_DEVICES picks the cards ("0,1" splits a model too large
+      for one card across both, "1" pins one, "cpu" forces CPU).
     models:
     - name: Imscriptiveon_qlora_merged2
       description: imscribing QLoRA merged Qwen3 — primary local model
@@ -236,6 +236,26 @@ providers:
       - coding
       - analysis
       requires_credits: true
+  vllm:
+    default_model: ''
+    base_url: http://localhost:8000/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
+  llama-server:
+    default_model: ''
+    base_url: http://localhost:8000/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
+  ollama:
+    default_model: ''
+    base_url: http://localhost:11434/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
+  lm-studio:
+    default_model: ''
+    base_url: http://localhost:1234/v1/chat/completions
+    max_tokens_default: 8192
+    temperature_default: 0.3
 task_routing:
   coding:
     preferred:

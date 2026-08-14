@@ -93,6 +93,36 @@ class ProviderConfig:
                     "max_tokens_default": 512,
                     "temperature_default": 0.3,
                 },
+                # OpenAI-compatible servers on this machine. default_model is
+                # deliberately empty: such a server serves exactly one model and
+                # rejects any other id, so the id is asked for at call time
+                # rather than pinned here where it would rot. max_tokens is NOT
+                # the local entry's 512 — an ob3ect is an 8-phase design and
+                # truncating it at 512 fails the Frobenius gate every time.
+                "vllm": {
+                    "default_model": "",
+                    "base_url": "http://localhost:8000/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
+                "llama-server": {
+                    "default_model": "",
+                    "base_url": "http://localhost:8000/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
+                "ollama": {
+                    "default_model": "",
+                    "base_url": "http://localhost:11434/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
+                "lm-studio": {
+                    "default_model": "",
+                    "base_url": "http://localhost:1234/v1/chat/completions",
+                    "max_tokens_default": 8192,
+                    "temperature_default": 0.3,
+                },
             },
             "cli": {
                 "default_provider": "deepseek",
@@ -249,6 +279,25 @@ def build_agent_config(
                 resolved_model = resolved_model.split("/")[-1]
         if not resolved_model or not (resolved_model.startswith("deepseek-") or resolved_model.startswith("deepseek")):
             resolved_model = "deepseek-v4-pro"
+
+    # A local OpenAI-compatible server is authoritative about what it serves.
+    # Without this the gate inherited another provider's slug (deepseek-v4-pro
+    # went to llama-server) and every gated call 400'd.
+    if provider.lower() in ("vllm", "llama-server", "llamacpp", "ollama",
+                            "lm-studio", "lmstudio", "local-http") and not resolved_model:
+        # base_url is the full chat endpoint by this file's convention, so the
+        # model list is its sibling, not a path appended to it.
+        base = provider_defaults.get("base_url", "http://localhost:8000/v1/chat/completions")
+        models_url = base.rstrip("/").replace("/chat/completions", "") + "/models"
+        try:
+            import httpx
+            r = httpx.get(models_url, timeout=3.0)
+            r.raise_for_status()
+            data = r.json().get("data") or []
+            if data:
+                resolved_model = data[0].get("id") or ""
+        except Exception:
+            resolved_model = resolved_model or ""
 
     result = {
         "provider": provider,

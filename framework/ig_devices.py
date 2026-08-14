@@ -233,12 +233,19 @@ def device_plan(logger, reserve_gib: float = 1.0):
         logger.info(f"Selected GPU {i} ({free // 1024**3} GB free).")
         return {"": i}, None
 
+    # Ordinal order, so the plan starts at GPU 0 and spills to the next card
+    # only when 0 is full. `balanced` was wrong for an asymmetric pair: it
+    # divides the model evenly, so a model that fits the 4070 alone still gets
+    # half its layers put on the 3060 and pays the boundary crossing once per
+    # forward for nothing. `sequential` fills in key order and spills only on
+    # need, which is what two unequal cards want.
+    warm.sort(key=lambda t: t[0])
     max_memory = {i: f"{max(free / 1024**3 - reserve_gib, 0.5):.1f}GiB" for i, free in warm}
     logger.info(
-        "Splitting the model across GPUs "
+        "Filling GPUs in order, spilling only when full: "
         + ", ".join(f"{i}:{max_memory[i]}" for i, _ in warm)
     )
-    return "balanced", max_memory
+    return "sequential", max_memory
 
 
 

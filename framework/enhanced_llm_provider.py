@@ -254,6 +254,11 @@ class HttpProvider(LLMProvider):
         # Use config-driven default if model not specified
         self.model = model or _get_default_model(provider_name)
         self.base_url = base_url
+        # Local loopback servers accept (and need) fields the cloud vendors reject.
+        self.local_http = provider_name in (
+            "vllm", "llama-server", "llamacpp", "ollama",
+            "lm-studio", "lmstudio", "local-http",
+        )
 
     @llm_retry
     async def query(self, prompt: str, **kwargs) -> str:
@@ -295,6 +300,18 @@ class HttpProvider(LLMProvider):
         }
         if max_tokens is not None:
             data["max_tokens"] = max_tokens
+        # A local OpenAI-compatible server running a thinking model (llama.cpp
+        # serving Qwen3.5) writes its chain of thought into `reasoning_content`
+        # and leaves `content` EMPTY until it finishes. Under a cap the answer
+        # never arrives at all: finish_reason=length, content="". That is the
+        # failure `_thinking_default` already documents for the local kernel —
+        # the design call parses nothing and retries forever — reaching the HTTP
+        # route, which never carried the switch. `chat_template_kwargs` is the
+        # llama.cpp/vLLM spelling; it is sent ONLY to local servers because the
+        # cloud vendors 400 on unknown fields, the same reason `reasoning` is
+        # not in this shared payload.
+        if getattr(self, "local_http", False):
+            data["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
         # NOTE: no reasoning switch here. `reasoning`/`reasoning_effort` is OpenRouter's
         # unified field and DeepSeek's own API 400s on it, so it is NOT vendor-neutral and
         # cannot live in the shared payload. OpenRouterProvider sends it; see there.
@@ -625,10 +642,23 @@ class LocalProvider(LLMProvider):
                 # 27B kept loading at full width. Measured: the same run OOM'd
                 # byte-for-byte with the variable set and unset.
                 from transformers import BitsAndBytesConfig
-                load_kwargs["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+                # `llm_int8_enable_fp32_cpu_offload` is not optional for a model
+                # that does not fit entirely in VRAM. Without it bitsandbytes
+                # REFUSES any module dispatched to CPU or disk — it raises rather
+                # than spilling — and the loader then falls all the way back to a
+                # full-CPU load, which is minutes per token. Measured on the 27B
+                # at int8 across 2×12GB: ~26GB quantized against 24GB available,
+                # hard failure, then a CPU load that never finished. With the flag
+                # the overflow layers ride in fp32 on the host and the rest stays
+                # on the cards.
+                load_kwargs["quantization_config"] = BitsAndBytesConfig(
+                    load_in_8bit=True,
+                    llm_int8_enable_fp32_cpu_offload=True,
+                )
                 load_kwargs.pop("torch_dtype", None)
                 load_kwargs.pop("dtype", None)
-                logger.info("8-bit BitsAndBytes quantization enabled.")
+                logger.info("8-bit BitsAndBytes quantization enabled "
+                            "(fp32 CPU offload permitted for overflow layers).")
 
             load_kwargs["local_files_only"] = True
             # ── GrammaFormer detection ──────────────────────────────────
@@ -1156,6 +1186,26 @@ class ModelRouter:
         logger.warning(f"Provider '{provider_name}' marked as failed; will fall back to next in chain.")
 
 
+def _served_model_id(chat_url: str) -> Optional[str]:
+    """The id a local OpenAI-compatible server reports, or None.
+
+    llama-server answers /v1/models with the GGUF path as the id and rejects a
+    name it does not serve, so guessing one turns every ob3ect call into a 400.
+    Asking costs one request and removes the guess.
+    """
+    try:
+        import httpx
+        models_url = chat_url.replace('/chat/completions', '/models')
+        r = httpx.get(models_url, timeout=3.0)
+        r.raise_for_status()
+        data = r.json().get('data') or []
+        if data:
+            return data[0].get('id')
+    except Exception:
+        return None
+    return None
+
+
 def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
     """
     Get LLM provider instance by name.
@@ -1175,6 +1225,60 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
     # Local provider — no API key required
     if provider_name == 'local':
         return LocalProvider(model_path=kwargs.get("model_path"))
+
+    # OpenAI-compatible servers running on this machine — vLLM, llama-server,
+    # Ollama, LM Studio. No API key: the endpoint is on loopback.
+    #
+    # The endpoint table is NOT redefined here. `agents/agents_cli.py` already
+    # owns LOCAL_BASE_URLS (vllm -> localhost:8000/v1 and friends) and that is
+    # the built integration; this only makes it reachable from the provider
+    # factory that ob3ect uses, which previously had no path to it at all.
+    if provider_name in ('vllm', 'llama-server', 'llamacpp', 'ollama',
+                         'lm-studio', 'lmstudio', 'local-http'):
+        base = None
+        try:
+            from imscribing_grammar.agents.agents_cli import LOCAL_BASE_URLS
+            base = LOCAL_BASE_URLS.get(provider_name)
+        except Exception:
+            pass
+        if base is None:
+            # Same defaults as that table, used only when it cannot be imported.
+            base = {
+                'vllm': 'http://localhost:8000/v1',
+                'llama-server': 'http://localhost:8000/v1',
+                'llamacpp': 'http://localhost:8000/v1',
+                'local-http': os.environ.get('LOCAL_BASE_URL', 'http://localhost:8000/v1'),
+                'ollama': os.environ.get('OLLAMA_HOST', 'http://localhost:11434') + '/v1',
+                'lm-studio': 'http://localhost:1234/v1',
+                'lmstudio': 'http://localhost:1234/v1',
+            }[provider_name]
+        base = os.environ.get('IG_LOCAL_HTTP_BASE_URL', base).rstrip('/')
+        if not base.endswith('/chat/completions'):
+            base = base + '/chat/completions'
+        # Which model to name. A local server serves exactly one thing and
+        # rejects any other id, so ITS answer outranks the environment.
+        #
+        # IG_MODEL routinely holds a cloud slug (deepseek/deepseek-v4-pro was in
+        # the environment when this was written). Handing that to llama-server
+        # is a guaranteed 400 — the same mistake this file already guards in the
+        # other direction, where a local checkpoint path must never go to a
+        # cloud provider. Precedence: explicit argument, then a prefixed
+        # IG_MODEL naming this route, then whatever the server reports, and a
+        # bare cloud-shaped IG_MODEL is ignored rather than forwarded.
+        model = kwargs.get('model') or ''
+        env_model = (os.environ.get('IG_MODEL') or '').strip()
+        if not model and ':' in env_model:
+            prefix, rest = env_model.split(':', 1)
+            if prefix.lower() == provider_name:
+                model = rest
+        if not model:
+            model = _served_model_id(base) or ''
+        if not model and env_model and '/' not in env_model:
+            model = env_model
+        if not model:
+            model = 'default'
+        return HttpProvider(api_key='sk-local', model=model,
+                            base_url=base, provider_name=provider_name)
 
     # Special case: aider doesn't require API key (uses underlying LLM's keys)
     if provider_name == 'aider':

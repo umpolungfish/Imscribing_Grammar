@@ -454,6 +454,18 @@ class _LocalChatCompletions:
                 qwen_msgs.append({"role": role, "content": content})
             elif role == "assistant":
                 m: Dict[str, Any] = {"role": "assistant", "content": content}
+                # Carry the reasoning across. Dropping it did not merely lose the
+                # text: the template checks `message.reasoning_content`, falls
+                # back to splitting `</think>` out of content, finds neither, and
+                # renders the turn with an EMPTY `<think>\n\n</think>` block. The
+                # ⊙perator then reads its own history as a run of windings that
+                # reasoned nothing, and imitates it — winding 0 thinks, because no
+                # prior assistant turn exists, and every winding after it is blank.
+                # Measured on the 27B: coherent THINK at winding 0, empty at 1, 2
+                # and 3, with the action degenerating to a repeated call unrelated
+                # to the task.
+                if msg.get("reasoning_content"):
+                    m["reasoning_content"] = msg["reasoning_content"]
                 if msg.get("tool_calls"):
                     m["tool_calls"] = _tool_calls_for_template(msg["tool_calls"])
                 qwen_msgs.append(m)
@@ -809,6 +821,12 @@ LOCAL_BASE_URLS: Dict[str, str] = {
     "lm-studio":   "http://localhost:1234/v1",
     "lmstudio":    "http://localhost:1234/v1",
     "vllm":        "http://localhost:8000/v1",
+    # llama.cpp's own server, which is what actually serves the 27B here: a
+    # 15.6 GiB Q4_K_M split across two 12 GiB cards, which vLLM cannot do
+    # (its GPTQ path forces Marlin, and Marlin's repack kernel is CUDA-only,
+    # so --cpu-offload-gb is structurally unavailable).
+    "llamacpp":    os.environ.get("LLAMACPP_URL", "http://localhost:8000/v1"),
+    "llama-cpp":   os.environ.get("LLAMACPP_URL", "http://localhost:8000/v1"),
     "local":       os.environ.get("LOCAL_BASE_URL", "http://localhost:11434/v1"),
     # ── Qwen local paths — the same local server, explicitly named ──
     # "qwen-local" and "local-qwen" are convenience aliases for running Qwen
@@ -1151,17 +1169,37 @@ def _file_read_emit(args: Dict[str, Any]) -> str:
         # THAT, and say which verb it was. A bare error re-enters THINK with no
         # new information, and an operator with nothing new to go on repeats the
         # call verbatim — which is exactly what was observed, four windings deep.
+        # NEWEST FIRST, with the mtime shown. Alphabetical and bare was not a
+        # cosmetic choice: asked for "the 5 most recent documents" the ⊙perator
+        # was handed 549 names in alphabetical order with no time on any of them,
+        # truncated at 200 — so the answer to the question it was asked was not
+        # reachable from the observation it was given, and it concluded with the
+        # first 200 names as if they were the newest. An observation that cannot
+        # answer the question is where that failure begins.
         try:
-            entries = sorted(os.listdir(path))
+            names = os.listdir(path)
+            stat_rows = []
+            for n in names:
+                full = os.path.join(path, n)
+                try:
+                    st = os.stat(full)
+                    stat_rows.append((st.st_mtime, n, os.path.isdir(full)))
+                except OSError:
+                    stat_rows.append((0.0, n, False))
+            stat_rows.sort(key=lambda r: -r[0])
         except Exception as e:
             return f"(error listing {path}: {e})"
-        shown = entries[:200]
-        body = "\n".join(f"  {n}/" if os.path.isdir(os.path.join(path, n)) else f"  {n}"
-                          for n in shown)
-        more = f"\n  … {len(entries) - len(shown)} more" if len(entries) > len(shown) else ""
+        import datetime as _dt
+        shown = stat_rows[:200]
+        body = "\n".join(
+            "  {}  {}{}".format(
+                _dt.datetime.fromtimestamp(mt).strftime("%Y-%m-%d %H:%M") if mt else "     (no mtime)",
+                n, "/" if isdir else "")
+            for mt, n, isdir in shown)
+        more = f"\n  … {len(stat_rows) - len(shown)} older, not shown" if len(stat_rows) > len(shown) else ""
         return (f"[{path} is a DIRECTORY — listing it instead; "
                 f"file_read reads files, run_command(\"ls -la {path}\") lists]\n"
-                f"[{len(entries)} entries]\n{body}{more}")
+                f"[{len(stat_rows)} entries, NEWEST FIRST by mtime]\n{body}{more}")
     except FileNotFoundError as e:
         # An error with no remedy re-enters THINK with nothing new, and the model
         # guesses again. The neighbours are one listdir away, and a wrong name is
@@ -1708,6 +1746,9 @@ def _done_verify(emit_input: Dict, emit_output: str,
     Empty means the conclusion was written without looking, which is the failure
     seen when a restored prior conclusion is copied verbatim over a fresh `pwd`.
     """
+    if _DONE_GROUNDING.get("synthesized_conclusion"):
+        return ("no conclusion was written — the run ended on a winding that "
+                "emitted no tool call — Frobenius OPEN", False)
     obs = _DONE_GROUNDING.get("observations", None)
     if obs is None:
         return ("(no grounding record — Frobenius closed)", True)
@@ -1719,6 +1760,33 @@ def _done_verify(emit_input: Dict, emit_output: str,
         return ("conclusion is a verbatim copy of a prior session's, with new "
                 "observations unaccounted for — Frobenius OPEN", False)
     return ("(conclusion follows observations taken this session — Frobenius closed)", True)
+
+
+def _degenerate_tail(text: str, min_run: int = 40) -> Optional[str]:
+    """
+    Detect a collapsed generation: a tail made of one short unit repeated over
+    and over ("𐑜𐑜𐑜𐑜…"). The ⊙perator does this when sampling falls into a fixed
+    point, and the winding that follows emits no tool call — so a run that ends
+    on one is a decoding failure, never a conclusion.
+
+    Returns the repeated unit if the text ends in a run of at least `min_run`
+    consecutive copies of a unit of 1-8 characters, else None.
+    """
+    if not text:
+        return None
+    tail = text[-4000:]
+    for unit_len in range(1, 9):
+        unit = tail[-unit_len:]
+        if not unit.strip():
+            continue
+        n = 0
+        i = len(tail)
+        while i >= unit_len and tail[i - unit_len:i] == unit:
+            n += 1
+            i -= unit_len
+        if n >= min_run:
+            return unit
+    return None
 
 
 # Set by the agent loop before each verify: what this session actually observed,
@@ -2921,6 +2989,26 @@ _EMIT_FNS: Dict[str, Any] = {
     "context_review":       _context_review_emit,
 }
 
+# Advertised in TOOL_SCHEMAS but absent from _EMIT_FNS — the ⊙perator reads the
+# schema we send it, calls the tool by name, and is told the tool does not
+# exist. It then re-reads the same schema, concludes the tool DOES exist, and
+# calls it again: an unbreakable loop where the model is right and the harness
+# is wrong. Measured on the 27B: eight identical `crystal_navigate` calls across
+# eight windings, each answered "unknown tool".
+#
+# All three are grammar tools reached through `imscribe`, so route them there
+# rather than withdrawing them from the schemas — a tool named in the inventory
+# should be callable by that name.
+def _grammar_shim(tool_name: str):
+    def _emit(args: Dict[str, Any]) -> str:
+        return _imscribe_emit({"tool_name": tool_name, "args": args})
+    return _emit
+
+
+for _shim in ("crystal_navigate", "crystal_count", "project"):
+    _EMIT_FNS.setdefault(_shim, _grammar_shim(_shim))
+
+
 _VERIFY_FNS: Dict[str, Any] = {
     "run_command":          _run_command_verify,
     "file_read":            _file_read_verify,
@@ -3971,6 +4059,183 @@ def _tool_schemas() -> List[Dict]:
     return list(TOOL_SCHEMAS)
 
 
+
+# The tool surface, restated at the point of generation. The canonical template
+# renders the schemas and the call format FIRST, then appends the system prompt
+# after them — so on a specialist run the format spec sits ~10k tokens back,
+# behind 40k characters of domain prose, and a local checkpoint has forgotten
+# the shape by the time it generates. The schemas are not the problem; their
+# DISTANCE is. This restates the protocol last, in the form the parser reads,
+# with real arguments rather than `example_parameter_1`.
+def _local_tool_index() -> str:
+    """A one-line-per-tool inventory, generated from the schemas so it cannot drift.
+
+    Discovery and protocol are two different failures. The schemas ARE the
+    inventory, but 25k characters of them at the head of a 20k-token system
+    message is not something a small checkpoint can hold while it generates.
+    Compacting the schemas recovers only 20% and costs the usage prose in
+    `imasm` that teaches its own syntax. Restating them as an index costs 1.5k
+    characters, removes no tool, and puts the whole surface where the ⊙perator
+    can see it.
+    """
+    rows = []
+    for sch in TOOL_SCHEMAS:
+        f = sch["function"]
+        first = next((l.strip() for l in (f.get("description") or "").splitlines()
+                      if l.strip()), "")
+        first = first.split(". ")[0].rstrip(".")
+        props = f.get("parameters", {}).get("properties", {}) or {}
+        req = f.get("parameters", {}).get("required", []) or []
+        keys = list(req) + [k for k in props if k not in req]
+        sig = ", ".join(keys[:4]) + (", …" if len(keys) > 4 else "")
+        rows.append(f"  {f['name']}({sig}) — {first[:96]}")
+    return ("\n\n## Every tool you have, in full\n\n"
+            + "\n".join(rows) + "\n")
+
+
+_LOCAL_CALL_SHAPES = """
+
+## Emitting a call — the exact form, restated
+
+Every winding ends in ONE tool call, in exactly this shape. Reasoning may come
+before it, never after.
+
+<tool_call>
+<function=run_command>
+<parameter=command>
+ls /home/mrnob0dy666/imsgct
+</parameter>
+</function>
+</tool_call>
+
+Two conventions, and they are not interchangeable:
+
+1. The 23 tools above are called directly, by the form just shown.
+   The ones that carry most work: `run_command` (any shell command),
+   `file_read` (read a file or list a directory), `file_write`, `imasm`,
+   `imscribe_system`, `done` (only once something has been observed).
+
+2. The ~50 Grammar tools are NOT in that list and cannot be called directly.
+   They are reached through `imscribe`, which takes the name as an argument:
+
+<tool_call>
+<function=imscribe>
+<parameter=tool_name>
+lookup_catalog
+</parameter>
+<parameter=args>
+{"name": "bip39_key_0"}
+</parameter>
+</function>
+</tool_call>
+
+Reading a file is a tool call too — never say you cannot reach the filesystem:
+
+<tool_call>
+<function=file_read>
+<parameter=path>
+/home/mrnob0dy666/imsgct/imscribing_grammar/IG.md
+</parameter>
+</function>
+</tool_call>
+
+If you are unsure which tool fits, call `run_command` and look. Emitting no
+call ends the run on a thought, and a thought is not an observation.
+"""
+
+def _server_context_window(base_url: str) -> int:
+    """The context size an OpenAI-compatible local server reports, or 0.
+
+    llama.cpp exposes it at /props as `default_generation_settings.n_ctx`;
+    asking beats assuming, because assuming 128k against a 65k server means the
+    pressure check never fires and the run dies on a 400 mid-winding.
+    """
+    if not base_url:
+        return 0
+    try:
+        import json as _json
+        import urllib.request as _u
+        root = base_url.rstrip("/")
+        if root.endswith("/v1"):
+            root = root[: -len("/v1")]
+        with _u.urlopen(root + "/props", timeout=3) as r:
+            d = _json.loads(r.read().decode("utf-8"))
+        n = (d.get("default_generation_settings") or {}).get("n_ctx") or d.get("n_ctx") or 0
+        return int(n)
+    except Exception:
+        return 0
+
+
+@dataclass
+class _StreamedMessage:
+    """What a streamed response reassembles into: the same shape the loop reads."""
+    content: Optional[str]
+    tool_calls: Optional[List[Any]]
+    reasoning_content: Optional[str] = None
+    model_extra: Optional[Dict[str, Any]] = None
+
+
+@dataclass
+class _StreamedChoice:
+    message: "_StreamedMessage"
+
+
+@dataclass
+class _StreamedResponse:
+    choices: List["_StreamedChoice"]
+
+
+def _consume_stream(stream) -> "_StreamedResponse":
+    """Print deltas to stderr as they arrive; return the assembled response.
+
+    Tool calls arrive in fragments — a name in one chunk, argument text spread
+    over many — keyed by index, so they are accumulated per index and only
+    assembled at the end. Reasoning content is streamed too where the server
+    sends it, which is the part worth watching: it is the long phase.
+    """
+    import sys as _sys
+    content_parts: List[str] = []
+    reasoning_parts: List[str] = []
+    calls: Dict[int, Dict[str, str]] = {}
+    wrote = False
+    for chunk in stream:
+        if not getattr(chunk, "choices", None):
+            continue
+        delta = chunk.choices[0].delta
+        rc = getattr(delta, "reasoning_content", None)
+        if rc:
+            reasoning_parts.append(rc)
+            _sys.stderr.write(rc); _sys.stderr.flush(); wrote = True
+        txt = getattr(delta, "content", None)
+        if txt:
+            content_parts.append(txt)
+            _sys.stderr.write(txt); _sys.stderr.flush(); wrote = True
+        for tc in (getattr(delta, "tool_calls", None) or []):
+            slot = calls.setdefault(tc.index, {"id": "", "name": "", "args": ""})
+            if getattr(tc, "id", None):
+                slot["id"] = tc.id
+            fn = getattr(tc, "function", None)
+            if fn is not None:
+                if getattr(fn, "name", None):
+                    slot["name"] = fn.name
+                    _sys.stderr.write(f"\n  ⟨{fn.name}⟩ "); _sys.stderr.flush(); wrote = True
+                if getattr(fn, "arguments", None):
+                    slot["args"] += fn.arguments
+                    _sys.stderr.write(fn.arguments); _sys.stderr.flush(); wrote = True
+    if wrote:
+        _sys.stderr.write("\n"); _sys.stderr.flush()
+    tool_calls = [
+        _LocalTC(tc_id=(v["id"] or f"tc-stream-{i}"), name=v["name"], arguments=v["args"])
+        for i, v in sorted(calls.items()) if v["name"]
+    ] or None
+    return _StreamedResponse([_StreamedChoice(_StreamedMessage(
+        content="".join(content_parts) or None,
+        tool_calls=tool_calls,
+        reasoning_content="".join(reasoning_parts) or None,
+        model_extra={},
+    ))])
+
+
 # ── Main agent class ──────────────────────────────────────────────────────────
 
 class TrueAgenticAgent:
@@ -4028,6 +4293,15 @@ class TrueAgenticAgent:
             effective_base = base_url or resolved_base
             effective_key  = api_key or resolved_key
             self.client    = _build_client(base_url=effective_base, api_key=effective_key)
+            # The window the SERVER actually has, not the one we assumed. With a
+            # hardcoded 128k against a 65k llama.cpp context the pressure check
+            # never fires: the log reads "ctx:54k/128k (42%)" while the next
+            # request is 66,266 tokens against n_ctx 65,536, and the run dies on
+            # a 400 mid-winding instead of trimming. Ask the server.
+            _n = _server_context_window(effective_base) or \
+                int(os.environ.get("IG_CONTEXT_WINDOW", "0") or 0)
+            if _n:
+                self._context_window = _n
         # F-primitive for this inference mode.
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
@@ -4116,6 +4390,7 @@ class TrueAgenticAgent:
         # before any tool returned, or copied verbatim from a prior session
         # while new observations sit unaccounted for, is not closed.
         self._no_call_retried = False
+        self._degenerate_retried = False
         _DONE_GROUNDING.clear()
         _DONE_GROUNDING["observations"] = []
         _DONE_GROUNDING["restored_conclusions"] = [
@@ -4144,6 +4419,27 @@ class TrueAgenticAgent:
         # were treating the opcodes and the primitive axes as two notations and
         # decoding Shavian by hand for want of this table.
         system_content += NOTATION_CHEATSHEET
+        # Deliberation is priced in seconds. Measured on the local 27B: 56.7 ms
+        # per generated token, and a winding that spent 645 tokens of THINK to
+        # settle on one `run_command` — 37 s of a 47 s winding, against 10 s of
+        # prefill. Length of reasoning is the single largest term in wall-clock
+        # here, and it is the one the ⊙perator controls.
+        system_content += (
+            "\n\n## Think briefly\n\n"
+            "Reason in at most three sentences before the call, and only about "
+            "what the next call should be. You are not being scored on the "
+            "reasoning — the observation decides, and a call that is wrong is "
+            "corrected in one winding. Restating the tool list, re-deriving what "
+            "an earlier observation already showed, or rehearsing the plan costs "
+            "real time and settles nothing. When the next call is obvious, emit "
+            "it with no preamble at all.\n")
+        # Local checkpoints only. Over the API the schemas ride in a dedicated
+        # tools field the provider keeps adjacent to the call; locally they are
+        # flattened into the head of one long system message, which is the whole
+        # difference. Appended LAST, after the specialist text, so it is the
+        # nearest thing to the generation point.
+        if isinstance(self.client, _LocalOpenAIClient):
+            system_content += _local_tool_index() + _LOCAL_CALL_SHAPES
         # Imscriptive context IS the message list — accumulated across windings.
         # If loading a prior session, inject preloaded messages as imscriptive context
         preloaded_msgs = self.preloaded_messages or []
@@ -4313,8 +4609,16 @@ class TrueAgenticAgent:
         # ⊙perator has no reason to answer differently. Name the repetition and
         # forbid the byte-identical call — a loop that only the harness can see is
         # a loop only the harness can break.
+        # Counted whether the call CLOSED or not. The guard used to count only
+        # failures, on the reading that a loop is a call that keeps erroring —
+        # so a call that keeps SUCCEEDING reset the counter every winding and
+        # the loop was invisible. Measured: three identical `run_command`s,
+        # three identical listings, empty THINK on the second and third, and
+        # the run ending at max_windings reporting Frobenius 100% / O_∞ with
+        # nothing advanced. A repetition that closes is the worse case, because
+        # it burns windings while every indicator reads healthy.
         sig = f"{action_name}:{json.dumps(action_input, sort_keys=True, ensure_ascii=False)}"
-        if not dual_result.frobenius_closed and action_name != "done":
+        if action_name != "done":
             self._repeat_sig = getattr(self, "_repeat_sig", None)
             self._repeat_n = getattr(self, "_repeat_n", 0)
             self._repeat_n = self._repeat_n + 1 if sig == self._repeat_sig else 1
@@ -4322,7 +4626,25 @@ class TrueAgenticAgent:
         else:
             self._repeat_sig, self._repeat_n = None, 0
 
-        if getattr(self, "_repeat_n", 0) >= 3:
+        if getattr(self, "_repeat_n", 0) >= 2 and dual_result.frobenius_closed:
+            # It worked, and it worked identically, and nothing was done with
+            # the answer. The observation is already in hand; what is missing is
+            # the step that uses it.
+            self._messages.append({
+                "role": "user",
+                "content": (
+                    f"[loop — winding {winding}] You have sent this EXACT call "
+                    f"{self._repeat_n} times and it SUCCEEDED every time, returning "
+                    f"the same result:\n"
+                    f"  {action_name}({json.dumps(action_input, ensure_ascii=False)[:200]})\n"
+                    f"Calling it again cannot tell you anything new. The observation "
+                    f"is already above. Either act on it with a DIFFERENT call, or "
+                    f"if it already answers the task, call `done` with the answer."
+                ),
+            })
+            self._repeat_n = 0
+
+        elif getattr(self, "_repeat_n", 0) >= 3:
             self._messages.append({
                 "role": "user",
                 "content": (
@@ -4436,13 +4758,38 @@ class TrueAgenticAgent:
                 _base = str(getattr(self.client, "base_url", "") or "")
                 if _base:
                     _create_kwargs["extra_body"] = _thinking_extra_body(_base)
-                response = self.client.chat.completions.create(**_create_kwargs)
+                if stream_tokens_enabled() and not isinstance(self.client, _LocalOpenAIClient):
+                    # Streaming over the API, not only over direct tensors.
+                    # `--stream` existed but drove the local shim alone, so on a
+                    # served model — which is where a winding takes 20-40 s of
+                    # generation — the flag did nothing and the wait was blank.
+                    _create_kwargs["stream"] = True
+                    response = _consume_stream(
+                        self.client.chat.completions.create(**_create_kwargs))
+                else:
+                    response = self.client.chat.completions.create(**_create_kwargs)
                 break  # Success — exit retry loop
             except Exception as exc:
                 err = str(exc)
                 code = getattr(exc, "status_code", None)
                 last_error = err
                 
+                # Context overflow is RECOVERABLE, not fatal. A 19-winding run
+                # died here on a 400 whose message names the remedy — the
+                # history is the thing that overflowed, and trimming it is
+                # exactly what _trim_history does. Trim and retry; only give up
+                # if it overflows again with nothing left to drop.
+                if code == 400 and ("context size" in err or "exceed_context" in err
+                                    or "too many tokens" in err.lower()):
+                    before = len(self._messages)
+                    self._trim_history()
+                    after = len(self._messages)
+                    if after < before:
+                        self._log(f"  [Context overflow — trimmed {before - after} "
+                                  f"messages, retrying]", "WARNING")
+                        continue
+                    raise RuntimeError(f"Fatal API error {code}: {err}") from exc
+
                 # Fatal: 4xx client errors (except 429 rate limit)
                 if code is not None and 400 <= code < 500 and code != 429:
                     raise RuntimeError(f"Fatal API error {code}: {err}") from exc
@@ -4549,6 +4896,28 @@ class TrueAgenticAgent:
             # ends the run on a thought. Nudge once, naming the acting tools, and
             # only conclude if it happens again.
             grounded = bool(_DONE_GROUNDING.get("observations"))
+            # A collapsed generation is a decoding failure, not a conclusion —
+            # it emits no tool call for the same reason it emits nothing else.
+            # Retry it once with the collapsed text kept out of the history,
+            # whether or not the session is grounded.
+            unit = _degenerate_tail(raw_reasoning_content or "") or _degenerate_tail(reasoning)
+            if unit and not getattr(self, "_degenerate_retried", False):
+                self._degenerate_retried = True
+                if self.verbose:
+                    self._log(f"  [Collapsed generation — repeated {unit!r} — retrying]",
+                              "WARNING")
+                self._messages.append({
+                    "role": "user",
+                    "content": (
+                        "[collapsed generation] Your last reply degenerated into a "
+                        "repeated character and emitted no tool call. Discard it. "
+                        "Think in at most three sentences, then emit exactly one "
+                        "tool call and nothing else."
+                    ),
+                })
+                return await self._think_and_act()
+            if unit:
+                _DONE_GROUNDING["synthesized_conclusion"] = True
             if not grounded and not getattr(self, "_no_call_retried", False):
                 self._no_call_retried = True
                 self._messages.append({
@@ -4569,8 +4938,11 @@ class TrueAgenticAgent:
                 # the part that was grounded.
                 return await self._think_and_act()
             action_name = "done"
-            action_input = {"conclusion": (reasoning or "").strip() or
-                            "No tool call was emitted; concluding here."}
+            _conclusion = (reasoning or "").strip()
+            if not _conclusion:
+                _DONE_GROUNDING["synthesized_conclusion"] = True
+                _conclusion = "No tool call was emitted; concluding here."
+            action_input = {"conclusion": _conclusion}
 
         return reasoning, action_name, action_input, tc_id, raw_reasoning_content
 
@@ -4781,8 +5153,22 @@ class TrueAgenticAgent:
             )
 
     def _estimate_context_tokens(self) -> int:
-        """Count tokens using tiktoken, or fall back to char//4 heuristic."""
-        return _estimate_messages_tokens(self._messages)
+        """Tokens the NEXT request will carry: messages AND tool schemas.
+
+        The schemas ride in their own `tools` field and the server counts them,
+        but the estimate only ever summed the messages — so a request the
+        harness called 55,593 tokens arrived as 68,203 against a 65,536 window
+        and 400'd at 85% "pressure". The schemas are ~7k tokens of JSON and the
+        chat template adds its own framing; both are charged every call.
+        """
+        base = _estimate_messages_tokens(self._messages)
+        if not hasattr(self, "_tools_token_cost"):
+            try:
+                blob = json.dumps(_tool_schemas(), ensure_ascii=False)
+                self._tools_token_cost = int(len(blob) / 3.2) + 256
+            except Exception:
+                self._tools_token_cost = 0
+        return base + self._tools_token_cost
 
     def _inject_review_prompt(self, pressure: float) -> None:
         """Inject a context-review request into the message history."""

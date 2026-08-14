@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+# opi — one command: bring up the local 27B and drop into a specialist ⊙perator.
+#
+#   ./opi                 → closure ⊙perator
+#   ./opi math            → math ⊙perator
+#   ./opi closure "task"  → run one task instead of interactive
+#
+# The server is started only if it is not already up, so this is safe to run
+# repeatedly; the model stays resident between sessions and the prompt prefix
+# stays cached, which is the whole point of serving rather than reloading.
+set -euo pipefail
+
+MODEL="${OPI_MODEL:-$HOME/.modelz/Q3p527b-GGUF/Qwen3.5-27B-Q4_K_M.gguf}"
+PORT="${OPI_PORT:-8000}"
+CTX="${OPI_CTX:-65536}"
+SERVER="$HOME/llama.cpp/build/bin/llama-server"
+LOG="${OPI_LOG:-$HOME/.opi_server.log}"
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# --serve-only: bring the server up and return. This is what every existing
+# alias calls, so the aliases keep their original form — `uv run …_operator.py -i`
+# — and the local model reaches them through IG_PROVIDER/IG_MODEL like any other
+# provider, rather than through flags bolted onto each alias.
+SERVE_ONLY=0
+if [ "${1:-}" = "--serve-only" ]; then SERVE_ONLY=1; shift; fi
+
+OP="${1:-closure}"; shift || true
+TASK="${*:-}"
+
+if ! curl -sf "http://127.0.0.1:$PORT/health" >/dev/null 2>&1; then
+  echo "[opi] starting llama-server on :$PORT"
+  echo "[opi]   model  Q4_K_M (4-bit weights, 15.6 GiB)"
+  echo "[opi]   ctx    $CTX, KV cache quantized q8_0 (cache only — not the weights)"
+  echo "[opi]   GPUs   0+1, split ${OPI_SPLIT:-60,40} (4070 first)"
+  # CUDA_DEVICE_ORDER=PCI_BUS_ID so llama.cpp's GPU 0 IS nvidia-smi's GPU 0.
+  # Without it CUDA enumerates by its own heuristic and the split lands on the
+  # wrong card — the 3060 fills first and spills to the 4070, which is backwards.
+  # --main-gpu 0 keeps the compute buffers on the 4070; OPI_SPLIT biases the
+  # layer split toward it (weights ∝ the ratio, 4070 first).
+  CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0,1 setsid nohup "$SERVER" \
+    -m "$MODEL" --n-gpu-layers 99 --split-mode layer \
+    --main-gpu 0 --tensor-split "${OPI_SPLIT:-60,40}" \
+    --ctx-size "$CTX" --cache-type-k q8_0 --cache-type-v q8_0 --flash-attn on \
+    --port "$PORT" --host 127.0.0.1 > "$LOG" 2>&1 < /dev/null &
+  disown
+  printf '[opi] loading'
+  for _ in $(seq 1 120); do
+    curl -sf "http://127.0.0.1:$PORT/health" >/dev/null 2>&1 && break
+    grep -qiE "failed to load|error loading" "$LOG" && { echo; echo "[opi] load FAILED — see $LOG"; exit 1; }
+    printf '.'; sleep 5
+  done
+  echo
+  curl -sf "http://127.0.0.1:$PORT/health" >/dev/null 2>&1 || { echo "[opi] server never came up — see $LOG"; exit 1; }
+  echo "[opi] server ready"
+else
+  echo "[opi] server already up on :$PORT"
+fi
+
+[ "$SERVE_ONLY" = "1" ] && exit 0
+
+cd "$HERE"
+ARGS=(--base-url "http://localhost:$PORT/v1" --model Q3p527b --api-key local)
+if [ -n "$TASK" ]; then
+  exec uv run "agents/specialists/${OP}_operator.py" "$TASK" "${ARGS[@]}"
+else
+  exec uv run "agents/specialists/${OP}_operator.py" -i "${ARGS[@]}"
+fi
