@@ -31,8 +31,8 @@ from imscrbgrmr.canonical_primitives import (
 _OPCODES: dict[str, tuple[str, bool]] = {
     "⊢": ("VINIT", False),
     "⊣": ("TANCH", False),
-    ">": ("AFWD", True),
-    "<": ("AREV", True),
+    "≻": ("AFWD", True),
+    "≺": ("AREV", True),
     "⋈": ("CLINK", True),
     "⊤": ("EVALT", True),
     "∈": ("FSPLIT", False),

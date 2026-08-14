@@ -52,17 +52,17 @@ from navigators.zfct_navigator import (
 
 CORPUS_BASE: dict[str, dict] = {
     'voynich': {
-        '⊢': '𐑦', '⊣': '𐑸', '>': '𐑾',  '<': '𐑹',
+        '⊢': '𐑦', '⊣': '𐑸', '≻': '𐑾',  '≺': '𐑹',
         '⋈': '⋈^ì', '⊤': '⊤^Ù', '∈': '𐑲',  '∋': '∋^Ş',
         '⊙': '⊙', '⊥': '𐑫', '⊞': '𐑙',  '◻': '𐑭',
     },
     'rohonc': {
-        '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
+        '⊢': '𐑨', '⊣': '𐑶', '≻': '𐑽', '≺': '𐑹',
         '⋈': '⋈^ì', '⊤': '⊤^@', '∈': '𐑲', '∋': '∋^ˌ',
         '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
     'linear_a': {
-        '⊢': '𐑨', '⊣': '𐑶', '>': '𐑽', '<': '𐑹',
+        '⊢': '𐑨', '⊣': '𐑶', '≻': '𐑽', '≺': '𐑹',
         '⋈': '⋈^ż', '⊤': '⊤^W', '∈': '𐑲', '∋': '∋^ˌ',
         '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
     },
@@ -264,7 +264,7 @@ def process_corpus(
         }
         if verbose:
             print(f'  {name:<10}  {len(instructions):>4} instr  '
-                  f'⊣={tuple_["⊣"]}  <={tuple_["<"]}  '
+                  f'⊣={tuple_["⊣"]}  <={tuple_["≺"]}  '
                   f'∋={tuple_["∋"]}  ⊥={tuple_["⊥"]}')
     return records
 
@@ -300,7 +300,7 @@ def write_text_report(all_records: dict[str, dict], path: Path) -> None:
                 f.write(f'  ── {_element_label(cid)} {name} '
                         f'({rec["n_instructions"]} instructions) ──\n')
                 f.write(f'  ⟨ ' + '  '.join(f'{t[p]}' for p in PRIMITIVES) + ' ⟩\n')
-                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["<"]}  ∋={t["∋"]}  ⊥={t["⊥"]}\n')
+                f.write(f'  Variable: ⊣={t["⊣"]}  <={t["≺"]}  ∋={t["∋"]}  ⊥={t["⊥"]}\n')
                 f.write(f'  ZFCₜ expression:\n')
                 for line in rec['expression'].split('\n'):
                     f.write(f'    {line.strip()}\n')

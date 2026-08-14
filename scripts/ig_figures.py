@@ -44,7 +44,7 @@ TIER_COLOR = {
     "O_∞":   "#9370DB",
 }
 
-PRIM_GLYPHS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIM_GLYPHS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 PRIM_NAMES  = [
     "Dimensionality", "Topology", "Recognition", "Parity",
     "Fidelity",       "Kinetics", "Granularity", "Coupling",

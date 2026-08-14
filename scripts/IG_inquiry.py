@@ -438,8 +438,8 @@ VALID_VALUES: Dict[str, List[str]] = {p: list(ORDINALS[p].keys()) for p in PRIMI
 SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "⊢":     {"∧": "𐑛",   "△": "𐑨", "∞": "𐑼",  "⊙": "𐑦"},
     "⊣":     {"∈": "𐑡", "⊂": "𐑰",       "⋈": "𐑥","⊠": "𐑶","⊙": "𐑸"},
-    ">":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
-    "<":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
+    "≻":     {"↑": "𐑩",   "∘": "𐑑",      "†": "𐑽", "↔": "𐑾"},
+    "≺":     {"∅": "𐑗",    "ψ": "𐑿",      "±": "𐑬",    "≡": "𐑯",    "±ˢ": "𐑹"},
     "⋈":     {"ℓ": "𐑱",     "ð": "𐑞",      "ℏ": "𐑐"},
     "⊤":     {"↯": "⊤^-",    "≈": "⊤^W",      "↺": "⊤^@",  "⊛": "⊤^Ù",   "⊞": "⊤^λ"},
     "∈":     {"ℶ": "𐑚",    "ℷ": "𐑔",    "ℵ": "𐑲"},
@@ -457,7 +457,7 @@ _TENSOR_RULES: Dict[str, str] = {
     "⊢":     "max",  # dimensionality union — composed system spans all dims of both
     "⊣":     "max",  # topology promotes to most complex structure
     ">":     "max",  # recognition mode promotes to most dynamic
-    "<":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
+    "≺":     "min",  # parity — asymmetry propagates (𐑗=1 wins)
     "⋈":     "min",  # fidelity bottleneck — limited by weaker fidelity partner
     "⊤":     "max",  # kinetic bottleneck — limited by slowest/most trapped step
     "∈":     "max",  # scope union — composed system has broadest scope
@@ -1153,7 +1153,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitives": {
                         "type": "array",
-                        "items": {"type": "string", "enum": ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]},
+                        "items": {"type": "string", "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]},
                         "description": "List of primitives to project onto",
                     },
                 },
@@ -1177,7 +1177,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitive": {
                         "type": "string",
-                        "enum": ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
+                        "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
                         "description": "The primitive to peel to its minimum value",
                     },
                 },
@@ -2465,7 +2465,7 @@ class SessionCatalog:
         # still name axes the short way. It used to map the marks themselves
         # onto Shavian value glyphs, which added keys no lookup ever reads.
         LEGACY_MAP = {
-            "D": "⊢", "T": "⊣", "R": ">", "P": "<", "F": "⋈",
+            "D": "⊢", "T": "⊣", "R": "≻", "P": "≺", "F": "⋈",
             "K": "⊤", "G": "∈", "Gamma": "∋", "Phi": "⊙",
             "H": "⊥", "S": "⊞", "Omega": "◻",
         }
@@ -3743,7 +3743,7 @@ class ToolDispatcher:
         a floor names a point where nothing lives.
         """
         import collections as _c
-        slots = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+        slots = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
         # The catalog is a Catalog, not a dict. An earlier form of this reached
         # for `.values()` and, finding none, silently matched nothing at all, so
         # every call answered "no entries with full tuples matched" whatever was
@@ -4125,7 +4125,7 @@ class ToolDispatcher:
     # Gate-2 flow condition) — the "paraconsistent observer" surface an action is checked
     # against. See navigators/cl8nk_navigator.py compute_meet_op for the reference computation
     # this mirrors, and PRIMITIVE_ORDER for the full 12-coordinate breach report.
-    _CONTAINMENT_CRITICAL = ("⊙", "<", "⊤")
+    _CONTAINMENT_CRITICAL = ("⊙", "≺", "⊤")
 
     def _containment_boundary(self, name: str, **kwargs) -> Dict[str, Any]:
         """AI containment boundary: is `name`'s own tuple inside the SIXTEEN_3 ∧ CLINK-L8
@@ -4950,9 +4950,9 @@ class ToolDispatcher:
 
     # Lowercase → canonical primitive name (dispatch() lowercases all keys)
     _PRIM_CANONICAL = {
-        **{p.lower(): p for p in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]},
+        **{p.lower(): p for p in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]},
         # backward-compat: old ASCII key names (lowercased by dispatch)
-        "d": "⊢", "t": "⊣", "r": ">", "p": "<", "f": "⋈",
+        "d": "⊢", "t": "⊣", "r": "≻", "p": "≺", "f": "⋈",
         "k": "⊤", "g": "∈", "gamma": "∋", "phi": "⊙",
         "h": "⊥", "s": "⊞", "omega": "◻",
         # backward-compat: old ⊙ notation for ⊙ (pre-migration)
@@ -4986,7 +4986,7 @@ class ToolDispatcher:
         tup_str = primitives.pop("tuple", "")
         if tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
+            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
             if len(parts) == 12:
                 primitives = {k: v for k, v in zip(prim_order, parts)}
         # Also accept 'name' to look up from catalog
@@ -4995,7 +4995,7 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
+            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
         # Normalize keys (dispatch lowercases all kwargs)
         primitives = self._norm_crystal_kwargs(primitives)
         try:
@@ -5096,10 +5096,10 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
+            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
         elif tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["⊢","⊣",">","<","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
+            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
             tup = {k: v for k, v in zip(prim_order, parts)}
         elif primitives:
             tup = self._norm_crystal_kwargs(primitives)
@@ -5185,7 +5185,7 @@ class ToolDispatcher:
         try:
             from navigators.crystal_navigator import encode_tuple as _enc, compute_tier as _tier, TOTAL_SIZE as _N
             exact_addr = _enc(tup)
-            exact_tier = _tier(tup["⊙"], tup["<"], tup["◻"], tup["⊢"])
+            exact_tier = _tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
 
             with _torch.no_grad():
                 out = model.forward([tup])
@@ -5194,7 +5194,7 @@ class ToolDispatcher:
             pred_tier  = _TierHead.TIERS[out["tier_logits"][0].argmax().item()]
             dec        = {p: _CRYSTAL_VALUES[p][out["dec_logits"][p][0].argmax().item()]
                           for p in _CRYSTAL_PRIMS}
-            dec_tier   = _tier(dec["⊙"], dec["<"], dec["◻"], dec["⊢"])
+            dec_tier   = _tier(dec["⊙"], dec["≺"], dec["◻"], dec["⊢"])
             addr_err   = abs(pred_addr - exact_addr)
             err_pct    = 100 * addr_err / _N
 
@@ -5312,7 +5312,7 @@ class ToolDispatcher:
             primitives = {k.capitalize() if len(k) > 1 else k.upper(): v
                           for k, v in primitives.items() if v}
             # Fill missing with defaults that give C=0 to be safe
-            defaults = {"⊢": "𐑛", "⊣": "𐑡", ">": "𐑩", "<": "𐑗",
+            defaults = {"⊢": "𐑛", "⊣": "𐑡", "≻": "𐑩", "≺": "𐑗",
                         "⋈": "⋈^ì", "⊤": "⊤^-", "∈": "𐑚", "∋": "∋^∧",
                         "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
             e = {**defaults, **primitives}
@@ -5579,12 +5579,12 @@ class ToolDispatcher:
         """Convert a numpy ordinal vector back to a primitive-value dict."""
         import numpy as _np
         from navigators.crystal_navigator import VALUES as _CV  # type: ignore
-        PRIMS_ORDER = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+        PRIMS_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
         VALS_BY_PRIM = {
             "⊢":     ["𐑛","𐑨","𐑼","𐑦"],
             "⊣":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
-            ">":     ["𐑩","𐑑","𐑽","𐑾"],
-            "<":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
+            "≻":     ["𐑩","𐑑","𐑽","𐑾"],
+            "≺":     ["𐑗","𐑿","𐑬","𐑯","𐑹"],
             "⋈":     ["⋈^ì","⋈^ð","⋈^ż"],
             "⊤":     ["⊤^-","⊤^W","⊤^@","⊤^Ù","⊤^λ"],
             "∈":     ["𐑚","𐑔","𐑲"],

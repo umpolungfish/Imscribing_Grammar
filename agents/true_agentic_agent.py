@@ -967,12 +967,12 @@ _spawn_config: Dict[str, str] = {"model": "grok-4", "base_url": "", "api_key": "
 # 𐑛 is the ⊢ value "<2", not "the ⊢ family". Keying families by value glyphs is
 # what let a sub-call report a missing family by naming a value.
 CANONICAL_FAMILIES: List[str] = [
-    "⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"
+    "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"
 ]
 
 # Schema property keys use _val suffix to avoid model confusion with < and >
 CANONICAL_FAMILIES_VAL: List[str] = [
-    "⊢_val", "⊣_val", ">_val", "<_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"
+    "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"
 ]
 
 class LoopPhase(Enum):
@@ -1235,7 +1235,7 @@ def _file_read_verify(emit_input: Dict, emit_output: str,
     return ("(read returned content — Frobenius closed)", True)
 
 
-_PRIM_KEYS = ["⊢", "⊣", ">", "<", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+_PRIM_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
 _TUPLE_RE = re.compile(r"⟨\s*([^⟩]+?)\s*⟩")
 _NAME_RE = re.compile(r"\b([a-z][a-z0-9_]{2,40})\b")
 
@@ -1623,8 +1623,8 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                 "valid_values": {
                     "⊢_val":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣_val":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-                    ">_val":     ["𐑩", "𐑑", "𐑽", "𐑾"],
-                    "<_val":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+                    "≻_val":     ["𐑩", "𐑑", "𐑽", "𐑾"],
+                    "≺_val":     ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                     "⋈_val":     ["𐑱", "𐑞", "𐑐"],
                     "⊤_val":     ["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
                     "∈_val":     ["𐑲", "𐑚", "𐑔"],
@@ -1905,8 +1905,8 @@ for _fam_values in (
 _PRIM_VALID: Dict[str, List[str]] = {
     "⊢": ["𐑛", "𐑨", "𐑼", "𐑦"],
     "⊣": ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-    ">": ["𐑩", "𐑑", "𐑽", "𐑾"],
-    "<": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+    "≻": ["𐑩", "𐑑", "𐑽", "𐑾"],
+    "≺": ["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
     "⋈": ["𐑱", "𐑞", "𐑐"],
     "⊤": ["𐑘", "𐑤", "𐑧", "𐑪", "𐑺"],
     "∈": ["𐑲", "𐑚", "𐑔"],
@@ -2018,7 +2018,7 @@ def _run_single_imscription(
                 data["<"] = data.pop(k)
             elif k == "〉" and ">" not in data:
                 data[">"] = data.pop(k)
-        # Model responds with _val suffix keys (e.g., "<_val", ">_val") per schema.
+        # Model responds with _val suffix keys (e.g., "≺_val", "≻_val") per schema.
         # Convert to bare marks for internal use.
         for k in list(data.keys()):
             if k.endswith("_val") and k[:-4] in CANONICAL_FAMILIES:
@@ -2190,7 +2190,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                 validate_structural = None  # type: ignore
         if validate_structural is not None:
             _fam_to_axis = {
-                "𐑛": "⊢", "𐑡": "⊣", "𐑩": ">", "𐑗": "<", "𐑱": "⋈", "𐑘": "⊤",
+                "𐑛": "⊢", "𐑡": "⊣", "𐑩": "≻", "𐑗": "≺", "𐑱": "⋈", "𐑘": "⊤",
                 "𐑚": "∈", "𐑝": "∋", "𐑢": "⊙", "𐑓": "⊥", "𐑙": "⊞", "𐑷": "◻",
             }
             axis_dict = {"name": name}
@@ -3113,9 +3113,9 @@ TOOL_SCHEMAS = [
                            "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
             "⊣_val":     _prim(["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
                            "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-            ">_val":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
+            "≻_val":     _prim(["𐑩", "𐑑", "𐑽", "𐑾"],
                            "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-            "<_val":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+            "≺_val":     _prim(["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
                            "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
             "⋈_val":     _prim(["𐑱", "𐑞", "𐑐"],
                            "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
@@ -3143,7 +3143,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢_val", "⊣_val", ">_val", "<_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"],
+        ["name", "description", "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"],
     ),
     _fn(
         "run_command",
