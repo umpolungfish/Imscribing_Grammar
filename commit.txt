@@ -1,38 +1,22 @@
-Finish the mark conversion, and correct two documents
+A rate limit is not an empty account
 
-The code conversion was done in three passes and each missed a class the previous
-filter could not see. This closes it: markdown that teaches the alphabet, the
-bare ixcriptions catalog, and every generated artifact under digital/ now read in
-the marks, and nothing in any repo still binds AFWD to > or AREV to <.
+A run died at "every funded provider returned a fatal error" with a working
+account sitting unused. Google had answered 429 RESOURCE_EXHAUSTED — a
+free-tier per-minute window, with the wait stated in the reply as 26 seconds —
+and the message contains the word "quota", which is in the fatal list. So the
+provider was marked dead, the chain demoted past it, and the run ended over a
+wait measured in seconds.
 
-Two documents carried real errors, both found by checking them rather than
-reading them.
+Both kinds of error say "quota" and only one of them is permanent. A rate limit
+is transient by construction: the window reopens. An empty account is not.
+_is_rate_limit now separates them and is consulted before the fatal check, so
+402 and 401 still demote and 429 no longer can.
 
-master_methods_d2048_stark reported the moduli field as 2^20 over F and 2^21 over
-Q, and marked the 2^26 reading FALSIFIED. Those are the oo-unramified numbers,
-which the conductor paper two days later identifies as the retracted error. The
-degrees are now 2^21 over F and 2^22 over Q, at p_2^12 oo_1, with the ray class
-group 2^27 of type [4096,1024,8,4].
+The backoff also guessed where the provider had already answered. Against a
+per-minute window a guess tends to guess short, and every early retry spends
+another request from the same budget, which is how five requests a minute
+became none. _server_retry_delay reads the retryDelay the provider sent and
+takes it when it is longer than the guess.
 
-That document and alt_sic_moduli_conductor both carry an exponent vector [-1,3,2]
-and they are not the same element: one is over eps_fund and the uniformizers of
-the degree-1024 tower with norm 2^56, the other over eps_d and g_-, g_+ inside F
-with norm -35905737691441125, which is odd. Since m_d = 5 (mod 8) and m_d is odd,
-2 is inert AND unramified in F, so F contains no such uniformizers at all. A
-shared numeral is not a shared object; the collision is now named in both places.
-
-sic_fiducial_extraction_2part_bypass stated the minimal polynomial as
-x^2-2047x-1, which evaluates to -2. It is x^2-2047x+1, as its own verification
-line said and as Proposition 7.1 gives. It also equated Q(sqrt3,sqrt5,sqrt409,
-sqrt683) with Q(sqrt m_d), degree 16 against degree 2, and gave the rational
-primes 3 and 5 norms 3 and 5 rather than 9 and 25.
-
-moduli_exact.txt now says what it is: ten of its twelve rows are 642-digit lindep
-fits at 2000 working digits, genuine only at z0 and z6, and its SUM cannot be 1
-because it sums fits. The height test that catches this is STATE.md's own and the
-file had never been put through it.
-
-d2048_sieve.rs and sunit_recognition_d2048.py now record that their five
-generators satisfy g3^2 = (d-3)eps and g4^2 = (d+1)eps, so an exponent vector over
-them is not a unique name, and at d=2048 the list cannot generate the S-unit group
-because 409 and 683 are forced in without generators.
+Found while imscribing an instruction set: the pipeline could not reach any
+model, and the harness was the suspect before the agent.
