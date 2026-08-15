@@ -42,36 +42,7 @@ _PROVIDER_FALLBACK = [
 ]
 
 
-def _is_rate_limit(err: str, code=None) -> bool:
-    """A rate limit, as opposed to an empty account.
-
-    Both say "quota", and only one of them is permanent. A per-minute window
-    reopens on its own — the provider even says when — so demoting on it burns
-    a working account for the rest of the run over a wait measured in seconds.
-    """
-    e = err.lower()
-    return code == 429 or "429" in e or "resource_exhausted" in e or "rate limit" in e
-
-
-def _server_retry_delay(err: str):
-    """The wait the provider asked for, if it named one.
-
-    Guessing a backoff against a per-minute window tends to guess short, and
-    every early retry spends another request from the same budget. When the
-    error carries `retryDelay` or "retry in Ns", that number is the answer.
-    """
-    m = re.search(r"retry(?:delay)?[\"'\s:=]+(\d+(?:\.\d+)?)\s*s", err, re.I)
-    if not m:
-        return None
-    try:
-        return float(m.group(1))
-    except ValueError:
-        return None
-
-
-def _is_fatal_provider_error(err: str, code=None) -> bool:
-    if _is_rate_limit(err, code):
-        return False
+def _is_fatal_provider_error(err: str) -> bool:
     e = err.lower()
     return any(c in e for c in _FATAL_PROVIDER_CODES)
 
@@ -298,11 +269,8 @@ class BaseAgent(ABC):
                     code = getattr(resp, "status_code", None)
 
                 # 429 rate limit
-                if _is_rate_limit(err, code) and attempt < max_retries:
-                    # Take the provider's own number when it gives one; a guess
-                    # against a per-minute window guesses short.
-                    delay = max(min(60, 2 ** (attempt + 2)),
-                                _server_retry_delay(err) or 0.0)
+                if code == 429 and attempt < max_retries:
+                    delay = min(60, 2 ** (attempt + 2))
                     logger.warning(
                         f"[{self.name}] rate limited (429) — retrying in {delay}s "
                         f"(attempt {attempt+1}/{max_retries})"
@@ -333,7 +301,7 @@ class BaseAgent(ABC):
                 # A fatal provider error is not transient: no amount of backoff buys
                 # credit. Demote to the next FUNDED provider and carry on, unless the
                 # caller pinned one explicitly.
-                if _is_fatal_provider_error(err, code):
+                if _is_fatal_provider_error(err):
                     self._dead_providers = getattr(self, "_dead_providers", set())
                     cur = self.config.get("provider", "")
                     self._dead_providers.add(cur)
