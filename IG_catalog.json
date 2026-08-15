@@ -131235,5 +131235,38 @@
     "⊥": "𐑖",
     "⊞": "𐑙",
     "◻": "𐑭"
+  },
+  {
+    "name": "erdos3_behrend_barrier",
+    "description": "click fusion of erdos_conjecture_ap ⋈ behrend_construction on D↔W (Δ=1.00); the μ (FFUSE) product, ring saturated on the D↔W pair.",
+    "provenance": "derived:click",
+    "⊢": "𐑨",
+    "⊣": "𐑡",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑵",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "◻": "𐑭"
+  },
+  {
+    "name": "sk_forge",
+    "description": "Specialized skolem‑aware forge: a universal assembly tool that accepts sets of monomers and resolves to a stable cyclic topology via spectral radii minimization ρ=2, with an emphasis on lossless, systematic construction and strict adherence to the structural lemma roles (encoding/duality, inverse structure, boundedness, topological invariant, regularity).",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    "≻": "𐑑",
+    "≺": "𐑬",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑜",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑕",
+    "◻": "𐑴"
   }
 ]
