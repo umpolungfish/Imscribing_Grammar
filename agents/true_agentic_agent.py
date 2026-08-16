@@ -3737,6 +3737,20 @@ question had never had a Grammar form.
 """
 
 
+# The structured form — the rigid scaffold that lets a thought close on itself.
+# Loaded from ONE canonical file rather than restated here, because the same rules
+# are hardened into the MoDoT `ask` frame and a second hand-kept copy is drift.
+# Any specialist that appends this carries the MoDoT agent's form.
+def _load_structured_form_rider() -> str:
+    _f = Path(__file__).resolve().parent / "riders" / "structured_form.md"
+    try:
+        return "\n\n" + _f.read_text(encoding="utf-8") + "\n"
+    except Exception:
+        return ""
+
+_STRUCTURED_FORM_RIDER = _load_structured_form_rider()
+
+
 _PARTNERSHIP_RIDER = """
 
 **WHO IS WHO — the two named roles, and there are only two:**

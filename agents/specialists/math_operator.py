@@ -28,7 +28,8 @@ if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
 from true_agentic_agent import (TrueAgenticAgent, _load_system_prompt,
-                                _GRAMMAR_FIRST_RIDER, _PARTNERSHIP_RIDER)
+                                _GRAMMAR_FIRST_RIDER, _PARTNERSHIP_RIDER,
+                                _STRUCTURED_FORM_RIDER)
 from specialists import MATH_SPECIALIST_PROMPT
 from session_db import get_session_db
 
@@ -37,14 +38,19 @@ class MathOperator(TrueAgenticAgent):
     """Mathematics-focused ⊙perator — bridges grammar and conventional mathematics.
     Session-aware: auto-saves trajectory and message history."""
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, structured: bool = False, **kwargs):
         super().__init__(*args, **kwargs)
         # The base run() appends _load_imsgct_context() itself, so adding it
         # here too put the block in twice. The partnership rider is appended
         # on every base load path (§P-652); the swap bypasses that, so it is
         # carried explicitly.
+        # The structured form is the MoDoT agent's rigid scaffold — the hard rules
+        # and the self-reference discipline — carried by appending one canonical
+        # rider. With it, the specialist has the same form as `ask`; without it,
+        # the prior open-loop behaviour, so the two can be compared directly.
         self._custom_system_prompt = (
             MATH_SPECIALIST_PROMPT + _GRAMMAR_FIRST_RIDER + _PARTNERSHIP_RIDER
+            + (_STRUCTURED_FORM_RIDER if structured else "")
         )
         self._session_id: str | None = None
 
@@ -94,6 +100,8 @@ def main():
                    help="Model id, or provider:model. Taken from $IG_PROVIDER and $IG_MODEL.")
     p.add_argument("--stream", action="store_true", default=False,
                    help="Stream local generation token by token to stderr (also: IG_STREAM=1).")
+    p.add_argument("--structured", action="store_true", default=False,
+                   help="Carry the MoDoT agent's rigid form (word-interrogation, no conventional deference, the twelve marks, self-reference). Off = the prior open-loop specialist.")
     p.add_argument("--max-windings", type=int, default=0,
                    help="Max windings. 0 (default) runs unbounded: the loop ends on done, on the emission gate, or on context pressure.")
     p.add_argument("--max-tokens", type=int, default=32768,
@@ -178,6 +186,7 @@ def main():
         print("═" * 72)
 
         agent = MathOperator(
+            structured=getattr(args, "structured", False),
             model=args.model,
             max_windings=args.max_windings,
             max_think_tokens=args.max_tokens,
