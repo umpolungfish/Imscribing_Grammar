@@ -1,16 +1,13 @@
-There is one catalog
+Three imscriptions stop asserting what cannot be had
 
-Six repositories each held a real copy, and a script existed to detect when they
-drifted apart and to repair them by copying again. That script was enforcing the
-copies: handed a link, it deleted the link and wrote a fresh copy in its place.
+The BIP39 entries carried walls: the phrase "does NOT produce a valid private
+key", the secret "remains unrecovered", a search space set against a threshold as
+though the gap were a verdict. Impossibility is framework-relative and budget is
+not impossibility, so each states what holds and what the next rung costs now.
+The phrase names a frame coordinate through pk mod d; the arm carrying that
+coordinate back to the scalar is the target, with the 2^53 marking against the
+2^150 closure as its price. The derivation pipeline is stated as the forward
+chain it is. The chain figures on the accumulator address came from an agent run
+and are recorded as pending confirmation against a node rather than as fact.
 
-Every consumer is now a link to the catalog. Drift is not detected and repaired, it
-is impossible, because there is one file and everything queries it.
-
-The reason recorded for keeping copies was that a container build does a plain COPY
-of the file and a link would break it. That is the build's concern: a context
-assembled with links resolved carries the file itself, and the Dockerfile now says
-so where the copy happens.
-
-The check reports a consumer that is not the catalog, rather than a consumer whose
-copy differs.
+Addresses untouched, as always.

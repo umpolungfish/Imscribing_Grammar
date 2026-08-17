@@ -467,6 +467,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fbba63042a9aa832"
   },
+  "<new_name>": {
+    "changes": 0,
+    "first_seen": "2026-08-16T05:41:25+00:00",
+    "last_changed": "2026-08-16T05:41:25+00:00",
+    "tuple_hash": "78f344ae992d8a75"
+  },
+  "<unique_name>": {
+    "changes": 0,
+    "first_seen": "2026-08-16T05:45:59+00:00",
+    "last_changed": "2026-08-16T05:45:59+00:00",
+    "tuple_hash": "b924c418709a1660"
+  },
   "A1": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -1354,6 +1366,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fca5142aea25a7c6"
+  },
+  "PK": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:27:06+00:00",
+    "last_changed": "2026-08-16T07:27:06+00:00",
+    "tuple_hash": "b1dba937b6955832"
   },
   "Perry's_Paradox": {
     "changes": 0,
@@ -2614,6 +2632,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c8ce70910a4a4eff"
+  },
+  "alternative_linker": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:43:14+00:00",
+    "last_changed": "2026-08-17T15:43:14+00:00",
+    "tuple_hash": "7ff9b9fa13380295"
   },
   "althaea_officinalis": {
     "changes": 0,
@@ -5711,6 +5735,30 @@
     "last_changed": "2026-08-15T03:34:55+00:00",
     "tuple_hash": "6da5b9ccdee3b4a3"
   },
+  "bip39_keys_10000_record_0": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:19:07+00:00",
+    "last_changed": "2026-08-17T04:19:07+00:00",
+    "tuple_hash": "0b6438e33b37b9dd"
+  },
+  "bip39_phrase": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:16:44+00:00",
+    "last_changed": "2026-08-16T06:16:44+00:00",
+    "tuple_hash": "2bb496a7c4b9e806"
+  },
+  "bip39_private_key": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:17:19+00:00",
+    "last_changed": "2026-08-16T06:17:19+00:00",
+    "tuple_hash": "bdcd27a034ae154c"
+  },
+  "bip39_public_key": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:17:58+00:00",
+    "last_changed": "2026-08-16T06:17:58+00:00",
+    "tuple_hash": "f25d37e823fc3b83"
+  },
   "bip39_secp256k1_derivation": {
     "changes": 0,
     "first_seen": "2026-08-11T19:50:14+00:00",
@@ -5728,6 +5776,12 @@
     "first_seen": "2026-08-11T10:39:15+00:00",
     "last_changed": "2026-08-11T10:39:15+00:00",
     "tuple_hash": "cee00fbdc389d05a"
+  },
+  "bip39_wordlist_imasm": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:17:56+00:00",
+    "last_changed": "2026-08-17T04:17:56+00:00",
+    "tuple_hash": "c7d769adbaa27b5e"
   },
   "bipartite_degenerate_graph": {
     "changes": 0,
@@ -10091,6 +10145,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "558a6f8696f21982"
   },
+  "clarity": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:27:00+00:00",
+    "last_changed": "2026-08-17T15:27:00+00:00",
+    "tuple_hash": "626f861911b8cb41"
+  },
   "clary_sage": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10114,6 +10174,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8a04f3e207909d2e"
+  },
+  "classical_ecc_recovery": {
+    "changes": 0,
+    "first_seen": "2026-08-17T17:10:53+00:00",
+    "last_changed": "2026-08-17T17:10:53+00:00",
+    "tuple_hash": "65d92c6b2771a8c0"
   },
   "classical_formal_proof": {
     "changes": 0,
@@ -14201,6 +14267,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cd88b0b360d978bd"
   },
+  "ecdlp_oracle": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:52:40+00:00",
+    "last_changed": "2026-08-17T13:52:40+00:00",
+    "tuple_hash": "a756c843f5b8d080"
+  },
   "ecdsa_secp256k1_sk_recovery_target": {
     "changes": 0,
     "first_seen": "2026-08-11T10:39:15+00:00",
@@ -14614,6 +14686,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "326f135fa7fa5b90"
+  },
+  "elliptic_curve_discrete_logarithm": {
+    "changes": 0,
+    "first_seen": "2026-08-17T14:11:42+00:00",
+    "last_changed": "2026-08-17T14:11:42+00:00",
+    "tuple_hash": "82c9cb5ff7f3c8fc"
   },
   "embed_bpe_tied": {
     "changes": 0,
@@ -17711,6 +17789,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6b75a5a7b858b0da"
   },
+  "from": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:28:09+00:00",
+    "last_changed": "2026-08-17T15:28:09+00:00",
+    "tuple_hash": "8a961d7f3c439f93"
+  },
   "fructose": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18299,11 +18383,35 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "79068aad17649cd8"
   },
+  "gate_condition": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:29:34+00:00",
+    "last_changed": "2026-08-17T04:29:34+00:00",
+    "tuple_hash": "8573bd889aae3e5b"
+  },
+  "gate_obstruction": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:43:14+00:00",
+    "last_changed": "2026-08-17T15:43:14+00:00",
+    "tuple_hash": "0da5a2306c3affa5"
+  },
+  "gate_obstruction_m3": {
+    "changes": 0,
+    "first_seen": "2026-08-17T16:38:20+00:00",
+    "last_changed": "2026-08-17T16:38:20+00:00",
+    "tuple_hash": "000f49d0dda54dc0"
+  },
   "gate_open": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8e1555022a6589e3"
+  },
+  "gate_panel_state": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:23:07+00:00",
+    "last_changed": "2026-08-17T04:23:07+00:00",
+    "tuple_hash": "ae392053c847a593"
   },
   "gate_test": {
     "changes": 0,
@@ -23015,6 +23123,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0f2f50a08b4a2b2d"
   },
+  "imasm_cycle_word": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:19:56+00:00",
+    "last_changed": "2026-08-16T06:19:56+00:00",
+    "tuple_hash": "dbec4cf7ed66d4ab"
+  },
   "imasm_ring_walk_keyspace": {
     "changes": 0,
     "first_seen": "2026-08-11T10:39:15+00:00",
@@ -23033,6 +23147,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc2461d6c1c11901"
   },
+  "impact_b_zero": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:40:36+00:00",
+    "last_changed": "2026-08-17T04:40:36+00:00",
+    "tuple_hash": "1aa91750b17c8bbd"
+  },
   "impedancespectroscopy": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -23050,6 +23170,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "46c127237f9e8d10"
+  },
+  "improves": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:27:35+00:00",
+    "last_changed": "2026-08-17T15:27:35+00:00",
+    "tuple_hash": "cb01c61f349d91a5"
   },
   "imscrib": {
     "changes": 0,
@@ -24773,6 +24899,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28e6c04311477f39"
   },
+  "key_pair_closure": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:20:33+00:00",
+    "last_changed": "2026-08-16T06:20:33+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "keyz": {
     "changes": 0,
     "first_seen": "2026-08-11T19:50:14+00:00",
@@ -25667,6 +25799,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eba3f6156c49ed01"
   },
+  "lattice_reduction": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:39:13+00:00",
+    "last_changed": "2026-08-16T07:39:13+00:00",
+    "tuple_hash": "f87bb3ac7a43e265"
+  },
   "lattice_tier_map": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -26074,6 +26212,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a94182e4d9d960bd"
+  },
+  "life_compiled_genetic_code": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:17:56+00:00",
+    "last_changed": "2026-08-17T04:17:56+00:00",
+    "tuple_hash": "e9c669613f8549e1"
   },
   "life_giving_magus___a_powerful_wizard_who_can_bring": {
     "changes": 0,
@@ -26794,6 +26938,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
+  },
+  "lowest-strain": {
+    "changes": 0,
+    "first_seen": "2026-08-17T14:53:17+00:00",
+    "last_changed": "2026-08-17T14:53:17+00:00",
+    "tuple_hash": "c4e007d2ccfb7baf"
   },
   "lsd": {
     "changes": 0,
@@ -30755,6 +30905,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "362367124984a81e"
   },
+  "nonce_reuse_attack": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:31:36+00:00",
+    "last_changed": "2026-08-16T07:31:36+00:00",
+    "tuple_hash": "1a4d5ae06a5d3a11"
+  },
   "nondeterministic_polynomial_NP": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -31888,6 +32044,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "616e9a32d42a516b"
+  },
+  "ordering": {
+    "changes": 0,
+    "first_seen": "2026-08-17T14:53:49+00:00",
+    "last_changed": "2026-08-17T14:53:49+00:00",
+    "tuple_hash": "99e96a4f48612eb9"
   },
   "ordinal_graph": {
     "changes": 0,
@@ -33299,6 +33461,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "540c7e1807c11bc5"
   },
+  "pbkdf": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:39:22+00:00",
+    "last_changed": "2026-08-17T13:39:22+00:00",
+    "tuple_hash": "526394d20507fbd6"
+  },
   "pc_abs_cycle_product13": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34373,6 +34541,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "209a3e90a03d4120"
   },
+  "phrase": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:34:43+00:00",
+    "last_changed": "2026-08-16T06:34:43+00:00",
+    "tuple_hash": "826836ddc81d838d"
+  },
+  "phrasewords": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:36:30+00:00",
+    "last_changed": "2026-08-17T13:36:30+00:00",
+    "tuple_hash": "437432cf50bc2591"
+  },
   "phylogenetic_tree": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34487,6 +34667,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "81d4279b2fa0b242"
   },
+  "pk": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:35:28+00:00",
+    "last_changed": "2026-08-16T06:35:28+00:00",
+    "tuple_hash": "cfb3973997553bc8"
+  },
   "pk_kp1_secp256k1": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
@@ -34505,6 +34691,24 @@
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "9dbee977875ee697"
   },
+  "pk_kp4_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-15T17:56:15+00:00",
+    "last_changed": "2026-08-15T17:56:15+00:00",
+    "tuple_hash": "6607820b2ed02367"
+  },
+  "pk_kp5_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-15T17:58:42+00:00",
+    "last_changed": "2026-08-15T17:58:42+00:00",
+    "tuple_hash": "aa9e8f3c3fe4aebe"
+  },
+  "pk_kp6_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-16T02:27:57+00:00",
+    "last_changed": "2026-08-16T02:27:57+00:00",
+    "tuple_hash": "c64c04eaf0c39107"
+  },
   "pk_sk_formula_closure": {
     "changes": 0,
     "first_seen": "2026-08-06T04:02:34+00:00",
@@ -34522,6 +34726,12 @@
     "first_seen": "2026-08-11T10:39:15+00:00",
     "last_changed": "2026-08-11T10:39:15+00:00",
     "tuple_hash": "ee08e8febd733970"
+  },
+  "pk_structural_word": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:19:41+00:00",
+    "last_changed": "2026-08-17T04:19:41+00:00",
+    "tuple_hash": "427c607ec2f19438"
   },
   "planck_constant": {
     "changes": 0,
@@ -35471,6 +35681,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee6275f761de58cd"
   },
+  "priv": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:38:06+00:00",
+    "last_changed": "2026-08-17T13:38:06+00:00",
+    "tuple_hash": "41c1ac094bd77821"
+  },
   "probabilistic_method": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35993,6 +36209,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "872f27a0a1d3ac2a"
   },
+  "pub": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:38:46+00:00",
+    "last_changed": "2026-08-17T13:38:46+00:00",
+    "tuple_hash": "c09016cca8fec292"
+  },
+  "public_key_structural_tuple": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:18:30+00:00",
+    "last_changed": "2026-08-17T04:18:30+00:00",
+    "tuple_hash": "c1853263185719a2"
+  },
   "puffball_spore_sac": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36353,6 +36581,30 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c87fe6974b17c175"
   },
+  "quantum_ecdlp_oracle": {
+    "changes": 0,
+    "first_seen": "2026-08-17T14:39:10+00:00",
+    "last_changed": "2026-08-17T14:39:10+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
+  "quantum_ecdlp_oracle_closure": {
+    "changes": 0,
+    "first_seen": "2026-08-17T17:24:51+00:00",
+    "last_changed": "2026-08-17T17:24:51+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
+  "quantum_ecdlp_oracle_closure.lean": {
+    "changes": 0,
+    "first_seen": "2026-08-17T16:38:20+00:00",
+    "last_changed": "2026-08-17T16:38:20+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
+  "quantum_ecdlp_solver": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:32:49+00:00",
+    "last_changed": "2026-08-16T07:32:49+00:00",
+    "tuple_hash": "a0388231d5617b5d"
+  },
   "quantum_entanglement": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36418,6 +36670,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7aa53a549b5f2e43"
+  },
+  "quantum_period_finding": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:28:34+00:00",
+    "last_changed": "2026-08-16T07:28:34+00:00",
+    "tuple_hash": "d705760573646613"
   },
   "quantum_randomness": {
     "changes": 0,
@@ -37246,6 +37504,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "75e29f2b0599dc31"
+  },
+  "relax": {
+    "changes": 0,
+    "first_seen": "2026-08-17T14:52:45+00:00",
+    "last_changed": "2026-08-17T14:52:45+00:00",
+    "tuple_hash": "b73d559675d15b9c"
   },
   "relaxed_h0_compton_ring": {
     "changes": 0,
@@ -38945,6 +39209,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "17b006fa78af4f91"
   },
+  "secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:39:51+00:00",
+    "last_changed": "2026-08-16T07:39:51+00:00",
+    "tuple_hash": "a2ca3072515347b9"
+  },
   "secp256k1_dialetheic_extraction_pipeline": {
     "changes": 0,
     "first_seen": "2026-08-06T16:23:01+00:00",
@@ -38969,6 +39239,18 @@
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "aa82e561c794e741"
   },
+  "secp256k1_private_key": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:27:06+00:00",
+    "last_changed": "2026-08-16T07:27:06+00:00",
+    "tuple_hash": "5bf7e478a452d9d8"
+  },
+  "secp256k1_public_key": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:27:44+00:00",
+    "last_changed": "2026-08-16T07:27:44+00:00",
+    "tuple_hash": "12b4f6ea5c8a70ae"
+  },
   "secretome": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38980,6 +39262,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "839f3b3ea1feadde"
+  },
+  "see": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:26:13+00:00",
+    "last_changed": "2026-08-17T15:26:13+00:00",
+    "tuple_hash": "3d9bc91b0683c18c"
+  },
+  "seed": {
+    "changes": 0,
+    "first_seen": "2026-08-17T13:37:27+00:00",
+    "last_changed": "2026-08-17T13:37:27+00:00",
+    "tuple_hash": "bbdedc6f4567c8b9"
   },
   "seed_imscription_0": {
     "changes": 0,
@@ -39983,6 +40277,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "df966ad022e23858"
   },
+  "side_channel_attack": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:32:13+00:00",
+    "last_changed": "2026-08-16T07:32:13+00:00",
+    "tuple_hash": "b5755904f49e602b"
+  },
   "siderophore": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40355,6 +40655,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e29d8bafac095de2"
   },
+  "sk": {
+    "changes": 0,
+    "first_seen": "2026-08-16T06:35:03+00:00",
+    "last_changed": "2026-08-16T06:35:03+00:00",
+    "tuple_hash": "1fecb20ee7db6ba4"
+  },
   "sk_forge": {
     "changes": 0,
     "first_seen": "2026-08-15T03:34:55+00:00",
@@ -40378,6 +40684,24 @@
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "5aab2ae719f0aa4c"
+  },
+  "sk_kp4_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-15T17:54:34+00:00",
+    "last_changed": "2026-08-15T17:54:34+00:00",
+    "tuple_hash": "6607820b2ed02367"
+  },
+  "sk_kp5_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-15T17:57:27+00:00",
+    "last_changed": "2026-08-15T17:57:27+00:00",
+    "tuple_hash": "6607820b2ed02367"
+  },
+  "sk_kp6_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-16T02:26:23+00:00",
+    "last_changed": "2026-08-16T02:26:23+00:00",
+    "tuple_hash": "c64c04eaf0c39107"
   },
   "skin_boundary": {
     "changes": 0,
@@ -44645,6 +44969,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8429a6fde3c7037b"
   },
+  "tick_count_scalar": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:44:18+00:00",
+    "last_changed": "2026-08-17T04:44:18+00:00",
+    "tuple_hash": "d969404fbb9c7431"
+  },
   "tier_climbing_seed": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -47477,6 +47807,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "050dadfc27b55770"
   },
+  "weak_key_attack": {
+    "changes": 0,
+    "first_seen": "2026-08-16T07:31:01+00:00",
+    "last_changed": "2026-08-16T07:31:01+00:00",
+    "tuple_hash": "279ab96001bc7db6"
+  },
   "weak_parity_violation": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -47836,6 +48172,12 @@
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "c549438bc8df87dd"
+  },
+  "winding_primacy": {
+    "changes": 0,
+    "first_seen": "2026-08-17T15:43:14+00:00",
+    "last_changed": "2026-08-17T15:43:14+00:00",
+    "tuple_hash": "b7483f0e74c960f8"
   },
   "winding_primacy_as_written": {
     "changes": 0,
@@ -49163,11 +49505,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "55931ffd830a2e3d"
   },
+  "\u2299\u2299\u2299\u2208\u2208\u2208\u22a4\u22a4\u22a4\u22a5\u22a5\u22a5\u220b\u220b\u220b\u25fb\u25fb\u25fb\u22a3\u22a3\u22a3": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:22:30+00:00",
+    "last_changed": "2026-08-17T04:22:30+00:00",
+    "tuple_hash": "6807852341f11b07"
+  },
   "\u22a2": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "57cbe64931f485a9"
+  },
+  "\u22a2\u2208\u22a4\u22a5\u220b\u25fb\u22a3\u2299\u2299\u2299": {
+    "changes": 0,
+    "first_seen": "2026-08-17T04:21:48+00:00",
+    "last_changed": "2026-08-17T04:21:48+00:00",
+    "tuple_hash": "4fc0df65f5ac21f9"
   },
   "\u22a2\u25c7++=\u22a2\u25c7><==\u22a2\u25c7><+=\u22a2\u25c7>+=\u22a2\u25c7><=<=====\u2299\u229e\u25cf+=\u22a2\u25c7><=\u00ac\u00ac\u22a3\u2299\u229e\u25cf\u22a2\u25c7><=\u2299++=+=": {
     "changes": 0,

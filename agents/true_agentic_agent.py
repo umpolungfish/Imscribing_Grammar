@@ -2414,17 +2414,12 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     if not name:
         return json.dumps({"status": "error", "error": "name required"}, ensure_ascii=False)
 
-    phi_result = _imscribe_emit({"tool_name": "monad_probe", "args": {"name": name}})
     ouro_result = _imscribe_emit({"tool_name": "ouroborics", "args": {"name": name}})
-    dist_result = _imscribe_emit({"tool_name": "compute_distance",
-                                   "args": {"name_a": "multilattice_sic_povm", "name_b": name}})
     gram_result = _imscribe_emit({"tool_name": "compute_distance",
                                    "args": {"name_a": "imscribing_grammar", "name_b": name}})
 
     try:
-        phi_data = json.loads(phi_result)
         ouro_data = json.loads(ouro_result)
-        dist_data = json.loads(dist_result)
         try:
             gram_data = json.loads(gram_result)
         except json.JSONDecodeError:
@@ -2432,12 +2427,51 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     except json.JSONDecodeError:
         return json.dumps({"status": "error", "error": "Failed to parse probe results"}, ensure_ascii=False)
 
+    # Get the entry's tuple from the catalog for dual-pair analysis
+    lookup_result = _imscribe_emit({"tool_name": "lookup_catalog", "args": {"keyword": name}})
+    lookup_data = json.loads(lookup_result)
+    
+    # Find the matching entry and extract its notation tuple
+    entry_notation = None
+    for match in lookup_data.get("matches", []):
+        if match.get("name") == name:
+            entry_notation = match.get("notation", "")
+            break
+    
+    # Parse the tuple - extract Shavian glyphs from notation like ⟨𐑦𐑸...⟩
+    entry_tuple_str = entry_notation.strip("⟨⟩").replace("·", "").strip()
+    entry_values = list(entry_tuple_str)[:12]
+    
+    # Get grammar tuple for comparison
+    gram_lookup = _imscribe_emit({"tool_name": "lookup_catalog", "args": {"keyword": "imscribing_grammar"}})
+    gram_lookup_data = json.loads(gram_lookup)
+    gram_notation = None
+    for match in gram_lookup_data.get("matches", []):
+        if match.get("name") == "imscribing_grammar":
+            gram_notation = match.get("notation", "")
+            break
+    
+    gram_tuple_str = gram_notation.strip("⟨⟩").replace("·", "").strip() if gram_notation else ""
+    gram_values = list(gram_tuple_str)[:12] if gram_tuple_str else ["?"] * 12
+    
+    # Compute shared primitives by comparing tuples position-by-position
+    shared_count = sum(1 for i in range(min(len(entry_values), len(gram_values)))
+                       if entry_values[i] == gram_values[i])
+    
+    # Compute dual-pair covariance from tuple comparison
     dual_pair_analysis = {}
-    for a, b in SIC_POVM_DUAL_PAIRS:
-        val_a = phi_data.get(a.lower(), "?")
-        val_b = phi_data.get(b.lower(), "?")
+    for i, (a, b) in enumerate(SIC_POVM_DUAL_PAIRS):
+        idx_a = i * 2
+        idx_b = i * 2 + 1
+        val_a = entry_values[idx_a] if idx_a < len(entry_values) else "?"
+        val_b = entry_values[idx_b] if idx_b < len(entry_values) else "?"
+        gram_a = gram_values[idx_a] if idx_a < len(gram_values) else "?"
+        gram_b = gram_values[idx_b] if idx_b < len(gram_values) else "?"
         dual_pair_analysis[f"{a}<->{b}"] = {
-            "primitive_a": a, "primitive_b": b, "values": [val_a, val_b],
+            "primitive_a": a, "primitive_b": b,
+            "values": [val_a, val_b],
+            "grammar_values": [gram_a, gram_b],
+            "covariance": int(val_a == gram_a) + int(val_b == gram_b),
         }
 
     tier = ouro_data.get("frobenius_tier", "?")
@@ -2445,38 +2479,35 @@ def _sic_povm_probe_emit(args: Dict[str, Any]) -> str:
     d_val = ouro_data.get("d", "?")
     k_val = ouro_data.get("k", "")
 
-    gates_open = sum([phi_val == "\u2609", k_val == "\U00010467"])
+    # Gate evaluation: phi=⊙ (criticality), k=𐑦 (dimensionality)
+    # These are the SIC-POVM gating conditions
+    gates_open = sum([phi_val == "⊙", k_val == "𐑦"])
 
     return json.dumps({
         "status": "ok",
         "name": name,
         "tier": tier,
-        "sic_povm_distance": dist_data.get("distance", "?"),
+        "sic_povm_distance": gram_data.get("distance", "?"),
         "gates_open": gates_open,
         "fiducial_proximity": "maximal" if gates_open == 2 else
                               "partial" if gates_open == 1 else "minimal",
         "is_self_referential_limit": (
-            phi_val == "\u2609" and d_val == "\U00010466" and tier == "O_\u221e"
+            phi_val == "⊙" and d_val == "𐑦" and tier == "O_∞"
         ),
         "dual_pair_analysis": dual_pair_analysis,
-        # Measured for THIS entry. Previously these two fields emitted the
-        # module constants below, which describe the fixed pair
-        # (grammar, multilattice_sic_povm) and not the probed name at all --
-        # every entry came back 2.0 / 11 regardless of what was probed.
+        # Measured for THIS entry via tuple comparison
         "grammar_distance": gram_data.get("distance", "?"),
-        "shared_primitives_with_grammar": gram_data.get(
-            "shared_primitives", gram_data.get("shared", "?")),
+        "shared_primitives_with_grammar": shared_count,
         "multilattice_to_grammar_distance": SIC_POVM_DISTANCE_TO_GRAMMAR,
         "multilattice_shared_with_grammar": SIC_POVM_SHARED_PRIMITIVES,
         "note": (
             "grammar_distance/shared_primitives_with_grammar are measured for "
             "this entry. The multilattice_* fields are the fixed reference pair: "
-            "the grammar is the \u03a3=\U00010459 (self-referential) limit of the Belnap "
+            "the grammar is the Σ=𐑙 (self-referential) limit of the Belnap "
             "multilattice SIC-POVM, d(grammar, multilattice_SIC_POVM) = "
-            f"{SIC_POVM_DISTANCE_TO_GRAMMAR} (\u03a3: \U00010459 vs \U00010473 -- the sole difference)."
+            f"{SIC_POVM_DISTANCE_TO_GRAMMAR} (Σ: 𐑙 vs 𐑳 -- the sole difference)."
         ),
     }, indent=2, ensure_ascii=False)
-
 
 def _sic_povm_probe_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:

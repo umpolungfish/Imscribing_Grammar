@@ -122,6 +122,29 @@ MANUSCRIPT_PROFILES: dict[str, dict] = {
         ],
         "companions": ["sic_povm_stark_hilbert12", "witness_vessel"],
     },
+    "alt_sic_moduli_conductor": {
+        "code_repository": "https://github.com/umpolungfish/p4rakernel",
+        "programming_languages": ["lean", "rust"],
+        "method": (
+            "Ray class field computation in PARI/GP determines the conductor of the "
+            "SIC-POVM moduli field; the tower is discharged in Lean 4 with no axioms, "
+            "and the arithmetic at $d=2048$ runs in the mOMonadOS bare-metal kernel."
+        ),
+        "extra_related": [
+            "https://github.com/umpolungfish/momonad_os",
+            "https://github.com/umpolungfish/ig-docs",
+            "https://github.com/umpolungfish/imscribing_grammar",
+            "https://github.com/umpolungfish",
+            "https://orcid.org/0000-0003-0003-0552",
+            "https://landomills.com/",
+            "https://imscribe.com/",
+        ],
+        "companions": ["sic_povm_stark_hilbert12", "witness_vessel", "chrysopoeia_2048"],
+        "crystalline_branch": "crystalline/sic-moduli-conductor-2026-08-08",
+        "crystalline_tag":    "crystalline-sic-moduli-conductor-v2",
+        "p4ra_commit":        "40803b7",
+        "momonad_commit":     "1b0823d",
+    },
 }
 
 UPLOAD_TYPES = {
@@ -388,12 +411,16 @@ def _build_notes(extracted: dict, stem: str) -> str:
     if artifact:
         parts.append(_tex_to_plain(artifact))
 
+    branch = profile.get("crystalline_branch", CRYSTALLINE_BRANCH)
+    tag    = profile.get("crystalline_tag", CRYSTALLINE_TAG)
+    commit = profile.get("p4ra_commit", P4RA_COMMIT)
     parts.append(
-        f"Frozen crystalline snapshot: branch {CRYSTALLINE_BRANCH}, tag {CRYSTALLINE_TAG}; "
-        f"p4rakernel commit {P4RA_COMMIT}."
+        f"Frozen crystalline snapshot: branch {branch}, tag {tag}; "
+        f"p4rakernel commit {commit}."
     )
-    if stem == "witness_vessel_lifted":
-        parts.append(f"mOMonadOS commit {MOMONAD_COMMIT}.")
+    momonad = profile.get("momonad_commit", MOMONAD_COMMIT if stem == "witness_vessel_lifted" else "")
+    if momonad:
+        parts.append(f"mOMonadOS commit {momonad}.")
     parts.append("Manuscript trio frozen in ig-docs on the same branch and tag.")
 
     companions = profile.get("companions", [])
@@ -583,9 +610,13 @@ def extract_from_tex(path: Path) -> dict:
     )
     if m:
         raw_kw = m.group(1).replace('~', ' ')
-        raw_kw = re.sub(r'\\\(\\cdot\\\)|\\cdot|·', ',', raw_kw)
+        # The separator is written $\cdot$, and stripping only the command
+        # leaves the math delimiters behind as keywords of their own.
+        raw_kw = re.sub(r'\$\s*\\cdot\s*\$|\\\(\s*\\cdot\s*\\\)|\\cdot|·', ',', raw_kw)
         raw_kw = _strip_latex(raw_kw)
-        kws = [k.strip().rstrip(';.,') for k in re.split(r'[;,]', raw_kw) if k.strip() and len(k.strip()) > 2]
+        kws = [k.strip().strip('$').strip().rstrip(';.,')
+               for k in re.split(r'[;,]', raw_kw) if k.strip()]
+        kws = [k for k in kws if len(k) > 2]
         if kws:
             info["keywords"] = kws
 
