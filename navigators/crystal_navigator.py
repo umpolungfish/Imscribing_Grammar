@@ -112,7 +112,7 @@ def compute_tier(phi: str, p: str, omega: str, d: str) -> str:
 # ── Mixed-radix address arithmetic ─────────────────────────────────────────────
 # Full address = cell_address * INNER_SIZE + inner_address
 # Cell address:  mixed-radix over (⊙, <, ◻, ⊢) — ordered as BOUNDARY_PRIMS
-# Inner address: mixed-radix over (⊣, >, ⋈, ⊤, ∈, ∋, ⊥, Σ) — ordered as INNER_PRIMS
+# Inner address: mixed-radix over (⊣, ≻, ⋈, ⊤, ∈, ∋, ⊥, ⊞) — ordered as INNER_PRIMS
 
 def _build_radix(prims: list[str]) -> tuple[list[int], int]:
     """Compute mixed-radix strides and total size for a given primitive list."""
@@ -286,7 +286,7 @@ def tensor(a: dict, b: dict, absorption=None) -> dict:
         oa, ob = ORD[p][a[p]], ORD[p][b[p]]
         if p in BOTTLENECK:
             result[p] = VALUES[p][min(oa, ob)]
-        elif p == "\u03a3":
+        elif p == "\u229e":
             # n:m absorbs; 1:1 only under 1:1\u22971:1; else n:n
             if oa == 2 or ob == 2:
                 result[p] = "\u03a3_\u00ef"
