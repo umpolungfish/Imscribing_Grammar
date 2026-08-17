@@ -24,9 +24,9 @@ from space_search.primitives import ORDINALS, WEIGHTS, resolve_ordinal_key
 PNAMES = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
 PFIELDS = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
 FIELD_TO_ORD = {
-    "D":"\u00D0", "T":"\u00de", "R":"\u0158", "P":"\u03a6", "F":"\u0192",
-    "K":"\u00c7", "G":"\u0393", "Gm":"\u0262", "Ph":"\u2299", "H":"\u0126",
-    "S":"\u03a3", "W":"\u03a9"
+    "D":"\u22a2", "T":"\u22a3", "R":"\u227b", "P":"\u227a", "F":"\u22c8",
+    "K":"\u22a4", "G":"\u2208", "Gm":"\u220b", "Ph":"\u2299", "H":"\u22a5",
+    "S":"\u229e", "W":"\u25fb"
 }
 
 def g2v(p, r):
@@ -312,10 +312,10 @@ def get_molecule_type(name, catalog):
 # Name-to-FG lookup — direct mapping from molecule names to functional groups
 MOLECULE_FG_DB = {
     "aspirin": ["ester", "carboxylic_acid", "aromatic_ring"],
-    "paracetamol": ["amide", "phenol"],
-    "acetaminophen": ["amide", "phenol"],
-    "thc": ["phenol", "alkene", "ether", "cyclic"],
-    "cannabidiol": ["phenol", "alkene", "cyclic"],
+    "paracetamol": ["amide", "phenol", "aromatic_ring"],
+    "acetaminophen": ["amide", "phenol", "aromatic_ring"],
+    "thc": ["phenol", "alkene", "ether", "cyclic", "aromatic_ring"],
+    "cannabidiol": ["phenol", "alkene", "cyclic", "aromatic_ring"],
     "caffeine": ["amine", "amide", "alkene", "cyclic"],
     "ibuprofen": ["carboxylic_acid", "aromatic_ring"],
     "naproxen": ["carboxylic_acid", "ether", "aromatic_ring"],
@@ -326,7 +326,7 @@ MOLECULE_FG_DB = {
     "fructose": ["alcohol", "ether", "ketone"],
     "sucrose": ["alcohol", "ether"],
     "benzaldehyde": ["aldehyde", "aromatic_ring"],
-    "aniline": ["amine", "aromatic_ring"],
+    "aniline": ["aniline", "aromatic_ring"],
     "toluene": ["aromatic_ring"],
     "nitrobenzene": ["nitro", "aromatic_ring"],
     "chlorobenzene": ["halide", "aromatic_ring"],
@@ -337,17 +337,17 @@ MOLECULE_FG_DB = {
     "acrylonitrile": ["alkene", "nitrile"],
     "ethylene": ["alkene"],
     "acetylene": ["alkyne"],
-    "cyclohexane": ["cyclic"],
-    "phenol": ["phenol"],
+    "cyclohexane": ["alkane"],
+    "phenol": ["phenol", "aromatic_ring"],
     "benzene": ["aromatic_ring"],
     "ethylbenzene": ["aromatic_ring"],
     "triethylamine": ["amine"],
     "propionic acid": ["carboxylic_acid"],
     "acetic acid": ["carboxylic_acid"],
-    "salicylic acid": ["carboxylic_acid", "phenol"],
-    "picric acid": ["phenol", "nitro"],
+    "salicylic acid": ["carboxylic_acid", "phenol", "aromatic_ring"],
+    "picric acid": ["phenol", "nitro", "aromatic_ring"],
     "2-acetoxybenzoic acid": ["ester", "carboxylic_acid", "aromatic_ring"],
-    "11-hydroxy-δ9-tetrahydrocannabinol": ["phenol", "alcohol", "alkene", "ether", "cyclic"],
+    "11-hydroxy-δ9-tetrahydrocannabinol": ["phenol", "alcohol", "alkene", "ether", "cyclic", "aromatic_ring"],
     "4-methyl-5-phenyl-4,5-dihydro-1,3-oxazol-2-amine": ["amine", "aromatic_ring", "ether", "cyclic"],
         "cubane": ["cyclic", "alkane"],
     "pentacyclo": ["cyclic", "alkane"],
@@ -362,15 +362,106 @@ MOLECULE_FG_DB = {
     "limonene": ["alkene", "cyclic"],
     "pinene": ["alkene", "cyclic"],
     "penicillin": ["amide", "carboxylic_acid", "cyclic", "thiol"],
-    "morphine": ["phenol", "alcohol", "ether", "amine", "alkene", "cyclic"],
-    "codeine": ["phenol", "ether", "amine", "alkene", "cyclic"],
+    "morphine": ["phenol", "alcohol", "ether", "amine", "alkene", "cyclic", "aromatic_ring"],
+    "codeine": ["phenol", "ether", "amine", "alkene", "cyclic", "aromatic_ring"],
     "diazepam": ["amide", "amine", "aromatic_ring", "halide", "cyclic"],
     "warfarin": ["alcohol", "ketone", "ester", "aromatic_ring"],
     "cholesterol": ["alcohol", "alkene", "cyclic"],
     "testosterone": ["alcohol", "ketone", "alkene", "cyclic"],
-    "estradiol": ["phenol", "alcohol", "cyclic"],
+    "estradiol": ["phenol", "alcohol", "cyclic", "aromatic_ring"],
     "cortisol": ["alcohol", "ketone", "alkene", "cyclic"],
 }
+
+# SMARTS for every functional group the FG table types. A molecule given as SMILES
+# is read here rather than by name, so the same nineteen groups are recognised
+# whichever way the target arrives.
+FG_SMARTS = {
+    "carboxylic_acid": "[CX3](=O)[OX2H1]",
+    "ester":           "[CX3](=O)[OX2H0][#6]",
+    "amide":           "[NX3][CX3](=[OX1])",
+    "aldehyde":        "[CX3H1](=O)[#6]",
+    "ketone":          "[#6][CX3](=O)[#6]",
+    "alcohol":         "[#6;!$(C=O)][OX2H]",
+    "phenol":          "[c][OX2H]",
+    "ether":           "[OD2]([#6])[#6]",
+    "epoxide":         "[OX2r3]1[#6r3][#6r3]1",
+    "amine":           "[NX3;H2,H1,H0;!$(N[C,S]=[O,S,N]);!$(N=*)]",
+    "aniline":         "[c][NX3;H2,H1,H0;!$(N[C,S]=[O,S,N])]",
+    "nitrile":         "[NX1]#[CX2]",
+    "thiol":           "[#6][SX2H]",
+    "halide":          "[#6][F,Cl,Br,I]",
+    "aromatic_ring":   "c1ccccc1",
+    "alkene":          "[CX3;!$(C=O)]=[CX3]",
+    "alkyne":          "[CX2]#[CX2]",
+    "carbonyl":        "[CX3]=[OX1]",
+    "alkane":          "[CX4;!$(C~[!#6;!#1])]",
+}
+
+def _looks_like_smiles(text):
+    """A target string is read as SMILES when RDKit parses it and the string is
+    not a molecule name already known to the database."""
+    if text.lower().replace("_", " ").strip() in MOLECULE_FG_DB:
+        return False
+    try:
+        from rdkit import Chem
+        from rdkit import RDLogger
+        RDLogger.DisableLog("rdApp.*")
+    except Exception:
+        return False
+    if not any(ch in text for ch in "()[]=#12345") and text.isalpha() and len(text) > 3:
+        return False
+    return Chem.MolFromSmiles(text) is not None
+
+def find_fgs_smiles(smiles):
+    """Functional groups of a SMILES string, by substructure match.
+
+    A larger group contains smaller ones, and counting both counts the same
+    atoms twice. Containment is decided on the atoms actually matched, so a
+    molecule carrying a phenol in one ring and an alcohol elsewhere keeps both,
+    while the hydroxyl of a carboxylic acid is not reported a second time.
+    """
+    from rdkit import Chem
+    from rdkit import RDLogger
+    RDLogger.DisableLog("rdApp.*")
+    mol = Chem.MolFromSmiles(smiles)
+    if mol is None:
+        return []
+    matches = {}
+    for name, sma in FG_SMARTS.items():
+        patt = Chem.MolFromSmarts(sma)
+        if patt is None:
+            continue
+        hits = [frozenset(h) for h in mol.GetSubstructMatches(patt)]
+        if hits:
+            matches[name] = hits
+
+    implied = {
+        "carboxylic_acid": {"carbonyl", "alcohol", "ether", "ketone", "aldehyde"},
+        "ester":           {"carbonyl", "ether", "alcohol", "ketone"},
+        "amide":           {"carbonyl", "amine", "aniline", "ketone"},
+        "aldehyde":        {"carbonyl"},
+        "ketone":          {"carbonyl"},
+        "phenol":          {"alcohol"},
+        "aniline":         {"amine"},
+        "epoxide":         {"ether"},
+        "aromatic_ring":   {"alkene"},
+    }
+    for big, smalls in implied.items():
+        if big not in matches:
+            continue
+        big_atoms = set().union(*matches[big])
+        for small in smalls:
+            if small not in matches:
+                continue
+            kept = [h for h in matches[small] if not h <= big_atoms]
+            if kept:
+                matches[small] = kept
+            else:
+                del matches[small]
+
+    if set(matches) - {"alkane"}:
+        matches.pop("alkane", None)
+    return sorted(matches)
 
 def find_fgs(name):
     """Extract functional groups from molecule name.
@@ -383,13 +474,18 @@ def find_fgs(name):
     """
     import re as _re
     name_lower = name.lower().replace("_", " ").replace("-", " ").strip()
-    
+
+    if _looks_like_smiles(name):
+        smiles_fgs = find_fgs_smiles(name)
+        if smiles_fgs:
+            return smiles_fgs
+
     if name_lower in MOLECULE_FG_DB:
-        return sorted(MOLECULE_FG_DB[name_lower])
-    
+        return sorted(g for g in MOLECULE_FG_DB[name_lower] if g in FG)
+
     for db_name in sorted(MOLECULE_FG_DB.keys(), key=len, reverse=True):
         if db_name in name_lower:
-            return sorted(MOLECULE_FG_DB[db_name])
+            return sorted(g for g in MOLECULE_FG_DB[db_name] if g in FG)
     
     words = _re.split(r'[\s\d,;()\[\]{}]+', name_lower)
     found = set()

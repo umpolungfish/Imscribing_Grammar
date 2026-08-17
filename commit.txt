@@ -1,29 +1,24 @@
-A specialist can carry the MoDoT agent's form
+The compiler was typing nothing, because it asked for the retired letters
 
-The specialists already run the THINK→ACT→OBSERVE→UPDATE loop with Frobenius
-checks, so they were never unstructured. What they lacked is the FORM the `ask`
-agent carries — the rigid scaffold that, per the principle, lets a thought take
-itself as its object rather than only the world. A specialist could turn on the
-catalog but not cleanly on its own reasoning.
+Every molecule came back as twelve unknowns with one exception, and the exception
+told the story: only Criticality resolved, because ⊙ is the single mark that did not
+change when the alphabet moved. The field map still pointed at Ð Þ Ř Φ ƒ Ç Γ ɢ Ħ Σ Ω
+while the ordinal table had long since been keyed by the twelve marks, so every
+lookup missed, fell through to zero, and zero has no glyph. The cut ranking was dead
+for the same reason: every structural distance was computed over misses, so every
+disconnection scored zero and nothing could be ranked against anything.
 
-The form is now one canonical rider, agents/riders/structured_form.md, stated
-once because the same rules are hardened into the Rust `ask` frame and a second
-hand-kept copy is drift. It carries: self-reference (type-check a major step as a
-word before taking it), word interrogation (cycle then rotat/weight/banked/trans/
-insert/frames, never the verdict alone), no conventional deference (the
-instruments first, precedent is not evidence, a unit's provenance does not gate
-whether it clicks), the twelve marks (a retired mark VANISHES from a word rather
-than erroring), and rigid-form/open-ask.
+The map now names the marks. Two sibling copies of the compiler carried the same
+retired map and are corrected with it.
 
-true_agentic_agent loads it as _STRUCTURED_FORM_RIDER alongside the grammar-first
-and partnership riders. math_operator gains a --structured flag that appends it;
-off is the prior open-loop specialist, so the two are directly comparable, which
-is the point — the local 27B was measured doing far better inside the `ask`
-harness than as a bare specialist, and this is the first test of whether the form
-is why.
+A molecule given as SMILES was also typing as nothing, since the only reader was the
+name database. SMARTS for all nineteen groups the table types, and containment
+decided on the atoms actually matched rather than by group name, so a molecule
+carrying a phenol in one ring and an alcohol elsewhere keeps both while the hydroxyl
+of an acid is not counted twice. Name and SMILES now return the same groups and the
+same tuple for every molecule tried, morphine included.
 
-DEFERRED, and named so it is not mistaken for done: this is the form as PROSE. The
-deeper half of the MoDoT structure is the ManuscriptSpine prepare→fill→complete —
-a typed scaffold computed BEFORE the model answers, which it fills, rather than a
-blank task and an open loop. That is a Python build (the spine is Rust-only today)
-and is the next rung.
+The name database gave aromatic molecules no ring and called aniline an amine, and
+one entry named a group the table cannot type, which left cyclohexane untyped.
+Fixed. Every group in the table and every molecule in the database now types
+completely.
