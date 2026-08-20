@@ -59,6 +59,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ddbb1b785bccb3aa"
   },
+  "0_af_m_2024": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:25:10+00:00",
+    "last_changed": "2026-08-18T08:25:10+00:00",
+    "tuple_hash": "29d12b0791d26418"
+  },
   "0_the_fool": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -184,6 +190,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f8d403d662912d76"
+  },
+  "2-subgroup": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:50:10+00:00",
+    "last_changed": "2026-08-18T20:50:10+00:00",
+    "tuple_hash": "461bbbfbd8b7317f"
   },
   "2.5": {
     "changes": 0,
@@ -2483,6 +2495,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "17a909b8e20c447f"
   },
+  "algebraic_cycle": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:28:53+00:00",
+    "last_changed": "2026-08-18T08:28:53+00:00",
+    "tuple_hash": "5bf7e478a452d9d8"
+  },
   "algebraic_geometry_navigator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -2602,6 +2620,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "86311ee38a2dd388"
+  },
+  "already": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:18:00+00:00",
+    "last_changed": "2026-08-18T12:18:00+00:00",
+    "tuple_hash": "287cc63e2c0b2705"
   },
   "als_001_therapeutic": {
     "changes": 0,
@@ -2759,6 +2783,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cbf156a94162cf4f"
   },
+  "among": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:18:36+00:00",
+    "last_changed": "2026-08-18T12:18:36+00:00",
+    "tuple_hash": "95f204ff7f55929f"
+  },
   "amperometry": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -2800,6 +2830,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2f3fbc22d06d122f"
+  },
+  "anabelian_hodge\u2013tate_stacks_of_perfectoid_diamonds": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:09:36+00:00",
+    "last_changed": "2026-08-18T22:09:36+00:00",
+    "tuple_hash": "c59e78b78450e9ff"
   },
   "analytical_idealism_kastrup": {
     "changes": 0,
@@ -3514,6 +3550,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "049e8482ec5b5f1c"
+  },
+  "aperiodic_monstrous_moonshine_quasicrystals": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:02:42+00:00",
+    "last_changed": "2026-08-18T22:02:42+00:00",
+    "tuple_hash": "567fce250dcd21f2"
   },
   "apertix_adjoint_corridor": {
     "changes": 0,
@@ -4649,6 +4691,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f01a1275629cf575"
   },
+  "available": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:23:22+00:00",
+    "last_changed": "2026-08-18T12:23:22+00:00",
+    "tuple_hash": "fbf8cee44bc85be2"
+  },
   "avian_preen": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5398,6 +5446,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fe3cde57c01935f3"
+  },
+  "best-scoring": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:08:16+00:00",
+    "last_changed": "2026-08-18T08:08:16+00:00",
+    "tuple_hash": "863c7916eab62a0d"
   },
   "bestvina_brady_morse": {
     "changes": 0,
@@ -9029,6 +9083,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d000ed0fb6f26fcc"
   },
+  "chern\u2013simons_\u221e_stacks_over_the_sphere_spectrum": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:07:33+00:00",
+    "last_changed": "2026-08-18T22:07:33+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "cherokee_a": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10769,6 +10829,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "042971a6c07003cc"
   },
+  "collatz_broadcast_limit": {
+    "changes": 0,
+    "first_seen": "2026-08-18T16:00:18+00:00",
+    "last_changed": "2026-08-18T16:00:18+00:00",
+    "tuple_hash": "5578490681ea70bf"
+  },
   "collatz_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10799,11 +10865,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0c5cca108818c43f"
   },
+  "collatz_dynamics": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:10:56+00:00",
+    "last_changed": "2026-08-18T22:10:56+00:00",
+    "tuple_hash": "10dae77218161095"
+  },
   "collatz_graph": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a5d1482ee9c494e"
+  },
+  "collatz_parity_macrocycle": {
+    "changes": 0,
+    "first_seen": "2026-08-18T15:59:44+00:00",
+    "last_changed": "2026-08-18T15:59:44+00:00",
+    "tuple_hash": "1e02f941ef5d6a64"
   },
   "collatz_system": {
     "changes": 0,
@@ -10816,6 +10894,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4fbcc400110a7a90"
+  },
+  "collatz_universal_closure": {
+    "changes": 0,
+    "first_seen": "2026-08-18T16:14:56+00:00",
+    "last_changed": "2026-08-18T16:14:56+00:00",
+    "tuple_hash": "1e02f941ef5d6a64"
   },
   "collect_ranks": {
     "changes": 0,
@@ -11285,11 +11369,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "95535cc3ff541633"
   },
+  "condensed_mathematics": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:12:40+00:00",
+    "last_changed": "2026-08-18T07:12:40+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "conductance_probe_d12": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc97633d1aada233"
+  },
+  "conductive": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:12:33+00:00",
+    "last_changed": "2026-08-18T12:12:33+00:00",
+    "tuple_hash": "fa7dd8863bae9081"
   },
   "conductive_dyad": {
     "changes": 0,
@@ -11476,6 +11572,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3a82c797696dba14"
+  },
+  "constructive_univalent_synthetic_quantum_topoi": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:08:55+00:00",
+    "last_changed": "2026-08-18T22:08:55+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "consumer_drone": {
     "changes": 0,
@@ -12167,6 +12269,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d835569a83cc733a"
   },
+  "crystalline_representations_of_the_absolute_galois_group_of_\u211a": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:15:23+00:00",
+    "last_changed": "2026-08-18T22:15:23+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "crystallographic_protein": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12281,6 +12389,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "faf07b8cc17fd3b6"
   },
+  "current": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:07:09+00:00",
+    "last_changed": "2026-08-18T08:07:09+00:00",
+    "tuple_hash": "b8d9d165074695e5"
+  },
   "current_navigator_state": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12388,6 +12502,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "40d5ecc14b6e392b"
+  },
+  "cycle_class_map": {
+    "changes": 0,
+    "first_seen": "2026-08-18T10:53:06+00:00",
+    "last_changed": "2026-08-18T10:53:06+00:00",
+    "tuple_hash": "a14ce6b6d297d203"
+  },
+  "cycle_class_map_surjective": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:00:12+00:00",
+    "last_changed": "2026-08-18T11:00:12+00:00",
+    "tuple_hash": "e57ebcdede9bdf32"
   },
   "cycle_space": {
     "changes": 0,
@@ -13097,6 +13223,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "33f083d296da2795"
   },
+  "derived_deligne\u2013lusztig_varieties_over_the_absolute_point": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:13:32+00:00",
+    "last_changed": "2026-08-18T22:13:32+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "derridas_paradox_of_the_gift": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -13511,6 +13643,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9302997ba8bc49d5"
   },
+  "directly": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:06:39+00:00",
+    "last_changed": "2026-08-18T08:06:39+00:00",
+    "tuple_hash": "6e3a63230501a0ac"
+  },
   "directory": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -13726,6 +13864,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "51fe84772bc5de3e"
+  },
+  "does": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:07:41+00:00",
+    "last_changed": "2026-08-18T13:07:41+00:00",
+    "tuple_hash": "6c0c25c8a8ca0212"
   },
   "dogme_et_rituel_de_la_haute_magie": {
     "changes": 0,
@@ -13948,6 +14092,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4b788c16db58fbee"
+  },
+  "drinfeld_associator": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:53:09+00:00",
+    "last_changed": "2026-08-18T20:53:09+00:00",
+    "tuple_hash": "a259bf76a6e845c8"
   },
   "drinker_paradox": {
     "changes": 0,
@@ -14680,6 +14830,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d4722d371bf2aad2"
+  },
+  "elliptic_cohomology_of_lubin\u2013tate_deformation_spaces": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:14:10+00:00",
+    "last_changed": "2026-08-18T22:14:10+00:00",
+    "tuple_hash": "6119cb16c9eec9ec"
   },
   "elliptic_curve": {
     "changes": 0,
@@ -15592,6 +15748,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9efdc7d6e1bdf59d"
+  },
+  "etale_homotopy_type": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:14:46+00:00",
+    "last_changed": "2026-08-18T07:14:46+00:00",
+    "tuple_hash": "3852b182040cadc3"
   },
   "eternal_fixedpoint": {
     "changes": 0,
@@ -16612,6 +16774,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "06b7386751a1b752"
+  },
+  "feferman": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:51:43+00:00",
+    "last_changed": "2026-08-18T11:51:43+00:00",
+    "tuple_hash": "645689fe2dcb8129"
+  },
+  "feferman\u2013sch\u00fctte": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:17:53+00:00",
+    "last_changed": "2026-08-18T13:17:53+00:00",
+    "tuple_hash": "b33455374bd887e4"
+  },
+  "feferman\u2013sch\u00fctte_hyperarithmetic_condensed_sets": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:59:02+00:00",
+    "last_changed": "2026-08-18T12:59:02+00:00",
+    "tuple_hash": "0e69f85a26de6259"
   },
   "fejervary_mayer_codex": {
     "changes": 0,
@@ -18232,6 +18412,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d20d54655800a4ee"
+  },
+  "gamma_0": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:53:07+00:00",
+    "last_changed": "2026-08-18T11:53:07+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
+  },
+  "gamma_0_notation_system": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:00:10+00:00",
+    "last_changed": "2026-08-18T12:00:10+00:00",
+    "tuple_hash": "b33455374bd887e4"
   },
   "gamma_and": {
     "changes": 0,
@@ -20075,6 +20267,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5af93340766ffd7c"
   },
+  "grothendieck_teichmuller": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:47:57+00:00",
+    "last_changed": "2026-08-18T20:47:57+00:00",
+    "tuple_hash": "a5251b75757af5e5"
+  },
   "grothendieck_topology": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -20092,6 +20290,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e1f7dae764fd5aa6"
+  },
+  "grothendiecks_homotopy_type_of_the_absolute_galois_group": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:05:59+00:00",
+    "last_changed": "2026-08-18T22:05:59+00:00",
+    "tuple_hash": "7bd721f2433bd2c6"
   },
   "ground": {
     "changes": 0,
@@ -21755,6 +21959,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2c980ae33fd748f2"
   },
+  "hochschild_homology_of_p_adic_lie_groups_over_the_sphere_spectrum": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:16:48+00:00",
+    "last_changed": "2026-08-18T22:16:48+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "hod": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -21784,6 +21994,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dd64711d72eda569"
+  },
+  "hodge_conjecture_integral_motives_witt_ring_fraction_field": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:28:47+00:00",
+    "last_changed": "2026-08-18T11:28:47+00:00",
+    "tuple_hash": "05c40ff6ba6b2e76"
   },
   "hodge_conjecture_navigator": {
     "changes": 0,
@@ -22102,6 +22318,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5d819a5337ed8331"
+  },
+  "homotopy_type_theoretic_models_of_inaccessible_infinity_topoi": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:12:19+00:00",
+    "last_changed": "2026-08-18T22:12:19+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "homotopy_type_theory": {
     "changes": 0,
@@ -22703,6 +22925,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "457cba2cce46db87"
   },
+  "hyperarithmetic": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:53:52+00:00",
+    "last_changed": "2026-08-18T11:53:52+00:00",
+    "tuple_hash": "f06f083bcd649139"
+  },
   "hyperbolic_bridge_omega_0": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -22762,6 +22990,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "89f31c23c9239a50"
+  },
+  "hyperk\u00e4hler_quantum_frobenioid_bundles": {
+    "changes": 0,
+    "first_seen": "2026-08-18T05:40:37+00:00",
+    "last_changed": "2026-08-18T05:40:37+00:00",
+    "tuple_hash": "4d2bc1f777e8add6"
   },
   "hyperpolarization": {
     "changes": 0,
@@ -23573,6 +23807,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b4fcea755796e05a"
   },
+  "integral_motives": {
+    "changes": 0,
+    "first_seen": "2026-08-18T10:29:00+00:00",
+    "last_changed": "2026-08-18T10:29:00+00:00",
+    "tuple_hash": "e78418549635fec9"
+  },
   "integrin_like_protein": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24065,6 +24305,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c93ff081328fb670"
   },
+  "it": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:08:13+00:00",
+    "last_changed": "2026-08-18T13:08:13+00:00",
+    "tuple_hash": "c33a6e95edbe1666"
+  },
   "iug_barrier_maximal": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24467,6 +24713,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9d7540aeb86caed2"
   },
+  "join_np": {
+    "changes": 0,
+    "first_seen": "2026-08-18T10:48:11+00:00",
+    "last_changed": "2026-08-18T10:48:11+00:00",
+    "tuple_hash": "ceeb48d2f7414ffe"
+  },
   "join_sefirot_iching": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24724,6 +24976,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2b1a660d93c41817"
+  },
+  "kaledins_derived_symplectic_lagrangian_foams": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:04:01+00:00",
+    "last_changed": "2026-08-18T22:04:01+00:00",
+    "tuple_hash": "20795f0bd8de8945"
   },
   "kalshi_prediction_market": {
     "changes": 0,
@@ -25132,6 +25390,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b21033a36cfcc5b0"
+  },
+  "kontsevichs_formality_theorem_for_derived_poisson\u2013lie_groupoids": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:17:59+00:00",
+    "last_changed": "2026-08-18T22:17:59+00:00",
+    "tuple_hash": "df37a303869032dd"
   },
   "kozyrev_mirror": {
     "changes": 0,
@@ -26375,6 +26639,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ed65e3943e4480c2"
   },
+  "linker_a": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:18:24+00:00",
+    "last_changed": "2026-08-18T13:18:24+00:00",
+    "tuple_hash": "add0b5db8dab3c31"
+  },
+  "linker_b": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:18:56+00:00",
+    "last_changed": "2026-08-18T13:18:56+00:00",
+    "tuple_hash": "fd12569f744b752a"
+  },
   "linker_bridge": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -26926,6 +27202,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "58f8ed2c6bf0e82d"
+  },
+  "lower": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:50:07+00:00",
+    "last_changed": "2026-08-18T07:50:07+00:00",
+    "tuple_hash": "cacff515fb4cd0d5"
   },
   "lower_bound": {
     "changes": 0,
@@ -28139,6 +28421,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "41871208666270e2"
   },
+  "may": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:49:40+00:00",
+    "last_changed": "2026-08-18T07:49:40+00:00",
+    "tuple_hash": "de994892be91b9e6"
+  },
   "maya_classic_peak": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -28192,6 +28480,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a39c2d3c33e2155a"
+  },
+  "measurable_cardinal_ultrapowers_of_perfectoid_spaces": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:06:42+00:00",
+    "last_changed": "2026-08-18T22:06:42+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "measure_holonomy": {
     "changes": 0,
@@ -28793,6 +29087,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc15daddb1d001ef"
   },
+  "microlocal_sheaf_theoretic_fukaya_categories_over_tropical_curves": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:10:56+00:00",
+    "last_changed": "2026-08-18T22:10:56+00:00",
+    "tuple_hash": "4a44d93d0aede2be"
+  },
   "microtome_sectioning": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -29207,6 +29507,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ec94bfb053724a1f"
   },
+  "moduli_stack": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:54:19+00:00",
+    "last_changed": "2026-08-18T20:54:19+00:00",
+    "tuple_hash": "d2bd051aecded5bd"
+  },
   "modus_ponens": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -29489,11 +29795,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f79f8f14a39a18a0"
   },
+  "motivic_cohomology": {
+    "changes": 0,
+    "first_seen": "2026-08-18T09:06:15+00:00",
+    "last_changed": "2026-08-18T09:06:15+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
+  },
   "motivic_critical_level": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "79040343b773308f"
+  },
+  "motivic_homotopy_quantum_k_theory_of_witt_vectors": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:04:38+00:00",
+    "last_changed": "2026-08-18T22:04:38+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
+  "motivic_homotopy_theory": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:13:22+00:00",
+    "last_changed": "2026-08-18T07:13:22+00:00",
+    "tuple_hash": "0e69f85a26de6259"
   },
   "motivic_morse_theory": {
     "changes": 0,
@@ -30863,6 +31187,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "534ef8c2aab7c9b3"
   },
+  "non_archimedean_tropical_derived_categories_of_log_schemes": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:05:21+00:00",
+    "last_changed": "2026-08-18T22:05:21+00:00",
+    "tuple_hash": "0e69f85a26de6259"
+  },
   "non_branching_bridge_mediator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -30910,6 +31240,12 @@
     "first_seen": "2026-08-16T07:31:36+00:00",
     "last_changed": "2026-08-16T07:31:36+00:00",
     "tuple_hash": "1a4d5ae06a5d3a11"
+  },
+  "noncommutative_crystalline_prismatic_\u221e_topoi": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:02:03+00:00",
+    "last_changed": "2026-08-18T22:02:03+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "nondeterministic_polynomial_NP": {
     "changes": 0,
@@ -31264,6 +31600,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6c274fcae1c68161"
+  },
+  "o_inf;": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:07:09+00:00",
+    "last_changed": "2026-08-18T13:07:09+00:00",
+    "tuple_hash": "9e9b00da8b3aad0a"
   },
   "o_inf_l9_promotion_standard": {
     "changes": 0,
@@ -32033,6 +32375,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fbd7f4d0f59026b5"
   },
+  "order": {
+    "changes": 0,
+    "first_seen": "2026-08-18T08:07:43+00:00",
+    "last_changed": "2026-08-18T08:07:43+00:00",
+    "tuple_hash": "5c8dc318a4c2aa29"
+  },
   "order_concept": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32483,6 +32831,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "27e313b7e41e0bef"
   },
+  "p-group": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:49:32+00:00",
+    "last_changed": "2026-08-18T20:49:32+00:00",
+    "tuple_hash": "8783d7e247c9332e"
+  },
   "p1": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32543,11 +32897,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc639e426254d0cb"
   },
+  "p_adic_holographic_synthetic_spectra_of_ultrametric_banach_spaces": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:03:21+00:00",
+    "last_changed": "2026-08-18T22:03:21+00:00",
+    "tuple_hash": "0e69f85a26de6259"
+  },
   "p_adic_integers": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d89acbc4d2afb577"
+  },
+  "p_adic_teichm\u00fcller_spaces_of_operadic_little_disks": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:12:54+00:00",
+    "last_changed": "2026-08-18T22:12:54+00:00",
+    "tuple_hash": "13b0e1854e85ddde"
   },
   "p_orbital": {
     "changes": 0,
@@ -35315,6 +35681,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5f01e994b54be4e1"
   },
+  "predicativity_boundary": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:01:05+00:00",
+    "last_changed": "2026-08-18T12:01:05+00:00",
+    "tuple_hash": "645689fe2dcb8129"
+  },
   "premise": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35698,6 +36070,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3dc129215674cec6"
+  },
+  "problem1135": {
+    "changes": 0,
+    "first_seen": "2026-08-18T15:54:22+00:00",
+    "last_changed": "2026-08-18T15:54:22+00:00",
+    "tuple_hash": "82e9502c374e1e4f"
   },
   "problem_1": {
     "changes": 0,
@@ -36641,6 +37019,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "46a6caa44d1bb318"
   },
+  "quantum_kummer\u2013vandiver\u2013iwasawa_main_conjectures_over_\ud835\udd3d\u2081": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:11:40+00:00",
+    "last_changed": "2026-08-18T22:11:40+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "quantum_logic": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -37510,6 +37894,12 @@
     "first_seen": "2026-08-17T14:52:45+00:00",
     "last_changed": "2026-08-17T14:52:45+00:00",
     "tuple_hash": "b73d559675d15b9c"
+  },
+  "relaxation": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:22:50+00:00",
+    "last_changed": "2026-08-18T12:22:50+00:00",
+    "tuple_hash": "1452cf947b042de5"
   },
   "relaxed_h0_compton_ring": {
     "changes": 0,
@@ -39023,6 +39413,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7b9af14420022a64"
   },
+  "schutte": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:52:24+00:00",
+    "last_changed": "2026-08-18T11:52:24+00:00",
+    "tuple_hash": "d31d71e53abba775"
+  },
   "schwarzschild_black_hole": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39160,6 +39556,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfc23d4f1e1bf442"
+  },
+  "searched": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:19:46+00:00",
+    "last_changed": "2026-08-18T12:19:46+00:00",
+    "tuple_hash": "2cc85b04bfc45a82"
   },
   "second_coming": {
     "changes": 0,
@@ -39689,6 +40091,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c84adc2cf9c2f205"
   },
+  "settled": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:48:36+00:00",
+    "last_changed": "2026-08-18T07:48:36+00:00",
+    "tuple_hash": "d4fccdcdacb1e6aa"
+  },
   "seven_forty_four_decomposition": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39874,6 +40282,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8dd8e7dee6da2b61"
+  },
+  "sheafification_hyperarithmetic": {
+    "changes": 0,
+    "first_seen": "2026-08-18T11:59:26+00:00",
+    "last_changed": "2026-08-18T11:59:26+00:00",
+    "tuple_hash": "0e69f85a26de6259"
   },
   "shearstress": {
     "changes": 0,
@@ -41249,6 +41663,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "63928b42c430fa6d"
   },
+  "sphere_spectrum": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:14:02+00:00",
+    "last_changed": "2026-08-18T07:14:02+00:00",
+    "tuple_hash": "7fa663c21de7df6e"
+  },
   "spice_melange": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -41752,6 +42172,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "71626aa000d3b968"
+  },
+  "state": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:49:06+00:00",
+    "last_changed": "2026-08-18T07:49:06+00:00",
+    "tuple_hash": "6d1aefc4bc01ab78"
   },
   "state_space_model": {
     "changes": 0,
@@ -42671,11 +43097,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "011c3b5a3ee85843"
   },
+  "sustaining": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:23:59+00:00",
+    "last_changed": "2026-08-18T12:23:59+00:00",
+    "tuple_hash": "f2a78958d5b4e423"
+  },
   "sustaining_3loop_modulus_15p": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "02b794bf5593f99d"
+  },
+  "sustains": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:11:53+00:00",
+    "last_changed": "2026-08-18T12:11:53+00:00",
+    "tuple_hash": "d7ab60e2988628ad"
   },
   "svo_word_order": {
     "changes": 0,
@@ -42736,6 +43174,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "53dbcf61ab1a36fb"
+  },
+  "sylow": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:48:56+00:00",
+    "last_changed": "2026-08-18T20:48:56+00:00",
+    "tuple_hash": "59f7874871294fec"
+  },
+  "sylow_2_subgroup_gt": {
+    "changes": 0,
+    "first_seen": "2026-08-18T20:56:36+00:00",
+    "last_changed": "2026-08-18T20:56:36+00:00",
+    "tuple_hash": "b0d4e1ce7367f674"
+  },
+  "sylow_2_subgroup_gt_macrocycle": {
+    "changes": 0,
+    "first_seen": "2026-08-18T21:05:17+00:00",
+    "last_changed": "2026-08-18T21:05:17+00:00",
+    "tuple_hash": "3d6ed97c942374ce"
   },
   "symbiont": {
     "changes": 0,
@@ -44243,6 +44699,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2fd54608e059ccac"
   },
+  "the_hodge_conjecture_for_integral_motives_over_the_field_of_fractions_of_the_witt_ring": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:18:36+00:00",
+    "last_changed": "2026-08-18T22:18:36+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
+  },
   "the_houses_frame": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -44320,6 +44782,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6feb9c5e3b0df01d"
+  },
+  "the_noncommutative_minimal_model_program_for_quasi_categories": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:14:46+00:00",
+    "last_changed": "2026-08-18T22:14:46+00:00",
+    "tuple_hash": "7b40b6e5946b3976"
   },
   "the_noun": {
     "changes": 0,
@@ -44416,6 +44884,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f921f8fef00f8880"
+  },
+  "the_sylow_2_subgroup_of_the_grothendieck\u2013teichm\u00fcller_group": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:16:10+00:00",
+    "last_changed": "2026-08-18T22:16:10+00:00",
+    "tuple_hash": "abd5b1cc6cfcac16"
   },
   "the_syntactic_tree": {
     "changes": 0,
@@ -44711,6 +45185,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "70d81f337763c475"
   },
+  "those": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:19:11+00:00",
+    "last_changed": "2026-08-18T12:19:11+00:00",
+    "tuple_hash": "bfd92729fe3cef88"
+  },
   "thoth": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -44974,6 +45454,12 @@
     "first_seen": "2026-08-17T04:44:18+00:00",
     "last_changed": "2026-08-17T04:44:18+00:00",
     "tuple_hash": "d969404fbb9c7431"
+  },
+  "tier": {
+    "changes": 0,
+    "first_seen": "2026-08-18T13:06:34+00:00",
+    "last_changed": "2026-08-18T13:06:34+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
   },
   "tier_climbing_seed": {
     "changes": 0,
@@ -45695,6 +46181,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a61f8e59bf82582c"
   },
+  "transcendental_\u00e9tale_condensed_spectra": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:01:04+00:00",
+    "last_changed": "2026-08-18T22:01:04+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "transcranial_magnetic_stimulation": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -45736,6 +46228,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "414fb42280f4a1c3"
+  },
+  "transfinite_iterated_forcing_extensions_of_\u00e9tale_homotopy_types": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:10:13+00:00",
+    "last_changed": "2026-08-18T22:10:13+00:00",
+    "tuple_hash": "3e365f11732e9a1a"
   },
   "transformation": {
     "changes": 0,
@@ -46420,6 +46918,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1b27af42fb2b61fe"
+  },
+  "ultrafilter_limits_of_nonstandard_peano_arithmetic_models_under_voevodskys_univalence": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:17:21+00:00",
+    "last_changed": "2026-08-18T22:17:21+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "ultraterrestrial_compositional": {
     "changes": 0,
@@ -47249,6 +47753,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "49e3450dc96d0de6"
   },
+  "verify": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:10:20+00:00",
+    "last_changed": "2026-08-18T12:10:20+00:00",
+    "tuple_hash": "e7caf2e9f1361732"
+  },
   "vertex_set": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -47993,6 +48503,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9a8627c6ea574558"
   },
+  "whether": {
+    "changes": 0,
+    "first_seen": "2026-08-18T12:11:04+00:00",
+    "last_changed": "2026-08-18T12:11:04+00:00",
+    "tuple_hash": "e7777ba968f33916"
+  },
   "whether...or": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48251,6 +48767,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fb3903d6302ee863"
   },
+  "witt_ring_fraction_field": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:51:59+00:00",
+    "last_changed": "2026-08-18T07:51:59+00:00",
+    "tuple_hash": "de966a2fe86c9099"
+  },
+  "witt_vectors": {
+    "changes": 0,
+    "first_seen": "2026-08-18T07:11:48+00:00",
+    "last_changed": "2026-08-18T07:11:48+00:00",
+    "tuple_hash": "9edec0c9cdb7079f"
+  },
   "wittgensteins_(already_\u2013_rule_following),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48274,6 +48802,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "088e3f1f4016e5e3"
+  },
+  "wont": {
+    "changes": 0,
+    "first_seen": "2026-08-18T16:31:43+00:00",
+    "last_changed": "2026-08-18T16:31:43+00:00",
+    "tuple_hash": "1c47fbe46c3d6ac0"
   },
   "wood_decay": {
     "changes": 0,
@@ -48988,6 +49522,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8e08e761fefda0c1"
+  },
+  "zeta_functions_of_random_matrix_ensembles_over_f\u2081": {
+    "changes": 0,
+    "first_seen": "2026-08-18T22:08:15+00:00",
+    "last_changed": "2026-08-18T22:08:15+00:00",
+    "tuple_hash": "e25aab004af7913a"
   },
   "zeta_goldbach_mediator": {
     "changes": 0,
