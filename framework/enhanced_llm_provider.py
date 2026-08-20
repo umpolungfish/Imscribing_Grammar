@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 # produces nothing — which is exactly how every winding came to log an empty
 # THINK line.
 # What "uncapped" means for an in-process generate, which needs a number.
-_LOCAL_UNCAPPED_MAX_TOKENS = 16384
+_LOCAL_UNCAPPED_MAX_TOKENS = 262144
 
 
 def _thinking_default() -> bool:
