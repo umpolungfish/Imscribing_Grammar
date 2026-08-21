@@ -10829,6 +10829,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "042971a6c07003cc"
   },
+  "collatz_boundedness_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "b85822974e78a091"
+  },
   "collatz_broadcast_limit": {
     "changes": 0,
     "first_seen": "2026-08-18T16:00:18+00:00",
@@ -10853,6 +10859,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "90ee2156fd7c6bc3"
   },
+  "collatz_cycle_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "20885b713afaf9f6"
+  },
   "collatz_deep": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10864,6 +10876,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0c5cca108818c43f"
+  },
+  "collatz_drift_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "8b9bc9b834ab7e8f"
   },
   "collatz_dynamics": {
     "changes": 0,
@@ -10877,17 +10895,41 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a5d1482ee9c494e"
   },
+  "collatz_nosc_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "58242179432227dc"
+  },
   "collatz_parity_macrocycle": {
     "changes": 0,
     "first_seen": "2026-08-18T15:59:44+00:00",
     "last_changed": "2026-08-18T15:59:44+00:00",
     "tuple_hash": "1e02f941ef5d6a64"
   },
+  "collatz_proof_chimera": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "40c022844dc15503"
+  },
+  "collatz_proof_skeleton": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "790df0f2b8edc356"
+  },
   "collatz_system": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a5d1482ee9c494e"
+  },
+  "collatz_tao_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "ae346a2efbaf3d36"
   },
   "collatz_theorem_proven": {
     "changes": 0,
@@ -10900,6 +10942,12 @@
     "first_seen": "2026-08-18T16:14:56+00:00",
     "last_changed": "2026-08-18T16:14:56+00:00",
     "tuple_hash": "1e02f941ef5d6a64"
+  },
+  "collatz_vessel": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "2abd178b9bf87f5a"
   },
   "collect_ranks": {
     "changes": 0,
@@ -15334,6 +15382,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5377ea10de5ee4ab"
+  },
+  "erdos1135_collatz": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "ebb2f07d2eaf996e"
   },
   "erdos3_behrend_barrier": {
     "changes": 0,
@@ -40378,6 +40432,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4806896ff29ad95b"
+  },
+  "shors_ecdlp_dlog_descent": {
+    "changes": 0,
+    "first_seen": "2026-08-21T06:26:38+00:00",
+    "last_changed": "2026-08-21T06:26:38+00:00",
+    "tuple_hash": "63026b7fd8c84fd4"
   },
   "short_interval_smoothness": {
     "changes": 0,
