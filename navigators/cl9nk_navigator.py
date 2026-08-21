@@ -175,8 +175,31 @@ ALIASES = {
     "zfct": "ZFCt",
 }
 
+def parse_tuple_arg(name):
+    """A literal 12-glyph tuple, submitted directly rather than by catalog name.
+
+    A tuple derived from a word (`imasm derive`) is not in the catalog and has no
+    name, so without this there is no way to ask the navigator about the object you
+    actually have. Brackets, separators and whitespace are ignored; every glyph must
+    be a value on its own axis, in canonical slot order.
+    """
+    glyphs = [c for c in name if c not in "⟨⟩ ,;·\t"]
+    if len(glyphs) != 12:
+        return None
+    t = {}
+    for key, g in zip(PRIMITIVE_KEYS, glyphs):
+        if g not in ORDINALS.get(key, {}):
+            return None
+        t[key] = g
+    return {"description": "tuple submitted directly (not a catalog entry)",
+            "tuple": t, "name": "⟨" + "".join(glyphs) + "⟩"}
+
+
 def resolve_system(name):
     load_catalog()
+    direct = parse_tuple_arg(name)
+    if direct is not None:
+        return direct
     if not CATALOG:
         return None
     name_lower = name.lower()
