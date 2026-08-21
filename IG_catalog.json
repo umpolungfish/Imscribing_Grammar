@@ -133783,7 +133783,6 @@
   {
     "name": "collatz_proof_chimera",
     "description": "click fusion of problem1135 ⋈ collatz_conjecture_proven on D↔W (Δ=1.00); the μ (FFUSE) product, ring saturated on the D↔W pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑽",
@@ -133816,7 +133815,6 @@
   {
     "name": "collatz_deep_product",
     "description": "product of the self_referential_imscription-catalyzed turnover of collatz_deep (oxidative); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "⊢": "𐑨",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -133833,7 +133831,6 @@
   {
     "name": "collatz_l9_floor",
     "description": "meet (greatest lower bound) of collatz_deep_product ⊓ lapis: min per axis, the floor the two share. A meet descends where every fusion verb raises.",
-    "provenance": "derived:meet",
     "⊢": "𐑛",
     "⊣": "𐑥",
     "≻": "𐑑",
@@ -133850,7 +133847,6 @@
   {
     "name": "collatz_l9_reached",
     "description": "click fusion of collatz_l9_floor ⋈ iut_theory_hodge_theater_iutt_fused on R↔S (Δ=1.00); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑛",
     "⊣": "𐑥",
     "≻": "𐑑",
@@ -133862,6 +133858,54 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑳",
+    "◻": "𐑭"
+  },
+  {
+    "name": "shors_btc_2",
+    "description": "Bitcoin secp256k1 ECDLP recovery tool using bounded-range baby-step giant-step with Belnap Shor coherence analysis and horn torus winding bridge",
+    "⊢": "𐑼",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑭"
+  },
+  {
+    "name": "shors_btc_2__retired",
+    "description": "[address retained] Formerly imscribed as 'shors_btc_2'. The name was re-pointed; this address is kept populated because it is structure regardless of the correspondence. Bitcoin secp256k1 ECDLP recovery tool using bounded-range baby-step giant-step with Belnap Shor coherence analysis",
+    "⊢": "𐑼",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "𐑢",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "◻": "𐑷"
+  },
+  {
+    "name": "winding_principle",
+    "description": "Functional two-projection winding system: edge-on angle θ=ωx and end-on shadow exp(2πix), with composition law tracking carry corrections and separate closure checks per projection",
+    "⊢": "𐑼",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "𐑢",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
     "◻": "𐑭"
   }
 ]
