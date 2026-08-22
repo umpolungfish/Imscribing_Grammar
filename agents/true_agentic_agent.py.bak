@@ -2828,7 +2828,7 @@ Check:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake ch
 
   Check if a theorem is sorry-free:
     run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && grep -n 'sorry' Imscribing/Millennium/RH.lean",
-                assertion=True)  -- enumerate honest sorry markers
+                assertion=True)  -- enumerate the sorry markers
 
   Verify agent self-encoding:
     run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build Imscribing.AgentSelf",
@@ -2846,7 +2846,7 @@ Check:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake ch
 ── When to use ──────────────────────────────────────────────────
 
   - When a task asks about a Millennium Problem: read the relevant Lean module
-    to understand the honest sorry structure and barrier taxonomy.
+    to understand the sorry structure and barrier taxonomy.
   - When a structural claim involves the crystal encoding: Crystal.lean has
     the Frobenius address bijection; cross-check with crystal_encode.
   - When writing formal documents about proofs: read the module first, quote

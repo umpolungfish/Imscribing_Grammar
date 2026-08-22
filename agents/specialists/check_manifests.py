@@ -49,7 +49,7 @@ markers = {
     "momonados": ["menu.rs", "repl.rs", "run_serial_cmds.sh", "make image",
                   "make ordinals", "check_menu_coverage.py"],
     # The four commands, the four classes, and the word that keeps a report
-    # honest. "price" is in the list because a closure without its cost is the
+    # complete. "price" is in the list because a closure without its cost is the
     # failure mode this specialist exists to prevent.
     "closure":   ["ovm", "oneshots", "ctc", "nesting", "sic", "d12", "d2048",
                   "one-shot", "manufactured", "price"],

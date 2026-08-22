@@ -1739,7 +1739,7 @@ def _done_verify(emit_input: Dict, emit_output: str,
     `done` used to close unconditionally, so a trajectory could contradict every
     observation it made and still report Frobenius 100% — the metric said
     nothing about the answer. The golem rule is that a report may state only what
-    a tool returned, and the cheapest honest test of it is whether any tool
+    a tool returned, and the cheapest test of it is whether any tool
     returned anything at all before the conclusion was written.
 
     `_DONE_GROUNDING` is set by the loop to the observations of THIS session.
@@ -4396,7 +4396,7 @@ class TrueAgenticAgent:
         emitted and its observation never folds back, so μ∘δ is left open and
         the message history ends on an assistant tool_call with no answer —
         exactly the orphan `_well_formed_tail` has to repair on reload. Setting
-        a flag lets the winding close honestly and the context stay usable.
+        a flag lets the winding close cleanly and the context stay usable.
 
         A second Ctrl-C restores the previous handler and aborts immediately,
         so a genuinely hung winding is still escapable.

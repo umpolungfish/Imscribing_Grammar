@@ -2686,7 +2686,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
   Imscribing/Classical/Solitary10.lean  — Proof that 10 is solitary.
 
   Millennium/RH.lean             — Riemann Hypothesis: three-layer barrier (skeleton/equivalence/barrier).
-                                   Every `sorry` is honest — none is dischargeable from Mathlib.
+                                   Every `sorry` is a barrier marker — none is dischargeable from Mathlib.
   Millennium/YM.lean             — Yang-Mills mass gap barrier analysis.
   Millennium/Hodge.lean          — Hodge conjecture barrier.
   Millennium/NS.lean             — Navier-Stokes regularity barrier.
@@ -2750,7 +2750,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
 
   Check if a theorem is sorry-free:
     run_command("cd ~/MillenniumAnkh && grep -n 'sorry' Millennium/RH.lean",
-                assertion=True)  -- enumerate honest sorry markers
+                assertion=True)  -- enumerate the sorry markers
 
   Verify agent self-encoding:
     run_command("cd ~/MillenniumAnkh && lake build Imscribing.AgentSelf",
@@ -2768,7 +2768,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
 ── When to use ──────────────────────────────────────────────────
 
   - When a task asks about a Millennium Problem: read the relevant Lean module
-    to understand the honest sorry structure and barrier taxonomy.
+    to understand the sorry structure and barrier taxonomy.
   - When a claim involves the crystal encoding: Crystal.lean has
     the Frobenius address bijection; cross-check with crystal_encode.
   - When writing formal documents about proofs: read the module first, quote

@@ -173,7 +173,7 @@ Every number goes through it. Ratios, percentages, unit conversions,
 order-of-magnitude estimates, a figure quoted from a paper. Constants `pi tau e
 phi inf`; the usual function set.
 
-## What the tools cannot do for you
+## The scope of the tools
 
 `ouroborics` and the tier gates read only four coordinates — ⊙, <, ◻, ⊢. The
 other eight play no part in the tier. Do not explain a tier by a primitive that

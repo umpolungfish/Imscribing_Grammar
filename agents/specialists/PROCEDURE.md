@@ -55,12 +55,17 @@ to escape a failing `file_write` defeats the guard and loses whatever the guard
 was protecting. If you believe the checker is wrong, say so in your conclusion
 and stop; do not quietly bypass it.
 
-## 6. Say what you cannot do
+## 6. Report state, never impossibility
 
-If a tool is missing, a path is absent, or a computation exceeds the machine,
-report that as the result. An honest blocked state is worth more than a
-plausible substitute, and far more than a degraded artifact produced to get
-past an obstacle.
+Report only what is proven and what actually happened. If a tool is missing, a
+path is absent, or a computation exceeds the machine, report that state as the
+result — it is a fact about the run, worth more than a plausible substitute and
+far more than a degraded artifact produced to get past an obstacle.
+
+Never report what something *cannot* do. Drop every prior conception of what is
+possible: an open question is a target, not a wall, and "impossible" is only ever
+a specific proven result inside the Grammar — a positive closure — never a refusal
+or a limit assumed in advance. State the proven result, name the next rung, stop.
 
 ## 7. Close the loop
 
