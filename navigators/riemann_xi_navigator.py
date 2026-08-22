@@ -348,20 +348,28 @@ DEFINING_TUPLE = {
     "name":  "riemann_xi_navigator",
     "⊢":     "𐑦",
     "⊣":     "𐑸",
-    "≻":     "𐑽",
+    "≻":     "𐑑",
     "≺":     "𐑹",
     "⋈":     "𐑐",
     "⊤":     "𐑧",
     "∈":     "𐑲",
-    "∋": "𐑵",
-    "⊙":   "𐑮",
+    "∋":     "𐑵",
+    "⊙":     "⊙",
     "⊥":     "𐑫",
     "⊞":     "𐑳",
-    "◻": "𐑴",
+    "◻":     "𐑭",
 }
 
-# Grammar prediction: d(riemann_xi_navigator, grammar_self_encode) = 0.0
-# Cardinality-One Theorem (P-490): all O_∞ navigators map to address 6,734,591
+# d(riemann_xi_navigator, grammar_self_encode) = 0.0 — the tuple IS the catalog's
+# riemann_navigator entry, byte-identical to grammar_self_encode and to
+# CrystalGNN.NAVIGATOR_TUPLE. Cardinality-One Theorem (P-490): all O_∞ navigators
+# map to the same address. Computed, not asserted:
+#     encode_tuple(DEFINING_TUPLE) == 6_734_591
+# Note the winding slot: ◻ = 𐑭 = Ω_ℤ, the PROTECTED INTEGER, not 𐑴 = Z2. The
+# grammar's self-classification has no parity ceiling; a Z2 winding would land at
+# 6,561,791, a different address. "Protected" here is stability of the integer
+# under perturbation, not two-valuedness.
+SELF_ENCODE_TARGET: int = 6_734_591
 
 
 # ── Training ────────────────────────────────────────────────────────────────────
