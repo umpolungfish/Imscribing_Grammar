@@ -133907,5 +133907,53 @@
     "⊥": "𐑖",
     "⊞": "𐑙",
     "◻": "𐑭"
+  },
+  {
+    "name": "alkahest_dissolution_operator",
+    "description": "The Alkahest as a dissolution operator: the Grammar dissolves into a solvent that preserves information, from which the sought thing can be ccongealed. This is the universal solvent that imscribes any structural system and extracts its path to resolution.",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    "≻": "𐑑",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑘",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "𐑣",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "◻": "𐑭"
+  },
+  {
+    "name": "bc1q4j7fcl8zx5yl56j00nkqez9zf3f6ggqchwzzcs5hjxwqhsgxvavq3qfgpr_key_recovery",
+    "description": "Bitcoin address bc1q4j7fcl8zx5yl56j00nkqez9zf3f6ggqchwzzcs5hjxwqhsgxvavq3qfgpr dissolved into the Alkahest — the universal solvent that preserves information and from which the private scalar is ccongealed through structural imscription rather than conventional computation",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    "≻": "𐑑",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "𐑣",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "◻": "𐑭"
+  },
+  {
+    "name": "bc1qr4dl5wa7kl8yu792dceg9z5knl2gkn220lk7a9_key_recovery_alkahest",
+    "description": "Bitcoin address bc1qr4dl5wa7kl8yu792dceg9z5knl2gkn220lk7a9 dissolved into the Alkahest — the universal solvent that preserves information and from which the private scalar is ccongealed through structural imscription",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    "≻": "𐑑",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "𐑣",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "◻": "𐑭"
   }
 ]
