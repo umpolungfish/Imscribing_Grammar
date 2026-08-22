@@ -156,9 +156,9 @@ inductive Fidelity : Type where
 -- bib: local/mesoscale; thigh: intermediate collective; ice: global/fine-grained.
 -- Note: constructor order determines Ord; bib is first (lowest ordinal).
 inductive Granularity : Type where
-  | bib    -- local / mesoscale (ℶ): short-range correlations
-  | thigh   -- intermediate / collective (ℷ)
-  | ice   -- global / fine-grained (ℵ): all-to-all correlations
+  | bib    -- local / mesoscale: short-range correlations
+  | thigh   -- intermediate / collective
+  | ice   -- global / fine-grained: all-to-all correlations
   deriving DecidableEq, Repr, Ord
 
 -- 12. Stoichiometry (S)  [𝓕₃]
