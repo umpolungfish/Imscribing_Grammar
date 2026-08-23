@@ -482,8 +482,7 @@ CL9NK_FORMULAE = {
         "𐑢": ("¬∃ξ( diverges(ξ) )", None, "distant"),
     },
     "⊥": {
-        "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0 — winding bridge", "WIND_BRIDGE", "match"),
-        "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )", "ETERNAL_FIXEDPOINT", "distant"),
+        "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) — infinite repetition", "INFINITE_STITCH", "match"),
         "𐑖": ("∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )", "TEMPD2", "close"),
         "𐑒": ("∃y( P(y) ↔ P(S²(y)) )", None, "distant"),
         "𐑓": ("∀x( P(x) ↔ P(S(x)) )", None, "distant"),
@@ -494,9 +493,8 @@ CL9NK_FORMULAE = {
         "𐑙": ("|A| = 1 ∧ |B| = 1", None, "distant"),
     },
     "◻": {
-        "𐑫": ("∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) — infinite repetition", "INFINITE_STITCH", "match"),
+        "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0 — winding bridge", "WIND_BRIDGE", "match"),
         "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)", "BRAID_TRANSCENDENCE", "distant"),
-        "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND", "distant"),
         "𐑴": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None, "close"),
         "𐑷": ("∮_γ dx = 0", None, "distant"),
     },
@@ -1057,9 +1055,9 @@ _ATOM_DESC = {
     "BRIDGE_EXIST":         "Existence of a bridge (∈ existential) (𐑔)",
     "STITCH_3":             "3-unit stitch: moat · hodge · linker (∋ conjunction) (𐑝)",
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
-    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (⊥=𐑭)",
+    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (◻=𐑭)",
     "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (⊞=𐑳)",
-    "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (◻=𐑫)",
+    "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (⊥=𐑫)",
 }
 
 def _print_entry_table(result):
