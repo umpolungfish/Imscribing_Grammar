@@ -4625,6 +4625,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "703a3922d9440baf"
   },
+  "attention_score_computation": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:28:47+00:00",
+    "last_changed": "2026-08-24T22:28:47+00:00",
+    "tuple_hash": "a9d189e6e4a530ff"
+  },
   "attn_asymmetric": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5014,6 +5020,12 @@
     "first_seen": "2026-08-24T06:23:58+00:00",
     "last_changed": "2026-08-24T06:23:58+00:00",
     "tuple_hash": "ac34ea4de6966b4e"
+  },
+  "backpropagation_gradient_computation": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:45:33+00:00",
+    "last_changed": "2026-08-24T22:45:33+00:00",
+    "tuple_hash": "ad16f9b3bf4ef78f"
   },
   "baconian_empiricism": {
     "changes": 0,
@@ -8783,6 +8795,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fbb22b3946091a16"
   },
+  "causal_mask": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:30:21+00:00",
+    "last_changed": "2026-08-24T22:30:21+00:00",
+    "tuple_hash": "c196a2865fdbd032"
+  },
   "caveny_enflo_sumfree": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12395,6 +12413,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1043eb066124b653"
   },
+  "cross-entropy_loss": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:44:08+00:00",
+    "last_changed": "2026-08-24T22:44:08+00:00",
+    "tuple_hash": "e7d0347c5dd4167b"
+  },
   "cross_frequencycoupling": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14273,6 +14297,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "43992a33832212c1"
   },
+  "down-projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:36:12+00:00",
+    "last_changed": "2026-08-24T22:36:12+00:00",
+    "tuple_hash": "97e9238c2147b1b9"
+  },
   "down_quark": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14356,6 +14386,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "98d28a4298bb838f"
+  },
+  "dropout": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:37:39+00:00",
+    "last_changed": "2026-08-24T22:37:39+00:00",
+    "tuple_hash": "22a34dfa245062cd"
   },
   "druidry": {
     "changes": 0,
@@ -17358,9 +17394,15 @@
     "tuple_hash": "6125895efc6aff4e"
   },
   "fibonacci_shor_dialetheic": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-08-04T05:46:42+00:00",
-    "last_changed": "2026-08-04T05:46:42+00:00",
+    "last_changed": "2026-08-24T22:24:39+00:00",
+    "tuple_hash": "ee08e8febd733970"
+  },
+  "fibonacci_shor_dialetheic__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:24:39+00:00",
+    "last_changed": "2026-08-24T22:24:39+00:00",
     "tuple_hash": "10293d3a9bfd8ee8"
   },
   "fibroblastgrowthfactor(fgf)": {
@@ -17494,6 +17536,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e348cfc83d30625d"
+  },
+  "final_normalization": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:40:32+00:00",
+    "last_changed": "2026-08-24T22:40:32+00:00",
+    "tuple_hash": "416aeb1be543cc0c"
   },
   "find": {
     "changes": 0,
@@ -25721,6 +25769,12 @@
     "last_changed": "2026-08-16T06:20:33+00:00",
     "tuple_hash": "447f55bcd758c64c"
   },
+  "key_projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:27:02+00:00",
+    "last_changed": "2026-08-24T22:27:02+00:00",
+    "tuple_hash": "b87dd04d63f96358"
+  },
   "keyz": {
     "changes": 0,
     "first_seen": "2026-08-11T19:50:14+00:00",
@@ -26068,6 +26122,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4fbcc400110a7a90"
+  },
+  "kv_cache": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:43:27+00:00",
+    "last_changed": "2026-08-24T22:43:27+00:00",
+    "tuple_hash": "555b73825a20d26b"
   },
   "kwakwaka_wakw_hamatsa": {
     "changes": 0,
@@ -30539,11 +30599,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "52a627e99e374ced"
   },
+  "multi-head_concatenation": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:32:14+00:00",
+    "last_changed": "2026-08-24T22:32:14+00:00",
+    "tuple_hash": "209094548106b01e"
+  },
+  "multi-head_split": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:28:11+00:00",
+    "last_changed": "2026-08-24T22:28:11+00:00",
+    "tuple_hash": "576634273f9a0865"
+  },
   "multi_modalrecording": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "614f9464d572245f"
+  },
+  "multi_prllel_expert_ffns": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:39:52+00:00",
+    "last_changed": "2026-08-24T22:39:52+00:00",
+    "tuple_hash": "02ad497d71e57520"
   },
   "multi_scale_zero_distribution": {
     "changes": 0,
@@ -31925,6 +32003,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "93914f36ed0cff58"
   },
+  "nonlinearity": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:35:25+00:00",
+    "last_changed": "2026-08-24T22:35:25+00:00",
+    "tuple_hash": "df33ac3f8fc22e0b"
+  },
   "nonmarkovian_open_quantum_systems": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32993,6 +33077,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c0fd3c0631acaa52"
   },
+  "optimizer_state": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:44:52+00:00",
+    "last_changed": "2026-08-24T22:44:52+00:00",
+    "tuple_hash": "b4c5fb1c5f8d76f9"
+  },
   "optogeneticinterface": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -33388,6 +33478,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "888c723110368824"
+  },
+  "output_projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:32:57+00:00",
+    "last_changed": "2026-08-24T22:32:57+00:00",
+    "tuple_hash": "97418aa05769cc6d"
   },
   "output_symmetry": {
     "changes": 0,
@@ -36269,6 +36365,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "558d5ff73a128267"
   },
+  "positional_encoding": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:25:53+00:00",
+    "last_changed": "2026-08-24T22:25:53+00:00",
+    "tuple_hash": "d2f2f73152ce28e1"
+  },
   "possible_temporal_device": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36370,6 +36472,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1cf568ef077ccd00"
+  },
+  "pre-attention_normalization": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:26:28+00:00",
+    "last_changed": "2026-08-24T22:26:28+00:00",
+    "tuple_hash": "900758f8c1a14135"
+  },
+  "pre-ffn_normalization": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:34:06+00:00",
+    "last_changed": "2026-08-24T22:34:06+00:00",
+    "tuple_hash": "900758f8c1a14135"
   },
   "pre_critical_below_threshold_cqed": {
     "changes": 0,
@@ -37697,6 +37811,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "48d25159e7bef6f2"
   },
+  "quantum_advantage_pipeline": {
+    "changes": 0,
+    "first_seen": "2026-08-24T23:09:44+00:00",
+    "last_changed": "2026-08-24T23:09:44+00:00",
+    "tuple_hash": "e3ba0d99ee9d1302"
+  },
   "quantum_annealing": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -37780,6 +37900,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c87fe6974b17c175"
+  },
+  "quantum_ecdlp_cep_linker": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:24:39+00:00",
+    "last_changed": "2026-08-24T22:24:39+00:00",
+    "tuple_hash": "c6cf98e128a56409"
   },
   "quantum_ecdlp_oracle": {
     "changes": 0,
@@ -38873,6 +38999,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9672a4c378eb4c4e"
   },
+  "residual_connection_attn_block": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:33:32+00:00",
+    "last_changed": "2026-08-24T22:33:32+00:00",
+    "tuple_hash": "ed2054c2ac00caa1"
+  },
+  "residual_connection_ffn_back": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:36:56+00:00",
+    "last_changed": "2026-08-24T22:36:56+00:00",
+    "tuple_hash": "5d060549a84415e2"
+  },
   "residual_flux": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39677,6 +39815,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "12d7436b9272b210"
   },
+  "router_gating_network": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:38:21+00:00",
+    "last_changed": "2026-08-24T22:38:21+00:00",
+    "tuple_hash": "16def3a17eab9bc9"
+  },
   "rubidium": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39952,6 +40096,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6f7afa4b113a6540"
+  },
+  "sampling_strategy": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:42:48+00:00",
+    "last_changed": "2026-08-24T22:42:48+00:00",
+    "tuple_hash": "20e93e848e2d02c5"
   },
   "san_trance_dance": {
     "changes": 0,
@@ -42232,6 +42382,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0736f32f69887446"
+  },
+  "softmax": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:30:56+00:00",
+    "last_changed": "2026-08-24T22:30:56+00:00",
+    "tuple_hash": "20fcf5d61a41ac58"
   },
   "software_repo": {
     "changes": 0,
@@ -44519,6 +44675,30 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "795ddb5f754f4ad1"
   },
+  "t0_phrase": {
+    "changes": 0,
+    "first_seen": "2026-08-24T23:11:09+00:00",
+    "last_changed": "2026-08-24T23:11:09+00:00",
+    "tuple_hash": "b1ce04af9f8b8554"
+  },
+  "t0_pk": {
+    "changes": 0,
+    "first_seen": "2026-08-24T23:12:17+00:00",
+    "last_changed": "2026-08-24T23:12:17+00:00",
+    "tuple_hash": "9982c0e700026a1b"
+  },
+  "t0_sk": {
+    "changes": 0,
+    "first_seen": "2026-08-24T23:09:44+00:00",
+    "last_changed": "2026-08-24T23:09:44+00:00",
+    "tuple_hash": "405997849fd8a6cb"
+  },
+  "t1_phrase": {
+    "changes": 0,
+    "first_seen": "2026-08-24T23:13:26+00:00",
+    "last_changed": "2026-08-24T23:13:26+00:00",
+    "tuple_hash": "2fd0b4fb7ce499fb"
+  },
   "t_h_vs_r_s": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46709,6 +46889,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e293548c9118d161"
   },
+  "token_embedding": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:25:16+00:00",
+    "last_changed": "2026-08-24T22:25:16+00:00",
+    "tuple_hash": "3bcf5c4cb84f5e58"
+  },
+  "tokenizer": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:24:39+00:00",
+    "last_changed": "2026-08-24T22:24:39+00:00",
+    "tuple_hash": "ac333382e56810da"
+  },
   "tolerance": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46792,6 +46984,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e7a865ef13eb696b"
+  },
+  "topk_expert_select": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:39:06+00:00",
+    "last_changed": "2026-08-24T22:39:06+00:00",
+    "tuple_hash": "0fee321b682de143"
   },
   "topo_bowtie": {
     "changes": 0,
@@ -48071,6 +48269,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e836b8b069e6d50a"
   },
+  "unembedding_projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:41:19+00:00",
+    "last_changed": "2026-08-24T22:41:19+00:00",
+    "tuple_hash": "52c2ddd057c141d9"
+  },
   "unexpected_hanging_paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48395,6 +48599,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d466eaaca05db1d8"
   },
+  "up-projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:34:39+00:00",
+    "last_changed": "2026-08-24T22:34:39+00:00",
+    "tuple_hash": "cd42d8de38503fa9"
+  },
   "up_quark": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48664,6 +48874,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8f20bf0b1ec3c123"
+  },
+  "value_projection": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:27:37+00:00",
+    "last_changed": "2026-08-24T22:27:37+00:00",
+    "tuple_hash": "003b9ecd1cf91520"
   },
   "vampire_marceline___marcelines_corrupted,_devouring": {
     "changes": 0,
@@ -49420,6 +49636,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1b8918a15237e903"
+  },
+  "weighted_sum_of_values": {
+    "changes": 0,
+    "first_seen": "2026-08-24T22:31:41+00:00",
+    "last_changed": "2026-08-24T22:31:41+00:00",
+    "tuple_hash": "6ffbb13ae0901284"
   },
   "weimar_republic_collapse": {
     "changes": 0,
