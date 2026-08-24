@@ -367,6 +367,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         name: Optional[str] = None,
         delta_g: Optional[float] = None,
         auto_register: bool = True,
+        temperature: Optional[float] = None,
     ) -> "ImscriptionGenerationResult":
         """
         Guided generation: one LLM call per primitive, numbered-choice selection.
@@ -410,7 +411,9 @@ class ImscriptionGeneratorAgent(BaseAgent):
             # OFF for it. Keep the wide cap as a no-regression floor: if a model ignores the
             # switch and reasons anyway, it still completes (just slower) instead of failing.
             raw = await self.call_llm(prompt=prompt, system=system,
-                                      max_tokens=16000, temperature=0.1, reasoning_off=True)
+                                      max_tokens=16000,
+                                      temperature=0.1 if temperature is None else temperature,
+                                      reasoning_off=True)
 
             # Extract leading integer
             m = re.match(r"\s*(\d+)", raw.strip())
@@ -486,6 +489,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         delta_g: Optional[float] = None,
         auto_register: bool = True,
         require_grounding: bool = False,  # NEW: Require mechanistic grounding
+        temperature: Optional[float] = None,
     ) -> ImscriptionGenerationResult:
         """
         Generate a imscription from a natural language description.
@@ -527,7 +531,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
                 raw_response = await self.call_llm(
                     prompt=call_prompt,
                     max_tokens=self.config.get("max_tokens", 4000),
-                    temperature=0.3,  # Lower temperature for more deterministic output
+                    temperature=0.3 if temperature is None else temperature,  # Lower temperature for more deterministic output by default
                     system=self._get_system_prompt()
                 )
                 imscription_data, reasoning, confidence, alternatives = self._parse_llm_response(raw_response)

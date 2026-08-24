@@ -1107,6 +1107,8 @@ def _register_to_json_catalog(
 @click.option("--axiom-guided", "-a", is_flag=True, help="Use axiom-guided generation (validates against composition axioms).")
 @click.option("--speculative", is_flag=True, help="Register imscription in the 'speculative' domain (non-canonical or hypothetical systems).")
 @click.option("--guided/--no-guided", default=True, help="Step-by-step guided generation (default ON): assigns one primitive at a time with numbered canonical choices, eliminating hallucinated values. Use --no-guided to revert to single-shot generation.")
+@click.option("--context", type=click.Path(exists=True, dir_okay=False), default=None, help="Path to a text/markdown file whose content is prepended to DESCRIPTION as background the model reasons over (e.g. a geometry context sheet).")
+@click.option("--temp", "-t", "temperature", type=float, default=None, help="Sampling temperature for the generation call(s). Overrides the mode's built-in default (0.1 per-primitive for --guided, 0.3 for single-shot and --axiom-guided).")
 def generate(
     description: str,
     name: Optional[str],
@@ -1118,6 +1120,8 @@ def generate(
     axiom_guided: bool,
     speculative: bool,
     guided: bool,
+    context: Optional[str],
+    temperature: Optional[float],
 ):
     """
     Encode any self-organizing system as a 12-primitive structural coordinate.
@@ -1164,6 +1168,14 @@ def generate(
         if name is None:
             name = _self_key
         console.print(f"[dim]Self-family: circular definition — \"{description}\"[/dim]")
+
+    if context:
+        context_text = Path(context).read_text(encoding="utf-8").strip()
+        description = (
+            f"Background context:\n{context_text}\n\n"
+            f"---\n\nEntity to imscribe: {description}"
+        )
+        console.print(f"[dim]Context loaded from {context} ({len(context_text)} chars).[/dim]")
 
     try:
         # Import the agent and provider config
@@ -1237,6 +1249,7 @@ def generate(
                     description,
                     name=name,
                     auto_register=agent_auto_register,
+                    temperature=temperature,
                 )
             )
 
@@ -1254,6 +1267,7 @@ def generate(
                     description,
                     name=name,
                     auto_register=agent_auto_register,
+                    temperature=temperature,
                 )
             )
 
@@ -1266,6 +1280,7 @@ def generate(
                     description,
                     name=name,
                     auto_register=agent_auto_register,
+                    temperature=temperature,
                 )
             )
 

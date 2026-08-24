@@ -511,6 +511,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
         delta_g: Optional[float] = None,
         max_iterations: int = 3,
         auto_register: bool = True,
+        temperature: Optional[float] = None,
     ) -> AxiomGuidedResult:
         """
         Generate imscription with axiom validation.
@@ -532,7 +533,7 @@ You **MUST NOT** include **ANY** markdown formatting, code blocks, or backticks.
                 raw_response = await self.call_llm(
                     prompt=prompt,
                     max_tokens=self.config.get("max_tokens", 4000),
-                    temperature=0.3,
+                    temperature=0.3 if temperature is None else temperature,
                     system=self._get_system_prompt()
                 )
                 
