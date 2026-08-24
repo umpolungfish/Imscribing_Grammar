@@ -1655,11 +1655,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e0791739a01fc94e"
   },
+  "abc_conjecture_conventional_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:10:26+00:00",
+    "last_changed": "2026-08-23T14:10:26+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "abc_conjecture_inequality": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1df4834483902125"
+  },
+  "abc_conjecture_inequality_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:43:30+00:00",
+    "last_changed": "2026-08-23T14:43:30+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "abc_conjecture_iut_proof": {
     "changes": 0,
@@ -1690,6 +1702,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "78be999e2a9de2a3"
+  },
+  "abc_conjecture_statement_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:11:10+00:00",
+    "last_changed": "2026-08-23T14:11:10+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "abc_dual_proof_draft": {
     "changes": 0,
@@ -1816,6 +1834,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2fd149d4b3d45e3e"
+  },
+  "abundance_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:41:21+00:00",
+    "last_changed": "2026-08-23T13:41:21+00:00",
+    "tuple_hash": "50bb36f63ab01410"
   },
   "abundancy_equation_10": {
     "changes": 0,
@@ -2026,6 +2050,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "34972a09b0bbf80d"
+  },
+  "adjoint_memoryless_paracomplete_negative_static_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "1a4693bf7ce45e93"
+  },
+  "adjoint_zero_chirality_paracomplete_integer_winding_static_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:45:16+00:00",
+    "last_changed": "2026-08-23T09:45:16+00:00",
+    "tuple_hash": "59e4fbe13eefdd56"
   },
   "adjugate_composition_shift": {
     "changes": 0,
@@ -2525,6 +2561,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a173ec551537af38"
   },
+  "alkahest_dissolution_operator": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "810c914423b9f48c"
+  },
   "alkahest_vessel_l9_promoted": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -2566,6 +2608,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4d1ffa8740b64104"
+  },
+  "alperin_weight_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:39:10+00:00",
+    "last_changed": "2026-08-23T13:39:10+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "alpha": {
     "changes": 0,
@@ -3616,6 +3664,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5e6cf1b4a6bd8dcd"
+  },
+  "appleby_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:48:49+00:00",
+    "last_changed": "2026-08-23T13:48:49+00:00",
+    "tuple_hash": "02dbd070e6942b76"
   },
   "appressorium": {
     "changes": 0,
@@ -5201,6 +5255,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee786b1009b84bcf"
   },
+  "bc1q4j7fcl8zx5yl56j00nkqez9zf3f6ggqchwzzcs5hjxwqhsgxvavq3qfgpr_key_recovery": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "2ab3b5948df840df"
+  },
+  "bc1qr4dl5wa7kl8yu792dceg9z5knl2gkn220lk7a9_key_recovery_alkahest": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "2ab3b5948df840df"
+  },
   "bcs_superconductivity": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5861,6 +5927,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9f060ad2ccc96108"
   },
+  "birch_and_swinnerton_dyer_theorem_": {
+    "changes": 0,
+    "first_seen": "2026-08-23T10:11:23+00:00",
+    "last_changed": "2026-08-23T10:11:23+00:00",
+    "tuple_hash": "f908893a234f6433"
+  },
   "birch_swinnerton_dyer": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5872,6 +5944,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d2822841e35254e4"
+  },
+  "birch_swinnerton_dyer_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:57:55+00:00",
+    "last_changed": "2026-08-23T13:57:55+00:00",
+    "tuple_hash": "6bdf1e9069d8aff7"
   },
   "bismuth": {
     "changes": 0,
@@ -6125,6 +6203,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e4406f98135dddc5"
   },
+  "bondy_erdos_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:34:39+00:00",
+    "last_changed": "2026-08-23T14:34:39+00:00",
+    "tuple_hash": "217391259da319c6"
+  },
   "bone_cancer_therapeutic_target": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6341,6 +6425,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7eda8c12b7220bf4"
   },
+  "borsuk_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:44:44+00:00",
+    "last_changed": "2026-08-23T13:44:44+00:00",
+    "tuple_hash": "5fe19b536f437c30"
+  },
   "bose_einstein_condensate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6424,6 +6514,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5273d8628a0e0a62"
+  },
+  "bounded_burnside_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:28:00+00:00",
+    "last_changed": "2026-08-23T13:28:00+00:00",
+    "tuple_hash": "4b7b9095fb05245f"
   },
   "boundedness": {
     "changes": 0,
@@ -7001,6 +7097,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "41266917574d5eee"
   },
+  "broue_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:38:20+00:00",
+    "last_changed": "2026-08-23T13:38:20+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
   "brown_rot": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -7180,6 +7282,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "19ead01dd36b4470"
+  },
+  "burnside_problem_bounded_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:36:49+00:00",
+    "last_changed": "2026-08-23T13:36:49+00:00",
+    "tuple_hash": "837b3623fe90ef4f"
   },
   "burstfrequency": {
     "changes": 0,
@@ -8536,6 +8644,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a274bfc23609dbc6"
+  },
+  "casas_alvero_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:19:34+00:00",
+    "last_changed": "2026-08-23T13:19:34+00:00",
+    "tuple_hash": "c923fc798949b7fc"
   },
   "caspaseactivity": {
     "changes": 0,
@@ -10871,6 +10985,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7421863c65b7d0b3"
   },
+  "collatz_deep_product": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "2b98fdafbdb2865f"
+  },
   "collatz_deep_structure": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10894,6 +11014,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a5d1482ee9c494e"
+  },
+  "collatz_l9_floor": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "ac39336fbfe0201c"
+  },
+  "collatz_l9_reached": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "5064fba6c7be1048"
   },
   "collatz_nosc_vessel": {
     "changes": 0,
@@ -11543,6 +11675,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "27d647c0a2eef8b1"
   },
+  "connes_embedding_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:16:55+00:00",
+    "last_changed": "2026-08-23T13:16:55+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "connes_spectral_triple": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -11711,11 +11849,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "48112b5a92f4851c"
   },
+  "continuum_hypothesis_false_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:48:42+00:00",
+    "last_changed": "2026-08-23T14:48:42+00:00",
+    "tuple_hash": "4c65d182dd646d4f"
+  },
   "continuum_hypothesis_true": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "48112b5a92f4851c"
+  },
+  "continuum_hypothesis_true_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:47:57+00:00",
+    "last_changed": "2026-08-23T14:47:57+00:00",
+    "tuple_hash": "59f7874871294fec"
+  },
+  "continuum_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:16:12+00:00",
+    "last_changed": "2026-08-23T13:16:12+00:00",
+    "tuple_hash": "c923fc798949b7fc"
   },
   "contradiction": {
     "changes": 0,
@@ -11830,6 +11986,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bf438de3a2f388e9"
+  },
+  "copying_a_state_that_does_not_commute": {
+    "changes": 0,
+    "first_seen": "2026-08-23T12:39:55+00:00",
+    "last_changed": "2026-08-23T12:39:55+00:00",
+    "tuple_hash": "65b2bb1382c41777"
   },
   "coral_ramaria": {
     "changes": 0,
@@ -12016,6 +12178,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "061e94a1ef1cfefd"
+  },
+  "cosmological_constant_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:50:09+00:00",
+    "last_changed": "2026-08-23T14:50:09+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "cosmology_base_test": {
     "changes": 0,
@@ -12226,6 +12394,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ac75606376a43caa"
+  },
+  "crouzeix_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:29:22+00:00",
+    "last_changed": "2026-08-23T13:29:22+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "crown_of_adventure": {
     "changes": 0,
@@ -13547,6 +13721,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "339754c6e320f453"
   },
+  "differentialadhesionhypothesis_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:17:08+00:00",
+    "last_changed": "2026-08-23T14:17:08+00:00",
+    "tuple_hash": "72bf54a44435e978"
+  },
   "differentialpulsevoltammetry": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14531,6 +14711,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bb8b82b3b4319df2"
   },
+  "eden_conjecture_unproven_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:28:37+00:00",
+    "last_changed": "2026-08-23T13:28:37+00:00",
+    "tuple_hash": "e4037b7d914d4f78"
+  },
   "eden_growth_model": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15425,6 +15611,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b674bcec10c07897"
   },
+  "erdos_conjecture_ap_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:36:13+00:00",
+    "last_changed": "2026-08-23T14:36:13+00:00",
+    "tuple_hash": "6bdf1e9069d8aff7"
+  },
   "erdos_distinct_distances": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15436,6 +15628,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e1459b12474c1dea"
+  },
+  "erdos_distinct_subset_sum_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:41:50+00:00",
+    "last_changed": "2026-08-23T14:41:50+00:00",
+    "tuple_hash": "e78418549635fec9"
   },
   "erdos_distinct_subset_sums": {
     "changes": 0,
@@ -15527,6 +15725,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7b2005b3f1b34c2f"
   },
+  "erdos_problem_1_distinct_subset_sums_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:50:49+00:00",
+    "last_changed": "2026-08-23T14:50:49+00:00",
+    "tuple_hash": "bbdedc6f4567c8b9"
+  },
   "erdos_problem_44": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15538,6 +15742,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f951868254e1639f"
+  },
+  "erdos_problem_44_construction_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:45:44+00:00",
+    "last_changed": "2026-08-23T14:45:44+00:00",
+    "tuple_hash": "94e6da06ea75be66"
   },
   "erdos_problem_44_constructive_proof": {
     "changes": 0,
@@ -15551,11 +15761,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "38174df7ffad6bf2"
   },
+  "erdos_problem_44_critique_resolution_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:45:01+00:00",
+    "last_changed": "2026-08-23T14:45:01+00:00",
+    "tuple_hash": "5984b5e2c8d93fa6"
+  },
   "erdos_problem_44_sidon_extension": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d8e253632f7958fa"
+  },
+  "erdos_problem_44_sidon_extension_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:44:17+00:00",
+    "last_changed": "2026-08-23T14:44:17+00:00",
+    "tuple_hash": "51ef90bb4da3f154"
+  },
+  "erdos_problem_44_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:47:10+00:00",
+    "last_changed": "2026-08-23T14:47:10+00:00",
+    "tuple_hash": "5984b5e2c8d93fa6"
   },
   "erdos_ramsey_hypergraph": {
     "changes": 0,
@@ -15605,17 +15833,35 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1f6255c9bcda76e4"
   },
+  "erdos_straus_conjecture_v2_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:01:53+00:00",
+    "last_changed": "2026-08-23T14:01:53+00:00",
+    "tuple_hash": "59f7874871294fec"
+  },
   "erdos_straus_proved": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cf44625ca0c0a450"
   },
+  "erdos_straus_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:01:02+00:00",
+    "last_changed": "2026-08-23T14:01:02+00:00",
+    "tuple_hash": "13100a7a6543d2d0"
+  },
   "erdos_strauss_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b6379a2a0da8b2d7"
+  },
+  "erdos_strauss_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:13:38+00:00",
+    "last_changed": "2026-08-23T14:13:38+00:00",
+    "tuple_hash": "6b4b7f7039c659f0"
   },
   "erdos_subset_sums": {
     "changes": 0,
@@ -15634,6 +15880,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a5cf5efad7b995e9"
+  },
+  "erdos_sumfree_problem_949_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:51:30+00:00",
+    "last_changed": "2026-08-23T14:51:30+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "erdos_szekeres_107": {
     "changes": 0,
@@ -15689,6 +15941,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cd6e6e563d46b395"
   },
+  "erdos_unit_distance_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:35:27+00:00",
+    "last_changed": "2026-08-23T14:35:27+00:00",
+    "tuple_hash": "11d55c6d00c9f0ea"
+  },
   "erdos_vdw_number": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15700,6 +15958,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
+  },
+  "erd\u0151s_distinct_subset_sum_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:41:00+00:00",
+    "last_changed": "2026-08-23T14:41:00+00:00",
+    "tuple_hash": "b75d3677294728ab"
   },
   "erd\u0151s_distinct_subset_sums": {
     "changes": 0,
@@ -15718,6 +15982,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2eb716ba348fc3ad"
+  },
+  "ergodic_mixing_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:40:42+00:00",
+    "last_changed": "2026-08-23T13:40:42+00:00",
+    "tuple_hash": "c48cf335b6f5b27f"
   },
   "ergosterol": {
     "changes": 0,
@@ -15905,6 +16175,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7981b3764d6b11c0"
   },
+  "euler_brick_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:07:31+00:00",
+    "last_changed": "2026-08-23T14:07:31+00:00",
+    "tuple_hash": "47b5e8fde1a7675e"
+  },
   "euler_bricks_draft": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15941,6 +16217,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e4656139d9cf512b"
   },
+  "euler_opn_form_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:00:17+00:00",
+    "last_changed": "2026-08-23T14:00:17+00:00",
+    "tuple_hash": "e57ebcdede9bdf32"
+  },
   "euler_product_zeta": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15952,6 +16234,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "97c3bfd7ef1bb6a1"
+  },
+  "euler_totient_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:31:42+00:00",
+    "last_changed": "2026-08-23T14:31:42+00:00",
+    "tuple_hash": "fa73e10617047da0"
   },
   "euler_touchard_ai_draft": {
     "changes": 0,
@@ -17357,6 +17645,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1765f1a3efaa8ba7"
   },
+  "five_problems_meet_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:15:02+00:00",
+    "last_changed": "2026-08-23T13:15:02+00:00",
+    "tuple_hash": "fdcc514731c74402"
+  },
   "fivefold_alchemy": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17602,6 +17896,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ec74e44f115ed3fb"
+  },
+  "fontaine_mazur_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:30:07+00:00",
+    "last_changed": "2026-08-23T13:30:07+00:00",
+    "tuple_hash": "447f55bcd758c64c"
   },
   "for": {
     "changes": 0,
@@ -18545,6 +18845,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d344c17c38514705"
   },
+  "gan_gross_prasad_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:30:51+00:00",
+    "last_changed": "2026-08-23T13:30:51+00:00",
+    "tuple_hash": "dfda80f161e755f3"
+  },
   "ganoderma_lucidum": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18731,6 +19037,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d1921d73f219ff72"
   },
+  "gaussian_moat_problem_star_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:49:27+00:00",
+    "last_changed": "2026-08-23T14:49:27+00:00",
+    "tuple_hash": "f8f9ebc94ed4586c"
+  },
   "gaussian_moat_ring_atactic_mix_1": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18766,6 +19078,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "151760f2fc132ab8"
+  },
+  "gaussian_moat_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:24:43+00:00",
+    "last_changed": "2026-08-23T13:24:43+00:00",
+    "tuple_hash": "f5674d9ba6622338"
   },
   "gaussian_monomer_1": {
     "changes": 0,
@@ -18922,6 +19240,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d952063bd3809247"
+  },
+  "generalized_continuum_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:15:26+00:00",
+    "last_changed": "2026-08-23T14:15:26+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "generalized_pipeline_system": {
     "changes": 0,
@@ -19103,6 +19427,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9d7b5bea477866a5"
   },
+  "gettier_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:21:41+00:00",
+    "last_changed": "2026-08-23T14:21:41+00:00",
+    "tuple_hash": "120ad1090f9d4f00"
+  },
   "gevurah": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -19156,6 +19486,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3c6b20979b8d035d"
+  },
+  "gilbert_pollak_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:21:31+00:00",
+    "last_changed": "2026-08-23T13:21:31+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "gilbreaths_conjecture": {
     "changes": 0,
@@ -19606,6 +19942,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee517a9c15f519ba"
+  },
+  "goldbachs_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:56:11+00:00",
+    "last_changed": "2026-08-23T13:56:11+00:00",
+    "tuple_hash": "079b7a3f00450a48"
   },
   "golden_chain_of_homer": {
     "changes": 0,
@@ -20135,11 +20477,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5b4bcdc841b6b342"
   },
+  "greenberg_iwasawa_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:31:44+00:00",
+    "last_changed": "2026-08-23T13:31:44+00:00",
+    "tuple_hash": "7a16d3408a6c0725"
+  },
   "greenberg_padic_lfunction_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5b4bcdc841b6b342"
+  },
+  "greenberg_padic_lfunction_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:32:30+00:00",
+    "last_changed": "2026-08-23T13:32:30+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "greens_paradox": {
     "changes": 0,
@@ -20729,6 +21083,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd3e318577e17ed"
   },
+  "hadwiger_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:45:41+00:00",
+    "last_changed": "2026-08-23T13:45:41+00:00",
+    "tuple_hash": "dfda80f161e755f3"
+  },
   "hafnium": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -20824,6 +21184,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9bfaa1371a693faf"
+  },
+  "halting_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:16:17+00:00",
+    "last_changed": "2026-08-23T14:16:17+00:00",
+    "tuple_hash": "a0388231d5617b5d"
   },
   "hal\u00e1sz_inequality": {
     "changes": 0,
@@ -20980,6 +21346,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "80327aba5648af38"
+  },
+  "hawkings_chronology_protection_(conjecture),_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:22:50+00:00",
+    "last_changed": "2026-08-23T14:22:50+00:00",
+    "tuple_hash": "8a677430832721e6"
   },
   "hc_ent_crystal": {
     "changes": 0,
@@ -21166,6 +21538,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d1d1fce0703de311"
+  },
+  "hecke_landau_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:05:16+00:00",
+    "last_changed": "2026-08-23T14:05:16+00:00",
+    "tuple_hash": "0e69f85a26de6259"
   },
   "hedge_witchcraft": {
     "changes": 0,
@@ -21929,11 +22307,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c57248a4cb1c21f9"
   },
+  "hilbert_sixteenth_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:17:32+00:00",
+    "last_changed": "2026-08-23T13:17:32+00:00",
+    "tuple_hash": "cc1cf9a3d0fd66a5"
+  },
   "hilbert_smith_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3bda982d8ef0d134"
+  },
+  "hilbert_smith_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:25:24+00:00",
+    "last_changed": "2026-08-23T13:25:24+00:00",
+    "tuple_hash": "e6b223eba4215b14"
   },
   "hilbert_space_embedding": {
     "changes": 0,
@@ -21958,6 +22348,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fe9cad8f06fd8333"
+  },
+  "hilbert_third_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:20:52+00:00",
+    "last_changed": "2026-08-23T13:20:52+00:00",
+    "tuple_hash": "b1893e07a49300b2"
   },
   "hilberts_hotel": {
     "changes": 0,
@@ -22049,11 +22445,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dd64711d72eda569"
   },
+  "hodge_conjecture_bridge_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:46:27+00:00",
+    "last_changed": "2026-08-23T14:46:27+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "hodge_conjecture_integral_motives_witt_ring_fraction_field": {
     "changes": 0,
     "first_seen": "2026-08-18T11:28:47+00:00",
     "last_changed": "2026-08-18T11:28:47+00:00",
     "tuple_hash": "05c40ff6ba6b2e76"
+  },
+  "hodge_conjecture_integral_motives_witt_ring_fraction_field_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:52:17+00:00",
+    "last_changed": "2026-08-23T14:52:17+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "hodge_conjecture_navigator": {
     "changes": 0,
@@ -22066,6 +22474,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "800786c3fbad5d9f"
+  },
+  "hodge_conjecture_system_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:03:37+00:00",
+    "last_changed": "2026-08-23T14:03:37+00:00",
+    "tuple_hash": "b976adc8ee38acb7"
   },
   "hodge_density_monomer": {
     "changes": 0,
@@ -22414,6 +22828,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a1ef5a2e6018de3e"
+  },
+  "hopf_conjecture_positive_curvature_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:42:58+00:00",
+    "last_changed": "2026-08-23T13:42:58+00:00",
+    "tuple_hash": "32975ffb6e32bdc1"
   },
   "hopf_convex_analytic": {
     "changes": 0,
@@ -22816,6 +23236,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c08340195222ab41"
+  },
+  "humes_problem_of_induction_(paradoxical),_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:27:25+00:00",
+    "last_changed": "2026-08-23T14:27:25+00:00",
+    "tuple_hash": "a2e49f5cadda6d86"
+  },
+  "humes_problem_of_induction_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:29:22+00:00",
+    "last_changed": "2026-08-23T14:29:22+00:00",
+    "tuple_hash": "1d2c6b7cb5a98015"
   },
   "humpback_vocalization": {
     "changes": 0,
@@ -23410,6 +23842,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0f2f50a08b4a2b2d"
+  },
+  "imasm_biomolecular_compilation": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "8a116697717ad279"
   },
   "imasm_cycle_word": {
     "changes": 0,
@@ -24083,6 +24521,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "79002e29fba7b273"
   },
+  "inverse_galois_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:36:05+00:00",
+    "last_changed": "2026-08-23T13:36:05+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "inverse_group": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24581,6 +25025,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "93d04924f9a43bcf"
   },
+  "jacobian_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:37:32+00:00",
+    "last_changed": "2026-08-23T13:37:32+00:00",
+    "tuple_hash": "e57ebcdede9bdf32"
+  },
   "jacobsthal_function": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24977,6 +25427,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "277757456fee9dc6"
   },
+  "k_squared_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:33:52+00:00",
+    "last_changed": "2026-08-23T14:33:52+00:00",
+    "tuple_hash": "c923fc798949b7fc"
+  },
   "k_trap_frobenius": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25025,6 +25481,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "05cddb1053d2b83b"
   },
+  "kakeya_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:43:54+00:00",
+    "last_changed": "2026-08-23T13:43:54+00:00",
+    "tuple_hash": "88a93cd82bea1280"
+  },
   "kalachakra_tantra": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25060,6 +25522,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a503f8c28c18c5e9"
+  },
+  "kaplansky_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:18:54+00:00",
+    "last_changed": "2026-08-23T13:18:54+00:00",
+    "tuple_hash": "0e69f85a26de6259"
   },
   "kappa": {
     "changes": 0,
@@ -25343,6 +25811,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ce8419a76c83cce"
   },
+  "kissing_number_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:20:10+00:00",
+    "last_changed": "2026-08-23T13:20:10+00:00",
+    "tuple_hash": "40c33cce628e176c"
+  },
   "kissing_unknown_dim": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25534,6 +26008,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6e8f7a099333a3fc"
+  },
+  "kummer_vandiver_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:33:17+00:00",
+    "last_changed": "2026-08-23T13:33:17+00:00",
+    "tuple_hash": "447f55bcd758c64c"
   },
   "kusner_conjecture": {
     "changes": 0,
@@ -25955,6 +26435,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0db207e2efaafca5"
   },
+  "lang_trotter_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:33:56+00:00",
+    "last_changed": "2026-08-23T13:33:56+00:00",
+    "tuple_hash": "779124ab3d9bea84"
+  },
   "langlands_correspondence": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -26261,6 +26747,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee517a9c15f519ba"
   },
+  "legendre_fresh_imscription": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "87ba64e4bd9216e6"
+  },
   "legendre_nsq_join": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -26272,6 +26764,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eea9fdc760151627"
+  },
+  "legendre_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:24:04+00:00",
+    "last_changed": "2026-08-23T13:24:04+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
   },
   "legendres_conjecture": {
     "changes": 0,
@@ -26374,6 +26872,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "087c4cc81f14292b"
+  },
+  "leopoldt_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:34:42+00:00",
+    "last_changed": "2026-08-23T13:34:42+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "leptin_signal": {
     "changes": 0,
@@ -28343,6 +28847,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "50150df1a8758337"
   },
+  "mathematical_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:50:27+00:00",
+    "last_changed": "2026-08-23T13:50:27+00:00",
+    "tuple_hash": "0e69f85a26de6259"
+  },
   "mathematics": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -28571,6 +29081,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c9be08f018ddce20"
   },
+  "measurement_problem_mismatch_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:09:32+00:00",
+    "last_changed": "2026-08-23T14:09:32+00:00",
+    "tuple_hash": "779124ab3d9bea84"
+  },
+  "measurement_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:57:00+00:00",
+    "last_changed": "2026-08-23T13:57:00+00:00",
+    "tuple_hash": "97e9238c2147b1b9"
+  },
   "mechanotransduction": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -28714,6 +29236,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1765f1a3efaa8ba7"
+  },
+  "meet_four_problems_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:14:26+00:00",
+    "last_changed": "2026-08-23T13:14:26+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
   },
   "meet_he_bi": {
     "changes": 0,
@@ -29549,11 +30077,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "41078180693b7d99"
   },
+  "modular_almost_purity_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:46:24+00:00",
+    "last_changed": "2026-08-23T13:46:24+00:00",
+    "tuple_hash": "fdcc514731c74402"
+  },
   "modular_invariance": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ba0d02821558e990"
+  },
+  "modular_tilting_correspondence_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:47:09+00:00",
+    "last_changed": "2026-08-23T13:47:09+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
   },
   "modularity_theorem": {
     "changes": 0,
@@ -29782,6 +30322,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3b9f2d03abb05da5"
+  },
+  "monty_hall_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:18:05+00:00",
+    "last_changed": "2026-08-23T14:18:05+00:00",
+    "tuple_hash": "2cb1cbe065036ee5"
   },
   "moonshine_module": {
     "changes": 0,
@@ -30479,6 +31025,12 @@
     "last_changed": "2026-08-04T05:46:42+00:00",
     "tuple_hash": "48ff9f3b0a7948a7"
   },
+  "navier_stokes_regularity_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:14:34+00:00",
+    "last_changed": "2026-08-23T14:14:34+00:00",
+    "tuple_hash": "fa72d74c56938e13"
+  },
   "navier_stokes_smooth": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -30490,6 +31042,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "097b9ca42733805e"
+  },
+  "navier_stokes_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T10:06:37+00:00",
+    "last_changed": "2026-08-23T10:06:37+00:00",
+    "tuple_hash": "61d4b8717c4e71ac"
   },
   "navier_stokes_turbulent": {
     "changes": 0,
@@ -30784,6 +31342,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "204610393b933500"
+  },
+  "newcombs_problem_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:28:27+00:00",
+    "last_changed": "2026-08-23T14:28:27+00:00",
+    "tuple_hash": "e57ebcdede9bdf32"
+  },
+  "newcombs_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:18:55+00:00",
+    "last_changed": "2026-08-23T14:18:55+00:00",
+    "tuple_hash": "c923fc798949b7fc"
   },
   "newestsenseorganword": {
     "changes": 0,
@@ -31816,6 +32386,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd3e318577e17ed"
+  },
+  "odd_perfect_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:04:27+00:00",
+    "last_changed": "2026-08-23T14:04:27+00:00",
+    "tuple_hash": "99a1cddbfa5f4282"
   },
   "odin": {
     "changes": 0,
@@ -32975,6 +33551,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "461fda73bb89ab1e"
   },
+  "p_versus_np_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T10:09:16+00:00",
+    "last_changed": "2026-08-23T10:09:16+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "p_vs_np": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -33725,6 +34307,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc1b8dbc4c14a8f0"
   },
+  "parity_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:33:08+00:00",
+    "last_changed": "2026-08-23T14:33:08+00:00",
+    "tuple_hash": "b076444346f95a3a"
+  },
   "parity_twist_suppression_bound": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -33778,6 +34366,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "524e24ae3e49ea70"
+  },
+  "partition_difference_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:38:14+00:00",
+    "last_changed": "2026-08-23T14:38:14+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
   },
   "partition_split_a": {
     "changes": 0,
@@ -34444,6 +35038,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a14ce6b6d297d203"
+  },
+  "perfect_cuboid_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:08:54+00:00",
+    "last_changed": "2026-08-23T14:08:54+00:00",
+    "tuple_hash": "9c28f0759395081a"
   },
   "perfect_cuboids": {
     "changes": 0,
@@ -35303,6 +35903,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f57175badf0feaab"
   },
+  "platos_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:20:37+00:00",
+    "last_changed": "2026-08-23T14:20:37+00:00",
+    "tuple_hash": "c923fc798949b7fc"
+  },
   "platycodon": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35417,6 +36023,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "70cbcb6f514d641f"
   },
+  "poincare_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:13:20+00:00",
+    "last_changed": "2026-08-23T13:13:20+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "polar_solvent_environment": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35453,11 +36065,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "16b6a07419cd51c4"
   },
+  "polignac_conjecture_v1_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:12:05+00:00",
+    "last_changed": "2026-08-23T14:12:05+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "polignac_proof_a_topological": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "16b6a07419cd51c4"
+  },
+  "polignac_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:12:49+00:00",
+    "last_changed": "2026-08-23T14:12:49+00:00",
+    "tuple_hash": "b33455374bd887e4"
   },
   "polonium": {
     "changes": 0,
@@ -35668,6 +36292,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6a4f9521b2a2d721"
+  },
+  "power_of_two_cycle_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:37:35+00:00",
+    "last_changed": "2026-08-23T14:37:35+00:00",
+    "tuple_hash": "e6420304327948e9"
   },
   "praseodymium": {
     "changes": 0,
@@ -36131,6 +36761,12 @@
     "last_changed": "2026-08-18T15:54:22+00:00",
     "tuple_hash": "82e9502c374e1e4f"
   },
+  "problem1135_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:52:56+00:00",
+    "last_changed": "2026-08-23T14:52:56+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
+  },
   "problem_1": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36143,11 +36779,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
   },
+  "problem_107_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:39:29+00:00",
+    "last_changed": "2026-08-23T14:39:29+00:00",
+    "tuple_hash": "02dbd070e6942b76"
+  },
   "problem_1135": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
+  },
+  "problem_1135_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:40:10+00:00",
+    "last_changed": "2026-08-23T14:40:10+00:00",
+    "tuple_hash": "fdcc514731c74402"
+  },
+  "problem_1_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:38:50+00:00",
+    "last_changed": "2026-08-23T14:38:50+00:00",
+    "tuple_hash": "76b453c2415a94a1"
   },
   "processions_of_fate": {
     "changes": 0,
@@ -36364,6 +37018,66 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6357f23187ec8990"
+  },
+  "prot_A0A1B0GTW7_CIROP": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A0JP26": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A0PK11": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A1A4S6": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A1A519": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A1L190": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "580fc256652b8a7a"
+  },
+  "prot_A1L3X0": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A2A2Y4": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A2RU14": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
+  },
+  "prot_A2RUC4": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "b8f819fe91043504"
   },
   "protactinium": {
     "changes": 0,
@@ -37078,6 +37792,12 @@
     "first_seen": "2026-08-18T22:11:40+00:00",
     "last_changed": "2026-08-18T22:11:40+00:00",
     "tuple_hash": "af5e03874333d8c8"
+  },
+  "quantum_kummer\u2013vandiver\u2013iwasawa_main_conjectures_over_\ud835\udd3d\u2081_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:53:47+00:00",
+    "last_changed": "2026-08-23T14:53:47+00:00",
+    "tuple_hash": "b976adc8ee38acb7"
   },
   "quantum_logic": {
     "changes": 0,
@@ -38027,6 +38747,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "98153c89eff66fdc"
   },
+  "representative_sequence_corpus": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "e5d4261fbbdddf22"
+  },
   "reptilian_oral": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38176,6 +38902,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "82d600d11f18b24e"
+  },
+  "resolved_riemann_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:58:40+00:00",
+    "last_changed": "2026-08-23T13:58:40+00:00",
+    "tuple_hash": "f137155ff812aac8"
   },
   "resonant_criticality_device": {
     "changes": 0,
@@ -38483,6 +39215,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b1d2e0bcb7113b87"
   },
+  "riemann_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T10:09:56+00:00",
+    "last_changed": "2026-08-23T10:09:56+00:00",
+    "tuple_hash": "f137155ff812aac8"
+  },
   "riemann_xi_navigator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38669,6 +39407,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fbb22b3946091a16"
   },
+  "rna_XM_022081632": {
+    "changes": 0,
+    "first_seen": "2026-08-23T23:55:02+00:00",
+    "last_changed": "2026-08-23T23:55:02+00:00",
+    "tuple_hash": "580fc256652b8a7a"
+  },
   "rna_interference": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38842,6 +39586,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cfc7e56d3e83b8a7"
+  },
+  "rotas_basis_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:27:19+00:00",
+    "last_changed": "2026-08-23T13:27:19+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
   },
   "rotate_dyad": {
     "changes": 0,
@@ -39412,6 +40162,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28046502f52ed21e"
+  },
+  "schinzel_hypothesis_h_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:32:30+00:00",
+    "last_changed": "2026-08-23T14:32:30+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
   },
   "schinzels_hypothesis_h": {
     "changes": 0,
@@ -40433,6 +41189,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4806896ff29ad95b"
   },
+  "shors_btc_2": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "a82a3646c46cbb33"
+  },
+  "shors_btc_2__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "70050f3ba5c6812a"
+  },
   "shors_ecdlp_dlog_descent": {
     "changes": 0,
     "first_seen": "2026-08-21T06:26:38+00:00",
@@ -40481,6 +41249,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f8f519b3a78c0967"
   },
+  "sic19_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:54:38+00:00",
+    "last_changed": "2026-08-23T13:54:38+00:00",
+    "tuple_hash": "02dbd070e6942b76"
+  },
   "sic_Galois_tensor": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40499,17 +41273,35 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2bead4ad498df75c"
   },
+  "sic_conjecture_open_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:52:09+00:00",
+    "last_changed": "2026-08-23T13:52:09+00:00",
+    "tuple_hash": "4a44d93d0aede2be"
+  },
   "sic_conjecture_open_v2": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd4d65343a1df06"
   },
+  "sic_conjecture_open_v2_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:52:58+00:00",
+    "last_changed": "2026-08-23T13:52:58+00:00",
+    "tuple_hash": "b0b4ba69ff59d4ab"
+  },
   "sic_conjecture_unproven": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6be3ac75899417c4"
+  },
+  "sic_conjecture_unproven_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:53:52+00:00",
+    "last_changed": "2026-08-23T13:53:52+00:00",
+    "tuple_hash": "19395206a60053f9"
   },
   "sic_d12_existence_proof": {
     "changes": 0,
@@ -40577,6 +41369,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4c93ff69e4609e1e"
   },
+  "sic_geometric_lift_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:55:21+00:00",
+    "last_changed": "2026-08-23T13:55:21+00:00",
+    "tuple_hash": "02dbd070e6942b76"
+  },
   "sic_hilbert12_connection": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40643,6 +41441,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a608532e7a9fcd2"
   },
+  "sic_povm_conjecture_open_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:51:17+00:00",
+    "last_changed": "2026-08-23T13:51:17+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
   "sic_povm_d": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -40684,6 +41488,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "02d67ee746950a29"
+  },
+  "sic_povm_d2048_zauner_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:30:13+00:00",
+    "last_changed": "2026-08-23T14:30:13+00:00",
+    "tuple_hash": "a023f2ae8f1b839c"
   },
   "sic_povm_draft": {
     "changes": 0,
@@ -40955,11 +41765,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7d3b288790d1f890"
   },
+  "simon_problem_classical_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:26:05+00:00",
+    "last_changed": "2026-08-23T13:26:05+00:00",
+    "tuple_hash": "097935638dadf203"
+  },
   "simon_problem_quantum": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "033ddd7cec07944f"
+  },
+  "simon_problem_quantum_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:26:42+00:00",
+    "last_changed": "2026-08-23T13:26:42+00:00",
+    "tuple_hash": "472c06db233b646b"
   },
   "simple_network_topology": {
     "changes": 0,
@@ -41717,6 +42539,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "437fae9d6486c8a8"
   },
+  "sphere_covering_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:42:07+00:00",
+    "last_changed": "2026-08-23T13:42:07+00:00",
+    "tuple_hash": "a022d17ba35bebe9"
+  },
   "sphere_packing_density_open": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -42173,6 +43001,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6deb02207bf9bb92"
   },
+  "stark_conjecture_partial_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:48:10+00:00",
+    "last_changed": "2026-08-23T13:48:10+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
+  },
   "stark_conjectures": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -42184,6 +43018,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b29eca909e5124a8"
+  },
+  "stark_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:35:20+00:00",
+    "last_changed": "2026-08-23T13:35:20+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "stark_unit": {
     "changes": 0,
@@ -42292,6 +43132,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7a7fcbd22080d438"
+  },
+  "steiner_tree_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:22:06+00:00",
+    "last_changed": "2026-08-23T13:22:06+00:00",
+    "tuple_hash": "88303cbaffd4bf39"
   },
   "stellar_feedback_core": {
     "changes": 0,
@@ -42971,11 +43817,23 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4d22c11a0342b7ca"
   },
+  "sumner_conjecture_conditions_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:22:43+00:00",
+    "last_changed": "2026-08-23T13:22:43+00:00",
+    "tuple_hash": "c923fc798949b7fc"
+  },
   "sumner_conjecture_statement": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee0cd4b8edd70292"
+  },
+  "sumner_conjecture_statement_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:23:24+00:00",
+    "last_changed": "2026-08-23T13:23:24+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "sun": {
     "changes": 0,
@@ -42994,6 +43852,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c8813280510e406f"
+  },
+  "sunflower_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:36:55+00:00",
+    "last_changed": "2026-08-23T14:36:55+00:00",
+    "tuple_hash": "ef58bc52d70ccbae"
   },
   "super_bridge_monomer_beta": {
     "changes": 0,
@@ -43570,6 +44434,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "74095c07c8c82fb9"
+  },
+  "szpiro_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:02:39+00:00",
+    "last_changed": "2026-08-23T14:02:39+00:00",
+    "tuple_hash": "af5e03874333d8c8"
   },
   "s\u00e1rk\u00f6zy_szemer\u00e9di_theorem": {
     "changes": 0,
@@ -44765,6 +45635,12 @@
     "last_changed": "2026-08-18T22:18:36+00:00",
     "tuple_hash": "e5ccd411fdf8fbcf"
   },
+  "the_hodge_conjecture_for_integral_motives_over_the_field_of_fractions_of_the_witt_ring_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:54:34+00:00",
+    "last_changed": "2026-08-23T14:54:34+00:00",
+    "tuple_hash": "05c40ff6ba6b2e76"
+  },
   "the_houses_frame": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -44974,6 +45850,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3ac3adda5294008f"
+  },
+  "the_uncaused_cause": {
+    "changes": 0,
+    "first_seen": "2026-08-24T00:13:12+00:00",
+    "last_changed": "2026-08-24T00:13:12+00:00",
+    "tuple_hash": "b33455374bd887e4"
+  },
+  "the_unmoved_mover": {
+    "changes": 0,
+    "first_seen": "2026-08-24T00:12:09+00:00",
+    "last_changed": "2026-08-24T00:12:09+00:00",
+    "tuple_hash": "4a44d93d0aede2be"
+  },
+  "the_unthought_thought": {
+    "changes": 0,
+    "first_seen": "2026-08-24T00:15:04+00:00",
+    "last_changed": "2026-08-24T00:15:04+00:00",
+    "tuple_hash": "e57ebcdede9bdf32"
   },
   "the_vampire_king___marcelines_wise,_lion_headed_past": {
     "changes": 0,
@@ -45299,6 +46193,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "695dd4ef3f679e05"
   },
+  "three_body_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:39:55+00:00",
+    "last_changed": "2026-08-23T13:39:55+00:00",
+    "tuple_hash": "2a7cde3f5847ad5d"
+  },
   "three_books_of_occult_philosophy": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -45310,6 +46210,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "be8009a75ba6fc80"
+  },
+  "three_prisoner_problem_(variant_of_monty_hall),_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:23:55+00:00",
+    "last_changed": "2026-08-23T14:23:55+00:00",
+    "tuple_hash": "5db7ee05d3016c29"
   },
   "three_sat": {
     "changes": 0,
@@ -46421,6 +47327,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5d0a873129a7b3fb"
   },
+  "travelling_salesman_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:15:40+00:00",
+    "last_changed": "2026-08-23T13:15:40+00:00",
+    "tuple_hash": "a4299162e071e8a9"
+  },
   "tree_trunks___sweet,_elderly_elephant_who_loves_baking_and": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46576,6 +47488,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "15ef2241139b7cc2"
+  },
+  "trolley_problem_(not_a_paradox,_but_ethical_puzzle),_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:25:04+00:00",
+    "last_changed": "2026-08-23T14:25:04+00:00",
+    "tuple_hash": "ea7e0c7d95d89d92"
   },
   "trolls_paradox": {
     "changes": 0,
@@ -46817,6 +47735,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "86e782304f5110c3"
   },
+  "two_body_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:49:40+00:00",
+    "last_changed": "2026-08-23T13:49:40+00:00",
+    "tuple_hash": "6c541fa41c89998d"
+  },
   "two_envelope_(already),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46829,17 +47753,35 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "848e6ea5ebb75213"
   },
+  "two_envelopes_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:19:47+00:00",
+    "last_changed": "2026-08-23T14:19:47+00:00",
+    "tuple_hash": "9d9a6121db3c0da8"
+  },
   "two_generals_problem_(not_a_paradox,_but_named),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e53b6dbe84bfe5a7"
   },
+  "two_generals_problem_(not_a_paradox,_but_named),_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:26:12+00:00",
+    "last_changed": "2026-08-23T14:26:12+00:00",
+    "tuple_hash": "2f53635039286aeb"
+  },
   "two_generals_problem_not_a_paradox_but_named": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a14ce6b6d297d203"
+  },
+  "two_generals_problem_not_a_paradox_but_named_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:30:56+00:00",
+    "last_changed": "2026-08-23T14:30:56+00:00",
+    "tuple_hash": "2f53635039286aeb"
   },
   "two_photonmicroscopy": {
     "changes": 0,
@@ -46936,6 +47878,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3471ea8bddfdf160"
+  },
+  "uhecr_horizon_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:08:11+00:00",
+    "last_changed": "2026-08-23T14:08:11+00:00",
+    "tuple_hash": "b976adc8ee38acb7"
   },
   "uhecr_source_distant": {
     "changes": 0,
@@ -48761,6 +49709,12 @@
     "last_changed": "2026-08-06T16:23:01+00:00",
     "tuple_hash": "d483aed621837e62"
   },
+  "winding_principle": {
+    "changes": 0,
+    "first_seen": "2026-08-23T09:26:32+00:00",
+    "last_changed": "2026-08-23T09:26:32+00:00",
+    "tuple_hash": "87217b30e7dc0bc3"
+  },
   "wing_delivery_drone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49157,6 +50111,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9b2450860c289d1a"
   },
+  "yang_mills_mass_gap_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:59:30+00:00",
+    "last_changed": "2026-08-23T13:59:30+00:00",
+    "tuple_hash": "01d023494557ede1"
+  },
   "yang_mills_navigator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49180,6 +50140,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8894d6ed9acdab00"
+  },
+  "yang\u2013mills_existence_and_mass_gap_theorem_": {
+    "changes": 0,
+    "first_seen": "2026-08-23T10:10:36+00:00",
+    "last_changed": "2026-08-23T10:10:36+00:00",
+    "tuple_hash": "fbe25240ec0698cc"
   },
   "yanomami_reahu": {
     "changes": 0,
@@ -49457,6 +50423,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "940871733e53f192"
   },
+  "zariski_lipman_conjecture_corrected_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:06:50+00:00",
+    "last_changed": "2026-08-23T14:06:50+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
+  "zariski_lipman_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:06:02+00:00",
+    "last_changed": "2026-08-23T14:06:02+00:00",
+    "tuple_hash": "e5ccd411fdf8fbcf"
+  },
   "zauner_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49480,6 +50458,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c0f927f90907d947"
+  },
+  "zauner_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T14:42:43+00:00",
+    "last_changed": "2026-08-23T14:42:43+00:00",
+    "tuple_hash": "dfda80f161e755f3"
   },
   "zayin": {
     "changes": 0,
@@ -49636,6 +50620,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5ee6e251ea68e335"
+  },
+  "zilber_pink_theorem": {
+    "changes": 0,
+    "first_seen": "2026-08-23T13:18:12+00:00",
+    "last_changed": "2026-08-23T13:18:12+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
   },
   "zinc": {
     "changes": 0,

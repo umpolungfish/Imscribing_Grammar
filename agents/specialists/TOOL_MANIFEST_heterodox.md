@@ -15,7 +15,7 @@ never assert arithmetic from memory.
 ## Cross-family, Grammar-first tools
 
 - **MoDoT — ./ask** — `cd`, `--features`, `TOOLS_math.md`, `MODOT_WALKTHROUGH.md`
-- **mOMonadOS — the bare-metal kernel** — `/run_serial_cmds.sh`, `run_serial_cmds.sh`, `self-imscribing`, `self-verification`
+- **mOMonadOS — the bare-metal kernel** — `/run_hosted_cmds.sh`, `run_hosted_cmds.sh`, `self-imscribing`, `self-verification`
 - **m3iosis — braid to tuple** — `m3`, `m3 info`, `braid-grammar`, `re-enters`, `m3iosis`, `--summary`, `--fusion`, `--strands`, `--word`
 - **p4rakernel — Lean 4** — `cd`, `proof_scaffold`, `re-investigate`, `p4rakernel`, `p4ramill`
 - **ob3ect — self-verifying objects** — `auto.py`, `/ask`, `ob3ect`, `--ob3ect`

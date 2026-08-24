@@ -8,7 +8,7 @@ Every chain below is a real sequence, not an illustration. Run the kernel with
 several commands per boot — the QEMU start dominates any single short command:
 
 ```
-cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" "<cmd>" …
+cd ~/imsgct/mOMonadOS && ./run_hosted_cmds.sh "<cmd>" "<cmd>" …
 ```
 
 ---
@@ -60,7 +60,7 @@ Lemma shape: *what kind of object is the circuit that realises this gate
 sequence, and does it close?*
 
 ```
-./run_serial_cmds.sh \
+./run_hosted_cmds.sh \
   "qc HTSX 8" \
   "bg tuple <word> <strands>" \
   "cycle <glyph-word>" \
@@ -96,7 +96,7 @@ exact Laurent polynomial by state sum, converts to Jones in t, and substitutes a
 root only at the end.
 
 ```
-./run_serial_cmds.sh "fibqc knot trefoil" "jp <gens…>"
+./run_hosted_cmds.sh "fibqc knot trefoil" "jp <gens…>"
 python3 scripts/jones_at_root.py "<braid>" <strands> <root>
 ```
 

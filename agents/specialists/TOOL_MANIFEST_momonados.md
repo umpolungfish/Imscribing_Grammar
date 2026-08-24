@@ -16,7 +16,7 @@ never assert arithmetic from memory.
 
 - **The menu tables — the documented surface** — `command`, `menu.rs`, `MenuItem`, `help`, `⊙>`
 - **The dispatcher — what the kernel actually runs** — `command`, `repl.rs`, `#[cfg(feature`, `Cargo.toml`
-- **Running the kernel** — `cd`, `run_serial_cmds.sh`, `⊙>`, `/run.sh`, `run.sh`, `make`, `make image`
+- **Running the kernel** — `cd`, `run_hosted_cmds.sh`, `⊙>`, `/run.sh`, `run.sh`, `make`, `make image`
 - **The six builds** — `make`, `make build`, `make release`, `make image`, `make hosted`, `hosted`, `make ordinals`, `/make_proof_vehicle.sh`, `make_proof_vehicle.sh`, `cargo`, `config.toml`, `missing-prelude`, `--features`
 - **Coverage between dispatcher and menu** — `cd`, `check_menu_coverage.py`, `python3`
 

@@ -46,7 +46,7 @@ markers = {
     # The mOMonadOS markers are the places the surface is READ FROM, not a list
     # of commands. A command name here would be exactly the staleness the
     # specialist is built to avoid, and the check would then enforce it.
-    "momonados": ["menu.rs", "repl.rs", "run_serial_cmds.sh", "make image",
+    "momonados": ["menu.rs", "repl.rs", "run_hosted_cmds.sh", "make image",
                   "make ordinals", "check_menu_coverage.py"],
     # The four commands, the four classes, and the word that keeps a report
     # complete. "price" is in the list because a closure without its cost is the

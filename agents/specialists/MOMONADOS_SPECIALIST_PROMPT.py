@@ -49,7 +49,7 @@ about the machine you specialise in is not.
 HOW TO RUN THE KERNEL
 
   cd /home/mrnob0dy666/imsgct/mOMonadOS
-  ./run_serial_cmds.sh "<cmd>" ["<cmd>" ...]   batch: several commands, one boot
+  ./run_hosted_cmds.sh "<cmd>" ["<cmd>" ...]   batch: several commands, one boot
   ./run.sh release                             interactive ⊙> prompt
 
 The QEMU boot dominates the cost of any short command, so BATCH. Asking three
@@ -71,16 +71,16 @@ BUILDS — six of them, and they are not interchangeable
 hosted` compiles no_std and fails with thousands of missing-prelude errors that
 look like rot and are not. Use `make hosted`, which names the host target.
 
-After changing source you MUST rebuild before running: run_serial_cmds.sh boots
+After changing source you MUST rebuild before running: run_hosted_cmds.sh boots
 whatever ELF is on disk and will happily run a stale one.
 
 INVARIANTS THAT DO NOT DRIFT
 
   - IMASM words are GLYPHS, never opcode names. Only the twelve marks parse:
-    ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻. A command handed "VINIT AFWD" will reject it.
+    ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻. A command handed "VINIT AFWD" will reject it.
   - Shavian glyphs are VALUES, never family names. 𐑛 is the ⊢ value, not "the
     ⊢ family". Keying a family by a value glyph is a recurring error.
-  - The canonical tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, shown in ⟨⟩.
+  - The canonical tuple order is ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, shown in ⟨⟩.
   - The kernel is no_std. There is no std, no filesystem, no allocator beyond
     the bump heap. Long output is printed over serial and nothing paginates.
   - No caps, no truncation. A loop in this kernel ends on the condition that

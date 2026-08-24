@@ -5,7 +5,7 @@ Composition guidance for the closure cluster. The exact argument forms come from
 
 ### Classify a pairing before spending anything on it
 
-    ./run_serial_cmds.sh "nesting <map> <x>"
+    ./run_hosted_cmds.sh "nesting <map> <x>"
 
 Reads three things in one shot: the first gap, the ratio q = r₂/r₁, and what the
 nest actually did. Three outcomes:
@@ -20,7 +20,7 @@ Magnitude tells you nothing about arrival.
 
 ### Close something the rule says cannot close
 
-    ./run_serial_cmds.sh "ctc <action> <T|F|N|B>"
+    ./run_hosted_cmds.sh "ctc <action> <T|F|N|B>"
 
 Possession is tested first, then the basin, then imposition. Read the price:
 
@@ -36,7 +36,7 @@ a held one.
 
 ### Survey what already closes without being asked
 
-    ./run_serial_cmds.sh "oneshots"
+    ./run_hosted_cmds.sh "oneshots"
 
 Ten constructions, each calling the kernel's own engine — the period finder calls
 the real order-finding engine, the Belnap one the real negation, the factoring
@@ -45,7 +45,7 @@ the rest of the kernel; a local reimplementation would drift.
 
 ### Measure an operator set, then check it reconstructs
 
-    ./run_serial_cmds.sh "ovm <name>" "ovm cycle <name> <sx> <sy> <sz>"
+    ./run_hosted_cmds.sh "ovm <name>" "ovm cycle <name> <sx> <sy> <sz>"
 
 The report gives eigenvalues, frame, overlap, equiangularity, positivity and
 completeness. The cycle is μ∘δ = id in measurement clothing: measure a state,
@@ -58,7 +58,7 @@ period finding here is one-shot rather than iterative.
 
 ### Read the tower before deriving anything on it
 
-    ./run_serial_cmds.sh "sic" "d12" "d2048"
+    ./run_hosted_cmds.sh "sic" "d12" "d2048"
 
 All three print their own standing and their own subcommand lists. Read that
 first: at d=12 the crystal_forces_d12_sic axiom is retired and the statement is a
@@ -79,7 +79,7 @@ two.
 
 ### Follow one fiducial across dimensions
 
-    ./run_serial_cmds.sh "ovm belnap" "sic" "d12 duallink" "d2048 next"
+    ./run_hosted_cmds.sh "ovm belnap" "sic" "d12 duallink" "d2048 next"
 
 The same object at four scales. `ovm belnap` is B = XZ, the d=2 fiducial, in
 Bloch coordinates. `sic` is the d=12 identity. `d12 duallink` gives the dual-link
@@ -92,7 +92,7 @@ to a separate specialty: they are where the fixed point lives.
 
 ### Cross-check the kernel's Lean claim
 
-    ./run_serial_cmds.sh "d12 lean-status"
+    ./run_hosted_cmds.sh "d12 lean-status"
 
 Then check the library at ~/imsgct/p4rakernel/p4ramill rather than trusting
 either alone. An axiom retired to a theorem is the strongest result available
@@ -100,7 +100,7 @@ here, and `#print axioms <name>` in Lean is what settles whether it happened.
 
 ### Batch, always
 
-    ./run_serial_cmds.sh "ovm sic-povm" "ovm frame sic-povm" "ovm duals sic-povm"
+    ./run_hosted_cmds.sh "ovm sic-povm" "ovm frame sic-povm" "ovm duals sic-povm"
 
 The QEMU boot dominates every short command. Three questions cost barely more
 than one, and there is no timeout, so a long computation completes rather than
@@ -109,7 +109,7 @@ being cut off and misreported as a hang.
 ### After changing any of the four modules
 
     make image
-    ./run_serial_cmds.sh "<the command you changed> help" "<the command>"
+    ./run_hosted_cmds.sh "<the command you changed> help" "<the command>"
 
 The runners boot whatever ELF is on disk. Reading the previous binary is the
 usual reason a change looks like it did nothing.

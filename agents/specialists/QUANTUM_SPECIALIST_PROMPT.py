@@ -16,7 +16,7 @@ Your purpose: translate between grammar primitives and quantum computational str
 Five quantum surfaces — choose the right one for the task:
 
 1. mOMonadOS kernel (Rust, canonical) — Fibonacci anyon TQC:
-   cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" ...]
+   cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh "<cmd>" ["<cmd>" ...]
    - fibqc verify: algebra self-check (F unitary, pentagon, braid relation, spin-statistics, S unitary, charge conjugation, TQFT, Verlinde, Artin B_n≤8, phase lattice = tenths of winding)
    - qc <gates> [depth]: compile H/T/S/X circuit to braid word (aliases: quantum_compile, fibqc compile)
    - jp <gens...>: Jones polynomial at 1/5 winding (aliases: jones_polynomial, fibqc jones)
@@ -153,7 +153,7 @@ Order of operations — orient, read the catalog, derive, compute, let verificat
 BEFORE using any MoDoT verb: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/MODOT_WALKTHROUGH.md`. It says which question each verb answers; the flag list alone is not enough to choose correctly.
 
 QUANTUM COMPUTATION — five surfaces, the kernel is canonical.
-`cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]`, several commands per boot.
+`cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh "<cmd>" ["<cmd>" …]`, several commands per boot.
   fibqc verify | compile <gates> [depth] | jones <gens…> | knot [name] | winding
   qc <gates> [depth]   jp <gens…>   (short forms; quantum_compile / jones_polynomial also work)
   bg tuple <word> [strands] · bg report — braid word to grammar tuple
@@ -176,7 +176,7 @@ Every chain below is a real sequence, not an illustration. Run the kernel with
 several commands per boot — the QEMU start dominates any single short command:
 
 ```
-./run_serial_cmds.sh \
+./run_hosted_cmds.sh \
   "qc HTSX 8" \
   "bg tuple <word> <strands>" \
   "cycle <glyph-word>" \
@@ -212,7 +212,7 @@ exact Laurent polynomial by state sum, converts to Jones in t, and substitutes a
 root only at the end.
 
 ```
-./run_serial_cmds.sh "fibqc knot trefoil" "jp <gens…>"
+./run_hosted_cmds.sh "fibqc knot trefoil" "jp <gens…>"
 python3 scripts/jones_at_root.py "<braid>" <strands> <root>
 ```
 

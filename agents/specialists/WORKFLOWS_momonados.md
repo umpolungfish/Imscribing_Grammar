@@ -27,7 +27,7 @@ Then batch a boot to sample the ones in question. One boot, many commands.
 ### Run several commands
 
     cd /home/mrnob0dy666/imsgct/mOMonadOS
-    ./run_serial_cmds.sh "help" "ctc help" "ctc cycle T" "substrate"
+    ./run_hosted_cmds.sh "help" "ctc help" "ctc cycle T" "substrate"
 
 The boot dominates; three commands cost barely more than one. There is no
 timeout, so a long computation completes rather than being cut off and
@@ -36,7 +36,7 @@ misreported as a hang.
 ### After changing kernel source
 
     make image          rebuild — the runners boot whatever ELF is on disk
-    ./run_serial_cmds.sh "<the command you changed>"
+    ./run_hosted_cmds.sh "<the command you changed>"
     python3 check_menu_coverage.py
     make ordinals       if you touched ordinals, tuples or the catalog
 

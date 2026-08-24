@@ -35,7 +35,7 @@ never assert arithmetic from memory.
 
 Full reference, read it before choosing a surface: `file_read` /home/mrnob0dy666/imsgct/ig-docs/quantum_computation_tools.md
 
-`cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]` — several commands per boot; the QEMU start dominates a single short one.
+`cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh "<cmd>" ["<cmd>" …]` — several commands per boot; the QEMU start dominates a single short one.
 
 1. KERNEL (Fibonacci anyon QC, native Rust) — the canonical path:
 - `fibqc verify` — F unitary, pentagon, braid relation, spin-statistics, S unitary, charge conjugation, TQFT identities, Verlinde formula, Artin B_n≤8, phase lattice = tenths of a winding

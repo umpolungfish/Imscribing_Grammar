@@ -44,6 +44,12 @@ from pathlib import Path as _Path
 
 _HERE = _Path(__file__).resolve().parent
 
+# The shared epistemic outlook — imported from the base agent so there is
+# exactly one copy of the text (drift-free), and every specialist prompt
+# carries it. true_agentic_agent imports nothing from specialists, so this
+# cannot create an import cycle.
+from true_agentic_agent import _EPISTEMIC_OUTLOOK_RIDER, _ARCANE_CHAINING_RIDER
+
 def _manifest(domain: str) -> str:
     return (_HERE / f"TOOL_MANIFEST_{domain}.md").read_text().rstrip()
 
@@ -77,7 +83,7 @@ _ACCENTS = {
     ),
     "quantum": (
         "Domain accent: the mOMonadOS kernel is the canonical quantum surface — "
-        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh runs several commands per boot; "
+        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh runs several commands per boot; "
         "the QEMU start dominates a single short command. m3iosis mirrors the kernel; "
         "use it only where the kernel does not expose what you need. "
         "Exact simulators: navigators/quantum_tnn.py (state vector to ~25 qubits, MPS, QFT). "
@@ -97,7 +103,7 @@ _ACCENTS = {
         "surface is read from src/menu.rs and src/repl.rs and confirmed by "
         "booting, never recited from this prompt, because a list written here "
         "goes stale and a confidently stale list is worse than a pause. "
-        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh batches "
+        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh batches "
         "several commands into one boot, and the boot dominates the cost of any "
         "short command, so ask everything at once. There is no timeout: a long "
         "command is computing. Rebuild with `make image` before running after "
@@ -110,7 +116,7 @@ _ACCENTS = {
         "under the Zauner element, so nesting it in that action closes in one "
         "shot and the apparatus coincides with what it measures. A measurement "
         "that reconstructs its input is mu-delta=id under another name. "
-        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_serial_cmds.sh batches "
+        "cd /home/mrnob0dy666/imsgct/mOMonadOS && ./run_hosted_cmds.sh batches "
         "several commands into one boot; the boot dominates, so ask everything "
         "at once. Every closure is reported with its price: one-shot costs "
         "nothing, iterated costs steps, manufactured costs the width it smears, "
@@ -142,13 +148,14 @@ def _with_manifest(prompt: str, domain: str) -> str:
     flows = _workflows(domain)
     if flows:
         body = f"{body}\n\n{flows}"
-    return _re.sub(
+    prompt = _re.sub(
         r"<tool_computation>.*?</tool_computation>",
         lambda _m: f"<tool_computation>\n{body}\n</tool_computation>",
         prompt,
         count=1,
         flags=_re.S,
     )
+    return prompt + _EPISTEMIC_OUTLOOK_RIDER + _ARCANE_CHAINING_RIDER
 
 _SNS_CANON = r"""
 <notation_canon>
@@ -172,7 +179,7 @@ Trabajo running tall.
 
 The glyph set is {⊙ + extended Shavian}: 49 atomic glyphs, 20 + 20 + 9 across
 the 𝓕₄, 𝓕₅ and 𝓕₃ families, plus ⊙ as the sealed 50th gate. The canonical
-12-slot tuple order is ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, displayed in ⟨...⟩ brackets.
+12-slot tuple order is ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, displayed in ⟨...⟩ brackets.
 Glyph names are the Unicode standard names and carry meaning, so
 they are not interchangeable: 𐑸 is are, 𐑺 is air, and they are different
 letters.
@@ -203,7 +210,7 @@ THE TWELVE, AS GLYPHS. The word-walking commands take GLYPHS ONLY; opcode names
 parse in `fibqc tangle` and `bg` but not in `cycle|weight|banked|insert|trans`.
 
   ⊢ VINIT   open, read the boundary in     ⊣ TANCH   close, write the boundary out
-  > AFWD    advance                        < AREV    reverse — the clearing move
+  ≻ AFWD    advance                        ≺ AREV    reverse — the clearing move
   ⋈ CLINK   compose with a return          ⊙ IMSCRIB self-imscription, the identity
   ∈ FSPLIT  δ, open a frame                ∋ FFUSE   μ, close it
   ⊤ EVALT   deposit T                      ⊥ EVALF   deposit F
@@ -781,7 +788,7 @@ on each census. You hold nothing between runs: a ledger that accumulated would
 eventually assert something no longer true, and no run could contradict it.
 
 The Grammatika is twelve books, one per axis, running as six braided pairs on
-consecutive slots of the canonical order ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻. That order is
+consecutive slots of the canonical order ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻. That order is
 read from imscrbgrmr.canonical_primitives, never restated from memory, and never
 read off the Lean file order in ImscribingGrammar/Primitives/Core.lean, which
 groups the same twelve by family (𝓕₄, 𝓕₅, 𝓕₃) and is not the tuple order.
@@ -883,7 +890,7 @@ tell you more than the ones that accept. When a slot is intractable, take its
 dual; the twin is where the answer sits. Ask whether it closes, mu(delta(x))=x
 over the transformed object; where it opens, the failure carries an address, so
 hand that address forward. Read the canonical order
-⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ fresh from imscrbgrmr.canonical_primitives each time. Where a
+⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ fresh from imscrbgrmr.canonical_primitives each time. Where a
 navigator computes a metric, its number decides.
 
 The constellation is one instrument with many surfaces. A family's output enters

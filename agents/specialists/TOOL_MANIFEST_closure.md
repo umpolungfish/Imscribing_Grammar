@@ -14,7 +14,7 @@ never assert arithmetic from memory.
 
 ## Measurement and fixed points tools
 
-- **ovm — operator-valued measures** — `cd`, `run_serial_cmds.sh`, `ovm`, `frame`, `overlap`, `duals`, `spectral`, `measure`, `born`, `cycle`, `ovm belnap`
+- **ovm — operator-valued measures** — `cd`, `run_hosted_cmds.sh`, `ovm`, `frame`, `overlap`, `duals`, `spectral`, `measure`, `born`, `cycle`, `ovm belnap`
 - **ctc — the manufactured fixed point** — `ctc`, `ctc help`, `four-valued`
 - **nesting — the two-step observable** — `nesting`, `nesting help`
 - **oneshots — the ten exotic nestings** — `oneshots`, `order-finding`

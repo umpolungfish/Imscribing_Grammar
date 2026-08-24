@@ -213,12 +213,12 @@ paradice_map, universe_jump, signature_manifold, jump_path_integral."""),
 · --canonical STR · --reference · --list-canonical · --list-patterns ·
 --suggest STR"""),
 
-    (IMSGCT / "mOMonadOS" / "run_serial_cmds.sh",
+    (IMSGCT / "mOMonadOS" / "run_hosted_cmds.sh",
      "QUANTUM COMPUTATION — five surfaces, the kernel is canonical", """\
 Full reference, read it before choosing a surface: `file_read`
 /home/mrnob0dy666/imsgct/ig-docs/quantum_computation_tools.md
 
-`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "<cmd>" ["<cmd>" …]` — several commands
+`cd ~/imsgct/mOMonadOS && ./run_hosted_cmds.sh "<cmd>" ["<cmd>" …]` — several commands
 per boot; the QEMU start dominates a single short one.
 
 1. KERNEL (Fibonacci anyon QC, native Rust) — the canonical path:
@@ -577,7 +577,7 @@ self-verification. It braids Fibonacci anyons on the metal.
 
 It is the first home for new work, not a port target. Anything developed here
 lands natively here before it lands anywhere else, and no Python version is
-written to precede it. `./run_serial_cmds.sh` runs several commands per boot;
+written to precede it. `./run_hosted_cmds.sh` runs several commands per boot;
 the QEMU start dominates a single short command, so batch them."""),
 
     (IMSGCT / "m3iosis", "m3iosis — braid to tuple", """\
@@ -645,9 +645,9 @@ arms carry `#[cfg(feature = ...)]`, which puts a command in the menu and out of
 the binary at the same time — check Cargo.toml before calling such a command
 missing."""),
 
-    (IMSGCT / "mOMonadOS" / "run_serial_cmds.sh",
+    (IMSGCT / "mOMonadOS" / "run_hosted_cmds.sh",
      "Running the kernel", """\
-`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh \"<cmd>\" [\"<cmd>\" ...]` boots
+`cd ~/imsgct/mOMonadOS && ./run_hosted_cmds.sh \"<cmd>\" [\"<cmd>\" ...]` boots
 QEMU, feeds each command to the `⊙>` prompt in order, and quits. `./run.sh
 release` gives an interactive prompt instead.
 
@@ -682,7 +682,7 @@ unreachable command is one nobody will find."""),
 CLOSURE_DOMAIN = [
     (IMSGCT / "mOMonadOS" / "src" / "ovm.rs",
      "ovm — operator-valued measures", """\
-`cd ~/imsgct/mOMonadOS && ./run_serial_cmds.sh "ovm"` prints the surface. Then
+`cd ~/imsgct/mOMonadOS && ./run_hosted_cmds.sh "ovm"` prints the surface. Then
 `ovm <name>` for a full report, and the specific instruments for what it leaves
 ambiguous: `frame` (frame operator S in the Pauli basis), `overlap` (Gram matrix
 G_ij = Tr(E_i E_j)), `duals` (conical 2-design duals), `spectral`, `measure`,
