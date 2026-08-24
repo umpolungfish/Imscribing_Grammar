@@ -1170,6 +1170,13 @@ def generate(
         console.print(f"[dim]Self-family: circular definition — \"{description}\"[/dim]")
 
     if context:
+        if name is None:
+            # The context prefix below pushes the entity's own words out of the
+            # front of `description`; derive the default name from the entity
+            # BEFORE prefixing, or the auto-namer picks up "Background_context"
+            # instead of the thing actually being imscribed.
+            from agents.axiom_guided_generator import _desc_slug
+            name = _desc_slug(description)
         context_text = Path(context).read_text(encoding="utf-8").strip()
         description = (
             f"Background context:\n{context_text}\n\n"
