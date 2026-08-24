@@ -128566,18 +128566,18 @@
   },
   {
     "name": "fibonacci_shor_dialetheic",
-    "description": "Shor compiled to Fibonacci anyon braids (τ⊗τ = 1⊕τ): topologically protected period finding, the braid length carrying the protection.",
-    "⊢": "𐑼",
-    "⊣": "𐑥",
-    "≻": "𐑽",
-    "≺": "𐑿",
+    "description": "Dialetheic Fibonacci Shor's algorithm — ob3ect word ⊢∈≻⋈⊞∈⊤≻⊥≺∋⊙⋈◻⊣ (15 steps). Shor's period-finding run through the Belnap FOUR register machine with Fibonacci anyon braid encoding: the period r is read from the 2:1 B-bias/T-bias coherence cost ratio (belnapCost = 2r), not from QFT gates; the 16₃ register walk (N→N→T→T→Ttf→Ttf→Ttf→Ttf→A→N→TF→TF→TF→TF→TF) is the control flow where ∈ splits the T-arm (constructive interference, correct period) and F-arm (destructive interference, refuted candidates), ⊤/⊥ evaluate them, ≺ clears, and ∋ fuses into the dialetheic verdict TF — both arms survive measurement because the first FSPLIT3 dangles (verdict B). Factorization via gcd(a^{r/2}±1, N) fixed by ◻. Kernel tuple derived by imasm(word=⊢∈≻⋈⊞∈⊤≻⊥≺∋⊙⋈◻⊣, derive=true): crystal 16404190.",
+    "⊢": "𐑦",
+    "⊣": "𐑶",
+    "≻": "𐑾",
+    "≺": "𐑹",
     "⋈": "𐑐",
-    "⊤": "𐑧",
-    "∈": "𐑔",
+    "⊤": "𐑘",
+    "∈": "𐑲",
     "∋": "𐑠",
-    "⊙": "⊙",
+    "⊙": "𐑻",
     "⊥": "𐑫",
-    "⊞": "𐑙",
+    "⊞": "𐑳",
     "◻": "𐑭"
   },
   {
@@ -136627,5 +136627,21 @@
     "⊥": "𐑓",
     "⊞": "𐑳",
     "◻": "𐑷"
+  },
+  {
+    "name": "fibonacci_shor_dialetheic__retired",
+    "description": "[address retained] Formerly imscribed as 'fibonacci_shor_dialetheic'. The name was re-pointed; this address is kept populated because it is structure regardless of the correspondence. Shor compiled to Fibonacci anyon braids (τ⊗τ = 1⊕τ): topologically protected period finding, the braid length carrying the protection.",
+    "⊢": "𐑼",
+    "⊣": "𐑥",
+    "≻": "𐑽",
+    "≺": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑙",
+    "◻": "𐑭"
   }
 ]
