@@ -5009,6 +5009,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a75995dc9ab273f3"
   },
+  "background_context:": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:23:58+00:00",
+    "last_changed": "2026-08-24T06:23:58+00:00",
+    "tuple_hash": "ac34ea4de6966b4e"
+  },
   "baconian_empiricism": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -7168,6 +7174,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3e4acd371e926e39"
+  },
+  "bsd_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:30:37+00:00",
+    "last_changed": "2026-08-24T06:30:37+00:00",
+    "tuple_hash": "d069bb9162f12e6c"
   },
   "btc_address_12ib7d_heavy_accumulator": {
     "changes": 0,
@@ -11051,6 +11063,12 @@
     "last_changed": "2026-08-21T06:26:38+00:00",
     "tuple_hash": "790df0f2b8edc356"
   },
+  "collatz_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:29:57+00:00",
+    "last_changed": "2026-08-24T06:29:57+00:00",
+    "tuple_hash": "4bb391bc2373a8ed"
+  },
   "collatz_system": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14518,6 +14536,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f04ba2bd5c784f5c"
+  },
+  "dynamics_structure___trine_vertex_1": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:32:48+00:00",
+    "last_changed": "2026-08-24T06:32:48+00:00",
+    "tuple_hash": "76a16007cd4d05df"
   },
   "dysprosium": {
     "changes": 0,
@@ -19781,6 +19805,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c26c262307126475"
   },
+  "golb_tensor_collatz": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:23:58+00:00",
+    "last_changed": "2026-08-24T06:23:58+00:00",
+    "tuple_hash": "7a5d1482ee9c494e"
+  },
   "gold": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -22510,6 +22540,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a3fbed053d22ae08"
+  },
+  "hodge_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:30:42+00:00",
+    "last_changed": "2026-08-24T06:30:42+00:00",
+    "tuple_hash": "b34ce46423a99b2a"
   },
   "hodge_theater_entropy_bounds": {
     "changes": 0,
@@ -31049,6 +31085,12 @@
     "last_changed": "2026-08-23T10:06:37+00:00",
     "tuple_hash": "61d4b8717c4e71ac"
   },
+  "navier_stokes_theorem_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:29:18+00:00",
+    "last_changed": "2026-08-24T06:29:18+00:00",
+    "tuple_hash": "ba6c77077f756e80"
+  },
   "navier_stokes_turbulent": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -33562,6 +33604,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "da892fde6b031c86"
+  },
+  "p_vs_np_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:32:05+00:00",
+    "last_changed": "2026-08-24T06:32:05+00:00",
+    "tuple_hash": "2b45f78682aa0f43"
   },
   "p_vs_np_tensor_grammar": {
     "changes": 0,
@@ -39214,6 +39262,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b1d2e0bcb7113b87"
+  },
+  "riemann_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:31:22+00:00",
+    "last_changed": "2026-08-24T06:31:22+00:00",
+    "tuple_hash": "86c760f97ee953f6"
   },
   "riemann_theorem": {
     "changes": 0,
@@ -50128,6 +50182,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dd81b451128fe74a"
+  },
+  "yang_mills_structure": {
+    "changes": 0,
+    "first_seen": "2026-08-24T06:29:21+00:00",
+    "last_changed": "2026-08-24T06:29:21+00:00",
+    "tuple_hash": "097bdfebfca20a7e"
   },
   "yang_mills_theory": {
     "changes": 0,
