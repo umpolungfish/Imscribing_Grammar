@@ -27,7 +27,16 @@ providers:
   deepseek:
     default_model: deepseek-v4-pro
     base_url: https://api.deepseek.com/chat/completions
-    max_tokens_default: 4000
+    # deepseek-v4-pro is a reasoning model: its chain of thought writes into
+    # reasoning_content, separate from the final message.content, and the
+    # shared HttpProvider.query only ever reads content. At the old 4000-token
+    # cap the reasoning phase alone consumed the whole budget on a structured
+    # imscription task, content came back null, and @llm_retry's retries each
+    # ran through an uncapped-timeout httpx client — a multi-minute hang per
+    # call, every time, not an occasional slow response. Raised to the model's
+    # own listed ceiling (8192) so reasoning has room to finish and still
+    # leave room for the actual answer.
+    max_tokens_default: 8192
     temperature_default: 0.7
     models:
     - name: deepseek-v4-pro
