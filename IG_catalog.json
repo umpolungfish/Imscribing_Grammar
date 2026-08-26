@@ -97334,7 +97334,7 @@
   },
   {
     "name": "sixteen_3_trilattice",
-    "description": "SIXTEEN_3 Trilattice: The complete set of sixteen paraconsistent paradoxes organized as a 3-fold trilattice structure under the Belnap-Frobenius substrate. A two-dimensional distributed surface (D=triangle) with bowtie crossing topology, adjoint coupling, Frobenius-special symmetry, quantum fidelity",
+    "description": "SIXTEEN_3 trilattice: 16-element Belnap-Four trilattice extending to three truth dimensions (truth, information, validity) with non-Abelian t-norm composition, 8 Frobenius-dual pairs, and central involution across three orthogonal axes",
     "⊢": "𐑨",
     "⊣": "𐑥",
     "≻": "𐑽",
@@ -137795,5 +137795,37 @@
     "⊥": "𐑓",
     "⊞": "𐑙",
     "⊡": "𐑷"
+  },
+  {
+    "name": "extended_zero_reduction_theory",
+    "description": "EZRT: three-layer notation 0ⁱʲᵏo^n_m encoding axes/depth/logic with palindrome endomorphism ˣʸᶻ₈⁷0⁷₈ˣʸᶻ, 4-quadrant system, D-FUMT₈ with SELF⟲, double mirror mirror²=id, Lean4 formalized",
+    "⊢": "𐑼",
+    "⊣": "𐑸",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑱",
+    "⊤": "𐑪",
+    "∈": "𐑚",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "⊡": "𐑴"
+  },
+  {
+    "name": "≺⊙⊞⊥⋈≻∋≺⊞⊡∈∈⋈⊥⊢∋⊙⊣⊣⊞⊢⊞≻∋⊣≺⊙⊤≺≺∈⊢⊞",
+    "description": "≺⊙⊞⊥⋈≻∋≺⊞⊡∈∈⋈⊥⊢∋⊙⊣⊣⊞⊢⊞≻∋⊣≺⊙⊤≺≺∈⊢⊞",
+    "⊢": "𐑦",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑜",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]

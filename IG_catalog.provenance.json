@@ -16691,6 +16691,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dd81b451128fe74a"
   },
+  "extended_zero_reduction_theory": {
+    "changes": 0,
+    "first_seen": "2026-08-26T22:44:07+00:00",
+    "last_changed": "2026-08-26T22:44:07+00:00",
+    "tuple_hash": "4e8c0b816c94134f"
+  },
   "extra_virgin_olive_oil": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -51592,6 +51598,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3984c64351493559"
+  },
+  "\u227a\u2299\u229e\u22a5\u22c8\u227b\u220b\u227a\u229e\u22a1\u2208\u2208\u22c8\u22a5\u22a2\u220b\u2299\u22a3\u22a3\u229e\u22a2\u229e\u227b\u220b\u22a3\u227a\u2299\u22a4\u227a\u227a\u2208\u22a2\u229e": {
+    "changes": 0,
+    "first_seen": "2026-08-26T22:44:07+00:00",
+    "last_changed": "2026-08-26T22:44:07+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
   },
   "\u2299": {
     "changes": 0,
