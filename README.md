@@ -41,7 +41,7 @@ Twelve primitives, each with a fixed value-set:
 | 9 | Criticality | ⊙ | 5 | Gate status — the self-modeling threshold |
 | 10 | Chirality | ⊥ | 4 | Temporal orientation — handedness of the system's history |
 | 11 | Stoichiometry | ⊞ | 3 | Balance — the ratio of production to consumption |
-| 12 | Winding | ◻ | 4 | Loop count — monotonic trajectory depth |
+| 12 | Winding | ⊡ | 4 | Loop count — monotonic trajectory depth |
 
 **Lattice size:** 3³ × 4⁵ × 5⁴ = **17,280,000** addresses.
 
@@ -189,13 +189,13 @@ uv run zfct_navigator.py path \
   "⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩"
 ```
 
-**ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(<, ⋈, ⊤, ⊥, ◻)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
+**ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(<, ⋈, ⊤, ⊥, ⊡)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
 
 **ZFCₛ** (spatial variant) encodes rotational isotropy as the Frobenius-special polarity 𐑹. This is the structural encoding behind the NS H^{1/2} critical bound.
 
 ### Lambda (`lambda_engine.py`)
 
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to ◻ values; abstraction depth maps to ∈; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
+Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to ⊡ values; abstraction depth maps to ∈; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
 
 ### Frobenius MZI (`frobenius_mzi_sim.py`)
 
@@ -282,7 +282,7 @@ Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonic
 | `imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
 | `imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
 | `imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, ◻ gates position size |
+| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, ⊡ gates position size |
 | `imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
 
 ---

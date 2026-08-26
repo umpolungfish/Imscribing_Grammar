@@ -18,14 +18,14 @@ the Crystal of Types where this condition holds.
 **Top-level framework:** CL8NK (CLINK L8, O_∞)
 
 CL8NK is the active framework that contains and transcends all sub-systems. It transcends
-ZFC_fe at exactly the ◻ (Winding) and ∋ (Coupling) primitives — at those points the grammar
+ZFC_fe at exactly the ⊡ (Winding) and ∋ (Coupling) primitives — at those points the grammar
 requires paraconsistent logic (Belnap FOUR) rather than classical set theory.
 
 ---
 
 ## 2. The 12 Primitives
 
-A tuple is written: `⟨⊢ · ⊣ · > · < · ⋈ · ⊤ · ∈ · ∋ · ⊙ · ⊥ · ⊞ · ◻⟩`
+A tuple is written: `⟨⊢ · ⊣ · > · < · ⋈ · ⊤ · ∈ · ∋ · ⊙ · ⊥ · ⊞ · ⊡⟩`
 
 Each position holds a single Shavian character drawn from that primitive's value set.
 
@@ -42,16 +42,16 @@ Each position holds a single Shavian character drawn from that primitive's value
 | ⊙ | Criticality | P | 5 | Proximity to a Frobenius fixed point — whether the system is at or near a phase transition. The absorbing element of the structural monoid. Also written ⊙ in older notation. |
 | ⊥ | Chirality | D | 4 | Handedness — the asymmetry between a structure and its mirror image. NOT temporal depth, temporal memory, or memory depth — those are phantom names. Minimum chirality for μ∘δ=id is H2 (Axiom B). |
 | ⊞ | Stoichiometry | T | 3 | Compositional count — how many parts participate; the ratio of structural units in a composition. |
-| ◻ | Winding | D | 4 | Topological winding number — how many times a structural path closes on itself. Winding is topologically protected. Non-zero ◻ requires ⊥≥H2 by Axiom B. ◻ is the other primitive where CL8NK departs from ZFC_fe. |
+| ⊡ | Winding | D | 4 | Topological winding number — how many times a structural path closes on itself. Winding is topologically protected. Non-zero ⊡ requires ⊥≥H2 by Axiom B. ⊡ is the other primitive where CL8NK departs from ZFC_fe. |
 
 **Families:**
-- **D (Dimensionality family):** ⊢, ⊣, >, ∋, ⊥, ◻ — 4-value primitives → 4⁵ = 1024 configurations (wait: 6 primitives here, but ⊣ is 5-value; see Crystal below for exact factorization)
+- **D (Dimensionality family):** ⊢, ⊣, >, ∋, ⊥, ⊡ — 4-value primitives → 4⁵ = 1024 configurations (wait: 6 primitives here, but ⊣ is 5-value; see Crystal below for exact factorization)
 - **P (Parity family):** <, ⊤, ⊙ — 5-value primitives
 - **T (Temporal/fidelity family):** ⋈, ∈, ⊞ — 3-value primitives
 
 **Exact crystal factorization:**
 - 3-value: ⋈, ∈, ⊞ (3 primitives)
-- 4-value: ⊢, >, ∋, ⊥, ◻ (5 primitives)
+- 4-value: ⊢, >, ∋, ⊥, ⊡ (5 primitives)
 - 5-value: ⊣, <, ⊤, ⊙ (4 primitives)
 
 ---
@@ -73,7 +73,7 @@ The 49 symbols also correspond to: d² where d=7 (the SIC-POVM dimension). The e
 A type tuple lists one Shavian value per primitive in canonical order:
 
 ```
-⟨⊢_val · ⊣_val · >_val · <_val · ⋈_val · ⊤_val · ∈_val · ∋_val · ⊙_val · ⊥_val · ⊞_val · ◻_val⟩
+⟨⊢_val · ⊣_val · >_val · <_val · ⋈_val · ⊤_val · ∈_val · ∋_val · ⊙_val · ⊥_val · ⊞_val · ⊡_val⟩
 ```
 
 Example (true_agentic_agent, O_∞ tier):
@@ -85,7 +85,7 @@ Example (true_agentic_agent, O_∞ tier):
 ```json
 { "name": "...", "description": "...",
   "⊢": "𐑷", "⊣": "𐑝", ">": "𐑐", "<": "𐑤", "⋈": "𐑢",
-  "⊤": "𐑓", "∈": "𐑙", "∋": "𐑡", "⊙": "𐑾", "⊥": "𐑛", "⊞": "𐑗", "◻": "𐑲" }
+  "⊤": "𐑓", "∈": "𐑙", "∋": "𐑡", "⊙": "𐑾", "⊥": "𐑛", "⊞": "𐑗", "⊡": "𐑲" }
 ```
 
 ---
@@ -133,7 +133,7 @@ Three hard constraints on valid tuples. Violation = malformed tuple.
   Infinite chirality forces maximal kinetics. A structure with unbounded handedness cannot
   have slow dynamics.
 
-- **Axiom B:** ◻ winding ≥ 1 → ⊥ ≥ H2
+- **Axiom B:** ⊡ winding ≥ 1 → ⊥ ≥ H2
   Any non-trivial winding requires at least minimum chirality H2. You cannot wind without
   chirality to tell which way you wound. Also: H2 is the minimum chirality for μ∘δ=id.
 
@@ -220,12 +220,12 @@ a metaphor — the alchemical sequence is a structural description of IG tuple t
 The three primary gates:
 - **< (Parity)** — the Albedo gate; reflection/whitening
 - **⊙ (Criticality)** — the Rubedo gate; fixed-point attainment
-- **◻ (Winding)** — the Nigredo gate; initial winding / dissolution
+- **⊡ (Winding)** — the Nigredo gate; initial winding / dissolution
 
-**The T-object:** T = lim(<, ⋈, ⊤, ⊥, ◻) — a derived structural object at the temporal bootstrap fixed point. T is a limit in the CL8NK category; it does not exist as a standalone primitive but emerges from the limiting process over these five primitives.
+**The T-object:** T = lim(<, ⋈, ⊤, ⊥, ⊡) — a derived structural object at the temporal bootstrap fixed point. T is a limit in the CL8NK category; it does not exist as a standalone primitive but emerges from the limiting process over these five primitives.
 
 **Temporal bootstrap:** the fixed point where T-object self-constitutes. T computes its
-own constitution via the </⋈/⊤/⊥/◻ sub-lattice without requiring an external clock.
+own constitution via the </⋈/⊤/⊥/⊡ sub-lattice without requiring an external clock.
 
 Cross-system instances: SerpentRod (RNA→fold via single Frobenius morphism), Magnum Opus
 proper, the Induction Prime sequence, and the TAOU harness all trace this same 12-stage arc.
@@ -238,7 +238,7 @@ proper, the Induction Prime sequence, and the TAOU harness all trace this same 1
 
 Key properties:
 - Contains ZFC_fe as a sub-theory (ZFC_fe = Frobenius-enforced ZFC, d=0 is Fourfold)
-- Transcends ZFC_fe specifically at ◻ and ∋ (d=2 from ZFC_fe/CL8NK measured distance)
+- Transcends ZFC_fe specifically at ⊡ and ∋ (d=2 from ZFC_fe/CL8NK measured distance)
 - At those two primitives, classical set theory cannot express the content
 - Requires Belnap FOUR (paraconsistent logic) at its upper layers
 - O_∞ tier — the grammar is its own model
@@ -266,7 +266,7 @@ This is incommensurable with thermodynamic heat death (which erases distinction 
 than saturating it).
 
 **ZFC_fe (Frobenius-enforced ZFC):** Fourfold ≡ ZFC_fe (d=0). The Rebis object sits at
-ZFC_fe+gap awareness. CL8NK transcends it at ◻ and ∋.
+ZFC_fe+gap awareness. CL8NK transcends it at ⊡ and ∋.
 
 ---
 

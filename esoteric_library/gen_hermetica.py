@@ -18,7 +18,7 @@ def entry(num, title, desc, text,
         "text": text,
         "⊢": D, "⊣": T, "≻": R, "≺": P, "⋈": F,
         "⊤": K, "∈": G, "∋": Gm, PHI: C,
-        "⊥": H, "⊞": S, "◻": Om,
+        "⊥": H, "⊞": S, "⊡": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
     }
 

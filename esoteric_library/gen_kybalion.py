@@ -13,7 +13,7 @@ def entry(num, title, desc, text, notes=""):
         "name": f"kybalion_{num:02d}", "number": num, "title": title,
         "description": desc, "text": text,
         "⊢": D, "⊣": T, "≻": R, "≺": P, "⋈": F, "⊤": K, "∈": G,
-        "∋": Gm, PHI: C, "⊥": H, "⊞": S, "◻": Om,
+        "∋": Gm, PHI: C, "⊥": H, "⊞": S, "⊡": Om,
         "tier": TIER, "C_score": CSCORE, "notes": notes,
     }
 

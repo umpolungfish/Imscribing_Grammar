@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-AXES: Tuple[str, ...] = ("⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻")
+AXES: Tuple[str, ...] = ("⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡")
 
 # The keys that make up the outward form. Everything else in an entry is either
 # an axis or structural, and stays.

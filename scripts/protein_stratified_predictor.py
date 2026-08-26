@@ -73,7 +73,7 @@ AA_DATA = {
     'Y': ('Tyr', 'Tyrosine', ('𐑿', 'Parity', 'Phosphorylation switch'), 'phenol — phosphorylation'),
 }
 
-PRIMITIVE_NAMES = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+PRIMITIVE_NAMES = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '⊡']
 AA_TO_PRIMITIVE_INDEX = {}
 for aa, (prim, _, _) in [(k,v) for k,v in PRIMITIVE_MAP.items()]:
     for i, pn in enumerate(PRIMITIVE_NAMES):
@@ -555,7 +555,7 @@ class ProteinStratifiedPredictor:
         based on structural criteria:
         - Fragments with > (Cys) clusters → structural core
         - Fragments with ⊙ (Gln) → criticality signaling
-        - Fragments with ◻ (Glu) → winding/closure modules
+        - Fragments with ⊡ (Glu) → winding/closure modules
         """
         products = []
         for frag in self.fragments:
@@ -589,7 +589,7 @@ class ProteinStratifiedPredictor:
             return 'structural_scaffold' if vec[2] >= 4 else 'redox_sensor'
         elif dom == '⊙':
             return 'metabolic_signaling'
-        elif dom == '◻':
+        elif dom == '⊡':
             return 'winding_closure_module'
         elif dom == '≺':
             return 'phosphorylation_switch'
@@ -845,16 +845,16 @@ def run_all_tests():
         print(f"    Cleavage sites: {len(r['cleavage_sites'])}")
         print(f"    Products: {len(products)}")
 
-        # Compute ◻ (Glu) totals
+        # Compute ⊡ (Glu) totals
         seq = r['sequence']
         omega_total = seq.count('E')
-        # Sum ◻ across fragments
-        frag_omega = sum(f['vector'][11] for f in r['fragments'])  # ◻ is index 11
-        print(f"    ◻ (Glu) total: {omega_total}")
+        # Sum ⊡ across fragments
+        frag_omega = sum(f['vector'][11] for f in r['fragments'])  # ⊡ is index 11
+        print(f"    ⊡ (Glu) total: {omega_total}")
         c_peptide = [p for p in products if 'peptide' in p['name'] and 'short' not in p['name'] and 'intervening' not in p['name']]
         for p in products:
-            omega = p['profile'].get('◻', 0)
-            print(f"    • {p['name']}: ◻={omega}, {p['inferred_function']}")
+            omega = p['profile'].get('⊡', 0)
+            print(f"    • {p['name']}: ⊡={omega}, {p['inferred_function']}")
 
     # ─── Proglucagon Detailed ─────────────────────────────────────────
     print("\n" + "=" * 72)
@@ -864,10 +864,10 @@ def run_all_tests():
     if r:
         for frag in r['fragments']:
             gln = frag['vector'][8]  # ⊙ index
-            glu = frag['vector'][11]  # ◻ index
+            glu = frag['vector'][11]  # ⊡ index
             asp = frag['vector'][9]  # ⊥ index
             print(f"  {frag['label']} ({frag['length']} AA @ {frag['start']}-{frag['end']}): "
-                  f"⊙={gln}, ◻={glu}, ⊥={asp}, dominant={frag['dominant_primitives']}")
+                  f"⊙={gln}, ⊡={glu}, ⊥={asp}, dominant={frag['dominant_primitives']}")
 
     return results
 

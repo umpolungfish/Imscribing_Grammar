@@ -30,7 +30,7 @@ The tuple is derived, not hand-picked (per-primitive, Tetractys-conflict-resolve
 | ⊙ | ⊙ | monad | critical, self-modeling gate |
 | ⊥ | 𐑖 | sure | two-step chirality — check then act (TOCTOU-aware) |
 | ⊞ | 𐑳 | up | many heterogeneous instruments orchestrated |
-| ◻ | 𐑭 | ah | integer winding — iterate passes (Tesla→Mozilla history) |
+| ⊡ | 𐑭 | ah | integer winding — iterate passes (Tesla→Mozilla history) |
 
 ##  Mission
 
@@ -81,7 +81,7 @@ the instrument; the vernacular is the delivery.
 ##  Closed gap (was: future winding)
 
 - braid_race_enumerator IS in the catalog now, ⟨𐑼𐑥𐑾𐑬𐑱𐑺𐑲𐑠⊙𐑫𐑳𐑟⟩.
-  The predicted ◻=𐑟 (non-Abelian winding) held — the derivation landed on the
+  The predicted ⊡=𐑟 (non-Abelian winding) held — the derivation landed on the
   candidate this section named, so the want-list entry is retired.
 
 ##  Initiation — how to run the agent (integration layer)

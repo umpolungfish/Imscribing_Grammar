@@ -114,7 +114,7 @@ def identify_fragment(seq: str, prev_motif: str = None,
            classify_module(seq).get('dominant')
     
     desc_map = {
-        '◻': '◻-winding module',
+        '⊡': '⊡-winding module',
         '⊙': '⊙-criticality signal',
         '≻': '>-scaffold domain',
         '≺': '<-switch domain',
@@ -333,7 +333,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
                         break
                     # Also stop if the fragment is large (>40 AA) and has hormone-like profile
                     nxt_cls = nxt.classification if hasattr(nxt, 'classification') else {}
-                    if len(nxt.sequence) > 40 and '◻' not in str(nxt_cls.get('dominant', '')):
+                    if len(nxt.sequence) > 40 and '⊡' not in str(nxt_cls.get('dominant', '')):
                         break
                     merged_seq += nxt.sequence
                     merge_end = nxt.end
@@ -372,7 +372,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
             # Merge β-LPH + γ-LPH (KK at ~215 splits in some tissues)
             if 'β-LPH' in prod.name and i+1 < len(products):
                 nxt = products[i+1]
-                # γ-LPH is typically 15-25 AA with ⊥/◻ signature
+                # γ-LPH is typically 15-25 AA with ⊥/⊡ signature
                 if len(nxt.sequence.rstrip('KR')) < 30 and 'β-endorphin' not in nxt.name:
                     merged_seq = prod.sequence + nxt.sequence
                     merged_cls = classify_module(merged_seq)
@@ -406,7 +406,7 @@ def should_merge_fragments(products: list, cleavage_sites: list,
             # Merge β-LPH + γ-LPH (KK at ~215 splits in some tissues)
             if 'β-LPH' in prod.name and i+1 < len(products):
                 nxt = products[i+1]
-                # γ-LPH is typically 15-25 AA with ⊥/◻ signature
+                # γ-LPH is typically 15-25 AA with ⊥/⊡ signature
                 if len(nxt.sequence.rstrip('KR')) < 30 and 'β-endorphin' not in nxt.name:
                     merged_seq = prod.sequence + nxt.sequence
                     merged_cls = classify_module(merged_seq)
@@ -721,9 +721,9 @@ def run_validation():
     print(f"  Total products:   {sum(len(results[n].mature_products) for n in results)}")
     print(f"  Monobasic sites:  {sum(1 for n in results for s in results[n].cleavage_sites if 'monobasic' in s.enzyme_family)}")
     
-    # Cross-species ◻ analysis
+    # Cross-species ⊡ analysis
     print(f"\n{'─' * 80}")
-    print("  ◻ (Glu) CONSERVATION IN INSULIN C-PEPTIDE")
+    print("  ⊡ (Glu) CONSERVATION IN INSULIN C-PEPTIDE")
     print(f"{'─' * 80}")
     ins_species = ['Human Insulin', 'Rat Insulin', 'Guinea Pig Insulin', 'Dogfish Insulin']
     for name in ins_species:
@@ -733,7 +733,7 @@ def run_validation():
                 if 'C-peptide' in p.name:
                     glus = p.sequence.count('E')
                     glns = p.sequence.count('Q')
-                    print(f"  {name:25s}: C-peptide ◻={glus}, ⊙={glns}, len={len(p.sequence)} AA")
+                    print(f"  {name:25s}: C-peptide ⊡={glus}, ⊙={glns}, len={len(p.sequence)} AA")
     
     return results
 

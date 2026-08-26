@@ -27,7 +27,7 @@ OLD_TO_SHAVIAN = {
 
 # Build a regex that matches any old symbol inside a Python string literal "..."
 # We do a simple quoted-string replacement: "OLD" → "NEW"
-# Sorted longest-first to avoid partial matches (e.g. "𐑟" before "◻_")
+# Sorted longest-first to avoid partial matches (e.g. "𐑟" before "⊡_")
 _SORTED = sorted(OLD_TO_SHAVIAN.keys(), key=len, reverse=True)
 
 def replace_quoted(text: str) -> str:

@@ -17,7 +17,7 @@ from typing import Optional
 
 from .ops import OPERATIONS, OPERATIONS_BY_NAME, Op
 
-PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 _CATALOG_PATH = Path(__file__).resolve().parent.parent.parent / "IG_catalog.json"
 

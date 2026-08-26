@@ -123,7 +123,7 @@ def load_catalog() -> dict:
     return catalog
 
 # Primitive keys as used in to_dict()
-_PRIM_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "◻", "⊞", "⊥"]
+_PRIM_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊡", "⊞", "⊥"]
 
 # Ordinal value ranks per primitive (internal caret notation)
 _VALUE_RANKS = {
@@ -136,13 +136,13 @@ _VALUE_RANKS = {
     "∈": {"𐑚": 0, "𐑔": 1, "𐑲": 2},
     "∋": {"∋^∧": 0, "∋^˝": 1, "∋^ˌ": 2, "∋^Ş": 3},
     "⊙": {"𐑢": 0, "𐑮": 1, "𐑻": 2, "𐑣": 3, "⊙": 4},
-    "◻": {"𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
+    "⊡": {"𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
     "⊞": {"𐑙": 0, "𐑕": 1, "𐑳": 2},
     "⊥": {"𐑓": 0, "𐑒": 1, "𐑖": 2, "𐑫": 3},
 }
 
 _WEIGHTS = {"⊢": 2.0, "⊣": 2.0, "≻": 1.5, "≺": 2.0, "⋈": 1.5, "⊤": 1.0,
-            "∈": 1.0, "∋": 1.0, "⊙": 2.5, "◻": 2.5, "⊞": 1.0, "⊥": 2.5}
+            "∈": 1.0, "∋": 1.0, "⊙": 2.5, "⊡": 2.5, "⊞": 1.0, "⊥": 2.5}
 
 def compute_distance(ims_a: Imscription, ims_b: Imscription) -> tuple[float, list[dict]]:
     """Compute distance between two Imscriptions."""

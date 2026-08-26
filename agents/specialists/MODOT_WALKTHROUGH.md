@@ -32,7 +32,7 @@ including your own reasoning as a program.
 ## Choosing a verb by the question you have
 
 **Do these two bond?** → `click A B`. Frobenius fusion across a conjugate axis
-(⊢↔◻, ⊣↔⊥, >↔⊞). Closes only when the tuples are complementary. `click A` alone
+(⊢↔⊡, ⊣↔⊥, >↔⊞). Closes only when the tuples are complementary. `click A` alone
 sweeps the whole catalog for partners.
 
 **What sits between these two?** → `scan A B`. Ranks catalog entries as
@@ -58,7 +58,7 @@ branched.
 **One hub, many arms** → `star M1 M2 M3 …`, four or more. Gives K(1,f) with
 ρ = √f — the contrast case to a cycle's ρ = 2.
 
-**Move one quantum** → `set A B`, donor then acceptor. Transports one winding ◻
+**Move one quantum** → `set A B`, donor then acceptor. Transports one winding ⊡
 across the ⊙ gradient.
 
 **Break it apart** → `homolyze A [B]` or `cleave`. The reverse of fusion: a
@@ -100,9 +100,9 @@ programs are written in them, and the kernel will refuse an ill-typed one. No
 catalog names enter — this operates on programs.
 
     ⊢ VINIT   ⊣ TANCH   ≻ AFWD   ≺ AREV   ⋈ CLINK   ⊙ IMSCRIB
-    ∈ FSPLIT  ∋ FFUSE   ⊤ EVALT  ⊥ EVALF  ⊞ ENGAGR  ◻ IFIX
+    ∈ FSPLIT  ∋ FFUSE   ⊤ EVALT  ⊥ EVALF  ⊞ ENGAGR  ⊡ IFIX
 
-A word can be written glued from those glyphs — `⊢⊙⋈∈≻⊤≺⊞⊥∋◻⊣` is a program.
+A word can be written glued from those glyphs — `⊢⊙⋈∈≻⊤≺⊞⊥∋⊡⊣` is a program.
 These twelve are also the twelve primitive axes; the alphabet is one set read
 two ways, and nothing outside it parses.
 
@@ -175,7 +175,7 @@ phi inf`; the usual function set.
 
 ## The scope of the tools
 
-`ouroborics` and the tier gates read only four coordinates — ⊙, <, ◻, ⊢. The
+`ouroborics` and the tier gates read only four coordinates — ⊙, <, ⊡, ⊢. The
 other eight play no part in the tier. Do not explain a tier by a primitive that
 does not enter it.
 

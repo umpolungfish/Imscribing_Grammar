@@ -4,11 +4,11 @@
 % Load with: \usepackage{imscrbgrmr}
 %
 % Primary command:  \prim{family}{subtype}
-%   e.g. \shav{𐑭}  \axis{◻}
+%   e.g. \shav{𐑭}  \axis{⊡}
 %   Works in both text mode and math mode (wraps in \text{} automatically).
 %
 % Tuple display:
-%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; ◻=𐑭}
+%   \synthtype{⊢=𐑦; ⊣=𐑶; >=𐑾; <=𐑹; ⋈=𐑐; ⊤=𐑧; ∈=𐑲; ∋=𐑠; ⊙=⊙; ⊥=𐑖; ⊞=𐑙; ⊡=𐑭}
 %   \primtuple{...}   — same, for use inside $...$ or equation environments
 %
 % Individual shortcuts (all 49 subtypes):
@@ -47,7 +47,7 @@
 \newfontfamily\primfont{Everson Mono}[Scale=1.05]
 \newfontfamily\shavfont{Trabajo}[Scale=1.0]
 
-% \axis{letter} — one of ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻
+% \axis{letter} — one of ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡
 % \shav{glyph}  — one Shavian value glyph
 \newcommand{\axis}[1]{\ifmmode\text{{\primfont #1}}\else{\primfont #1}\fi}
 \newcommand{\shav}[1]{\ifmmode\text{{\shavfont #1}}\else{\shavfont #1}\fi}
@@ -55,7 +55,7 @@
 % ── Core rendering macro ──────────────────────────────────────────────────────
 %
 % \prim{family-char}{subtype-char}
-%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻  (⊣ migrated; see \Ttop)
+%   family-char  : ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡  (⊣ migrated; see \Ttop)
 %   subtype-char : the paired TIPA glyph character
 %
 % The subtype is lowered and scaled to 78% — no actual subscript glyph needed.
@@ -161,8 +161,8 @@
 \newcommand{\Snn}{\shav{𐑕}}    % so   — n:n, matched many-to-many
 \newcommand{\Snm}{\shav{𐑳}}    % up   — n:m, unmatched many-to-many
 
-% ◻ — Protection.  Core.lean ctor order: awe, oak, ah, zoo.
-\newcommand{\Omprot}{\axis{◻}}
+% ⊡ — Protection.  Core.lean ctor order: awe, oak, ah, zoo.
+\newcommand{\Omprot}{\axis{⊡}}
 \newcommand{\Omzero}{\shav{𐑷}}  % awe — no topological protection
 \newcommand{\Omtwo}{\shav{𐑴}}   % oak — ℤ₂ symmetry protection
 \newcommand{\Omz}{\shav{𐑭}}     % ah  — integer winding number, ℤ

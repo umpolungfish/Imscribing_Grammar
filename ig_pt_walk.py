@@ -125,7 +125,7 @@ def generate_tex():
     for prim, vi in PRIM_VERT.items():
         v = ICO_VERTS[vi]
         d = zdepth(v)
-        empty = prim in ('◻','≻','∈','⋈')
+        empty = prim in ('⊡','≻','∈','⋈')
         col = 'black!6' if empty else ('black!10' if d < 0 else 'black!16')
         p2  = proj([c * 5.4 for c in v], SCALE)
         L.append(f'\\draw[{col},line width=0.35pt] (0,0) -- ({p2[0]:.3f}cm,{p2[1]:.3f}cm);\n')
@@ -195,7 +195,7 @@ def generate_tex():
         v    = ICO_VERTS[vi]
         r_lbl = 5.3
         lp   = proj([c * r_lbl for c in v], SCALE)
-        empty = prim in ('◻','≻','∈','⋈')
+        empty = prim in ('⊡','≻','∈','⋈')
         alpha = '!22' if (d < -0.1 or empty) else '!52'
         L.append(f'\\node[font={{\\igprimfont\\fontsize{{12}}{{12}}\\selectfont}},text=black{alpha}]'
                  f' at ({lp[0]:.3f}cm,{lp[1]:.3f}cm) {{{prim}}};\n')

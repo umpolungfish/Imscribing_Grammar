@@ -6,7 +6,7 @@ against the six open Clay Millennium types.
 Background: ruleset_universe.py's canonical universe already treats one
 T-primitive (⊤, kinetics) asymmetrically as a ceiling condition (entry's
 ordinal <= critical ordinal) while the other four dynamics primitives
-(<, ⋈, ⊥, ◻) require exact ordinal equality. This script generalizes that
+(<, ⋈, ⊥, ⊡) require exact ordinal equality. This script generalizes that
 single asymmetry uniformly to all five dynamics primitives, at the same
 canonical anchors, and re-sweeps every gate-universe already on record
 (RULESETS + NEW_RULESETS, 29 total) to see which open Clay problems
@@ -46,7 +46,7 @@ T_CEILING = {
     "⋈": ("𐑐", True),
     "⊤": ("𐑧", True),
     "⊥": ("𐑫", True),
-    "◻": ("𐑭", True),
+    "⊡": ("𐑭", True),
 }
 
 

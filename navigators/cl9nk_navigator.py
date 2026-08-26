@@ -50,10 +50,10 @@ ORDINALS = {
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
     "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
     "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊡": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 # =============================================================================
 # CATALOG LOADING — single source of truth, no hardcoded systems
@@ -116,14 +116,14 @@ def load_catalog(force=False):
         "∋": "𐑝",
         "⊙": "⊙",
         # ⊥ (Chirality) owns 𐑫 = wool = inexhaustible chirality → ETERNAL_FIXEDPOINT.
-        # ◻ (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
-        # These were transposed: ⊥ held 𐑭 and ◻ held 𐑫, i.e. each carried a value from
+        # ⊡ (Protection) owns 𐑭 = ah = integer winding ℤ → ZWIND (∮A = 2πn, n ∈ ℤ).
+        # These were transposed: ⊥ held 𐑭 and ⊡ held 𐑫, i.e. each carried a value from
         # the other's axis. The swap made clink_l9 report distance 1.2289 from its OWN
-        # reference, with the only two "promotions" being ⊥: 𐑫→𐑭 and ◻: 𐑭→𐑫 — a
+        # reference, with the only two "promotions" being ⊥: 𐑫→𐑭 and ⊡: 𐑭→𐑫 — a
         # transposition masquerading as structure. Ordinal authority is Core.lean.
         "⊥": "𐑫",
         "⊞": "𐑳",
-        "◻": "𐑭",
+        "⊡": "𐑭",
     }
 
 
@@ -151,7 +151,7 @@ def _resolve_clink_l8_reference():
         "⊙": "⊙",
         "⊥": "𐑫",
         "⊞": "𐑳",
-        "◻": "𐑟",
+        "⊡": "𐑟",
     }
 
 # =============================================================================
@@ -385,7 +385,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, ⊤=𐑧, ◻=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, ⊡=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -404,7 +404,7 @@ def assess_tier(t):
     """
     crit = t.get("⊙")
     pol  = t.get("≺")
-    prot = t.get("◻")
+    prot = t.get("⊡")
     dim  = t.get("⊢")
     if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
         return "O₀"
@@ -492,7 +492,7 @@ CL9NK_FORMULAE = {
         "𐑕": ("∀a∈A∀b∈B( type(a) = type(b) )", None, "close"),
         "𐑙": ("|A| = 1 ∧ |B| = 1", None, "distant"),
     },
-    "◻": {
+    "⊡": {
         "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0 — winding bridge", "WIND_BRIDGE", "match"),
         "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)", "BRAID_TRANSCENDENCE", "distant"),
         "𐑴": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None, "close"),
@@ -702,13 +702,13 @@ def compute_transcendence():
         "significance": "Integer winding bridge (Hodge Bridge) — guarantees density of bridges across moats.",
     }
     stitch_info = {
-        "primitive": "◻",
-        "l8_value": l8.get("◻", "?"),
-        "l9_value": l9.get("◻", "?"),
-        "l8_fragment": CL9NK_FORMULAE["◻"].get(l8.get("◻", ""), ("?", None, "?"))[0],
-        "l9_fragment": CL9NK_FORMULAE["◻"].get(l9.get("◻", ""), ("?", None, "?"))[0],
-        "l8_atom": CL9NK_FORMULAE["◻"].get(l8.get("◻", ""), ("?", None, "?"))[1],
-        "l9_atom": CL9NK_FORMULAE["◻"].get(l9.get("◻", ""), ("?", None, "?"))[1],
+        "primitive": "⊡",
+        "l8_value": l8.get("⊡", "?"),
+        "l9_value": l9.get("⊡", "?"),
+        "l8_fragment": CL9NK_FORMULAE["⊡"].get(l8.get("⊡", ""), ("?", None, "?"))[0],
+        "l9_fragment": CL9NK_FORMULAE["⊡"].get(l9.get("⊡", ""), ("?", None, "?"))[0],
+        "l8_atom": CL9NK_FORMULAE["⊡"].get(l8.get("⊡", ""), ("?", None, "?"))[1],
+        "l9_atom": CL9NK_FORMULAE["⊡"].get(l9.get("⊡", ""), ("?", None, "?"))[1],
         "significance": "Infinite repetition of the stitch [moat · hodge · linker] — path to infinity.",
     }
 
@@ -736,7 +736,7 @@ def compute_transcendence():
 # =============================================================================
 
 def generate_promotions():
-    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡","≻":"𐑩","≺":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
+    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡","≻":"𐑩","≺":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","⊡":"𐑷"}
 
     zfc_t = None
     load_catalog()
@@ -746,7 +746,7 @@ def generate_promotions():
             zfc_t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
             break
     if zfc_t is None:
-        zfc_t = {"⊢":"𐑼","⊣":"𐑸","≻":"𐑾","≺":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
+        zfc_t = {"⊢":"𐑼","⊣":"𐑸","≻":"𐑾","≺":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","⊡":"𐑭"}
 
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:
@@ -809,7 +809,7 @@ def generate_promotions():
         ],
         "total_promotions": len(stage1) + len(stage2) + len(stage3) + len(stage4),
         "total_distance_zfc_to_l9": round(d_zfc_l9, 4),
-        "transcendence": {"primitives": ["⊥", "◻"], "d_l8_to_l9": round(d_l8_l9, 4)},
+        "transcendence": {"primitives": ["⊥", "⊡"], "d_l8_to_l9": round(d_l8_l9, 4)},
         "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; CLINK L9 defined internally.",
     }
 
@@ -1055,7 +1055,7 @@ _ATOM_DESC = {
     "BRIDGE_EXIST":         "Existence of a bridge (∈ existential) (𐑔)",
     "STITCH_3":             "3-unit stitch: moat · hodge · linker (∋ conjunction) (𐑝)",
     "PHI_C":                "Criticality fixed-point — ξ→∞ ∧ μ∘δ=id (⊙)",
-    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (◻=𐑭)",
+    "WIND_BRIDGE":          "⬆ Hodge Bridge — integer winding density (⊡=𐑭)",
     "MOAT_BRIDGE_TYPE":     "Type mismatch between moat and bridge (⊞=𐑳)",
     "INFINITE_STITCH":      "⬆ Infinite repetition of the stitch — path to infinity (⊥=𐑫)",
 }

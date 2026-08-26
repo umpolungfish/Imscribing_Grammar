@@ -18,7 +18,7 @@ from typing import Dict, List, Tuple, Literal
 # (sourced from space_search/primitives.py ORDINALS + README + Core.lean)
 # =============================================================================
 
-PRIMITIVE_ORDER: List[str] = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_ORDER: List[str] = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 # Exact glyphs per primitive (the only legal values)
 CANONICAL_VALUES: Dict[str, List[str]] = {
@@ -33,7 +33,7 @@ CANONICAL_VALUES: Dict[str, List[str]] = {
     "⊙": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],               # Criticality — 5 (note: ⊙ glyph is a legal value)
     "⊥": ["𐑓", "𐑒", "𐑖", "𐑫"],                    # Chirality — 4
     "⊞": ["𐑙", "𐑕", "𐑳"],                         # Stoichiometry — 3
-    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],                    # Winding — 4
+    "⊡": ["𐑷", "𐑴", "𐑭", "𐑟"],                    # Winding — 4
 }
 
 # Ordinal ranks (1-based where possible; non-integer only for the two transitional ⊙ values)
@@ -50,14 +50,14 @@ ORDINALS: Dict[str, Dict[str, float]] = {
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
     "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
     "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊡": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
 # Canonical weights for distance calculations (from space_search/primitives.py v0.5.0)
 WEIGHTS: Dict[str, float] = {
     "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.0,
     "⋈": 1.0, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
-    "⊙": 1.0, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
+    "⊙": 1.0, "⊥": 0.8, "⊞": 1.0, "⊡": 0.7,
 }
 
 # Human-readable names (for docs / errors only — the glyphs are the identity)
@@ -73,7 +73,7 @@ PRIMITIVE_NAMES: Dict[str, str] = {
     "⊙": "Criticality",
     "⊥": "Chirality",
     "⊞": "Stoichiometry",
-    "◻": "Winding",
+    "⊡": "Winding",
 }
 
 # =============================================================================
@@ -100,7 +100,7 @@ class CrystalAddress:
     Crit: str  # ⊙ Criticality (the field name is Crit; the *value* can be the glyph ⊙)
     H: str   # ⊥ Chirality
     S: str   # ⊞ Stoichiometry
-    O: str   # ◻ Winding
+    O: str   # ⊡ Winding
 
     def __post_init__(self):
         glyph_map = self._glyph_map()
@@ -112,7 +112,7 @@ class CrystalAddress:
         return {
             "⊢": self.D, "⊣": self.T, "≻": self.R, "≺": self.P,
             "⋈": self.F, "⊤": self.K, "∈": self.G, "∋": self.C,
-            "⊙": self.Crit, "⊥": self.H, "⊞": self.S, "◻": self.O,
+            "⊙": self.Crit, "⊥": self.H, "⊞": self.S, "⊡": self.O,
         }
 
     @classmethod
@@ -124,7 +124,7 @@ class CrystalAddress:
         return cls(
             D=d["⊢"], T=d["⊣"], R=d["≻"], P=d["≺"],
             F=d["⋈"], K=d["⊤"], G=d["∈"], C=d["∋"],
-            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["◻"],
+            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["⊡"],
         )
 
     @classmethod
@@ -132,7 +132,7 @@ class CrystalAddress:
         return cls(
             D=d["⊢"], T=d["⊣"], R=d["≻"], P=d["≺"],
             F=d["⋈"], K=d["⊤"], G=d["∈"], C=d["∋"],
-            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["◻"],
+            Crit=d["⊙"], H=d["⊥"], S=d["⊞"], O=d["⊡"],
         )
 
     def as_tuple(self) -> Tuple[str, ...]:
@@ -166,7 +166,7 @@ OuroboricityTier = Literal["O₀", "O₁", "O₂", "O₂†", "O_∞"]
 
 def ouroboricity_tier(addr: CrystalAddress) -> OuroboricityTier:
     """
-    Compute the canonical ouroboricity tier from the (<, ⊙) pair (with ◻/D context).
+    Compute the canonical ouroboricity tier from the (<, ⊙) pair (with ⊡/D context).
     Matches the rules in Core.lean and the README table.
     """
     phi = addr.P
@@ -206,13 +206,13 @@ def ouroboricity_tier(addr: CrystalAddress) -> OuroboricityTier:
 PHILOSOPHERS_STONE: CrystalAddress = CrystalAddress.from_dict({
     "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑾", "≺": "𐑹",
     "⋈": "𐑐", "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠",
-    "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
+    "⊙": "⊙", "⊥": "𐑫", "⊞": "𐑳", "⊡": "𐑭",
 })
 
 MINIMUM_BASELINE: CrystalAddress = CrystalAddress.from_dict({
     "⊢": "𐑛", "⊣": "𐑡", "≻": "𐑩", "≺": "𐑗",
     "⋈": "𐑱", "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝",
-    "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷",
+    "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "⊡": "𐑷",
 })
 
 

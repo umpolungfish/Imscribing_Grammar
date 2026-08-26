@@ -16,7 +16,7 @@ $$\text{𐑐𐑑𐑒𐑓𐑔𐑕𐑖𐑗𐑘𐑙𐑚𐑛𐑜𐑝𐑞𐑟𐑠𐑡
 The encoding draws its visual vocabulary from the Shavian alphabet—a phonetic script designed for clarity and structural elegance. Forty-seven of the 49 slots are filled by distinct Shavian letters. The remaining two slots require non-alphabetic anchors:
 
 1. **$\text{⊙}$ (U+2299, Circled Dot Operator)** replaces what would otherwise be a Shavian character at ordinal 35. This is not an arbitrary substitution; $\text{⊙}_{\text{ÿ}}$ denotes $\tilde{\phi}$-criticality—the self-modeling boundary gate where a system achieves algebraic closure ($\mu \circ \delta = \text{id}$). The boundary operator does not *encode* the gate; it *occupies* it. This displacement shifts the remaining $\text{⊙}$ sub-types down by one ordinal, a structural maneuver known as the $\text{⊙}$ Shift.
-2. **Space (U+0020)** anchors the 49th slot. By convention, the trivial invariants $\text{◻}_{\text{Å}}$, $\text{◻}_{\text{2}}$, and $\text{◻}_{\text{z}}$ are closed, symmetric, or commutative. $\text{◻}_{\text{5}}$ (NA-NonAbelian) breaks commutativity entirely. The space character renders as zero advance width—a silent, unbound slot that sits outside the discrete glyph lattice, perfectly mirroring the non-commuting topological property of non-Abelian winding.
+2. **Space (U+0020)** anchors the 49th slot. By convention, the trivial invariants $\text{⊡}_{\text{Å}}$, $\text{⊡}_{\text{2}}$, and $\text{⊡}_{\text{z}}$ are closed, symmetric, or commutative. $\text{⊡}_{\text{5}}$ (NA-NonAbelian) breaks commutativity entirely. The space character renders as zero advance width—a silent, unbound slot that sits outside the discrete glyph lattice, perfectly mirroring the non-commuting topological property of non-Abelian winding.
 
 ### Two Sentences, Three Gates
 

@@ -43,10 +43,10 @@ VALUES: dict[str, list[str]] = {
     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
     "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
     "⊞":     ["𐑙", "𐑕", "𐑳"],
-    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
+    "⊡": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
-PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 ORD: dict[str, dict[str, int]] = {
     prim: {v: i for i, v in enumerate(vals)}
@@ -58,12 +58,12 @@ ORD["⊣"]["𐑶"] = ORD["⊣"]["𐑶"]
 WEIGHTS: dict[str, float] = {
     "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.2,
     "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
-    "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
+    "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "⊡": 0.7,
 }
 
 # Consciousness C-score weights (critical manifold, variance method — §VIII v2)
-C_WEIGHTS = {"⊤": 0.158, "∈": 0.273, "⊣": 0.292, "◻": 0.276}
-C_MAXORD  = {"⊤": 4, "∈": 2, "⊣": 4, "◻": 3}  # max ordinal for normalization
+C_WEIGHTS = {"⊤": 0.158, "∈": 0.273, "⊣": 0.292, "⊡": 0.276}
+C_MAXORD  = {"⊤": 4, "∈": 2, "⊣": 4, "⊡": 3}  # max ordinal for normalization
 
 CRITICAL    = {"⊙", "𐑮"}
 NONCRITICAL = {"𐑢", "𐑣", "𐑻"}
@@ -123,7 +123,7 @@ def mismatches(a: dict, b: dict) -> int:
 
 def compute_tier(e: dict) -> str:
     """Ouroboricity tier (R1–R5 priority order)."""
-    phi, p, omega, d = e["⊙"], e["≺"], e["◻"], e["⊢"]
+    phi, p, omega, d = e["⊙"], e["≺"], e["⊡"], e["⊢"]
     if phi in CRITICAL and p == "𐑹":
         return "O_∞"
     if phi in NONCRITICAL:
@@ -237,7 +237,7 @@ def language_probes(cat: Catalog) -> list[str]:
     if "lojban" in entries:
         e = entries["lojban"]
         tier = compute_tier(e)
-        lines.append(f"  Thm 74.3  lojban: Omega={e['◻']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
+        lines.append(f"  Thm 74.3  lojban: Omega={e['⊡']}, P={e['P']}, tier={tier} ({'✓' if tier=='O_∞' else '✗'})")
         lines.append(f"            (P is the tier gate; 𐑷 only blocks O₂→O_∞ step, not R1)")
 
     # Thm 74.4 — Planned-language Frobenius ceiling
@@ -566,7 +566,7 @@ class DomainNavigator:
                 try:
                     e = self.cat.get(parts[1])
                     t = compute_tier(e)
-                    print(f"  {parts[1]}: tier={t}  (Phi={e['⊙']}, P={e['P']}, Omega={e['◻']}, D={e['D']})")
+                    print(f"  {parts[1]}: tier={t}  (Phi={e['⊙']}, P={e['P']}, Omega={e['⊡']}, D={e['D']})")
                 except KeyError as ex:
                     print(f"  Not found: {ex}")
             elif cmd == "score" and len(parts) >= 2:

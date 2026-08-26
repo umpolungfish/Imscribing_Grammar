@@ -174,7 +174,7 @@ def derive_tuple(sym):
     else:
         H = 3
 
-    # ─── ◻ (Winding) idx ─────────────────────────────────────────
+    # ─── ⊡ (Winding) idx ─────────────────────────────────────────
     # f-block strong winding: 29; d-block 4-5 integer: 36
     # everything else (s, p, d period 6 relativistic): 39
     if block == 'f':
@@ -302,7 +302,7 @@ def derive_tuple(sym):
     return {
         '≻': SH[R],
         '⊥': SH[H],
-        '◻': SH[Om],
+        '⊡': SH[Om],
         '⊢': SH[D],
         '⊞': SH[Sig],
         '≺': SH[Ph],
@@ -355,13 +355,13 @@ def build_catalog_entry(sym):
 def imasm_word(sym):
     """Return the 12-token IMASM word string for an element."""
     t = derive_tuple(sym)
-    prims = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
+    prims = ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
     return ''.join(t[p] for p in prims)
 
 
 def validate_against_existing(cat):
     """Check how our derivations compare to the 7 hand-crafted entries."""
-    prims = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
+    prims = ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
     existing = {e['name']: e for e in cat if e['name'] in set(ELEM_NAMES_EN.values())}
     sym_map = {v: k for k, v in ELEM_NAMES_EN.items()}
     info_line('\nValidation against 7 existing hand-crafted entries:')
@@ -415,7 +415,7 @@ def main():
             if entry['name'] in all_elem_names:
                 sym = next(s for s, v in ELEMENTS.items() if v[4] == entry['name'])
                 correct = build_catalog_entry(sym)
-                if any(entry.get(p) != correct[p] for p in ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']):
+                if any(entry.get(p) != correct[p] for p in ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']):
                     cat[i] = correct
                     info_line(f'  Updated stale entry: {entry["name"]}')
                     updated += 1
@@ -425,8 +425,8 @@ def main():
         info_line(f'Added {added} new + updated {updated} stale element entries in catalog.')
 
     if '--table' in sys.argv or '--add' not in sys.argv:
-        prims = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> ⊥ ◻ ⊢ Σ < ⊤ ⋈ ∋ ∈ ⊣ ⊙"}')
+        prims = ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
+        info_line(f'\n{"Sym":4s} {"Z":3s} P B {"IMASM word (12 tokens)":50s}  {"> ⊥ ⊡ ⊢ Σ < ⊤ ⋈ ∋ ∈ ⊣ ⊙"}')
         info_line('-'*110)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z, period, col, block, name = ELEMENTS[sym]
@@ -437,8 +437,8 @@ def main():
 
     if '--imasm' in sys.argv:
         # Output IMASM opcode index table (ordinal values 0-47 or S for ⊙)
-        prims = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
-        info_line(f'\n{"Sym":4s} {"Z":3s} | >  ⊥  ◻  ⊢  Σ  <  ⊤  ⋈  ∋  ∈  ⊣  ⊙')
+        prims = ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
+        info_line(f'\n{"Sym":4s} {"Z":3s} | >  ⊥  ⊡  ⊢  Σ  <  ⊤  ⋈  ∋  ∈  ⊣  ⊙')
         info_line('-'*60)
         for sym in sorted(ELEMENTS, key=lambda s: ELEMENTS[s][0]):
             Z = ELEMENTS[sym][0]

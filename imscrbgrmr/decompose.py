@@ -6,7 +6,7 @@ Inverse operations that complement the build-up algebra (meet/join/tensor/lift).
 Operations
 ----------
 project          — orthogonal projection onto a named primitive subset
-primitive_peel   — drop one primitive to its constraint-bottom; track ⊙ / ◻ cost
+primitive_peel   — drop one primitive to its constraint-bottom; track ⊙ / ⊡ cost
 factor           — greatest proper sub-imscription (greedy descent toward constraint-bottom)
 principal_decomp — decompose into join-irreducible atomic factors
 cofactor         — residual B given composite C and factor A  (inverts tensor)
@@ -22,11 +22,11 @@ Tensor rules are primitive-aware (see algebra.py):
   • D    → union (D-components form a set system)
   • T    → promotion (topology lattice)
   • <    → join-dominant (⊙ propagates)
-  • ◻    → join-dominant (higher topological protection inherits)
+  • ⊡    → join-dominant (higher topological protection inherits)
   • R, P, ∈ → categorical (tensor helper rules)
 
 Cofactor analysis is primitive-aware: for meet-dominant (F, K), cofactor reveals
-the bottleneck component; for join-dominant (G, <, ◻), it reveals the contributor.
+the bottleneck component; for join-dominant (G, <, ⊡), it reveals the contributor.
 """
 
 from __future__ import annotations
@@ -171,7 +171,7 @@ class PeelResult:
     result: Optional[Imscription]     # None if axiom-blocked
     phi_c_preserved: bool
     omega_preserved: bool
-    peel_cost: float              # |Δξ_CP| from losing ⊙ or ◻ (0 if preserved)
+    peel_cost: float              # |Δξ_CP| from losing ⊙ or ⊡ (0 if preserved)
     blocked: bool
     block_reason: str
     notes: List[str] = field(default_factory=list)
@@ -332,7 +332,7 @@ def primitive_peel(
 
     Checks post-peel invariants:
       • ⊙ preserved?  If lost and strict=True → blocked; else → cost += phi_c_cost
-      • ◻ preserved?    If degraded and strict=True → blocked; else → cost += omega_cost × levels
+      • ⊡ preserved?    If degraded and strict=True → blocked; else → cost += omega_cost × levels
       • Axiom 2 (G_ב + 𐑝(SPECIFIC) cannot reach G_ℵ)?  → blocked always
 
     Returns PeelResult with the peeled imscription, cost, and flags.
@@ -379,7 +379,7 @@ def primitive_peel(
             )
         peel_cost += phi_c_cost
 
-    # ◻ topology protection
+    # ⊡ topology protection
     new_topo = peeled.topo_index
     orig_str = _TOPO_ORD.get(original_topo, 0) if original_topo else 0
     new_str = _TOPO_ORD.get(new_topo, 0) if new_topo else 0
@@ -387,12 +387,12 @@ def primitive_peel(
     if not omega_preserved:
         levels_lost = orig_str - new_str
         oc = omega_cost_per_level * levels_lost
-        notes.append(f"◻ degraded {original_topo} → {new_topo} ({levels_lost} level(s)) — cost +{oc:.1f} nats")
+        notes.append(f"⊡ degraded {original_topo} → {new_topo} ({levels_lost} level(s)) — cost +{oc:.1f} nats")
         if strict:
             return PeelResult(
                 imscription_name=imscription.name, peeled=primitive, result=None,
                 phi_c_preserved=phi_c_preserved, omega_preserved=False, peel_cost=0.0,
-                blocked=True, block_reason=f"Peeling {primitive} degrades ◻ (strict mode)",
+                blocked=True, block_reason=f"Peeling {primitive} degrades ⊡ (strict mode)",
                 notes=notes,
             )
         peel_cost += oc
@@ -485,7 +485,7 @@ def principal_decomp(imscription: Imscription, max_factors: int = 9) -> Principa
     plus the categorical skeleton as the final factor.
 
     A imscription is join-irreducible in the ordinal dimensions when all F/K/G are at
-    their constraint-bottoms.  The categorical dimensions (D, T, R, P, ∈, <, ◻)
+    their constraint-bottoms.  The categorical dimensions (D, T, R, P, ∈, <, ⊡)
     are each a single atom — they cannot be further decomposed without losing their
     identity.
 
@@ -558,7 +558,7 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     D (union):  cofactor[D] = components(C) − components(A) → CONTRIBUTOR / EXPLAINED
     T (topology promotion): same logic as join-dominant ordinal
     < (⊙ join-dominant): if A has ⊙ and C has ⊙ → EXPLAINED; else CONTRIBUTOR / CONFLICT
-    ◻ (topo protection, join): same as G logic on ordinal strength
+    ⊡ (topo protection, join): same as G logic on ordinal strength
     R, P, ∈ (categorical, tensor helper):
       • A[p] = C[p] → EXPLAINED (A explains it)
       • A[p] ≠ C[p] → PASSTHROUGH (B must have C[p]; we can't say more without the tensor rule)
@@ -659,22 +659,22 @@ def cofactor(composite: Imscription, factor_a: Imscription) -> CofactorResult:
     cofactor_kwargs[_PRIM_FIELD["Phi"]] = cof_phi
     dims.append(CofactorDimension("Phi", C.criticality_phase, A.criticality_phase, cof_phi, phi_role, note))
 
-    # ── ◻ (topological protection, join-dominant) ────────────────────────────
+    # ── ⊡ (topological protection, join-dominant) ────────────────────────────
     c_ome = _TOPO_ORD.get(C.topo_index, 0) if C.topo_index else 0
     a_ome = _TOPO_ORD.get(A.topo_index, 0) if A.topo_index else 0
     if a_ome > c_ome:
         cof_ome_val = None
         ome_role = "CONFLICT"
-        note = "A[◻] stronger than C[◻] — impossible under tensor (join-dominant)"
+        note = "A[⊡] stronger than C[⊡] — impossible under tensor (join-dominant)"
         conflicts.append("Omega")
     elif a_ome == c_ome:
         cof_ome_val = TopoIndex.awe if c_ome > 0 else None
         ome_role = "EXPLAINED"
-        note = f"A explains ◻={C.topo_index}; B contributes ≥TRIVIAL"
+        note = f"A explains ⊡={C.topo_index}; B contributes ≥TRIVIAL"
     else:
         cof_ome_val = C.topo_index
         ome_role = "CONTRIBUTOR"
-        note = f"B carries ◻={C.topo_index}"
+        note = f"B carries ⊡={C.topo_index}"
         contributors.append("Omega")
     cofactor_kwargs[_PRIM_FIELD["Omega"]] = cof_ome_val
     dims.append(CofactorDimension("Omega", C.topo_index, A.topo_index, cof_ome_val, ome_role, note))

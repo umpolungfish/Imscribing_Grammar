@@ -544,7 +544,7 @@ _LEGACY_TO_CANON: Dict[str, str] = {
     "H": "𐑓", "S": "𐑙", "Omega": "𐑷",
     "⊢": "𐑛", "⊣": "𐑡", "≻": "𐑩", "≺": "𐑗", "⋈": "𐑱",
     "⊤": "𐑘", "∈": "𐑚", "∋": "𐑝", "⊙": "𐑢", "⊥": "𐑓",
-    "⊞": "𐑙", "◻": "𐑷",
+    "⊞": "𐑙", "⊡": "𐑷",
 }
 
 # ── Primitive display symbols (unicode) ───────────────────────────────────────
@@ -574,7 +574,7 @@ PRIMITIVE_DISPLAY: Dict[str, str] = {
     "𐑓": "0",  "𐑒": "1",  "𐑖": "2",  "𐑫": "∞",
     # S — Stoichiometry
     "𐑙": "1:1",  "𐑕": "n:n",  "𐑳": "n:m",
-    # ◻ — Winding
+    # ⊡ — Winding
     "𐑷": "0",  "𐑴": "ℤ₂",  "𐑭": "ℤ",  "𐑟": "∅",
 }
 
@@ -925,7 +925,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "imscribe_system, e.g.: imscribe_system(name='test', description='test', "
                     "⊢='𐑛', ⊣='𐑡', >='𐑾', <='𐑗', "
                     "⋈='𐑱', ⊤='𐑤', ∈='𐑚', ∋='𐑝', "
-                    "⊙='𐑢', ⊥='𐑓', ⊞='𐑙', ◻='𐑷')"
+                    "⊙='𐑢', ⊥='𐑓', ⊞='𐑙', ⊡='𐑷')"
                 )
             })
 
@@ -940,7 +940,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;◻",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;⊡",
                 "valid_values": {
                     "⊢":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -953,7 +953,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                     "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
                     "⊞":     ["𐑙", "𐑕", "𐑳"],
-                    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
+                    "⊡": ["𐑷", "𐑴", "𐑭", "𐑟"],
                 },
                 "example": (
                     'imscribe(tool_name="imscribe_system", args={'
@@ -1168,7 +1168,7 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "𐑢": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],  # ⊙ / Critical
     "𐑓": ["𐑓", "𐑒", "𐑖", "𐑫"],        # H
     "𐑙": ["𐑙", "𐑕", "𐑳"],            # S
-    "𐑷": ["𐑷", "𐑴", "𐑭", "𐑟"],        # ◻
+    "𐑷": ["𐑷", "𐑴", "𐑭", "𐑟"],        # ⊡
 }
 
 _TRIANGULATION_SYSTEM = (
@@ -1732,7 +1732,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return ("◻/∋ transcendence analysis returned — Frobenius closed", True)
+            return ("⊡/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -1997,7 +1997,7 @@ TOOL_SCHEMAS = [
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
             "⊞":     _prim(["𐑙", "𐑕", "𐑳"],
                            "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-            "◻": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
+            "⊡": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -2009,7 +2009,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
+        ["name", "description", "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"],
     ),
     _fn(
         "run_command",
@@ -2213,7 +2213,7 @@ TOOL_SCHEMAS = [
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "⊙": {"type": "string", "description": "Filter by Phi criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"},
-             "◻": {"type": "string", "description": "Filter by winding"}},
+             "⊡": {"type": "string", "description": "Filter by winding"}},
             ["limit", "⊙"]),
         _fn(
             "crystal_count",
@@ -2531,7 +2531,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     Example direct tool call:
       imscribe_system(name="my_system", description="a test system",
         ⊢="𐑼", ⊣="𐑥", >="𐑾", <="𐑬", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", ⊞="𐑙", ◻="𐑭")
+        ∈="𐑔", ∋="𐑠", ⊙="⊙", ⊥="𐑒", ⊞="𐑙", ⊡="𐑭")
 
   TETRACTYS PROTOCOL — every imscribe_system call WITHOUT convergence_justification:
     Your proposed tuple is winding 1. Two additional de novo imscriptions are run automatically
@@ -2633,7 +2633,7 @@ IG TOOL REFERENCE  (pass as: imscribe(tool_name=..., args={...}))
     action="promotions" → all 6 ZFCₜ promotion channels with ordinal gaps
     action="distance"   → d(name, ZFCₜ) gap (requires name)
     Six ZFCₜ promotions: ⊣(T_net→T_odot), >(R_super→R_lr), <(P_asym→P_pm),
-                         ∋(Gamma_and→Gamma_seq), ⊥(H0→H2), ◻(Omega_0→Omega_Z)
+                         ∋(Gamma_and→Gamma_seq), ⊥(H0→H2), ⊡(Omega_0→Omega_Z)
 
 [Aleph / Hebrew letters]
 
@@ -2815,14 +2815,14 @@ constrains the remaining degrees of freedom:
             no finite n → ∞  (Axiom A: H_∞ requires ⊛)
   [11] S — Component types: one type, one instance → 1:1; many identical → n:n;
             multiple distinct types → n:m
-  [12] ◻ — Topological invariant: none → 0; Z2 parity-protected → ℤ₂
+  [12] ⊡ — Topological invariant: none → 0; Z2 parity-protected → ℤ₂
             (Axiom B: requires H_2 or H_∞); integer winding → ℤ;
             non-Abelian braiding → ∅_NA (requires D_⊙)
 
 After assignment, VERIFY:
   - Tier consistency: ouroborics tool
   - Frobenius condition for ±ˢ: μ∘δ=id must hold exactly (not just approximately)
-  - D-◻: ℤ₂ requires D≥△; ℤ requires D≥∞
+  - D-⊡: ℤ₂ requires D≥△; ℤ requires D≥∞
   - K-<: ⊙ + ↺ = deep critical structure; × + ↯ = runaway
   - × absorption: tensor(⊙, ×) = × — coupling to an EP system destroys Gate 1
 
@@ -2960,7 +2960,7 @@ Q: "What is the minimal path to O_∞ from O₂?"
 Q: "Apply the human lift to paper.tex."
   W0: file_read("paper.tex")
   W1: imscribe_system(name="paper_draft", description="...", ⊣="𐑡", <="𐑗",
-        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", ⊥="𐑓", ◻="𐑷",
+        ⋈="𐑱", ⊤="𐑪", ∈="𐑚", ∋="𐑝", ⊥="𐑓", ⊡="𐑷",
         ⊢="𐑼", >="𐑾", ⊙="⊙", ⊞="𐑳")
   W2: imscribe("compute_promotions", {"name_source": "paper_draft", "name_target": "human_academic_prose_target"})
       → confirms 8 promotions needed
@@ -2974,7 +2974,7 @@ Q: "Encode the Langlands correspondence as a type."
   W0: imscribe_system(name="langlands_correspondence",
         description="The Langlands program: bridge between Galois representations and automorphic forms",
         ⊢="𐑼", ⊣="𐑸", >="𐑽", <="𐑿", ⋈="𐑐", ⊤="𐑧",
-        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", ⊞="𐑳", ◻="𐑭")
+        ∈="𐑔", ∋="𐑵", ⊙="𐑮", ⊥="𐑫", ⊞="𐑳", ⊡="𐑭")
       → {status: ok, name: langlands_correspondence, ...}
   W1: imscribe("ouroborics", {"name": "langlands_correspondence"})
   W2: done
@@ -3003,18 +3003,18 @@ Primitive identifier → LaTeX (You **MUST** use these EXACT forms):
   ⊙ → $\text{⊙}_{\text{ÿ}}$       𐑮 → $\text{⊙}_{\text{Æ}}$      𐑻 → $\text{⊙}_{\text{3}}$    𐑢 → $\text{⊙}_{\text{ž}}$   𐑣 → $\text{⊙}_{\text{Ţ}}$
   𐑓 → $\text{⊥}_{\text{Ñ}}$         𐑒 → $\text{⊥}_{\text{£}}$        𐑖 → $\text{⊥}_{\text{A}}$    𐑫 → $\text{⊥}_{\text{!}}$
   𐑙 → $\text{Σ}_{\text{S}}$         𐑕 → $\text{Σ}_{\text{ő}}$        𐑳 → $\text{Σ}_{\text{ï}}$
-  𐑷 → $\text{◻}_{\text{Å}}$         𐑴 → $\text{◻}_{\text{2}}$        𐑭 → $\text{◻}_{\text{z}}$    𐑟 → $\text{◻}_{\text{5}}$
+  𐑷 → $\text{⊡}_{\text{Å}}$         𐑴 → $\text{⊡}_{\text{2}}$        𐑭 → $\text{⊡}_{\text{z}}$    𐑟 → $\text{⊡}_{\text{5}}$
 
   O_∞ → $\text{O}_{\text{inf}}$   O₀ → $\text{O}_{\text{0}}$   O₁ → $\text{O}_{\text{1}}$   O₂ → $\text{O}_{\text{2}}$   O₂† → $\text{O}_{\text{2}}^{\text{†}}$
   mu circ delta=id → $\mu \circ \delta = \text{id}$
   Z2 (symmetry group) → $\mathbb{Z}_2$
 
 Tuple display — You **MUST** use $\langle ... \rangle$ with semicolons and thin spaces:
-  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{⊤}_{\text{@}};\ \text{∈}_{\text{ʔ}};\ \text{∋}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{⊥}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{◻}_{\text{z}} \rangle$$
+  $$\langle \text{⊢}_{\text{ω}};\ \text{⊣}_{\text{¨}};\ \text{>}_{\text{=}};\ \text{<}_{\text{}};\ \text{⋈}_{\text{ż}};\ \text{⊤}_{\text{@}};\ \text{∈}_{\text{ʔ}};\ \text{∋}_{\text{ˌ}};\ \text{⊙}_{\text{ÿ}};\ \text{⊥}_{\text{A}};\ \text{Σ}_{\text{S}};\ \text{⊡}_{\text{z}} \rangle$$
   You **MUST NOT** use: <𐑦𐑶𐑾𐑹; ...>
 
 In running prose, You **MUST** always wrap: "$\text{⊙}_{\text{ÿ}}$ criticality", "$\text{O}_{\text{inf}}$ tier",
-"$\text{◻}_{\text{z}}$ protection", "$\text{<}_{\text{}}$", "$\mu \circ \delta = \text{id}$".
+"$\text{⊡}_{\text{z}}$ protection", "$\text{<}_{\text{}}$", "$\mu \circ \delta = \text{id}$".
 
 Exception: primitive identifiers used as Python enum values inside code fences or tool call
 arguments are correct as-is — You **MUST NOT** add LaTeX inside code blocks or JSON.
@@ -3148,7 +3148,7 @@ class TrueAgenticAgent:
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (<, P, ◻, D) only; 𐑱 in
+        # sub-oracle — it does not tensor with it. Tier is (<, P, ⊡, D) only; 𐑱 in
         # the sub-oracle does not degrade the harness tier from O_∞.
         self.inference_fidelity: str = (
             "𐑐" if isinstance(self.client, _LocalOpenAIClient) else "𐑱"

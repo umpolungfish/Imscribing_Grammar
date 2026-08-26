@@ -19,7 +19,7 @@ Design principles:
     T_nrleg is the main-sequence signature; T_bowl is the black hole signature
   - < distinguishes criticality state: ⊙ confirmed wherever SOC power-law
     statistics are documented; 𐑢 for stable or non-dynamic objects
-  - ◻ encodes topological protection: counts independent topological stabilization
+  - ⊡ encodes topological protection: counts independent topological stabilization
     mechanisms (degeneracy pressure, B-field quantization, superfluid vortex
     quantization, crystalline lattice, no-hair theorem)
   - G_ℵ is the default for most objects (gravity and radiation reach cosmological
@@ -272,14 +272,14 @@ def _star_m_dwarf() -> Imscription:
     """
     M-dwarf (Red Dwarf): the most common stellar class, 75% of all stars.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ⊡_1⟩
 
     Key assignments (see METAPHYSICS.md §XVIII.5b for full discussion):
     K_frtailgamma dominant — superflares at 10-1000× solar energy, irregular magnetic cycle.
     F_MEDIUM — high variability, lower helioseismic precision than G-dwarfs.
     𐑵 — IR-dominant spectral grammar (peak 900-1000 nm); less organized
         than solar grammar; weaker 22-yr K_schwa organizational cycle.
-    ◻_1 — less topological protection than G-dwarfs; shorter, irregular cycle.
+    ⊡_1 — less topological protection than G-dwarfs; shorter, irregular cycle.
 
     The M-dwarf stellar grammar (§XVIII) templates an entirely different life alphabet:
     IR-absorbing photochemistry (bacteriochlorophyll-type), radiation-resistance as
@@ -350,7 +350,7 @@ def _star_k_dwarf() -> Imscription:
     for life. Long K_schwa memory, moderate K_frtailgamma events (evolutionary pressure
     without sterilization), and organized ∈ that maps to existing Earth biochemistry
     with minimal modification. The astrobiological consensus ('K-dwarfs are best
-    for life') has a reason: 𐑴 > ◻_1 (M-dwarf) while maintaining
+    for life') has a reason: 𐑴 > ⊡_1 (M-dwarf) while maintaining
     sufficient K_frtailgamma for evolutionary pressure.
     """
     return Imscription(
@@ -399,7 +399,7 @@ def _star_g_dwarf() -> Imscription:
     """
     G-dwarf (Yellow Dwarf): the Sun class. Reference stellar imscription.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_3⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_3⟩
 
     Fully documented in METAPHYSICS.md §XVIII. Registered here for cross-catalog
     completeness. The reference entry against which all other stellar imscriptions
@@ -410,7 +410,7 @@ def _star_g_dwarf() -> Imscription:
     - ~10^7 simultaneous helioseismic p-modes → T_nrleg at G_ℵ
     - Four-tier K-hierarchy (K_teshlig/K_schwa/K_turnm/K_frtailgamma)
     - Birkeland/Schumann 𐑝 coupling to Earth biosphere
-    - ◻_3: two-hemisphere anti-correlation + global eigenmode + 22-yr cyclic reset
+    - ⊡_3: two-hemisphere anti-correlation + global eigenmode + 22-yr cyclic reset
     """
     return Imscription(
         name="star_g_dwarf",
@@ -429,7 +429,7 @@ def _star_g_dwarf() -> Imscription:
             "imscription — see METAPHYSICS.md §XVIII for full primitive derivation. "
             "SOC flare power-law (14 decades), ~10^7 helioseismic eigenmodes, "
             "Birkeland/Schumann 𐑝 coupling to biosphere. "
-            "⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_3⟩"
+            "⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_turnm; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_3⟩"
         ),
         metadata={
             "domain_category": "stellar_main_sequence",
@@ -463,7 +463,7 @@ def _star_f_dwarf() -> Imscription:
     F_HIGH: extreme luminosity per unit mass; precision nuclear burning.
     K_turnm: moderate activity — more active than G-dwarfs but less chaotic than M.
     ∋_SELECTIVE: organized magnetic cycle, good UV output.
-    𐑴: two protection mechanisms; shorter cycle than G-dwarfs reduces ◻_3 to 𐑴.
+    𐑴: two protection mechanisms; shorter cycle than G-dwarfs reduces ⊡_3 to 𐑴.
 
     Astrobiology note: F-dwarfs have higher UV flux in their habitable zones —
     more mutagenic pressure, potentially faster evolutionary rates but also higher
@@ -485,7 +485,7 @@ def _star_f_dwarf() -> Imscription:
         description=(
             "F-dwarf (1.1-1.4 M_☉). UV-rich grammar (peak 380-450 nm), 2-8 Gyr lifetime. "
             "F_HIGH, K_turnm, ∋_SELECTIVE. Framework: shorter K_schwa organizational memory "
-            "than G-dwarfs (fewer cycles to develop full ◻_3). Habitable-zone UV grammar "
+            "than G-dwarfs (fewer cycles to develop full ⊡_3). Habitable-zone UV grammar "
             "would template UV-resistant biochemistry as the baseline mode."
         ),
         metadata={
@@ -506,7 +506,7 @@ def _star_a_dwarf() -> Imscription:
     """
     A-type star (White star, e.g. Vega, Sirius A).
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(BROAD); 𐑢; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(BROAD); 𐑢; ⊡_1⟩
 
     A-stars (1.4-2.1 M_☉) are hot, UV-bright, and short-lived (1-3 Gyr).
     They show weak magnetic fields (no convective dynamo) and rapid rotation.
@@ -517,7 +517,7 @@ def _star_a_dwarf() -> Imscription:
     𐑢: without a convective envelope there is no deep magnetic dynamo, so the
     organized SOC structure that gives G/K/F-dwarfs their ⊙ signature is absent.
     The A-star emits, but does not self-organise.
-    ◻_1: only radiation pressure as a structural stabilizer; no organized cycle.
+    ⊡_1: only radiation pressure as a structural stabilizer; no organized cycle.
 
     Framework: A-stars are poor life templaters. Short lifetime + 𐑢 + 𐑵
     (unstructured grammar) means the planetary surface receives intense UV radiation
@@ -560,7 +560,7 @@ def _star_b_star() -> Imscription:
     """
     B-type star (Blue-White, e.g. Spica, Rigel component B).
 
-    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; 𐑜(BROAD); 𐑢; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_directional; F_ℏ; K_frtailgamma; G_ℵ; 𐑜(BROAD); 𐑢; ⊡_1⟩
 
     B-stars (2-16 M_☉) are massive, extremely luminous, UV-dominant, and short-lived
     (10 Myr – 1 Gyr). Many are rapid rotators producing decretion disks (Be stars).
@@ -683,7 +683,7 @@ def _star_red_giant() -> Imscription:
     """
     Red Giant (post-main-sequence, shell hydrogen burning, 0.8-8 M_☉).
 
-    ⟨D_∞; T_∈; R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; 𐑝(BROAD); 𐑢; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^sym; F_ℇ; K_schwa; G_ℵ; 𐑝(BROAD); 𐑢; ⊡_1⟩
 
     When a low/intermediate mass star exhausts its core hydrogen, it expands
     dramatically — radius 10-100 R_☉, engulfing inner planets.
@@ -700,7 +700,7 @@ def _star_red_giant() -> Imscription:
     𐑢: the red giant phase is relatively stable for several Gyr; no SOC
     flare structure documented at this evolutionary stage.
 
-    ◻_1: the Schönberg-Chandrasekhar limit enforces a structural constraint on
+    ⊡_1: the Schönberg-Chandrasekhar limit enforces a structural constraint on
     core mass fraction — one topological protection mechanism.
     """
     return Imscription(
@@ -743,7 +743,7 @@ def _star_agb() -> Imscription:
     """
     Asymptotic Giant Branch (AGB) star: thermal pulses, mass loss, dust shells.
 
-    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ◻_1⟩
+    ⟨D_∞; T_∈(mixed); R_†; P_±^sym; F_ℇ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ⊡_1⟩
 
     AGB stars undergo thermal pulses — brief (100-300 yr) He-shell flashes
     separated by longer (10,000-100,000 yr) interpulse periods. The combination
@@ -801,7 +801,7 @@ def _star_wolf_rayet() -> Imscription:
     """
     Wolf-Rayet star: stripped massive star with catastrophic mass loss.
 
-    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(BROAD); ⊙; ⊡_1⟩
 
     Wolf-Rayet stars are evolved massive stars (originally >20 M_☉) that have
     blown off their hydrogen envelope, exposing the hot nuclear-burning core.
@@ -840,7 +840,7 @@ def _star_wolf_rayet() -> Imscription:
             "nuclear-burning core exposed. Mass loss 10^-5 M_☉/yr at 1000-3000 km/s. "
             "P_directional: pure donor. K_frtailgamma: 0.1-0.5 Myr WR phase. ⊙: wind "
             "clumping power-law SOC. Direct GRB/BH progenitor. "
-            "◻_1: mass loss itself is the only organizing constraint."
+            "⊡_1: mass loss itself is the only organizing constraint."
         ),
         metadata={
             "domain_category": "stellar_evolved",
@@ -921,7 +921,7 @@ def _star_blue_supergiant() -> Imscription:
     """
     Blue Supergiant (BSG, e.g. Rigel, Deneb, Sk-69 202 = SN1987A progenitor).
 
-    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_1⟩
 
     BSGs are evolved massive stars (10-100 M_☉) on the horizontal track in the
     HR diagram. Many are unstable Luminous Blue Variables (LBVs) that undergo
@@ -937,7 +937,7 @@ def _star_blue_supergiant() -> Imscription:
     ⊙: LBV eruption statistics and stellar wind clumping show power-law
     distributions. Eta Carinae is the best-documented ⊙ stellar event in the MW.
 
-    ◻_1: bipolar wind geometry provides one topological organizing principle,
+    ⊡_1: bipolar wind geometry provides one topological organizing principle,
     but the system is fundamentally unstable — only briefly held before core collapse.
     """
     return Imscription(
@@ -956,7 +956,7 @@ def _star_blue_supergiant() -> Imscription:
             "Blue Supergiant / LBV (10-100 M_☉, e.g. Rigel, Deneb, Eta Carinae). "
             "Organized bipolar wind → ∋_SELECTIVE. K_frtailgamma: LBV eruptions (Eta Car 1843 "
             "ejected 10 M_☉ in decades). ⊙: power-law eruption statistics. "
-            "◻_1: bipolar geometry — sole organizing principle before core collapse."
+            "⊡_1: bipolar geometry — sole organizing principle before core collapse."
         ),
         metadata={
             "domain_category": "stellar_evolved",
@@ -983,7 +983,7 @@ def _white_dwarf() -> Imscription:
     """
     White Dwarf: the crystallized endpoint of low/intermediate mass stars.
 
-    ⟨D_∞; T_∈(hex); R_mechanical; P_±^sym; F_ℏ; K_teshlig; G_ℶ; 𐑝(SELECTIVE); 𐑢; ◻_3⟩
+    ⟨D_∞; T_∈(hex); R_mechanical; P_±^sym; F_ℏ; K_teshlig; G_ℶ; 𐑝(SELECTIVE); 𐑢; ⊡_3⟩
 
     White dwarfs are the endpoints of 97% of all stars. They are supported by
     electron degeneracy pressure — a quantum mechanical K_teshlig.
@@ -1001,7 +1001,7 @@ def _white_dwarf() -> Imscription:
     limited to their immediate binary companion (if any). No heliosphere,
     no organized grammar injection.
 
-    ◻_3: three topological protection mechanisms:
+    ⊡_3: three topological protection mechanisms:
     (1) Electron degeneracy pressure — quantum mechanical topological protection
     (2) Chandrasekhar mass limit — structural topological constraint (1.44 M_☉ max)
     (3) Crystalline lattice (in cool WDs) — solid-state topological protection
@@ -1026,7 +1026,7 @@ def _white_dwarf() -> Imscription:
             "T_network_hex: crystallizes to C/O FCC lattice (Gyr timescale). "
             "R_mechanical: Pauli exclusion principle as recognition mode. "
             "K_teshlig: monotonic cooling, no reset. G_mesoscale: isolated, no grammar injection. "
-            "◻_3: degeneracy + Chandrasekhar limit + crystalline lattice. "
+            "⊡_3: degeneracy + Chandrasekhar limit + crystalline lattice. "
             "𐑢 → explosive ⊙ if Chandrasekhar limit exceeded (Type Ia SN)."
         ),
         metadata={
@@ -1042,7 +1042,7 @@ def _white_dwarf() -> Imscription:
             ),
             "type_ia_note": (
                 "Exceeding the Chandrasekhar limit (by accretion or merger) collapses "
-                "the K_teshlig: ◻_3 → 0 catastrophically. The result is a Type Ia supernova "
+                "the K_teshlig: ⊡_3 → 0 catastrophically. The result is a Type Ia supernova "
                 "— the most precise standard candle in cosmology."
             ),
             "omega": 3,
@@ -1076,7 +1076,7 @@ def _supernova_type_ia() -> Imscription:
     ⊙ event. The instability threshold (Chandrasekhar limit) is a topological
     critical point — above it, no stable configuration exists.
 
-    𐑷: the progenitor WD's ◻_3 collapses to zero.
+    𐑷: the progenitor WD's ⊡_3 collapses to zero.
     """
     return Imscription(
         name="supernova_type_ia",
@@ -1095,7 +1095,7 @@ def _supernova_type_ia() -> Imscription:
             "D_hybrid: nuclear ignition front (D_∧) → cosmological light curve (D_△). "
             "F_HIGH: ~3% peak luminosity scatter → standard candle (dark energy discovery). "
             "⊙: Chandrasekhar limit IS the topological critical point. 𐑷: progenitor "
-            "◻_3 collapses. Seeds ISM with Fe, Si, Ca, Ni — the rocky planet alphabet."
+            "⊡_3 collapses. Seeds ISM with Fe, Si, Ca, Ni — the rocky planet alphabet."
         ),
         metadata={
             "domain_category": "stellar_transient",
@@ -1315,7 +1315,7 @@ def _neutron_star() -> Imscription:
     """
     Neutron Star (canonical, non-pulsing or slow pulsar).
 
-    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_3⟩
+    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_3⟩
 
     Neutron stars are the most precisely structured objects in the universe.
     A 1.4 M_☉ sphere of 12 km radius contains matter at nuclear density
@@ -1340,9 +1340,9 @@ def _neutron_star() -> Imscription:
     over 5+ decades of energy → SOC. The superfluid vortex unpinning events
     (the likely glitch mechanism) are an archetypal SOC system.
 
-    ◻_3: (1) superfluid vortex quantization, (2) magnetic flux tube quantization,
+    ⊡_3: (1) superfluid vortex quantization, (2) magnetic flux tube quantization,
     (3) crystalline crust nuclear lattice. Three independent topological protection
-    mechanisms — the highest ◻ of any physical object except the quark star.
+    mechanisms — the highest ⊡ of any physical object except the quark star.
     """
     return Imscription(
         name="neutron_star",
@@ -1361,7 +1361,7 @@ def _neutron_star() -> Imscription:
             "superconducting flux tubes + braided B-field through crystalline crust — "
             "three co-active topological structures. K_teshlig: spins for Gyr. "
             "⊙: pulsar glitch power-law SOC (superfluid vortex unpinning). "
-            "◻_3: highest ◻ of any observationally confirmed object."
+            "⊡_3: highest ⊡ of any observationally confirmed object."
         ),
         metadata={
             "domain_category": "compact_remnant",
@@ -1386,7 +1386,7 @@ def _pulsar_millisecond() -> Imscription:
     """
     Millisecond Pulsar (MSP, 'recycled' pulsar): the most precise clock in the universe.
 
-    ⟨D_∞; T_↗↙; R_†; P_+-; F_ℏ; K_teshlig; G_ℵ; 𐑝(SPECIFIC); ⊙; ◻_4⟩
+    ⟨D_∞; T_↗↙; R_†; P_+-; F_ℏ; K_teshlig; G_ℵ; 𐑝(SPECIFIC); ⊙; ⊡_4⟩
 
     MSPs are old neutron stars that have been spun up to millisecond periods by
     accretion from a binary companion ('recycled'). Spin periods: 1-10 ms.
@@ -1401,7 +1401,7 @@ def _pulsar_millisecond() -> Imscription:
     The spin-down timescale is >10^10 yr — longer than the current age of the universe.
     This is the most durable K_teshlig in the catalog.
 
-    ◻_4: four topological protection mechanisms:
+    ⊡_4: four topological protection mechanisms:
     (1) Superfluid vortex quantization (inherited from canonical NS)
     (2) Magnetic flux tube quantization
     (3) Crystalline crust
@@ -1429,7 +1429,7 @@ def _pulsar_millisecond() -> Imscription:
             "Millisecond pulsar (recycled, P=1-10 ms). Most precise clock in the universe "
             "(exceeds atomic clocks). T_braid: all NS topology preserved + accretion "
             "history. ∋_SPECIFIC: unique timing signature per pulsar. K_teshlig absolute: "
-            "spin-down timescale > age of universe. ◻_4: NS topology + orbital angular "
+            "spin-down timescale > age of universe. ⊡_4: NS topology + orbital angular "
             "momentum lock. PTA network: 100 MSPs as galaxy-scale GW detector — "
             "individual ∋_SPECIFIC beams forming T_nrleg at G_ℵ."
         ),
@@ -1460,7 +1460,7 @@ def _magnetar() -> Imscription:
     """
     Magnetar: neutron star with B ~ 10^11 T (10^15 Gauss), ~1000× stronger than normal NS.
 
-    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_3⟩
+    ⟨D_∞; T_↗↙; R_mechanical; P_+-; F_ℏ; K_frtailgamma; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_3⟩
 
     Magnetars are the most magnetically intense objects in the universe.
     The B-field stores ~10^46 J of magnetic energy — comparable to the rotational
@@ -1482,9 +1482,9 @@ def _magnetar() -> Imscription:
     ⊙: magnetar flare energy statistics follow a power-law over >5 decades
     → the most directly observed SOC system in astrophysics after solar flares.
 
-    ◻_3: same three mechanisms as canonical NS, but the extreme B-field adds a
+    ⊡_3: same three mechanisms as canonical NS, but the extreme B-field adds a
     fourth in principle (field topology protection) — however, the field
-    actively BREAKS topology (starquakes), so net ◻_3 rather than ◻_4.
+    actively BREAKS topology (starquakes), so net ⊡_3 rather than ⊡_4.
     """
     return Imscription(
         name="magnetar",
@@ -1530,7 +1530,7 @@ def _black_hole_stellar() -> Imscription:
     """
     Stellar-Mass Black Hole (3-100 M_☉, remnant of core collapse or merger).
 
-    ⟨D_holo; T_∪; R_mechanical; P_+; F_ℏ; K_teshlig; G_ℵ; 𐑜(BROAD); ⊙; ◻_∞⟩
+    ⟨D_holo; T_∪; R_mechanical; P_+; F_ℏ; K_teshlig; G_ℵ; 𐑜(BROAD); ⊙; ⊡_∞⟩
 
     The black hole is the ultimate limit of the framework.
 
@@ -1554,11 +1554,11 @@ def _black_hole_stellar() -> Imscription:
     G and D degenerate — scale and dimensionality cannot be independently defined.
     The singularity is the ultimate G/D degeneracy condition.
 
-    ◻_∞: the no-hair theorem is the most powerful topological protection in the
+    ⊡_∞: the no-hair theorem is the most powerful topological protection in the
     universe. All information is reduced to three numbers. The BH cannot be
     disturbed into a different configuration — any perturbation is radiated away
     (quasi-normal modes) and the BH returns to its (M, J, Q) ground state.
-    ◻_∞ (in the limit of the no-hair theorem, which may be violated by
+    ⊡_∞ (in the limit of the no-hair theorem, which may be violated by
     quantum gravity — hence the information paradox).
     """
     return Imscription(
@@ -1578,7 +1578,7 @@ def _black_hole_stellar() -> Imscription:
             "all bulk information encoded on the horizon. T_bowl: event horizon as "
             "one-way surface (accepts, never emits classically). P_acceptor: pure "
             "acceptor. ∋_BROAD: gravity couples to everything. ⊙: event horizon IS "
-            "the G/D degeneracy boundary. ◻_∞: no-hair theorem — strongest topological "
+            "the G/D degeneracy boundary. ⊡_∞: no-hair theorem — strongest topological "
             "protection in the observational universe."
         ),
         metadata={
@@ -1589,11 +1589,11 @@ def _black_hole_stellar() -> Imscription:
             "no_hair_theorem": "BH described by (M, J, Q) only — 3 parameters",
             "bekenstein_hawking_entropy": "S = A / 4l_P^2 (horizon area in Planck units)",
             "information_paradox_note": (
-                "The BH information paradox: if ◻_∞ holds (no-hair theorem), information "
+                "The BH information paradox: if ⊡_∞ holds (no-hair theorem), information "
                 "is destroyed. If quantum gravity violates no-hair (as Hawking radiation "
-                "suggests it must), ◻ is finite. The resolution determines whether ◻_∞ "
+                "suggests it must), ⊡ is finite. The resolution determines whether ⊡_∞ "
                 "is physical or an approximation. Current consensus: information is "
-                "preserved but scrambled — ◻ is large but not infinite."
+                "preserved but scrambled — ⊡ is large but not infinite."
             ),
             "gd_degeneracy_note": (
                 "The singularity is the ultimate G/D degeneracy condition: G_ℵ and D_∧ "
@@ -1686,7 +1686,7 @@ def _quark_star() -> Imscription:
     """
     Quark Star / Strange Star (hypothetical): matter deconfined to quark level.
 
-    ⟨D_∞; T_↗↙; R_covalent_dynamic; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_4⟩
+    ⟨D_∞; T_↗↙; R_covalent_dynamic; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_4⟩
 
     If the Bodmer-Witten hypothesis is correct, strange quark matter (ud + s quarks
     in equal proportions) is the true ground state of matter — more stable than
@@ -1703,7 +1703,7 @@ def _quark_star() -> Imscription:
     in a topological superconducting phase. This is T_braid at the QCD level —
     a more complex braid than neutron-star superfluidity.
 
-    ◻_4: four protection mechanisms:
+    ⊡_4: four protection mechanisms:
     (1) CFL phase topological protection (color-flavor locking)
     (2) Strange quark matter self-binding (Bodmer-Witten stability)
     (3) Superconducting gap in the quark matter
@@ -1732,7 +1732,7 @@ def _quark_star() -> Imscription:
             "Quark/Strange star (hypothetical). Strange quark matter (uds) as ground "
             "state of matter if Bodmer-Witten hypothesis holds. R_covalent_dynamic: "
             "QCD color-force as recognition mode. T_braid: color-flavor locking (CFL) "
-            "topological superconducting phase. ◻_4: highest confirmed physical ◻ — "
+            "topological superconducting phase. ⊡_4: highest confirmed physical ⊡ — "
             "CFL protection + Bodmer-Witten self-binding + quark superconductivity + "
             "strangeness K_teshlig autocatalysis."
         ),
@@ -1762,7 +1762,7 @@ def _gravastar() -> Imscription:
     """
     Gravastar (Gravitational Vacuum Condensate Star): the 'Black Shell'.
 
-    ⟨D_holo; T_∪; R_mechanical; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ◻_3⟩
+    ⟨D_holo; T_∪; R_mechanical; P_±^ψ; F_ℏ; K_teshlig; G_ℵ; 𐑝(SELECTIVE); ⊙; ⊡_3⟩
 
     The gravastar (Mazur & Mottola 2001) is a hypothetical alternative to the
     black hole. Instead of a singularity, the interior is a de Sitter space
@@ -1791,7 +1791,7 @@ def _gravastar() -> Imscription:
     Phase boundaries are the canonical ⊙ condition — the topological transition
     at the shell is the maximum criticality condition in the framework.
 
-    ◻_3: (1) Schwarzschild geometry stability, (2) de Sitter interior topology,
+    ⊡_3: (1) Schwarzschild geometry stability, (2) de Sitter interior topology,
     (3) shell surface stability (thin-shell formalism).
 
     Status: hypothetical. Phenomenologically identical to BH externally.
@@ -1842,7 +1842,7 @@ def _dark_star() -> Imscription:
     Dark Star (Spolyar, Freese, Gondolo 2008): first generation stars powered by
     dark matter annihilation rather than nuclear fusion.
 
-    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; 𐑝(BROAD); 𐑢; ◻_1⟩
+    ⟨D_∞; T_∈; R_†; P_±^ψ; F_ℇ; K_schwa; G_ℵ; 𐑝(BROAD); 𐑢; ⊡_1⟩
 
     Dark stars are proposed first-generation (Pop III) protostars in which
     WIMP (weakly interacting massive particle) dark matter annihilation provides

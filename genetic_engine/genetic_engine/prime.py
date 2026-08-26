@@ -5,7 +5,7 @@ The Frobenius template rule: prime editing succeeds when μ∘δ=id for
 the edited locus. Three conditions:
   1. Stratum preservation
   2. Primitive invariance
-  3. ◻ boundary respect
+  3. ⊡ boundary respect
 
 Optimization criteria beyond sequence homology:
   - Frobenius stratum checking
@@ -75,7 +75,7 @@ class PrimeEditOptimizer:
         edit_prim = AA_PRIMITIVE_MAP.get(edit_aa, None)
         primitive_invariant = (orig_prim == edit_prim)
 
-        # Condition 3: ◻ boundary respect
+        # Condition 3: ⊡ boundary respect
         if c_orig.is_stop:
             omega_respected = c_edit.is_stop or (edit_aa == "Sel")
         else:
@@ -125,9 +125,9 @@ class PrimeEditOptimizer:
             delta = get_primitive_delta(orig_aa, edit_aa)
             notes_parts.append(f"✗ Primitive CHANGE: {orig_prim} → {edit_prim} (risk: {delta['risk_class']})")
         if omega_respected:
-            notes_parts.append("✓ ◻ boundary respected")
+            notes_parts.append("✓ ⊡ boundary respected")
         else:
-            notes_parts.append("✗ ◻ BOUNDARY VIOLATED")
+            notes_parts.append("✗ ⊡ BOUNDARY VIOLATED")
         notes_parts.append(f"B₄ lattice cost: {b4_cost}/6")
         notes_parts.append(f"Frobenius design score: {design_score:.3f}")
 

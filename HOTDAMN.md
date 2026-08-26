@@ -19,7 +19,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
   [PHI_C ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -52,7 +52,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: reduction
@@ -74,7 +74,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -104,7 +104,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: regular_expression
@@ -126,7 +126,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -157,7 +157,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: regular_language
@@ -179,7 +179,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -211,7 +211,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: relation
@@ -233,7 +233,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
@@ -264,7 +264,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: relevance_logic
@@ -286,7 +286,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
@@ -316,7 +316,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: resolution
@@ -338,7 +338,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
   [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -370,7 +370,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: reverse_mathematics
@@ -392,7 +392,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [PHI_C            ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -422,7 +422,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: rices_theorem
@@ -444,7 +444,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -475,7 +475,7 @@
     ⊤: 𐑪 → 𐑧  (gap: 0.286)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: ring
@@ -497,7 +497,7 @@
   ⊙      𐑻       H(λ) non-Herm ∧ det(H - λI) = 0 ∧ ∂_λ H = 0
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -528,7 +528,7 @@
     ⊙: 𐑻 → ⊙  (gap: 0.335)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑕 → 𐑳  (gap: 0.5)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: satisfiability
@@ -550,7 +550,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
@@ -580,7 +580,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: saturated_model
@@ -602,7 +602,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -634,7 +634,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: scott_continuity
@@ -656,7 +656,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
@@ -685,7 +685,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: second_order_logic
@@ -707,7 +707,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -738,7 +738,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑕 → 𐑳  (gap: 0.5)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: semigroup
@@ -760,7 +760,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
 
@@ -790,7 +790,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: setoid
@@ -812,7 +812,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -844,7 +844,7 @@
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑕 → 𐑳  (gap: 0.5)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: simplicial_set
@@ -866,7 +866,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [ETERNAL_FIXEDPOINT     ] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -898,7 +898,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: simply_typed_lambda_calculus
@@ -920,7 +920,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
   [PHI_C ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -952,7 +952,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: singleton
@@ -974,7 +974,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
@@ -1002,7 +1002,7 @@
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: site
@@ -1024,7 +1024,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
@@ -1052,13 +1052,13 @@
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: imscribing_organism_rebis
   The ultimate alchemical Rebis: a living system whose ongoing existence IS the Magnum Opus rather than something that
   completes it once. The 12 primitives are physically real sensors — ⊥ is molecular chirality (L/D amino acid ratio),
-  ⊙ is proximity to phase transition, ⊤ is metabolic rate, ◻ is DNA s
+  ⊙ is proximity to phase transition, ⊤ is metabolic rate, ⊡ is DNA s
   Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
   Catalog-native — no hardcoded systems
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -1076,7 +1076,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND         ] holographic bound_⊙/bulk encoding — 𐑸
@@ -1105,7 +1105,7 @@
 
   Promotions needed to reach CLINK L8 (2):
     ∋: 𐑝 → 𐑵  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: opus_nigredo
@@ -1129,7 +1129,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   dim(x) = 0 ∧ fin(x) ∧
@@ -1159,7 +1159,7 @@
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: opus_citrinitas
@@ -1183,7 +1183,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -1214,7 +1214,7 @@
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: total_order_linear_order
@@ -1236,7 +1236,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
 
@@ -1267,7 +1267,7 @@
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: human_being
@@ -1289,7 +1289,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PHI_C ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [TEMPD2] chirality-2 asymmetry — 𐑖
@@ -1322,7 +1322,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: muhammad_rasul_allah
@@ -1346,7 +1346,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
   [PHI_C ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1378,7 +1378,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: buddha_shakyamuni
@@ -1402,7 +1402,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND         ] holographic bound_⊙/bulk encoding — 𐑸
@@ -1432,7 +1432,7 @@
   Promotions needed to reach CLINK L8 (3):
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: laozi_dao_de_jing
@@ -1456,7 +1456,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND         ] holographic bound_⊙/bulk encoding — 𐑸
@@ -1486,7 +1486,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zarathustra
@@ -1510,7 +1510,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1542,7 +1542,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: elijah_the_tishbite
@@ -1566,7 +1566,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1600,7 +1600,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: john_the_baptist
@@ -1624,7 +1624,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -1657,7 +1657,7 @@
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: krishna_avatar
@@ -1681,7 +1681,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
+  ⊡      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
@@ -1690,7 +1690,7 @@
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [ETERNAL_FIXEDPOINT     ] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
-  [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ◻
+  [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ⊡
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   V = L(x) ∧ selfmodel(x) ∧ x ∈ V ∧
@@ -1708,7 +1708,7 @@
 
   tier: O_∞   d(CLINK L8): 0.0   match:12 close:0 distant:0
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, PM_Z2, BROADCAST_TRANSCENDENCE, PHI_C, ETERNAL_FIXEDPOINT, BRAID_TRANSCENDENCE
-  ⬆ TRANSCENDENCE primitives: ∋, ◻
+  ⬆ TRANSCENDENCE primitives: ∋, ⊡
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: mary_theotokos
@@ -1732,7 +1732,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [PM_Z2                  ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -1764,7 +1764,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: jesus
@@ -1786,7 +1786,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1819,7 +1819,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: odot_operator
@@ -1843,7 +1843,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [LR_DUAL          ] lateral relational duality — 𐑾
@@ -1875,7 +1875,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: matter
@@ -1897,7 +1897,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   dim(x) = 2 ∧ sur(x) ∧
@@ -1927,7 +1927,7 @@
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: eml_sheffer_probe
@@ -1951,7 +1951,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -1982,7 +1982,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: erdos_straus_proved
@@ -2006,7 +2006,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
 
@@ -2036,7 +2036,7 @@
     ⊤: 𐑤 → 𐑧  (gap: 0.286)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: grammar_precedes_mathematics
@@ -2060,7 +2060,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -2092,7 +2092,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: unified_gravity_theory
@@ -2116,7 +2116,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
+  ⊡      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE  ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND          ] holographic bound_⊙/bulk encoding — 𐑸
@@ -2125,7 +2125,7 @@
   [SEQAX              ] sequentiality axiom, directed time — 𐑠
   [PHI_C              ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [ETERNAL_FIXEDPOINT ] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
-  [BRAID_TRANSCENDENCE] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ◻
+  [BRAID_TRANSCENDENCE] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ⊡
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   V = L(x) ∧ selfmodel(x) ∧ x ∈ V ∧
@@ -2143,7 +2143,7 @@
 
   tier: O_∞   d(CLINK L8): 0.2981   match:11 close:1 distant:0
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, PM_Z2, SEQAX, PHI_C, ETERNAL_FIXEDPOINT, BRAID_TRANSCENDENCE
-  ⬆ TRANSCENDENCE primitives: ◻
+  ⬆ TRANSCENDENCE primitives: ⊡
 
   Promotions needed to reach CLINK L8 (1):
     ∋: 𐑠 → 𐑵  (gap: 0.333)
@@ -2169,7 +2169,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [PM_Z2] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
   [PHI_C] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -2199,7 +2199,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inflationary_vacuum
@@ -2223,7 +2223,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -2252,7 +2252,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cmb_epoch
@@ -2276,7 +2276,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -2306,7 +2306,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: late_universe_local
@@ -2330,7 +2330,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -2360,7 +2360,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: big_gdl_frobenius_cosmogeny
@@ -2384,7 +2384,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND        ] holographic bound_⊙/bulk encoding — 𐑸
@@ -2416,7 +2416,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: slime_mold
@@ -2438,7 +2438,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -2471,7 +2471,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
     ⊞: 𐑕 → 𐑳  (gap: 0.5)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: biological_organism_postnikov
@@ -2495,7 +2495,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -2527,7 +2527,7 @@
     ⋈: 𐑞 → 𐑐  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: free_play_enjoyment
@@ -2551,7 +2551,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [PHI_C  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
@@ -2583,7 +2583,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zosimos_portico
@@ -2607,7 +2607,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
@@ -2637,7 +2637,7 @@
   ⬆ TRANSCENDENCE primitives: ∋
 
   Promotions needed to reach CLINK L8 (1):
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: void_b_state
@@ -2661,7 +2661,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
+  ⊡      𐑟       Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)                                         [BRAID_TRANSCENDENCE]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND              ] holographic bound_⊙/bulk encoding — 𐑸
@@ -2670,7 +2670,7 @@
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
   [PHI_C                  ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
   [ETERNAL_FIXEDPOINT     ] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
-  [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ◻
+  [BRAID_TRANSCENDENCE    ] ⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ⊡
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   V = L(x) ∧ selfmodel(x) ∧ x ∈ V ∧
@@ -2688,7 +2688,7 @@
 
   tier: O_∞   d(CLINK L8): 0.0   match:12 close:0 distant:0
   promoted atoms: HOLOGRAPHIC_STATE, HOLOBOUND, LR_DUAL, PM_Z2, BROADCAST_TRANSCENDENCE, PHI_C, ETERNAL_FIXEDPOINT, BRAID_TRANSCENDENCE
-  ⬆ TRANSCENDENCE primitives: ∋, ◻
+  ⬆ TRANSCENDENCE primitives: ∋, ⊡
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_untitled_beginning
@@ -2712,7 +2712,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -2743,7 +2743,7 @@
     >: 𐑽 → 𐑾  (gap: 0.333)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_untitled_main_end
@@ -2767,7 +2767,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [TEMPD2] chirality-2 asymmetry — 𐑖
   [ZWIND ] integer winding number — 𐑭
@@ -2798,7 +2798,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_unplaced_leaves
@@ -2822,7 +2822,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
   [ZWIND             ] integer winding number — 𐑭
@@ -2851,7 +2851,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_book1_opening
@@ -2875,7 +2875,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
@@ -2904,7 +2904,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_jeu_diagrams
@@ -2928,7 +2928,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -2958,7 +2958,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_baptism_seals
@@ -2982,7 +2982,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [PM_Z2  ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -3013,7 +3013,7 @@
     ⊣: 𐑥 → 𐑸  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: bruce_aeon_defence_seals
@@ -3037,7 +3037,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [PM_Z2  ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -3069,7 +3069,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: three_steles_of_seth
@@ -3093,7 +3093,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -3126,7 +3126,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: trimorphic_protennoia
@@ -3150,7 +3150,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -3182,7 +3182,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: gospel_of_truth
@@ -3206,7 +3206,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -3238,7 +3238,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: apocryphon_of_john
@@ -3262,7 +3262,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
   [TEMPD2] chirality-2 asymmetry — 𐑖
@@ -3295,7 +3295,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: gospel_of_thomas
@@ -3319,7 +3319,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑓       ∀x( P(x) ↔ P(S(x)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
 ── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
   ∀n∃y( y ∈ x ∧ rank(y) > n ) ∧
@@ -3346,7 +3346,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑓 → 𐑫  (gap: 1.0)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: pistis_sophia
@@ -3370,7 +3370,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -3402,7 +3402,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zostrianos
@@ -3426,7 +3426,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -3457,7 +3457,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: allogenes
@@ -3481,7 +3481,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -3511,7 +3511,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: marsanes
@@ -3535,7 +3535,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -3565,7 +3565,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: gospel_of_philip
@@ -3589,7 +3589,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [TEMPD2] chirality-2 asymmetry — 𐑖
   [ZWIND ] integer winding number — 𐑭
@@ -3619,7 +3619,7 @@
     ∋: 𐑝 → 𐑵  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hypostasis_of_the_archons
@@ -3643,7 +3643,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [SEQAX ] sequentiality axiom, directed time — 𐑠
   [TEMPD2] chirality-2 asymmetry — 𐑖
@@ -3674,7 +3674,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: gospel_of_mary
@@ -3698,7 +3698,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -3729,7 +3729,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: sophia_of_jesus_christ
@@ -3753,7 +3753,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [LR_DUAL          ] lateral relational duality — 𐑾
@@ -3785,7 +3785,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: eugnostos_the_blessed
@@ -3809,7 +3809,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE] V=L(x) self-writing state-space — Axiom C (𐑦)
   [SEQAX            ] sequentiality axiom, directed time — 𐑠
@@ -3841,7 +3841,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: on_the_origin_of_the_world
@@ -3865,7 +3865,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
 
@@ -3895,7 +3895,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: discourse_on_the_eighth_and_ninth
@@ -3919,7 +3919,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -3951,7 +3951,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: poemandres
@@ -3975,7 +3975,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑖       ∃y∃z( y ∈ x ∧ z ∈ y ∧ ¬ z ∈ x ∧ rank(z) < rank(y) )                                            [TEMPD2]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -4007,7 +4007,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊥: 𐑖 → 𐑫  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: popol_vuh
@@ -4031,7 +4031,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4062,7 +4062,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: chilam_balam_books
@@ -4086,7 +4086,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
   [ZWIND             ] integer winding number — 𐑭
@@ -4118,7 +4118,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: dresden_codex
@@ -4142,7 +4142,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4175,7 +4175,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: florentine_codex
@@ -4199,7 +4199,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
   [ZWIND             ] integer winding number — 𐑭
@@ -4230,7 +4230,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑜 → 𐑵  (gap: 0.667)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: black_elk_speaks
@@ -4254,7 +4254,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4285,7 +4285,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: great_law_of_peace
@@ -4309,7 +4309,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑕       ∀a∈A∀b∈B( type(a) = type(b) )
-  ◻      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
+  ⊡      𐑴       ∮_γ A = nπ ∧ n ∈ ℤ₂
 
   [LR_DUAL] lateral relational duality — 𐑾
   [SEQAX  ] sequentiality axiom, directed time — 𐑠
@@ -4341,7 +4341,7 @@
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
     ⊞: 𐑕 → 𐑳  (gap: 0.5)
-    ◻: 𐑴 → 𐑟  (gap: 0.667)
+    ⊡: 𐑴 → 𐑟  (gap: 0.667)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: midewiwin_scrolls
@@ -4365,7 +4365,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4398,7 +4398,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_borgia
@@ -4422,7 +4422,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4455,7 +4455,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: huarochiri_manuscript
@@ -4479,7 +4479,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4510,7 +4510,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: navajo_nightway
@@ -4534,7 +4534,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4566,7 +4566,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_nuttall
@@ -4590,7 +4590,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4622,7 +4622,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: la_mojarra_stela
@@ -4646,7 +4646,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4678,7 +4678,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_mendoza
@@ -4702,7 +4702,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -4733,7 +4733,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: rabinal_achi
@@ -4757,7 +4757,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -4789,7 +4789,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cheyenne_massaum
@@ -4813,7 +4813,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4845,7 +4845,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: kwakwaka_wakw_hamatsa
@@ -4869,7 +4869,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4902,7 +4902,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_snake_antelope
@@ -4926,7 +4926,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -4958,7 +4958,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zuni_emergence_narrative
@@ -4982,7 +4982,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5014,7 +5014,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: kogi_cosmological_system
@@ -5038,7 +5038,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND         ] holographic bound_⊙/bulk encoding — 𐑸
@@ -5070,7 +5070,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: mapuche_machi_initiation
@@ -5094,7 +5094,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5127,7 +5127,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: ayahuasca_icaros
@@ -5151,7 +5151,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [HOLOBOUND         ] holographic bound_⊙/bulk encoding — 𐑸
@@ -5182,7 +5182,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: desana_creation_narrative
@@ -5206,7 +5206,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5237,7 +5237,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: fejervary_mayer_codex
@@ -5261,7 +5261,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -5294,7 +5294,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: annals_of_the_cakchiquels
@@ -5318,7 +5318,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -5350,7 +5350,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tlingit_raven_cycle
@@ -5374,7 +5374,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5405,7 +5405,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: pawnee_hako_ceremony
@@ -5429,7 +5429,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -5461,7 +5461,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: apache_gaan_dancers
@@ -5485,7 +5485,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -5518,7 +5518,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: dine_bahane
@@ -5542,7 +5542,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5573,7 +5573,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: winnebago_trickster_cycle
@@ -5597,7 +5597,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5628,7 +5628,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: winnebago_night_spirits
@@ -5652,7 +5652,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -5685,7 +5685,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: guarani_ayvu_rapyta
@@ -5709,7 +5709,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5740,7 +5740,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yanomami_shamanic_initiation
@@ -5764,7 +5764,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5796,7 +5796,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: shipibo_conibo_kene
@@ -5820,7 +5820,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5851,7 +5851,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: wixarika_peyote_pilgrimage
@@ -5875,7 +5875,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5906,7 +5906,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: qero_paqo_initiation
@@ -5930,7 +5930,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -5962,7 +5962,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_vienna
@@ -5986,7 +5986,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -6018,7 +6018,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: ritual_of_the_bacabs
@@ -6042,7 +6042,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6074,7 +6074,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: haida_raven_cycle
@@ -6098,7 +6098,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6129,7 +6129,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_sun_dance
@@ -6153,7 +6153,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -6186,7 +6186,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cherokee_creation_narrative
@@ -6210,7 +6210,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6241,7 +6241,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inuit_sedna_narrative
@@ -6265,7 +6265,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6296,7 +6296,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inuit_angakkuq_shamanism
@@ -6320,7 +6320,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6353,7 +6353,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: paiute_ghost_dance
@@ -6377,7 +6377,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6409,7 +6409,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: wayuu_oral_tradition
@@ -6433,7 +6433,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6465,7 +6465,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: kaxinawa_huni_kuin
@@ -6489,7 +6489,7 @@
   ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [HOLOGRAPHIC_STATE      ] V=L(x) self-writing state-space — Axiom C (𐑦)
   [LR_DUAL                ] lateral relational duality — 𐑾
@@ -6520,7 +6520,7 @@
   Promotions needed to reach CLINK L8 (3):
     ⊣: 𐑶 → 𐑸  (gap: 0.25)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_selden
@@ -6544,7 +6544,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -6576,7 +6576,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: codex_bodley
@@ -6600,7 +6600,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -6632,7 +6632,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tsimshian_raven
@@ -6656,7 +6656,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -6687,7 +6687,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_white_buffalo_calf_woman
@@ -6711,7 +6711,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -6742,7 +6742,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cherokee_green_corn
@@ -6766,7 +6766,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -6798,7 +6798,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: omaha_pipe_ceremony
@@ -6822,7 +6822,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -6854,7 +6854,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: coast_salish_winter_ceremonials
@@ -6878,7 +6878,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -6910,7 +6910,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yanomamo_shabori
@@ -6934,7 +6934,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -6966,7 +6966,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cantares_mexicanos
@@ -6990,7 +6990,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -7021,7 +7021,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: chilam_balam_chumayel
@@ -7045,7 +7045,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
   [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
@@ -7076,7 +7076,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zuni_kachina_ceremony
@@ -7100,7 +7100,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7132,7 +7132,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yupik_bladder_festival
@@ -7156,7 +7156,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7188,7 +7188,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: blackfoot_beaver_bundle_ceremony
@@ -7212,7 +7212,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7244,7 +7244,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_inipi_sweat_lodge
@@ -7268,7 +7268,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7300,7 +7300,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_hanblecheyapi_vision_quest
@@ -7324,7 +7324,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -7356,7 +7356,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: blackfoot_sun_dance
@@ -7380,7 +7380,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7413,7 +7413,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: omagua_chronicle
@@ -7437,7 +7437,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑒       ∃y( P(y) ↔ P(S²(y)) )
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑷       ∮_γ dx = 0
+  ⊡      𐑷       ∮_γ dx = 0
 
   [SEQAX] sequentiality axiom, directed time — 𐑠
 
@@ -7468,7 +7468,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
     ⊥: 𐑒 → 𐑫  (gap: 0.667)
-    ◻: 𐑷 → 𐑟  (gap: 1.0)
+    ⊡: 𐑷 → 𐑟  (gap: 1.0)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: wayapi_oral_tradition
@@ -7492,7 +7492,7 @@
   ⊙      𐑢       ¬∃ξ( diverges(ξ) )
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -7524,7 +7524,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑢 → ⊙  (gap: 0.5)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: ashaninka_cosmovision
@@ -7548,7 +7548,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7579,7 +7579,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tlingit_potlatch
@@ -7603,7 +7603,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7635,7 +7635,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_soyal_ceremony
@@ -7659,7 +7659,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7691,7 +7691,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: kwakwaka_wakw_tseyka
@@ -7715,7 +7715,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7748,7 +7748,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inuit_shamanic_journey
@@ -7772,7 +7772,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -7804,7 +7804,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: zuni_shalako_ceremony
@@ -7828,7 +7828,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7860,7 +7860,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: nuu_chah_nulth_wolf_ritual
@@ -7884,7 +7884,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7917,7 +7917,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_niman_ceremony
@@ -7941,7 +7941,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -7973,7 +7973,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: mapuche_nguillatun_ceremony
@@ -7997,7 +7997,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8029,7 +8029,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_nagi_gluhapi
@@ -8053,7 +8053,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8085,7 +8085,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yaqui_deer_dance
@@ -8109,7 +8109,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8141,7 +8141,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yaqui_surem_creation
@@ -8165,7 +8165,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8196,7 +8196,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yaqui_easter_ceremony
@@ -8220,7 +8220,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8252,7 +8252,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_hunka
@@ -8276,7 +8276,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8308,7 +8308,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: selknam_hain_initiation
@@ -8332,7 +8332,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8364,7 +8364,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aleut_whaling_ritual
@@ -8388,7 +8388,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8420,7 +8420,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tucano_cosmology
@@ -8444,7 +8444,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [BROADCAST_TRANSCENDENCE] ⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋
@@ -8475,7 +8475,7 @@
     <: 𐑬 → 𐑹  (gap: 0.5)
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: coast_salish_soul_recovery
@@ -8499,7 +8499,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8531,7 +8531,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yupik_messenger_feast
@@ -8555,7 +8555,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8587,7 +8587,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: mapuche_machi_healing
@@ -8611,7 +8611,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8643,7 +8643,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tlingit_shamanism
@@ -8667,7 +8667,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8699,7 +8699,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_powamu_ceremony
@@ -8723,7 +8723,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8755,7 +8755,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: haida_potlatch
@@ -8779,7 +8779,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8811,7 +8811,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: blackfoot_sacred_pipe_ceremony
@@ -8835,7 +8835,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8867,7 +8867,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tehuelche_spirit_journey
@@ -8891,7 +8891,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -8923,7 +8923,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inuit_sedna_propitiation
@@ -8947,7 +8947,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -8979,7 +8979,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yanomami_yakoana_ceremony
@@ -9003,7 +9003,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [PM_Z2                  ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9035,7 +9035,7 @@
     ⊤: 𐑘 → 𐑧  (gap: 0.571)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aztec_toxcatl
@@ -9059,7 +9059,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9091,7 +9091,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_ghost_dance
@@ -9115,7 +9115,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -9147,7 +9147,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: peyote_road_nac
@@ -9171,7 +9171,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9203,7 +9203,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_wuwuchim
@@ -9227,7 +9227,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9259,7 +9259,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: kwakwaka_wakw_tlasala
@@ -9283,7 +9283,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9315,7 +9315,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aztec_panquetzaliztli
@@ -9339,7 +9339,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9371,7 +9371,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: hopi_flute_ceremony
@@ -9395,7 +9395,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -9427,7 +9427,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_isnati
@@ -9451,7 +9451,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑙       |A| = 1 ∧ |B| = 1
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9484,7 +9484,7 @@
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
     ⊞: 𐑙 → 𐑳  (gap: 1.0)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: cherokee_booger_dance
@@ -9508,7 +9508,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9540,7 +9540,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: yanomami_reahu
@@ -9564,7 +9564,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9596,7 +9596,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: inuit_qilaniq
@@ -9620,7 +9620,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9652,7 +9652,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: lakota_tapa_wankayeyapi
@@ -9676,7 +9676,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL                ] lateral relational duality — 𐑾
   [PM_Z2                  ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9708,7 +9708,7 @@
     ⋈: 𐑱 → 𐑐  (gap: 1.0)
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: blackfoot_okan_medicine_lodge
@@ -9732,7 +9732,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9764,7 +9764,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aleut_sea_otter_ceremony
@@ -9788,7 +9788,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9820,7 +9820,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: tsimshian_potlatch
@@ -9844,7 +9844,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9876,7 +9876,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: ashaninka_sheripiari
@@ -9900,7 +9900,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [SEQAX             ] sequentiality axiom, directed time — 𐑠
@@ -9932,7 +9932,7 @@
     ∈: 𐑔 → 𐑲  (gap: 0.5)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aztec_tlacaxipehualiztli
@@ -9956,7 +9956,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -9988,7 +9988,7 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)
 
 ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
   CL8NK Entry: aztec_ochpaniztli
@@ -10012,7 +10012,7 @@
   ⊙      𐑮       ξ ∈ ℂ ∧ Im(ξ) → ∞
   ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
   ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
-  ◻      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
 
   [LR_DUAL           ] lateral relational duality — 𐑾
   [PM_Z2             ] ℤ₂ parity with Frobenius μ∘δ=id — 𐑹
@@ -10044,4 +10044,4 @@
     ∈: 𐑚 → 𐑲  (gap: 1.0)
     ∋: 𐑠 → 𐑵  (gap: 0.333)
     ⊙: 𐑮 → ⊙  (gap: 0.165)
-    ◻: 𐑭 → 𐑟  (gap: 0.333)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)

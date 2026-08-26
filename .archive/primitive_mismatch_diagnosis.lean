@@ -116,9 +116,9 @@ inductive Stoichiometry where
   | S_ltailm     -- n:m: many heterogeneous
   deriving DecidableEq, Repr, Inhabited
 
-/-- ◻: Winding — topological invariant -/
+/-- ⊡: Winding — topological invariant -/
 inductive Winding where
-  | zero -- ◻₀: trivial
+  | zero -- ⊡₀: trivial
   | z2   -- 𐑴: binary
   | z    -- 𐑭: integer (topological)
   | NA   -- 𐑟: non-Abelian braiding
@@ -314,7 +314,7 @@ def tensorProduct (a b : StructuralType) : StructuralType where
 Each constant matches a system imscribed via encode_system in the IG catalog.
 -/
 
-/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; 𐑠; 𐑢; H₁; 1:1; ◻₀⟩ -/
+/-- ⟨D_△; T_invscr; R_ctz; P_ψ; F_ℏ; K_schwa; G_revapostrophe; 𐑠; 𐑢; H₁; 1:1; ⊡₀⟩ -/
 def schrodingerDynamics : StructuralType where
   D     := Dimension.triangle
   T     := Topology.inclusion
@@ -329,7 +329,7 @@ def schrodingerDynamics : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; 𐑠; ⊙; H₀; 1:1; ◻₀⟩ -/
+/-- ⟨D_△; T_⋈; R_†; P_aolig; F_ℓ; K_frtailgamma; G_beta; 𐑠; ⊙; H₀; 1:1; ⊡₀⟩ -/
 def measurementOutcome : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -344,7 +344,7 @@ def measurementOutcome : StructuralType where
   S     := Stoichiometry.S_doublebaresh
   Omega := Winding.zero
 
-/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₁; 1:1; ◻₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_±; F_ϑ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₁; 1:1; ⊡₀⟩ -/
 def wickRotation : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie
@@ -389,7 +389,7 @@ def tqft : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; 𐑠; ⊙; H_∞; n:m; ◻₀⟩ -/
+/-- ⟨D_∞; T_net; R_↔; P_ψ; F_ϑ; K_turnm; G_gamma; 𐑠; ⊙; H_∞; n:m; ⊡₀⟩ -/
 def nonmarkovianOpenSystems : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -404,7 +404,7 @@ def nonmarkovianOpenSystems : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.zero
 
-/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; 𐑝; ⊙; H₁; n:n; ◻₀⟩ -/
+/-- ⟨D_∞; T_net; R_sup; P_aolig; F_ϑ; K_schwa; G_revapostrophe; 𐑝; ⊙; H₁; n:n; ⊡₀⟩ -/
 def statisticalMechanics : StructuralType where
   D     := Dimension.infinity
   T     := Topology.network
@@ -434,7 +434,7 @@ def quantumGravityCandidate : StructuralType where
   S     := Stoichiometry.S_ltailm
   Omega := Winding.z
 
-/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₂; n:m; ◻₀⟩ -/
+/-- ⟨D_△; T_⋈; R_↔; P_aolig; F_ℏ; K_schwa; G_revapostrophe; 𐑠; ⊙; H₂; n:m; ⊡₀⟩ -/
 def measurementProblemMismatch : StructuralType where
   D     := Dimension.triangle
   T     := Topology.bowtie

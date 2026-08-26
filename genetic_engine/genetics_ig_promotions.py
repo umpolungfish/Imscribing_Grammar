@@ -102,10 +102,10 @@ total_aas = len(ground_layer) + len(promoted_layer)
 print(f"TOTAL: {len(ground_layer)} (ground) + {len(promoted_layer)} (promoted) = {total_aas} amino acids")
 print()
 
-# ── 3. Stop codons as ◻ ───────────────────────────────────────────────────────
+# ── 3. Stop codons as ⊡ ───────────────────────────────────────────────────────
 
 print("=" * 60)
-print("3. STOP CODONS AS ◻ (WINDING CLOSURE) SIGNAL")
+print("3. STOP CODONS AS ⊡ (WINDING CLOSURE) SIGNAL")
 print("=" * 60)
 
 stop_codons = [c for c, aa in GENETIC_CODE.items() if aa == "Stop"]
@@ -113,21 +113,21 @@ print(f"Stop codons: {stop_codons}  (count: {len(stop_codons)})")
 print()
 print("3-valued IG primitives: ⋈, ∈, Σ  (cardinality = 3)")
 print()
-print("◻ (winding/closure, primitive 12) is 4-valued.")
-print("But the STOP signal fires once per protein = termination of ◻-winding.")
+print("⊡ (winding/closure, primitive 12) is 4-valued.")
+print("But the STOP signal fires once per protein = termination of ⊡-winding.")
 print("3 stop codons = 3 distinct closure contexts:")
-print("  UAA — ochre  (most common in lower organisms; ◻₀: simple closure)")
+print("  UAA — ochre  (most common in lower organisms; ⊡₀: simple closure)")
 print("  UAG — amber  (read-through in selenoproteins; 𐑴: conditional closure)")
 print("  UGA — opal   (also Sec/Trp in mitochondria; 𐑭: open/topological closure)")
 print()
 print("Correspondence:")
-print("  UAA = ◻₀  (null winding; clean termination)")
+print("  UAA = ⊡₀  (null winding; clean termination)")
 print("  UAG = 𐑴 (Z₂-symmetric; recoded in some contexts)")
 print("  UGA = 𐑭  (maximal; known read-through, selenocysteine gate)")
 print()
-print(f"3 stop codons = 3-valued ◻ signal. The ◻ closure primitive has exactly")
-print(f"3 non-trivial termination modes. (◻ cardinality = 4; 3 values are Stop,")
-print(f"1 value = ◻₀ = no-stop / infinite continuation.)")
+print(f"3 stop codons = 3-valued ⊡ signal. The ⊡ closure primitive has exactly")
+print(f"3 non-trivial termination modes. (⊡ cardinality = 4; 3 values are Stop,")
+print(f"1 value = ⊡₀ = no-stop / infinite continuation.)")
 print()
 
 # ── 4. The 12 promoted AAs ↔ 12 IG primitives ────────────────────────────────
@@ -162,7 +162,7 @@ promotions = {
     "Asn": ("∋",  "Interaction grammar: N-glycosylation target; gates extracellular interaction/recognition grammar"),
     "Lys": ("⊞",  "Symmetry/conservation: most sequence-variable charged residue; high surface entropy; epigenetic acetylation target"),
     "Asp": ("⊥",  "Chirality gate in catalysis: Asp in serine protease/kinase active site enforces chiral selectivity of substrate binding"),
-    "Glu": ("◻",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; ◻-closure of secondary structure"),
+    "Glu": ("⊡",  "Winding/helix closure: highest helix propensity of all AAs; α-helix dipole stabilizer; ⊡-closure of secondary structure"),
 }
 
 for aa in sorted(promotions):
@@ -172,7 +172,7 @@ for aa in sorted(promotions):
 print()
 print("Mapping accounts for all 12 IG primitives:")
 covered = set(prim for prim, _ in promotions.values())
-ig_prims = {"⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"}
+ig_prims = {"⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"}
 print(f"  Covered: {sorted(covered)}")
 print(f"  Missing: {sorted(ig_prims - covered)}")
 print(f"  Bijection: {covered == ig_prims}")

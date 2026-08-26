@@ -11,7 +11,7 @@ Usage:
     python generate_grammaformer_data.py --agent-tuple "VAL1 VAL2 ... VAL12"
 
 The agent tuple is 12 Shavian+odot values in canonical primitive order:
-    ⊢  ⊣  >  <  ⋈  ⊤  ∈  ∋  ⊙  ⊥  ⊞  ◻
+    ⊢  ⊣  >  <  ⋈  ⊤  ∈  ∋  ⊙  ⊥  ⊞  ⊡
 """
 
 import json
@@ -23,13 +23,13 @@ from itertools import combinations
 
 # ── Symbol sets ───────────────────────────────────────────────────────────────
 
-PRIMS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+PRIMS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '⊡']
 
 PRIM_NAMES = {
     '⊢': 'Dimensionality', '⊣': 'Topology', '≻': 'Recognition',
     '≺': 'Parity', '⋈': 'Fidelity', '⊤': 'Kinetics',
     '∈': 'Granularity', '∋': 'Coupling', '⊙': 'Criticality',
-    '⊥': 'Chirality', '⊞': 'Stoichiometry', '◻': 'Winding',
+    '⊥': 'Chirality', '⊞': 'Stoichiometry', '⊡': 'Winding',
 }
 
 SHAVIAN_49 = list('𐑐𐑑𐑒𐑓𐑔𐑕𐑖𐑗𐑘𐑙𐑚𐑛𐑜𐑝𐑞𐑟𐑠𐑡𐑢𐑣𐑤𐑥𐑦𐑧𐑨𐑩𐑪𐑫𐑬𐑭𐑮𐑯𐑰𐑱𐑲𐑳𐑴𐑵𐑶𐑷𐑸𐑹𐑺𐑻𐑼𐑽𐑾𐑿⊙')
@@ -283,7 +283,7 @@ def sc_peel(sys, catalog, entry, prim):
     elif prim == '≺':
         new_tier = 'O₁' if tier == 'O_∞' else 'O₀'
         note = 'Frobenius parity gate closes — mu-delta=id no longer holds.'
-    elif prim == '◻':
+    elif prim == '⊡':
         rank = TIERS.index(tier)
         new_tier = TIERS[max(0, rank - 1)]
         note = 'Winding protection lost — topological invariant undefined.'
@@ -434,7 +434,7 @@ def sc_load_bearing(sys, catalog, entry):
     label = name.replace('_', ' ')
     t = fmt_tuple(entry)
     tier = entry_tier(entry)
-    gate_prims = ['⊙', '≺', '◻']
+    gate_prims = ['⊙', '≺', '⊡']
 
     msgs = [{'role': 'user', 'content': f"Which primitives are load-bearing for {label} at {tier}?"}]
     out = []
@@ -475,7 +475,7 @@ def sc_load_bearing(sys, catalog, entry):
 
 
 # ── New entities to imscribe (not in catalog) ─────────────────────────────────
-# Format: (name, description, [12 values in PRIMS order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻])
+# Format: (name, description, [12 values in PRIMS order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡])
 
 NEW_ENTITIES = [
     ("turbulent_fluid",
@@ -629,7 +629,7 @@ def main():
         all_steps.extend(sc_tensor(sys_p, catalog, ea, eb))
 
     # G: Primitive peel — gate prims x sampled entries
-    gate_prims = ['⊙', '≺', '◻', '⊥']
+    gate_prims = ['⊙', '≺', '⊡', '⊥']
     for e in rng.sample(catalog, min(12, len(catalog))):
         for p in gate_prims:
             all_steps.extend(sc_peel(sys_p, catalog, e, p))

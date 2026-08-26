@@ -38,27 +38,27 @@ NOVEL_COMPOUNDS: Dict[str, Dict[str, str]] = {
     "verticullum": {
         "⊢": "𐑦", "⊣": "𐑥", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑫",
-        "⊞": "𐑳", "◻": "𐑟",
+        "⊞": "𐑳", "⊡": "𐑟",
     },
     "chimerium": {
         "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑵", "⊙": "𐑣", "⊥": "𐑫",
-        "⊞": "𐑳", "◻": "𐑭",
+        "⊞": "𐑳", "⊡": "𐑭",
     },
     "apertix": {
         "⊢": "𐑦", "⊣": "𐑥", "≻": "𐑽", "≺": "𐑬", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "⊙", "⊥": "𐑖",
-        "⊞": "𐑳", "◻": "𐑴",
+        "⊞": "𐑳", "⊡": "𐑴",
     },
     "retiarius": {
         "⊢": "𐑼", "⊣": "𐑡", "≻": "𐑾", "≺": "𐑿", "⋈": "𐑞",
         "⊤": "𐑺", "∈": "𐑚", "∋": "𐑜", "⊙": "𐑮", "⊥": "𐑒",
-        "⊞": "𐑕", "◻": "𐑷",
+        "⊞": "𐑕", "⊡": "𐑷",
     },
     "praxeum": {
         "⊢": "𐑦", "⊣": "𐑶", "≻": "𐑾", "≺": "𐑹", "⋈": "𐑐",
         "⊤": "𐑧", "∈": "𐑲", "∋": "𐑠", "⊙": "𐑻", "⊥": "𐑫",
-        "⊞": "𐑳", "◻": "𐑭",
+        "⊞": "𐑳", "⊡": "𐑭",
     },
 }
 
@@ -251,9 +251,9 @@ def winding_modulate(compound_key: str, target_w: str) -> dict:
         return {"error": f"Unknown target winding: {target_w}. Use: {list(WINDING_LEVELS.keys())}"}
 
     base = compounds[compound_key]
-    current_w = base.get("◻", "")
-    current_ord = get_ordinal("◻", current_w)
-    target_ord = get_ordinal("◻", target_w)
+    current_w = base.get("⊡", "")
+    current_ord = get_ordinal("⊡", current_w)
+    target_ord = get_ordinal("⊡", target_w)
 
     # Non-Abelian requires D=𐑦
     if target_w == "𐑟" and base.get("⊢") != "𐑦":
@@ -264,7 +264,7 @@ def winding_modulate(compound_key: str, target_w: str) -> dict:
         }
 
     modified = dict(base)
-    modified["◻"] = target_w
+    modified["⊡"] = target_w
 
     universes = get_psychedelic_universes()
     base_access = set()
@@ -499,7 +499,7 @@ def supercritical_launch(base_compound_key: str) -> dict:
         "chimerium_profile": {
             "phi": chimerium.get("⊙", ""),
             "h": chimerium.get("⊥", ""),
-            "omega": chimerium.get("◻", ""),
+            "omega": chimerium.get("⊡", ""),
             "tier": assign_tier(chimerium),
         },
     }
@@ -622,8 +622,8 @@ def show_novel_compounds():
 
         lines.append(f"  {names.get(ckey, ckey)}")
         lines.append(f"    Tier: {tier}  |  Universes: {len(accesses)}/17")
-        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['≺']}  ◻={ctuple['◻']}")
-        lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['≻']}{ctuple['≺']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['◻']}⟩")
+        lines.append(f"    Bottlenecks: ⊙={ctuple['⊙']}  ⊥={ctuple['⊥']}  <={ctuple['≺']}  ⊡={ctuple['⊡']}")
+        lines.append(f"    Full: ⟨{ctuple['⊢']}{ctuple['⊣']}{ctuple['≻']}{ctuple['≺']}{ctuple['⋈']}{ctuple['⊤']}{ctuple['∈']}{ctuple['∋']}{ctuple['⊙']}{ctuple['⊥']}{ctuple['⊞']}{ctuple['⊡']}⟩")
         if accesses:
             lines.append(f"    Accesses: {', '.join(sorted(accesses))}")
         lines.append("")
@@ -632,7 +632,7 @@ def show_novel_compounds():
     lines.append("-" * 78)
     lines.append("  Structural Deltas from Baselines:")
     lines.append("")
-    lines.append(f"  {'Compound':<24} {'⊙':>4} {'⊥':>4} {'≺':>4} {'◻':>4}  Distinguishing Feature")
+    lines.append(f"  {'Compound':<24} {'⊙':>4} {'⊥':>4} {'≺':>4} {'⊡':>4}  Distinguishing Feature")
     lines.append(f"  {'-'*24} {'-'*4} {'-'*4} {'-'*4} {'-'*4}  {'-'*28}")
     lines.append(f"  {'Verticullum':<24} {'⊙':>4} {'𐑫':>4} {'𐑹':>4} {'𐑟':>4}  EP-Lever: non-Abelian winding + ⊙")
     lines.append(f"  {'Chimerium':<24} {'𐑣':>4} {'𐑫':>4} {'𐑹':>4} {'𐑭':>4}  Supercritical catalyst")
@@ -699,7 +699,7 @@ Commands:
 Control Methods:
   control ep <compound> [ratio]      EP Gate Toggle — couple with Praxeum
   control chirality <compound> <H>   Chirality Ladder — step to target ⊥
-  control winding <compound> <W>     Winding Modulate — adjust ◻ protection
+  control winding <compound> <W>     Winding Modulate — adjust ⊡ protection
   control scope <compound> <G>       Scope Focus — adjust ∈ range
   control adjoint <compound> <P> <V> Adjoint Steer — directed primitive change
   control launch <compound>          Supercritical Launch — couple with Chimerium

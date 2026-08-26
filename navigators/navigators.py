@@ -110,7 +110,7 @@ class ThurstonNet(nn.Module):
         "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑽",
         "≺": "𐑹", "⋈": "𐑐", "⊤": "𐑧",
         "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
-        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑴",
+        "⊥": "𐑫", "⊞": "𐑳", "⊡": "𐑴",
     }
     SELF_ENCODE_TARGET: int = 6_563_951   # encode_tuple(DEFINING_TUPLE)
     THURSTON_GEOMETRIES: list[str] = THURSTON_GEOMETRIES
@@ -447,7 +447,7 @@ class YangMillsNavigator(nn.Module):
         "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑑",
         "≺": "𐑹", "⋈": "𐑐", "⊤": "𐑪",
         "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
-        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
+        "⊥": "𐑫", "⊞": "𐑳", "⊡": "𐑭",
     }
     SELF_ENCODE_TARGET: int = 6_734_735   # encode_tuple(DEFINING_TUPLE)
 
@@ -714,7 +714,7 @@ class RiemannNavigator(nn.Module):
         "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑑",
         "≺": "𐑹", "⋈": "𐑐", "⊤": "𐑧",
         "∈": "𐑲", "∋": "𐑵", "⊙": "⊙",
-        "⊥": "𐑫", "⊞": "𐑳", "◻": "𐑭",
+        "⊥": "𐑫", "⊞": "𐑳", "⊡": "𐑭",
     }
     # Crystal address — same as grammar_self_encode (d=0, Cardinality-One Theorem §XXXVII)
     SELF_ENCODE_TARGET: int = 6_734_591
@@ -993,7 +993,7 @@ class IsingNavigator:
         "⊢": "𐑨", "⊣": "𐑶", "≻": "𐑑",
         "≺": "𐑹", "⋈": "𐑱", "⊤": "𐑘",
         "∈": "𐑲", "∋": "𐑝", "⊙": "⊙",
-        "⊥": "𐑓", "⊞": "𐑕", "◻": "𐑴",
+        "⊥": "𐑓", "⊞": "𐑕", "⊡": "𐑴",
     }
 
     # Known 3D Ising critical exponents (benchmarks)

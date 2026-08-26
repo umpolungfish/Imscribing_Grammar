@@ -106,7 +106,7 @@ _PRIM_TACTIC: dict[str, str] = {
     "⊙": "have h_crit : CriticalityResolved X p := by sorry",
     "⊥": "have h_depth : TemporalDepthFinite X := by sorry",
     "⊞": "have h_uniq : UniqueWitness X p := by sorry",
-    "◻": "have h_inv : TopologicalInvariant X = _ := by sorry",
+    "⊡": "have h_inv : TopologicalInvariant X = _ := by sorry",
 }
 
 # ── Domain → Mathlib imports ───────────────────────────────────────────────────

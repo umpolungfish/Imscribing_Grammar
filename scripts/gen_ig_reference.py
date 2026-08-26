@@ -50,7 +50,7 @@ PRIMITIVES = [
     ("⊙", "Criticality",    5, ["ž","ÿ","Æ","3","Ţ"], "Cys"),
     ("⊥", "Chirality",      4, ["Ñ","£","A","!"],     "Gln"),
     ("⊞", "Stoichiometry",  3, ["S","ő","ï"],          "Ala"),
-    ("◻", "Winding",        4, ["Å","2","z","5"],      "Arg"),
+    ("⊡", "Winding",        4, ["Å","2","z","5"],      "Arg"),
 ]
 
 # colour by subtype count: 3→green, 4→blue, 5→purple
@@ -86,12 +86,12 @@ def preamble() -> str:
     ] + [
         # The twelve primitive marks, likewise. FreeSerif has neither the
         # turnstiles nor the tacks nor the box, and unicode-math only rescues
-        # the ones that are math operators: ◻ is a geometric shape and came out
+        # the ones that are math operators: ⊡ is a geometric shape and came out
         # as a missing-glyph box in the Winding row.
         (f"{B}newunicodechar{{{g}}}"
          f"{{{B}ifmmode{B}text{{{{{B}shavfont {g}}}}}"
          f"{B}else{{{{{B}shavfont {g}}}}}{B}fi}}")
-        for g in "⊢⊣⋈⊤∈∋⊙⊥⊞◻"
+        for g in "⊢⊣⋈⊤∈∋⊙⊥⊞⊡"
     ] + [
         (f"{B}newunicodechar{{{chr(0x10450+i)}}}"
          f"{{{B}ifmmode{B}text{{{{{B}shavfont {chr(0x10450+i)}}}}}"
@@ -529,19 +529,19 @@ def page4() -> str:
         "THERAPEUTICS": [
             ("Ouroboric Pill",        "DNA origami sensor-drug barrel (M13mp18, 54nm). 5 aptamers, QD-FRET logic gates. $\\mu{B}circ{B}delta$ error 0.0106.", "⊙ > <"),
             ("Quantum Biologic",      "dCas9-DNMT3A epigenetic editor. LNP vector, 5 targets (BDNF, MECP2, FMR1...). 78.8\\% efficacy, 100\\% Frobenius closure.", "> ⋈ ⊥"),
-            ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "◻ ∈ Σ"),
+            ("Universal Antidote",    "$10^{12}$ DARPin library on yeast display. 500 toxin targets, 4 categories. FACS enrichment + deep sequencing.", "⊡ ∈ Σ"),
         ],
         "MATERIALS": [
             ("Ouroboric Composite",   "Self-healing CFRP. Embedded capsule network (85\\% efficiency). 7 healing cycles, 90.5\\% fatigue retention at 1000 cycles.", "⊤ ⊣ <"),
-            ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ ◻ ⊥"),
-            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "⊥ ⊞ ◻"),
+            ("Topological QM",        "Bi$_2$Se$_3$/FeSe heterostructure. Majorana zero modes, non-Abelian braiding. MajoranaFixed: Majorana $\\equiv$ SIC-POVM $\\equiv$ Belnap B (rfl).", "⊣ ⊡ ⊥"),
+            ("Eternal Memory Polymer","Oligocarbamate (264 monomers), chirality-encoded. $10^{15}$ bits/g. 55,723 year half-life @ 300K (Arrhenius).", "⊥ ⊞ ⊡"),
             ("Self-Weaving Fabric",   "5-layer 3D orthogonal smart textile. Sensing, energy harvesting, display, RF. Multiplex via ∈ scope hierarchy.", "∈ ∋ ⊢"),
         ],
         "BIOLOGY": [
             ("Ouroboric Cell",        "JCVI-syn3.0 (531 kbp, 469 genes) + serine recombinase self-editing system. 200-generation adaptive evolution sim, 40\\% genome edited.", "⊙ > ⊥"),
             ("Quantum Bioelectric",   "iPSC cardiomyocytes + neurons. Quantum-coherent ion channels (Kv1.2, Nav1.5), microelectrode array. Xenopus limb regeneration model.", "⊥ ⊙ ∋"),
             ("Universal Symbiont",    "12-strain microbial consortium. Quorum sensing + metabolic cross-feeding. 12 strains $\\leftrightarrow$ 12 primitives (Σ bijection).", "Σ ∈ ∋"),
-            ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "◻ ⊣ ⊢"),
+            ("Topological Morphogenesis","Reaction-diffusion kidney: Wnt/FGF/SDF-1 gradients. Gierer-Meinhardt activator-inhibitor. Tubule network from 500 sim steps.", "⊡ ⊣ ⊢"),
         ],
     }
 
@@ -604,7 +604,7 @@ def page4() -> str:
         f"  \\begin{{tabular}}{{@{{}}llll@{{}}}}",
         f"  Prima Materia & ⊢ (Dimensionality) & Albedo & < (Parity, Frobenius-special) \\\\",
         f"  Nigredo & ⊣ (Topology, collapse) & Citrinitas & ⊙ (Criticality, self-model) \\\\",
-        f"  Solutio & > (Recognition, dissolve) & Rubedo & ◻ (Winding, completion) \\\\",
+        f"  Solutio & > (Recognition, dissolve) & Rubedo & ⊡ (Winding, completion) \\\\",
         f"  Calcinatio & ⊞ (Stoichiometry, fire) & Multiplicatio & ∈ (Granularity, scope) \\\\",
         f"  Coagulatio & ⊤ (Kinetics, fixation) & Projectio & ∋ (Coupling, projection) \\\\",
         f"  Sublimatio & ⋈ (Fidelity, rising) & Fixatio & ⊥ (Chirality, fixed point) \\\\",

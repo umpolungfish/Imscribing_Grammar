@@ -22,7 +22,7 @@ Primitives and their assignment routes:
   R   (RecognitionMode)   → bond type + reversibility + catalytic flag
   P   (Polarity)          → partner symmetry
   ∈   (InteractionGrammar)→ selectivity ratio
-  ◻   (TopoIndex)         → derived from {T, K, D, ∈, G} via P-22 5-rule tree
+  ⊡   (TopoIndex)         → derived from {T, K, D, ∈, G} via P-22 5-rule tree
   ⊙   (CriticalityPhase)  → G/D degeneracy + Varma score heuristic
 """
 
@@ -667,7 +667,7 @@ class PrimitiveAssignmentEngine:
             is_boundary=is_boundary, boundary_margin=round(margin, 3),
         )
 
-    # ── ◻ (TopoIndex) — derived via P-22 decision tree ───────────────────────
+    # ── ⊡ (TopoIndex) — derived via P-22 decision tree ───────────────────────
 
     def assign_Omega_from_primitives(
         self,
@@ -678,35 +678,35 @@ class PrimitiveAssignmentEngine:
         G: Granularity,
     ) -> PrimitiveAssignment:
         """
-        Derive ◻ from {T, K, D, ∈, G} using the P-22 five-rule decision tree.
+        Derive ⊡ from {T, K, D, ∈, G} using the P-22 five-rule decision tree.
         Zero mismatches on 32/32 catalog imscriptions in the original audit.
 
         Rules (priority order):
-          1. K = MBL                        → ◻ = Z2_CLASS  (MBL topological order)
-          2. T = BRAID                      → ◻ = NON_ABELIAN  (anyonic statistics)
-          3. T = NETWORK and G = GLOBAL     → ◻ = CHERN  (Chern-Simons global network)
-          4. D = TEMPORAL and G = GLOBAL    → ◻ = Z2_CLASS  (temporal global protection)
-          5. Gamma = QUANTUM_AND            → ◻ = NON_ABELIAN  (quantum grammar)
-          default                           → ◻ = None
+          1. K = MBL                        → ⊡ = Z2_CLASS  (MBL topological order)
+          2. T = BRAID                      → ⊡ = NON_ABELIAN  (anyonic statistics)
+          3. T = NETWORK and G = GLOBAL     → ⊡ = CHERN  (Chern-Simons global network)
+          4. D = TEMPORAL and G = GLOBAL    → ⊡ = Z2_CLASS  (temporal global protection)
+          5. Gamma = QUANTUM_AND            → ⊡ = NON_ABELIAN  (quantum grammar)
+          default                           → ⊡ = None
         """
         if K == KineticCharacter.air:
             value = TopoIndex.oak
-            rule = "Rule 1: K=MBL → ◻=Z2_CLASS"
+            rule = "Rule 1: K=MBL → ⊡=Z2_CLASS"
         elif T == Topology.mime:
             value = TopoIndex.zoo
-            rule = "Rule 2: T=BRAID → ◻=NON_ABELIAN"
+            rule = "Rule 2: T=BRAID → ⊡=NON_ABELIAN"
         elif T == Topology.judge and G == Granularity.thigh:
             value = TopoIndex.ah
-            rule = "Rule 3: T=NETWORK ∧ G=GLOBAL → ◻=CHERN"
+            rule = "Rule 3: T=NETWORK ∧ G=GLOBAL → ⊡=CHERN"
         elif D == Dimensionality.array and G == Granularity.thigh:
             value = TopoIndex.oak
-            rule = "Rule 4: D=TEMPORAL ∧ G=GLOBAL → ◻=Z2_CLASS"
+            rule = "Rule 4: D=TEMPORAL ∧ G=GLOBAL → ⊡=Z2_CLASS"
         elif Gamma == InteractionGrammar.vow:
             value = TopoIndex.zoo
-            rule = "Rule 5: ∈=QUANTUM_AND → ◻=NON_ABELIAN"
+            rule = "Rule 5: ∈=QUANTUM_AND → ⊡=NON_ABELIAN"
         else:
             value = None
-            rule = "Default: no ◻-trigger rules fired → ◻=None"
+            rule = "Default: no ⊡-trigger rules fired → ⊡=None"
 
         return PrimitiveAssignment(
             primitive="Omega", value=value, confidence=0.97,
@@ -931,7 +931,7 @@ class PrimitiveAssignmentEngine:
         else:
             underdetermined.append("Gamma")
 
-        # ── ◻ — derived from {T, K, D, ∈, G} ────────────────────────────────
+        # ── ⊡ — derived from {T, K, D, ∈, G} ────────────────────────────────
         needed = {"T", "K", "D", "Gamma", "G"}
         if needed <= set(assignments.keys()):
             assignments["Omega"] = self.assign_Omega_from_primitives(

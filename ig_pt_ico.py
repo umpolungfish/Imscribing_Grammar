@@ -3,7 +3,7 @@
 Design C-3D — Icosahedral Radial.
 12 IG primitives at icosahedron vertices; elements cluster at their primitive's
 vertex, at radius = period × scale. Projected isometrically.
-Empty arms (◻ > ∈ ⋈) form a cold cap on the back hemisphere.
+Empty arms (⊡ > ∈ ⋈) form a cold cap on the back hemisphere.
 """
 
 import math, subprocess, shutil
@@ -49,7 +49,7 @@ def generate_tex():
     for prim, vi in PRIM_VERT.items():
         v = ICO_VERTS[vi]
         d = zdepth(v)
-        is_empty = prim in ('◻','≻','∈','⋈')
+        is_empty = prim in ('⊡','≻','∈','⋈')
         if is_empty:
             col = 'black!8'
         elif d < -0.1:
@@ -71,7 +71,7 @@ def generate_tex():
         # Push label outward past the element cluster (max period=7 at R=3.64cm)
         r_lbl = 5.4   # labels at 5.4*2.0=10.8cm from centre
         lp = proj([c * r_lbl for c in v], SCALE)
-        is_empty = prim in ('◻','≻','∈','⋈')
+        is_empty = prim in ('⊡','≻','∈','⋈')
         opacity = '!30' if (d < -0.15 or is_empty) else '!55'
         L.append(f'\\node[font={{\\igprimfont\\fontsize{{12}}{{12}}\\selectfont}},text=black{opacity}]'
                  f' at ({lp[0]:.3f}cm,{lp[1]:.3f}cm) {{{prim}}};\n')
@@ -105,7 +105,7 @@ def generate_tex():
     for d, vi, prim in vert_depths:
         v   = ICO_VERTS[vi]
         p2  = proj(v, SCALE)
-        col = 'black!35' if prim not in ('◻','≻','∈','⋈') else 'black!15'
+        col = 'black!35' if prim not in ('⊡','≻','∈','⋈') else 'black!15'
         L.append(f'\\node[circle,fill={col},minimum size=0.12cm,inner sep=0pt]'
                  f' at ({p2[0]:.3f}cm,{p2[1]:.3f}cm) {{}};\n')
 

@@ -602,7 +602,7 @@ class CrossDomainAnalogyDetector:
         "⊙": 0.05,  # Criticality
         "⊞": 0.08,  # Stoichiometry — raised from 0.05; valency-sensitive for ⋈ systems
     }
-    # ⊥ (chirality) and ◻ (winding) are absent: this detector has always scored
+    # ⊥ (chirality) and ⊡ (winding) are absent: this detector has always scored
     # ten of the twelve. That is a gap in the measure, not in the alphabet, and
     # naming it here is better than a table that silently looks complete.
     

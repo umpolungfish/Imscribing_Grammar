@@ -36,7 +36,7 @@ ICO_EDGES = [
 ]
 
 # Primitive → icosahedron vertex index
-# Populated primitives on front hemisphere; empty arms (◻ > ∈ ⋈) pushed back.
+# Populated primitives on front hemisphere; empty arms (⊡ > ∈ ⋈) pushed back.
 PRIM_VERT = {
     '⊥':  0,   # front-top        — d/f-block + H, most elements
     '∋':  1,   # front-bottom     — alkali metals
@@ -46,7 +46,7 @@ PRIM_VERT = {
     '≺':  9,   # left-front       — group 16
     '⊢':  6,   # right-bottom     — group 13
     '⊣':  7,   # left-bottom      — group 14
-    '◻': 10,   # right-back       — empty
+    '⊡': 10,   # right-back       — empty
     '≻': 11,   # left-back        — empty
     '∈':  2,   # back-top         — empty
     '⋈':  3,   # back-bottom      — empty

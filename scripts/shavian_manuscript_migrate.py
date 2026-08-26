@@ -37,14 +37,14 @@ REPLACEMENTS = [
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont ž}}}', r'{\igfont 𐑢}'),
     (r'\text{{\igprimfont ⊙}}_{\text{{\igfont Ţ}}}', r'{\igfont 𐑻}'),
     (r'\text{{\igprimfont ⊙}}_{3}', r'{\igfont 𐑣}'),
-    # ◻ (Protection)
-    (r'\text{{\igprimfont ◻}}_{\text{{\igfont Å}}}', r'{\igfont 𐑷}'),
+    # ⊡ (Protection)
+    (r'\text{{\igprimfont ⊡}}_{\text{{\igfont Å}}}', r'{\igfont 𐑷}'),
     (r'\Omega_{\text{{\igfont Å}}}', r'{\igfont 𐑷}'),
-    (r'\text{{\igprimfont ◻}}_{2}', r'{\igfont 𐑴}'),
-    (r'\text{{\igprimfont ◻}}_{z}', r'{\igfont 𐑭}'),
-    (r'\text{{\igprimfont ◻}}_{5}', r'{\igfont 𐑟}'),
-    (r'\text{{\igprimfont ◻}}_{Z}', r'{\igfont 𐑭}'),
-    (r'\text{{\igprimfont ◻}}_{Z_2}', r'{\igfont 𐑴}'),
+    (r'\text{{\igprimfont ⊡}}_{2}', r'{\igfont 𐑴}'),
+    (r'\text{{\igprimfont ⊡}}_{z}', r'{\igfont 𐑭}'),
+    (r'\text{{\igprimfont ⊡}}_{5}', r'{\igfont 𐑟}'),
+    (r'\text{{\igprimfont ⊡}}_{Z}', r'{\igfont 𐑭}'),
+    (r'\text{{\igprimfont ⊡}}_{Z_2}', r'{\igfont 𐑴}'),
     # ⊥ (Chirality)
     (r'\text{{\igprimfont ⊥}}_0', r'{\igfont 𐑓}'),
     (r'\text{{\igprimfont ⊥}}_1', r'{\igfont 𐑒}'),

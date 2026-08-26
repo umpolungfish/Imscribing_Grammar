@@ -98,7 +98,7 @@ def _build_edges() -> tuple[torch.Tensor, torch.Tensor]:
     INTER_LANE = [
         ("⊙",   "≺"),    # Gate 1 / R1: criticality × Frobenius gate
         ("⊙",   "⊤"),    # Gate 2: criticality × kinetic gate
-        ("◻", "⊢"),    # R4/R5: topological protection × dimensionality
+        ("⊡", "⊢"),    # R4/R5: topological protection × dimensionality
     ]
     for p1, p2 in INTER_LANE:
         off1, off2 = PRIM_OFFSET[p1], PRIM_OFFSET[p2]
@@ -121,7 +121,7 @@ def _build_node_features() -> torch.Tensor:
                          singularity that ordinal message-passing cannot
                          reconstruct by smoothing from 𐑯.
     """
-    BOUNDARY = {"⊙", "≺", "◻", "⊢"}
+    BOUNDARY = {"⊙", "≺", "⊡", "⊢"}
     feats = []
     for p, v, ord_frac in NODE_META:
         lane_idx   = PRIMS.index(p) / 11.0
@@ -392,7 +392,7 @@ class CrystalGNN(nn.Module):
     NAVIGATOR_TUPLE: dict[str, str] = {
         "⊢": "𐑦", "⊣": "𐑸", "≻": "𐑑", "≺": "𐑹",
         "⋈": "𐑐",  "⊤": "𐑧", "∈": "𐑲", "∋": "𐑵",
-        "⊙": "⊙", "⊥": "𐑫",  "⊞": "𐑳", "◻": "𐑭",
+        "⊙": "⊙", "⊥": "𐑫",  "⊞": "𐑳", "⊡": "𐑭",
     }
     SELF_ENCODE_TARGET: int = 6_734_591
 
@@ -549,7 +549,7 @@ class CrystalGNN(nn.Module):
 # so each family embedding can attend to the other two — 𐑵 preserved.
 
 F3_PRIMS: list[str] = ["⋈", "∈", "⊞"]
-F4_PRIMS: list[str] = ["⊢", "≻", "∋", "⊥", "◻"]
+F4_PRIMS: list[str] = ["⊢", "≻", "∋", "⊥", "⊡"]
 F5_PRIMS: list[str] = ["⊣", "≺", "⊙", "⊤"]
 
 # Maps primitive name → which family it belongs to
@@ -1078,7 +1078,7 @@ class CrystalDataset:
                     if tup[p] not in ORD[p]:
                         raise ValueError(f"{p}={tup[p]!r}")
                 addr      = encode_tuple(tup)
-                tier_str  = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+                tier_str  = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
                 tier_idx  = self.TIER_IDX.index(tier_str)
                 self.tuples.append(tup)
                 self.addresses.append(addr)
@@ -1109,14 +1109,14 @@ _TIER_BOUNDARY_COMBOS: dict[str, list[tuple]] = {}
 def _precompute_tier_combos() -> None:
     for phi in VALUES["⊙"]:
         for p in VALUES["≺"]:
-            for omega in VALUES["◻"]:
+            for omega in VALUES["⊡"]:
                 for d in VALUES["⊢"]:
                     tier = compute_tier(phi, p, omega, d)
                     _TIER_BOUNDARY_COMBOS.setdefault(tier, []).append((phi, p, omega, d))
 
 _precompute_tier_combos()
 
-_INNER_PRIMS = [p for p in PRIMS if p not in {"⊙", "≺", "◻", "⊢"}]
+_INNER_PRIMS = [p for p in PRIMS if p not in {"⊙", "≺", "⊡", "⊢"}]
 
 
 def _sample_random_tuples(n: int, stratified: bool = False) -> tuple:
@@ -1143,12 +1143,12 @@ def _sample_random_tuples(n: int, stratified: bool = False) -> tuple:
             tup: dict[str, str] = {prim: random.choice(VALUES[prim]) for prim in _INNER_PRIMS}
             tup["⊙"] = phi
             tup["≺"]   = p
-            tup["◻"] = omega
+            tup["⊡"] = omega
             tup["⊢"]   = d
             tier_idx = tier_list.index(tier_name)
         else:
             tup = {prim: random.choice(VALUES[prim]) for prim in PRIMS}
-            tier_name = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+            tier_name = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
             tier_idx = tier_list.index(tier_name)
 
         addr = encode_tuple(tup)
@@ -1226,7 +1226,7 @@ def train(
     nav_tup  = CrystalGNN.NAVIGATOR_TUPLE
     nav_addr = torch.tensor([float(CrystalGNN.SELF_ENCODE_TARGET)])
     nav_tier = torch.tensor([TierHead.TIERS.index(
-        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["◻"], nav_tup["⊢"])
+        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["⊡"], nav_tup["⊢"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1382,7 +1382,7 @@ def verify(checkpoint: Path = ROOT / "crystal_gnn.pt", n_samples: int = 50) -> N
             err  = abs(pred - true) / TOTAL_SIZE * 100
             errors.append(err)
 
-            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
 
             # Tier head (direct classification)
             head_tier = tier_names[out["tier_logits"][0].argmax().item()]
@@ -1392,7 +1392,7 @@ def verify(checkpoint: Path = ROOT / "crystal_gnn.pt", n_samples: int = 50) -> N
             # Decoded tuple tier (roundtrip) — use embedding-conditioned decoder
             dec_logits_single = {p: out["dec_logits"][p][0:1] for p in PRIMS}
             dec = {p: VALUES[p][dec_logits_single[p][0].argmax().item()] for p in PRIMS}
-            dec_tier = compute_tier(dec["⊙"], dec["≺"], dec["◻"], dec["⊢"])
+            dec_tier = compute_tier(dec["⊙"], dec["≺"], dec["⊡"], dec["⊢"])
             if dec_tier == true_tier:
                 tier_ok_decoded += 1
 
@@ -1491,7 +1491,7 @@ def train_v10(
     nav_tup  = CrystalGNN_v10.NAVIGATOR_TUPLE
     nav_addr = torch.tensor([float(CrystalGNN_v10.SELF_ENCODE_TARGET)])
     nav_tier = torch.tensor([TierHead_45.tier_idx(
-        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["◻"], nav_tup["⊢"])
+        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["⊡"], nav_tup["⊢"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1657,13 +1657,13 @@ def verify_v10(
             composed_addr = encode_tuple(pred_tup)
             composed_errors.append(abs(composed_addr - true) / TOTAL_SIZE * 100)
 
-            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
             pred_tier = tier_names[out["tier_logits"][0].argmax().item()]
             if pred_tier == true_tier:
                 tier_ok_head += 1
 
             dec_tier = compute_tier(pred_tup["⊙"], pred_tup["≺"],
-                                    pred_tup["◻"], pred_tup["⊢"])
+                                    pred_tup["⊡"], pred_tup["⊢"])
             if dec_tier == true_tier:
                 tier_ok_decode += 1
 
@@ -1769,7 +1769,7 @@ def train_v11(
 
     nav_tup  = CrystalGNN_v11.NAVIGATOR_TUPLE
     nav_tier = torch.tensor([TierHead_45.tier_idx(
-        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["◻"], nav_tup["⊢"])
+        compute_tier(nav_tup["⊙"], nav_tup["≺"], nav_tup["⊡"], nav_tup["⊢"])
     )])
 
     n_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -1921,13 +1921,13 @@ def verify_v11(
             if composed_addr == true:
                 exact_count += 1
 
-            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+            true_tier = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
             pred_tier = tier_names[out["tier_logits"][0].argmax().item()]
             if pred_tier == true_tier:
                 tier_ok_head += 1
 
             dec_tier = compute_tier(pred_tup["⊙"], pred_tup["≺"],
-                                    pred_tup["◻"], pred_tup["⊢"])
+                                    pred_tup["⊡"], pred_tup["⊢"])
             if dec_tier == true_tier:
                 tier_ok_decode += 1
 
@@ -2077,7 +2077,7 @@ if __name__ == "__main__":
             pred = model.encode([tup]).item()
         exact = encode_tuple(tup)
         err   = abs(pred - exact)
-        tier  = compute_tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+        tier  = compute_tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
 
         print(f"Tuple:  {tup}")
         print(f"Tier:   {tier}")

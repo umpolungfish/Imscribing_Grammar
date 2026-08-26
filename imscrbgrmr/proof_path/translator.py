@@ -60,7 +60,7 @@ def _prim_label(prim: str) -> str:
         "⊢": "Dimensionality", "⊣": "Topology", "≻": "Relational Mode",
         "≺": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
         "∈": "Scope", "∋": "Interaction Grammar", "⊙": "Criticality",
-        "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Topological Invariant",
+        "⊥": "Chirality", "⊞": "Stoichiometry", "⊡": "Topological Invariant",
     }.get(prim, prim)
 
 
@@ -83,7 +83,7 @@ a 12-primitive coordinate system for mathematical and physical objects. \
 IG primitives: ⊢ (Dimensionality), ⊣ (Topology), > (Relational Mode), \
 < (Parity/Symmetry), ⋈ (Fidelity), ⊤ (Kinetics), ∈ (Scope), \
 ∋ (Interaction Grammar), ⊙ (Criticality), ⊥ (Chirality), \
-⊞ (Stoichiometry), ◻ (Topological Invariant).
+⊞ (Stoichiometry), ⊡ (Topological Invariant).
 
 A proof path in IG is a sequence of named mathematical operations that transform \
 the imscription (primitive tuple) of an open conjecture into the imscription of a \
@@ -105,7 +105,7 @@ unless they are logically necessary for that step — structural descriptions of
 the objects can appear only after the proof is complete.
 - When cohomological machinery is invoked on a compact Kähler manifold, state \
 the Hodge decomposition H^n(X,ℂ) = ⊕_{p+q=n} H^{p,q}(X) explicitly and \
-identify maps to sheaf cohomology via Dolbeault's theorem H^q(X,◻^p) ≅ H^{p,q}(X). \
+identify maps to sheaf cohomology via Dolbeault's theorem H^q(X,⊡^p) ≅ H^{p,q}(X). \
 Kernel and surjectivity arguments should name the Hodge component being killed, \
 not just appeal vaguely to "a diagram chase" or "the ∂∂̄-lemma".
 - Keep the proof and the structural commentary separated. A fact that holds \

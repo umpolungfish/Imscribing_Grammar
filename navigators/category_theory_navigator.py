@@ -79,7 +79,7 @@ class NavigatorConfig:
             "⊙": self.Phi,
             "⊥": self.H,
             "⊞": self.S,
-            "◻": self.Omega
+            "⊡": self.Omega
         }
     
     def hash(self) -> str:

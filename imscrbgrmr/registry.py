@@ -112,7 +112,7 @@ def record_provenance(entries, catalog_path) -> Dict[str, Any]:
 
     The catalog stores name, description and twelve glyphs and nothing else, so
     there is no way to ask of an assignment whether it was computed or asserted.
-    That gap is load-bearing: entries at the top of the ◻ ladder cannot be
+    That gap is load-bearing: entries at the top of the ⊡ ladder cannot be
     distinguished from entries that merely claim to be, and the ones that name
     their own claim in their description are indistinguishable from the ones
     that were walked there by a verb.
@@ -167,12 +167,12 @@ def record_provenance(entries, catalog_path) -> Dict[str, Any]:
 def slot_category_violations(entries) -> List[str]:
     """Report glyphs sitting in a slot that cannot hold them.
 
-    Each primitive is an inductive with a closed constructor list — ◻, for
+    Each primitive is an inductive with a closed constructor list — ⊡, for
     instance, is `| awe | oak | ah | zoo` and nothing else — so a glyph outside
     that list is not an unusual value but a type error. The catalog carried such
     entries undetected because nothing ever compared a saved tuple against
-    CANONICAL_PRIMITIVES: two entries held a < value in the ◻ slot, and every
-    structural verb that needed ◻ on them returned N (void) rather than naming
+    CANONICAL_PRIMITIVES: two entries held a < value in the ⊡ slot, and every
+    structural verb that needed ⊡ on them returned N (void) rather than naming
     the cause. This runs on save so the next one is reported when it is written
     rather than discovered by a refusal much later.
 

@@ -3,7 +3,7 @@
 IG Periodic Table — Janet (left-step) arrangement grounded in 12 primitives.
 
 Primary axes:
-  X: ◻ × ⊥  (orbital winding × chirality = block structure)
+  X: ⊡ × ⊥  (orbital winding × chirality = block structure)
   Y: ∈       (granularity = period)
 
 Block primitive signatures:
@@ -169,7 +169,7 @@ ORGANIC_THREAD  = ['H', 'O', 'N', 'C', 'S', 'P']
 METALLIC_THREAD = ['Fe', 'Ni', 'Zn', 'Mo', 'Rh', 'Pd', 'W', 'Ir', 'Pt', 'Au']
 
 # ─────────────────────────────────────────────────────────────
-# TikZ cell colors by block × period (◻ × ∈)
+# TikZ cell colors by block × period (⊡ × ∈)
 # ─────────────────────────────────────────────────────────────
 BLOCK_BASE = {
     's': 'amber',

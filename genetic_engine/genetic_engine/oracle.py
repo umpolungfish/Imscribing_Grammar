@@ -1,5 +1,5 @@
 """
-oracle.py — The Structural ◻racle
+oracle.py — The Structural ⊡racle
 ===================================
 
 A universal cross-domain structural translation engine built on the Imscribing Grammar.
@@ -100,7 +100,7 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
         "𐑕": 1,   # n:n — many identical
         "𐑳": 2,   # n:m — many heterogeneous
     },
-    "◻": {  # Winding / Topological Invariant
+    "⊡": {  # Winding / Topological Invariant
         "𐑷": 0,   # 0 — trivial
         "𐑴": 1,   # Z2 — parity-protected
         "𐑭": 2,   # Z — integer winding
@@ -108,12 +108,12 @@ PRIMITIVE_VALUES: Dict[str, Dict[str, int]] = {
     },
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 PRIMITIVE_NAMES = {
     "⊢": "Dimensionality", "⊣": "Topology", "≻": "Relational Mode",
     "≺": "Parity/Symmetry", "⋈": "Fidelity", "⊤": "Kinetics",
     "∈": "Interaction Scope", "∋": "Interaction Grammar", "⊙": "Criticality",
-    "⊥": "Chirality", "⊞": "Stoichiometry", "◻": "Winding/Protection",
+    "⊥": "Chirality", "⊞": "Stoichiometry", "⊡": "Winding/Protection",
 }
 
 
@@ -151,10 +151,10 @@ def primitives_to_str(t: Dict[str, str]) -> str:
 # ──────────────────────────────────────────────────────────────────────
 
 # Helper to build tuple dict
-def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻) -> Dict[str, str]:
+def T(⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ⊡) -> Dict[str, str]:
     return {
         "⊢": ⊢, "⊣": ⊣, "≻": >, "≺": <, "⋈": ⋈, "⊤": ⊤,
-        "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": ⊥, "⊞": ⊞, "◻": ◻,
+        "∈": ∈, "∋": ∋, "⊙": ⊙, "⊥": ⊥, "⊞": ⊞, "⊡": ⊡,
     }
 
 STRUCTURAL_CATALOG: Dict[str, Dict[str, Any]] = {

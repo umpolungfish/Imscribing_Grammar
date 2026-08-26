@@ -13,7 +13,7 @@ open Dimensionality Topology Relational Polarity Grammar
 
 -- ============================================================
 -- IMSCRIPTION STRUCT
--- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
+-- An Imscription is a 12-tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩.
 -- Field name 'rel' used for Relational (R) since 'rec' is reserved in Lean 4.
 -- @[ext] generates Imscription.ext for pointwise equality.
 -- ============================================================
@@ -31,7 +31,7 @@ structure Imscription : Type where
   crit  : Criticality      -- ⊙
   chir  : Chirality        -- H
   stoi  : Stoichiometry    -- S
-  prot  : Protection       -- ◻
+  prot  : Protection       -- ⊡
   deriving DecidableEq, Repr
 
 -- ============================================================
@@ -95,7 +95,7 @@ theorem primitiveMismatches_zero_iff (a b : Imscription) :
 
 -- ============================================================
 -- TENSOR PRODUCT (structural composition)
--- Union primitives: max (D, T, R, G, ∈, ⊙, H, S, ◻)
+-- Union primitives: max (D, T, R, G, ∈, ⊙, H, S, ⊡)
 -- Bottleneck primitives: min (P, F) — weaker partner wins
 -- ============================================================
 
@@ -277,7 +277,7 @@ theorem gr_as_morphism_cost :
 -- ============================================================
 
 /-- Frobenius cliff: O_∞ requires or'. No other Polarity gives O_∞
-    regardless of ⊙, ◻, D. (Lean-verified statement of §23 / §69.) -/
+    regardless of ⊙, ⊡, D. (Lean-verified statement of §23 / §69.) -/
 theorem o_inf_iff_P_pm_sym_at_phi_c (s : Imscription) :
     imscriptionTier s = .O_∞ ↔
     (s.crit = .monad ∨ s.crit = .roar) ∧ s.pol = .or' := by

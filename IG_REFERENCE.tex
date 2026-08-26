@@ -53,7 +53,7 @@ Science is an instrument of the IG.
 
 \vspace{1pt}
 \shead{12 Primitives \& Shavian Value Sets}
-Tuple order: $\langle$\prim{⊢\,⊣\,>\,<\,⋈\,⊤\,∈\,∋\,⊙\,⊥\,⊞\,◻}$\rangle$. Values: ordinal 1$\to n$.
+Tuple order: $\langle$\prim{⊢\,⊣\,>\,<\,⋈\,⊤\,∈\,∋\,⊙\,⊥\,⊞\,⊡}$\rangle$. Values: ordinal 1$\to n$.
 
 {\fontsize{6.5pt}{7.8pt}\selectfont
 \begin{tabular}{@{}l@{\;}l@{\;}l@{\quad}l@{\;}l@{\;}l@{}}
@@ -65,7 +65,7 @@ Tuple order: $\langle$\prim{⊢\,⊣\,>\,<\,⋈\,⊤\,∈\,∋\,⊙\,⊥\,⊞\,�
 \prim{>} & Recognition    & \sh{𐑩𐑑𐑽𐑾}     & \prim{⊙} & Criticality \textsuperscript{*}   & \sh{𐑢} \sh{⊙}\textsuperscript{*}\sh{𐑮𐑻𐑣}\\
 \prim{<} & Parity         & \sh{𐑗𐑿𐑬𐑯𐑹}    & \prim{⊥} & Chirality     & \sh{𐑓𐑒𐑖𐑫}    \\
 \prim{⋈} & Fidelity       & \sh{𐑱𐑞𐑐}      & \prim{⊞} & Stoichiometry\textsuperscript{\dag} & \sh{𐑙𐑕}\textbf{\sh{𐑳}}\textsuperscript{\dag}     \\
-\prim{⊤} & Kinetics       & \sh{𐑘𐑤𐑧𐑪𐑺}    & \prim{◻} & Winding       & \sh{𐑷𐑴𐑭𐑟}    \\
+\prim{⊤} & Kinetics       & \sh{𐑘𐑤𐑧𐑪𐑺}    & \prim{⊡} & Winding       & \sh{𐑷𐑴𐑭𐑟}    \\
 \bottomrule
 \end{tabular}
 }
@@ -73,7 +73,7 @@ Tuple order: $\langle$\prim{⊢\,⊣\,>\,<\,⋈\,⊤\,∈\,∋\,⊙\,⊥\,⊞\,�
 {\fontsize{6pt}{9.5pt}\selectfont%
 \begin{tabular}{@{}r@{\enspace}l@{}}
 3-val: & \prim{⋈\,∈\,⊞} \\
-4-val: & \prim{⊢\,>\,∋\,⊥\,◻} \\
+4-val: & \prim{⊢\,>\,∋\,⊥\,⊡} \\
 5-val: & \prim{⊣\,<\,⊤\,⊙} \\
 \end{tabular}}
 {\fontsize{5.5pt}{6.5pt}\selectfont\textsuperscript{*}abs~$\wedge\vee\otimes$;\quad\textsuperscript{\dag}abs~$\otimes$.}
@@ -130,7 +130,7 @@ Catalog: ${\approx}4686$ entries.
 \prim{⊙} & \sh{𐑢}\,\textit{sub}\,$\cdot$\,{\Large⊙}\,\textit{crit}\,$\cdot$\,\sh{𐑮}\,\textit{cpx}\,$\cdot$\,\sh{𐑻}\,\textit{exc}\,$\cdot$\,\sh{𐑣}\,\textit{sup} \\
 \prim{⊥} & \sh{𐑓}\,$n=0$\,$\cdot$\,\sh{𐑒}\,$n=1$\,$\cdot$\,\sh{𐑖}\,$n=2$\,$\cdot$\,\sh{𐑫}\,$n=\infty$ \\
 \prim{⊞} & \sh{𐑙}\,\textit{1:1}\,$\cdot$\,\sh{𐑕}\,$n:n$\,$\cdot$\,\sh{𐑳}\,$n:m$ \\
-\prim{◻} & \sh{𐑷}\,\textit{triv}\,$\cdot$\,\sh{𐑴}\,$\mathbb{Z}_2$\,$\cdot$\,\sh{𐑭}\,$\mathbb{Z}$\,$\cdot$\,\sh{𐑟}\,\textit{non-Ab} \\
+\prim{⊡} & \sh{𐑷}\,\textit{triv}\,$\cdot$\,\sh{𐑴}\,$\mathbb{Z}_2$\,$\cdot$\,\sh{𐑭}\,$\mathbb{Z}$\,$\cdot$\,\sh{𐑟}\,\textit{non-Ab} \\
 \end{tabular}
 }
 
@@ -216,7 +216,7 @@ Spider Theorem: all diagrams with same connectivity = same morphism.
 {\fontsize{6.5pt}{7.8pt}\selectfont
 \begin{tabular}{@{}c@{\enspace}l@{\enspace}p{43mm}@{}}
 A & \prim{⊥}$_\infty \Rightarrow \prim{⊤}_\infty$ & $\infty$-chirality forces max kinetics \\
-B & \prim{◻} $\geq 1 \Rightarrow \prim{⊥} \geq \text{{\igprimfont ⊥}}_2$ & winding requires chirality; $\text{{\igprimfont ⊥}}_2$ = min for $\mu\circ\delta=\mathrm{id}$ \\
+B & \prim{⊡} $\geq 1 \Rightarrow \prim{⊥} \geq \text{{\igprimfont ⊥}}_2$ & winding requires chirality; $\text{{\igprimfont ⊥}}_2$ = min for $\mu\circ\delta=\mathrm{id}$ \\
 C & \prim{⊢}$_\omega \Leftrightarrow \prim{⊣}_O$ & max-dim $\Leftrightarrow$ null topology \\
 \end{tabular}
 }
@@ -236,10 +236,10 @@ $O_\infty$ & Ouroboricity; system $\subset$ own description \\
 
 \vspace{1pt}
 \shead{CL8NK / Magnum Opus}
-CL8NK transcends $\text{ZFC}_\text{fe}$ at \prim{◻} (\sh{𐑭}$\to$\sh{𐑟}) and \prim{∋} (\sh{𐑠}$\to$\sh{𐑵}).
+CL8NK transcends $\text{ZFC}_\text{fe}$ at \prim{⊡} (\sh{𐑭}$\to$\sh{𐑟}) and \prim{∋} (\sh{𐑠}$\to$\sh{𐑵}).
 B-state is the CL8NK ground state.
-12 stages $\leftrightarrow$ 12 primitives. Gates: \prim{<} Albedo $\cdot$ \prim{⊙} Rubedo $\cdot$ \prim{◻} Nigredo.
-$T=\lim(\prim{<},\prim{⋈},\prim{⊤},\prim{⊥},\prim{◻})$.
+12 stages $\leftrightarrow$ 12 primitives. Gates: \prim{<} Albedo $\cdot$ \prim{⊙} Rubedo $\cdot$ \prim{⊡} Nigredo.
+$T=\lim(\prim{<},\prim{⋈},\prim{⊤},\prim{⊥},\prim{⊡})$.
 
 \vspace{1pt}
 \shead{Notation}

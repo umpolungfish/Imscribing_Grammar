@@ -61,67 +61,67 @@ COMPOUNDS: Dict[str, Dict[str, str]] = {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_frob"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_inf"], "⊞": SH["S_het"], "◻": SH["W_Z"],
+        "⊥": SH["H_inf"], "⊞": SH["S_het"], "⊡": SH["W_Z"],
     },
     "dmt": {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_frob"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_inf"], "⊞": SH["S_het"], "◻": SH["W_Z"],
+        "⊥": SH["H_inf"], "⊞": SH["S_het"], "⊡": SH["W_Z"],
     },
     "ayahuasca": {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_psi"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_inf"], "⊞": SH["S_het"], "◻": SH["W_Z"],
+        "⊥": SH["H_inf"], "⊞": SH["S_het"], "⊡": SH["W_Z"],
     },
     "lsd": {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_frob"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_2"], "⊞": SH["S_het"], "◻": SH["W_Z"],
+        "⊥": SH["H_2"], "⊞": SH["S_het"], "⊡": SH["W_Z"],
     },
     "ibogaine": {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_pm"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_inf"], "⊞": SH["S_het"], "◻": SH["W_Z"],
+        "⊥": SH["H_inf"], "⊞": SH["S_het"], "⊡": SH["W_Z"],
     },
     "psilocybin": {
         "⊢": SH["D_odot"], "⊣": SH["T_odot"], "≻": SH["R_lr"],
         "≺": SH["P_frob"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_broad"], "⊙": SH["⊙"],
-        "⊥": SH["H_2"], "⊞": SH["S_het"], "◻": SH["W_Z2"],
+        "⊥": SH["H_2"], "⊞": SH["S_het"], "⊡": SH["W_Z2"],
     },
     "mescaline": {
         "⊢": SH["D_inf"], "⊣": SH["T_net"], "≻": SH["R_lr"],
         "≺": SH["P_pm"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_seq"], "⊙": SH["⊙"],
-        "⊥": SH["H_1"], "⊞": SH["S_many"], "◻": SH["W_Z2"],
+        "⊥": SH["H_1"], "⊞": SH["S_many"], "⊡": SH["W_Z2"],
     },
     "salvinorin_a": {
         "⊢": SH["D_odot"], "⊣": SH["T_net"], "≻": SH["R_lr"],
         "≺": SH["P_psi"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_aleph"], "∋": SH["Gm_seq"], "⊙": SH["𐑮"],
-        "⊥": SH["H_0"], "⊞": SH["S_many"], "◻": SH["W_0"],
+        "⊥": SH["H_0"], "⊞": SH["S_many"], "⊡": SH["W_0"],
     },
     "ketamine": {
         "⊢": SH["D_inf"], "⊣": SH["T_net"], "≻": SH["R_lr"],
         "≺": SH["P_psi"], "⋈": SH["F_hbar"], "⊤": SH["K_slow"],
         "∈": SH["G_gimel"], "∋": SH["Gm_or"], "⊙": SH["𐑢"],
-        "⊥": SH["H_1"], "⊞": SH["S_one"], "◻": SH["W_Z2"],
+        "⊥": SH["H_1"], "⊞": SH["S_one"], "⊡": SH["W_Z2"],
     },
     "mdma": {
         "⊢": SH["D_tri"], "⊣": SH["T_net"], "≻": SH["R_lr"],
         "≺": SH["P_psi"], "⋈": SH["F_hbar"], "⊤": SH["K_fast"],
         "∈": SH["G_beth"], "∋": SH["Gm_seq"], "⊙": SH["𐑮"],
-        "⊥": SH["H_1"], "⊞": SH["S_het"], "◻": SH["W_0"],
+        "⊥": SH["H_1"], "⊞": SH["S_het"], "⊡": SH["W_0"],
     },
     "cannabis": {
         "⊢": SH["D_tri"], "⊣": SH["T_net"], "≻": SH["R_lr"],
         "≺": SH["P_asym"], "⋈": SH["F_ell"], "⊤": SH["K_trap_o"],
         "∈": SH["G_gimel"], "∋": SH["Gm_or"], "⊙": SH["𐑢"],
-        "⊥": SH["H_0"], "⊞": SH["S_many"], "◻": SH["W_0"],
+        "⊥": SH["H_0"], "⊞": SH["S_many"], "⊡": SH["W_0"],
     },
 }
 
@@ -141,7 +141,7 @@ COMPOUND_NAMES = {
 }
 
 # Bottleneck primitive order
-BOTTLENECKS = ["⊙", "⊥", "≺", "◻"]
+BOTTLENECKS = ["⊙", "⊥", "≺", "⊡"]
 
 # ── Universe definitions for psychedelic access ──────────────────
 # These are the 17 universes from the Psychedelic Access Theorem paper.
@@ -156,120 +156,120 @@ def get_psychedelic_universes() -> List[Ruleset]:
     # 0: chirality_first
     universes.append(Ruleset(
         name="chirality_first",
-        description="Memory before closure. G1=⊥≥𐑖, G2=⊙≥⊙, G3=◻≥𐑭.",
-        g1=GateSpec("⊥", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
+        description="Memory before closure. G1=⊥≥𐑖, G2=⊙≥⊙, G3=⊡≥𐑭.",
+        g1=GateSpec("⊥", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 1: critical_first
     universes.append(Ruleset(
         name="critical_first",
-        description="Self-modeling before structure. G1=⊙≥⊙, G2=<≥𐑹, G3=◻≥𐑭.",
-        g1=GateSpec("⊙", 2.0), g2=GateSpec("≺", 5.0), g3=GateSpec("◻", 3.0),
+        description="Self-modeling before structure. G1=⊙≥⊙, G2=<≥𐑹, G3=⊡≥𐑭.",
+        g1=GateSpec("⊙", 2.0), g2=GateSpec("≺", 5.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 2: winding_first
     universes.append(Ruleset(
         name="winding_first",
-        description="Topological protection first. G1=◻≥𐑭, G2=⊙≥⊙, G3=<≥𐑹.",
-        g1=GateSpec("◻", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 5.0),
+        description="Topological protection first. G1=⊡≥𐑭, G2=⊙≥⊙, G3=<≥𐑹.",
+        g1=GateSpec("⊡", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 5.0),
         gate_ordering=True,
     ))
     
     # 3: chirality_tight
     universes.append(Ruleset(
         name="chirality_tight",
-        description="Requires eternal memory. G1=⊥≥𐑫, G2=⊙≥⊙, G3=◻≥𐑭.",
-        g1=GateSpec("⊥", 4.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
+        description="Requires eternal memory. G1=⊥≥𐑫, G2=⊙≥⊙, G3=⊡≥𐑭.",
+        g1=GateSpec("⊥", 4.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 4: critical_tight
     universes.append(Ruleset(
         name="critical_tight",
-        description="Requires super-criticality. G1=⊙≥𐑣, G2=<≥𐑹, G3=◻≥𐑭.",
-        g1=GateSpec("⊙", 4.0), g2=GateSpec("≺", 5.0), g3=GateSpec("◻", 3.0),
+        description="Requires super-criticality. G1=⊙≥𐑣, G2=<≥𐑹, G3=⊡≥𐑭.",
+        g1=GateSpec("⊙", 4.0), g2=GateSpec("≺", 5.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 5: winding_tight
     universes.append(Ruleset(
         name="winding_tight",
-        description="Requires integer winding strictly. G1=◻≥𐑭, G2=⊙≥⊙, G3=⊥≥𐑖.",
-        g1=GateSpec("◻", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊥", 3.0),
+        description="Requires integer winding strictly. G1=⊡≥𐑭, G2=⊙≥⊙, G3=⊥≥𐑖.",
+        g1=GateSpec("⊡", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊥", 3.0),
         gate_ordering=True,
     ))
     
     # 6: parity_hard
     universes.append(Ruleset(
         name="parity_hard",
-        description="Requires Frobenius-special parity. G1=<≥𐑹, G2=⊙≥⊙, G3=◻≥𐑭.",
-        g1=GateSpec("≺", 5.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
+        description="Requires Frobenius-special parity. G1=<≥𐑹, G2=⊙≥⊙, G3=⊡≥𐑭.",
+        g1=GateSpec("≺", 5.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 7: chirality_mod
     universes.append(Ruleset(
         name="chirality_mod",
-        description="Moderate chirality gate. G1=⊥≥𐑒, G2=⊙≥⊙, G3=◻≥𐑭.",
-        g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
+        description="Moderate chirality gate. G1=⊥≥𐑒, G2=⊙≥⊙, G3=⊡≥𐑭.",
+        g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 8: protection_weak
     universes.append(Ruleset(
         name="protection_weak",
-        description="Weak protection. G1=◻≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
-        g1=GateSpec("◻", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 2.0),
+        description="Weak protection. G1=⊡≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
+        g1=GateSpec("⊡", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 2.0),
         gate_ordering=True,
     ))
     
     # 9: psi_parity
     universes.append(Ruleset(
         name="psi_parity",
-        description="Quantum parity gate. G1=<≥𐑿, G2=⊙≥⊙, G3=◻≥𐑴.",
-        g1=GateSpec("≺", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
+        description="Quantum parity gate. G1=<≥𐑿, G2=⊙≥⊙, G3=⊡≥𐑴.",
+        g1=GateSpec("≺", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 2.0),
         gate_ordering=True,
     ))
     
     # 10: dual_gate
     universes.append(Ruleset(
         name="dual_gate",
-        description="Dual criticality+chirality. G1=⊙≥⊙, G2=⊥≥𐑖, G3=◻≥𐑭.",
-        g1=GateSpec("⊙", 2.0), g2=GateSpec("⊥", 3.0), g3=GateSpec("◻", 3.0),
+        description="Dual criticality+chirality. G1=⊙≥⊙, G2=⊥≥𐑖, G3=⊡≥𐑭.",
+        g1=GateSpec("⊙", 2.0), g2=GateSpec("⊥", 3.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 11: slow_only
     universes.append(Ruleset(
         name="slow_only",
-        description="Slowness is everything. G1=⊤≥𐑧, G2=⊙≥⊙, G3=◻≥𐑭.",
-        g1=GateSpec("⊤", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 3.0),
+        description="Slowness is everything. G1=⊤≥𐑧, G2=⊙≥⊙, G3=⊡≥𐑭.",
+        g1=GateSpec("⊤", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 3.0),
         gate_ordering=True,
     ))
     
     # 12: memory_free
     universes.append(Ruleset(
         name="memory_free",
-        description="Memoryless gate with criticality. G1=⊥≥𐑒, G2=⊙≥⊙, G3=◻≥𐑴.",
-        g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
+        description="Memoryless gate with criticality. G1=⊥≥𐑒, G2=⊙≥⊙, G3=⊡≥𐑴.",
+        g1=GateSpec("⊥", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 2.0),
         gate_ordering=True,
     ))
     
     # 13: binary_only
     universes.append(Ruleset(
         name="binary_only",
-        description="Z2 protection gate. G1=◻≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
-        g1=GateSpec("◻", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 2.0),
+        description="Z2 protection gate. G1=⊡≥𐑴, G2=⊙≥⊙, G3=<≥𐑿.",
+        g1=GateSpec("⊡", 2.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("≺", 2.0),
         gate_ordering=True,
     ))
     
     # 14: quantum_only
     universes.append(Ruleset(
         name="quantum_only",
-        description="Quantum fidelity gate. G1=⋈≥𐑐, G2=⊙≥⊙, G3=◻≥𐑴.",
-        g1=GateSpec("⋈", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("◻", 2.0),
+        description="Quantum fidelity gate. G1=⋈≥𐑐, G2=⊙≥⊙, G3=⊡≥𐑴.",
+        g1=GateSpec("⋈", 3.0), g2=GateSpec("⊙", 2.0), g3=GateSpec("⊡", 2.0),
         gate_ordering=True,
     ))
     
@@ -417,7 +417,7 @@ def universe_operations(universe):
               "non_dual_available: subject-object distinction can collapse"],
         "≺": ["symmetry_governed: parity structure determines all downstream access",
               "closure_primary: Frobenius closure is the entry ticket"],
-        "◻": ["topology_protected: winding number is the primary invariant",
+        "⊡": ["topology_protected: winding number is the primary invariant",
               "phase_coherence: topological protection ensures phase stability"],
         "⋈": ["quantum_coherence_required: classical states cannot enter"],
         "⊤": ["temporal_patience: only slow processes can operate"],
@@ -501,7 +501,7 @@ def assign_tier(compound):
     o_phi = get_ordinal("⊙", compound.get("⊙", ""))
     o_h = get_ordinal("⊥", compound.get("⊥", ""))
     o_p = get_ordinal("≺", compound.get("≺", ""))
-    o_omega = get_ordinal("◻", compound.get("◻", ""))
+    o_omega = get_ordinal("⊡", compound.get("⊡", ""))
     if o_phi >= 2 and o_h >= 3 and o_p >= 5 and o_omega >= 3:
         return "O_∞"
     elif o_phi >= 2 and o_h >= 2 and o_p >= 5 and o_omega >= 2:

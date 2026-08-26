@@ -44,7 +44,7 @@ TIER_COLOR = {
     "O_∞":   "#9370DB",
 }
 
-PRIM_GLYPHS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIM_GLYPHS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 PRIM_NAMES  = [
     "Dimensionality", "Topology", "Recognition", "Parity",
     "Fidelity",       "Kinetics", "Granularity", "Coupling",
@@ -63,7 +63,7 @@ SUBTYPE_ORDER = {
     "⊙": ["ž","ÿ","Æ","3","Ţ"],
     "⊥": ["Ñ","£","A","!"],
     "⊞": ["S","ő","ï"],
-    "◻": ["Å","2","z","5"],
+    "⊡": ["Å","2","z","5"],
 }
 
 

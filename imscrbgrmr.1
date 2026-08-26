@@ -26,7 +26,7 @@ The 12 primitives are irreducible dimensions:
 \fB⊢\fR  Dimensionality      \fB⊣\fR  Topology            \fB>\fR  Relational mode
 \fB<\fR  Polarity            \fB⋈\fR  Fidelity            \fB⊤\fR  Kinetic character
 \fB∈\fR  Granularity               \fB∋\fR  Grammar            \fB⊙\fR  Criticality
-\fB⊥\fR  Chirality      \fB⊞\fR  Stoichiometry       \fB◻\fR  Protection
+\fB⊥\fR  Chirality      \fB⊞\fR  Stoichiometry       \fB⊡\fR  Protection
 .fi
 .RE
 .PP
@@ -253,7 +253,7 @@ quiver-based GNN navigator:
 .TP
 \fBquiver\fR
 49 nodes (one per primitive value), 255 edges including inter-lane
-structural correlations (\fI⊙ <-> <\fR, \fI⊙ <-> ⊤\fR, \fI◻ <-> ⊢\fR).
+structural correlations (\fI⊙ <-> <\fR, \fI⊙ <-> ⊤\fR, \fI⊡ <-> ⊢\fR).
 .TP
 \fBv10 CF-GNN\fR
 Crystal-Factored: three family heads (\fIF_3\fR/\fIF_4\fR/\fIF_5\fR) +
@@ -319,7 +319,7 @@ uv run crystal_navigator.py describe
 uv run crystal_navigator.py repl
 
 # Encode a tuple to an address
-uv run crystal_navigator.py encode "⊢=𐑦 ⊣=𐑸 >=𐑽 <=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ◻=𐑭"
+uv run crystal_navigator.py encode "⊢=𐑦 ⊣=𐑸 >=𐑽 <=𐑹 ⋈=𐑐 ⊤=𐑧 ∈=𐑲 ∋=𐑵 ⊙=⊙ ⊥=𐑫 ⊞=𐑳 ⊡=𐑭"
 
 # Decode address 6734591 back to tuple
 uv run crystal_navigator.py decode 6734591

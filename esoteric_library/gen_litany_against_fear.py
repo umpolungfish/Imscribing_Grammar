@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PHI = '⊙'
 
 # ---------------------------------------------------------------------------
-# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ ◻
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ ⊡
 #
 #   ⊢  Dimensionality : 𐑛  𐑨  𐑼  𐑦
 #   ⊣  Topology       : 𐑡  𐑰  𐑥  𐑶  𐑸
@@ -23,13 +23,13 @@ PHI = '⊙'
 #   ⊙  Criticality    : 𐑢  ⊙  𐑮  𐑻  𐑣
 #   ⊥  Chirality : 𐑓  𐑒  𐑖  𐑫
 #   ⊞  Stoichiometry  : 𐑙  𐑕  𐑳
-#   ◻  Winding        : 𐑷  𐑴  𐑭  𐑟
+#   ⊡  Winding        : 𐑷  𐑴  𐑭  𐑟
 #
-# Tier heuristic (boundary fields: <, D, ⊙, ◻):
+# Tier heuristic (boundary fields: <, D, ⊙, ⊡):
 #   T_0   : 𐑢, D compact/infty, < not Frobenius
 #   T_1   : ⊙, < not Frobenius
-#   T_2   : ⊙/𐑮, < not Frobenius, ◻ winding
-#   T_3   : 𐑮/𐑻, any <, ◻ winding
+#   T_2   : ⊙/𐑮, < not Frobenius, ⊡ winding
+#   T_3   : 𐑮/𐑻, any <, ⊡ winding
 #   T_inf : 𐑻 or (⊙ + 𐑹) — Frobenius + EP
 # ---------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ def entry(num, title, desc, text,
         "text": text,
         "⊢": D, "⊣": T, "≻": R, "≺": P, "⋈": F,
         "⊤": K, "∈": G, "∋": Gm, PHI: C,
-        "⊥": H, "⊞": S, "◻": Om,
+        "⊥": H, "⊞": S, "⊡": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
     }
 

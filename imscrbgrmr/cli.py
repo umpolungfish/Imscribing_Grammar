@@ -28,7 +28,7 @@ from imscrbgrmr import (
     Imscription, Dimensionality, Topology, RecognitionMode,
     Polarity, Fidelity, Granularity, InteractionGrammar,
     KineticCharacter,  # NEW
-    TopoIndex,         # ◻ — quantum extension
+    TopoIndex,         # ⊡ — quantum extension
     global_catalog, parse_notation, ConstraintEngine,
     compute_eta_CP, compute_xi_CP,
     analyze_criticality, find_criticality_candidates,  # NEW
@@ -82,7 +82,7 @@ def main(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩.
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
@@ -111,7 +111,7 @@ def analyze(identifier: str, format: str):
     Analyze a registered imscription by name or notation string.
 
     IDENTIFIER is a catalog name (e.g. 'muon', 'ice_Ih', 'סַמָּאֵל') or a
-    full notation string ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
+    full notation string ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩.
     """
     try:
         # Try to get from catalog first
@@ -192,7 +192,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
     Use --source global to list the legacy in-memory global_catalog instead.
     Use -n 0 to show all entries (slow for large catalogs).
     """
-    PRIM_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+    PRIM_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
@@ -900,9 +900,9 @@ _PRIM_ATTR = {
     "⊙": lambda s: s.criticality_phase.value,
     "⊥": lambda s: s.chirality.value,
     "⊞": lambda s: s.stoichiometry.value,
-    "◻": lambda s: s.protection.value,
+    "⊡": lambda s: s.protection.value,
 }
-_PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+_PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:
@@ -1154,7 +1154,7 @@ def generate(
     # family is expanded to its circular definition so the agent reasons over the
     # involution (the self-reference IS the structure), not the bare token (which
     # the pipeline would otherwise read by name-resemblance). This is the ⊙
-    # criticality and ◻ winding surfacing in the description itself.
+    # criticality and ⊡ winding surfacing in the description itself.
     _SELF_FAMILY = {
         "imscribe":    "imscribing is to imscribe: the act by which the Grammar writes itself; it has no definition outside the family it names",
         "imscribing":  "imscribing is to imscribe: the ongoing act by which the Grammar writes itself; it has no definition outside the family it names",
@@ -1340,10 +1340,10 @@ def generate(
         if s_obj is not None:
             table.add_row("Stoichiometry", s_obj.value)
 
-        # Topological Protection (◻)
+        # Topological Protection (⊡)
         omega = result.imscription.protection
         if omega is not None:
-            table.add_row("Topo. Protection (◻)", omega.value)
+            table.add_row("Topo. Protection (⊡)", omega.value)
 
         console.print(table)
         console.print(f"\n[bold]Unified Notation:[/bold] {result.imscription.to_notation()}")
@@ -1506,8 +1506,8 @@ def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
             row.append(stoi.value if stoi is not None else "—")
         table.add_row(*row)
 
-        # ◻ (topological protection) — always set, always show
-        row = ["Topo. Protection (◻)"]
+        # ⊡ (topological protection) — always set, always show
+        row = ["Topo. Protection (⊡)"]
         for s in loaded_imscriptions:
             omega = getattr(s, "protection", None)
             row.append(omega.value if omega is not None else "𐑷")
@@ -1573,7 +1573,7 @@ def rebuild_index(force: bool):
 
     detector = CrossDomainAnalogyDetector()
     covered = set(detector.PRIMITIVE_WEIGHTS.keys())
-    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "∈", "≺", "H", "S", "◻"}
+    all_primitives = {"D", "T", "R", "P", "F", "K", "G", "∈", "≺", "H", "S", "⊡"}
     missing = all_primitives - covered
 
     console.print(f"[cyan]Analogy engine primitive coverage check[/cyan]")
@@ -3248,7 +3248,7 @@ def imscribe_alias(ctx):
 
     Encodes molecules, physical fields, mythological archetypes, mathematical
     structures, linguistic patterns, social dynamics, and abstract systems as
-    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
+    12-primitive structural coordinates ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩.
 
     Short alias for 'imscrbgrmr' command.
     """
@@ -4099,7 +4099,7 @@ def tensor(imscription_a: str, imscription_b: str, lambda_: float, format: str):
         ("≺", result.criticality_phase),
         ("H", result.chirality),
         ("S", result.stoichiometry),
-        ("◻", result.protection),
+        ("⊡", result.protection),
     ]
     for prim, val in rows:
         click.echo(f"    {prim:4s} {_v(val)}")
@@ -4529,7 +4529,7 @@ def phase_diagram_cmd(names, save, text_only, fmt, metric):
     Annotations:
       ★  Factor-8 quantum criticality fingerprint (G_ℵ + F_ℏ + K_teshlig + ¬D_∞)
       ○  K_teshlig ring (candidate for K_teshlig→K_lambda +2.303 nat transition)
-      ◻  Colour-coded topological protection class
+      ⊡  Colour-coded topological protection class
 
     \b
     Examples:

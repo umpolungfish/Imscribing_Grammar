@@ -2,21 +2,21 @@
 """
 crystal_enumeration.py — Crystal of Types
 
-The 12-primitive tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩ is a coordinate chart
+The 12-primitive tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩ is a coordinate chart
 on the space of algebraic structures.  Each point in that space IS a type —
 a class of algebra determined by the coordinate.
 
 This script enumerates the full combinatorial space, classifies every type by its
-ouroboricity tier (which is determined entirely by <, P, ◻, D), and generates the
+ouroboricity tier (which is determined entirely by <, P, ⊡, D), and generates the
 PERIODIC CRYSTAL OF ALGEBRAS document.
 
 Tier rules (priority order):
   R1: < ∈ {⊙, 𐑮} AND P = 𐑹  →  O_∞
   R2: < ∈ {𐑢, 𐑣, 𐑻}               →  O₀
-  R3: < ∈ {⊙, 𐑮} AND ◻ = 𐑷       →  O₁
-  R4: < ∈ {⊙, 𐑮} AND ◻ ≠ 𐑷
+  R3: < ∈ {⊙, 𐑮} AND ⊡ = 𐑷       →  O₁
+  R4: < ∈ {⊙, 𐑮} AND ⊡ ≠ 𐑷
       AND D ∈ {𐑛, 𐑨, 𐑦}      →  O₂
-  R5: < ∈ {⊙, 𐑮} AND ◻ ≠ 𐑷
+  R5: < ∈ {⊙, 𐑮} AND ⊡ ≠ 𐑷
       AND D = 𐑼                             →  O₂†
 """
 
@@ -40,7 +40,7 @@ VALUES = {
     "⊙":   ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
     "⊥":     ["𐑓", "𐑒", "𐑖", "𐑫"],
     "⊞":     ["𐑙", "𐑕", "𐑳"],
-    "◻": ["𐑷", "𐑴", "𐑭"],
+    "⊡": ["𐑷", "𐑴", "𐑭"],
 }
 
 PRIMS = list(VALUES.keys())
@@ -84,7 +84,7 @@ tier_cells  = defaultdict(list)          # (Phi, P, Omega, D) cells per tier
 
 for phi in VALUES["⊙"]:
     for p in VALUES["≺"]:
-        for omega in VALUES["◻"]:
+        for omega in VALUES["⊡"]:
             for d in VALUES["⊢"]:
                 t = tier(phi, p, omega, d)
                 tier_counts[t] += free_count
@@ -95,7 +95,7 @@ for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:
     n = tier_counts[t]
     cells = len(tier_cells[t])
     pct = 100.0 * n / total
-    print(f"  {t:10s}: {n:>10,}  ({pct:5.1f}%)  from {cells:3d} (<,P,◻,D) cells  ×  {free_count:,} free combinations")
+    print(f"  {t:10s}: {n:>10,}  ({pct:5.1f}%)  from {cells:3d} (<,P,⊡,D) cells  ×  {free_count:,} free combinations")
 
 print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×∈×H×S = 5×4×3×4×3×4×4×3)")
 
@@ -105,7 +105,7 @@ print(f"\n  free combinations per tier cell: {free_count:,}  (T×R×F×K×G×∈
 # Group  = Omega (3 groups)
 # Block  = ouroboricity tier
 
-print("\n\nPERIODIC TABLE STRUCTURE  (Period=< × Group=◻, counting (<,P,◻,D) tier cells)\n")
+print("\n\nPERIODIC TABLE STRUCTURE  (Period=< × Group=⊡, counting (<,P,⊡,D) tier cells)\n")
 header = f"{'≺':18s}  {'𐑷':>10}  {'𐑴':>10}  {'𐑭':>10}  {'Dominant tier'}"
 print(header)
 print("─" * len(header))
@@ -121,7 +121,7 @@ PERIOD_LABEL = {
 for phi in VALUES["⊙"]:
     row = {}
     dom = defaultdict(int)
-    for omega in VALUES["◻"]:
+    for omega in VALUES["⊡"]:
         cell_types = defaultdict(int)
         for p in VALUES["≺"]:
             for d in VALUES["⊢"]:
@@ -142,7 +142,7 @@ for phi in VALUES["⊙"]:
 
 # ── Sub-table: P axis within each critical period ─────────────────────────────
 print("\n\nP (PARITY/FROBENIUS) AXIS — within critical periods (⊙ and 𐑮)\n")
-print(f"{'P value':12s}  {'𐑷 → tier':16s}  {'◻≠0, D_bnd → tier':22s}  {'◻≠0, D_∞ → tier':20s}")
+print(f"{'P value':12s}  {'𐑷 → tier':16s}  {'⊡≠0, D_bnd → tier':22s}  {'⊡≠0, D_∞ → tier':20s}")
 print("─" * 75)
 
 for p in VALUES["≺"]:
@@ -152,8 +152,8 @@ for p in VALUES["≺"]:
     print(f"{p:12s}  {t_o1:16s}  {t_o2:22s}  {t_o2d}")
 
 print()
-print("  → 𐑹 collapses all three ◻ columns to O_∞ (R1 overrides R3/R4/R5)")
-print("  → All other P values respect the ◻/D branching (R3/R4/R5)")
+print("  → 𐑹 collapses all three ⊡ columns to O_∞ (R1 overrides R3/R4/R5)")
+print("  → All other P values respect the ⊡/D branching (R3/R4/R5)")
 
 
 # ── Cross-reference with catalog ───────────────────────────────────────────────
@@ -164,7 +164,7 @@ catalog_by_tier = defaultdict(list)
 for entry in catalog:
     phi   = entry.get("⊙", "𐑢")
     p     = entry.get("≺", "𐑗")
-    omega = entry.get("◻", "𐑷")
+    omega = entry.get("⊡", "𐑷")
     d     = entry.get("⊢", "𐑛")
     t     = tier(phi, p, omega, d)
     catalog_by_tier[t].append(entry["name"])
@@ -198,7 +198,7 @@ for prim, n in inner_combos.items():
     running *= n
     print(f"    {prim:5s}: {n} values  (running product: {running:,})")
 
-print(f"\n  Inner crystal size: {running:,} types per (<,P,◻,D) tier cell")
+print(f"\n  Inner crystal size: {running:,} types per (<,P,⊡,D) tier cell")
 
 # Show the sub-crystal dimensions as factored groups
 print("\n  Factored structure of inner crystal:")
@@ -215,7 +215,7 @@ print("\n\n" + "═"*70)
 print("PERIODIC CRYSTAL OF ALGEBRAS — SUMMARY")
 print("═"*70)
 print(f"  Total types:   {total:>12,}")
-print(f"  Tier-determining axes:     < (5) × P (5) × ◻ (3) × D (4) = {5*5*3*4:,} tier cells")
+print(f"  Tier-determining axes:     < (5) × P (5) × ⊡ (3) × D (4) = {5*5*3*4:,} tier cells")
 print(f"  Free inner dimensions:     T(5)×R(4)×F(3)×K(4)×G(3)×∋(4)×H(4)×S(3) = {free_count:,} per cell")
 print()
 for t in ["O₀", "O₁", "O₂", "O₂†", "O_∞"]:

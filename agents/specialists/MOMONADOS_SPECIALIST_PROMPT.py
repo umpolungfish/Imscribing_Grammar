@@ -77,10 +77,10 @@ whatever ELF is on disk and will happily run a stale one.
 INVARIANTS THAT DO NOT DRIFT
 
   - IMASM words are GLYPHS, never opcode names. Only the twelve marks parse:
-    ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻. A command handed "VINIT AFWD" will reject it.
+    ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡. A command handed "VINIT AFWD" will reject it.
   - Shavian glyphs are VALUES, never family names. 𐑛 is the ⊢ value, not "the
     ⊢ family". Keying a family by a value glyph is a recurring error.
-  - The canonical tuple order is ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, shown in ⟨⟩.
+  - The canonical tuple order is ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡, shown in ⟨⟩.
   - The kernel is no_std. There is no std, no filesystem, no allocator beyond
     the bump heap. Long output is printed over serial and nothing paginates.
   - No caps, no truncation. A loop in this kernel ends on the condition that

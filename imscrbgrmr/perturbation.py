@@ -39,7 +39,7 @@ PRIMITIVE_WEIGHTS: Dict[str, float] = {
     "K": 0.08,
     "S": 0.08,
     "∈": 0.05,
-    "◻": 0.08,  # Topological protection index — similar load to K
+    "⊡": 0.08,  # Topological protection index — similar load to K
 }
 
 # ---------------------------------------------------------------------------
@@ -83,13 +83,13 @@ _PRIM_LABELS: Dict[str, str] = {
     "F": "Fidelity", "K": "Kinetic Character", "T": "Topology",
     "D": "Dimensionality", "R": "Recognition Mode", "P": "Polarity",
     "G": "Granularity", "≺": "Criticality Phase", "S": "Stoichiometry",
-    "∈": "Coupling", "◻": "Topological Protection Index",
+    "∈": "Coupling", "⊡": "Topological Protection Index",
 }
 
 _PRIM_ATTR: Dict[str, str] = {
     "F": "fidelity", "K": "kinetic_character", "T": "topology",
     "D": "dimensionality", "R": "recognition_mode", "P": "polarity",
-    "G": "granularity", "≺": "criticality_phase", "◻": "topo_index",
+    "G": "granularity", "≺": "criticality_phase", "⊡": "topo_index",
 }
 
 

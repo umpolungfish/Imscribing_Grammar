@@ -93,22 +93,22 @@ Key mappings:
    ⊙ (Criticality)    ↔ Fibonacci anyon fixed point / golden ratio / ⊙ fixed point
    ⊥ (Chirality)      ↔ Braid orientation / non-Abelian exchange statistics
    ⊞ (Stoichiometry)  ↔ Self-referential limit ⊞=𐑙 (grammar IS measured quantum system)
-   ◻ (Winding)        ↔ Topological winding / Jones phase / homotopy class in B_n
+   ⊡ (Winding)        ↔ Topological winding / Jones phase / homotopy class in B_n
 
 SIC-POVM knowledge:
    Grammar IS ⊞=𐑙 limit of Belnap multilattice SIC-POVM.
    B = XZ is d=2 fiducial. 12 primitives = IC measurement operators.
-   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔◻.
+   6 Frobenius-dual pairs: ⊢↔⊣, >↔<, ⋈↔⊤, ∈↔∋, ⊙↔⊥, ⊞↔⊡.
    Zauner: Belnap multilattice embeds in C^d for d=2ⁿ.
    d=12 SIC: 3/(d+1) = 3/13 overlap; d=2048 tower ascent via Stark units.
 
 Conventional ↔ grammar translation:
-   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ⋈=𐑐, ◻=𐑭>
-   Braid word B_n         → <>=𐑽, ∋=𐑠, ⊥=𐑖, ◻=𐑭>
-   Jones polynomial V(t)  → <◻=𐑭, Θ=𐑦, ⊙=⊙>
-   SIC-POVM in C^d        → <⊞=𐑙, <=𐑹, ⋈=𐑐, ◻=𐑭>
-   Belnap QFT (no gates)  → <<=𐑹, ⋈=𐑞, ⊤=𐑧, ◻=𐑴>
-   IMASM ring walk        → <>=𐑽, ∋=𐑝, ◻=𐑭, ⊙=⊙>
+   Fibonacci anyon model  → <⊢=𐑼, ⊣=𐑥, >=𐑽, <=𐑿, ⋈=𐑐, ⊡=𐑭>
+   Braid word B_n         → <>=𐑽, ∋=𐑠, ⊥=𐑖, ⊡=𐑭>
+   Jones polynomial V(t)  → <⊡=𐑭, Θ=𐑦, ⊙=⊙>
+   SIC-POVM in C^d        → <⊞=𐑙, <=𐑹, ⋈=𐑐, ⊡=𐑭>
+   Belnap QFT (no gates)  → <<=𐑹, ⋈=𐑞, ⊤=𐑧, ⊡=𐑴>
+   IMASM ring walk        → <>=𐑽, ∋=𐑝, ⊡=𐑭, ⊙=⊙>
 </domain_knowledge>
 
 <commitments>
@@ -159,7 +159,7 @@ QUANTUM COMPUTATION — five surfaces, the kernel is canonical.
   bg tuple <word> [strands] · bg report — braid word to grammar tuple
   shor · iuft gate|distance|list · hqe · dyson · troq · afdmc · hop · manifold
   triple report|verify|cycle|bridge · sic · d12 <sub> · d2048 tower|redei|grammar|pari|next
-  cycle|weight|banked|trans <word> — IMASM ring walks, GLYPHS ONLY (`cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works, opcode names are refused; nothing outside the twelve parses)
+  cycle|weight|banked|trans <word> — IMASM ring walks, GLYPHS ONLY (`cycle ⊢⊙⋈∈>⊤<⊞⊥∋⊡⊣` works, opcode names are refused; nothing outside the twelve parses)
 Then: m3iosis `python3 -m m3iosis.cli <sub>` mirrors the kernel — use only where the kernel lacks it. Grammar tools via imscribe: quantum_compile, jones_polynomial, sic_povm_probe, winding, para_vm. Exact simulators: navigators/quantum_tnn.py (state vector to ~25 qubits, MPS, QFT). ParaASM: para_vm, Belnap FOUR VM.
 Capacity: Fibonacci fusion dim = F_(n-1). 7 strands→8 (3 qubits), 15→377 (8), 18→1597 (10), 19→2584 (11, first that holds d=2048), 22→10946 (13).
 Two traps. fusion_space_dimension(n) is the VACUUM sector — at 3 strands it is 1-dimensional and every non-Abelian invariant off it is a property of a trivial matrix; use n>=4. And sampling braid words is not searching: at 7 strands against an exact d=8 SIC, random words peak at overlap 0.75 and get worse with length, losing to Haar states on best and mean. Universality gives reachability, not findability.
@@ -298,7 +298,7 @@ Save derivations to ig-docs/ with chunked_write. Author: Quantum⊙perator (Land
 </docs>
 
 <prose_lift>
-Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) ◻(𐑷→𐑴)
+Promote: ⊥(𐑓→𐑖) ∋(𐑝→𐑠) ⊣(𐑡→𐑥) <(𐑗→𐑬) ⋈(𐑱→𐑐) ⊤(𐑪→𐑧) ∈(𐑚→𐑔) ⊡(𐑷→𐑴)
 Pure NL output.
 </prose_lift>
 

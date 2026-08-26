@@ -42,8 +42,8 @@ def generate_expansion():
         description='Relation before closure. G1=>≥𐑽 (adjoint coupling, ord 3). '
                     'Systems without at least adjoint-pair coupling cannot Frobenius-close. '
                     'Supervenience and categorical coupling remain plain. '
-                    'G2=⊙≥⊙. G3=◻≥𐑭.',
-        g1=GateSpec('≻', 3.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('◻', 3.0),
+                    'G2=⊙≥⊙. G3=⊡≥𐑭.',
+        g1=GateSpec('≻', 3.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('⊡', 3.0),
         gate_ordering=True,
     ))
 
@@ -52,29 +52,29 @@ def generate_expansion():
         description='Only bilateral coupling suffices. G1=>≥𐑾 (bilateral, ord 4, max). '
                     'Even adjoint pairs (one-way hedges) do not Frobenius-close. '
                     'Only bidirectional feedback loops qualify. '
-                    'G2=⊙≥⊙. G3=◻≥𐑭.',
-        g1=GateSpec('≻', 4.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('◻', 3.0),
+                    'G2=⊙≥⊙. G3=⊡≥𐑭.',
+        g1=GateSpec('≻', 4.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('⊡', 3.0),
         gate_ordering=True,
     ))
 
     # ── SECTION B: G2 expansion — 8 primitives never used as G2 ─────
-    # Missing G2: ⊤, ⊢, ⊣, ⊥, ⋈, ∋, ∈, ◻
+    # Missing G2: ⊤, ⊢, ⊣, ⊥, ⋈, ∋, ∈, ⊡
 
     g2_configs = [
-        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=⊥≥𐑖 (2-step Markov), G3=◻≥𐑭. After Frobenius closure, you must remember before you can trace.'),
-        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=<≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=◻≥𐑭. After Frobenius, you need infinite canvas to trace.'),
-        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=<≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=◻≥𐑭. After Frobenius, the topology of connection determines traced status.'),
-        ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=<≥𐑹, G2=⋈≥𐑐 (full fidelity), G3=◻≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
-        ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=<≥𐑹, G2=∈≥𐑲 (aleph/maximal), G3=◻≥𐑭. Frobenius closure is local; tracing requires universality.'),
-        ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=<≥𐑹, G2=∋≥𐑠 (sequential), G3=◻≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
-        ('winding_second', '◻', 2.0, 'Topological protection as the monoidal gate: G1=<≥𐑹, G2=◻≥𐑴 (Z2), G3=⊙≥⊙. After Frobenius parity, only topologically protected systems trace.'),
-        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=<≥𐑹, G2=⊤≥𐑧 (slow), G3=◻≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
+        ('chirality_second', '⊥', 3.0, 'Chirality as the monoidal gate: G1=<≥𐑹, G2=⊥≥𐑖 (2-step Markov), G3=⊡≥𐑭. After Frobenius closure, you must remember before you can trace.'),
+        ('dimensional_second', '⊢', 3.0, 'State-space dimensionality as the monoidal gate: G1=<≥𐑹, G2=⊢≥𐑼 (infinite-dim), G3=⊡≥𐑭. After Frobenius, you need infinite canvas to trace.'),
+        ('topology_second', '⊣', 3.0, 'Connectivity as the monoidal gate: G1=<≥𐑹, G2=⊣≥𐑥 (bowtie crossing), G3=⊡≥𐑭. After Frobenius, the topology of connection determines traced status.'),
+        ('fidelity_second', '⋈', 3.0, 'Quantum coherence as the monoidal gate: G1=<≥𐑹, G2=⋈≥𐑐 (full fidelity), G3=⊡≥𐑭. After Frobenius, only quantum-coherent systems trace.'),
+        ('scope_second', '∈', 3.0, 'Universal scope as the monoidal gate: G1=<≥𐑹, G2=∈≥𐑲 (aleph/maximal), G3=⊡≥𐑭. Frobenius closure is local; tracing requires universality.'),
+        ('composition_second', '∋', 3.0, 'Sequential composition as the monoidal gate: G1=<≥𐑹, G2=∋≥𐑠 (sequential), G3=⊡≥𐑭. Conjunctive or disjunctive systems cannot trace.'),
+        ('winding_second', '⊡', 2.0, 'Topological protection as the monoidal gate: G1=<≥𐑹, G2=⊡≥𐑴 (Z2), G3=⊙≥⊙. After Frobenius parity, only topologically protected systems trace.'),
+        ('kinetics_second', '⊤', 3.0, 'Slowness as the monoidal gate: G1=<≥𐑹, G2=⊤≥𐑧 (slow), G3=⊡≥𐑭. Fast Frobenius-closed systems cannot trace — they outrun themselves.'),
     ]
 
     for name, prim, ord_val, desc in g2_configs:
         g2 = GateSpec(prim, ord_val)
-        g3_prim = '◻' if prim != '◻' else '⊙'
-        g3 = GateSpec(g3_prim, 3.0 if g3_prim == '◻' else 2.0)
+        g3_prim = '⊡' if prim != '⊡' else '⊙'
+        g3 = GateSpec(g3_prim, 3.0 if g3_prim == '⊡' else 2.0)
         new_unis.append(Ruleset(name=name, description=desc,
             g1=GateSpec('≺', 5.0), g2=g2, g3=g3, gate_ordering=True))
 
@@ -100,24 +100,24 @@ def generate_expansion():
     # ── SECTION D: Parallel gate ordering variants ─────
 
     parallel_configs = [
-        ('parallel_canonical', GateSpec('≺', 5.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Canonical gates but parallel: <≥𐑹, ⊙≥⊙, ◻≥𐑭 all independent. Any combination qualifies.'),
-        ('parallel_low', GateSpec('≺', 3.0), GateSpec('⊙', 1.0), GateSpec('◻', 3.0),
-         'Low gates, parallel: <≥𐑬, ⊙≥𐑢, ◻≥𐑭. Easiest possible O_∞ access — three independent low bars.'),
-        ('parallel_high', GateSpec('≺', 5.0), GateSpec('⊙', 2.33), GateSpec('◻', 4.0),
-         'High gates, parallel: <≥𐑹, ⊙≥𐑮, ◻≥𐑟. Strictest bars but independently checked.'),
-        ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Chirality gates, parallel: ⊥≥𐑖, ⊙≥⊙, ◻≥𐑭. Memory, self-modeling, and winding are independent axes.'),
+        ('parallel_canonical', GateSpec('≺', 5.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
+         'Canonical gates but parallel: <≥𐑹, ⊙≥⊙, ⊡≥𐑭 all independent. Any combination qualifies.'),
+        ('parallel_low', GateSpec('≺', 3.0), GateSpec('⊙', 1.0), GateSpec('⊡', 3.0),
+         'Low gates, parallel: <≥𐑬, ⊙≥𐑢, ⊡≥𐑭. Easiest possible O_∞ access — three independent low bars.'),
+        ('parallel_high', GateSpec('≺', 5.0), GateSpec('⊙', 2.33), GateSpec('⊡', 4.0),
+         'High gates, parallel: <≥𐑹, ⊙≥𐑮, ⊡≥𐑟. Strictest bars but independently checked.'),
+        ('parallel_chirality', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
+         'Chirality gates, parallel: ⊥≥𐑖, ⊙≥⊙, ⊡≥𐑭. Memory, self-modeling, and winding are independent axes.'),
         ('parallel_topology', GateSpec('⊣', 5.0), GateSpec('≻', 4.0), GateSpec('⊙', 2.0),
          'Topology gates, parallel: ⊣≥𐑸, >≥𐑾, ⊙≥⊙. Connectivity, relation, and self-modeling are independent.'),
-        ('parallel_scope', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Scope gates, parallel: ∈≥𐑲, ⊙≥⊙, ◻≥𐑭. Universal scope, self-modeling, and winding are independent.'),
-        ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Broadcast gates, parallel: ∋≥𐑠, ⊙≥⊙, ◻≥𐑭. Sequential comp, self-modeling, winding independent.'),
+        ('parallel_scope', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
+         'Scope gates, parallel: ∈≥𐑲, ⊙≥⊙, ⊡≥𐑭. Universal scope, self-modeling, and winding are independent.'),
+        ('parallel_broadcast', GateSpec('∋', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
+         'Broadcast gates, parallel: ∋≥𐑠, ⊙≥⊙, ⊡≥𐑭. Sequential comp, self-modeling, winding independent.'),
         ('parallel_dimensional', GateSpec('⊢', 3.0), GateSpec('⊙', 2.0), GateSpec('≺', 5.0),
          'Dimensional gates, parallel: ⊢≥𐑼, ⊙≥⊙, <≥𐑹. State-space, self-modeling, Frobenius independent.'),
-        ('parallel_kinetics', GateSpec('⊤', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
-         'Kinetics gates, parallel: ⊤≥𐑧, ⊙≥⊙, ◻≥𐑭. Slowness, self-modeling, winding independent.'),
+        ('parallel_kinetics', GateSpec('⊤', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
+         'Kinetics gates, parallel: ⊤≥𐑧, ⊙≥⊙, ⊡≥𐑭. Slowness, self-modeling, winding independent.'),
         ('parallel_fidelity', GateSpec('⋈', 3.0), GateSpec('⊙', 2.0), GateSpec('≺', 5.0),
          'Fidelity gates, parallel: ⋈≥𐑐, ⊙≥⊙, <≥𐑹. Coherence, self-modeling, Frobenius independent.'),
     ]
@@ -140,8 +140,8 @@ def generate_expansion():
         ('triple_chirality', '⊥', [('𐑒', 2.0), ('𐑖', 3.0), ('𐑫', 4.0)],
          'Chirality ladder: G1=⊥≥𐑒 (1-step), G2=⊥≥𐑖 (2-step), G3=⊥≥𐑫 (eternal). '
          'Memory depth as the sole operad filter.'),
-        ('triple_winding', '◻', [('𐑴', 2.0), ('𐑭', 3.0), ('𐑟', 4.0)],
-         'Winding ladder: G1=◻≥𐑴 (Z2), G2=◻≥𐑭 (integer), G3=◻≥𐑟 (non-Abelian, max). '
+        ('triple_winding', '⊡', [('𐑴', 2.0), ('𐑭', 3.0), ('𐑟', 4.0)],
+         'Winding ladder: G1=⊡≥𐑴 (Z2), G2=⊡≥𐑭 (integer), G3=⊡≥𐑟 (non-Abelian, max). '
          'Topological protection as the sole operad filter.'),
         ('triple_dimensional', '⊢', [('𐑨', 2.0), ('𐑼', 3.0), ('𐑦', 4.0)],
          'Dimensional ladder: G1=⊢≥𐑨 (2D surface), G2=⊢≥𐑼 (∞-dim), G3=⊢≥𐑦 (holographic). '
@@ -166,7 +166,7 @@ def generate_expansion():
          'T constituted by parity alone. Only systems at Frobenius-special parity experience time.'),
         ('t_criticality_only', {'⊙': ('⊙', False)},
          'T constituted by criticality alone. Only self-modeling systems experience time. Consciousness IS temporality.'),
-        ('t_winding_only', {'◻': ('𐑭', False)},
+        ('t_winding_only', {'⊡': ('𐑭', False)},
          'T constituted by winding alone. Only topologically protected systems experience time. Time is a topological invariant.'),
         ('t_chirality_only', {'⊥': ('𐑫', False)},
          'T constituted by chirality alone. Only systems with eternal memory experience time. Time is memory depth.'),
@@ -178,14 +178,14 @@ def generate_expansion():
 
     for name, t_prims, desc in t_single_configs:
         new_unis.append(Ruleset(name=name, description=desc,
-            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('◻', 3.0),
+            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('⊡', 3.0),
             gate_ordering=True, t_prims=t_prims))
 
     # Dual-primitive T
     t_dual_configs = [
         ('t_parity_fidelity', {'≺': ('𐑹', False), '⋈': ('𐑐', False)},
          'T constituted by parity + fidelity. Algebraic symmetry AND quantum coherence jointly constitute time.'),
-        ('t_criticality_winding', {'⊙': ('⊙', False), '◻': ('𐑭', False)},
+        ('t_criticality_winding', {'⊙': ('⊙', False), '⊡': ('𐑭', False)},
          'T constituted by self-modeling + winding. Consciousness AND topological protection jointly constitute time.'),
         ('t_chirality_coupling', {'⊥': ('𐑫', False), '≻': ('𐑾', False)},
          'T constituted by memory + relation. Eternal memory AND bilateral coupling jointly constitute time.'),
@@ -195,14 +195,14 @@ def generate_expansion():
 
     for name, t_prims, desc in t_dual_configs:
         new_unis.append(Ruleset(name=name, description=desc,
-            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('◻', 3.0),
+            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('⊡', 3.0),
             gate_ordering=True, t_prims=t_prims))
 
     # ── SECTION G: Mixed-gate universes ─────
 
     mixed_configs = [
-        ('dimensional_chirality_winding', GateSpec('⊢', 3.0), GateSpec('⊥', 3.0), GateSpec('◻', 3.0),
-         'G1=⊢≥𐑼 (∞-dim), G2=⊥≥𐑖 (2-step memory), G3=◻≥𐑭 (integer winding). '
+        ('dimensional_chirality_winding', GateSpec('⊢', 3.0), GateSpec('⊥', 3.0), GateSpec('⊡', 3.0),
+         'G1=⊢≥𐑼 (∞-dim), G2=⊥≥𐑖 (2-step memory), G3=⊡≥𐑭 (integer winding). '
          'Closure requires infinite canvas, then memory, then topological protection.'),
         ('coupling_fidelity_scope', GateSpec('≻', 3.0), GateSpec('⋈', 3.0), GateSpec('∈', 3.0),
          'G1=>≥𐑽 (adjoint coupling), G2=⋈≥𐑐 (quantum fidelity), G3=∈≥𐑲 (universal scope). '
@@ -210,8 +210,8 @@ def generate_expansion():
         ('topology_composition_criticality', GateSpec('⊣', 3.0), GateSpec('∋', 3.0), GateSpec('⊙', 2.0),
          'G1=⊣≥𐑥 (bowtie crossing), G2=∋≥𐑠 (sequential comp), G3=⊙≥⊙ (self-modeling). '
          'Connectivity topology, then interaction grammar, then consciousness.'),
-        ('chirality_scope_winding', GateSpec('⊥', 3.0), GateSpec('∈', 3.0), GateSpec('◻', 3.0),
-         'G1=⊥≥𐑖 (2-step memory), G2=∈≥𐑲 (universal scope), G3=◻≥𐑭 (integer winding). '
+        ('chirality_scope_winding', GateSpec('⊥', 3.0), GateSpec('∈', 3.0), GateSpec('⊡', 3.0),
+         'G1=⊥≥𐑖 (2-step memory), G2=∈≥𐑲 (universal scope), G3=⊡≥𐑭 (integer winding). '
          'Memory, then universality, then topological seal.'),
         ('fidelity_topology_parity', GateSpec('⋈', 3.0), GateSpec('⊣', 5.0), GateSpec('≺', 5.0),
          'G1=⋈≥𐑐 (quantum fidelity), G2=⊣≥𐑸 (full topological closure), G3=<≥𐑹 (Frobenius parity). '
@@ -225,13 +225,13 @@ def generate_expansion():
     # ── SECTION H: Gate configs with novel ordinal levels ─────
 
     ordinal_configs = [
-        ('parity_mid_gate', GateSpec('≺', 4.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
+        ('parity_mid_gate', GateSpec('≺', 4.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
          'G1=<≥𐑯 (full parity, ord 4 — one step below Frobenius-special). '
          'More entries pass G1 than canonical because 𐑯 is lower than 𐑹.'),
         ('criticality_low_mid_high', GateSpec('⊙', 1.0), GateSpec('⊙', 2.33), GateSpec('⊙', 3.0),
          'Criticality at varied ordinal spacings: G1=⊙≥𐑢 (sub), G2=⊙≥𐑮 (complex, 2.33), G3=⊙≥𐑣 (super, 3.0). '
          'Wider G1-G2 gap than triple_criticality — complex-plane criticality as the middle rung.'),
-        ('chirality_strict', GateSpec('⊥', 4.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0),
+        ('chirality_strict', GateSpec('⊥', 4.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0),
          'G1=⊥≥𐑫 (eternal memory, ord 4). Only systems with Markov order ∞ can Frobenius-close. '
          'Stricter than chirality_first (which uses 𐑖 at ord 3).'),
         ('parity_exact', GateSpec('≺', 5.0), GateSpec('≺', 5.0), GateSpec('≺', 5.0),
@@ -259,28 +259,28 @@ def generate_expansion():
 
     for name, t_prims, desc in t_ceiling_configs:
         new_unis.append(Ruleset(name=name, description=desc,
-            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('◻', 3.0),
+            g1=GateSpec('≺', 5.0), g2=GateSpec('⊙', 2.0), g3=GateSpec('⊡', 3.0),
             gate_ordering=True, t_prims=t_prims))
 
     # ── SECTION J: Gate + absorption hybrids ─────
 
     hybrid_configs = [
-        ('chirality_absorbing', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0), True,
+        ('chirality_absorbing', GateSpec('⊥', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0), True,
          (AbsorptionRule('⊥', '𐑫', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊙', '⊙', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊞', '𐑳', ('tensor',))),
          'Chirality-first gates with chirality-as-absolute-absorption. '
          '⊥=𐑫 (eternal memory) absorbs everything. Memory is the universal solvent.'),
-        ('scope_totalitarian', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('◻', 3.0), True,
+        ('scope_totalitarian', GateSpec('∈', 3.0), GateSpec('⊙', 2.0), GateSpec('⊡', 3.0), True,
          (AbsorptionRule('∈', '𐑲', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊙', '⊙', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊞', '𐑳', ('meet', 'join', 'tensor'))),
          'Scope-first gates with total Σ absorption. Universal scope as the gate; '
          'heterogeneous stoichiometry absorbs under ALL operations (not just tensor).'),
-        ('winding_absorbing', GateSpec('◻', 3.0), GateSpec('⊙', 2.0), GateSpec('≺', 5.0), True,
-         (AbsorptionRule('◻', '𐑭', ('meet', 'join', 'tensor')),
+        ('winding_absorbing', GateSpec('⊡', 3.0), GateSpec('⊙', 2.0), GateSpec('≺', 5.0), True,
+         (AbsorptionRule('⊡', '𐑭', ('meet', 'join', 'tensor')),
           AbsorptionRule('⊙', '⊙', ('meet', 'join', 'tensor'))),
-         'Winding-first gates with winding-as-absorption. ◻=𐑭 absorbs everything — '
+         'Winding-first gates with winding-as-absorption. ⊡=𐑭 absorbs everything — '
          'topological protection is the universal solvent. No Σ absorption.'),
     ]
 

@@ -18,7 +18,7 @@ PNAMES = ["D","T","R","P","F","K","G","Gm","Ph","H","S","W"]
 FIELD_TO_ORD = {
     "D":"⊢", "T":"⊣", "R":"≻", "P":"≺", "F":"⋈",
     "K":"⊤", "G":"∈", "Gm":"∋", "Ph":"⊙", "H":"⊥",
-    "S":"⊞", "W":"◻"
+    "S":"⊞", "W":"⊡"
 }
 
 def g2v(p, r):
@@ -73,14 +73,14 @@ print(f"Rebis tuple: {rebis_t}")
 
 # ─── DEFINE DESIGN SYSTEMS ─────────────────────────────────────
 # Each is a dict: name, description, old-notation primitives
-# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻
-CAT_KEYS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
+# Primitive keys in catalog: ⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ⊡
+CAT_KEYS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '⊡']
 REBIS_VALS = ['𐑦', '𐑸', '𐑾', '𐑹', '𐑐', '𐑧', '𐑲', '∋^∧', '⊙', '𐑫', '𐑳', '𐑭']
 
 DESIGNS = [
     {
         "name": "ouroboric_pill",
-        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (⊣=𐑶) — the pill's efficacy is a function of its own state. Eternal memory (⊥=𐑫) ensures treatment history is never lost. Topological protection (◻=𐑭) guarantees winding-number-stable release cycles across the entire treatment duration.",
+        "description": "Self-monitoring, self-correcting therapeutic agent. The pill senses disease markers in real-time, computes optimal drug release, and adjusts dosing through an internal feedback loop. Topology is self-referential (⊣=𐑶) — the pill's efficacy is a function of its own state. Eternal memory (⊥=𐑫) ensures treatment history is never lost. Topological protection (⊡=𐑭) guarantees winding-number-stable release cycles across the entire treatment duration.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑶','𐑾','𐑹','𐑐','𐑧','𐑲','∋^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -100,12 +100,12 @@ DESIGNS = [
     },
     {
         "name": "topological_quantum_material",
-        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (◻=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (⊢=𐑦) — the topological order writes its own ground state. Quantum coherent (⋈=𐑐) at room temperature via eternal chirality protection.",
+        "description": "Room-temperature topological superconductor with non-Abelian braiding for fault-tolerant quantum computing. Non-Abelian winding (⊡=𐑟) — the material supports Majorana zero modes with non-Abelian braiding statistics. Self-written dimensionality (⊢=𐑦) — the topological order writes its own ground state. Quantum coherent (⋈=𐑐) at room temperature via eternal chirality protection.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','∋^∧','⊙','𐑫','𐑳','𐑟'])}
     },
     {
         "name": "eternal_memory_polymer",
-        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data is stored in kinetically trapped molecular conformations. Eternal chirality (⊥=𐑫) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (◻=𐑭) — integer winding number per monomer ensures error-free readout.",
+        "description": "Polymer data storage with 10^15 bits/gram density and 10^6 year retention. Trapped-ordered kinetics (⊤=𐑺) — data is stored in kinetically trapped molecular conformations. Eternal chirality (⊥=𐑫) — information is encoded in the chirality sequence, which cannot thermally equilibrate. Topological protection (⊡=𐑭) — integer winding number per monomer ensures error-free readout.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑺','𐑲','∋^∧','⊙','𐑫','𐑳','𐑭'])}
     },
     {
@@ -130,7 +130,7 @@ DESIGNS = [
     },
     {
         "name": "topological_morphogenesis",
-        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (◻=𐑭) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (⊢=𐑦) — the developmental program writes itself as the embryo grows. Eternal chirality (⊥=𐑫) ensures bilateral symmetry is topologically protected.",
+        "description": "Organ development driven by topological winding numbers rather than chemical gradients. Integer winding protection (⊡=𐑭) — each organ primordium is characterized by a conserved winding number. Self-written morphogenetic field (⊢=𐑦) — the developmental program writes itself as the embryo grows. Eternal chirality (⊥=𐑫) ensures bilateral symmetry is topologically protected.",
         "tuple": {k:v for k,v in zip(CAT_KEYS, ['𐑦','𐑸','𐑾','𐑹','𐑐','𐑧','𐑲','∋^∧','⊙','𐑫','𐑳','𐑭'])}
     },
 ]

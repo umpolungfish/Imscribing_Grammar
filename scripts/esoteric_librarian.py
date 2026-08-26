@@ -35,7 +35,7 @@ from sounds import FIELD_ORDER, PRIMITIVE_MAP, OLD_ID_MAP, resolve_id
 # We accept BOTH when reading, but normalize to ⊙ for internal tuple storage.
 CRIT_LEGACY = '⊙'    # used in all catalog .json files
 CRIT_MODERN = '⊙'    # used in sounds.py FIELD_ORDER
-_FIELDS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
+_FIELDS = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '⊡']
 
 # ── criticality key normalization ─────────────────────────────────────────────
 def _get_crit(entry):
@@ -127,7 +127,7 @@ _FIELD_LABELS = {
     CRIT_LEGACY: '<  Criticality   ',
     '⊥': 'H  Chirality',
     '⊞': 'S  Stoichiometry ',
-    '◻': '◻  Winding       ',
+    '⊡': '⊡  Winding       ',
 }
 
 _OLD_NAMES = {v: k for k, v in OLD_ID_MAP.items()}
@@ -260,7 +260,7 @@ def cmd_validate(args):
         CRIT_LEGACY: {'𐑢', '⊙', '𐑮', '𐑻', '𐑣'},
         '⊥': {'𐑓', '𐑒', '𐑖', '𐑫'},
         '⊞': {'𐑙', '𐑕', '𐑳'},
-        '◻': {'𐑷', '𐑴', '𐑭', '𐑟'},
+        '⊡': {'𐑷', '𐑴', '𐑭', '𐑟'},
     }
     valid_tiers = {'T_0', 'T_1', 'T_2', 'T_3', 'T_inf', 'O₀', 'O₁', 'O₂', 'O₂†', 'O_∞', ''}
 
@@ -474,7 +474,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 
-# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ ◻
+# Available glyph IDs — field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ [⊙=crit] ⊥ ⊞ ⊡
 #   ⊢: 𐑛 𐑨 𐑼 𐑦
 #   ⊣: 𐑡 𐑰 𐑥 𐑶 𐑸
 #   >: 𐑩 𐑑 𐑽 𐑾
@@ -486,7 +486,7 @@ PHI = '⊙'  # criticality key (pre-migration, compatible with all tools)
 #   ⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣
 #   ⊥: 𐑓 𐑒 𐑖 𐑫
 #   ⊞: 𐑙 𐑕 𐑳
-#   ◻: 𐑷 𐑴 𐑭 𐑟
+#   ⊡: 𐑷 𐑴 𐑭 𐑟
 
 def entry(num, title, desc, text,
           D, T, R, P, F, K, G, Gm, C, H, S, Om,
@@ -499,7 +499,7 @@ def entry(num, title, desc, text,
         "text": text,
         "⊢": D, "⊣": T, "≻": R, "≺": P, "⋈": F,
         "⊤": K, "∈": G, "∋": Gm, PHI: C,
-        "⊥": H, "⊞": S, "◻": Om,
+        "⊥": H, "⊞": S, "⊡": Om,
         "tier": tier, "C_score": cscore, "notes": notes,
     }}
 
@@ -694,7 +694,7 @@ def cmd_add(args):
     if len(raw) != 12:
         sys.exit(f"Error: --tuple requires exactly 12 glyph IDs, got {len(raw)}")
 
-    field_keys = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '◻']
+    field_keys = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', CRIT_LEGACY, '⊥', '⊞', '⊡']
     entry = {}
     entry['name'] = args.name
     if args.number is not None:

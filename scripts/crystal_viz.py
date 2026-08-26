@@ -3,7 +3,7 @@
 crystal_viz.py — Crystal of Types: Visualizations
 
 Generates four figures:
-  1. crystal_periodic_table.png   — 5×3 <×◻ periodic table with tier distributions
+  1. crystal_periodic_table.png   — 5×3 <×⊡ periodic table with tier distributions
   2. crystal_tier_census.png      — Treemap of 10.4M types by tier
   3. crystal_p_axis.png           — P-axis Frobenius collapse matrix
   4. crystal_inner_crystal.png    — Inner 34,560-type sub-crystal quadrant diagram
@@ -286,7 +286,7 @@ plt.close(fig2)
 # FIGURE 3 — P-axis Frobenius collapse matrix
 # ══════════════════════════════════════════════════════════════════════
 # Rows: P values (5)
-# Columns: 6 combinations of (◻, D-type): (◻0,any), (◻Z2,D_bnd), (◻Z2,D_inf), (◻Z,D_bnd), (◻Z,D_inf) — 5 combos
+# Columns: 6 combinations of (⊡, D-type): (⊡0,any), (⊡Z2,D_bnd), (⊡Z2,D_inf), (⊡Z,D_bnd), (⊡Z,D_inf) — 5 combos
 # + 1 column for "𐑹 collapses all" label
 
 OMEGA_D_COMBOS = [

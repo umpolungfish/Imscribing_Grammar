@@ -4,20 +4,20 @@ Vocal imscription — catalog entry → WAV.
 Reads the 12-primitive tuple of a named catalog entry and concatenates the
 corresponding phoneme WAV files from vocal_sounds/ into a single imscription.
 
-Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻
+Primitive order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡
 """
 
 import wave
 import numpy as np
 from pathlib import Path
 
-PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 # Glyph primary key → vocal_sounds/ subdirectory name
 PRIM_DIR: dict[str, str] = {
     "⊢": "D", "⊣": "T", "≻": "R", "≺": "P",
     "⋈": "F", "⊤": "K", "∈": "G", "∋": "Gamma",
-    "⊙": "Phi", "⊥": "H", "⊞": "S", "◻": "Omega",
+    "⊙": "Phi", "⊥": "H", "⊞": "S", "⊡": "Omega",
 }
 
 # ── Pronunciation guide ────────────────────────────────────────────────────────
@@ -273,7 +273,7 @@ PRONUNCIATION_GUIDES: dict[str, tuple[str, str, str]] = {
         "Labiodental nasal. Lower lip touches upper teeth (as for 'f' or 'v'), soft palate down, voice hums through the nose. The 'm' in 'triumph', 'circumvent', 'comfort' — the nasal that assimilates to a following /f/ or /v/.",
     ),
 
-    # ◻ — Topological invariant
+    # ⊡ — Topological invariant
     "𐑷": (
         "/e/",
         "pure 'e' as in French 'été'",

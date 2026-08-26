@@ -16,7 +16,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.97,
     "notes": "Self-referential: the statement that names the Tao undoes itself. Named/unnamed coalesce at the EP — the exceptional point where both modes merge."
@@ -38,7 +38,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑴",
+    "⊡": "𐑴",
     "tier": "T_2",
     "C_score": 0.62,
     "notes": "Yin/yang structure of perception: each concept creates its opposite. Wu wei (⊤^Ù) as the sage's response to paired emergence."
@@ -60,7 +60,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.18,
     "notes": "Practical governance: compact scope, direct instruction, sub-critical stability as the goal."
@@ -82,7 +82,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.95,
     "notes": "The Tao as empty fullness: holographic, self-referential, EP criticality. The vessel that pre-dates God."
@@ -104,7 +104,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.65,
     "notes": "Pure symmetry (𐑯) encodes impartiality; lateral relational mode (𐑾) marks non-preferential stance."
@@ -126,7 +126,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.88,
     "notes": "The valley/female as generative topology: holographic, reverberant grammar (∋^Ş), psi polarity (𐑿 = golden-ratio generative)."
@@ -148,7 +148,7 @@
     "⊙": "𐑢",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.7,
     "notes": "Self-sacrifice as self-preservation: the Frobenius condition (𐑹) at work — putting oneself last = finding oneself first."
@@ -170,7 +170,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.45,
     "notes": "Water as structural archetype: nested topology (𐑰 = fills all spaces), symmetric polarity, sub-critical stability."
@@ -192,7 +192,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.2,
     "notes": "Practical bounded wisdom: the box topology marks the limit; stopping before the limit is the lesson."
@@ -214,7 +214,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.72,
     "notes": "The chapter structured as six questions — each asks whether the seeker can hold a paradox. ∋^∧ (simultaneous) captures the and-structure."
@@ -236,7 +236,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.48,
     "notes": "Three parallel examples (wheel, vessel, room) all encode the same topology: the empty interior is what enables use. Frobenius self-duality: being and non-being are codependent."
@@ -258,7 +258,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.22,
     "notes": "Network topology (𐑡) encodes the flat undifferentiated world of sense stimuli. Fast kinetics (⊤^-) for the percussive assault of sensation."
@@ -280,7 +280,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.58,
     "notes": "The paradox of making the world's trouble your own — lateral relational mode because the sage doesn't dominate; bowtie where self meets world."
@@ -302,7 +302,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.94,
     "notes": "The three negations (invisible/inaudible/ungrasped) merge into formlessness: EP criticality, modes coalesce. One of the core metaphysical chapters."
@@ -324,7 +324,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.75,
     "notes": "Portrait of the ancient sage: complex psi-polarity (𐑿) captures the multi-faceted enumeration; infinite chirality for the ancestral exemplars."
@@ -346,7 +346,7 @@
     "⊙": "𐑢",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.68,
     "notes": "The return sequence: empty → still → arise → act → return → root → constant. Sequential grammar with infinite chirality. The great cycle."
@@ -368,7 +368,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.25,
     "notes": "Taxonomy of governance: four levels encoded in sequential grammar. The best ruler leaves no trace (⊤^Ù, still)."
@@ -390,7 +390,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑴",
+    "⊡": "𐑴",
     "tier": "T_2",
     "C_score": 0.55,
     "notes": "Each virtue that appears marks a prior loss: benevolence signals the Tao's absence. Z2 winding — the binary oscillation between authentic and counterfeit."
@@ -412,7 +412,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.15,
     "notes": "Imperative mode: shed the accretions (𐑗 = directional asymmetry of the command). The uncarved block (p'u) as the destination."
@@ -434,7 +434,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_2",
     "C_score": 0.6,
     "notes": "The sage as singular: psi-polarity (𐑿) for the complex, alone identity. The most personal chapter — Laozi as the drifting outsider."
@@ -456,7 +456,7 @@
     "⊙": "𐑮",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.9,
     "notes": "The Tao contains all four strata (image, thing, essence, truth) simultaneously: c_complex criticality captures the multi-mode structure."
@@ -478,7 +478,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.73,
     "notes": "Frobenius structure of paradox: each reversal is a self-dual identity. ∋^∧ encodes the simultaneous assertion of all paradox-pairs."
@@ -500,7 +500,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.28,
     "notes": "Brevity as structural value: the short chapter enacts its own teaching. Compact scope, still kinetics, open winding."
@@ -522,7 +522,7 @@
     "⊙": "𐑣",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.3,
     "notes": "Supercritical striving (⊙_Ţ) fails: the one who grows and displays will not endure. Fast kinetics for the percussive overreach."
@@ -544,7 +544,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.96,
     "notes": "The cosmological chapter: four great things in sequential hierarchy ending in nature (tzu-jan). EP criticality — all modes merge in the primordial."
@@ -566,7 +566,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.4,
     "notes": "Root/branch topology (𐑰): gravity contains lightness. ⊤^Ù (still) as the kinetic signature of the master of unrest."
@@ -588,7 +588,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.5,
     "notes": "Paired inversions: best traveler/speaker/etc. encode the same sub-critical excellence. Bad ones are teachers of the good — relational mode is lateral."
@@ -610,7 +610,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.7,
     "notes": "Three parallel know/keep pairs (masculine/feminine, white/black, honour/humiliation) converging to the uncarved block. Frobenius self-duality."
@@ -632,7 +632,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_1",
     "C_score": 0.42,
     "notes": "The sacred nature of the world forbids intervention. Lateral relational mode: no superiority. ⊤^Ù encodes non-action."
@@ -654,7 +654,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.2,
     "notes": "Compact governance: the box topology marks the bounded domain; non-force is still (⊤^Ù)."
@@ -676,7 +676,7 @@
     "⊙": "𐑣",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.28,
     "notes": "Supercritical (⊙_Ţ) marks the unstable, growing violence of war. Fast kinetics (⊤^-). Victory is mourning — the chapter ends in grief."
@@ -698,7 +698,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.82,
     "notes": "Names emerge from the unnamed Tao as rivers flow to the sea: nested topology, sequential grammar, infinite chirality."
@@ -720,7 +720,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.52,
     "notes": "Four pairs in ascending hierarchy. The chapter is a ladder: knowing → mastering; others → self. Each step through the bowtie."
@@ -742,7 +742,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.8,
     "notes": "Reverberant grammar (∋^Ş) for the Tao that flows everywhere without preference. Pure symmetry (𐑯) of impartial nourishment."
@@ -764,7 +764,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.85,
     "notes": "The great Form as attractor: nested topology, reverberant grammar. The tasteless, invisible thing that draws the world."
@@ -786,7 +786,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑴",
+    "⊡": "𐑴",
     "tier": "T_2",
     "C_score": 0.62,
     "notes": "Preparatory paradox: each pair is a first-X-then-Y structure. Z2 winding captures the binary oscillation of the strategy."
@@ -808,7 +808,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.93,
     "notes": "Wu wei as the hinge of Book I. The paradox of action/non-action at the EP: modes coalesce. Frobenius self-duality of doing-nothing = doing-everything."
@@ -830,7 +830,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.68,
     "notes": "Opens Book II. Sequential hierarchy of decline: highest virtue (unconscious) → benevolence → righteousness → propriety. Each step signals a prior loss."
@@ -852,7 +852,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.75,
     "notes": "The enumeration of six things holding the One: simultaneous grammar (∋^∧), nested topology. Noble has humble as root — Frobenius."
@@ -874,7 +874,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.96,
     "notes": "The briefest chapter, maximum density. From not-being → being → ten thousand things. EP: the two modes (being/non-being) coalesce."
@@ -896,7 +896,7 @@
     "⊙": "𐑮",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.78,
     "notes": "Three types of students; twelve paradoxical descriptions of the Tao follow. c_complex criticality for the multi-mode, contradictory-seeming path."
@@ -918,7 +918,7 @@
     "⊙": "𐑣",
     "⊥": "𐑫",
     "⊞": "𐑳",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.91,
     "notes": "The cosmological cascade: 1→2→3→∞. Asymmetric stoichiometry (𐑳) for the n→m generation. Supercritical expansion (⊙_Ţ). The central ontological chapter."
@@ -940,7 +940,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.7,
     "notes": "Soft/hard polarity resolved by Frobenius: emptiness as the penetrating force. Few in the world practice this teaching."
@@ -962,7 +962,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_1",
     "C_score": 0.38,
     "notes": "Three questions, three answers. Knowing when enough is enough is a sub-critical insight. Lateral mode: these are peer-level warnings, not commands."
@@ -984,7 +984,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.65,
     "notes": "Five paradoxes of greatness: each great thing appears as its opposite. Frobenius self-duality holds them together."
@@ -1006,7 +1006,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑴",
+    "⊡": "𐑴",
     "tier": "T_2",
     "C_score": 0.55,
     "notes": "Z2 winding: binary oscillation between Tao-present and Tao-absent world states. The horses are the diagnostic."
@@ -1028,7 +1028,7 @@
     "⊙": "𐑻",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.9,
     "notes": "The holographic principle of knowing: the inner contains the outer. EP criticality — the outside and inside coalesce. Still kinetics (⊤^Ù) for the sage who doesn't move."
@@ -1050,7 +1050,7 @@
     "⊙": "𐑻",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.72,
     "notes": "The subtraction path: learning adds, Tao subtracts. EP at the limit of subtraction: non-action, nothing undone. Sequential grammar traces the path."
@@ -1072,7 +1072,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.65,
     "notes": "Pure symmetry (𐑯) of impartiality: all treated equally. Lateral relational mode. The sage merges with the people."
@@ -1094,7 +1094,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.58,
     "notes": "The three-in-ten taxonomy of life-paths. The one protected by the Tao is untouched by tiger's claws or soldier's sword."
@@ -1116,7 +1116,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.7,
     "notes": "Four-stage production cascade (Tao→virtue→substance→environment) in sequential grammar. The Tao nourishes without possessing."
@@ -1138,7 +1138,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_3",
     "C_score": 0.83,
     "notes": "Mother/children: knowing the mother is the return. Closing the senses is ⊤^@ (slow bloom of restraint). The sealed gate (⊤^Ù) versus the open gate."
@@ -1160,7 +1160,7 @@
     "⊙": "𐑣",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_1",
     "C_score": 0.38,
     "notes": "Supercritical excess (⊙_Ţ) in the corrupt court: the rulers grow rich while the fields empty. The great Way abandoned for the network of side paths (𐑡)."
@@ -1182,7 +1182,7 @@
     "⊙": "𐑢",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.68,
     "notes": "Hierarchical nesting: self→family→village→state→world. Each level is a stable foundation. The root that cannot be uprooted."
@@ -1204,7 +1204,7 @@
     "⊙": "⊙",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.52,
     "notes": "The infant as the image of perfect virtue: Frobenius self-duality (all without asserting any). H_0 chirality — the infant has no history, only presence."
@@ -1226,7 +1226,7 @@
     "⊙": "𐑻",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.88,
     "notes": "Sealed mouth = sealed gate = sealed senses. EP at the merger with dust: inside and outside coalesce. The know-er cannot be benefited or harmed — above distinction."
@@ -1248,7 +1248,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.3,
     "notes": "Three modes of governance: justice, war, non-interference. The sequential grammar traces the hierarchy, ending in wu wei."
@@ -1270,7 +1270,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑴",
+    "⊡": "𐑴",
     "tier": "T_2",
     "C_score": 0.58,
     "notes": "Z2 winding: the cycle of good becoming evil and vice versa. The chapter's most striking line: no one knows when the cycle will end."
@@ -1292,7 +1292,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_0",
     "C_score": 0.32,
     "notes": "Restraint as the accumulation of virtue: the box topology of containment. The roots go deep, the tree endures."
@@ -1314,7 +1314,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.18,
     "notes": "The simplest governance principle: minimum intervention. The smallest chapter among the governance chapters."
@@ -1336,7 +1336,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.45,
     "notes": "The downstream metaphor: nested topology (𐑰) as all streams flow to the low center. The female wins by stillness (⊤^Ù)."
@@ -1358,7 +1358,7 @@
     "⊙": "⊙",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.78,
     "notes": "The Tao as universal refuge: even the bad are not abandoned. Symmetric polarity (𐑯) for the universal, impartial shelter."
@@ -1380,7 +1380,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.68,
     "notes": "The strategy of the small: address difficulty before it becomes difficulty. The Frobenius condition: act/not-act, taste/not-taste are self-dual."
@@ -1402,7 +1402,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.42,
     "notes": "The most famous practical aphorism: the thousand-mile journey. Sequential grammar traces action in the early stage as the key."
@@ -1424,7 +1424,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.4,
     "notes": "Simplicity versus cleverness as governance poles. Sub-critical stability is the goal. Historical depth (𐑖) for the ancient contrast."
@@ -1446,7 +1446,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.42,
     "notes": "The sea metaphor: nested topology, hundred streams flowing to the lowest point. Non-competition as the path to leadership."
@@ -1468,7 +1468,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.48,
     "notes": "Three treasures as a nested set: each one generates the next virtue. Psi-polarity (𐑿) for the precious, complex multi-faceted teaching."
@@ -1490,7 +1490,7 @@
     "⊙": "𐑢",
     "⊥": "𐑓",
     "⊞": "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.25,
     "notes": "Three parallel inversions of martial expectation. The non-competitive virtue matches heaven. Compact, focused, sub-critical."
@@ -1512,7 +1512,7 @@
     "⊙": "⊙",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.28,
     "notes": "The strategy of retreat: rolling up the sleeve without showing the arm. The greatest disaster is underestimating the enemy."
@@ -1534,7 +1534,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.55,
     "notes": "The hidden jade: psi-polarity for the concealed value. Easy/unknown paradox. The sage's solitude in understanding."
@@ -1556,7 +1556,7 @@
     "⊙": "⊙",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_1",
     "C_score": 0.42,
     "notes": "The paradox of meta-cognition: knowing-that-you-don't-know is strength. The sage diagnoses the disease and is thereby healed."
@@ -1578,7 +1578,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_1",
     "C_score": 0.38,
     "notes": "The sage knows himself without displaying himself, loves himself without exalting himself. Non-interference as the political wisdom."
@@ -1600,7 +1600,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.58,
     "notes": "Bowtie topology where bold action and bold restraint cross: one leads to death, the other to life. The vast net of heaven catches without striving."
@@ -1622,7 +1622,7 @@
     "⊙": "𐑣",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.25,
     "notes": "Supercritical (⊙_Ţ) marks the unstable overreach of the ruler who usurps heaven's role. Fast kinetics for the sudden violence of execution."
@@ -1644,7 +1644,7 @@
     "⊙": "𐑣",
     "⊥": "𐑓",
     "⊞": "𐑕",
-    "◻": "𐑷",
+    "⊡": "𐑷",
     "tier": "T_0",
     "C_score": 0.28,
     "notes": "Supercritical excess (⊙_Ţ) of the extractive state. Network topology (𐑡) for the tax network. Asymmetric polarity (𐑗) of unilateral extraction."
@@ -1666,7 +1666,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.58,
     "notes": "The life/death polarity encoded as soft/hard. The hard and strong belong to death; the soft and yielding belong to life. Sequential lesson from observation."
@@ -1688,7 +1688,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.68,
     "notes": "The bow as the image of heaven's redistribution: high brought low, low raised. Pure symmetry (𐑯) of the balanced tension. The sage gives without accumulating."
@@ -1710,7 +1710,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_2",
     "C_score": 0.73,
     "notes": "Water as Frobenius archetype: contains all without claiming any. The ruler who bears the curse of the state bears the kingdom. The paradox that everyone knows but nobody practices."
@@ -1732,7 +1732,7 @@
     "⊙": "⊙",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_1",
     "C_score": 0.48,
     "notes": "The sage holds the left tally without enforcing it. Heaven is always with the good — no favorites. Lateral relational mode: no compulsion."
@@ -1754,7 +1754,7 @@
     "⊙": "𐑢",
     "⊥": "𐑒",
     "⊞": "𐑕",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_0",
     "C_score": 0.35,
     "notes": "The utopian small state: complete containment (𐑶), stillness (⊤^Ù), symmetric peace (𐑯). Boats and carts unused; weapons in storage. The ideal is sub-critical stability."
@@ -1776,7 +1776,7 @@
     "⊙": "𐑻",
     "⊥": "𐑫",
     "⊞": "𐑙",
-    "◻": "𐑭",
+    "⊡": "𐑭",
     "tier": "T_inf",
     "C_score": 0.97,
     "notes": "Final synthesis: mirrors Chapter 1 at higher resolution. EP criticality — all the paradoxes (true/beautiful, skilled/disputatious, sage/hoarder) coalesce. The loop closes."

@@ -26,7 +26,7 @@ def from_idx(n):
     if n == 99: return CRIT
     return SH[max(0, min(47, n))]
 
-PRIMS = ['≻','⊥','◻','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
+PRIMS = ['≻','⊥','⊡','⊢','⊞','≺','⊤','⋈','∋','∈','⊣','⊙']
 
 def word(t):
     return ''.join(t[p] for p in PRIMS)
@@ -222,8 +222,8 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     # ── ⊥: max → SOC of most complex component
     H = max(get(tA, '⊥'), get(tB, '⊥'))
 
-    # ── ◻: max → bonding adds winding; keep max of reactants
-    Om = max(get(tA, '◻'), get(tB, '◻'))
+    # ── ⊡: max → bonding adds winding; keep max of reactants
+    Om = max(get(tA, '⊡'), get(tB, '⊡'))
 
     # ── ⊢: max → dimensionality of more complex atom dominates
     D = max(get(tA, '⊢'), get(tB, '⊢'))
@@ -302,7 +302,7 @@ def fuse_product(tA, tB, sym_A, sym_B, n_A, n_B, btype):
     return {
         '≻': from_idx(R),
         '⊥': from_idx(H),
-        '◻': from_idx(Om),
+        '⊡': from_idx(Om),
         '⊢': from_idx(D),
         '⊞': from_idx(Sig),
         '≺': from_idx(Ph),

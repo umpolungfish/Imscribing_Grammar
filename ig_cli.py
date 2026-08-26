@@ -54,7 +54,7 @@ PNAMES = ["D", "T", "R", "P", "F", "K", "G", "Gm", "Ph", "H", "S", "W"]
 # Field name mapping (Unicode keys in catalog JSON → short names)
 CAT_FIELD_MAP = {"⊢": "D", "⊣": "T", "≻": "R", "≺": "P", "⋈": "F",
                  "⊤": "K", "∈": "G", "∋": "Gm", "⊙": "Ph",
-                 "⊥": "H", "⊞": "S", "◻": "W"}
+                 "⊥": "H", "⊞": "S", "⊡": "W"}
 
 def _load_catalog():
     """Load and index catalog. Returns dict[name → entry]."""
@@ -230,7 +230,7 @@ def cmd_ouroborics(args, catalog):
     elif tier == "O₂†":
         print("   → Broadcast medium — O₂ with universal composition.")
     elif tier == "O₂":
-        print("   → Self-referential topology (𐑸), but ◻ limits closure.")
+        print("   → Self-referential topology (𐑸), but ⊡ limits closure.")
     elif tier == "O₁":
         print("   → One level of critical self-reference possible.")
     else:

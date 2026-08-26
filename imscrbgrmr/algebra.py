@@ -256,7 +256,7 @@ def _imscription_to_primitives_dict(s: Imscription) -> Optional[Dict[str, str]]:
         "⊙": s.criticality_phase.value,
         "⊥": s.chirality.value,
         "⊞": s.stoichiometry.value,
-        "◻": s.protection.value,
+        "⊡": s.protection.value,
     }
     resolved = {}
     for prim, val in raw.items():

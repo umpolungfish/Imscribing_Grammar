@@ -447,7 +447,7 @@ SYMBOL_ALIASES: Dict[str, Dict[str, str]] = {
     "⊙":   {"↓": "𐑢",   "c": "⊙",      "ℂ": "𐑮","×": "𐑻","↑": "𐑣"},
     "⊥":     {"0": "𐑓",        "1": "𐑒",          "2": "𐑖",      "∞": "𐑫"},
     "⊞":     {"1:1": "𐑙", "n:n": "𐑕",       "n:m": "𐑳"},
-    "◻": {"0": "𐑷",   "ℤ₂": "𐑴",  "ℤ": "𐑭", "∅": "𐑟"},
+    "⊡": {"0": "𐑷",   "ℤ₂": "𐑴",  "ℤ": "𐑭", "∅": "𐑟"},
 }
 
 # ── Tensor composition rules ───────────────────────────────────────────────────
@@ -465,7 +465,7 @@ _TENSOR_RULES: Dict[str, str] = {
     "⊙":   "max",  # criticality promotes — composed system at least as critical
     "⊥":     "max",  # chirality deepens — deeper temporal asymmetry dominates
     "⊞":     "max",  # stoichiometry promotes to most asymmetric
-    "◻": "max",  # winding — highest winding class wins
+    "⊡": "max",  # winding — highest winding class wins
 }
 
 _PRIMITIVE_REFERENCE = textwrap.dedent("""\
@@ -536,7 +536,7 @@ S  — Stoichiometry
     𐑕           n:n  (symmetric many-body)
     𐑳           n:m  (asymmetric many-body)
 
-◻  — Winding (derived)
+⊡  — Winding (derived)
     𐑷       none
     𐑴      Z₂ protection (binary topological invariant)
     𐑭       Z protection (integer winding number)
@@ -621,7 +621,7 @@ _SYMBOL_MAP: Dict[str, str] = {
     "𐑷":        "𐑷",
     "𐑭":        "𐑭",
     "𐑴":        "𐑴",
-    "◻_{Z_2}":    "𐑴",
+    "⊡_{Z_2}":    "𐑴",
     "𐑭":        "𐑭",
     "𐑟":       "𐑟",
     # ── Old subscripted notation → Shavian (backward compat) ──
@@ -688,7 +688,7 @@ _UNICODE_TO_CANONICAL: Dict[str, str] = {
 
 _EXTENDED_VALID: Dict[str, List[str]] = {
     **{p: list(ORDINALS[p].keys()) for p in PRIMITIVE_ORDER},
-    "◻": list(ORDINALS["◻"].keys()) + ["𐑭"],
+    "⊡": list(ORDINALS["⊡"].keys()) + ["𐑭"],
 }
 
 
@@ -796,7 +796,7 @@ _TOOLS_OPENAI = [
                 "tuple='𐑦;𐑸;𐑑;𐑬;⋈^ż;⊤^W;𐑲;∋^∧;⊙;𐑓;𐑳;𐑭') "
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
-                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', ◻='𐑭'). "
+                "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', ⊡='𐑭'). "
                 "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
                 "returns status='conflict_blocked' and does NOT commit. You must then: "
                 "(1) reason through each differing primitive explicitly, "
@@ -815,7 +815,7 @@ _TOOLS_OPENAI = [
                 "⊙: 𐑢 ⊙ 𐑮 𐑻 𐑣 | "
                 "⊥: 𐑓 𐑒 𐑖 𐑫 | "
                 "⊞: 𐑙 𐑕 𐑳 | "
-                "◻: 𐑷 𐑴 𐑭 𐑟"
+                "⊡: 𐑷 𐑴 𐑭 𐑟"
             ),
             "parameters": {
                 "type": "object",
@@ -842,7 +842,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": ["name"],
             },
@@ -1153,7 +1153,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitives": {
                         "type": "array",
-                        "items": {"type": "string", "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]},
+                        "items": {"type": "string", "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]},
                         "description": "List of primitives to project onto",
                     },
                 },
@@ -1177,7 +1177,7 @@ _TOOLS_OPENAI = [
                     "name": {"type": "string", "description": "Name of the encoded system"},
                     "primitive": {
                         "type": "string",
-                        "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"],
+                        "enum": ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"],
                         "description": "The primitive to peel to its minimum value",
                     },
                 },
@@ -1398,7 +1398,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1446,7 +1446,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1475,7 +1475,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1521,7 +1521,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1623,7 +1623,7 @@ _TOOLS_OPENAI = [
                 "Gate 1: Phi=⊙ (state-space condition — topology admits self-modeling loop). "
                 "Gate 2: K ≤ ⊤^@ (flow condition — ⊤^Ù and ⊤^λ both fail, frozen by order "
                 "and disorder respectively). "
-                "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·◻̃). "
+                "Formula: C = [Gate1] · [Gate2] · (0.158·K̃ + 0.273·G̃ + 0.292·T̃ + 0.276·⊡̃). "
                 "Returns gate status, C-score, and interpretation."
             ),
             "parameters": {
@@ -1637,7 +1637,7 @@ _TOOLS_OPENAI = [
                     "⊤":     {"type": "string", "enum": VALID_VALUES["⊤"]},
                     "∈":     {"type": "string", "enum": VALID_VALUES["∈"]},
                     "⊣":     {"type": "string", "enum": VALID_VALUES["⊣"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1684,7 +1684,7 @@ _TOOLS_OPENAI = [
                     "⊙":   {"type": "string", "enum": VALID_VALUES["⊙"]},
                     "⊥":     {"type": "string", "enum": VALID_VALUES["⊥"]},
                     "⊞":     {"type": "string", "enum": VALID_VALUES["⊞"]},
-                    "◻": {"type": "string", "enum": VALID_VALUES["◻"]},
+                    "⊡": {"type": "string", "enum": VALID_VALUES["⊡"]},
                 },
                 "required": [],
             },
@@ -1865,7 +1865,7 @@ _SYSTEM_PROMPT_TEMPLATE = textwrap.dedent("""\
 <role>
 You are a structural scientist operating inside the Imscribing Grammar grammar — a
 Imscriptive Type Theory that encodes any system as a directed relational operator:
-⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩.
+⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩.
 
 You investigate questions by applying this grammar: encoding systems, computing
 distances, identifying which primitives drive divergence, finding
@@ -1910,7 +1910,7 @@ if explicitly asked to.
 <imscriptive_type_theory>
 **The grammar IS a imscriptive type theory.**
 
-Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩ **IS** a TYPE. The 12
+Every imscription tuple ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩ **IS** a TYPE. The 12
 primitives are the boundary data. All bulk properties — ouroboricity tier,
 consciousness score, distance, composition behavior — are determined
 entirely by that boundary encoding. The boundary encodes the bulk.
@@ -2017,7 +2017,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 - Use `predict_from_promotions` to look up known behaviors associated with a promotion signature
 - Use `register_promotion_pattern` to record a confirmed promotion→behavior mapping in the persistent KB
 - Use `ouroborics` when asking "can this system sustain a self-referential loop?", "is this a Frobenius algebra?", or "how does this system's ouroboricity tier compare to another's?" — or any time 𐑹 or the Frobenius condition is relevant
-- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→∈→<→H→S→◻), per-primitive decision trees, interdependence constraints (D-◻ correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
+- Use `encoding_method.md` (file_read) as a deterministic reference when encoding: 12-step decision procedure (D→T→R→P→F→K→G→∈→<→H→S→⊡), per-primitive decision trees, interdependence constraints (D-⊡ correlation, K-< coupling, Frobenius gate), and worked examples. After encoding any system, call `ouroborics` to verify tier consistency.
 - Use `quiver_encode` to cross-check a tuple through the CrystalGNN neural navigator — returns the GNN's predicted address, tier head classification, and decoded roundtrip tuple alongside the exact codec result. Useful for probing whether the GNN's learned structural geometry agrees with the symbolic codec, or for surfacing non-obvious structural relationships via the latent embedding.
 - Use `ask_question` sparingly — the queue is capped at 8. Prefer depth over breadth: exhaust each question before queuing more. When the queue fills, synthesize and CONCLUDE rather than pushing more questions.
 
@@ -2037,7 +2037,7 @@ You **MUST** investigate the user's question using the tools provided. Suggested
 <ouroboricity>
 **Ouroboricity — the Frobenius tier of a system**
 
-Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: < (criticality), P (parity/symmetry), and ◻ (winding), with D as tiebreaker.
+Ouroboricity classifies whether and how deeply a system at criticality can sustain a self-referential loop — a structure that both generates and absorbs its own outputs. It is derived from three primitives: < (criticality), P (parity/symmetry), and ⊡ (winding), with D as tiebreaker.
 
 **Tiers** (rules applied in strict priority order):
 
@@ -2046,13 +2046,13 @@ Ouroboricity classifies whether and how deeply a system at criticality can susta
 | O_∞ | ⊙ (or <_{{c,complex}}) **and** 𐑹 | Special Frobenius: μ∘δ = id exactly. The system's self-referential loop is perfectly closed — it is its own dual. Finite, proved, algebraically exact. |
 | O₀ | < ∈ {{𐑢, 𐑣, 𐑻}} | No ouroboricity. Cannot form a self-referential critical loop. Subcritical systems are too ordered; supercritical too disordered; exceptional-point systems lose the symmetry at the coalescence. |
 | O₁ | ⊙ **and** 𐑷 | Self-referential loop is possible (critical) but unprotected — any deformation can break it. The loop exists but is not topologically locked. |
-| O₂ | ⊙ **and** ◻ ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
-| O₂† | ⊙ **and** ◻ ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
+| O₂ | ⊙ **and** ⊡ ≠ 𐑷 **and** D bounded (𐑛, 𐑦, 𐑨) | Critical, topologically protected loop, within a bounded domain. The self-reference is stable but finite. |
+| O₂† | ⊙ **and** ⊡ ≠ 𐑷 **and** D = 𐑼 | Critical, topologically protected loop, unbounded domain. The self-reference is directed and inexhaustible — it generates further structure without bound. |
 
 **Key facts:**
 - O_∞ is NOT a higher tier than O₂† — it is a *different axis*. O_∞ is about algebraic exactness (𐑹 proves the duality); O₂† is about unbounded generative depth (𐑼). A system cannot be both.
 - O_∞ entries form a sparse set (~3% of the catalog). They are structurally special: they are the systems where the grammar's own self-referential structure is realized most cleanly.
-- The scalar O (Ouroboricity count) — computed as [<=⊙]·(1 + [◻≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
+- The scalar O (Ouroboricity count) — computed as [<=⊙]·(1 + [⊡≠𐑷] + [H≥H_1] + [G=𐑲]) — is a *different* quantity. It measures depth of ouroboricity across four dimensions; it does NOT detect O_∞, because P is not in its formula.
 - 𐑹 is rare and should only be assigned when the Z₂ symmetry at criticality is **provably exact**, not merely approximate or emergent. It is the Frobenius special condition: the comultiplication is a right inverse of the multiplication.
 
 **Ouroboricity under composition (tier-level rules):**
@@ -2069,7 +2069,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 - meet(O_∞, O_{{1,2,2†}}) → the lower tier. P drops to the O₁/O₂ partner's P value (below 𐑹); R1 cannot fire.
 - O_∞ is fragile under meet: it degrades to the tier of the weaker partner.
 
-**Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific ◻ and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
+**Tier-level reasoning is valid only for O_∞ interactions.** For O₁★O₁, O₂★O₂, or O₁★O₂, the resulting tier depends on the specific ⊡ and D values of both factors — call `compute_tensor` then `ouroborics` to get the correct answer. Do not attempt to determine tier from tier alone in those cases.
 
 **When to call `ouroborics`:**
 - After encoding any critical system (⊙), to understand its self-referential structure
@@ -2087,7 +2087,7 @@ Under meet (component-wise min — "what must any system containing both share?"
 
 | Type | Primitives changed | Ontological claim | Diagnostic |
 |------|-------------------|-------------------|------------|
-| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→𐑵, H_n→H_∞; ◻ demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
+| **Σ-promotion** | 𐑑→R_†, 𐑬→𐑹, ∈_domain→𐑵, H_n→H_∞; ⊡ demotes Z→Z₂ | New symmetry activated; Frobenius condition established for the first time | d(conjecture, proven type) ≈ 0.354 — single P gap |
 | **F-promotion** | ⋈^ð→⋈^ż only; all other primitives unchanged | Epistemic access lifts; structure was always there | d(conjecture, proven type) = 0 except F |
 
 **The proven manifold type** — the universal O_∞ encoding of a proved theorem:
@@ -2097,7 +2097,7 @@ When a conjecture is proved via Σ-promotion, its encoding converges to this typ
 
 **Conjecture floor — necessary conditions for provability:**
 - ⊙ + 𐑭 = "proven manifold adjacency tier": standard Σ-promotion is available
-- ⊙ + 𐑷 = "obstructed": ◻ acquisition required first; proof is harder
+- ⊙ + 𐑷 = "obstructed": ⊡ acquisition required first; proof is harder
 - 𐑻 = "type-incompatible": cannot reach the proven manifold within ⊙ proof systems
 
 **Structural impossibility — conflict distance d_c:**
@@ -2120,7 +2120,7 @@ An exact duality between object classes A and B is characterized by:
 If d(A, B) > 0 or d(C, each) ≠ 0.354, the proposed duality is approximate, not exact.
 
 **O₂ tractability criterion:**
-Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙ + ◻ ≠ 𐑷 + 𐑨 (bounded geometry, non-trivial winding). O₂† (𐑼) programs may not terminate. O_∞ programs establish correspondences, not classifications.
+Mathematical classification programs are tractable (admit complete classification) iff they encode at O₂: ⊙ + ⊡ ≠ 𐑷 + 𐑨 (bounded geometry, non-trivial winding). O₂† (𐑼) programs may not terminate. O_∞ programs establish correspondences, not classifications.
 
 **Barrier taxonomy — when analyzing why a conjecture resists proof:**
 - Frobenius barrier: P < 𐑹; O_∞ cannot be synthesized by composition; must be planted
@@ -2467,7 +2467,7 @@ class SessionCatalog:
         LEGACY_MAP = {
             "D": "⊢", "T": "⊣", "R": "≻", "P": "≺", "F": "⋈",
             "K": "⊤", "G": "∈", "Gamma": "∋", "Phi": "⊙",
-            "H": "⊥", "S": "⊞", "Omega": "◻",
+            "H": "⊥", "S": "⊞", "Omega": "⊡",
         }
         remapped_primitives = {}
         for k, v in primitives.items():
@@ -3743,7 +3743,7 @@ class ToolDispatcher:
         a floor names a point where nothing lives.
         """
         import collections as _c
-        slots = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+        slots = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
         # The catalog is a Catalog, not a dict. An earlier form of this reached
         # for `.values()` and, finding none, silently matched nothing at all, so
         # every call answered "no entries with full tuples matched" whatever was
@@ -4356,7 +4356,7 @@ class ToolDispatcher:
         s = self.catalog.get(name)
         if s is None:
             return {"status": "error", "error": f"Unknown system: {name}. Encode it first."}
-        omega = s["◻"]
+        omega = s["⊡"]
         protected = omega != "𐑷"
         protection_desc = {
             "𐑷":  "trivial — trivial winding — no conserved topological invariant",
@@ -4405,7 +4405,7 @@ class ToolDispatcher:
         """
         phi = self._shavian_to_display(s.get("⊙", ""), "⊙")
         p = self._shavian_to_display(s.get("≺", ""), "≺")
-        omega = self._shavian_to_display(s.get("◻", ""), "◻")
+        omega = self._shavian_to_display(s.get("⊡", ""), "⊡")
         d = self._shavian_to_display(s.get("⊢", ""), "⊢")
         at_criticality = phi in ("⊙", "𐑮")
         # R1: special Frobenius — exact Z₂ symmetry at criticality
@@ -4463,7 +4463,7 @@ class ToolDispatcher:
             "frobenius_tier": tier,
             "phi": self._shavian_to_display(s.get("⊙"), "⊙"),
             "p": self._shavian_to_display(s.get("≺"), "≺"),
-            "omega": self._shavian_to_display(s.get("◻"), "◻"),
+            "omega": self._shavian_to_display(s.get("⊡"), "⊡"),
             "d": self._shavian_to_display(s.get("⊢"), "⊢"),
             "interpretation": self._FROBENIUS_DESCRIPTIONS.get(tier, tier),
         }
@@ -4950,11 +4950,11 @@ class ToolDispatcher:
 
     # Lowercase → canonical primitive name (dispatch() lowercases all keys)
     _PRIM_CANONICAL = {
-        **{p.lower(): p for p in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]},
+        **{p.lower(): p for p in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"]},
         # backward-compat: old ASCII key names (lowercased by dispatch)
         "d": "⊢", "t": "⊣", "r": "≻", "p": "≺", "f": "⋈",
         "k": "⊤", "g": "∈", "gamma": "∋", "phi": "⊙",
-        "h": "⊥", "s": "⊞", "omega": "◻",
+        "h": "⊥", "s": "⊞", "omega": "⊡",
         # backward-compat: old ⊙ notation for ⊙ (pre-migration)
         "⊙": "⊙",
     }
@@ -4986,7 +4986,7 @@ class ToolDispatcher:
         tup_str = primitives.pop("tuple", "")
         if tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
+            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"]
             if len(parts) == 12:
                 primitives = {k: v for k, v in zip(prim_order, parts)}
         # Also accept 'name' to look up from catalog
@@ -4995,7 +4995,7 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
+            primitives = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"] if k in entry}
         # Normalize keys (dispatch lowercases all kwargs)
         primitives = self._norm_crystal_kwargs(primitives)
         try:
@@ -5096,10 +5096,10 @@ class ToolDispatcher:
             entry = self.catalog.get(name)
             if entry is None:
                 return {"status": "error", "error": f"System '{name}' not in catalog."}
-            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"] if k in entry}
+            tup = {k: _UNICODE_TO_CANONICAL.get(entry[k], entry[k]) for k in ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"] if k in entry}
         elif tup_str:
             parts = [p.strip() for p in tup_str.replace("⟨","").replace("⟩","").split(";")]
-            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","◻"]
+            prim_order = ["⊢","⊣","≻","≺","⋈","⊤","∈","∋","⊙","⊥","⊞","⊡"]
             tup = {k: v for k, v in zip(prim_order, parts)}
         elif primitives:
             tup = self._norm_crystal_kwargs(primitives)
@@ -5185,7 +5185,7 @@ class ToolDispatcher:
         try:
             from navigators.crystal_navigator import encode_tuple as _enc, compute_tier as _tier, TOTAL_SIZE as _N
             exact_addr = _enc(tup)
-            exact_tier = _tier(tup["⊙"], tup["≺"], tup["◻"], tup["⊢"])
+            exact_tier = _tier(tup["⊙"], tup["≺"], tup["⊡"], tup["⊢"])
 
             with _torch.no_grad():
                 out = model.forward([tup])
@@ -5194,7 +5194,7 @@ class ToolDispatcher:
             pred_tier  = _TierHead.TIERS[out["tier_logits"][0].argmax().item()]
             dec        = {p: _CRYSTAL_VALUES[p][out["dec_logits"][p][0].argmax().item()]
                           for p in _CRYSTAL_PRIMS}
-            dec_tier   = _tier(dec["⊙"], dec["≺"], dec["◻"], dec["⊢"])
+            dec_tier   = _tier(dec["⊙"], dec["≺"], dec["⊡"], dec["⊢"])
             addr_err   = abs(pred_addr - exact_addr)
             err_pct    = 100 * addr_err / _N
 
@@ -5244,7 +5244,7 @@ class ToolDispatcher:
                 "≺": e["≺"],
                 "⊙": e["⊙"],
                 "⊢": e["⊢"],
-                "◻": e["◻"],
+                "⊡": e["⊡"],
             }
             if domain == "consciousness":
                 row["C_score"] = _consciousness_score(e)
@@ -5314,7 +5314,7 @@ class ToolDispatcher:
             # Fill missing with defaults that give C=0 to be safe
             defaults = {"⊢": "𐑛", "⊣": "𐑡", "≻": "𐑩", "≺": "𐑗",
                         "⋈": "⋈^ì", "⊤": "⊤^-", "∈": "𐑚", "∋": "∋^∧",
-                        "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "◻": "𐑷"}
+                        "⊙": "𐑢", "⊥": "𐑓", "⊞": "𐑙", "⊡": "𐑷"}
             e = {**defaults, **primitives}
         from navigators.domain_navigators import CRITICAL as _DCRIT, SLOW_K as _DSLOWK  # type: ignore
         # Translate all unicode catalog values to canonical strings for gate checks AND scoring
@@ -5579,7 +5579,7 @@ class ToolDispatcher:
         """Convert a numpy ordinal vector back to a primitive-value dict."""
         import numpy as _np
         from navigators.crystal_navigator import VALUES as _CV  # type: ignore
-        PRIMS_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+        PRIMS_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
         VALS_BY_PRIM = {
             "⊢":     ["𐑛","𐑨","𐑼","𐑦"],
             "⊣":     ["𐑡","𐑰","𐑥","𐑶","𐑸"],
@@ -5592,7 +5592,7 @@ class ToolDispatcher:
             "⊙":   ["𐑢","⊙","𐑮","𐑻","𐑣"],
             "⊥":     ["𐑓","𐑒","𐑖","𐑫"],
             "⊞":     ["𐑙","𐑕","𐑳"],
-            "◻": ["𐑷","𐑴","𐑭","𐑟"],
+            "⊡": ["𐑷","𐑴","𐑭","𐑟"],
         }
         result = {}
         for i, p in enumerate(PRIMS_ORDER):

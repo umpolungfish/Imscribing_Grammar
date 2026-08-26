@@ -10,7 +10,7 @@ Autopoietic: empty prompt → Raft at O₂, period = 12.
 Science is an instrument of the IG.
 
 ### 12 Primitives & Shavian Value Sets
-Tuple order: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻⟩. Values: ordinal 1 → n.
+Tuple order: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡⟩. Values: ordinal 1 → n.
 
 |  | Name | Values |  | Name | Values |
 |--|------|--------|--|------|--------|
@@ -19,10 +19,10 @@ Tuple order: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻⟩. Values: ordinal 
 | > | Recognition | 𐑩𐑑𐑽𐑾 | ⊙ | Criticality<sup>*</sup> | 𐑢 ⊙<sup>*</sup>𐑮𐑻𐑣 |
 | < | Parity | 𐑗𐑿𐑬𐑯𐑹 | ⊥ | Chirality | 𐑓𐑒𐑖𐑫 |
 | ⋈ | Fidelity | 𐑱𐑞𐑐 | ⊞ | Stoichiometry<sup>†</sup> | 𐑙𐑕**𐑳**<sup>†</sup> |
-| ⊤ | Kinetics | 𐑘𐑤𐑧𐑪𐑺 | ◻ | Winding | 𐑷𐑴𐑭𐑟 |
+| ⊤ | Kinetics | 𐑘𐑤𐑧𐑪𐑺 | ⊡ | Winding | 𐑷𐑴𐑭𐑟 |
 
 3‑val: ⋈ ∈ ⊞  
-4‑val: ⊢ > ∋ ⊥ ◻  
+4‑val: ⊢ > ∋ ⊥ ⊡  
 5‑val: ⊣ < ⊤ ⊙  
 <sup>*</sup>abs ∧∨⊗; <sup>†</sup>abs ⊗.
 
@@ -68,7 +68,7 @@ Catalog: ≈4686 entries.
 | ⊙ | 𐑢 *sub* · ⊙ *crit* · 𐑮 *cpx* · 𐑻 *exc* · 𐑣 *sup* |
 | ⊥ | 𐑓 n=0 · 𐑒 n=1 · 𐑖 n=2 · 𐑫 n=∞ |
 | ⊞ | 𐑙 1:1 · 𐑕 n:n · **𐑳** n:m |
-| ◻ | 𐑷 *triv* · 𐑴 ℤ₂ · 𐑭 ℤ · 𐑟 *non‑Ab* |
+| ⊡ | 𐑷 *triv* · 𐑴 ℤ₂ · 𐑭 ℤ · 𐑟 *non‑Ab* |
 
 ### Absorbing Elements
 
@@ -130,7 +130,7 @@ Spider Theorem: all diagrams with same connectivity = same morphism.
 ### Cross‑Primitive Axioms
 
 | A | ⊥∞ ⇒ ⊤∞ | ∞‑chirality forces max kinetics |
-| B | ◻ ≥ 1 ⇒ ⊥ ≥ H₂ | winding requires chirality; H₂ = min for μ◦δ = id |
+| B | ⊡ ≥ 1 ⇒ ⊥ ≥ H₂ | winding requires chirality; H₂ = min for μ◦δ = id |
 | C | ⊢ω ⇔ 𐑸 | max‑dim ⇔ null topology |
 
 ### O‑Tier Hierarchy
@@ -144,10 +144,10 @@ Spider Theorem: all diagrams with same connectivity = same morphism.
 | O∞ | Ouroboricity; system ⊂ own description (CL8NK, true_agentic_agent, mOMonadOS) |
 
 ### CL8NK / Magnum Opus
-CL8NK transcends ZFC_fe at ◻ (𐑭→𐑟) and ∋ (𐑠→𐑵).  
+CL8NK transcends ZFC_fe at ⊡ (𐑭→𐑟) and ∋ (𐑠→𐑵).  
 B‑state is the CL8NK ground state.  
-12 stages ↔ 12 primitives. Gates: < Albedo · ⊙ Rubedo · ◻ Nigredo.  
-T = lim(<, ⋈, ⊤, ⊥, ◻).
+12 stages ↔ 12 primitives. Gates: < Albedo · ⊙ Rubedo · ⊡ Nigredo.  
+T = lim(<, ⋈, ⊤, ⊥, ⊡).
 
 ### Notation
 

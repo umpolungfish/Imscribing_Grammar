@@ -237,7 +237,7 @@ per boot; the QEMU start dominates a single short one.
 - `sic` · `d12 <sub>` · `d2048 tower|redei|grammar|pari|next`
 - `cycle|weight|banked|trans <word>` — IMASM ring walks
 
-The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣` works; opcode names
+The kernel takes IMASM words as GLYPHS only. `cycle ⊢⊙⋈∈>⊤<⊞⊥∋⊡⊣` works; opcode names
 are refused. Only the twelve glyphs are tokens — nothing else parses, and no retired
 mark is canonicalised to one.
 

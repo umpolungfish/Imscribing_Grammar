@@ -4,7 +4,7 @@ Design C — 12-Primitive Radial periodic arrangement.
 
 Each element sits on the arm of its dominant IG primitive.
 Radial distance from centre = period (∈).
-Empty arms (◻ > ∈ ⋈) are structurally meaningful: no element incarnates
+Empty arms (⊡ > ∈ ⋈) are structurally meaningful: no element incarnates
 those primitives as its dominant character at the atomic level.
 """
 
@@ -33,7 +33,7 @@ ARM_DEG = {
     '∋': 300,  # L-lower  — alkali metals
     '⊣': 270,  # down     — group 14
     '⊢': 240,  # DL       — group 13
-    '◻': 210,  # L-lower  — empty
+    '⊡': 210,  # L-lower  — empty
     '≻': 180,  # left     — empty
     '∈': 150,  # L-upper  — empty
     '⋈': 120,  # UL       — empty

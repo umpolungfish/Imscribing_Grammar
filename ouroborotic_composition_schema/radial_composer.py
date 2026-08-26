@@ -106,7 +106,7 @@ def compose_primitive_radial(
         "⊙": composite.get("Phi", "𐑢"),
         "⊥": composite.get("H", "𐑓"),
         "⊞": composite.get("S", "𐑙"),
-        "◻": composite.get("Omega", "𐑷"),
+        "⊡": composite.get("Omega", "𐑷"),
     }
     
     # TODO: Replace with actual imscribe_system call (requires direct import)

@@ -68,7 +68,7 @@ _REASONING_OVERRIDE_FIELDS = {
     "interaction_grammar": ("∋", r"G_(broad|seq|or|and)\b"),
     "polarity":       ("≺", r"P_(pm_sym|pm|sym|psi|asym)\b"),
     "kinetic_character": ("⊤", r"K_(MBL|trap|slow|mod|fast)\b"),
-    "protection":     ("◻", r"Omega_(NA|Z2|Z|0)\b"),
+    "protection":     ("⊡", r"Omega_(NA|Z2|Z|0)\b"),
     "chirality":      ("⊥", r"H(0|1|2|_inf)\b"),
 }
 
@@ -93,7 +93,7 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
             prim_key = {
                 "dimensionality": "⊢", "topology": "⊣", "criticality_phase": "⊙",
                 "interaction_grammar": "∋", "polarity": "≺", "kinetic_character": "⊤",
-                "protection": "◻", "chirality": "⊥",
+                "protection": "⊡", "chirality": "⊥",
             }[field]
             if candidate in ORDINALS[prim_key] and result.get(field) != candidate:
                 result[field] = candidate
@@ -106,7 +106,7 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
 # ── Structural validation: canonical slot membership + cross-primitive axioms ─────────
 # The axioms were, until now, stated only in the PROMPT — told to the model, enforced by
 # nothing. A tuple violating Axiom C sailed through with grounding_status "full" (seen
-# live: ⊢=𐑦 with ⊣=𐑥, plus ⊥/◻ values transposed by the old to_notation slot order).
+# live: ⊢=𐑦 with ⊣=𐑥, plus ⊥/⊡ values transposed by the old to_notation slot order).
 # This is the code the prose always claimed to be.
 #
 # Value sets mirror the ordinal scripture (Core.lean ctor order / gen_clay; same table
@@ -146,7 +146,7 @@ def validate_structural(imscription: "Imscription") -> List[str]:
         errs.append(
             f"Axiom A: ⊥=𐑫 requires ⊤ ∈ {{𐑧,𐑪}} (got ⊤={v['kinetic_character']})")
     if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
-        errs.append(f"Axiom B: ◻={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
+        errs.append(f"Axiom B: ⊡={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
     # Axiom C is ONE-DIRECTIONAL: an imscriptive topology requires imscriptive
     # dimensionality. The biconditional this used to enforce is a stronger claim
     # than the kernel makes — `ImscriptiveTopology` in p4ramill reads
@@ -155,7 +155,7 @@ def validate_structural(imscription: "Imscription") -> List[str]:
     if v["topology"] == "𐑸" and v["dimensionality"] != "𐑦":
         errs.append(f"Axiom C: ⊣=𐑸 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
     if v["protection"] == "𐑟" and v["dimensionality"] != "𐑦":
-        errs.append(f"Axiom D: ◻=𐑟 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
+        errs.append(f"Axiom D: ⊡=𐑟 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
     return errs
 
 
@@ -313,7 +313,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
          "options": [("𐑙","Equal symmetric pairing"),
                      ("𐑕","Higher-order symmetric — oligomers, committees"),
                      ("𐑳","Asymmetric — different counts on each side")]},
-        {"short": "◻",  "long": "protection",           "question": "Can the role be continuously deformed away?",
+        {"short": "⊡",  "long": "protection",           "question": "Can the role be continuously deformed away?",
          "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
                      ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
                      ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
@@ -444,7 +444,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         # Axiom B: 𐑴 or 𐑭 requires chirality >= H_turntwo.
         prot = imscription_data.get("protection", "")
         chir = imscription_data.get("chirality", "")
-        _needs_chiral = {"𐑴", "𐑭", "𐑟"}   # ◻ Z2 / integer / non-Abelian
+        _needs_chiral = {"𐑴", "𐑭", "𐑟"}   # ⊡ Z2 / integer / non-Abelian
         _weak_chiral  = {"𐑓", "𐑒"}        # ⊥ achiral / soft
         if prot in _needs_chiral and chir in _weak_chiral:
             import warnings
@@ -728,7 +728,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
     def _get_system_prompt(self) -> str:
         """Get the domain-agnostic system prompt for imscription generation."""
         return """<role>
-You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ◻⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
+You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
 
 The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same type. Your task is to identify which type an input instantiates.
 
@@ -750,7 +750,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - Is it near a threshold/criticality? (<)
 - Does it break symmetry persistently? (H)
 - What is the participation ratio? (S)
-- Is its role topologically protected? (◻)
+- Is its role topologically protected? (⊡)
 </task>
 
 <primitives>
@@ -823,12 +823,12 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑕`: Higher-order symmetric, n:n (oligomers, committees).
 - `𐑳`: Asymmetric, n:m — different counts on each side.
 
-**◻ — Topological protection** (can the role be continuously deformed away?):
+**⊡ — Topological protection** (can the role be continuously deformed away?):
 - `𐑷`: No protection — trivial; the role CAN be continuously deformed to a trivial state. Default for most systems without explicit topological structure.
 - `𐑴`: Z2-protected — requires crossing a Z2 topological boundary to change; binary, global protection.
 - `𐑭`: Integer-winding-protected — associated with a conserved winding number; the role is stable against perturbations that preserve the winding invariant.
 - `𐑟`: Non-Abelian protection — the most robust; requires 𐑦.
-**For abstract/narrative systems: ◻ encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
+**For abstract/narrative systems: ⊡ encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
 
 **MANDATORY AXIOMS — violating these causes a parse error:**
 - **Axiom A**: `𐑫` REQUIRES `⊤=𐑪`. If you assign 𐑫, you MUST also assign ⊤=𐑪. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS 𐑪. A fast-exchanging (𐑘) system cannot be topologically chiral.
@@ -853,10 +853,10 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
   [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires ⊤=𐑪)
   [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
-  [12] ◻ → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
+  [12] ⊡ → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
 
 **INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
-- D-◻: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
+- D-⊡: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
 - K-<: ⊙ + ⊤=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + ⊤=𐑘 = runaway decay
 - 𐑹 requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
 - Tier verification: ⊙ + 𐑹 → O_∞; ⊙ + 𐑷 → O₁; ⊙ + Omega≠0 + D∈{𐑛,𐑨,𐑦} → O₂; ⊙ + Omega≠0 + 𐑼 → O₂†
@@ -876,9 +876,9 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 - G: Does it affect only its immediate contact, a local region, or the entire system?
 - <: Does it operate at a threshold — a point of maximum sensitivity between two states?
 - H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
-- ◻: Is the role topologically required by the structure of the system, or could it be continuously deformed away?
+- ⊡: Is the role topologically required by the structure of the system, or could it be continuously deformed away?
 
-*Mathematical structures*: The "operating space" is the mathematical domain; 𐑦 for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; ◻ encodes homotopy class.
+*Mathematical structures*: The "operating space" is the mathematical domain; 𐑦 for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; ⊡ encodes homotopy class.
 
 *Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; < encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
 
@@ -957,7 +957,7 @@ Use only values from the value_registry table. The `reasoning` field MUST refere
 
 {name_instruction}
 
-Work through all 12 primitives (D, T, R, P, F, K, G, ∈, ⊙, H, S, ◻) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
+Work through all 12 primitives (D, T, R, P, F, K, G, ∈, ⊙, H, S, ⊡) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
 
 CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "𐑛", "𐑥", "⊙"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
 
@@ -1015,7 +1015,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
-                    "⊞": "stoichiometry", "◻": "protection",
+                    "⊞": "stoichiometry", "⊡": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
@@ -1056,7 +1056,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
-                    "⊞": "stoichiometry", "◻": "protection",
+                    "⊞": "stoichiometry", "⊡": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
@@ -1080,7 +1080,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
                     "⋈": "fidelity", "⊤": "kinetic_character",
                     "∈": "granularity", "∋": "interaction_grammar",
                     "⊙": "criticality_phase", "⊥": "chirality",
-                    "⊞": "stoichiometry", "◻": "protection",
+                    "⊞": "stoichiometry", "⊡": "protection",
                     "D": "dimensionality", "T": "topology", "R": "recognition_mode",
                     "P": "polarity", "F": "fidelity", "K": "kinetic_character",
                     "G": "granularity", "H": "chirality", "S": "stoichiometry",
@@ -1119,7 +1119,7 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
         "⊤": "kinetic_character",  "∈": "granularity",
         "∋": "interaction_grammar","⊙": "criticality_phase",
         "⊥": "chirality",          "⊞": "stoichiometry",
-        "◻": "protection",
+        "⊡": "protection",
         # ASCII single-letter fallbacks (models frequently return these)
         "D": "dimensionality",     "T": "topology",
         "R": "recognition_mode",   "P": "polarity",

@@ -52,13 +52,13 @@ print("=" * 60)
 
 # Crystal = 3^3 * 4^5 * 5^4
 # 3-card primitives: ⋈, ∈, Σ  (count=3, each 3 values)
-# 4-card primitives: ⊢, >, ∋, ⊥, ◻  (count=5, each 4 values)
+# 4-card primitives: ⊢, >, ∋, ⊥, ⊡  (count=5, each 4 values)
 # 5-card primitives: ⊣, <, ⊤, ⊙  (count=4, each 5 values)
 
 prim_cards = {
     "⊢": 4, "⊣": 5, "≻": 4, "≺": 5, "⋈": 3,
     "⊤": 5, "∈": 3, "∋": 4, "⊙": 5, "⊥": 4,
-    "⊞": 3, "◻": 4,
+    "⊞": 3, "⊡": 4,
 }
 
 by_card = defaultdict(list)
@@ -72,7 +72,7 @@ for card in sorted(by_card):
 
 print()
 print("Genetic code cardinalities:")
-print("  4 nucleotides    → matches 4-valued primitives (⊢, >, ∋, ⊥, ◻)")
+print("  4 nucleotides    → matches 4-valued primitives (⊢, >, ∋, ⊥, ⊡)")
 print("  3 bases/codon    → matches 3-valued primitives (⋈, ∈, Σ)")
 print("  20 amino acids   = 4 × 5  (both cardinalities appear in Crystal)")
 print("  64 codons = 4³   → 4-valued base × 3-valued codon length")
@@ -316,10 +316,10 @@ print("8. IG BOOTSTRAP SEQUENCE vs CENTRAL DOGMA ORDERING")
 print("=" * 60)
 
 # IG bootstrap: ordinal-1 of each primitive in canonical tuple order
-# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→⊞→◻
+# ⊢→⊣→>→<→⋈→⊤→∈→∋→⊙→⊥→⊞→⊡
 # Central dogma: DNA→RNA→Protein (with replication, transcription, translation)
 
-ig_order = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+ig_order = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 ig_desc = {
     "⊢": "Dimensionality/scope of the system (genome ploidy/size)",
     "⊣": "Topology (DNA supercoiling, chromosome architecture)",
@@ -332,7 +332,7 @@ ig_desc = {
     "⊙": "Criticality (protein fold nucleus, prion-like phase transition)",
     "⊥": "Chirality (L-amino acid homochirality — FIXED at bootstrap)",
     "⊞": "Symmetry/entropy (sequence conservation, evolutionary info content)",
-    "◻": "Winding/closure (α-helix winding number, topoisomerase, fold closure)",
+    "⊡": "Winding/closure (α-helix winding number, topoisomerase, fold closure)",
 }
 
 print("IG primitive → Central dogma stage:")

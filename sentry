@@ -125,7 +125,7 @@ elif [[ "$out" == "MOVED 0 OF"* ]]; then
 else watch "address safety" F "$out"; fi
 # Entries deliberately outside the crystal's 3³×4⁵×5⁴ cardinality. The group 13
 # and 15 elements carry 𐑛 in ⊞, the transactinides carry 𐑧 in ⊙, and two winding
-# partners hold a polarity value in ◻. Each is a determination about the entry,
+# partners hold a polarity value in ⊡. Each is a determination about the entry,
 # not something a sweep may delete, so the watch holds a baseline and only
 # breaks if the count grows.
 OFFCRYSTAL_BASELINE=20

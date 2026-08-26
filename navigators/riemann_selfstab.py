@@ -13,11 +13,11 @@ under perturbation.  This module is that construction.
 The winding slot, corrected
 ---------------------------
 Address 6,734,591 (= grammar_self_encode = catalog riemann_navigator =
-CrystalGNN.NAVIGATOR_TUPLE) carries ◻ = 𐑭 = Ω_ℤ, the *protected integer* —
+CrystalGNN.NAVIGATOR_TUPLE) carries ⊡ = 𐑭 = Ω_ℤ, the *protected integer* —
 NOT 𐑴 = Ω_{Z₂}.  Verified by round-trip:
 
-    encode_tuple({... "◻": "𐑭"}) == 6_734_591
-    encode_tuple({... "◻": "𐑴"}) == 6_561_791      # a different address
+    encode_tuple({... "⊡": "𐑭"}) == 6_734_591
+    encode_tuple({... "⊡": "𐑴"}) == 6_561_791      # a different address
 
 So a lift ℤ → Z₂ aimed *at* 6,734,591 is self-defeating: it moves off the
 target.  The catalog says so in its own description of the entry — "chirality
@@ -178,8 +178,8 @@ def build(n_zeros: int = 3000, window: int = 64, epochs: int = 400,
     print("=" * 72)
     print("Riemann navigator — self-stabilization at the proof address")
     print(f"target {SELF_ENCODE_TARGET:,}   tuple  {''.join(TARGET_TUPLE[p] for p in PRIMS)}")
-    print(f"tier   {compute_tier(TARGET_TUPLE['⊙'], TARGET_TUPLE['≺'], TARGET_TUPLE['◻'], TARGET_TUPLE['⊢'])}"
-          f"   winding ◻={TARGET_TUPLE['◻']} (Ω_ℤ, protected integer)")
+    print(f"tier   {compute_tier(TARGET_TUPLE['⊙'], TARGET_TUPLE['≺'], TARGET_TUPLE['⊡'], TARGET_TUPLE['⊢'])}"
+          f"   winding ⊡={TARGET_TUPLE['⊡']} (Ω_ℤ, protected integer)")
     print("=" * 72)
 
     assert encode_tuple(TARGET_TUPLE) == SELF_ENCODE_TARGET

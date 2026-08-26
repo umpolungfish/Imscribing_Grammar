@@ -8,7 +8,7 @@ p4rapend/MOZILLA_WEB_FINDING_2026.md. Constitution: BUGHUNTER_CONSTITUTION.md.
 Every tool below is the SAME instrument family the framework was verified with.
 The tuple says it: sequential pipeline (∋=measure), driven automation (⊤=yea),
 mesoscale scope (∈=bib), many heterogeneous tools (⊞=up), two-step memory
-(⊥=sure — check then act), integer winding (◻=ah — iterate passes, terminate).
+(⊥=sure — check then act), integer winding (⊡=ah — iterate passes, terminate).
 
 ## 0. Base agent tools (the full set, not a reminder)
 

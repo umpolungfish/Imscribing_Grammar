@@ -231,7 +231,7 @@ _TYPES = {
         "h_level": "2  (π₂(S²) = ℤ; higher homotopy groups non-trivial)",
         "univalence": "holds",
         "groupoid": "∞-groupoid; π₁=1, π₂=ℤ, π₃=ℤ (Hopf fibration), ...",
-        "loop": "◻²(S², base) ≃ ℤ  (double loop space)",
+        "loop": "⊡²(S², base) ≃ ℤ  (double loop space)",
         "note": "S² = suspension of S¹. π_n(S²) are notoriously complex for n ≥ 3.",
     },
     "Prop": {

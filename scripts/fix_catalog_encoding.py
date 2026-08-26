@@ -3,7 +3,7 @@
 fix_catalog_encoding.py — normalize all three encoding errors in IG_catalog.json.
 
   Category 1 — Legacy key names (D,T,R,P,F,K,G,Gamma,Phi,H,S,Omega)
-                → rename to canonical glyph keys (⊢,⊣,>,<,⋈,⊤,∋,∈,⊙,⊥,⊞,◻)
+                → rename to canonical glyph keys (⊢,⊣,>,<,⋈,⊤,∋,∈,⊙,⊥,⊞,⊡)
                   Values are already Shavian; only keys need renaming.
 
   Category 2 — Tuple notation  (tuple: '𐑼;𐑸;𐑾;...')
@@ -62,14 +62,14 @@ LEGACY_KEY_MAP = {
     "Phi":   "⊙",
     "H":     "⊥",
     "S":     "⊞",
-    "Omega": "◻",
+    "Omega": "⊡",
 }
 
 # Old Criticality glyph → canonical
 PRIM_GLYPH_NORM = {"⊙": "⊙"}
 
 # Canonical prim glyphs for regex split
-_PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊙", "⊥", "⊞", "◻"]
+_PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊙", "⊥", "⊞", "⊡"]
 _PRIM_PAT = "|".join(re.escape(p) for p in sorted(_PRIMS, key=len, reverse=True))
 _TUPLE_SPLIT = re.compile(f';(?={_PRIM_PAT})')
 

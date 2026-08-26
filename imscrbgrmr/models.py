@@ -6,13 +6,13 @@ Imscription.lean. Enum VALUES are glyph IDs (e.g. 𐑛, 𐑡, 𐑓); field names
 Imscription use the long Python-readable form with short-name properties (dim, top,
 recog, pol, gram, fid, kin, gran, crit, prot, stoi, chir) mirroring Lean.
 
-Tuple notation: ⟨D; T; R; P; F; K; G; ∈; <; ◻; S; H⟩
+Tuple notation: ⟨D; T; R; P; F; K; G; ∈; <; ⊡; S; H⟩
 
 Ordering conventions (match Lean Core.lean):
   F: F_noise < F_beltl < F_dh < F_hardsign
   K: K_lambda < K_teshlig < K_schwa < K_turnm < K_frtailgamma
   G: G_revapostrophe < G_beta < G_gamma   (ℵ = finest/atomic, ℷ = coarsest/cosmological)
-  ◻: Omega_closeepsilon < Omega_crtwo < Omega_dzlig < Omega_C < Omega_turna
+  ⊡: Omega_closeepsilon < Omega_crtwo < Omega_dzlig < Omega_C < Omega_turna
   H: H_closeomega < H_toneletterstem < H_turntwo < H_invscripta
 
 Cross-primitive axioms (enforced in Imscription.__post_init__; mirroring Core.lean):
@@ -575,7 +575,7 @@ class Criticality(Enum):
 
 
 # =============================================================================
-# Primitive X: Winding (◻)
+# Primitive X: Winding (⊡)
 # =============================================================================
 
 class Protection(Enum):
@@ -770,7 +770,7 @@ class Imscription:
     A Imscription is a minimal constraint-carrying unit encoded as a 12-tuple
     over the canonical primitive types.
 
-    Notation: ⟨D; T; R; P; F; K; G; ∈; <; ◻; S; H⟩
+    Notation: ⟨D; T; R; P; F; K; G; ∈; <; ⊡; S; H⟩
 
     All 12 primitive fields are required (no Optional). Cross-primitive axioms
     A–D from Core.lean are enforced at construction time.
@@ -827,12 +827,12 @@ class Imscription:
         #
         #   Self-application. The correct formulation of A imscribes with ⊥=𐑫 ∧ ⊤=𐑧,
         #   the exact pair old-A forbade. The correct formulation of D imscribes with
-        #   ⊢=𐑛 ∧ ◻=𐑟 (old-D required ⊢=𐑦) and ⊣=𐑸 at ⊢=𐑛 (violating one-way C).
+        #   ⊢=𐑛 ∧ ⊡=𐑟 (old-D required ⊢=𐑦) and ⊣=𐑸 at ⊢=𐑛 (violating one-way C).
         #   Each correct formulation violates the coordinate form of its own axiom.
         #
         #   Catalog. Every shadow has counterexamples across multiple dimensionalities,
         #   including genuine non-Abelian anyons and SIC existence entries carrying
-        #   ◻=𐑟 without ⊢=𐑦.
+        #   ⊡=𐑟 without ⊢=𐑦.
         #
         # Enforcing any of them refuses to construct legal tuples. The closure test
         # belongs to the protocol layer, where δ/μ can actually be run: see
@@ -876,11 +876,11 @@ class Imscription:
     # ── Notation and serialization ────────────────────────────────────────────
 
     def to_notation(self) -> str:
-        """Canonical tuple string: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻⟩ (concatenated, no separators).
+        """Canonical tuple string: ⟨⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡⟩ (concatenated, no separators).
 
-        ⊥ (chirality) is slot 10 and ◻ (protection) is slot 12. Emitting protection at
+        ⊥ (chirality) is slot 10 and ⊡ (protection) is slot 12. Emitting protection at
         10 and chirality at 12 transposes them: the VALUES stay correct but land in each
-        other's slots, so every consumer that reads by position sees an ◻-value where ⊥
+        other's slots, so every consumer that reads by position sees an ⊡-value where ⊥
         belongs and vice versa — and neither is a member of the slot's own value set.
         """
         return (
@@ -909,7 +909,7 @@ class Imscription:
             "∈":             self.granularity.value,
             "∋":             self.grammar.value,
             "⊙":             self.criticality_phase.value,
-            "◻":             self.protection.value,
+            "⊡":             self.protection.value,
             "⊞":             self.stoichiometry.value,
             "⊥":             self.chirality.value,
             "grounding":     self.grounding,
@@ -922,7 +922,7 @@ class Imscription:
         """
         Construct a Imscription from a catalog dict (new or legacy format).
 
-        Accepts glyph keys (⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ◻), short ASCII keys
+        Accepts glyph keys (⊢, ⊣, >, <, ⋈, ⊤, ∈, ∋, ⊙, ⊥, ⊞, ⊡), short ASCII keys
         (D, T, R, P, F, K, G, Gamma, Phi, Omega, S, H), and long Python field names.
 
         The retired glyph keys do NOT resolve. Every stored catalog was migrated
@@ -958,7 +958,7 @@ class Imscription:
                 kinetic_character= KineticChar.from_symbol(_get("⊤", "K", "kinetic_character", "𐑤")),
                 granularity      = Granularity.from_symbol(_get("∈", "G", "granularity", "𐑚")),
                 criticality_phase= Criticality.from_symbol(_get("⊙", "Phi", "criticality_phase", "𐑢")),
-                protection       = Protection.from_symbol(_get("◻", "Omega", "protection", "𐑷")),
+                protection       = Protection.from_symbol(_get("⊡", "Omega", "protection", "𐑷")),
                 # 𐑳 is n:m, the general ratio: the old "n:m" spelling was left as the
                 # default long after from_symbol stopped resolving it, so an entry
                 # missing this key raised instead of taking a default.

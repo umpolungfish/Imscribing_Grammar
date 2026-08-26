@@ -75,7 +75,7 @@ def hunt_for_entry(entry, n_samples=2000, seed=42, verbose=True):
                       f"{'seq' if ordering else 'par'}")
 
     # Also try varying T-constitution with canonical gates
-    canonical_gates = (GateSpec("≺", 5.0), GateSpec("⊙", 2.0), GateSpec("◻", 3.0), True)
+    canonical_gates = (GateSpec("≺", 5.0), GateSpec("⊙", 2.0), GateSpec("⊡", 3.0), True)
     t_count = 0
     for t_cfg in iter_t_subsets():
         if not t_cfg:

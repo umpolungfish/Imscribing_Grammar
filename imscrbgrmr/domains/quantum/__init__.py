@@ -11,7 +11,7 @@ Eight imscriptions in two tiers:
     spin_singlet        D_∧  · T_⋈  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑷
     qubit_logical       D_∧  · T_|  · R_sup · P_±ψ · F_ℓ · K_schwa · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑷
 
-  Tier 2 — Topological Matter (first catalog entries using T_braid + ◻):
+  Tier 2 — Topological Matter (first catalog entries using T_braid + ⊡):
     kitaev_chain_majorana   D_∧  · T_|      · R_sup · P_±  · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑭
     fqh_moore_read          D_△  · T_braid  · R_sup · P_±ψ · F_ℏ · K_teshlig · G_ℵ · ∈∧(QUANTUM) · 𐑢 · 𐑟
     topological_insulator   D_△  · T_∈      · R_sup · P_±  · F_ℏ · K_schwa · G_ℵ · ∈⊙          · 𐑢 · 𐑴
@@ -72,7 +72,7 @@ def register_quantum_imscriptions() -> List[str]:
     Register all eight quantum/topological imscriptions into the global catalog.
 
     Safe to call multiple times (idempotent). Always refreshes metadata on
-    already-present entries so ◻ and topo_index fields survive JSON round-trips.
+    already-present entries so ⊡ and topo_index fields survive JSON round-trips.
 
     Returns:
         List of names that were newly registered (empty if all already present).
@@ -136,7 +136,7 @@ def _photon() -> Imscription:
       ∈ = SELECTIVE_AND (QUANTUM tier): resonant absorption requires a specific
           frequency match (selective) AND a transition dipole (AND logic).
       < = 𐑢: single photon is below the G–D criticality locus.
-      ◻ = TRIVIAL: free-space photon has no topological protection.
+      ⊡ = TRIVIAL: free-space photon has no topological protection.
           (Photonic topological insulators would be a separate imscription.)
     """
     return Imscription(
@@ -185,7 +185,7 @@ def _proton() -> Imscription:
           experiments on ice; non-local in principle.
       ∈ = SPECIFIC_AND: one highly specific protonation site at a time.
       < = 𐑢.
-      ◻ = TRIVIAL: bare proton, no topological structure.
+      ⊡ = TRIVIAL: bare proton, no topological structure.
     """
     return Imscription(
         name="proton",
@@ -229,7 +229,7 @@ def _electron() -> Imscription:
       G = G_ℵ (GLOBAL): Bell-pair electrons are non-locally correlated (CHSH).
       ∈ = SPECIFIC_AND: one target orbital per bonding event.
       < = 𐑢.
-      ◻ = TRIVIAL: free electron; topological character emerges from band
+      ⊡ = TRIVIAL: free electron; topological character emerges from band
           structure of hosting material (separate imscription).
     """
     return Imscription(
@@ -286,8 +286,8 @@ def _spin_singlet() -> Imscription:
       < = 𐑢: Factor 8 fires (G_ℵ + F_ℏ + K_teshlig + ¬D_∞) but the single
           isolated singlet is not yet at the criticality locus; Factor 8
           scores the criticality candidacy probe, not <.
-      ◻ = TRIVIAL: the singlet is not a topologically protected state per se.
-          (A spin singlet in a topological magnet would inherit the material ◻.)
+      ⊡ = TRIVIAL: the singlet is not a topologically protected state per se.
+          (A spin singlet in a topological magnet would inherit the material ⊡.)
     """
     return Imscription(
         name="spin_singlet",
@@ -336,7 +336,7 @@ def _qubit_logical() -> Imscription:
       G = G_ℵ (GLOBAL): entanglement non-local across entire quantum register.
       ∈ = QUANTUM_AND: CNOT / Toffoli gates require joint operation on two qubits.
       < = 𐑢: sub-threshold fidelity prevents criticality lift (Axiom 5).
-      ◻ = TRIVIAL: unprotected qubit. Topological qubit (𐑟) is a separate
+      ⊡ = TRIVIAL: unprotected qubit. Topological qubit (𐑟) is a separate
           imscription — it would have F_ℏ and K_teshlig instead.
     """
     return Imscription(
@@ -400,7 +400,7 @@ def _kitaev_chain_majorana() -> Imscription:
       ∈ = QUANTUM_AND: the non-local qubit requires both end modes simultaneously;
           a single Majorana is not a qubit.
       < = 𐑢: stable topological phase (not at the phase transition).
-      ◻ = Z_CLASS (𐑭): ℤ topological invariant, AZ class D, 1D.
+      ⊡ = Z_CLASS (𐑭): ℤ topological invariant, AZ class D, 1D.
           The winding number W ∈ ℤ; topological phase has W = 1.
       S = "1:1": one Majorana zero mode per end (γ_L : γ_R = 1:1).
     """
@@ -460,7 +460,7 @@ def _fqh_moore_read() -> Imscription:
           two or more anyons — inherently a multi-particle (QUANTUM AND) operation.
       < = 𐑢: stable FQH plateau (the phase transition to ν=2 or ν=3 is a
           separate imscription).
-      ◻ = NON_ABELIAN (𐑟): non-Abelian Ising anyons. First 𐑟 entry in the
+      ⊡ = NON_ABELIAN (𐑟): non-Abelian Ising anyons. First 𐑟 entry in the
           catalog. Protection_strength = 4 (maximum).
       S = None: filling fraction ν=5/2 is a material property, not a pairwise
           stoichiometric ratio.
@@ -521,7 +521,7 @@ def _topological_insulator_bi2se3() -> Imscription:
       ∈ = SELECTIVE_AND: the surface states selectively couple to magnetic
           perturbations (gap-opening) vs. non-magnetic (no gap); selective.
       < = 𐑢: stable topological insulating phase.
-      ◻ = Z2_CLASS (𐑴): strong ℤ₂ TI, class AII (ν₀ = 1).
+      ⊡ = Z2_CLASS (𐑴): strong ℤ₂ TI, class AII (ν₀ = 1).
       S = None: bulk material, not a pairwise recognition event.
     """
     return Imscription(

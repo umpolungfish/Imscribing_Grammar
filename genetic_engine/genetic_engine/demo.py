@@ -323,7 +323,7 @@ def demo_verification() -> None:
         ("UUU", "UUC", "Phe silent (split)"),
         ("AUG", "AUU", "Met→Ile missense"),
         ("UGU", "UGG", "Cys→Trp (>→⊣)"),
-        ("AUG", "UAA", "Met→Stop (◻ violation)"),
+        ("AUG", "UAA", "Met→Stop (⊡ violation)"),
     ]
     print(f"\n  {'Edit':<20} {'Scenario':<30} {'Status':<16} {'Ratio':<8}")
     print(f"  {'─'*75}")

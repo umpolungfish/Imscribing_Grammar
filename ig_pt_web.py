@@ -33,7 +33,7 @@ def build_data():
     # Correct empty check using actual prim names
     EMPTY_PRIMS = {'Omega', 'R', 'Gamma', 'f'}
     for prim in primitives:
-        primitives[prim]['empty'] = (prim in ('◻', '≻', '∈', '⋈'))
+        primitives[prim]['empty'] = (prim in ('⊡', '≻', '∈', '⋈'))
     return {
         'elements': elements,
         'primitives': primitives,

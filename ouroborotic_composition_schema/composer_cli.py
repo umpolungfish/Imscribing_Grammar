@@ -69,7 +69,7 @@ def load_imscription(name: str) -> Imscription:
                 'Phi': '⊙',
                 'H': '⊥',
                 'S': '⊞',
-                'Omega': '◻'
+                'Omega': '⊡'
             }
             norm_key = mapping.get(k, k)
             normalized[norm_key] = v

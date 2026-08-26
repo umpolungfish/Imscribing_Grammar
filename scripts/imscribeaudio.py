@@ -134,7 +134,7 @@ def main():
 
     # ---- --list ------------------------------------------------------------
     if args.list:
-        print("Canonical glyph IDs (field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻)\n")
+        print("Canonical glyph IDs (field order: ⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡)\n")
         for gid in PRIMITIVE_MAP:
             print(f"  {gid}")
         return

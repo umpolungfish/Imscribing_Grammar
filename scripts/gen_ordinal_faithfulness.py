@@ -30,7 +30,7 @@ PRIM = {
     "⊙": ("ordinalPhi",  "Criticality",    {"𐑢":"woe","⊙":"monad","𐑮":"roar","𐑻":"err","𐑣":"haha"}),
     "⊥": ("ordinalH",    "Chirality",      {"𐑓":"fee","𐑒":"kick","𐑖":"sure","𐑫":"wool"}),
     "⊞": ("ordinalS",    "Stoichiometry",  {"𐑙":"hung","𐑕":"so","𐑳":"up"}),
-    "◻": ("ordinalOmega","Protection",     {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
+    "⊡": ("ordinalOmega","Protection",     {"𐑷":"awe","𐑴":"oak","𐑭":"ah","𐑟":"zoo"}),
 }
 # Exact ℚ for the canonical non-integer transitional ranks.
 FRAC = {2.33: "7/3", 2.67: "8/3", 4.5: "9/2"}

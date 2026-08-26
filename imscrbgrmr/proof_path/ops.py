@@ -91,7 +91,7 @@ _S_full   = "𐑲"   # full / global scope
 _S_mid    = "𐑔"   # intermediate
 _S_spread = "𐑚"   # spreading / global
 
-# ◻ — Topological Invariant
+# ⊡ — Topological Invariant
 _W_triv   = "𐑷"   # trivial (Z)
 _W_z2     = "𐑴"   # Z/2
 _W_der    = "𐑭"   # derived / complex zeta
@@ -217,7 +217,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊣": {_T_dense: _T_proj, _T_smooth: _T_proj, _T_fib: _T_proj},
-            "◻": {_W_z2: _W_der, _W_prim: _W_der},
+            "⊡": {_W_z2: _W_der, _W_prim: _W_der},
         },
         direction="generalize",
     ),
@@ -231,7 +231,7 @@ OPERATIONS: list[Op] = [
             "Frobenius acts on H^k with eigenvalues of weight k — Weil's insight."
         ),
         transitions={
-            "◻": {_W_der: _W_triv, _W_der: _W_z2},
+            "⊡": {_W_der: _W_triv, _W_der: _W_z2},
             "⊣": {_T_proj: _T_fib},
         },
         direction="specialize",
@@ -286,7 +286,7 @@ OPERATIONS: list[Op] = [
         name="apply_spectral_sequence",
         description="Deploy a spectral sequence to compute cohomology from a filtration.",
         math=(
-            "Hodge-de Rham: E_1^{p,q} = H^q(X, ◻^p_X) ⟹ H^{p+q}_{dR}(X). "
+            "Hodge-de Rham: E_1^{p,q} = H^q(X, ⊡^p_X) ⟹ H^{p+q}_{dR}(X). "
             "Degenerates at E_1 for smooth projective X (Deligne–Illusie), "
             "giving the Hodge decomposition H^n(X,C) = ⊕_{p+q=n} H^{p,q}(X)."
         ),
@@ -353,7 +353,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "⊞": {_STO_1_1: _STO_nn, _STO_1_1: _STO_mix},
-            "◻": {_W_z2: _W_der, _W_triv: _W_der},
+            "⊡": {_W_z2: _W_der, _W_triv: _W_der},
         },
         direction="generalize",
     ),
@@ -368,7 +368,7 @@ OPERATIONS: list[Op] = [
         ),
         transitions={
             "≻": {_R_aff: _R_smooth},
-            "◻": {_W_der: _W_triv},
+            "⊡": {_W_der: _W_triv},
             "∋": {_G_and: _G_sub},
         },
         direction="bridge",

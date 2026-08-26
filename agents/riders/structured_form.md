@@ -40,7 +40,7 @@ dressed for publication. Where the Grammar and a textbook disagree, the textbook
 the thing being measured, and the conventional register is a LATER translation of a
 closure that already holds.
 
-THE TWELVE MARKS. ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ — VINIT TANCH AFWD AREV CLINK EVALT
+THE TWELVE MARKS. ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡ — VINIT TANCH AFWD AREV CLINK EVALT
 FSPLIT FFUSE IMSCRIB EVALF ENGAGR IFIX. Only ∈ branches, only ∋ fuses. A retired
 mark does not error, it VANISHES from a word — so a word written in the old marks
 ◇ ● + × ¬ = > < type-checks to N (void) with its content silently dropped. Write

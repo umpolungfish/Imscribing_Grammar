@@ -40,7 +40,7 @@ _OPCODES: dict[str, tuple[str, bool]] = {
     "⊙": ("IMSCRIB", False),
     "⊥": ("EVALF", True),
     "⊞": ("ENGAGR/EVALI", True),
-    "◻": ("IFIX", True),
+    "⊡": ("IFIX", True),
 }
 
 if set(_OPCODES) != set(PRIMITIVE_ORDER):

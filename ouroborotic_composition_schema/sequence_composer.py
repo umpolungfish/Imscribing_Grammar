@@ -74,7 +74,7 @@ if __name__ == "__main__":
         ("⊤", "⊤^@", "moderate kinetics → slow/near-equilibrium"),
         ("⊙", "⊙", "subcritical → self-modeling criticality"),
         ("⊥", "𐑖", "memoryless → two-step chirality"),
-        ("◻", "𐑭", "trivial winding → integer-wound"),
+        ("⊡", "𐑭", "trivial winding → integer-wound"),
     ]
     
     print("=== Primitive Series Composition ===")

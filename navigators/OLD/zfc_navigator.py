@@ -45,7 +45,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 # ── 1. Primitive ordinals (canonical v0.5.1) ────────────────────────────────
 
-PRIMITIVES = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVES = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 ORDINALS: Dict[str, Dict[str, float]] = {
     "⊢":     {"𐑛": 0, "𐑨": 1, "𐑼": 2, "𐑦": 3},
@@ -59,13 +59,13 @@ ORDINALS: Dict[str, Dict[str, float]] = {
     "⊙":   {"𐑢": 0, "⊙": 1, "𐑮": 2, "𐑻": 3, "𐑣": 4},
     "⊥":     {"𐑓": 0, "𐑒": 1, "𐑖": 2, "𐑫": 3},
     "⊞":     {"𐑙": 0, "𐑕": 1, "𐑳": 2},
-    "◻": {"𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
+    "⊡": {"𐑷": 0, "𐑴": 1, "𐑭": 2, "𐑟": 3},
 }
 
 WEIGHTS = {
     "⊢": 1.0, "⊣": 1.0, "≻": 1.0, "≺": 1.2,
     "⋈": 0.9, "⊤": 1.0, "∈": 1.0, "∋": 1.0,
-    "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "◻": 0.7,
+    "⊙": 1.1, "⊥": 0.8, "⊞": 1.0, "⊡": 0.7,
 }
 
 # Inverse ordinal maps for decoding predictions
@@ -368,7 +368,7 @@ ZFC_TEMPLATES: Dict[str, Dict[str, List[str]]] = {
         "𐑳":        ["EXISTS", "VF", "LPAREN",
                        "FUNC", "VF", "AND", "NOT", "BIJ", "VF", "VX", "VX", "RPAREN"],
     },
-    "◻": {
+    "⊡": {
         "𐑷":    ["VX", "EQ", "VX"],    # trivial protection
         "𐑴":   ["EXISTS", "VY", "LPAREN",
                        "SUCC", "SUCC", "VY", "EQ", "VX", "RPAREN"],
@@ -842,7 +842,7 @@ IUG_TUPLE = {
     "⊙":   "⊙",
     "⊥":     "𐑫",
     "⊞":     "𐑳",
-    "◻": "𐑭",
+    "⊡": "𐑭",
 }
 
 # Grammar self-encoding (address 6,734,591 — T_ZFC is far from here)
@@ -860,7 +860,7 @@ GRAMMAR_TUPLE = {
     "⊙":   "⊙",
     "⊥":     "𐑫",
     "⊞":     "𐑳",
-    "◻": "𐑭",
+    "⊡": "𐑭",
 }
 
 # ZFC self-encoding (should have d_rt ≈ 0)
@@ -878,7 +878,7 @@ ZFC_TUPLE = {
     "⊙":   "𐑢",
     "⊥":     "𐑓",
     "⊞":     "𐑙",
-    "◻": "𐑷",
+    "⊡": "𐑷",
 }
 
 

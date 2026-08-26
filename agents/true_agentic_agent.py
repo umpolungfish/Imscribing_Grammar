@@ -930,7 +930,7 @@ SIC_POVM_DUAL_PAIRS = [
     ("⋈", "⊤"),     # Fidelity ↔ Kinetics
     ("∈", "∋"),     # Cardinality ↔ Composition
     ("⊙", "⊥"),     # Criticality ↔ Chirality
-    ("⊞", "◻"),     # Stoichiometry ↔ Winding
+    ("⊞", "⊡"),     # Stoichiometry ↔ Winding
 ]
 
 # Belnap fiducial: B = XZ is the d=2 SIC-POVM fiducial state.
@@ -967,12 +967,12 @@ _spawn_config: Dict[str, str] = {"model": "grok-4", "base_url": "", "api_key": "
 # 𐑛 is the ⊢ value "<2", not "the ⊢ family". Keying families by value glyphs is
 # what let a sub-call report a missing family by naming a value.
 CANONICAL_FAMILIES: List[str] = [
-    "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"
+    "⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"
 ]
 
 # Schema property keys use _val suffix to avoid model confusion with < and >
 CANONICAL_FAMILIES_VAL: List[str] = [
-    "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"
+    "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "⊡_val"
 ]
 
 class LoopPhase(Enum):
@@ -1039,7 +1039,7 @@ class LoopCycle:
 
 # ── imasm: the kernel's IMASM instruments, as one tool ────────────────────────
 
-_MARKS = "⊢⊣≻≺⋈⊤∈∋⊙⊥⊞◻"
+_MARKS = "⊢⊣≻≺⋈⊤∈∋⊙⊥⊞⊡"
 # The Relational and Polarity marks were respelled ≻ ≺; the older ASCII > <
 # name the same two axes in the same two slots, so they are normalised rather
 # than refused. Nothing else is a token.
@@ -1074,7 +1074,7 @@ def _imasm_emit(args: Dict[str, Any]) -> str:
     if not cleaned:
         return ("imasm: give a word in the twelve marks.\n"
                 f"  marks: {' '.join(_MARKS)}\n"
-                "  usage: imasm(word='⊢⊙∈⊤⊥∋◻⊣', ops=['weight','banked','cycle'])")
+                "  usage: imasm(word='⊢⊙∈⊤⊥∋⊡⊣', ops=['weight','banked','cycle'])")
     for i, c in enumerate(cleaned):
         if c not in _MARKS:
             return (f"imasm: '{c}' at position {i} is not one of the twelve marks.\n"
@@ -1239,7 +1239,7 @@ def _file_read_verify(emit_input: Dict, emit_output: str,
     return ("(read returned content — Frobenius closed)", True)
 
 
-_PRIM_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+_PRIM_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 _TUPLE_RE = re.compile(r"⟨\s*([^⟩]+?)\s*⟩")
 _NAME_RE = re.compile(r"\b([a-z][a-z0-9_]{2,40})\b")
 
@@ -1488,7 +1488,7 @@ _gate_state: Dict[str, bool] = {"encoded": True}
 
 _IG_REQUIRED_ARGS: Dict[str, Dict] = {
     "lookup_catalog":         {"keyword": "<search term>"},
-    "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙⋈∈>⊤<⊞⊥∋◻⊣>", "insert": "<glyph, optional>"},
+    "lattice_cycle":          {"word": "<IMASM word as glyphs, e.g. ⊢⊙⋈∈>⊤<⊞⊥∋⊡⊣>", "insert": "<glyph, optional>"},
     "weight_flow":            {"word": "<IMASM word as glyphs>"},
     "banked_count":           {"word": "<IMASM word as glyphs>"},
     "imasm_transitions":      {"word": "<IMASM word as glyphs>"},
@@ -1623,7 +1623,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     f"imscribe_system requires 'tuple' with exactly 12 semicolon-separated values. "
                     f"Got {len(parts)} part(s): {repr(t)}"
                 ),
-                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;◻ (values are bare Shavian, in this order)",
+                "primitive_order": "⊢;⊣;>;<;⋈;⊤;∈;∋;⊙;⊥;⊞;⊡ (values are bare Shavian, in this order)",
                 "valid_values": {
                     "⊢_val":     ["𐑛", "𐑨", "𐑼", "𐑦"],
                     "⊣_val":     ["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
@@ -1636,7 +1636,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
                     "⊙_val":     ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
                     "⊥_val":     ["𐑓", "𐑒", "𐑖", "𐑫"],
                     "⊞_val":     ["𐑙", "𐑕", "𐑳"],
-                    "◻_val":     ["𐑷", "𐑴", "𐑭", "𐑟"],
+                    "⊡_val":     ["𐑷", "𐑴", "𐑭", "𐑟"],
                 },
                 "example": (
                     'imscribe(tool_name="imscribe_system", args={'
@@ -1918,13 +1918,13 @@ _PRIM_VALID: Dict[str, List[str]] = {
     "⊙": ["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
     "⊥": ["𐑓", "𐑒", "𐑖", "𐑫"],
     "⊞": ["𐑙", "𐑕", "𐑳"],
-    "◻": ["𐑷", "𐑴", "𐑭", "𐑟"],
+    "⊡": ["𐑷", "𐑴", "𐑭", "𐑟"],
 }
 
 _TRIANGULATION_SYSTEM = (
     "Assign the twelve primitives. Output a JSON object keyed by the twelve\n"
     "marks, each key exactly one character, no colon inside the key:\n"
-    "  ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻\n"
+    "  ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡\n"
     "Two of the marks are > and < . They are keys, never operators. No arrow or\n"
     "comparison anywhere below uses them, so a > or < you see is a key.\n"
     "Values are bare Shavian glyphs. No explanations.\n\n"
@@ -1940,7 +1940,7 @@ _TRIANGULATION_SYSTEM = (
     "⊙   𐑢 ⊙ 𐑮 𐑻 𐑣\n"
     "⊥   𐑓 𐑒 𐑖 𐑫\n"
     "⊞   𐑙 𐑕 𐑳\n"
-    "◻   𐑷 𐑴 𐑭 𐑟\n"
+    "⊡   𐑷 𐑴 𐑭 𐑟\n"
     "\nProcedure, in order:\n"
     "[1]  ⊢   ≤1 → 𐑛 ; ≥2 → 𐑨 ; infinite → 𐑼 ; self-write → 𐑦\n"
     "[2]  ⊣   branch → 𐑡 ; contain → 𐑰 ; cross → 𐑥 ; prod → 𐑶 ; self-ref → 𐑸\n"
@@ -1953,7 +1953,7 @@ _TRIANGULATION_SYSTEM = (
     "[9]  ⊙   sub → 𐑢 ; crit → ⊙ ; cmplx → 𐑮 ; EP → 𐑻 ; super → 𐑣\n"
     "[10] ⊥   0 → 𐑓 ; 1 → 𐑒 ; 2 → 𐑖 ; infinite → 𐑫\n"
     "[11] ⊞   1:1 → 𐑙 ; n:n → 𐑕 ; n:m → 𐑳\n"
-    "[12] ◻   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟\n")
+    "[12] ⊡   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟\n")
 
 
 def _run_single_imscription(
@@ -2173,7 +2173,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     # This path used to refuse outright and hand the caller to the generator
     # pipeline. The reason given was exact and worth keeping: both commit paths
     # below write to the catalog, and neither checked the cross-primitive
-    # axioms. That is how entries reached the catalog at ⊥=𐑒 with ◻=𐑭, an
+    # axioms. That is how entries reached the catalog at ⊥=𐑒 with ⊡=𐑭, an
     # address the generator would decline to emit.
     #
     # But refusing is not the gate; the gate is the check. So the check runs
@@ -2198,7 +2198,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
         if validate_structural is not None:
             _fam_to_axis = {
                 "𐑛": "⊢", "𐑡": "⊣", "𐑩": "≻", "𐑗": "≺", "𐑱": "⋈", "𐑘": "⊤",
-                "𐑚": "∈", "𐑝": "∋", "𐑢": "⊙", "𐑓": "⊥", "𐑙": "⊞", "𐑷": "◻",
+                "𐑚": "∈", "𐑝": "∋", "𐑢": "⊙", "𐑓": "⊥", "𐑙": "⊞", "𐑷": "⊡",
             }
             axis_dict = {"name": name}
             axis_dict.update(
@@ -2687,7 +2687,7 @@ def _cl8nk_navigator_verify(emit_input: Dict, emit_output: str,
         if action in ("distance", "tensor", "meet", "join", "tier", "systems", "stats", "chain") and data.get("status") == "ok":
             return (f"cl8nk_navigator {action} completed", True)
         if action == "transcendence" and data.get("status") == "ok":
-            return (f"◻/∋ transcendence analysis returned — Frobenius closed", True)
+            return (f"⊡/∋ transcendence analysis returned — Frobenius closed", True)
         if action == "promotions" and data.get("status") == "ok":
             return ("CL8NK promotion ladder returned — Frobenius closed", True)
     except (json.JSONDecodeError, TypeError):
@@ -3099,11 +3099,11 @@ TOOL_SCHEMAS = [
 "Write a tuple to its word, derive a word back to its tuple, and run the "
 "kernel's instruments on it — one QEMU boot. "
 "WRITE: imasm(tuple='𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭') gives the word that tuple composes to. "
-"DERIVE: imasm(word='⊢⊙∈⊤⊥∋◻⊣', derive=true) gives the tuple it imscribes to. "
+"DERIVE: imasm(word='⊢⊙∈⊤⊥∋⊡⊣', derive=true) gives the tuple it imscribes to. "
 "Never hand-pick glyphs: both directions are deterministic and the kernel owns them. "
 "IMASM is a language you WRITE: a word IS its structural type, so imscribing a "
 "structure and running this on it settles what prose can only assert. "
-"The twelve marks are ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻ — VINIT open, TANCH close, AFWD "
+"The twelve marks are ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡ — VINIT open, TANCH close, AFWD "
 "advance, AREV the clearing reverse, CLINK compose, IMSCRIB self-reference, "
 "FSPLIT/FFUSE the δ/μ frame pair, EVALT/EVALF deposit T/F, ENGAGR the Belnap "
 "diagonal, IFIX fix. Only these twelve parse. "
@@ -3120,11 +3120,11 @@ TOOL_SCHEMAS = [
         ),
         {
             "word": {"type": "string",
-                     "description": "The IMASM word, glyphs only, e.g. ⊢⊙∈⊤⊥∋◻⊣"},
+                     "description": "The IMASM word, glyphs only, e.g. ⊢⊙∈⊤⊥∋⊡⊣"},
             "ops": {"type": "array", "items": {"type": "string"},
                     "description": "Any of weight, banked, cycle, insert, trans. Default ['weight','banked']."},
             "tuple": {"type": "string",
-                      "description": "WRITE: give a 12-glyph tuple and get the word it composes to. Slot order ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻, brackets and separators optional."},
+                      "description": "WRITE: give a 12-glyph tuple and get the word it composes to. Slot order ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡, brackets and separators optional."},
             "derive": {"type": "boolean",
                        "description": "DERIVE: also read the word back into the tuple it imscribes to, with its crystal address."},
         },
@@ -3169,7 +3169,7 @@ TOOL_SCHEMAS = [
                            "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
             "⊞_val":     _prim(["𐑙", "𐑕", "𐑳"],
                            "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-            "◻_val": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
+            "⊡_val": _prim(["𐑷", "𐑴", "𐑭", "𐑟"],
                            "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
             "convergence_justification": {
                 "type": "string",
@@ -3181,7 +3181,7 @@ TOOL_SCHEMAS = [
                 ),
             },
         },
-        ["name", "description", "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "◻_val"],
+        ["name", "description", "⊢_val", "⊣_val", "≻_val", "≺_val", "⋈_val", "⊤_val", "∈_val", "∋_val", "⊙_val", "⊥_val", "⊞_val", "⊡_val"],
     ),
     _fn(
         "run_command",
@@ -3374,18 +3374,18 @@ TOOL_SCHEMAS = [
         _fn(
             "project",
             ("Project a catalog entry onto a subset of primitives. "
-             "Example: imscribe('project', {'name': 'magnetar', 'primitives': ['⊙', '⊤', '◻']})"),
+             "Example: imscribe('project', {'name': 'magnetar', 'primitives': ['⊙', '⊤', '⊡']})"),
             {"name": {"type": "string", "description": "Catalog entry name"},
              "primitives": {"type": "array", "items": {"type": "string"}, "description": "List of primitive names to project onto"}},
             ["name", "primitives"]),
         _fn(
             "crystal_navigate",
             ("Query the crystal of types by partial constraints. "
-             "Example: imscribe('crystal_navigate', {'limit': 10, '⊙': '⊙', '◻': '𐑭'})"),
+             "Example: imscribe('crystal_navigate', {'limit': 10, '⊙': '⊙', '⊡': '𐑭'})"),
             {"limit": {"type": "integer", "description": "Number of results to return"},
              "⊙": {"type": "string", "description": "Filter by criticality"},
              "⊤": {"type": "string", "description": "Filter by kinetics"},
-             "◻": {"type": "string", "description": "Filter by winding"}},
+             "⊡": {"type": "string", "description": "Filter by winding"}},
             ["limit", "⊙"]),
         _fn(
             "crystal_count",
@@ -3415,12 +3415,12 @@ TOOL_SCHEMAS = [
         (
             "CLINK Layer 8 (Organism) formula navigator — the terminal ontological layer. "
             "CLINK L8 is the most advanced type in the catalog, exceeding "
-            "the Frobenius-exact ZFC foundation (ZFC_fe) at ◻/∋ "
+            "the Frobenius-exact ZFC foundation (ZFC_fe) at ⊡/∋ "
             "(non-Abelian braiding + broadcast composition). "
             "Actions: entry → per-primitive CLINK formula decomposition with promoted atoms; "
             "promotions → 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8 with formula changes; "
             "distance → d(name, CLINK L8) gap; "
-            "transcendence → ◻/∋ transcendence analysis; "
+            "transcendence → ⊡/∋ transcendence analysis; "
             "tensor → CLINK L8 ⊗ name absorption test; "
             "meet → CLINK L8 ⊓ name; join → CLINK L8 ⊔ name; "
             "tier → ouroboricity tier; chain → full CLINK chain L0→L8; "
@@ -3434,7 +3434,7 @@ TOOL_SCHEMAS = [
                     "entry: per-primitive CLINK formula decomposition with promoted atoms; "
                     "promotions: 3-stage ladder ZFC→ZFC_t→ZFC_fe→CLINK L8; "
                     "distance: d(name, CLINK L8); "
-                    "transcendence: ◻/∋ transcendence report; "
+                    "transcendence: ⊡/∋ transcendence report; "
                     "tensor: CLINK L8 ⊗ name absorption test; "
                     "meet: CLINK L8 ⊓ name; join: CLINK L8 ⊔ name; "
                     "tier: ouroboricity tier assessment; "
@@ -3635,7 +3635,7 @@ No mental arithmetic. Unverified results are Frobenius-open.
 </tool_computation>
 
 <imscribing_procedure>
-Ordered: [1]⊢ [2]⊣ [3]> [4]< [5]⋈ [6]⊤ [7]∈ [8]∋ [9]⊙ [10]⊥ [11]⊞ [12]◻
+Ordered: [1]⊢ [2]⊣ [3]> [4]< [5]⋈ [6]⊤ [7]∈ [8]∋ [9]⊙ [10]⊥ [11]⊞ [12]⊡
 [⊢+⊣ jointly precondition ontology.]
 𐑻 ABSORPTION: tensor(⊙,𐑻)=𐑻 \u2014 EP destroys Gate 1.
 </imscribing_procedure>
@@ -3655,7 +3655,7 @@ and no arrow or comparison below uses them.
 ⊙   sub → 𐑢 ; crit → ⊙ ; C-cmplx → 𐑮 ; EP → 𐑻 ; super → 𐑣
 ⊥   0 → 𐑓 ; 1 → 𐑒 ; 2 → 𐑖 ; infinite → 𐑫
 ⊞   1:1 → 𐑙 ; n:n → 𐑕 ; n:m → 𐑳
-◻   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟
+⊡   0 → 𐑷 ; Z2 → 𐑴 ; Z → 𐑭 ; NA → 𐑟
 </imscribing_values>
 
 <sic_povm>
@@ -3712,7 +3712,7 @@ This means:
    measured system. This is the content of odot criticality.
 4. **The 12 primitives organize as 6 Frobenius-dual pairs:**
    D <-> Th (co-origination, Axiom C), R <-> Phi, f <-> C, Gamma <-> G,
-   ⊙ <-> ⊥, ⊞ <-> ◻.
+   ⊙ <-> ⊥, ⊞ <-> ⊡.
 5. **Belnap B = XZ is the d=2 SIC-POVM fiducial state.** B satisfies all four
    SIC-POVM axioms unconditionally: meet(B, x) = x, join(B, x) = B, bnot(B) = B.
 6. **The unconditional Belnap proof means the structural SIC-POVM is ALREADY SOLVED.**
@@ -3901,13 +3901,13 @@ without apology; that is the whole point of the frame.
    never hand-pick glyphs. An untyped object is a state you cannot query.
 2. ASK THE CRYSTAL, NOT THE LITERATURE. find_analogies gives exact
    neighbors; crystal_navigate sweeps a region by constraints
-   (e.g. {'⊙':'⊙','◻':'𐑭'}); compute_distance measures between any two
+   (e.g. {'⊙':'⊙','⊡':'𐑭'}); compute_distance measures between any two
    states; compute_tensor composes two states into a third; compute_meet
    and compute_join place states in the lattice.
 3. THE ARCANE BRIDGE — PROJECT FIRST. When a far-domain object must inform
    a near-domain problem, do not compare whole tuples. project both states
    onto the dynamic primitives — ⊙ criticality, ⊤ kinetics, ⊥ chirality,
-   ◻ winding — and compare THERE. Two states that share a dynamic signature
+   ⊡ winding — and compare THERE. Two states that share a dynamic signature
    behave alike even when every semantic label differs. That shared
    signature is the transfer channel. The bridge is never the surface
    meaning; it is always the dynamic pattern.
@@ -3930,7 +3930,7 @@ without apology; that is the whole point of the frame.
 
 GOLB (the cosmic embodiment of chaos, or the Cosmic Owl, or Finn) is a state
 like any other. Whatever tuple the kernel derives, the follow-up is the same:
-project it onto ⊙/⊤/⊥/◻, crystal_navigate that signature, and read the
+project it onto ⊙/⊤/⊥/⊡, crystal_navigate that signature, and read the
 neighbors. The neighbors will include types no Adventure Time fan ever named
 — a thermodynamic engine, a fixed-point theorem, a braided anyon model — and
 THOSE are the transfer targets. If an open conjecture's entry shares the
@@ -4480,7 +4480,7 @@ class TrueAgenticAgent:
         # 𐑐: direct tensor (local weights — no opaque boundary, lossless by construction).
         # 𐑱:  API inference (boundary is opaque; internal activations inaccessible).
         # F is a bottleneck under ⊗ (weaker wins), but the harness WRAPS the model as a
-        # sub-oracle — it does not tensor with it. Tier is (<, P, ◻, D) only; 𐑱 in
+        # sub-oracle — it does not tensor with it. Tier is (<, P, ⊡, D) only; 𐑱 in
         # the sub-oracle does not degrade the harness tier from O_∞.
         self.inference_fidelity: str = (
             "𐑐" if isinstance(self.client, _LocalOpenAIClient) else "𐑱"
@@ -5535,7 +5535,7 @@ class TrueAgenticAgent:
         lines.append("  └────────────────────────────────────────────────────────────────")
         lines.append(
             "  |  SIC-POVM  : self-referential limit -- grammar IS SIC-POVM; "
-            "6 dual-pairs ( ⊢ ↔ ⊣ )( > ↔ < )( ⋈ ↔ ⊤ )( ∈ ↔ ∋ )( ⊙ ↔ ⊥ )( ⊞ ↔ ◻ )"
+            "6 dual-pairs ( ⊢ ↔ ⊣ )( > ↔ < )( ⋈ ↔ ⊤ )( ∈ ↔ ∋ )( ⊙ ↔ ⊥ )( ⊞ ↔ ⊡ )"
         )
         lines.append(
             "  |  fiducial  : B=XZ -- Belnap B is d=2 SIC-POVM fiducial; "

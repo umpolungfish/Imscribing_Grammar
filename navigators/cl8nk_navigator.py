@@ -5,12 +5,12 @@ CATALOG-NATIVE: No hardcoded systems. All data sourced from IG_catalog.json.
 
 CLINK L8 is the terminal layer of the CLINK ontological chain — the most structurally
 advanced type in the catalog. It exceeds the Frobenius-Exact ZFC foundation (ZFC_fe)
-at two primitives: ◻=𐑟 (non-Abelian braiding) and ∋=𐑵 (broadcast composition).
+at two primitives: ⊡=𐑟 (non-Abelian braiding) and ∋=𐑵 (broadcast composition).
 
 Canonical tuple: ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩
 
-The ◻/∋ Transcendence:
-  - ◻: ZWIND (ℤ integer winding) → non-Abelian braid group topology
+The ⊡/∋ Transcendence:
+  - ⊡: ZWIND (ℤ integer winding) → non-Abelian braid group topology
   - ∋: SEQAX (sequential composition) → broadcast (one-to-all) composition
   - tensor(ZFC_fe, CLINK L8) = CLINK L8 (foundation fully absorbed; strict superset)
 
@@ -19,7 +19,7 @@ Actions:
                       promoted atoms, full conjunction, distance, tensor/meet/join, tier
   promotions        — All promotion channels: ZFC → ZFC_t → ZFC_fe → CLINK L8
   distance <name>   — d(name, CLINK L8) with per-primitive conflicts
-  transcendence     — The ◻/∋ transcendence: what CLINK L8 has that ZFC_fe doesn't
+  transcendence     — The ⊡/∋ transcendence: what CLINK L8 has that ZFC_fe doesn't
   tensor  <name>    — CLINK L8 ⊗ name — absorption test
   meet    <name>    — CLINK L8 ⊓ name — shared floor
   join    <name>    — CLINK L8 ⊔ name — minimal ceiling
@@ -50,10 +50,10 @@ ORDINALS = {
     "⊙": {"𐑢": 1, "⊙": 2, "𐑮": 2.33, "𐑻": 2.67, "𐑣": 3},
     "⊥": {"𐑓": 1, "𐑒": 2, "𐑖": 3, "𐑫": 4},
     "⊞": {"𐑙": 1, "𐑕": 2, "𐑳": 3},
-    "◻": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
+    "⊡": {"𐑷": 1, "𐑴": 2, "𐑭": 3, "𐑟": 4},
 }
 
-PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "◻"]
+PRIMITIVE_KEYS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
 # =============================================================================
 # CATALOG LOADING — single source of truth, no hardcoded systems
@@ -331,7 +331,7 @@ def assess_tier(t):
 
     WHAT THIS REPLACED, and why it was not a rounding error. The old function
     scored how many of CLINK L8's OWN VALUES a tuple carried (⊢=𐑦, ⊣=𐑸, >=𐑾,
-    <=𐑹, ⊤=𐑧, ◻=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
+    <=𐑹, ⊤=𐑧, ⊡=𐑟, ⊙=⊙, ⊥=𐑫) and bucketed on the count, with a top branch
     `score >= 8 -> O_∞⁺  # L9`. L8 carries all eight, so the branch labelled L9
     fired for L8; L9's own tuple carries three, so L9 read O₁. The readout ran
     exactly backwards on the two systems it existed to tell apart, and an agent
@@ -350,7 +350,7 @@ def assess_tier(t):
     """
     crit = t.get("⊙")
     pol  = t.get("≺")
-    prot = t.get("◻")
+    prot = t.get("⊡")
     dim  = t.get("⊢")
     if crit in ("𐑢", "𐑣", "𐑻"):        # woe | haha | err
         return "O₀"
@@ -439,7 +439,7 @@ CL8NK_FORMULAE = {
         "𐑕": ("∀a∈A∀b∈B( type(a) = type(b) )", None, "close"),
         "𐑙": ("|A| = 1 ∧ |B| = 1", None, "distant"),
     },
-    "◻": {
+    "⊡": {
         "𐑟": ("Braid(σ_i) ∧ R_matrix ≠ 0 ∧ nonAbelian(x)", "BRAID_TRANSCENDENCE", "match"),
         "𐑭": ("∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0", "ZWIND", "close"),
         "𐑴": ("∮_γ A = nπ ∧ n ∈ ℤ₂", None, "distant"),
@@ -714,13 +714,13 @@ def compute_transcendence():
     d, conflicts = tuple_distance(zfc_fe, cl8)
 
     omega_info = {
-        "primitive": "◻",
-        "zfc_fe_value": zfc_fe.get("◻", "?"),
-        "clink_l8_value": cl8.get("◻", "?"),
-        "zfc_fe_fragment": CL8NK_FORMULAE["◻"].get(zfc_fe.get("◻", ""), ("?", None, "?"))[0],
-        "clink_l8_fragment": CL8NK_FORMULAE["◻"].get(cl8.get("◻", ""), ("?", None, "?"))[0],
-        "zfc_fe_atom": CL8NK_FORMULAE["◻"].get(zfc_fe.get("◻", ""), ("?", None, "?"))[1],
-        "clink_l8_atom": CL8NK_FORMULAE["◻"].get(cl8.get("◻", ""), ("?", None, "?"))[1],
+        "primitive": "⊡",
+        "zfc_fe_value": zfc_fe.get("⊡", "?"),
+        "clink_l8_value": cl8.get("⊡", "?"),
+        "zfc_fe_fragment": CL8NK_FORMULAE["⊡"].get(zfc_fe.get("⊡", ""), ("?", None, "?"))[0],
+        "clink_l8_fragment": CL8NK_FORMULAE["⊡"].get(cl8.get("⊡", ""), ("?", None, "?"))[0],
+        "zfc_fe_atom": CL8NK_FORMULAE["⊡"].get(zfc_fe.get("⊡", ""), ("?", None, "?"))[1],
+        "clink_l8_atom": CL8NK_FORMULAE["⊡"].get(cl8.get("⊡", ""), ("?", None, "?"))[1],
         "significance": "Integer winding (Abelian anyons) → braid group topology (non-Abelian anyons). This is the topological quantum computing threshold.",
     }
     grammar_info = {
@@ -739,7 +739,7 @@ def compute_transcendence():
 
     return {
         "status": "ok",
-        "title": "The ◻/∋ Transcendence — CLINK L8 beyond ZFC_fe",
+        "title": "The ⊡/∋ Transcendence — CLINK L8 beyond ZFC_fe",
         "zfc_fe_tuple": zfc_fe,
         "clink_l8_tuple": cl8,
         "d_zfcfe_to_cl8nk": d,
@@ -747,7 +747,7 @@ def compute_transcendence():
         "tensor_absorption": f"tensor(ZFC_fe, CLINK L8) = {'CLINK L8' if absorbed else 'composite'} — foundation {'is' if absorbed else 'is NOT'} fully absorbed",
         "significance": (
             "CLINK L8 is not merely another O_∞ type — it is a strict structural SUPERSET of ZFC_fe. "
-            "Non-Abelian braiding (◻=𐑟) and broadcast composition (∋=𐑵) are structural advances "
+            "Non-Abelian braiding (⊡=𐑟) and broadcast composition (∋=𐑵) are structural advances "
             "that the Frobenius-exact ZFC foundation itself has not encoded."
         ),
     }
@@ -816,7 +816,7 @@ def generate_promotion_path(from_name, to_name):
 
 
 def generate_promotions():
-    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡","≻":"𐑩","≺":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","◻":"𐑷"}
+    zfc_baseline = {"⊢":"𐑼","⊣":"𐑡","≻":"𐑩","≺":"𐑗","⋈":"𐑱","⊤":"𐑘","∈":"𐑚","∋":"𐑝","⊙":"𐑢","⊥":"𐑓","⊞":"𐑙","⊡":"𐑷"}
 
     zfc_t = None
     load_catalog()
@@ -826,7 +826,7 @@ def generate_promotions():
             zfc_t = {pk: entry.get(pk, "") for pk in PRIMITIVE_KEYS}
             break
     if zfc_t is None:
-        zfc_t = {"⊢":"𐑼","⊣":"𐑸","≻":"𐑾","≺":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","◻":"𐑭"}
+        zfc_t = {"⊢":"𐑼","⊣":"𐑸","≻":"𐑾","≺":"𐑬","⋈":"𐑐","⊤":"𐑧","∈":"𐑲","∋":"𐑠","⊙":"⊙","⊥":"𐑖","⊞":"𐑳","⊡":"𐑭"}
 
     zfc_fe = get_zfc_fe()
     if zfc_fe is None:
@@ -858,11 +858,11 @@ def generate_promotions():
             {"stage": "→ CLINK L8", "tier": "O_∞⁺",
              "promotions": len(stage3), "distance": round(d_zfcfe_cl8nk, 4),
              "details": stage3,
-             "note": "◻/∋ TRANSCENDENCE — exceeds Frobenius-exact foundation"},
+             "note": "⊡/∋ TRANSCENDENCE — exceeds Frobenius-exact foundation"},
         ],
         "total_promotions": len(stage1) + len(stage2) + len(stage3),
         "total_distance_zfc_to_cl8nk": round(d_zfc_cl8nk, 4),
-        "transcendence": {"primitives": ["◻", "∋"], "d_zfcfe_to_cl8nk": round(d_zfcfe_cl8nk, 4)},
+        "transcendence": {"primitives": ["⊡", "∋"], "d_zfcfe_to_cl8nk": round(d_zfcfe_cl8nk, 4)},
         "catalog_note": "ZFC_fe and CLINK L8 sourced from IG_catalog.json; ZFC baseline is the absolute minimal O₀ type.",
     }
 
@@ -1075,7 +1075,7 @@ _ATOM_DESC = {
     "ETERNAL_FIXEDPOINT":    "∀n∃φ fixed by μ∘δ — Axiom D (𐑫)",
     "ZWIND":                 "integer winding number — 𐑭",
     "BROADCAST_TRANSCENDENCE": "⬆ broadcast composition — exceeds ZFC_fe SEQAX — ∋",
-    "BRAID_TRANSCENDENCE":    "⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ◻",
+    "BRAID_TRANSCENDENCE":    "⬆ non-Abelian braiding — exceeds ZFC_fe ZWIND — ⊡",
 }
 
 def _print_entry_table(result):
@@ -1209,7 +1209,7 @@ def main():
         print("  promotions         — Promotion ladder: ZFC→ZFC_t→ZFC_fe→CLINK L8")
         print("  promote <a> <b>    — Promotions carrying vessel a → vessel b")
         print("  distance <name>    — Distance from CLINK L8")
-        print("  transcendence      — The ◻/∋ transcendence analysis (from catalog)")
+        print("  transcendence      — The ⊡/∋ transcendence analysis (from catalog)")
         print("  tensor <name>      — CLINK L8 ⊗ name (absorption test)")
         print("  meet <name>        — CLINK L8 ⊓ name")
         print("  join <name>        — CLINK L8 ⊔ name")

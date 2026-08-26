@@ -12,7 +12,7 @@ Edge types and weights:
   enzyme bridge          weight 4.0   (S-P → Fe bridge)
   icosahedron edges      weight 2.5   (primitive adjacency from crystal structure)
   same period            weight 0.3   (weak ∈-ring pull)
-  same block             weight 0.5   (◻-family pull)
+  same block             weight 0.5   (⊡-family pull)
 
 Layout: Kamada-Kawai (minimises graph-theoretic stress).
 Primitive nodes seeded at icosahedron projections; elements seeded at their
@@ -86,7 +86,7 @@ def build_graph():
         for i in range(len(syms_s) - 1):
             G.add_edge(syms_s[i], syms_s[i+1], weight=0.3, etype='period')
 
-    # Same-block cohesion (◻ family)
+    # Same-block cohesion (⊡ family)
     by_block = defaultdict(list)
     for sym, (Z, per, col, blk) in ELEMENTS.items():
         by_block[blk].append(sym)
@@ -174,7 +174,7 @@ def generate_tex(pos):
     # ── Primitive lines from origin ───────────────────────────────────────────
     for prim in PRIM_VERT:
         pp = pos[f'P_{prim}']
-        empty = prim in ('◻','≻','∈','⋈')
+        empty = prim in ('⊡','≻','∈','⋈')
         col = 'black!8' if empty else 'black!14'
         L.append(f'\\draw[{col},line width=0.35pt] (0,0) -- ({pp[0]:.3f}cm,{pp[1]:.3f}cm);\n')
 
@@ -224,7 +224,7 @@ def generate_tex(pos):
     # ── Primitive anchor nodes + labels ───────────────────────────────────────
     for prim, vi in PRIM_VERT.items():
         pp   = pos[f'P_{prim}']
-        empty = prim in ('◻','≻','∈','⋈')
+        empty = prim in ('⊡','≻','∈','⋈')
         col  = 'black!20' if not empty else 'black!10'
         L.append(f'\\node[circle,fill={col},minimum size=0.15cm,inner sep=0pt]'
                  f' at ({pp[0]:.3f}cm,{pp[1]:.3f}cm) {{}};\n')

@@ -6,7 +6,7 @@
 
 ## 12 Primitives & Shavian Value Sets
 
-Tuple order: $\langle$\heb{⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻}$\rangle$. Values: ordinal $1 \to n$. **Bold name = absorbing element** (\heb{⊙} absorbs $\wedge\vee\otimes$; 𐑳 absorbs $\otimes$).
+Tuple order: $\langle$\heb{⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡}$\rangle$. Values: ordinal $1 \to n$. **Bold name = absorbing element** (\heb{⊙} absorbs $\wedge\vee\otimes$; 𐑳 absorbs $\otimes$).
 
 | Glyph | Name | Values |
 |---|---|---|
@@ -21,9 +21,9 @@ Tuple order: $\langle$\heb{⊢ ⊣ > < ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ◻}$\rangle$
 | \heb{⊙} | **Criticality** | 𐑢 ⊙ 𐑮 𐑻 𐑣 |
 | \heb{⊥} | Chirality | 𐑓 𐑒 𐑖 𐑫 |
 | \heb{⊞} | **Stoichiometry** | 𐑙 𐑕 **𐑳** |
-| \heb{◻} | Winding | 𐑷 𐑴 𐑭 𐑟 |
+| \heb{⊡} | Winding | 𐑷 𐑴 𐑭 𐑟 |
 
-Crystal families — 3-val: \heb{⋈ ∈ ⊞} — 4-val: \heb{⊢ > ∋ ⊥ ◻} — 5-val: \heb{⊣ < ⊤ ⊙}
+Crystal families — 3-val: \heb{⋈ ∈ ⊞} — 4-val: \heb{⊢ > ∋ ⊥ ⊡} — 5-val: \heb{⊣ < ⊤ ⊙}
 
 ---
 
@@ -42,7 +42,7 @@ Crystal families — 3-val: \heb{⋈ ∈ ⊞} — 4-val: \heb{⊢ > ∋ ⊥ ◻}
 | \heb{⊙} | 𐑢 sub-critical · ⊙ critical/self-modeling · 𐑮 complex-plane-crit · 𐑻 exceptional-pt · 𐑣 supercritical |
 | \heb{⊥} | 𐑓 $n=0$ · 𐑒 $n=1$ · 𐑖 $n=2$ · 𐑫 $n=\infty$ |
 | \heb{⊞} | 𐑙 1:1 · 𐑕 $n$:$n$ identical · 𐑳 $n$:$m$ heterogeneous |
-| \heb{◻} | 𐑷 trivial · 𐑴 $\mathbb{Z}_2$ · 𐑭 integer-winding · 𐑟 non-Abelian-braiding |
+| \heb{⊡} | 𐑷 trivial · 𐑴 $\mathbb{Z}_2$ · 𐑭 integer-winding · 𐑟 non-Abelian-braiding |
 
 ---
 
@@ -142,7 +142,7 @@ Groups: L = Logical; F = Frobenius ($\delta$/$\mu$); B = Belnap; Li = Linear. $1
 | | Axiom | Meaning |
 |---|---|---|
 | A | \heb{⊥}$_\infty \Rightarrow$ \heb{⊤}$_\infty$ | $\infty$-chirality forces max kinetics |
-| B | \heb{◻}$\geq 1 \Rightarrow$ \heb{⊥}$\geq H_2$ | winding requires chirality; $H_2$ = min for $\mu\circ\delta=\mathrm{id}$ |
+| B | \heb{⊡}$\geq 1 \Rightarrow$ \heb{⊥}$\geq H_2$ | winding requires chirality; $H_2$ = min for $\mu\circ\delta=\mathrm{id}$ |
 | C | \heb{⊢}$_\omega \Leftrightarrow$ \heb{⊣}$_O$ | max-dim $\Leftrightarrow$ null topology |
 
 ---
@@ -161,12 +161,12 @@ Groups: L = Logical; F = Frobenius ($\delta$/$\mu$); B = Belnap; Li = Linear. $1
 
 ## CL8NK / Magnum Opus
 
-CL8NK transcends $\mathrm{ZFC}_\mathrm{fe}$ at \heb{◻} (𐑭$\to$𐑟) and \heb{∋} (𐑠$\to$𐑵).
+CL8NK transcends $\mathrm{ZFC}_\mathrm{fe}$ at \heb{⊡} (𐑭$\to$𐑟) and \heb{∋} (𐑠$\to$𐑵).
 B-state is the CL8NK ground state. 12 stages $\leftrightarrow$ 12 primitives.
-Gates: \heb{<} Albedo $\cdot$ \heb{⊙} Rubedo $\cdot$ \heb{◻} Nigredo.
-$T = \lim($\heb{<}, \heb{⋈}, \heb{⊤}, \heb{⊥}, \heb{◻}$)$.
+Gates: \heb{<} Albedo $\cdot$ \heb{⊙} Rubedo $\cdot$ \heb{⊡} Nigredo.
+$T = \lim($\heb{<}, \heb{⋈}, \heb{⊤}, \heb{⊥}, \heb{⊡}$)$.
 
-CL8NK tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑵 ⊙ 𐑫 𐑳 𐑟$\rangle$ — $\mathrm{ZFC}_\mathrm{fe}$ tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑫 𐑳 𐑭$\rangle$. Transcendence: \heb{◻}: 𐑭$\to$𐑟 (integer$\to$non-Abelian); \heb{∋}: 𐑠$\to$𐑵 (sequential$\to$broadcast).
+CL8NK tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑵 ⊙ 𐑫 𐑳 𐑟$\rangle$ — $\mathrm{ZFC}_\mathrm{fe}$ tuple: $\langle$𐑦 𐑸 𐑾 𐑹 𐑐 𐑧 𐑲 𐑠 ⊙ 𐑫 𐑳 𐑭$\rangle$. Transcendence: \heb{⊡}: 𐑭$\to$𐑟 (integer$\to$non-Abelian); \heb{∋}: 𐑠$\to$𐑵 (sequential$\to$broadcast).
 
 ---
 

@@ -13,18 +13,18 @@ The module computes:
   4. 2-D MDS projection (metric multidimensional scaling)
   5. Annotated visual output:
        - Dendrogram: branch height = tuple distance
-       - Phase map (MDS 2-D scatter): ◻ color, Factor-8 marker, K_teshlig ring
+       - Phase map (MDS 2-D scatter): ⊡ color, Factor-8 marker, K_teshlig ring
 
 Interpretation of features:
   - Tall dendrogram branches → large structural discontinuity → phase boundary candidate
   - Factor-8 markers (★) → quantum criticality fingerprint (TFI/heavy-fermion)
   - K_teshlig→K_lambda universal cost (+2.303 nats) appears as parallel trajectory in MDS
-  - ◻ color encodes topological class:
-      grey   = TRIVIAL (◻₀)
+  - ⊡ color encodes topological class:
+      grey   = TRIVIAL (⊡₀)
       blue   = Z_CLASS (𐑭)
       green  = Z2_CLASS (𐑴)
       red    = NON_ABELIAN (𐑟)
-      orange = CHERN (◻_Ch)
+      orange = CHERN (⊡_Ch)
 
 CLI:
   imscribe phase-diagram [NAME [NAME ...]] [--save PATH] [--text-only] [--format text|json]
@@ -66,10 +66,10 @@ _OMEGA_COLOR = {
 
 _OMEGA_LABEL = {
     None:                  "unset",
-    TopoIndex.awe:     "◻₀ TRIVIAL",
+    TopoIndex.awe:     "⊡₀ TRIVIAL",
     TopoIndex.ah:     "𐑭 ℤ-class",
     TopoIndex.oak:    "𐑴 ℤ₂-class",
-    TopoIndex.ah:       "◻_Ch CHERN",
+    TopoIndex.ah:       "⊡_Ch CHERN",
     TopoIndex.zoo: "𐑟 NON-ABELIAN",
 }
 
@@ -172,8 +172,8 @@ class PhaseDiagram:
             print(f"  ○ {name}")
         print()
 
-        # ◻ classes
-        print("── Topological Class (◻) ──")
+        # ⊡ classes
+        print("── Topological Class (⊡) ──")
         from collections import defaultdict
         by_omega: Dict[Any, List[str]] = defaultdict(list)
         for name, omega in zip(self.imscription_names, self.omega_values):
@@ -219,7 +219,7 @@ class PhaseDiagram:
         """
         Render two-panel phase diagram:
           Left:  Ward dendrogram (branch height = tuple distance)
-          Right: MDS 2-D phase map (◻ color, Factor-8 star, K_teshlig ring)
+          Right: MDS 2-D phase map (⊡ color, Factor-8 star, K_teshlig ring)
         """
         try:
             import matplotlib.pyplot as plt
@@ -342,7 +342,7 @@ class PhaseDiagram:
         _AXIS_LABELS = {
             "diagonal": ("MDS axis 1  (weighted Euclidean)", "MDS axis 2  (weighted Euclidean)"),
             "mahalanobis": (
-                "MDS axis 1  [e₁: topological-criticality  ◻ vs G+<]",
+                "MDS axis 1  [e₁: topological-criticality  ⊡ vs G+<]",
                 "MDS axis 2  [e₂: criticality  < vs G+D]",
             ),
         }
@@ -356,7 +356,7 @@ class PhaseDiagram:
 
         # Legend
         legend_elements = [
-            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.awe],     label="◻₀  TRIVIAL"),
+            mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.awe],     label="⊡₀  TRIVIAL"),
             mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.ah],     label="𐑭  ℤ-class"),
             mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.oak],    label="𐑴 ℤ₂-class"),
             mpatches.Patch(color=_OMEGA_COLOR[TopoIndex.zoo], label="𐑟 non-Abelian"),
@@ -399,7 +399,7 @@ def _primitive_diff_labels(a: Imscription, b: Imscription) -> List[str]:
         ("G",  a.granularity,        b.granularity),
         ("∈",  a.interaction_grammar,b.interaction_grammar),
         ("≺",  a.criticality_phase,  b.criticality_phase),
-        ("◻",  a.topo_index,         b.topo_index),
+        ("⊡",  a.topo_index,         b.topo_index),
     ]
     for label, va, vb in checks:
         if va != vb:

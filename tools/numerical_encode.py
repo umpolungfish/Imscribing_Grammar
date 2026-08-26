@@ -9,8 +9,8 @@ from collections import OrderedDict
 from typing import Dict, List, Tuple, Optional, Union
 
 # ── Primitive → Glyph → Ordinal (canonical IG ordering) ──────────
-PRIMITIVES = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '◻']
-PRIM_CARDINALITIES = {'⊢': 4, '⊣': 5, '≻': 4, '≺': 5, '⋈': 3, '⊤': 5, '∈': 3, '∋': 4, '⊙': 5, '⊥': 4, '⊞': 3, '◻': 4}
+PRIMITIVES = ['⊢', '⊣', '≻', '≺', '⋈', '⊤', '∈', '∋', '⊙', '⊥', '⊞', '⊡']
+PRIM_CARDINALITIES = {'⊢': 4, '⊣': 5, '≻': 4, '≺': 5, '⋈': 3, '⊤': 5, '∈': 3, '∋': 4, '⊙': 5, '⊥': 4, '⊞': 3, '⊡': 4}
 
 # Glyph → ordinal (1-based)
 GLYPH_ORDINALS: Dict[str, Dict[str, int]] = {
@@ -25,7 +25,7 @@ GLYPH_ORDINALS: Dict[str, Dict[str, int]] = {
     '⊙': {'𐑢': 1, '⊙': 2, '𐑮': 3, '𐑻': 4, '𐑣': 5},
     '⊥': {'𐑓': 1, '𐑒': 2, '𐑖': 3, '𐑫': 4},
     '⊞': {'𐑙': 1, '𐑕': 2, '𐑳': 3},
-    '◻': {'𐑷': 1, '𐑴': 2, '𐑭': 3, '𐑟': 4},
+    '⊡': {'𐑷': 1, '𐑴': 2, '𐑭': 3, '𐑟': 4},
 }
 
 ORDINAL_GLYPHS = {p: {v: k for k, v in m.items()} for p, m in GLYPH_ORDINALS.items()}
@@ -243,7 +243,7 @@ if __name__ == '__main__':
     print(f"  IG→Shavian transcoding entries: {len(IG_TO_SHAVIAN)}")
     # Smoke test
     test = {'⊢': '𐑦', '⊣': '𐑸', '≻': '𐑾', '≺': '𐑹', '⋈': '𐑐', '⊤': '𐑧',
-            '∈': '𐑲', '∋': '𐑠', '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭'}
+            '∈': '𐑲', '∋': '𐑠', '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '⊡': '𐑭'}
     v = encode_ordinal(test)
     print(f"  Smoke test (RH ordinal): {v}")
     v2 = encode_zero_centered(test)

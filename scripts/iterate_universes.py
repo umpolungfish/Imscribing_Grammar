@@ -24,7 +24,7 @@ PRIMITIVES_MAX = {
     "⊙": 3.0,  # 𐑣 = super-critical (ord 3)
     "⊥": 4.0,  # 𐑫 = eternal chirality (ord 4)
     "⊞": 3.0,  # 𐑳 = many heterogeneous (ord 3)
-    "◻": 4.0,  # 𐑟 = non-Abelian (ord 4)
+    "⊡": 4.0,  # 𐑟 = non-Abelian (ord 4)
 }
 
 PRIMITIVES_HALF = {p: max(1.0, v/2) for p, v in PRIMITIVES_MAX.items()}
@@ -35,17 +35,17 @@ def build_universes():
     rulesets = []
 
     # ═══════════════════════════════════════════════════════════
-    # Batch A: Each primitive as sole G1 at max ordinal (G2=⊙, G3=◻ canonical)
+    # Batch A: Each primitive as sole G1 at max ordinal (G2=⊙, G3=⊡ canonical)
     # ═══════════════════════════════════════════════════════════
     for prim, max_ord in PRIMITIVES_MAX.items():
-        # Skip ⊙ and ◻ — already well-covered
+        # Skip ⊙ and ⊡ — already well-covered
         rulesets.append(Ruleset(
             name=f"g1_{prim}_max",
-            description=f"G1={prim}≥ord{max_ord} as sole primary gate. G2=⊙≥ord2.0, G3=◻≥ord3.0. "
+            description=f"G1={prim}≥ord{max_ord} as sole primary gate. G2=⊙≥ord2.0, G3=⊡≥ord3.0. "
                         f"Canonical T. Universe where {prim} gates first.",
             g1=GateSpec(prim, max_ord),
             g2=GateSpec("⊙", 2.0),
-            g3=GateSpec("◻", 3.0),
+            g3=GateSpec("⊡", 3.0),
             gate_ordering=True,
         ))
 
@@ -55,11 +55,11 @@ def build_universes():
     for prim, half_ord in PRIMITIVES_HALF.items():
         rulesets.append(Ruleset(
             name=f"g1_{prim}_half",
-            description=f"G1={prim}≥ord{half_ord} (half-max, looser gate). G2=⊙≥ord1.0, G3=◻≥ord3.0. "
+            description=f"G1={prim}≥ord{half_ord} (half-max, looser gate). G2=⊙≥ord1.0, G3=⊡≥ord3.0. "
                         f"Universes with relaxed first-gate thresholds.",
             g1=GateSpec(prim, half_ord),
             g2=GateSpec("⊙", 1.0),
-            g3=GateSpec("◻", 3.0),
+            g3=GateSpec("⊡", 3.0),
             gate_ordering=True,
         ))
 
@@ -86,28 +86,28 @@ def build_universes():
         ("⊣", "⊢", "topology_dimensionality", "⊣≥ord5.0 → ⊢≥ord4.0: topology then dimension"),
         ("∈", "∋", "scope_grammar", "∈≥ord3.0 → ∋≥ord4.0: universal scope then broadcast"),
         ("≺", "⋈", "parity_fidelity", "<≥ord5.0 → ⋈≥ord3.0: Frobenius parity then quantum fidelity"),
-        ("◻", "⊥", "winding_chirality", "◻≥ord4.0 → ⊥≥ord4.0: non-Abelian winding then eternal chirality"),
+        ("⊡", "⊥", "winding_chirality", "⊡≥ord4.0 → ⊥≥ord4.0: non-Abelian winding then eternal chirality"),
     ]
     for g1_prim, g2_prim, name, desc in combos:
         rulesets.append(Ruleset(
             name=name,
-            description=f"G1={g1_prim}≥max, G2={g2_prim}≥max, G3=◻≥ord3.0. {desc}",
+            description=f"G1={g1_prim}≥max, G2={g2_prim}≥max, G3=⊡≥ord3.0. {desc}",
             g1=GateSpec(g1_prim, PRIMITIVES_MAX[g1_prim]),
             g2=GateSpec(g2_prim, PRIMITIVES_MAX[g2_prim]),
-            g3=GateSpec("◻", 3.0),
+            g3=GateSpec("⊡", 3.0),
             gate_ordering=True,
         ))
 
     # ═══════════════════════════════════════════════════════════
     # Batch E: T-constitution variants — every subset of dynamics
     # ═══════════════════════════════════════════════════════════
-    dynamics = ["≺", "⋈", "⊤", "⊥", "◻"]
+    dynamics = ["≺", "⋈", "⊤", "⊥", "⊡"]
     structure = ["⊢", "⊣", "≻", "∈", "⊞"]
     
     # All dynamics only
     rulesets.append(Ruleset(
         name="t_all_dynamics",
-        description="T constituted by ALL 5 dynamic primitives (<,⋈,⊤,⊥,◻). Canonical gates. "
+        description="T constituted by ALL 5 dynamic primitives (<,⋈,⊤,⊥,⊡). Canonical gates. "
                     "Time requires the full dynamic quintet.",
         t_prims={p: _T_CANONICAL[p] for p in dynamics},
     ))
@@ -138,11 +138,11 @@ def build_universes():
     for prim, max_ord in PRIMITIVES_MAX.items():
         rulesets.append(Ruleset(
             name=f"parallel_{prim}",
-            description=f"G1={prim}≥max, G2=⊙≥2.0, G3=◻≥3.0 — NO ordering (parallel gates). "
+            description=f"G1={prim}≥max, G2=⊙≥2.0, G3=⊡≥3.0 — NO ordering (parallel gates). "
                         f"All three must be satisfied simultaneously, not sequentially.",
             g1=GateSpec(prim, max_ord),
             g2=GateSpec("⊙", 2.0),
-            g3=GateSpec("◻", 3.0),
+            g3=GateSpec("⊡", 3.0),
             gate_ordering=False,
         ))
 
@@ -152,11 +152,11 @@ def build_universes():
     for prim in PRIMITIVES_MAX:
         rulesets.append(Ruleset(
             name=f"g1_{prim}_min",
-            description=f"G1={prim}≥ord1.0 (minimal — almost all pass). G2=⊙≥ord1.0, G3=◻≥ord1.0. "
+            description=f"G1={prim}≥ord1.0 (minimal — almost all pass). G2=⊙≥ord1.0, G3=⊡≥ord1.0. "
                         f"Near-trivial gates reveal what the universe looks like with minimal filtering.",
             g1=GateSpec(prim, 1.0),
             g2=GateSpec("⊙", 1.0),
-            g3=GateSpec("◻", 1.0),
+            g3=GateSpec("⊡", 1.0),
             gate_ordering=True,
         ))
 

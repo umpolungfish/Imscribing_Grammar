@@ -9,7 +9,7 @@ using zfct_navigator.compose_formula + render_tokens.
 
 Per-element primitive derivation
 ─────────────────────────────────
-  Fixed (corpus-level):  ⊢, >, ⋈, ⊤, ∈, ⊙, ◻, < (whole-manuscript)
+  Fixed (corpus-level):  ⊢, >, ⋈, ⊤, ∈, ⊙, ⊡, < (whole-manuscript)
   Variable (element-level):
     ⊣  — dominant opcode cluster (ENGAGR→K; FSPLIT+FFUSE balanced→¨; IFIX→6)
     <  — FSPLIT:FFUSE balance (exact→}; near→˙; skewed→F; none→ɐ)
@@ -54,17 +54,17 @@ CORPUS_BASE: dict[str, dict] = {
     'voynich': {
         '⊢': '𐑦', '⊣': '𐑸', '≻': '𐑾',  '≺': '𐑹',
         '⋈': '⋈^ì', '⊤': '⊤^Ù', '∈': '𐑲',  '∋': '∋^Ş',
-        '⊙': '⊙', '⊥': '𐑫', '⊞': '𐑙',  '◻': '𐑭',
+        '⊙': '⊙', '⊥': '𐑫', '⊞': '𐑙',  '⊡': '𐑭',
     },
     'rohonc': {
         '⊢': '𐑨', '⊣': '𐑶', '≻': '𐑽', '≺': '𐑹',
         '⋈': '⋈^ì', '⊤': '⊤^@', '∈': '𐑲', '∋': '∋^ˌ',
-        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
+        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '⊡': '𐑭',
     },
     'linear_a': {
         '⊢': '𐑨', '⊣': '𐑶', '≻': '𐑽', '≺': '𐑹',
         '⋈': '⋈^ż', '⊤': '⊤^W', '∈': '𐑲', '∋': '∋^ˌ',
-        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '◻': '𐑭',
+        '⊙': '⊙', '⊥': '𐑖', '⊞': '𐑳', '⊡': '𐑭',
     },
 }
 
