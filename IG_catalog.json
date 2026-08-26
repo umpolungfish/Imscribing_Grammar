@@ -137427,5 +137427,37 @@
     "⊥": "𐑫",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "derived_non_commutative_motivic_cohomology_of_hyper_transfinite_p_adic_quantales_with_exotic",
+    "description": "Derived Non-Commutative Motivic Cohomology of Hyper-Transfinite p-adic Quantales with Exotic Differentiable Structures",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "universe_everything_thinking",
+    "description": "Cognitive framework where the universe and void are sequentially stripped away through forward/reverse evaluation morphisms, leaving only the act of thinking as the self-referential invariant — dialetheic closure of existence and non-existence held in paradoxical memory",
+    "⊢": "𐑛",
+    "⊣": "𐑶",
+    "≻": "𐑾",
+    "≺": "𐑹",
+    "⋈": "𐑐",
+    "⊤": "𐑘",
+    "∈": "𐑲",
+    "∋": "𐑠",
+    "⊙": "𐑻",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]

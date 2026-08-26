@@ -13493,6 +13493,12 @@
     "last_changed": "2026-08-18T22:13:32+00:00",
     "tuple_hash": "af5e03874333d8c8"
   },
+  "derived_non_commutative_motivic_cohomology_of_hyper_transfinite_p_adic_quantales_with_exotic": {
+    "changes": 0,
+    "first_seen": "2026-08-26T09:07:41+00:00",
+    "last_changed": "2026-08-26T09:07:41+00:00",
+    "tuple_hash": "dfda80f161e755f3"
+  },
   "derridas_paradox_of_the_gift": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
