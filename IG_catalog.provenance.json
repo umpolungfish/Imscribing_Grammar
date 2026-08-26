@@ -131,6 +131,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "39c75c9d00145eca"
   },
+  "103277867124729124385933159538790698367131075431782693005168079489520062500228029606289705507762": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:43:04+00:00",
+    "last_changed": "2026-08-26T15:43:04+00:00",
+    "tuple_hash": "f67e06cab7b5da31"
+  },
+  "116365475324646329921422570508870820372440971494229144567302554073545578444052010535769122259538": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "34402e32dde727d3"
+  },
   "11pthe": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -268,6 +280,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a787c39c406d00f0"
+  },
+  "350": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:05:51+00:00",
+    "last_changed": "2026-08-26T16:05:51+00:00",
+    "tuple_hash": "a8965b69478a941e"
+  },
+  "356": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:07:10+00:00",
+    "last_changed": "2026-08-26T16:07:10+00:00",
+    "tuple_hash": "a8965b69478a941e"
+  },
+  "388": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:06:31+00:00",
+    "last_changed": "2026-08-26T16:06:31+00:00",
+    "tuple_hash": "29d12b0791d26418"
   },
   "39p": {
     "changes": 0,
@@ -412,6 +442,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d2b2fab73e8f0688"
+  },
+  "950085221963742775794750800464740915472680378076910004941393459297726095484971632215725202760961": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:42:13+00:00",
+    "last_changed": "2026-08-26T15:42:13+00:00",
+    "tuple_hash": "cf36f0c07784f7f0"
+  },
+  "986178847898590983129048852220267610998672519044926840989156592084968162075067920052755345257667": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:41:20+00:00",
+    "last_changed": "2026-08-26T15:41:20+00:00",
+    "tuple_hash": "cf36f0c07784f7f0"
   },
   "9pwhat": {
     "changes": 0,
@@ -7204,6 +7246,12 @@
     "first_seen": "2026-08-11T10:39:15+00:00",
     "last_changed": "2026-08-11T10:39:15+00:00",
     "tuple_hash": "9b38c0d883a7e0f3"
+  },
+  "btc_oneshot": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "8a116697717ad279"
   },
   "bubble_collapse_singularity": {
     "changes": 0,
@@ -14891,6 +14939,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e54f05d564f40a8f"
   },
+  "eight": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:13:57+00:00",
+    "last_changed": "2026-08-26T16:13:57+00:00",
+    "tuple_hash": "b366d63ebea4ced8"
+  },
   "eight_join_de_inf_ax_higgs_grav_dm_omg_wow": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15118,6 +15172,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
+  },
+  "eleven": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:20:38+00:00",
+    "last_changed": "2026-08-26T16:20:38+00:00",
+    "tuple_hash": "c76cdf030966ed30"
   },
   "eleven_sefirot": {
     "changes": 0,
@@ -17717,6 +17777,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dbf78384f1a95cee"
   },
+  "five": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:11:52+00:00",
+    "last_changed": "2026-08-26T16:11:52+00:00",
+    "tuple_hash": "21f95f7c68f0565a"
+  },
   "five_constant_ring": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18100,6 +18166,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8a18db24de53614b"
+  },
+  "four": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:11:10+00:00",
+    "last_changed": "2026-08-26T16:11:10+00:00",
+    "tuple_hash": "d45f68e821f61eb2"
   },
   "four_cardinal_directions": {
     "changes": 0,
@@ -31757,6 +31829,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5021be80b1cf29c9"
   },
+  "nine": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:18:44+00:00",
+    "last_changed": "2026-08-26T16:18:44+00:00",
+    "tuple_hash": "d59aad4ac9eaa41e"
+  },
   "nine_sefirot": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -32459,6 +32537,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9d7540aeb86caed2"
   },
+  "obtaining_\u2208\u22a2\u22a5<\u22a1><\u229e\u2208\u2299\u22a3<\u22c8\u229e\u22a3<<>\u22a2\u220b\u229e\u22a2\u22a3<\u220b\u220b\u22a5\u2208<\u22a3\u229e<\u22a3\u22a1\u220b\u22c8\u22a3<\u22a4\u229e\u22a3\u22a3\u22a5\u2208\u220b\u22a4\u22a2\u22a3\u22a1<\u22a1>\u22c8\u22c8>\u220b\u2299\u22a3\u2299\u22a4\u2208\u22a3<\u22a2_from": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "1081dfbc4acebd47"
+  },
   "obtaining_\u2208\u22a2\u22a5<\u25fb><\u229e\u2208\u2299\u22a3<\u22c8\u229e\u22a3<<>\u22a2\u220b\u229e\u22a2\u22a3<\u220b\u220b\u22a5\u2208<\u22a3\u229e<\u22a3\u25fb\u220b\u22c8\u22a3<\u22a4\u229e\u22a3\u22a3\u22a5\u2208\u220b\u22a4\u22a2\u22a3\u25fb<\u25fb>\u22c8\u22c8>\u220b\u2299\u22a3\u2299\u22a4\u2208\u22a3<\u22a2_from": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
@@ -32860,6 +32944,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9a8627c6ea574558"
+  },
+  "one": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:09:08+00:00",
+    "last_changed": "2026-08-26T16:09:08+00:00",
+    "tuple_hash": "3e65ca30ba2dd951"
   },
   "one_way_speed": {
     "changes": 0,
@@ -41129,6 +41219,12 @@
     "last_changed": "2026-08-18T07:48:36+00:00",
     "tuple_hash": "d4fccdcdacb1e6aa"
   },
+  "seven": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:13:15+00:00",
+    "last_changed": "2026-08-26T16:13:15+00:00",
+    "tuple_hash": "21f95f7c68f0565a"
+  },
   "seven_forty_four_decomposition": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -42106,6 +42202,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a1d8828e76d31a56"
+  },
+  "six": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:12:33+00:00",
+    "last_changed": "2026-08-26T16:12:33+00:00",
+    "tuple_hash": "eea876739cba8c7f"
   },
   "six_coefficient_frobenius_algebra": {
     "changes": 0,
@@ -45197,6 +45299,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "432235a8360e1382"
   },
+  "ten": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:19:25+00:00",
+    "last_changed": "2026-08-26T16:19:25+00:00",
+    "tuple_hash": "21f95f7c68f0565a"
+  },
   "ten_sefirot": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46486,6 +46594,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8ea285bdd12a2bdb"
+  },
+  "three": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:10:28+00:00",
+    "last_changed": "2026-08-26T16:10:28+00:00",
+    "tuple_hash": "35f9141c4a8e03e9"
   },
   "three_approaches_join": {
     "changes": 0,
@@ -48047,6 +48161,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
   },
+  "twelve": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:21:18+00:00",
+    "last_changed": "2026-08-26T16:21:18+00:00",
+    "tuple_hash": "1a795f5ba5a99741"
+  },
   "twelve_keys_basil_valentine": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -48070,6 +48190,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd3e318577e17ed"
+  },
+  "two": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:09:48+00:00",
+    "last_changed": "2026-08-26T16:09:48+00:00",
+    "tuple_hash": "db259670fb3a8689"
   },
   "two_body_problem": {
     "changes": 0,
@@ -48652,6 +48778,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a71815e0520e1400"
+  },
+  "universe_everything_thinking": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "8a116697717ad279"
   },
   "unknot_0_1": {
     "changes": 0,
@@ -50891,6 +51023,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2cc3f9776ac2ae5b"
   },
+  "zero": {
+    "changes": 0,
+    "first_seen": "2026-08-26T16:21:55+00:00",
+    "last_changed": "2026-08-26T16:21:55+00:00",
+    "tuple_hash": "f45171f72053e9f8"
+  },
   "zero_object": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -51467,17 +51605,35 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "55931ffd830a2e3d"
   },
+  "\u2299\u2299\u2299\u2208\u2208\u2208\u22a4\u22a4\u22a4\u22a5\u22a5\u22a5\u220b\u220b\u220b\u22a1\u22a1\u22a1\u22a3\u22a3\u22a3": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "6807852341f11b07"
+  },
   "\u2299\u2299\u2299\u2208\u2208\u2208\u22a4\u22a4\u22a4\u22a5\u22a5\u22a5\u220b\u220b\u220b\u25fb\u25fb\u25fb\u22a3\u22a3\u22a3": {
     "changes": 0,
     "first_seen": "2026-08-17T04:22:30+00:00",
     "last_changed": "2026-08-17T04:22:30+00:00",
     "tuple_hash": "6807852341f11b07"
   },
+  "\u22a1_stability_proof_kernel*": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "747b4c1824609d8b"
+  },
   "\u22a2": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "57cbe64931f485a9"
+  },
+  "\u22a2\u2208\u22a4\u22a5\u220b\u22a1\u22a3\u2299\u2299\u2299": {
+    "changes": 0,
+    "first_seen": "2026-08-26T15:40:26+00:00",
+    "last_changed": "2026-08-26T15:40:26+00:00",
+    "tuple_hash": "4fc0df65f5ac21f9"
   },
   "\u22a2\u2208\u22a4\u22a5\u220b\u25fb\u22a3\u2299\u2299\u2299": {
     "changes": 0,
