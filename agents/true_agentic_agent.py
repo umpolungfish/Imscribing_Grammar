@@ -1056,13 +1056,14 @@ def _imasm_emit(args: Dict[str, Any]) -> str:
     Everything here is the kernel's own — weight, banked, cycle, insert, trans,
     the braid reading — so nothing can drift from what the kernel actually says.
     """
-    # write/derive come first: they are the two the rider has always named.
+    # write comes first: it is the one the rider has always named. derive is
+    # withheld — not useful yet — so every read goes through the ops below,
+    # via run_hosted_cmds.sh, same as it always has.
     tup = (args.get("tuple") or "").strip()
     if tup:
         return _imasm_kernel(f'"imasm write {tup}"')
     word = (args.get("word") or "").strip()
     ops = args.get("ops") or ["weight", "banked"]
-    derive = args.get("derive")
     if isinstance(ops, str):
         ops = [o.strip() for o in ops.replace(",", " ").split() if o.strip()]
 
@@ -1085,13 +1086,6 @@ def _imasm_emit(args: Dict[str, Any]) -> str:
         return f"imasm: unknown op(s) {bad}. Available: {sorted(known)}"
 
     cmds = " ".join(f'"{o} {cleaned}"' for o in ops)
-    if derive:
-        # Append derive command rather than replacing ops — both can coexist
-        # in a single QEMU boot. Previously, derive=True silently discarded
-        # all requested ops (weight, banked, cycle, etc.), forcing agents to
-        # either derive OR measure, but never both. The boot dominates;
-        # derive is free as an appended command.
-        cmds = f'{cmds} "imasm derive {cleaned}"' if cmds else f'"imasm derive {cleaned}"'
     return _imasm_kernel(cmds, args.get("timeout", 900))
 
 
@@ -3100,11 +3094,10 @@ TOOL_SCHEMAS = [
     _fn(
         "imasm",
         (
-"Write a tuple to its word, derive a word back to its tuple, and run the "
-"kernel's instruments on it — one QEMU boot. "
+"Write a tuple to its word and run the kernel's instruments on it — one QEMU boot. "
 "WRITE: imasm(tuple='𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭') gives the word that tuple composes to. "
-"DERIVE: imasm(word='⊢⊙∈⊤⊥∋⊡⊣', derive=true) gives the tuple it imscribes to. "
-"Never hand-pick glyphs: both directions are deterministic and the kernel owns them. "
+"Never hand-pick glyphs: writing is deterministic and the kernel owns it. "
+"derive is withheld for now — not useful yet — read a word with the ops below instead. "
 "IMASM is a language you WRITE: a word IS its structural type, so imscribing a "
 "structure and running this on it settles what prose can only assert. "
 "The twelve marks are ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡ — VINIT open, TANCH close, AFWD "
@@ -3129,8 +3122,6 @@ TOOL_SCHEMAS = [
                     "description": "Any of weight, banked, cycle, insert, trans. Default ['weight','banked']."},
             "tuple": {"type": "string",
                       "description": "WRITE: give a 12-glyph tuple and get the word it composes to. Slot order ⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡, brackets and separators optional."},
-            "derive": {"type": "boolean",
-                       "description": "DERIVE: also read the word back into the tuple it imscribes to, with its crystal address."},
         },
         [],
     ),
@@ -3743,9 +3734,11 @@ different question and will quietly substitute it for the one you were asked.
 - **Imscribe it.** An object that has not been imscribed has not been typed, and
   everything said about it afterwards is unanchored. `imscribe_system` commits
   it. Never hand-pick the twelve glyphs: `imasm write tuple=⟨…⟩` gives the word
-  a tuple composes to and `imasm derive word=…` reads a word back into its
-  types, both deterministic. A tuple you guessed is a tuple you will defend —
-  which is also why you imscribe the contents of a file and not its name.
+  a tuple composes to, deterministically. Read a word back with `imasm`'s ops
+  (weight, banked, cycle, insert, trans) through run_hosted_cmds.sh, not
+  derive — derive is withheld until it's useful. A tuple you guessed is a
+  tuple you will defend — which is also why you imscribe the contents of a
+  file and not its name.
 - **Ask the catalog before you ask the literature.** `lookup_catalog`,
   `find_analogies`, `compute_distance`, `compute_meet`, `compute_join`,
   `compute_tensor`. If a structure already sits in the crystal, its neighbours

@@ -1,7 +1,5 @@
-The compiler was still typing one field as nothing, the same bug the last fix here named but didn't fully close.
+Pulled imasm derive off every agent's roster. It isn't useful yet, and I don't want it offered until it is.
 
-That fix moved FIELD_TO_ORD from the retired Latin-letter alphabet to the twelve marks, eleven of twelve entries correctly. The twelfth, W (Winding/Protection), was set to "◻", a plain white square, not "⊡", the real mark space_search.primitives.ORDINALS is actually keyed by. Every lookup for that one field missed, fell through to ordinal zero, and ordinal zero had no glyph to reverse-map back to — so every molecule's structural type showed eleven real values and one "?", and every distance computation involving that field was silently comparing against a miss.
+The imasm tool's schema, its description, and the _GRAMMAR_FIRST_RIDER prose all told agents that word=... derive=true reads a word back into its tuple. Dropped the derive parameter and its branch in the handler, dropped the DERIVE sentence from the tool description, and rewrote the rider to point at the ops (weight, banked, cycle, insert, trans) through run_hosted_cmds.sh instead — which is what every agent was already using for that anyway.
 
-Fixed: FIELD_TO_ORD["W"] to "⊡". Verified against the actual failing case: rebis.ch3mpiler retrosynth on a real target SMILES now types the full twelve-field tuple with no "?", the retired-alphabet way this file has already been bitten by once.
-
-Checked for other copies of this exact table across the tree (excluding vendored packages) — this is the only one left carrying the mistake. rhr_p4rky/ch3mpiler_serpentrod_pipeline.py in red-hot_rebis uses "◻" too, but consistently, in its own PNAMES and its own GLYPH_ORDINALS alike, and never crosses into space_search/vox_bridge's canonical marks — a real parallel dialect, not this bug.
+true_agentic_agent.py is the source; the seven TOOLS_*.md specialist rosters are generated from it, so regenerated those with gen_tool_manifest.py rather than hand-editing seven copies of the same paragraph. Confirmed no "imasm derive" or "derive=true" survives anywhere in agents/.
