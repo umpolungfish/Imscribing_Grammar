@@ -1,5 +1,7 @@
-I recovered true_agentic_agent.py from a real data-loss incident: a full-file write meant to patch _imasm_emit instead replaced the entire 6570-line file with just the 36-line patch fragment, and that truncated file got committed as imscribe.com before anyone caught it. git restore only put the working tree back to that same broken commit, so the file stayed at 36 lines.
+The compiler was still typing one field as nothing, the same bug the last fix here named but didn't fully close.
 
-I pulled the last good version from 605c179, the commit immediately before the truncation, and reapplied the exact fix that was already correctly reasoned out in the failed attempt: derive no longer discards the requested ops, it appends its own imasm derive command alongside them, so an agent can ask for weight, banked, cycle, and the tuple derivation together in one boot instead of getting only one or the other.
+That fix moved FIELD_TO_ORD from the retired Latin-letter alphabet to the twelve marks, eleven of twelve entries correctly. The twelfth, W (Winding/Protection), was set to "◻", a plain white square, not "⊡", the real mark space_search.primitives.ORDINALS is actually keyed by. Every lookup for that one field missed, fell through to ordinal zero, and ordinal zero had no glyph to reverse-map back to — so every molecule's structural type showed eleven real values and one "?", and every distance computation involving that field was silently comparing against a miss.
 
-Verified with py_compile before committing anything.
+Fixed: FIELD_TO_ORD["W"] to "⊡". Verified against the actual failing case: rebis.ch3mpiler retrosynth on a real target SMILES now types the full twelve-field tuple with no "?", the retired-alphabet way this file has already been bitten by once.
+
+Checked for other copies of this exact table across the tree (excluding vendored packages) — this is the only one left carrying the mistake. rhr_p4rky/ch3mpiler_serpentrod_pipeline.py in red-hot_rebis uses "◻" too, but consistently, in its own PNAMES and its own GLYPH_ORDINALS alike, and never crosses into space_search/vox_bridge's canonical marks — a real parallel dialect, not this bug.
