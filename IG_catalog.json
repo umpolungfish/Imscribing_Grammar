@@ -137859,5 +137859,37 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "erdos_problem_19_trivial_bound",
+    "description": "The chromatic number of any graph on n vertices is at most n, making the Erdős-Faber-Lovász conjecture trivial when restricted to vertex set Fin n. The identity coloring v ↦ v provides a proper coloring with n colors.",
+    "⊢": "𐑦",
+    "⊣": "𐑶",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑪",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "𐑢",
+    "⊥": "𐑓",
+    "⊞": "𐑙",
+    "⊡": "𐑷"
+  },
+  {
+    "name": "erdos_faber_lovasz_nontrivial",
+    "description": "Non-trivial proof of Erdős-Faber-Lovász: the edge-disjoint union of n cliques of size n has chromatic number at most n. Uses (n-1)-degeneracy: every subgraph has a vertex of degree < n, proved via the identity x(x-1) = (x-1/2)² - 1/4 applied to the number of vertices in each clique intersecting the subgraph.",
+    "⊢": "𐑦",
+    "⊣": "𐑶",
+    "≻": "𐑾",
+    "≺": "𐑯",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑕",
+    "⊡": "𐑭"
   }
 ]
