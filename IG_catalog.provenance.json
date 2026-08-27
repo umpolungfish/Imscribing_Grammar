@@ -51653,6 +51653,12 @@
     "last_changed": "2026-08-17T04:21:48+00:00",
     "tuple_hash": "4fc0df65f5ac21f9"
   },
+  "\u22a2\u229e\u22a3\u22a4\u22c8\u22c8\u22a5\u2208\u229e\u2208\u2208\u22a4\u22a1\u22a4\u229e\u22a1\u2299\u229e\u22a1\u2299\u22a1\u2208\u22a4\u2299\u2208\u229e\u229e\u2299\u2208\u2208\u229e\u2208\u22c8\u220b\u2208\u22c8\u220b\u22a5\u22a4\u22c8\u22a5\u227b\u229e\u22a5\u2299\u22c8\u22c8\u22a1\u22a5\u22c8\u22a2\u22a4\u22a1\u22a2\u22c8\u229e\u22a1\u229e\u22a5\u22c8\u229e\u227b\u22a1\u229e\u22c8\u227a\u2208\u220b\u22c8\u22a4\u22a1\u22a5\u22c8\u22a2\u22a1\u22a4\u22a5\u22a1\u227a\u22a2\u229e\u22a3\u22a3\u22a4\u227b\u22a4\u227b\u22c8\u22c8\u2208\u22a2\u227a\u22a1\u220b\u227a\u22a4": {
+    "changes": 0,
+    "first_seen": "2026-08-26T23:34:07+00:00",
+    "last_changed": "2026-08-26T23:34:07+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
+  },
   "\u22a2\u25c7++=\u22a2\u25c7><==\u22a2\u25c7><+=\u22a2\u25c7>+=\u22a2\u25c7><=<=====\u2299\u229e\u25cf+=\u22a2\u25c7><=\u00ac\u00ac\u22a3\u2299\u229e\u25cf\u22a2\u25c7><=\u2299++=+=": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -51676,6 +51682,12 @@
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "50394180669a2ca7"
+  },
+  "\u22c8\u2208\u22a4\u220b\u2299\u22a1\u2208\u22a3\u227b\u22a4\u22c8\u227b\u2208\u22c8\u2299\u2299\u22a3\u227b\u229e\u229e\u227a\u229e\u22c8\u2299\u227a\u2299\u227a\u22a3\u2208\u227a\u22a2\u22a2\u22a3\u22a5\u22a1\u22a5\u22a3\u220b\u220b\u229e\u22c8\u229e\u22a4\u22a4\u22c8\u22c8\u220b\u227b\u22a4\u22c8\u2208\u220b\u2208\u22c8\u22a5\u22a5\u22a5\u2299\u227a\u229e\u22a3\u22a1\u229e": {
+    "changes": 0,
+    "first_seen": "2026-08-26T22:50:52+00:00",
+    "last_changed": "2026-08-26T22:50:52+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
   },
   "\u25fb_stability_proof_kernel*": {
     "changes": 0,
