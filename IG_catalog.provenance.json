@@ -3623,6 +3623,12 @@
     "last_changed": "2026-08-02T09:07:27+00:00",
     "tuple_hash": "b6dd6a091f9e07af"
   },
+  "any_graph_formed_by_merging_\\(n\\)_cliques,_each_of_size_\\(n\\),_where_any_two_cliques_intersect": {
+    "changes": 0,
+    "first_seen": "2026-08-27T16:10:24+00:00",
+    "last_changed": "2026-08-27T16:10:24+00:00",
+    "tuple_hash": "72e0e1cc84355d50"
+  },
   "anyonic_holonomic_semiotic_frobenoid_algebra": {
     "changes": 0,
     "first_seen": "2026-07-30T00:06:47+00:00",
@@ -15797,6 +15803,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfd3e318577e17ed"
   },
+  "erdos_faber_lovasz_nontrivial": {
+    "changes": 0,
+    "first_seen": "2026-08-27T15:34:55+00:00",
+    "last_changed": "2026-08-27T15:34:55+00:00",
+    "tuple_hash": "c72a6040eefcf5c3"
+  },
   "erdos_faber_lovasz_peeled_P": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15850,6 +15862,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "242907f7d5994b1c"
+  },
+  "erdos_problem_19_trivial_bound": {
+    "changes": 0,
+    "first_seen": "2026-08-27T15:34:55+00:00",
+    "last_changed": "2026-08-27T15:34:55+00:00",
+    "tuple_hash": "283dab0b75a4c0fb"
   },
   "erdos_problem_1_distinct_subset_sums": {
     "changes": 0,
@@ -15916,6 +15934,12 @@
     "first_seen": "2026-08-23T14:47:10+00:00",
     "last_changed": "2026-08-23T14:47:10+00:00",
     "tuple_hash": "5984b5e2c8d93fa6"
+  },
+  "erdos_problem_66": {
+    "changes": 0,
+    "first_seen": "2026-08-27T15:34:55+00:00",
+    "last_changed": "2026-08-27T15:34:55+00:00",
+    "tuple_hash": "b6a2d3573b561556"
   },
   "erdos_ramsey_hypergraph": {
     "changes": 0,
@@ -42587,6 +42611,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fd016351a286661c"
   },
+  "some_graph_formed_by_merging_\\(n\\)_cliques,_each_of_size_\\(n\\),_where_any_two_cliques_intersect": {
+    "changes": 0,
+    "first_seen": "2026-08-27T16:11:21+00:00",
+    "last_changed": "2026-08-27T16:11:21+00:00",
+    "tuple_hash": "df431e9ce2674233"
+  },
   "son_of_god_light_man": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46270,6 +46300,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "88a93cd82bea1280"
+  },
+  "the_totality_of_the_reserve_completion_function_where_for_every_leftover_pattern_the_greedy": {
+    "changes": 0,
+    "first_seen": "2026-08-27T15:34:55+00:00",
+    "last_changed": "2026-08-27T15:34:55+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
   },
   "the_tower": {
     "changes": 0,

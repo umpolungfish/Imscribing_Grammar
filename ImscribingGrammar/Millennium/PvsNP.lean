@@ -96,7 +96,7 @@ SAT is NP-complete (Cook 1971 / Levin 1973): SAT ∈ P ↔ P = NP.
     Diagonalization + algebraic techniques (arithmetic circuits, low-degree extensions)
     cannot resolve P vs NP.
 
-  These three meta-barriers are PROVED THEOREMS — they are sorry-free in mathematics.
+  These three meta-barriers are PROVED THEOREMS — they are *sans* sorry in mathematics.
   They narrow the space of viable proof strategies substantially.
 
 ---

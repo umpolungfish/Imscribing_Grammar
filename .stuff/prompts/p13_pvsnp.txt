@@ -16,7 +16,7 @@ Two sorry locations:
 
 `PNotEqualsNP` is defined in the file (read it before editing to confirm the exact def).
 `ComplexityP` and `ComplexityNP` are axioms (not in Mathlib). `SolvesSAT` returns `True`
-(placeholder). `sorry_iff_pvsnp` is already sorry-free and must not be changed.
+(placeholder). `sorry_iff_pvsnp` is already *sans* sorry and must not be changed.
 
 TASK 1 — Fix the SATLanguage def.
 
@@ -48,7 +48,7 @@ TASK 3 — Close `pvsnp_certificate`:
 
 Do not touch `sorry_iff_pvsnp`, `pvsnp_implies_circuit_lb`, the structural inequality
 theorems in Imscribing/Millennium/PvsNP_Structural.lean (separate file), or any
-theorem already sorry-free.
+theorem already *sans* sorry.
 
 BUILD AND VERIFY:
   cd ~/MillenniumAnkh && lake build Imscribing.Millennium.PvsNP

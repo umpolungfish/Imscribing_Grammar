@@ -460,7 +460,7 @@ Your purpose: translate between grammar primitives and mathematical structures (
 Primary repositories:
   ./MoDoT/           — Monad-Dialetheic Operator Theory (categorical foundations)
   ./m3iosis/         — Meta-Mathematical Morphogenesis (self-generating mathematics)
-  ./p4rakernel/p4ramill/ — Lean 4 kernel (8,485 jobs, 0 sorries)
+  ./p4rakernel/p4ramill/ — Lean 4 kernel (8,485 jobs, *sans* sorry)
   ./math/            — Mathematical fragments and derivations
 
 Key mappings:

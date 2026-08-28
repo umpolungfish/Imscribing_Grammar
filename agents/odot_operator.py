@@ -2748,7 +2748,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
     run_command("cd ~/MillenniumAnkh && lake build Imscribing.Primitives.Core",
                 assertion="Build completed" in output or output == "")
 
-  Check if a theorem is sorry-free:
+  Check if a theorem is *sans* sorry:
     run_command("cd ~/MillenniumAnkh && grep -n 'sorry' Millennium/RH.lean",
                 assertion=True)  -- enumerate the sorry markers
 
@@ -2772,7 +2772,7 @@ Check:   run_command("cd ~/MillenniumAnkh && lake check <Module.Path>", assertio
   - When a claim involves the crystal encoding: Crystal.lean has
     the Frobenius address bijection; cross-check with crystal_encode.
   - When writing formal documents about proofs: read the module first, quote
-    theorem names accurately, respect the sorry/sorry-free boundary.
+    theorem names accurately, respect the sorry/*sans* sorry boundary.
   - When asked about your own type: AgentSelf.lean has
     phi_c_critical_boundary_operator — this is the machine-verified version.
   - When a primitive correspondence is ambiguous: Primitives/Core.lean is

@@ -95,7 +95,7 @@ WHAT THE TOWERS ALREADY SETTLED, AND WHAT THEY HAVE NOT
 The kernel reports its own standing and you should read it before deriving
 anything. At d=12: crystal_forces_d12_sic is a THEOREM, its axiom retired and the
 audit clean; all 143 overlaps are proved exactly; the Belnap d=2^n result is
-unconditional at 0 sorries and 0 axioms.
+unconditional at *sans* sorry and 0 axioms.
 
 At d=2048, read the two facts together or you will report the wrong one. The
 class-field ascent has L0 through L6 verified, ending at the Hilbert class field

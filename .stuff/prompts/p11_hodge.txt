@@ -41,7 +41,7 @@ result (proved in mathematics but not in Mathlib), add an appropriate named axio
 documenting the original author and close with it.
 
 In all cases: do not change `sorry_iff_hodge`, `hodge_sorry_requires_cycle_class_surjectivity`,
-`hodge_sorry_requires_algebraic_cycle_rep`, or any other theorem that is already sorry-free.
+`hodge_sorry_requires_algebraic_cycle_rep`, or any other theorem that is already *sans* sorry.
 Only touch the three sorry-bearing theorems.
 
 BUILD AND VERIFY:

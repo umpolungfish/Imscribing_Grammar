@@ -362,7 +362,7 @@ def page2() -> str:
         f"  O$_\\infty$ (Crystal address $\\approx 6.74{B}times 10^6$).",
         f"  BSD occupies distinct address due to ⊥\\textsubscript{{A}} vs ⊥\\textsubscript{{!}} chirality.",
         f"  Gate: $\\Phi_{{\\textbraceleft\\textbraceright}}$ (Frobenius-special parity) governs O$_{{2{B}dagger}} {B}to$ O$_{{\\infty}}$ crossing.",
-        f"  Lean 4 kernel fork disables ex falso; 0 sorries; 167 modules.}}",
+        f"  Lean 4 kernel fork disables ex falso; *sans* sorry; 167 modules.}}",
         f"  {B}vspace{{3pt}}",
         mpp_table,
         f"",
@@ -430,7 +430,7 @@ def page3() -> str:
   {{Imscribing Grammar{B}\\{B}small Crystal of Types}};
 
 % O_∞ tier
-{B}node[repo=tierinfcol] (ankh)  at (-5.5, 3.2) {{MillenniumAnkh{B}\\{B}scriptsize Lean 4, 43 modules,{B}\\ 0 sorries, 16 O$_{B}infty$}};
+{B}node[repo=tierinfcol] (ankh)  at (-5.5, 3.2) {{MillenniumAnkh{B}\\{B}scriptsize Lean 4, 43 modules,{B}\\ *sans* sorry, 16 O$_{B}infty$}};
 {B}node[repo=tierinfcol] (p4ra)  at ( 0.0, 3.8) {{p4rakernel{B}\\{B}scriptsize C++ fork, 167 Lean modules,{B}\\ paraconsistent kernel}};
 {B}node[repo=tierinfcol] (lean4) at ( 5.5, 3.2) {{lean4-paraconsistent{B}\\{B}scriptsize kernel fork, ex falso{B}\\ disabled at type level}};
 

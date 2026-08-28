@@ -2049,7 +2049,7 @@ layers unified by the Belnap FOUR bilattice:
 architectural layer --- the environment in which proof terms are checked. The $\texttt{mark\_paraconsistent()}$ flag
 means the kernel compiles cleanly in both modes (paraconsistent and standard), producing bit-identical results when no
 contradiction is present.
- \item \textbf{Lean 4 p4ramill} (167 modules, 0 sorries): The formalization layer. Contains the full Belnap FOUR
+ \item \textbf{Lean 4 p4ramill} (167 modules, *sans* sorry): The formalization layer. Contains the full Belnap FOUR
 lattice with theorems proved by $\texttt{rfl}$: $\texttt{no\_explosion}$ ($B \wedge \neg B = B$, not $\bot$),
 $\texttt{B\_fixed\_point\_negation}$ ($\neg B = B$), and $\texttt{B\_no\_boolean\_complement}$. The
 $\texttt{MajoranaFixed.lean}$ module proves the unification theorem: the Belnap $B$ fixed point, the SIC-POVM

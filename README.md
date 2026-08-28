@@ -221,7 +221,7 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 
 `imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. Classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `imsgct/p4rakernel/ClassicalRestriction.lean`.
 
-**~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (sorry-free), and the Millennium cluster.
+**~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (*sans* sorry), and the Millennium cluster.
 
 ### Structure
 
@@ -229,14 +229,14 @@ The paraconsistent layer is not a relaxation of logic. It is the correct logic f
 Imscribing/Primitives/      — Core.lean (12 inductive primitives), Crystal (3³×4⁵×5⁴),
                               tier ladder O₀→${O}_\infty$, Frobenius tensor ⊗, ZFCₜ / ZFC_fe
 Imscribing/Paraconsistent/  — Belnap FOUR, Frobenius closure (μ∘δ=id), Shor, MajoranaFixed,
-                              TupleCodec (topos↔crystal), QCI bridges (all sorry-free)
+                              TupleCodec (topos↔crystal), QCI bridges (all *sans* sorry)
 Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge, PvsNP, OPN,
                               plus Beal, Collatz, Dixmier, E8/G2 vessel, and more
 ```
 
 ### Millennium cluster — where the sorries sit
 
-Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted, and stops there. The kernel, primitives, lattice, and paraconsistent cluster are sorry-free; the Millennium sorries state the remaining work. Full detail: `imsgct/p4rakernel/README.md`.
+Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted, and stops there. The kernel, primitives, lattice, and paraconsistent cluster are *sans* sorry; the Millennium sorries state the remaining work. Full detail: `imsgct/p4rakernel/README.md`.
 
 ---
 

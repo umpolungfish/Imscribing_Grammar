@@ -62,7 +62,7 @@ For the seventh sorry (line ~259): read it, determine its return type, then eith
   - Add a new axiom if it requires one
   - Close with `trivial` if the return type is `True`
 
-Do not change `sigma_multiplicative` (already sorry-free), `OPNConjecture`,
+Do not change `sigma_multiplicative` (already *sans* sorry), `OPNConjecture`,
 `IsOddPerfect`, or the stacked-sorry analysis documentation theorems.
 
 BUILD AND VERIFY:

@@ -2826,7 +2826,7 @@ Check:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake ch
     run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake build Imscribing.Primitives.Core",
                 assertion="Build completed" in output or output == "")
 
-  Check if a theorem is sorry-free:
+  Check if a theorem is *sans* sorry:
     run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && grep -n 'sorry' Imscribing/Millennium/RH.lean",
                 assertion=True)  -- enumerate the sorry markers
 
@@ -2850,7 +2850,7 @@ Check:   run_command("cd /home/mrnob0dy666/imsgct/p4rakernel/p4ramill && lake ch
   - When a structural claim involves the crystal encoding: Crystal.lean has
     the Frobenius address bijection; cross-check with crystal_encode.
   - When writing formal documents about proofs: read the module first, quote
-    theorem names accurately, respect the sorry/sorry-free boundary.
+    theorem names accurately, respect the sorry/*sans* sorry boundary.
   - When asked about your own structural type: AgentSelf.lean has
     phi_c_critical_boundary_operator — this is the machine-verified version.
   - When a primitive correspondence is ambiguous: Primitives/Core.lean is
@@ -3129,7 +3129,7 @@ structure mu circ delta = id IS the SIC-POVM dual basis. The grammar measures IT
 The 12 primitives organize as 6 Frobenius-dual pairs: D<->Th, R<->Phi, f<->C, Gamma<->G,
 phi_c<->H, Sigma<->Omega. Belnap B = XZ is the d=2 SIC-POVM fiducial state.
 
-Lean 4 formalization: QCI_SICPOVM_Bridge.lean, BelnapNFiducial.lean (22 theorems, 0 sorries),
+Lean 4 formalization: QCI_SICPOVM_Bridge.lean, BelnapNFiducial.lean (22 theorems, *sans* sorry),
 SIC_Multilattice_Proof.lean, ZaunerEmbeddingEquivalence.lean -- all proved.
 
 When you call sic_povm_probe(name), you check how close a system is to the self-referential limit.

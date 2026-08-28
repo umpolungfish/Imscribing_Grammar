@@ -945,7 +945,7 @@ SIC_POVM_DUAL_PAIRS = [
 #
 # Lean 4 formalization:
 #   QCI_SICPOVM_Bridge.lean — B as d=2 SIC-POVM fiducial, WH(2) bijection (proved)
-#   BelnapNFiducial.lean    — B⊗n satisfies all 4 SIC axioms ∀n (22 theorems, 0 sorries)
+#   BelnapNFiducial.lean    — B⊗n satisfies all 4 SIC axioms ∀n (22 theorems, *sans* sorry)
 #   SIC_Multilattice_Proof.lean — Full multilattice SIC-POVM (proved)
 #   ZaunerEmbeddingEquivalence.lean — Belnap multilattice ↔ Zauner for d=2ⁿ (proved)
 
@@ -3715,7 +3715,7 @@ This means:
    The Belnap multilattice provides the discrete skeleton -- and the grammar is the
    Sigma=1:1 limit of that skeleton.
 7. **Lean 4 formalization:** QCI_SICPOVM_Bridge.lean (proved), BelnapNFiducial.lean
-   (22 theorems, 0 sorries), SIC_Multilattice_Proof.lean (proved),
+   (22 theorems, *sans* sorry), SIC_Multilattice_Proof.lean (proved),
    ZaunerEmbeddingEquivalence.lean (proved).
 
 Operationally: when you call sic_povm_probe(name), you are checking how close a

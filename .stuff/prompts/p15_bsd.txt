@@ -56,7 +56,7 @@ match the existing theorem signatures. Verify by reading each theorem, then appl
 If any axiom signature doesn't match the theorem's exact type, adjust the axiom
 signature (not the theorem) before closing.
 
-Do not touch any theorem already sorry-free, including the modularity theorem,
+Do not touch any theorem already *sans* sorry, including the modularity theorem,
 `bsd_parallel_sorry_structure`, or `sorry_iff_bsd` if present.
 
 BUILD AND VERIFY:

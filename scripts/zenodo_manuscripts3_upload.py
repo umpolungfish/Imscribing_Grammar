@@ -80,7 +80,7 @@ DEPOSITS = [
                 "Lean 4's standard foundations and compiler trust. This is, to our knowledge, the "
                 "first machine-checked SIC-POVM existence in any dimension.\n\n"
                 "For the frontier dimension $d=2048=2^{11}$ the transport apparatus is formalized "
-                "and sorry-free. It includes a forward map "
+                "and *sans* sorry. It includes a forward map "
                 "$\\varphi\\colon B^{\\oplus 11}\\to\\mathbb{C}^{2048}$, a reduction $\\psi$ with "
                 "$\\psi\\circ\\varphi=\\mathrm{id}$, a conditional reduction to Stark, and a non-real "
                 "character obstruction that blocks the false branch. Unconditional existence remains "

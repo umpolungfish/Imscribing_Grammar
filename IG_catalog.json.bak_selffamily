@@ -51313,7 +51313,7 @@
   },
   {
     "name": "belnap_multilattice_sic_povm",
-    "description": "The Belnap multilattice SIC-POVM fiducial: B^⊗n in (Belnap)^n with WH(2)^n action. Unifies Belnap dialetheic fixed point, SIC fiducial, and Majorana paired state as instances of the same Frobenius fixed-point at O_∞. 0 axioms, 0 sorries — all 22 theorems proved in Lean 4.",
+    "description": "The Belnap multilattice SIC-POVM fiducial: B^⊗n in (Belnap)^n with WH(2)^n action. Unifies Belnap dialetheic fixed point, SIC fiducial, and Majorana paired state as instances of the same Frobenius fixed-point at O_∞. 0 axioms, *sans* sorry — all 22 theorems proved in Lean 4.",
     "Ð": "𐑦",
     "Þ": "𐑸",
     "Ř": "𐑾",
@@ -83265,7 +83265,7 @@
   },
   {
     "name": "sic_d12_existence_proof",
-    "description": "Machine-checked constructive proof that SICPOVM_Exists 12. Built via exact rational algebra K₁₆(s₀,s₁,s₃,s₉,i,c₅,u₁) with 143 frozen native_decide identities, transferred to ℂ¹² along star-ring hom φ at IVT-bracketed real root g₀. 0 sorries. crystal_forces_d12_sic went from axiom to theorem.",
+    "description": "Machine-checked constructive proof that SICPOVM_Exists 12. Built via exact rational algebra K₁₆(s₀,s₁,s₃,s₉,i,c₅,u₁) with 143 frozen native_decide identities, transferred to ℂ¹² along star-ring hom φ at IVT-bracketed real root g₀. *sans* sorry. crystal_forces_d12_sic went from axiom to theorem.",
     "Ð": "𐑨",
     "Þ": "𐑥",
     "Ř": "𐑑",

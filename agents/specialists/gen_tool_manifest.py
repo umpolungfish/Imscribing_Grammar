@@ -730,7 +730,7 @@ existence, duallink, z0, ordinals, verify, symmetric, embedding, lean-status.
 
 Standing as the kernel reports it: crystal_forces_d12_sic is a THEOREM with its
 axiom retired and the audit clean, all 143 overlaps proved exactly, and the
-Belnap d=2^n result unconditional at 0 sorries and 0 axioms. The fiducial is
+Belnap d=2^n result unconditional at *sans* sorry and 0 axioms. The fiducial is
 radical-expressible but its true home is the ring R of dimension 2048 over Q,
 which is what makes the d=2048 ascent the same question at the hard end."""),
 
