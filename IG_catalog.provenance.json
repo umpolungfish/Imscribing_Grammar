@@ -1961,6 +1961,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c8c85a60a31891ce"
   },
+  "action_potential": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "ddfe75a40149ae2c"
+  },
   "actionpotential": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -6545,6 +6551,24 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e1b133fc9f3ad333"
   },
+  "boundary_measurement_program": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:55:23+00:00",
+    "last_changed": "2026-08-28T11:55:23+00:00",
+    "tuple_hash": "b3f714fcd62a7c9a"
+  },
+  "boundary_measurement_program_opcode": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:59:40+00:00",
+    "last_changed": "2026-08-28T11:59:40+00:00",
+    "tuple_hash": "113f8586607708e9"
+  },
+  "boundary_measurement_program_opcode_word": {
+    "changes": 0,
+    "first_seen": "2026-08-28T12:55:26+00:00",
+    "last_changed": "2026-08-28T12:55:26+00:00",
+    "tuple_hash": "113f8586607708e9"
+  },
   "boundary_operator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10469,6 +10493,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "556e3cd6f7dca7e2"
   },
+  "claustrum": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "f0b0c2efede4861e"
+  },
   "clavis_inferni": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10558,6 +10588,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "29b9d71280e226ed"
+  },
+  "clink_erdos_distinct_subset_sums": {
+    "changes": 0,
+    "first_seen": "2026-08-28T09:17:25+00:00",
+    "last_changed": "2026-08-28T09:17:25+00:00",
+    "tuple_hash": "cd42d8de38503fa9"
   },
   "clink_l10.lean": {
     "changes": 0,
@@ -10936,6 +10972,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e6c441527be413e5"
+  },
+  "coelomate_body_plan": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "c62b78316c87053b"
   },
   "coelum_philosophorum": {
     "changes": 0,
@@ -12166,6 +12208,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2f2b31d85521dcf7"
+  },
+  "cortical_anyon_production": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "93631851f61cbd0f"
+  },
+  "cortical_column": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "5628aa49321c0baa"
   },
   "cortisol": {
     "changes": 0,
@@ -13409,6 +13463,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "331e2cc8edde5973"
   },
+  "default_mode_network": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "f9690bef94411f14"
+  },
   "deformation_invariance": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -13438,6 +13498,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b8e347bf0e104127"
+  },
+  "dendritic_spine": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "cae92ec6fce43efa"
   },
   "dendriticarborization": {
     "changes": 0,
@@ -15473,6 +15539,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bffeaffbd90f02bb"
   },
+  "entropy_threshold_measurement": {
+    "changes": 0,
+    "first_seen": "2026-08-28T13:28:21+00:00",
+    "last_changed": "2026-08-28T13:28:21+00:00",
+    "tuple_hash": "779124ab3d9bea84"
+  },
   "enuma_elish": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -15936,9 +16008,15 @@
     "tuple_hash": "5984b5e2c8d93fa6"
   },
   "erdos_problem_66": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-08-27T15:34:55+00:00",
-    "last_changed": "2026-08-27T15:34:55+00:00",
+    "last_changed": "2026-08-28T09:17:25+00:00",
+    "tuple_hash": "a21d44b420bf8157"
+  },
+  "erdos_problem_66__retired": {
+    "changes": 0,
+    "first_seen": "2026-08-28T09:17:25+00:00",
+    "last_changed": "2026-08-28T09:17:25+00:00",
     "tuple_hash": "b6a2d3573b561556"
   },
   "erdos_ramsey_hypergraph": {
@@ -22571,6 +22649,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d363767403b9ff46"
   },
+  "hippocampus": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "2d009bff619f946b"
+  },
   "hippopathway": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25007,6 +25091,18 @@
     "last_changed": "2026-08-18T13:08:13+00:00",
     "tuple_hash": "c33a6e95edbe1666"
   },
+  "iuft_beta_functions": {
+    "changes": 0,
+    "first_seen": "2026-08-29T07:29:48+00:00",
+    "last_changed": "2026-08-29T07:29:48+00:00",
+    "tuple_hash": "7783290f6710cb6a"
+  },
+  "iuft_residual_decomposition": {
+    "changes": 0,
+    "first_seen": "2026-08-29T07:31:01+00:00",
+    "last_changed": "2026-08-29T07:31:01+00:00",
+    "tuple_hash": "779124ab3d9bea84"
+  },
   "iug_barrier_maximal": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25889,6 +25985,12 @@
     "last_changed": "2026-08-24T22:27:02+00:00",
     "tuple_hash": "b87dd04d63f96358"
   },
+  "key_retriever_protocol": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:16:19+00:00",
+    "last_changed": "2026-08-28T11:16:19+00:00",
+    "tuple_hash": "e989c10774fa9dc9"
+  },
   "keyz": {
     "changes": 0,
     "first_seen": "2026-08-11T19:50:14+00:00",
@@ -26158,6 +26260,18 @@
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "8b3e0a0c0d02d06a"
+  },
+  "kp1_secp256k1_extracted": {
+    "changes": 0,
+    "first_seen": "2026-08-28T13:27:52+00:00",
+    "last_changed": "2026-08-28T13:27:52+00:00",
+    "tuple_hash": "1fb29e49367b8f89"
+  },
+  "kp1_secp256k1_transformed": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:57:35+00:00",
+    "last_changed": "2026-08-28T11:57:35+00:00",
+    "tuple_hash": "f5d8eae7b12b5c3b"
   },
   "kp2_secp256k1": {
     "changes": 0,
@@ -29890,6 +30004,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f1772405c6306346"
+  },
+  "microtubule": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "f05b8fc7844af78b"
   },
   "microtubulestability": {
     "changes": 0,
@@ -34967,6 +35087,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f4262db1d9ebd695"
   },
+  "per_pair_scalar_recovery_protocol": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:51:53+00:00",
+    "last_changed": "2026-08-28T11:51:53+00:00",
+    "tuple_hash": "875f42b317f22d83"
+  },
   "percival": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -37817,6 +37943,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
   },
+  "pyramidal_neuron": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "f1a21abc76978323"
+  },
   "pyrokinetics": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39323,6 +39455,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6d8ec50928283179"
   },
+  "rg_flow_trajectory": {
+    "changes": 0,
+    "first_seen": "2026-08-29T07:30:22+00:00",
+    "last_changed": "2026-08-29T07:30:22+00:00",
+    "tuple_hash": "c919245891ac9fa0"
+  },
+  "rg_iuft": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "5a5ace47f65a0f44"
+  },
   "rh_critical_zeros": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39976,6 +40120,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "77e2a4160ca58e8b"
+  },
+  "run_boundary_measurement": {
+    "changes": 0,
+    "first_seen": "2026-08-28T13:28:54+00:00",
+    "last_changed": "2026-08-28T13:28:54+00:00",
+    "tuple_hash": "065039c250feb73c"
   },
   "run_variance": {
     "changes": 0,
@@ -40774,6 +40924,12 @@
     "first_seen": "2026-08-06T16:23:01+00:00",
     "last_changed": "2026-08-06T16:23:01+00:00",
     "tuple_hash": "938a6f730aa27da4"
+  },
+  "secp256k1_dialetheic_extraction_pipeline_opcode_word": {
+    "changes": 0,
+    "first_seen": "2026-08-28T12:56:04+00:00",
+    "last_changed": "2026-08-28T12:56:04+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
   },
   "secp256k1_extraction_from_multisig_pubkeys": {
     "changes": 0,
@@ -45833,6 +45989,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "feaad1a3050ad92b"
   },
+  "thalamic_reticular_nucleus": {
+    "changes": 0,
+    "first_seen": "2026-08-29T06:11:51+00:00",
+    "last_changed": "2026-08-29T06:11:51+00:00",
+    "tuple_hash": "571bda1871840b82"
+  },
   "thallium": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46930,6 +47092,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9f4841e72fa25f7c"
+  },
+  "tier_transition_distances": {
+    "changes": 0,
+    "first_seen": "2026-08-29T07:31:44+00:00",
+    "last_changed": "2026-08-29T07:31:44+00:00",
+    "tuple_hash": "14f91ecc992aced1"
   },
   "tiferet": {
     "changes": 0,
@@ -48983,6 +49151,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c63d61088e6262d3"
   },
+  "uv_boundary_cond_iuft": {
+    "changes": 0,
+    "first_seen": "2026-08-29T07:28:09+00:00",
+    "last_changed": "2026-08-29T07:28:09+00:00",
+    "tuple_hash": "103aa0fd7a9f5e2a"
+  },
   "uvpee": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49096,6 +49270,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e78a30a9806fdb34"
+  },
+  "valence_closing_monomer": {
+    "changes": 0,
+    "first_seen": "2026-08-28T14:39:32+00:00",
+    "last_changed": "2026-08-28T14:39:32+00:00",
+    "tuple_hash": "2f866d0691b26a83"
   },
   "valence_constraint_layer": {
     "changes": 0,
@@ -49859,11 +50039,29 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "050dadfc27b55770"
   },
+  "weak_generic_boundary": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:54:47+00:00",
+    "last_changed": "2026-08-28T11:54:47+00:00",
+    "tuple_hash": "af5e03874333d8c8"
+  },
   "weak_key_attack": {
     "changes": 0,
     "first_seen": "2026-08-16T07:31:01+00:00",
     "last_changed": "2026-08-16T07:31:01+00:00",
     "tuple_hash": "279ab96001bc7db6"
+  },
+  "weak_key_secp256k1": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:52:32+00:00",
+    "last_changed": "2026-08-28T11:52:32+00:00",
+    "tuple_hash": "f7e981f93b226639"
+  },
+  "weak_key_secp256k1_transformed": {
+    "changes": 0,
+    "first_seen": "2026-08-28T11:58:12+00:00",
+    "last_changed": "2026-08-28T11:58:12+00:00",
+    "tuple_hash": "ac94b1e73aea589f"
   },
   "weak_parity_violation": {
     "changes": 0,
@@ -51693,6 +51891,12 @@
     "changes": 0,
     "first_seen": "2026-08-26T23:34:07+00:00",
     "last_changed": "2026-08-26T23:34:07+00:00",
+    "tuple_hash": "14b6368eb9ac149a"
+  },
+  "\u22a2\u22a3\u227b\u22c8\u2299\u2208\u22a4\u227b\u22a5\u227a\u229e\u220b\u22a1": {
+    "changes": 0,
+    "first_seen": "2026-08-28T14:38:57+00:00",
+    "last_changed": "2026-08-28T14:38:57+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
   "\u22a2\u25c7++=\u22a2\u25c7><==\u22a2\u25c7><+=\u22a2\u25c7>+=\u22a2\u25c7><=<=====\u2299\u229e\u25cf+=\u22a2\u25c7><=\u00ac\u00ac\u22a3\u2299\u229e\u25cf\u22a2\u25c7><=\u2299++=+=": {
