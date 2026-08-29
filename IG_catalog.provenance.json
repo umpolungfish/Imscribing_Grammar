@@ -5957,6 +5957,12 @@
     "last_changed": "2026-08-11T19:50:14+00:00",
     "tuple_hash": "7616610b34ab0871"
   },
+  "bip39_seed_residue_system": {
+    "changes": 0,
+    "first_seen": "2026-08-29T18:54:15+00:00",
+    "last_changed": "2026-08-29T18:54:15+00:00",
+    "tuple_hash": "e32eafe2ed07482f"
+  },
   "bip39_sic_grover_search": {
     "changes": 0,
     "first_seen": "2026-08-11T10:39:15+00:00",
@@ -7270,6 +7276,12 @@
     "first_seen": "2026-08-11T19:50:14+00:00",
     "last_changed": "2026-08-11T19:50:14+00:00",
     "tuple_hash": "7616610b34ab0871"
+  },
+  "btc_boundary_puncture": {
+    "changes": 0,
+    "first_seen": "2026-08-29T18:54:15+00:00",
+    "last_changed": "2026-08-29T18:54:15+00:00",
+    "tuple_hash": "447f55bcd758c64c"
   },
   "btc_dlog_recovery_pipeline": {
     "changes": 0,
@@ -40919,6 +40931,12 @@
     "last_changed": "2026-08-16T07:39:51+00:00",
     "tuple_hash": "a2ca3072515347b9"
   },
+  "secp256k1_boundary_puncture": {
+    "changes": 0,
+    "first_seen": "2026-08-29T19:58:10+00:00",
+    "last_changed": "2026-08-29T19:58:10+00:00",
+    "tuple_hash": "447f55bcd758c64c"
+  },
   "secp256k1_dialetheic_extraction_pipeline": {
     "changes": 0,
     "first_seen": "2026-08-06T16:23:01+00:00",
@@ -40954,6 +40972,12 @@
     "first_seen": "2026-08-16T07:27:06+00:00",
     "last_changed": "2026-08-16T07:27:06+00:00",
     "tuple_hash": "5bf7e478a452d9d8"
+  },
+  "secp256k1_pubkey_residue_system": {
+    "changes": 0,
+    "first_seen": "2026-08-29T18:54:15+00:00",
+    "last_changed": "2026-08-29T18:54:15+00:00",
+    "tuple_hash": "e32eafe2ed07482f"
   },
   "secp256k1_public_key": {
     "changes": 0,
@@ -50428,6 +50452,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bbaa490ff735ca34"
+  },
+  "winding_of_the_primes": {
+    "changes": 0,
+    "first_seen": "2026-08-29T19:58:10+00:00",
+    "last_changed": "2026-08-29T19:58:10+00:00",
+    "tuple_hash": "635bf827ebf7e6ad"
   },
   "winding_period_finder": {
     "changes": 0,

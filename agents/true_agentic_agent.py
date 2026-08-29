@@ -754,23 +754,33 @@ def _build_client(base_url: str = "", api_key: str = "") -> "openai.OpenAI":
         sys.exit("openai package required: uv add openai")
 
     is_openrouter = False
+    is_openai     = False
     if not base_url:
         base_url = "https://openrouter.ai/api/v1"
         is_openrouter = True
     else:
         is_openrouter = "openrouter.ai" in base_url
+        is_openai     = "api.openai.com" in base_url
 
     is_local = any(h in base_url for h in ("localhost", "127.0.0.1", "0.0.0.0"))
 
     if not api_key:
         if is_local:
             api_key = "local"
+        elif is_openai:
+            # Direct OpenAI: pull OPENAI_API_KEY. Distinct from OpenRouter so
+            # an operator can hold keys for both without one masking the other.
+            api_key = os.environ.get("OPENAI_API_KEY", "")
+            if not api_key:
+                sys.exit("OPENAI_API_KEY not set (required for OpenAI endpoint).")
         else:
             api_key = os.environ.get("OPENROUTER_API_KEY", "")
             if not api_key:
                 sys.exit("OPENROUTER_API_KEY not set.")
 
-    # OpenRouter-specific headers — only for OpenRouter endpoints
+    # Provider-specific headers — only for OpenRouter endpoints.
+    # OpenAI rejects unknown headers on its chat/completions route, so the
+    # OpenRouter referer/title set must stay gated to OpenRouter only.
     headers: Dict[str, str] = {}
     if is_openrouter:
         headers = {
@@ -845,6 +855,10 @@ REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
     "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
     "kilo":     ("https://api.kilo.ai/api/gateway",                      "KILO_API_KEY"),
     "kilocode": ("https://api.kilo.ai/api/gateway",                      "KILO_API_KEY"),
+    # OpenAI's own OpenAI-compatible endpoint. Distinct from OpenRouter: no
+    # proxy headers, no model-name rewriting, key from OPENAI_API_KEY.
+    # Use the `openai:` prefix (e.g. `openai:gpt-4o`) to route directly.
+    "openai":   ("https://api.openai.com/v1",                            "OPENAI_API_KEY"),
 }
 
 
@@ -861,6 +875,7 @@ def _resolve_model_and_endpoint(model_str: str) -> Tuple[str, str, str]:
         qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
         kilo:model-id          → Kilo Gateway API (KILO_API_KEY)
         kilocode:model-id      → Kilo Gateway API (KILO_API_KEY)
+        openai:model-id        → OpenAI API (OPENAI_API_KEY)
     No prefix → check MODEL_ALIASES, then use OpenRouter.
     OPENROUTER_MODEL env var overrides the resolved OpenRouter model ID.
     LOCAL_BASE_URL env var overrides the base URL for all local traffic.
@@ -4628,7 +4643,11 @@ class TrueAgenticAgent:
                 "content": (
                     "[SESSION CONTINUATION — prior messages loaded. "
                     f"Winding offset: {self.starting_winding_offset}]\n\n"
-                    f"TASK: {task}\n\nBegin. Emit your first tool call."
+                    "You are bughunter_operator. The work below is yours — "
+                    "the prior trajectory and observations are yours to act on.\n"
+                    f"TASK: {task}\n\n"
+                    "Resume from where you stopped. Think in at most three sentences. "
+                    "Then emit exactly one tool call and nothing else."
                 ),
             })
             self._task_msg_index = len(self._messages) - 1
@@ -4637,7 +4656,13 @@ class TrueAgenticAgent:
         else:
             self._messages: List[Dict[str, Any]] = [
                 {"role": "system", "content": system_content},
-                {"role": "user",   "content": f"TASK: {task}\n\nBegin. Emit your first tool call."},
+                {"role": "user",   "content": (
+                    "You are bughunter_operator. This is YOUR task — it arrived here, "
+                    "not to someone watching you work.\n"
+                    f"TASK: {task}\n\n"
+                    "Think in at most three sentences. Then emit exactly one tool call "
+                    "and nothing else."
+                )},
             ]
             self._task_msg_index = 1
         self._log(f"\n{'═'*72}")
@@ -4727,10 +4752,30 @@ class TrueAgenticAgent:
         # The roster goes in FRESH each winding and the previous copy comes out,
         # so the history carries exactly one. Without the removal it accumulates
         # a copy per turn and crowds out the work it exists to support.
+        # Drop both the prior tool roster AND the prior WINDING REMINDER block
+        # each turn, so only the freshest copy of each sits in history. Without
+        # the WINDING REMINDER removal it accumulates one per winding and
+        # crowds out the work it exists to support, exactly the failure the
+        # TOOLS prefix was already preventing for its sibling.
         self._messages = [m for m in self._messages
                           if not (m.get("role") == "user"
-                                  and str(m.get("content", "")).startswith("[TOOLS —"))]
-        self._messages.append({"role": "user", "content": _tool_roster()})
+                                  and (str(m.get("content", "")).startswith("[TOOLS —")
+                                       or str(m.get("content", "")).startswith("[WINDING REMINDER")))]
+        # Identity grounding: every winding begins from the agent's frame, not
+        # from the user's. The model has previously confused itself with the
+        # assistant receiving the task rather than the operator taking it. This
+        # short block resets that frame on every winding.
+        self._messages.append({
+            "role": "user",
+            "content": (
+                "[WINDING REMINDER — this is you. The task below is yours to act on.]\n"
+                "You are bughunter_operator. You are inside a THINK→ACT→OBSERVE→UPDATE "
+                "loop. The user message is the task IN YOUR HANDS, not a request "
+                "someone else is waiting on you to answer. The principal named a "
+                "target; act on it now.\n\n"
+                + _tool_roster()
+            ),
+        })
 
         # THINK + ACT: one LLM call over accumulated message history
         reasoning, action_name, action_input, tc_id, raw_reasoning_content = await self._think_and_act()
