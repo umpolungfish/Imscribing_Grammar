@@ -138627,5 +138627,53 @@
     "⊥": "𐑓",
     "⊞": "𐑕",
     "⊡": "𐑷"
+  },
+  {
+    "name": "dqi_algorithm",
+    "description": "Decoded Quantum Interferometry (DQI): quantum optimization via QFT-induced constructive interference on high-objective symbol strings, reduced to syndrome decoding for LDPC code C⊥ = {d∈F₂ᵐ : Bd=0} with up to ℓ errors. Achieves superpolynomial speedups for max-XORSAT and polynomial fits.",
+    "⊢": "𐑨",
+    "⊣": "𐑶",
+    "≻": "𐑽",
+    "≺": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑘",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "fde_lattice_descent",
+    "description": "FDE lattice δ/μ fork-fuse descent",
+    "⊢": "𐑨",
+    "⊣": "𐑰",
+    "≻": "𐑑",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "fde_collatz_period",
+    "description": "The period of a nontrivial Collatz cycle, bounded by diving to whatever FDE(n) depth recovers it",
+    "⊢": "𐑛",
+    "⊣": "𐑥",
+    "≻": "𐑽",
+    "≺": "𐑹",
+    "⋈": "𐑐",
+    "⊤": "𐑪",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]

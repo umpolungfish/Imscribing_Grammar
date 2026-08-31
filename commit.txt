@@ -1,5 +1,21 @@
-Pulled imasm derive off every agent's roster. It isn't useful yet, and I don't want it offered until it is.
+I make the momonados specialist aware of combo and combo2, the two new
+mOMonadOS REPL commands from this session. Added a curated entry to
+MOMONADOS_DOMAIN in gen_tool_manifest.py -- what combo does, what brief
+changes, why combo2 exists (a repair that closes one rotation's exposure
+isn't yet known to hold on its own orbit) -- then regenerated
+TOOL_MANIFEST_momonados.md and TOOLS_momonados.md from it.
 
-The imasm tool's schema, its description, and the _GRAMMAR_FIRST_RIDER prose all told agents that word=... derive=true reads a word back into its tuple. Dropped the derive parameter and its branch in the handler, dropped the DERIVE sentence from the tool description, and rewrote the rider to point at the ops (weight, banked, cycle, insert, trans) through run_hosted_cmds.sh instead — which is what every agent was already using for that anyway.
+true_agentic_agent.py itself needs no change: it's the generic engine, and
+a specialist swaps in its own system prompt on top of it rather than the
+other way around. The chain that actually needed updating is
+gen_tool_manifest.py's curated source -> the two generated .md files ->
+specialists/__init__.py's _with_manifest, which reads TOOL_MANIFEST_
+momonados.md fresh at import time and appends it to
+MOMONADOS_SPECIALIST_PROMPT. Verified live: imported the module and
+confirmed combo and combo2 both appear in the actual composed prompt
+string, not just the intermediate files.
 
-true_agentic_agent.py is the source; the seven TOOLS_*.md specialist rosters are generated from it, so regenerated those with gen_tool_manifest.py rather than hand-editing seven copies of the same paragraph. Confirmed no "imasm derive" or "derive=true" survives anywhere in agents/.
+Also fixed a real, unrelated drift the regeneration surfaced: the curated
+entry for check_menu_coverage.py pointed at mOMonadOS/check_menu_coverage.py,
+which moved to mOMonadOS/py/check_menu_coverage.py at some point. Fixed the
+path while I was already in the file.

@@ -14453,6 +14453,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "737903013ae77e88"
   },
+  "dqi_algorithm": {
+    "changes": 0,
+    "first_seen": "2026-08-31T10:03:39+00:00",
+    "last_changed": "2026-08-31T10:03:39+00:00",
+    "tuple_hash": "d1b6909e2a9acf3e"
+  },
   "dr._evils_paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17314,6 +17320,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3c2e917af8b9cf16"
+  },
+  "fde_collatz_period": {
+    "changes": 0,
+    "first_seen": "2026-08-31T10:41:36+00:00",
+    "last_changed": "2026-08-31T10:41:36+00:00",
+    "tuple_hash": "8a677430832721e6"
+  },
+  "fde_lattice_descent": {
+    "changes": 0,
+    "first_seen": "2026-08-31T10:03:39+00:00",
+    "last_changed": "2026-08-31T10:03:39+00:00",
+    "tuple_hash": "ab3c12dd5ef7bc16"
   },
   "fe2o3": {
     "changes": 0,
@@ -31570,6 +31588,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f3ff93192ca31ee1"
+  },
+  "nested_oneshot_prime_winder": {
+    "changes": 0,
+    "first_seen": "2026-08-31T10:03:39+00:00",
+    "last_changed": "2026-08-31T10:03:39+00:00",
+    "tuple_hash": "bfeb1fe696709234"
   },
   "networkburst": {
     "changes": 0,
