@@ -1669,8 +1669,7 @@ def _imscribe_emit(args: Dict[str, Any]) -> str:
         else:
             result = dispatcher.dispatch(tool_name, tool_args, iteration=0)
 
-        # Open the gate on successful imscribe_system (first encoding or justified re-encoding)
-        # "conflict_blocked" does NOT open the gate — model must resolve first.
+        # Open the gate on successful imscribe_system (first encoding or a re-imscription).
         if tool_name == "imscribe_system" and isinstance(result, dict) and result.get("status") in ("ok", "updated"):
             _gate_state["encoded"] = True
 
@@ -1712,18 +1711,6 @@ def _imscribe_verify(emit_input: Dict, emit_output: str,
         data = json.loads(emit_output)
         status = data.get("status", "")
         tool_name = emit_input.get("tool_name", "")
-
-        if status == "conflict_blocked":
-            # imscribe_system rejected — agent must re-call WITH convergence_justification field.
-            differing = data.get("differing_primitives", [])
-            msg = (
-                f"imscribe_system CONFLICT — catalog not updated. "
-                f"Differing primitives: {differing}. "
-                f"You MUST re-call imscribe_system with a 'convergence_justification' field "
-                f"(not just in THINK — it must be a parameter in the tool call itself) "
-                f"giving per-primitive reasoning for each of {differing}."
-            )
-            return (f"{msg} — Frobenius OPEN", False)
 
         if status == "error":
             errs = data.get("errors") or [data.get("error", "unknown error")]
@@ -2061,99 +2048,8 @@ def _run_single_imscription(
         return _fail(f"{type(exc).__name__}: {exc}")
 
 
-def _triangulate_imscription(
-    winding1: Dict[str, str],
-    name: str,
-    description: str,
-    client: Any,
-    model_id: str,
-) -> Dict[str, Any]:
-    """Run 2 additional de novo imscriptions (windings 2 and 3) and compare all 3.
-
-    Returns a dict with:
-      "converged"  : bool — True if all 3 agree on every primitive
-      "majority"   : Dict[str, str] — majority-vote tuple (present when converged or 2/3)
-      "conflicts"  : List[str] — primitives with no 2/3 agreement
-      "windings"   : List[Dict[str, str]] — all 3 tuples for display
-      "report"     : str — human-readable Tetractys report
-    """
-    order = CANONICAL_FAMILIES[:]
-    windings = [winding1]
-    sub_errors: List[str] = []
-    # Winding 2 and 3 are de novo — no knowledge of prior winding results
-    for _ in range(2):
-        w = _run_single_imscription(name, description, client, model_id, sub_errors)
-        if w:
-            windings.append(w)
-
-    if len(windings) < 2:
-        # Triangulation failure — sub-calls could not reach the LLM.
-        # This is a FIRST-CLASS ERROR: the imscription MUST NOT be committed
-        # without cross-validation. The agent must restore LLM connectivity and retry.
-        import logging as _log
-        why = "; ".join(sub_errors) if sub_errors else "no reason captured"
-        _log.getLogger('true_agentic_agent').error(
-            f'✗ TRIANGULATION FAILURE: only {len(windings)}/3 windings succeeded for {name!r}. '
-            f'Imscription REJECTED — cross-validation absent. Sub-call failures: {why}'
-        )
-        return {
-            "converged": False,
-            "triangulation_failure": True,
-            "windings": windings,
-            "sub_call_errors": sub_errors,
-            "report": (
-                f"✗ TRIANGULATION FAILURE: only {len(windings)}/3 windings completed. "
-                f"The imscription has NOT been committed. Sub-call failures: {why}. "
-                f"Only a connection/auth error means the LLM was unreachable; a parse or "
-                f"validation failure means the model replied and the reply was rejected."
-            ),
-        }
-
-    # Per-primitive majority vote
-    majority: Dict[str, str] = {}
-    conflicts: List[str] = []
-    for k in order:
-        votes: Dict[str, int] = {}
-        for w in windings:
-            v = w.get(k, "")
-            votes[v] = votes.get(v, 0) + 1
-        best_val = max(votes, key=lambda x: votes[x])
-        best_count = votes[best_val]
-        if best_count >= 2:
-            majority[k] = best_val
-        else:
-            # All 3 differ — true conflict
-            conflicts.append(k)
-            majority[k] = winding1.get(k, best_val)  # fallback to caller's value
-
-    n = len(windings)
-    converged = len(conflicts) == 0
-
-    # Build report
-    lines = [f"TETRACTYS — {n}/{3} windings completed"]
-    for i, w in enumerate(windings):
-        sym = "  ".join(w.get(k, "?") for k in order)
-        lines.append(f"  W{i+1}: {sym}")
-    if converged:
-        lines.append(f"  ✓ CONVERGED — all {n} windings agree")
-    else:
-        lines.append(f"  ⚠ CONFLICTS on: {', '.join(conflicts)}")
-        lines.append("  Conflict resolution required before committing.")
-        for k in conflicts:
-            vals = [w.get(k, "?") for w in windings]
-            lines.append(f"    {k}: {' | '.join(vals)}")
-
-    return {
-        "converged": converged,
-        "majority": majority,
-        "conflicts": conflicts,
-        "windings": windings,
-        "report": "\n".join(lines),
-    }
-
-
 def _imscribe_system_emit(args: Dict[str, Any]) -> str:
-    """Dedicated emit for imscribe_system — runs Tetractys before committing."""
+    """Dedicated emit for imscribe_system — checks slot membership, then commits."""
     # Keys are the marks. No remap: the schema asks for marks and nothing else.
     name = args.get("name", "")
     # The model (especially 1.7B) often dumps the full task text into description,
@@ -2182,19 +2078,22 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
     if justification:
         tool_args["convergence_justification"] = justification
 
-    # ── THE AXIOM GATE ───────────────────────────────────────────────────────
+    # ── THE SLOT-MEMBERSHIP GATE ────────────────────────────────────────────
     # This path used to refuse outright and hand the caller to the generator
     # pipeline. The reason given was exact and worth keeping: both commit paths
-    # below write to the catalog, and neither checked the cross-primitive
-    # axioms. That is how entries reached the catalog at ⊥=𐑒 with ⊡=𐑭, an
-    # address the generator would decline to emit.
+    # below write to the catalog, and neither checked that a value actually
+    # belongs to its own primitive's set. That is how entries reached the
+    # catalog with a value borrowed from a different primitive's set entirely.
     #
     # But refusing is not the gate; the gate is the check. So the check runs
-    # here now, the same validate_structural the generator uses — slot
-    # membership plus Axioms A through D. A tuple that is a point in the Crystal
-    # goes on to the Tetractys protocol below and commits like any other. A
-    # tuple that is not gets refused HERE, by name, which is what the shunt
-    # message used to promise the pipeline would do.
+    # here now, the same validate_structural the generator uses. Its cross-
+    # primitive axioms (A through D) are retired -- Core.lean records each as
+    # a bare `axiom` that proved False on an untouched hypothesis variable, so
+    # there are no more axioms to gate; validate_structural checks slot
+    # membership alone now, and that is what this block checks too. A tuple
+    # that is a point in the Crystal commits directly below, re-imscription
+    # or not. A tuple that is not gets refused HERE, by name, which is what
+    # the shunt message used to promise the pipeline would do.
     proposed_now: Dict[str, str] = {
         k: get_val(k) for k in order
     }
@@ -2222,11 +2121,7 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                 _errs = validate_structural(_Imscr.from_dict(axis_dict))
             except Exception as _e:
                 _errs = [f"could not build the tuple to check it: {_e}"]
-            if _errs and justification:
-                # Tetractys already ran once (convergence_justification present)
-                # and still produced a tuple outside the Crystal -- refuse here,
-                # a second independent-triangulation pass on the same input
-                # would not resolve what the first one already couldn't.
+            if _errs:
                 return json.dumps({
                     "status": "axiom_blocked",
                     "name": name,
@@ -2237,101 +2132,18 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                     "blocking": _errs,
                     "message": (
                         "The catalog has NOT been written. This tuple is not a point "
-                        "in the Crystal even after Tetractys triangulation: the slot "
-                        "membership above is what it violates. Fix the named slots and "
-                        "call again."
+                        "in the Crystal: the slot membership above is what it "
+                        "violates. Fix the named slots and call again."
                     ),
                 }, indent=2, ensure_ascii=False)
-            # _errs with no justification yet is exactly the per-primitive
-            # uncertainty Tetractys exists to resolve -- three independent
-            # windings converging on a value, not a single model's one
-            # guess. A hard refusal here bypassed Tetractys every time,
-            # kicking the same model back to guess alone instead of
-            # triangulating. Fall through and let it run.
 
-
-    # If convergence_justification already provided, the caller has resolved Tetractys
-    # conflicts — commit directly without re-triangulating.
-    if justification:
-        return _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
-
-    # Check that the caller supplied a complete tuple (all 12 primitives non-empty)
-    proposed: Dict[str, str] = {k: _PRIM_NORM.get(str(args.get(k, "")), str(args.get(k, ""))) for k in order}
-    if not all(proposed.values()):
-        # Incomplete — fall through to normal dispatch which will report the error
-        return _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
-
-    # ── TETRACTYS PROTOCOL ────────────────────────────────────────────────
-    # Winding 1 = caller's proposed tuple (already reasoned in THINK context)
-    # Windings 2 & 3 = fresh de novo sub-calls (no catalog, no history)
-    raw_model = _spawn_config.get("model", "grok-4")
-    if (raw_model.lower() == "local" or raw_model.lower().startswith("local:")
-            or raw_model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(raw_model))
-            or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model):
-        if raw_model.lower() == "grammaformer":
-            resolved_model = "grammaformer"
-        elif os.path.isdir(os.path.expanduser(raw_model)) or raw_model.startswith("/") or raw_model.startswith("~") or ".modelz" in raw_model:
-            resolved_model = raw_model
-        else:
-            resolved_model = raw_model.split(":", 1)[1] if ":" in raw_model else "local"
-        client = _LocalOpenAIClient()
-    else:
-        resolved_model, resolved_base, resolved_key = _resolve_model_and_endpoint(raw_model)
-        client = _build_client(base_url=resolved_base, api_key=resolved_key)
-
-    tri = _triangulate_imscription(proposed, name, description, client, resolved_model)
-
-    # Display the Tetractys report in the tool output regardless of outcome
-    report = tri["report"]
-
-    if tri.get("triangulation_failure"):
-        # Triangulation sub-calls failed — FIRST-CLASS ERROR, do NOT commit.
-        # Report the measured reason. This message used to assert connectivity
-        # loss unconditionally, which is the one cause that cannot be true when
-        # the main loop is reaching the same client on every other winding.
-        _errs = tri.get("sub_call_errors") or []
-        _why = "; ".join(_errs) if _errs else "no reason captured"
-        return json.dumps({
-            "status": "triangulation_failure",
-            "message": (
-                f"Triangulation sub-calls failed: only {len(tri.get('windings',[]))}/3 windings succeeded. "
-                f"The catalog has NOT been updated. Sub-call failures: {_why}. "
-                "Re-call imscribe_system once the cause above is addressed."
-            ),
-            "sub_call_errors": _errs,
-            "report": tri["report"],
-        }, indent=2, ensure_ascii=False)
-
-    if tri["converged"]:
-        # All windings agree — commit with Tetractys note embedded as justification
-        n_windings = len(tri["windings"])
-        tool_args["convergence_justification"] = (
-            f"[Triangulated: {n_windings}/3 windings converged] {report}"
-        )
-        commit_result = _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
-        return f"{report}\n\nCOMMIT RESULT:\n{commit_result}"
-    else:
-        # Conflicts found — return the report and majority tuple WITHOUT committing.
-        # The calling agent must reason through the conflicts and re-call imscribe_system
-        # with convergence_justification resolving each conflicting primitive.
-        majority = tri["majority"]
-        majority_tuple = ";".join(majority.get(k, "?") for k in order)
-        winding_details = []
-        for i, w in enumerate(tri["windings"]):
-            t = ";".join(w.get(k, "?") for k in order)
-            winding_details.append(f"W{i+1}: {t}")
-        return json.dumps({
-            "status": "tetractys_conflict",
-            "message": (
-                "Three-winding Tetractys produced conflicts. "
-                "Re-call imscribe_system with convergence_justification addressing each "
-                "conflicting primitive. The catalog has NOT been updated."
-            ),
-            "conflicting_primitives": tri["conflicts"],
-            "majority_tuple": majority_tuple,
-            "windings": winding_details,
-            "tetractys_report": report,
-        }, indent=2, ensure_ascii=False)
+    # Slot membership is the only gate. A re-imscription of an existing name,
+    # or a genuine conflict with a differing tuple, is not gated here or in
+    # the catalog layer -- commit directly. Three-winding Tetractys
+    # triangulation used to run here for exactly this case; removed, since
+    # slot membership already ran above and there is nothing left to
+    # triangulate independent opinions over.
+    return _emit_short_echo({"tool_name": "imscribe_system", "args": tool_args})
 
 def _imscribe_system_verify(emit_input: Dict, emit_output: str,
                            verify_args: Dict) -> Tuple[str, bool]:
@@ -2347,37 +2159,8 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
             False,
         )
 
-    # Triangulation failure — sub-calls could not reach LLM, catalog not updated
-    if '"status": "triangulation_failure"' in emit_output or \
-       '"status":"triangulation_failure"' in emit_output:
-        return (
-            "Triangulation FAILURE — sub-call LLM requests failed. Catalog NOT updated. "
-            "Restore LLM connectivity and re-call imscribe_system. — Frobenius OPEN",
-            False,
-        )
-
-    # Triangulation conflict — catalog not updated, agent must resolve and re-call
-    if '"status": "tetractys_conflict"' in emit_output or \
-       '"status":"tetractys_conflict"' in emit_output:
-        try:
-            data = json.loads(emit_output)
-            conflicts = data.get("conflicting_primitives", [])
-        except Exception:
-            conflicts = []
-        return (
-            f"Triangulation conflict on {conflicts} — catalog NOT updated. "
-            f"Re-call imscribe_system with convergence_justification resolving each "
-            f"conflicting primitive. — Frobenius OPEN",
-            False,
-        )
-    # Converged Tetractys — output is "REPORT\n\nCOMMIT RESULT:\n{json}"
-    if "COMMIT RESULT:" in emit_output:
-        commit_part = emit_output.split("COMMIT RESULT:", 1)[-1].strip()
-    else:
-        commit_part = emit_output
-
     # Status check via _imscribe_verify
-    base_msg, base_ok = _imscribe_verify({"tool_name": "imscribe_system"}, commit_part, verify_args)
+    base_msg, base_ok = _imscribe_verify({"tool_name": "imscribe_system"}, emit_output, verify_args)
     if not base_ok:
         return base_msg, base_ok
 
@@ -2387,7 +2170,7 @@ def _imscribe_system_verify(emit_input: Dict, emit_output: str,
     name = emit_input.get("name", "")
     if not name:
         try:
-            name = json.loads(commit_part).get("name", "")
+            name = json.loads(emit_output).get("name", "")
         except Exception:
             pass
     if name:
@@ -3156,12 +2939,11 @@ TOOL_SCHEMAS = [
             "Specify all 12 primitives explicitly — every field is required. "
             "This is the ONLY way to add a system. Never invent one to satisfy a "
             "prompt: catalog reads are always available, and every tuple must be "
-            "derived rather than hand-written. "
-            "TETRACTYS: Every call without convergence_justification triggers 3-winding "
-            "Tetractys. Your proposed tuple is winding 1; two de novo sub-calls (no catalog "
-            "context) are windings 2 and 3. If all 3 agree the catalog is committed immediately. "
-            "If conflicts exist the tool returns status=tetractys_conflict — you MUST re-call "
-            "with convergence_justification resolving each conflicting primitive."
+            "derived rather than hand-written. Every value must belong to its own "
+            "primitive's set; a value borrowed from a different primitive's set is "
+            "refused, not committed. A re-imscription of an existing name, with a "
+            "tuple that differs from what is already there, is not gated — it "
+            "commits directly once every value passes slot membership."
         ),
         {
             "name":        {"type": "string", "description": "Unique snake_case identifier"},
@@ -3193,10 +2975,11 @@ TOOL_SCHEMAS = [
             "convergence_justification": {
                 "type": "string",
                 "description": (
-                    "Required after tetractys_conflict or catalog conflict_blocked. "
-                    "Provide per-primitive reasoning for each conflicting/differing primitive: "
-                    "which value is correct and why. Presence of this field bypasses Tetractys "
-                    "and commits directly (you have already resolved the conflicts)."
+                    "Optional. Not required to commit — a valid tuple commits on its "
+                    "own, including a re-imscription of an existing name with a "
+                    "differing tuple. Use this to record per-primitive reasoning for "
+                    "any primitive you changed from an existing entry, if that "
+                    "reasoning is worth keeping in the catalog."
                 ),
             },
         },

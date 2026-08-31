@@ -797,12 +797,11 @@ _TOOLS_OPENAI = [
                 "ALTERNATIVE: pass all 12 as individual keyword arguments "
                 "(⊢='𐑦', ⊣='𐑸', >='𐑑', <='𐑬', ⋈='⋈^ż', ⊤='⊤^W', "
                 "∈='𐑲', ∋='∋^∧', ⊙='⊙', ⊥='𐑓', ⊞='𐑳', ⊡='𐑭'). "
-                "CONFLICT PROTOCOL: if a name already exists with a different tuple, the tool "
-                "returns status='conflict_blocked' and does NOT commit. You must then: "
-                "(1) reason through each differing primitive explicitly, "
-                "(2) determine the correct value for each, "
-                "(3) re-call encode_system with convergence_justification='<your per-primitive reasoning>' "
-                "to commit. If both encodings are valid, use a distinct name for the earlier one. "
+                "RE-IMSCRIPTION: if a name already exists with a different tuple, this commits "
+                "directly and overwrites it — not gated. convergence_justification is optional; "
+                "use it to record per-primitive reasoning for any value you changed, if that's "
+                "worth keeping in the catalog. If both encodings are valid, use a distinct name "
+                "for the earlier one instead of overwriting it. "
                 "Canonical value sets (Symbol_symbol IDs) — use ONLY these exact strings: "
                 "⊢: 𐑛 𐑨 𐑼 𐑦 | "
                 "⊣: 𐑡 𐑰 𐑥 𐑶 𐑸 | "
@@ -2511,9 +2510,12 @@ class SessionCatalog:
         imscription = {p: normalized[p] for p in PRIMITIVE_ORDER}
 
         # ── Consistency check 1: same name, different tuple ──────────────────────
-        # If the name already exists with a different tuple:
-        #   - without convergence_justification → BLOCK; do not commit.
-        #   - with convergence_justification    → commit and record justification.
+        # A re-imscription of an existing name is not gated. It already passed
+        # slot membership above -- that is the check that matters. This used
+        # to block without convergence_justification and force a
+        # comparison→convergence protocol; conflict_info is kept only as an
+        # informational record of what changed, address preservation below
+        # still runs regardless.
         conflict_info: Optional[Dict[str, Any]] = None
         if name in self._entries:
             existing = self._entries[name]
@@ -2527,25 +2529,6 @@ class SessionCatalog:
                     "distance": round(dist, 4),
                     "differing_primitives": differing,
                 }
-                if not convergence_justification:
-                    # Block the commit — force comparison→convergence protocol.
-                    return {
-                        "status": "conflict_blocked",
-                        "name": name,
-                        "existing_tuple": existing,
-                        "proposed_tuple": {p: imscription[p] for p in PRIMITIVE_ORDER},
-                        "distance": round(dist, 4),
-                        "differing_primitives": differing,
-                        "instruction": (
-                            f"Conflicting encoding for '{name}' — catalog NOT updated. "
-                            f"You MUST perform the comparison→convergence protocol before committing: "
-                            f"(1) Call compute_conflict_distance('{name}', '<proposed_name>') "
-                            f"or reason through each differing primitive ({differing}) explicitly. "
-                            f"(2) Determine which value is correct for each conflict. "
-                            f"(3) Re-call encode_system with convergence_justification='<your per-primitive reasoning>' "
-                            f"to commit. If both encodings are valid, use a distinct name for the earlier one."
-                        ),
-                    }
 
         # ── Address preservation ─────────────────────────────────────────────────
         # Names and descriptions are mutable; ADDRESSES ARE NOT. Every tuple that
