@@ -19,6 +19,7 @@ never assert arithmetic from memory.
 - **Running the kernel** — `cd`, `run_hosted_cmds.sh`, `⊙>`, `/run.sh`, `run.sh`, `make`, `make image`
 - **The six builds** — `make`, `make build`, `make release`, `make image`, `make hosted`, `hosted`, `make ordinals`, `/make_proof_vehicle.sh`, `make_proof_vehicle.sh`, `cargo`, `config.toml`, `missing-prelude`, `--features`
 - **Coverage between dispatcher and menu** — `cd`, `check_menu_coverage.py`, `python3`
+- **combo / combo2 — the standing audit across a whole orbit** — `combo`, `combo brief`, `combo2`, `re-run`, `same-cost`
 
 
 Full syntax, every flag and subcommand: `file_read` `/home/mrnob0dy666/imsgct/imscribing_grammar/agents/specialists/TOOLS_momonados.md`. Read it before using a tool whose invocation you are unsure of.

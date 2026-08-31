@@ -671,11 +671,28 @@ the ELF, a runner and the Lean sources.
 hosted` compiles no_std and fails with thousands of missing-prelude errors that
 look like rot and are not. `make hosted` names the host target explicitly."""),
 
-    (IMSGCT / "mOMonadOS" / "check_menu_coverage.py",
+    (IMSGCT / "mOMonadOS" / "py" / "check_menu_coverage.py",
      "Coverage between dispatcher and menu", """\
-`cd ~/imsgct/mOMonadOS && python3 check_menu_coverage.py`. Reports every REPL
-command unreachable from the menu. Run it after wiring a new command; an
+`cd ~/imsgct/mOMonadOS && python3 py/check_menu_coverage.py`. Reports every
+REPL command unreachable from the menu. Run it after wiring a new command; an
 unreachable command is one nobody will find."""),
+
+    (IMSGCT / "mOMonadOS" / "src" / "combo.rs",
+     "combo / combo2 — the standing audit across a whole orbit", """\
+`combo <word>` cycles the word, then runs weight, banked, insert, and repair
+on every DISTINCT rotation it produces (rotations that repeat verbatim under
+ROTAT are not re-run) -- one report instead of four commands times however
+many cuts the word has. `combo <word> brief` keeps the same search but has
+repair print only its cheapest candidate per rotation, not every one grouped
+by crystal address; on a word with an open fork the full form can run into
+the tens of thousands of lines (repair's own search returns hundreds of
+same-cost candidates), so reach for brief first and drop to full only once
+brief has pointed at the rotation worth reading in full.
+
+`combo2 <word>` is combo (brief) on the word, then weight, banked, insert,
+and repair AGAIN on every distinct word that first pass's repairs produced.
+A repair that closes one rotation's exposure is not yet known to hold on its
+OWN orbit -- combo2 is the check for that instead of an assumption of it."""),
 ]
 
 
