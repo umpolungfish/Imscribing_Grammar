@@ -4461,22 +4461,7 @@ class TrueAgenticAgent:
         self._context_window   = context_window
         self._review_threshold = review_threshold
 
-        # A recognized `provider:` prefix (llamacpp:, ollama:, vllm:, deepseek:, ...)
-        # names an HTTP-served model and must route through _resolve_model_and_endpoint
-        # below, even when the path after the colon looks like a local directory --
-        # ".modelz" in model, startswith("/"), os.path.isdir(...) are all heuristics
-        # for a BARE path with no prefix at all, and they used to fire on a prefixed
-        # one too (llamacpp:/home/.../.modelz/q38 contains ".modelz", so it matched
-        # here and loaded a tokenizer for the checkpoint in-process instead of asking
-        # the llama-server already running on that model's actual port). "local:" is
-        # deliberately excluded from that carve-out: it means in-process tensor
-        # inference by design, not an HTTP server, even though "local" also names an
-        # entry in LOCAL_BASE_URLS.
-        _prefix = model.split(":", 1)[0].lower() if ":" in model else ""
-        _http_prefix = _prefix != "local" and (
-            _prefix in LOCAL_BASE_URLS or _prefix in REMOTE_API_PROVIDERS or _prefix == "openrouter"
-        )
-        if not _http_prefix and (model.lower() == "local" or model.lower().startswith("local:")
+        if (model.lower() == "local" or model.lower().startswith("local:")
                 or model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(model))
                 or model.startswith("/") or model.startswith("~") or ".modelz" in model):
             if model.lower() == "grammaformer":
