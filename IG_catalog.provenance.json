@@ -17927,6 +17927,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "53c81fe172b11d9b"
   },
+  "fixed_point_nesting_effect": {
+    "changes": 0,
+    "first_seen": "2026-08-30T09:18:20+00:00",
+    "last_changed": "2026-08-30T09:18:20+00:00",
+    "tuple_hash": "51ef90bb4da3f154"
+  },
   "fixed_point_nesting_rule": {
     "changes": 0,
     "first_seen": "2026-08-06T04:02:34+00:00",
@@ -36934,6 +36940,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "26b6c3aedabaa884"
+  },
+  "primenum_ovm": {
+    "changes": 0,
+    "first_seen": "2026-08-30T00:52:56+00:00",
+    "last_changed": "2026-08-30T00:52:56+00:00",
+    "tuple_hash": "cd42d8de38503fa9"
   },
   "primitive_D": {
     "changes": 0,

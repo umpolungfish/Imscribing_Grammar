@@ -138579,5 +138579,53 @@
     "⊥": "𐑫",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "primenum_ovm",
+    "description": "the Prime Number Placement Operator Valued-Measure",
+    "⊢": "𐑦",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "fixed_point_nesting_effect",
+    "description": "fixed-point nesting effect",
+    "⊢": "𐑦",
+    "⊣": "𐑰",
+    "≻": "𐑽",
+    "≺": "𐑬",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "nested_oneshot_prime_winder",
+    "description": "B4-verdict primality/factorization operator built on the IMASM word ⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣ (period 12, phase-bearing). T=prime, F=composite, B=paradice. Fold topology: each nesting fold takes a linear sieve path and folds it so start and end kiss; when endpoints kiss (cycle complete), gcd(|x-y|, n) is a non-trivial factor. Brent's cycle detection = kissing detection = fold revelation. Arbitrary length via num-bigint::BigUint. Kernel-derived tuple from mOMonadOS bg tuple: ⟨𐑼𐑡𐑑𐑗𐑱𐑺𐑲𐑝𐑢𐑓𐑕𐑷⟩.",
+    "⊢": "𐑼",
+    "⊣": "𐑡",
+    "≻": "𐑑",
+    "≺": "𐑗",
+    "⋈": "𐑱",
+    "⊤": "𐑺",
+    "∈": "𐑲",
+    "∋": "𐑝",
+    "⊙": "𐑢",
+    "⊥": "𐑓",
+    "⊞": "𐑕",
+    "⊡": "𐑷"
   }
 ]
