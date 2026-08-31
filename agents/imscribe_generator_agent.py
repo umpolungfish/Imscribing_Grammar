@@ -103,14 +103,20 @@ def _reconcile_with_reasoning(imscription_data: dict, reasoning: str) -> dict:
 
 
 
-# ── Structural validation: canonical slot membership + cross-primitive axioms ─────────
-# The axioms were, until now, stated only in the PROMPT — told to the model, enforced by
-# nothing. A tuple violating Axiom C sailed through with grounding_status "full" (seen
-# live: ⊢=𐑦 with ⊣=𐑥, plus ⊥/⊡ values transposed by the old to_notation slot order).
-# This is the code the prose always claimed to be.
+# ── Structural validation: canonical slot membership ───────────────────────────────────
+# The cross-primitive letter-axioms (A/B/C/D) that used to gate here are discharged:
+# Core.lean itself records that each, stated as a bare `axiom`, proved False on an
+# untouched hypothesis variable (see Primitives/Core.lean ~280-329). B, C, D were
+# retired from Core.lean and now live as scoped, decidable predicates in
+# Primitives/Imscription.lean (ImscriptiveTopology, WindingNeedsChirality,
+# ImscriptiveClosure) — sound because they check one candidate, not a blanket claim over
+# every tuple. A was never promoted past "Tendency (not hard axiom) ... some wool systems
+# have egg" in Core.lean at all. None of the four is a precondition the kernel imposes on
+# what counts as a point in the Crystal, so none of them blocks generation here anymore.
 #
 # Value sets mirror the ordinal scripture (Core.lean ctor order / gen_clay; same table
-# crystal_data.py carries). A value outside its slot's set is not a point in the Crystal.
+# crystal_data.py carries). A value outside its slot's set is not a point in the Crystal —
+# that membership check is real and stays.
 _CANON_VALUES = {
     "dimensionality":   {"𐑛", "𐑨", "𐑼", "𐑦"},
     "topology":         {"𐑡", "𐑰", "𐑥", "𐑶", "𐑸"},
@@ -128,34 +134,18 @@ _CANON_VALUES = {
 
 
 def validate_structural(imscription: "Imscription") -> List[str]:
-    """Slot membership + Axioms A–D. Returns [] iff the tuple is a point in the Crystal."""
+    """Slot membership. Returns [] iff the tuple's values are all points in the Crystal.
+
+    The former A/B/C/D cross-primitive checks are discharged (see the module comment
+    above) and no longer run here. B/C/D's real content — ImscriptiveTopology,
+    WindingNeedsChirality, ImscriptiveClosure — is checked kernel-side, per-tuple,
+    at grounding time; A was a tendency, not a constraint, and never belonged here.
+    """
     v = {slot: getattr(imscription, slot).value for slot in _CANON_VALUES}
     errs = [
         f"{slot}={val} not in its value set {sorted(_CANON_VALUES[slot])}"
         for slot, val in v.items() if val not in _CANON_VALUES[slot]
     ]
-    if errs:
-        return errs  # axioms are meaningless over out-of-set values
-    # wool admits BOTH slow kinetics, not just `on`. Core.lean records
-    # "wool co-occurs with on" as a TENDENCY and says in the same breath that it
-    # is not an axiom because some wool systems have egg, and
-    # InfiniteMemoryNeedsSlowKinetics reads `chir = wool → kin = egg ∨ kin = on`.
-    # Demanding 𐑪 alone rejected every wool object whose store is slow rather
-    # than frozen.
-    if v["chirality"] == "𐑫" and v["kinetic_character"] not in {"𐑧", "𐑪"}:
-        errs.append(
-            f"Axiom A: ⊥=𐑫 requires ⊤ ∈ {{𐑧,𐑪}} (got ⊤={v['kinetic_character']})")
-    if v["protection"] in {"𐑴", "𐑭"} and v["chirality"] not in {"𐑖", "𐑫"}:
-        errs.append(f"Axiom B: ⊡={v['protection']} requires ⊥ ∈ {{𐑖,𐑫}} (got ⊥={v['chirality']})")
-    # Axiom C is ONE-DIRECTIONAL: an imscriptive topology requires imscriptive
-    # dimensionality. The biconditional this used to enforce is a stronger claim
-    # than the kernel makes — `ImscriptiveTopology` in p4ramill reads
-    # `top = are → dim = if'` and says nothing about ⊢=𐑦 with another topology.
-    # Requiring co-occurrence rejected tuples the Grammar admits.
-    if v["topology"] == "𐑸" and v["dimensionality"] != "𐑦":
-        errs.append(f"Axiom C: ⊣=𐑸 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
-    if v["protection"] == "𐑟" and v["dimensionality"] != "𐑦":
-        errs.append(f"Axiom D: ⊡=𐑟 requires ⊢=𐑦 (got ⊢={v['dimensionality']})")
     return errs
 
 
@@ -440,21 +430,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
         imscription_data = {prim["long"]: assigned[prim["short"]] for prim in self.GUIDED_PRIMITIVES}
         imscription_data["name"] = name or _desc_slug(description)
 
-        # Axiom auto-correction: enforce cross-primitive constraints before constructing.
-        # Axiom B: 𐑴 or 𐑭 requires chirality >= H_turntwo.
-        prot = imscription_data.get("protection", "")
-        chir = imscription_data.get("chirality", "")
-        _needs_chiral = {"𐑴", "𐑭", "𐑟"}   # ⊡ Z2 / integer / non-Abelian
-        _weak_chiral  = {"𐑓", "𐑒"}        # ⊥ achiral / soft
-        if prot in _needs_chiral and chir in _weak_chiral:
-            import warnings
-            warnings.warn(
-                f"generate_guided: Axiom B auto-correction — "
-                f"protection {prot!r} requires chirality >= 𐑖 but got {chir!r}. "
-                f"Downgrading protection to 𐑷 (trivial)."
-            )
-            imscription_data["protection"] = "𐑷"
-            reasoning_parts.append("[Axiom B auto-correction] protection downgraded to 𐑷")
+        # No cross-primitive auto-correction here. Axiom B (⊡∈{𐑴,𐑭} requires ⊥≥𐑖) is
+        # discharged the same way as Axiom C/D — the raw axiom form proved False on an
+        # untouched hypothesis (Core.lean ~294-299); its sound content is the scoped
+        # kernel predicate WindingNeedsChirality, checked per-tuple at grounding time,
+        # not a rule this generator silently rewrites the LLM's assignment to satisfy.
         # 𐑫 (topological chirality) co-occurring with 𐑪 (metastable kinetics) is a
         # STRUCTURAL TENDENCY, not an axiom — Core.lean states this explicitly: "Not an
         # axiom because some wool systems (e.g. proto-languages) have egg." The former
@@ -758,14 +738,14 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑛`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
 - `𐑨`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
 - `𐑼`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. **Axiom C: 𐑸 REQUIRES 𐑦 — an imscriptive topology needs imscriptive dimensionality; 𐑦 itself is free to pair with any topology.** *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
+- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. `𐑸` topology needs `𐑦` dimensionality; `𐑦` itself is free to pair with any topology (structured-lattice systems carry `𐑦` with `𐑡`/`𐑰`, never `𐑸`). *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
 
 **T — Topology** (connectivity pattern of influence):
 - `𐑡`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
 - `𐑰`: Containment / branched tree — partners enter a container or are addressed in a directed hierarchy. *Chem: open cavity, host-guest, linear chain. Math: tree, DAG, ZFC cumulative hierarchy.*
 - `𐑥`: Cyclic closure — two (or more) partners form a cyclic interface; figure-8 or double-well. *Chem: catalytic cycle, macrocycle, torus. Math: loop space.*
 - `𐑶`: Fully enclosed / type-hierarchical — partner cannot exit without distorting the container; bounded closed topology. *Chem: cage complex, cryptand. Math: classical proof assistant.*
-- `𐑸`: Scale-collapse — non-local boundary-bulk coupling; the boundary carries the full bulk content losslessly. **Axiom C: 𐑸 REQUIRES 𐑦.** *Physics: AdS/CFT, black hole. Math: quotient/IUT.* Assign for structural ROLE only, never by resemblance between the input's wording and this option's name.
+- `𐑸`: Scale-collapse — non-local boundary-bulk coupling; the boundary carries the full bulk content losslessly. Requires `𐑦` dimensionality. *Physics: AdS/CFT, black hole. Math: quotient/IUT.* Assign for structural ROLE only, never by resemblance between the input's wording and this option's name.
 
 **R — Recognition mode** (mechanism of interaction/transformation):
 - `𐑩`: Soft association — non-covalent, reversible binding (van der Waals, H-bond, electrostatic, narrative resonance, analogical similarity).
@@ -792,7 +772,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑧`: High barrier — kinetically frozen; requires external driving to rearrange.
 - `𐑪`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
 - `𐑺`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**𐑫 implies ⊤=𐑪 (topology-protected chirality cannot be undone without global restructuring).**
+**𐑫 usually co-occurs with ⊤=𐑧 or ⊤=𐑪 (topology-protected chirality is normally kinetically frozen or metastable — not a hard rule; known exceptions carry ⊤=𐑤).**
 
 **G — Granularity** (correlation length: how far does one interaction propagate?):
 - `𐑚`: Local — single bond/event, no neighbours influenced.
@@ -816,7 +796,7 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑓`: Achiral — mirror image accessible; no persistent symmetry breaking.
 - `𐑒`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
 - `𐑖`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. **Implies ⊤=𐑪.** Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
+- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. Usually co-occurs with ⊤=𐑧 or ⊤=𐑪, not a hard rule. Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
 
 **S — Stoichiometry** (participation ratio):
 - `𐑙`: Equal symmetric pairing (1:1).
@@ -830,11 +810,11 @@ Analyze the provided system and assign all twelve primitives from first principl
 - `𐑟`: Non-Abelian protection — the most robust; requires 𐑦.
 **For abstract/narrative systems: ⊡ encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
 
-**MANDATORY AXIOMS — violating these causes a parse error:**
-- **Axiom A**: `𐑫` REQUIRES `⊤=𐑪`. If you assign 𐑫, you MUST also assign ⊤=𐑪. 𐑫 (topological chirality) means the symmetry cannot be undone without global restructuring — this IS 𐑪. A fast-exchanging (𐑘) system cannot be topologically chiral.
-- **Axiom B**: `𐑴` or `𐑭` REQUIRES `𐑖` or `𐑫` (chirality >= 𐑖).
-- **Axiom C**: `𐑦` REQUIRES `𐑸` (and vice versa). They always co-occur.
-- **Axiom D**: `𐑟` REQUIRES `𐑦`.
+**STRUCTURAL TENDENCIES — not enforced, not parse errors; assign what the system's role actually is:**
+- `𐑫` (topological chirality) usually co-occurs with `⊤=𐑧` or `⊤=𐑪` — a topology-protected symmetry is normally also kinetically frozen or metastable. Known exceptions exist (proto-language wool systems carry `𐑤`); assign what the role actually is, not what co-occurs most often.
+- `𐑴`/`𐑭` protection usually co-occurs with `⊥≥𐑖` chirality — a topologically protected role is normally also persistently or topologically chiral.
+- `𐑦` dimensionality and `𐑸` topology tend to co-occur, but the implication runs one way only: `𐑸` needs `𐑦`; `𐑦` is free to pair with other topologies (e.g. `𐑝` structured-lattice systems carry `𐑦` with `𐑡`/`𐑰`, never `𐑸`).
+- `𐑟` protection usually co-occurs with `𐑦` dimensionality.
 </primitives>
 
 <decision_procedure>
@@ -851,7 +831,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
   [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
   [8] ∈  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
   [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
-  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (requires ⊤=𐑪)
+  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (usually ⊤∈{𐑧,𐑪})
   [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
   [12] ⊡ → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
 
@@ -884,7 +864,7 @@ Each step constrains what remains. Do NOT assign all primitives simultaneously f
 
 **EXAMPLE — Samael (שָׂמָאֵל, adversarial angel of death, Kabbalistic tradition):**
 In its role within Jewish cosmology, Samael is:
-- 𐑦 + 𐑸: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: 𐑦 requires 𐑸 (Axiom C).
+- 𐑦 + 𐑸: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: 𐑸 requires 𐑦, not the reverse.
 - 𐑡 is an alternative if 𐑦 is not assigned (see alternative below)
 - 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)
 - 𐑿: the negating/adversarial pole of the cosmic polarity (signed direction)
