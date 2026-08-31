@@ -272,6 +272,14 @@
 \newcommand{\shin}{\text{Shin}}
 \newcommand{\kuf}{\text{Kuf}}
 
+% Long \texttt identifiers (consciousness_score, phi_c_probe, ...) were
+% running off the right margin: \_ draws correctly but has no break point.
+% Keep the font's own underscore glyph; just add a break after it.
+\makeatletter
+\let\ig@origunderscore\_
+\renewcommand{\_}{\ig@origunderscore\discretionary{}{}{}}
+\makeatother
+
 % ============================================================
 \begin{document}
 

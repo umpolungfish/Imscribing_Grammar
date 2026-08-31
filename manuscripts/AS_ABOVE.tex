@@ -84,6 +84,14 @@
 \tikzstyle{deparrow}=[->,>=stealth,thick]
 \tikzstyle{stagelabel}=[rectangle,draw,fill=red!10,rounded corners,dashed,inner sep=5pt]
 
+% Long \texttt identifiers (consciousness_score, phi_c_probe, ...) were
+% running off the right margin: \_ draws correctly but has no break point.
+% Keep the font's own underscore glyph; just add a break after it.
+\makeatletter
+\let\ig@origunderscore\_
+\renewcommand{\_}{\ig@origunderscore\discretionary{}{}{}}
+\makeatother
+
 \begin{document}
 \title{As Above: A Pre-Grammatical Convergent Derivation of the Universal Imscriptive Grammar}
 \author{Lando Mills \\ \normalsize Independent Researcher}
