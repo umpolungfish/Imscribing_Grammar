@@ -904,165 +904,9 @@ _PRIM_ATTR = {
 }
 _PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
-# Verbatim from true_agentic_agent.py's TOOL_SCHEMAS entry for imscribe_system --
-# the actual enum each _val field is validated against. The tool schema carries
-# this too, but rendered ~10k tokens back in a long system prompt; a local
-# checkpoint has been observed emitting values outside these sets on its first
-# attempt (⊢='𐑸', which is a topology value, not a dimensionality one) and
-# only catching it after a round trip through the tool's own rejection. This
-# restates the same table at the point the model actually reasons and commits,
-# not a second source of truth -- copy the schema exactly if it ever changes.
-_PRIMITIVE_VALID_VALUES = {
-    "⊢": (["𐑛", "𐑨", "𐑼", "𐑦"],
-          "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
-    "⊣": (["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
-          "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
-    "≻": (["𐑩", "𐑑", "𐑽", "𐑾"],
-          "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
-    "≺": (["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
-          "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
-    "⋈": (["𐑱", "𐑞", "𐑐"],
-          "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
-    "⊤": (["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
-          "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
-    "∈": (["𐑲", "𐑚", "𐑔"],
-          "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
-    "∋": (["𐑝", "𐑜", "𐑠", "𐑵"],
-          "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
-    "⊙": (["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
-          "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
-    "⊥": (["𐑓", "𐑒", "𐑖", "𐑫"],
-          "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
-    "⊞": (["𐑙", "𐑕", "𐑳"],
-          "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
-    "⊡": (["𐑷", "𐑴", "𐑭", "𐑟"],
-          "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
-}
-
-
-def _valid_values_block(primitives: List[str]) -> str:
-    """Render the enum + description for each of the given marks, one line each."""
-    lines = []
-    for p in primitives:
-        values, desc = _PRIMITIVE_VALID_VALUES[p]
-        lines.append(f"  {p}_val ∈ {values}  —  {desc}")
-    return "\n".join(lines)
-
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:
     return {p: _PRIM_ATTR[p](imscription) for p in _PRIMITIVE_ORDER}
-
-
-def _agent_resolve_conflict(
-    name: str,
-    description: str,
-    existing: Dict[str, str],
-    proposed: Dict[str, str],
-    differing: List[str],
-    model: str = "",
-    provider: str = "",
-    existing_description: str = "",
-) -> None:
-    """Spawn a TrueAgenticAgent session to reason through and resolve a tuple conflict."""
-    import os as _os
-    import sys as _sys
-
-    # Ensure project root is importable (CLI may be invoked from any CWD)
-    if str(_PROJECT_ROOT) not in _sys.path:
-        _sys.path.insert(0, str(_PROJECT_ROOT))
-
-    from agents.true_agentic_agent import TrueAgenticAgent, LOCAL_BASE_URLS, REMOTE_API_PROVIDERS
-
-    existing_str = "⟨" + "".join(existing[p] for p in _PRIMITIVE_ORDER) + "⟩"
-    proposed_str = "⟨" + "".join(proposed[p] for p in _PRIMITIVE_ORDER) + "⟩"
-    prim_list    = ", ".join(differing)
-
-    valid_values = _valid_values_block(_PRIMITIVE_ORDER)
-
-    task = f"""\
-CONFLICT RESOLUTION — imscribe '{name}' in IG_catalog.json
-
-Existing encoding: {existing_str}
-Proposed encoding: {proposed_str}
-Differing primitives: [{prim_list}]
-
-Both tuples are proposals. Neither carries precedence: age is not evidence and recency
-is not evidence. The Grammar speaks one structural verdict — for each differing
-primitive there is one structurally correct value; find it.
-
-Every _val you commit, on every one of the 12 primitives (not just the differing
-ones), must come from that primitive's own set below. A value from a different
-primitive's set is not a variant reading, it is not in the Grammar at all:
-{valid_values}
-
-The existing entry's tuple and description are both already given above — do
-NOT call lookup_catalog for '{name}' to re-fetch them; a one-character or
-short name is not guaranteed to surface in a paginated keyword search over a
-large catalog, and the entry is already fully in front of you.
-
-Your task:
-1. For each differing primitive ({prim_list}), reason from first principles — which value
-   is structurally correct and why? Cite the grammar definitions explicitly. Judge every
-   axis on structural grounds alone. If the evidence genuinely cannot decide an axis,
-   say so in the justification and keep the value whose stated reasoning is stronger.
-2. Call imscribe_system with ALL 12 primitives and a convergence_justification covering
-   every differing primitive. Write the description that records the reasoning behind
-   the tuple you commit. The tool will not commit without convergence_justification.
-3. Call done() with a one-paragraph summary of the resolution.
-
-Existing description, for reference:
-"{existing_description or description}"
-"""
-
-    model = model or _os.environ.get("IG_MODEL") or _os.environ.get("IG_AGENT_MODEL", "")
-
-    # `generate`'s own provider/model split (cli.py) strips the provider tag
-    # before this function ever sees `model` -- so a local model handed here
-    # as a bare filesystem path (e.g. llamacpp's checkpoint dir) carries no
-    # marker saying which server serves it. TrueAgenticAgent's own resolver
-    # (_resolve_model_and_endpoint) reads a DIFFERENT prefix syntax than
-    # cli.py's provider/model split does -- colon, not slash -- and with no
-    # prefix at all it falls through to a local-load path that treats a real
-    # directory as something to load in-process via transformers. That
-    # crashed here: llamacpp//home/.../q38 reached this function as the bare
-    # path "/home/.../q38", TrueAgenticAgent found no colon prefix, and tried
-    # to instantiate a HuggingFace tokenizer for a GGUF-only checkpoint that
-    # has none.
-    #
-    # Reattach the prefix in the syntax TrueAgenticAgent reads. For a local
-    # HTTP server (llamacpp, ollama, vllm, lm-studio...) that server's own
-    # OpenAI-compatible endpoint ignores the requested model name entirely --
-    # it serves whatever checkpoint it was started with -- so the path-shaped
-    # value that crashed the OLD heuristic (leading "/" or "~", ".modelz" in
-    # it, or a real directory) is never handed through as the model id; a
-    # short placeholder carries the same request. This is entirely on the
-    # calling side: TrueAgenticAgent's own resolver and its local-vs-HTTP
-    # gate are untouched, and still route on exactly the shapes they always
-    # did. A cloud provider's model id IS the real thing the API needs, so
-    # only the local-HTTP case gets the placeholder swap; everything else is
-    # left exactly as it was.
-    if provider and ":" not in model:
-        provider_lower = provider.lower()
-        if provider_lower in LOCAL_BASE_URLS and provider_lower != "local":
-            path_shaped = (
-                model.startswith("/") or model.startswith("~")
-                or ".modelz" in model or _os.path.isdir(_os.path.expanduser(model))
-            )
-            model_id = "default" if path_shaped else model
-            model = f"{provider}:{model_id}"
-        elif provider_lower in REMOTE_API_PROVIDERS:
-            model = f"{provider}:{model}"
-
-    if not model:
-        raise click.UsageError(
-            "No model for conflict-resolution agent. "
-            "Set IG_AGENT_MODEL or ensure --model/IG_MODEL is set."
-        )
-    console.print(f"[cyan]Conflict-resolution agent ({model}) — resolving '{name}'...[/cyan]\n")
-
-    agent = TrueAgenticAgent(model=model, max_windings=40, verbose=True)
-    result = agent.run_sync(task)
-    console.print(f"\n[dim]{result}[/dim]")
 
 
 def _register_to_json_catalog(
@@ -1151,29 +995,21 @@ def _register_to_json_catalog(
             diff_table.add_row(f"[{style}]{p}[/{style}]" if style else p, old_v, new_v)
         console.print(diff_table)
 
-        # Local provider cannot route through the OpenRouter-backed agentic harness.
-        # Accept proposed (guided) encoding — it supersedes any previous unguided run.
-        if model.lower() == "local":
-            console.print("[cyan]Local provider: accepting guided encoding (supersedes prior unguided run).[/cyan]")
-            existing_desc = existing_entry.get("description", "") if existing_entry else ""
-            new_entry: Dict = {"name": name, "description": existing_desc or description}
-            new_entry.update(proposed)
-            disk_entries[name] = new_entry
-            try:
-                from .registry import write_canonical_catalog
-                write_canonical_catalog(disk_entries, catalog_path)
-                console.print(f"[green]✓ '{name}' updated in IG_catalog.json[/green]")
-            except OSError as e:
-                console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
-            return
-
-        console.print("[cyan]Spawning conflict-resolution agent...[/cyan]")
+        # A re-imscription is not gated -- commit the proposed tuple directly,
+        # same as a brand new name. imscribe_system and encode_system both
+        # commit a differing tuple outright now; this CLI path matches that.
+        console.print("[cyan]Re-imscription: committing the proposed encoding.[/cyan]")
         existing_desc = existing_entry.get("description", "") if existing_entry else ""
-        _agent_resolve_conflict(
-            name, description, existing_tuple, proposed, differing,
-            model=model, provider=provider, existing_description=existing_desc,
-        )
-        return  # agent wrote to IG_catalog.json; nothing left to do here
+        new_entry: Dict = {"name": name, "description": existing_desc or description}
+        new_entry.update(proposed)
+        disk_entries[name] = new_entry
+        try:
+            from .registry import write_canonical_catalog
+            write_canonical_catalog(disk_entries, catalog_path)
+            console.print(f"[green]✓ '{name}' updated in IG_catalog.json[/green]")
+        except OSError as e:
+            console.print(f"[red]Failed to write IG_catalog.json: {e}[/red]")
+        return
 
     # New name — write directly to catalog
     new_entry: Dict = {"name": name, "description": description}
