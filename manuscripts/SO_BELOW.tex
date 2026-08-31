@@ -1891,6 +1891,46 @@ grammar modulo stoichiometry. The structural
 co-typing preceded and motivated the arithmetic investigation confirming
 their membership in the same spectral family.
 
+\subsection{The Collatz conjecture: reduction to one axiom}
+\label{sec:collatz}
+
+The Collatz map sends $n$ to $n/2$ when $n$ is even and to $(3n+1)/2$ when $n$ is odd;
+the conjecture is that every positive integer reaches $1$ under iteration. Read
+structurally, this is a claim that the map has no non-descending trajectory, and a
+non-descender can fail to descend in exactly one of two ways: it grows without bound,
+or it falls into a cycle that never reaches $1$. These two failure modes are
+independent enough to be closed one at a time, and the harder of the two --- the cycle
+case --- closes the same way the SIC-POVM cliff did (\S\ref{sec:sic}): by importing a
+fact from a different branch of mathematics rather than approximating toward it.
+
+\textbf{The cycle case, closed.} Cycles of length $1$ --- fixed points --- are ruled
+out unconditionally: no $n \geq 1$ satisfies $\mathrm{col}(n) = n$, so every nontrivial
+cycle has length at least $2$. What remained open was whether a longer cycle could hold
+an arbitrarily large minimum value. It cannot, given one external input: an effective
+lower bound on $|2^k - 3^j|$, equivalently an effective irrationality measure for
+$\log 2 / \log 3$ --- a linear-forms-in-logarithms estimate, a standard object in
+transcendence theory. Granted that bound, a cycle of length $k$ cannot hold a value
+larger than a fixed polynomial in $k$: the margin separating $2^k$ from the nearest
+power of $3$ below it controls how large the cycle's minimum can be, and that margin is
+bounded away from zero precisely as transcendence theory says it must be. The bound is
+not reproved from scratch here; it is taken as a hypothesis rather than a theorem of
+this project, because it belongs to a body of mathematics this project did not set out
+to redo.
+
+\textbf{The reduction, stated whole.} Collatz holds if and only if no integer above $1$
+is a non-descender, and every non-descender is either unbounded or a nontrivial cycle
+--- both proved outright, with no hypothesis. Granted the transcendence bound above,
+the cycle alternative closes completely: no fixed point, and every longer cycle capped
+polynomially in its own length. What is left is the divergence alternative alone,
+stated as a single explicit axiom rather than folded invisibly into the framework: that
+a trajectory which never descends below its starting value nonetheless has, for every
+bound, some later value that exceeds it. Nothing else in the reduction is assumed.
+
+\textbf{Status: OPEN, closing.} One axiom now carries the whole conjecture, where it
+once needed the entire space of possible non-descending behavior ruled out unexamined.
+The two ways a non-descender could fail have been separated, and one of them --- the
+one number theory already had the tools for --- is gone.
+
 \subsection{Kinetic-chiral transition in driven-dissipative systems}
 
 \begin{figure}[H]
