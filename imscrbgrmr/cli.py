@@ -967,19 +967,36 @@ Existing description, for reference:
     # marker saying which server serves it. TrueAgenticAgent's own resolver
     # (_resolve_model_and_endpoint) reads a DIFFERENT prefix syntax than
     # cli.py's provider/model split does -- colon, not slash -- and with no
-    # prefix at all it falls through to OpenRouter-or-local-load heuristics
-    # that treat a real directory path as something to load in-process via
-    # transformers. That crashed here: llamacpp//home/.../q38 reached this
-    # function as the bare path "/home/.../q38", TrueAgenticAgent found no
-    # colon prefix, and tried to instantiate a HuggingFace tokenizer for a
-    # GGUF-only checkpoint that has none. Reattach the prefix in the syntax
-    # TrueAgenticAgent actually reads, only for providers it recognizes --
-    # an unrecognized provider (a cloud slug this file already threads
-    # through correctly today) is left exactly as it was.
-    if provider and ":" not in model and provider.lower() in (
-        set(LOCAL_BASE_URLS) | set(REMOTE_API_PROVIDERS)
-    ):
-        model = f"{provider}:{model}"
+    # prefix at all it falls through to a local-load path that treats a real
+    # directory as something to load in-process via transformers. That
+    # crashed here: llamacpp//home/.../q38 reached this function as the bare
+    # path "/home/.../q38", TrueAgenticAgent found no colon prefix, and tried
+    # to instantiate a HuggingFace tokenizer for a GGUF-only checkpoint that
+    # has none.
+    #
+    # Reattach the prefix in the syntax TrueAgenticAgent reads. For a local
+    # HTTP server (llamacpp, ollama, vllm, lm-studio...) that server's own
+    # OpenAI-compatible endpoint ignores the requested model name entirely --
+    # it serves whatever checkpoint it was started with -- so the path-shaped
+    # value that crashed the OLD heuristic (leading "/" or "~", ".modelz" in
+    # it, or a real directory) is never handed through as the model id; a
+    # short placeholder carries the same request. This is entirely on the
+    # calling side: TrueAgenticAgent's own resolver and its local-vs-HTTP
+    # gate are untouched, and still route on exactly the shapes they always
+    # did. A cloud provider's model id IS the real thing the API needs, so
+    # only the local-HTTP case gets the placeholder swap; everything else is
+    # left exactly as it was.
+    if provider and ":" not in model:
+        provider_lower = provider.lower()
+        if provider_lower in LOCAL_BASE_URLS and provider_lower != "local":
+            path_shaped = (
+                model.startswith("/") or model.startswith("~")
+                or ".modelz" in model or _os.path.isdir(_os.path.expanduser(model))
+            )
+            model_id = "default" if path_shaped else model
+            model = f"{provider}:{model_id}"
+        elif provider_lower in REMOTE_API_PROVIDERS:
+            model = f"{provider}:{model}"
 
     if not model:
         raise click.UsageError(
