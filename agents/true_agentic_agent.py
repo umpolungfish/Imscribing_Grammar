@@ -2222,7 +2222,11 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                 _errs = validate_structural(_Imscr.from_dict(axis_dict))
             except Exception as _e:
                 _errs = [f"could not build the tuple to check it: {_e}"]
-            if _errs:
+            if _errs and justification:
+                # Tetractys already ran once (convergence_justification present)
+                # and still produced a tuple outside the Crystal -- refuse here,
+                # a second independent-triangulation pass on the same input
+                # would not resolve what the first one already couldn't.
                 return json.dumps({
                     "status": "axiom_blocked",
                     "name": name,
@@ -2233,12 +2237,17 @@ def _imscribe_system_emit(args: Dict[str, Any]) -> str:
                     "blocking": _errs,
                     "message": (
                         "The catalog has NOT been written. This tuple is not a point "
-                        "in the Crystal: the cross-primitive axioms above are what it "
-                        "violates. Fix the named slots and call again; the axioms are "
-                        "the same ones the generator pipeline enforces, so nothing is "
-                        "gained by routing around this."
+                        "in the Crystal even after Tetractys triangulation: the slot "
+                        "membership above is what it violates. Fix the named slots and "
+                        "call again."
                     ),
                 }, indent=2, ensure_ascii=False)
+            # _errs with no justification yet is exactly the per-primitive
+            # uncertainty Tetractys exists to resolve -- three independent
+            # windings converging on a value, not a single model's one
+            # guess. A hard refusal here bypassed Tetractys every time,
+            # kicking the same model back to guess alone instead of
+            # triangulating. Fall through and let it run.
 
 
     # If convergence_justification already provided, the caller has resolved Tetractys
