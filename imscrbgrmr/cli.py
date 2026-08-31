@@ -904,6 +904,50 @@ _PRIM_ATTR = {
 }
 _PRIMITIVE_ORDER = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
+# Verbatim from true_agentic_agent.py's TOOL_SCHEMAS entry for imscribe_system --
+# the actual enum each _val field is validated against. The tool schema carries
+# this too, but rendered ~10k tokens back in a long system prompt; a local
+# checkpoint has been observed emitting values outside these sets on its first
+# attempt (⊢='𐑸', which is a topology value, not a dimensionality one) and
+# only catching it after a round trip through the tool's own rejection. This
+# restates the same table at the point the model actually reasons and commits,
+# not a second source of truth -- copy the schema exactly if it ever changes.
+_PRIMITIVE_VALID_VALUES = {
+    "⊢": (["𐑛", "𐑨", "𐑼", "𐑦"],
+          "Dimensionality: wedge=0d point, triangle=2d surface, infty=infinite-dim, odot=imscriptive"),
+    "⊣": (["𐑡", "𐑰", "𐑥", "𐑶", "𐑸"],
+          "Topology: network=branching, in=inclusion, bowtie=crossing, boxtimes=box product, odot=imscriptive closure"),
+    "≻": (["𐑩", "𐑑", "𐑽", "𐑾"],
+          "Coupling: super=supervenience, cat=categorical, dagger=adjoint, lr=bidirectional"),
+    "≺": (["𐑗", "𐑿", "𐑬", "𐑯", "𐑹"],
+          "Parity: asym=none, psi=quantum, pm=partial, sym=full, pm_sym=Frobenius-special"),
+    "⋈": (["𐑱", "𐑞", "𐑐"],
+          "Fidelity: ell=classical, eth=thermal, hbar=quantum"),
+    "⊤": (["𐑺", "𐑪", "𐑧", "𐑤", "𐑘"],
+          "Kinetics: fast=driven, mod=moderate, slow=near-equilibrium, trap=frozen-order, MBL=frozen-disorder"),
+    "∈": (["𐑲", "𐑚", "𐑔"],
+          "Cardinality: beth=local, gimel=mesoscale, aleph=maximal/all"),
+    "∋": (["𐑝", "𐑜", "𐑠", "𐑵"],
+          "Composition: and=conjunctive, or=disjunctive, seq=sequential, broad=broadcast"),
+    "⊙": (["𐑢", "⊙", "𐑮", "𐑻", "𐑣"],
+          "Criticality: sub=below, c=critical (self-modeling gate), c_complex=complex-plane critical, EP=exceptional point, super=supercritical"),
+    "⊥": (["𐑓", "𐑒", "𐑖", "𐑫"],
+          "Chirality: 𐑓=memoryless, 𐑒=one step, 𐑖=two steps, 𐑫=eternal"),
+    "⊞": (["𐑙", "𐑕", "𐑳"],
+          "Stoichiometry: 𐑙=1:1, 𐑕=many identical, 𐑳=many heterogeneous"),
+    "⊡": (["𐑷", "𐑴", "𐑭", "𐑟"],
+          "Winding: 0=trivial, Z2=binary, Z=integer (topological), NA=non-Abelian"),
+}
+
+
+def _valid_values_block(primitives: List[str]) -> str:
+    """Render the enum + description for each of the given marks, one line each."""
+    lines = []
+    for p in primitives:
+        values, desc = _PRIMITIVE_VALID_VALUES[p]
+        lines.append(f"  {p}_val ∈ {values}  —  {desc}")
+    return "\n".join(lines)
+
 
 def _imscription_to_tuple(imscription) -> Dict[str, str]:
     return {p: _PRIM_ATTR[p](imscription) for p in _PRIMITIVE_ORDER}
@@ -933,6 +977,8 @@ def _agent_resolve_conflict(
     proposed_str = "⟨" + "".join(proposed[p] for p in _PRIMITIVE_ORDER) + "⟩"
     prim_list    = ", ".join(differing)
 
+    valid_values = _valid_values_block(_PRIMITIVE_ORDER)
+
     task = f"""\
 CONFLICT RESOLUTION — imscribe '{name}' in IG_catalog.json
 
@@ -943,6 +989,11 @@ Differing primitives: [{prim_list}]
 Both tuples are proposals. Neither carries precedence: age is not evidence and recency
 is not evidence. The Grammar speaks one structural verdict — for each differing
 primitive there is one structurally correct value; find it.
+
+Every _val you commit, on every one of the 12 primitives (not just the differing
+ones), must come from that primitive's own set below. A value from a different
+primitive's set is not a variant reading, it is not in the Grammar at all:
+{valid_values}
 
 Your task:
 1. Call lookup_catalog(keyword='{name}') to read the existing entry and its description.
