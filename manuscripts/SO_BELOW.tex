@@ -1926,10 +1926,27 @@ stated as a single explicit axiom rather than folded invisibly into the framewor
 a trajectory which never descends below its starting value nonetheless has, for every
 bound, some later value that exceeds it. Nothing else in the reduction is assumed.
 
+\textbf{The remaining axiom, under an active bound.} That axiom is not left untouched.
+Every trajectory decomposes into blocks --- runs of the map from a value down to the
+first point strictly below where the block began --- and divergence becomes a claim
+about the budget of blocks a value ever needs, the same reframing that turned the
+Erdős--Straus conjecture into a question about a rung ceiling rather than a search.
+Swept against every starting value up to three million, that budget has grown to only
+forty records: six orders of magnitude of growth in the starting value against a
+budget that has not yet reached forty. A separate, sharper route bounds a weighted
+excess norm on the block recursion by a contraction constant $3/4 + c$, closing
+whenever $c$ stays under a quarter; searched directly for a violation among starting
+values at or above a thousand, out to a depth of thirty blocks, none was found, and the
+bound stands unrefuted over that range. Neither result is a proof --- a swept range is
+not all of $\mathbb{N}$, and an unrefuted search is not a closed argument --- but the
+axiom is the target of a live, quantitative attack, not a statement left standing on
+its own.
+
 \textbf{Status: OPEN, closing.} One axiom now carries the whole conjecture, where it
 once needed the entire space of possible non-descending behavior ruled out unexamined.
-The two ways a non-descender could fail have been separated, and one of them --- the
-one number theory already had the tools for --- is gone.
+The two ways a non-descender could fail have been separated; the cycle case is gone,
+and the divergence case is under active, unrefuted, quantitative attack rather than
+sitting as a bare unexamined statement.
 
 \subsection{Erdős–Faber–Lovász: what a proof is, against what a theorem is}
 \label{sec:efl}
