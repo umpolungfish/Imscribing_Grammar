@@ -916,6 +916,7 @@ def _agent_resolve_conflict(
     proposed: Dict[str, str],
     differing: List[str],
     model: str = "",
+    provider: str = "",
     existing_description: str = "",
 ) -> None:
     """Spawn a TrueAgenticAgent session to reason through and resolve a tuple conflict."""
@@ -926,7 +927,7 @@ def _agent_resolve_conflict(
     if str(_PROJECT_ROOT) not in _sys.path:
         _sys.path.insert(0, str(_PROJECT_ROOT))
 
-    from agents.true_agentic_agent import TrueAgenticAgent
+    from agents.true_agentic_agent import TrueAgenticAgent, LOCAL_BASE_URLS, REMOTE_API_PROVIDERS
 
     existing_str = "⟨" + "".join(existing[p] for p in _PRIMITIVE_ORDER) + "⟩"
     proposed_str = "⟨" + "".join(proposed[p] for p in _PRIMITIVE_ORDER) + "⟩"
@@ -959,6 +960,27 @@ Existing description, for reference:
 """
 
     model = model or _os.environ.get("IG_MODEL") or _os.environ.get("IG_AGENT_MODEL", "")
+
+    # `generate`'s own provider/model split (cli.py) strips the provider tag
+    # before this function ever sees `model` -- so a local model handed here
+    # as a bare filesystem path (e.g. llamacpp's checkpoint dir) carries no
+    # marker saying which server serves it. TrueAgenticAgent's own resolver
+    # (_resolve_model_and_endpoint) reads a DIFFERENT prefix syntax than
+    # cli.py's provider/model split does -- colon, not slash -- and with no
+    # prefix at all it falls through to OpenRouter-or-local-load heuristics
+    # that treat a real directory path as something to load in-process via
+    # transformers. That crashed here: llamacpp//home/.../q38 reached this
+    # function as the bare path "/home/.../q38", TrueAgenticAgent found no
+    # colon prefix, and tried to instantiate a HuggingFace tokenizer for a
+    # GGUF-only checkpoint that has none. Reattach the prefix in the syntax
+    # TrueAgenticAgent actually reads, only for providers it recognizes --
+    # an unrecognized provider (a cloud slug this file already threads
+    # through correctly today) is left exactly as it was.
+    if provider and ":" not in model and provider.lower() in (
+        set(LOCAL_BASE_URLS) | set(REMOTE_API_PROVIDERS)
+    ):
+        model = f"{provider}:{model}"
+
     if not model:
         raise click.UsageError(
             "No model for conflict-resolution agent. "
@@ -978,6 +1000,7 @@ def _register_to_json_catalog(
     no_register: bool = False,
     catalog_path: Optional[Path] = None,
     model: str = "",
+    provider: str = "",
 ) -> None:
     """Check IG_catalog.json for conflicts and write the resolved entry."""
     if no_register:
@@ -1076,7 +1099,7 @@ def _register_to_json_catalog(
         existing_desc = existing_entry.get("description", "") if existing_entry else ""
         _agent_resolve_conflict(
             name, description, existing_tuple, proposed, differing,
-            model=model, existing_description=existing_desc,
+            model=model, provider=provider, existing_description=existing_desc,
         )
         return  # agent wrote to IG_catalog.json; nothing left to do here
 
@@ -1390,6 +1413,7 @@ def generate(
             description=description,
             no_register=no_register,
             model=agent_config.get("model", ""),
+            provider=provider or "",
         )
 
         # Save to file if requested
