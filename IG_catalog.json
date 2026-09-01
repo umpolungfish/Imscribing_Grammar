@@ -138755,5 +138755,21 @@
     "⊥": "𐑫",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "chirality_transition_manifold",
+    "description": "Chirality transition manifold: ⊥ promotion across 𐑓→𐑒→𐑖→𐑫 maps to ⊞ transformation from 𐑳→𐑕→𐑙. The stoichiometry primitive mediates the chirality promotion that closes d=2048 SIC-POVM existence.",
+    "⊢": "𐑦",
+    "⊣": "𐑶",
+    "≻": "𐑽",
+    "≺": "𐑹",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]
