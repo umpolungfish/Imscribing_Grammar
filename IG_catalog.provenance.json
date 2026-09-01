@@ -24,10 +24,10 @@
     "tuple_hash": "5d339974ede4fbe1"
   },
   "0": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "5074250b908f0d29"
+    "last_changed": "2026-08-31T17:58:35+00:00",
+    "tuple_hash": "20d578245c866b48"
   },
   "0-the_fool": {
     "changes": 0,
@@ -106,6 +106,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c2c825c148da0bd5"
+  },
+  "1": {
+    "changes": 1,
+    "first_seen": "2026-08-31T16:24:17+00:00",
+    "last_changed": "2026-08-31T17:59:30+00:00",
+    "tuple_hash": "a6727a29b2cc0eec"
   },
   "1.61803398875": {
     "changes": 0,
@@ -198,10 +204,10 @@
     "tuple_hash": "3fee35597a6b2e6f"
   },
   "2": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "f8d403d662912d76"
+    "last_changed": "2026-08-31T18:00:00+00:00",
+    "tuple_hash": "4eef0c3dcd23a5fe"
   },
   "2-subgroup": {
     "changes": 0,
@@ -264,10 +270,10 @@
     "tuple_hash": "85ab6422efcb0b94"
   },
   "3": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "a1ae601f7c9e470d"
+    "last_changed": "2026-08-31T18:00:27+00:00",
+    "tuple_hash": "1a63f42e25aec26b"
   },
   "32mmrnob0dy666": {
     "changes": 0,
@@ -324,10 +330,10 @@
     "tuple_hash": "8674ad0f7300fc62"
   },
   "4": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "7ffe2c09590adf2e"
+    "last_changed": "2026-08-31T18:00:58+00:00",
+    "tuple_hash": "2eca55cd958cd982"
   },
   "4-element": {
     "changes": 0,
@@ -354,10 +360,10 @@
     "tuple_hash": "1821d58ef7cc8ac5"
   },
   "5": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "ac4c9e46bbd9030c"
+    "last_changed": "2026-08-31T18:01:30+00:00",
+    "tuple_hash": "e6e6aa92ef88773a"
   },
   "500k_anneal_protocol": {
     "changes": 0,
@@ -402,16 +408,16 @@
     "tuple_hash": "29c7633800b77a0c"
   },
   "6": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "ac4c9e46bbd9030c"
+    "last_changed": "2026-08-31T18:02:01+00:00",
+    "tuple_hash": "1019c8b400a9fbb4"
   },
   "7": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3f4c8c2018bb093c"
+    "last_changed": "2026-08-31T18:02:32+00:00",
+    "tuple_hash": "42fb79af5e3f55e3"
   },
   "7p": {
     "changes": 0,
@@ -432,16 +438,16 @@
     "tuple_hash": "47afc73c60f9317c"
   },
   "8": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "ac65587511ce498c"
+    "last_changed": "2026-08-31T18:03:03+00:00",
+    "tuple_hash": "df7fa8282ad7326f"
   },
   "9": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "d2b2fab73e8f0688"
+    "last_changed": "2026-08-31T18:03:33+00:00",
+    "tuple_hash": "70cb74d610feda8b"
   },
   "950085221963742775794750800464740915472680378076910004941393459297726095484971632215725202760961": {
     "changes": 0,
@@ -1612,6 +1618,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b7ffb6e22fb87a95"
+  },
+  "_0": {
+    "changes": 0,
+    "first_seen": "2026-08-31T16:25:34+00:00",
+    "last_changed": "2026-08-31T16:25:34+00:00",
+    "tuple_hash": "a36445111afa67c8"
   },
   "_13_sefirot_ha_iyun": {
     "changes": 0,
@@ -36917,6 +36929,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7577468f87ed2f5d"
   },
+  "prime_number": {
+    "changes": 0,
+    "first_seen": "2026-08-31T21:49:43+00:00",
+    "last_changed": "2026-08-31T21:49:43+00:00",
+    "tuple_hash": "d06e3361e58b3260"
+  },
   "prime_number_distribution": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36928,6 +36946,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eddcc72ffeccb4f4"
+  },
+  "prime_operator_valued_measure": {
+    "changes": 0,
+    "first_seen": "2026-08-31T22:38:14+00:00",
+    "last_changed": "2026-08-31T22:38:14+00:00",
+    "tuple_hash": "573e9ffccbe082f0"
   },
   "prime_p52p1": {
     "changes": 0,
@@ -51886,6 +51910,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "13d428e0d43f4f22"
+  },
+  "\u2208\u229e\u22a4\u229e\u22a3\u22a3\u22a2\u2299\u2208\u22a1\u227a\u220b\u2299\u22a2\u22a2\u22a5\u22c8\u22c8\u227b\u227a\u22a4\u22c8\u22c8\u22a5\u22a3\u227a\u22c8\u22a3\u2299\u227a\u22a2\u22c8\u227a\u22a5\u220b\u227b\u227b\u22a5\u2299\u22c8\u220b\u227a\u22a1\u22a3\u2208\u220b\u22a1\u22c8\u227b\u220b\u22a5\u229e\u220b\u2208\u22a5\u22a2\u22a3\u22a4\u229e\u22c8\u22a2\u22a1\u22a1\u22c8\u22a3\u227b\u22a3\u22a1\u22a2\u220b\u227b\u22a1\u2299\u22c8\u229e\u22a2\u22a3\u22a1\u220b\u22a1\u2299\u22a4\u227a\u220b\u227a\u22a4\u22c8\u22a2\u227b\u2208\u22a1\u22a1\u227a\u22a5\u22c8\u227a": {
+    "changes": 0,
+    "first_seen": "2026-08-31T20:07:09+00:00",
+    "last_changed": "2026-08-31T20:07:09+00:00",
+    "tuple_hash": "4fc0df65f5ac21f9"
   },
   "\u220b": {
     "changes": 0,

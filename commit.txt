@@ -1,21 +1,14 @@
-I make the momonados specialist aware of combo and combo2, the two new
-mOMonadOS REPL commands from this session. Added a curated entry to
-MOMONADOS_DOMAIN in gen_tool_manifest.py -- what combo does, what brief
-changes, why combo2 exists (a repair that closes one rotation's exposure
-isn't yet known to hold on its own orbit) -- then regenerated
-TOOL_MANIFEST_momonados.md and TOOLS_momonados.md from it.
+I stop imscribe generate spawning an agent to resolve name conflicts.
+Conflicts aren't gated anymore at either the imscribe_system or
+encode_system layer, so an agent session that used to reason through
+differing primitives and re-call with convergence_justification had
+nothing left to resolve -- it was loading a local model on every
+conflicting name for a decision the tool already makes on its own.
 
-true_agentic_agent.py itself needs no change: it's the generic engine, and
-a specialist swaps in its own system prompt on top of it rather than the
-other way around. The chain that actually needed updating is
-gen_tool_manifest.py's curated source -> the two generated .md files ->
-specialists/__init__.py's _with_manifest, which reads TOOL_MANIFEST_
-momonados.md fresh at import time and appends it to
-MOMONADOS_SPECIALIST_PROMPT. Verified live: imported the module and
-confirmed combo and combo2 both appear in the actual composed prompt
-string, not just the intermediate files.
-
-Also fixed a real, unrelated drift the regeneration surfaced: the curated
-entry for check_menu_coverage.py pointed at mOMonadOS/check_menu_coverage.py,
-which moved to mOMonadOS/py/check_menu_coverage.py at some point. Fixed the
-path while I was already in the file.
+_register_to_json_catalog's conflict branch now writes the proposed
+tuple straight to IG_catalog.json, the same direct-write path the
+new-name branch already used, matching imscribe_system's own commit
+behavior for a re-imscription. Removed _agent_resolve_conflict and the
+_PRIMITIVE_VALID_VALUES table + _valid_values_block helper it was the
+only caller of -- dead code once nothing spawns an agent to hand that
+table to.
