@@ -138771,5 +138771,21 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "grammar_native_representation_of_functional_graph_dynamics",
+    "description": "Grammar-native representation of functional-graph dynamics",
+    "⊢": "𐑦",
+    "⊣": "𐑡",
+    "≻": "𐑽",
+    "≺": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]

@@ -10133,6 +10133,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c9df6114a33bee34"
   },
+  "chirality_transition_manifold": {
+    "changes": 0,
+    "first_seen": "2026-09-02T10:34:48+00:00",
+    "last_changed": "2026-09-02T10:34:48+00:00",
+    "tuple_hash": "63fec5950e5ea2a0"
+  },
   "chiropteran_viral_reservoir": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -20578,6 +20584,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9c716837c5427bac"
+  },
+  "grammar_native_representation_of_functional_graph_dynamics": {
+    "changes": 0,
+    "first_seen": "2026-09-02T10:34:48+00:00",
+    "last_changed": "2026-09-02T10:34:48+00:00",
+    "tuple_hash": "76b453c2415a94a1"
   },
   "grammar_pnp_join": {
     "changes": 0,
