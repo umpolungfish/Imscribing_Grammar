@@ -1920,10 +1920,10 @@
     "tuple_hash": "cec8550aedd136dc"
   },
   "acetic_acid": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "644b348d3b905bce"
+    "last_changed": "2026-09-03T21:03:59+00:00",
+    "tuple_hash": "de6c5e5761f3a636"
   },
   "achillea_millefolium": {
     "changes": 0,
@@ -2886,10 +2886,10 @@
     "tuple_hash": "8b00db2e6f346d22"
   },
   "ammonia": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "cbf156a94162cf4f"
+    "last_changed": "2026-09-03T21:04:32+00:00",
+    "tuple_hash": "c1b59270219813a6"
   },
   "among": {
     "changes": 0,
@@ -3030,10 +3030,10 @@
     "tuple_hash": "0722b0892e80fe3f"
   },
   "aniline": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T20:59:33+00:00",
+    "tuple_hash": "e66e99486a7292cd"
   },
   "anise": {
     "changes": 0,
@@ -5544,10 +5544,10 @@
     "tuple_hash": "0b6b1e693642618f"
   },
   "benzene": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "6d966a4f290f94d6"
+    "last_changed": "2026-09-03T20:57:39+00:00",
+    "tuple_hash": "c2a13bc9bb4824ae"
   },
   "bereshit_bet_resh": {
     "changes": 0,
@@ -7758,10 +7758,10 @@
     "tuple_hash": "82c76ae877a17386"
   },
   "carbon_dioxide": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "13a0ebd0e87bd69b"
+    "last_changed": "2026-09-03T21:05:34+00:00",
+    "tuple_hash": "64a85a40ab7ccf70"
   },
   "carbon_ferromagnetism": {
     "changes": 0,
@@ -10200,10 +10200,10 @@
     "tuple_hash": "4aa937d0db6e7339"
   },
   "cholesterol": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "688d8f600d6ec834"
+    "last_changed": "2026-09-03T21:01:13+00:00",
+    "tuple_hash": "0206f6931fef2e30"
   },
   "cholinergicsignaling": {
     "changes": 0,
@@ -10926,10 +10926,10 @@
     "tuple_hash": "2e04f3730071aa50"
   },
   "cocaine": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "11c742d42a88f523"
+    "last_changed": "2026-09-03T21:10:45+00:00",
+    "tuple_hash": "2c83aec629513ee0"
   },
   "cochromatic_divergence": {
     "changes": 0,
@@ -12252,10 +12252,10 @@
     "tuple_hash": "5628aa49321c0baa"
   },
   "cortisol": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3efb721a695ee99c"
+    "last_changed": "2026-09-03T21:02:52+00:00",
+    "tuple_hash": "7dde387578234384"
   },
   "cosmic_breath": {
     "changes": 0,
@@ -14268,10 +14268,10 @@
     "tuple_hash": "d7a8349fe66117dd"
   },
   "dmt": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T21:08:58+00:00",
+    "tuple_hash": "1a2770ab24a9092e"
   },
   "dna_barcoding": {
     "changes": 0,
@@ -16326,10 +16326,10 @@
     "tuple_hash": "feaad1a3050ad92b"
   },
   "estradiol": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "688d8f600d6ec834"
+    "last_changed": "2026-09-03T21:01:46+00:00",
+    "tuple_hash": "97e7c83a7af2bfcb"
   },
   "eta": {
     "changes": 0,
@@ -16368,10 +16368,10 @@
     "tuple_hash": "cc57962f6c314bae"
   },
   "ethanol": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "13a0ebd0e87bd69b"
+    "last_changed": "2026-09-03T21:03:24+00:00",
+    "tuple_hash": "454b135a3497a23b"
   },
   "ethanol_production": {
     "changes": 0,
@@ -18648,10 +18648,10 @@
     "tuple_hash": "8a961d7f3c439f93"
   },
   "fructose": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3b5a124e62e23738"
+    "last_changed": "2026-09-03T21:00:38+00:00",
+    "tuple_hash": "1b32a53a76a3fdbd"
   },
   "fruiting_body": {
     "changes": 0,
@@ -19914,10 +19914,10 @@
     "tuple_hash": "a83594d6dd6f756d"
   },
   "glucose": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3b5a124e62e23738"
+    "last_changed": "2026-09-03T21:00:05+00:00",
+    "tuple_hash": "c7d2b95287296f15"
   },
   "gluon": {
     "changes": 0,
@@ -28170,10 +28170,10 @@
     "tuple_hash": "c4e007d2ccfb7baf"
   },
   "lsd": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3efb721a695ee99c"
+    "last_changed": "2026-09-03T21:09:31+00:00",
+    "tuple_hash": "d41f4736dffa3f5f"
   },
   "luca": {
     "changes": 0,
@@ -28242,10 +28242,10 @@
     "tuple_hash": "1a151728261e688c"
   },
   "lysergic_acid": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "4fd82eb9548a0b8c"
+    "last_changed": "2026-09-03T21:06:09+00:00",
+    "tuple_hash": "a29d7403aa0ac897"
   },
   "lysosomalintegrity": {
     "changes": 0,
@@ -29412,10 +29412,10 @@
     "tuple_hash": "ba416fff39341998"
   },
   "mdma": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "688d8f600d6ec834"
+    "last_changed": "2026-09-03T21:10:06+00:00",
+    "tuple_hash": "badf75259fb38f8b"
   },
   "me_mow___tiny,_ruthless_cat_assassin": {
     "changes": 0,
@@ -29832,10 +29832,10 @@
     "tuple_hash": "bfd3e318577e17ed"
   },
   "mescaline": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T21:08:25+00:00",
+    "tuple_hash": "3d80b9a55ca8d0d7"
   },
   "mescaline_odot": {
     "changes": 0,
@@ -32016,10 +32016,10 @@
     "tuple_hash": "457cba2cce46db87"
   },
   "nicotine": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T21:11:20+00:00",
+    "tuple_hash": "9f8c20bc2fc56552"
   },
   "nightosphere": {
     "changes": 0,
@@ -35718,10 +35718,10 @@
     "tuple_hash": "6a2c0647240a64e4"
   },
   "phenol": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "229e6bfe452853c3"
+    "last_changed": "2026-09-03T20:58:57+00:00",
+    "tuple_hash": "e66e99486a7292cd"
   },
   "pheromone": {
     "changes": 0,
@@ -37812,10 +37812,10 @@
     "tuple_hash": "08d2a0f76427f61b"
   },
   "psilocin": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T21:07:51+00:00",
+    "tuple_hash": "3aac137ac74f8c8c"
   },
   "psilocybe_cubensis": {
     "changes": 0,
@@ -39486,10 +39486,10 @@
     "tuple_hash": "c5fa3df5e47e4e8a"
   },
   "retinalorganoid": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "bbc6ed86997dced5"
+    "last_changed": "2026-09-03T21:06:41+00:00",
+    "tuple_hash": "4c8ec47e0d2e4f82"
   },
   "retinoicacidsignaling": {
     "changes": 0,
@@ -46050,10 +46050,10 @@
     "tuple_hash": "a6ff14a145ff1571"
   },
   "testosterone": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3efb721a695ee99c"
+    "last_changed": "2026-09-03T21:02:18+00:00",
+    "tuple_hash": "452c1a52ac6a15f6"
   },
   "tet": {
     "changes": 0,
@@ -46110,10 +46110,10 @@
     "tuple_hash": "6dbac976964b47ba"
   },
   "thc": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "3efb721a695ee99c"
+    "last_changed": "2026-09-03T21:11:56+00:00",
+    "tuple_hash": "3b2c682ac1abfdd8"
   },
   "the": {
     "changes": 0,
@@ -47412,10 +47412,10 @@
     "tuple_hash": "c2dd26164321a8a5"
   },
   "toluene": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "6d966a4f290f94d6"
+    "last_changed": "2026-09-03T20:58:21+00:00",
+    "tuple_hash": "8ad51194c85b648e"
   },
   "tonoplast": {
     "changes": 0,
@@ -48330,10 +48330,10 @@
     "tuple_hash": "ad4ed333766f47d8"
   },
   "tryptamine": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "76e1a465a3276408"
+    "last_changed": "2026-09-03T21:07:14+00:00",
+    "tuple_hash": "cd87bebd1a708398"
   },
   "tryptophan_sidechain": {
     "changes": 0,
@@ -50052,10 +50052,10 @@
     "tuple_hash": "11cacdb40a719a08"
   },
   "water": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "cd94b2a441553462"
+    "last_changed": "2026-09-03T21:05:02+00:00",
+    "tuple_hash": "61d03700085379e0"
   },
   "water_ambient": {
     "changes": 0,
