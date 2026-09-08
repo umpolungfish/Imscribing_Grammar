@@ -1357,7 +1357,7 @@ def generate(
 @main.command()
 @click.argument("imscriptions", nargs=-1, required=True)
 @click.option("--include-thermo", "-t", is_flag=True, help="Include thermodynamic comparison.")
-def compare(imscriptions: tuple, delta_g: tuple, include_thermo: bool):
+def compare(imscriptions: tuple, include_thermo: bool):
     """
     Compare multiple imscriptions side-by-side.
 
