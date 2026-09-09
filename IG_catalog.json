@@ -139059,5 +139059,21 @@
     "⊥": "𐑖",
     "⊞": "𐑳",
     "⊡": "𐑴"
+  },
+  {
+    "name": "distantoasis_b4",
+    "description": "DistantOasis augmented with Belnap FOUR lattice B4-valued verification for secret credibility scoring. Integrates distantoasis scanning with B4 lattice semantics: T=true positive secret, F=false positive, B=dialetheic conflict, N=inconclusive. B4 join(T,F)=B provides composition rule for dual-scanner findings where scanner disagreement creates parser gaps/semantic differentials in credential discovery.",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    "≻": "𐑾",
+    "≺": "𐑯",
+    "⋈": "𐑱",
+    "⊤": "𐑧",
+    "∈": "𐑲",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑒",
+    "⊞": "𐑳",
+    "⊡": "𐑭"
   }
 ]
