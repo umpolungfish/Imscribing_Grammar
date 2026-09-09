@@ -129750,7 +129750,7 @@
   },
   {
     "name": "bughunter_operator",
-    "description": "A specialist ⊙perator that operates the bug-hunter framework end-to-end",
+    "description": "bughunter_operator — the bug-hunter specialist, self-contained",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
