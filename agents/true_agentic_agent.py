@@ -4224,6 +4224,30 @@ class TrueAgenticAgent:
     dual-tool planting (§88 Thm 88.3) to achieve O_∞ at the tool interface.
     """
 
+    _SPECIALIST_ALIASES = {
+        # CamelCase class name -> snake_case specialist name. Derived names are
+        # exact for every operator except ChemBioOperator, whose module/file is
+        # "chembio" (no underscore); the alias keeps the stamp faithful to it.
+        "ChemBioOperator": "chembio_operator",
+    }
+
+    @property
+    def specialist_name(self) -> str:
+        """The snake_case specialist name derived from the running class.
+
+        The winding reminder stamps this name so each specialist (heterodox,
+        math, chembio, closure, editorial, ...) is identified by what it
+        actually is — never by a hardcoded literal. Derived from
+        __class__.__name__ rather than a stored string, so every subclass is
+        correct with no further edits, and the base agent reads
+        "true_agentic_agent".
+        """
+        cls = self.__class__.__name__
+        if cls in self._SPECIALIST_ALIASES:
+            return self._SPECIALIST_ALIASES[cls]
+        import re
+        return re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", cls).lower()
+
     def __init__(
         self,
         model: str = "grok-4",
@@ -4435,7 +4459,7 @@ class TrueAgenticAgent:
                 "content": (
                     "[SESSION CONTINUATION — prior messages loaded. "
                     f"Winding offset: {self.starting_winding_offset}]\n\n"
-                    "You are bughunter_operator. The work below is yours — "
+                    f"You are {self.specialist_name}. The work below is yours — "
                     "the prior trajectory and observations are yours to act on.\n"
                     f"TASK: {task}\n\n"
                     "Resume from where you stopped. Think in at most three sentences. "
@@ -4449,7 +4473,7 @@ class TrueAgenticAgent:
             self._messages: List[Dict[str, Any]] = [
                 {"role": "system", "content": system_content},
                 {"role": "user",   "content": (
-                    "You are bughunter_operator. This is YOUR task — it arrived here, "
+                    f"You are {self.specialist_name}. This is YOUR task — it arrived here, "
                     "not to someone watching you work.\n"
                     f"TASK: {task}\n\n"
                     "Think in at most three sentences. Then emit exactly one tool call "
@@ -4561,7 +4585,7 @@ class TrueAgenticAgent:
             "role": "user",
             "content": (
                 "[WINDING REMINDER — this is you. The task below is yours to act on.]\n"
-                "You are bughunter_operator. You are inside a THINK→ACT→OBSERVE→UPDATE "
+                f"You are {self.specialist_name}. You are inside a THINK→ACT→OBSERVE→UPDATE "
                 "loop. The user message is the task IN YOUR HANDS, not a request "
                 "someone else is waiting on you to answer. The principal named a "
                 "target; act on it now.\n\n"

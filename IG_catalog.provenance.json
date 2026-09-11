@@ -14279,6 +14279,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1b071f371b0613a4"
   },
+  "distantoasis_b4": {
+    "changes": 0,
+    "first_seen": "2026-09-11T08:55:08+00:00",
+    "last_changed": "2026-09-11T08:55:08+00:00",
+    "tuple_hash": "076bd96684859a31"
+  },
   "distillation_v14": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -50794,6 +50800,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0630a970e04d4723"
+  },
+  "world": {
+    "changes": 0,
+    "first_seen": "2026-09-11T08:55:08+00:00",
+    "last_changed": "2026-09-11T08:55:08+00:00",
+    "tuple_hash": "f905498c706d3187"
   },
   "wormwood": {
     "changes": 0,
