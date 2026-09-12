@@ -13867,5 +13867,13 @@
   "65cbcf65732dc8d11473dcf46de1ddcad8258c9d5b2fb469cd16afae3e45ee87": "3 \u2014 The T-bit set and F-bit clear configuration enforces a deterministic, geometry-constrained firing pattern that minimizes entropy and ensures high-fidelity transmission.",
   "9c7f305ba5751bcd752b7af7ddb0a33c33a77d22f0ee3a3059da4d791ddb168d": "3 \u2014 The assignment of the kinetic_character primitive \u22a4 to a system with T-bit set and other bits clear indicates a state that is kinetically frozen and requires external driving to rearrange.",
   "4af15218f04431cc7ed934f02bc48d7fd35212f4ce72927d1861212ec858ccf6": "1 \u2014 The T-bit set with F, I, and fork-bits clear indicates a self-contained, non-propagating interaction confined to a single local event.",
-  "0adb85e0cfef7e605a3c3947bf336bf34ad102ee57147142d857d55dfd335658": "1 \u2014 The T-bit set with F, I, and fork-bits clear indicates a strict, simultaneous requirement for all defined partners in the interaction grammar."
+  "0adb85e0cfef7e605a3c3947bf336bf34ad102ee57147142d857d55dfd335658": "1 \u2014 The T-bit set with F, I, and fork-bits clear indicates a strict, simultaneous requirement for all defined partners in the interaction grammar.",
+  "3d732ac22688fe73214d6a552d18e19a0a21aa10d8812151ff5b754ecb0d009f": "",
+  "3c61ae41fce85748f0379d89d16774d9db1c4d84897096146024fcff94f11ddb": "3 \u2014 The system recurs through a closed cycle with a reset step, matching \u201crestores.\u201d",
+  "de466729625f9154974d27379870a9c65795fac4eba071b150e5e3e0c37a8619": "1 \u2014 The word splits into 'res' + 'to' + 'res', so the repeated 'res' units participate in a 1:1 equal pairing.",
+  "1edd9bda1878ad5fbf88d3d2c6c25b3f0014a382cb00ea4b8107720aa3c5c9a2": "4 \u2014 The word \u201crestores\u201d ends in the voiced /z/ sound, matching Shavian \ud801\udc5f.",
+  "2d69ef559436fc0ebcba4f90d07d2df523ab770f6b6841df890902b0b20955e8": "2 \u2014 The assigned primitive \u2299 denotes the critical point itself, so the system is at the threshold.",
+  "07b38e2189ad45c0a446c4e013a1914a78d460cf8b8fb10c253ccf86e4f7b919": "1 \u2014 Restoring returns the system to its original symmetric state, so the broken orientational symmetry is not persistent.",
+  "8f503bbd940f20b41fafa4ada455e9a351487a2d5e4f571f17aa710af3fef288": "1 \u2014 The word \"restores\" implies a reversible return to a prior state, matching soft non-covalent association.",
+  "4a0d3832acd5a5a20565bbe4b42ae908dc69857a34470fb4ab3ddbe42888af0a": "2 \u2014 The primitive \u227a is an asymmetric precedence relation, so its interface has a single signed direction rather than self-complementarity."
 }

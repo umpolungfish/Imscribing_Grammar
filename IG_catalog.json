@@ -139091,5 +139091,21 @@
     "⊥": "𐑫",
     "⊞": "𐑳",
     "⊡": "𐑭"
+  },
+  {
+    "name": "factor_operator",
+    "description": "The monotone factor-state constructor F_N over 𝟒={N,T,F,B}: a cyclic constraint circuit (P,Q,K)→(P',Q',K') whose fixed points are exactly the ambient factor states with p·q≡N mod 2^m. P,Q∈𝟒^m are ambient factor lanes seeded at N; K is the unresolved coupling register holding the carry structure. Each lane is refined by knowledge-order consensus (lub in ≤k = bitwise OR, T⊕F=B) against the 2-adic inverse leg N·Q⁻¹ / N·P⁻¹, so the step is extensive and the bounded Kleene iteration converges without oscillation. The true factor pair is a certified fixed point (ALL five conditions PASS); the all-N seed converges to a symmetric paradox-stabilized fixed point that fails terminal classicality — the honest hardness statement, not a hidden search.",
+    "⊢": "𐑦",
+    "⊣": "𐑶",
+    "≻": "𐑽",
+    "≺": "𐑿",
+    "⋈": "𐑐",
+    "⊤": "𐑤",
+    "∈": "𐑔",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑖",
+    "⊞": "𐑙",
+    "⊡": "𐑭"
   }
 ]
