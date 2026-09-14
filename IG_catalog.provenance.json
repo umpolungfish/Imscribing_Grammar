@@ -1997,6 +1997,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "75f9a44b883b9630"
   },
+  "ac_factorizer_membrane": {
+    "changes": 0,
+    "first_seen": "2026-09-13T21:22:57+00:00",
+    "last_changed": "2026-09-13T21:22:57+00:00",
+    "tuple_hash": "103aa0fd7a9f5e2a"
+  },
   "academic_publishing": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10085,6 +10091,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8e2d61f66d68b791"
   },
+  "chimera_test_shor_samadhi": {
+    "changes": 0,
+    "first_seen": "2026-09-14T04:02:04+00:00",
+    "last_changed": "2026-09-14T04:02:04+00:00",
+    "tuple_hash": "31a5fd45c099156d"
+  },
   "chimerium_supercritical": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17339,6 +17351,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6d934cbf72dd8303"
   },
+  "factor_operator": {
+    "changes": 0,
+    "first_seen": "2026-09-13T21:13:10+00:00",
+    "last_changed": "2026-09-13T21:13:10+00:00",
+    "tuple_hash": "338014979ff17b6f"
+  },
   "factored_GNN": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -20062,6 +20080,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
+  },
+  "gn_factorizer_membrane": {
+    "changes": 0,
+    "first_seen": "2026-09-13T21:13:10+00:00",
+    "last_changed": "2026-09-13T21:13:10+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
   },
   "gnn_prediction": {
     "changes": 0,
@@ -24718,6 +24742,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f94c72306b387aac"
+  },
+  "instant_non_walking_read": {
+    "changes": 0,
+    "first_seen": "2026-09-14T00:28:39+00:00",
+    "last_changed": "2026-09-14T00:28:39+00:00",
+    "tuple_hash": "d7238b9fffe63d64"
   },
   "instead": {
     "changes": 0,
@@ -30563,6 +30593,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bb44562fe29a1f5c"
   },
+  "modot_divisor_ring_factor_method": {
+    "changes": 0,
+    "first_seen": "2026-09-13T21:13:10+00:00",
+    "last_changed": "2026-09-13T21:13:10+00:00",
+    "tuple_hash": "f79d0a25e05fa0dc"
+  },
   "modot_foundation": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -36100,6 +36136,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7ece7efb027198fd"
+  },
+  "photon_ligand1": {
+    "changes": 0,
+    "first_seen": "2026-09-14T04:02:04+00:00",
+    "last_changed": "2026-09-14T04:02:04+00:00",
+    "tuple_hash": "adf369b42c19847a"
   },
   "photonics_quantum": {
     "changes": 0,
@@ -43229,6 +43271,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "16ef981f878aad94"
   },
+  "spectral_phase_factorizer_membrane": {
+    "changes": 0,
+    "first_seen": "2026-09-13T21:21:10+00:00",
+    "last_changed": "2026-09-13T21:21:10+00:00",
+    "tuple_hash": "b0b21f76ff47d79b"
+  },
   "spectral_right_mode": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -46108,6 +46156,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5e37c93215fae2ed"
+  },
+  "test_entry_alpha": {
+    "changes": 0,
+    "first_seen": "2026-09-14T04:02:04+00:00",
+    "last_changed": "2026-09-14T04:02:04+00:00",
+    "tuple_hash": "20089c349011f47f"
   },
   "test_full_glyph_dispatch": {
     "changes": 0,
