@@ -4,11 +4,11 @@
 
 > *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same type; the distance between them is an integer."*
 
-**What it is.** 12 primitives over **17,280,000** crystal addresses (3³×4⁵×5⁴). Any system — physical, mathematical, linguistic, biological, computational — gets a 12-tuple fixing its type, ouroboricity tier, Frobenius status, and integer distance to every other imscribed system.
+**What it is.** 12 primitives over **17,280,000** crystal addresses (3³×4⁵×5⁴). Any system - physical, mathematical, linguistic, biological, computational - gets a 12-tuple fixing its type, ouroboricity tier, Frobenius status, and integer distance to every other imscribed system.
 
-**What it does.** Imscribes a system to its address, then computes: tier promotions, T-consistent proof paths, Frobenius closure, L¹ distance in O(1). Domain engines compile subjects to 12-opcode **IMASM** bytecode run on the Belnap FOUR WhaleVM — genetics, lambda calculus, cetacean acoustics, interferometry, undeciphered scripts, one machine.
+**What it does.** Imscribes a system to its address, then computes: tier promotions, T-consistent proof paths, Frobenius closure, L¹ distance in O(1). Domain engines compile subjects to 12-opcode **IMASM** bytecode run on the Belnap FOUR WhaleVM - genetics, lambda calculus, cetacean acoustics, interferometry, undeciphered scripts, one machine.
 
-**Tiers** (⟨polarity, criticality⟩): O₀ inert · O₁ reactive · O₂ recursive (⊙ open) · O₂† dialetheic (Belnap B) · O_∞ Philosopher's Stone (⊙ open + μ∘δ=id — the grammar imscribes itself here).
+**Tiers** (⟨polarity, criticality⟩): O₀ inert · O₁ reactive · O₂ recursive (⊙ open) · O₂† dialetheic (Belnap B) · O_∞ Philosopher's Stone (⊙ open + μ∘δ=id - the grammar imscribes itself here).
 
 ## Use
 
@@ -25,7 +25,7 @@ uv run zfct_navigator.py path "⟨…⟩" "⟨…⟩"       # A* proof path
 uv run whale_audio.py <file.wav> [onset_delta]  # cetacean engine (standalone: imsgct/cetaceanspeak)
 ```
 
-Engines: cetacean (Frobenius closure rate vs 6 human archetypes) · genetic (20 AA / 64 codons / B₄²; 5 canonical questions) · ZFCₜ navigator · lambda · Frobenius MZI · paraconsistent layer · `sentry` golem. Lean: `p4rakernel/p4ramill` (`lake build`; Millennium sorries tracked there). Catalog + undeciphered-texts sections in full version. Zenodo: `zenodo <pdf>` (sandbox) / `zenodo-live` / `zenodo-list-live` — public domain.
+Engines: cetacean (Frobenius closure rate vs 6 human archetypes) · genetic (20 AA / 64 codons / B₄²; 5 canonical questions) · ZFCₜ navigator · lambda · Frobenius MZI · paraconsistent layer · `sentry` golem. Lean: `p4rakernel/p4ramill` (`lake build`; Millennium sorries tracked there). Catalog + undeciphered-texts sections in full version. Zenodo: `zenodo <pdf>` (sandbox) / `zenodo-live` / `zenodo-list-live` - public domain.
 
 ```bash
 git clone <this repo> && cd imscribing_grammar && uv pip install -e .  # Python ≥3.11; Lean 4 v4.28.0 + Mathlib; optional: librosa soundfile
