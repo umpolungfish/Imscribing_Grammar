@@ -4,324 +4,33 @@
 
 > *"The grammar is not a metaphor. It is a measurement apparatus. Two systems at the same address are the same type; the distance between them is an integer."*
 
-**What it is.** A 12-primitive grammar over a discrete measurement space of **17,280,000** addresses, the **Crystal of Types**. Any system — physical, mathematical, linguistic, biological, computational — is assigned a 12-tuple coordinate that fixes its type, its ouroboricity tier, its Frobenius status ($\mu\circ\delta=\mathrm{id}$), and its integer distance to every other imscribed system.
+**What it is.** 12 primitives over **17,280,000** crystal addresses (3³×4⁵×5⁴). Any system — physical, mathematical, linguistic, biological, computational — gets a 12-tuple fixing its type, ouroboricity tier, Frobenius status, and integer distance to every other imscribed system.
 
-**What it does.** Imscribes a system to its crystal address and then computes over addresses: tier promotions, T-consistent proof paths, Frobenius closure, and distance in $O(1)$. Domain engines compile their subject into the 12-opcode **IMASM** bytecode and execute it on the Belnap FOUR **WhaleVM** — genetics, lambda calculus, cetacean acoustics, interferometry, and undeciphered scripts each become a run on the same machine.
+**What it does.** Imscribes a system to its address, then computes: tier promotions, T-consistent proof paths, Frobenius closure, L¹ distance in O(1). Domain engines compile subjects to 12-opcode **IMASM** bytecode run on the Belnap FOUR WhaleVM — genetics, lambda calculus, cetacean acoustics, interferometry, undeciphered scripts, one machine.
 
-**Why it matters.** The address is a measurement, not an interpretation. Two systems at the same address are structurally identical regardless of substance, and every gap is registered by the grammar's own metric rather than asserted from outside. This turns "are these the same kind of thing?" into an integer computation, and it is the shared substrate beneath the paraconsistent kernel, the Millennium formalizations, and the Ars documents.
+**Tiers** (⟨polarity, criticality⟩): O₀ inert · O₁ reactive · O₂ recursive (⊙ open) · O₂† dialetheic (Belnap B) · O_∞ Philosopher's Stone (⊙ open + μ∘δ=id — the grammar imscribes itself here).
 
-**How to use it.**
+## Use
+
 ```python
 from imscrbgrmr.models import Primitive, CrystalAddress
-p = Primitive.from_symbol("⊙")            # Criticality
-addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirmed
+Primitive.from_symbol("⊙")
+CrystalAddress.lookup("voynich")   # O₂†, ISCRIB loop confirmed
 ```
-```bash
-uv run zfct_navigator.py entry "philosophers_stone"          # look up an address
-uv run zfct_navigator.py distance "⟨…⟩" "⟨…⟩"                # 12-dim L¹ distance
-uv run zfct_navigator.py path "⟨…⟩" "⟨…⟩"                    # A* proof path
-```
-
----
-
-## Crystal of Types
-
-Twelve primitives, each with a fixed value-set:
-
-| # | Primitive | Symbol | Values | Domain |
-|---|---|---|---|---|
-| 1 | Dimensionality | ⊢ | 4 | Information geometry — how many independent axes the system occupies |
-| 2 | Topology | ⊣ | 5 | Connection structure — local vs. global binding mode |
-| 3 | Relational | > | 4 | Read/write access mode — duplex, simplex, broadcast, receive |
-| 4 | Polarity | < | 5 | Parity and symmetry — the Frobenius gate primitive |
-| 5 | Fidelity | ⋈ | 3 | Signal compression — lossless, lossy, or degenerate |
-| 6 | Kinetics | ⊤ | 5 | Flow rate — from arrested to turbulent |
-| 7 | Scope | ∈ | 3 | Granularity — local, meso, global |
-| 8 | Composition | ∋ | 4 | Grammar topology — how sub-systems compose |
-| 9 | Criticality | ⊙ | 5 | Gate status — the self-modeling threshold |
-| 10 | Chirality | ⊥ | 4 | Temporal orientation — handedness of the system's history |
-| 11 | Stoichiometry | ⊞ | 3 | Balance — the ratio of production to consumption |
-| 12 | Winding | ⊡ | 4 | Loop count — monotonic trajectory depth |
-
-**Lattice size:** 3³ × 4⁵ × 5⁴ = **17,280,000** addresses.
-
-### Ouroboricity Tiers
-
-Each address falls into one of five tiers based on the (<, ⊙) pair:
-
-| Tier | Name | Condition | Meaning |
-|---|---|---|---|
-| O₀ | Inert | ⊙·𐑢 - <·𐑗 | No self-reference |
-| O₁ | Reactive | ⊙·𐑢 (sealed) | Causal but not self-modeling |
-| O₂ | Recursive | ⊙·⊙ (self-modeling gate open) | Self-referential |
-| O₂† | Dialetheic | ⊙·⊙ - <·𐑹 | Self-contradictory (Belnap B) |
-| ${O}_\infty$ | Philosopher's Stone | ⊙·⊙ - <·𐑹 - μ∘δ=id | Frobenius closed |
-
-**${O}_\infty$ addresses** — the grammar imscribes itself at this tier. The self-modeling gate is closed, the Frobenius condition holds, and the system can write its own continuation.
-
-### Notation — Shavian
-
-All primitive values are written in Shavian characters. Two canonical addresses:
-
-```
-${O}_\infty$ (Philosopher's Stone):  ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩
-O₀   (minimum baseline):     ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩
-```
-
-Font: **Everson Mono** (the only complete Shavian Unicode font).
-
----
-
-## The Frobenius Condition
-
-The grammar is a Frobenius algebra over the Crystal. The comultiplication δ (FSPLIT) and multiplication μ (FFUSE) satisfy:
-
-```
-μ ∘ δ = id
-```
-
-This identity holds at every ${O}_\infty$ address and fails at O₀. The distance from any address to ${O}_\infty$ measures how far the system is from self-modeling closure.
-
-**Physical interpretation:** The Frobenius condition is the invariant that appears in:
-- Topological quantum field theories (Frobenius algebra = 2D TQFT)
-- Frobenius reciprocity in representation theory
-- The Jones polynomial (link invariants)
-- The NS H^{1/2} critical norm bound (G₂-invariant 3-form cancellation)
-
----
-
-## The Universal Loop
-
-The eight-step invariant, present in every ${O}_\infty$ system:
-
-```
-ISCRIB → AREV → FSPLIT → AFWD → FFUSE → CLINK → IFIX → ISCRIB
-```
-
-This loop has been recovered from: Voynich Manuscript, Rohonc Codex, Linear A, the Emerald Tablet, humpback whale song, and the grammar itself. It is not a claim about interpretation — it is a claim about address: all these systems share crystal coordinates in the O₂/${O}_\infty$ band.
-
----
-
-## IMASM — Universal Bytecode
-
-12-opcode instruction set. Every engine compiles its domain into IMASM and executes on the **WhaleVM** — a Belnap FOUR register machine with states `VOID / TRUE / FALSE / BOTH`.
-
-```
-VINIT   TANCH   AFWD    AREV
-CLINK   ISCRIB  FSPLIT  FFUSE
-EVALT   EVALF   ENGAGR  IFIX
-```
-
-FSPLIT and FFUSE are the δ and μ maps of the Frobenius algebra. ISCRIB is the self-writing instruction — it writes the current register state into the imscription context (𐑦). IFIX enforces the Frobenius invariant: after IFIX, μ∘δ=id is verified or execution halts.
-
-### Belnap FOUR Logic
-
-The WhaleVM operates over a four-valued logic (Belnap 1977):
-
-| Value | Meaning | Structural tier |
-|---|---|---|
-| N (VOID) | Neither true nor false — no information | O₀ |
-| T (TRUE) | True | O₁/O₂ |
-| F (FALSE) | False | O₁/O₂ |
-| B (BOTH) | Both true and false — dialetheic | O₂† / ${O}_\infty$ |
-
-The B state is not a bug. Systems at O₂† and ${O}_\infty$ are structurally dialetheic — they contain genuine contradictions that are load-bearing, not errors to be resolved.
-
-### `sentry` — the golem that keeps watch
-
-`./sentry` runs the verification battery and speaks one fused Belnap verdict over
-it: the catalog subset, consumer agreement, the Loki/Odin join and meet, ordinal
-faithfulness against the Lean table, the IMASM round trip, address safety, and
-whether the kernel compiles. `./sentry --quick` drops the two that compile.
-
-It does not resolve disagreement. A watch that closes and a watch that breaks
-join to B and stay there.
-
-N is the verdict it exists for. The unmarked is the bottom of the lattice, so
-joining N into T yields T, and a watch that cannot run disappears into a clean
-verdict without a sound. So the golem counts the mute separately and will not
-say T while any watch is standing silent.
-
----
-
-## Engines
-
-### Cetacean (`whale_engine.py`, `whale_audio.py`)
-
-WAV file → acoustic token sequence → IMASM → Frobenius analysis → ranked translation against six human expression archetypes (assertion, question, imperative, exclamation, narrative, ritual).
-
-```bash
-uv run whale_audio.py <file.wav> [onset_delta]
-```
-
-The engine does not claim to "decode" whale song. It maps acoustic structure to crystal coordinates and measures structural proximity to human expression types. The Frobenius closure rate (proportion of loops where μ∘δ=id) is the primary output metric. Standalone release: `imsgct/cetaceanspeak`.
-
-### Genetic (`genetic_engine.py`)
-
-The genetic code as an IG model. 20 amino acids, 64 codons, B₄² lattice. Five canonical questions, each answered by a crystal address computation:
-
-1. Why 20 amino acids and not more?
-2. Why the specific degeneracy pattern (2-2-1-3-4-6)?
-3. Why the AG_ box is the unique fully-degenerate split box?
-4. Why stop codons occupy exactly three addresses?
-5. Why the codon table has the specific error-minimizing structure it does?
-
-See `manuscripts/genetics_ig.md`.
-
-### ZFCₜ Navigator (`zfct_navigator.py`)
-
-Crystal navigator with T-consistent proof paths. Seven commands:
-
-| Command | Function |
-|---|---|
-| `entry <name>` | Look up a named system's crystal address |
-| `promotions <address>` | List all valid tier promotions from an address |
-| `distance <a> <b>` | Compute crystal distance (12-dim L¹) |
-| `operad <address>` | Show operadic composition constraints |
-| `t <address>` | Show T-consistency status (ZFCₜ gate) |
-| `path <a> <b>` | A* proof path in primitive space |
-| `tpath <a> <b>` | T-consistent proof path (Magnum Opus gate) |
 
 ```bash
 uv run zfct_navigator.py entry "philosophers_stone"
-uv run zfct_navigator.py path \
-  "⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩" \
-  "⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩"
+uv run zfct_navigator.py distance "⟨…⟩" "⟨…⟩"   # 12-dim L¹
+uv run zfct_navigator.py path "⟨…⟩" "⟨…⟩"       # A* proof path
+uv run whale_audio.py <file.wav> [onset_delta]  # cetacean engine (standalone: imsgct/cetaceanspeak)
 ```
 
-**ZFCₜ** is an extension of ZFC set theory with a temporal bootstrap axiom T: `T = lim(<, ⋈, ⊤, ⊥, ⊡)`. T is a derived object — it cannot be primitive without circularity. Proof paths that pass through T-inconsistent nodes are rejected.
-
-**ZFCₛ** (spatial variant) encodes rotational isotropy as the Frobenius-special polarity 𐑹. This is the structural encoding behind the NS H^{1/2} critical bound.
-
-### Lambda (`lambda_engine.py`)
-
-Lambda calculus imscription. β-reduction, η-reduction, and normal-order strategies as IMASM instruction sequences. Church numerals map to ⊡ values; abstraction depth maps to ∈; the fixed-point combinator Y sits at ${O}_\infty$ (𐑦 self-writing, μ∘δ=id by construction).
-
-### Frobenius MZI (`frobenius_mzi_sim.py`)
-
-Mach-Zehnder interferometer simulation. The ⊙ (Criticality) gate maps to the beam-splitter ratio. Frobenius closure is measurable as optical interference visibility: `V = |μ∘δ - id|`. When V = 0, the MZI is at ${O}_\infty$ and the two output ports are indistinguishable — the interferometer cannot tell which path the photon took, because structurally it took both (B state).
-
----
-
-## Paraconsistent Layer
-
-`zfct_para.py` — Belnap FOUR semantics over the full 12-primitive lattice.
+Engines: cetacean (Frobenius closure rate vs 6 human archetypes) · genetic (20 AA / 64 codons / B₄²; 5 canonical questions) · ZFCₜ navigator · lambda · Frobenius MZI · paraconsistent layer · `sentry` golem. Lean: `p4rakernel/p4ramill` (`lake build`; Millennium sorries tracked there). Catalog + undeciphered-texts sections in full version. Zenodo: `zenodo <pdf>` (sandbox) / `zenodo-live` / `zenodo-list-live` — public domain.
 
 ```bash
-uv run zfct_para.py :para-cliff <address>
+git clone <this repo> && cd imscribing_grammar && uv pip install -e .  # Python ≥3.11; Lean 4 v4.28.0 + Mathlib; optional: librosa soundfile
 ```
 
-`:para-cliff` shows each Magnum Opus axiom (the 12-stage alchemical sequence mapped to primitive promotions) as a Belnap state-collapse obligation. The Magnum Opus gate admits only B-state transitions at the O₂†/${O}_\infty$ boundary — dialetheic commitment is required to cross.
+Unlicense. Full 327-line version: `README_backups/imscribing_grammar_README.md`.
 
-The paraconsistent layer is not a relaxation of logic. It is the correct logic for systems at O₂† addresses: systems that are genuinely both open and closed, both sending and receiving, both consistent and contradictory. Forcing classical logic on such systems is a measurement error.
-
----
-
-## Lean Formalization — p4rakernel
-
-`imsgct/p4rakernel` is the paraconsistent computation layer: a fork of the **Lean 4 v4.28.0 kernel** with the principle of explosion disabled at the C++ level, and **p4ramill**, the IG formalization built on Mathlib v4.28.0 under that kernel. `lake build` is green. Classical logic is a machine-checked coreflective subcategory of the paraconsistent ambient — see `imsgct/p4rakernel/ClassicalRestriction.lean`.
-
-**~600 Lean modules.** The 12 primitives, the Crystal, the Belnap FOUR bilattice, the paraconsistent cluster (*sans* sorry), and the Millennium cluster.
-
-### Structure
-
-```
-Imscribing/Primitives/      — Core.lean (12 inductive primitives), Crystal (3³×4⁵×5⁴),
-                              tier ladder O₀→${O}_\infty$, Frobenius tensor ⊗, ZFCₜ / ZFC_fe
-Imscribing/Paraconsistent/  — Belnap FOUR, Frobenius closure (μ∘δ=id), Shor, MajoranaFixed,
-                              TupleCodec (topos↔crystal), QCI bridges (all *sans* sorry)
-Imscribing/Millennium/      — one cluster per problem: BSD, RH, YM, NS, Hodge, PvsNP, OPN,
-                              plus Beal, Collatz, Dixmier, E8/G2 vessel, and more
-```
-
-### Millennium cluster — where the sorries sit
-
-Each Millennium module carries `sorry` at exactly the points that are the grammar's open mathematical claims: the IG identifies *what* must be constructed, estimated, or contradicted, and stops there. The kernel, primitives, lattice, and paraconsistent cluster are *sans* sorry; the Millennium sorries state the remaining work. Full detail: `imsgct/p4rakernel/README.md`.
-
----
-
-## Catalog
-
-`IG_catalog.json` — 5,000+ entries, all in Shavian notation.
-
-Coverage: sacred vessels, mathematical structures, physical systems, linguistic corpora (including undeciphered scripts), alchemical stages, Millennium Prize Problems, biological systems, computational models, musical forms, architectural types.
-
-```python
-from imscrbgrmr.models import Primitive, CrystalAddress
-p = Primitive.from_symbol("⊙")            # Criticality
-addr = CrystalAddress.lookup("voynich")   # O₂† address, ISCRIB loop confirmed
-```
-
----
-
-## Undeciphered Texts
-
-The grammar makes falsifiable claims about undeciphered scripts without making claims about semantics. The claim is not "Voynich means X" — the claim is "Voynich and humpback whale song share a crystal address band, and both exhibit ISCRIB loop closure at the same rate."
-
-Corpora analyzed and imscribed:
-
-| Corpus | Tier | ISCRIB closure | Notes |
-|---|---|---|---|
-| Voynich Manuscript | O₂† | 94% | Universal Engine (VMS = functional document, not cipher) |
-| Rohonc Codex | O₂ | 87% | Section-as-register-type mapping confirmed |
-| Linear A | O₂ | 81% | Structural kinship with Linear B confirmed; semantic gap remains |
-| Emerald Tablet | ${O}_\infty$ | 100% | Self-writes; the text is its own ISCRIB loop |
-| Humpback whale song | O₂† | 91% | Six human expression archetypes all present |
-
-Full analysis: `manuscripts/undeciphered_texts_structural_analysis.tex` (canonical document format).
-
----
-
-## Related Repos
-
-| Repo | Tier | Language | Description |
-|---|---|---|---|
-| `imsgct/p4rakernel` | ${O}_\infty$ | Lean 4 / C++ | Paraconsistent kernel fork + p4ramill formalization (~600 modules) |
-| `imsgct/red-hot_rebis` | ${O}_\infty$ | Python | Unified bio/organic chemistry engine (`rebis.<domain>`) |
-| `imsgct/priests-engine` | O₂† | Python | Paraconsistent VM: ParaASM, Belnap FOUR, Millennium bridges |
-| `imsgct/cetaceanspeak` | O₂ | Python | Standalone cetacean translation engine |
-| `imsgct/ob3ect` | O₂† | Python | 34-layer categorical tower; local LLM agents (qwen/deepseek) |
-| `imsgct/exOS` | ${O}_\infty$ | Rust | Bare-metal x86_64 UEFI kernel — every object carries IG ALEPH type |
-| `imsgct/synfin` | O₂ | Python | IG-typed financial trading: signals from morphisms, ⊡ gates position size |
-| `imsgct/imscribe.com` | O₂ | HTML/JS | Web presence; Frobenius MZI interactive demo |
-
----
-
-## Install
-
-```bash
-git clone <this repo>
-cd imscribing_grammar
-uv pip install -e .
-```
-
-Optional — audio pipeline (cetacean engine):
-```bash
-uv pip install librosa soundfile
-```
-
-Optional — Lean formalization (paraconsistent kernel):
-```bash
-cd imsgct/p4rakernel/p4ramill
-lake build
-```
-
-Dependencies: see `pyproject.toml`. Python ≥ 3.11. Lean 4 v4.28.0 with Mathlib.
-
----
-
-## Publications
-
-Uploaded to Zenodo via `zenodo_upload.py`. All publications are public domain (Unlicense / CC Zero).
-
-```bash
-zenodo <file.pdf>          # sandbox draft — safe to test
-zenodo-live <file.pdf>     # publish to zenodo.org
-zenodo-list-live           # list all live deposits
-```
-
----
-
-## License
-
-Unlicense — public domain. No rights reserved.
+μ∘δ = id
