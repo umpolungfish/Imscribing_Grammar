@@ -1,15 +1,9 @@
-I stop imscribe generate spawning an agent to resolve name conflicts.
-Conflicts aren't gated anymore at either the imscribe_system or
-encode_system layer, so an agent session that used to reason through
-differing primitives and re-call with convergence_justification had
-nothing left to resolve -- it was loading a local model on every
-conflicting name for a decision the tool already makes on its own.
+Fix criticality census: import CriticalityPhase in the summary branch
 
-_register_to_json_catalog's conflict branch now writes the proposed
-tuple straight to IG_catalog.json, the same direct-write path the
-new-name branch already used, matching imscribe_system's own commit
-behavior for a re-imscription. Removed _agent_resolve_conflict and the
-_PRIMITIVE_VALID_VALUES table + _valid_values_block helper it was the
-only caller of -- dead code once nothing spawns an agent to hand that
-table to.
-Submitted PR: Make Claude Agent SDK Truly Agentic via Structural Promotion (PR_CLAUDE_AGENT_SDK_TRULY_AGENIC.md)
+`imscribe criticality` with no argument referenced CriticalityPhase without it
+being in scope in the summary branch, so the census raised NameError instead of
+counting. Restore the local import, matching how the specific-entry branch already
+pulls it from imscrbgrmr.models. The census now runs and reports the ⊙ critical
+count over the full catalog.
+
+Whole-tree snapshot.

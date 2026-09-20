@@ -2184,6 +2184,7 @@ def criticality(imscription_name: Optional[str], show_all: bool, min_confidence:
         
         else:
             # Show summary
+            from imscrbgrmr.models import CriticalityPhase
             all_imscriptions = list(global_catalog._imscriptions.values())
             critical_count = sum(
                 1 for s in all_imscriptions

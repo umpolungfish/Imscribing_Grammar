@@ -111,6 +111,9 @@ def _build_preamble(title: str, date: str, abstract: str, keywords: list,
         f"{_B}usepackage[top=1in, bottom=1in, left=1in, right=1in]{{geometry}}",
         f"{_B}usepackage{{microtype}}",
         f"{_B}usepackage{{parskip}}",
+        f"{_B}providecommand{{{_B}tightlist}}{{%",
+        f"  {_B}setlength{{{_B}itemsep}}{{0pt}}{_B}setlength{{{_B}parskip}}{{0pt}}%",
+        f"}}",
         "",
         f"% Language",
         f"{_B}usepackage[english]{{babel}}",
@@ -475,14 +478,17 @@ def compile_pdf(md_path: Path, out_path: Path | None = None,
     if tex_only:
         return tex_out
 
-    # Compile with ltx
-    ltx = Path.home() / ".local" / "bin" / "ltx"
-    if not ltx.exists():
-        ltx = Path("/usr/bin/lualatex")
+    # XeLaTeX handles the installed Unicode font stack reliably. Keep the
+    # historical ltx and LuaLaTeX routes as fallbacks for environments without it.
+    compiler = Path("/usr/bin/xelatex")
+    if not compiler.exists():
+        compiler = Path.home() / ".local" / "bin" / "ltx"
+    if not compiler.exists():
+        compiler = Path("/usr/bin/lualatex")
 
-    print(f"  compiling with {ltx.name} ...")
+    print(f"  compiling with {compiler.name} ...")
     result = subprocess.run(
-        [str(ltx), str(tex_out.name)],
+        [str(compiler), "-interaction=nonstopmode", "-halt-on-error", str(tex_out.name)],
         capture_output=True, text=True,
         cwd=str(tmp_dir),
     )
