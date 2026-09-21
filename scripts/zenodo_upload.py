@@ -1491,13 +1491,21 @@ def cmd_upload(args):
         dep_id     = dep["id"]
         bucket_url = dep["links"]["bucket"]
         print(f"  Found: '{dep.get('metadata', {}).get('title', '(untitled)')}' — state: {dep['state']}")
+        # --update is additive: keep every existing file and add the new one(s)
+        # alongside, so attaching the Lean never strips the manuscript. Any new
+        # file whose name matches an existing one replaces just that file.
         existing_files = dep.get("files", [])
-        if existing_files:
-            print(f"  Removing {len(existing_files)} old file(s) ...")
-            for ef in existing_files:
+        incoming = {f.name for f in files}
+        clash = [ef for ef in existing_files if ef.get("filename") in incoming]
+        if clash:
+            print(f"  Replacing {len(clash)} file(s) with the same name ...")
+            for ef in clash:
                 dr = session.delete(f"{base}/deposit/depositions/{dep_id}/files/{ef['id']}")
                 if dr.status_code not in (200, 204):
                     print(f"  Warning: could not delete {ef.get('filename', ef['id'])}: {dr.status_code}")
+        kept = len(existing_files) - len(clash)
+        if kept > 0:
+            print(f"  Keeping {kept} existing file(s).")
     else:
         print(f"\nCreating new deposit on {site} ...")
         dep = api_create(session, base)
