@@ -139208,7 +139208,6 @@
   {
     "name": "chimera_test_shor_samadhi",
     "description": "click fusion of shors_algorithm ⋈ operator_samadhi_composite on R↔S (Δ=1.67); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -139241,7 +139240,6 @@
   {
     "name": "chimera_menu_sweep_tmp",
     "description": "click fusion of shors_algorithm ⋈ operator_samadhi_composite on R↔S (Δ=1.67); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -139258,7 +139256,6 @@
   {
     "name": "chimera_shor_b4test",
     "description": "click fusion of shors_algorithm ⋈ b4_factor_v2_engine on T↔H (Δ=0.67); the μ (FFUSE) product, ring saturated on the T↔H pair.",
-    "provenance": "derived:click",
     "⊢": "𐑼",
     "⊣": "𐑥",
     "≻": "𐑾",
@@ -139275,7 +139272,6 @@
   {
     "name": "ligand_b4_test",
     "description": "de-novo ligand for the catalytic site b4_factor_v2_engine — the bidirectional structural complement (complement_type, ported from red-hot_rebis ligand_from_active_site); the partner b4_factor_v2_engine binds lock-and-key over the six conjugate pairs.",
-    "provenance": "derived:complement",
     "⊢": "𐑨",
     "⊣": "𐑰",
     "≻": "𐑩",
@@ -139292,7 +139288,6 @@
   {
     "name": "cycle_prod_test",
     "description": "product of the b4_factor_v2_engine-catalyzed turnover of shors_algorithm (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "⊢": "𐑨",
     "⊣": "𐑰",
     "≻": "𐑑",
@@ -139309,7 +139304,6 @@
   {
     "name": "excited_b4_test",
     "description": "excited state b4_factor_v2_engine* — b4_factor_v2_engine promoted by δ (light) to the exceptional-point resonance (⊙→𐑻), the metastable non-Hermitian excited manifold that decays by fluorescence (μ) or drives a SET.",
-    "provenance": "derived:excite",
     "⊢": "𐑼",
     "⊣": "𐑥",
     "≻": "𐑾",
@@ -139326,7 +139320,6 @@
   {
     "name": "test_chimera_quark_demo",
     "description": "click fusion of quark ⋈ o_inf_l9_promotion_standard on T↔H (Δ=1.75); the μ (FFUSE) product, ring saturated on the T↔H pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑶",
     "≻": "𐑾",
@@ -139343,7 +139336,6 @@
   {
     "name": "chimera_shor_b4_drytest",
     "description": "click fusion of shors_algorithm ⋈ b4_factor_v2_engine on T↔H (Δ=0.67); the μ (FFUSE) product, ring saturated on the T↔H pair.",
-    "provenance": "derived:click",
     "⊢": "𐑼",
     "⊣": "𐑥",
     "≻": "𐑾",
@@ -139360,7 +139352,6 @@
   {
     "name": "cycle_reg_probe",
     "description": "product of the photon-catalyzed turnover of quark (reductive); one winding quantum moved, the catalyst regenerated (μ∘δ=id, fixed point of the loop).",
-    "provenance": "derived:cycle",
     "⊢": "𐑛",
     "⊣": "𐑶",
     "≻": "𐑑",
@@ -139377,7 +139368,6 @@
   {
     "name": "photon_ligand_reg",
     "description": "de-novo ligand for the catalytic site photon — the bidirectional structural complement (complement_type, ported from red-hot_rebis ligand_from_active_site); the partner photon binds lock-and-key over the six conjugate pairs.",
-    "provenance": "derived:complement",
     "⊢": "𐑨",
     "⊣": "𐑸",
     "≻": "𐑩",
@@ -139394,7 +139384,6 @@
   {
     "name": "chimera_alkahest_owsm",
     "description": "click fusion of alkahest ⋈ one_way_speed_measurement on R↔S (Δ=1.67); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -139411,7 +139400,6 @@
   {
     "name": "testchimera_demo1",
     "description": "click fusion of ordinary_metal ⋈ operator_samadhi_composite on R↔S (Δ=1.50); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -139428,7 +139416,6 @@
   {
     "name": "testchimera_demo2",
     "description": "click fusion of dark_matter ⋈ operator_samadhi_composite on R↔S (Δ=1.50); the μ (FFUSE) product, ring saturated on the R↔S pair.",
-    "provenance": "derived:click",
     "⊢": "𐑦",
     "⊣": "𐑸",
     "≻": "𐑾",
@@ -139920,6 +139907,54 @@
     "⊙": "⊙",
     "⊥": "𐑖",
     "⊞": "𐑳",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "spitzer_godel_super_axiom",
+    "description": "Gödel's ontological proof via super-axiom: mathematical intelligibility preexists and grounds all math; Gödel's theorem shows the highest possible intelligibility must exist through a mind capable of conceiving it (God). Grounded in Gödel's incompleteness and the diagonal lemma.",
+    "⊢": "𐑦",
+    "⊣": "𐑥",
+    "≻": "𐑽",
+    "≺": "𐑯",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑒",
+    "⊞": "𐑕",
+    "⊡": "𐑭"
+  },
+  {
+    "name": "spitzer_lonergan_proof",
+    "description": "Lonergan's proof from Insight: If all reality is completely intelligible, then God exists. But all reality is completely intelligible. Therefore God exists. Minor premise: all reality completely intelligible because at least one uncaused reality exists through itself, and this uncaused reality is the final and sufficient answer to all coherent questions (\"Why is it so?\"). Intelligibility follows ontology — the terminus a quo of any cause-effect series is also the terminating answer to causal explanation.",
+    "⊢": "𐑦",
+    "⊣": "𐑥",
+    "≻": "𐑩",
+    "≺": "𐑯",
+    "⋈": "𐑱",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑠",
+    "⊙": "⊙",
+    "⊥": "𐑒",
+    "⊞": "𐑳",
+    "⊡": "𐑴"
+  },
+  {
+    "name": "spitzer_thomistic_proof",
+    "description": "Contemporary Thomistic metaphysical proof (Aquinas): (1) at least one uncaused reality exists through itself; (2) an uncaused reality must be unrestricted (real distinction between existence and essence, existence precedes essence); (3) being itself must be one (Parmenides); (4) the one unrestricted uncaused reality is the Creator of all else. Distinguishes God of metaphysics (reason) from God of revelation.",
+    "⊢": "𐑦",
+    "⊣": "𐑥",
+    "≻": "𐑽",
+    "≺": "𐑯",
+    "⋈": "𐑞",
+    "⊤": "𐑧",
+    "∈": "𐑚",
+    "∋": "𐑝",
+    "⊙": "⊙",
+    "⊥": "𐑒",
+    "⊞": "𐑕",
     "⊡": "𐑭"
   }
 ]
