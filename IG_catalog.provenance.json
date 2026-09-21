@@ -18203,6 +18203,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bffeaffbd90f02bb"
   },
+  "fixed_point_spectral_construction": {
+    "changes": 0,
+    "first_seen": "2026-09-21T20:57:03+00:00",
+    "last_changed": "2026-09-21T20:57:03+00:00",
+    "tuple_hash": "bb9f377dc523e0a0"
+  },
   "flag_algebra_extremal": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -42083,6 +42089,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c9ddb9075130fcfc"
   },
+  "shiab_operator": {
+    "changes": 0,
+    "first_seen": "2026-09-21T17:19:33+00:00",
+    "last_changed": "2026-09-21T17:19:33+00:00",
+    "tuple_hash": "2d65d2aa448ef65d"
+  },
   "shiitake": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -43588,6 +43600,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "653dfc4cfd917718"
+  },
+  "spitzer_godel_super_axiom": {
+    "changes": 0,
+    "first_seen": "2026-09-21T17:19:33+00:00",
+    "last_changed": "2026-09-21T17:19:33+00:00",
+    "tuple_hash": "3160683c9f930d2e"
+  },
+  "spitzer_lonergan_proof": {
+    "changes": 0,
+    "first_seen": "2026-09-21T17:19:33+00:00",
+    "last_changed": "2026-09-21T17:19:33+00:00",
+    "tuple_hash": "221d5057f6a4fcff"
+  },
+  "spitzer_thomistic_proof": {
+    "changes": 0,
+    "first_seen": "2026-09-21T17:19:33+00:00",
+    "last_changed": "2026-09-21T17:19:33+00:00",
+    "tuple_hash": "3160683c9f930d2e"
   },
   "splendor_solis": {
     "changes": 0,
