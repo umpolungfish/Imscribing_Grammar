@@ -258,10 +258,6 @@ def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
       DashScope       extra_body={"enable_thinking": …}
       OpenRouter      extra_body={"reasoning": {"enabled": …}}
 
-    llama.cpp is controlled by server flags (--jinja, --reasoning-format), not
-    by chat_template_kwargs; sending that body is ignored or harmful, so we
-    send nothing for it.
-
     The local tensor lane needs none of this — it renders the template itself —
     which is exactly why the setting was reaching only that lane before.
     """
@@ -271,21 +267,8 @@ def _thinking_extra_body(base_url: str) -> Dict[str, Any]:
         return {"enable_thinking": on}
     if "openrouter.ai" in u:
         return {"reasoning": {"enabled": on}}
-    # llama.cpp / llama-server: reasoning is a server-side template concern.
-    _llamacpp_hint = (
-        os.environ.get("LLAMACPP_URL", "")
-        or os.environ.get("LLAMA_CPP_URL", "")
-        or ""
-    ).lower()
-    if "llamacpp" in u or "llama.cpp" in u or (
-        _llamacpp_hint
-        and any(h in u for h in ("localhost", "127.0.0.1", "0.0.0.0"))
-        and any(h in _llamacpp_hint for h in ("localhost", "127.0.0.1", "0.0.0.0"))
-        and (":8000" in u or ":8080" in u)
-    ):
-        return {}
     if any(h in u for h in ("localhost", "127.0.0.1", "0.0.0.0")):
-        # vLLM / SGLang on a local port — both read chat_template_kwargs.
+        # A locally served model is vLLM or SGLang here; both read chat_template_kwargs.
         return {"chat_template_kwargs": {"enable_thinking": on}}
     return {"chat_template_kwargs": {"enable_thinking": on}}
 
@@ -4294,50 +4277,15 @@ class TrueAgenticAgent:
         self._context_window   = context_window
         self._review_threshold = review_threshold
 
-        # Explicit *served* provider prefixes (llamacpp:, ollama:, vllm:, …)
-        # always win over path heuristics.  Previously ".modelz" / absolute paths
-        # forced the in-process tensor client even when the operator wrote
-        # llamacpp:/home/.../.modelz/q30p6_4bit — so the HTTP server on :8000
-        # was never contacted and the run silently loaded HF weights instead.
-        #
-        # "local" / "local:<path>" remain the direct-tensor lane (not HTTP),
-        # even though "local" also appears in LOCAL_BASE_URLS for URL defaults.
-        _prefix = model.split(":", 1)[0].lower() if ":" in model else ""
-        _tensor_prefixes = {"local", "grammaformer"}
-        _explicit_served = (
-            (_prefix in LOCAL_BASE_URLS and _prefix not in _tensor_prefixes)
-            or _prefix in REMOTE_API_PROVIDERS
-            or _prefix == "openrouter"
-        )
-        # Bare "local" / "local:<path>" / "grammaformer" still mean direct tensor.
-        # A filesystem path (absolute, ~, directory, or .modelz) also means tensor
-        # — but only when no served-provider prefix was given.
-        _path_looks_local = (
-            (not _explicit_served)
-            and (
-                model.lower() in ("local", "grammaformer")
-                or model.lower().startswith("local:")
-                or os.path.isdir(os.path.expanduser(model))
-                or model.startswith("/")
-                or model.startswith("~")
-                or ".modelz" in model
-            )
-        )
-        if _path_looks_local:
+        if (model.lower() == "local" or model.lower().startswith("local:")
+                or model.lower() == "grammaformer" or os.path.isdir(os.path.expanduser(model))
+                or model.startswith("/") or model.startswith("~") or ".modelz" in model):
             if model.lower() == "grammaformer":
                 self.model_id = "grammaformer"
-            elif model.lower().startswith("local:"):
-                # local:/abs/path or local:grammaformer — id is the part after :
-                self.model_id = model.split(":", 1)[1] if ":" in model else "local"
-            elif (
-                os.path.isdir(os.path.expanduser(model))
-                or model.startswith("/")
-                or model.startswith("~")
-                or ".modelz" in model
-            ):
-                self.model_id = os.path.expanduser(model)
+            elif os.path.isdir(os.path.expanduser(model)) or model.startswith("/") or model.startswith("~") or ".modelz" in model:
+                self.model_id = model
             else:
-                self.model_id = "local"
+                self.model_id = model.split(":", 1)[1] if ":" in model else "local"
             self.client   = _LocalOpenAIClient()
             effective_base = ""
             effective_key  = ""
@@ -4956,20 +4904,10 @@ class TrueAgenticAgent:
             tc = msg.tool_calls[0]
             tc_id        = tc.id
             action_name  = tc.function.name
-            # OpenAI wire format: arguments is a JSON *string*.  Some servers
-            # (notably recent llama.cpp after the autoparser refactor) return a
-            # parsed object instead; the official SDK and json.loads both choke
-            # on that.  Accept both.
-            _raw_args = tc.function.arguments
             try:
-                if isinstance(_raw_args, dict):
-                    action_input = _raw_args
-                elif isinstance(_raw_args, (list, int, float, bool)) or _raw_args is None:
-                    action_input = {} if _raw_args is None else {"value": _raw_args}
-                else:
-                    action_input = json.loads(_raw_args or "{}")
-            except (json.JSONDecodeError, TypeError) as _je:
-                raw = _raw_args if isinstance(_raw_args, str) else repr(_raw_args)
+                action_input = json.loads(tc.function.arguments or "{}")
+            except json.JSONDecodeError as _je:
+                raw = (tc.function.arguments or "")
                 _orig = action_name
                 action_name = "run_command"
                 action_input = {

@@ -19925,6 +19925,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4c93ff69e4609e1e"
   },
+  "geometric_unity": {
+    "changes": 0,
+    "first_seen": "2026-09-22T02:28:18+00:00",
+    "last_changed": "2026-09-22T02:28:18+00:00",
+    "tuple_hash": "1011787192c813ed"
+  },
+  "geometric_unity__retired": {
+    "changes": 0,
+    "first_seen": "2026-09-22T02:28:18+00:00",
+    "last_changed": "2026-09-22T02:28:18+00:00",
+    "tuple_hash": "3317324f74a9970f"
+  },
   "geometry": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -27838,6 +27850,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ad5714b92e5c912"
+  },
+  "lingua_ignota": {
+    "changes": 0,
+    "first_seen": "2026-09-22T02:28:18+00:00",
+    "last_changed": "2026-09-22T02:28:18+00:00",
+    "tuple_hash": "88a4f77d6d5c75d0"
   },
   "link_frobenius_special_01": {
     "changes": 0,
@@ -49606,6 +49624,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "08d2a0f76427f61b"
+  },
+  "uqmds": {
+    "changes": 0,
+    "first_seen": "2026-09-22T02:28:18+00:00",
+    "last_changed": "2026-09-22T02:28:18+00:00",
+    "tuple_hash": "cfa27b8252892319"
   },
   "ur_element": {
     "changes": 0,
