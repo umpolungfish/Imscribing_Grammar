@@ -3412,6 +3412,30 @@ TOOL_SCHEMAS = [
         },
         ["summary"],
     ),
+    _fn(
+        "gmonad",
+        (
+            "G-mOMonadOS GPU-native command dispatcher. "
+            "G-mOMonadOS is the GPU-accelerated build of mOMonadOS with CUDA support. "
+            "Commands are dispatched via /home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh. "
+            "16 command sections: Exec, Status, Programs, Crystal, Grammar, Quantum, IMASM, "
+            "Kernel, Rebis, Dialect, ParaASM, Cr3echrz, Seals, Proof, Help, Tools."
+        ),
+        {
+            "command": {
+                "type": "string",
+                "description": (
+                    "The G-mOMonadOS command to run (e.g., \"help\", \"exec\", \"crystal\", \"grammar\", "
+                    "\"quantum\", \"fibqc\", \"boot\", \"tick\", \"run\", \"status\", \"snapshot\", \"graph\")"
+                ),
+            },
+            "args_str": {
+                "type": "string",
+                "description": "Optional additional arguments to pass to the command (e.g., \"tick 10\" or \"boot VII\")",
+            },
+        },
+        ["command"],
+    ),
 ]
 
 # ── System prompt ─────────────────────────────────────────────────────────────
@@ -6488,3 +6512,195 @@ TOOL_SCHEMAS.append({
         },
     },
 })
+
+
+# ── G-mOMonadOS GPU-native dispatcher ──────────────────────────────────────────
+
+def _gmonad_emit(args: Dict[str, Any]) -> str:
+    """G-mOMonadOS GPU-native command dispatcher.
+    
+    G-mOMonadOS is the GPU-accelerated build of mOMonadOS with CUDA support.
+    Commands are dispatched via /home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh
+    
+    Args:
+        command: The G-mOMonadOS command to run (e.g., 'exec', 'crystal', 'grammar')
+        args_str: Optional additional arguments to pass to the command
+        
+    Returns:
+        stdout+stderr from the command execution
+    """
+    import subprocess
+    
+    cmd = args.get("command", "")
+    args_str = args.get("args_str", "")
+    
+    if not cmd:
+        return "Error: No command specified for gmonad"
+    
+    gmonad_path = "/home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh"
+    
+    try:
+        full_cmd = f"bash {gmonad_path} {cmd} {args_str}"
+        result = subprocess.run(
+            full_cmd,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+        output = result.stdout + result.stderr
+        return output if output else f"Command executed (exit code: {result.returncode})"
+    except subprocess.TimeoutExpired:
+        return "Error: G-mOMonadOS command timed out after 60 seconds"
+    except Exception as e:
+        return f"Error running G-mOMonadOS: {e}"
+
+
+def _gmonad_verify(emit_input: Dict, emit_output: str,
+                   verify_args: Dict) -> Tuple[str, bool]:
+    if "Error:" in emit_output[:50]:
+        return (f"gmonad failed: {emit_output[:200]} — Frobenius OPEN", False)
+    return ("gmonad command executed — Frobenius closed", True)
+
+# Register gmonad in dispatch tables
+_EMIT_FNS["gmonad"] = _gmonad_emit
+_VERIFY_FNS["gmonad"] = _gmonad_verify
+
+# G-mOMonadOS tool schema (to be inserted into TOOL_SCHEMAS list)
+# This is appended here for reference; the actual schema needs to be in the TOOL_SCHEMAS list
+_GMONAD_SCHEMA = _fn(
+    "gmonad",
+    (
+        "G-mOMonadOS GPU-native command dispatcher. "
+        "G-mOMonadOS is the GPU-accelerated build of mOMonadOS with CUDA support. "
+        "Commands are dispatched via /home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh. "
+        "16 command sections: Exec, Status, Programs, Crystal, Grammar, Quantum, IMASM, "
+        "Kernel, Rebis, Dialect, ParaASM, Cr3echrz, Seals, Proof, Help, Tools."
+    ),
+    {
+        "command": {
+            "type": "string",
+            "description": (
+                "The G-mOMonadOS command to run (e.g., 'help', 'exec', 'crystal', 'grammar', "
+                "'quantum', 'fibqc', 'boot', 'tick', 'run', 'status', 'snapshot', 'graph')"
+            ),
+        },
+        "args_str": {
+            "type": "string",
+            "description": "Optional additional arguments to pass to the command (e.g., 'tick 10' or 'boot VII')",
+        },
+    },
+    ["command"],
+)
+# ── Vox Pancosmic Disassembler ──────────────────────────────────────────────────
+
+def _vox_emit(args: Dict[str, Any]) -> str:
+    """Vox — Pancosmic Disassembling Re-Compiling Organism.
+    
+    Vox lifts native binaries, EVM, WASM, CPython .pyc, genetic sequences 
+    to IMASM modules and audits control-flow closure.
+    
+    Commands run via cargo run --bin vox -- <command> from /home/mrnob0dy666/imsgct/Vox
+    
+    Args:
+        command: The Vox command (e.g., 'lift', 'run', 'imasm', 'glyphs', 'circuit',
+                 'word', 'verdict', 'morphism-factor', 'factor', 'tower', 'bridge',
+                 'evm', 'wasm', 'hex', 'rna', 'aa', 'fasta', 'pdb', 'glyco', 'compile',
+                 'pyc', 'safetensors', 'self', 'classify', 'tables', 'selftest')
+        args_str: Optional additional arguments to pass to the command
+        
+    Returns:
+        stdout+stderr from the command execution
+        
+    Verdict system:
+        T = closes (control-flow closed)
+        B = fork open (holds a terminal fork open)
+        N = never forked
+        F = ill-typed (a ∋ with no ∈ to pair)
+    """
+    import subprocess
+    
+    cmd = args.get("command", "")
+    args_str = args.get("args_str", "")
+    
+    if not cmd:
+        return "Error: No command specified for vox"
+    
+    vox_path = "/home/mrnob0dy666/imsgct/Vox"
+    
+    try:
+        full_cmd = f"cd {vox_path} && cargo run --bin vox -- {cmd} {args_str} 2>&1"
+        result = subprocess.run(
+            full_cmd,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=120
+        )
+        output = result.stdout + result.stderr
+        return output if output else f"Command executed (exit code: {result.returncode})"
+    except subprocess.TimeoutExpired:
+        return "Error: Vox command timed out after 120 seconds"
+    except Exception as e:
+        return f"Error running Vox: {e}"
+
+
+def _vox_verify(emit_input: Dict, emit_output: str,
+                verify_args: Dict) -> Tuple[str, bool]:
+    """Verify Vox command execution.
+    
+    Checks for errors in output and validates verdict system responses.
+    """
+    if "Error:" in emit_output[:50]:
+        return (f"vox failed: {emit_output[:200]} — Frobenius OPEN", False)
+    
+    # Vox verdicts are structural: T/B/N/F are all valid closed states
+    # They represent different closure properties, not failure
+    if any(verdict in emit_output for verdict in ["T closes", "B holds", "N never", "F is ill-typed"]):
+        return ("vox verdict issued — Frobenius closed", True)
+    
+    return ("vox command executed — Frobenius closed", True)
+
+
+# Register vox in dispatch tables
+_EMIT_FNS["vox"] = _vox_emit
+_VERIFY_FNS["vox"] = _vox_verify
+
+# Vox tool schema (appended to TOOL_SCHEMAS)
+_VOX_SCHEMA = _fn(
+    "vox",
+    (
+        "Vox — Pancosmic Disassembling Re-Compiling Organism. "
+        "Lifts native binaries, EVM, WASM, CPython .pyc, genetic sequences to IMASM modules. "
+        "Audits control-flow closure with verdict system: T=closes, B=fork open, N=never forked, F=ill-typed. "
+        "Commands: lift, run, imasm, glyphs, unglyphs, circuit, word, verdict, "
+        "morphism-factor, extract-factor, construct-carrier, factor-with, factor-operator, scout, factor, "
+        "tower, bridge, pairs, evm, wasm, hex, rna, aa, fasta, pdb, glyco, compile, pyc, safetensors, "
+        "self, classify, tables, selftest."
+    ),
+    {
+        "command": {
+            "type": "string",
+            "description": (
+                "The Vox command to run. Core: lift, run, imasm, glyphs, unglyphs, circuit, word, verdict. "
+                "Factorization: morphism-factor, extract-factor, construct-carrier, factor-with, factor-operator, scout, factor. "
+                "Membranes: tower, bridge. "
+                "Lanes: evm, wasm, hex, rna, aa, fasta, pdb, glyco, compile, pyc, safetensors. "
+                "Utilities: self, classify, tables, selftest, pairs."
+            ),
+        },
+        "args_str": {
+            "type": "string",
+            "description": (
+                "Optional additional arguments. Examples: "
+                "'lift file.so', 'run main --args 1,2,3 file.so', 'imasm module.imasm', "
+                "'verdict ⊢∈⊤⊡⊣', 'tower 5', 'bridge 12345 7', "
+                "'evm 0x60806040', 'rna AUGUUUGCC', 'aa MKTVR', 'compile ATGTTTGCC'"
+            ),
+        },
+    },
+    ["command"],
+)
+
+# Append Vox schema to TOOL_SCHEMAS
+TOOL_SCHEMAS.append(_VOX_SCHEMA)

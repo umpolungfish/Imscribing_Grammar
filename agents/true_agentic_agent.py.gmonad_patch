@@ -1,0 +1,45 @@
+def _gmonad_emit(args: Dict[str, Any]) -> str:
+    """G-mOMonadOS GPU-native command dispatcher.
+    
+    G-mOMonadOS is the GPU-accelerated build of mOMonadOS with CUDA support.
+    Commands are dispatched via /home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh
+    
+    Args:
+        command: The G-mOMonadOS command to run (e.g., 'exec', 'crystal', 'grammar')
+        args_str: Optional additional arguments to pass to the command
+        
+    Returns:
+        stdout+stderr from the command execution
+    """
+    import subprocess
+    
+    cmd = args.get("command", "")
+    args_str = args.get("args_str", "")
+    
+    if not cmd:
+        return "Error: No command specified for gmonad"
+    
+    gmonad_path = "/home/mrnob0dy666/imsgct/G-mOMonadOS/run_cmds.sh"
+    
+    try:
+        full_cmd = f"bash {gmonad_path} {cmd} {args_str}"
+        result = subprocess.run(
+            full_cmd,
+            shell=True,
+            capture_output=True,
+            text=True,
+            timeout=60
+        )
+        output = result.stdout + result.stderr
+        return output if output else f"Command executed (exit code: {result.returncode})"
+    except subprocess.TimeoutExpired:
+        return "Error: G-mOMonadOS command timed out after 60 seconds"
+    except Exception as e:
+        return f"Error running G-mOMonadOS: {e}"
+
+
+def _gmonad_verify(emit_input: Dict, emit_output: str,
+                   verify_args: Dict) -> Tuple[str, bool]:
+    if "Error:" in emit_output[:50]:
+        return (f"gmonad failed: {emit_output[:200]} — Frobenius OPEN", False)
+    return ("gmonad command executed — Frobenius closed", True)
