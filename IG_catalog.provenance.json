@@ -6161,6 +6161,12 @@
     "last_changed": "2026-08-23T13:57:55+00:00",
     "tuple_hash": "6bdf1e9069d8aff7"
   },
+  "birth": {
+    "changes": 0,
+    "first_seen": "2026-09-30T18:19:19+00:00",
+    "last_changed": "2026-09-30T18:19:19+00:00",
+    "tuple_hash": "8bf9a4cf0a012472"
+  },
   "bismuth": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -12431,6 +12437,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9e9d6446c785d711"
   },
+  "cosmic_dialectic": {
+    "changes": 0,
+    "first_seen": "2026-09-30T18:28:26+00:00",
+    "last_changed": "2026-09-30T18:28:26+00:00",
+    "tuple_hash": "f9f98910411d963a"
+  },
   "cosmic_epoch_0_null_void": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -13590,10 +13602,10 @@
     "tuple_hash": "604d7c98a07b69fd"
   },
   "death": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "66d720877e4e9ae8"
+    "last_changed": "2026-09-30T18:18:14+00:00",
+    "tuple_hash": "d0cebc93f231c75c"
   },
   "death___the_skeletal,_music_loving_personification_of_death": {
     "changes": 0,
@@ -15334,6 +15346,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "421e167cbd359c39"
+  },
+  "electricity": {
+    "changes": 0,
+    "first_seen": "2026-09-30T14:53:31+00:00",
+    "last_changed": "2026-09-30T14:53:31+00:00",
+    "tuple_hash": "23a0eb4c3311636f"
   },
   "electrochemical_cell": {
     "changes": 0,
@@ -19042,6 +19060,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7ee0f61209a21d9b"
+  },
+  "fundamental_law_of_arithmetic": {
+    "changes": 0,
+    "first_seen": "2026-10-03T22:02:56+00:00",
+    "last_changed": "2026-10-03T22:02:56+00:00",
+    "tuple_hash": "5489db9295325e28"
   },
   "fundamental_logic": {
     "changes": 0,
@@ -28907,6 +28931,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f49f5b0e244e77d3"
   },
+  "magnetism": {
+    "changes": 0,
+    "first_seen": "2026-09-30T15:00:47+00:00",
+    "last_changed": "2026-09-30T15:00:47+00:00",
+    "tuple_hash": "de645d0b3389faf0"
+  },
   "magnetoreception": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -33929,6 +33959,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b7f86ef3fa588e53"
   },
+  "organism": {
+    "changes": 0,
+    "first_seen": "2026-09-30T14:57:50+00:00",
+    "last_changed": "2026-09-30T14:57:50+00:00",
+    "tuple_hash": "954643bd0d95dc57"
+  },
   "organism_dm_composite": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38356,6 +38392,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d8e9188e75df42fb"
+  },
+  "pure_qubit_factorization": {
+    "changes": 0,
+    "first_seen": "2026-10-03T12:28:25+00:00",
+    "last_changed": "2026-10-03T12:28:25+00:00",
+    "tuple_hash": "2962edb0967b3ef5"
   },
   "pure_self_rep_seed": {
     "changes": 0,
