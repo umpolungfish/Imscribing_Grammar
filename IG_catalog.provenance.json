@@ -3065,6 +3065,12 @@
     "last_changed": "2026-08-18T22:09:36+00:00",
     "tuple_hash": "c59e78b78450e9ff"
   },
+  "analytical_continuation_sic_povm": {
+    "changes": 0,
+    "first_seen": "2026-10-10T00:25:17+00:00",
+    "last_changed": "2026-10-10T00:25:17+00:00",
+    "tuple_hash": "8814a4dc4bec7c40"
+  },
   "analytical_idealism_kastrup": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5494,6 +5500,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9beaf78d5f3a9a57"
+  },
+  "bealproof": {
+    "changes": 0,
+    "first_seen": "2026-10-10T00:25:17+00:00",
+    "last_changed": "2026-10-10T00:25:17+00:00",
+    "tuple_hash": "a7a2e5a0d47683f6"
   },
   "beautiful": {
     "changes": 0,
@@ -30497,6 +30509,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5c37a836d9a738d4"
   },
+  "millennium_paraconsistent": {
+    "changes": 0,
+    "first_seen": "2026-10-10T00:25:17+00:00",
+    "last_changed": "2026-10-10T00:25:17+00:00",
+    "tuple_hash": "a7a2e5a0d47683f6"
+  },
   "mimir": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -35586,10 +35604,10 @@
     "tuple_hash": "26cb51c244adc7ac"
   },
   "perfect_cuboid": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "6f8589110f94d0cc"
+    "last_changed": "2026-10-10T00:25:17+00:00",
+    "tuple_hash": "a7a2e5a0d47683f6"
   },
   "perfect_cuboid_asymmetric": {
     "changes": 0,

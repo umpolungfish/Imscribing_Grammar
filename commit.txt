@@ -1,9 +1,3 @@
-Fix criticality census: import CriticalityPhase in the summary branch
+I add the analytical continuation SIC entry
 
-`imscribe criticality` with no argument referenced CriticalityPhase without it
-being in scope in the summary branch, so the census raised NameError instead of
-counting. Restore the local import, matching how the specific-entry branch already
-pulls it from imscrbgrmr.models. The census now runs and reports the ⊙ critical
-count over the full catalog.
-
-Whole-tree snapshot.
+I add the catalog entry and provenance record for the analytical continuation and SIC-POVM construction.

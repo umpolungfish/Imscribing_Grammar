@@ -140324,5 +140324,21 @@
     "⊥": "𐑓",
     "⊞": "𐑙",
     "⊡": "𐑷"
+  },
+  {
+    "name": "analytical_continuation_sic_povm",
+    "description": "the relationship between 963623\\zeta(-1) = -\\frac{1}{12}963623 and the universal dual frame SIC-POVM",
+    "⊢": "𐑦",
+    "⊣": "𐑸",
+    "≻": "𐑽",
+    "≺": "𐑹",
+    "⋈": "𐑐",
+    "⊤": "𐑧",
+    "∈": "𐑔",
+    "∋": "𐑵",
+    "⊙": "⊙",
+    "⊥": "𐑫",
+    "⊞": "𐑳",
+    "⊡": "𐑴"
   }
 ]
