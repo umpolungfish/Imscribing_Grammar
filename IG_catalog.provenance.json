@@ -563,6 +563,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a3ad9b0845f8b6da"
   },
+  "<3": {
+    "changes": 0,
+    "first_seen": "2026-10-16T01:02:25+00:00",
+    "last_changed": "2026-10-16T01:02:25+00:00",
+    "tuple_hash": "1bcb6e3ba241a262"
+  },
   "<_NP_duality_relative": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
@@ -1684,6 +1690,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "42437ed97036045b"
+  },
+  "UNO_Reverse_paper": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:13:33+00:00",
+    "last_changed": "2026-10-15T22:13:33+00:00",
+    "tuple_hash": "1a850e62758b5843"
+  },
+  "UNO_Reverse_paper__retired": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:13:33+00:00",
+    "last_changed": "2026-10-15T22:13:33+00:00",
+    "tuple_hash": "627f9c50bfee9baf"
   },
   "Wittgenstein's_Paradox": {
     "changes": 0,
@@ -6202,6 +6220,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "df124ae8979a762e"
+  },
+  "bit_stream": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:14:56+00:00",
+    "last_changed": "2026-10-15T22:14:56+00:00",
+    "tuple_hash": "a4dcd7dc206b8209"
   },
   "black_cohosh": {
     "changes": 0,
@@ -10775,6 +10799,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eaf2ac4db04a583e"
   },
+  "climb": {
+    "changes": 0,
+    "first_seen": "2026-10-14T11:40:23+00:00",
+    "last_changed": "2026-10-14T11:40:23+00:00",
+    "tuple_hash": "f3ad3bef0954f739"
+  },
   "climbing_seed": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -14489,6 +14519,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1ae2b1e86a3ef7d7"
   },
+  "divisor_lattice": {
+    "changes": 0,
+    "first_seen": "2026-10-16T04:20:32+00:00",
+    "last_changed": "2026-10-16T04:20:32+00:00",
+    "tuple_hash": "3c33c98cd325f24b"
+  },
   "djed_pillar": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -17494,6 +17530,12 @@
     "first_seen": "2026-09-13T21:13:10+00:00",
     "last_changed": "2026-09-13T21:13:10+00:00",
     "tuple_hash": "338014979ff17b6f"
+  },
+  "factor_pair": {
+    "changes": 0,
+    "first_seen": "2026-10-16T04:21:14+00:00",
+    "last_changed": "2026-10-16T04:21:14+00:00",
+    "tuple_hash": "83281870efb35493"
   },
   "factored_GNN": {
     "changes": 0,
@@ -21065,6 +21107,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bb00ce12642a7705"
   },
+  "gravity": {
+    "changes": 0,
+    "first_seen": "2026-10-14T10:05:07+00:00",
+    "last_changed": "2026-10-14T10:05:07+00:00",
+    "tuple_hash": "7c2bcf182995b9af"
+  },
   "great_attractor": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -23909,6 +23957,12 @@
     "last_changed": "2026-08-06T22:51:02+00:00",
     "tuple_hash": "85fb4be764b6c09b"
   },
+  "human_written_UNO_Reverse": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:13:33+00:00",
+    "last_changed": "2026-10-15T22:13:33+00:00",
+    "tuple_hash": "202585d9ca557148"
+  },
   "humanity_current": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -24754,6 +24808,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
+  },
+  "inclosure_construction": {
+    "changes": 0,
+    "first_seen": "2026-10-16T01:02:25+00:00",
+    "last_changed": "2026-10-16T01:02:25+00:00",
+    "tuple_hash": "70d8b54cf09ec31e"
   },
   "increment_modulus": {
     "changes": 0,
@@ -27166,6 +27226,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "905f80740ba5a8cf"
+  },
+  "lando_dmv_voice": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:13:33+00:00",
+    "last_changed": "2026-10-15T22:13:33+00:00",
+    "tuple_hash": "1a850e62758b5843"
   },
   "lang_trotter_conjecture": {
     "changes": 0,
@@ -29819,6 +29885,12 @@
     "last_changed": "2026-08-18T22:06:42+00:00",
     "tuple_hash": "af5e03874333d8c8"
   },
+  "measure": {
+    "changes": 0,
+    "first_seen": "2026-10-14T11:37:50+00:00",
+    "last_changed": "2026-10-14T11:37:50+00:00",
+    "tuple_hash": "c6f30f399113d0eb"
+  },
   "measure_holonomy": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -31858,6 +31930,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f6e068d17051de67"
+  },
+  "navier_stokes_pinch": {
+    "changes": 0,
+    "first_seen": "2026-10-14T08:46:19+00:00",
+    "last_changed": "2026-10-14T08:46:19+00:00",
+    "tuple_hash": "dd67560a089bfd24"
   },
   "navier_stokes_regularity_problem": {
     "changes": 1,
@@ -34325,6 +34403,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eeed7326396018f2"
   },
+  "o\u2082": {
+    "changes": 0,
+    "first_seen": "2026-10-14T11:39:04+00:00",
+    "last_changed": "2026-10-14T11:39:04+00:00",
+    "tuple_hash": "59418f5fbe49897f"
+  },
   "o\u2082\u207a": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -34348,6 +34432,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "18e41f8a07d4f52d"
+  },
+  "o\u2083": {
+    "changes": 0,
+    "first_seen": "2026-10-14T11:39:47+00:00",
+    "last_changed": "2026-10-14T11:39:47+00:00",
+    "tuple_hash": "64e61471380c60bb"
   },
   "o\u208b\u2081": {
     "changes": 0,
@@ -39257,6 +39347,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f097e3db4fe0999b"
   },
+  "re_entry": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:14:14+00:00",
+    "last_changed": "2026-10-15T22:14:14+00:00",
+    "tuple_hash": "4f7009dd7688b56a"
+  },
   "re_register_gate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39514,6 +39610,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1d751bc1fd0b5599"
+  },
+  "reentry": {
+    "changes": 0,
+    "first_seen": "2026-10-16T06:15:32+00:00",
+    "last_changed": "2026-10-16T06:15:32+00:00",
+    "tuple_hash": "ddfb4c510f325bf8"
   },
   "reeves_mass_from_frequency": {
     "changes": 0,
@@ -41800,6 +41902,30 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "94e54961f15f964e"
+  },
+  "semiprime": {
+    "changes": 0,
+    "first_seen": "2026-10-16T04:18:35+00:00",
+    "last_changed": "2026-10-16T04:18:35+00:00",
+    "tuple_hash": "71210abef4b128d6"
+  },
+  "semiprime_arev": {
+    "changes": 0,
+    "first_seen": "2026-10-15T05:31:55+00:00",
+    "last_changed": "2026-10-15T05:31:55+00:00",
+    "tuple_hash": "5c4ff4ac3bc6001f"
+  },
+  "semiprime_factor": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:16:14+00:00",
+    "last_changed": "2026-10-15T22:16:14+00:00",
+    "tuple_hash": "8becdd3f06da0b95"
+  },
+  "semiprime_whole": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:15:34+00:00",
+    "last_changed": "2026-10-15T22:15:34+00:00",
+    "tuple_hash": "d84eeba1aee3fef1"
   },
   "senescence": {
     "changes": 0,
@@ -49529,6 +49655,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "22c66c314d15f982"
   },
+  "units>": {
+    "changes": 0,
+    "first_seen": "2026-10-16T01:03:36+00:00",
+    "last_changed": "2026-10-16T01:03:36+00:00",
+    "tuple_hash": "60db9420d1e59223"
+  },
   "univalence_axiom": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -51508,6 +51640,18 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "307be00b0302926e"
+  },
+  "y_combinator": {
+    "changes": 0,
+    "first_seen": "2026-10-15T22:13:33+00:00",
+    "last_changed": "2026-10-15T22:13:33+00:00",
+    "tuple_hash": "f5d8eae7b12b5c3b"
+  },
+  "y_combinatorics": {
+    "changes": 0,
+    "first_seen": "2026-10-16T04:19:44+00:00",
+    "last_changed": "2026-10-16T04:19:44+00:00",
+    "tuple_hash": "cc0ddeb01521da35"
   },
   "yablos_(already),": {
     "changes": 0,
