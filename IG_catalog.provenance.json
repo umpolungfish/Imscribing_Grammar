@@ -2591,6 +2591,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "00fbafe8e127bd73"
   },
+  "alanine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:49:52+00:00",
+    "last_changed": "2026-10-18T00:49:52+00:00",
+    "tuple_hash": "7ee2c5133f2b1a93"
+  },
   "alanine_sidechain": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -4139,6 +4145,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "92c75e90fbbea173"
   },
+  "arginine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:50:37+00:00",
+    "last_changed": "2026-10-18T00:50:37+00:00",
+    "tuple_hash": "740a72351b7441df"
+  },
   "arginine_sidechain": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -4480,6 +4492,24 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
+  },
+  "asparagine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:51:28+00:00",
+    "last_changed": "2026-10-18T00:51:28+00:00",
+    "tuple_hash": "740a72351b7441df"
+  },
+  "aspartate": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:52:09+00:00",
+    "last_changed": "2026-10-18T00:52:09+00:00",
+    "tuple_hash": "2fffab87cecb71ff"
+  },
+  "aspartic_acid": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:05:08+00:00",
+    "last_changed": "2026-10-18T01:05:08+00:00",
+    "tuple_hash": "b0b20740df3e9446"
   },
   "aspherical_2d_cw_complex": {
     "changes": 0,
@@ -13205,6 +13235,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ac26f54988a831a8"
   },
+  "cysteine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:52:50+00:00",
+    "last_changed": "2026-10-18T00:52:50+00:00",
+    "tuple_hash": "f86b6d402ae5b5c7"
+  },
   "cystic_fibrosis_deltaf508": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -20279,11 +20315,29 @@
     "last_changed": "2026-09-28T17:14:32+00:00",
     "tuple_hash": "af52a6171e79b9e6"
   },
+  "glutamate": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:46:41+00:00",
+    "last_changed": "2026-10-18T00:46:41+00:00",
+    "tuple_hash": "5ebc49fea30b3185"
+  },
   "glutamatergictransmission": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "1340a69c34740078"
+  },
+  "glutamic_acid": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:05:55+00:00",
+    "last_changed": "2026-10-18T01:05:55+00:00",
+    "tuple_hash": "a508a1be327ec95e"
+  },
+  "glutamine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:53:33+00:00",
+    "last_changed": "2026-10-18T00:53:33+00:00",
+    "tuple_hash": "27722bc345792bc5"
   },
   "glutathioneperoxidase": {
     "changes": 0,
@@ -20296,6 +20350,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "98db5a0d807f539b"
+  },
+  "glycine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:54:18+00:00",
+    "last_changed": "2026-10-18T00:54:18+00:00",
+    "tuple_hash": "229df65da89420be"
   },
   "glycogen": {
     "changes": 0,
@@ -23111,6 +23171,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfc4a9b813f2ce1a"
   },
+  "histidine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:54:59+00:00",
+    "last_changed": "2026-10-18T00:54:59+00:00",
+    "tuple_hash": "5e51a784459ccc72"
+  },
   "histone_modification": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -25499,6 +25565,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ec41ba09385c2b1d"
   },
+  "isoleucine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:55:41+00:00",
+    "last_changed": "2026-10-18T00:55:41+00:00",
+    "tuple_hash": "740a72351b7441df"
+  },
   "isomorphism_gap_filler": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -27713,6 +27785,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f65132bd909562aa"
   },
+  "leucine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:56:26+00:00",
+    "last_changed": "2026-10-18T00:56:26+00:00",
+    "tuple_hash": "740a72351b7441df"
+  },
   "level_3_tower_seed": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -28690,6 +28768,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-09-03T21:06:09+00:00",
     "tuple_hash": "a29d7403aa0ac897"
+  },
+  "lysine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:57:07+00:00",
+    "last_changed": "2026-10-18T00:57:07+00:00",
+    "tuple_hash": "b0b20740df3e9446"
   },
   "lysosomalintegrity": {
     "changes": 0,
@@ -30430,6 +30514,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a85e2afea3e2a529"
+  },
+  "methionine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:57:52+00:00",
+    "last_changed": "2026-10-18T00:57:52+00:00",
+    "tuple_hash": "2fffab87cecb71ff"
   },
   "methyl_anion_nucleophile_CH3": {
     "changes": 0,
@@ -36257,6 +36347,12 @@
     "last_changed": "2026-09-03T20:58:57+00:00",
     "tuple_hash": "e66e99486a7292cd"
   },
+  "phenylalanine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:58:33+00:00",
+    "last_changed": "2026-10-18T00:58:33+00:00",
+    "tuple_hash": "a508a1be327ec95e"
+  },
   "pheromone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -37918,6 +38014,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "418807df4eaebca7"
+  },
+  "proline": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:59:13+00:00",
+    "last_changed": "2026-10-18T00:59:13+00:00",
+    "tuple_hash": "dcb5cf0e61f6b70f"
   },
   "proline_aldol_cycle": {
     "changes": 0,
@@ -41992,6 +42094,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "525ec5e25d8e5f37"
+  },
+  "serine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T00:59:54+00:00",
+    "last_changed": "2026-10-18T00:59:54+00:00",
+    "tuple_hash": "740a72351b7441df"
   },
   "serine_sidechain": {
     "changes": 0,
@@ -47669,6 +47777,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e787432c4935676b"
   },
+  "threonine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:00:33+00:00",
+    "last_changed": "2026-10-18T01:00:33+00:00",
+    "tuple_hash": "747928de3555993e"
+  },
   "thresholdpotential": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49025,6 +49139,12 @@
     "last_changed": "2026-09-03T21:07:14+00:00",
     "tuple_hash": "cd87bebd1a708398"
   },
+  "tryptophan": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:01:13+00:00",
+    "last_changed": "2026-10-18T01:01:13+00:00",
+    "tuple_hash": "2e6d28d2498ba7de"
+  },
   "tryptophan_sidechain": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -49306,6 +49426,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c722007b56e5c0da"
+  },
+  "tyrosine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:01:56+00:00",
+    "last_changed": "2026-10-18T01:01:56+00:00",
+    "tuple_hash": "8b030e4b71829654"
   },
   "tzadi": {
     "changes": 0,
@@ -50110,6 +50236,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f45b7bafacad8feb"
+  },
+  "valine": {
+    "changes": 0,
+    "first_seen": "2026-10-18T01:02:36+00:00",
+    "last_changed": "2026-10-18T01:02:36+00:00",
+    "tuple_hash": "740a72351b7441df"
   },
   "value_aligned_ai": {
     "changes": 0,
