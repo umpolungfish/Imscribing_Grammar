@@ -1,0 +1,82 @@
+============================================================
+λ-ENGINE  ·  Cantor monad × Gödel comonad
+g := Cantor ∘ Gödel  (PRIMITIVE_THEOREMS §81)
+============================================================
+
+── Cantor power-set monad P ──────────────────────────────
+  m = P{'α', 'β', 'γ'}
+  η('α') = P{'α'}
+
+  Powerset of {a,b,c}:
+    ∅
+    {'a'}
+    {'b'}
+    {'c'}
+    {'a', 'b'}
+    {'c', 'a'}
+    {'c', 'b'}
+    {'c', 'a', 'b'}
+
+  Cantor diagonal witness on 3 sets:
+    enum = [P{0, 2}, P{1}, P{0, 1, 2}]
+    D    = P{}  (differs from each S_i at index i)
+    i=0: 0 ∈ S_0, 0 ∉ D  → differ: True
+    i=1: 1 ∈ S_1, 1 ∉ D  → differ: True
+    i=2: 2 ∈ S_2, 2 ∉ D  → differ: True
+
+  Monad laws: {'left_unit': '✓', 'right_unit': '✓', 'associativity': '✓'}
+
+── Gödel encoding comonad G ──────────────────────────────
+  G('α')         = G('α', #1)
+  ε(G('α'))      = 'α'
+  δ(G('α'))      = G(G('α', #1), #1)
+  δ(δ(G('α')))   = G(G(G('α', #1), #1), #1)
+
+  Gödel sentence (PA): G('Sentence #2 is not provable in PA.', #2)
+
+  Fano plane (octonionic δ — co-type octonions, d=0):
+    δ(e_1) = G((2, 4), #3)
+    δ(e_2) = G((3, 5), #4)
+    δ(e_3) = G((4, 6), #5)
+    δ(e_4) = G((5, 7), #6)
+    δ(e_5) = G((6, 1), #7)
+    δ(e_6) = G((7, 2), #8)
+    δ(e_7) = G((1, 3), #9)
+
+  Comonad laws: {'counit_left': '✓', 'counit_right': '✓', 'coassociativity': '✓'}
+
+── Distributive law λ: P(G) → G(P) ───────────────────────
+  Input  P(G(T)) = P{G('α', #1), G('β', #10), G('γ', #11)}
+  Output G(P(T)) = G(P{'α', 'β', 'γ'}, #{1,10,11})
+  Decoded P(T)   = P{'α', 'β', 'γ'}
+
+── Frobenius condition μ∘δ=id ────────────────────────────
+  frobenius_check(G('α')) = True  ← True: λ planted
+
+Frobenius μ∘δ=id requires BOTH μ (monad) AND δ (comonad).
+  monad_cantor  has μ  but no δ  → cannot test
+  comonad_goedel has δ  but no μ  → cannot test
+  lam() plants both simultaneously → Frobenius holds
+  d(monad⊗comonad, λ) = 2.2361   → gap is non-zero
+  λ must be planted, not assembled.  (PRIMITIVE_THEOREMS §23/§81)
+
+── λ axiom verification ──────────────────────────────────
+  ✓ unit_axiom: True
+  ✓ frobenius: True
+  ✓ naturality: True
+  ✓ counit_axiom: True
+  ✓ multiplication_axiom: True
+  ✓ comultiplication_axiom: True
+
+── Crystal of Types addresses (Imscribing Grammar) ───────
+  System                     Address      Tier       C  Note
+  ──────────────────────────────────────────────────────────────────────
+  monad_cantor               5,326,271    O₂     0.611  
+  comonad_goedel             5,311,151    O₂†    0.830  = octonions
+  monad ⊗ comonad            —            O₂         —  d=2.2361 from λ
+  distributive_law_lambda    6,734,591    O_∞    0.830  = grammar_self_encode
+
+  Frobenius non-synthesizability (§23/§81):
+    d(monad ⊗ comonad, λ) = 2.2361  [P-gap=2.0, R-gap=1.0]
+    λ is not recoverable from P and G by tensor composition.
+    It must be planted — as a natural transformation, whole.

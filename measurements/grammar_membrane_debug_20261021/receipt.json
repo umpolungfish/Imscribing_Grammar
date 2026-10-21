@@ -1,0 +1,102 @@
+{
+  "commands": [
+    {
+      "name": "lambda_verify",
+      "command": [
+        "imscribe",
+        "lambda",
+        "verify"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "source_frobenius",
+      "command": [
+        "imscribe",
+        "lambda",
+        "frobenius",
+        "412023436986659543855531365332575948179811699844327982845455626433876445565248426198098870423161841879261420247188869492560931776375033421130982397485150944909106910269861031862704114880866970564902903653658867433731720813104105190864254793282601391257624033946373269391",
+        "--halves"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "source_comonad",
+      "command": [
+        "imscribe",
+        "lambda",
+        "comonad",
+        "412023436986659543855531365332575948179811699844327982845455626433876445565248426198098870423161841879261420247188869492560931776375033421130982397485150944909106910269861031862704114880866970564902903653658867433731720813104105190864254793282601391257624033946373269391"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl8nk_self-reading_fixed_point",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl8nk_navigator.py",
+        "entry",
+        "self-reading_fixed_point"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl8nk_dual-named_numerals",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl8nk_navigator.py",
+        "entry",
+        "dual-named_numerals"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl8nk_distributive_law_lambda",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl8nk_navigator.py",
+        "entry",
+        "distributive_law_lambda"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl9nk_self-reading_fixed_point",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl9nk_navigator.py",
+        "entry",
+        "self-reading_fixed_point"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl9nk_dual-named_numerals",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl9nk_navigator.py",
+        "entry",
+        "dual-named_numerals"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cl9nk_distributive_law_lambda",
+      "command": [
+        "/home/mrnob0dy666/imscribing_grammar/.venv/bin/python3",
+        "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl9nk_navigator.py",
+        "entry",
+        "distributive_law_lambda"
+      ],
+      "returncode": 0
+    }
+  ],
+  "bindings": {
+    "/home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json": "178b3277ec3bba23d44fcdf1a98f00f7480e29a9564d1cf2bef1fdf8e7377426",
+    "/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/measurements/lean_only_membrane_20261021/resident/locked896.stdout": "808a0033cdc26878ae16229acc371b893b012ab11efc3c4c800f5f6875a382d6",
+    "/home/mrnob0dy666/imsgct/imscribing_grammar/imscrbgrmr/lambda_engine.py": "953e0de96cea9a7ffc78b1647ac9b7ed7f86897e80834e74e3cd51a5a4f7bf4a",
+    "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl8nk_navigator.py": "d2719eafc2cf9adffa7716e6aafe56972c1a20a7df8de63cdeac39f69d34dabd",
+    "/home/mrnob0dy666/imsgct/imscribing_grammar/navigators/cl9nk_navigator.py": "3fc33a1a3cdf72daa83c51cba67c446db76b296033b60fb12aee1d10806ea049"
+  },
+  "scope": "Grammar debugging of retained source/state; no factor production run"
+}

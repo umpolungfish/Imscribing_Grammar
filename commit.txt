@@ -1,3 +1,3 @@
-I add the analytical continuation SIC entry
+I preserve source contexts through my Grammar lambda transport and check complete returned objects.
 
-I add the catalog entry and provenance record for the analytical continuation and SIC-POVM construction.
+I retain joint contexts as explicit immutable source-label sets, verify the full mixed-law compatibility equations, and route the legacy script through the canonical engine. I record the actual 896-bit carrier controls, native SRFP/DNN graph readings and Lean preparation mismatch while factor production remains paused.

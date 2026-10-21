@@ -1,0 +1,27 @@
+warning: plausible: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/plausible' has local changes
+warning: LeanSearchClient: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/LeanSearchClient' has local changes
+warning: importGraph: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/importGraph' has local changes
+warning: proofwidgets: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/proofwidgets' has local changes
+warning: aesop: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/aesop' has local changes
+warning: Qq: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/Qq' has local changes
+warning: batteries: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/batteries' has local changes
+warning: Cli: repository '/home/mrnob0dy666/imsgct/p4rakernel/p4ramill/.lake/packages/Cli' has local changes
+structure Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane (N : ℕ) : Type
+number of parameters: 1
+fields:
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.sourceWell : BinaryWell
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.sourceBound : binEval self.sourceWell = N
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.continuation : Term
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.reduced : Steps (prepared N) self.continuation
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.budget : ℕ
+constructor:
+  Imscribing.Paraconsistent.LeanOnlyMembrane.Membrane.mk {N : ℕ} (sourceWell : BinaryWell)
+    (sourceBound : binEval sourceWell = N) (continuation : Term) (reduced : Steps (prepared N) continuation)
+    (budget : ℕ) : Membrane N
+Imscribing.Paraconsistent.LeanOnlyMembrane.trigger_resume {N : ℕ} (first second : ℕ) (m : Membrane N) :
+  (trigger second (trigger first m)).continuation = (trigger (first + second) m).continuation
+Imscribing.Paraconsistent.LeanOnlyMembrane.trigger_source {N : ℕ} (fuel : ℕ) (m : Membrane N) :
+  binEval (trigger fuel m).sourceWell = N
+0
+896
+("prepared operator is residentFactor", true, true, true)

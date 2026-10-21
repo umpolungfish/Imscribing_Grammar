@@ -1,0 +1,53 @@
+
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  CL8NK Entry: self-reading_fixed_point
+  Self-reading fixed point - The numeral is its own decomposition: reading it and factoring it are the same act, as in
+  a quine whose source is its output. The fixed point lives in the closure of Y on a pairing that is simultaneously
+  multiplicative, a self-referential object
+  Reference: CLINK L8 (Organism) — ⟨𐑦⋅𐑸⋅𐑾⋅𐑹⋅𐑐⋅𐑧⋅𐑲⋅𐑵⋅⊙⋅𐑫⋅𐑳⋅𐑟⟩ (from catalog)
+  Catalog-native — no hardcoded systems
+════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Prim   Value   CLINK fragment
+  ─────  ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⊢      𐑦       V = L(x) ∧ selfmodel(x) ∧ x ∈ V                                                     [HOLOGRAPHIC_STATE]
+  ⊣      𐑥       cross(x, y) ∧ ¬ meet(x, y)
+  ≻      𐑑       Fun(x, y) ∧ Nat(y, z) → Fun(x, z)
+  ≺      𐑬       ℤ₂(x) ∧ ¬(x = -x)
+  ⋈      𐑐       ℏ(x) ∧ [x, p] = iℏ
+  ⊤      𐑧       τ ≫ T ∧ eq(x) ∧ gate_open(x)
+  ∈      𐑔       ∃y∈x( |y| ∼ |x| )
+  ∋      𐑝       f ∧ g ∧ h
+  ⊙      ⊙       ξ → ∞ ∧ μ∘δ = id                                                                                [PHI_C]
+  ⊥      𐑫       ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V )                                       [ETERNAL_FIXEDPOINT]
+  ⊞      𐑳       ∃a∈A∃b∈B( type(a) ≠ type(b) )
+  ⊡      𐑭       ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0                                                               [ZWIND]
+
+  [HOLOGRAPHIC_STATE ] V=L(x) self-writing state-space — Axiom C (𐑦)
+  [PHI_C             ] criticality fixed-point ξ→∞ ∧ μ∘δ=id — ⊙
+  [ETERNAL_FIXEDPOINT] ∀n∃φ fixed by μ∘δ — Axiom D (𐑫)
+  [ZWIND             ] integer winding number — 𐑭
+
+── CLINK expression ──────────────────────────────────────────────────────────────────────────────────────────────────
+  V = L(x) ∧ selfmodel(x) ∧ x ∈ V ∧
+  cross(x, y) ∧ ¬ meet(x, y) ∧
+  Fun(x, y) ∧ Nat(y, z) → Fun(x, z) ∧
+  ℤ₂(x) ∧ ¬(x = -x) ∧
+  ℏ(x) ∧ [x, p] = iℏ ∧
+  τ ≫ T ∧ eq(x) ∧ gate_open(x) ∧
+  ∃y∈x( |y| ∼ |x| ) ∧
+  f ∧ g ∧ h ∧
+  ξ → ∞ ∧ μ∘δ = id ∧
+  ∀n∃φ( rank(φ) > n ∧ φ fixed by μ∘δ ∧ φ ∈ V ) ∧
+  ∃a∈A∃b∈B( type(a) ≠ type(b) ) ∧
+  ∮_γ A = 2πn ∧ n ∈ ℤ ∧ wind(γ) ≠ 0
+
+  tier: O₂   d(CLINK L8): 1.3374   match:6 close:4 distant:2
+  promoted atoms: HOLOGRAPHIC_STATE, PHI_C, ETERNAL_FIXEDPOINT, ZWIND
+
+  Promotions needed to reach CLINK L8 (5):
+    ⊣: 𐑥 → 𐑸  (gap: 0.5)
+    ≻: 𐑑 → 𐑾  (gap: 0.667)
+    ≺: 𐑬 → 𐑹  (gap: 0.5)
+    ∋: 𐑝 → 𐑵  (gap: 1.0)
+    ⊡: 𐑭 → 𐑟  (gap: 0.333)

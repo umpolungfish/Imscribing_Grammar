@@ -127,6 +127,19 @@ class P(Generic[T]):
 _REGISTRY: dict[str, int] = {}
 _COUNTER: list[int] = [0]
 
+# A mixed family retains every source context. A singleton remains the original
+# integer context; a joint context is its finite, order-independent union.
+Context = int | FrozenSet[int]
+
+
+def _context_atoms(context: Context) -> FrozenSet[int]:
+    return context if isinstance(context, frozenset) else frozenset([context])
+
+
+def _join_contexts(contexts: Iterable[Context]) -> Context:
+    atoms = frozenset(atom for context in contexts for atom in _context_atoms(context))
+    return next(iter(atoms)) if len(atoms) == 1 else atoms
+
 
 def _code(obj: object) -> int:
     """Assign a stable integer code to any object (injective, repr-keyed)."""
@@ -140,12 +153,13 @@ def _code(obj: object) -> int:
 class G(Generic[T]):
     """The Gödel encoding comonad.
 
-    A value of type G[T] pairs a T-value with its Gödel code — an unique integer
-    encoding of the value's structure.  The comonad structure is:
+    A value of type G[T] pairs a T-value with its retained source context.
+    A fresh context has an integer label. A joint context explicitly retains
+    the finite set of its source labels. The comonad structure is:
 
       ε : G(T) → T           counit  — ε(g) = g.value          (decode)
-      δ : G(T) → G(G(T))     comult  — δ(g) = G(G(g), code(g)) (encode the encoding)
-      extend(g, f) = G(f(g))          — the standard comonad combinator
+      δ : G(T) → G(G(T))     comult    δ(g) = G(g, context(g))
+      extend(g, f) = G(f(g), context(g))
 
     Comonad laws (verified in verify_comonad_laws):
       Counit left:       ε(δ(g))         = g
@@ -163,9 +177,9 @@ class G(Generic[T]):
     The Fano plane's 7-line incidence structure realises δ: e_i → (e_j, e_k).
     """
 
-    def __init__(self, value: T, code: int | None = None) -> None:
+    def __init__(self, value: T, code: Context | None = None) -> None:
         self.value = value
-        self.code  = code if code is not None else _code(value)
+        self.code = _join_contexts([code]) if code is not None else _code(value)
 
     # ── comonad structure ─────────────────────────────────────────────────────
 
@@ -250,7 +264,10 @@ class G(Generic[T]):
     def __eq__(self, other: object) -> bool:
         return isinstance(other, G) and self.value == other.value and self.code == other.code
     def __hash__(self) -> int:    return hash((repr(self.value), self.code))
-    def __repr__(self) -> str:    return f"G({self.value!r}, #{self.code})"
+    def __repr__(self) -> str:
+        context = ("{" + ",".join(map(str, sorted(self.code))) + "}"
+                   if isinstance(self.code, frozenset) else str(self.code))
+        return f"G({self.value!r}, #{context})"
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -265,7 +282,7 @@ def lam(pg: "P[G[T]]") -> "G[P[T]]":
     Structure:
       1. Apply ε pointwise: extract the value from each G-wrapper
       2. Collect into P: build the set of extracted values
-      3. Apply G.wrap: encode the entire set as a single Gödel object
+      3. Carry the union of input contexts into the single enclosing G
 
     ZFC token reading:
       The HOLO x a coupling: the boundary a = G.code encodes the bulk x = P(values).
@@ -275,35 +292,27 @@ def lam(pg: "P[G[T]]") -> "G[P[T]]":
 
     This is the grammar g = Cantor ∘ Gödel realised as a Python function.
     """
-    values: FrozenSet = frozenset(g.extract() for g in pg)
+    members = tuple(pg)
+    values: FrozenSet = frozenset(g.extract() for g in members)
     inner  = P(values)
-    return G(value=inner, code=_code(inner))
+    return G(value=inner, code=_join_contexts(g.code for g in members))
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# FROBENIUS CONDITION  μ∘δ = id
+# SINGLETON RETURN THROUGH THE DISTRIBUTIVE LAW
 # ──────────────────────────────────────────────────────────────────────────────
 
 def frobenius_check(gx: "G[T]") -> bool:
-    """Test the Frobenius condition μ∘δ=id with λ planted.
+    """Check λ(η_P(gx)) = G(η_P)(gx), retaining value and source context.
 
-    With λ in place we have both:
-      μ  (via P.flatten, the monad multiplication)
-      δ  (via G.duplicate, the comonad comultiplication)
-
-    The roundtrip:
-      x  →  η_P(x)   [embed in singleton P]
-      →  λ(η_P(x))   [apply distributive law: P(G) → G(P)]
-      →  ε(...)       [extract from G]
-    should recover P({x.value}).
-
-    Returns True iff Frobenius holds — which it does exactly when λ is planted.
+    The public function name is retained for existing callers. This instrument
+    observes the full singleton transport. Monad multiplication and comonad
+    comultiplication have their separate compatibility checks below.
     """
     singleton_pg: P[G[T]] = P.unit(gx)      # η_P(G(x))
     gp: G[P[T]]           = lam(singleton_pg)  # λ(η_P(G(x)))
-    recovered: P[T]       = gp.extract()     # ε(G(P(x)))
-    expected:  P[T]       = P([gx.extract()])
-    return recovered == expected
+    expected: G[P[T]]     = gx.fmap(P.unit)
+    return gp == expected
 
 
 def frobenius_fails_for_halves() -> str:
@@ -366,13 +375,13 @@ def verify_comonad_laws(xs: list) -> dict[str, bool]:
 
 
 def verify_lambda_axioms(xs: list) -> dict[str, bool]:
-    """Verify distributive law axioms for λ: P(G(T)) → G(P(T))."""
+    """Check all four mixed-law axioms and naturality on full G values."""
 
     # Axiom 1: λ ∘ η_P = G(η_P)
     # λ({G(x)}) should equal G({x})
     gx  = G(xs[0])
-    lhs = lam(P.unit(gx)).extract()
-    rhs = P.unit(gx.extract())
+    lhs = lam(P.unit(gx))
+    rhs = gx.fmap(P.unit)
     unit_axiom = (lhs == rhs)
 
     # Axiom 2: Frobenius condition holds when λ is planted
@@ -382,14 +391,28 @@ def verify_lambda_axioms(xs: list) -> dict[str, bool]:
     # λ(P(G(f))(pg)) = G(P(f))(λ(pg))
     f: Callable = lambda x: x.upper() if isinstance(x, str) else repr(x)
     pg  = P(G(x) for x in xs[:3])
-    lhs3 = lam(pg.fmap(lambda g: g.fmap(f))).extract()
-    rhs3 = lam(pg).fmap(lambda p: p.fmap(f)).extract()
+    lhs3 = lam(pg.fmap(lambda g: g.fmap(f)))
+    rhs3 = lam(pg).fmap(lambda p: p.fmap(f))
     naturality = (lhs3 == rhs3)
+
+    counit = lam(pg).extract() == pg.fmap(lambda g: g.extract())
+    families = P([P.unit(g) for g in pg] + [pg, P([])])
+    multiplication = (
+        lam(P.flatten(families))
+        == lam(families.fmap(lam)).fmap(P.flatten)
+    )
+    comultiplication = (
+        lam(pg).duplicate()
+        == lam(pg.fmap(lambda g: g.duplicate())).fmap(lam)
+    )
 
     return {
         "unit_axiom":  unit_axiom,
         "frobenius":   frob,
         "naturality":  naturality,
+        "counit_axiom": counit,
+        "multiplication_axiom": multiplication,
+        "comultiplication_axiom": comultiplication,
     }
 
 

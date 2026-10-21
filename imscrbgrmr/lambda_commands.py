@@ -75,7 +75,7 @@ def lambda_group():
       monad      Cantor monad operations
       comonad    Gödel comonad operations
       law        Apply λ to a list of values
-      frobenius  Check Frobenius condition μ∘δ=id
+      frobenius  Check singleton value and source-context return through λ
       fano       Fano plane / octonionic comultiplication
     """
 
@@ -143,10 +143,10 @@ def demo_cmd():
     console.print(f"  Decoded P(T)   = {gp.extract()}")
 
     # ── Frobenius ─────────────────────────────────────────────────────────────
-    console.rule("[bold]Frobenius condition μ∘δ=id[/bold]")
+    console.rule("[bold]Singleton value and context return through λ[/bold]")
 
     fc = frobenius_check(G("α"))
-    console.print(f"  frobenius_check(G('α')) = {fc}  ← True: λ planted")
+    console.print(f"  singleton return = {fc}")
     console.print()
     console.print(frobenius_fails_for_halves())
 
@@ -209,7 +209,8 @@ def verify_cmd():
         tbl.add_row("Comonad G", k.replace("_", " "), _bool_cell(v))
 
     for k, v in verify_lambda_axioms(xs).items():
-        tbl.add_row("λ axioms", k.replace("_", " "), _bool_cell(v))
+        label = "singleton return" if k == "frobenius" else k.replace("_", " ")
+        tbl.add_row("λ axioms", label, _bool_cell(v))
 
     console.print(tbl)
     console.print()
@@ -346,7 +347,7 @@ def law_cmd(values):
     gp = lam(pg)
     console.print(f"  G(P(T))  =  {gp}")
     console.print(f"  Decoded  =  {gp.extract()}")
-    console.print(f"  Gödel code of the collection: #{gp.code}")
+    console.print(f"  Retained source context: #{gp.code}")
     console.print()
 
 
@@ -358,7 +359,7 @@ def law_cmd(values):
 @click.argument("value", default="α")
 @click.option("--halves", is_flag=True, default=False, help="Show non-synthesizability proof.")
 def frobenius_cmd(value: str, halves: bool):
-    """Check the Frobenius condition μ∘δ=id for a value.
+    """Check singleton value and source-context return through λ.
 
     \b
     VALUE: string to wrap in G. Default: α
@@ -379,9 +380,9 @@ def frobenius_cmd(value: str, halves: bool):
     mark = "✓" if result else "✗"
 
     console.print(Panel(
-        f"[bold]Frobenius condition μ∘δ=id[/bold]\n\n"
+        f"[bold]Singleton return through λ[/bold]\n\n"
         f"  Input:   G({value!r}) = {gx}\n"
-        f"  Result:  [{color}]{mark} {result}[/{color}]  ({'λ planted' if result else 'λ absent'})",
+        f"  Value and context return:  [{color}]{mark} {result}[/{color}]",
         expand=False,
     ))
 

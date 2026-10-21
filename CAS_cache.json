@@ -103,5 +103,12 @@
     "formula": "C21H23NO5",
     "source": "pubchem",
     "type_hint": ""
+  },
+  "277-10-1": {
+    "cas": "277-10-1",
+    "name": "cubane",
+    "formula": "C8H8",
+    "source": "pubchem",
+    "type_hint": ""
   }
 }
