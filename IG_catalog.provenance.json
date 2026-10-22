@@ -1,23 +1,23 @@
 {
-  "(+)_\u03b1_thujone": {
+  "(+)_α_thujone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a0a30e041cf0f0d5"
   },
-  "(+)_\u03b2_thujone": {
+  "(+)_β_thujone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc10bfe9f027fccc"
   },
-  "(\u2212)_\u03b1_thujone": {
+  "(−)_α_thujone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c148cbc8ef6eff36"
   },
-  "(\u2212)_\u03b2_thujone": {
+  "(−)_β_thujone": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -437,7 +437,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c5249af145bc1844"
   },
-  "44_pair_stabilized\u207a": {
+  "44_pair_stabilized⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -635,6 +635,12 @@
     "last_changed": "2026-08-16T05:41:25+00:00",
     "tuple_hash": "78f344ae992d8a75"
   },
+  "<oxidative_catalyst>": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:45:01+00:00",
+    "last_changed": "2026-10-22T04:45:01+00:00",
+    "tuple_hash": "3b4805ff5466fbcd"
+  },
   "<unique_name>": {
     "changes": 0,
     "first_seen": "2026-08-16T05:45:59+00:00",
@@ -671,7 +677,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "32167c0db1e41f41"
   },
-  "A2\u2020": {
+  "A2†": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -1133,7 +1139,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fd8f335c97072c78"
   },
-  "G\u00f6del's_Incompleteness_Theorems": {
+  "Gödel's_Incompleteness_Theorems": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -1277,7 +1283,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "051a5b2d80c2ed17"
   },
-  "K\u00f6nig's_Paradox": {
+  "König's_Paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -1397,7 +1403,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fd8f335c97072c78"
   },
-  "L\u00f6b's_Paradox": {
+  "Löb's_Paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -1733,7 +1739,7 @@
     "last_changed": "2026-09-18T18:16:47+00:00",
     "tuple_hash": "0ed8c095b50bc0a3"
   },
-  "[\u00f0": {
+  "[ð": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -1757,7 +1763,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dc12b6aba7e75eba"
   },
-  "_meson_\u2014_qq\u0304": {
+  "_meson_—_qq̄": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -2609,6 +2615,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0d374f7f1c759c5d"
   },
+  "alchemical_factor_extraction": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "742e8db6c72da3f1"
+  },
   "alchemical_hermetic_universe": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -2885,6 +2897,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ae922a69dfc8bb6"
   },
+  "also": {
+    "changes": 0,
+    "first_seen": "2026-10-21T20:48:04+00:00",
+    "last_changed": "2026-10-21T20:48:04+00:00",
+    "tuple_hash": "9b05d987f7f1d829"
+  },
   "alternate_self_branch": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -3083,7 +3101,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2f3fbc22d06d122f"
   },
-  "anabelian_hodge\u2013tate_stacks_of_perfectoid_diamonds": {
+  "anabelian_hodge–tate_stacks_of_perfectoid_diamonds": {
     "changes": 0,
     "first_seen": "2026-08-18T22:09:36+00:00",
     "last_changed": "2026-08-18T22:09:36+00:00",
@@ -5375,6 +5393,36 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fe3cde57c01935f3"
   },
+  "bark_dual_frame_universal": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:33:08+00:00",
+    "last_changed": "2026-10-22T04:33:08+00:00",
+    "tuple_hash": "3ed2a55937031e93"
+  },
+  "bark_formalization_lean": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:59:08+00:00",
+    "last_changed": "2026-10-22T04:59:08+00:00",
+    "tuple_hash": "e0bd6e89156bd1b2"
+  },
+  "bark_frobenius_p1": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:32:03+00:00",
+    "last_changed": "2026-10-22T04:32:03+00:00",
+    "tuple_hash": "a00cf0179e3b6664"
+  },
+  "bark_phi": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:31:18+00:00",
+    "last_changed": "2026-10-22T04:31:18+00:00",
+    "tuple_hash": "d96dbf1b18949be8"
+  },
+  "bark_self_dual": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:32:44+00:00",
+    "last_changed": "2026-10-22T04:32:44+00:00",
+    "tuple_hash": "cba7ee7e39a7114f"
+  },
   "barnettes_conjecture": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -5825,7 +5873,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4761b09240a8c916"
   },
-  "betty_grof___ice_kings_determined_former_fianc\u00e9e_from_the": {
+  "betty_grof___ice_kings_determined_former_fiancée_from_the": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -6738,10 +6786,10 @@
     "tuple_hash": "048fce1fc039f58d"
   },
   "bottom_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:43:25+00:00",
+    "tuple_hash": "8f42bd055a0ef247"
   },
   "bounce_house_princess___a_fun_loving,_inflatable_princess": {
     "changes": 0,
@@ -6911,7 +6959,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "410bafa748d4d6a5"
   },
-  "braid_operator_\u03c4": {
+  "braid_operator_τ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -7103,7 +7151,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e82aa52dc9e19b08"
   },
-  "bridge_entropy_neutralizer_\u03b1": {
+  "bridge_entropy_neutralizer_α": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -7301,31 +7349,31 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4ee9b3530d1592d3"
   },
-  "bridge_to_\u0159_manifold": {
+  "bridge_to_ř_manifold": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cfb5159808c11e60"
   },
-  "bridge_to_\u0159_manifold_non_magnetic": {
+  "bridge_to_ř_manifold_non_magnetic": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f526c45188e2217c"
   },
-  "bridge_to_\u0159_manifold_ring": {
+  "bridge_to_ř_manifold_ring": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f49f5b0e244e77d3"
   },
-  "bridge_unit_\u03c9": {
+  "bridge_unit_ω": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "88441cc7fe8da82d"
   },
-  "bridge_unit_\ud801\udc56": {
+  "bridge_unit_𐑖": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -9431,6 +9479,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "727b308c5541dfe1"
   },
+  "characterize": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:39:53+00:00",
+    "last_changed": "2026-10-22T06:39:53+00:00",
+    "tuple_hash": "7254fc7992bcf311"
+  },
   "charge_quantum": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -9450,10 +9504,10 @@
     "tuple_hash": "2484542a1c00b93c"
   },
   "charm_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:42:38+00:00",
+    "tuple_hash": "973b334df7798668"
   },
   "chayot_collective": {
     "changes": 0,
@@ -9521,7 +9575,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d000ed0fb6f26fcc"
   },
-  "chern\u2013simons_\u221e_stacks_over_the_sphere_spectrum": {
+  "chern–simons_∞_stacks_over_the_sphere_spectrum": {
     "changes": 0,
     "first_seen": "2026-08-18T22:07:33+00:00",
     "last_changed": "2026-08-18T22:07:33+00:00",
@@ -10115,6 +10169,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee5f6cec6619e0bb"
   },
+  "chimera_107_1135": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "02dbd070e6942b76"
+  },
+  "chimera_1_1135": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "1afb3b0f78951733"
+  },
   "chimera_alkahest_owsm": {
     "changes": 0,
     "first_seen": "2026-09-18T16:02:09+00:00",
@@ -10133,6 +10199,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a4d630c0d881138f"
   },
+  "chimera_collatz": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "bfd3e318577e17ed"
+  },
   "chimera_compton_split_radius_l9_magnitude_depth_recurrent": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10144,6 +10216,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2c0b0b732f01e115"
+  },
+  "chimera_fodor_szem": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "b6ac9777776fa862"
   },
   "chimera_menu_sweep_tmp": {
     "changes": 0,
@@ -10211,6 +10289,12 @@
     "last_changed": "2026-09-14T04:02:04+00:00",
     "tuple_hash": "31a5fd45c099156d"
   },
+  "chimera_yoneda_godel": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:13:09+00:00",
+    "last_changed": "2026-10-22T06:13:09+00:00",
+    "tuple_hash": "afad4f7549907a9c"
+  },
   "chimerium_supercritical": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -10223,7 +10307,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8b00db2e6f346d22"
   },
-  "chiral_agent_\u0127": {
+  "chiral_agent_ħ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -11939,6 +12023,18 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "acdf029fa495d871"
   },
+  "compute_conflict_distance": {
+    "changes": 0,
+    "first_seen": "2026-10-21T21:08:29+00:00",
+    "last_changed": "2026-10-21T21:08:29+00:00",
+    "tuple_hash": "716a3ce636942419"
+  },
+  "compute_distance": {
+    "changes": 0,
+    "first_seen": "2026-10-21T21:07:49+00:00",
+    "last_changed": "2026-10-21T21:07:49+00:00",
+    "tuple_hash": "8e210a758ea94ef5"
+  },
   "concentration_inequality": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -11956,6 +12052,12 @@
     "first_seen": "2026-08-18T07:12:40+00:00",
     "last_changed": "2026-08-18T07:12:40+00:00",
     "tuple_hash": "af5e03874333d8c8"
+  },
+  "conductance": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:37:39+00:00",
+    "last_changed": "2026-10-22T06:37:39+00:00",
+    "tuple_hash": "8920a36dd005d95b"
   },
   "conductance_probe_d12": {
     "changes": 0,
@@ -12929,7 +13031,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d835569a83cc733a"
   },
-  "crystalline_representations_of_the_absolute_galois_group_of_\u211a": {
+  "crystalline_representations_of_the_absolute_galois_group_of_ℚ": {
     "changes": 0,
     "first_seen": "2026-08-18T22:15:23+00:00",
     "last_changed": "2026-08-18T22:15:23+00:00",
@@ -13925,7 +14027,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "33f083d296da2795"
   },
-  "derived_deligne\u2013lusztig_varieties_over_the_absolute_point": {
+  "derived_deligne–lusztig_varieties_over_the_absolute_point": {
     "changes": 0,
     "first_seen": "2026-08-18T22:13:32+00:00",
     "last_changed": "2026-08-18T22:13:32+00:00",
@@ -14591,7 +14693,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4071f621b4be8291"
   },
-  "dnadamage(\u03b3h2ax,cometassay)": {
+  "dnadamage(γh2ax,cometassay)": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -14772,10 +14874,10 @@
     "tuple_hash": "97e9238c2147b1b9"
   },
   "down_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:41:22+00:00",
+    "tuple_hash": "e892aaed9a6fd45f"
   },
   "dqi_algorithm": {
     "changes": 0,
@@ -15629,7 +15731,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d4722d371bf2aad2"
   },
-  "elliptic_cohomology_of_lubin\u2013tate_deformation_spaces": {
+  "elliptic_cohomology_of_lubin–tate_deformation_spaces": {
     "changes": 0,
     "first_seen": "2026-08-18T22:14:10+00:00",
     "last_changed": "2026-08-18T22:14:10+00:00",
@@ -16547,25 +16649,25 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b8a74d2f87cb7034"
   },
-  "erd\u0151s_distinct_subset_sum_problem": {
+  "erdős_distinct_subset_sum_problem": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
   },
-  "erd\u0151s_distinct_subset_sum_theorem": {
+  "erdős_distinct_subset_sum_theorem": {
     "changes": 0,
     "first_seen": "2026-08-23T14:41:00+00:00",
     "last_changed": "2026-08-23T14:41:00+00:00",
     "tuple_hash": "b75d3677294728ab"
   },
-  "erd\u0151s_distinct_subset_sums": {
+  "erdős_distinct_subset_sums": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b26f69be8498ffac"
   },
-  "erd\u0151s_lax_sequence": {
+  "erdős_lax_sequence": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -17753,13 +17855,13 @@
     "last_changed": "2026-08-18T11:51:43+00:00",
     "tuple_hash": "645689fe2dcb8129"
   },
-  "feferman\u2013sch\u00fctte": {
+  "feferman–schütte": {
     "changes": 0,
     "first_seen": "2026-08-18T13:17:53+00:00",
     "last_changed": "2026-08-18T13:17:53+00:00",
     "tuple_hash": "b33455374bd887e4"
   },
-  "feferman\u2013sch\u00fctte_hyperarithmetic_condensed_sets": {
+  "feferman–schütte_hyperarithmetic_condensed_sets": {
     "changes": 0,
     "first_seen": "2026-08-18T12:59:02+00:00",
     "last_changed": "2026-08-18T12:59:02+00:00",
@@ -17939,13 +18041,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f7260027ca203c16"
   },
-  "fibonacci_anyon_o\u2082": {
+  "fibonacci_anyon_o₂": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4fb48a91c5708cda"
   },
-  "fibonacci_anyon_o\u2082+compton_wavelength_magnitude": {
+  "fibonacci_anyon_o₂+compton_wavelength_magnitude": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -18119,6 +18221,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2e3099a6529164e9"
   },
+  "find_analogies": {
+    "changes": 0,
+    "first_seen": "2026-10-21T20:52:07+00:00",
+    "last_changed": "2026-10-21T20:52:07+00:00",
+    "tuple_hash": "753eda0caacf1647"
+  },
   "fine_structure_alpha": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18161,7 +18269,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "246bf824b53217a7"
   },
-  "fine_structure_constant\u207b": {
+  "fine_structure_constant⁻": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -18797,6 +18905,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ee99112648c71357"
   },
+  "free_commutative_monoid": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:38:43+00:00",
+    "last_changed": "2026-10-22T04:38:43+00:00",
+    "tuple_hash": "50ead68fa1475ca4"
+  },
   "free_play_enjoyment": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -18892,6 +19006,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "308cf5865e2bada5"
+  },
+  "frobenius_algebra_p1": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:40:20+00:00",
+    "last_changed": "2026-10-22T04:40:20+00:00",
+    "tuple_hash": "76b1fe87577d2297"
   },
   "frobenius_closure_inc_squared": {
     "changes": 0,
@@ -19565,7 +19685,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "081eb81328883c12"
   },
-  "gap_\u00f0_holographic": {
+  "gap_ð_holographic": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -21569,6 +21689,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3d8fc46680678e86"
   },
+  "guessing": {
+    "changes": 0,
+    "first_seen": "2026-10-21T21:07:15+00:00",
+    "last_changed": "2026-10-21T21:07:15+00:00",
+    "tuple_hash": "9c5f71d9861ed920"
+  },
   "guidonian_A_la_mi_re": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -21719,19 +21845,19 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2606bade505df298"
   },
-  "g\u00f6del_numbering": {
+  "gödel_numbering": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "be709a5d13692cb7"
   },
-  "g\u00f6dels_first_incompleteness_theorem": {
+  "gödels_first_incompleteness_theorem": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0e69f85a26de6259"
   },
-  "g\u00f6dels_incompleteness_theorems": {
+  "gödels_incompleteness_theorems": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -21959,13 +22085,13 @@
     "last_changed": "2026-08-23T14:16:17+00:00",
     "tuple_hash": "a0388231d5617b5d"
   },
-  "hal\u00e1sz_inequality": {
+  "halász_inequality": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f087572519796c22"
   },
-  "hal\u00e1sz_l1_estimate": {
+  "halász_l1_estimate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -22079,7 +22205,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fc473cf44887bf68"
   },
-  "hausdorff_(t\u2082)_space": {
+  "hausdorff_(t₂)_space": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -22979,7 +23105,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ca26ae3728d70b4b"
   },
-  "hilbert_embed_nab_bridg\u0113": {
+  "hilbert_embed_nab_bridgē": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -23057,7 +23183,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3773c5e0ab765286"
   },
-  "hilbert_embed_seed_o2\u0304": {
+  "hilbert_embed_seed_o2̄": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -23536,6 +23662,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6714d6fab72b2b8b"
+  },
+  "homo-polymer": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:40:38+00:00",
+    "last_changed": "2026-10-22T06:40:38+00:00",
+    "tuple_hash": "bf7a8bd1e6a8cc83"
   },
   "homo_lumo": {
     "changes": 0,
@@ -24293,7 +24425,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "89f31c23c9239a50"
   },
-  "hyperk\u00e4hler_quantum_frobenioid_bundles": {
+  "hyperkähler_quantum_frobenioid_bundles": {
     "changes": 0,
     "first_seen": "2026-08-18T05:40:37+00:00",
     "last_changed": "2026-08-18T05:40:37+00:00",
@@ -25649,6 +25781,12 @@
     "last_changed": "2026-08-18T13:08:13+00:00",
     "tuple_hash": "c33a6e95edbe1666"
   },
+  "its": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:41:10+00:00",
+    "last_changed": "2026-10-22T06:41:10+00:00",
+    "tuple_hash": "a204a8ab00400ad4"
+  },
   "iuft_beta_functions": {
     "changes": 0,
     "first_seen": "2026-08-29T07:29:48+00:00",
@@ -25829,7 +25967,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9bade831b14309bf"
   },
-  "jacksons_paradox_(marys_room_\u2014_sometimes_called),": {
+  "jacksons_paradox_(marys_room_—_sometimes_called),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -26219,13 +26357,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f8b2b3e10178dc3c"
   },
-  "k19_ray_class_field\u207a\u207a": {
+  "k19_ray_class_field⁺⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7ac84602985f9fd5"
   },
-  "k19_ray_class_field\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a\u207a": {
+  "k19_ray_class_field⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -26783,7 +26921,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b21033a36cfcc5b0"
   },
-  "kontsevichs_formality_theorem_for_derived_poisson\u2013lie_groupoids": {
+  "kontsevichs_formality_theorem_for_derived_poisson–lie_groupoids": {
     "changes": 0,
     "first_seen": "2026-08-18T22:17:59+00:00",
     "last_changed": "2026-08-18T22:17:59+00:00",
@@ -26939,7 +27077,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dc134ece477afecb"
   },
-  "k\u00f6nigs_paradox": {
+  "königs_paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -27065,7 +27203,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "da01744055b85547"
   },
-  "l9_topology_branched_\u00e7": {
+  "l9_topology_branched_ç": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -28163,7 +28301,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4183012fc050538e"
   },
-  "linker_\ud801\udc6a": {
+  "linker_𐑪": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -28535,6 +28673,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "82e98bc3aad341d8"
   },
+  "lookup_catalog": {
+    "changes": 0,
+    "first_seen": "2026-10-21T20:51:27+00:00",
+    "last_changed": "2026-10-21T20:51:27+00:00",
+    "tuple_hash": "0ce91884c5237e71"
+  },
   "loop": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -28661,7 +28805,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "598f2e2ce7808578"
   },
-  "lov\u00e1sz_path": {
+  "lovász_path": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -28799,7 +28943,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "18640279cca4e053"
   },
-  "l\u00f6bs_paradox": {
+  "löbs_paradox": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -29003,7 +29147,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8d7a0bc40b45fcc8"
   },
-  "macrocycle_\u0159_final": {
+  "macrocycle_ř_final": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -29591,6 +29735,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "499f0f49e793739b"
   },
+  "master_sic": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:39:50+00:00",
+    "last_changed": "2026-10-22T04:39:50+00:00",
+    "tuple_hash": "3ed2a55937031e93"
+  },
   "master_template_alpha": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -29615,7 +29765,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "46c8d4ffcffe7010"
   },
-  "material_\u03c1_2_6181": {
+  "material_ρ_2_6181": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -30047,7 +30197,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d58c33967470d06a"
   },
-  "mediator_\u03c7": {
+  "mediator_χ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -31073,11 +31223,23 @@
     "last_changed": "2026-08-23T13:46:24+00:00",
     "tuple_hash": "fdcc514731c74402"
   },
+  "modular_arithmetic": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:14:31+00:00",
+    "last_changed": "2026-10-22T06:14:31+00:00",
+    "tuple_hash": "3efafbc6ff34595c"
+  },
   "modular_invariance": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ba0d02821558e990"
+  },
+  "modular_rho_extraction": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:34:06+00:00",
+    "last_changed": "2026-10-22T06:34:06+00:00",
+    "tuple_hash": "9d2447c59d602316"
   },
   "modular_tilting_correspondence_theorem": {
     "changes": 0,
@@ -31247,19 +31409,19 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "734c0ad3e7f1dfdb"
   },
-  "monomer_\u03b1": {
+  "monomer_α": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8147b4241a32bdb0"
   },
-  "monomer_\u03b2": {
+  "monomer_β": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "92511996878df450"
   },
-  "monomer_\u03b3": {
+  "monomer_γ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -31823,7 +31985,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5a1ea9f7a154caba"
   },
-  "m\u0113chan\u0113": {
+  "mēchanē": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -32723,19 +32885,19 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2d02eff8c86c6444"
   },
-  "nitroso_radical_anion_\u03c0_cavitand_cage_imscription": {
+  "nitroso_radical_anion_π_cavitand_cage_imscription": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "d58f8894f8ca90c1"
   },
-  "nitroso_radical_anion_\u03c0_cryptand_cage_imscription": {
+  "nitroso_radical_anion_π_cryptand_cage_imscription": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "d58f8894f8ca90c1"
   },
-  "nitroso_radical_calixarene_anion_\u03c0_sandwich_imscription": {
+  "nitroso_radical_calixarene_anion_π_sandwich_imscription": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
@@ -32915,7 +33077,7 @@
     "last_changed": "2026-08-16T07:31:36+00:00",
     "tuple_hash": "1a4d5ae06a5d3a11"
   },
-  "noncommutative_crystalline_prismatic_\u221e_topoi": {
+  "noncommutative_crystalline_prismatic_∞_topoi": {
     "changes": 0,
     "first_seen": "2026-08-18T22:02:03+00:00",
     "last_changed": "2026-08-18T22:02:03+00:00",
@@ -33389,13 +33551,19 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9d7540aeb86caed2"
   },
-  "obtaining_\u2208\u22a2\u22a5<\u22a1><\u229e\u2208\u2299\u22a3<\u22c8\u229e\u22a3<<>\u22a2\u220b\u229e\u22a2\u22a3<\u220b\u220b\u22a5\u2208<\u22a3\u229e<\u22a3\u22a1\u220b\u22c8\u22a3<\u22a4\u229e\u22a3\u22a3\u22a5\u2208\u220b\u22a4\u22a2\u22a3\u22a1<\u22a1>\u22c8\u22c8>\u220b\u2299\u22a3\u2299\u22a4\u2208\u22a3<\u22a2_from": {
+  "obtain": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:36:02+00:00",
+    "last_changed": "2026-10-22T06:36:02+00:00",
+    "tuple_hash": "45ddcea298d789dd"
+  },
+  "obtaining_∈⊢⊥<⊡><⊞∈⊙⊣<⋈⊞⊣<<>⊢∋⊞⊢⊣<∋∋⊥∈<⊣⊞<⊣⊡∋⋈⊣<⊤⊞⊣⊣⊥∈∋⊤⊢⊣⊡<⊡>⋈⋈>∋⊙⊣⊙⊤∈⊣<⊢_from": {
     "changes": 0,
     "first_seen": "2026-08-26T15:40:26+00:00",
     "last_changed": "2026-08-26T15:40:26+00:00",
     "tuple_hash": "1081dfbc4acebd47"
   },
-  "obtaining_\u2208\u22a2\u22a5<\u25fb><\u229e\u2208\u2299\u22a3<\u22c8\u229e\u22a3<<>\u22a2\u220b\u229e\u22a2\u22a3<\u220b\u220b\u22a5\u2208<\u22a3\u229e<\u22a3\u25fb\u220b\u22c8\u22a3<\u22a4\u229e\u22a3\u22a3\u22a5\u2208\u220b\u22a4\u22a2\u22a3\u25fb<\u25fb>\u22c8\u22c8>\u220b\u2299\u22a3\u2299\u22a4\u2208\u22a3<\u22a2_from": {
+  "obtaining_∈⊢⊥<◻><⊞∈⊙⊣<⋈⊞⊣<<>⊢∋⊞⊢⊣<∋∋⊥∈<⊣⊞<⊣◻∋⋈⊣<⊤⊞⊣⊣⊥∈∋⊤⊢⊣◻<◻>⋈⋈>∋⊙⊣⊙⊤∈⊣<⊢_from": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
@@ -34523,55 +34691,55 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f99fc08c0ebf8d02"
   },
-  "o\u2080": {
+  "o₀": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "eeed7326396018f2"
   },
-  "o\u2082": {
+  "o₂": {
     "changes": 0,
     "first_seen": "2026-10-14T11:39:04+00:00",
     "last_changed": "2026-10-14T11:39:04+00:00",
     "tuple_hash": "59418f5fbe49897f"
   },
-  "o\u2082\u207a": {
+  "o₂⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9b1e5a4a61c63094"
   },
-  "o\u2082\u207a\u207a": {
+  "o₂⁺⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ba621a707d54487"
   },
-  "o\u2082\u207a\u207a\u207a": {
+  "o₂⁺⁺⁺": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2ba621a707d54487"
   },
-  "o\u2082\u207a\u207a\u207a**": {
+  "o₂⁺⁺⁺**": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "18e41f8a07d4f52d"
   },
-  "o\u2083": {
+  "o₃": {
     "changes": 0,
     "first_seen": "2026-10-14T11:39:47+00:00",
     "last_changed": "2026-10-14T11:39:47+00:00",
     "tuple_hash": "64e61471380c60bb"
   },
-  "o\u208b\u2081": {
+  "o₋₁": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ea8b3b7cef5206de"
   },
-  "o\u208b\u2081`.*": {
+  "o₋₁`.*": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -34655,7 +34823,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d89acbc4d2afb577"
   },
-  "p_adic_teichm\u00fcller_spaces_of_operadic_little_disks": {
+  "p_adic_teichmüller_spaces_of_operadic_little_disks": {
     "changes": 0,
     "first_seen": "2026-08-18T22:12:54+00:00",
     "last_changed": "2026-08-18T22:12:54+00:00",
@@ -35777,7 +35945,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "20e93999ebbc173b"
   },
-  "pentaquark_\u2014_qqqqq\u0304": {
+  "pentaquark_—_qqqqq̄": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -36214,6 +36382,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5476b5b42673067b"
+  },
+  "perhaps": {
+    "changes": 0,
+    "first_seen": "2026-10-21T20:50:47+00:00",
+    "last_changed": "2026-10-21T20:50:47+00:00",
+    "tuple_hash": "8c181cfe07ed176e"
   },
   "peri_fractal_anyonic_quantale": {
     "changes": 0,
@@ -37595,6 +37769,24 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c9ddb9075130fcfc"
   },
+  "prime_factorization": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:38:18+00:00",
+    "last_changed": "2026-10-22T04:38:18+00:00",
+    "tuple_hash": "c59ec5888a13b53f"
+  },
+  "prime_factorization+prime_factorization+": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:42:35+00:00",
+    "last_changed": "2026-10-22T04:42:35+00:00",
+    "tuple_hash": "42300af90d9c85f1"
+  },
+  "prime_factorization+prime_factorization+prime_factorization": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:42:04+00:00",
+    "last_changed": "2026-10-22T04:42:04+00:00",
+    "tuple_hash": "ccdc49e063314b00"
+  },
   "prime_gap_distribution": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -38927,6 +39119,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "14edd864354c6352"
   },
+  "quantum_cohomology": {
+    "changes": 0,
+    "first_seen": "2026-10-22T04:39:15+00:00",
+    "last_changed": "2026-10-22T04:39:15+00:00",
+    "tuple_hash": "5385118712eed646"
+  },
   "quantum_critical_network": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -39005,13 +39203,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "46a6caa44d1bb318"
   },
-  "quantum_kummer\u2013vandiver\u2013iwasawa_main_conjectures_over_\ud835\udd3d\u2081": {
+  "quantum_kummer–vandiver–iwasawa_main_conjectures_over_𝔽₁": {
     "changes": 0,
     "first_seen": "2026-08-18T22:11:40+00:00",
     "last_changed": "2026-08-18T22:11:40+00:00",
     "tuple_hash": "af5e03874333d8c8"
   },
-  "quantum_kummer\u2013vandiver\u2013iwasawa_main_conjectures_over_\ud835\udd3d\u2081_theorem": {
+  "quantum_kummer–vandiver–iwasawa_main_conjectures_over_𝔽₁_theorem": {
     "changes": 0,
     "first_seen": "2026-08-23T14:53:47+00:00",
     "last_changed": "2026-08-23T14:53:47+00:00",
@@ -40829,7 +41027,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "443fde8afd8ac4e2"
   },
-  "ross\u2013littlewood": {
+  "ross–littlewood": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -40997,7 +41195,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7f508f61dfd223ef"
   },
-  "r\u2194s": {
+  "r↔s": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -41657,6 +41855,12 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bfc23d4f1e1bf442"
   },
+  "search": {
+    "changes": 0,
+    "first_seen": "2026-10-21T21:06:36+00:00",
+    "last_changed": "2026-10-21T21:06:36+00:00",
+    "tuple_hash": "ec93598a5ae6ac24"
+  },
   "searched": {
     "changes": 0,
     "first_seen": "2026-08-18T12:19:46+00:00",
@@ -42077,7 +42281,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "250baffe80220414"
   },
-  "senescence_associated\u03b2_galactosidase": {
+  "senescence_associatedβ_galactosidase": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -43043,13 +43247,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e78a30a9806fdb34"
   },
-  "sigma\u207a_\u03bb_fusion": {
+  "sigma⁺_λ_fusion": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "76a4516b6f4a4823"
   },
-  "sigma\u207a_\u03bb_fusion.lean": {
+  "sigma⁺_λ_fusion.lean": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -43727,6 +43931,12 @@
     "last_changed": "2026-10-21T10:56:29+00:00",
     "tuple_hash": "9cd4078653665dc5"
   },
+  "source-bound_selection_operation": {
+    "changes": 0,
+    "first_seen": "2026-10-21T11:57:08+00:00",
+    "last_changed": "2026-10-21T11:57:08+00:00",
+    "tuple_hash": "bae60b769ad4ab60"
+  },
   "southern_oc_economy": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
@@ -43852,6 +44062,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "ed98070686b32327"
+  },
+  "spectral": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:38:05+00:00",
+    "last_changed": "2026-10-22T06:38:05+00:00",
+    "tuple_hash": "8b0e26d2bda2aa65"
   },
   "spectral_generator": {
     "changes": 0,
@@ -43997,7 +44213,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c4def7ac336fad1d"
   },
-  "spitzenk\u00f6rper": {
+  "spitzenkörper": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -44128,6 +44344,12 @@
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "050c91efa79cf418"
+  },
+  "stability": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:36:31+00:00",
+    "last_changed": "2026-10-22T06:36:31+00:00",
+    "tuple_hash": "7e2d8a21bf425de4"
   },
   "stability_check_g": {
     "changes": 0,
@@ -44717,7 +44939,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0211594242e2aeaa"
   },
-  "stone_parity_product_\u03b1": {
+  "stone_parity_product_α": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -44808,10 +45030,10 @@
     "tuple_hash": "6a49c1e286205010"
   },
   "strange_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:42:08+00:00",
+    "tuple_hash": "8a5979175b1c00fc"
   },
   "stream_V_alchemy": {
     "changes": 0,
@@ -45839,13 +46061,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "55f7d878008a4419"
   },
-  "szemer\u00e9di_theorem": {
+  "szemerédi_theorem": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0c6bdee93d3b404e"
   },
-  "szemer\u00e9di_trotter_operator": {
+  "szemerédi_trotter_operator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -45875,7 +46097,7 @@
     "last_changed": "2026-08-23T14:02:39+00:00",
     "tuple_hash": "af5e03874333d8c8"
   },
-  "s\u00e1rk\u00f6zy_szemer\u00e9di_theorem": {
+  "sárközy_szemerédi_theorem": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -46775,13 +46997,13 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bbfc2bbf70f124b5"
   },
-  "ternary_gap_promoted_\u0159": {
+  "ternary_gap_promoted_ř": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d4270dfa0e53a887"
   },
-  "ternary_gap_promoted_\u03c6": {
+  "ternary_gap_promoted_φ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -46913,7 +47135,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c4035a64cf2a0d06"
   },
-  "tetraquark_\u2014_qqq\u0304q\u0304": {
+  "tetraquark_—_qqq̄q̄": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -47285,7 +47507,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c79ddb2ba17b1bc8"
   },
-  "the_m\u0113chan\u0113": {
+  "the_mēchanē": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -47393,7 +47615,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f921f8fef00f8880"
   },
-  "the_sylow_2_subgroup_of_the_grothendieck\u2013teichm\u00fcller_group": {
+  "the_sylow_2_subgroup_of_the_grothendieck–teichmüller_group": {
     "changes": 0,
     "first_seen": "2026-08-18T22:16:10+00:00",
     "last_changed": "2026-08-18T22:16:10+00:00",
@@ -47699,7 +47921,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28adebd1fa032322"
   },
-  "thomsons_(already_\u2013_lamp),": {
+  "thomsons_(already_–_lamp),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -48330,10 +48552,10 @@
     "tuple_hash": "f92a9f939bc1a3e9"
   },
   "top_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:43:51+00:00",
+    "tuple_hash": "c517bae04db88e38"
   },
   "topdown_superheavy_dm_decay": {
     "changes": 0,
@@ -48761,7 +48983,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a61f8e59bf82582c"
   },
-  "transcendental_\u00e9tale_condensed_spectra": {
+  "transcendental_étale_condensed_spectra": {
     "changes": 0,
     "first_seen": "2026-08-18T22:01:04+00:00",
     "last_changed": "2026-08-18T22:01:04+00:00",
@@ -48809,7 +49031,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "414fb42280f4a1c3"
   },
-  "transfinite_iterated_forcing_extensions_of_\u00e9tale_homotopy_types": {
+  "transfinite_iterated_forcing_extensions_of_étale_homotopy_types": {
     "changes": 0,
     "first_seen": "2026-08-18T22:10:13+00:00",
     "last_changed": "2026-08-18T22:10:13+00:00",
@@ -48845,7 +49067,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b6bcb61490c35fe5"
   },
-  "transforminggrowthfactor_\u03b2(tgf_\u03b2)": {
+  "transforminggrowthfactor_β(tgf_β)": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -49307,7 +49529,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "287f8457d7b7a50e"
   },
-  "turings_(already_\u2013_halting),": {
+  "turings_(already_–_halting),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -49619,7 +49841,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a68b1cf37253a862"
   },
-  "uncertainty_principle_(heisenberg_\u2013_paradoxical": {
+  "uncertainty_principle_(heisenberg_–_paradoxical": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -49817,7 +50039,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c2028a2a93c3f641"
   },
-  "unit_\u03c9_expansion": {
+  "unit_ω_expansion": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -50004,10 +50226,10 @@
     "tuple_hash": "cd42d8de38503fa9"
   },
   "up_quark": {
-    "changes": 0,
+    "changes": 1,
     "first_seen": "2026-07-29T19:41:12+00:00",
-    "last_changed": "2026-07-29T19:41:12+00:00",
-    "tuple_hash": "737903013ae77e88"
+    "last_changed": "2026-10-22T07:40:43+00:00",
+    "tuple_hash": "9d2fc60145fb8aba"
   },
   "upanishads": {
     "changes": 0,
@@ -50123,7 +50345,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8ea5e0d5f9062df1"
   },
-  "utility_(already_\u2013_utility_monster),": {
+  "utility_(already_–_utility_monster),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -51257,7 +51479,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fec6bd1bb140a115"
   },
-  "white_horse_(gongsun_long_\u2013_already),": {
+  "white_horse_(gongsun_long_–_already),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -51521,7 +51743,7 @@
     "last_changed": "2026-08-18T07:11:48+00:00",
     "tuple_hash": "9edec0c9cdb7079f"
   },
-  "wittgensteins_(already_\u2013_rule_following),": {
+  "wittgensteins_(already_–_rule_following),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -51653,7 +51875,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0c2b1c3fa0463148"
   },
-  "xenos_(zenos_\u2013_already),": {
+  "xenos_(zenos_–_already),": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -51893,7 +52115,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8894d6ed9acdab00"
   },
-  "yang\u2013mills_existence_and_mass_gap_theorem_": {
+  "yang–mills_existence_and_mass_gap_theorem_": {
     "changes": 0,
     "first_seen": "2026-08-23T10:10:36+00:00",
     "last_changed": "2026-08-23T10:10:36+00:00",
@@ -52265,7 +52487,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "caf91b412477c168"
   },
-  "zermelo\u2013fraenkel_set_theory": {
+  "zermelo–fraenkel_set_theory": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
@@ -52325,7 +52547,7 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8e08e761fefda0c1"
   },
-  "zeta_functions_of_random_matrix_ensembles_over_f\u2081": {
+  "zeta_functions_of_random_matrix_ensembles_over_f₁": {
     "changes": 0,
     "first_seen": "2026-08-18T22:08:15+00:00",
     "last_changed": "2026-08-18T22:08:15+00:00",
@@ -52511,559 +52733,565 @@
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e4c6acdff4a30fa2"
   },
-  "\u00b7": {
+  "·": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "97d8d6e0a0a444a2"
   },
-  "\u00e7": {
+  "ç": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6c02ad61c9b22d78"
   },
-  "\u00f0": {
+  "ð": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c9df6114a33bee34"
   },
-  "\u00f0_\u00df-\u00fe_\u00f2-\u021d_\u01bf-\u01bf_\u021d-\ua77c_\u00df-\ua743_\u00f2-\u1d79_\u00ff-\u2299_\u00ff-\u0239_\u00df-\u0195_\u00f2-\u00df_\u00ff-\ua7b7_\u00f2": {
+  "ð_ß-þ_ò-ȝ_ƿ-ƿ_ȝ-ꝼ_ß-ꝃ_ò-ᵹ_ÿ-⊙_ÿ-ȹ_ß-ƕ_ò-ß_ÿ-ꞷ_ò": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f0dac723e779ac7c"
   },
-  "\u00fe": {
+  "þ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "aba216194711d5b8"
   },
-  "\u0127": {
+  "ħ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "cc1cf9a3d0fd66a5"
   },
-  "\u0127=\ud801\udc6b": {
+  "ħ=𐑫": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "031cb616edbb0e36"
   },
-  "\u0127_reorientation_protocol": {
+  "ħ_reorientation_protocol": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5e8b932b4aa55a45"
   },
-  "\u0159": {
+  "ř": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "056dec5f1e757470"
   },
-  "\u0192": {
+  "ƒ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "50394180669a2ca7"
   },
-  "\u0262": {
+  "ɢ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "62409ddf68b01503"
   },
-  "\u0262_and_rep": {
+  "ɢ_and_rep": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9e611e3b729a16aa"
   },
-  "\u0262_broad_rep": {
+  "ɢ_broad_rep": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28ffc4e46173ff07"
   },
-  "\u0393_aleph_rep": {
+  "Γ_aleph_rep": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "015c6903f528ebaf"
   },
-  "\u0393_beth_rep": {
+  "Γ_beth_rep": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9e611e3b729a16aa"
   },
-  "\u03a6_NP_duality_relative": {
+  "Φ_NP_duality_relative": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "28544c415be9a364"
   },
-  "\u03a6_NP_duality_transformation": {
+  "Φ_NP_duality_transformation": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "03e8dbd0637d5ba6"
   },
-  "\u03a6_NP_tensor": {
+  "Φ_NP_tensor": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8fa93ea14abb71d2"
   },
-  "\u03a6_complexity": {
+  "Φ_complexity": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d8e6c9055fcfc2ca"
   },
-  "\u03a6_equals_NP_assumption": {
+  "Φ_equals_NP_assumption": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "5a31c82b4a7d2953"
   },
-  "\u03a6_join_NP": {
+  "Φ_join_NP": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6ab7ba3105eec8ab"
   },
-  "\u03a6_not_equals_NP_claim": {
+  "Φ_not_equals_NP_claim": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c236a91d467e6548"
   },
-  "\u03a9_stability_proof_kernel*": {
+  "Ω_stability_proof_kernel*": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "747b4c1824609d8b"
   },
-  "\u03b3": {
+  "γ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d58c33967470d06a"
   },
-  "\u03b4": {
+  "δ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "fe2cac23e3aac8f0"
   },
-  "\u03b4_map": {
+  "δ_map": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "af5e03874333d8c8"
   },
-  "\u03b5_v_bnd": {
+  "ε_v_bnd": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f6729b56847b4920"
   },
-  "\u03ba": {
+  "κ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d21d8d48a4ab8bca"
   },
-  "\u03bc_map": {
+  "μ_map": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "80872f182d0abdbf"
   },
-  "\u03c1_limit": {
+  "ρ-engine": {
+    "changes": 0,
+    "first_seen": "2026-10-22T06:40:18+00:00",
+    "last_changed": "2026-10-22T06:40:18+00:00",
+    "tuple_hash": "699b86692a2b90bb"
+  },
+  "ρ_limit": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bb01ddf6617aadad"
   },
-  "\u03c3": {
+  "σ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "b8a74d2f87cb7034"
   },
-  "\u03c3_dopant": {
+  "σ_dopant": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3295e9303208c40a"
   },
-  "\u03c3_type": {
+  "σ_type": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6e91321e3b86205f"
   },
-  "\u03c3_winding_summation": {
+  "σ_winding_summation": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3078cf0d21c99b7e"
   },
-  "\u03c3\u03c9}_fuse": {
+  "σω}_fuse": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "2c46a51edcf9f982"
   },
-  "\u03c6": {
+  "φ": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c0afb7e1142503c3"
   },
-  "\u03c6]": {
+  "φ]": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e91ae2d62c434a23"
   },
-  "\u03c9": {
+  "ω": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "dc10d0d7bb34381d"
   },
-  "\u03c9-saturate": {
+  "ω-saturate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d58c33967470d06a"
   },
-  "\u03c9=\ud801\udc6e": {
+  "ω=𐑮": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "744defd3d65f2400"
   },
-  "\u03c9=\ud801\udc6e_inverse_candidate": {
+  "ω=𐑮_inverse_candidate": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "c86094ea914ff49b"
   },
-  "\u03c9=\ud801\udc6f": {
+  "ω=𐑯": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "31d24b74698de022"
   },
-  "\u03c9=\ud801\udc6f_flux_density_map": {
+  "ω=𐑯_flux_density_map": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "f8e324c2a070fcb6"
   },
-  "\u03c9_donor_acceptor_pair": {
+  "ω_donor_acceptor_pair": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "8d66bfcf3d9e4d57"
   },
-  "\u03c9_invariant": {
+  "ω_invariant": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "68769242fcb33380"
   },
-  "\u03c9_monad_constant": {
+  "ω_monad_constant": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d64478bdfba51f44"
   },
-  "\u03c9_prime": {
+  "ω_prime": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "be7d15cd947087d8"
   },
-  "\u03c9_residue_stability_check": {
+  "ω_residue_stability_check": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "4e0e608b311e306b"
   },
-  "\u03c9_stability": {
+  "ω_stability": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "bed2f387df3aeea2"
   },
-  "\u03c9_stability_proof_kernel": {
+  "ω_stability_proof_kernel": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "7cf515590d7df21d"
   },
-  "\u03c9_stable_theory": {
+  "ω_stable_theory": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "6ccc5a36e24773c5"
   },
-  "\u2135\u2080_categorical": {
+  "ℵ₀_categorical": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9ae4b8e35e5bfa05"
   },
-  "\u2192": {
+  "→": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "13d428e0d43f4f22"
   },
-  "\u2208\u229e\u22a4\u229e\u22a3\u22a3\u22a2\u2299\u2208\u22a1\u227a\u220b\u2299\u22a2\u22a2\u22a5\u22c8\u22c8\u227b\u227a\u22a4\u22c8\u22c8\u22a5\u22a3\u227a\u22c8\u22a3\u2299\u227a\u22a2\u22c8\u227a\u22a5\u220b\u227b\u227b\u22a5\u2299\u22c8\u220b\u227a\u22a1\u22a3\u2208\u220b\u22a1\u22c8\u227b\u220b\u22a5\u229e\u220b\u2208\u22a5\u22a2\u22a3\u22a4\u229e\u22c8\u22a2\u22a1\u22a1\u22c8\u22a3\u227b\u22a3\u22a1\u22a2\u220b\u227b\u22a1\u2299\u22c8\u229e\u22a2\u22a3\u22a1\u220b\u22a1\u2299\u22a4\u227a\u220b\u227a\u22a4\u22c8\u22a2\u227b\u2208\u22a1\u22a1\u227a\u22a5\u22c8\u227a": {
+  "∈⊞⊤⊞⊣⊣⊢⊙∈⊡≺∋⊙⊢⊢⊥⋈⋈≻≺⊤⋈⋈⊥⊣≺⋈⊣⊙≺⊢⋈≺⊥∋≻≻⊥⊙⋈∋≺⊡⊣∈∋⊡⋈≻∋⊥⊞∋∈⊥⊢⊣⊤⊞⋈⊢⊡⊡⋈⊣≻⊣⊡⊢∋≻⊡⊙⋈⊞⊢⊣⊡∋⊡⊙⊤≺∋≺⊤⋈⊢≻∈⊡⊡≺⊥⋈≺": {
     "changes": 0,
     "first_seen": "2026-08-31T20:07:09+00:00",
     "last_changed": "2026-08-31T20:07:09+00:00",
     "tuple_hash": "4fc0df65f5ac21f9"
   },
-  "\u220b": {
+  "∋": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "62409ddf68b01503"
   },
-  "\u222e_\u03b3_a_=_2\u03c0n_\u2227_n_\u2208_\u2124_\u2227_wind(\u03b3)_\u2260_0": {
+  "∮_γ_a_=_2πn_∧_n_∈_ℤ_∧_wind(γ)_≠_0": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "3984c64351493559"
   },
-  "\u227a\u2299\u229e\u22a5\u22c8\u227b\u220b\u227a\u229e\u22a1\u2208\u2208\u22c8\u22a5\u22a2\u220b\u2299\u22a3\u22a3\u229e\u22a2\u229e\u227b\u220b\u22a3\u227a\u2299\u22a4\u227a\u227a\u2208\u22a2\u229e": {
+  "≺⊙⊞⊥⋈≻∋≺⊞⊡∈∈⋈⊥⊢∋⊙⊣⊣⊞⊢⊞≻∋⊣≺⊙⊤≺≺∈⊢⊞": {
     "changes": 0,
     "first_seen": "2026-08-26T22:44:07+00:00",
     "last_changed": "2026-08-26T22:44:07+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
-  "\u2299": {
+  "⊙": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0ad8e8cd197f6a3d"
   },
-  "\u2299_c_critical_boundary_operator": {
+  "⊙_c_critical_boundary_operator": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "55931ffd830a2e3d"
   },
-  "\u2299\u2299\u2299\u2208\u2208\u2208\u22a4\u22a4\u22a4\u22a5\u22a5\u22a5\u220b\u220b\u220b\u22a1\u22a1\u22a1\u22a3\u22a3\u22a3": {
+  "⊙⊙⊙∈∈∈⊤⊤⊤⊥⊥⊥∋∋∋⊡⊡⊡⊣⊣⊣": {
     "changes": 0,
     "first_seen": "2026-08-26T15:40:26+00:00",
     "last_changed": "2026-08-26T15:40:26+00:00",
     "tuple_hash": "6807852341f11b07"
   },
-  "\u2299\u2299\u2299\u2208\u2208\u2208\u22a4\u22a4\u22a4\u22a5\u22a5\u22a5\u220b\u220b\u220b\u25fb\u25fb\u25fb\u22a3\u22a3\u22a3": {
+  "⊙⊙⊙∈∈∈⊤⊤⊤⊥⊥⊥∋∋∋◻◻◻⊣⊣⊣": {
     "changes": 0,
     "first_seen": "2026-08-17T04:22:30+00:00",
     "last_changed": "2026-08-17T04:22:30+00:00",
     "tuple_hash": "6807852341f11b07"
   },
-  "\u22a1_stability_proof_kernel*": {
+  "⊡_stability_proof_kernel*": {
     "changes": 0,
     "first_seen": "2026-08-26T15:40:26+00:00",
     "last_changed": "2026-08-26T15:40:26+00:00",
     "tuple_hash": "747b4c1824609d8b"
   },
-  "\u22a2": {
+  "⊢": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "57cbe64931f485a9"
   },
-  "\u22a2\u2208\u22a4\u22a5\u220b\u22a1\u22a3\u2299\u2299\u2299": {
+  "⊢∈⊤⊥∋⊡⊣⊙⊙⊙": {
     "changes": 0,
     "first_seen": "2026-08-26T15:40:26+00:00",
     "last_changed": "2026-08-26T15:40:26+00:00",
     "tuple_hash": "4fc0df65f5ac21f9"
   },
-  "\u22a2\u2208\u22a4\u22a5\u220b\u25fb\u22a3\u2299\u2299\u2299": {
+  "⊢∈⊤⊥∋◻⊣⊙⊙⊙": {
     "changes": 0,
     "first_seen": "2026-08-17T04:21:48+00:00",
     "last_changed": "2026-08-17T04:21:48+00:00",
     "tuple_hash": "4fc0df65f5ac21f9"
   },
-  "\u22a2\u229e\u22a3\u22a4\u22c8\u22c8\u22a5\u2208\u229e\u2208\u2208\u22a4\u22a1\u22a4\u229e\u22a1\u2299\u229e\u22a1\u2299\u22a1\u2208\u22a4\u2299\u2208\u229e\u229e\u2299\u2208\u2208\u229e\u2208\u22c8\u220b\u2208\u22c8\u220b\u22a5\u22a4\u22c8\u22a5\u227b\u229e\u22a5\u2299\u22c8\u22c8\u22a1\u22a5\u22c8\u22a2\u22a4\u22a1\u22a2\u22c8\u229e\u22a1\u229e\u22a5\u22c8\u229e\u227b\u22a1\u229e\u22c8\u227a\u2208\u220b\u22c8\u22a4\u22a1\u22a5\u22c8\u22a2\u22a1\u22a4\u22a5\u22a1\u227a\u22a2\u229e\u22a3\u22a3\u22a4\u227b\u22a4\u227b\u22c8\u22c8\u2208\u22a2\u227a\u22a1\u220b\u227a\u22a4": {
+  "⊢⊞⊣⊤⋈⋈⊥∈⊞∈∈⊤⊡⊤⊞⊡⊙⊞⊡⊙⊡∈⊤⊙∈⊞⊞⊙∈∈⊞∈⋈∋∈⋈∋⊥⊤⋈⊥≻⊞⊥⊙⋈⋈⊡⊥⋈⊢⊤⊡⊢⋈⊞⊡⊞⊥⋈⊞≻⊡⊞⋈≺∈∋⋈⊤⊡⊥⋈⊢⊡⊤⊥⊡≺⊢⊞⊣⊣⊤≻⊤≻⋈⋈∈⊢≺⊡∋≺⊤": {
     "changes": 0,
     "first_seen": "2026-08-26T23:34:07+00:00",
     "last_changed": "2026-08-26T23:34:07+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
-  "\u22a2\u22a3\u227b\u22c8\u2299\u2208\u22a4\u227b\u22a5\u227a\u229e\u220b\u22a1": {
+  "⊢⊣≻⋈⊙∈⊤≻⊥≺⊞∋⊡": {
     "changes": 0,
     "first_seen": "2026-08-28T14:38:57+00:00",
     "last_changed": "2026-08-28T14:38:57+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
-  "\u22a2\u25c7++=\u22a2\u25c7><==\u22a2\u25c7><+=\u22a2\u25c7>+=\u22a2\u25c7><=<=====\u2299\u229e\u25cf+=\u22a2\u25c7><=\u00ac\u00ac\u22a3\u2299\u229e\u25cf\u22a2\u25c7><=\u2299++=+=": {
+  "⊢◇++=⊢◇><==⊢◇><+=⊢◇>+=⊢◇><=<=====⊙⊞●+=⊢◇><=¬¬⊣⊙⊞●⊢◇><=⊙++=+=": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e5f9b1fffef06945"
   },
-  "\u22a2\u25c7+\u00d7\u25cf\u00ac\u22a3": {
+  "⊢◇+×●¬⊣": {
     "changes": 0,
     "first_seen": "2026-08-11T19:50:14+00:00",
     "last_changed": "2026-08-11T19:50:14+00:00",
     "tuple_hash": "215445d5bb2d2d93"
   },
-  "\u22a2\u25c7>=\u2299\u229e\u25cf\u00ac\u22a3": {
+  "⊢◇>=⊙⊞●¬⊣": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "64ab0889c06e2eb7"
   },
-  "\u22c8": {
+  "⋈": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "50394180669a2ca7"
   },
-  "\u22c8\u2208\u22a4\u220b\u2299\u22a1\u2208\u22a3\u227b\u22a4\u22c8\u227b\u2208\u22c8\u2299\u2299\u22a3\u227b\u229e\u229e\u227a\u229e\u22c8\u2299\u227a\u2299\u227a\u22a3\u2208\u227a\u22a2\u22a2\u22a3\u22a5\u22a1\u22a5\u22a3\u220b\u220b\u229e\u22c8\u229e\u22a4\u22a4\u22c8\u22c8\u220b\u227b\u22a4\u22c8\u2208\u220b\u2208\u22c8\u22a5\u22a5\u22a5\u2299\u227a\u229e\u22a3\u22a1\u229e": {
+  "⋈∈⊤∋⊙⊡∈⊣≻⊤⋈≻∈⋈⊙⊙⊣≻⊞⊞≺⊞⋈⊙≺⊙≺⊣∈≺⊢⊢⊣⊥⊡⊥⊣∋∋⊞⋈⊞⊤⊤⋈⋈∋≻⊤⋈∈∋∈⋈⊥⊥⊥⊙≺⊞⊣⊡⊞": {
     "changes": 0,
     "first_seen": "2026-08-26T22:50:52+00:00",
     "last_changed": "2026-08-26T22:50:52+00:00",
     "tuple_hash": "14b6368eb9ac149a"
   },
-  "\u25fb_stability_proof_kernel*": {
+  "◻_stability_proof_kernel*": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "747b4c1824609d8b"
   },
-  "\u27f6e\u207b\u27f6": {
+  "⟶e⁻⟶": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "795658df0f339072"
   },
-  "\ud801\udc50": {
+  "𐑐": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9ca815f4fcce5c04"
   },
-  "\ud801\udc51": {
+  "𐑑": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "00368dd820ce8314"
   },
-  "\ud801\udc54": {
+  "𐑔": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a5914419d82f6f6b"
   },
-  "\ud801\udc5a_rep": {
+  "𐑚_rep": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "9e611e3b729a16aa"
   },
-  "\ud801\udc5b": {
+  "𐑛": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "0c83ab108067fcb9"
   },
-  "\ud801\udc5d": {
+  "𐑝": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "46b9a8b23d232e09"
   },
-  "\ud801\udc5d_rep": {
+  "𐑝_rep": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "9e611e3b729a16aa"
   },
-  "\ud801\udc65": {
+  "𐑥": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "940967bdadf6f3cc"
   },
-  "\ud801\udc66\ud801\udc78\ud801\udc7d\ud801\udc57\ud801\udc50\ud801\udc67\ud801\udc54\ud801\udc75\u2299\ud801\udc56\ud801\udc59\ud801\udc77": {
+  "𐑦𐑸𐑽𐑗𐑐𐑧𐑔𐑵⊙𐑖𐑙𐑷": {
     "changes": 0,
     "first_seen": "2026-08-05T03:21:28+00:00",
     "last_changed": "2026-08-05T03:21:28+00:00",
     "tuple_hash": "1c38c80e02d06cc2"
   },
-  "\ud801\udc6a": {
+  "𐑪": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "aad2979adcc2f2ac"
   },
-  "\ud801\udc6b": {
+  "𐑫": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "d32587bc0733c189"
   },
-  "\ud801\udc6c": {
+  "𐑬": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "61ad98ce3d356aa6"
   },
-  "\ud801\udc6d": {
+  "𐑭": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "e611ffde066e477b"
   },
-  "\ud801\udc6d\u0304": {
+  "𐑭̄": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "9f7c57a359310685"
   },
-  "\ud801\udc6e": {
+  "𐑮": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "de6c0577c493f589"
   },
-  "\ud801\udc72_rep": {
+  "𐑲_rep": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
     "tuple_hash": "015c6903f528ebaf"
   },
-  "\ud801\udc73": {
+  "𐑳": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "601441edf0de6b89"
   },
-  "\ud801\udc75": {
+  "𐑵": {
     "changes": 0,
     "first_seen": "2026-07-29T19:41:12+00:00",
     "last_changed": "2026-07-29T19:41:12+00:00",
     "tuple_hash": "a644067a7b26d051"
   },
-  "\ud801\udc75_rep": {
+  "𐑵_rep": {
     "changes": 0,
     "first_seen": "2026-08-03T19:21:31+00:00",
     "last_changed": "2026-08-03T19:21:31+00:00",
