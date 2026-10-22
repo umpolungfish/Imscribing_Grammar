@@ -92,8 +92,17 @@ def write_canonical_catalog(entries, path) -> List[str]:
     path = Path(path)
     record_provenance(entries, path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(entries, f, indent=2, ensure_ascii=False)
+    envelope = None
+    if path.exists():
+        with open(path, encoding="utf-8") as stream:
+            existing = json.load(stream)
+        if isinstance(existing, dict) and "imscriptions" in existing:
+            envelope = existing
+            envelope["imscriptions"] = entries
+    pending = path.with_suffix(path.suffix + ".tmp")
+    with open(pending, "w", encoding="utf-8") as f:
+        json.dump(envelope if envelope is not None else entries, f, indent=2, ensure_ascii=False)
+    pending.replace(path)
     propagate_catalog(path)
     return problems
 
@@ -1024,12 +1033,8 @@ def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
     import glob as _glob
 
     _PACKAGE_DIR = Path(__file__).resolve().parent
-    _CANDIDATES = [
-        str(_PACKAGE_DIR.parent / "IG_catalog.json"),
-        "IG_catalog.json",
-    ]
-    if extra_path:
-        _CANDIDATES.insert(0, extra_path)
+    _CANDIDATES = [extra_path or os.environ.get("IG_CATALOG") or
+                   str(Path.home() / ".imscrbgrmr" / "catalog.json")]
 
     paths: List[str] = []
     for candidate in _CANDIDATES:
@@ -1063,7 +1068,7 @@ def load_catalog_dicts(extra_path: Optional[str] = None) -> List[dict]:
 
 
 # ── Catalog propagation ─────────────────────────────────────────────────────
-CANONICAL_CATALOG = Path("/home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json")
+CANONICAL_CATALOG = Path.home() / ".imscrbgrmr" / "catalog.json"
 _SYNC_SCRIPT = Path("/home/mrnob0dy666/imsgct/imscribing_grammar/sync_catalog.sh")
 
 

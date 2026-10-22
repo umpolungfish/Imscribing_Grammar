@@ -1,3 +1,4 @@
-I preserve source contexts through my Grammar lambda transport and check complete returned objects.
+I preserve main catalog configuration and format compatibility
 
-I retain joint contexts as explicit immutable source-label sets, verify the full mixed-law compatibility equations, and route the legacy script through the canonical engine. I record the actual 896-bit carrier controls, native SRFP/DNN graph readings and Lean preparation mismatch while factor production remains paused.
+I route inquiry, CLI and navigator reads through the configured user catalog and preserve its envelope and metadata during atomic writes.
+I make synchronization paths portable and document registration through the native instruments.

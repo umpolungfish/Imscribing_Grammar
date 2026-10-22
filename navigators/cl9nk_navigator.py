@@ -65,19 +65,9 @@ CLINK_L9_REF = None
 CLINK_L8_REF = None
 
 def _find_catalog_path():
-    _here = _os.path.dirname(_os.path.abspath(__file__))
-    _candidates = [
-        # Canonical FIRST — the website and vendored copies run days behind.
-        _os.path.join(_here, "..", "IG_catalog.json"),
-        "/home/mrnob0dy666/imsgct/imscribing_grammar/IG_catalog.json",
-        _os.path.join(_here, "IG_catalog.json"),
-        _os.path.join(_here, "..", "..", "imscribe.com", "IG_catalog.json"),
-        _os.path.join(_here, "..", "..", "red-hot_rebis", "shared", "IG_catalog.json"),
-    ]
-    for p in _candidates:
-        if _os.path.exists(p):
-            return _os.path.abspath(p)
-    return None
+    path = _os.path.expanduser(_os.environ.get("MOMONADOS_CATALOG") or
+        _os.environ.get("IG_CATALOG") or "~/.imscrbgrmr/catalog.json")
+    return _os.path.abspath(path) if _os.path.isfile(path) else None
 
 
 def load_catalog(force=False):

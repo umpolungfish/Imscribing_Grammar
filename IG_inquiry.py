@@ -407,7 +407,7 @@ _MERGED2_PATH = os.path.join(
 )
 
 # Persistent cross-session catalog
-CATALOG_PATH = os.path.join(os.path.dirname(__file__), "IG_catalog.json")
+CATALOG_PATH = os.path.expanduser(os.environ.get("IG_CATALOG", "~/.imscrbgrmr/catalog.json"))
 
 # Persistent cross-session insight library
 INSIGHTS_PATH = os.path.join(os.path.dirname(__file__), "ig_insights.json")
@@ -2389,10 +2389,13 @@ class SessionCatalog:
         entries not currently in memory (preserves entries added by other processes)."""
         # Read current disk state so we don't clobber entries written by concurrent sessions
         disk_entries: Dict[str, Any] = {}
+        envelope = None
         if os.path.exists(path):
             try:
                 with open(path, "r", encoding="utf-8") as f:
                     raw = json.load(f)
+                if isinstance(raw, dict) and "imscriptions" in raw:
+                    envelope = raw
                 # Handle both list-of-dicts and dict-with-imscriptions formats
                 entries = raw if isinstance(raw, list) else raw.get("imscriptions", raw.get("entries", []))
                 for e in entries:
@@ -2406,10 +2409,11 @@ class SessionCatalog:
         # Overlay in-memory entries (they take precedence over disk for names we own)
         merged: Dict[str, Any] = dict(disk_entries)
         for name, imscription in self._entries.items():
-            entry: Dict[str, Any] = {
+            entry: Dict[str, Any] = dict(disk_entries.get(name, {}))
+            entry.update({
                 "name": name,
                 "description": self._descriptions.get(name, ""),
-            }
+            })
             entry.update(imscription)
             merged[name] = entry
 
@@ -2448,8 +2452,13 @@ class SessionCatalog:
             live.add(_addr(e))
 
         try:
-            with open(path, "w", encoding="utf-8") as f:
-                json.dump(list(merged.values()), f, indent=2, ensure_ascii=False)
+            entries = list(merged.values())
+            if envelope is not None:
+                envelope["imscriptions"] = entries
+            pending = path + ".tmp"
+            with open(pending, "w", encoding="utf-8") as f:
+                json.dump(envelope if envelope is not None else entries, f, indent=2, ensure_ascii=False)
+            os.replace(pending, path)
         except OSError:
             pass  # Non-fatal — inquiry continues even if save fails
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # sync_catalog.sh — there is one catalog.
 #
-# The catalog lives at:
-#     imscribing_grammar/IG_catalog.json
+# IG_CATALOG selects the main catalog. With no override, use the current
+# user's application catalog. Repository paths are resolved from this script.
 #
 # Every other IG_catalog.json in the tree is a link to it. Not a copy kept in
 # step, a link: one file, queried by everything. A copy can drift, which is why
@@ -19,12 +19,13 @@
 #
 set -euo pipefail
 
-ROOT="/home/mrnob0dy666/imsgct"
-SRC="$ROOT/imscribing_grammar/IG_catalog.json"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+SRC="${IG_CATALOG:-${MOMONADOS_CATALOG:-$HOME/.imscrbgrmr/catalog.json}}"
 MODE="${1:-sync}"
 
 [ -f "$SRC" ] || { echo "FATAL: the catalog is missing: $SRC" >&2; exit 2; }
-SRC_N="$(python3 -c "import json;print(len(json.load(open('$SRC'))))")"
+SRC_N="$(python3 -c 'import json,sys;raw=json.load(open(sys.argv[1]));print(len(raw.get("imscriptions",[]) if isinstance(raw,dict) else raw))' "$SRC")"
 echo "catalog: $SRC"
 echo "         $SRC_N entries"
 echo

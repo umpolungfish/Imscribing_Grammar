@@ -12,6 +12,14 @@
 
 ## Use
 
+Configure the catalog location with `IG_CATALOG`. Catalog entries are written
+through the imscription and native
+algebra/registration instruments. Never hand-author tuples or append exploratory
+rings, polymers or other derived results directly to catalog JSON. Keep
+working materials and operation receipts outside the catalog until registered
+through the appropriate instrument. Missing coordinates remain unresolved;
+copying a reference value or blending monomer coordinates does not resolve them.
+
 ```python
 from imscrbgrmr.models import Primitive, CrystalAddress
 Primitive.from_symbol("⊙")

@@ -6,6 +6,7 @@ Accessible via `imscrbgrmr` or `imscribe` command.
 """
 import asyncio
 import json
+import os
 import sys
 from typing import Dict, List, Optional
 from pathlib import Path
@@ -13,6 +14,7 @@ from pathlib import Path
 # Ensure project root is on sys.path so `agents` and `framework` packages are
 # importable regardless of the working directory the user invokes `imscribe` from.
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_CATALOG_PATH = Path(os.environ.get("IG_CATALOG", "~/.imscrbgrmr/catalog.json")).expanduser()
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -42,18 +44,22 @@ console = Console()
 
 _IG_CATALOG_LOADED = False
 
+def _catalog_entries(path):
+    with open(path, encoding="utf-8") as stream:
+        raw = json.load(stream)
+    return raw.get("imscriptions", []) if isinstance(raw, dict) else raw
+
 def _load_ig_catalog_into_global():
     """Load IG_catalog.json entries into global_catalog (runs once per process)."""
     global _IG_CATALOG_LOADED
     if _IG_CATALOG_LOADED:
         return
     _IG_CATALOG_LOADED = True
-    _ig_path = _PROJECT_ROOT / "IG_catalog.json"
+    _ig_path = _CATALOG_PATH
     if not _ig_path.exists():
         return
     from imscrbgrmr.models import Imscription as _Sy
-    with open(_ig_path, encoding="utf-8") as _fh:
-        _ig_entries = json.load(_fh)
+    _ig_entries = _catalog_entries(_ig_path)
     # Batch mode: suppress per-entry disk saves (save once at the end)
     global_catalog._batch_loading = True
     try:
@@ -188,7 +194,7 @@ def catalog():
 def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: int, name_filter: str):
     """List registered imscriptions (default: first 50).
 
-    By default reads from IG_catalog.json (the single source of truth).
+    By default reads from ~/.imscrbgrmr/catalog.json, the main catalog.
     Use --source global to list the legacy in-memory global_catalog instead.
     Use -n 0 to show all entries (slow for large catalogs).
     """
@@ -196,12 +202,11 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
 
     if source == "json" and not domain:
         # ── Primary path: merge IG_catalog.json + ~/.imscrbgrmr/catalog.json ──
-        json_path = _PROJECT_ROOT / "IG_catalog.json"
+        json_path = _CATALOG_PATH
         if not json_path.exists():
             console.print(f"[red]IG_catalog.json not found at {json_path}[/red]")
             return
-        with open(json_path, "r", encoding="utf-8") as f:
-            entries = json.load(f)
+        entries = _catalog_entries(json_path)
 
         # No second store. This used to merge ~/.imscrbgrmr/catalog.json, which
         # made `list` see a strictly larger namespace than every other command:
@@ -231,7 +236,7 @@ def list_imscriptions(domain: Optional[str], source: str, limit: int, offset: in
         for entry in page:
             name = entry.get("name", "?")
             d_val = entry.get("⊢", "?")
-            vals = [entry.get(p, "?") for p in PRIM_ORDER]
+            vals = [entry.get(p, "?") or "?" for p in PRIM_ORDER]
             notation = "⟨" + "".join(vals) + "⟩"
             table.add_row(name, notation, d_val)
 
@@ -613,13 +618,12 @@ def search_imscriptions(fidelity: Optional[str], topology: Optional[str]):
 @click.option("--yes", "-y", is_flag=True, help="Skip confirmation prompt.")
 def delete_imscriptions(names: tuple, yes: bool):
     """Delete one or more imscriptions from IG_catalog.json by name."""
-    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+    catalog_path = _CATALOG_PATH
     if not catalog_path.exists():
         console.print("[red]IG_catalog.json not found.[/red]")
         raise SystemExit(1)
 
-    with open(catalog_path, "r", encoding="utf-8") as f:
-        entries: list = json.load(f)
+    entries: list = _catalog_entries(catalog_path)
 
     disk: Dict[str, Dict] = {e["name"]: e for e in entries if "name" in e}
 
@@ -664,7 +668,7 @@ def _ixc_catalog_path() -> Path:
     repositories, so a copy stays a copy.
     """
     import os
-    p = Path(os.environ.get("IG_CATALOG") or (_PROJECT_ROOT / "IG_catalog.json"))
+    p = Path(os.environ.get("IG_CATALOG") or _CATALOG_PATH).expanduser()
     if not p.exists():
         console.print(f"[red]Catalog not found: {p}[/red]")
         raise SystemExit(1)
@@ -672,8 +676,7 @@ def _ixc_catalog_path() -> Path:
 
 
 def _ixc_load(path: Path) -> list:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return _catalog_entries(path)
 
 
 def _ixc_write(entries: list, path: Path) -> None:
@@ -923,7 +926,7 @@ def _register_to_json_catalog(
         return
 
     if catalog_path is None:
-        catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+        catalog_path = _CATALOG_PATH
 
     proposed = _imscription_to_tuple(imscription)
     # Normalize name: lowercase + strip apostrophes/punctuation so "Liars_Paradox"
@@ -935,11 +938,10 @@ def _register_to_json_catalog(
     disk_entries: Dict[str, Dict] = {}
     if catalog_path.exists():
         try:
-            with open(catalog_path, "r", encoding="utf-8") as f:
-                for e in json.load(f):
-                    n = e.get("name")
-                    if n:
-                        disk_entries[n] = e
+            for e in _catalog_entries(catalog_path):
+                n = e.get("name")
+                if n:
+                    disk_entries[n] = e
         except (json.JSONDecodeError, OSError):
             pass
 
@@ -5316,13 +5318,12 @@ def vocal_cmd(name: Optional[str], output: Optional[str], gap: int, play: bool,
         raise SystemExit(1)
 
     # ── load entry from IG_catalog.json ───────────────────────────────────────
-    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
+    catalog_path = _CATALOG_PATH
     if not catalog_path.exists():
         console.print("[red]IG_catalog.json not found.[/red]")
         raise SystemExit(1)
 
-    with open(catalog_path) as f:
-        catalog: list[dict] = json.load(f)
+    catalog: list[dict] = _catalog_entries(catalog_path)
 
     entry = next((e for e in catalog if e.get("name") == name), None)
     if entry is None:
@@ -5453,10 +5454,8 @@ def proof_path_cmd(
     )
 
     # Resolve catalog entries for descriptions
-    catalog_path = _PROJECT_ROOT / "IG_catalog.json"
-    with open(catalog_path) as f:
-        raw = json.load(f)
-    entries = raw if isinstance(raw, list) else raw.get("entries", [])
+    catalog_path = _CATALOG_PATH
+    entries = _catalog_entries(catalog_path)
     by_name = {e["name"]: e for e in entries}
 
     if source not in by_name:
