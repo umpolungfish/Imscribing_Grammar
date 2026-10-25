@@ -1,4 +1,3 @@
-I preserve main catalog configuration and format compatibility
+I keep measurements local and remove their files from Git tracking.
 
-I route inquiry, CLI and navigator reads through the configured user catalog and preserve its envelope and metadata during atomic writes.
-I make synchronization paths portable and document registration through the native instruments.
+I ignore measurement directories at every depth while preserving their local contents.
