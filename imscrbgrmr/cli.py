@@ -4522,7 +4522,7 @@ imscribe_alias.add_command(phase_diagram_cmd, name="phase-diagram")
 @click.option("--model",              default=None,  envvar="IG_MODEL",    help="Model ID (env: IG_MODEL). Uses provider default if unset.")
 @click.option("--format",      "-f",  type=click.Choice(["text", "json"]), default="text")
 def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
-             limit, max_hops, delta_g, provider, model, format):
+             limit, max_hops, provider, model, format):
     """
     Single-shot ImscribeTool dispatch — LLM tool layer from the command line.
 
@@ -4543,7 +4543,7 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).parent.parent))
-    from imscribe_tool import IGTool as ImscribeTool
+    from agents.imscribe_tool import IGTool as ImscribeTool
 
     kwargs = {}
     if name:        kwargs["name"]        = name
@@ -4556,9 +4556,9 @@ def tool_cmd(operation, name, src, dst, a, b, description, xi_r, xi_tau,
     if xi_tau:      kwargs["xi_tau"]      = xi_tau
     if limit != 5:  kwargs["limit"]       = limit
     if max_hops != 6: kwargs["max_hops"]  = max_hops
-    if delta_g:     kwargs["delta_g"]     = delta_g
-    if provider:    kwargs["provider"]    = provider
-    if model:       kwargs["model"]       = model
+    if operation == "generate":
+        if provider: kwargs["provider"] = provider
+        if model: kwargs["model"] = model
 
     result = ImscribeTool.dispatch(operation, **kwargs)
 

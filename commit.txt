@@ -1,3 +1,3 @@
-I keep measurements local and remove their files from Git tracking.
+I restore native catalog tool dispatch for my extraction work.
 
-I ignore measurement directories at every depth while preserving their local contents.
+I remove an obsolete callback argument, import the current tool module, and keep generation-only provider options out of algebra calls. I verify the live Stark distance through the real CLI.
