@@ -61,10 +61,10 @@ _C_sub    = "𐑻"   # sub-critical (open-mid front)
 _C_super  = "𐑣"   # supercritical (long open)
 
 # ∋ — Interaction Grammar
-_G_and    = "∋^∧"   # conjunction / sharp
-_G_alt    = "∋^˝"   # alternating / cyclic
-_G_sub    = "∋^ˌ"   # subordinate / secondary
-_G_broad  = "∋^Ş"   # broadcast / full
+_G_and    = "𐑝"   # conjunction / sharp
+_G_alt    = "𐑜"   # alternating / cyclic
+_G_sub    = "𐑠"   # subordinate / secondary
+_G_broad  = "𐑵"   # broadcast / full
 
 # < — Parity / Symmetry
 _P_weak   = "𐑗"   # weak / partial
@@ -98,16 +98,16 @@ _W_der    = "𐑭"   # derived / complex zeta
 _W_prim   = "𐑟"   # minimal / primitive
 
 # ⋈ — Fidelity
-_F_exact  = "⋈^ż"   # glottal = exact
-_F_approx = "⋈^ì"   # lateral = approximate
-_F_voiced = "⋈^ð"   # voiced dental = active
+_F_exact  = "𐑐"   # glottal = exact
+_F_approx = "𐑱"   # lateral = approximate
+_F_voiced = "𐑞"   # voiced dental = active
 
 # ⊤ — Kinetics
-_K_fast   = "⊤^-"   # fast spread
-_K_unif   = "⊤^W"   # uniform
-_K_slow   = "⊤^@"   # neutral / slow
-_K_osc    = "⊤^Ù"   # oscillating / trapped
-_K_lin    = "⊤^λ"   # linear
+_K_fast   = "𐑘"   # fast spread
+_K_unif   = "𐑤"   # uniform
+_K_slow   = "𐑧"   # neutral / slow
+_K_osc    = "𐑪"   # oscillating / trapped
+_K_lin    = "𐑺"   # linear
 
 # Σ — Stoichiometry
 _STO_1_1  = "𐑙"   # 1:1

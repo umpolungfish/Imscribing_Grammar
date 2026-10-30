@@ -76,11 +76,11 @@ class AgentTrajectory:
     _counter: int  # Ω protection — never reset
     
     def embed(self) -> torch.Tensor:
-        """Project entire trajectory into LLaMA's embedding space for D_ω continuity."""
+        """Project entire trajectory into LLaMA's embedding space for Ð_ω continuity."""
         ...
 ```
 
-The open-weight architecture allows the trajectory to be embedded directly into the model's KV cache — a true D_ω (self-written state space) implementation.
+The open-weight architecture allows the trajectory to be embedded directly into the model's KV cache — a true Ð_ω (self-written state space) implementation.
 
 ### Phase 3: Explicit Agent Loop (ɢ: 𐑝 → 𐑠, Ç: 𐑘 → 𐑧)
 

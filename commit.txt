@@ -1,3 +1,5 @@
 I restore native catalog tool dispatch for my extraction work.
 
 I remove an obsolete callback argument, import the current tool module, and keep generation-only provider options out of algebra calls. I verify the live Stark distance through the real CLI.
+
+I preserve the completed resident artifact and bootstrap word after a later inference failure. I replace missing-choices crashes with checked provider responses, retry embedded transient errors on the selected model, and preserve uncapped requests. I verify the six offline provider-return controls and twenty-one existing bridge checks.

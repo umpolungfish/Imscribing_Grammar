@@ -45,8 +45,22 @@ def _thinking_default() -> bool:
 
 enable_thinking: bool = _thinking_default()
 
+
+class ProviderResponseError(RuntimeError):
+    """A provider failure carried inside an HTTP-success response."""
+
+    def __init__(self, message: str, code=None):
+        super().__init__(message)
+        try:
+            self.code = int(code)
+        except (TypeError, ValueError):
+            self.code = None
+
+
 # Common retry configuration for all providers
 def _is_retryable_http_error(exc: BaseException) -> bool:
+    if isinstance(exc, ProviderResponseError):
+        return exc.code == 429 or (exc.code is not None and exc.code >= 500)
     if isinstance(exc, httpx.HTTPStatusError):
         # 4xx client errors (except 429 rate-limit) are permanent — don't retry
         return exc.response.status_code == 429 or exc.response.status_code >= 500
@@ -70,17 +84,17 @@ _provider_defaults: Optional[Dict[str, Any]] = None
 def _load_provider_defaults() -> Dict[str, Any]:
     """Load provider defaults from YAML config file."""
     global _provider_defaults
-    
+
     if _provider_defaults is not None:
         return _provider_defaults
-    
+
     # Try to load from provider_defaults.yaml
     config_paths = [
         Path(__file__).parent.parent / "provider_defaults.yaml",
         Path(__file__).parent / "provider_defaults.yaml",
         Path.cwd() / "provider_defaults.yaml",
     ]
-    
+
     for config_path in config_paths:
         if config_path.exists():
             try:
@@ -92,7 +106,7 @@ def _load_provider_defaults() -> Dict[str, Any]:
                     return _provider_defaults
             except Exception as e:
                 logger.warning(f"Error loading provider config from {config_path}: {e}")
-    
+
     # Fallback to built-in defaults
     _provider_defaults = {
         "anthropic": {
@@ -118,6 +132,10 @@ def _load_provider_defaults() -> Dict[str, Any]:
         "openrouter": {
             "default_model": "deepseek/deepseek-chat",
             "base_url": "https://openrouter.ai/api/v1/chat/completions",
+        },
+        "orcarouter": {
+            "default_model": "orcarouter/auto",
+            "base_url": "https://api.orcarouter.ai/v1/chat/completions",
         },
         "groq": {
             "default_model": "llama-3.3-70b-versatile",
@@ -264,6 +282,43 @@ class HttpProvider(LLMProvider):
             "lm-studio", "lmstudio", "local-http",
         )
 
+    def _check_response_error(self, payload):
+        if isinstance(payload, dict) and payload.get("error") is not None:
+            error = payload["error"]
+            code = error.get("code") if isinstance(error, dict) else None
+            detail = error.get("message", "unspecified provider error") if isinstance(error, dict) else str(error)
+            metadata = error.get("metadata") if isinstance(error, dict) else None
+            upstream = metadata.get("provider_name") if isinstance(metadata, dict) else None
+            location = f"{self.provider_name}/{self.model}"
+            if upstream:
+                location += f" (upstream {upstream})"
+            raise ProviderResponseError(f"{location}: provider error {code}: {str(detail)[:800]}", code)
+
+    def _response_content(self, response):
+        location = f"{self.provider_name}/{self.model}"
+        try:
+            payload = response.json()
+        except ValueError as exc:
+            raise ProviderResponseError(
+                f"{location}: HTTP {response.status_code} returned a non-JSON completion"
+            ) from exc
+        self._check_response_error(payload)
+        choices = payload.get("choices") if isinstance(payload, dict) else None
+        if not isinstance(choices, list) or not choices or not isinstance(choices[0], dict):
+            fields = ", ".join(sorted(payload)) if isinstance(payload, dict) else type(payload).__name__
+            raise ProviderResponseError(
+                f"{location}: HTTP {response.status_code} returned no completion choices (fields: {fields})"
+            )
+        choice = choices[0]
+        self._check_response_error(choice)
+        message = choice.get("message")
+        content = message.get("content") if isinstance(message, dict) else None
+        if not isinstance(content, str) or not content.strip():
+            raise ProviderResponseError(
+                f"{location}: API returned no text content (finish_reason={choice.get('finish_reason', 'unknown')!r})"
+            )
+        return content
+
     @llm_retry
     async def query(self, prompt: str, **kwargs) -> str:
         temp = kwargs.get("temperature", 0.7)
@@ -340,6 +395,7 @@ class HttpProvider(LLMProvider):
                             evt = json.loads(payload)
                         except Exception:
                             continue
+                        self._check_response_error(evt)
                         for choice in evt.get("choices") or []:
                             piece = (choice.get("delta") or {}).get("content")
                             if piece:
@@ -360,17 +416,7 @@ class HttpProvider(LLMProvider):
                 response = await client.post(self.base_url, headers=headers, json=data)
                 response.raise_for_status()
 
-                full_response = response.json()
-                content = full_response["choices"][0]["message"]["content"]
-
-                if content is None:
-                    # API returned null content — surface a clear error rather than
-                    # crashing inside re.sub (content filter, rate limit, empty response).
-                    finish_reason = full_response["choices"][0].get("finish_reason", "unknown")
-                    raise ValueError(
-                        f"API returned null content (finish_reason={finish_reason!r}). "
-                        f"Check rate limits, content filters, or model availability."
-                    )
+                content = self._response_content(response)
 
                 # Strip <think>...</think> reasoning blocks (Grok, DeepSeek-R1, etc.)
                 content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
@@ -445,8 +491,9 @@ class OpenRouterProvider(HttpProvider):
             "model": self.model,
             "messages": messages,
             "temperature": temp,
-            "max_tokens": max_tokens,
         }
+        if max_tokens is not None:
+            data["max_tokens"] = max_tokens
         # A trivial call (e.g. the guided imscribe pick: reply with a number) does not need a
         # reasoning model to think — that just burns the budget and stalls. Turn reasoning off
         # for it via OpenRouter's unified switch; models that always reason ignore it harmlessly.
@@ -457,11 +504,7 @@ class OpenRouterProvider(HttpProvider):
             async with httpx.AsyncClient(timeout=120.0) as client:
                 response = await client.post(self.base_url, headers=headers, json=data)
                 response.raise_for_status()
-                full_response = response.json()
-                content = full_response["choices"][0]["message"]["content"]
-                if content is None:
-                    finish_reason = full_response["choices"][0].get("finish_reason", "unknown")
-                    raise ValueError(f"API returned null content (finish_reason={finish_reason!r})")
+                content = self._response_content(response)
                 content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
                 return content
         except httpx.HTTPStatusError as e:
@@ -488,15 +531,27 @@ class OpenRouterProvider(HttpProvider):
                 async with httpx.AsyncClient(timeout=120.0) as client:
                     response = await client.post(self.base_url, headers=headers, json=data)
                     response.raise_for_status()
-                    full_response = response.json()
-                    content = full_response["choices"][0]["message"]["content"]
-                    if content is None:
-                        finish_reason = full_response["choices"][0].get("finish_reason", "unknown")
-                        raise ValueError(f"API returned null content (finish_reason={finish_reason!r})")
+                    content = self._response_content(response)
                     content = re.sub(r"<think>.*?</think>", "", content, flags=re.DOTALL).strip()
                     return content
             logger.error(f"HTTP {e.response.status_code} from {self.base_url}: {body}")
             raise
+
+
+class OrcaRouterProvider(OpenRouterProvider):
+    """OrcaRouter — OpenAI-compatible meta-router gateway. API key: ORCAROUTER_API_KEY.
+
+    Same request shape as OpenRouter (both are OpenAI-compatible routers), so
+    this reuses OpenRouterProvider.query unchanged: temperature clamp, streaming
+    absence check, `<think>` strip and the mandatory-reasoning 400 retry all
+    apply. The only differences are the endpoint and the default model slug.
+    """
+    def __init__(self, api_key: str, model: Optional[str] = None):
+        HttpProvider.__init__(
+            self, api_key, model,
+            "https://api.orcarouter.ai/v1/chat/completions",
+            "orcarouter",
+        )
 
 
 class LocalProvider(LLMProvider):
@@ -752,7 +807,7 @@ class LocalProvider(LLMProvider):
             # ── Toroidal attention integration ──────────────────────────
             # IG_TOROIDAL_ATTENTION=1 replaces flash_attn/sdpa with
             # FFT-based circulant convolution on Z_N or Z_m×Z_n.
-            # Config: IG_TOROIDAL_SIGMA=0.15 (kernel width), 
+            # Config: IG_TOROIDAL_SIGMA=0.15 (kernel width),
             #         IG_TOROIDAL_MODE=1d|2d (geometry)
             if os.getenv("IG_TOROIDAL_ATTENTION", "").strip() not in ("", "0"):
                 _sigma = float(os.getenv("IG_TOROIDAL_SIGMA", "0.15"))
@@ -763,7 +818,7 @@ class LocalProvider(LLMProvider):
                     _layers = [int(x.strip()) for x in _layers_s.split(",") if x.strip().isdigit()]
                 try:
                     from framework.ig_toroidal_attention import patch_with_toroidal
-                    patch_with_toroidal(mdl, sigma=_sigma, mode=_mode, 
+                    patch_with_toroidal(mdl, sigma=_sigma, mode=_mode,
                                        layers_to_patch=_layers)
                     logger.info(
                         f"Toroidal attention active (σ={_sigma}, {_mode}"
@@ -1218,14 +1273,14 @@ def _served_model_id(chat_url: str) -> Optional[str]:
 def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
     """
     Get LLM provider instance by name.
-    
+
     Args:
         provider_name: Provider name (anthropic, deepseek, qwen, mistral, google, aider)
         **kwargs: Provider-specific configuration
-        
+
     Returns:
         LLMProvider instance
-        
+
     Raises:
         ValueError: If provider not supported or API key missing
     """
@@ -1337,6 +1392,8 @@ def get_llm_provider(provider_name: str, **kwargs) -> LLMProvider:
         return DeepSeekProvider(api_key=api_key, **kwargs)
     elif provider_name == 'openrouter':
         return OpenRouterProvider(api_key=api_key, **kwargs)
+    elif provider_name == 'orcarouter':
+        return OrcaRouterProvider(api_key=api_key, **kwargs)
     elif provider_name == 'groq':
         return GroqProvider(api_key=api_key, **kwargs)
     elif provider_name in ('kilo', 'kilocode'):

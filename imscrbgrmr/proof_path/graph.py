@@ -19,7 +19,7 @@ from .ops import OPERATIONS, OPERATIONS_BY_NAME, Op
 
 PRIMS = ["⊢", "⊣", "≻", "≺", "⋈", "⊤", "∈", "∋", "⊙", "⊥", "⊞", "⊡"]
 
-_CATALOG_PATH = Path(__file__).resolve().parent.parent.parent / "IG_catalog.json"
+_CATALOG_PATH = Path.home() / ".imscrbgrmr" / "catalog.json"
 
 
 # ── Data structures ────────────────────────────────────────────────────────────
@@ -45,7 +45,7 @@ def hamming(a: dict[str, str], b: dict[str, str]) -> int:
 def _load_catalog() -> dict[str, dict[str, str]]:
     with open(_CATALOG_PATH) as f:
         raw = json.load(f)
-    entries = raw if isinstance(raw, list) else raw.get("entries", [])
+    entries = raw if isinstance(raw, list) else raw.get("imscriptions", raw.get("entries", []))
     result = {}
     for e in entries:
         name = e.get("name", "")

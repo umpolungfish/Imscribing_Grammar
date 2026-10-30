@@ -25,6 +25,7 @@ Prefix syntax for --model (inherited from true_agentic_agent harness):
     deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
     qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
     groq:model-id          → Groq API (GROQ_API_KEY)
+    orcarouter:model-id    → OrcaRouter API (ORCAROUTER_API_KEY)
 
 Example:
     python agents/agents_cli.py true_agentic_agent --task "Analyze Riemann zeta"
@@ -41,9 +42,9 @@ from typing import Dict, Tuple
 # Add parent to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 # Model resolution — imported from true_agentic_agent harness
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 
 MODEL_ALIASES: Dict[str, str] = {
     "claude-opus-4":    "anthropic/claude-opus-4",
@@ -67,9 +68,10 @@ LOCAL_BASE_URLS: Dict[str, str] = {
 }
 
 REMOTE_API_PROVIDERS: Dict[str, Tuple[str, str]] = {
-    "deepseek": ("https://api.deepseek.com/v1",                          "DEEPSEEK_API_KEY"),
-    "qwen":     ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
-    "groq":     ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
+    "deepseek":    ("https://api.deepseek.com/v1",                          "DEEPSEEK_API_KEY"),
+    "qwen":        ("https://dashscope.aliyuncs.com/compatible-mode/v1",    "QWEN_API_KEY"),
+    "groq":        ("https://api.groq.com/openai/v1",                       "GROQ_API_KEY"),
+    "orcarouter":  ("https://api.orcarouter.com/v1",                        "ORCAROUTER_API_KEY"),
 }
 
 
@@ -89,12 +91,12 @@ def _provider_for(model_str: str, base_url: str = "") -> str:
         prefix = model_str.split(":", 1)[0].lower()
         if prefix in ("ollama", "lm-studio", "lmstudio", "vllm", "local"):
             return "local"
-        if prefix in ("deepseek", "qwen", "openrouter", "anthropic", "openai"):
+        if prefix in ("deepseek", "qwen", "openrouter", "anthropic", "openai", "orcarouter"):
             return prefix
     u = (base_url or "").lower()
-    for name in ("openrouter", "deepseek", "dashscope", "anthropic", "openai"):
+    for name in ("openrouter", "orcarouter", "deepseek", "dashscope", "anthropic", "openai"):
         if name in u:
-            return "openrouter" if name == "openrouter" else name
+            return name
     if u:
         return "local"
     return "openrouter"
@@ -111,6 +113,8 @@ def resolve_model(model_str: str) -> Tuple[str, str, str]:
         local:my-model         → LOCAL_BASE_URL env var (default: ollama)
         deepseek:model-id      → DeepSeek API (DEEPSEEK_API_KEY)
         qwen:model-id          → Qwen/DashScope API (QWEN_API_KEY)
+        groq:model-id          → Groq API (GROQ_API_KEY)
+        orcarouter:model-id    → OrcaRouter API (ORCAROUTER_API_KEY)
     No prefix → check MODEL_ALIASES, then use OpenRouter.
     """
     if ":" in model_str:
@@ -138,9 +142,9 @@ def resolve_model_id(alias: str) -> str:
     return model_id
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 # Retry config — exponential backoff for LLM calls (from harness §RETRY)
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 
 RETRY_CONFIG = {
     "rate_limit": 5,     # 429
@@ -150,9 +154,9 @@ RETRY_CONFIG = {
 }
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 # Agent runner functions
-# ═══════════════════════════════════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════════════════════════
 
 def build_parser():
     parser = argparse.ArgumentParser(
@@ -187,7 +191,7 @@ def build_parser():
     parser.add_argument(
         "--model", "-m",
         default="grok-4",
-        help="Model to use (default: grok-4). Supports prefix syntax: ollama:, lm-studio:, local:, deepseek:, qwen:, groq:"
+        help="Model to use (default: grok-4). Supports prefix syntax: ollama:, lm-studio:, local:, deepseek:, qwen:, groq:, orcarouter:"
     )
     parser.add_argument(
         "--max-windings", "-w",
@@ -429,8 +433,6 @@ def run_ensemble_agent(task: str, args):
         "agent": "ensemble_agent",
         "result": result.to_dict(),
     }
-
-
 
 
 def run_criticality_agent(task: str, args):

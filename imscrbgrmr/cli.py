@@ -5089,13 +5089,14 @@ def cofactor(composite: str, factor_a: str, format: str):
         click.echo(json.dumps({
             "composite": composite,
             "factor_a": factor_a,
-            "blocked": r.blocked,
+            "blocked": r.result is None,
             "conflict_primitives": r.conflict_primitives,
             "contributor_primitives": [d.primitive for d in r.dimensions if d.role == "CONTRIBUTOR"],
             "result": r.result.to_notation() if r.result else None,
             "dimensions": [
                 {"primitive": d.primitive, "role": d.role,
-                 "factor_val": str(d.factor_val), "composite_val": str(d.composite_val)}
+                 "factor_val": str(d.factor_val), "composite_val": str(d.composite_val),
+                 "cofactor_val": str(d.cofactor_val), "note": d.note}
                 for d in r.dimensions
             ],
             "notes": r.notes,
