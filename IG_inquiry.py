@@ -400,11 +400,8 @@ _OPENAI_BASE_URLS: Dict[str, str] = {
     "local":       os.environ.get("IG_LOCAL_BASE_URL") or os.environ.get("LOCAL_MODEL_URL", "http://localhost:11434/v1"),
 }
 
-# Default path for the merged2 Imscribing Grammar fine-tune
-_MERGED2_PATH = os.path.join(
-    os.path.dirname(__file__),
-    "INFERRED/output/Imscriptiveon_qlora/merged2/merged_model"
-)
+# Default path for the Q3p8 GGUF local model
+_MERGED2_PATH = "/home/mrnob0dy666/imsgct/.modelz/q38/Q3p8.gguf"
 
 # Persistent cross-session catalog
 CATALOG_PATH = os.path.expanduser(os.environ.get("IG_CATALOG", "~/.imscrbgrmr/catalog.json"))

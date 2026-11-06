@@ -33,8 +33,14 @@ _PARENT = Path(__file__).resolve().parent.parent
 if str(_PARENT) not in sys.path:
     sys.path.insert(0, str(_PARENT))
 
-from true_agentic_agent import (TrueAgenticAgent,
-                                _GRAMMAR_FIRST_RIDER, _PARTNERSHIP_RIDER)
+import true_agentic_agent as _taa
+from true_agentic_agent import (
+    TrueAgenticAgent,
+    _load_system_prompt,
+    _GRAMMAR_FIRST_RIDER,
+    _PARTNERSHIP_RIDER,
+    _EPISTEMIC_OUTLOOK_RIDER,
+)
 from session_db import get_session_db
 
 _CONSTITUTION = Path(__file__).resolve().parent / "BUGHUNTER_CONSTITUTION.md"
@@ -53,13 +59,12 @@ class BughunterOperator(TrueAgenticAgent):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._custom_system_prompt = (
-            _load_constitution() + _GRAMMAR_FIRST_RIDER + _PARTNERSHIP_RIDER
+            _load_constitution() + _GRAMMAR_FIRST_RIDER + _PARTNERSHIP_RIDER + _EPISTEMIC_OUTLOOK_RIDER
         )
         self._session_id: str | None = None
 
     async def run(self, task: str) -> str:
         """Run with the bughunter constitution injected as the system prompt."""
-        import true_agentic_agent as _taa
         _original_load = _taa._load_system_prompt
         _taa._load_system_prompt = lambda: self._custom_system_prompt
         try:

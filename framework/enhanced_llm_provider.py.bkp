@@ -554,7 +554,7 @@ class LocalProvider(LLMProvider):
       2. ~/imsgct/MoDoT/ask   (the wrapper that builds/execs the native binary)
 
     The model the kernel loads is selected on the Rust side via
-    IG_LOCAL_MODEL_DIR (default ~/models/Qwen3-1.7B, ask_native/src/local.rs), and
+    IG_LOCAL_MODEL_DIR (default /home/mrnob0dy666/imsgct/.modelz/q38/Q3p8.gguf, ask_native/src/local.rs), and
     the cards it runs on via IG_DEVICES — with two cards open the model is SPLIT
     across them layer by layer;
     ob3ect does not second-guess it, which is exactly what "routed the same"
@@ -564,7 +564,7 @@ class LocalProvider(LLMProvider):
 
     # Retained only as the identity string for the response cache key and for the
     # renamed pure-Python fallback below. The kernel resolves the real model dir.
-    DEFAULT_MODEL_PATH = "~/models/Qwen3-1.7B"
+    DEFAULT_MODEL_PATH = "/home/mrnob0dy666/imsgct/.modelz/q38/Q3p8.gguf"
 
     DEFAULT_ASK_BIN = "~/imsgct/MoDoT/ask"
 

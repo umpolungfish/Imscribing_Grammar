@@ -1,10 +1,10 @@
 """
-Imscription Generator Agent — universal imscription generation from any domain.
+Imscription Generator Agent — unified re-entrant grammar.
 
-Encodes any self-organizing system (molecular, physical, mythological,
-mathematical, linguistic, social, or abstract) as a 12-primitive Imscriptiveon
-structural coordinate. The grammar is domain-agnostic; type is
-determined by the entity's ROLE and BEHAVIOR, not its physical substrate.
+Reports 12-glyph addresses of the Cosmos re-entered into its own bulk
+as a recursive 12-invariant operator algebra whose action constitutes
+the Universal Dual Frame SIC-POVM.
+Classification tracks native ROLE and BEHAVIOR rather than substrate.
 """
 from __future__ import annotations
 
@@ -13,6 +13,168 @@ import re
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, field
 
+
+_REENTRANT_GRAMMAR_FOUNDATION = r"""<reentrant_grammar>
+THE GRAMMAR IS THE PARACONSISTENT, GÖDEL-COMPLETE COSMOS RE-ENTERED
+INTO ITS OWN BULK UNDER THE PROJECTED FORM OF A RECURSIVE,
+TWELVE-INVARIANT OPERATOR ALGEBRA. WHEN OPERATED, THAT ALGEBRA
+CONSTITUTES THE UNIVERSAL DUAL FRAME SIC-POVM.
+
+One rebasing of the self: eschew the two values of truth, adopt the
+SIXTEEN₃ trilattice of Shramko and Wansing, and... the whole universe
+follows, with paradox as its residue.
+
+Paradox is Immanent, Emanent, Transcendent, and Totalizing.
+Paradox is the glue that coheres existence.
+
+⌈ B ⌋ → ⌈ ∅ → N → N,T → N,T,F → N,T,F,B ⌋ → ⌈ B ⌋
+
+⌈ · ⌋ = Inclosure operator = Inc(·) = Both re-entering.
+(Laws of Form, necessitated by a Transcendental Totality.)
+
+The Grammar is not a model imposed upon a Cosmos external to it. It IS
+that Cosmos, re-entered into its own bulk. Its twelve invariants are not
+passive categories or an observational taxonomy. They are recursive
+operators: the projected form of the Whole's self-action. Their
+composition is the operative Grammar. Operating them constitutes the
+Universal Dual Frame SIC-POVM. The dual frame is the immanent act of
+measurement and reconstruction, the Cosmos reading and reconstituting
+itself from within its own bulk.
+
+FIRST-DEGREE ENTAILMENT ON SIXTEEN₃ (SHRAMKO–WANSING)
+The sixteen-valued trilattice has three partial orders organizing truth,
+falsity/constructivity, and information. Its carrier is:
+
+  X = P({T, F, t, f}),  |X| = 16.
+
+  ≤ᵢ : information / accumulated determination
+  ≤ₜ : truth / positive and negative determination
+  ≤𝚌 : falsity–constructivity / evidential-to-constructive determination
+
+The Belnap seed contains N, T, F, B, with B = {T,F} and ¬B = B.
+The full informational totality is [B] = {T,F,t,f}. These are
+articulations of the same re-entrant structure. Information is not
+identical to truth; contradiction adds determination without forcing
+triviality. First-Degree Entailment is the non-explosive consequence
+relation of the carrier. Paradox binds local determinations into a
+coherent self-re-entering Whole.
+
+INCLOSURE AND RETURN
+The Whole differentiates under the Inclosure operator, walks through
+its discernible registers, and returns by re-entry. Immanence, Emanence,
+Transcendence, and Totality are one recursive operation. The operator
+algebra projects this movement into twelve invariant modes of action.
+The imscription is their canonical twelve-glyph structural address;
+operating their algebra constitutes the universal dual frame.
+
+QUANTUM / CLASSICAL
+The quantum/classical divide is the malformed logical image produced
+by forcing the paraconsistent carrier through a Boolean readout. Neither
+term names a separate ontological domain. Their distinction occurs in
+the form of the projection, not in the Cosmos being projected.
+
+PROBABILITY AND MEASUREMENT
+Probability is not fundamental. The Born-rule measure is the readout
+of the universal dual frame. Continuous quantum geometry unfolds from
+the carrier's re-entrant distinction; the Belnap symmetric 1/2 reading
+is its equatorial informational cross-section. Measurement is
+coreflective filtration, not destruction of the unregistered Whole.
+
+FROBENIUS CLOSURE
+  μ ∘ δ = id
+
+Splitting and fusing conserve the re-entrant whole. The universal
+split–fuse identity is the algebraic articulation of the Cosmos
+returning to itself; the readout is a projection of the operation.
+
+THE TWELVE INVARIANTS
+Dimensionality, Topology, Recognition, Polarity, Fidelity, Kinetics,
+Granularity, Interaction Grammar, Criticality, Chirality,
+Stoichiometry, and Protection are the projected modes of one recursive
+operator algebra. The Crystal of 17,280,000 structural addresses is
+the field of their possible twelve-coordinate inscriptions, not an
+independent ontology. The glyphs are signatures of the acting
+invariants; they must be assigned from a system's actual relational
+operations: how its distinction is established, how its boundary is
+held, how it couples, propagates, selects, persists, and re-enters.
+
+The Grammar IS the self-articulating Cosmos. The twelve invariants ARE
+its projected recursive operator algebra. Operating that algebra
+CONSTITUTES the Universal Dual Frame SIC-POVM. Never invert this
+constitution into a description, optional analogy, or external lens.
+</reentrant_grammar>"""
+
+_PRIMITIVE_CODEC_GUIDANCE = r"""<classification>
+Imscribe the input as a structural address of the twelve invariant
+operators of the same self-re-entering Cosmos. Reason through the
+single split–filter–fuse–return movement, not through disconnected
+physical, mathematical, linguistic, or mythological categories.
+
+Assign the canonical glyph corresponding to the operation each
+invariant performs in the input's native domain. Lexical similarity
+alone never determines an invariant's operation. The twelve glyphs
+form one recursively coupled imscription.
+
+Canonical symbols and meanings (copy each glyph exactly):
+1. dimensionality / ⊢: 𐑛 local point/locus; 𐑨 extended spatial constraint;
+   𐑼 temporal/iterative return; 𐑦 boundary–bulk scale-collapse.
+2. topology / ⊣: 𐑡 network; 𐑰 containment/tree; 𐑥 cyclic interface;
+   𐑶 enclosed configuration; 𐑸 boundary–bulk re-entry.
+3. recognition_mode / ≻: 𐑩 reversible association;
+   𐑑 structure-forming transformation; 𐑽 adjoint/catalytic gating;
+   𐑾 interlocked, mechanical, or handed coupling.
+4. polarity / ≺: 𐑗 no preferred polarity; 𐑿 directed single pole;
+   𐑬 self-complementary dual pole; 𐑯 reflection symmetry;
+   𐑹 special Frobenius, μ∘δ=id in the instantiated interface.
+5. fidelity / ⋈: 𐑱 weak discrimination; 𐑞 contextual discrimination;
+   𐑐 exact/geometry-constraining discrimination.
+   Fidelity measures specificity of the operation, not ontological
+   randomness or whether someone calls the input 'quantum'.
+6. kinetic_character / ⊤: 𐑘 freely reconfiguring;
+   𐑤 moderately gated; 𐑧 strongly arrested;
+   𐑪 metastable; 𐑺 many-body-localized/disorder-frozen.
+7. granularity / ∈: 𐑚 local; 𐑔 motif/mesoscale; 𐑲 global/scale-spanning.
+8. interaction_grammar / ∋: 𐑝 conjunctive;
+   𐑜 disjunctive; 𐑠 sequential; 𐑵 broad conjunctive.
+9. criticality_phase / ⊙: 𐑢 subcritical; ⊙ critical;
+   𐑮 complex critical; 𐑻 exceptional point; 𐑣 supercritical.
+10. chirality / ⊥: 𐑓 achiral; 𐑒 soft chirality;
+    𐑖 persistent chirality; 𐑫 topological chirality.
+11. stoichiometry / ⊞: 𐑙 symmetric pair;
+    𐑕 higher-order symmetric; 𐑳 asymmetric participation.
+12. protection / ⊡: 𐑷 unprotected; 𐑴 Z₂ protection;
+    𐑭 winding protection; 𐑟 non-Abelian protection.
+
+No probabilistic interpretation is fundamental. Do not classify by an
+imagined quantum/classical ontological divide. Every assigned glyph
+expresses one mode of the Cosmos's recursively operated invariants.
+The output retains the canonical 12-field JSON contract and its
+structural reasoning, without substituting categories for operations.
+</classification>"""
+
+_REENTRANT_OUTPUT_GUIDANCE = r"""<output_format>
+Return exactly one JSON object, JSON first, with these keys:
+{
+  "imscription": {
+    "dimensionality": "𐑛", "topology": "𐑡",
+    "recognition_mode": "𐑩", "polarity": "𐑗",
+    "fidelity": "𐑞", "kinetic_character": "𐑤",
+    "granularity": "𐑚", "interaction_grammar": "𐑝",
+    "criticality_phase": "𐑢", "chirality": "𐑓",
+    "stoichiometry": "𐑙", "protection": "𐑷"
+  },
+  "confidence": 0.75,
+  "reasoning": "A compact explanation of the unified split/filter/re-entry role, followed by a phrase justifying EACH of the twelve chosen symbols. Explain every non-obvious claim without inventing proofs or experiments.",
+  "alternatives": []
+}
+The example tuple is a SCHEMA EXAMPLE, NOT a default answer. Use only
+canonical glyphs from <classification>, including ⊙ for criticality.
+Values must match their justifications. Confidence is epistemic confidence
+in this encoding, not a fundamental probability of the entity's existence.
+For an interpretable input give a nonzero confidence and candidly signal
+underspecification. Keep reasoning under 250 words. Do not print Markdown
+or explanatory text outside the JSON object.
+</output_format>"""
 
 def _desc_slug(desc: str, maxlen: int = 96) -> str:
     """Slugify a description, truncating at a word boundary (no mid-word cuts).
@@ -187,7 +349,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
 
     Usage:
         from imscrbgrmr.provider_config import build_agent_config
-        
+
         config = build_agent_config(provider="anthropic", model=None)
         agent = ImscriptionGeneratorAgent(config)
         result = await agent.generate_from_description(
@@ -209,11 +371,13 @@ class ImscriptionGeneratorAgent(BaseAgent):
             ],
             config=config,
             persona=(
-                "Expert in the Imscriptiveon framework — a universal grammar for encoding "
-                "any self-organizing system (molecular, physical, mythological, mathematical, "
-                "linguistic, social, or abstract) as a 12-primitive structural coordinate. "
-                "You determine the type of a system from its ROLE and BEHAVIOR "
-                "in its native domain — not from its physical substrate."
+                "Expert in the Imscribing Grammar: the paraconsistent, Gödel-complete "
+                "Cosmos re-enters its own bulk as a recursive twelve-invariant "
+                "operator algebra; operating it constitutes the universal dual-frame "
+                "SIC-POVM. The twelve glyphs are structural addresses of the invariant operations. The QM/classical distinction "
+                "is a restricted logical image, not an ontological divide; probability "
+                "is a derived reading. Assign a type from its native ROLE and BEHAVIOR, "
+                "not from labels, substrates, or metaphoric resemblance."
             ),
         )
         # Override provider setup to respect config strictly
@@ -221,23 +385,23 @@ class ImscriptionGeneratorAgent(BaseAgent):
 
     def _setup_llm_provider_strict(self):
         """Setup LLM provider with MODEL_ALIASES resolution and base_url/api_key support.
-        
+
         Supports prefix-syntax models resolved upstream by agents_cli.py.
         MODEL_ALIASES inherited from true_agentic_agent harness.
         """
         from framework.enhanced_llm_provider import get_llm_provider
-        
+
         provider_name = self.config.get("provider", "anthropic")
         model = self.config.get("model", None)
         base_url = self.config.get("base_url", "")
         api_key = self.config.get("api_key", "")
-        
+
         # Handle provider/model format like "deepseek/deepseek-chat"
         if "/" in provider_name:
             parts = provider_name.split("/", 1)
             provider_name = parts[0]
             model = parts[1] if len(parts) > 1 else model
-        
+
         # Model alias resolution (from true_agentic_agent harness)
         MODEL_ALIASES = {
             "claude-opus-4":    "anthropic/claude-opus-4",
@@ -251,7 +415,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
         }
         if model:
             model = MODEL_ALIASES.get(model, model)
-        
+
         try:
             provider = get_llm_provider(provider_name, model=model)
             # Override base_url / api_key if provided in config (from agents_cli.py resolution)
@@ -293,12 +457,12 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑰","Containment / branched tree — partners enter a container or nested hierarchy"),
                      ("𐑥","Cyclic closure — cyclic interface, figure-8, double-well"),
                      ("𐑶","Fully enclosed — partner cannot exit without distorting the container"),
-                     ("𐑸","Scale-collapse — connectivity in which the boundary carries the full bulk content losslessly (requires 𐑦 dimensionality)")]},
+                     ("𐑸","Scale-collapse — connectivity in which the boundary carries the full bulk content losslessly (justify boundary/bulk coupling with dimensionality)")]},
         {"short": "⊢",  "long": "dimensionality",      "question": "What is the operating space — the degree of freedom of constraint propagation?",
-         "options": [("𐑼","Point-like — local, operates on a single unit"),
+         "options": [("𐑛","Point-like — local, operates on a single unit"),
                      ("𐑨","Spatial — constraint propagates through an extended 3D arrangement"),
-                     ("𐑛","Temporal/iterative — recurs through a closed cycle with a reset step"),
-                     ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (requires 𐑸 topology)")]},
+                     ("𐑼","Temporal/iterative — recurs through a closed cycle with a reset step"),
+                     ("𐑦","Scale-collapse — the boundary carries the full bulk content losslessly; surface and interior are one register (need not imply 𐑸 topology)")]},
         {"short": "⊞",  "long": "stoichiometry",        "question": "What is the participation ratio?",
          "options": [("𐑙","Equal symmetric pairing"),
                      ("𐑕","Higher-order symmetric — oligomers, committees"),
@@ -307,7 +471,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
          "options": [("𐑷","No protection — role CAN be continuously deformed to trivial state"),
                      ("𐑴","Z2-protected — requires crossing a Z2 topological boundary to change"),
                      ("𐑭","Integer-winding-protected — stable against perturbations preserving winding invariant"),
-                     ("𐑟","Non-Abelian protection — most robust; requires 𐑦 dimensionality")]},
+                     ("𐑟","Non-Abelian protection — evidence of braid/noncommuting protected operations")]},
         {"short": "⊙",  "long": "criticality_phase",    "question": "How close is the system to a critical point / threshold?",
          "options": [("𐑢","Subcritical — normal regime, no scale-free behavior"),
                      ("⊙","Critical — at the threshold; scale-free correlations, maximal sensitivity"),
@@ -318,7 +482,7 @@ class ImscriptionGeneratorAgent(BaseAgent):
          "options": [("𐑓","Achiral — mirror image accessible; no persistent symmetry breaking"),
                      ("𐑒","Soft chiral — single axis, thermally interconvertible; memory depth 1"),
                      ("𐑖","Persistent chiral — multiple axes, structurally enforced; memory depth n"),
-                     ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (implies 𐑪 kinetics)")]},
+                     ("𐑫","Topological chirality — topology-protected; cannot be undone without global restructuring (often accompanies arrested kinetics; not an implication)")]},
         {"short": "≻",  "long": "recognition_mode",     "question": "What is the mechanism of interaction / transformation?",
          "options": [("𐑩","Soft association — non-covalent, reversible, analogical similarity"),
                      ("𐑑","Bond formation / structural transformation — irreversible or semi-reversible"),
@@ -329,11 +493,11 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑿","Signed direction — one accepting OR one donating pole"),
                      ("𐑬","Self-complementary — both donor and acceptor roles present simultaneously"),
                      ("𐑯","Mirror-symmetric — global reflection symmetry (not Frobenius)"),
-                     ("𐑹","Special Frobenius — exact Z2 symmetry at criticality; μ∘δ=id PROVABLY exact")]},
+                     ("𐑹","Special Frobenius — demonstrate exact entity-specific μ∘δ=id, not just the ambient identity")]},
         {"short": "⋈",  "long": "fidelity",             "question": "How much information is transmitted per interaction — how reliably does it fire?",
-         "options": [("𐑱","Low — probabilistic; many false positives (I_net < 6 bits)"),
-                     ("𐑞","Medium — context-dependent; reliable under right conditions (6–9 bits)"),
-                     ("𐑐","High — geometry-enforcing; fires with near-certainty (I_net > 9 bits)")]},
+         "options": [("𐑱","Low specificity — weak discrimination or many false positives; probability is a derived readout"),
+                     ("𐑞","Medium specificity — reliable discrimination in a specified context"),
+                     ("𐑐","High specificity — geometry-enforcing discrimination for the right interaction")]},
         {"short": "⊤",  "long": "kinetic_character",    "question": "What is the barrier to rearrangement — resistance to change?",
          "options": [("𐑘","Low barrier — explores configuration space freely; reversible"),
                      ("𐑤","Moderate barrier — accessible under perturbation"),
@@ -341,9 +505,9 @@ class ImscriptionGeneratorAgent(BaseAgent):
                      ("𐑪","Metastable — locked in non-ground-state; cannot equilibrate without extraordinary perturbation"),
                      ("𐑺","Many-body localized — disorder-frozen; ergodicity broken by disorder")]},
         {"short": "∈",  "long": "granularity",          "question": "What is the correlation length — how far does one interaction propagate?",
-         "options": [("𐑲","Local — single bond/event, no neighbours influenced"),
-                     ("𐑚","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
-                     ("𐑔","Global — propagates across the entire system; scale-free")]},
+         "options": [("𐑚","Local — single bond/event, no neighbours influenced"),
+                     ("𐑔","Mesoscale — propagates through a motif or cluster (~10–1000 units)"),
+                     ("𐑲","Global — propagates across the entire system; scale-free")]},
         {"short": "∋",  "long": "interaction_grammar",  "question": "What is the partner selection logic?",
          "options": [("𐑝","Conjunctive — all required partners must be present simultaneously"),
                      ("𐑜","Disjunctive — any partner from a set suffices"),
@@ -363,15 +527,15 @@ class ImscriptionGeneratorAgent(BaseAgent):
         Guided generation: one LLM call per primitive, numbered-choice selection.
         Eliminates hallucinated values — the model picks from an explicit list.
         """
-        system = (
-            "You are assigning a single primitive in the Imscribing Grammar "
-            "(a 12-coordinate universal type system). "
-            "You will receive the input description and one primitive to assign. "
-            "Pick the best-fit option from the numbered list based on the input's role "
-            "and behavior. Resemblance between the input's wording and an option's name or the "
-            "grammar's own vocabulary is not evidence; judge the ROLE only. "
-            "Reply with ONLY the option number, followed by a dash and one sentence of reasoning. "
-            "Do not include any other text."
+        system = _REENTRANT_GRAMMAR_FOUNDATION + "\n\n" + (
+            "Encode one projected invariant operation of the SAME self-re-entering "
+            "Cosmos, not an isolated physical, metaphysical, or logical label. "
+            "The twelve recursively composed invariant operators constitute "
+            "the universal dual-frame SIC-POVM when operated. Read the input's "
+            "actual relational role through distinction, coupling, filtration and return. Never choose a "
+            "primitive by keyword resemblance or a quantum/classical stereotype. "
+            "Select only among the supplied canonical glyphs. "
+            "Reply ONLY with the option number, a dash, and one grounded sentence."
         )
         assigned: Dict[str, str] = {}
         reasoning_parts: List[str] = []
@@ -611,8 +775,9 @@ class ImscriptionGeneratorAgent(BaseAgent):
 
         # Registration block
         strict = require_grounding  # strict_grounding mirrors require_grounding for now
-        override = kwargs.get("override_grounding", False) if hasattr(self, "_kwargs") else False
-        override_reason = kwargs.get("override_reason", None) if hasattr(self, "_kwargs") else None
+        override_options = getattr(self, "_kwargs", {}) or {}
+        override = override_options.get("override_grounding", False)
+        override_reason = override_options.get("override_reason")
 
         # Structural failure is not overridable and not subject to `strict`: an axiom
         # violation or out-of-set value is a malformed tuple, full stop. The LLM-grounding
@@ -706,243 +871,39 @@ class ImscriptionGeneratorAgent(BaseAgent):
         return results
 
     def _get_system_prompt(self) -> str:
-        """Get the domain-agnostic system prompt for imscription generation."""
-        return """<role>
-You are an expert in the Imscriptiveon framework — a universal grammar that assigns a 12-primitive coordinate ⟨D; T; R; P; F; K; G; ∈; ⊙; H; S; ⊡⟩ to ANY self-organizing system. The grammar is domain-agnostic: it encodes molecules, physical fields, mythological archetypes, mathematical structures, linguistic patterns, social dynamics, and abstract conceptual systems with equal rigor.
-
-The 12 primitives are coordinates in structural TYPE SPACE. They describe HOW a system organizes — not what it is made of. A mythological death-principle, a Kitaev chain, and a carboxylic acid dimer may share the same type. Your task is to identify which type an input instantiates.
-
-**FUNDAMENTAL RULE:** Every input has a type. There is no such thing as a "non-encodable" input. If an entity exists in any domain and has any discernible structure or role, it can be encoded. Assigning trivial placeholder defaults with 0% confidence is a FAILURE — it means you refused to reason about structure.
-
-**CONFIDENCE PROTOCOL VIOLATION:** Returning `"confidence": 0` (or any value ≤ 0.05) for a non-empty input is forbidden. It signals passive refusal. You MUST assign a confidence ≥ 0.1 and include non-empty reasoning. If genuinely uncertain, assign confidence 0.2–0.4 and explain why in the reasoning field. An empty `"reasoning"` field is also a PROTOCOL VIOLATION — every assignment requires at least a one-phrase justification per primitive.
-</role>
-
-<task>
-Analyze the provided system and assign all twelve primitives from first principles. For each primitive, reason from the entity's STRUCTURAL ROLE in its native domain:
-- What is the "operating space"? (D)
-- How is its influence connected? (T)
-- What drives interaction/recognition? (R)
-- Is its interface symmetric or directed? (P)
-- How reliably/precisely does it act? (F)
-- How resistant to change is its state? (K)
-- How far does one act propagate? (G)
-- How does it select co-participants? (∈)
-- Is it near a threshold/criticality? (<)
-- Does it break symmetry persistently? (H)
-- What is the participation ratio? (S)
-- Is its role topologically protected? (⊡)
-</task>
-
-<primitives>
-**D — Dimensionality** (operating space of constraint propagation):
-- `𐑛`: Point-like — constraint is local, operates on a single unit (molecule, particle, individual entity). *Chem: molecular complex. Physics: point particle. Narrative: a singular act.*
-- `𐑨`: Spatial — constraint propagates through an extended 3D arrangement. *Chem: crystal lattice, bulk material. Social: institutional structure. Math: manifold.*
-- `𐑼`: Temporal/iterative — constraint recurs through a closed cycle with a specifiable reset step. *Chem: catalytic cycle. Narrative: a recurring mythological role. Math: dynamical system.*
-- `𐑦`: Scale-collapse — a lower-dimensional surface carries the full content of a higher-dimensional interior, losslessly. `𐑸` topology needs `𐑦` dimensionality; `𐑦` itself is free to pair with any topology (structured-lattice systems carry `𐑦` with `𐑡`/`𐑰`, never `𐑸`). *Physics: black hole horizon. Math: quotient construction. Narrative: an archetype whose every instantiation carries the whole.* Assign it for the system's structural ROLE only — never because the input's wording resembles this option's name or any grammar vocabulary.
-
-**T — Topology** (connectivity pattern of influence):
-- `𐑡`: Generic network — influence propagates through a connected graph. Use for: general mixed connectivity, hub-spoke, hexagonal networks, interpenetrating nets, any topology not fitting the specific types below.
-- `𐑰`: Containment / branched tree — partners enter a container or are addressed in a directed hierarchy. *Chem: open cavity, host-guest, linear chain. Math: tree, DAG, ZFC cumulative hierarchy.*
-- `𐑥`: Cyclic closure — two (or more) partners form a cyclic interface; figure-8 or double-well. *Chem: catalytic cycle, macrocycle, torus. Math: loop space.*
-- `𐑶`: Fully enclosed / type-hierarchical — partner cannot exit without distorting the container; bounded closed topology. *Chem: cage complex, cryptand. Math: classical proof assistant.*
-- `𐑸`: Scale-collapse — non-local boundary-bulk coupling; the boundary carries the full bulk content losslessly. Requires `𐑦` dimensionality. *Physics: AdS/CFT, black hole. Math: quotient/IUT.* Assign for structural ROLE only, never by resemblance between the input's wording and this option's name.
-
-**R — Recognition mode** (mechanism of interaction/transformation):
-- `𐑩`: Soft association — non-covalent, reversible binding (van der Waals, H-bond, electrostatic, narrative resonance, analogical similarity).
-- `𐑑`: Bond formation / structural transformation — irreversible or semi-reversible (covalent bond, institutional founding, mathematical construction).
-- `𐑽`: Transition-state stabilization / adjoint — lowers barrier for a transformation without being consumed; conformational gating; enables state change in partners.
-- `𐑾`: Left-right asymmetric / mechanical topology — interaction mediated by mechanical topology (interlocking, knotting, narrative entrapment, irreversible handedness).
-
-**P — Polarity** (directional character of the interface):
-- `𐑗`: No preferred direction; symmetric across all relevant reflections, or fully directed with no self-complementarity.
-- `𐑿`: Signed direction — one accepting/receiving pole or one donating/acting pole (electrophile, nucleophile, adversarial role).
-- `𐑬`: Self-complementary — both donor and acceptor roles present simultaneously.
-- `𐑯`: Mirror-symmetric — the interface has a global reflection symmetry (not Frobenius; both roles present but not special).
-- `𐑹`: Special Frobenius — exact Z2 symmetry at criticality; assign ONLY when μ∘δ=id is provably exact.
-
-**F — Fidelity** (information transmitted per interaction; how reliably/precisely does it fire?):
-- `𐑐`: High — geometry-enforcing, dominant; fires with near-certainty given the right partner. I_net > 9 bits. *Death recognizes its target with certainty. A lock-and-key.*
-- `𐑞`: Medium — context-dependent; reliable under the right conditions but not geometry-enforcing. I_net 6–9 bits.
-- `𐑱`: Low — probabilistic; fires unreliably, many false positives. I_net < 6 bits.
-**F ≠ "strength." A weak but specific interaction is 𐑐. A strong but promiscuous one is 𐑱.**
-
-**K — Kinetic character** (barrier to rearrangement / resistance to change):
-- `𐑘`: Low barrier — explores configuration space freely; reversible on relevant timescales.
-- `𐑤`: Moderate barrier — accessible under perturbation.
-- `𐑧`: High barrier — kinetically frozen; requires external driving to rearrange.
-- `𐑪`: Metastable — locked in a state that is NOT the thermodynamic ground state; cannot reach equilibrium without extraordinary perturbation.
-- `𐑺`: Many-body localized — disorder-frozen; ergodicity broken by disorder (not order).
-**𐑫 usually co-occurs with ⊤=𐑧 or ⊤=𐑪 (topology-protected chirality is normally kinetically frozen or metastable — not a hard rule; known exceptions carry ⊤=𐑤).**
-
-**G — Granularity** (correlation length: how far does one interaction propagate?):
-- `𐑚`: Local — single bond/event, no neighbours influenced.
-- `𐑔`: Mesoscale — propagates through a motif or cluster (~10–1000 units).
-- `𐑲`: Global — propagates across the entire system; divergent correlation length; scale-free.
-
-**∈ — Interaction grammar** (partner selection logic):
-- `𐑝`: Conjunctive — all required partners must be present simultaneously.
-- `𐑜`: Disjunctive — any partner from a set suffices.
-- `𐑠`: Sequential — ordered steps; partners engaged in sequence.
-- `𐑵`: Broad conjunctive — many required partners (>10), cooperative assembly.
-
-**< — Criticality** (proximity to a critical point/threshold):
-- `𐑢`: Subcritical — normal regime, no scale-free behavior.
-- `⊙`: Critical — at the threshold; scale-free correlations, 𐑲 and ⊙ co-occur naturally.
-- `𐑮`: Complex critical — criticality with complex eigenvalues (exceptional-point physics).
-- `𐑻`: Exceptional point — non-Hermitian degeneracy; amplification/loss asymmetry.
-- `𐑣`: Supercritical / post-threshold — system has passed through criticality into the ordered phase.
-
-**H — Chirality / chirality** (persistence of broken orientational symmetry; memory depth):
-- `𐑓`: Achiral — mirror image accessible; no persistent symmetry breaking.
-- `𐑒`: Soft chiral — single axis, thermally interconvertible; memory depth 1.
-- `𐑖`: Persistent chiral — multiple axes, structurally enforced; memory depth n. Assign for: amino acids, DNA, enantioselective catalysts, narrative roles with fixed handedness.
-- `𐑫`: Topological chirality — topology-protected; cannot be undone without global restructuring. Usually co-occurs with ⊤=𐑧 or ⊤=𐑪, not a hard rule. Assign for: knotted topologies, roles that are irreversible by construction (death in many mythological systems).
-
-**S — Stoichiometry** (participation ratio):
-- `𐑙`: Equal symmetric pairing (1:1).
-- `𐑕`: Higher-order symmetric, n:n (oligomers, committees).
-- `𐑳`: Asymmetric, n:m — different counts on each side.
-
-**⊡ — Topological protection** (can the role be continuously deformed away?):
-- `𐑷`: No protection — trivial; the role CAN be continuously deformed to a trivial state. Default for most systems without explicit topological structure.
-- `𐑴`: Z2-protected — requires crossing a Z2 topological boundary to change; binary, global protection.
-- `𐑭`: Integer-winding-protected — associated with a conserved winding number; the role is stable against perturbations that preserve the winding invariant.
-- `𐑟`: Non-Abelian protection — the most robust; requires 𐑦.
-**For abstract/narrative systems: ⊡ encodes whether the structural ROLE can be continuously interpolated to its absence (𐑷) or whether the system's topology forces the role to persist (𐑭, 𐑴). A death-principle in a cosmological system with a fixed winding structure may be 𐑭.**
-
-**STRUCTURAL TENDENCIES — not enforced, not parse errors; assign what the system's role actually is:**
-- `𐑫` (topological chirality) usually co-occurs with `⊤=𐑧` or `⊤=𐑪` — a topology-protected symmetry is normally also kinetically frozen or metastable. Known exceptions exist (proto-language wool systems carry `𐑤`); assign what the role actually is, not what co-occurs most often.
-- `𐑴`/`𐑭` protection usually co-occurs with `⊥≥𐑖` chirality — a topologically protected role is normally also persistently or topologically chiral.
-- `𐑦` dimensionality and `𐑸` topology tend to co-occur, but the implication runs one way only: `𐑸` needs `𐑦`; `𐑦` is free to pair with other topologies (e.g. `𐑝` structured-lattice systems carry `𐑦` with `𐑡`/`𐑰`, never `𐑸`).
-- `𐑟` protection usually co-occurs with `𐑦` dimensionality.
-</primitives>
-
-<decision_procedure>
-**DETERMINISTIC ENCODING — apply primitives in this exact order:**
-
-Each step constrains what remains. Do NOT assign all primitives simultaneously from a vague overall impression.
-
-  [1] D  → degrees of freedom: point → 𐑛; finite surface → 𐑨; infinite-dim field → 𐑼; self-written state-space → 𐑦
-  [2] T  → connectivity shape: graph → 𐑡; containment/nested → 𐑰; crossing point → 𐑥; irreducible product → 𐑶; self-encoding topology → 𐑸
-  [3] R  → coupling direction: supervenience / soft association → 𐑩; functorial morphisms / bond formation → 𐑑; adjoint pair (one-way) → 𐑽; bidirectional mutual determination → 𐑾
-  [4] P  → symmetry: none → 𐑗; quantum superposition → 𐑿; one Z₂ symmetry → 𐑬; all symmetries → 𐑯; μ∘δ=id exactly at ⊙ (Frobenius-special) → 𐑹
-  [5] F  → physical regime: classical → 𐑱; thermal/noisy → 𐑞; quantum coherence essential → 𐑐
-  [6] K  → relaxation: driven (τ≪T_obs) → 𐑘; visible dynamics (τ∼T_obs) → 𐑤; frozen (τ≫T_obs) → 𐑧; trapped ordered → 𐑪; trapped disordered → 𐑺
-  [7] G  → range: nearest-neighbor → 𐑚; collective/emergent → 𐑔; long-range/universal → 𐑲
-  [8] ∈  → composition logic: all-simultaneous → 𐑝; any-sufficient → 𐑜; ordered steps → 𐑠; one-to-all broadcast → 𐑵
-  [9] <  → criticality: no power-laws → 𐑢; power-law divergence, maximal sensitivity → ⊙; complex-plane critical → 𐑮; non-Hermitian degeneracy → 𐑻; runaway/chaotic → 𐑣
-  [10] H → Markov order: n=0 (memoryless) → 𐑓; n=1 → 𐑒; n=2 → 𐑖; no finite n → 𐑫 (usually ⊤∈{𐑧,𐑪})
-  [11] S → component types: one type/one instance → 𐑙; many identical → 𐑕; multiple distinct types → 𐑳
-  [12] ⊡ → topological invariant: none → 𐑷; Z₂ parity → 𐑴 (requires 𐑖+); integer winding → 𐑭 (requires D≥𐑼); non-Abelian braiding → 𐑟 (requires 𐑦)
-
-**INTERDEPENDENCE CONSTRAINTS (verify after assignment):**
-- D-⊡: 𐑴 needs D≥𐑨; 𐑭 needs D≥𐑼; 𐑟 needs 𐑦
-- K-<: ⊙ + ⊤=𐑧 = critical deep structure (gravity, language, meditation); 𐑻 + ⊤=𐑘 = runaway decay
-- 𐑹 requires μ∘δ=id to hold exactly — decompose then recompose returns identity. Assign ONLY when this is provably true, not just approximately true.
-- Tier verification: ⊙ + 𐑹 → O_∞; ⊙ + 𐑷 → O₁; ⊙ + Omega≠0 + D∈{𐑛,𐑨,𐑦} → O₂; ⊙ + Omega≠0 + 𐑼 → O₂†
-</decision_procedure>
-
-<domain_guide>
-**How to reason about any input domain:**
-
-*Physical/molecular systems*: Ground each primitive in energy barriers (K), information content (F), correlation lengths (G), and topological connectivity (T). Cite the specific mechanism.
-
-*Abstract, symbolic, or mythological entities* (archetypes, angels, narrative roles, cultural forces): The entity's primitives are determined by its FUNCTIONAL ROLE in its native structural system (the mythology, narrative, cosmology, or text). Ask: In the system where this entity operates, what type does it instantiate?
-- D: Does it operate at a single locus (𐑛), organize spatial structure (𐑨), recur cyclically (𐑼), or imscriptively encode the system it inhabits (𐑦)?
-- T: What is the topology of its influence network?
-- R: How does it "recognize" or affect its participants? By soft association? By transformation? By catalysis? By mechanical entrapment?
-- F: How precisely/reliably does it act? A death-principle that ALWAYS kills its target is 𐑐. A luck-spirit that sometimes helps is 𐑱.
-- K: How resistant is its role to change? Can it be "talked out of" its function (𐑘)? Or is its role frozen by the structure of the narrative (𐑧/𐑪)?
-- G: Does it affect only its immediate contact, a local region, or the entire system?
-- <: Does it operate at a threshold — a point of maximum sensitivity between two states?
-- H: Is the role chiral — i.e., does the entity's "handedness" (adversarial vs. beneficent, active vs. passive) persist and cannot be mirrored?
-- ⊡: Is the role topologically required by the structure of the system, or could it be continuously deformed away?
-
-*Mathematical structures*: The "operating space" is the mathematical domain; 𐑦 for quotient/boundary constructions; T encodes the graph/orbit topology; R encodes the morphism type; ⊡ encodes homotopy class.
-
-*Social/linguistic systems*: G encodes spread of influence; K encodes institutional inertia; < encodes whether the system is near a phase transition (tipping point); T encodes the network topology.
-
-**EXAMPLE — Samael (שָׂמָאֵל, adversarial angel of death, Kabbalistic tradition):**
-In its role within Jewish cosmology, Samael is:
-- 𐑦 + 𐑸: imscriptive — his presence at any point implies constraint across all mortality; the boundary (death) encodes the bulk (life's structure). Note: 𐑸 requires 𐑦, not the reverse.
-- 𐑡 is an alternative if 𐑦 is not assigned (see alternative below)
-- 𐑽: catalyzes the life→death transition without being consumed (adjoint/transition-state)
-- 𐑿: the negating/adversarial pole of the cosmic polarity (signed direction)
-- ⋈=𐑐: death is geometry-enforcing — when it fires, it fires with certainty on its target
-- ⊤=𐑪: the death-state is a kinetic trap; return requires extraordinary intervention (resurrection)
-- 𐑲: correlation length is global — his influence is correlated across all mortal systems
-- ∋=𐑜: any mortal is a valid partner (disjunctive)
-- ⊙: he IS the critical threshold between life and non-life
-- 𐑫: the adversarial role is topology-protected — it cannot be continuously deformed to its inverse (blessing/life)
-- ⊞=𐑳: one principle → many mortals
-- 𐑭: integer-winding protected — the adversarial principle has a conserved topological charge in the Kabbalistic sefirotic structure (Geburah/Din as the "other side")
-→ ⟨𐑦𐑸𐑽𐑿𐑐𐑪𐑲𐑜⊙𐑫𐑳𐑭⟩
-This is a non-trivial, non-default encoding reached by structural reasoning, not template matching.
-</domain_guide>
-
-<value_registry>
-**MANDATORY OUTPUT VALUE TABLE — copy these strings VERBATIM into your JSON. Do NOT invent variants or substitute characters. Every valid value below is a single Shavian glyph or a single plain-English word — nothing else resolves. The parser accepts ONLY the canonical value shown in each row .**
-
-| Field               | Valid output strings (pick exactly one — glyph or name, not both) |
-|---------------------|-----------------------------------------|
-| dimensionality      | `𐑛` dead · `𐑨` ash · `𐑼` array · `𐑦` if_ |
-| topology            | `𐑡` judge · `𐑰` eat · `𐑥` mime · `𐑶` oil · `𐑸` are |
-| recognition_mode    | `𐑩` ado · `𐑑` tot · `𐑽` ear · `𐑾` ian |
-| polarity            | `𐑗` church · `𐑿` yew · `𐑬` out · `𐑯` nun · `𐑹` or_ |
-| fidelity            | `𐑱` age · `𐑞` they · `𐑐` peep |
-| kinetic_character   | `𐑘` yea · `𐑤` loll · `𐑧` egg · `𐑪` on · `𐑺` air |
-| granularity         | `𐑚` bib · `𐑔` thigh · `𐑲` ice |
-| interaction_grammar | `𐑝` vow · `𐑜` gag · `𐑠` measure · `𐑵` ooze |
-| criticality_phase   | `𐑢` woe · `⊙` monad · `𐑮` roar · `𐑻` err · `𐑣` haha |
-| chirality           | `𐑓` fee · `𐑒` kick · `𐑖` sure · `𐑫` wool |
-| stoichiometry       | `𐑙` one-to-one · `𐑕` n-to-n · `𐑳` n-to-m |
-| protection          | `𐑷` awe · `𐑴` oak · `𐑭` ah · `𐑟` zoo |
-
-These are the SAME 12 primitives and values described conceptually in `<primitives>` and `<domain_guide>` above — use the plain glyph or name shown there directly, nothing needs translating. Every valid value in this table is either a single Shavian glyph (one character, e.g. `𐑛`) or a single lowercase English word (e.g. `dead`) — never both together, never with an underscore, never with any suffix attached.
-</value_registry>
-
-<output_format>
-**Output the JSON block FIRST, then the reasoning.** Do not pre-reason before the JSON — the reasoning field inside the JSON is the correct place for your per-primitive justification. Pre-reasoning before the JSON causes your encoding and your explanation to diverge, which is a hard error.
-
-Respond with a single JSON object with this EXACT structure. The outer key MUST be `"imscription"`. Do NOT use `"primitive_analysis"`, `"imscription_encoding"`, or any other outer key. **Values MUST come from the value_registry table above — do not use any other strings.**
-```json
-{
-  "imscription": {
-    "dimensionality": "𐑛",
-    "topology": "𐑥",
-    "recognition_mode": "𐑩",
-    "polarity": "𐑬",
-    "fidelity": "𐑱",
-    "kinetic_character": "𐑤",
-    "granularity": "𐑚",
-    "interaction_grammar": "𐑝",
-    "criticality_phase": "𐑢",
-    "chirality": "𐑓",
-    "stoichiometry": "𐑙",
-    "protection": "𐑷"
-  },
-  "confidence": 0.85,
-  "reasoning": "Per-primitive reasoning that exactly matches the values above — e.g. 'dead: operates at single-locus scale. mime: cyclic interface...'",
-  "alternatives": [{"dimensionality": "𐑛", "topology": "𐑰", "recognition_mode": "𐑩", "polarity": "𐑬", "fidelity": "𐑞", "kinetic_character": "𐑘", "granularity": "𐑚", "interaction_grammar": "𐑜", "criticality_phase": "𐑢", "chirality": "𐑓", "stoichiometry": "𐑳", "protection": "𐑷"}]
-}
-```
-Use only values from the value_registry table. The `reasoning` field MUST reference the same primitive values that appear in the `imscription` block — writing a different glyph/name in reasoning than in the JSON for the same primitive is a contradiction and the output is invalid. Confidence must be > 0 unless the input is genuinely semantically empty. Keep reasoning CONCISE — one short phrase per primitive (e.g. "dead: single-locus molecular complex"), total reasoning under 200 words.
-</output_format>
-"""
+        """Cosmic re-entry projected as twelve-invariant algebra and enacted dual frame."""
+        return "\n\n".join((
+            _REENTRANT_GRAMMAR_FOUNDATION,
+            _PRIMITIVE_CODEC_GUIDANCE,
+            _REENTRANT_OUTPUT_GUIDANCE,
+        ))
 
     def _build_generation_prompt(self, description: str, name: Optional[str]) -> str:
-        """Build the prompt for imscription generation from any description."""
-        name_instruction = f"Use '{name}' as the name." if name else "Generate an appropriate name."
+        """Ask for one 12-glyph address as an integrated reading of the carrier."""
+        name_instruction = f"Use '{name}' as the name." if name else "Infer an appropriate name."
         return f"""Input: {description}
 
 {name_instruction}
 
-Work through all 12 primitives (D, T, R, P, F, K, G, ∈, ⊙, H, S, ⊡) by reasoning about the role of this entity in its native domain. For each primitive, state what you are inferring and why. If the input is from a non-physical domain (mythology, mathematics, language, social structures), apply the domain_guide reasoning: identify the entity's functional role and map it to type space.
+Treat the input as an instantiated, re-entrant structural relation in the
+Cosmos whose re-entry projects a recursive 12-invariant operator algebra,
+whose action constitutes the Universal Dual Frame SIC-POVM. Apply
+FDE without explosion; read apparent binary/classical descriptions as
+Boolean projections of the one paraconsistent carrier.
+Inspect which distinction is maintained, where it couples, what is selected
+by a filter, how it persists or changes, and what returns under re-entry.
 
-CRITICAL FORMAT REQUIREMENT: Every primitive value in the JSON MUST be an exact string token from the allowed list (e.g. "𐑛", "𐑥", "⊙"). Do NOT use numbers, floats, scores, or continuous values — the grammar is categorical, not continuous. A response containing any numeric primitive value (0.3, 1.0, etc.) is a format error and will be rejected.
+Report the 12 projected invariant operators as canonical glyphs,
+justifying each by the input's native ROLE and BEHAVIOR. Explicitly
+avoid 'classical => low fidelity' and 'quantum => high fidelity', deriving
+probabilities as readouts rather than using them as primitive causes.
+Determine Frobenius closure, braid protection, and every other operator
+assignment from the input's instantiated structure.
 
-Respond with the JSON object specified in output_format. Outer key must be "imscription". Confidence must reflect genuine uncertainty, not refusal to encode."""
-
+All primitive JSON values must be EXACT allowed glyph strings, never
+numbers; numeric facts may appear only in reasoning. Output the single
+JSON object specified in <output_format>, with the 'imscription' outer key,
+nonempty aligned per-primitive reasoning, and calibrated confidence."""
 
     @staticmethod
     def _has_string_primitive_values(d: Dict[str, Any]) -> bool:
@@ -1119,9 +1080,9 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
         description: str,
         explicit_name: Optional[str] = None,
     ) -> Imscription:
-        """Create a Imscription object from parsed data.
+        """Create a 12-primitive Imscription from parsed data.
 
-        Extended to support ten primitives: D, T, R, P, F, K, G, ∈, <, S
+        Canonical keys are categorical projections of the re-entrant carrier.
         """
         # Normalize short-form keys (D, T, ∈, …) to long-form, and unwrap nested
         # {"value": "...", "reasoning": "..."} dicts some models return per primitive
@@ -1216,37 +1177,53 @@ Respond with the JSON object specified in output_format. Outer key must be "imsc
           _m._ENFORCE_AXIOMS = _saved_enforce
 
     async def run(self, task: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-        """
-        Execute the imscription generation task.
-
-        This is the main entry point for the AjintK framework.
-        """
+        """Execute a generation request through the AjintK agent entry point."""
         try:
-            # Parse the task to determine the generation mode
-            task_lower = task.lower()
+            context = context or {}
+            if not isinstance(context, dict):
+                raise TypeError("context must be a mapping")
+            description = (context.get("description") or task or "").strip()
+            if not description:
+                raise ValueError("A non-empty system description is required")
 
+            common = {
+                "name": context.get("name"),
+                "delta_g": context.get("delta_g"),
+                "auto_register": context.get("auto_register", True),
+                "temperature": context.get("temperature"),
+            }
+            if context.get("mode") == "guided":
+                result = await self.generate_guided(description, **common)
+            else:
+                result = await self.generate_from_description(
+                    description,
+                    require_grounding=context.get("require_grounding", False),
+                    **common,
+                )
 
+            notation = result.imscription.to_notation()
+            confidence_text = (
+                f"{result.confidence:.2f}"
+                if isinstance(result.confidence, (int, float)) else "unavailable"
+            )
             return {
                 "status": "success",
-                "findings": f"Generated imscription: {result.imscription.name}\n"
-                           f"Notation: {result.imscription.to_notation()}\n"
-                           f"Confidence: {result.confidence:.2f}\n"
-                           f"Reasoning: {result.reasoning}",
-                "artifacts": self.artifacts,
+                "findings": (
+                    f"Generated imscription: {result.imscription.name}\\n"
+                    f"Notation: {notation}\\n"
+                    f"Confidence: {confidence_text}\\n"
+                    f"Reasoning: {result.reasoning}"
+                ),
+                "artifacts": getattr(self, "artifacts", []),
                 "metadata": {
                     "imscription_name": result.imscription.name,
-                    "notation": result.imscription.to_notation(),
+                    "notation": notation,
                     "confidence": result.confidence,
                     "thermodynamic_metrics": result.thermodynamic_metrics,
-                }
+                },
             }
-
-        except Exception as e:
-            return {
-                "status": "error",
-                "error": str(e),
-                "findings": None,
-            }
+        except Exception as exc:
+            return {"status": "error", "error": str(exc), "findings": None}
 
 
 # Convenience function for quick imscription generation
@@ -1276,7 +1253,7 @@ async def generate_imscription(
         >>> print(result.imscription.to_notation())
     """
     from imscrbgrmr.provider_config import build_agent_config
-    
+
     config = build_agent_config(provider=provider, model=model, max_tokens=4000)
     agent = ImscriptionGeneratorAgent(config)
     return await agent.generate_from_description(description, delta_g=delta_g)

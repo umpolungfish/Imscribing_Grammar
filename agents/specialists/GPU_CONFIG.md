@@ -61,7 +61,7 @@ Use this when:
 export IG_LOCAL_MODEL_DIR=/home/mrnob0dy666/models/Qwen3-4B
 ```
 
-Default: `/home/mrnob0dy666/models/Qwen3-1.7B`
+Default: `/home/mrnob0dy666/imsgct/.modelz/q38/Q3p8.gguf`
 
 ## Model Sizing: What Fits Where
 

@@ -250,7 +250,7 @@ class BridgeDisplay:
             lean_output = getattr(artifact, "lean_verification_output", "") or ""
             lean_status = ("Elaborated" if lean_verified is True else
                            "Rejected" if lean_verified is False else
-                           "Timed out after 180s" if "timed out" in lean_output else "Not verified")
+                           "Timed out" if "timed out" in lean_output else "Not verified")
             table.add_row("Lean scaffold", lean_status)
         def display_path(path):
             resolved = Path(path).absolute()
@@ -273,6 +273,210 @@ class BridgeDisplay:
                             border="green" if getattr(artifact, "lean_verified", None) else "yellow")
 
 
+def retained_message_view(messages, system=""):
+    """Reference exact repeated tool returns without removing their events.
+
+    The complete messages and measurements remain in the resident bank. The
+    first occurrence supplies the definition; subsequent occurrences retain
+    their own operation and index while referring to that identical output.
+    """
+    import hashlib
+    import os
+    from imscribing_grammar.resident_state_view import NativeJSONView
+    json_view = NativeJSONView(GLYPH.values())
+    seen = {}
+    assistant_definitions = {}
+    assistant_frames = []
+    # The API already carries the current system text. Historical task frames
+    # may reference exact slices of that same visible text without duplicating it.
+    task_frames = [(-1, f"Task frame: {system}\n")] if system else []
+    view = []
+    for index, message in enumerate(messages):
+        content = message["content"]
+        if message["role"] == "assistant":
+            if content in assistant_definitions:
+                original = assistant_definitions[content]
+                digest = hashlib.sha256(content.encode()).hexdigest()
+                content = f"Retained identical assistant output: message={original}; sha256={digest}"
+            else:
+                assistant_definitions[content] = index
+                matches = []
+                for prior_index, prior in assistant_frames:
+                    prefix = len(os.path.commonprefix([content, prior]))
+                    suffix = len(os.path.commonprefix([content[prefix:][::-1], prior[prefix:][::-1]]))
+                    matches.append((prefix + suffix, prior_index, prefix, suffix))
+                shared, prior_index, prefix, suffix = max(matches, default=(0, -1, 0, 0))
+                if shared >= 512:
+                    digest = hashlib.sha256(content.encode()).hexdigest()
+                    middle = content[prefix:len(content)-suffix if suffix else None]
+                    content = (f"Retained assistant continuation: source_message={prior_index}; "
+                               f"prefix_characters={prefix}; suffix_characters={suffix}; sha256={digest}\n{middle}")
+                assistant_frames.append((index, message['content']))
+        if message["role"] == "user" and content.startswith("MoDoT ") and " returned:\n" in content:
+            head, body = content.split(" returned:\n", 1)
+            if body in seen:
+                original = seen[body]
+                digest = hashlib.sha256(body.encode()).hexdigest()
+                content = f"{head} returned:\nRetained identical native output: message={original}; sha256={digest}"
+            else:
+                seen[body] = index
+                content = f"{head} returned:\nRetained native output definition: message={index}\n{json_view.encode_body(body)}"
+        original_content = message["content"]
+        if message["role"] == "user" and original_content.startswith("Task frame: "):
+            matches = []
+            for prior_index, prior in task_frames:
+                prefix = len(os.path.commonprefix([original_content, prior]))
+                suffix = len(os.path.commonprefix([original_content[prefix:][::-1], prior[prefix:][::-1]]))
+                matches.append((prefix + suffix, prior_index, prefix, suffix))
+            shared, prior_index, prefix, suffix = max(matches, default=(0, -1, 0, 0))
+            if shared >= 256:
+                digest = hashlib.sha256(original_content.encode()).hexdigest()
+                middle = original_content[prefix:len(original_content)-suffix if suffix else None]
+                definition = '; source_definition=Task frame: + current API system + newline' if prior_index == -1 else ''
+                content = (f"Retained task-frame continuation v2: message={index}; source_message={prior_index}; "
+                           f"prefix_characters={prefix}; suffix_characters={suffix}; sha256={digest}{definition}\n{middle}")
+            else:
+                content = f"Retained task-frame definition: message={index}\n{original_content}"
+                content = json_view.encode_text(content)
+            task_frames.append((index, original_content))
+        view.append({**message, "content": content})
+    return view
+
+
+def restore_retained_message_view(messages, system=""):
+    """Expand every reference for exact continuation/codec verification."""
+    import hashlib
+    from imscribing_grammar.resident_state_view import NativeJSONView
+    json_view = NativeJSONView()
+    restored = []
+    assistant_reference = re.compile(r"Retained identical assistant output: message=(\d+); sha256=([0-9a-f]{64})$")
+    assistant_delta = re.compile(r"Retained assistant continuation: source_message=(\d+); prefix_characters=(\d+); suffix_characters=(\d+); sha256=([0-9a-f]{64})\n(.*)", re.S)
+    definition = re.compile(r"Retained native output definition: message=(\d+)(?:; sha256=([0-9a-f]{64}))?\n(.*)", re.S)
+    pattern = re.compile(r"Retained identical native output: message=(\d+); sha256=([0-9a-f]{64})$")
+    task_definition = re.compile(r"Retained task-frame definition: message=(\d+)\n(.*)", re.S)
+    task_continuation = re.compile(r"Retained task-frame continuation: message=(\d+); prefix_message=(\d+); prefix_characters=(\d+); prefix_sha256=([0-9a-f]{64})\n(.*)", re.S)
+    task_delta = re.compile(r"Retained task-frame continuation v2: message=(\d+); source_message=(-?\d+); prefix_characters=(\d+); suffix_characters=(\d+); sha256=([0-9a-f]{64})(?:; source_definition=Task frame: \+ current API system \+ newline)?\n(.*)", re.S)
+    for message in messages:
+        content = json_view.decode_text(message["content"])
+        shared_delta = assistant_delta.fullmatch(content) if message['role'] == 'assistant' else None
+        if shared_delta:
+            original, prefix, suffix = map(int, shared_delta.group(1, 2, 3))
+            if original >= len(restored) or restored[original]['role'] != 'assistant':
+                raise ValueError('Assistant delta is outside its retained past')
+            source = restored[original]['content']
+            content = source[:prefix] + shared_delta[5] + (source[-suffix:] if suffix else '')
+            if hashlib.sha256(content.encode()).hexdigest() != shared_delta[4]:
+                raise ValueError('Assistant delta changed its source binding')
+        shared_assistant = assistant_reference.fullmatch(content) if message["role"] == "assistant" else None
+        if shared_assistant:
+            original = int(shared_assistant[1])
+            if original >= len(restored) or restored[original]["role"] != "assistant":
+                raise ValueError("Assistant reference is outside its retained past")
+            content = restored[original]["content"]
+            if hashlib.sha256(content.encode()).hexdigest() != shared_assistant[2]:
+                raise ValueError("Assistant reference changed its source binding")
+        delta = task_delta.fullmatch(content)
+        if delta:
+            index, prior_index, prefix, suffix = map(int, delta.group(1, 2, 3, 4))
+            if index != len(restored) or prior_index < -1 or prior_index >= len(restored) or (prior_index == -1 and not system):
+                raise ValueError("Task-frame delta is outside the retained past")
+            source = f"Task frame: {system}\n" if prior_index == -1 else restored[prior_index]["content"]
+            content = source[:prefix] + delta[6] + (source[-suffix:] if suffix else "")
+            if hashlib.sha256(content.encode()).hexdigest() != delta[5]:
+                raise ValueError("Task-frame delta changed its source binding")
+        defined = task_definition.fullmatch(content)
+        continued = task_continuation.fullmatch(content)
+        if defined:
+            if int(defined[1]) != len(restored):
+                raise ValueError("Task-frame definition changed its source position")
+            content = defined[2]
+        elif continued:
+            index, prior_index, length = map(int, continued.group(1, 2, 3))
+            if index != len(restored) or prior_index >= len(restored):
+                raise ValueError("Task-frame continuation is outside the retained past")
+            prefix = restored[prior_index]["content"][:length]
+            if hashlib.sha256(prefix.encode()).hexdigest() != continued[4]:
+                raise ValueError("Task-frame prefix changed its source binding")
+            content = prefix + continued[5]
+        if message["role"] == "user" and content.startswith("MoDoT ") and " returned:\n" in content:
+            head, body = content.split(" returned:\n", 1)
+            declared = definition.fullmatch(body)
+            if declared:
+                decoded_body = json_view.decode_body(declared[3])
+                if int(declared[1]) != len(restored) or (declared[2] and hashlib.sha256(decoded_body.encode()).hexdigest() != declared[2]):
+                    raise ValueError("Native output definition changed its source binding")
+                body = decoded_body
+                content = f"{head} returned:\n{body}"
+            match = pattern.fullmatch(body)
+            if match:
+                index = int(match[1])
+                if index >= len(restored):
+                    raise ValueError("Native output reference is outside the retained past")
+                original = restored[index]["content"].split(" returned:\n", 1)[1]
+                if hashlib.sha256(original.encode()).hexdigest() != match[2]:
+                    raise ValueError("Native output reference changed its source binding")
+                content = f"{head} returned:\n{original}"
+        restored.append({**message, "content": content})
+    return restored
+
+
+def banked_message_view(messages, system="", recent=2):
+    """Expose a continuation while retaining a retrievable, exact history bank."""
+    import hashlib
+    offset = max(0, len(messages)-recent)
+    raw = json.dumps(messages[:offset], ensure_ascii=False)
+    boundary = {'offset': offset, 'total_messages': len(messages),
+                'bank_sha256': hashlib.sha256(raw.encode()).hexdigest()}
+    content = ('Resident history bank boundary: ' + json.dumps(boundary) + '\n'
+               'Every original message remains in the same resident bank. Earlier records are held, not deleted. '
+               'For exact historical text, respond ONLY with '
+               '{"resident_history_read":{"message":0,"offset":0,"length":8192}}. '
+               'Message indices address the complete original history; request one page at a time. '
+               'The following recent records begin at the boundary offset. References inside those records '
+               'use recent-record indices; source_message=-1 refers to the current API system text.')
+    return [{'role': 'user', 'content': content}] + retained_message_view(messages[offset:], system)
+
+
+def restore_banked_message_view(view, bank, system=""):
+    import hashlib
+    header = view[0]['content'].split('\n', 1)[0]
+    boundary = json.loads(header.removeprefix('Resident history bank boundary: '))
+    offset = boundary['offset']
+    if type(offset) is not int or not 0 <= offset <= len(bank):
+        raise ValueError('Resident bank offset is outside its source history')
+    raw = json.dumps(bank[:offset], ensure_ascii=False)
+    if boundary['total_messages'] != len(bank) or hashlib.sha256(raw.encode()).hexdigest() != boundary['bank_sha256']:
+        raise ValueError('Resident bank boundary changed its retained history')
+    return bank[:offset] + restore_retained_message_view(view[1:], system)
+
+
+def resident_context_pages(messages, current, system="", page_bytes=4096):
+    """Bound the inference view; exact operands stay addressable in the bank.
+
+    A byte bound reserves room even for non-ASCII glyph tokenization. No
+    historical or current operand is deleted or rewritten in its source bank.
+    Negative read addresses identify the pending task (-1) and system (-2).
+    """
+    import hashlib
+    def page(text, address):
+        data=text.encode('utf-8')
+        if len(data)<=2*page_bytes:return text
+        first=data[:page_bytes].decode('utf-8',errors='ignore')
+        last=data[-page_bytes:].decode('utf-8',errors='ignore')
+        return (f'Retained operand: message={address}; utf8_bytes={len(data)}; '
+                f'sha256={hashlib.sha256(data).hexdigest()}. '
+                'The middle remains in the exact resident bank. Read it with '
+                '{"resident_history_read":{"message":'+str(address)+',"offset":0,"length":8192}}. '
+                'Read offsets and lengths count original characters.\n'
+                'BEGIN ORIGINAL OPERAND\n'+first+'\nHELD MIDDLE\n'+last+'\nEND ORIGINAL OPERAND')
+    boundary=banked_message_view(messages,system,recent=0)
+    for index in range(max(0,len(messages)-2),len(messages)):
+        message=messages[index]
+        boundary.append({**message,'content':page(message['content'],index)})
+    boundary.append({**current,'content':page(current['content'],-1)})
+    return boundary,page(system,-2)
+
+
 class BridgeSession:
     """Retain the starting agent and its complete inference/tool continuation."""
     def __init__(self, agent, display=None):
@@ -283,6 +487,8 @@ class BridgeSession:
         self.turn_count = 0
         self.display = display
         self.record_path = None
+        self.banked_inference = False
+        self.pending_inference = None
         self._ig_chain_name = agent.config.get("provider", "resident")
         self._call = agent.call_llm
 
@@ -293,13 +499,84 @@ class BridgeSession:
                 self.display.turn(self.turn_count)
             call_args = list(args)
             call_kwargs = dict(kwargs)
-            if isinstance(prompt, str) and self.messages:
-                carried_prompt = self.messages + [{"role": "user", "content": prompt}]
+            current_system = kwargs.get('system', '')
+            if isinstance(prompt, str) and self.messages and not self.banked_inference:
+                history = retained_message_view(self.messages, current_system)
+                if restore_retained_message_view(history, current_system) != self.messages:
+                    raise ValueError('Resident inference changed its retained history')
+                carried_prompt = history + [{"role": "user", "content": prompt}]
                 if "prompt" in call_kwargs or not call_args:
                     call_kwargs["prompt"] = carried_prompt
                 else:
                     call_args[0] = carried_prompt
-            response = await self._call(*call_args, **call_kwargs)
+            if isinstance(prompt, list) and not self.banked_inference:
+                current = {**prompt[-1], "content": f"Task frame: {kwargs.get('system', '')}\n{prompt[-1]['content']}"}
+                raw_prompt = prompt[:-1] + [current]
+                carried_prompt = retained_message_view(raw_prompt, current_system)
+                if restore_retained_message_view(carried_prompt, current_system) != raw_prompt:
+                    raise ValueError('Resident inference changed its retained history')
+                if (not carried_prompt[-1]["content"].startswith("Retained task-frame continuation v2:")
+                        or len(carried_prompt[-1]["content"]) >= len(prompt[-1]["content"])):
+                    carried_prompt[-1] = prompt[-1]
+                if "prompt" in call_kwargs or not call_args:
+                    call_kwargs["prompt"] = carried_prompt
+                else:
+                    call_args[0] = carried_prompt
+            for read_attempt in range(5):
+                if self.banked_inference:
+                    history = banked_message_view(self.messages, current_system, recent=0)
+                    if restore_banked_message_view(history, self.messages, current_system) != self.messages:
+                        raise ValueError('Resident bank changed its source history')
+                    current_message = prompt[-1] if isinstance(prompt, list) else {'role': 'user', 'content': prompt}
+                    self.pending_inference={'message':current_message,'system':current_system}
+                    pages,system_page=resident_context_pages(self.messages,current_message,current_system)
+                    # The byte bound leaves output capacity within the local
+                    # 65,536-token window without relying on chars/token guesses.
+                    if len(json.dumps(pages,ensure_ascii=False).encode())+len(system_page.encode())>48000:
+                        raise ValueError('Resident paged inference exceeds its input byte budget')
+                    self.save()
+                    call_kwargs['system']=system_page
+                    if 'prompt' in call_kwargs or not call_args:
+                        call_kwargs['prompt'] = pages
+                    else:
+                        call_args[0] = pages
+                try:
+                    response = await self._call(*call_args, **call_kwargs)
+                except Exception as exc:
+                    self.operations.append({"operation": "resident inference error", "output": f"{type(exc).__name__}: {exc}"})
+                    if any(marker in str(exc).lower() for marker in ('exceed_context_size_error', 'context size', 'context length', 'context window')) and not self.banked_inference:
+                        self.banked_inference = True
+                        self.operations.append({'operation': 'Resident bank boundary',
+                            'output': 'Context capacity reached. Complete history retained in the same resident bank; exact paged readout enabled.'})
+                        self.save()
+                        continue
+                    self.save()
+                    raise
+                try:
+                    request = json.loads(response)
+                except (TypeError, ValueError):
+                    request = None
+                if not isinstance(request, dict) or set(request) != {'resident_history_read'}:
+                    break
+                source_count = len(self.messages)
+                self.messages.append({'role': 'assistant', 'content': response})
+                self.operations.append({'operation': 'Resident history request', 'output': response})
+                self.save()
+                query = request['resident_history_read']
+                if not isinstance(query, dict):
+                    raise ValueError('Resident history read requires a message and character page')
+                index, offset, length = (query.get(k, default) for k, default in [('message', -1), ('offset', 0), ('length', 8192)])
+                if any(type(x) is not int for x in [index, offset, length]) or not (-2 <= index < source_count) or (index < 0 and self.pending_inference is None) or offset < 0 or not 1 <= length <= 8192:
+                    raise ValueError('Resident history read is outside its retained bank or page bound')
+                original = (self.pending_inference['message'] if index == -1 else {'role':'system','content':self.pending_inference['system']} if index == -2 else self.messages[index])
+                self.tool_return('Resident history read', json.dumps({'message': index, 'role': original['role'],
+                    'offset': offset, 'total_characters': len(original['content']),
+                    'text': original['content'][offset:offset+length]}, ensure_ascii=False))
+                self.turn_count += 1
+                if self.display:
+                    self.display.turn(self.turn_count)
+            else:
+                raise RuntimeError('Resident inference held after its bounded history readout; full bank retained')
             if self.display:
                 self.display.response(self.turn_count, response)
             message = prompt[-1] if isinstance(prompt, list) else {"role": "user", "content": prompt}
@@ -361,6 +638,8 @@ class BridgeSession:
                 "model": getattr(self.agent.provider, "model", None),
                 "messages": self.messages, "operations": self.operations,
                 "reentry": getattr(self, "reentry_state", None),
+                "banked_inference": self.banked_inference,
+                "pending_inference": self.pending_inference,
             }, ensure_ascii=False, indent=2))
 
 
@@ -610,6 +889,8 @@ async def run_bridge(
     artifact_dir: Optional[Path] = None,
     display: Optional[BridgeDisplay] = None,
     reentry_rounds: int = 3,
+    resume_session: Optional[Path] = None,
+    execution_feedback: Optional[str] = None,
 ) -> BridgeResult:
     
     result = BridgeResult(description=description, imscription_name=name or "")
@@ -625,26 +906,60 @@ async def run_bridge(
         session = BridgeSession(agent_class(agent_config), display)
         session_bank = Path(artifact_dir or _OB3ECT_DIGITAL) / "resident_sessions"
         session_bank.mkdir(parents=True, exist_ok=True)
-        session.record_path = session_bank / f"{session.session_id}.json"
+        restored = None
+        if resume_session is not None:
+            if not guided or axiom_guided:
+                raise ValueError("Resident checkpoint restore currently requires the guided native gate")
+            restored = json.loads(Path(resume_session).read_text())
+            if restored["provider"] != agent_config.get("provider"):
+                raise ValueError("Resident continuation must keep its source provider")
+            if restored.get("model") != getattr(session.agent.provider, "model", None):
+                raise ValueError("Resident continuation must keep its source model")
+            if restored["agent_id"] != session.agent.agent_id or restored["reentry"]["subject"] != description:
+                raise ValueError("Resident continuation belongs to another agent or subject")
+            session.session_id = restored["session_id"]
+            session.messages = restored["messages"]
+            session.banked_inference = bool(restored.get('banked_inference', False))
+            session.operations = restored["operations"]
+            session.turn_count = sum(m["role"] == "assistant" for m in session.messages)
+            session.reentry_state = restored["reentry"]
+            session.record_path = Path(resume_session)
+        else:
+            session.record_path = session_bank / f"{session.session_id}.json"
         result.session_id = session.session_id
         result.operations = session.operations
         selected_model = (getattr(session.agent.provider, "model", None) or
                           getattr(session.agent.provider, "model_path", None) or agent_config.get("model"))
         display.heading(description, provider, selected_model, session.session_id)
         started = time.monotonic()
-        with display.stage(1, "Generate imscription"):
-            imscription_result = await generate_imscription(
-                description=description,
-                name=name,
-                provider=provider,
-                model=model,
-                delta_g=delta_g,
-                guided=guided,
-                axiom_guided=axiom_guided,
-                temperature=temperature,
-                agent=session.agent,
-            )
-        
+        with display.stage(1, "Restore retained imscription" if restored else "Generate imscription"):
+            if restored:
+                from imscribing_grammar.imscrbgrmr.models import Imscription
+                from imscribing_grammar.agents.imscribe_generator_agent import validate_structural
+                last = restored["reentry"]["rounds"][-1]
+                entry = Imscription.from_dict({"name": name, "description": description,
+                                              **parse_tuple_to_dict(restored["reentry"]["current_tuple"])})
+                failures = validate_structural(entry)
+                if (last["returned_grounding"] == "full") != (not failures):
+                    raise ValueError("Restored Type no longer agrees with its native grounding receipt")
+                imscription_result = ImscriptionGenerationResult(imscription=entry,
+                    confidence=1.0, reasoning=last["returned_reasoning"],
+                    grounding_status=last["returned_grounding"], failed_primitives=failures,
+                    metadata={"restored_guided_gate": str(resume_session)})
+                result.reentry = restored["reentry"]
+                result.imscription_word = restored["reentry"]["rounds"][0]["type_word"]
+                result.ob3ect_bootstrap_word = restored["reentry"]["continuation"]["previous_imasm_word"]
+                persisted = [op["output"] for op in session.operations if op["operation"] == "artifact persisted"]
+                if persisted:
+                    result.artifact_path = session.artifact_path = persisted[-1]
+                display.detail("Restored", f"{session.turn_count} model turns and {len(session.operations)} native returns")
+            else:
+                imscription_result = await generate_imscription(
+                    description=description, name=name, provider=provider, model=model,
+                    delta_g=delta_g, guided=guided, axiom_guided=axiom_guided,
+                    temperature=temperature, agent=session.agent)
+        if execution_feedback:
+            session.tool_return("Executing folding return", execution_feedback)
         result.imscription_name = imscription_result.imscription.name
         result.imscription_tuple = parse_imscription_tuple(imscription_result)
         display.detail(result.imscription_name, result.imscription_tuple)
@@ -684,7 +999,8 @@ async def run_bridge(
                     steps, nesting_return=lambda record: session.tool_return(
                         "IMASM nesting", json.dumps(record, ensure_ascii=False))),
                 logical_expressions=lambda tuple_text: navigator_logical_expressions(
-                    tuple_text, result.imscription_name))
+                    tuple_text, result.imscription_name),
+                resume_state=restored["reentry"] if restored else None)
         with display.stage(3, "Retain the coupled return"):
             result.ob3ect_artifact = artifact
             result.artifact_path = session.artifact_path
@@ -746,6 +1062,8 @@ Examples:
     parser.add_argument("--artifact-dir", type=Path, help="Artifact output directory")
     parser.add_argument("--output", "-o", type=Path, help="Output JSON file for bridge result")
     parser.add_argument("--reentry-rounds", type=int, default=3, help="Retained Type/IMASM rounds before returning a held continuation")
+    parser.add_argument("--resume-session", type=Path, help="Continue the same resident from its retained native checkpoint")
+    parser.add_argument("--execution-feedback", type=Path, help="Return an executing carrier observation into this resident")
     parser.add_argument("--verbose", action="store_true", help="Include exception tracebacks")
     parser.add_argument("--json", action="store_true", help="Print complete JSON to stdout; progress goes to stderr")
     
@@ -781,6 +1099,8 @@ Examples:
         artifact_dir=args.artifact_dir,
         display=display,
         reentry_rounds=args.reentry_rounds,
+        resume_session=args.resume_session,
+        execution_feedback=args.execution_feedback.read_text() if args.execution_feedback else None,
     ))
     
     output_data = {
