@@ -43,6 +43,18 @@ from true_agentic_agent import (
 )
 from session_db import get_session_db
 
+# ── Dialetheic network spider (inclosure_telemetry) ──
+from inclosure_telemetry.spider import (
+    spider_walk as _spider_walk_fn,
+    run_default as _spider_run_default,
+    SPIDER_ID,
+    SpiderReport,
+    filter_spider,
+)
+from inclosure_telemetry.engine import Ledger, Rule, Event, close, closure_certificate
+from inclosure_telemetry.lattice import Atom, name, parse, graph_neighbors
+from inclosure_telemetry.trace import trace_all
+
 _CONSTITUTION = Path(__file__).resolve().parent / "BUGHUNTER_CONSTITUTION.md"
 
 
@@ -90,6 +102,70 @@ class BughunterOperator(TrueAgenticAgent):
         return db.list_sessions(limit=limit)
 
 
+
+    # ── Dialetheic network spider (inclosure_telemetry) ──
+    def spider_run(self, ticks: int = 500, seed: str = "B",
+                   spider_id: str = SPIDER_ID,
+                   events_path: str | None = None,
+                   rules_path: str | None = None,
+                   weights: dict | None = None) -> dict:
+        """Walk the dialetheic B-seam spider and return its report."""
+        from pathlib import Path as _Path
+        from inclosure_telemetry.engine import Rule as _Rule
+        import json as _json
+        rules = ()
+        if rules_path is not None:
+            rules = tuple(_Rule.from_dict(r) for r in _json.loads(_Path(rules_path).read_text()))
+        report = _spider_run_default(
+            seed=parse(seed),
+            ticks=ticks,
+            out_path=_Path(events_path) if events_path else None,
+            rules=rules,
+            spider_id=spider_id,
+            weights=weights,
+        )
+        return {
+            'spider_id': report.spider_id,
+            'events_written': report.events_written,
+            'seam_counts': {
+                'classical': report.seam_counts.get(0, 0),
+                'boundary_B': report.seam_counts.get(1, 0),
+                'interior_B': report.seam_counts.get(2, 0),
+            },
+            'final_atom': name(report.final_atom),
+            'certificate': report.certificate,
+        }
+
+    def spider_trace(self, events_path: str, spider_id: str = SPIDER_ID,
+                     rules_path: str | None = None) -> dict:
+        """Trace a spider's event ledger back to source events."""
+        from pathlib import Path as _Path
+        from inclosure_telemetry.engine import Ledger as _Ledger, Rule as _Rule
+        import json as _json
+        ledger = _Ledger()
+        with _Path(events_path).open(encoding='utf-8') as fh:
+            for line in fh:
+                if line.strip():
+                    ledger.append(Event.from_dict(_json.loads(line)))
+        rules = ()
+        if rules_path is not None:
+            rules = tuple(_Rule.from_dict(r) for r in _json.loads(_Path(rules_path).read_text()))
+        sub = filter_spider(ledger, spider_id)
+        if not sub.events:
+            raise KeyError(f'no events for spider {spider_id!r}')
+        result = close(sub.projection(), rules)
+        return {
+            'spider_id': spider_id,
+            'event_count': len(sub.events),
+            'subjects': sorted(result.states),
+            'lineage': trace_all(sub, result),
+        }
+
+    def spider_diagnose(self, system: str, environment: str) -> dict:
+        """§33 diagnostic lookup on the spider's own state."""
+        from inclosure_telemetry.diagnostics import diagnose as _diagnose
+        return _diagnose(system, environment)
+
 def main():
     import argparse
     p = argparse.ArgumentParser(
@@ -119,6 +195,16 @@ def main():
                    help="List saved sessions and exit.")
     p.add_argument("--no-save", action="store_true",
                    help="Do not save the session.")
+    p.add_argument('--spider-run', action='store_true', help='Run the dialetheic B-seam spider.')
+    p.add_argument('--spider-ticks', type=int, default=500, help='Spider tick count.')
+    p.add_argument('--spider-seed', default='B', help='Spider starting site (T/F/B/N/TB/A/NONE).')
+    p.add_argument('--spider-id', default='spider', help='Spider identifier.')
+    p.add_argument('--spider-events', default='', help='Path to write/read spider event JSONL.')
+    p.add_argument('--spider-rules', default='', help='Path to JSON closure rules for spider.')
+    p.add_argument('--spider-trace', action='store_true', help='Trace spider events back to source.')
+    p.add_argument('--spider-diag-system', default='', help='Spider diagnose system (N/T/F/B/TB/A).')
+    p.add_argument('--spider-diag-env', default='', help='Spider diagnose environment (N/T/F/B/TB/A).')
+
     a = p.parse_args()
     # The flag and IG_STREAM are one switch: the reader in true_agentic_agent
     # consults the environment, so setting it here makes both spellings work.
@@ -160,16 +246,61 @@ def main():
     if a.api_key:
         kw["api_key"] = a.api_key
     # verbose is the base's knob; quiet is this launcher's flag, resolved here.
-    # output has no constructor slot — the trajectory is written after the run.
+    # output has no constructor slot — the trajectory is written after the run,
+    # as the other operators do, not passed in.
     kw["verbose"] = not a.quiet
 
-    op = BughunterOperator(**kw)
-
-    # list_sessions returns row dicts; the most recent id is [0]["id"], not [0][0].
+    # Resolve the session to continue from, if any.
     _recent = BughunterOperator.list_sessions(1)
     sid = a.session_id or (_recent[0]["id"] if (a.continue_ and _recent) else "")
+
+    preloaded_messages: list | None = None
+    preloaded_trajectory: list | None = None
+    starting_winding_offset = 0
     if sid:
-        op._session_id = sid
+        _meta, _messages, _windings = BughunterOperator.load_session(sid)
+        preloaded_messages = _messages
+        preloaded_trajectory = _windings
+        starting_winding_offset = len(_windings)
+        kw["preloaded_messages"] = preloaded_messages
+        kw["preloaded_trajectory"] = preloaded_trajectory
+        kw["starting_winding_offset"] = starting_winding_offset
+
+
+    op = BughunterOperator(**kw)
+    op._session_id = sid
+    # ── Spider CLI dispatch ──
+    spider_mode = any([
+        getattr(a, 'spider_run', False),
+        getattr(a, 'spider_trace', False),
+        bool(getattr(a, 'spider_diag_system', '')) or bool(getattr(a, 'spider_diag_env', '')),
+    ])
+    if spider_mode:
+        if not op._session_id:
+            op._session_id = sid or 'spider-cli'
+        if a.spider_run:
+            result = op.spider_run(
+                ticks=a.spider_ticks,
+                seed=a.spider_seed,
+                spider_id=a.spider_id,
+                events_path=a.spider_events or None,
+                rules_path=a.spider_rules or None,
+            )
+        elif a.spider_trace:
+            result = op.spider_trace(
+                events_path=a.spider_events,
+                spider_id=a.spider_id,
+                rules_path=a.spider_rules or None,
+            )
+        else:
+            result = op.spider_diagnose(
+                system=a.spider_diag_system,
+                environment=a.spider_diag_env,
+            )
+        import json as _json
+        print(_json.dumps(result, indent=2, ensure_ascii=False))
+        return
+
 
     def _one(task):
         result = asyncio.run(op.run(task))

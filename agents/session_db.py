@@ -211,28 +211,52 @@ class SessionDB:
 
             # --- windings rows ---
             for cyc in agent.trajectory:
-                dr = cyc.dual_result
-                conn.execute("""
-                    INSERT OR REPLACE INTO windings
-                        (session_id, winding, ts, think_reasoning, action_name,
-                         action_input, tool_output, verify_output, frobenius_closed,
-                         update_note, done, conclusion, b4_result, dialetheic,
-                         para_vm_snapshot)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                """, (
-                    sid, cyc.winding, cyc.ts, _scrub(cyc.think_reasoning), cyc.action_name,
-                    json.dumps(_scrub(cyc.action_input), ensure_ascii=False),
-                    _scrub(dr.tool_output) if dr else None,
-                    dr.verify_output if dr else None,
-                    1 if cyc.frobenius_closed else 0,
-                    cyc.update_note,
-                    1 if cyc.done else 0,
-                    _scrub(cyc.conclusion),
-                    cyc.b4_result,
-                    1 if cyc.dialetheic else 0,
-                    json.dumps(cyc.para_vm_snapshot, ensure_ascii=False)
-                    if cyc.para_vm_snapshot else None,
-                ))
+                if isinstance(cyc, dict):
+                    dr = cyc.get('dual_result') or {}
+                    conn.execute("""
+                        INSERT OR REPLACE INTO windings
+                            (session_id, winding, ts, think_reasoning, action_name,
+                             action_input, tool_output, verify_output, frobenius_closed,
+                             update_note, done, conclusion, b4_result, dialetheic,
+                             para_vm_snapshot)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        sid, cyc.get('winding'), cyc.get('ts'), _scrub(cyc.get('think_reasoning')), cyc.get('action_name'),
+                        json.dumps(_scrub(cyc.get('action_input')), ensure_ascii=False),
+                        _scrub(dr.get('tool_output')) if dr else None,
+                        dr.get('verify_output') if dr else None,
+                        1 if cyc.get('frobenius_closed') else 0,
+                        cyc.get('update_note'),
+                        1 if cyc.get('done') else 0,
+                        _scrub(cyc.get('conclusion')),
+                        cyc.get('b4_result'),
+                        1 if cyc.get('dialetheic') else 0,
+                        json.dumps(cyc.get('para_vm_snapshot'), ensure_ascii=False)
+                        if cyc.get('para_vm_snapshot') else None,
+                    ))
+                else:
+                    dr = cyc.dual_result
+                    conn.execute("""
+                        INSERT OR REPLACE INTO windings
+                            (session_id, winding, ts, think_reasoning, action_name,
+                             action_input, tool_output, verify_output, frobenius_closed,
+                             update_note, done, conclusion, b4_result, dialetheic,
+                             para_vm_snapshot)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        sid, cyc.winding, cyc.ts, _scrub(cyc.think_reasoning), cyc.action_name,
+                        json.dumps(_scrub(cyc.action_input), ensure_ascii=False),
+                        _scrub(dr.tool_output) if dr else None,
+                        dr.verify_output if dr else None,
+                        1 if cyc.frobenius_closed else 0,
+                        cyc.update_note,
+                        1 if cyc.done else 0,
+                        _scrub(cyc.conclusion),
+                        cyc.b4_result,
+                        1 if cyc.dialetheic else 0,
+                        json.dumps(cyc.para_vm_snapshot, ensure_ascii=False)
+                        if cyc.para_vm_snapshot else None,
+                    ))
 
         return sid
 

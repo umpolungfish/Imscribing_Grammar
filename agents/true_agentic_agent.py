@@ -3413,6 +3413,45 @@ TOOL_SCHEMAS = [
         ["summary"],
     ),
     _fn(
+        "spider_run",
+        (
+            "Walk the dialetheic B-seam spider and return its report. Runs spider_walk "
+            "over the inclosure_telemetry lattice for a given number of ticks."
+        ),
+        {
+            "ticks": {"type": "integer", "description": "Spider tick count (default 500)."},
+            "seed": {"type": "string", "description": "Spider starting site (T/F/B/N/TB/A/NONE, default B)."},
+            "spider_id": {"type": "string", "description": "Spider identifier (default 'spider')."},
+            "events_path": {"type": "string", "description": "Path to write/read spider event JSONL."},
+            "rules_path": {"type": "string", "description": "Path to JSON closure rules for spider."},
+            "weights": {"type": "string", "description": "JSON string of weights dict."},
+        },
+        [],
+    ),
+    _fn(
+        "spider_trace",
+        (
+            "Trace a spider's event ledger back to source events through closure."
+        ),
+        {
+            "events_path": {"type": "string", "description": "Path to spider event JSONL file."},
+            "spider_id": {"type": "string", "description": "Spider identifier (default 'spider')."},
+            "rules_path": {"type": "string", "description": "Path to JSON closure rules for spider."},
+        },
+        ["events_path"],
+    ),
+    _fn(
+        "spider_diagnose",
+        (
+            "§33 diagnostic lookup on the spider's own state."
+        ),
+        {
+            "system": {"type": "string", "description": "Diagnose system (N/T/F/B/TB/A)."},
+            "environment": {"type": "string", "description": "Diagnose environment (N/T/F/B/TB/A)."},
+        },
+        ["system", "environment"],
+    ),
+    _fn(
         "gmonad",
         (
             "G-mOMonadOS GPU-native command dispatcher. "
@@ -4530,6 +4569,10 @@ class TrueAgenticAgent:
             # tool messages answering them; restoring that verbatim reproduces
             # the orphan and the next request is rejected.
             self._messages = self._well_formed_tail(list(preloaded_msgs))
+            # SYSTEM PROMPT IS MISSING ON RESUME — the preloaded branch never
+            # prepended it, so the agent woke up with no constitution, no tool
+            # roster, no identity. Restore it as message 0 every time.
+            self._messages.insert(0, {"role": "system", "content": system_content})
             self._messages.append({
                 "role": "user",
                 "content": (
@@ -5087,6 +5130,14 @@ class TrueAgenticAgent:
         emit_fn   = _EMIT_FNS.get(action_name)
         verify_fn = _VERIFY_FNS.get(action_name)
 
+        # Specialist-bound methods (spider_run, spider_trace, spider_diagnose)
+        # are not in TOOL_SCHEMAS/_EMIT_FNS because they live on subclasses.
+        # Fall back to a bound method on self so the LLM can call them normally.
+        if emit_fn is None:
+            _bound = getattr(self, action_name, None)
+            if callable(_bound):
+                emit_fn = _bound
+
         unknown_tool = emit_fn is None
         if unknown_tool:
             # Say what it is and where the real one lives. Most "unknown" names
@@ -5464,9 +5515,13 @@ class TrueAgenticAgent:
             )
         # B4 dialetheic stats if ParaVerify is enabled and there are windings
         if _PARAVERIFY_ENABLED and self.trajectory:
-            d_count = sum(1 for c in self.trajectory if c.dialetheic)
+            def _dial(c):
+                return c.get('dialetheic') if isinstance(c, dict) else getattr(c, 'dialetheic', False)
+            def _da(c):
+                return c.get('para_vm_snapshot') is not None if isinstance(c, dict) else getattr(c, 'para_vm_snapshot', None) is not None
+            d_count = sum(1 for c in self.trajectory if _dial(c))
             total = len(self.trajectory) or 1
-            da_count = sum(1 for c in self.trajectory if c.para_vm_snapshot is not None)
+            da_count = sum(1 for c in self.trajectory if _da(c))
             lines.append(
                 f"  │  dialetheic: {d_count}/{total} windings ({d_count/total:.0%})  "
                 f"— O_∞ signature at boundary"
@@ -6665,6 +6720,14 @@ def _vox_verify(emit_input: Dict, emit_output: str,
 # Register vox in dispatch tables
 _EMIT_FNS["vox"] = _vox_emit
 _VERIFY_FNS["vox"] = _vox_verify
+
+
+
+# Register spider tool emit/verify fns (bound methods on BughunterOperator subclass)
+for _spider_fn in ("spider_run", "spider_trace", "spider_diagnose"):
+    _EMIT_FNS.setdefault(_spider_fn, lambda _ai, _name=_spider_fn: f"(spider tool {_name} — call via BughunterOperator bound method)")
+    _VERIFY_FNS.setdefault(_spider_fn, lambda _ei, _eo, _va: ("(spider tool — Frobenius trivially closed)", True))
+
 
 # Vox tool schema (appended to TOOL_SCHEMAS)
 _VOX_SCHEMA = _fn(
