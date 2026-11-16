@@ -229,9 +229,9 @@ footer {
     </div>
     <div class="axioms-bar">
       <span class="pill gold">M = ⟨S, ≤_t, ≤_f, ≤_i, Inc, μ, δ, W⟩</span>
-      <span class="pill cyan">49 Shavian Types + ⊙ = 50 Gates</span>
+      <span class="pill cyan">49 Types + ⊙ = 50 Gates</span>
       <span class="pill crimson">B-state native · No explosion</span>
-      <span class="pill emerald">12 Axes = 12 IMASM Opcodes</span>
+      <span class="pill emerald">12 Axes = 12 IMASM Primitive Operators</span>
       <a class="pill" href="https://github.com/umpolungfish/Imscribing_Grammar" target="_blank" rel="noopener">GitHub Repo ↗</a>
       <a class="pill" href="https://github.com/umpolungfish/p4rakernel" target="_blank" rel="noopener">p4rakernel (Lean 4) ↗</a>
       <a class="pill" href="https://imscribe.com/" target="_blank" rel="noopener">imscribe.com ↗</a>
@@ -239,8 +239,8 @@ footer {
       <a class="pill" href="https://orcid.org/0000-0003-0003-0552" target="_blank" rel="noopener">ORCID ↗</a>
     </div>
     <div class="epigraph">
-      "distinction cuts the world apart / topos sews the bleeding heart / the cloak they weave between the two / its warp and woof define what's True."
-      — <span class="shav">𐑦</span> (VINIT · if) &amp; <span class="shav">𐑸</span> (TANCH · are), Shavian Notation Spec v0.7.0
+      "distinction cuts the world apart / topos sews the bleeding heart / the cloak they weave between the two / its warp and woof Inclosing you"
+      — <span class="shav">𐑦</span> (VINIT · if) &amp; <span class="shav">𐑸</span> (TANCH · are), Notation Spec v0.7.0
     </div>
   </header>
 
@@ -327,7 +327,7 @@ footer {
             <label class="lbl">1 · Grammar (<span class="mono">define</span>)</label>
             <div id="vGrammar" class="verdict-box">—</div>
           </div>
-          <div>
+          <div> 
             <label class="lbl">2 · Close Condition (<span class="mono">check</span>)</label>
             <div id="vClose" class="verdict-box">—</div>
           </div>
@@ -983,7 +983,7 @@ function renderMZI() {
 // === REFERENCE & REPO CONSTELLATION ===
 function initReferenceTable() {
   document.querySelector("#refTable tbody").innerHTML = AXES.map((ax,idx)=>{
-    const chips = ax.vals.map((v,vi)=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed #1c2230;"><span><span class="shav" style="color:var(--gold);font-size:1.15em;">${v.g}</span> <span class="mono">${vi+1}. ${v.n} (${v.u})</span> <span style="color:var(--muted);">— ${v.k}</span></span><button type="button" style="padding:2px 8px;font-size:11px;" onclick="loadPreset('${v.p}','protocol',2,'B');location.hash='#imasm';">Load ${v.p}</button></div>`).join("");
+    const chips = ax.vals.map((v,vi)=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed #1c2230;"><span><span class="shav" style="color:var(--gold);font-size:1.15em;">${v.g}</span> <span class="mono">${v.n}</span> <span style="color:var(--muted);">— ${v.k}</span></span><button type="button" style="padding:2px 8px;font-size:11px;" onclick="loadPreset('${v.p}','protocol',2,'B');location.hash='#imasm';">Load ${v.p}</button></div>`).join("");
     return `<tr><td class="mono">${idx}</td><td class="mono"><span style="color:var(--gold);font-size:16px;">${ax.sym}</span> ${ax.name} (${ax.short})<br><span style="color:var(--muted);font-size:11px;">${ax.val}</span></td><td class="mono">${ax.axis}<br><span style="color:${ax.work?'var(--cyan)':'var(--muted)'};font-size:11px;">Work: ${ax.work?'YES':'no (inert)'}</span></td><td>${chips}</td></tr>`;
   }).join("");
 }
