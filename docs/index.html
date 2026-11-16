@@ -239,6 +239,84 @@ footer {
   color: var(--muted); font-family: var(--mono); font-size: 11px;
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px;
 }
+
+
+/* === Calculus Ratiocinator (scoped) === */
+
+
+.calc-ratiocinator *{margin:0;padding:0;box-sizing:border-box}
+.calc-ratiocinator html, .calc-ratiocinator body{background:#0b0b12;color:#f0ead8;font-family:'Hack',monospace;overflow-x:hidden}
+.calc-ratiocinator #calc-layout{display:grid;grid-template-columns:340px 1fr;height:100vh;width:100vw}
+.calc-ratiocinator #calc-sidebar{background:#12101e;border-right:1px solid #2a2740;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
+.calc-ratiocinator #calc-main{padding:20px;background:#0b0b12;display:grid;grid-template-columns:1fr 360px;grid-template-rows:auto auto 1fr;gap:12px;overflow:hidden}
+.calc-ratiocinator h1{color:#e8b84b;font-size:18px;margin-bottom:2px}
+.calc-ratiocinator h2{color:#c8b8e0;font-size:14px;margin:12px 0 6px;border-bottom:1px solid #2a2740;padding-bottom:4px;flex-shrink:0}
+.calc-ratiocinator select{width:100%;background:#1e1c2e;color:#f0ead8;border:1px solid #3a3550;border-radius:4px;padding:6px 8px;font-family:'Hack',monospace;font-size:12px;margin-bottom:6px}
+.calc-ratiocinator select option{background:#1e1c2e}
+.calc-ratiocinator input{width:100%;background:#1e1c2e;color:#f0ead8;border:1px solid #3a3550;border-radius:4px;padding:6px 8px;font-family:inherit;font-size:12px;margin:4px 0}
+.calc-ratiocinator select optgroup{background:#12101e;color:#8a84b0;font-style:normal}
+.calc-ratiocinator textarea{width:100%;background:#1e1c2e;color:#f0ead8;border:1px solid #3a3550;border-radius:4px;padding:6px 8px;font-family:'Hack',monospace;font-size:14px;height:60px;margin:4px 0;letter-spacing:2px}
+.calc-ratiocinator .btn{background:#2A2740;color:#f0ead8;border:1px solid #3a3550;border-radius:4px;padding:5px 12px;cursor:pointer;font-size:11px;margin:2px;font-family:'Hack',monospace}
+.calc-ratiocinator .btn:hover{background:#3a3550;border-color:#a84bb8}
+.calc-ratiocinator .tag{display:inline-block;padding:2px 8px;border-radius:3px;font-size:10px;margin:2px;font-weight:bold}
+.calc-ratiocinator .tag-pass{background:#1a3a1a;color:#6f6;border:1px solid #2a5a2a}
+.calc-ratiocinator .tag-fail{background:#3a1a1a;color:#f66;border:1px solid #5a2a2a}
+.calc-ratiocinator .tag-par{background:#2a1a3a;color:#a8f;border:1px solid #3a2a5a}
+.calc-ratiocinator .tag-seq{background:#1a2a3a;color:#6af;border:1px solid #2a3a5a}
+.calc-ratiocinator .cyc{border-top:1px solid #2a2740;margin-top:8px;padding-top:8px}
+.calc-ratiocinator .cyc table{border-collapse:collapse;width:100%;font-size:10px}
+.calc-ratiocinator .cyc th{color:#8a84b0;font-weight:normal;text-align:left;padding:1px 6px 1px 0}
+.calc-ratiocinator .cyc td{padding:1px 6px 1px 0;white-space:nowrap}
+.calc-ratiocinator .cyc tr.row{cursor:pointer}.cyc tr.row:hover{background:#242238}
+.calc-ratiocinator .cyc tr.cur{background:#2a2740;color:#fff}
+.calc-ratiocinator .cyc .w{letter-spacing:1px;font-size:12px}
+.calc-ratiocinator .cyc .wrap{color:#a84bb8}
+.calc-ratiocinator .tag-info{background:#1e1c2e;color:#c8b8e0;border:1px solid #3a3550}
+.calc-ratiocinator #ruleset-box{background:#1a1828;border:1px solid #2a2740;border-radius:6px;padding:10px;margin:10px 0;font-size:11px;line-height:1.6;color:#f0ead8;flex-shrink:0}
+.calc-ratiocinator #ruleset-box .gr{display:flex;gap:6px;margin:2px 0}
+.calc-ratiocinator #ruleset-box .gl{color:#8a84b0;width:24px}
+.calc-ratiocinator #ruleset-box .gv{color:#f0ead8}
+.calc-ratiocinator #calc-rslt-box{background:#1a1828;border:1px solid #2a2740;border-radius:6px;padding:10px;margin:10px 0;font-size:11px;color:#f0ead8;flex-shrink:0}
+
+.calc-ratiocinator #calc-right-col{display:flex;flex-direction:column;gap:12px;overflow:hidden;grid-column:2;grid-row:3}
+.calc-ratiocinator #calc-cfg-box{background:#1a1828;border:1px solid #2a2740;border-radius:6px;padding:12px;font-size:11px;line-height:1.6;color:#f0ead8;flex-grow:1;overflow-y:auto}
+.calc-ratiocinator #calc-static-view{width:100%;height:240px;background:#0b0b12;border:1px solid #2a2740;border-radius:6px;position:relative;overflow:hidden;flex-shrink:0}
+.calc-ratiocinator #calc-braid-view{width:100%;height:100%;background:#0b0b12;border:1px solid #2a2740;border-radius:6px;position:relative;overflow:hidden;grid-column:1;grid-row:3}
+
+.calc-ratiocinator #calc-braid-view svg, .calc-ratiocinator #calc-static-view svg{width:100%;height:100%}
+.calc-ratiocinator .edge{stroke:#3a3550;stroke-width:1.5;fill:none}
+.calc-ratiocinator .edge.pass{stroke:#4a8}
+.calc-ratiocinator .edge.fail{stroke:#844;stroke-dasharray:4,3}
+.calc-ratiocinator .edge.back{stroke:#a84bb8;stroke-dasharray:2,2}
+.calc-ratiocinator text{font-family:'Hack',monospace;pointer-events:none}
+.calc-ratiocinator #calc-legend{display:flex;gap:14px;margin:0;font-size:10px;flex-wrap:wrap;color:#8a84b0;grid-column:1 / -1;grid-row:2;align-items:center}
+.calc-ratiocinator #calc-legend span{display:flex;align-items:center;gap:4px}
+.calc-ratiocinator .ld{width:10px;height:10px;border-radius:50%;display:inline-block}
+.calc-ratiocinator #calc-tip{position:absolute;display:none;pointer-events:none;background:rgba(11,11,18,0.96);border:1px solid #5a659c;border-radius:6px;padding:8px 12px;color:#f0ead8;font-size:11px;max-width:280px;z-index:100;line-height:1.5}
+.calc-ratiocinator #calc-stat-bar{display:flex;gap:12px;margin:0;font-size:11px;color:#8a84b0;flex-wrap:wrap;grid-column:1 / -1;grid-row:1}
+
+/* Pan/Zoom cursor styling */
+.calc-ratiocinator .pannable{ cursor: grab; }
+.calc-ratiocinator .pannable:active{ cursor: grabbing; }
+
+.calc-ratiocinator .pl{fill:none;stroke:#fff;stroke-width:1.4;stroke-linecap:round;stroke-dasharray:2 22;opacity:.55;animation:flow 1.4s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.calc-ratiocinator #calc-modebar{position:absolute;top:8px;right:8px;z-index:5;display:flex;gap:4px}
+.calc-ratiocinator #calc-modebar .btn.on{border-color:#e8b84b;color:#e8b84b}
+
+/* === end Calculus === */
+
+
+/* === M137 Trilattice Explorers (scoped) === */
+
+
+.m137-explorers #m137-bar{display:flex;gap:8px;padding:8px 12px;height:44px;box-sizing:border-box;align-items:center;background:#161a20}
+.m137-explorers #m137-bar button{min-height:32px;padding:4px 14px;border:1px solid #3a4250;border-radius:8px;background:#1a2029;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer}
+.m137-explorers #m137-bar button[aria-pressed=true]{background:#2c3a4d;border-color:#6fb3d9}
+.m137-explorers #m137-view{position:relative;overflow:hidden;background:#0B0B0C;}
+.m137-explorers #m137-stage{position:relative;width:100%;max-width:1600px;height:760px;margin:0 auto;transform-origin:0 0;}
+
+/* === end M137 === */
 </style>
 </head>
 <body>
@@ -299,111 +377,1700 @@ footer {
   <!-- 01: IMASM WORKBENCH -->
   <section id="imasm" class="bench">
     <div class="window">
-      <div class="titlebar">IMASM 12-Opcode Graph Workbench<span class="win-btns"><button>×</button><button>□</button><button>−</button></span></div>
+      <div class="titlebar">Calculus Ratiocinator · IMASM<span class="win-btns"><button>×</button><button>□</button><button>−</button></span></div>
       <div class="content">
+        <div class="calc-ratiocinator">
 
-    <h2><span class="sec-tag">01 · Engine</span> IMASM 12-Opcode Graph Workbench</h2>
-    <p class="sub">
-      A word is a node list; the verb supplies the edges. Computes Grammar (<span class="mono">define</span>),
-      edge-ancestry Close Condition (<span class="mono">check</span>), Topology (<span class="mono">classify</span>), and Kleene Trilattice Flow (<span class="mono">eval / eval16</span>).
-    </p>
-    <div class="grid-2">
-      <div class="card">
-        <h3>Program &amp; Wiring</h3>
-        <div class="row" style="margin-bottom:10px;">
-          <div style="flex:2;min-width:210px;">
-            <label class="lbl" for="wordInput">IMASM Word (glyphs, names, short codes, δ/μ)</label>
-            <input id="wordInput" type="text" value="⊢∈≻∋⊤" />
-          </div>
-          <div style="flex:1;min-width:130px;">
-            <label class="lbl" for="verbSelect">Graph Verb</label>
-            <select id="verbSelect">
-              <option value="protocol" selected>protocol (close ∈/∋)</option>
-              <option value="chain">chain (β = 0)</option>
-              <option value="ring">ring (head←tail)</option>
-              <option value="bubble">bubble PRE:A:B:POST</option>
-              <option value="star">star CORE:a:b:c</option>
-              <option value="comb">comb BACK:p:q</option>
-              <option value="wire">wire NODES / i-j</option>
-            </select>
-          </div>
-        </div>
-        <div class="row" style="margin-bottom:10px;">
-          <div style="flex:1;min-width:110px;">
-            <label class="lbl" for="aritySelect">Dyad Arity</label>
-            <select id="aritySelect">
-              <option value="2" selected>2-arm {T,t} | {F,f}</option>
-              <option value="3">3-arm {T} | {F} | {t,f}</option>
-            </select>
-          </div>
-          <div style="flex:1;min-width:110px;">
-            <label class="lbl" for="seedSelect">VINIT Seed (⊢)</label>
-            <select id="seedSelect">
-              <option value="B" selected>B = {T,F} (FOUR slice)</option>
-              <option value="A">A = {T,F,t,f} (Full SIXTEEN_3)</option>
-              <option value="Tf">Tf = {T,f}</option>
-              <option value="Ft">Ft = {F,t}</option>
-              <option value="T">T = {T}</option>
-              <option value="F">F = {F}</option>
-              <option value="tf">tf = {t,f}</option>
-              <option value="N">N = {}</option>
-            </select>
-          </div>
-          <div style="flex:1;min-width:130px;">
-            <label class="lbl" for="gateMode">⊤ / ⊥ Semantics</label>
-            <select id="gateMode">
-              <option value="pass" selected>§5 Pass-Gate (∩ {T,t}/{F,f})</option>
-              <option value="assert">§1 Assert Pole (∪ {T}/{F})</option>
-            </select>
-          </div>
-        </div>
-        <label class="lbl">Insert Opcode Token</label>
-        <div class="row" id="opcodePalette" style="margin-bottom:10px;"></div>
-        <label class="lbl">Canonical Presets</label>
-        <div class="row" style="margin-bottom:12px;">
-          <button type="button" onclick="loadPreset('⊢∈≻∋⊤','protocol',2,'B')">⊢∈≻∋⊤ (T)</button>
-          <button type="button" onclick="loadPreset('⊢∈≺∋⊤','protocol',2,'Tf')">⊢∈≺∋⊤ @ Tf (AREV)</button>
-          <button type="button" onclick="loadPreset('⊢∈⊙∋⊣','protocol',2,'B')">⊢∈⊙∋⊣ (N identity)</button>
-          <button type="button" onclick="loadPreset('⊢∈⊙⊙⊙∋⊣','protocol',3,'B')">⊢∈⊙⊙⊙∋⊣ (3-arm N)</button>
-          <button type="button" onclick="loadPreset('⊢∈⊞≻∋⊣','protocol',2,'B')">⊢∈⊞≻∋⊣ (B paradox)</button>
-          <button type="button" onclick="loadPreset('⊢≻:⊤:⊥:∋⊡⊣','bubble',3,'A')">bubble ⊢≻:⊤:⊥:∋⊡⊣ (3-arm)</button>
-          <button type="button" onclick="loadPreset('⊢∈:⊤:⊥:≻⊣','star',3,'B')">star ⊢∈:⊤:⊥:≻⊣</button>
-          <button type="button" onclick="loadPreset('⊢∈≻∈⊤⊣:≺:⊥','comb',2,'B')">comb ⊢∈≻∈⊤⊣:≺:⊥</button>
-          <button type="button" onclick="loadPreset('⊢∈≻∋⊣','ring',2,'B')">ring ⊢∈≻∋⊣ (⊢ F)</button>
-        </div>
-        <div class="svg-stage">
-          <svg id="graphSvg" viewBox="0 0 680 260" width="100%" height="100%"></svg>
-        </div>
-      </div>
+<div id="calc-tip"></div><div id="calc-layout">
+<div id="calc-sidebar">
+<div style="font-size:10px;color:#8a84b0;margin-bottom:6px">IMASM &middot; twelve opcodes &middot; SIXTEEN<sub>3</sub> carrier</div>
+<h2>1. Verb &amp; Carrier</h2>
+<select id="calc-verbSel" onchange="evaluate()"><option value="protocol">protocol: ∈/∋ pairs reconnect (the way to close)</option><option value="chain">chain: head to tail, nothing reconnects</option><option value="ring">ring: head to tail to head (β=1)</option></select>
+<select id="calc-arSel" onchange="evaluate()"><option value="2">fork arity 2: {T,t} | {F,f}</option><option value="3">fork arity 3: {T} | {F} | {t,f}</option></select>
+<select id="calc-seedSel" onchange="evaluate()"><option value="15">seed A (full SIXTEEN₃)</option><option value="3">seed B (classical slice)</option><option value="1">seed T</option><option value="2">seed F</option><option value="9">seed Tf</option></select>
+<h2>2. Select IMASM Word</h2>
+<select id="calc-wordSel" onchange="updateWord()">
+  <optgroup label="⊢ Axis">
+    <option value="𐑛">𐑛: ⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣</option>
+    <option value="𐑨">𐑨: ⊢≻∈⊤⊥⊞⋈⊙≺∋⊡⊣</option>
+    <option value="𐑼">𐑼: ⊢∈⊤≻⋈⊙⊡⋈⊡⋈⊡≺⊥∋⊞⊣</option>
+    <option value="𐑦">𐑦: ⊢⊙∈⊤≻⊥≺⊞∋⋈⊡⊣</option>
+  </optgroup>
+  <optgroup label="⊣ Axis">
+    <option value="𐑡">𐑡: ⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣</option>
+    <option value="𐑰">𐑰: ⊢⊣∈≻⋈⊤≺⊥∋⊙⊡⊞⋈⊣</option>
+    <option value="𐑥">𐑥: ⊢∈≻⊤≺⊥⋈⊞⊙∋⊡⊣</option>
+    <option value="𐑶">𐑶: ⊢∈≻⊤≺⊥⋈⊞∋⊙⊡⊣</option>
+    <option value="𐑸">𐑸: ⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣</option>
+  </optgroup>
+  <optgroup label="≻ Axis">
+    <option value="𐑩">𐑩: ⊢≻∈⊤≻⊞⊥≺∋⋈⊙⊡⊣</option>
+    <option value="𐑑">𐑑: ⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣</option>
+    <option value="𐑽">𐑽: ⊢⊣≻∈≻⊤⋈⊙≻⊥⋈⊙⊞≺∋⊡⊣</option>
+    <option value="𐑾">𐑾: ⊢∈≻⊤⋈≺⊥⊞∋⊡⊙⋈⊣</option>
+  </optgroup>
+  <optgroup label="≺ Axis">
+    <option value="𐑗">𐑗: ⊢∈≻⊤⋈≺⊥⊞⋈⊙⊡∋⊣</option>
+    <option value="𐑿">𐑿: ⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣</option>
+    <option value="𐑬">𐑬: ⊢≻∈⊤⋈⊡⊥≺⊞∋⊙⊣</option>
+    <option value="𐑯">𐑯: ⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣</option>
+    <option value="𐑹">𐑹: ⊢≻∈⊤⊥⊞∋⋈⊙⊡⊣</option>
+  </optgroup>
+  <optgroup label="⋈ Axis">
+    <option value="𐑱">𐑱: ⊢≻∈⊤⊥⊞∋⋈⊙≺⊡⊣</option>
+    <option value="𐑞">𐑞: ⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣</option>
+    <option value="𐑐">𐑐: ⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣</option>
+  </optgroup>
+  <optgroup label="⊤ Axis">
+    <option value="𐑘">𐑘: ⊢≻∈⊤⊥⊞⋈⊙∋⊡≺⊣</option>
+    <option value="𐑤">𐑤: ⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣</option>
+    <option value="𐑧">𐑧: ⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣</option>
+    <option value="𐑪">𐑪: ⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣</option>
+    <option value="𐑺">𐑺: ⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣</option>
+  </optgroup>
+  <optgroup label="∈ Axis">
+    <option value="𐑚">𐑚: ⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣</option>
+    <option value="𐑔">𐑔: ⊢∈≻⊤⋈⊙≺⊥⊞⊡∋⊣</option>
+    <option value="𐑲">𐑲: ⊢≻⋈∈⊤⊥⊞∋≺⊙⊡⊣</option>
+  </optgroup>
+  <optgroup label="∋ Axis">
+    <option value="𐑝">𐑝: ⊢∈≻⊤⋈≺⊥⊞∋⊙⊡⊣</option>
+    <option value="𐑜">𐑜: ⊢≻∈⊤⋈⊥≺⋈∋⊞⊙⊡⊣</option>
+    <option value="𐑠">𐑠: ⊢∈≻⊤⋈≺⊥⊞⊙⊡∋⊣</option>
+    <option value="𐑵">𐑵: ⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣</option>
+  </optgroup>
+  <optgroup label="⊙ Axis">
+    <option value="𐑢">𐑢: ⊢≻⋈⊙∈⊤⊥⊞∋⊡⊣</option>
+    <option value="⊙">⊙: ⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣</option>
+    <option value="𐑮">𐑮: ⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣</option>
+    <option value="𐑻">𐑻: ⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣</option>
+    <option value="𐑣">𐑣: ⊢≻∈⊤⋈≺⊥⋈⊞∋⊙⊡⋈⊣</option>
+  </optgroup>
+  <optgroup label="⊥ Axis">
+    <option value="𐑓">𐑓: ⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣</option>
+    <option value="𐑒">𐑒: ⊢∈≻⊤⋈⊙⊡≺⊥⊞∋⊣</option>
+    <option value="𐑖">𐑖: ⊢≻∈⊤⊥⊞≺⋈⊙⊡∋⊣</option>
+    <option value="𐑫">𐑫: ⊢≻∈⊤⊥⊞⋈⊙⊡∋⊣</option>
+  </optgroup>
+  <optgroup label="⊞ Axis">
+    <option value="𐑙">𐑙: ⊢≻≺⋈∈⊤⊥⊞∋⊙⊡⊣</option>
+    <option value="𐑕">𐑕: ⊢≻⋈∈⊤⊥⊞∋⊙⊡≺⋈⊣</option>
+    <option value="𐑳">𐑳: ⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣</option>
+  </optgroup>
+  <optgroup label="⊡ Axis">
+    <option value="𐑷">𐑷: ⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣</option>
+    <option value="𐑴">𐑴: ⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣</option>
+    <option value="𐑭">𐑭: ⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣</option>
+    <option value="𐑟">𐑟: ⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣</option>
+  </optgroup>
+  <optgroup label="Ratiocinator">
+    <option value="rationi">rationi: ⊢⊙∈⊤≻≺⊡≺⊥⊙⊙≻⊡⊤⋈≺⊞⊙≻⊤≺⊥⋈⊞⊡⊤≻≺⋈⊙⊞⊡⊙≻⊤⋈≺⊞⊡⊙≻⊤⊡⋈≺⊞⊙≻⊤⊥⋈⊙⊡⋈⊙≻⊤⊡≺⊥⊞⊙≻⊤⊙⋈⊡⊙≻⋈⊤⊞⊥≺⊡∋⊣</option>
+  </optgroup>
+  <option value="custom">— custom —</option>
+</select>
+<textarea id="calc-customWord" placeholder="⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣" oninput="onCustom()"></textarea>
+<button class="btn" onclick="evaluate()">&#x25b6; Evaluate</button>
+<button class="btn" title="ROTAT: k to k-1 (mod n)" onclick="rotat(-1)">&#x21ba;</button>
+<button class="btn" title="ROTAT: k to k+1 (mod n)" onclick="rotat(1)">&#x21bb;</button>
+<span id="calc-cutLbl" style="font-size:10px;color:#8a84b0"></span>
+<h2>3. Three Verdicts</h2>
+<input id="calc-expect" placeholder="speak the expected readout first (A, B, Tf …)" oninput="evaluate()">
+<div id="calc-rslt-box">Run evaluation</div>
+</div>
+<div id="calc-main">
+<div id="calc-stat-bar">Select an IMASM word and verb, then Evaluate &middot; Scroll to zoom, drag to pan</div>
+<div id="calc-legend">
+<span><span class="ld" style="background:#0072B2"></span>no work ⊢⊣⊙</span>
+<span><span class="ld" style="background:#7B3294"></span>∈ ∋ (dyad)</span>
+<span><span class="ld" style="background:#B8860B"></span>work ≻≺⋈⊤⊥⊞⊡</span>
+<span><span style="color:#4a8">&mdash;</span> edge on a transformed arm</span>
+<span><span style="color:#a84bb8">..</span> ring wrap</span>
+<span><span style="color:#f66">&#9679;</span> dangling ∈/∋</span>
+</div>
+<div id="calc-braid-view" class="pannable"><div id="calc-modebar"><button class="btn on" id="calc-mBraid" onclick="setMode('braid')">braid</button><button class="btn" id="calc-mGraph" onclick="setMode('graph')">graph</button><button class="btn" id="calc-mPlay" onclick="togglePlay()">&#9208;</button><button class="btn" onclick="stepRow()">&#9197;</button></div><svg id="calc-braidSvg"></svg></div>
+<div id="calc-right-col">
+  <div id="calc-cfg-box">Run evaluation</div>
+  <div id="calc-static-view" class="pannable"><svg id="calc-staticSvg"></svg></div>
+</div>
+</div></div>
+<script>
 
-      <div class="card">
-        <h3>Three Independent Verdicts (§6)</h3>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div>
-            <label class="lbl">1 · Grammar (<span class="mono">define</span>)</label>
-            <div id="vGrammar" class="verdict-box">—</div>
-          </div>
-          <div> 
-            <label class="lbl">2 · Close Condition (<span class="mono">check</span>)</label>
-            <div id="vClose" class="verdict-box">—</div>
-          </div>
-          <div>
-            <label class="lbl">3 · Trilattice Flow (<span class="mono">eval / eval16</span>)</label>
-            <div id="vFlow" class="verdict-box">—</div>
-          </div>
-          <div>
-            <label class="lbl">Topology Census (<span class="mono">classify</span>)</label>
-            <div id="vClassify" class="verdict-box" style="font-size:12px;">—</div>
-          </div>
-          <div>
-            <label class="lbl">Kleene Edge Register Trace (settled in <span id="kleeneRounds">0</span> rounds)</label>
-            <div id="vTrace" class="verdict-box" style="font-size:12px;max-height:132px;overflow:auto;">—</div>
-          </div>
+const GLYPH = {"VINIT":"⊢","TANCH":"⊣","AFWD":"≻","AREV":"≺","CLINK":"⋈",
+  "IMSCRIB":"⊙","FSPLIT":"∈","FFUSE":"∋","EVALT":"⊤","EVALF":"⊥",
+  "ENGAGR":"⊞","IFIX":"⊡"};
+
+const SYM2NAME = {
+  "⊢": "VINIT", "⊣": "TANCH", "≻": "AFWD", "≺": "AREV",
+  "⋈": "CLINK", "⊙": "IMSCRIB", "∈": "FSPLIT", "∋": "FFUSE",
+  "⊤": "EVALT", "⊥": "EVALF", "⊞": "ENGAGR", "⊡": "IFIX"
+};
+
+const FAM = {"VINIT":0,"TANCH":0,"AFWD":0,"AREV":0,"CLINK":0,"IMSCRIB":0,
+  "FSPLIT":1,"FFUSE":1,"EVALT":2,"EVALF":2,"ENGAGR":2,"IFIX":3};
+const FAMC = ["#0072B2","#7B3294","#B8860B","#009E73"];
+
+// ── B4 Belnap carrier of truth values (from G-mOMonadOS belnap.rs) ──
+// N=0, T=1, F=2, B=3 — truth order: F≤N≤T, F≤B≤T; N and B incomparable
+const B4_N = 0, B4_T = 1, B4_F = 2, B4_B = 3;
+const B4_NAME = ['N', 'T', 'F', 'B'];
+
+// Join (least upper bound in truth order)
+const B4_JOIN = [
+  [B4_N, B4_T, B4_F, B4_B],  // N row
+  [B4_T, B4_T, B4_B, B4_T],  // T row
+  [B4_F, B4_B, B4_F, B4_B],  // F row
+  [B4_B, B4_T, B4_B, B4_B],  // B row
+];
+
+function bn(v){return B4_NAME[v];}
+function swap(v){return v ^ 3;}  // N↔B, T↔F (AREV clearing reverse)
+function gate(op,x){
+  switch(op){
+    case 'VINIT': return x;
+    case 'EVALT': return B4_T;
+    case 'EVALF': return B4_F;
+    case 'ENGAGR': return B4_B;
+    case 'IMSCRIB': return B4_T;
+    case 'AREV': return swap(x);
+    case 'FSPLIT': return x;
+    case 'FFUSE': return x;
+    case 'CLINK': return x;
+    case 'TANCH': return x;
+    case 'AFWD': return x;
+    case 'IFIX': return x;
+    default: return x;
+  }
+}
+function seed_to_b4(s){
+  switch(s){
+    case 1: return B4_T;   // seed T
+    case 2: return B4_F;   // seed F
+    case 3: return B4_B;   // seed B (classical slice)
+    case 9: return B4_B;   // seed Tf (T+F = both)
+    case 15: return B4_B;  // seed A (full SIXTEEN₃)
+    default: return B4_T;
+  }
+}
+
+
+// New Symbol-based Programs
+const PROGRAMS = {
+  "𐑛": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑨": "⊢≻∈⊤⊥⊞⋈⊙≺∋⊡⊣",
+  "𐑼": "⊢∈⊤≻⋈⊙⊡⋈⊡⋈⊡≺⊥∋⊞⊣",
+  "𐑦": "⊢⊙∈⊤≻⊥≺⊞∋⋈⊡⊣",
+  "𐑡": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑰": "⊢⊣∈≻⋈⊤≺⊥∋⊙⊡⊞⋈⊣",
+  "𐑥": "⊢∈≻⊤≺⊥⋈⊞⊙∋⊡⊣",
+  "𐑶": "⊢∈≻⊤≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑸": "⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣",
+  "𐑩": "⊢≻∈⊤≻⊞⊥≺∋⋈⊙⊡⊣",
+  "𐑑": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣",
+  "𐑽": "⊢⊣≻∈≻⊤⋈⊙≻⊥⋈⊙⊞≺∋⊡⊣",
+  "𐑾": "⊢∈≻⊤⋈≺⊥⊞∋⊡⊙⋈⊣",
+  "𐑗": "⊢∈≻⊤⋈≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑿": "⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣",
+  "𐑬": "⊢≻∈⊤⋈⊡⊥≺⊞∋⊙⊣",
+  "𐑯": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑹": "⊢≻∈⊤⊥⊞∋⋈⊙⊡⊣",
+  "𐑱": "⊢≻∈⊤⊥⊞∋⋈⊙≺⊡⊣",
+  "𐑞": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑐": "⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣",
+  "𐑘": "⊢≻∈⊤⊥⊞⋈⊙∋⊡≺⊣",
+  "𐑤": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣",
+  "𐑧": "⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑪": "⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑺": "⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣",
+  "𐑚": "⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑔": "⊢∈≻⊤⋈⊙≺⊥⊞⊡∋⊣",
+  "𐑲": "⊢≻⋈∈⊤⊥⊞∋≺⊙⊡⊣",
+  "𐑝": "⊢∈≻⊤⋈≺⊥⊞∋⊙⊡⊣",
+  "𐑜": "⊢≻∈⊤⋈⊥≺⋈∋⊞⊙⊡⊣",
+  "𐑠": "⊢∈≻⊤⋈≺⊥⊞⊙⊡∋⊣",
+  "𐑵": "⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣",
+  "𐑢": "⊢≻⋈⊙∈⊤⊥⊞∋⊡⊣",
+  "⊙": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑮": "⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑻": "⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣",
+  "𐑣": "⊢≻∈⊤⋈≺⊥⋈⊞∋⊙⊡⋈⊣",
+  "𐑓": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑒": "⊢∈≻⊤⋈⊙⊡≺⊥⊞∋⊣",
+  "𐑖": "⊢≻∈⊤⊥⊞≺⋈⊙⊡∋⊣",
+  "𐑫": "⊢≻∈⊤⊥⊞⋈⊙⊡∋⊣",
+  "𐑙": "⊢≻≺⋈∈⊤⊥⊞∋⊙⊡⊣",
+  "𐑕": "⊢≻⋈∈⊤⊥⊞∋⊙⊡≺⋈⊣",
+  "𐑳": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑷": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑴": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑭": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑟": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣"
+};
+
+// Pan/Zoom state
+const zoomState = {
+  braid: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 },
+  static: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 }
+};
+
+function applyZoom(viewId) {
+  const el = document.getElementById(viewId + 'Zoom');
+  if (!el) return;
+  const s = zoomState[viewId];
+  el.setAttribute('transform', `translate(${s.tx}, ${s.ty}) scale(${s.scale})`);
+}
+
+function setupPanZoom(id) {
+  const container = document.getElementById(id + '-view');
+  if (!container) return;
+  const state = zoomState[id];
+
+  container.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+    const vb = svg.viewBox.baseVal;
+    const rect = container.getBoundingClientRect();
+    
+    // Fallbacks in case viewBox isn't fully set
+    const vbW = vb.width || 800;
+    const vbH = vb.height || 480;
+    const scaleX = vbW / (container.clientWidth || 800);
+    const scaleY = vbH / (container.clientHeight || 480);
+    
+    const mouseX = (e.clientX - rect.left) * scaleX;
+    const mouseY = (e.clientY - rect.top) * scaleY;
+    
+    const zoomFactor = Math.exp(-e.deltaY * 0.002);
+    const newScale = Math.min(Math.max(0.1, state.scale * zoomFactor), 20);
+    
+    // Zoom to mouse pointer
+    state.tx = mouseX - (mouseX - state.tx) * (newScale / state.scale);
+    state.ty = mouseY - (mouseY - state.ty) * (newScale / state.scale);
+    state.scale = newScale;
+    
+    applyZoom(id);
+  }, { passive: false });
+
+  container.addEventListener('mousedown', (e) => {
+    state.isDragging = true;
+    state.startX = e.clientX;
+    state.startY = e.clientY;
+    state.startTx = state.tx;
+    state.startTy = state.ty;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!state.isDragging) return;
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+    const vb = svg.viewBox.baseVal;
+    const vbW = vb.width || 800;
+    const vbH = vb.height || 480;
+    const scaleX = vbW / (container.clientWidth || 800);
+    const scaleY = vbH / (container.clientHeight || 480);
+    
+    state.tx = state.startTx + (e.clientX - state.startX) * scaleX;
+    state.ty = state.startTy + (e.clientY - state.startY) * scaleY;
+    applyZoom(id);
+  });
+
+  window.addEventListener('mouseup', () => {
+    state.isDragging = false;
+  });
+  
+  container.addEventListener('dblclick', () => {
+    state.tx = 0;
+    state.ty = 0;
+    state.scale = 1;
+    applyZoom(id);
+  });
+}
+
+let rot = 0;  // current cut k, taken mod n (ROTAT)
+
+const $=id=>document.getElementById(id);
+const ALIAS={VINIT:'VINIT',VI:'VINIT',TANCH:'TANCH',TA:'TANCH',AFWD:'AFWD',AF:'AFWD',AREV:'AREV',AR:'AREV',CLINK:'CLINK',CL:'CLINK',EVALT:'EVALT',ET:'EVALT',FSPLIT:'FSPLIT',FS:'FSPLIT',FFUSE:'FFUSE',FF:'FFUSE',IMSCRIB:'IMSCRIB',IM:'IMSCRIB',EVALF:'EVALF',EF:'EVALF',ENGAGR:'ENGAGR',EG:'ENGAGR',IFIX:'IFIX',IX:'IFIX'};
+// §1: glyphs glued, full names, short forms, δ/μ parse alike; brackets parse to nothing
+function parseWord(str){
+  const out=[];
+  for(const c of str.replace(/[\[\]()]/g,' ').split(/\s+/)){
+    if(!c)continue;
+    if(ALIAS[c.toUpperCase()]){out.push(ALIAS[c.toUpperCase()]);continue;}
+    for(const ch of c){if(ch==='δ')out.push('FSPLIT');else if(ch==='μ')out.push('FFUSE');else if(SYM2NAME[ch])out.push(SYM2NAME[ch]);}
+  }
+  return out;
+}
+function getBaseTokens(){
+  const sel=$('wordSel').value;
+  return parseWord(sel==='custom'?$('customWord').value:(PROGRAMS[sel]||''));
+}
+
+// words live on Z/nZ: the cut k reads token (k+i) mod n at position i
+function rotateWord(tokens, k) {
+  const n = tokens.length;
+  if (!n) return tokens;
+  const r = ((k % n) + n) % n;
+  return tokens.slice(r).concat(tokens.slice(0, r));
+}
+
+function getTokens() { return rotateWord(getBaseTokens(), rot); }
+
+// minimal period p | n of the cyclic word (p = n when aperiodic)
+function cyclicPeriod(t) {
+  const n = t.length;
+  for (let p = 1; p <= n; p++) {
+    if (n % p) continue;
+    let ok = true;
+    for (let i = p; i < n && ok; i++) if (t[i] !== t[i - p]) ok = false;
+    if (ok) return p;
+  }
+  return n;
+}
+
+function rotat(d) {
+  const n = getBaseTokens().length;
+  if (!n) return;
+  rot = (((rot + d) % n) + n) % n;
+  evaluate();
+}
+
+function setCut(k) { rot = k; evaluate(); }
+
+function cycleHTML(base){
+  const n=base.length;if(!n)return'';
+  const g=t=>t.map(x=>GLYPH[x]),p=cyclicPeriod(base),cur=((rot%n)+n)%n,word=g(base).join('');
+  const vc={T:'#6f6',N:'#6af',B:'#a8f',F:'#f66'};
+  let rows='';const reg={};const V0=model(base).A;
+  for(let k=0;k<p;k++){
+    const X=execRing(rotateWord(base,k),+$('seedSel').value),ro=X.final;
+    (reg[ro]=reg[ro]||[]).push(k);
+    const w=g(rotateWord(base,k)).map((c,i)=>(k+i>=n)?`<span class="wrap">${c}</span>`:c).join('');
+    rows+=`<tr class="row ${(cur%p)===k?'cur':''}" onclick="setCut(${k})"><td>${k}</td><td>${ro}</td><td style="color:${vc[V0.v]}">${V0.v}</td><td class="w">${w}</td></tr>`;
+  }
+  const lines=Object.entries(reg).map(([r,ks])=>`<div>${r.padEnd(6,'\u00a0')} at k = ${ks.join(', ')}</div>`).join('');
+  return `<div class="cyc"><div><b>cycle</b> <span style="letter-spacing:2px;font-size:13px">${g(base).join(' ')}</span></div>
+  <div>word : <span style="letter-spacing:2px;font-size:13px">${word}</span> &nbsp; period ${p} &middot; ℤ/${n}ℤ${p<n?` &middot; ${n/p} copies of a period-${p} block`:''}</div>
+  <div style="margin:4px 0;color:#8a84b0">ROTAT cuts, each judged by the engine under the current verb; <span class="wrap">violet</span> letters wrapped</div>
+  <table><tr><th>k</th><th>readout</th><th>verdict</th><th>word</th></tr>${rows}</table>
+  <div style="margin-top:6px;color:#8a84b0">landing register by cut:</div>${lines}
+  <div style="margin-top:4px">readout is <b>${Object.keys(reg).length>1?'PHASE-BEARING':'phase-blind'}</b>: ${Object.keys(reg).length} distinct landing${Object.keys(reg).length===1?'':'s'}</div></div>`;
+}
+
+function updateWord() {
+  rot = 0;
+  const sel = document.getElementById("wordSel").value;
+  document.getElementById("customWord").style.display = sel === "custom" ? "block" : "none";
+  if (sel !== "custom") evaluate();
+}
+
+function onCustom() { rot = 0; evaluate(); }
+
+
+// ═══ IMASM ENGINE ═══ follows IMASM.md §3–§6 (check.rs / imasm16_3.rs semantics)
+const WORK=new Set(['AFWD','AREV','CLINK','EVALT','EVALF','ENGAGR','IFIX']); // §1 Work column
+
+// §3 the verb supplies the edges; the word is only the node list
+function buildGraph(N,verb,ar){
+  const n=N.length,E=[];
+  // ⊢ VINIT has in-arity 0: it is a source and never an edge target (a ROTAT cut or a ring wrap can put it mid-word)
+  const tgtOK=b=>N[b]!=='VINIT';
+  for(let i=0;i+1<n;i++)if(tgtOK(i+1))E.push([i,i+1]);
+  if(verb==='ring'&&n&&tgtOK(0))E.push([n-1,0]);
+  if(verb==='protocol'){const st=[];
+    N.forEach((t,i)=>{if(t==='FSPLIT')st.push(i);else if(t==='FFUSE'&&st.length){const f=st.pop();for(let a=1;a<ar;a++)E.push([f,i]);}});}
+  return E;
+}
+function reach(n,adj,i){const s=new Set([i]),q=[i];while(q.length){const u=q.pop();for(const v of adj[u])if(!s.has(v)){s.add(v);q.push(v);}}return s;}
+function analyze(N,E){
+  const n=N.length,out=N.map(()=>[]),inn=N.map(()=>[]),pre=N.map(()=>[]),suc=N.map(()=>[]);
+  E.forEach(([a,b],k)=>{out[a].push(k);inn[b].push(k);suc[a].push(b);pre[b].push(a);});
+  const errs=[];
+  N.forEach((t,i)=>{const G=GLYPH[t]+'@'+i;
+    if(out[i].length>1&&t!=='FSPLIT')errs.push(G+' fans out but is not a brancher');
+    else if(out[i].length>3)errs.push(G+' exceeds out-arity');
+    if(inn[i].length>1&&t!=='FFUSE')errs.push(G+' merges in but is not a merger');
+    else if(inn[i].length>(t==='VINIT'?0:3))errs.push(G+' exceeds in-arity');
+    if(t==='VINIT'&&inn[i].length)errs.push(G+' is a source with in-arity 0');});
+  // §3 pairing is ancestry over edges (a ∈ is its own ancestor; multiplicity counts)
+  const anc=N.map((_,i)=>reach(n,pre,i)),fw=N.map((_,i)=>reach(n,suc,i));
+  const pairs=[],fk=new Set(),fu=new Set();
+  N.forEach((t,g)=>{if(t!=='FFUSE'||inn[g].length<2)return;
+    const src=inn[g].map(k=>E[k][0]),cand=[];
+    N.forEach((u,f)=>{if(u==='FSPLIT'&&src.every(x=>anc[x].has(f)))cand.push(f);});
+    if(!cand.length)return;
+    const f=cand.find(c=>cand.every(d=>d===c||!anc[d].has(c)));const F0=f===undefined?cand[0]:f;
+    const arms=[];N.forEach((_,v)=>{if(v!==F0&&v!==g&&fw[F0].has(v)&&anc[g].has(v))arms.push(v);});
+    pairs.push({f:F0,g,arms,work:arms.some(v=>WORK.has(N[v]))});fk.add(F0);fu.add(g);});
+  const forks=[],fuses=[];N.forEach((t,i)=>{if(t==='FSPLIT')forks.push(i);if(t==='FFUSE')fuses.push(i);});
+  const dang=[...forks.filter(i=>!fk.has(i)),...fuses.filter(i=>!fu.has(i))];
+  // §4 close condition: reconnection AND transformation; B beats T
+  let v,why;
+  if(errs.length){v='F';why='ill-typed';}
+  else if(!n){v='N';why='void';}
+  else if(!forks.length&&!fuses.length){v='N';why='no fork';}
+  else if(dang.length){v='B';why='open';}
+  else if(!pairs.some(p=>p.work)){v='N';why='identity';}
+  else if(N.includes('ENGAGR')&&!N.includes('IFIX')){v='B';why='paradox held';}
+  else{v='T';why='closes';}
+  // classify by invariants
+  const par=[...Array(n).keys()],fd=x=>par[x]===x?x:(par[x]=fd(par[x]));
+  E.forEach(([a,b])=>{par[fd(a)]=fd(b);});
+  const C=new Set(par.map((_,i)=>fd(i))).size,beta=E.length-n+C;
+  const br=N.map((_,i)=>i).filter(i=>out[i].length>1),mg=N.map((_,i)=>i).filter(i=>inn[i].length>1);
+  const arms=br.reduce((a,i)=>a+out[i].length,0);
+  let name;
+  if(!n)name='trivial';else if(C>1||beta>=2)name='network';
+  else if(beta===0){if(!br.length)name='linear';else{
+    const bs=new Set(br);let adj=0;E.forEach(([a,b])=>{if(bs.has(a)&&bs.has(b))adj++;});
+    name=(adj>=br.length-1&&arms>=3)?'star':'comb';}}
+  else name=(br.length||mg.length)?'branched':'ring';
+  let w=Array(n).fill(1),l=1;
+  for(let it=0;it<300&&n;it++){const x=w.slice();E.forEach(([a,b])=>{x[a]+=w[b];x[b]+=w[a];});l=Math.hypot(...x);w=x.map(q=>q/l);}
+  return{v,why,errs,pairs,forks,fuses,dang,out,inn,name,beta,C,br:br.length,mg:mg.length,
+    src:inn.filter(a=>!a.length).length,snk:out.filter(a=>!a.length).length,arms,rho:n?l-1:0,
+    transformed:pairs.filter(p=>p.work).length};
+}
+// §5 Kleene iteration from all-N edge values; every gate monotone in ≤_i
+function flowEval(N,E,seed,ar,A){
+  const n=N.length,val=E.map(()=>B4_N),inV=i=>A.inn[i].reduce((a,k)=>B4_JOIN[a][val[k]],B4_N);
+  const outOf=(i,x)=>{const t=N[i];
+    if(t==='FSPLIT'){return A.out[i].map(()=>x);}
+    const y=t==='VINIT'?seed:gate(t,x);return A.out[i].map(()=>y);};
+  let ch=true,rounds=0;
+  while(ch&&rounds<4*E.length+20){ch=false;rounds++;
+    for(let i=0;i<n;i++){const x=N[i]==='VINIT'?seed:inV(i),ys=outOf(i,x);
+      A.out[i].forEach((k,j)=>{const nv=B4_JOIN[val[k]][ys[j]];if(nv!==val[k]){val[k]=nv;ch=true;}});}}
+  const rin=N.map((t,i)=>t==='VINIT'?seed:inV(i)),rout=N.map((t,i)=>t==='FSPLIT'?rin[i]:gate(t,rin[i]));
+  const ti=N.lastIndexOf('TANCH'),ro=ti>=0?rin[ti]:rout[n-1];
+  const dy=A.pairs.map(p=>({f:p.f,g:p.g,fed:rin[p.f],rec:rin[p.g],id:rin[p.f]===rin[p.g]}));
+  return{rin,rout,rounds,read:bn(ro),dy,sig:dy.map(d=>d.id?'id':'¬id').join(' ')||'—'};
+}
+function model(N){
+  const ar=+$('arSel').value,verb=$('verbSel').value,seed=seed_to_b4(+$('seedSel').value);
+  const E=buildGraph(N,verb,ar),A=analyze(N,E),F=flowEval(N,E,seed,ar,A);
+  return{N,E,A,F,ar,verb,seed};
+}
+// ═══ RING EXECUTION ═══ mirrors the kernel's Machine::step (imasm16_3.rs)
+// Register is Reg16_3: four bits {big_t, big_f, small_t, small_f}.
+// VINIT clears to N and resets the frame stack. ∈ opens an empty frame.
+// ∋ pops the frame and unions its touched axes into reg AND the parent frame.
+// EVALT/EVALF/ENGAGR union into the register (touch), never overwrite.
+// AREV clears the register to N (clearing reverse). AFWD seeds T if reg=N.
+// IMSCRIB seeds T only if reg is N. IFIX latches; everything after is inert.
+function execRing(N, seed){
+  let reg = {bt:false,bf:false,st:false,sf:false};
+  let fixed=false, fixedAt=0, fin=null;
+  let inert=0, skipped=0, unm=0, exe=0, abandoned=0;
+  const stack=[];  // each frame: [] of touched Axis ('T'|'F'|'I')
+
+  function isN(r){return !r.bt&&!r.bf&&!r.st&&!r.sf;}
+
+  N.forEach((t,i)=>{
+    if(fixed){
+      if(t==='FFUSE')skipped++;
+      if(t!=='IMSCRIB')inert++;
+      return;
+    }
+    switch(t){
+      case 'VINIT':
+        reg={bt:false,bf:false,st:false,sf:false};
+        abandoned+=stack.length;
+        stack.length=0;
+        break;
+      case 'TANCH': break;
+      case 'AFWD':
+        if(isN(reg)) reg.bt=true;
+        break;
+      case 'AREV':
+        reg={bt:false,bf:false,st:false,sf:false};
+        break;
+      case 'CLINK': break;
+      case 'IMSCRIB':
+        if(isN(reg)) reg.bt=true;
+        break;
+      case 'FSPLIT':
+        stack.push([]);
+        break;
+      case 'FFUSE':{
+        const closed = stack.pop();
+        if(closed !== undefined){
+          for(const a of closed){
+            if(a==='T') reg.bt=true;
+            else if(a==='F') reg.bf=true;
+            else { reg.st=true; reg.sf=true; }
+          }
+          exe++;
+          if(stack.length>0){
+            const parent = stack[stack.length-1];
+            for(const a of closed) if(!parent.includes(a)) parent.push(a);
+          }
+        } else {
+          unm++;
+        }
+        break;
+      }
+      case 'IFIX':
+        fixed=true; fixedAt=i+1; fin={...reg}; break;
+      case 'EVALT': reg.bt=true; if(stack.length>0) stack[stack.length-1].push('T'); break;
+      case 'EVALF': reg.bf=true; if(stack.length>0) stack[stack.length-1].push('F'); break;
+      case 'ENGAGR': reg.st=true; reg.sf=true; if(stack.length>0) stack[stack.length-1].push('I'); break;
+    }
+  });
+  if(!fixed) fin={...reg};
+  const open = stack.length;
+  const returned = exe>=1 && unm===0 && open===0 && abandoned===0;
+  return {
+    final: regName(fin), fixedAt, inert, skipped, unm, open,
+    exe, returned,
+    bank: { live: exe, dep: 0, inert: 0, exposed: 0, holds: exe>=1, vacuous: exe===0 }
+  };
+}
+function regName(r){
+  // Kernel Reg16_3 name(): N=∅, A=all, else concatenation of present axes
+  const parts=[];
+  if(r.bt) parts.push('T');
+  if(r.bf) parts.push('F');
+  if(r.st) parts.push('t');
+  if(r.sf) parts.push('f');
+  return parts.length===0?'N':parts.length===4?'A':parts.join('');
+}
+const VMEAN={
+  'T closes':'μ∘δ closes over transformed reconnections: proceed',
+  'N identity':'∈/∋ reconnect but no work between: put work on the arms',
+  'N no fork':'no ∈/∋ dyad at all: add a dyad',
+  'N void':'nothing parsed: write a real word',
+  'B open':'a ∈ or ∋ dangles: fuse it (∋) or commit one arm (⊡)',
+  'B paradox held':'closes over work and ⊞ is present with no ⊡ to commit it: sound to hold, not a clean T',
+  'F ill-typed':'grammar violated: revise'};
+const KERNEL={T:'green: worked dyad (split, transform, fuse)',N:'N: identity closure; put a transforming opcode between fork and fuse',B:'Open / paradox: not a clean green',F:'refused: ill-typed'};
+
+function evaluate(){
+  const base=getBaseTokens(),N=rotateWord(base,rot),n=N.length;
+  if(!n){$('rslt-box').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';$('cfg-box').innerHTML='';$('braidSvg').innerHTML='';$('staticSvg').innerHTML='';return;}
+  const M=model(N),A=M.A,F=M.F,k=((rot%n)+n)%n,X=execRing(N,M.seed),V=model(base).A,RO=X.final;
+  const tc={T:'tag-pass',N:'tag-seq',B:'tag-par',F:'tag-fail'}[V.v];
+  const exp=$('expect').value.trim();
+  const expH=exp?`<div style="margin-top:6px">expected <b>${exp}</b> &rarr; ${exp===RO?'<span style="color:#6f6">matches the readout</span>':`<span style="color:#f66">differs: execution read ${RO}</span>`}</div>`:'';
+  $('rslt-box').innerHTML=`
+    <div style="margin-bottom:6px"><b>word</b> (cut k = ${k} mod ${n}): <span style="font-size:14px;letter-spacing:2px">${N.map(t=>GLYPH[t]).join(' ')}</span></div>
+    <div style="color:#8a84b0;font-size:10px;margin-bottom:6px">${M.verb} &middot; fork arity ${M.ar} &middot; seed ${bn(M.seed)}</div>
+    <div><span class="tag ${tc}">${V.v} (${V.why})</span> <span class="tag tag-info">${A.name}</span></div>
+    <div style="color:#8a84b0;font-size:10px;margin:4px 0 8px">${VMEAN[V.v+' '+V.why]||''}</div>
+    <div><b>grammar</b> (define): ${V.errs.length?'<span style="color:#f66">'+V.errs.join('; ')+'</span>':'<span style="color:#6f6">composition laws hold</span>'}</div>
+    <div><b>kernel</b> (prove, local class): ${KERNEL[V.v]}<br><span style="color:#8a84b0;font-size:10px">the live p4ramill kernel is authoritative</span></div>
+    <div><b>flow</b> (eval16): readout <b>${RO}</b> &middot; fixed at ${X.fixedAt} &middot; dyads <b>${F.sig}</b> &middot; settled in ${F.rounds} rounds</div>
+    ${expH}${cycleHTML(base)}`;
+  $('cutLbl').textContent=' k = '+k+' (mod '+n+')';
+  $('stat-bar').textContent=`V=${n} E=${M.E.length} β=${A.beta} · ${A.name} · ρ=${A.rho.toFixed(3)} · ${V.v} (${V.why}) · readout ${RO}`;
+  const prs=A.pairs.map(p=>`<div style="margin-left:10px">∈${p.f} → ∋${p.g} &middot; arms [${p.arms.join(',')||'empty'}] &middot; ${p.work?'<span style="color:#6f6">work</span>':'<span style="color:#f66">identity</span>'} &middot; ${F.dy.find(d=>d.f===p.f&&d.g===p.g).id?'id':'¬id'} (fed ${bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).fed)}, got ${bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).rec)})</div>`).join('');
+  $('cfg-box').innerHTML=`
+    <div><b>execution</b> (cut ${k}): final <b>${RO}</b> &middot; fixed_at ${X.fixedAt} &middot; inert ${X.inert} &middot; skipped fuses ${X.skipped} &middot; unmatched fuses ${X.unm} &middot; reconnections ${X.exe} &middot; returned ${X.returned}<br><b>banking</b>: reconnections ${X.exe} &middot; holds ${X.holds} &middot; vacuous ${X.vacuous}</div>
+    <div style="margin-top:8px"><b>classify</b>: ${A.name} &middot; V=${n} E=${M.E.length} β=${A.beta} C=${A.C}<br>branch ${A.br} merge ${A.mg} source ${A.src} sink ${A.snk} &middot; arms ${A.arms} &middot; ρ=${A.rho.toFixed(4)}</div>
+    <div style="margin-top:8px"><b>ancestry pairs</b> (${A.pairs.length}, ${A.transformed} transformed):</div>${prs||'<div style="margin-left:10px;color:#8a84b0">none</div>'}
+    ${A.dang.length?`<div style="color:#f66;margin-top:4px">dangling: ${A.dang.map(i=>GLYPH[N[i]]+'@'+i).join(' ')}</div>`:''}
+    <div style="margin-top:8px"><b>register by node</b> (in &rarr; out):</div>
+    <div style="font-size:10px;color:#8a84b0;margin-left:10px;line-height:1.5">${N.map((t,i)=>`${i} ${GLYPH[t]} ${bn(F.rin[i])}&rarr;${bn(F.rout[i])}`).join(' &middot; ')}</div>`;
+  drawStatic(M);
+  if(viewMode==='graph')drawGraph(M);else drawBraidDiagram(N,V.v==='T');
+}
+function drawStatic(M){
+  const svg=$('staticSvg'),W=$('static-view').clientWidth||300,H=$('static-view').clientHeight||200,n=M.N.length;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  const c=Math.max(6,Math.min(18,(W-40)/n)),x0=30,y0=40;
+  let h=`<text x="8" y="16" fill="#c8b8e0" font-size="10">register out of each node (SIXTEEN₃ bits)</text>`;
+  ['T','F','t','f'].forEach((b,j)=>{h+=`<text x="8" y="${y0+j*c+c*0.75}" fill="#8a84b0" font-size="9">${b}</text>`;});
+  M.N.forEach((t,i)=>{const r=M.F.rout[i];
+    [1,2,4,8].forEach((bit,j)=>{h+=`<rect x="${x0+i*c}" y="${y0+j*c}" width="${c-1}" height="${c-1}" fill="${r&bit?(j<2?'#B8860B':'#7B3294'):'#1e1c2e'}"/>`;});
+    h+=`<text x="${x0+i*c+c/2}" y="${y0+4*c+12}" text-anchor="middle" fill="#8a84b0" font-size="${Math.min(10,c)}">${GLYPH[t]}</text>`;});
+  svg.innerHTML=`<g id="staticZoom">${h}</g>`;applyZoom('static');
+}
+function drawGraph(M){
+  const svg=$('braidSvg'),box=$('braid-view'),W=box.clientWidth||800,H=box.clientHeight||480;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  const N=M.N,n=N.length,A=M.A,F=M.F,gap=(W-80)/Math.max(1,n-1),X=i=>40+i*gap,Y=H/2;
+  const armEdge=new Set();A.pairs.filter(p=>p.work).forEach(p=>{const s=new Set([p.f,p.g,...p.arms]);M.E.forEach(([a,b],k)=>{if(s.has(a)&&s.has(b))armEdge.add(k);});});
+  const seen={};let h='';
+  M.E.forEach(([a,b],k)=>{
+    const key=a+'-'+b,m=seen[key]=(seen[key]||0)+1,wrap=b<=a;
+    const cls='edge'+(wrap?' back':armEdge.has(k)?' pass':'');
+    if(b===a+1&&m===1){h+=`<path class="${cls}" d="M${X(a)},${Y} L${X(b)},${Y}"/>`;return;}
+    const d=Math.abs(b-a),hh=Math.min(Y-30,18+d*gap*0.35)+(m-1)*14,dir=wrap?1:-1;
+    h+=`<path class="${cls}" d="M${X(a)},${Y} C${X(a)},${Y+dir*hh} ${X(b)},${Y+dir*hh} ${X(b)},${Y}"/>`;
+  });
+  N.forEach((t,i)=>{
+    const col=WORK.has(t)?'#B8860B':(t==='FSPLIT'||t==='FFUSE')?'#7B3294':'#0072B2',dg=A.dang.includes(i);
+    h+=`<circle cx="${X(i)}" cy="${Y}" r="15" fill="#0b0b12" stroke="${dg?'#f66':col}" stroke-width="${dg?3:2}"/>
+    <text x="${X(i)}" y="${Y+5}" text-anchor="middle" fill="${col}" font-size="16" font-weight="bold">${GLYPH[t]}</text>
+    <text x="${X(i)}" y="${Y+32}" text-anchor="middle" fill="#8a84b0" font-size="8">${i}</text>
+    <text x="${X(i)-14}" y="${Y-6}" text-anchor="end" fill="#8a84b0" font-size="8" font-weight="bold">${bn(F.rin[i])}</text><text x="${X(i)}" y="${Y+44}" text-anchor="middle" fill="#c8b8e0" font-size="9">${bn(F.rout[i])}</text>`;});
+  h+=`<text x="12" y="16" fill="#c8b8e0" font-size="11">${M.verb} graph &middot; ${A.name} &middot; β=${A.beta} &middot; ${A.v} (${A.why})</text>`;
+  svg.innerHTML=`<g id="braidZoom">${h}</g>`;applyZoom('braid');
+}
+
+// ═══ BRAID VIEW ═══ mirrors braid_protocol.rs: stack_delta + read_tangle
+let viewMode='braid';
+const BPAL=['#e8b84b','#6af','#c78bd6','#5ec9a0','#f08a6a','#b9c7ff','#d6d06a','#ff7fae'];
+const CPAL=['#ff7a6a','#6af','#5ec9a0','#e8b84b','#c78bd6','#4ad6c4','#f0a0d0','#d6d06a','#9ab0ff','#ff9f43'];
+const SUB='₀₁₂₃₄₅₆₇₈₉';
+const sig=g=>'σ'+String(Math.abs(g)).split('').map(c=>SUB[c]).join('')+(g<0?'⁻¹':'');
+let bAnim={n:0,i:0,sec:[],paused:false,raf:0};
+function setMode(m){viewMode=m;document.getElementById('mBraid').classList.toggle('on',m==='braid');document.getElementById('mGraph').classList.toggle('on',m==='graph');evaluate();}
+function togglePlay(){bAnim.paused=!bAnim.paused;document.getElementById('mPlay').textContent=bAnim.paused?'▶':'⏸';}
+function stepRow(){bAnim.paused=true;document.getElementById('mPlay').textContent='▶';bAnim.i=(bAnim.i+1)%Math.max(1,bAnim.n);}
+function stopTick(){cancelAnimationFrame(bAnim.raf);bAnim.n=0;}
+function braidTick(ts){
+  if(!bAnim.n)return;
+  if(!bAnim.paused)bAnim.i=Math.floor(ts/650)%bAnim.n;
+  const r=document.getElementById('bband');
+  if(r&&bAnim.sec[bAnim.i])r.setAttribute('d',bAnim.sec[bAnim.i]);
+  bAnim.raf=requestAnimationFrame(braidTick);
+}
+function readBraid(tokens){
+  const D={VINIT:1,ENGAGR:1,FSPLIT:1,TANCH:-1,IFIX:-1,FFUSE:-1};
+  let d=0,gens=[],prof=[0],rows=[],max=0;
+  for(const t of tokens){
+    const dl=D[t]||0;let bad=null,g=0;
+    if(t==='AFWD'||t==='AREV'){if(d<=0)bad='nothing to cross';else g=(t==='AFWD'?1:-1)*d;}
+    if(dl<0&&d+dl<0)bad='pop below start depth';
+    const d0=d;if(!bad)d+=dl;
+    if(g)gens.push(g);
+    max=Math.max(max,d);prof.push(d);
+    rows.push({t,d0,d1:d,g,bad});
+  }
+  return{rows,gens,prof,max,strands:max+1,closes:d===0,end:d,writhe:gens.reduce((a,g)=>a+Math.sign(g),0)};
+}
+// ANNULAR BRAID: words live on Z/nZ, so the braid is drawn on an annulus.
+//   angle  = token index mod n   (row k occupies the sector [k, k+1) clockwise from the cut)
+//   radius = strand slot         (slot 0 innermost; depth d = how many slots are live)
+// The ROTAT cut k is the seam at 12 o'clock. Strands cross the seam and rejoin
+// the start of the word, so the closed-braid trace is the geometry itself, not an add-on.
+function drawBraidDiagram(tokens,allPass){
+  const svg=document.getElementById('braidSvg'),box=document.getElementById('braid-view');
+  const W0=box.clientWidth||800,H0=box.clientHeight||480;
+  const up=Math.max(1,660/Math.min(W0,H0)),W=W0*up,H=H0*up;      // keep the ring legible in short panes
+  const R=readBraid(tokens),n=R.rows.length,S=R.strands;
+  const nb=getBaseTokens().length,cut=nb?((rot%nb)+nb)%nb:0;     // wrapped letters = last `cut` of the cut word
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const cx=W/2,cy=H/2+10,Rmax=Math.min(W,H)/2-100,Rin=Rmax*0.3;
+  const dr=Math.min(62,(Rmax-Rin)/Math.max(S-1,1)),rs=q=>Rin+q*dr,Rlast=rs(S-1),rl=Rlast+30;
+  const TAU=2*Math.PI,th=u=>-Math.PI/2+TAU*u/n;
+  const pt=(q,u,r=rs(q))=>[cx+r*Math.cos(th(u)),cy+r*Math.sin(th(u))];
+  const fmt=z=>z[0].toFixed(1)+','+z[1].toFixed(1);
+  // local frame at (slot,u): f(p,q) = p along the radius, q along the flow (clockwise)
+  const fr=(q,u)=>{const a=th(u),c=Math.cos(a),sn=Math.sin(a),[x,y]=pt(q,u);return(p,t)=>[x+p*c-t*sn,y+p*sn+t*c];};
+  const J=pts=>pts.map((z,i)=>(i?'L':'M')+fmt(z)).join(' ');
+  const steps=du=>Math.max(6,Math.ceil(Math.abs(du)*TAU/n/0.06));
+  const arcPts=(r,ua,ub)=>{const m=steps(ub-ua);return Array.from({length:m+1},(_,i)=>pt(0,ua+(ub-ua)*i/m,r));};
+  const Lr=(q,ua,ub)=>{const m=steps(ub-ua);return J(Array.from({length:m+1},(_,i)=>pt(q,ua+(ub-ua)*i/m)));};
+  const bz=(a,b,c,d,t)=>{const v=1-t;return v*v*v*a+3*v*v*t*b+3*v*t*t*c+t*t*t*d;};
+  const Cr=(qa,ua,qb,ub)=>{const m=(ua+ub)/2,K=Math.max(14,steps(ub-ua));
+    return J(Array.from({length:K+1},(_,i)=>{const t=i/K;return pt(bz(qa,qa,qb,qb,t),bz(ua,m,m,ub,t));}));};
+  const sector=i=>J([...arcPts(Rlast+14,i,i+1),...arcPts(Rin-18,i,i+1).reverse()])+' Z';
+  const dim=allPass?1:.6;
+  // CLOSED LINK: when depth returns to 0 (and no row is malformed) the word is a genuine closed braid.
+  // Every lane runs the full circle (births/deaths just continue the lane, no caps or bars), the seam
+  // joins lane q's end to lane q's start, and strands are coloured by link component (cycle of the permutation).
+  const conn=R.closes&&!R.rows.some(r=>r.bad);
+  let comp=null,ncomp=0;
+  if(conn){
+    const ids=[...Array(S).keys()];
+    R.rows.forEach(r=>{if(r.g){const lo=r.d0-1;[ids[lo],ids[lo+1]]=[ids[lo+1],ids[lo]];}});
+    const nxt=Array(S);ids.forEach((j,p)=>{nxt[j]=p;});     // arc j ends in lane p, rejoins arc p at the seam
+    comp=Array(S).fill(-1);
+    for(let j=0;j<S;j++)if(comp[j]<0){let a=j;while(comp[a]<0){comp[a]=ncomp;a=nxt[a];}ncomp++;}
+  }
+  const colr=id=>conn?CPAL[comp[id]%CPAL.length]:BPAL[id%8];
+  const P=(id,d)=>`<path d="${d}" fill="none" stroke="${colr(id)}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" opacity="${dim}"/><path class="pl" d="${d}"/>`;
+  let slots=conn?[...Array(S).keys()]:[0],nid=1,h='';
+
+  // lanes, sector rules, the live row band
+  for(let q=0;q<S;q++)h+=`<circle cx="${cx}" cy="${cy}" r="${rs(q).toFixed(1)}" fill="none" stroke="#1d1b30" stroke-width="1" stroke-dasharray="2 6"/>`;
+  for(let k=0;k<n;k++)h+=`<path d="M${fmt(pt(0,k,Rin-18))} L${fmt(pt(0,k,rl-14))}" stroke="#191729" stroke-width="1"/>`;
+  h+=`<path id="bband" d="${sector(0)}" fill="#e8b84b" opacity=".09"/>`;
+
+  R.rows.forEach((r,k)=>{
+    const u0=k,u1=k+1,um=k+.5,t=r.t,ok=!r.bad,d0=r.d0,d1=r.d1,dl=d1-d0;
+    const before=slots.slice(),skip=new Set();let mk='';
+    if(r.g&&ok){
+      const lo=d0-1,hi=d0,pos=r.g>0,il=before[lo],ih=before[hi];
+      const pa=Cr(lo,u0,hi,u1),pb=Cr(hi,u0,lo,u1);
+      const [under,over,iu,io]=pos?[pb,pa,ih,il]:[pa,pb,il,ih];
+      h+=P(iu,under)+`<path d="${over}" fill="none" stroke="#0b0b12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>`+P(io,over);
+      skip.add(lo);skip.add(hi);slots[lo]=ih;slots[hi]=il;
+      mk+=`<circle cx="${pt((lo+hi)/2,um)[0].toFixed(1)}" cy="${pt((lo+hi)/2,um)[1].toFixed(1)}" r="5" fill="none" stroke="${pos?'#e8b84b':'#a84bb8'}" stroke-width="1.6"/>`;
+    }
+    if(conn){for(let i=0;i<S;i++){if(!skip.has(i))h+=P(before[i],Lr(i,u0,u1));}}
+    else for(let i=0;i<=d0;i++){
+      if(skip.has(i)||(ok&&dl<0&&i===d0))continue;
+      h+=P(before[i],Lr(i,u0,u1));
+    }
+    if(!conn&&ok&&dl>0){
+      const v=nid++;
+      if(t==='FSPLIT')h+=P(v,Cr(d0,u0,d1,u1));
+      else{const f=fr(d1,um);
+        h+=P(v,Lr(d1,um,u1))+`<path d="M${fmt(f(-7,-9))} Q${fmt(f(-7,0))} ${fmt(f(0,0))} Q${fmt(f(7,0))} ${fmt(f(7,-9))}" fill="none" stroke="${BPAL[v%8]}" stroke-width="2"/>`;}
+      slots.push(v);
+    }
+    if(!conn&&ok&&dl<0){
+      const id=slots.pop();
+      if(t==='FFUSE')h+=P(id,Cr(d0,u0,d1,u1));
+      else{const f=fr(d0,um),lab=f(0,16);
+        h+=P(id,Lr(d0,u0,um))+`<path d="M${fmt(f(-9,0))} L${fmt(f(9,0))}" stroke="${BPAL[id%8]}" stroke-width="3.4" stroke-linecap="round"/>`;
+        mk+=`<text x="${lab[0].toFixed(1)}" y="${(lab[1]+4).toFixed(1)}" text-anchor="middle" fill="${FAMC[FAM[t]]}" font-size="12">${GLYPH[t]}</text>`;}
+    }
+    const fc=FAMC[FAM[t]],qs=Math.min(d0,S-1),[xs,ys]=pt(qs,um);
+    if(!ok)mk+=`<text x="${xs.toFixed(1)}" y="${(ys+5).toFixed(1)}" text-anchor="middle" fill="#f66" font-size="15">✕</text>`;
+    else if(t==='EVALT'||t==='EVALF'||t==='IMSCRIB'||t==='ENGAGR')
+      mk+=`<circle cx="${xs.toFixed(1)}" cy="${ys.toFixed(1)}" r="9" fill="#0b0b12" stroke="${fc}" stroke-width="1.8"/><text x="${xs.toFixed(1)}" y="${(ys+4).toFixed(1)}" text-anchor="middle" fill="${fc}" font-size="11">${GLYPH[t]}</text>`;
+    else if(t==='CLINK'&&d0>=1){const [mx,my]=pt(d0-.5,um);
+      mk+=`<path d="M${fmt(pt(d0-1,um))} L${fmt(pt(d0,um))}" stroke="${fc}" stroke-width="1.4" stroke-dasharray="3 3"/><circle cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="9" fill="#0b0b12" stroke="${fc}"/><text x="${mx.toFixed(1)}" y="${(my+4).toFixed(1)}" text-anchor="middle" fill="${fc}" font-size="11">⋈</text>`;}
+    h+=mk;
+    // rim labels: glyph (violet when it wrapped through the cut), row index mod n, generator or depth
+    const wrapped=k+cut>=nb&&cut>0,[gx,gy]=pt(0,um,rl),[ix,iy]=pt(0,um,rl+16),[sx,sy]=pt(0,um,rl+36);
+    h+=`<text x="${gx.toFixed(1)}" y="${(gy+5).toFixed(1)}" text-anchor="middle" fill="${wrapped?'#a84bb8':fc}" font-size="15" font-weight="bold">${GLYPH[t]}</text>`
+      +`<text x="${ix.toFixed(1)}" y="${(iy+3).toFixed(1)}" text-anchor="middle" fill="#8a84b0" font-size="9">${k}</text>`
+      +`<text x="${sx.toFixed(1)}" y="${(sy+4).toFixed(1)}" text-anchor="middle" fill="${r.g?(r.g>0?'#e8b84b':'#c78bd6'):'#5a5580'}" font-size="10">${r.g?sig(r.g):'d='+d1}</text>`;
+  });
+
+  // the seam: strands leave row n-1 and re-enter row 0 (Z/nZ). Closed when depth returns to 0.
+  h+=`<path d="M${fmt(pt(0,0,Rin-22))} L${fmt(pt(0,0,rl-14))}" stroke="#e8b84b" stroke-width="1.8" opacity="${conn?.3:.85}"/>`;
+  if(R.closes&&!conn){const [sx0,sy0]=pt(0,0);
+    h+=`<circle cx="${sx0.toFixed(1)}" cy="${sy0.toFixed(1)}" r="4.5" fill="#0b0b12" stroke="#e8b84b" stroke-width="1.6"/>`;}
+  else{
+    for(let q=0;q<slots.length;q++){ if(q===0)continue;
+      const f=fr(q,n+.22);
+      h+=`<path d="${Lr(q,n,n+.22)}" fill="none" stroke="#f66" stroke-width="2.4" stroke-dasharray="3 3" stroke-linecap="round"/>`
+        +`<path d="M${fmt(f(-8,0))} L${fmt(f(8,0))}" stroke="#f66" stroke-width="2.4" stroke-linecap="round"/>`;}
+  }
+  // where the original word's own head and tail sit once the cut has moved
+  if(cut>0){const ub=n-cut;
+    h+=`<path d="M${fmt(pt(0,ub,Rin-22))} L${fmt(pt(0,ub,rl-14))}" stroke="#a84bb8" stroke-width="1.4" stroke-dasharray="4 3" opacity=".85"/>`
+      +`<path d="${J(arcPts(Rlast+14,ub,n))}" fill="none" stroke="#a84bb8" stroke-width="1.6" stroke-dasharray="2 3" opacity=".8"/>`;}
+
+  // the hole carries the modulus
+  h+=`<text x="${cx}" y="${cy-8}" text-anchor="middle" fill="#e8b84b" font-size="15" font-weight="bold">ℤ/${nb}ℤ</text>`
+    +`<text x="${cx}" y="${cy+8}" text-anchor="middle" fill="#c8b8e0" font-size="10">cut k = ${cut}</text>`
+    +`<text x="${cx}" y="${cy+22}" text-anchor="middle" fill="${R.closes?'#6f6':'#f66'}" font-size="10">${conn?'closed link · '+ncomp+' comp.':R.closes?'closed':'open · d='+R.end}</text>`;
+  h+=`<text x="26" y="22" fill="#c8b8e0" font-size="12">annular braid read-off: ${R.gens.length?R.gens.map(sig).join(' '):'no crossings'}</text>`;
+  h+=`<text x="26" y="38" fill="#8a84b0" font-size="10">${S} strands${conn?' · '+ncomp+' component'+(ncomp>1?'s':''):''} · writhe ${R.writhe>0?'+':''}${R.writhe} · ${conn?'closed link (each lane rejoins itself at the seam)':R.closes?'closed (depth returns to 0 at the seam)':'open at the seam, ends at depth '+R.end}</text>`;
+  svg.innerHTML=`<g id="braidZoom">${h}</g>`;applyZoom('braid');
+  cancelAnimationFrame(bAnim.raf);
+  bAnim={n,i:0,sec:Array.from({length:n},(_,i)=>sector(i)),paused:bAnim.paused,raf:0};
+  bAnim.raf=requestAnimationFrame(braidTick);
+  const bad=R.rows.map((r,k)=>r.bad?`row ${k} ${GLYPH[r.t]}: ${r.bad}`:'').filter(Boolean);
+  document.getElementById('cfg-box').innerHTML=`<div style="border-bottom:1px solid #2a2740;padding-bottom:8px;margin-bottom:8px"><b>Braid reading</b> <span style="color:#8a84b0">(read_tangle, annular)</span><br/>
+    annulus: ℤ/${nb}ℤ &middot; cut k = ${cut}${cut?` &middot; <span style="color:#a84bb8">base head at row ${n-cut}</span>`:''}<br/>
+    generators: ${R.gens.length?R.gens.map(sig).join(' '):'&mdash;'}<br/>strands ${S}${conn?' &middot; components '+ncomp:''} &middot; crossings ${R.gens.length} &middot; writhe ${R.writhe}<br/>
+    depth: ${R.prof.join(' ')}<br/>closes at the seam: ${R.closes?'<span style="color:#6f6">yes</span>':'<span style="color:#f66">no</span>'}
+    ${bad.length?'<br/><span style="color:#f66">'+bad.join('<br/>')+'</span>':''}</div>`+document.getElementById('cfg-box').innerHTML;
+}
+
+window.onload = function() {
+  setupPanZoom('braid');
+  setupPanZoom('static');
+  
+  document.getElementById("wordSel").value = "𐑛";
+  document.getElementById("customWord").style.display = "none";
+  evaluate();
+};
+
+
+/* === Calculus Ratiocinator === */
+
+
+const GLYPH = {"VINIT":"⊢","TANCH":"⊣","AFWD":"≻","AREV":"≺","CLINK":"⋈",
+  "IMSCRIB":"⊙","FSPLIT":"∈","FFUSE":"∋","EVALT":"⊤","EVALF":"⊥",
+  "ENGAGR":"⊞","IFIX":"⊡"};
+
+const SYM2NAME = {
+  "⊢": "VINIT", "⊣": "TANCH", "≻": "AFWD", "≺": "AREV",
+  "⋈": "CLINK", "⊙": "IMSCRIB", "∈": "FSPLIT", "∋": "FFUSE",
+  "⊤": "EVALT", "⊥": "EVALF", "⊞": "ENGAGR", "⊡": "IFIX"
+};
+
+const FAM = {"VINIT":0,"TANCH":0,"AFWD":0,"AREV":0,"CLINK":0,"IMSCRIB":0,
+  "FSPLIT":1,"FFUSE":1,"EVALT":2,"EVALF":2,"ENGAGR":2,"IFIX":3};
+const FAMC = ["#0072B2","#7B3294","#B8860B","#009E73"];
+
+// ── B4 Belnap carrier of truth values (from G-mOMonadOS belnap.rs) ──
+// N=0, T=1, F=2, B=3 — truth order: F≤N≤T, F≤B≤T; N and B incomparable
+const B4_N = 0, B4_T = 1, B4_F = 2, B4_B = 3;
+const B4_NAME = ['N', 'T', 'F', 'B'];
+
+// Join (least upper bound in truth order)
+const B4_JOIN = [
+  [B4_N, B4_T, B4_F, B4_B],  // N row
+  [B4_T, B4_T, B4_B, B4_T],  // T row
+  [B4_F, B4_B, B4_F, B4_B],  // F row
+  [B4_B, B4_T, B4_B, B4_B],  // B row
+];
+
+function calc_bn(v){return B4_NAME[v];}
+function calc_swap(v){return v ^ 3;}  // N↔B, T↔F (AREV clearing reverse)
+function calc_gate(op,x){
+  switch(op){
+    case 'VINIT': return x;
+    case 'EVALT': return B4_T;
+    case 'EVALF': return B4_F;
+    case 'ENGAGR': return B4_B;
+    case 'IMSCRIB': return B4_T;
+    case 'AREV': return calc_swap(x);
+    case 'FSPLIT': return x;
+    case 'FFUSE': return x;
+    case 'CLINK': return x;
+    case 'TANCH': return x;
+    case 'AFWD': return x;
+    case 'IFIX': return x;
+    default: return x;
+  }
+}
+function calc_seed_to_b4(s){
+  switch(s){
+    case 1: return B4_T;   // seed T
+    case 2: return B4_F;   // seed F
+    case 3: return B4_B;   // seed B (classical slice)
+    case 9: return B4_B;   // seed Tf (T+F = both)
+    case 15: return B4_B;  // seed A (full SIXTEEN₃)
+    default: return B4_T;
+  }
+}
+
+
+// New Symbol-based Programs
+const PROGRAMS = {
+  "𐑛": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑨": "⊢≻∈⊤⊥⊞⋈⊙≺∋⊡⊣",
+  "𐑼": "⊢∈⊤≻⋈⊙⊡⋈⊡⋈⊡≺⊥∋⊞⊣",
+  "𐑦": "⊢⊙∈⊤≻⊥≺⊞∋⋈⊡⊣",
+  "𐑡": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑰": "⊢⊣∈≻⋈⊤≺⊥∋⊙⊡⊞⋈⊣",
+  "𐑥": "⊢∈≻⊤≺⊥⋈⊞⊙∋⊡⊣",
+  "𐑶": "⊢∈≻⊤≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑸": "⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣",
+  "𐑩": "⊢≻∈⊤≻⊞⊥≺∋⋈⊙⊡⊣",
+  "𐑑": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣",
+  "𐑽": "⊢⊣≻∈≻⊤⋈⊙≻⊥⋈⊙⊞≺∋⊡⊣",
+  "𐑾": "⊢∈≻⊤⋈≺⊥⊞∋⊡⊙⋈⊣",
+  "𐑗": "⊢∈≻⊤⋈≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑿": "⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣",
+  "𐑬": "⊢≻∈⊤⋈⊡⊥≺⊞∋⊙⊣",
+  "𐑯": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑹": "⊢≻∈⊤⊥⊞∋⋈⊙⊡⊣",
+  "𐑱": "⊢≻∈⊤⊥⊞∋⋈⊙≺⊡⊣",
+  "𐑞": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑐": "⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣",
+  "𐑘": "⊢≻∈⊤⊥⊞⋈⊙∋⊡≺⊣",
+  "𐑤": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣",
+  "𐑧": "⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑪": "⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑺": "⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣",
+  "𐑚": "⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣",
+  "𐑔": "⊢∈≻⊤⋈⊙≺⊥⊞⊡∋⊣",
+  "𐑲": "⊢≻⋈∈⊤⊥⊞∋≺⊙⊡⊣",
+  "𐑝": "⊢∈≻⊤⋈≺⊥⊞∋⊙⊡⊣",
+  "𐑜": "⊢≻∈⊤⋈⊥≺⋈∋⊞⊙⊡⊣",
+  "𐑠": "⊢∈≻⊤⋈≺⊥⊞⊙⊡∋⊣",
+  "𐑵": "⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣",
+  "𐑢": "⊢≻⋈⊙∈⊤⊥⊞∋⊡⊣",
+  "⊙": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑮": "⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣",
+  "𐑻": "⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣",
+  "𐑣": "⊢≻∈⊤⋈≺⊥⋈⊞∋⊙⊡⋈⊣",
+  "𐑓": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑒": "⊢∈≻⊤⋈⊙⊡≺⊥⊞∋⊣",
+  "𐑖": "⊢≻∈⊤⊥⊞≺⋈⊙⊡∋⊣",
+  "𐑫": "⊢≻∈⊤⊥⊞⋈⊙⊡∋⊣",
+  "𐑙": "⊢≻≺⋈∈⊤⊥⊞∋⊙⊡⊣",
+  "𐑕": "⊢≻⋈∈⊤⊥⊞∋⊙⊡≺⋈⊣",
+  "𐑳": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑷": "⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣",
+  "𐑴": "⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣",
+  "𐑭": "⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣",
+  "𐑟": "⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣"
+};
+
+// Pan/Zoom state
+const zoomState = {
+  braid: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 },
+  static: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 }
+};
+
+function calc_applyZoom(viewId) {
+  const el = document.getElementById(viewId + 'Zoom');
+  if (!el) return;
+  const s = zoomState[viewId];
+  el.setAttribute('transform', `translate(${s.tx}, ${s.ty}) scale(${s.scale})`);
+}
+
+function calc_setupPanZoom(id) {
+  const container = document.getElementById(id + '-view');
+  if (!container) return;
+  const state = zoomState[id];
+
+  container.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+    const vb = svg.viewBox.baseVal;
+    const rect = container.getBoundingClientRect();
+    
+    // Fallbacks in case viewBox isn't fully set
+    const vbW = vb.width || 800;
+    const vbH = vb.height || 480;
+    const scaleX = vbW / (container.clientWidth || 800);
+    const scaleY = vbH / (container.clientHeight || 480);
+    
+    const mouseX = (e.clientX - rect.left) * scaleX;
+    const mouseY = (e.clientY - rect.top) * scaleY;
+    
+    const zoomFactor = Math.exp(-e.deltaY * 0.002);
+    const newScale = Math.min(Math.max(0.1, state.scale * zoomFactor), 20);
+    
+    // Zoom to mouse pointer
+    state.tx = mouseX - (mouseX - state.tx) * (newScale / state.scale);
+    state.ty = mouseY - (mouseY - state.ty) * (newScale / state.scale);
+    state.scale = newScale;
+    
+    calc_applyZoom(id);
+  }, { passive: false });
+
+  container.addEventListener('mousedown', (e) => {
+    state.isDragging = true;
+    state.startX = e.clientX;
+    state.startY = e.clientY;
+    state.startTx = state.tx;
+    state.startTy = state.ty;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!state.isDragging) return;
+    const svg = container.querySelector('svg');
+    if (!svg) return;
+    const vb = svg.viewBox.baseVal;
+    const vbW = vb.width || 800;
+    const vbH = vb.height || 480;
+    const scaleX = vbW / (container.clientWidth || 800);
+    const scaleY = vbH / (container.clientHeight || 480);
+    
+    state.tx = state.startTx + (e.clientX - state.startX) * scaleX;
+    state.ty = state.startTy + (e.clientY - state.startY) * scaleY;
+    calc_applyZoom(id);
+  });
+
+  window.addEventListener('mouseup', () => {
+    state.isDragging = false;
+  });
+  
+  container.addEventListener('dblclick', () => {
+    state.tx = 0;
+    state.ty = 0;
+    state.scale = 1;
+    calc_applyZoom(id);
+  });
+}
+
+let rot = 0;  // current cut k, taken mod n (ROTAT)
+
+const $=id=>document.getElementById(id);
+const ALIAS={VINIT:'VINIT',VI:'VINIT',TANCH:'TANCH',TA:'TANCH',AFWD:'AFWD',AF:'AFWD',AREV:'AREV',AR:'AREV',CLINK:'CLINK',CL:'CLINK',EVALT:'EVALT',ET:'EVALT',FSPLIT:'FSPLIT',FS:'FSPLIT',FFUSE:'FFUSE',FF:'FFUSE',IMSCRIB:'IMSCRIB',IM:'IMSCRIB',EVALF:'EVALF',EF:'EVALF',ENGAGR:'ENGAGR',EG:'ENGAGR',IFIX:'IFIX',IX:'IFIX'};
+// §1: glyphs glued, full names, short forms, δ/μ parse alike; brackets parse to nothing
+function calc_parseWord(str){
+  const out=[];
+  for(const c of str.replace(/[\[\]()]/g,' ').split(/\s+/)){
+    if(!c)continue;
+    if(ALIAS[c.toUpperCase()]){out.push(ALIAS[c.toUpperCase()]);continue;}
+    for(const ch of c){if(ch==='δ')out.push('FSPLIT');else if(ch==='μ')out.push('FFUSE');else if(SYM2NAME[ch])out.push(SYM2NAME[ch]);}
+  }
+  return out;
+}
+function calc_getBaseTokens(){
+  const sel=$('calc-wordSel').value;
+  return calc_parseWord(sel==='custom'?$('calc-customWord').value:(PROGRAMS[sel]||''));
+}
+
+// words live on Z/nZ: the cut k reads token (k+i) mod n at position i
+function calc_rotateWord(tokens, k) {
+  const n = tokens.length;
+  if (!n) return tokens;
+  const r = ((k % n) + n) % n;
+  return tokens.slice(r).concat(tokens.slice(0, r));
+}
+
+function calc_getTokens() { return calc_rotateWord(calc_getBaseTokens(), rot); }
+
+// minimal period p | n of the cyclic word (p = n when aperiodic)
+function cyclicPeriod(t) {
+  const n = t.length;
+  for (let p = 1; p <= n; p++) {
+    if (n % p) continue;
+    let ok = true;
+    for (let i = p; i < n && ok; i++) if (t[i] !== t[i - p]) ok = false;
+    if (ok) return p;
+  }
+  return n;
+}
+
+function calc_rotat(d) {
+  const n = calc_getBaseTokens().length;
+  if (!n) return;
+  rot = (((rot + d) % n) + n) % n;
+  calc_evaluate();
+}
+
+function calc_setCut(k) { rot = k; calc_evaluate(); }
+
+function calc_cycleHTML(base){
+  const n=base.length;if(!n)return'';
+  const g=t=>t.map(x=>GLYPH[x]),p=cyclicPeriod(base),cur=((rot%n)+n)%n,word=g(base).join('');
+  const vc={T:'#6f6',N:'#6af',B:'#a8f',F:'#f66'};
+  let rows='';const reg={};const V0=calc_model(base).A;
+  for(let k=0;k<p;k++){
+    const X=calc_execRing(calc_rotateWord(base,k),+$('calc-seedSel').value),ro=X.final;
+    (reg[ro]=reg[ro]||[]).push(k);
+    const w=g(calc_rotateWord(base,k)).map((c,i)=>(k+i>=n)?`<span class="wrap">${c}</span>`:c).join('');
+    rows+=`<tr class="row ${(cur%p)===k?'cur':''}" onclick="calc_setCut(${k})"><td>${k}</td><td>${ro}</td><td style="color:${vc[V0.v]}">${V0.v}</td><td class="w">${w}</td></tr>`;
+  }
+  const lines=Object.entries(reg).map(([r,ks])=>`<div>${r.padEnd(6,'\u00a0')} at k = ${ks.join(', ')}</div>`).join('');
+  return `<div class="cyc"><div><b>cycle</b> <span style="letter-spacing:2px;font-size:13px">${g(base).join(' ')}</span></div>
+  <div>word : <span style="letter-spacing:2px;font-size:13px">${word}</span> &nbsp; period ${p} &middot; ℤ/${n}ℤ${p<n?` &middot; ${n/p} copies of a period-${p} block`:''}</div>
+  <div style="margin:4px 0;color:#8a84b0">ROTAT cuts, each judged by the engine under the current verb; <span class="wrap">violet</span> letters wrapped</div>
+  <table><tr><th>k</th><th>readout</th><th>verdict</th><th>word</th></tr>${rows}</table>
+  <div style="margin-top:6px;color:#8a84b0">landing register by cut:</div>${lines}
+  <div style="margin-top:4px">readout is <b>${Object.keys(reg).length>1?'PHASE-BEARING':'phase-blind'}</b>: ${Object.keys(reg).length} distinct landing${Object.keys(reg).length===1?'':'s'}</div></div>`;
+}
+
+function calc_updateWord() {
+  rot = 0;
+  const sel = document.getElementById("calc-wordSel").value;
+  document.getElementById("calc-customWord").style.display = sel === "custom" ? "block" : "none";
+  if (sel !== "custom") calc_evaluate();
+}
+
+function calc_onCustom() { rot = 0; calc_evaluate(); }
+
+
+// ═══ IMASM ENGINE ═══ follows IMASM.md §3–§6 (check.rs / imasm16_3.rs semantics)
+const WORK=new Set(['AFWD','AREV','CLINK','EVALT','EVALF','ENGAGR','IFIX']); // §1 Work column
+
+// §3 the verb supplies the edges; the word is only the node list
+function calc_buildGraph(N,verb,ar){
+  const n=N.length,E=[];
+  // ⊢ VINIT has in-arity 0: it is a source and never an edge target (a ROTAT cut or a ring wrap can put it mid-word)
+  const tgtOK=b=>N[b]!=='VINIT';
+  for(let i=0;i+1<n;i++)if(tgtOK(i+1))E.push([i,i+1]);
+  if(verb==='ring'&&n&&tgtOK(0))E.push([n-1,0]);
+  if(verb==='protocol'){const st=[];
+    N.forEach((t,i)=>{if(t==='FSPLIT')st.push(i);else if(t==='FFUSE'&&st.length){const f=st.pop();for(let a=1;a<ar;a++)E.push([f,i]);}});}
+  return E;
+}
+function calc_reach(n,adj,i){const s=new Set([i]),q=[i];while(q.length){const u=q.pop();for(const v of adj[u])if(!s.has(v)){s.add(v);q.push(v);}}return s;}
+function calc_analyze(N,E){
+  const n=N.length,out=N.map(()=>[]),inn=N.map(()=>[]),pre=N.map(()=>[]),suc=N.map(()=>[]);
+  E.forEach(([a,b],k)=>{out[a].push(k);inn[b].push(k);suc[a].push(b);pre[b].push(a);});
+  const errs=[];
+  N.forEach((t,i)=>{const G=GLYPH[t]+'@'+i;
+    if(out[i].length>1&&t!=='FSPLIT')errs.push(G+' fans out but is not a brancher');
+    else if(out[i].length>3)errs.push(G+' exceeds out-arity');
+    if(inn[i].length>1&&t!=='FFUSE')errs.push(G+' merges in but is not a merger');
+    else if(inn[i].length>(t==='VINIT'?0:3))errs.push(G+' exceeds in-arity');
+    if(t==='VINIT'&&inn[i].length)errs.push(G+' is a source with in-arity 0');});
+  // §3 pairing is ancestry over edges (a ∈ is its own ancestor; multiplicity counts)
+  const anc=N.map((_,i)=>calc_reach(n,pre,i)),fw=N.map((_,i)=>calc_reach(n,suc,i));
+  const pairs=[],fk=new Set(),fu=new Set();
+  N.forEach((t,g)=>{if(t!=='FFUSE'||inn[g].length<2)return;
+    const src=inn[g].map(k=>E[k][0]),cand=[];
+    N.forEach((u,f)=>{if(u==='FSPLIT'&&src.every(x=>anc[x].has(f)))cand.push(f);});
+    if(!cand.length)return;
+    const f=cand.find(c=>cand.every(d=>d===c||!anc[d].has(c)));const F0=f===undefined?cand[0]:f;
+    const arms=[];N.forEach((_,v)=>{if(v!==F0&&v!==g&&fw[F0].has(v)&&anc[g].has(v))arms.push(v);});
+    pairs.push({f:F0,g,arms,work:arms.some(v=>WORK.has(N[v]))});fk.add(F0);fu.add(g);});
+  const forks=[],fuses=[];N.forEach((t,i)=>{if(t==='FSPLIT')forks.push(i);if(t==='FFUSE')fuses.push(i);});
+  const dang=[...forks.filter(i=>!fk.has(i)),...fuses.filter(i=>!fu.has(i))];
+  // §4 close condition: reconnection AND transformation; B beats T
+  let v,why;
+  if(errs.length){v='F';why='ill-typed';}
+  else if(!n){v='N';why='void';}
+  else if(!forks.length&&!fuses.length){v='N';why='no fork';}
+  else if(dang.length){v='B';why='open';}
+  else if(!pairs.some(p=>p.work)){v='N';why='identity';}
+  else if(N.includes('ENGAGR')&&!N.includes('IFIX')){v='B';why='paradox held';}
+  else{v='T';why='closes';}
+  // classify by invariants
+  const par=[...Array(n).keys()],fd=x=>par[x]===x?x:(par[x]=fd(par[x]));
+  E.forEach(([a,b])=>{par[fd(a)]=fd(b);});
+  const C=new Set(par.map((_,i)=>fd(i))).size,beta=E.length-n+C;
+  const br=N.map((_,i)=>i).filter(i=>out[i].length>1),mg=N.map((_,i)=>i).filter(i=>inn[i].length>1);
+  const arms=br.reduce((a,i)=>a+out[i].length,0);
+  let name;
+  if(!n)name='trivial';else if(C>1||beta>=2)name='network';
+  else if(beta===0){if(!br.length)name='linear';else{
+    const bs=new Set(br);let adj=0;E.forEach(([a,b])=>{if(bs.has(a)&&bs.has(b))adj++;});
+    name=(adj>=br.length-1&&arms>=3)?'star':'comb';}}
+  else name=(br.length||mg.length)?'branched':'ring';
+  let w=Array(n).fill(1),l=1;
+  for(let it=0;it<300&&n;it++){const x=w.slice();E.forEach(([a,b])=>{x[a]+=w[b];x[b]+=w[a];});l=Math.hypot(...x);w=x.map(q=>q/l);}
+  return{v,why,errs,pairs,forks,fuses,dang,out,inn,name,beta,C,br:br.length,mg:mg.length,
+    src:inn.filter(a=>!a.length).length,snk:out.filter(a=>!a.length).length,arms,rho:n?l-1:0,
+    transformed:pairs.filter(p=>p.work).length};
+}
+// §5 Kleene iteration from all-N edge values; every calc_gate monotone in ≤_i
+function calc_flowEval(N,E,seed,ar,A){
+  const n=N.length,val=E.map(()=>B4_N),inV=i=>A.inn[i].reduce((a,k)=>B4_JOIN[a][val[k]],B4_N);
+  const outOf=(i,x)=>{const t=N[i];
+    if(t==='FSPLIT'){return A.out[i].map(()=>x);}
+    const y=t==='VINIT'?seed:calc_gate(t,x);return A.out[i].map(()=>y);};
+  let ch=true,rounds=0;
+  while(ch&&rounds<4*E.length+20){ch=false;rounds++;
+    for(let i=0;i<n;i++){const x=N[i]==='VINIT'?seed:inV(i),ys=outOf(i,x);
+      A.out[i].forEach((k,j)=>{const nv=B4_JOIN[val[k]][ys[j]];if(nv!==val[k]){val[k]=nv;ch=true;}});}}
+  const rin=N.map((t,i)=>t==='VINIT'?seed:inV(i)),rout=N.map((t,i)=>t==='FSPLIT'?rin[i]:calc_gate(t,rin[i]));
+  const ti=N.lastIndexOf('TANCH'),ro=ti>=0?rin[ti]:rout[n-1];
+  const dy=A.pairs.map(p=>({f:p.f,g:p.g,fed:rin[p.f],rec:rin[p.g],id:rin[p.f]===rin[p.g]}));
+  return{rin,rout,rounds,read:calc_bn(ro),dy,sig:dy.map(d=>d.id?'id':'¬id').join(' ')||'—'};
+}
+function calc_model(N){
+  const ar=+$('calc-arSel').value,verb=$('calc-verbSel').value,seed=calc_seed_to_b4(+$('calc-seedSel').value);
+  const E=calc_buildGraph(N,verb,ar),A=calc_analyze(N,E),F=calc_flowEval(N,E,seed,ar,A);
+  return{N,E,A,F,ar,verb,seed};
+}
+// ═══ RING EXECUTION ═══ mirrors the kernel's Machine::step (imasm16_3.rs)
+// Register is Reg16_3: four bits {big_t, big_f, small_t, small_f}.
+// VINIT clears to N and resets the frame stack. ∈ opens an empty frame.
+// ∋ pops the frame and unions its touched axes into reg AND the parent frame.
+// EVALT/EVALF/ENGAGR union into the register (touch), never overwrite.
+// AREV clears the register to N (clearing reverse). AFWD seeds T if reg=N.
+// IMSCRIB seeds T only if reg is N. IFIX latches; everything after is inert.
+function calc_execRing(N, seed){
+  let reg = {bt:false,bf:false,st:false,sf:false};
+  let fixed=false, fixedAt=0, fin=null;
+  let inert=0, skipped=0, unm=0, exe=0, abandoned=0;
+  const stack=[];  // each frame: [] of touched Axis ('T'|'F'|'I')
+
+  function isN(r){return !r.bt&&!r.bf&&!r.st&&!r.sf;}
+
+  N.forEach((t,i)=>{
+    if(fixed){
+      if(t==='FFUSE')skipped++;
+      if(t!=='IMSCRIB')inert++;
+      return;
+    }
+    switch(t){
+      case 'VINIT':
+        reg={bt:false,bf:false,st:false,sf:false};
+        abandoned+=stack.length;
+        stack.length=0;
+        break;
+      case 'TANCH': break;
+      case 'AFWD':
+        if(isN(reg)) reg.bt=true;
+        break;
+      case 'AREV':
+        reg={bt:false,bf:false,st:false,sf:false};
+        break;
+      case 'CLINK': break;
+      case 'IMSCRIB':
+        if(isN(reg)) reg.bt=true;
+        break;
+      case 'FSPLIT':
+        stack.push([]);
+        break;
+      case 'FFUSE':{
+        const closed = stack.pop();
+        if(closed !== undefined){
+          for(const a of closed){
+            if(a==='T') reg.bt=true;
+            else if(a==='F') reg.bf=true;
+            else { reg.st=true; reg.sf=true; }
+          }
+          exe++;
+          if(stack.length>0){
+            const parent = stack[stack.length-1];
+            for(const a of closed) if(!parent.includes(a)) parent.push(a);
+          }
+        } else {
+          unm++;
+        }
+        break;
+      }
+      case 'IFIX':
+        fixed=true; fixedAt=i+1; fin={...reg}; break;
+      case 'EVALT': reg.bt=true; if(stack.length>0) stack[stack.length-1].push('T'); break;
+      case 'EVALF': reg.bf=true; if(stack.length>0) stack[stack.length-1].push('F'); break;
+      case 'ENGAGR': reg.st=true; reg.sf=true; if(stack.length>0) stack[stack.length-1].push('I'); break;
+    }
+  });
+  if(!fixed) fin={...reg};
+  const open = stack.length;
+  const returned = exe>=1 && unm===0 && open===0 && abandoned===0;
+  return {
+    final: calc_regName(fin), fixedAt, inert, skipped, unm, open,
+    exe, returned,
+    bank: { live: exe, dep: 0, inert: 0, exposed: 0, holds: exe>=1, vacuous: exe===0 }
+  };
+}
+function calc_regName(r){
+  // Kernel Reg16_3 name(): N=∅, A=all, else concatenation of present axes
+  const parts=[];
+  if(r.bt) parts.push('T');
+  if(r.bf) parts.push('F');
+  if(r.st) parts.push('t');
+  if(r.sf) parts.push('f');
+  return parts.length===0?'N':parts.length===4?'A':parts.join('');
+}
+const VMEAN={
+  'T closes':'μ∘δ closes over transformed reconnections: proceed',
+  'N identity':'∈/∋ reconnect but no work between: put work on the arms',
+  'N no fork':'no ∈/∋ dyad at all: add a dyad',
+  'N void':'nothing parsed: write a real word',
+  'B open':'a ∈ or ∋ dangles: fuse it (∋) or commit one arm (⊡)',
+  'B paradox held':'closes over work and ⊞ is present with no ⊡ to commit it: sound to hold, not a clean T',
+  'F ill-typed':'grammar violated: revise'};
+const KERNEL={T:'green: worked dyad (split, transform, fuse)',N:'N: identity closure; put a transforming opcode between fork and fuse',B:'Open / paradox: not a clean green',F:'refused: ill-typed'};
+
+function calc_evaluate(){
+  const base=calc_getBaseTokens(),N=calc_rotateWord(base,rot),n=N.length;
+  if(!n){$('calc-rslt-box').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';$('calc-cfg-box').innerHTML='';$('calc-braidSvg').innerHTML='';$('calc-staticSvg').innerHTML='';return;}
+  const M=calc_model(N),A=M.A,F=M.F,k=((rot%n)+n)%n,X=calc_execRing(N,M.seed),V=calc_model(base).A,RO=X.final;
+  const tc={T:'tag-pass',N:'tag-seq',B:'tag-par',F:'tag-fail'}[V.v];
+  const exp=$('calc-expect').value.trim();
+  const expH=exp?`<div style="margin-top:6px">expected <b>${exp}</b> &rarr; ${exp===RO?'<span style="color:#6f6">matches the readout</span>':`<span style="color:#f66">differs: execution read ${RO}</span>`}</div>`:'';
+  $('calc-rslt-box').innerHTML=`
+    <div style="margin-bottom:6px"><b>word</b> (cut k = ${k} mod ${n}): <span style="font-size:14px;letter-spacing:2px">${N.map(t=>GLYPH[t]).join(' ')}</span></div>
+    <div style="color:#8a84b0;font-size:10px;margin-bottom:6px">${M.verb} &middot; fork arity ${M.ar} &middot; seed ${calc_bn(M.seed)}</div>
+    <div><span class="tag ${tc}">${V.v} (${V.why})</span> <span class="tag tag-info">${A.name}</span></div>
+    <div style="color:#8a84b0;font-size:10px;margin:4px 0 8px">${VMEAN[V.v+' '+V.why]||''}</div>
+    <div><b>grammar</b> (define): ${V.errs.length?'<span style="color:#f66">'+V.errs.join('; ')+'</span>':'<span style="color:#6f6">composition laws hold</span>'}</div>
+    <div><b>kernel</b> (prove, local class): ${KERNEL[V.v]}<br><span style="color:#8a84b0;font-size:10px">the live p4ramill kernel is authoritative</span></div>
+    <div><b>flow</b> (eval16): readout <b>${RO}</b> &middot; fixed at ${X.fixedAt} &middot; dyads <b>${F.sig}</b> &middot; settled in ${F.rounds} rounds</div>
+    ${expH}${calc_cycleHTML(base)}`;
+  $('calc-cutLbl').textContent=' k = '+k+' (mod '+n+')';
+  $('calc-stat-bar').textContent=`V=${n} E=${M.E.length} β=${A.beta} · ${A.name} · ρ=${A.rho.toFixed(3)} · ${V.v} (${V.why}) · readout ${RO}`;
+  const prs=A.pairs.map(p=>`<div style="margin-left:10px">∈${p.f} → ∋${p.g} &middot; arms [${p.arms.join(',')||'empty'}] &middot; ${p.work?'<span style="color:#6f6">work</span>':'<span style="color:#f66">identity</span>'} &middot; ${F.dy.find(d=>d.f===p.f&&d.g===p.g).id?'id':'¬id'} (fed ${calc_bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).fed)}, got ${calc_bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).rec)})</div>`).join('');
+  $('calc-cfg-box').innerHTML=`
+    <div><b>execution</b> (cut ${k}): final <b>${RO}</b> &middot; fixed_at ${X.fixedAt} &middot; inert ${X.inert} &middot; skipped fuses ${X.skipped} &middot; unmatched fuses ${X.unm} &middot; reconnections ${X.exe} &middot; returned ${X.returned}<br><b>banking</b>: reconnections ${X.exe} &middot; holds ${X.holds} &middot; vacuous ${X.vacuous}</div>
+    <div style="margin-top:8px"><b>classify</b>: ${A.name} &middot; V=${n} E=${M.E.length} β=${A.beta} C=${A.C}<br>branch ${A.br} merge ${A.mg} source ${A.src} sink ${A.snk} &middot; arms ${A.arms} &middot; ρ=${A.rho.toFixed(4)}</div>
+    <div style="margin-top:8px"><b>ancestry pairs</b> (${A.pairs.length}, ${A.transformed} transformed):</div>${prs||'<div style="margin-left:10px;color:#8a84b0">none</div>'}
+    ${A.dang.length?`<div style="color:#f66;margin-top:4px">dangling: ${A.dang.map(i=>GLYPH[N[i]]+'@'+i).join(' ')}</div>`:''}
+    <div style="margin-top:8px"><b>register by node</b> (in &rarr; out):</div>
+    <div style="font-size:10px;color:#8a84b0;margin-left:10px;line-height:1.5">${N.map((t,i)=>`${i} ${GLYPH[t]} ${calc_bn(F.rin[i])}&rarr;${calc_bn(F.rout[i])}`).join(' &middot; ')}</div>`;
+  calc_drawStatic(M);
+  if(viewMode==='graph')calc_drawGraph(M);else calc_drawBraidDiagram(N,V.v==='T');
+}
+function calc_drawStatic(M){
+  const svg=$('calc-staticSvg'),W=$('calc-static-view').clientWidth||300,H=$('calc-static-view').clientHeight||200,n=M.N.length;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  const c=Math.max(6,Math.min(18,(W-40)/n)),x0=30,y0=40;
+  let h=`<text x="8" y="16" fill="#c8b8e0" font-size="10">register out of each node (SIXTEEN₃ bits)</text>`;
+  ['T','F','t','f'].forEach((b,j)=>{h+=`<text x="8" y="${y0+j*c+c*0.75}" fill="#8a84b0" font-size="9">${b}</text>`;});
+  M.N.forEach((t,i)=>{const r=M.F.rout[i];
+    [1,2,4,8].forEach((bit,j)=>{h+=`<rect x="${x0+i*c}" y="${y0+j*c}" width="${c-1}" height="${c-1}" fill="${r&bit?(j<2?'#B8860B':'#7B3294'):'#1e1c2e'}"/>`;});
+    h+=`<text x="${x0+i*c+c/2}" y="${y0+4*c+12}" text-anchor="middle" fill="#8a84b0" font-size="${Math.min(10,c)}">${GLYPH[t]}</text>`;});
+  svg.innerHTML=`<g id="staticZoom">${h}</g>`;calc_applyZoom('static');
+}
+function calc_drawGraph(M){
+  const svg=$('calc-braidSvg'),box=$('calc-braid-view'),W=box.clientWidth||800,H=box.clientHeight||480;
+  svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  const N=M.N,n=N.length,A=M.A,F=M.F,gap=(W-80)/Math.max(1,n-1),X=i=>40+i*gap,Y=H/2;
+  const armEdge=new Set();A.pairs.filter(p=>p.work).forEach(p=>{const s=new Set([p.f,p.g,...p.arms]);M.E.forEach(([a,b],k)=>{if(s.has(a)&&s.has(b))armEdge.add(k);});});
+  const seen={};let h='';
+  M.E.forEach(([a,b],k)=>{
+    const key=a+'-'+b,m=seen[key]=(seen[key]||0)+1,wrap=b<=a;
+    const cls='edge'+(wrap?' back':armEdge.has(k)?' pass':'');
+    if(b===a+1&&m===1){h+=`<path class="${cls}" d="M${X(a)},${Y} L${X(b)},${Y}"/>`;return;}
+    const d=Math.abs(b-a),hh=Math.min(Y-30,18+d*gap*0.35)+(m-1)*14,dir=wrap?1:-1;
+    h+=`<path class="${cls}" d="M${X(a)},${Y} C${X(a)},${Y+dir*hh} ${X(b)},${Y+dir*hh} ${X(b)},${Y}"/>`;
+  });
+  N.forEach((t,i)=>{
+    const col=WORK.has(t)?'#B8860B':(t==='FSPLIT'||t==='FFUSE')?'#7B3294':'#0072B2',dg=A.dang.includes(i);
+    h+=`<circle cx="${X(i)}" cy="${Y}" r="15" fill="#0b0b12" stroke="${dg?'#f66':col}" stroke-width="${dg?3:2}"/>
+    <text x="${X(i)}" y="${Y+5}" text-anchor="middle" fill="${col}" font-size="16" font-weight="bold">${GLYPH[t]}</text>
+    <text x="${X(i)}" y="${Y+32}" text-anchor="middle" fill="#8a84b0" font-size="8">${i}</text>
+    <text x="${X(i)-14}" y="${Y-6}" text-anchor="end" fill="#8a84b0" font-size="8" font-weight="bold">${calc_bn(F.rin[i])}</text><text x="${X(i)}" y="${Y+44}" text-anchor="middle" fill="#c8b8e0" font-size="9">${calc_bn(F.rout[i])}</text>`;});
+  h+=`<text x="12" y="16" fill="#c8b8e0" font-size="11">${M.verb} graph &middot; ${A.name} &middot; β=${A.beta} &middot; ${A.v} (${A.why})</text>`;
+  svg.innerHTML=`<g id="braidZoom">${h}</g>`;calc_applyZoom('braid');
+}
+
+// ═══ BRAID VIEW ═══ mirrors braid_protocol.rs: stack_delta + read_tangle
+let viewMode='braid';
+const BPAL=['#e8b84b','#6af','#c78bd6','#5ec9a0','#f08a6a','#b9c7ff','#d6d06a','#ff7fae'];
+const CPAL=['#ff7a6a','#6af','#5ec9a0','#e8b84b','#c78bd6','#4ad6c4','#f0a0d0','#d6d06a','#9ab0ff','#ff9f43'];
+const SUB='₀₁₂₃₄₅₆₇₈₉';
+const sig=g=>'σ'+String(Math.abs(g)).split('').map(c=>SUB[c]).join('')+(g<0?'⁻¹':'');
+let bAnim={n:0,i:0,sec:[],paused:false,raf:0};
+function calc_setMode(m){viewMode=m;document.getElementById('calc-mBraid').classList.toggle('on',m==='braid');document.getElementById('calc-mGraph').classList.toggle('on',m==='graph');calc_evaluate();}
+function calc_togglePlay(){bAnim.paused=!bAnim.paused;document.getElementById('calc-mPlay').textContent=bAnim.paused?'▶':'⏸';}
+function calc_stepRow(){bAnim.paused=true;document.getElementById('calc-mPlay').textContent='▶';bAnim.i=(bAnim.i+1)%Math.max(1,bAnim.n);}
+function calc_stopTick(){cancelAnimationFrame(bAnim.raf);bAnim.n=0;}
+function calc_braidTick(ts){
+  if(!bAnim.n)return;
+  if(!bAnim.paused)bAnim.i=Math.floor(ts/650)%bAnim.n;
+  const r=document.getElementById('bband');
+  if(r&&bAnim.sec[bAnim.i])r.setAttribute('d',bAnim.sec[bAnim.i]);
+  bAnim.raf=requestAnimationFrame(calc_braidTick);
+}
+function calc_readBraid(tokens){
+  const D={VINIT:1,ENGAGR:1,FSPLIT:1,TANCH:-1,IFIX:-1,FFUSE:-1};
+  let d=0,gens=[],prof=[0],rows=[],max=0;
+  for(const t of tokens){
+    const dl=D[t]||0;let bad=null,g=0;
+    if(t==='AFWD'||t==='AREV'){if(d<=0)bad='nothing to cross';else g=(t==='AFWD'?1:-1)*d;}
+    if(dl<0&&d+dl<0)bad='pop below start depth';
+    const d0=d;if(!bad)d+=dl;
+    if(g)gens.push(g);
+    max=Math.max(max,d);prof.push(d);
+    rows.push({t,d0,d1:d,g,bad});
+  }
+  return{rows,gens,prof,max,strands:max+1,closes:d===0,end:d,writhe:gens.reduce((a,g)=>a+Math.sign(g),0)};
+}
+// ANNULAR BRAID: words live on Z/nZ, so the braid is drawn on an annulus.
+//   angle  = token index mod n   (row k occupies the sector [k, k+1) clockwise from the cut)
+//   radius = strand slot         (slot 0 innermost; depth d = how many slots are live)
+// The ROTAT cut k is the seam at 12 o'clock. Strands cross the seam and rejoin
+// the start of the word, so the closed-braid trace is the geometry itself, not an add-on.
+function calc_drawBraidDiagram(tokens,allPass){
+  const svg=document.getElementById('calc-braidSvg'),box=document.getElementById('calc-braid-view');
+  const W0=box.clientWidth||800,H0=box.clientHeight||480;
+  const up=Math.max(1,660/Math.min(W0,H0)),W=W0*up,H=H0*up;      // keep the ring legible in short panes
+  const R=calc_readBraid(tokens),n=R.rows.length,S=R.strands;
+  const nb=calc_getBaseTokens().length,cut=nb?((rot%nb)+nb)%nb:0;     // wrapped letters = last `cut` of the cut word
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  const cx=W/2,cy=H/2+10,Rmax=Math.min(W,H)/2-100,Rin=Rmax*0.3;
+  const dr=Math.min(62,(Rmax-Rin)/Math.max(S-1,1)),rs=q=>Rin+q*dr,Rlast=rs(S-1),rl=Rlast+30;
+  const TAU=2*Math.PI,th=u=>-Math.PI/2+TAU*u/n;
+  const pt=(q,u,r=rs(q))=>[cx+r*Math.cos(th(u)),cy+r*Math.sin(th(u))];
+  const fmt=z=>z[0].toFixed(1)+','+z[1].toFixed(1);
+  // local frame at (slot,u): f(p,q) = p along the radius, q along the flow (clockwise)
+  const fr=(q,u)=>{const a=th(u),c=Math.cos(a),sn=Math.sin(a),[x,y]=pt(q,u);return(p,t)=>[x+p*c-t*sn,y+p*sn+t*c];};
+  const J=pts=>pts.map((z,i)=>(i?'L':'M')+fmt(z)).join(' ');
+  const steps=du=>Math.max(6,Math.ceil(Math.abs(du)*TAU/n/0.06));
+  const arcPts=(r,ua,ub)=>{const m=steps(ub-ua);return Array.from({length:m+1},(_,i)=>pt(0,ua+(ub-ua)*i/m,r));};
+  const Lr=(q,ua,ub)=>{const m=steps(ub-ua);return J(Array.from({length:m+1},(_,i)=>pt(q,ua+(ub-ua)*i/m)));};
+  const bz=(a,b,c,d,t)=>{const v=1-t;return v*v*v*a+3*v*v*t*b+3*v*t*t*c+t*t*t*d;};
+  const Cr=(qa,ua,qb,ub)=>{const m=(ua+ub)/2,K=Math.max(14,steps(ub-ua));
+    return J(Array.from({length:K+1},(_,i)=>{const t=i/K;return pt(bz(qa,qa,qb,qb,t),bz(ua,m,m,ub,t));}));};
+  const sector=i=>J([...arcPts(Rlast+14,i,i+1),...arcPts(Rin-18,i,i+1).reverse()])+' Z';
+  const dim=allPass?1:.6;
+  // CLOSED LINK: when depth returns to 0 (and no row is malformed) the word is a genuine closed braid.
+  // Every lane runs the full circle (births/deaths just continue the lane, no caps or bars), the seam
+  // joins lane q's end to lane q's start, and strands are coloured by link component (cycle of the permutation).
+  const conn=R.closes&&!R.rows.some(r=>r.bad);
+  let comp=null,ncomp=0;
+  if(conn){
+    const ids=[...Array(S).keys()];
+    R.rows.forEach(r=>{if(r.g){const lo=r.d0-1;[ids[lo],ids[lo+1]]=[ids[lo+1],ids[lo]];}});
+    const nxt=Array(S);ids.forEach((j,p)=>{nxt[j]=p;});     // arc j ends in lane p, rejoins arc p at the seam
+    comp=Array(S).fill(-1);
+    for(let j=0;j<S;j++)if(comp[j]<0){let a=j;while(comp[a]<0){comp[a]=ncomp;a=nxt[a];}ncomp++;}
+  }
+  const colr=id=>conn?CPAL[comp[id]%CPAL.length]:BPAL[id%8];
+  const P=(id,d)=>`<path d="${d}" fill="none" stroke="${colr(id)}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" opacity="${dim}"/><path class="pl" d="${d}"/>`;
+  let slots=conn?[...Array(S).keys()]:[0],nid=1,h='';
+
+  // lanes, sector rules, the live row band
+  for(let q=0;q<S;q++)h+=`<circle cx="${cx}" cy="${cy}" r="${rs(q).toFixed(1)}" fill="none" stroke="#1d1b30" stroke-width="1" stroke-dasharray="2 6"/>`;
+  for(let k=0;k<n;k++)h+=`<path d="M${fmt(pt(0,k,Rin-18))} L${fmt(pt(0,k,rl-14))}" stroke="#191729" stroke-width="1"/>`;
+  h+=`<path id="bband" d="${sector(0)}" fill="#e8b84b" opacity=".09"/>`;
+
+  R.rows.forEach((r,k)=>{
+    const u0=k,u1=k+1,um=k+.5,t=r.t,ok=!r.bad,d0=r.d0,d1=r.d1,dl=d1-d0;
+    const before=slots.slice(),skip=new Set();let mk='';
+    if(r.g&&ok){
+      const lo=d0-1,hi=d0,pos=r.g>0,il=before[lo],ih=before[hi];
+      const pa=Cr(lo,u0,hi,u1),pb=Cr(hi,u0,lo,u1);
+      const [under,over,iu,io]=pos?[pb,pa,ih,il]:[pa,pb,il,ih];
+      h+=P(iu,under)+`<path d="${over}" fill="none" stroke="#0b0b12" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>`+P(io,over);
+      skip.add(lo);skip.add(hi);slots[lo]=ih;slots[hi]=il;
+      mk+=`<circle cx="${pt((lo+hi)/2,um)[0].toFixed(1)}" cy="${pt((lo+hi)/2,um)[1].toFixed(1)}" r="5" fill="none" stroke="${pos?'#e8b84b':'#a84bb8'}" stroke-width="1.6"/>`;
+    }
+    if(conn){for(let i=0;i<S;i++){if(!skip.has(i))h+=P(before[i],Lr(i,u0,u1));}}
+    else for(let i=0;i<=d0;i++){
+      if(skip.has(i)||(ok&&dl<0&&i===d0))continue;
+      h+=P(before[i],Lr(i,u0,u1));
+    }
+    if(!conn&&ok&&dl>0){
+      const v=nid++;
+      if(t==='FSPLIT')h+=P(v,Cr(d0,u0,d1,u1));
+      else{const f=fr(d1,um);
+        h+=P(v,Lr(d1,um,u1))+`<path d="M${fmt(f(-7,-9))} Q${fmt(f(-7,0))} ${fmt(f(0,0))} Q${fmt(f(7,0))} ${fmt(f(7,-9))}" fill="none" stroke="${BPAL[v%8]}" stroke-width="2"/>`;}
+      slots.push(v);
+    }
+    if(!conn&&ok&&dl<0){
+      const id=slots.pop();
+      if(t==='FFUSE')h+=P(id,Cr(d0,u0,d1,u1));
+      else{const f=fr(d0,um),lab=f(0,16);
+        h+=P(id,Lr(d0,u0,um))+`<path d="M${fmt(f(-9,0))} L${fmt(f(9,0))}" stroke="${BPAL[id%8]}" stroke-width="3.4" stroke-linecap="round"/>`;
+        mk+=`<text x="${lab[0].toFixed(1)}" y="${(lab[1]+4).toFixed(1)}" text-anchor="middle" fill="${FAMC[FAM[t]]}" font-size="12">${GLYPH[t]}</text>`;}
+    }
+    const fc=FAMC[FAM[t]],qs=Math.min(d0,S-1),[xs,ys]=pt(qs,um);
+    if(!ok)mk+=`<text x="${xs.toFixed(1)}" y="${(ys+5).toFixed(1)}" text-anchor="middle" fill="#f66" font-size="15">✕</text>`;
+    else if(t==='EVALT'||t==='EVALF'||t==='IMSCRIB'||t==='ENGAGR')
+      mk+=`<circle cx="${xs.toFixed(1)}" cy="${ys.toFixed(1)}" r="9" fill="#0b0b12" stroke="${fc}" stroke-width="1.8"/><text x="${xs.toFixed(1)}" y="${(ys+4).toFixed(1)}" text-anchor="middle" fill="${fc}" font-size="11">${GLYPH[t]}</text>`;
+    else if(t==='CLINK'&&d0>=1){const [mx,my]=pt(d0-.5,um);
+      mk+=`<path d="M${fmt(pt(d0-1,um))} L${fmt(pt(d0,um))}" stroke="${fc}" stroke-width="1.4" stroke-dasharray="3 3"/><circle cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="9" fill="#0b0b12" stroke="${fc}"/><text x="${mx.toFixed(1)}" y="${(my+4).toFixed(1)}" text-anchor="middle" fill="${fc}" font-size="11">⋈</text>`;}
+    h+=mk;
+    // rim labels: glyph (violet when it wrapped through the cut), row index mod n, generator or depth
+    const wrapped=k+cut>=nb&&cut>0,[gx,gy]=pt(0,um,rl),[ix,iy]=pt(0,um,rl+16),[sx,sy]=pt(0,um,rl+36);
+    h+=`<text x="${gx.toFixed(1)}" y="${(gy+5).toFixed(1)}" text-anchor="middle" fill="${wrapped?'#a84bb8':fc}" font-size="15" font-weight="bold">${GLYPH[t]}</text>`
+      +`<text x="${ix.toFixed(1)}" y="${(iy+3).toFixed(1)}" text-anchor="middle" fill="#8a84b0" font-size="9">${k}</text>`
+      +`<text x="${sx.toFixed(1)}" y="${(sy+4).toFixed(1)}" text-anchor="middle" fill="${r.g?(r.g>0?'#e8b84b':'#c78bd6'):'#5a5580'}" font-size="10">${r.g?sig(r.g):'d='+d1}</text>`;
+  });
+
+  // the seam: strands leave row n-1 and re-enter row 0 (Z/nZ). Closed when depth returns to 0.
+  h+=`<path d="M${fmt(pt(0,0,Rin-22))} L${fmt(pt(0,0,rl-14))}" stroke="#e8b84b" stroke-width="1.8" opacity="${conn?.3:.85}"/>`;
+  if(R.closes&&!conn){const [sx0,sy0]=pt(0,0);
+    h+=`<circle cx="${sx0.toFixed(1)}" cy="${sy0.toFixed(1)}" r="4.5" fill="#0b0b12" stroke="#e8b84b" stroke-width="1.6"/>`;}
+  else{
+    for(let q=0;q<slots.length;q++){ if(q===0)continue;
+      const f=fr(q,n+.22);
+      h+=`<path d="${Lr(q,n,n+.22)}" fill="none" stroke="#f66" stroke-width="2.4" stroke-dasharray="3 3" stroke-linecap="round"/>`
+        +`<path d="M${fmt(f(-8,0))} L${fmt(f(8,0))}" stroke="#f66" stroke-width="2.4" stroke-linecap="round"/>`;}
+  }
+  // where the original word's own head and tail sit once the cut has moved
+  if(cut>0){const ub=n-cut;
+    h+=`<path d="M${fmt(pt(0,ub,Rin-22))} L${fmt(pt(0,ub,rl-14))}" stroke="#a84bb8" stroke-width="1.4" stroke-dasharray="4 3" opacity=".85"/>`
+      +`<path d="${J(arcPts(Rlast+14,ub,n))}" fill="none" stroke="#a84bb8" stroke-width="1.6" stroke-dasharray="2 3" opacity=".8"/>`;}
+
+  // the hole carries the modulus
+  h+=`<text x="${cx}" y="${cy-8}" text-anchor="middle" fill="#e8b84b" font-size="15" font-weight="bold">ℤ/${nb}ℤ</text>`
+    +`<text x="${cx}" y="${cy+8}" text-anchor="middle" fill="#c8b8e0" font-size="10">cut k = ${cut}</text>`
+    +`<text x="${cx}" y="${cy+22}" text-anchor="middle" fill="${R.closes?'#6f6':'#f66'}" font-size="10">${conn?'closed link · '+ncomp+' comp.':R.closes?'closed':'open · d='+R.end}</text>`;
+  h+=`<text x="26" y="22" fill="#c8b8e0" font-size="12">annular braid read-off: ${R.gens.length?R.gens.map(sig).join(' '):'no crossings'}</text>`;
+  h+=`<text x="26" y="38" fill="#8a84b0" font-size="10">${S} strands${conn?' · '+ncomp+' component'+(ncomp>1?'s':''):''} · writhe ${R.writhe>0?'+':''}${R.writhe} · ${conn?'closed link (each lane rejoins itself at the seam)':R.closes?'closed (depth returns to 0 at the seam)':'open at the seam, ends at depth '+R.end}</text>`;
+  svg.innerHTML=`<g id="braidZoom">${h}</g>`;calc_applyZoom('braid');
+  cancelAnimationFrame(bAnim.raf);
+  bAnim={n,i:0,sec:Array.from({length:n},(_,i)=>sector(i)),paused:bAnim.paused,raf:0};
+  bAnim.raf=requestAnimationFrame(calc_braidTick);
+  const bad=R.rows.map((r,k)=>r.bad?`row ${k} ${GLYPH[r.t]}: ${r.bad}`:'').filter(Boolean);
+  document.getElementById('calc-cfg-box').innerHTML=`<div style="border-bottom:1px solid #2a2740;padding-bottom:8px;margin-bottom:8px"><b>Braid reading</b> <span style="color:#8a84b0">(read_tangle, annular)</span><br/>
+    annulus: ℤ/${nb}ℤ &middot; cut k = ${cut}${cut?` &middot; <span style="color:#a84bb8">base head at row ${n-cut}</span>`:''}<br/>
+    generators: ${R.gens.length?R.gens.map(sig).join(' '):'&mdash;'}<br/>strands ${S}${conn?' &middot; components '+ncomp:''} &middot; crossings ${R.gens.length} &middot; writhe ${R.writhe}<br/>
+    depth: ${R.prof.join(' ')}<br/>closes at the seam: ${R.closes?'<span style="color:#6f6">yes</span>':'<span style="color:#f66">no</span>'}
+    ${bad.length?'<br/><span style="color:#f66">'+bad.join('<br/>')+'</span>':''}</div>`+document.getElementById('calc-cfg-box').innerHTML;
+}
+
+window.onload = function() {
+  calc_setupPanZoom('braid');
+  calc_setupPanZoom('static');
+  
+  document.getElementById("calc-wordSel").value = "𐑛";
+  document.getElementById("calc-customWord").style.display = "none";
+  calc_evaluate();
+};
+
+/* === end Calculus === */
+
+window.addEventListener("DOMContentLoaded", function(){
+  var calcBody = document.querySelector(".calc-ratiocinator");
+  if(calcBody){
+    var ws = document.getElementById("calc-wordSel");
+    if(ws) ws.value = "𐑛";
+    var cw = document.getElementById("calc-customWord");
+    if(cw) cw.style.display = "none";
+    if(typeof calc_evaluate === "function") calc_evaluate();
+    if(typeof calc_setupPanZoom === "function"){ calc_setupPanZoom("calc-braid"); calc_setupPanZoom("calc-static"); }
+  }
+});
+
+
+/* === M137 Trilattice Explorers === */
+
+class DCLogic{constructor(p){this.props=p||{};this.state={}}setState(o){Object.assign(this.state,o);if(this._upd)this._upd()}forceUpdate(){if(this._upd)this._upd()}}
+const B=[
+{name:"Horn Torus",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#10141a;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D horn torus with the (16,3) knot\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">Horn Torus and the (16,3) Knot</h1><span style=\"font-size:12px;color:#a9b0ba\">Drag to rotate · scroll or pinch to zoom</span></div>\n<div style=\"display:flex;flex-wrap:wrap;gap:10px\">\n<button onClick=\"{{togKnot}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{kBg}}\">(16,3) knot</button>\n<button onClick=\"{{togEv}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{eBg}}\">Evaluator sphere and trine</button>\n<button onClick=\"{{togShell}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{sBg}}\">Split shell λC</button>\n</div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div>R = r = 1: the central hole closes at the pinch ⊙, the origin, where inside and outside are continuous.</div>\n<div>16 toroidal turns = the 16 states of SIXTEEN₃; 3 poloidal turns = ≤i, ≤t, ≤c and the bridge number of B₃.</div>\n<div>Coupler: ⊙ to ∋ at x = 1. Source boundary ⊢ at x = 2R = 2. Shell and evaluator sphere have radius R/2. Polarity ≺ reflects the lobe across ⊙.</div>\n<div>At d = 2048 the conductor is (2¹²)∞₁ = (16³)∞₁. Tilt θ = arctan(1/4); α⁻¹ = 137.0359990839846908.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={knot:true,ev:true,shell:true}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.5;this.pit=.45;this.dr=false;
+c.addEventListener('pointerdown',e=>{this.dr=true;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;this.yaw+=(e.clientX-this.lx)*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+(e.clientY-this.ly)*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',()=>{this.dr=false});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=14/(14-z);return[580+a*this.S*k,380-y*this.S*k]}
+path(pts,col,w,dash){const x=this.x;x.beginPath();pts.forEach((p,i)=>{const q=this.pr(p);i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.stroke();x.setLineDash([])}
+dot(p,col,r,t){const x=this.x,q=this.pr(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(t){x.font='12px system-ui';x.fillStyle='#e9e7e0';x.fillText(t,q[0]+8,q[1]-8)}}
+draw(){const s=this.state,x=this.x,N=Math.PI*2;x.clearRect(0,0,1160,760);this.S=170*this.zm;if(!this.dr)this.yaw+=.004;
+const T=(u,v)=>[(1+Math.cos(v))*Math.cos(u),Math.sin(v),(1+Math.cos(v))*Math.sin(u)];
+const C=f=>{const a=[];for(let i=0;i<=64;i++)a.push(f(i/64*N));return a};
+for(let i=0;i<24;i++){const a=[];for(let j=0;j<=36;j++)a.push(T(i/24*N,j/36*N));this.path(a,'rgba(111,179,217,.4)',1)}
+for(let j=1;j<10;j++){const a=[];for(let i=0;i<=60;i++)a.push(T(i/60*N,j/10*N));this.path(a,'rgba(111,179,217,.4)',1)}
+if(s.knot){const a=[];for(let i=0;i<=1200;i++){const t=i/1200*N;a.push(T(16*t,3*t))}this.path(a,'#e8a54b',1.6)}
+if(s.shell)this.path(C(a=>[.5*Math.cos(a),.5*Math.sin(a),0]),'#e9e7e0',1.5,[5,4]);
+if(s.ev){const P='#b79cf0';this.path(C(a=>[.5+.5*Math.cos(a),.5*Math.sin(a),0]),P,1);this.path(C(a=>[.5+.5*Math.cos(a),0,.5*Math.sin(a)]),P,1);this.path(C(a=>[.5,.5*Math.sin(a),.5*Math.cos(a)]),P,2);
+const A=[.5,0,.5],B=[.5,.433,-.25],D=[.5,-.433,-.25];this.path([A,B,D,A],P,2);this.dot(A,P,4,'⊤');this.dot(B,P,4,'⊥');this.dot(D,P,4,'⊞')}
+this.path([[0,0,0],[1,0,0]],'#fff',3);
+this.dot([0,0,0],'#ff6b5e',6,'⊙ pinch');this.dot([1,0,0],'#fff',4,'∋');this.dot([2,0,0],'#fff',4,'⊢ γ(0)');this.dot([-2,0,0],'#a9b0ba',3,'≺ reflected lobe')}
+renderVals(){const s=this.state,g=k=>()=>this.setState({[k]:!this.state[k]}),b=v=>v?'#2c3a4d':'#1a2029';
+return{togKnot:g('knot'),togEv:g('ev'),togShell:g('shell'),kBg:b(s.knot),eBg:b(s.ev),sBg:b(s.shell)}}
+}
+
+return Component}},
+{name:"SIXTEEN₃ Lattice",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#10141a;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D projection of the sixteen-element information lattice\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">SIXTEEN₃ = 𝒫({T, F, t, f})</h1><span style=\"font-size:12px;color:#a9b0ba\">Drag to rotate · scroll or pinch to zoom · click a vertex</span></div>\n<div style=\"display:flex;flex-wrap:wrap;gap:10px\">\n<button onClick=\"{{selVoid}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">Void ∅</button>\n<button onClick=\"{{selGlut}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">Glut {T,F}</button>\n<button onClick=\"{{selTot}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">Totality [B]</button>\n</div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div><b style=\"color:#e9e7e0\">Selected:</b> {{setName}} · information rank {{rank}} · entropy {{ent}}</div>\n<div><b style=\"color:#e9e7e0\">¬x:</b> {{negName}} · {{fixText}}</div>\n<div><b style=\"color:#e9e7e0\">u(x) = x ∩ {T,t}:</b> {{uName}} · <b style=\"color:#e9e7e0\">v(x) = x ∩ {F,f}:</b> {{vName}}</div>\n<div>Edges add one element (≤i, Boolean lattice, height 4). Ringed vertices are Fix(¬): ∅, {T,F}, {t,f}, [B]. The dashed line joins x to ¬x.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={sel:3}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.5;this.pit=.4;this.t=0;this.dr=false;this.pts=[];
+c.addEventListener('pointerdown',e=>{this.dr=true;this.mv=0;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;const dx=e.clientX-this.lx,dy=e.clientY-this.ly;this.mv+=Math.abs(dx)+Math.abs(dy);this.yaw+=dx*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+dy*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',e=>{this.dr=false;if(this.mv<5){const r=c.getBoundingClientRect(),k=1160/r.width,px=(e.clientX-r.left)*k,py=(e.clientY-r.top)*k;let b=-1,d=26;this.pts.forEach((p,i)=>{const h=Math.hypot(p[0]-px,p[1]-py);if(h<d){d=h;b=i}});if(b>=0)this.setState({sel:b})}});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+neg(m){return((m&1)<<1)|((m>>1)&1)|((m&4)<<1)|((m>>1)&4)}
+nm(m){return m?'{'+['T','F','t','f'].filter((_,i)=>(m>>i)&1).join(',')+'}':'∅'}
+rk(m){return(m&1)+((m>>1)&1)+((m>>2)&1)+((m>>3)&1)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=14/(14-z);return[580+a*135*this.zm*k,380-y*135*this.zm*k]}
+draw(){const x=this.x,sel=this.state.sel,a=this.t+=.005,b=a*.7,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);x.clearRect(0,0,1160,760);
+const q=[];for(let m=0;m<16;m++){const X=m&1?1:-1,Y=m&2?1:-1,Z=m&4?1:-1,W=m&8?1:-1;
+const x1=X*ca-W*sa,w1=X*sa+W*ca,y1=Y*cb-Z*sb,z1=Y*sb+Z*cb,k=1.7/(2.6-w1);q.push(this.pr([x1*k,y1*k,z1*k]))}
+this.pts=q;x.lineWidth=1;x.strokeStyle='rgba(233,231,224,.28)';
+for(let i=0;i<16;i++)for(let j=0;j<4;j++){const o=i^(1<<j);if(o>i){x.beginPath();x.moveTo(q[i][0],q[i][1]);x.lineTo(q[o][0],q[o][1]);x.stroke()}}
+const n=this.neg(sel);if(n!==sel){x.setLineDash([6,5]);x.strokeStyle='#ffffff';x.lineWidth=1.8;x.beginPath();x.moveTo(q[sel][0],q[sel][1]);x.lineTo(q[n][0],q[n][1]);x.stroke();x.setLineDash([])}
+const col=['#8b95a5','#6fb3d9','#e8a54b','#d98fd0','#ff6b5e'];x.font='11px system-ui';
+for(let m=0;m<16;m++){const p=q[m];x.beginPath();x.arc(p[0],p[1],7,0,7);x.fillStyle=col[this.rk(m)];x.fill();
+if(this.neg(m)===m){x.beginPath();x.arc(p[0],p[1],12,0,7);x.strokeStyle='#e9e7e0';x.lineWidth=1.5;x.stroke()}
+if(m===sel){x.beginPath();x.arc(p[0],p[1],17,0,7);x.strokeStyle='#fff';x.lineWidth=3;x.stroke()}
+x.fillStyle='#e9e7e0';x.fillText(this.nm(m).replace(/[{}]/g,'').replace(/,/g,''),p[0]+10,p[1]-10)}}
+renderVals(){const s=this.state.sel,n=this.neg(s),fx=n===s;
+return{setName:this.nm(s),rank:this.rk(s),ent:this.rk(s)+' × k_B ln 2',negName:this.nm(n),fixText:fx?'a fixed point of negation':'not a fixed point',uName:this.nm(s&5),vName:this.nm(s&10),
+selVoid:()=>this.setState({sel:0}),selGlut:()=>this.setState({sel:3}),selTot:()=>this.setState({sel:15})}}
+}
+
+return Component}},
+{name:"Glut Sphere",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#10141a;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D Bloch sphere from the True pole to the False pole\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">Glut on the Sphere: ℂP¹ ≅ S²</h1><span style=\"font-size:12px;color:#a9b0ba\">Drag to rotate · scroll or pinch to zoom</span></div>\n<div style=\"display:flex;flex-wrap:wrap;gap:10px;align-items:center\">\n<button onClick=\"{{setT}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">T · θ = 0</button>\n<button onClick=\"{{setB}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">Glut B · θ = π/2</button>\n<button onClick=\"{{setF}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:#1a2029\">F · θ = π</button>\n<label style=\"display:flex;align-items:center;gap:8px;font-size:13px;color:#cfd3da\">θ <input type=\"range\" min=\"0\" max=\"180\" step=\"1\" value=\"{{deg}}\" onInput=\"{{onDeg}}\" aria-label=\"Polar angle theta in degrees\" style=\"width:200px\"> {{deg}}°</label>\n</div>\n<div style=\"display:flex;height:22px;border-radius:6px;overflow:hidden;font-size:12px;line-height:22px\">\n<div style=\"width:{{wT}}%;background:#e8a54b;color:#10141a;padding-left:8px;white-space:nowrap\">p_T = {{pT}}</div>\n<div style=\"width:{{wF}}%;background:#6fb3d9;color:#10141a;padding-left:8px;white-space:nowrap\">p_F = {{pF}}</div>\n</div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div>p_T(θ) = cos²(θ/2) = (1 + cos θ)/2, forced by Busch's theorem on the positive-operator frame.</div>\n<div>K = |T⟩⟨T|, S₊ = |T⟩⟨F|, S₋ = |F⟩⟨T| generate 𝔰𝔲(2): J_z = ½σ_z, J_x = ½σ_x, J_y = ½σ_y.</div>\n<div>Equator θ = π/2: p_T = info(T)/info(B) = 1/2, the discrete Belnap reading.</div>\n<div>Measurement splits, reads, and fuses along μ ∘ δ = id; collapse is projection onto the classical record.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={deg:90}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.7;this.pit=.35;this.dr=false;
+c.addEventListener('pointerdown',e=>{this.dr=true;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;this.yaw+=(e.clientX-this.lx)*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+(e.clientY-this.ly)*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',()=>{this.dr=false});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=6/(6-z);return[580+a*240*this.zm*k,380-y*240*this.zm*k]}
+path(pts,col,w,dash){const x=this.x;x.beginPath();pts.forEach((p,i)=>{const q=this.pr(p);i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.stroke();x.setLineDash([])}
+dot(p,col,r,t){const x=this.x,q=this.pr(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(t){x.font='13px system-ui';x.fillStyle='#e9e7e0';x.fillText(t,q[0]+9,q[1]-9)}}
+draw(){const x=this.x,N=Math.PI*2,th=this.state.deg*Math.PI/180,ph=.8;x.clearRect(0,0,1160,760);if(!this.dr)this.yaw+=.003;
+const S=(t,p)=>[Math.sin(t)*Math.cos(p),Math.cos(t),Math.sin(t)*Math.sin(p)];
+const C=f=>{const a=[];for(let i=0;i<=72;i++)a.push(f(i/72*N));return a};
+for(let j=1;j<6;j++){const t=j*Math.PI/6;this.path(C(a=>S(t,a)),'rgba(111,179,217,.3)',1)}
+for(let j=0;j<6;j++){const p=j*Math.PI/6;this.path(C(a=>S(a,p)),'rgba(111,179,217,.3)',1)}
+this.path(C(a=>S(Math.PI/2,a)),'#ff6b5e',2);
+this.path(C(a=>S(th,a)),'#e8a54b',1.2,[4,4]);
+this.path([[0,-1.25,0],[0,1.25,0]],'#e9e7e0',1.5);
+const P=S(th,ph);this.path([[0,0,0],P],'#e8a54b',3.5);this.path([P,[0,P[1],0]],'#fff',1.5,[4,4]);
+this.dot([0,P[1],0],'#fff',3);this.dot(P,'#e8a54b',7);
+this.dot([0,1,0],'#e9e7e0',5,'T  (θ = 0)');this.dot([0,-1,0],'#e9e7e0',5,'F  (θ = π)');this.dot(S(Math.PI/2,0),'#ff6b5e',5,'B  glut')}
+renderVals(){const d=this.state.deg,t=d*Math.PI/180,p=Math.cos(t/2)**2;
+return{deg:d,pT:p.toFixed(3),pF:(1-p).toFixed(3),wT:(p*100).toFixed(1),wF:((1-p)*100).toFixed(1),
+onDeg:e=>this.setState({deg:+e.target.value}),setT:()=>this.setState({deg:0}),setB:()=>this.setState({deg:90}),setF:()=>this.setState({deg:180})}}
+}
+
+return Component}},
+{name:"m137 Horn Torus",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#0B0B0C;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D m137 horn torus with the 12-fold B3 braid trajectory\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">m137 Pure Horn Torus Geometry (R = r)</h1><label style=\"display:flex;align-items:center;gap:8px;font-size:12px;color:#a9b0ba\">Drag · scroll to zoom · k <input type=\"range\" min=\"0\" max=\"100\" step=\"1\" value=\"{{kn}}\" onInput=\"{{onK}}\" aria-label=\"Attenuation constant k\" style=\"width:110px\"> {{kv}}</label></div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div>Strict single-point central cusp topology: the major and minor radii stay equal along the whole surface.</div>\n<div>R = r = exp(−0.25 · θ / 2π), a logarithmic spiral attenuation applied uniformly.</div>\n<div>Cyan: the 12-fold B₃ braid trajectory over 12π, three poloidal turns per toroidal turn, locked to the horn shell.</div>\n<div>Surface: X = (R + r cos φ) cos θ, Y = (R + r cos φ) sin θ, Z = r sin φ.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={k:.25}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.5;this.pit=.45;this.dr=false;
+c.addEventListener('pointerdown',e=>{this.dr=true;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;this.yaw+=(e.clientX-this.lx)*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+(e.clientY-this.ly)*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',()=>{this.dr=false});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=14/(14-z);return[580+a*this.S*k,380-y*this.S*k]}
+path(pts,col,w,dash){const x=this.x;x.beginPath();pts.forEach((p,i)=>{const q=this.pr(p);i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.stroke();x.setLineDash([])}
+dot(p,col,r,t){const x=this.x,q=this.pr(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(t){x.font='12px system-ui';x.fillStyle='#e9e7e0';x.fillText(t,q[0]+8,q[1]-8)}}
+draw(){const x=this.x,N=Math.PI*2,k=this.state.k;x.clearRect(0,0,1160,760);this.S=160*this.zm;if(!this.dr)this.yaw+=.004;
+const Q=(t,f)=>{const R=Math.exp(-k*t/(12*Math.PI));return[(R+R*Math.cos(f))*Math.cos(t),R*Math.sin(f),(R+R*Math.cos(f))*Math.sin(t)]};
+for(let i=0;i<96;i++){const a=[];for(let j=0;j<=40;j++)a.push(Q(i/96*12*Math.PI,j/40*N));this.path(a,'hsla('+(300-i*2.5)+',90%,62%,.5)',1)}
+for(let j=0;j<12;j++){const a=[];for(let i=0;i<=720;i++)a.push(Q(i/720*12*Math.PI,j/12*N));this.path(a,'rgba(255,170,90,.35)',1)}
+const a=[];for(let i=0;i<=3000;i++){const t=i/3000*12*Math.PI,R=Math.exp(-k*t/(12*Math.PI));a.push([(R+R*Math.cos(3*t))*Math.cos(t),R*Math.sin(3*t),(R+R*Math.cos(3*t))*Math.sin(t)])}
+this.path(a,'#00ffff',2.4);this.dot(a[Math.floor((Date.now()/8000%1)*3000)],'#ffffff',6);this.dot([0,0,0],'#ff6b5e',5,'cusp')}
+renderVals(){return{kv:this.state.k.toFixed(2),kn:Math.round(this.state.k*100),onK:e=>this.setState({k:+e.target.value/100})}}
+}
+
+return Component}},
+{name:"Cardioid and KAM",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#10141a;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D horn torus with cardioid profile and golden rotation orbit\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">Golden Cardioid and KAM Orbit</h1><span style=\"font-size:12px;color:#a9b0ba\">Drag to rotate · scroll or pinch to zoom</span></div>\n<div style=\"display:flex;flex-wrap:wrap;gap:10px\"><button onClick=\"{{togcar}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{cB}}\">Cardioid ρ = R(1 + cos ψ)</button><button onClick=\"{{togmer}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{mB}}\">Meridian circle</button><button onClick=\"{{togkam}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{kB}}\">Golden orbit ω* = φ − 1</button></div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div>Radial distance from the axis: ρ(ψ) = R(1 + cos ψ). At ψ = π, ρ = 0: the cusp rests at the pinch ⊙.</div><div>Gold: ρ(ψ) plotted as a polar curve in the vertical xz plane (both lobes) and in the equatorial xy plane. Blue dashed: the meridian circles of radius R through the pinch and the outer equator of radius 2R.</div><div>φ = 1 + 1/φ, the fixed point of the recursion. Golden mean rotation ω* = φ − 1 ≈ 0.6180339887.</div><div>Cyan: the orbit u = t, v = ω* t on the torus, 30 toroidal turns, resisting resonance.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={car:true,mer:true,kam:true}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.5;this.pit=.45;this.dr=false;
+c.addEventListener('pointerdown',e=>{this.dr=true;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;this.yaw+=(e.clientX-this.lx)*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+(e.clientY-this.ly)*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',()=>{this.dr=false});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=14/(14-z);return[580+a*this.S*k,380-y*this.S*k]}
+path(pts,col,w,dash){const x=this.x;x.beginPath();pts.forEach((p,i)=>{const q=this.pr(p);i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.stroke();x.setLineDash([])}
+dot(p,col,r,t){const x=this.x,q=this.pr(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(t){x.font='12px system-ui';x.fillStyle='#e9e7e0';x.fillText(t,q[0]+8,q[1]-8)}}
+draw(){const s=this.state,x=this.x,N=Math.PI*2;x.clearRect(0,0,1160,760);this.S=170*this.zm;if(!this.dr)this.yaw+=.003;
+const T=(u,v)=>[(1+Math.cos(v))*Math.cos(u),Math.sin(v),(1+Math.cos(v))*Math.sin(u)];
+for(let i=0;i<24;i++){const a=[];for(let j=0;j<=36;j++)a.push(T(i/24*N,j/36*N));this.path(a,'rgba(111,179,217,.3)',1)}
+for(let j=1;j<10;j++){const a=[];for(let i=0;i<=60;i++)a.push(T(i/60*N,j/10*N));this.path(a,'rgba(111,179,217,.3)',1)}
+if(s.mer){for(const e of[1,-1]){const a=[];for(let i=0;i<=120;i++){const p=i/120*N;a.push([e*(1+Math.cos(p)),Math.sin(p),0])}this.path(a,'#6fb3d9',2,[6,4])}const a=[];for(let i=0;i<=120;i++){const p=i/120*N;a.push([2*Math.cos(p),0,2*Math.sin(p)])}this.path(a,'#6fb3d9',2,[6,4])}
+if(s.car){for(const e of[1,-1]){const a=[];for(let i=0;i<=240;i++){const p=i/240*N,r=1+Math.cos(p);a.push([e*r*Math.cos(p),r*Math.sin(p),0])}this.path(a,'#e8a54b',3.2)}const a=[];for(let i=0;i<=240;i++){const p=i/240*N,r=1+Math.cos(p);a.push([r*Math.cos(p),0,r*Math.sin(p)])}this.path(a,'#e8a54b',3.2)}
+if(s.kam){const a=[],w=(Math.sqrt(5)-1)/2;for(let i=0;i<=3000;i++){const t=i/3000*N*30;a.push(T(t,w*t))}this.path(a,'#00ffff',1.4)}
+this.dot([0,0,0],'#ff6b5e',6,'⊙ cusp ψ = π')}
+renderVals(){const s=this.state,g=k=>()=>this.setState({[k]:!this.state[k]}),c=v=>v?'#2c3a4d':'#1a2029';
+return{togcar:g('car'),togmer:g('mer'),togkam:g('kam'),cB:c(s.car),mB:c(s.mer),kB:c(s.kam)}}
+}
+
+return Component}},
+{name:"Braid to Surgery",tpl:"\n\n<div style=\"width:1600px;height:760px;background:#10141a;color:#e9e7e0;font-family:system-ui,sans-serif;display:flex;flex-direction:row\">\n<canvas id=\"cv\" width=\"1160\" height=\"760\" style=\"display:block;width:1160px;height:760px;touch-action:none;cursor:grab\" aria-label=\"Interactive 3D mixed braid on three strands\"></canvas>\n<div style=\"width:384px;padding:28px;display:flex;flex-direction:column;gap:18px\">\n<div style=\"display:flex;flex-direction:column;gap:6px\"><h1 style=\"margin:0;font-size:26px\">Mixed Braid β′ = (σ₁σ₂⁻¹)³ and Dehn Filling</h1><span style=\"font-size:12px;color:#a9b0ba\">Drag to rotate · scroll or pinch to zoom</span></div>\n<div style=\"display:flex;flex-wrap:wrap;gap:10px\"><button onClick=\"{{togcl}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{cB}}\">Closure arcs</button><button onClick=\"{{togan}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{aB}}\">Annular view</button><button onClick=\"{{togpause}}\" style=\"min-height:44px;padding:8px 14px;border:1px solid #3a4250;border-radius:8px;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer;background:{{pB}}\">{{pl}}</button></div>\n<div style=\"display:grid;grid-template-columns:minmax(0,1fr);gap:10px;font-size:14px;line-height:1.5;color:#cfd3da\">\n<div>Six crossings: σ₁ at 1, 3, 5 and σ₂⁻¹ at 2, 4, 6. The closed braid is a 4-cusped link exterior.</div><div>Filling slopes s(β) = (1/1, 1/−2, 1/−1) on cusps 1, 2, 3; cusp 0 stays unfilled.</div><div>Result: the 1-cusped hyperbolic manifold m137(0,0), H₁ = ℤ.</div><div>Volume 4 · K_Catalan ≈ 3.6638623767. Chain: SIXTEEN₃ → B₃ → m137.</div>\n</div>\n</div>\n</div>\n",make:function(DCLogic){
+class Component extends DCLogic{
+constructor(p){super(p);this.state={cl:true,an:false,pause:false}}
+componentDidMount(){const c=this.root.querySelector('canvas');this.zm=1;this.np=0;this.pp={};c.addEventListener('wheel',e=>{e.preventDefault();this.zm=Math.max(.3,Math.min(5,this.zm*Math.exp(-e.deltaY*.0015)))},{passive:false});c.addEventListener('pointerdown',e=>{this.pp[e.pointerId]=[e.clientX,e.clientY];this.np=Object.keys(this.pp).length});c.addEventListener('pointermove',e=>{const q=this.pp[e.pointerId];if(!q)return;const o=Object.keys(this.pp);if(o.length===2){const a=this.pp[o[0]],b=this.pp[o[1]],d0=Math.hypot(a[0]-b[0],a[1]-b[1]);q[0]=e.clientX;q[1]=e.clientY;const d1=Math.hypot(a[0]-b[0],a[1]-b[1]);if(d0>0)this.zm=Math.max(.3,Math.min(5,this.zm*d1/d0))}else{q[0]=e.clientX;q[1]=e.clientY}});const up=e=>{delete this.pp[e.pointerId];this.np=Object.keys(this.pp).length};c.addEventListener('pointerup',up);c.addEventListener('pointercancel',up);this.x=c.getContext('2d');this.yaw=.5;this.pit=.45;this.dr=false;
+c.addEventListener('pointerdown',e=>{this.dr=true;this.lx=e.clientX;this.ly=e.clientY;c.setPointerCapture(e.pointerId)});
+c.addEventListener('pointermove',e=>{if(!this.dr||this.np>1)return;this.yaw+=(e.clientX-this.lx)*.01;this.pit=Math.max(-1.5,Math.min(1.5,this.pit+(e.clientY-this.ly)*.01));this.lx=e.clientX;this.ly=e.clientY});
+c.addEventListener('pointerup',()=>{this.dr=false});
+const f=()=>{this.draw();this.raf=requestAnimationFrame(f)};f()}
+componentWillUnmount(){cancelAnimationFrame(this.raf)}
+pr(p){const cy=Math.cos(this.yaw),sy=Math.sin(this.yaw),cp=Math.cos(this.pit),sp=Math.sin(this.pit);
+const a=p[0]*cy+p[2]*sy,b=-p[0]*sy+p[2]*cy,y=p[1]*cp-b*sp,z=p[1]*sp+b*cp,k=14/(14-z);return[580+a*this.S*k,380-y*this.S*k]}
+path(pts,col,w,dash){const x=this.x;x.beginPath();pts.forEach((p,i)=>{const q=this.pr(p);i?x.lineTo(q[0],q[1]):x.moveTo(q[0],q[1])});x.strokeStyle=col;x.lineWidth=w;x.setLineDash(dash||[]);x.stroke();x.setLineDash([])}
+dot(p,col,r,t){const x=this.x,q=this.pr(p);x.beginPath();x.arc(q[0],q[1],r,0,7);x.fillStyle=col;x.fill();if(t){x.font='12px system-ui';x.fillStyle='#e9e7e0';x.fillText(t,q[0]+8,q[1]-8)}}
+build(){const seq=[1,-2,1,-2,1,-2];let p=[0,1,2];const S=[[],[],[]];
+seq.forEach((g,c)=>{const a=Math.abs(g)-1,b=a+1,sg=g>0?1:-1;
+for(let k=0;k<=20;k++){const s=k/20,e=(1-Math.cos(Math.PI*s))/2,up=3-(c+s);
+for(let sl=0;sl<3;sl++){const id=p[sl];let x=(sl-1)*1.2,y=0;
+if(sl===a){x=(a-1)*1.2+1.2*e;y=sg*.5*Math.sin(Math.PI*s)}
+else if(sl===b){x=(b-1)*1.2-1.2*e;y=-sg*.5*Math.sin(Math.PI*s)}
+S[id].push([x,up,y])}}
+const t=p[a];p[a]=p[b];p[b]=t});return S}
+draw(){const s=this.state,x=this.x;x.clearRect(0,0,1160,760);this.S=100*this.zm;if(!this.dr&&!s.pause)this.yaw+=.003;this.tm=(this.tm||0)+16;
+if(!this.B)this.B=this.build();const col=['#e8a54b','#00ffff','#d98fd0'],f=Math.floor((this.tm/7000%1)*120);
+if(s.cl&&!s.an)for(let j=0;j<3;j++){const X=(j-1)*1.2,o=2.2+.5*j;this.path([[X,3,0],[X,3.5,0],[o,3.5,0],[o,-3.5,0],[X,-3.5,0],[X,-3,0]],'rgba(233,231,224,.4)',1.6,[5,4])}
+if(s.an)for(const r of[1.7,3.5]){const a=[];for(let i=0;i<=96;i++){const t=i/96*Math.PI*2;a.push([r*Math.cos(t),0,r*Math.sin(t)])}this.path(a,'rgba(233,231,224,.25)',1)}
+this.B.forEach((a0,i)=>{const a=s.an?a0.map(q=>{const th=(3-q[1])/6*Math.PI*2,r=2.6+q[0]*.55;return[r*Math.cos(th),q[2]*.55,r*Math.sin(th)]}):a0;this.path(a,col[i],4);this.dot(a[Math.min(f,a.length-1)],'#fff',5)});
+for(let c=0;c<6;c++){this.dot([0,2.5-c,0],'rgba(0,0,0,0)',0,'')}
+if(!s.an){const X=this.x;X.font='12px system-ui';X.fillStyle='#a9b0ba';const q=this.pr([-2.2,2.5,0]);X.fillText('σ₁ σ₂⁻¹ σ₁ σ₂⁻¹ σ₁ σ₂⁻¹ (top to bottom)',q[0]-40,q[1])}}
+renderVals(){const s=this.state,g=k=>()=>this.setState({[k]:!this.state[k]}),c=v=>v?'#2c3a4d':'#1a2029';return{togcl:g('cl'),togan:g('an'),togpause:g('pause'),cB:c(s.cl),aB:c(s.an),pB:c(s.pause),pl:s.pause?'Resume spin':'Pause spin'}}
+}
+
+return Component}}
+];
+const RE=/\{\{\s*([\w.$]+)\s*\}\}/g;
+let cur=null,curIdx=-1;
+function bind(root,comp){const tx=[],at=[],w=document.createTreeWalker(root,5);let n;
+while(n=w.nextNode()){if(n.nodeType===3){if(n.nodeValue.indexOf('{{')>=0)tx.push([n,n.nodeValue])}else{Array.from(n.attributes).forEach(a=>{if(a.value.indexOf('{{')<0)return;
+const m=a.value.match(/^\{\{\s*([\w.$]+)\s*\}\}$/),ev={onclick:'click',oninput:'input'}[a.name.toLowerCase()];
+if(ev&&m){n.removeAttribute(a.name);n.addEventListener(ev,e=>{const f=comp.renderVals()[m[1]];if(f)f(e)})}else at.push([n,a.name,a.value])})}}
+return()=>{const v=comp.renderVals(),g=(_,k)=>v[k]==null?'':v[k];
+tx.forEach(([n,t])=>{n.nodeValue=t.replace(RE,g)});
+at.forEach(([el,name,t])=>{const s=t.replace(RE,g);if(name==='value')el.value=s;else el.setAttribute(name,s)})}}
+function show(i){if(cur&&cur.componentWillUnmount)cur.componentWillUnmount();const st=document.getElementById('m137-stage');st.innerHTML='';
+const root=document.createElement('div');root.innerHTML=B[i].tpl;st.appendChild(root);
+const C=B[i].make(DCLogic),comp=new C({});comp.root=root;const up=bind(root,comp);comp._upd=up;up();if(comp.componentDidMount)comp.componentDidMount();cur=comp;curIdx=i;
+Array.from(document.querySelectorAll('#bar button')).forEach((b,j)=>b.setAttribute('aria-pressed',j===i?'true':'false'))}
+function fit(){const v=document.getElementById('m137-view'),s=Math.min(v.clientWidth/1600,v.clientHeight/760);const st=document.getElementById('m137-stage');
+st.style.transform='translate('+Math.max(0,(v.clientWidth-1600*s)/2)+'px,0) scale('+s+')'}
+const bar=document.getElementById('m137-bar');B.forEach((b,i)=>{const e=document.createElement('button');e.textContent=b.name;e.setAttribute('role','tab');e.addEventListener('click',()=>show(i));bar.appendChild(e)});
+window.addEventListener('resize',fit);fit();show(0);
+
+/* === end M137 === */
+</script>
         </div>
       </div>
     </div>
-      </div>
-  </div>
   </section>
 
   <!-- 02: SIXTEEN_3 TRILATTICE & WALK -->
@@ -564,6 +2231,24 @@ footer {
       </div>
   </div>
   </section>
+  <!-- 07: TRILATTICE EXPLORERS -->
+  <section id="trilattice-explorers" class="bench">
+    <h2><span class="sec-tag">07 · Explorers</span> m137 Trilattice Explorers</h2>
+    <p class="sub">
+      Interactive 3D explorers for the re-entrant trilattice: horn torus knots, SIXTEEN₃ lattice,
+      glut sphere, m137 geometry, golden cardioid/KAM, and mixed braid surgery.
+    </p>
+    <div class="window">
+      <div class="titlebar">Trilattice Explorers<span class="win-btns"><button>×</button><button>□</button><button>−</button></span></div>
+      <div class="content">
+        <div class="m137-explorers">
+          <div id="m137-bar" role="tablist"></div>
+          <div id="m137-view"><div id="m137-stage"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <footer>
     <span>umpolungfish · Imscribing Grammar · Open Research</span>
