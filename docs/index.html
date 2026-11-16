@@ -567,7 +567,7 @@ footer {
 
   <footer>
     <span>umpolungfish · Imscribing Grammar · Open Research</span>
-    <span>Canonical Shavian font: <a href="https://www.evertype.com/fonts/shaw/" target="_blank" rel="noopener">Trabajo.ttf</a> (place in <span class="mono">docs/fonts/Trabajo.ttf</span>)</span>
+    <span>Canonical Shavian font: <a href="https://www.evertype.com/fonts/shaw/" target="_blank" rel="noopener">Trabajo.ttf</a> (bundled in <span class="mono">docs/fonts/</span>)</span>
   </footer>
 </div>
 
@@ -584,7 +584,7 @@ const AXES = [
   {"sym":"⊙","name":"IMSCRIB","short":"IM","axis":"Criticality","val":"1→1","work":false,"arity":5,"stride":48,"weight":1.0,"vals":[{"g":"𐑢","u":"U+10462","n":"woe","p":"⊢≻⋈⊙∈⊤⊥⊞∋⊡⊣","k":"sub-crit"},{"g":"⊙","u":"U+2299","n":"monad","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"monad/crit"},{"g":"𐑮","u":"U+1046E","n":"roar","p":"⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣","k":"super-crit"},{"g":"𐑻","u":"U+1047B","n":"err","p":"⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣","k":"exceptional"},{"g":"𐑣","u":"U+10463","n":"ha-ha","p":"⊢≻∈⊤⋈≺⊥⋈⊞∋⊙⊡⋈⊣","k":"chaotic"}]},
   {"sym":"⊥","name":"EVALF","short":"EF","axis":"Chirality","val":"1→1","work":true,"arity":4,"stride":12,"weight":0.8,"vals":[{"g":"𐑓","u":"U+10453","n":"fee","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"0-step"},{"g":"𐑒","u":"U+10452","n":"kick","p":"⊢∈≻⊤⋈⊙⊡≺⊥⊞∋⊣","k":"1-step Markov"},{"g":"𐑖","u":"U+10456","n":"sure","p":"⊢≻∈⊤⊥⊞≺⋈⊙⊡∋⊣","k":"2-step Markov"},{"g":"𐑫","u":"U+1046B","n":"wool","p":"⊢≻∈⊤⊥⊞⋈⊙⊡∋⊣","k":"eternal ∞"}]},
   {"sym":"⊞","name":"ENGAGR","short":"EG","axis":"Stoichiometry","val":"1→1","work":true,"arity":3,"stride":4,"weight":1.0,"vals":[{"g":"𐑙","u":"U+10459","n":"hung","p":"⊢≻≺⋈∈⊤⊥⊞∋⊙⊡⊣","k":"1:1 singular"},{"g":"𐑕","u":"U+10455","n":"so","p":"⊢≻⋈∈⊤⊥⊞∋⊙⊡≺⋈⊣","k":"many-same"},{"g":"𐑳","u":"U+10473","n":"up","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"many-hetero"}]},
-  {"sym":"⊡","name":"IFIX","short":"IX","axis":"Winding","val":"1→1","work":true,"arity":4,"stride":1,"weight":0.7,"vals":[{"g":"𐑷","u":"U+10477","n":"awe","p":"⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣","k":"trivial"},{"g":"𐑴","u":"U+10474","n":"oak","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"ℤ₂"},{"g":"𐑭","u":"U+1046D","n":"ah","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"ℤ integer"},{"g":"𐑟","u":"U+1045F","n":"zoo","p":"⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣","k":"non-Abelian"}]}
+  {"sym":"⊡","name":"IFIX","short":"IX","axis":"Winding","val":"1→1","work":true,"arity":4,"stride":1,"weight":0.7,"vals":[{"g":"𐑷","u":"U+10477","n":"awe","p":"⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣","k":"trivial"},{"g":"𐑴","u":"U+10474","n":"oak","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"ℤ<sub>2</sub>"},{"g":"𐑭","u":"U+1046D","n":"ah","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"ℤ integer"},{"g":"𐑟","u":"U+1045F","n":"zoo","p":"⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣","k":"non-Abelian"}]}
 ];
 
 const OP_MAP = {}, NAME_TO_SYM = {"δ":"∈","μ":"∋","DELTA":"∈","MU":"∋"};
@@ -1079,7 +1079,7 @@ function initReferenceTable() {
 const REPOS = [
   {name:"Imscribing_Grammar",role:"Hub · O<sub>∞</sub>",desc:"12-primitive Crystal of Types, IMASM apparatus, Dual-Frame SIC-POVM & Frobenius MZI."},
   {name:"p4rakernel",role:"Lean 4 Scripture",desc:"Lean 4 v4.28.0 fork with explosion disabled at C++ level + p4ramill machine-checked proofs."},
-  {name:"g-momonados",role:"Bare-Metal OS",desc:"G-m⊙² self-imscribing Rust kernel with GPU SIXTEEN_3 verification & Crystal navigation."},
+  {name:"g-momonados",role:"Bare-Metal OS",desc:"G-m⊙<sup>2</sup> self-imscribing Rust kernel with GPU SIXTEEN_3 verification & Crystal navigation."},
   {name:"exOS",role:"OS / ALEPH",desc:"Bare-metal Rust OS running built-in ALEPH/IMASM programs & Frobenius fixed-point probes."},
   {name:"MoDoT",role:"Agentic Vessel",desc:"Agentic inquiry organism, Manuscript Spine, and Dual-Link SIC Witness Vessel."},
   {name:"Vox",role:"Compiler",desc:"Cross-substrate compiler lifting IMASM programs across computational and protein substrates."},
