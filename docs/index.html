@@ -1467,8 +1467,8 @@ function calc_parseWord(str){
   return out;
 }
 function calc_getBaseTokens(){
-  const sel=calc_$('\1').value;
-  return calc_parseWord(sel==='custom'?calc_$('\1').value:(PROGRAMS[sel]||''));
+  const sel=calc_$('calc-wordSel').value;
+  return calc_parseWord(sel==='custom'?calc_$('calc-wordSel').value:(PROGRAMS[sel]||''));
 }
 
 // words live on Z/nZ: the cut k reads token (k+i) mod n at position i
@@ -1508,7 +1508,7 @@ function calc_cycleHTML(base){
   const vc={T:'#6f6',N:'#6af',B:'#a8f',F:'#f66'};
   let rows='';const reg={};const V0=calc_model(base).A;
   for(let k=0;k<p;k++){
-    const X=calc_execRing(rotateWord(base,k),+calc_$('\1').value),ro=X.final;
+    const X=calc_execRing(rotateWord(base,k),+calc_$('calc-seedSel').value),ro=X.final;
     (reg[ro]=reg[ro]||[]).push(k);
     const w=g(rotateWord(base,k)).map((c,i)=>(k+i>=n)?`<span class="wrap">${c}</span>`:c).join('');
     rows+=`<tr class="row ${(cur%p)===k?'cur':''}" onclick="calc_setCut(${k})"><td>${k}</td><td>${ro}</td><td style="color:${vc[V0.v]}">${V0.v}</td><td class="w">${w}</td></tr>`;
@@ -1612,7 +1612,7 @@ function calc_flowEval(N,E,seed,ar,A){
   return{rin,rout,rounds,read:calc_bn(ro),dy,sig:dy.map(d=>d.id?'id':'¬id').join(' ')||'—'};
 }
 function calc_model(N){
-  const ar=+calc_$('\1').value,verb=calc_$('\1').value,seed=calc_seed_to_b4(+calc_$('\1').value);
+  const ar=+calc_$('calc-arSel').value,verb=calc_$('calc-verbSel').value,seed=calc_seed_to_b4(+calc_$('calc-seedSel').value);
   const E=calc_buildGraph(N,verb,ar),A=calc_analyze(N,E),F=calc_flowEval(N,E,seed,ar,A);
   return{N,E,A,F,ar,verb,seed};
 }
@@ -1712,12 +1712,12 @@ const KERNEL={T:'green: worked dyad (split, transform, fuse)',N:'N: identity clo
 
 function calc_evaluate(){
   const base=calc_getBaseTokens(),N=rotateWord(base,rot),n=N.length;
-  if(!n){calc_$('\1').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';calc_$('\1').innerHTML='';calc_$('\1').innerHTML='';calc_$('\1').innerHTML='';return;}
+  if(!n){calc_$('calc-rslt-box').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';calc_$('calc-rslt-box').innerHTML='';calc_$('calc-rslt-box').innerHTML='';calc_$('calc-rslt-box').innerHTML='';return;}
   const M=calc_model(N),A=M.A,F=M.F,k=((rot%n)+n)%n,X=calc_execRing(N,M.seed),V=calc_model(base).A,RO=X.final;
   const tc={T:'tag-pass',N:'tag-seq',B:'tag-par',F:'tag-fail'}[V.v];
-  const exp=calc_$('\1').value.trim();
+  const exp=calc_$('calc-rslt-box').value.trim();
   const expH=exp?`<div style="margin-top:6px">expected <b>${exp}</b> &rarr; ${exp===RO?'<span style="color:#6f6">matches the readout</span>':`<span style="color:#f66">differs: execution read ${RO}</span>`}</div>`:'';
-  calc_$('\1').innerHTML=`
+  calc_$('calc-rslt-box').innerHTML=`
     <div style="margin-bottom:6px"><b>word</b> (cut k = ${k} mod ${n}): <span style="font-size:14px;letter-spacing:2px">${N.map(t=>GLYPH[t]).join(' ')}</span></div>
     <div style="color:#8a84b0;font-size:10px;margin-bottom:6px">${M.verb} &middot; fork arity ${M.ar} &middot; seed ${calc_bn(M.seed)}</div>
     <div><span class="tag ${tc}">${V.v} (${V.why})</span> <span class="tag tag-info">${A.name}</span></div>
@@ -1726,10 +1726,10 @@ function calc_evaluate(){
     <div><b>kernel</b> (prove, local class): ${KERNEL[V.v]}<br><span style="color:#8a84b0;font-size:10px">the live p4ramill kernel is authoritative</span></div>
     <div><b>flow</b> (eval16): readout <b>${RO}</b> &middot; fixed at ${X.fixedAt} &middot; dyads <b>${F.sig}</b> &middot; settled in ${F.rounds} rounds</div>
     ${expH}${calc_cycleHTML(base)}`;
-  calc_$('\1').textContent=' k = '+k+' (mod '+n+')';
-  calc_$('\1').textContent=`V=${n} E=${M.E.length} β=${A.beta} · ${A.name} · ρ=${A.rho.toFixed(3)} · ${V.v} (${V.why}) · readout ${RO}`;
+  calc_$('calc-cutLbl').textContent=' k = '+k+' (mod '+n+')';
+  calc_$('calc-stat-bar').textContent=`V=${n} E=${M.E.length} β=${A.beta} · ${A.name} · ρ=${A.rho.toFixed(3)} · ${V.v} (${V.why}) · readout ${RO}`;
   const prs=A.pairs.map(p=>`<div style="margin-left:10px">∈${p.f} → ∋${p.g} &middot; arms [${p.arms.join(',')||'empty'}] &middot; ${p.work?'<span style="color:#6f6">work</span>':'<span style="color:#f66">identity</span>'} &middot; ${F.dy.find(d=>d.f===p.f&&d.g===p.g).id?'id':'¬id'} (fed ${calc_bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).fed)}, got ${calc_bn(F.dy.find(d=>d.f===p.f&&d.g===p.g).rec)})</div>`).join('');
-  calc_$('\1').innerHTML=`
+  calc_$('calc-rslt-box').innerHTML=`
     <div><b>execution</b> (cut ${k}): final <b>${RO}</b> &middot; fixed_at ${X.fixedAt} &middot; inert ${X.inert} &middot; skipped fuses ${X.skipped} &middot; unmatched fuses ${X.unm} &middot; reconnections ${X.exe} &middot; returned ${X.returned}<br><b>banking</b>: reconnections ${X.exe} &middot; holds ${X.holds} &middot; vacuous ${X.vacuous}</div>
     <div style="margin-top:8px"><b>classify</b>: ${A.name} &middot; V=${n} E=${M.E.length} β=${A.beta} C=${A.C}<br>branch ${A.br} merge ${A.mg} source ${A.src} sink ${A.snk} &middot; arms ${A.arms} &middot; ρ=${A.rho.toFixed(4)}</div>
     <div style="margin-top:8px"><b>ancestry pairs</b> (${A.pairs.length}, ${A.transformed} transformed):</div>${prs||'<div style="margin-left:10px;color:#8a84b0">none</div>'}
@@ -1740,7 +1740,7 @@ function calc_evaluate(){
   if(viewMode==='graph')calc_drawGraph(M);else calc_drawBraidDiagram(N,V.v==='T');
 }
 function calc_drawStatic(M){
-  const svg=calc_$('\1'),W=calc_$('\1').clientWidth||300,H=calc_$('\1').clientHeight||200,n=M.N.length;
+  const svg=calc_$('calc-staticSvg'),W=calc_$('calc-staticSvg').clientWidth||300,H=calc_$('calc-staticSvg').clientHeight||200,n=M.N.length;
   svg.setAttribute('viewBox','0 0 '+W+' '+H);
   const c=Math.max(6,Math.min(18,(W-40)/n)),x0=30,y0=40;
   let h=`<text x="8" y="16" fill="#c8b8e0" font-size="10">register out of each node (SIXTEEN₃ bits)</text>`;
@@ -1751,7 +1751,7 @@ function calc_drawStatic(M){
   svg.innerHTML=`<g id="staticZoom">${h}</g>`;calc_applyZoom('static');
 }
 function calc_drawGraph(M){
-  const svg=calc_$('\1'),box=calc_$('\1'),W=box.clientWidth||800,H=box.clientHeight||480;
+  const svg=calc_$('calc-braidSvg'),box=calc_$('calc-braid-view'),W=box.clientWidth||800,H=box.clientHeight||480;
   svg.setAttribute('viewBox','0 0 '+W+' '+H);
   const N=M.N,n=N.length,A=M.A,F=M.F,gap=(W-80)/Math.max(1,n-1),X=i=>40+i*gap,Y=H/2;
   const armEdge=new Set();A.pairs.filter(p=>p.work).forEach(p=>{const s=new Set([p.f,p.g,...p.arms]);M.E.forEach(([a,b],k)=>{if(s.has(a)&&s.has(b))armEdge.add(k);});});
@@ -1780,9 +1780,9 @@ const CPAL=['#ff7a6a','#6af','#5ec9a0','#e8b84b','#c78bd6','#4ad6c4','#f0a0d0','
 const SUB='₀₁₂₃₄₅₆₇₈₉';
 const sig=g=>'σ'+String(Math.abs(g)).split('').map(c=>SUB[c]).join('')+(g<0?'⁻¹':'');
 let bAnim={n:0,i:0,sec:[],paused:false,raf:0};
-function calc_setMode(m){viewMode=m;document.getElementById('mBraid').classList.toggle('on',m==='braid');document.getElementById('mGraph').classList.toggle('on',m==='graph');calc_evaluate();}
-function calc_togglePlay(){bAnim.paused=!bAnim.paused;document.getElementById('mPlay').textContent=bAnim.paused?'▶':'⏸';}
-function calc_stepRow(){bAnim.paused=true;document.getElementById('mPlay').textContent='▶';bAnim.i=(bAnim.i+1)%Math.max(1,bAnim.n);}
+function calc_setMode(m){viewMode=m;document.getElementById('calc-mBraid').classList.toggle('on',m==='braid');document.getElementById('calc-mGraph').classList.toggle('on',m==='graph');calc_evaluate();}
+function calc_togglePlay(){bAnim.paused=!bAnim.paused;document.getElementById('calc-mPlay').textContent=bAnim.paused?'▶':'⏸';}
+function calc_stepRow(){bAnim.paused=true;document.getElementById('calc-mPlay').textContent='▶';bAnim.i=(bAnim.i+1)%Math.max(1,bAnim.n);}
 function calc_stopTick(){cancelAnimationFrame(bAnim.raf);bAnim.n=0;}
 function calc_braidTick(ts){
   if(!bAnim.n)return;
@@ -1932,8 +1932,8 @@ function calc_drawBraidDiagram(tokens,allPass){
 }
 
 window.onload_calc = function() {
-  calc_setupPanZoom('braid');
-  calc_setupPanZoom('static');
+  calc_setupPanZoom('calc-braid');
+  calc_setupPanZoom('calc-static');
   
   document.getElementById("wordSel").value = "𐑛";
   document.getElementById("customWord").style.display = "none";
