@@ -1241,11 +1241,14 @@ function initPalette() {
 
 window.addEventListener("DOMContentLoaded", ()=>{
   initPalette();
-  ["wordInput","verbSelect","aritySelect","seedSelect","gateMode"].forEach(id=>{
-    document.getElementById(id).addEventListener("input",renderWorkbench);
-    document.getElementById(id).addEventListener("change",renderWorkbench);
-  });
-  renderWorkbench(); initLatticeGrid(); renderTrilattice(); renderWalk();
+  if (document.getElementById("wordInput")) {
+    ["wordInput","verbSelect","aritySelect","seedSelect","gateMode"].forEach(id=>{
+      document.getElementById(id).addEventListener("input",renderWorkbench);
+      document.getElementById(id).addEventListener("change",renderWorkbench);
+    });
+    renderWorkbench();
+  }
+  initLatticeGrid(); renderTrilattice(); renderWalk();
   initSlotGrid(); setTuplePreset("stone"); renderMZI(); initReferenceTable(); initRepos();
   // Initialize Calculus Ratiocinator
   if(typeof window.onload_calc === "function") window.onload_calc();
