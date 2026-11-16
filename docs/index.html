@@ -688,9 +688,9 @@ function setupPanZoom(id) {
   });
 }
 
+const $=id=>document.getElementById(id);
 let rot = 0;  // current cut k, taken mod n (ROTAT)
 
-const $=id=>document.getElementById(id);
 const ALIAS={VINIT:'VINIT',VI:'VINIT',TANCH:'TANCH',TA:'TANCH',AFWD:'AFWD',AF:'AFWD',AREV:'AREV',AR:'AREV',CLINK:'CLINK',CL:'CLINK',EVALT:'EVALT',ET:'EVALT',FSPLIT:'FSPLIT',FS:'FSPLIT',FFUSE:'FFUSE',FF:'FFUSE',IMSCRIB:'IMSCRIB',IM:'IMSCRIB',EVALF:'EVALF',EF:'EVALF',ENGAGR:'ENGAGR',EG:'ENGAGR',IFIX:'IFIX',IX:'IFIX'};
 // §1: glyphs glued, full names, short forms, δ/μ parse alike; brackets parse to nothing
 function parseWord(str){
@@ -1373,7 +1373,6 @@ function calc_setupPanZoom(id) {
 
 let rot = 0;  // current cut k, taken mod n (ROTAT)
 
-const $=id=>document.getElementById(id);
 const ALIAS={VINIT:'VINIT',VI:'VINIT',TANCH:'TANCH',TA:'TANCH',AFWD:'AFWD',AF:'AFWD',AREV:'AREV',AR:'AREV',CLINK:'CLINK',CL:'CLINK',EVALT:'EVALT',ET:'EVALT',FSPLIT:'FSPLIT',FS:'FSPLIT',FFUSE:'FFUSE',FF:'FFUSE',IMSCRIB:'IMSCRIB',IM:'IMSCRIB',EVALF:'EVALF',EF:'EVALF',ENGAGR:'ENGAGR',EG:'ENGAGR',IFIX:'IFIX',IX:'IFIX'};
 // §1: glyphs glued, full names, short forms, δ/μ parse alike; brackets parse to nothing
 function calc_parseWord(str){
