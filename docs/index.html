@@ -471,9 +471,9 @@ footer {
   <option value="custom">— custom —</option>
 </select>
 <textarea id="calc-customWord" placeholder="⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣" oninput="onCustom()"></textarea>
-<button class="btn" onclick="evaluate()">&#x25b6; Evaluate</button>
-<button class="btn" title="ROTAT: k to k-1 (mod n)" onclick="rotat(-1)">&#x21ba;</button>
-<button class="btn" title="ROTAT: k to k+1 (mod n)" onclick="rotat(1)">&#x21bb;</button>
+<button class="btn" onclick="calc_evaluate()">&#x25b6; Evaluate</button>
+<button class="btn" title="ROTAT: k to k-1 (mod n)" onclick="calc_rotat(-1)">&#x21ba;</button>
+<button class="btn" title="ROTAT: k to k+1 (mod n)" onclick="calc_rotat(1)">&#x21bb;</button>
 <span id="calc-cutLbl" style="font-size:10px;color:#8a84b0"></span>
 <h2>3. Three Verdicts</h2>
 <input id="calc-expect" placeholder="speak the expected readout first (A, B, Tf …)" oninput="evaluate()">
@@ -489,7 +489,7 @@ footer {
 <span><span style="color:#a84bb8">..</span> ring wrap</span>
 <span><span style="color:#f66">&#9679;</span> dangling ∈/∋</span>
 </div>
-<div id="calc-braid-view" class="pannable"><div id="calc-modebar"><button class="btn on" id="calc-mBraid" onclick="setMode('braid')">braid</button><button class="btn" id="calc-mGraph" onclick="setMode('graph')">graph</button><button class="btn" id="calc-mPlay" onclick="togglePlay()">&#9208;</button><button class="btn" onclick="stepRow()">&#9197;</button></div><svg id="calc-braidSvg"></svg></div>
+<div id="calc-braid-view" class="pannable"><div id="calc-modebar"><button class="btn on" id="calc-mBraid" onclick="calc_setMode('braid')">braid</button><button class="btn" id="calc-mGraph" onclick="calc_setMode('graph')">graph</button><button class="btn" id="calc-mPlay" onclick="calc_togglePlay()">&#9208;</button><button class="btn" onclick="calc_stepRow()">&#9197;</button></div><svg id="calc-braidSvg"></svg></div>
 <div id="calc-right-col">
   <div id="calc-cfg-box">Run evaluation</div>
   <div id="calc-static-view" class="pannable"><svg id="calc-staticSvg"></svg></div>
@@ -747,7 +747,7 @@ function cycleHTML(base){
     const X=execRing(rotateWord(base,k),+$('seedSel').value),ro=X.final;
     (reg[ro]=reg[ro]||[]).push(k);
     const w=g(rotateWord(base,k)).map((c,i)=>(k+i>=n)?`<span class="wrap">${c}</span>`:c).join('');
-    rows+=`<tr class="row ${(cur%p)===k?'cur':''}" onclick="setCut(${k})"><td>${k}</td><td>${ro}</td><td style="color:${vc[V0.v]}">${V0.v}</td><td class="w">${w}</td></tr>`;
+    rows+=`<tr class="row ${(cur%p)===k?'cur':''}" onclick="calc_setCut(${k})"><td>${k}</td><td>${ro}</td><td style="color:${vc[V0.v]}">${V0.v}</td><td class="w">${w}</td></tr>`;
   }
   const lines=Object.entries(reg).map(([r,ks])=>`<div>${r.padEnd(6,'\u00a0')} at k = ${ks.join(', ')}</div>`).join('');
   return `<div class="cyc"><div><b>cycle</b> <span style="letter-spacing:2px;font-size:13px">${g(base).join(' ')}</span></div>
@@ -1851,8 +1851,8 @@ function calc_drawBraidDiagram(tokens,allPass){
 }
 
 window.onload = function() {
-  calc_setupPanZoom('braid');
-  calc_setupPanZoom('static');
+  calc_setupPanZoom('calc-braid');
+  calc_setupPanZoom('calc-static');
   
   document.getElementById("calc-wordSel").value = "𐑛";
   document.getElementById("calc-customWord").style.display = "none";
