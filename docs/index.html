@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Imscribing Grammar · ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩</title>
+<meta name="description" content="The Imscribing Grammar: 12-opcode IMASM calculus, SIXTEEN_3 trilattice, 17,280,000-address Crystal of Types, and Frobenius dual-frame SIC-POVM measurement apparatus." />
+<style>
+@font-face {
+  font-family: 'Trabajo';
+  src: url('./fonts/Trabajo.ttf') format('truetype');
+  unicode-range: U+10450-1047F, U+2060-206F;
+  font-display: swap;
+}
+:root {
+  --bg: #07080c;
+  --panel: #0d1017;
+  --panel-2: #121621;
+  --line: #212838;
+  --line-bright: #34415c;
+  --text: #e8ecf4;
+  --muted: #8b95ab;
+  --gold: #e6b85c;
+  --crimson: #e05a6d;
+  --cyan: #57c7d4;
+  --emerald: #5bd198;
+  --mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  --shavian: 'Trabajo', 'Segoe UI Historic', 'Apple Symbols', 'Noto Sans Shavian', ui-monospace, monospace;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: radial-gradient(circle at 50% 0%, #101524 0%, var(--bg) 52%);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre, .mono { font-family: var(--mono); }
+.shav { font-family: var(--shavian); font-size: 1.08em; letter-spacing: 0.02em; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 24px 18px 80px; }
+
+nav.top-nav {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(7, 8, 12, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+nav.top-nav .inner {
+  max-width: 1240px; margin: 0 auto; padding: 10px 18px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold);
+}
+.nav-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; font-family: var(--mono); }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+
+header.hero {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(18,22,33,0.95), rgba(10,12,18,0.95));
+  padding: 28px 26px; margin-top: 18px; border-radius: 6px;
+}
+.hero-kicker {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+h1 { margin: 0 0 10px; font-size: clamp(1.9rem, 3.6vw, 2.75rem); font-weight: 650; letter-spacing: -0.02em; }
+.stone-banner {
+  display: inline-flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  padding: 10px 14px; margin: 10px 0 14px;
+  background: var(--bg); border: 1px solid var(--line-bright); border-radius: 4px;
+  font-family: var(--mono); font-size: 14px;
+}
+.stone-glyphs { color: var(--gold); font-size: 1.25rem; }
+.axioms-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pill {
+  font-family: var(--mono); font-size: 12px; padding: 4px 10px; border-radius: 3px;
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--text);
+}
+.pill.gold { border-color: rgba(230,184,92,0.45); color: var(--gold); }
+.pill.cyan { border-color: rgba(87,199,212,0.45); color: var(--cyan); }
+.pill.crimson { border-color: rgba(224,90,109,0.45); color: var(--crimson); }
+.pill.emerald { border-color: rgba(91,209,152,0.45); color: var(--emerald); }
+
+.epigraph {
+  margin-top: 16px; padding-left: 14px; border-left: 2px solid var(--gold);
+  color: var(--muted); font-size: 14px; font-style: italic;
+}
+
+section.bench {
+  margin-top: 26px; border: 1px solid var(--line); background: var(--panel);
+  border-radius: 6px; padding: 22px;
+}
+section.bench h2 {
+  margin: 0 0 6px; font-size: 1.32rem; font-weight: 600;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+}
+.sec-tag {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 2px 8px; border: 1px solid var(--line-bright); border-radius: 3px; color: var(--gold);
+}
+.sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+
+.grid-2 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; }
+.grid-eq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 920px) { .grid-2, .grid-eq, .grid-3 { grid-template-columns: 1fr; } }
+
+.card { background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 14px; }
+.card h3 {
+  margin: 0 0 10px; font-size: 13px; font-family: var(--mono);
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted);
+}
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+label.lbl { font-family: var(--mono); font-size: 12px; color: var(--muted); display: block; margin-bottom: 4px; }
+input[type="text"], select {
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line-bright); border-radius: 4px;
+  padding: 8px 10px; font-family: var(--mono); font-size: 14px; width: 100%;
+}
+input[type="range"] { width: 100%; accent-color: var(--gold); }
+button {
+  background: var(--panel-2); color: var(--text);
+  border: 1px solid var(--line-bright); border-radius: 4px;
+  padding: 7px 11px; font-family: var(--mono); font-size: 12px; cursor: pointer;
+}
+button:hover { border-color: var(--gold); background: #181e2d; }
+button.active, button.primary { border-color: var(--gold); color: var(--gold); background: rgba(230,184,92,0.08); }
+
+.verdict-box {
+  padding: 10px 12px; border-radius: 4px; border: 1px solid var(--line);
+  background: var(--panel-2); font-family: var(--mono); font-size: 13px; white-space: pre-wrap;
+}
+.v-T { border-color: var(--emerald); color: var(--emerald); }
+.v-N { border-color: var(--muted); color: var(--text); }
+.v-B { border-color: var(--gold); color: var(--gold); }
+.v-F { border-color: var(--crimson); color: var(--crimson); }
+
+.svg-stage {
+  width: 100%; height: 280px;
+  background: radial-gradient(circle at center, #0e131e, #06070a);
+  border: 1px solid var(--line); border-radius: 5px; overflow: hidden;
+}
+
+.lat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 600px) { .lat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.lat-cell {
+  padding: 8px; border-radius: 4px; border: 1px solid var(--line);
+  background: var(--panel-2); cursor: pointer; text-align: left; font-family: var(--mono); font-size: 12px;
+}
+.lat-cell.slice { border-color: rgba(87,199,212,0.45); }
+.lat-cell.selA { outline: 2px solid var(--gold); }
+.lat-cell.selB { outline: 2px solid var(--crimson); }
+
+.slot-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 1020px) { .slot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .slot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.slot-card { background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 10px; }
+.slot-head { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--mono); font-size: 12px; margin-bottom: 6px; }
+.slot-op { font-size: 16px; color: var(--gold); }
+.slot-meta { font-size: 11px; color: var(--muted); margin-top: 5px; font-family: var(--mono); }
+
+table.ref { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.ref th, table.ref td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.ref th { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); background: var(--panel-2); }
+.scroll-x { overflow-x: auto; }
+
+.walk-track { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+.walk-node { padding: 6px 10px; border-radius: 4px; border: 1px solid var(--line); font-family: var(--mono); font-size: 12px; background: var(--panel-2); }
+.walk-node.active { border-color: var(--gold); color: var(--gold); box-shadow: 0 0 0 1px rgba(230,184,92,0.35); }
+.walk-node.neighbor { border-color: var(--cyan); color: var(--cyan); }
+
+.repo-card {
+  background: var(--bg); border: 1px solid var(--line); border-radius: 5px; padding: 14px;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 8px;
+}
+.repo-card:hover { border-color: var(--line-bright); }
+.repo-title { font-family: var(--mono); font-weight: 600; color: var(--gold); font-size: 14px; }
+.repo-desc { font-size: 13px; color: var(--muted); }
+.repo-links { display: flex; gap: 10px; font-family: var(--mono); font-size: 12px; }
+
+footer {
+  margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--line);
+  color: var(--muted); font-family: var(--mono); font-size: 12px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="inner">
+    <div class="brand">
+      <span class="shav">⊙</span>
+      <span>Imscribing Grammar · v0.7.0 / IMASM</span>
+    </div>
+    <div class="nav-links">
+      <a href="#imasm">IMASM Workbench</a>
+      <a href="#trilattice">SIXTEEN_3 &amp; Walk</a>
+      <a href="#crystal">Crystal &amp; Tensor</a>
+      <a href="#mzi">MZI μ∘δ=id</a>
+      <a href="#reference">49+1 Reference</a>
+      <a href="#constellation">Git Sites Hub</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="hero-kicker">Characteristica Universalis · Lapis · Graal · Dual-Frame SIC-POVM</div>
+    <h1>The Imscribing Grammar</h1>
+    <p style="margin:0;color:var(--muted);max-width:78ch;">
+      A twelve-primitive measurement apparatus for structural types and executable paraconsistent reasoning.
+      Twelve symbolic opcodes generate the <span class="mono">3³ × 4⁵ × 5⁴ = 17,280,000</span>-address Crystal of Types,
+      running on the <span class="mono">SIXTEEN_3 = 𝒫({T, F, t, f})</span> trilattice and formalized in
+      <a href="https://github.com/umpolungfish/p4rakernel" target="_blank" rel="noopener">p4rakernel</a>.
+    </p>
+    <div class="stone-banner">
+      <span style="color:var(--muted);">O<sub>∞</sub> · THE STONE:</span>
+      <span class="shav stone-glyphs">⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩</span>
+      <span style="color:var(--cyan);">addr 17,273,854 / 17,280,000</span>
+      <span style="color:var(--emerald);">μ ∘ δ = id</span>
+    </div>
+    <div class="axioms-bar">
+      <span class="pill gold">M = ⟨S, ≤_t, ≤_f, ≤_i, Inc, μ, δ, W⟩</span>
+      <span class="pill cyan">49 Shavian Types + ⊙ = 50 Gates</span>
+      <span class="pill crimson">B-state native · No explosion</span>
+      <span class="pill emerald">12 Axes = 12 IMASM Opcodes</span>
+      <a class="pill" href="https://github.com/umpolungfish/Imscribing_Grammar" target="_blank" rel="noopener">GitHub Repo ↗</a>
+      <a class="pill" href="https://github.com/umpolungfish/p4rakernel" target="_blank" rel="noopener">p4rakernel (Lean 4) ↗</a>
+      <a class="pill" href="https://imscribe.com/" target="_blank" rel="noopener">imscribe.com ↗</a>
+      <a class="pill" href="https://landomills.com/" target="_blank" rel="noopener">landomills.com ↗</a>
+      <a class="pill" href="https://orcid.org/0000-0003-0003-0552" target="_blank" rel="noopener">ORCID ↗</a>
+    </div>
+    <div class="epigraph">
+      "distinction cuts the world apart / topos sews the bleeding heart / the cloak they weave between the two / its warp and woof define what's True."
+      — <span class="shav">𐑦</span> (VINIT · if) &amp; <span class="shav">𐑸</span> (TANCH · are), Shavian Notation Spec v0.7.0
+    </div>
+  </header>
+
+  <!-- 01: IMASM WORKBENCH -->
+  <section id="imasm" class="bench">
+    <h2><span class="sec-tag">01 · Engine</span> IMASM 12-Opcode Graph Workbench</h2>
+    <p class="sub">
+      A word is a node list; the verb supplies the edges. Computes Grammar (<span class="mono">define</span>),
+      edge-ancestry Close Condition (<span class="mono">check</span>), Topology (<span class="mono">classify</span>), and Kleene Trilattice Flow (<span class="mono">eval / eval16</span>).
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Program &amp; Wiring</h3>
+        <div class="row" style="margin-bottom:10px;">
+          <div style="flex:2;min-width:210px;">
+            <label class="lbl" for="wordInput">IMASM Word (glyphs, names, short codes, δ/μ)</label>
+            <input id="wordInput" type="text" value="⊢∈≻∋⊤" />
+          </div>
+          <div style="flex:1;min-width:130px;">
+            <label class="lbl" for="verbSelect">Graph Verb</label>
+            <select id="verbSelect">
+              <option value="protocol" selected>protocol (close ∈/∋)</option>
+              <option value="chain">chain (β = 0)</option>
+              <option value="ring">ring (head←tail)</option>
+              <option value="bubble">bubble PRE:A:B:POST</option>
+              <option value="star">star CORE:a:b:c</option>
+              <option value="comb">comb BACK:p:q</option>
+              <option value="wire">wire NODES / i-j</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-bottom:10px;">
+          <div style="flex:1;min-width:110px;">
+            <label class="lbl" for="aritySelect">Dyad Arity</label>
+            <select id="aritySelect">
+              <option value="2" selected>2-arm {T,t} | {F,f}</option>
+              <option value="3">3-arm {T} | {F} | {t,f}</option>
+            </select>
+          </div>
+          <div style="flex:1;min-width:110px;">
+            <label class="lbl" for="seedSelect">VINIT Seed (⊢)</label>
+            <select id="seedSelect">
+              <option value="B" selected>B = {T,F} (FOUR slice)</option>
+              <option value="A">A = {T,F,t,f} (Full SIXTEEN_3)</option>
+              <option value="Tf">Tf = {T,f}</option>
+              <option value="Ft">Ft = {F,t}</option>
+              <option value="T">T = {T}</option>
+              <option value="F">F = {F}</option>
+              <option value="tf">tf = {t,f}</option>
+              <option value="N">N = {}</option>
+            </select>
+          </div>
+          <div style="flex:1;min-width:130px;">
+            <label class="lbl" for="gateMode">⊤ / ⊥ Semantics</label>
+            <select id="gateMode">
+              <option value="pass" selected>§5 Pass-Gate (∩ {T,t}/{F,f})</option>
+              <option value="assert">§1 Assert Pole (∪ {T}/{F})</option>
+            </select>
+          </div>
+        </div>
+        <label class="lbl">Insert Opcode Token</label>
+        <div class="row" id="opcodePalette" style="margin-bottom:10px;"></div>
+        <label class="lbl">Canonical Presets</label>
+        <div class="row" style="margin-bottom:12px;">
+          <button type="button" onclick="loadPreset('⊢∈≻∋⊤','protocol',2,'B')">⊢∈≻∋⊤ (T)</button>
+          <button type="button" onclick="loadPreset('⊢∈≺∋⊤','protocol',2,'Tf')">⊢∈≺∋⊤ @ Tf (AREV)</button>
+          <button type="button" onclick="loadPreset('⊢∈⊙∋⊣','protocol',2,'B')">⊢∈⊙∋⊣ (N identity)</button>
+          <button type="button" onclick="loadPreset('⊢∈⊙⊙⊙∋⊣','protocol',3,'B')">⊢∈⊙⊙⊙∋⊣ (3-arm N)</button>
+          <button type="button" onclick="loadPreset('⊢∈⊞≻∋⊣','protocol',2,'B')">⊢∈⊞≻∋⊣ (B paradox)</button>
+          <button type="button" onclick="loadPreset('⊢≻:⊤:⊥:∋⊡⊣','bubble',3,'A')">bubble ⊢≻:⊤:⊥:∋⊡⊣ (3-arm)</button>
+          <button type="button" onclick="loadPreset('⊢∈:⊤:⊥:≻⊣','star',3,'B')">star ⊢∈:⊤:⊥:≻⊣</button>
+          <button type="button" onclick="loadPreset('⊢∈≻∈⊤⊣:≺:⊥','comb',2,'B')">comb ⊢∈≻∈⊤⊣:≺:⊥</button>
+          <button type="button" onclick="loadPreset('⊢∈≻∋⊣','ring',2,'B')">ring ⊢∈≻∋⊣ (⊢ F)</button>
+        </div>
+        <div class="svg-stage">
+          <svg id="graphSvg" viewBox="0 0 680 260" width="100%" height="100%"></svg>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Three Independent Verdicts (§6)</h3>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div>
+            <label class="lbl">1 · Grammar (<span class="mono">define</span>)</label>
+            <div id="vGrammar" class="verdict-box">—</div>
+          </div>
+          <div>
+            <label class="lbl">2 · Close Condition (<span class="mono">check</span>)</label>
+            <div id="vClose" class="verdict-box">—</div>
+          </div>
+          <div>
+            <label class="lbl">3 · Trilattice Flow (<span class="mono">eval / eval16</span>)</label>
+            <div id="vFlow" class="verdict-box">—</div>
+          </div>
+          <div>
+            <label class="lbl">Topology Census (<span class="mono">classify</span>)</label>
+            <div id="vClassify" class="verdict-box" style="font-size:12px;">—</div>
+          </div>
+          <div>
+            <label class="lbl">Kleene Edge Register Trace (settled in <span id="kleeneRounds">0</span> rounds)</label>
+            <div id="vTrace" class="verdict-box" style="font-size:12px;max-height:132px;overflow:auto;">—</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02: SIXTEEN_3 TRILATTICE & WALK -->
+  <section id="trilattice" class="bench">
+    <h2><span class="sec-tag">02 · Algebra</span> SIXTEEN_3 Trilattice &amp; Re-Entrant Walk</h2>
+    <p class="sub">
+      Operational tuple <span class="mono">M = ⟨S, ≤_t, ≤_f, ≤_i, Inc, μ, δ, W⟩</span> on <span class="mono">SIXTEEN_3 = 𝒫({T, F, t, f})</span>.
+      Click two states to inspect independent partial orders, meets/joins, <span class="mono">AREV</span>, non-commutative <span class="mono">Inc</span>, and the monotonic Walk <span class="mono">W</span>.
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>16-State Register Carrier (cyan = FOUR classical slice)</h3>
+        <div class="row" style="margin-bottom:8px;font-size:12px;font-family:var(--mono);">
+          <span style="color:var(--gold);">■ A: <span id="lblA">T</span></span>
+          <span style="color:var(--crimson);">■ B: <span id="lblB">t</span></span>
+          <button type="button" onclick="pickMode='A';renderTrilattice();" id="btnPickA" class="active">Select A</button>
+          <button type="button" onclick="pickMode='B';renderTrilattice();" id="btnPickB">Select B</button>
+        </div>
+        <div class="lat-grid" id="latGrid"></div>
+        <div class="verdict-box" style="margin-top:12px;font-size:12px;" id="algebraOut"></div>
+      </div>
+
+      <div class="card">
+        <h3>Re-Entry Axioms &amp; Monotonic Informational Walk W</h3>
+        <div id="reentryOut" class="verdict-box" style="font-size:12px;margin-bottom:12px;"></div>
+        <div class="row" style="margin-bottom:8px;">
+          <div style="flex:1;min-width:160px;">
+            <label class="lbl" for="obsSelect">Observer Locus O (Observer Grounding)</label>
+            <select id="obsSelect" onchange="renderWalk()">
+              <option value="void">Unmarked Void (outside boundary)</option>
+              <option value="mark">Inside Mark (distinction active)</option>
+              <option value="boundary" selected>At Boundary [A] (self-imscription)</option>
+              <option value="orbit">Re-entrant Orbit (paradox loop)</option>
+            </select>
+          </div>
+          <div style="padding-top:18px;">
+            <button type="button" class="primary" onclick="stepWalk(1)">Step Walk W (+≤_i)</button>
+            <button type="button" onclick="resetWalk()">Reset ∅</button>
+          </div>
+        </div>
+        <div class="walk-track" id="walkTrack"></div>
+        <div id="walkDetail" class="verdict-box" style="font-size:12px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03: CRYSTAL, TENSOR & STRANGE LOOP -->
+  <section id="crystal" class="bench">
+    <h2><span class="sec-tag">03 · Crystal</span> 12-Primitive Crystal, Tensor A ⊗ B &amp; Strange Loop</h2>
+    <p class="sub">
+      Mixed-radix space <span class="mono">3³ × 4⁵ × 5⁴ = 17,280,000</span> in canonical order
+      <span class="mono">⟨⊢ ⊣ ≻ ≺ ⋈ ⊤ ∈ ∋ ⊙ ⊥ ⊞ ⊡⟩</span>. Every Shavian value expands to its own IMASM program (<span class="mono">imasm cycle</span>).
+    </p>
+    <div class="row" style="margin-bottom:14px;">
+      <button type="button" class="primary" onclick="setTuplePreset('stone')">Load The Stone (O_∞ · 17,273,854)</button>
+      <button type="button" onclick="setTuplePreset('void')">Load Minimum Baseline (0)</button>
+      <button type="button" onclick="setTuplePreset('barrier')">Load Ω-Barrier Probe</button>
+      <button type="button" onclick="expandStrangeLoop()">Expand Tuple → Strange Loop IMASM Word</button>
+    </div>
+    <div class="slot-grid" id="slotGrid"></div>
+    <div class="grid-eq" style="margin-top:16px;">
+      <div class="card">
+        <h3>Crystal Coordinate &amp; Invariants</h3>
+        <div id="crystalSummary" class="verdict-box" style="font-size:13px;"></div>
+      </div>
+      <div class="card">
+        <h3>Tensor Product C = Current ⊗ Target</h3>
+        <div class="row" style="margin-bottom:8px;">
+          <label class="lbl" for="tensorPartner" style="margin:0;">Target B:</label>
+          <select id="tensorPartner" style="width:auto;flex:1;" onchange="renderCrystal()">
+            <option value="stone">The Stone ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩</option>
+            <option value="void">Baseline ⟨𐑛𐑡𐑩𐑗𐑱𐑘𐑚𐑝𐑢𐑓𐑙𐑷⟩</option>
+            <option value="barrier">Ω-Barrier ⟨𐑦𐑸𐑾𐑹𐑐𐑺𐑲𐑵⊙𐑫𐑳𐑟⟩</option>
+          </select>
+        </div>
+        <div id="tensorSummary" class="verdict-box" style="font-size:12px;"></div>
+      </div>
+    </div>
+    <div id="strangeLoopBox" class="card" style="margin-top:14px;display:none;">
+      <h3>Strange Loop Expansion (12 Concatenated Type Programs · Per-Axis Verified)</h3>
+      <div id="strangeLoopText" class="verdict-box" style="font-size:12px;word-break:break-all;"></div>
+    </div>
+  </section>
+
+  <!-- 04: FROBENIUS MZI SIMULATOR -->
+  <section id="mzi" class="bench">
+    <h2><span class="sec-tag">04 · Physics</span> Frobenius Dual-Frame Mach–Zehnder Simulator</h2>
+    <p class="sub">
+      Criticality <span class="mono">⊙</span> maps to split angle θ; Parity <span class="mono">≺</span> maps to relative arm phase φ.
+      At <span class="mono">O_∞</span> (θ = 90°, φ = 0°), <span class="mono">V = |μ∘δ − id| = 0</span> and output ports read 50% / 50% (<span class="mono">B</span>-state).
+    </p>
+    <div class="grid-2">
+      <div class="card">
+        <canvas id="mziCanvas" width="640" height="240" style="width:100%;height:auto;background:#050609;border:1px solid var(--line);border-radius:4px;"></canvas>
+      </div>
+      <div class="card">
+        <h3>Interferometer Parameters</h3>
+        <label class="lbl">Criticality ⊙ Split Angle θ (<span id="mziThetaVal">90°</span>)</label>
+        <input id="mziTheta" type="range" min="0" max="180" value="90" oninput="renderMZI()" />
+        <label class="lbl" style="margin-top:12px;">Parity ≺ Phase Offset φ (<span id="mziPhiVal">0°</span>)</label>
+        <input id="mziPhi" type="range" min="0" max="180" value="0" oninput="renderMZI()" />
+        <div id="mziReadout" class="verdict-box" style="margin-top:14px;font-size:12px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05: REFERENCE TABLE -->
+  <section id="reference" class="bench">
+    <h2><span class="sec-tag">05 · Reference</span> The 12 Axes, 49+1 Shavian Glyphs &amp; Type Programs</h2>
+    <p class="sub">
+      Shavian Notation Spec v0.7.0 and IMASM Guide (October 2026). Click any Type Program button to load it into the Workbench.
+    </p>
+    <div class="scroll-x">
+      <table class="ref" id="refTable">
+        <thead>
+          <tr><th>Slot</th><th>Opcode</th><th>Axis (Work?)</th><th>Shavian Values (Ordinal · Unicode · Phoneme · Type Program)</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 06: CONSTELLATION -->
+  <section id="constellation" class="bench">
+    <h2><span class="sec-tag">06 · Constellation</span> Connected Repositories &amp; Git-Site Hub</h2>
+    <p class="sub">
+      <span class="mono">Imscribing_Grammar</span> serves as the central hub; sibling repositories implement formal verification, bare-metal execution, and domain substrates.
+    </p>
+    <div class="grid-3" id="repoGrid"></div>
+  </section>
+
+  <footer>
+    <span>umpolungfish · Imscribing Grammar · Open Research</span>
+    <span>Canonical Shavian font: <a href="https://www.evertype.com/fonts/shaw/" target="_blank" rel="noopener">Trabajo.ttf</a> (place in <span class="mono">docs/fonts/Trabajo.ttf</span>)</span>
+  </footer>
+</div>
+
+<script>
+const AXES = [
+  {"sym":"⊢","name":"VINIT","short":"VI","axis":"Dimensionality","val":"0→1","work":false,"arity":4,"stride":4320000,"weight":1.0,"vals":[{"g":"𐑛","u":"U+1045B","n":"dead","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"∞D field"},{"g":"𐑨","u":"U+10468","n":"ash","p":"⊢≻∈⊤⊥⊞⋈⊙≺∋⊡⊣","k":"2D membrane"},{"g":"𐑼","u":"U+1047C","n":"array","p":"⊢∈⊤≻⋈⊙⊡⋈⊡⋈⊡≺⊥∋⊞⊣","k":"0D wedge"},{"g":"𐑦","u":"U+10466","n":"if","p":"⊢⊙∈⊤≻⊥≺⊞∋⋈⊡⊣","k":"self-written"}]},
+  {"sym":"⊣","name":"TANCH","short":"TA","axis":"Topology","val":"1→1","work":false,"arity":5,"stride":864000,"weight":1.0,"vals":[{"g":"𐑡","u":"U+10461","n":"judge","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"tree/DAG"},{"g":"𐑰","u":"U+10470","n":"eat","p":"⊢⊣∈≻⋈⊤≺⊥∋⊙⊡⊞⋈⊣","k":"nested"},{"g":"𐑥","u":"U+10465","n":"mime","p":"⊢∈≻⊤≺⊥⋈⊞⊙∋⊡⊣","k":"crossing"},{"g":"𐑶","u":"U+10476","n":"oil","p":"⊢∈≻⊤≺⊥⋈⊞∋⊙⊡⊣","k":"braid/box"},{"g":"𐑸","u":"U+10478","n":"are","p":"⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣","k":"ouroboric"}]},
+  {"sym":"≻","name":"AFWD","short":"AF","axis":"Coupling","val":"1→1","work":true,"arity":4,"stride":216000,"weight":1.0,"vals":[{"g":"𐑩","u":"U+10469","n":"ado","p":"⊢≻∈⊤≻⊞⊥≺∋⋈⊙⊡⊣","k":"ordinal 1"},{"g":"𐑑","u":"U+10451","n":"tot","p":"⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣","k":"ordinal 2"},{"g":"𐑽","u":"U+1047D","n":"ear","p":"⊢⊣≻∈≻⊤⋈⊙≻⊥⋈⊙⊞≺∋⊡⊣","k":"ordinal 3"},{"g":"𐑾","u":"U+1047E","n":"ian","p":"⊢∈≻⊤⋈≺⊥⊞∋⊡⊙⋈⊣","k":"ordinal 4"}]},
+  {"sym":"≺","name":"AREV","short":"AR","axis":"Parity","val":"1→1","work":true,"arity":5,"stride":43200,"weight":1.0,"vals":[{"g":"𐑗","u":"U+10457","n":"church","p":"⊢∈≻⊤⋈≺⊥⊞⋈⊙⊡∋⊣","k":"asymmetric"},{"g":"𐑿","u":"U+1047F","n":"yew","p":"⊢∈≻⊤⋈≺⊥∋⊞⊙⊡⊣","k":"quantum-part"},{"g":"𐑬","u":"U+1046C","n":"out","p":"⊢≻∈⊤⋈⊡⊥≺⊞∋⊙⊣","k":"partial-sym"},{"g":"𐑯","u":"U+1046F","n":"nun","p":"⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣","k":"full-sym"},{"g":"𐑹","u":"U+10479","n":"or","p":"⊢≻∈⊤⊥⊞∋⋈⊙⊡⊣","k":"Frobenius μ∘δ=id"}]},
+  {"sym":"⋈","name":"CLINK","short":"CL","axis":"Fidelity","val":"1→1","work":true,"arity":3,"stride":14400,"weight":1.0,"vals":[{"g":"𐑱","u":"U+10471","n":"age","p":"⊢≻∈⊤⊥⊞∋⋈⊙≺⊡⊣","k":"classical"},{"g":"𐑞","u":"U+1045E","n":"they","p":"⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣","k":"semiclassical"},{"g":"𐑐","u":"U+10450","n":"peep","p":"⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣","k":"quantum"}]},
+  {"sym":"⊤","name":"EVALT","short":"ET","axis":"Kinetics","val":"1→1","work":true,"arity":5,"stride":2880,"weight":1.0,"vals":[{"g":"𐑘","u":"U+10458","n":"yea","p":"⊢≻∈⊤⊥⊞⋈⊙∋⊡≺⊣","k":"trapped/MBL"},{"g":"𐑤","u":"U+10464","n":"loll","p":"⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣","k":"slow"},{"g":"𐑧","u":"U+10467","n":"egg","p":"⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣","k":"moderate"},{"g":"𐑪","u":"U+1046A","n":"on","p":"⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣","k":"fast"},{"g":"𐑺","u":"U+1047A","n":"air","p":"⊢∈≻⊤≺⊥⊞⋈⊙∋⊡⊣","k":"driven"}]},
+  {"sym":"∈","name":"FSPLIT","short":"FS","axis":"Cardinality","val":"1→2/3","work":false,"arity":3,"stride":960,"weight":1.0,"vals":[{"g":"𐑚","u":"U+1045A","n":"bib","p":"⊢∈≻⊤⋈≺⊥⋈⊞∋⊙⊡⊣","k":"ordinal 1"},{"g":"𐑔","u":"U+10454","n":"thigh","p":"⊢∈≻⊤⋈⊙≺⊥⊞⊡∋⊣","k":"ordinal 2"},{"g":"𐑲","u":"U+10472","n":"ice","p":"⊢≻⋈∈⊤⊥⊞∋≺⊙⊡⊣","k":"ordinal 3"}]},
+  {"sym":"∋","name":"FFUSE","short":"FF","axis":"Composition","val":"2/3→1","work":false,"arity":4,"stride":240,"weight":1.0,"vals":[{"g":"𐑝","u":"U+1045D","n":"vow","p":"⊢∈≻⊤⋈≺⊥⊞∋⊙⊡⊣","k":"ordinal 1"},{"g":"𐑜","u":"U+1045C","n":"gag","p":"⊢≻∈⊤⋈⊥≺⋈∋⊞⊙⊡⊣","k":"ordinal 2"},{"g":"𐑠","u":"U+10460","n":"measure","p":"⊢∈≻⊤⋈≺⊥⊞⊙⊡∋⊣","k":"ordinal 3"},{"g":"𐑵","u":"U+10475","n":"ooze","p":"⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣","k":"broadcast"}]},
+  {"sym":"⊙","name":"IMSCRIB","short":"IM","axis":"Criticality","val":"1→1","work":false,"arity":5,"stride":48,"weight":1.0,"vals":[{"g":"𐑢","u":"U+10462","n":"woe","p":"⊢≻⋈⊙∈⊤⊥⊞∋⊡⊣","k":"sub-crit"},{"g":"⊙","u":"U+2299","n":"monad","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"monad/crit"},{"g":"𐑮","u":"U+1046E","n":"roar","p":"⊢∈≻⊤≺⊥⊞⋈⊙⊡∋⊣","k":"super-crit"},{"g":"𐑻","u":"U+1047B","n":"err","p":"⊢⊙∈≻⊤≺⊥⋈⊞∋⊡⊣","k":"exceptional"},{"g":"𐑣","u":"U+10463","n":"ha-ha","p":"⊢≻∈⊤⋈≺⊥⋈⊞∋⊙⊡⋈⊣","k":"chaotic"}]},
+  {"sym":"⊥","name":"EVALF","short":"EF","axis":"Chirality","val":"1→1","work":true,"arity":4,"stride":12,"weight":0.8,"vals":[{"g":"𐑓","u":"U+10453","n":"fee","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"0-step"},{"g":"𐑒","u":"U+10452","n":"kick","p":"⊢∈≻⊤⋈⊙⊡≺⊥⊞∋⊣","k":"1-step Markov"},{"g":"𐑖","u":"U+10456","n":"sure","p":"⊢≻∈⊤⊥⊞≺⋈⊙⊡∋⊣","k":"2-step Markov"},{"g":"𐑫","u":"U+1046B","n":"wool","p":"⊢≻∈⊤⊥⊞⋈⊙⊡∋⊣","k":"eternal ∞"}]},
+  {"sym":"⊞","name":"ENGAGR","short":"EG","axis":"Stoichiometry","val":"1→1","work":true,"arity":3,"stride":4,"weight":1.0,"vals":[{"g":"𐑙","u":"U+10459","n":"hung","p":"⊢≻≺⋈∈⊤⊥⊞∋⊙⊡⊣","k":"1:1 singular"},{"g":"𐑕","u":"U+10455","n":"so","p":"⊢≻⋈∈⊤⊥⊞∋⊙⊡≺⋈⊣","k":"many-same"},{"g":"𐑳","u":"U+10473","n":"up","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"many-hetero"}]},
+  {"sym":"⊡","name":"IFIX","short":"IX","axis":"Winding","val":"1→1","work":true,"arity":4,"stride":1,"weight":0.7,"vals":[{"g":"𐑷","u":"U+10477","n":"awe","p":"⊢∈≻⊤≺⊥⋈⊞⊙⊡∋⊣","k":"trivial"},{"g":"𐑴","u":"U+10474","n":"oak","p":"⊢∈≻⊤≺⊥⊞∋⋈⊙⊡⊣","k":"ℤ₂"},{"g":"𐑭","u":"U+1046D","n":"ah","p":"⊢∈≻⊤≺⊥⋈⊙⊞∋⊡⊣","k":"ℤ integer"},{"g":"𐑟","u":"U+1045F","n":"zoo","p":"⊢∈≻⊤⋈⊙≺⊥⊞∋⊡⊣","k":"non-Abelian"}]}
+];
+
+const OP_MAP = {}, NAME_TO_SYM = {"δ":"∈","μ":"∋","DELTA":"∈","MU":"∋"};
+AXES.forEach(a => { OP_MAP[a.sym] = a; NAME_TO_SYM[a.name] = a.sym; NAME_TO_SYM[a.short] = a.sym; });
+
+// SIXTEEN_3 carrier: T=1, F=2, t=4, f=8
+const BIT_T=1, BIT_F=2, BIT_t=4, BIT_f=8;
+const S16_NAMES = {0:"N",1:"T",2:"F",3:"B",4:"t",5:"Tt",6:"Ft",7:"TFt",8:"f",9:"Tf",10:"Ff",11:"TFf",12:"tf",13:"Ttf",14:"Ftf",15:"A"};
+const NAME_TO_MASK = {};
+Object.entries(S16_NAMES).forEach(([k,v]) => NAME_TO_MASK[v] = Number(k));
+const fmtMask = m => {
+  const a = [];
+  if (m&1) a.push("T"); if (m&2) a.push("F"); if (m&4) a.push("t"); if (m&8) a.push("f");
+  return `${S16_NAMES[m]}={${a.join(",")}}`;
+};
+const isClassicalSlice = m => (m & (BIT_t|BIT_f)) === 0;
+const le_i = (x,y) => (x & y) === x;
+const le_t = (x,y) => ((x&(BIT_T|BIT_t)) & (y&(BIT_T|BIT_t))) === (x&(BIT_T|BIT_t)) && ((y&(BIT_F|BIT_f)) & (x&(BIT_F|BIT_f))) === (y&(BIT_F|BIT_f));
+const le_f = (x,y) => ((x&(BIT_F|BIT_f)) & (y&(BIT_F|BIT_f))) === (x&(BIT_F|BIT_f)) && ((y&(BIT_T|BIT_t)) & (x&(BIT_T|BIT_t))) === (y&(BIT_T|BIT_t));
+const le_c = (x,y) => ((x&(BIT_T|BIT_F)) & (y&(BIT_T|BIT_F))) === (x&(BIT_T|BIT_F)) && ((y&(BIT_t|BIT_f)) & (x&(BIT_t|BIT_f))) === (y&(BIT_t|BIT_f));
+const meet_i = (x,y) => x & y, join_i = (x,y) => x | y;
+const meet_t = (x,y) => (x & y & (BIT_T|BIT_t)) | ((x | y) & (BIT_F|BIT_f));
+const join_t = (x,y) => ((x | y) & (BIT_T|BIT_t)) | (x & y & (BIT_F|BIT_f));
+const meet_f = (x,y) => (x & y & (BIT_F|BIT_f)) | ((x | y) & (BIT_T|BIT_t));
+const join_f = (x,y) => ((x | y) & (BIT_F|BIT_f)) | (x & y & (BIT_T|BIT_t));
+const meet_c = (x,y) => (x & y & (BIT_T|BIT_F)) | ((x | y) & (BIT_t|BIT_f));
+const join_c = (x,y) => ((x | y) & (BIT_T|BIT_F)) | (x & y & (BIT_t|BIT_f));
+const arevMask = x => ((x&BIT_T)?BIT_F:0)|((x&BIT_F)?BIT_T:0)|((x&BIT_t)?BIT_f:0)|((x&BIT_f)?BIT_t:0);
+const splitMask = (x, arity) => arity === 2 ? [x&(BIT_T|BIT_t), x&(BIT_F|BIT_f)] : [x&BIT_T, x&BIT_F, x&(BIT_t|BIT_f)];
+
+function tokenizeWord(str) {
+  const hadBrackets = /[\[\]]/.test(str);
+  const cleaned = str.replace(/[\[\]]/g, "");
+  const out = [];
+  for (const part of cleaned.trim().split(/\s+/).filter(Boolean)) {
+    const up = part.toUpperCase();
+    if (NAME_TO_SYM[up]) out.push(NAME_TO_SYM[up]);
+    else if (NAME_TO_SYM[part]) out.push(NAME_TO_SYM[part]);
+    else for (const ch of part) {
+      if (OP_MAP[ch]) out.push(ch);
+      else if (ch === "δ") out.push("∈");
+      else if (ch === "μ") out.push("∋");
+    }
+  }
+  return {tokens: out, hadBrackets};
+}
+
+function buildGraph(wordStr, verb, arity) {
+  let nodes = [], edges = [], hadBrackets = /[\[\]]/.test(wordStr);
+  if (verb === "wire" && wordStr.includes("/")) {
+    const [nPart, ePart] = wordStr.split("/");
+    nodes = tokenizeWord(nPart).tokens;
+    for (const m of (ePart || "").match(/\d+\s*-\s*\d+/g) || []) {
+      const [u, v] = m.split("-").map(Number);
+      if (u >= 0 && u < nodes.length && v >= 0 && v < nodes.length) edges.push({u, v, arm:-1});
+    }
+    return {nodes, edges, hadBrackets};
+  }
+  if (verb === "bubble" && wordStr.includes(":")) {
+    const segs = wordStr.split(":").map(s => tokenizeWord(s).tokens);
+    const pre = segs[0] || [], arms = segs.slice(1, Math.max(2, segs.length - 1)), post = segs.length >= 2 ? segs[segs.length - 1] : [];
+    if (pre[pre.length - 1] !== "∈") pre.push("∈");
+    if (post[0] !== "∋") post.unshift("∋");
+    const forkIdx = pre.length - 1;
+    nodes.push(...pre);
+    for (let i=0;i<pre.length-1;i++) edges.push({u:i, v:i+1, arm:-1});
+    const armEnds = [];
+    arms.forEach((an, ai) => {
+      if (!an.length) armEnds.push({fromFork:true, idx:forkIdx, arm:ai});
+      else {
+        const st = nodes.length; nodes.push(...an);
+        edges.push({u:forkIdx, v:st, arm:ai});
+        for (let k=0;k<an.length-1;k++) edges.push({u:st+k, v:st+k+1, arm:-1});
+        armEnds.push({fromFork:false, idx:st+an.length-1, arm:ai});
+      }
+    });
+    const fuseIdx = nodes.length; nodes.push(...post);
+    armEnds.forEach(ae => edges.push({u:ae.idx, v:fuseIdx, arm:ae.fromFork ? ae.arm : -1}));
+    if (arity === 3 && arms.length === 2) edges.push({u:forkIdx, v:fuseIdx, arm:2});
+    for (let i=0;i<post.length-1;i++) edges.push({u:fuseIdx+i, v:fuseIdx+i+1, arm:-1});
+    return {nodes, edges, hadBrackets};
+  }
+  if (verb === "star" && wordStr.includes(":")) {
+    const segs = wordStr.split(":").map(s => tokenizeWord(s).tokens);
+    const core = segs[0] || ["∈"]; nodes.push(...core);
+    for (let i=0;i<core.length-1;i++) edges.push({u:i, v:i+1, arm:-1});
+    const hub = core.length - 1;
+    segs.slice(1).forEach((an, ai) => {
+      if (!an.length) return;
+      const st = nodes.length; nodes.push(...an);
+      edges.push({u:hub, v:st, arm:ai});
+      for (let k=0;k<an.length-1;k++) edges.push({u:st+k, v:st+k+1, arm:-1});
+    });
+    return {nodes, edges, hadBrackets};
+  }
+  if (verb === "comb" && wordStr.includes(":")) {
+    const segs = wordStr.split(":").map(s => tokenizeWord(s).tokens);
+    const back = segs[0] || []; nodes.push(...back);
+    for (let i=0;i<back.length-1;i++) edges.push({u:i, v:i+1, arm:-1});
+    const forkNodes = back.map((c,i)=>c==="∈"?i:-1).filter(i=>i>=0);
+    segs.slice(1).forEach((gr, gi) => {
+      if (!gr.length) return;
+      const host = forkNodes[gi] !== undefined ? forkNodes[gi] : Math.min(gi, back.length - 1);
+      const st = nodes.length; nodes.push(...gr);
+      if (host >= 0) edges.push({u:host, v:st, arm:1});
+      for (let k=0;k<gr.length-1;k++) edges.push({u:st+k, v:st+k+1, arm:-1});
+    });
+    return {nodes, edges, hadBrackets};
+  }
+  nodes = tokenizeWord(wordStr).tokens;
+  for (let i=0;i<nodes.length-1;i++) edges.push({u:i, v:i+1, arm:nodes[i]==="∈"?0:-1});
+  if (verb === "ring" && nodes.length > 1) {
+    edges.push({u:nodes.length-1, v:0, arm:nodes[nodes.length-1]==="∈"?0:-1});
+  } else if (verb === "protocol") {
+    const stack = [];
+    for (let i=0;i<nodes.length;i++) {
+      if (nodes[i]==="∈") stack.push(i);
+      else if (nodes[i]==="∋" && stack.length) {
+        const f = stack.pop();
+        for (let arm=1;arm<arity;arm++) edges.push({u:f, v:i, arm});
+      }
+    }
+  }
+  return {nodes, edges, hadBrackets};
+}
+
+function analyzeGraph(nodes, edges, arity, seedName, gateMode, hadBrackets=false) {
+  const n = nodes.length;
+  if (!n) return {
+    grammar:{cls:"v-N",text:hadBrackets?"Empty stream (brackets parse to nothing per §13).":"Empty word."},
+    close:{cls:"v-N",code:"N (void)",text:"No committed opcodes; nothing parsed."},
+    flow:{cls:"v-N",text:"No flow."}, classify:{V:0,E:0,C:0,beta:0,rho:0,name:"trivial",openEnds:0},
+    pairs:[], rounds:0, edgeVals:[], nodeIn:[], nodeOut:[]
+  };
+  const outE = Array.from({length:n},()=>[]), inE = Array.from({length:n},()=>[]);
+  edges.forEach((e,idx)=>{ outE[e.u].push({...e,idx}); inE[e.v].push({...e,idx}); });
+
+  const errors = [];
+  for (let i=0;i<n;i++) {
+    const ch = nodes[i];
+    if (ch!=="∈" && outE[i].length>1) errors.push(`node ${i} (${ch}) fans out (${outE[i].length}>1)`);
+    if (ch!=="∋" && inE[i].length>1) errors.push(`node ${i} (${ch}) merges in (${inE[i].length}>1)`);
+    if (ch==="⊢" && inE[i].length>0) errors.push(`node ${i} (⊢) has in-edge (in-arity must be 0)`);
+    if (ch==="∈" && outE[i].length>3) errors.push(`node ${i} (∈) exceeds max arity 3`);
+    if (ch==="∋" && inE[i].length>3) errors.push(`node ${i} (∋) exceeds max arity 3`);
+  }
+  const grammarOk = errors.length === 0;
+
+  const seen = Array(n).fill(false); let C = 0;
+  for (let i=0;i<n;i++) if (!seen[i]) {
+    C++; const q=[i]; seen[i]=true;
+    while (q.length) {
+      const c=q.pop();
+      outE[c].forEach(e=>{if(!seen[e.v]){seen[e.v]=true;q.push(e.v);}});
+      inE[c].forEach(e=>{if(!seen[e.u]){seen[e.u]=true;q.push(e.u);}});
+    }
+  }
+  const beta = edges.length - n + C;
+  let rho = 0, M = Array.from({length:n},()=>Array(n).fill(0));
+  edges.forEach(e => M[e.u][e.v] += 1);
+  let logS = 0, alive = true;
+  for (let p=0;p<8;p++) {
+    const nxt = Array.from({length:n},()=>Array(n).fill(0)); let mmax = 0;
+    for (let i=0;i<n;i++) for (let k=0;k<n;k++) if (M[i][k]) for (let j=0;j<n;j++) nxt[i][j] += M[i][k]*M[k][j];
+    for (let i=0;i<n;i++) for (let j=0;j<n;j++) if (nxt[i][j]>mmax) mmax = nxt[i][j];
+    if (!mmax) { alive = false; break; }
+    logS *= 2;
+    for (let i=0;i<n;i++) for (let j=0;j<n;j++) nxt[i][j] /= mmax;
+    logS += Math.log(mmax); M = nxt;
+  }
+  if (alive) {
+    let infN = 0;
+    for (let i=0;i<n;i++) { let r=0; for(let j=0;j<n;j++) r+=Math.abs(M[i][j]); if(r>infN) infN=r; }
+    rho = infN>0 ? Math.exp((logS + Math.log(infN))/256) : 0;
+  }
+
+  const branchNodes = [], mergeNodes = [];
+  for (let i=0;i<n;i++) { if(outE[i].length>1) branchNodes.push(i); if(inE[i].length>1) mergeNodes.push(i); }
+  let topoName = "network";
+  if (C>1 || beta>=2) topoName = "network";
+  else if (beta===0) topoName = (!branchNodes.length && !mergeNodes.length) ? "linear" : (branchNodes.length===1 && outE[branchNodes[0]].length>=3 ? "star" : "comb");
+  else if (beta===1) topoName = (!branchNodes.length && !mergeNodes.length) ? "ring" : "branched";
+
+  const reach = (start, adj, dirKey) => {
+    const vis = new Set([start]), q=[start];
+    while (q.length) { const c=q.pop(); adj[c].forEach(e=>{if(!vis.has(e[dirKey])){vis.add(e[dirKey]);q.push(e[dirKey]);}}); }
+    return vis;
+  };
+  const forks = [], fuses = [];
+  for (let i=0;i<n;i++) { if(nodes[i]==="∈") forks.push(i); if(nodes[i]==="∋") fuses.push(i); }
+  const pairedForks = new Set(), pairedFuses = new Set(), pairs = [];
+  let hasWork = false;
+  for (const fuse of fuses) {
+    const ins = inE[fuse]; if (ins.length < 2) continue;
+    let common = null;
+    for (const e of ins) {
+      const fAnc = new Set([...reach(e.u, inE, "u")].filter(x=>nodes[x]==="∈"));
+      common = common === null ? fAnc : new Set([...common].filter(x=>fAnc.has(x)));
+    }
+    if (!common || !common.size) continue;
+    const cands = [...common]; let inner = cands[0];
+    for (const c of cands) {
+      const dc = reach(c, outE, "v");
+      if (!cands.some(o=>o!==c && dc.has(o))) { inner=c; break; }
+    }
+    pairedForks.add(inner); pairedFuses.add(fuse);
+    const fDesc = reach(inner, outE, "v"), mAnc = reach(fuse, inE, "u");
+    const arms = [...fDesc].filter(x=>mAnc.has(x) && x!==inner && x!==fuse);
+    const wArms = arms.filter(x=>OP_MAP[nodes[x]].work);
+    if (wArms.length) hasWork = true;
+    pairs.push({fork:inner, fuse, arms, workCount:wArms.length});
+  }
+
+  let close;
+  if (!grammarOk) close = {cls:"v-F",code:"F (ill-typed)",text:errors.join("; ")};
+  else if (!forks.length && !fuses.length) close = {cls:"v-N",code:"N (no fork)",text:"No ∈/∋ dyad; alternatives never weighed."};
+  else if (pairedForks.size!==forks.length || pairedFuses.size!==fuses.length) close = {cls:"v-B",code:"B (open)",text:"Well-typed, but an ∈ or ∋ dangles. Wire via protocol/∋ or commit with ⊡."};
+  else if (!hasWork) close = {cls:"v-N",code:"N (identity)",text:"∈/∋ reconnect (μ∘δ=id), but only inert opcodes between. Put work on arms."};
+  else if (nodes.includes("⊞")) close = {cls:"v-B",code:"B (paradox held)",text:"Closes over transformation and ⊞ is present: genuinely Both."};
+  else close = {cls:"v-T",code:"T (closes)",text:`μ∘δ closes over ${pairs.length} transformed reconnection(s).`};
+
+  const seed = NAME_TO_MASK[seedName] ?? (BIT_T|BIT_F);
+  let edgeVals = Array(edges.length).fill(0), nodeIn = Array(n).fill(0), nodeOut = Array(n).fill(0), rounds = 0;
+  for (let r=0;r<64;r++) {
+    rounds++; let changed = false;
+    const nextEdge = [...edgeVals], nextIn = Array(n).fill(0), nextOut = Array(n).fill(0);
+    for (let i=0;i<n;i++) {
+      let x = 0; inE[i].forEach(e=>x|=edgeVals[e.idx]); nextIn[i]=x;
+      const op = nodes[i]; let outVal = x;
+      if (op==="⊢") outVal = x | seed;
+      else if (op==="≺") outVal = arevMask(x);
+      else if (op==="⊞") outVal = x | BIT_t | BIT_f;
+      else if (op==="⊤") outVal = gateMode==="pass" ? (x&(BIT_T|BIT_t)) : (x|BIT_T);
+      else if (op==="⊥") outVal = gateMode==="pass" ? (x&(BIT_F|BIT_f)) : (x|BIT_F);
+      nextOut[i] = outVal;
+      if (op==="∈") {
+        const parts = splitMask(x, arity);
+        outE[i].forEach((e,k)=>{ const slot=(e.arm>=0&&e.arm<parts.length)?e.arm:(k%parts.length); if(parts[slot]!==nextEdge[e.idx]){nextEdge[e.idx]=parts[slot];changed=true;} });
+      } else {
+        outE[i].forEach(e=>{ if(outVal!==nextEdge[e.idx]){nextEdge[e.idx]=outVal;changed=true;} });
+      }
+    }
+    edgeVals = nextEdge; nodeIn = nextIn; nodeOut = nextOut;
+    if (!changed) break;
+  }
+
+  let flowTxt = "", flowCls = "v-N";
+  if (!grammarOk) { flowTxt = "Refused: ill-typed graph."; flowCls = "v-F"; }
+  else if (!pairs.length) { flowTxt = `No closed dyads; terminal readout: ${fmtMask(nodeOut[n-1])}`; }
+  else {
+    const sigs = pairs.map((p,pi)=>`dyad#${pi+1} [∈@${p.fork}→∋@${p.fuse}]: ${S16_NAMES[nodeIn[p.fork]]} → ${S16_NAMES[nodeOut[p.fuse]]} (${nodeIn[p.fork]===nodeOut[p.fuse]?"id":"not-id"})`);
+    flowCls = pairs.every(p=>nodeIn[p.fork]===nodeOut[p.fuse]) ? "v-T" : "v-B";
+    flowTxt = sigs.join(" | ") + ` · readout=${fmtMask(nodeOut[n-1])}`;
+  }
+  const openPorts = [];
+  for (let i=0;i<n;i++) {
+    if (nodes[i]!=="⊢" && !inE[i].length) openPorts.push(`in@${i}(${nodes[i]})`);
+    if (!outE[i].length && nodes[i]!=="⊣") openPorts.push(`out@${i}(${nodes[i]})`);
+  }
+  return {
+    grammar: grammarOk ? {cls:"v-T",text:`Valid IMASM graph (${n} nodes, ${edges.length} edges).${hadBrackets?" [Brackets stripped as reading aids; CLI treats raw brackets as void.]":""}${openPorts.length?" Open ends: "+openPorts.join(", "):""}`} : {cls:"v-F",text:errors.join("; ")},
+    close, flow:{cls:flowCls,text:flowTxt}, classify:{V:n,E:edges.length,C,beta,rho,name:topoName,openEnds:openPorts.length},
+    pairs, rounds, edgeVals, nodeIn, nodeOut
+  };
+}
+
+function renderWorkbench() {
+  const word = document.getElementById("wordInput").value, verb = document.getElementById("verbSelect").value;
+  const arity = Number(document.getElementById("aritySelect").value), seed = document.getElementById("seedSelect").value;
+  const gateMode = document.getElementById("gateMode").value;
+  const {nodes, edges, hadBrackets} = buildGraph(word, verb, arity);
+  const res = analyzeGraph(nodes, edges, arity, seed, gateMode, hadBrackets);
+
+  const gBox = document.getElementById("vGrammar"); gBox.className = "verdict-box "+res.grammar.cls; gBox.textContent = res.grammar.text;
+  const cBox = document.getElementById("vClose"); cBox.className = "verdict-box "+res.close.cls; cBox.textContent = `${res.close.code} — ${res.close.text}`;
+  const fBox = document.getElementById("vFlow"); fBox.className = "verdict-box "+res.flow.cls; fBox.textContent = res.flow.text;
+  const cl = res.classify;
+  document.getElementById("vClassify").textContent = `topology=${cl.name} | V=${cl.V} E=${cl.E} C=${cl.C} β=${cl.beta} | ρ=${cl.rho.toFixed(4)} | open_ends=${cl.openEnds}`;
+  document.getElementById("kleeneRounds").textContent = res.rounds;
+  const tr = edges.map((e,i)=>`e${i}: ${e.u}(${nodes[e.u]}) → ${e.v}(${nodes[e.v]})${e.arm>=0?` [arm ${e.arm}]`:""} = ${fmtMask(res.edgeVals[i])}`);
+  document.getElementById("vTrace").textContent = tr.length ? tr.join("\n") : "No edges.";
+  drawGraphSVG(nodes, edges, res);
+}
+
+function drawGraphSVG(nodes, edges, res) {
+  const svg = document.getElementById("graphSvg"), W = 680, H = 260;
+  if (!nodes.length) { svg.innerHTML = `<text x="340" y="135" text-anchor="middle" fill="#8b95ab" font-family="monospace" font-size="13">N (void) — no opcodes parsed</text>`; return; }
+  const n = nodes.length, padX = 48, stepX = n>1 ? (W-2*padX)/(n-1) : 0;
+  const pos = nodes.map((_,i)=>({x: n===1?W/2:padX+i*stepX, y: H/2 + (n>10?(i%2===0?-16:16):0)}));
+  let defs = `<defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#57c7d4"/></marker>
+    <marker id="arrGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 1 L 10 5 L 0 9 z" fill="#e6b85c"/></marker>
+  </defs>`;
+  const pairCount = {}; let edgeSvg = "";
+  edges.forEach((e,idx)=>{
+    const key = `${e.u}-${e.v}`, c = pairCount[key]||0; pairCount[key] = c+1;
+    const p1 = pos[e.u], p2 = pos[e.v], isDirect = (e.v===e.u+1 && c===0), valStr = S16_NAMES[res.edgeVals[idx]??0];
+    if (isDirect) {
+      const dx=p2.x-p1.x, dy=p2.y-p1.y, dist=Math.hypot(dx,dy)||1, r=17;
+      edgeSvg += `<line x1="${p1.x+(dx/dist)*r}" y1="${p1.y+(dy/dist)*r}" x2="${p2.x-(dx/dist)*(r+2)}" y2="${p2.y-(dy/dist)*(r+2)}" stroke="#57c7d4" stroke-width="1.6" marker-end="url(#arr)"/>`;
+      edgeSvg += `<text x="${(p1.x+p2.x)/2}" y="${(p1.y+p2.y)/2-9}" text-anchor="middle" fill="#8b95ab" font-family="monospace" font-size="10">${valStr}</text>`;
+    } else {
+      const dir = c%2===0 ? -1 : 1, lift = (44 + Math.floor(c/2)*28 + Math.abs(e.v-e.u)*10)*dir;
+      const mx = (p1.x+p2.x)/2, my = (p1.y+p2.y)/2 + lift, col = e.arm>=0 ? "#e6b85c" : "#e05a6d", mk = e.arm>=0 ? "url(#arrGold)" : "url(#arr)";
+      edgeSvg += `<path d="M ${p1.x} ${p1.y} Q ${mx} ${my} ${p2.x} ${p2.y-(lift<0?18:-18)}" fill="none" stroke="${col}" stroke-width="1.5" stroke-dasharray="${e.arm>0?'4 3':''}" marker-end="${mk}"/>`;
+      edgeSvg += `<text x="${mx}" y="${my+(lift<0?12:-4)}" text-anchor="middle" fill="${col}" font-family="monospace" font-size="10">${valStr}</text>`;
+    }
+  });
+  let nodeSvg = "";
+  nodes.forEach((ch,i)=>{
+    const p = pos[i], meta = OP_MAP[ch], fill = ch==="⊞"?"#26131a":(meta.work?"#111b29":"#121621");
+    const stroke = (ch==="∈"||ch==="∋")?"#e6b85c":(ch==="⊞"?"#e05a6d":(meta.work?"#57c7d4":"#8b95ab"));
+    nodeSvg += `<g><circle cx="${p.x}" cy="${p.y}" r="16" fill="${fill}" stroke="${stroke}" stroke-width="1.8"/><text x="${p.x}" y="${p.y+5}" text-anchor="middle" fill="#e8ecf4" font-family="monospace" font-size="15">${ch}</text><text x="${p.x}" y="${p.y+30}" text-anchor="middle" fill="#8b95ab" font-family="monospace" font-size="9">${i}:${meta.short}</text></g>`;
+  });
+  svg.innerHTML = defs + edgeSvg + nodeSvg;
+}
+function loadPreset(w,v,a,s) {
+  document.getElementById("wordInput").value = w; document.getElementById("verbSelect").value = v;
+  document.getElementById("aritySelect").value = String(a); document.getElementById("seedSelect").value = s;
+  renderWorkbench();
+}
+
+// === SIXTEEN_3 & WALK ===
+let selA = 1, selB = 4, pickMode = "A", walkStep = 2;
+const WALK_PATH = [0, 1, 3, 7, 15];
+function initLatticeGrid() {
+  const grid = document.getElementById("latGrid"); grid.innerHTML = "";
+  for (let m=0;m<16;m++) {
+    const btn = document.createElement("button"); btn.type = "button";
+    btn.className = "lat-cell" + (isClassicalSlice(m)?" slice":""); btn.id = "lat_"+m;
+    btn.innerHTML = `<div style="font-weight:600;color:var(--text);">${S16_NAMES[m]}</div><div style="color:var(--muted);font-size:11px;">${fmtMask(m).split("=")[1]}</div>`;
+    btn.onclick = () => { if(pickMode==="A") selA=m; else selB=m; renderTrilattice(); };
+    grid.appendChild(btn);
+  }
+}
+const Inc_transition = (a,b) => {
+  let res = a | b;
+  if ((a&BIT_T)&&(b&BIT_F)&&!((a&BIT_F)&&(b&BIT_T))) res |= (BIT_t|BIT_f);
+  else if ((a&BIT_F)&&(b&BIT_T)&&!((a&BIT_T)&&(b&BIT_F))) res |= BIT_f;
+  return res;
+};
+const R_reentry = x => x===0 ? BIT_t : ((x&BIT_T)&&(x&BIT_F) ? (x|BIT_t|BIT_f) : x);
+
+function renderTrilattice() {
+  for (let m=0;m<16;m++) {
+    const el = document.getElementById("lat_"+m);
+    el.classList.toggle("selA", m===selA); el.classList.toggle("selB", m===selB);
+  }
+  document.getElementById("btnPickA").classList.toggle("active", pickMode==="A");
+  document.getElementById("btnPickB").classList.toggle("active", pickMode==="B");
+  document.getElementById("lblA").textContent = fmtMask(selA);
+  document.getElementById("lblB").textContent = fmtMask(selB);
+  document.getElementById("algebraOut").textContent = [
+    `Order Checks:  A ≤_i B: ${le_i(selA,selB)}  |  A ≤_t B: ${le_t(selA,selB)}  |  A ≤_f B: ${le_f(selA,selB)}  |  A ≤_c B: ${le_c(selA,selB)}`,
+    `Information (≤_i):  A ⊓ B = ${fmtMask(meet_i(selA,selB))}   |   A ⊔ B = ${fmtMask(join_i(selA,selB))}`,
+    `Truth       (≤_t):  A ∧ B = ${fmtMask(meet_t(selA,selB))}   |   A ∨ B = ${fmtMask(join_t(selA,selB))}`,
+    `Falsity     (≤_f):  A ∧_f B = ${fmtMask(meet_f(selA,selB))} |   A ∨_f B = ${fmtMask(join_f(selA,selB))}`,
+    `Construct   (≤_c):  A △ B = ${fmtMask(meet_c(selA,selB))}   |   A ▽ B = ${fmtMask(join_c(selA,selB))}`,
+    `AREV (≺: T↔F, t↔f): ≺(A) = ${fmtMask(arevMask(selA))}   |   ≺(B) = ${fmtMask(arevMask(selB))}`
+  ].join("\n");
+
+  const idemAll = Array.from({length:16},(_,x)=>R_reentry(R_reentry(x))===R_reentry(x)).every(Boolean);
+  const nonVoid = Array.from({length:16},(_,x)=>R_reentry(x)!==0).every(Boolean);
+  const frobAll = Array.from({length:16},(_,x)=>{const [a,b]=splitMask(x,2),[c,d,e]=splitMask(x,3);return (a|b)===x&&(c|d|e)===x;}).every(Boolean);
+  const ab = Inc_transition(selA,selB), ba = Inc_transition(selB,selA);
+  document.getElementById("reentryOut").textContent = [
+    `Distinction Axiom: R(∅)=${fmtMask(R_reentry(0))} ≠ ∅  |  Never Void (16/16): ${nonVoid}`,
+    `Re-entry Idempotency R(R(x))=R(x) (16/16): ${idemAll}  |  Fixed point A={T,F,t,f}: ${R_reentry(15)===15}`,
+    `Non-Commutative Inclosure: Inc(A→B)=${fmtMask(ab)} vs Inc(B→A)=${fmtMask(ba)} [≠? ${ab!==ba}]`,
+    `Core Law μ∘δ = id (2-arm & 3-arm across 16/16 states): ${frobAll}  |  Converse δ∘μ ≠ id`
+  ].join("\n");
+}
+
+function renderWalk() {
+  const curIdx = walkStep, prevIdx = (curIdx-1+WALK_PATH.length)%WALK_PATH.length, nextIdx = (curIdx+1)%WALK_PATH.length;
+  document.getElementById("walkTrack").innerHTML = WALK_PATH.map((m,idx)=>{
+    const cls = idx===curIdx?"walk-node active":((idx===prevIdx||idx===nextIdx)?"walk-node neighbor":"walk-node");
+    const tag = idx===curIdx?" [n]":(idx===prevIdx?" [n-1]":(idx===nextIdx?" [n+1]":""));
+    return `<div class="${cls}">${S16_NAMES[m]}${tag}</div>` + (idx<WALK_PATH.length-1?`<span style="color:var(--muted);">≤_i</span>`:"");
+  }).join("");
+  const cur = WALK_PATH[curIdx], prev = WALK_PATH[prevIdx], nxt = WALK_PATH[nextIdx];
+  const obs = document.getElementById("obsSelect").value;
+  const obsReading = {
+    void: "Observer outside boundary: only external distinction visible; re-entry requires crossing.",
+    mark: "Observer inside Mark: distinguishes T vs F; contradiction collapses unless banked.",
+    boundary: "Observer at Boundary [A]: perceives both poles without explosion; μ∘δ = id verified.",
+    orbit: "Observer in Re-entrant Orbit: B={T,F} drives stable dialetheic oscillation between n-1 and n+1."
+  }[obs];
+  const paradoxActive = (cur & (BIT_T|BIT_F)) === (BIT_T|BIT_F);
+  document.getElementById("walkDetail").textContent = [
+    `Contextual Grounding Loop: (n-1)=${fmtMask(prev)} → (n)=${fmtMask(cur)} → (n+1)=${fmtMask(nxt)}`,
+    `Monotonic ≤_i Check: distinctions preserved (${(le_i(prev,cur)||cur===0)?"strictly monotone":"wrapped at [A]"}).`,
+    `Paraconsistent Status: ${paradoxActive?"B-STATE / SUPERPOSITION ACTIVE — stable oscillation loop (no halt).":"Consistent progression along ≤_i."}`,
+    `Observer O Grounding: ${obsReading}`
+  ].join("\n");
+}
+const stepWalk = d => { walkStep = (walkStep + d) % WALK_PATH.length; renderWalk(); };
+const resetWalk = () => { walkStep = 0; renderWalk(); };
+
+// === CRYSTAL, TENSOR & STRANGE LOOP ===
+let curTuple = [3,4,3,4,2,2,2,2,1,3,2,2];
+const PRESETS = { stone:[3,4,3,4,2,2,2,2,1,3,2,2], void:[0,0,0,0,0,0,0,0,0,0,0,0], barrier:[3,4,3,4,2,4,2,3,1,3,2,3] };
+function initSlotGrid() {
+  const grid = document.getElementById("slotGrid"); grid.innerHTML = "";
+  AXES.forEach((ax,i)=>{
+    const card = document.createElement("div"); card.className = "slot-card";
+    const opts = ax.vals.map((v,vi)=>`<option value="${vi}">${v.g} (${v.n} · ${v.k})</option>`).join("");
+    card.innerHTML = `<div class="slot-head"><span class="slot-op">${ax.sym} ${ax.short}</span><span style="color:var(--muted);">${ax.axis}</span></div><select id="slotSel_${i}" onchange="curTuple[${i}]=Number(this.value);renderCrystal();">${opts}</select><div class="slot-meta" id="slotMeta_${i}"></div>`;
+    grid.appendChild(card);
+  });
+}
+function setTuplePreset(name) { curTuple=[...PRESETS[name]]; curTuple.forEach((v,i)=>document.getElementById("slotSel_"+i).value=v); renderCrystal(); }
+const computeAddr = idxs => idxs.reduce((acc,v,i)=>acc+v*AXES[i].stride,0);
+const computeDist = (a,b) => Math.sqrt(a.reduce((s,v,i)=>s+AXES[i].weight*(v-b[i])*(v-b[i]),0));
+function computeTensor(a,b) {
+  const out=[], bottlenecks=[];
+  for (let i=0;i<12;i++) {
+    if (i===3||i===4) { const m=Math.min(a[i],b[i]); out.push(m); if(a[i]!==b[i]) bottlenecks.push(`${AXES[i].sym} ${AXES[i].axis}→${AXES[i].vals[m].g}(${AXES[i].vals[m].n})`); }
+    else out.push(Math.max(a[i],b[i]));
+  }
+  return {out,bottlenecks};
+}
+function renderCrystal() {
+  curTuple.forEach((v,i)=>{ const val=AXES[i].vals[v]; document.getElementById("slotMeta_"+i).textContent=`${val.u} · stride ${AXES[i].stride.toLocaleString()}`; });
+  const glyphs = curTuple.map((v,i)=>AXES[i].vals[v].g).join(""), addr = computeAddr(curTuple);
+  const axC = (curTuple[0]===3)===(curTuple[1]===4), omega = (curTuple[11]===3&&curTuple[7]===3&&curTuple[3]===4);
+  let tier = "O_0";
+  if (curTuple[8]===1||curTuple[8]===4) tier = curTuple[3]===4?"O_∞":(curTuple[11]===0?"O_1":(curTuple[0]===3?"O_2†":"O_2"));
+  document.getElementById("crystalSummary").textContent = [
+    `Tuple: ⟨${glyphs}⟩`,
+    `Crystal Address: ${addr.toLocaleString()} / 17,280,000`,
+    `Ouroboricity Tier: ${tier}`,
+    `Axiom C (𐑦 ⟺ 𐑸 self-recognition): ${axC?"SATISFIED":"VIOLATED (𐑦/𐑸 mismatch)"}`,
+    `Ω Barrier (⊡=𐑟 ∧ ∋=𐑵 ∧ ≺=𐑹): ${omega?"AT / ABOVE CEILING (CLINK L8)":"below ceiling"}`
+  ].join("\n");
+  const partner = PRESETS[document.getElementById("tensorPartner").value];
+  const {out,bottlenecks} = computeTensor(curTuple, partner);
+  document.getElementById("tensorSummary").textContent = [
+    `C = A ⊗ B: ⟨${out.map((v,i)=>AXES[i].vals[v].g).join("")}⟩`,
+    `Addr(C): ${computeAddr(out).toLocaleString()}  |  Manifold Distance d(A,B) = ${computeDist(curTuple,partner).toFixed(4)}`,
+    `Rule: ≺ Parity & ⋈ Fidelity bottleneck (min); 10 union slots compose via max.`,
+    bottlenecks.length?`Bottlenecks fired: ${bottlenecks.join(", ")}`:"No bottleneck clash — pure union / identical constraints."
+  ].join("\n");
+}
+function expandStrangeLoop() {
+  const box = document.getElementById("strangeLoopBox"); box.style.display = "block";
+  const parts = curTuple.map((v,i)=>{
+    const val = AXES[i].vals[v], g = buildGraph(val.p,"protocol",2), res = analyzeGraph(g.nodes,g.edges,2,"B","pass");
+    return `${AXES[i].sym}(${val.g} ${val.n}): ${val.p} → ${res.close.code}`;
+  });
+  const full = curTuple.map((v,i)=>AXES[i].vals[v].p).join("");
+  document.getElementById("strangeLoopText").textContent = `Concatenated Word (${full.length} opcodes):\n${full}\n\nPer-Axis Self-Verification (protocol):\n`+parts.join("\n");
+}
+
+// === MZI SIMULATOR ===
+function renderMZI() {
+  const thetaDeg = Number(document.getElementById("mziTheta").value), phiDeg = Number(document.getElementById("mziPhi").value);
+  document.getElementById("mziThetaVal").textContent = thetaDeg+"°"; document.getElementById("mziPhiVal").textContent = phiDeg+"°";
+  const theta = thetaDeg*Math.PI/180, phi = phiDeg*Math.PI/180;
+  const frobDefect = Math.sqrt(Math.pow(Math.cos(theta),2)+Math.pow(Math.sin(phi),2))/Math.SQRT2;
+  const port0 = 0.5*(1+Math.cos(theta-phi)), port1 = 1-port0;
+  const cv = document.getElementById("mziCanvas"), ctx = cv.getContext("2d");
+  ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.strokeStyle="#34415c"; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(40,70); ctx.lineTo(600,70); ctx.moveTo(180,170); ctx.lineTo(600,170); ctx.stroke();
+  ctx.strokeStyle="#e6b85c"; ctx.lineWidth=3;
+  [[165,90,195,50],[445,190,475,150],[165,190,195,150],[445,90,475,50]].forEach(([x1,y1,x2,y2])=>{ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();});
+  const wT = Math.pow(Math.cos(theta/2),2), wB = Math.pow(Math.sin(theta/2),2);
+  ctx.strokeStyle=`rgba(87,199,212,${0.2+0.8*wT})`; ctx.beginPath(); ctx.moveTo(180,70); ctx.lineTo(460,70); ctx.stroke();
+  ctx.strokeStyle=`rgba(224,90,109,${0.2+0.8*wB})`; ctx.beginPath(); ctx.moveTo(180,170); ctx.lineTo(460,170); ctx.stroke();
+  ctx.strokeStyle="rgba(230,184,92,0.55)"; ctx.lineWidth=1.6;
+  ctx.beginPath(); ctx.moveTo(180,70); ctx.lineTo(180,170); ctx.moveTo(460,70); ctx.lineTo(460,170); ctx.stroke();
+  ctx.fillStyle="#e8ecf4"; ctx.font="12px monospace"; ctx.fillText("⊢ IN",14,58);
+  ctx.fillStyle="#e6b85c"; ctx.fillText("∈ δ (Split ⊙)",142,36); ctx.fillText("∋ μ (Fuse)",432,36);
+  ctx.fillStyle="#57c7d4"; ctx.fillText(`Arm T: ${(wT*100).toFixed(0)}%`,285,56);
+  ctx.fillStyle="#e05a6d"; ctx.fillText(`Arm F (≺ φ=${phiDeg}°): ${(wB*100).toFixed(0)}%`,250,192);
+  ctx.fillStyle="#e8ecf4"; ctx.fillText(`D₀: ${(port0*100).toFixed(1)}%`,545,56); ctx.fillText(`D₁: ${(port1*100).toFixed(1)}%`,545,156);
+  document.getElementById("mziReadout").textContent = [
+    `Residual ‖μ∘δ − id‖ = ${frobDefect.toFixed(4)}   |   Port Contrast |D₀−D₁| = ${Math.abs(port0-port1).toFixed(4)}`,
+    `Path State: ${frobDefect<0.05?"O_∞ FROBENIUS CLOSURE — dual-path B-state indistinguishable (μ∘δ = id)":"Distinguishable / classical projection (δ∘μ ≠ id)"}`
+  ].join("\n");
+}
+
+// === REFERENCE & REPO CONSTELLATION ===
+function initReferenceTable() {
+  document.querySelector("#refTable tbody").innerHTML = AXES.map((ax,idx)=>{
+    const chips = ax.vals.map((v,vi)=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px dashed #1c2230;"><span><span class="shav" style="color:var(--gold);font-size:1.15em;">${v.g}</span> <span class="mono">${vi+1}. ${v.n} (${v.u})</span> <span style="color:var(--muted);">— ${v.k}</span></span><button type="button" style="padding:2px 8px;font-size:11px;" onclick="loadPreset('${v.p}','protocol',2,'B');location.hash='#imasm';">Load ${v.p}</button></div>`).join("");
+    return `<tr><td class="mono">${idx}</td><td class="mono"><span style="color:var(--gold);font-size:16px;">${ax.sym}</span> ${ax.name} (${ax.short})<br><span style="color:var(--muted);font-size:11px;">${ax.val}</span></td><td class="mono">${ax.axis}<br><span style="color:${ax.work?'var(--cyan)':'var(--muted)'};font-size:11px;">Work: ${ax.work?'YES':'no (inert)'}</span></td><td>${chips}</td></tr>`;
+  }).join("");
+}
+
+const REPOS = [
+  {name:"Imscribing_Grammar",role:"Hub · O_∞",desc:"12-primitive Crystal of Types, IMASM apparatus, Dual-Frame SIC-POVM & Frobenius MZI."},
+  {name:"p4rakernel",role:"Lean 4 Scripture",desc:"Lean 4 v4.28.0 fork with explosion disabled at C++ level + p4ramill machine-checked proofs."},
+  {name:"g-momonados",role:"Bare-Metal OS",desc:"G-m⊙² self-imscribing Rust kernel with GPU SIXTEEN_3 verification & Crystal navigation."},
+  {name:"exOS",role:"OS / ALEPH",desc:"Bare-metal Rust OS running built-in ALEPH/IMASM programs & Frobenius fixed-point probes."},
+  {name:"MoDoT",role:"Agentic Vessel",desc:"Agentic inquiry organism, Manuscript Spine, and Dual-Link SIC Witness Vessel."},
+  {name:"Vox",role:"Compiler",desc:"Cross-substrate compiler lifting IMASM programs across computational and protein substrates."},
+  {name:"ob3ect",role:"Closure Engine",desc:"Constructs self-imscribing programs, checks closure & hosts the Categorical Tower."},
+  {name:"red-hot_rebis",role:"Bio-Organic",desc:"Paraconsistent bio-organic chemistries, gene & protein IMASM execution."},
+  {name:"IMSCRIBr",role:"Tooling",desc:"Imscription compiler and workbench utilities."},
+  {name:"priests-engine",role:"Formal Logic",desc:"Paraconsistent dialetheic witness engine."},
+  {name:"Ars_Phytoglyphica",role:"Botanical Ars",desc:"Plant morphological imscription engine (Ars trilogy)."},
+  {name:"Ars_Animaglyphica",role:"Zoological Ars",desc:"Animal morphological imscription engine (Lean-verified in p4ramill)."},
+  {name:"Ars_Fungiglyphica",role:"Fungal Ars",desc:"15 canonical fungal types across 86 species compiled to pharmaceutical parameters."},
+  {name:"rohonc-engine",role:"Substrate Engine",desc:"Executable IMASM architecture extracted from the Rohonc Codex."},
+  {name:"cetaceanspeak",role:"Substrate Engine",desc:"Cetacean acoustic and structural grammar imscription."},
+  {name:"cr3echrz",role:"Morphology",desc:"Structural organism imscription and phenotype mapping."},
+  {name:"MillenniumAnkh",role:"Millennium Cluster",desc:"Formal structural invariants cluster."}
+];
+function initRepos() {
+  document.getElementById("repoGrid").innerHTML = REPOS.map(r=>`
+    <div class="repo-card">
+      <div>
+        <div class="row" style="justify-content:space-between;margin-bottom:6px;">
+          <span class="repo-title">${r.name}</span>
+          <span class="pill" style="font-size:10px;padding:2px 6px;">${r.role}</span>
+        </div>
+        <div class="repo-desc">${r.desc}</div>
+      </div>
+      <div class="repo-links">
+        <a href="https://github.com/umpolungfish/${r.name}" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://umpolungfish.github.io/${r.name}/" target="_blank" rel="noopener">Git Site ↗</a>
+      </div>
+    </div>
+  `).join("");
+}
+
+function initPalette() {
+  document.getElementById("opcodePalette").innerHTML = AXES.map(a=>`<button type="button" title="${a.name} (${a.axis}, work=${a.work})" onclick="document.getElementById('wordInput').value+='${a.sym}';renderWorkbench();">${a.sym} ${a.short}</button>`).join("");
+}
+
+window.addEventListener("DOMContentLoaded", ()=>{
+  initPalette();
+  ["wordInput","verbSelect","aritySelect","seedSelect","gateMode"].forEach(id=>{
+    document.getElementById(id).addEventListener("input",renderWorkbench);
+    document.getElementById(id).addEventListener("change",renderWorkbench);
+  });
+  renderWorkbench(); initLatticeGrid(); renderTrilattice(); renderWalk();
+  initSlotGrid(); setTuplePreset("stone"); renderMZI(); initReferenceTable(); initRepos();
+});
+</script>
+</body>
+</html>
