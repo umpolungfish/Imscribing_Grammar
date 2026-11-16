@@ -245,8 +245,8 @@ footer {
 
 
 .calc-ratiocinator *{margin:0;padding:0;box-sizing:border-box}
-.calc-ratiocinator html, .calc-ratiocinator body{background:#0b0b12;color:#f0ead8;font-family:'Hack',monospace;overflow-x:hidden}
-.calc-ratiocinator #calc-layout{display:grid;grid-template-columns:340px 1fr;height:100vh;width:100vw}
+.calc-ratiocinator{background:#0b0b12;color:#f0ead8;font-family:'Hack',monospace;overflow:hidden;display:flex;flex-direction:column;height:100%;}
+.calc-ratiocinator #calc-layout{display:grid;grid-template-columns:340px 1fr;height:100%;width:100%;min-height:0;}
 .calc-ratiocinator #calc-sidebar{background:#12101e;border-right:1px solid #2a2740;padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:4px}
 .calc-ratiocinator #calc-main{padding:20px;background:#0b0b12;display:grid;grid-template-columns:1fr 360px;grid-template-rows:auto auto 1fr;gap:12px;overflow:hidden}
 .calc-ratiocinator h1{color:#e8b84b;font-size:18px;margin-bottom:2px}
@@ -314,7 +314,9 @@ footer {
 .m137-explorers #m137-bar button{min-height:32px;padding:4px 14px;border:1px solid #3a4250;border-radius:8px;background:#1a2029;color:#e9e7e0;font:13px system-ui,sans-serif;cursor:pointer}
 .m137-explorers #m137-bar button[aria-pressed=true]{background:#2c3a4d;border-color:#6fb3d9}
 .m137-explorers #m137-view{position:relative;overflow:hidden;background:#0B0B0C;}
-.m137-explorers #m137-stage{position:relative;width:100%;max-width:1600px;height:760px;margin:0 auto;transform-origin:0 0;}
+.m137-explorers #m137-stage{position:relative;width:100%;max-width:1600px;height:auto;max-height:55vh;margin:0 auto;transform-origin:0 0;}
+.m137-explorers canvas{max-width:100%!important;height:auto!important;display:block;}
+.m137-explorers div[style*="1600px"],.m137-explorers div[style*="height:760px"]{width:100%!important;max-width:100%!important;}
 
 /* === end M137 === */
 </style>
