@@ -92,7 +92,7 @@ def main(ctx):
 
     Accessible via 'imscrbgrmr' or 'imscribe' command.
     """
-    global_catalog.populate_defaults()
+    global_catalog._ensure_loaded()
     _load_ig_catalog_into_global()
     if ctx.invoked_subcommand is None:
         click.echo(ctx.get_help())
@@ -1283,8 +1283,9 @@ def generate(
         console.print(f"[bold]Confidence:[/bold] {result.confidence:.1%}")
 
         # Reasoning
+        from agents.imscribe_generator_agent import strip_tool_call_tags
         console.print(f"\n[bold]AI Reasoning:[/bold]")
-        console.print(Markdown(result.reasoning))
+        console.print(Markdown(strip_tool_call_tags(result.reasoning)))
         
         # Grounding validation results (if extracted)
 
@@ -3187,7 +3188,7 @@ def imscribe_alias(ctx):
 
     Short alias for 'imscrbgrmr' command.
     """
-    global_catalog.populate_defaults()
+    global_catalog._ensure_loaded()
     _load_ig_catalog_into_global()
     if ctx.invoked_subcommand is None:
         click.echo(ctx.get_help())

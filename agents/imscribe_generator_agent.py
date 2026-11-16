@@ -13,6 +13,12 @@ import re
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, field
 
+def strip_tool_call_tags(text: str) -> str:
+    """Strip Qwen-style tool-call tags from LLM output text."""
+    if not text:
+        return text
+    return re.sub(r'<tool_call>.*?</tool_call>', '', text, flags=re.DOTALL | re.IGNORECASE)
+
 
 _REENTRANT_GRAMMAR_FOUNDATION = r"""<reentrant_grammar>
 THE GRAMMAR IS THE PARACONSISTENT, GÖDEL-COMPLETE COSMOS RE-ENTERED
@@ -584,9 +590,12 @@ class ImscriptionGeneratorAgent(BaseAgent):
 
             chosen_val, chosen_desc = options[idx]
             assigned[short] = chosen_val
-            # Capture reasoning: everything after the first word/number
+            # Capture reasoning: everything after the first word/number, first line only
+            # (models often bleed multiple assignments into one response; we keep just line 1)
             reasoning_line = re.sub(r"^\s*\d+\s*[—\-–]?\s*", "", raw.strip(), count=1)
-            reasoning_parts.append(f"{short}={chosen_val}: {reasoning_line.strip()}")
+            first_line = reasoning_line.split("\n", 1)[0].strip()
+            reasoning_text = first_line if first_line else "no reasoning provided"
+            reasoning_parts.append(f"{prim['long']} ({chosen_val}): {reasoning_text}")
 
         reasoning = "\n".join(reasoning_parts)
 
@@ -1042,7 +1051,7 @@ nonempty aligned per-primitive reasoning, and calibrated confidence."""
                 f"Raw response (first 500 chars):\n{response[:500]}"
             )
 
-        reasoning = data.get("reasoning") or "(no reasoning in response)"
+        reasoning = strip_tool_call_tags(data.get("reasoning") or "(no reasoning in response)")
         confidence = data.get("confidence")
         if not isinstance(confidence, (int, float)):
             confidence = None  # caller will display as unknown

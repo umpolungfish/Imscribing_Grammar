@@ -535,9 +535,31 @@ class ImscriptionCatalog:
         return True
 
     def save_catalog(self) -> bool:
-        """Persist catalog to its configured storage path. Returns True on success."""
+        """Persist catalog to its configured storage path. Returns True on success.
+
+        Guard: refuses to overwrite an on-disk catalog that holds MORE entries
+        than this in-memory catalog. A registry that failed to load the main
+        catalog (populate_defaults only) must never shrink it to a demo stub.
+        """
         if self._storage_path:
             try:
+                if self._storage_path.exists():
+                    try:
+                        existing = json.loads(
+                            self._storage_path.read_text(encoding="utf-8"))
+                        existing_count = (
+                            len(existing.get("imscriptions", []))
+                            if isinstance(existing, dict) else len(existing))
+                        if existing_count > len(self._imscriptions):
+                            logging.warning(
+                                "Refusing catalog save: on-disk %s holds %d "
+                                "entries but in-memory catalog holds %d. "
+                                "Load the main catalog before saving.",
+                                self._storage_path, existing_count,
+                                len(self._imscriptions))
+                            return False
+                    except (json.JSONDecodeError, OSError):
+                        pass
                 self.save(self._storage_path)
                 return True
             except Exception as e:
