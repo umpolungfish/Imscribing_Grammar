@@ -6,11 +6,9 @@
 <title>The Imscribing Grammar · ⟨𐑦𐑸𐑾𐑹𐑐𐑧𐑲𐑠⊙𐑫𐑳𐑭⟩</title>
 <meta name="description" content="The Imscribing Grammar: 12-opcode IMASM calculus, SIXTEEN_3 trilattice, 17,280,000-address Crystal of Types, and Frobenius dual-frame SIC-POVM measurement apparatus." />
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-
 @font-face {
   font-family: 'JetBrains Mono';
-  src: local('JetBrains Mono'), url('https://fonts.gstatic.com/s/jetbrainsmono/v25/tDbD2oWUg0MKqy7BL3N0Hl6DkRMT7LdQZP8VmT5q.ttf') format('truetype');
+  src: local('JetBrains Mono'), url('./fonts/JetBrainsMono-Regular.ttf') format('truetype');
   font-weight: 400 700;
   font-display: swap;
 }
@@ -1031,6 +1029,12 @@ function drawGraphSVG(nodes, edges, res) {
   svg.innerHTML = defs + edgeSvg + nodeSvg;
 }
 function loadPreset(w,v,a,s) {
+  if (!document.getElementById("wordInput")) {
+    const ws = document.getElementById("calc-wordSel"), cw = document.getElementById("calc-customWord");
+    if (!ws || !cw || typeof calc_evaluate !== "function") return;
+    ws.value = "custom"; cw.value = w; calc_evaluate();
+    return;
+  }
   document.getElementById("wordInput").value = w; document.getElementById("verbSelect").value = v;
   document.getElementById("aritySelect").value = String(a); document.getElementById("seedSelect").value = s;
   renderWorkbench();
@@ -1243,7 +1247,9 @@ function initRepos() {
 }
 
 function initPalette() {
-  document.getElementById("opcodePalette").innerHTML = AXES.map(a=>`<button type="button" title="${a.name} (${a.axis}, work=${a.work})" onclick="document.getElementById('wordInput').value+='${a.sym}';renderWorkbench();">${a.sym} ${a.short}</button>`).join("");
+  const pal = document.getElementById("opcodePalette");
+  if (!pal) return;
+  pal.innerHTML = AXES.map(a=>`<button type="button" title="${a.name} (${a.axis}, work=${a.work})" onclick="document.getElementById('wordInput').value+='${a.sym}';renderWorkbench();">${a.sym} ${a.short}</button>`).join("");
 }
 
 window.addEventListener("DOMContentLoaded", ()=>{
@@ -1261,7 +1267,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
   if(typeof window.onload_calc === "function") window.onload_calc();
   // Initialize M137 Trilattice Explorers
   if(typeof m137_fit === "function" && typeof m137_show === "function") {
-    m137_fit(); m137_show(0);
+    m137_show(0); m137_fit();
   }
 });
 
@@ -1384,8 +1390,8 @@ const PROGRAMS = {
 
 // Pan/Zoom state
 const zoomState = {
-  braid: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 },
-  static: { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 }
+  'calc-braid': { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 },
+  'calc-static': { tx: 0, ty: 0, scale: 1, isDragging: false, startX: 0, startY: 0, startTx: 0, startTy: 0 }
 };
 
 function calc_applyZoom(viewId) {
@@ -1425,7 +1431,7 @@ function calc_setupPanZoom(id) {
     state.scale = newScale;
     
     calc_applyZoom(id);
-  }, { passive: false };
+  }, { passive: false });
 
   container.addEventListener('mousedown', (e) => {
     state.isDragging = true;
@@ -1534,8 +1540,8 @@ function calc_cycleHTML(base){
 
 function calc_updateWord() {
   rot = 0;
-  const sel = document.getElementById("wordSel").value;
-  document.getElementById("customWord").style.display = sel === "custom" ? "block" : "none";
+  const sel = document.getElementById("calc-wordSel").value;
+  document.getElementById("calc-customWord").style.display = sel === "custom" ? "block" : "none";
   if (sel !== "custom") calc_evaluate();
 }
 
@@ -1722,10 +1728,10 @@ const KERNEL={T:'green: worked dyad (split, transform, fuse)',N:'N: identity clo
 
 function calc_evaluate(){
   const base=calc_getBaseTokens(),N=rotateWord(base,rot),n=N.length;
-  if(!n){calc_$('calc-rslt-box').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';calc_$('calc-rslt-box').innerHTML='';calc_$('calc-rslt-box').innerHTML='';calc_$('calc-rslt-box').innerHTML='';return;}
+  if(!n){calc_$('calc-rslt-box').innerHTML='<span class="tag tag-seq">N (void)</span> no committed opcodes parsed';return;}
   const M=calc_model(N),A=M.A,F=M.F,k=((rot%n)+n)%n,X=calc_execRing(N,M.seed),V=calc_model(base).A,RO=X.final;
   const tc={T:'tag-pass',N:'tag-seq',B:'tag-par',F:'tag-fail'}[V.v];
-  const exp=calc_$('calc-rslt-box').value.trim();
+  const exp=calc_$('calc-expect').value.trim();
   const expH=exp?`<div style="margin-top:6px">expected <b>${exp}</b> &rarr; ${exp===RO?'<span style="color:#6f6">matches the readout</span>':`<span style="color:#f66">differs: execution read ${RO}</span>`}</div>`:'';
   calc_$('calc-rslt-box').innerHTML=`
     <div style="margin-bottom:6px"><b>word</b> (cut k = ${k} mod ${n}): <span style="font-size:14px;letter-spacing:2px">${N.map(t=>GLYPH[t]).join(' ')}</span></div>
@@ -1758,7 +1764,7 @@ function calc_drawStatic(M){
   M.N.forEach((t,i)=>{const r=M.F.rout[i];
     [1,2,4,8].forEach((bit,j)=>{h+=`<rect x="${x0+i*c}" y="${y0+j*c}" width="${c-1}" height="${c-1}" fill="${r&bit?(j<2?'#B8860B':'#7B3294'):'#1e1c2e'}"/>`;});
     h+=`<text x="${x0+i*c+c/2}" y="${y0+4*c+12}" text-anchor="middle" fill="#8a84b0" font-size="${Math.min(10,c)}">${GLYPH[t]}</text>`;});
-  svg.innerHTML=`<g id="staticZoom">${h}</g>`;calc_applyZoom('static');
+  svg.innerHTML=`<g id="calc-staticZoom">${h}</g>`;calc_applyZoom('calc-static');
 }
 function calc_drawGraph(M){
   const svg=calc_$('calc-braidSvg'),box=calc_$('calc-braid-view'),W=box.clientWidth||800,H=box.clientHeight||480;
@@ -1780,7 +1786,7 @@ function calc_drawGraph(M){
     <text x="${X(i)}" y="${Y+32}" text-anchor="middle" fill="#8a84b0" font-size="8">${i}</text>
     <text x="${X(i)-14}" y="${Y-6}" text-anchor="end" fill="#8a84b0" font-size="8" font-weight="bold">${calc_bn(F.rin[i])}</text><text x="${X(i)}" y="${Y+44}" text-anchor="middle" fill="#c8b8e0" font-size="9">${calc_bn(F.rout[i])}</text>`;});
   h+=`<text x="12" y="16" fill="#c8b8e0" font-size="11">${M.verb} graph &middot; ${A.name} &middot; β=${A.beta} &middot; ${A.v} (${A.why})</text>`;
-  svg.innerHTML=`<g id="braidZoom">${h}</g>`;calc_applyZoom('braid');
+  svg.innerHTML=`<g id="calc-braidZoom">${h}</g>`;calc_applyZoom('calc-braid');
 }
 
 // ═══ BRAID VIEW ═══ mirrors braid_protocol.rs: stack_delta + read_tangle
@@ -1821,7 +1827,7 @@ function calc_readBraid(tokens){
 // The ROTAT cut k is the seam at 12 o'clock. Strands cross the seam and rejoin
 // the start of the word, so the closed-braid trace is the geometry itself, not an add-on.
 function calc_drawBraidDiagram(tokens,allPass){
-  const svg=document.getElementById('braidSvg'),box=document.getElementById('braid-view');
+  const svg=document.getElementById('calc-braidSvg'),box=document.getElementById('calc-braid-view');
   const W0=box.clientWidth||800,H0=box.clientHeight||480;
   const up=Math.max(1,660/Math.min(W0,H0)),W=W0*up,H=H0*up;      // keep the ring legible in short panes
   const R=calc_readBraid(tokens),n=R.rows.length,S=R.strands;
@@ -1929,24 +1935,24 @@ function calc_drawBraidDiagram(tokens,allPass){
     +`<text x="${cx}" y="${cy+22}" text-anchor="middle" fill="${R.closes?'#6f6':'#f66'}" font-size="10">${conn?'closed link · '+ncomp+' comp.':R.closes?'closed':'open · d='+R.end}</text>`;
   h+=`<text x="26" y="22" fill="#c8b8e0" font-size="12">annular braid read-off: ${R.gens.length?R.gens.map(sig).join(' '):'no crossings'}</text>`;
   h+=`<text x="26" y="38" fill="#8a84b0" font-size="10">${S} strands${conn?' · '+ncomp+' component'+(ncomp>1?'s':''):''} · writhe ${R.writhe>0?'+':''}${R.writhe} · ${conn?'closed link (each lane rejoins itself at the seam)':R.closes?'closed (depth returns to 0 at the seam)':'open at the seam, ends at depth '+R.end}</text>`;
-  svg.innerHTML=`<g id="braidZoom">${h}</g>`;calc_applyZoom('braid');
+  svg.innerHTML=`<g id="calc-braidZoom">${h}</g>`;calc_applyZoom('calc-braid');
   cancelAnimationFrame(bAnim.raf);
   bAnim={n,i:0,sec:Array.from({length:n},(_,i)=>sector(i)),paused:bAnim.paused,raf:0};
   bAnim.raf=requestAnimationFrame(calc_braidTick);
   const bad=R.rows.map((r,k)=>r.bad?`row ${k} ${GLYPH[r.t]}: ${r.bad}`:'').filter(Boolean);
-  document.getElementById('cfg-box').innerHTML=`<div style="border-bottom:1px solid #2a2740;padding-bottom:8px;margin-bottom:8px"><b>Braid reading</b> <span style="color:#8a84b0">(read_tangle, annular)</span><br/>
+  document.getElementById('calc-cfg-box').innerHTML=`<div style="border-bottom:1px solid #2a2740;padding-bottom:8px;margin-bottom:8px"><b>Braid reading</b> <span style="color:#8a84b0">(read_tangle, annular)</span><br/>
     annulus: ℤ/${nb}ℤ &middot; cut k = ${cut}${cut?` &middot; <span style="color:#a84bb8">base head at row ${n-cut}</span>`:''}<br/>
     generators: ${R.gens.length?R.gens.map(sig).join(' '):'&mdash;'}<br/>strands ${S}${conn?' &middot; components '+ncomp:''} &middot; crossings ${R.gens.length} &middot; writhe ${R.writhe}<br/>
     depth: ${R.prof.join(' ')}<br/>closes at the seam: ${R.closes?'<span style="color:#6f6">yes</span>':'<span style="color:#f66">no</span>'}
-    ${bad.length?'<br/><span style="color:#f66">'+bad.join('<br/>')+'</span>':''}</div>`+document.getElementById('cfg-box').innerHTML;
+    ${bad.length?'<br/><span style="color:#f66">'+bad.join('<br/>')+'</span>':''}</div>`+document.getElementById('calc-cfg-box').innerHTML;
 }
 
 window.onload_calc = function() {
   calc_setupPanZoom('calc-braid');
   calc_setupPanZoom('calc-static');
   
-  document.getElementById("wordSel").value = "𐑛";
-  document.getElementById("customWord").style.display = "none";
+  document.getElementById("calc-wordSel").value = "𐑛";
+  document.getElementById("calc-customWord").style.display = "none";
   calc_evaluate();
 };
 
@@ -2137,23 +2143,18 @@ while(n=w.nextNode()){if(n.nodeType===3){if(n.nodeValue.indexOf('{{')>=0)tx.push
 const m=a.value.match(/^\{\{\s*([\w.$]+)\s*\}\}$/),ev={onclick:'click',oninput:'input'}[a.name.toLowerCase()];
 if(ev&&m){n.removeAttribute(a.name);n.addEventListener(ev,e=>{const f=comp.renderVals()[m[1]];if(f)f(e)})}else at.push([n,a.name,a.value])})}}
 return()=>{const v=comp.renderVals(),g=(_,k)=>v[k]==null?'':v[k];
-tx.forEach(([n,t])=>{n.nodeValue=t.replace(RE,g)});
-at.forEach(([el,name,t])=>{const s=t.replace(RE,g);if(name==='value')el.value=s;else el.setAttribute(name,s)})}}
-function m137_show(i){if(m137_cur&&m137_cur.componentWillUnmount)m137_cur.componentWillUnmount();const st=document.getElementById('stage');st.innerHTML='';
-const root=document.createElement('div');root.innerHTML=B[i].tpl;st.appendChild(root);
-const C=B[i].make(m137_DCLogic),comp=new C({});comp.root=root;const up=m137_bind(root,comp);comp._upd=up;up();if(comp.componentDidMount)comp.componentDidMount();m137_cur=comp;m137_curIdx=i;
-Array.from(document.querySelectorAll('#bar button')).forEach((b,j)=>b.setAttribute('aria-pressed',j===i?'true':'false'))}
-function m137_fit(){const v=document.getElementById('view'),s=Math.min(v.clientWidth/1600,v.clientHeight/760);const st=document.getElementById('stage');
+tx.forEach(([n,t])=>{n.nodeValue=t.replace(m137_RE,g)});
+at.forEach(([el,name,t])=>{const s=t.replace(m137_RE,g);if(name==='value')el.value=s;else el.setAttribute(name,s)})}}
+function m137_show(i){if(m137_cur&&m137_cur.componentWillUnmount)m137_cur.componentWillUnmount();const st=document.getElementById('m137-stage');st.innerHTML='';
+const root=document.createElement('div');root.innerHTML=m137_B[i].tpl;st.appendChild(root);
+const C=m137_B[i].make(m137_DCLogic),comp=new C({});comp.root=root;const up=m137_bind(root,comp);comp._upd=up;up();if(comp.componentDidMount)comp.componentDidMount();m137_cur=comp;m137_curIdx=i;m137_fit();
+Array.from(document.querySelectorAll('#m137-bar button')).forEach((b,j)=>b.setAttribute('aria-pressed',j===i?'true':'false'))}
+function m137_fit(){const v=document.getElementById('m137-view'),s=Math.min(v.clientWidth/1600,v.clientHeight/760);const st=document.getElementById('m137-stage');
 st.style.transform='translate('+Math.max(0,(v.clientWidth-1600*s)/2)+'px,0) scale('+s+')'}
-const bar=document.getElementById('bar');B.forEach((b,i)=>{const e=document.createElement('button');e.textContent=b.name;e.setAttribute('role','tab');e.addEventListener('click',()=>m137_show(i));bar.appendChild(e)});
-window.addEventListener('resize',m137_fit);m137_fit();m137_show(0);
+const bar=document.getElementById('m137-bar');m137_B.forEach((b,i)=>{const e=document.createElement('button');e.textContent=b.name;e.setAttribute('role','tab');e.addEventListener('click',()=>m137_show(i));bar.appendChild(e)});
+window.addEventListener('resize',m137_fit);
 
 /* === end M137 === */
-
-}
-}
-}
-}
 </script>
 </body>
 </html>
