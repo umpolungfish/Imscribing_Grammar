@@ -330,6 +330,28 @@ footer {
 .m137-explorers #m137-stage{position:relative;width:100%;max-width:1600px;height:auto;max-height:55vh;margin:0 auto;transform-origin:0 0;}
 .m137-explorers canvas{max-width:100%!important;height:auto!important;display:block;}
 .m137-explorers div[style*="1600px"],.m137-explorers div[style*="height:760px"]{width:100%!important;max-width:100%!important;}
+.m137-explorers div[style*="flex-direction:row"] > canvas{width:calc(100% - 384px)!important;height:auto!important;align-self:flex-start!important;aspect-ratio:1160/760!important;}
+
+/* === Mobile responsiveness === */
+@media (max-width: 900px) {
+  body { image-rendering: auto; }
+  nav.top-nav { margin: 0 8px 12px 8px; }
+  nav.top-nav .inner { padding: 8px 10px; }
+  .wrap { padding: 12px 10px 60px; }
+  .window .content { padding: 10px; }
+  /* Calculus Ratiocinator: sidebar stacks above, main area single column */
+  .calc-ratiocinator #calc-layout { grid-template-columns: 1fr; }
+  .calc-ratiocinator #calc-sidebar { border-right: none; border-bottom: 1px solid #2a2740; max-height: 46vh; flex-shrink: 0; }
+  .calc-ratiocinator #calc-main { grid-template-columns: 1fr; grid-template-rows: auto auto auto; padding: 12px; }
+  .calc-ratiocinator #calc-braid-view { grid-column: 1; grid-row: auto; height: 300px; }
+  .calc-ratiocinator #calc-right-col { grid-column: 1; grid-row: auto; overflow: visible; }
+  /* Trilattice Explorers: canvas stacks above its data panel */
+  .m137-explorers div[style*="flex-direction:row"] { flex-direction: column!important; height: auto!important; }
+  .m137-explorers div[style*="flex-direction:row"] > canvas { width: 100%!important; height: auto!important; }
+  .m137-explorers div[style*="flex-direction:row"] > div { width: auto!important; padding: 14px 16px!important; }
+  .m137-explorers #m137-bar { flex-wrap: wrap; height: auto; min-height: 44px; padding: 6px 8px; }
+  #m137-stage { max-height: none; }
+}
 
 /* === end M137 === */
 </style>
@@ -2149,8 +2171,7 @@ function m137_show(i){if(m137_cur&&m137_cur.componentWillUnmount)m137_cur.compon
 const root=document.createElement('div');root.innerHTML=m137_B[i].tpl;st.appendChild(root);
 const C=m137_B[i].make(m137_DCLogic),comp=new C({});comp.root=root;const up=m137_bind(root,comp);comp._upd=up;up();if(comp.componentDidMount)comp.componentDidMount();m137_cur=comp;m137_curIdx=i;m137_fit();
 Array.from(document.querySelectorAll('#m137-bar button')).forEach((b,j)=>b.setAttribute('aria-pressed',j===i?'true':'false'))}
-function m137_fit(){const v=document.getElementById('m137-view'),s=Math.min(v.clientWidth/1600,v.clientHeight/760);const st=document.getElementById('m137-stage');
-st.style.transform='translate('+Math.max(0,(v.clientWidth-1600*s)/2)+'px,0) scale('+s+')'}
+function m137_fit(){const st=document.getElementById('m137-stage');if(st)st.style.transform='none';}
 const bar=document.getElementById('m137-bar');m137_B.forEach((b,i)=>{const e=document.createElement('button');e.textContent=b.name;e.setAttribute('role','tab');e.addEventListener('click',()=>m137_show(i));bar.appendChild(e)});
 window.addEventListener('resize',m137_fit);
 
